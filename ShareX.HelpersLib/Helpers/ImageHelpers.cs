@@ -243,6 +243,159 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        /// <summary>Automatically crop image to remove transparent outside area.</summary>
+        public static Bitmap AutoCropImage(Bitmap bmp)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle rect = source;
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            {
+                bool leave = false;
+
+                // Find X
+                for (int x = rect.X; x < rect.Width && !leave; x++)
+                {
+                    for (int y = rect.Y; y < rect.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
+                        {
+                            rect.X = x;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                // Find Y
+                for (int y = rect.Y; y < rect.Height && !leave; y++)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
+                        {
+                            rect.Y = y;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                // Find Width
+                for (int x = rect.Width - 1; x >= rect.X && !leave; x--)
+                {
+                    for (int y = rect.Y; y < rect.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
+                        {
+                            rect.Width = x - rect.X + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                // Find Height
+                for (int y = rect.Height - 1; y >= rect.Y && !leave; y--)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
+                        {
+                            rect.Height = y - rect.Y + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (source != rect)
+            {
+                Bitmap croppedBitmap = CropBitmap(bmp, rect);
+
+                if (croppedBitmap != null)
+                {
+                    bmp.Dispose();
+                    return croppedBitmap;
+                }
+            }
+
+            return bmp;
+        }
+
+        /// <summary>Automatically crop image to remove transparent outside area. Only checks center pixels.</summary>
+        public static Bitmap QuickAutoCropImage(Bitmap bmp)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle rect = source;
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            {
+                int middleX = rect.Width / 2;
+                int middleY = rect.Height / 2;
+
+                // Find X
+                for (int x = rect.X; x < rect.Width; x++)
+                {
+                    if (unsafeBitmap.GetPixel(x, middleY).Alpha > 0)
+                    {
+                        rect.X = x;
+                        break;
+                    }
+                }
+
+                // Find Y
+                for (int y = rect.Y; y < rect.Height; y++)
+                {
+                    if (unsafeBitmap.GetPixel(middleX, y).Alpha > 0)
+                    {
+                        rect.Y = y;
+                        break;
+                    }
+                }
+
+                // Find Width
+                for (int x = rect.Width - 1; x >= rect.X; x--)
+                {
+                    if (unsafeBitmap.GetPixel(x, middleY).Alpha > 0)
+                    {
+                        rect.Width = x - rect.X + 1;
+                        break;
+                    }
+                }
+
+                // Find Height
+                for (int y = rect.Height - 1; y >= rect.Y; y--)
+                {
+                    if (unsafeBitmap.GetPixel(middleX, y).Alpha > 0)
+                    {
+                        rect.Height = y - rect.Y + 1;
+                        break;
+                    }
+                }
+            }
+
+            if (source != rect)
+            {
+                Bitmap croppedBitmap = CropBitmap(bmp, rect);
+
+                if (croppedBitmap != null)
+                {
+                    bmp.Dispose();
+                    return croppedBitmap;
+                }
+            }
+
+            return bmp;
+        }
+
         /// <summary>Adds empty space around image.</summary>
         public static Image AddCanvas(Image img, Padding margin)
         {
