@@ -33,7 +33,7 @@ namespace ShareX.ImageEffectsLib
     {
         private int radius;
 
-        [DefaultValue(10)]
+        [DefaultValue(15)]
         public int Radius
         {
             get
@@ -42,7 +42,12 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                radius = value.Min(1);
+                radius = value.Min(3);
+
+                if (radius.IsEvenNumber())
+                {
+                    radius++;
+                }
             }
         }
 

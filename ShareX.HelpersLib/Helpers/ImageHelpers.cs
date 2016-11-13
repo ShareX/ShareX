@@ -1031,7 +1031,7 @@ namespace ShareX.HelpersLib
         {
             if (range > 1)
             {
-                if ((range & 1) == 0)
+                if (range.IsEvenNumber())
                 {
                     range++;
                 }

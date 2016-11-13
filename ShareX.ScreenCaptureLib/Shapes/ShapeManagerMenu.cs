@@ -425,8 +425,9 @@ namespace ShareX.ScreenCaptureLib
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
-            tslnudBlurRadius.Content.Minimum = 2;
-            tslnudBlurRadius.Content.Maximum = 100;
+            tslnudBlurRadius.Content.Minimum = 3;
+            tslnudBlurRadius.Content.Maximum = 199;
+            tslnudBlurRadius.Content.Increment = 2;
             tslnudBlurRadius.Content.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.Content.Value;

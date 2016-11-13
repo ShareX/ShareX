@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         public int BlurRadius { get; set; } = 15;
 
         // Pixelate effect
-        public int PixelateSize { get; set; } = 7;
+        public int PixelateSize { get; set; } = 8;
 
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;
