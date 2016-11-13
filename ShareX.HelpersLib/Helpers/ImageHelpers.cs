@@ -1174,6 +1174,102 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides)
+        {
+            if (sides == AnchorStyles.None)
+            {
+                return img;
+            }
+
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                Point previousPoint, currentPoint;
+                int horizontalTornCount = img.Width / tornRange;
+                int verticalTornCount = img.Height / tornRange;
+
+                if (sides.HasFlag(AnchorStyles.Top))
+                {
+                    previousPoint = new Point(tornRange, MathHelpers.Random(0, tornDepth));
+
+                    for (int i = 0; i < horizontalTornCount - 1; i++)
+                    {
+                        currentPoint = new Point(previousPoint.X + tornRange, MathHelpers.Random(0, tornDepth));
+                        gp.AddLine(previousPoint, currentPoint);
+                        previousPoint = currentPoint;
+                    }
+                }
+                else
+                {
+                    previousPoint = new Point(0, 0);
+                    currentPoint = new Point(img.Width - 1, 0);
+                    gp.AddLine(previousPoint, currentPoint);
+                    previousPoint = currentPoint;
+                }
+
+                if (sides.HasFlag(AnchorStyles.Right))
+                {
+                    for (int i = 0; i < verticalTornCount; i++)
+                    {
+                        currentPoint = new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), previousPoint.Y + tornRange);
+                        gp.AddLine(previousPoint, currentPoint);
+                        previousPoint = currentPoint;
+                    }
+                }
+                else
+                {
+                    currentPoint = new Point(img.Width - 1, img.Height - 1);
+                    gp.AddLine(previousPoint, currentPoint);
+                    previousPoint = currentPoint;
+                }
+
+                if (sides.HasFlag(AnchorStyles.Bottom))
+                {
+                    for (int i = 0; i < horizontalTornCount; i++)
+                    {
+                        currentPoint = new Point(previousPoint.X - tornRange, img.Height - 1 - MathHelpers.Random(0, tornDepth));
+                        gp.AddLine(previousPoint, currentPoint);
+                        previousPoint = currentPoint;
+                    }
+                }
+                else
+                {
+                    currentPoint = new Point(0, img.Height - 1);
+                    gp.AddLine(previousPoint, currentPoint);
+                    previousPoint = currentPoint;
+                }
+
+                if (sides.HasFlag(AnchorStyles.Left))
+                {
+                    for (int i = 0; i < verticalTornCount; i++)
+                    {
+                        currentPoint = new Point(MathHelpers.Random(0, tornDepth), previousPoint.Y - tornRange);
+                        gp.AddLine(previousPoint, currentPoint);
+                        previousPoint = currentPoint;
+                    }
+                }
+                else
+                {
+                    currentPoint = new Point(0, 0);
+                    gp.AddLine(previousPoint, currentPoint);
+                    previousPoint = currentPoint;
+                }
+
+                gp.CloseFigure();
+
+                Bitmap result = img.CreateEmptyBitmap();
+
+                using (img)
+                using (Graphics g = Graphics.FromImage(result))
+                using (TextureBrush brush = new TextureBrush(img))
+                {
+                    g.SetHighQuality();
+                    g.FillPath(brush, gp);
+
+                    return result;
+                }
+            }
+        }
+
         public static string OpenImageFileDialog()
         {
             string[] images = OpenImageFileDialog(false);
@@ -1422,115 +1518,6 @@ namespace ShareX.HelpersLib
             }
 
             return img;
-        }
-
-        public static Image CreateTornEdge(Image sourceImage, int toothHeight, int horizontalToothRange, int verticalToothRange, AnchorStyles sides)
-        {
-            Image result = sourceImage.CreateEmptyBitmap();
-
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                Random random = new Random();
-                int horizontalRegions = sourceImage.Width / horizontalToothRange;
-                int verticalRegions = sourceImage.Height / verticalToothRange;
-
-                Point previousEndingPoint = new Point(horizontalToothRange, random.Next(1, toothHeight));
-                Point newEndingPoint;
-
-                if (sides.HasFlag(AnchorStyles.Top))
-                {
-                    for (int i = 0; i < horizontalRegions; i++)
-                    {
-                        int x = previousEndingPoint.X + horizontalToothRange;
-                        int y = random.Next(1, toothHeight);
-                        newEndingPoint = new Point(x, y);
-                        path.AddLine(previousEndingPoint, newEndingPoint);
-                        previousEndingPoint = newEndingPoint;
-                    }
-                }
-                else
-                {
-                    previousEndingPoint = new Point(0, 0);
-                    newEndingPoint = new Point(sourceImage.Width, 0);
-                    path.AddLine(previousEndingPoint, newEndingPoint);
-                    previousEndingPoint = newEndingPoint;
-                }
-
-                if (sides.HasFlag(AnchorStyles.Right))
-                {
-                    for (int i = 0; i < verticalRegions; i++)
-                    {
-                        int x = sourceImage.Width - random.Next(1, toothHeight);
-                        int y = previousEndingPoint.Y + verticalToothRange;
-                        newEndingPoint = new Point(x, y);
-                        path.AddLine(previousEndingPoint, newEndingPoint);
-                        previousEndingPoint = newEndingPoint;
-                    }
-                }
-                else
-                {
-                    previousEndingPoint = new Point(sourceImage.Width, 0);
-                    newEndingPoint = new Point(sourceImage.Width, sourceImage.Height);
-                    path.AddLine(previousEndingPoint, newEndingPoint);
-                    previousEndingPoint = newEndingPoint;
-                }
-
-                if (sides.HasFlag(AnchorStyles.Bottom))
-                {
-                    for (int i = 0; i < horizontalRegions; i++)
-                    {
-                        int x = previousEndingPoint.X - horizontalToothRange;
-                        int y = sourceImage.Height - random.Next(1, toothHeight);
-                        newEndingPoint = new Point(x, y);
-                        path.AddLine(previousEndingPoint, newEndingPoint);
-                        previousEndingPoint = newEndingPoint;
-                    }
-                }
-                else
-                {
-                    previousEndingPoint = new Point(sourceImage.Width, sourceImage.Height);
-                    newEndingPoint = new Point(0, sourceImage.Height);
-                    path.AddLine(previousEndingPoint, newEndingPoint);
-                    previousEndingPoint = newEndingPoint;
-                }
-
-                if (sides.HasFlag(AnchorStyles.Left))
-                {
-                    for (int i = 0; i < verticalRegions; i++)
-                    {
-                        int x = random.Next(1, toothHeight);
-                        int y = previousEndingPoint.Y - verticalToothRange;
-                        newEndingPoint = new Point(x, y);
-                        path.AddLine(previousEndingPoint, newEndingPoint);
-                        previousEndingPoint = newEndingPoint;
-                    }
-                }
-                else
-                {
-                    previousEndingPoint = new Point(0, sourceImage.Height);
-                    newEndingPoint = new Point(0, 0);
-                    path.AddLine(previousEndingPoint, newEndingPoint);
-                    previousEndingPoint = newEndingPoint;
-                }
-
-                path.CloseFigure();
-
-                using (Graphics graphics = Graphics.FromImage(result))
-                {
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
-                    // Draw the created figure with the original image by using a TextureBrush so we have anti-aliasing
-                    using (Brush brush = new TextureBrush(sourceImage))
-                    {
-                        graphics.FillPath(brush, path);
-                    }
-                }
-            }
-
-            return result;
         }
 
         #endregion Greenshot methods
