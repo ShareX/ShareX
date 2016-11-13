@@ -79,9 +79,10 @@ namespace ShareX.ScreenCaptureLib
                 rect.Intersect(Rectangle);
 
                 using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
-                using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
                 {
-                    g.DrawImage(pixelatedImage, rect);
+                    ImageHelpers.PixelateImage(croppedImage, PixelSize);
+
+                    g.DrawImage(croppedImage, rect);
                 }
             }
         }

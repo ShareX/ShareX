@@ -727,16 +727,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Bitmap Sharpen(Image image, double strength)
+        public static Bitmap Sharpen(Image img, double strength)
         {
-            using (Bitmap bitmap = (Bitmap)image)
+            using (Bitmap bitmap = (Bitmap)img)
             {
                 if (bitmap != null)
                 {
                     Bitmap sharpenImage = bitmap.Clone() as Bitmap;
 
-                    int width = image.Width;
-                    int height = image.Height;
+                    int width = img.Width;
+                    int height = img.Height;
 
                     // Create sharpening filter.
                     const int filterSize = 5;
@@ -755,7 +755,7 @@ namespace ShareX.HelpersLib
 
                     const int s = filterSize / 2;
 
-                    Color[,] result = new Color[image.Width, image.Height];
+                    Color[,] result = new Color[img.Width, img.Height];
 
                     // Lock image bits for read/write.
                     if (sharpenImage != null)
@@ -855,6 +855,50 @@ namespace ShareX.HelpersLib
                         color.Green = Math.Min(color.Green, highlightColor.G);
                         color.Blue = Math.Min(color.Blue, highlightColor.B);
                         unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
+        }
+
+        public static void PixelateImage(Bitmap bmp, int pixelSize)
+        {
+            if (pixelSize > 1)
+            {
+                using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+                {
+                    for (int y = 0; y < unsafeBitmap.Height; y += pixelSize)
+                    {
+                        for (int x = 0; x < unsafeBitmap.Width; x += pixelSize)
+                        {
+                            int r = 0, g = 0, b = 0, a = 0, count = 0;
+
+                            int yLimit = Math.Min(y + pixelSize, unsafeBitmap.Height);
+                            int xLimit = Math.Min(x + pixelSize, unsafeBitmap.Width);
+
+                            for (int y2 = y; y2 < yLimit; y2++)
+                            {
+                                for (int x2 = x; x2 < xLimit; x2++)
+                                {
+                                    ColorBgra color = unsafeBitmap.GetPixel(x2, y2);
+
+                                    r += color.Red;
+                                    g += color.Green;
+                                    b += color.Blue;
+                                    a += color.Alpha;
+                                    count++;
+                                }
+                            }
+
+                            ColorBgra averageColor = new ColorBgra((byte)(b / count), (byte)(g / count), (byte)(r / count), (byte)(a / count));
+
+                            for (int y2 = y; y2 < yLimit; y2++)
+                            {
+                                for (int x2 = x; x2 < xLimit; x2++)
+                                {
+                                    unsafeBitmap.SetPixel(x2, y2, averageColor);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1120,57 +1164,6 @@ namespace ShareX.HelpersLib
             {
                 ImageHelper.ApplyBoxBlur(sourceImage, radius);
             }
-        }
-
-        public static Bitmap Pixelate(Bitmap sourceImage, int pixelSize)
-        {
-            pixelSize = Math.Min(pixelSize, sourceImage.Width);
-            pixelSize = Math.Min(pixelSize, sourceImage.Height);
-
-            Bitmap result = sourceImage.CreateEmptyBitmap();
-
-            using (IFastBitmap src = FastBitmap.Create(sourceImage, new Rectangle(0, 0, sourceImage.Width, sourceImage.Height)))
-            using (IFastBitmap dest = FastBitmap.Create(result))
-            {
-                List<Color> colors = new List<Color>();
-                int halbPixelSize = pixelSize / 2;
-                for (int y = src.Top - halbPixelSize; y < src.Bottom + halbPixelSize; y = y + pixelSize)
-                {
-                    for (int x = src.Left - halbPixelSize; x <= src.Right + halbPixelSize; x = x + pixelSize)
-                    {
-                        colors.Clear();
-                        for (int yy = y; yy < y + pixelSize; yy++)
-                        {
-                            if (yy >= src.Top && yy < src.Bottom)
-                            {
-                                for (int xx = x; xx < x + pixelSize; xx++)
-                                {
-                                    if (xx >= src.Left && xx < src.Right)
-                                    {
-                                        colors.Add(src.GetColorAt(xx, yy));
-                                    }
-                                }
-                            }
-                        }
-                        Color currentAvgColor = ColorHelpers.Mix(colors);
-                        for (int yy = y; yy <= y + pixelSize; yy++)
-                        {
-                            if (yy >= src.Top && yy < src.Bottom)
-                            {
-                                for (int xx = x; xx <= x + pixelSize; xx++)
-                                {
-                                    if (xx >= src.Left && xx < src.Right)
-                                    {
-                                        dest.SetColorAt(xx, yy, currentAvgColor);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            return result;
         }
 
         public static Image CreateTornEdge(Image sourceImage, int toothHeight, int horizontalToothRange, int verticalToothRange, AnchorStyles sides)

@@ -323,34 +323,6 @@ namespace ShareX.HelpersLib
             return Color.FromName(color);
         }
 
-        public static Color Mix(List<Color> colors)
-        {
-            int a = 0;
-            int r = 0;
-            int g = 0;
-            int b = 0;
-            int count = 0;
-
-            foreach (Color color in colors)
-            {
-                if (!color.Equals(Color.Empty))
-                {
-                    a += color.A;
-                    r += color.R;
-                    g += color.G;
-                    b += color.B;
-                    count++;
-                }
-            }
-
-            if (count == 0)
-            {
-                return Color.Empty;
-            }
-
-            return Color.FromArgb(a / count, r / count, g / count, b / count);
-        }
-
         public static int PerceivedBrightness(Color color)
         {
             return (int)Math.Sqrt(color.R * color.R * .299 + color.G * color.G * .587 + color.B * color.B * .114);
