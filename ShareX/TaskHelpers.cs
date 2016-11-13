@@ -23,6 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using Greenshot;
+using Greenshot.Drawing;
+using Greenshot.IniFile;
+using Greenshot.Plugin;
+using GreenshotPlugin.Core;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEffectsLib;
@@ -832,7 +837,7 @@ namespace ShareX
 
         public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
         {
-            return ImageHelpers.AnnotateImage(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
+            return AnnotateImageUsingGreenshot(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
                 x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
                 (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
@@ -843,6 +848,47 @@ namespace ShareX
                     return newFilePath;
                 },
                 x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
+        }
+
+        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath, bool allowSave, string configPath, Action<Image> clipboardCopyRequested,
+            Action<Image> imageUploadRequested, Action<Image, string> imageSaveRequested, Func<Image, string, string> imageSaveAsRequested, Action<Image> printImageRequested)
+        {
+            if (!IniConfig.isInitialized)
+            {
+                IniConfig.AllowSave = allowSave;
+                IniConfig.Init(configPath);
+            }
+
+            using (Image cloneImage = img != null ? (Image)img.Clone() : ImageHelpers.LoadImage(imgPath))
+            using (ICapture capture = new Capture { Image = cloneImage })
+            using (Surface surface = new Surface(capture))
+            using (ImageEditorForm editor = new ImageEditorForm(surface, true))
+            {
+                editor.IsTaskWork = img != null;
+                editor.SetImagePath(imgPath);
+                editor.ClipboardCopyRequested += clipboardCopyRequested;
+                editor.ImageUploadRequested += imageUploadRequested;
+                editor.ImageSaveRequested += imageSaveRequested;
+                editor.ImageSaveAsRequested += imageSaveAsRequested;
+                editor.PrintImageRequested += printImageRequested;
+
+                DialogResult result = editor.ShowDialog();
+
+                if (result == DialogResult.OK && editor.IsTaskWork)
+                {
+                    using (img)
+                    {
+                        return editor.GetImageForExport();
+                    }
+                }
+
+                if (result == DialogResult.Abort)
+                {
+                    return null;
+                }
+            }
+
+            return img;
         }
 
         public static void OpenImageEffects()

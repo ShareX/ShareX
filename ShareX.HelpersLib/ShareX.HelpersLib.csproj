@@ -1158,12 +1158,6 @@
     <None Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Greenshot.ImageEditor\Greenshot.ImageEditor.csproj">
-      <Project>{cd642bf4-d815-4d67-a0b5-c69f0b8231af}</Project>
-      <Name>Greenshot.ImageEditor</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ShareX_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
