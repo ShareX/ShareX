@@ -247,7 +247,7 @@
     <value>6</value>
   </data>
   <data name="btnCombine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="btnCombine.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 472</value>

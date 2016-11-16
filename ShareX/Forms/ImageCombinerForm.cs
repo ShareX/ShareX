@@ -28,6 +28,7 @@ using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -103,13 +104,31 @@ namespace ShareX
         {
             if (lvImages.Items.Count > 0)
             {
-                IEnumerable<Image> images = null;
+                List<Image> images = new List<Image>();
 
                 try
                 {
-                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text)).Where(x => x != null);
-                    Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
-                    OnProcessRequested(output);
+                    foreach (ListViewItem lvi in lvImages.Items)
+                    {
+                        string filePath = lvi.Text;
+
+                        if (File.Exists(filePath))
+                        {
+                            Image img = ImageHelpers.LoadImage(filePath);
+
+                            if (img != null)
+                            {
+                                images.Add(img);
+                            }
+                        }
+                    }
+
+                    if (images.Count > 1)
+                    {
+                        Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
+
+                        OnProcessRequested(output);
+                    }
                 }
                 catch (Exception ex)
                 {
