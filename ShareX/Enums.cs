@@ -188,7 +188,6 @@ namespace ShareX
         DNSChanger,
         QRCode,
         Ruler,
-        Automate,
         IndexFolder,
         ImageCombiner,
         VideoThumbnailer,

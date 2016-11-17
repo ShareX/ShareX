@@ -501,9 +501,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Bắt đầu ghi lại màn hình (dạng ảnh GIF) sử dụng vùng lần trước</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Mở/Dừng công cụ tự động hóa</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Chụp theo vùng (Trong suốt)</value>
   </data>
@@ -527,9 +524,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>Chụp màn hình</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>Công cụ</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>Tải lên</value>

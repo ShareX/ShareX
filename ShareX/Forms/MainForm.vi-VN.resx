@@ -174,9 +174,6 @@
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Tự động chụp...</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Tự động hóa...</value>
-  </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Xóa danh sách</value>
   </data>
@@ -425,9 +422,6 @@
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Tự động chụp...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Tự động hóa...</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Chụp</value>

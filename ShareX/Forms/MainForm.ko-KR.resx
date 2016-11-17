@@ -189,9 +189,6 @@
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>자동화...</value>
-  </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>목록 전부 제거</value>
   </data>
@@ -374,9 +371,6 @@
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>자동화...</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>촬영</value>

@@ -192,9 +192,6 @@ namespace ShareX
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
                     break;
-                case HotkeyType.Automate:
-                    StartAutomate();
-                    break;
                 case HotkeyType.IndexFolder:
                     UploadManager.IndexFolder();
                     break;
@@ -675,33 +672,6 @@ namespace ShareX
                     Program.MainForm.niTray.Tag = null;
                     Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
                 }
-            }
-        }
-
-        public static void OpenAutomate()
-        {
-            AutomateForm form = AutomateForm.GetInstance(Program.Settings.AutomateScripts);
-            form.ForceActivate();
-        }
-
-        public static void StartAutomate()
-        {
-            AutomateForm form = AutomateForm.GetInstance(Program.Settings.AutomateScripts);
-
-            if (form.Visible)
-            {
-                if (AutomateForm.IsRunning)
-                {
-                    form.Stop();
-                }
-                else
-                {
-                    form.Start();
-                }
-            }
-            else
-            {
-                form.ForceActivate();
             }
         }
 

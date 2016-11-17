@@ -498,9 +498,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>使用上一次的区域开始屏幕录制(GIF)</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>打开/停止自动化工具</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>捕捉矩形区域（透明度）</value>
   </data>
@@ -524,9 +521,6 @@
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>屏幕捕捉</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>上传</value>

@@ -826,24 +826,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open/Stop Automate tool.
-        /// </summary>
-        internal static string HotkeyType_Automate {
-            get {
-                return ResourceManager.GetString("HotkeyType_Automate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tools.
-        /// </summary>
-        internal static string HotkeyType_Automate_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_Automate_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Webpage capture.
         /// </summary>
         internal static string HotkeyType_CaptureWebpage {

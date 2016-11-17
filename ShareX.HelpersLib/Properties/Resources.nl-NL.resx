@@ -495,9 +495,6 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Start opnemen (GIF) met laatste regio</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Open/Stop Automatiseringsgereedschap</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Transparant)</value>
   </data>
@@ -521,9 +518,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>Hulpmiddelen</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>Uploaden</value>

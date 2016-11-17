@@ -258,12 +258,6 @@ namespace ShareX
 
         #endregion ScreenRecord Form
 
-        #region Automate Form
-
-        public List<ScriptInfo> AutomateScripts = new List<ScriptInfo>();
-
-        #endregion Automate Form
-
         #region Webpage Capture Form
 
         public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();

@@ -89,15 +89,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
-    <Compile Include="Automate\AutomateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Automate\AutomateForm.Designer.cs">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Automate\Functions.cs" />
-    <Compile Include="Automate\FunctionManager.cs" />
-    <Compile Include="Automate\ScriptInfo.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="NameParser\CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
@@ -317,9 +308,6 @@
     <Compile Include="StringLineReader.cs" />
     <Compile Include="Native\TaskbarManager.cs" />
     <Compile Include="ThreadWorker.cs" />
-    <Compile Include="Tokenizer\BetweenTagsResult.cs" />
-    <Compile Include="Tokenizer\Token.cs" />
-    <Compile Include="Tokenizer\Tokenizer.cs" />
     <Compile Include="Cryptographic\HashCheck.cs" />
     <Compile Include="Cryptographic\Translator.cs" />
     <Compile Include="Cryptographic\TranslatorHelper.cs" />
@@ -429,39 +417,6 @@
     <Compile Include="WritablePropertiesOnlyResolver.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
-    <EmbeddedResource Include="Automate\AutomateForm.de.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.es.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.fr.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.ko-KR.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.nl-NL.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.pt-BR.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.ru.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.tr.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.vi-VN.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Automate\AutomateForm.zh-CN.resx">
-      <DependentUpon>AutomateForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>

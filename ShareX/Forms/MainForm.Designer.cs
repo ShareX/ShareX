@@ -77,7 +77,6 @@
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,8 +94,8 @@
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.tssDestinations1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDestinationSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbApplicationSettings = new System.Windows.Forms.ToolStripButton();
             this.tsbTaskSettings = new System.Windows.Forms.ToolStripButton();
+            this.tsbApplicationSettings = new System.Windows.Forms.ToolStripButton();
             this.tsbHotkeySettings = new System.Windows.Forms.ToolStripButton();
             this.tssMain2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
@@ -196,7 +195,6 @@
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,8 +212,8 @@
             this.tsmiTrayURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTrayDestinations1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayDestinationSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayApplicationSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTaskSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayApplicationSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHotkeySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayToggleHotkeys = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray2 = new System.Windows.Forms.ToolStripSeparator();
@@ -595,7 +593,6 @@
             this.tsmiDNSChanger,
             this.tsmiQRCode,
             this.tsmiRuler,
-            this.tsmiAutomate,
             this.tsmiIndexFolder,
             this.tsmiImageCombiner,
             this.tsmiVideoThumbnailer,
@@ -661,13 +658,6 @@
             this.tsmiRuler.Name = "tsmiRuler";
             resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
-            // 
-            // tsmiAutomate
-            // 
-            this.tsmiAutomate.Image = global::ShareX.Properties.Resources.robot;
-            this.tsmiAutomate.Name = "tsmiAutomate";
-            resources.ApplyResources(this.tsmiAutomate, "tsmiAutomate");
-            this.tsmiAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
             // 
             // tsmiIndexFolder
             // 
@@ -786,19 +776,19 @@
             resources.ApplyResources(this.tsmiDestinationSettings, "tsmiDestinationSettings");
             this.tsmiDestinationSettings.Click += new System.EventHandler(this.tsbDestinationSettings_Click);
             // 
-            // tsbApplicationSettings
-            // 
-            this.tsbApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
-            resources.ApplyResources(this.tsbApplicationSettings, "tsbApplicationSettings");
-            this.tsbApplicationSettings.Name = "tsbApplicationSettings";
-            this.tsbApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
-            // 
             // tsbTaskSettings
             // 
             this.tsbTaskSettings.Image = global::ShareX.Properties.Resources.gear;
             resources.ApplyResources(this.tsbTaskSettings, "tsbTaskSettings");
             this.tsbTaskSettings.Name = "tsbTaskSettings";
             this.tsbTaskSettings.Click += new System.EventHandler(this.tsbTaskSettings_Click);
+            // 
+            // tsbApplicationSettings
+            // 
+            this.tsbApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
+            resources.ApplyResources(this.tsbApplicationSettings, "tsbApplicationSettings");
+            this.tsbApplicationSettings.Name = "tsbApplicationSettings";
+            this.tsbApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
             // 
             // tsbHotkeySettings
             // 
@@ -1498,7 +1488,6 @@
             this.tsmiTrayDNSChanger,
             this.tsmiTrayQRCode,
             this.tsmiTrayRuler,
-            this.tsmiTrayAutomate,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayImageCombiner,
             this.tsmiTrayVideoThumbnailer,
@@ -1564,13 +1553,6 @@
             this.tsmiTrayRuler.Name = "tsmiTrayRuler";
             resources.ApplyResources(this.tsmiTrayRuler, "tsmiTrayRuler");
             this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
-            // 
-            // tsmiTrayAutomate
-            // 
-            this.tsmiTrayAutomate.Image = global::ShareX.Properties.Resources.robot;
-            this.tsmiTrayAutomate.Name = "tsmiTrayAutomate";
-            resources.ApplyResources(this.tsmiTrayAutomate, "tsmiTrayAutomate");
-            this.tsmiTrayAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
             // 
             // tsmiTrayIndexFolder
             // 
@@ -1688,19 +1670,19 @@
             resources.ApplyResources(this.tsmiTrayDestinationSettings, "tsmiTrayDestinationSettings");
             this.tsmiTrayDestinationSettings.Click += new System.EventHandler(this.tsbDestinationSettings_Click);
             // 
-            // tsmiTrayApplicationSettings
-            // 
-            this.tsmiTrayApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
-            this.tsmiTrayApplicationSettings.Name = "tsmiTrayApplicationSettings";
-            resources.ApplyResources(this.tsmiTrayApplicationSettings, "tsmiTrayApplicationSettings");
-            this.tsmiTrayApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
-            // 
             // tsmiTrayTaskSettings
             // 
             this.tsmiTrayTaskSettings.Image = global::ShareX.Properties.Resources.gear;
             this.tsmiTrayTaskSettings.Name = "tsmiTrayTaskSettings";
             resources.ApplyResources(this.tsmiTrayTaskSettings, "tsmiTrayTaskSettings");
             this.tsmiTrayTaskSettings.Click += new System.EventHandler(this.tsbTaskSettings_Click);
+            // 
+            // tsmiTrayApplicationSettings
+            // 
+            this.tsmiTrayApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
+            this.tsmiTrayApplicationSettings.Name = "tsmiTrayApplicationSettings";
+            resources.ApplyResources(this.tsmiTrayApplicationSettings, "tsmiTrayApplicationSettings");
+            this.tsmiTrayApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
             // 
             // tsmiTrayHotkeySettings
             // 
@@ -2084,8 +2066,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenColorPicker;
         public System.Windows.Forms.ToolStripMenuItem tsmiTrayRecentItems;
         private System.Windows.Forms.ContextMenuStrip cmsTray;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAutomate;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAutomate;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleTransparent;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleTransparent;
         private System.Windows.Forms.ToolStripMenuItem tsmiWebpageCapture;

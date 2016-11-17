@@ -525,9 +525,6 @@ Você gostaria de baixar e instalar?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Gravar tela usando a última região utilizada (GIF)</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Abrir/Parar ferramenta de Automatização</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Capturar região (transparente)</value>
   </data>
@@ -551,9 +548,6 @@ Você gostaria de baixar e instalar?</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>Capturar tela</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>Ferramentas</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>Upload</value>

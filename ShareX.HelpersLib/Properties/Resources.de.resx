@@ -498,9 +498,6 @@ Möchtest du sie herunterladen und installieren?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Bildschirmaufnahme (GIF) starten mit der letzten Region</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Öffne/Stoppe Automatisierungs-Werkzeug</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Region aufnehmen (Transparent)</value>
   </data>
@@ -524,9 +521,6 @@ Möchtest du sie herunterladen und installieren?</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>Hochladen</value>

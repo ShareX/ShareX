@@ -582,9 +582,6 @@
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>颜色选择器...</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>自动化...</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>
   </data>
@@ -602,9 +599,6 @@
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>颜色选择器...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>自动化...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>

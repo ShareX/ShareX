@@ -579,17 +579,11 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Letzte Links</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automatisieren...</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Bildverbinder...</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Region (Transparent)</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automatisieren...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Bildverbinder...</value>

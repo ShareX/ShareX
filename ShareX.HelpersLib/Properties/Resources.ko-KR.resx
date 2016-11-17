@@ -564,9 +564,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>마지막 영역으로 화면 녹화 (GIF)</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>자동화 도구 열고 멈추기</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>직사각형 영역 촬영 (투명하게)</value>
   </data>

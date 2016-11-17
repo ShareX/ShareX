@@ -201,9 +201,6 @@
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Captura automática...</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automatizar...</value>
-  </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Limpar lista</value>
   </data>
@@ -437,9 +434,6 @@
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automatizar...</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>Config. do programa...</value>

@@ -501,9 +501,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Iniciar grabación de la pantalla (GIF) utilizando la última región</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Abrir / Parar herramienta de automatización</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Capturar región rectángulo transparente</value>
   </data>

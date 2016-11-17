@@ -275,9 +275,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="ui_menu_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui-menu-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
     <value>Share URL ({0})</value>
   </data>

@@ -147,9 +147,6 @@
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Автозахват</value>
   </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Автоматизировать...</value>
-  </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Палитра</value>
   </data>
@@ -224,9 +221,6 @@
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Автозахват</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Автоматизировать...</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Палитра</value>

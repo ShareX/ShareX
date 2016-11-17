@@ -570,17 +570,11 @@
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automate...</value>
-  </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs...</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Région (Transparent)</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automate...</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs...</value>

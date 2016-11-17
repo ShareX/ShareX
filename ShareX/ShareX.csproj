@@ -1235,7 +1235,6 @@
     <None Include="Resources\globe.png" />
     <None Include="Resources\us.png" />
     <None Include="Resources\clipboard-list.png" />
-    <None Include="Resources\robot.png" />
     <None Include="Resources\layer-transparent.png" />
     <None Include="Resources\kr.png" />
     <None Include="Resources\es.png" />

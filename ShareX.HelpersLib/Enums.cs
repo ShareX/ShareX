@@ -76,17 +76,6 @@ namespace ShareX.HelpersLib
         RIPEMD160
     }
 
-    public enum TokenType
-    {
-        Unknown,
-        Whitespace,
-        Symbol,
-        Literal,
-        Identifier,
-        Numeric,
-        Keyword
-    }
-
     public enum BorderType
     {
         Outside,

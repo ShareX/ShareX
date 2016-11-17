@@ -582,9 +582,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Son bölgeyi kullanarak ekran kaydet (GIF)</value>
   </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Aç/Durdur otomatikleştirme aracını</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Bölge yakala (Saydam)</value>
   </data>
@@ -608,9 +605,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
     <value>Ekran yakalama</value>
-  </data>
-  <data name="HotkeyType_Automate_Category" xml:space="preserve">
-    <value>Araçlar</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
     <value>Yükle</value>

@@ -207,9 +207,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Meetlat...</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automatiseren...</value>
-  </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
@@ -470,9 +467,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Liniaal...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automatiseren...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>

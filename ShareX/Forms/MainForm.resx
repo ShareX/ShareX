@@ -645,12 +645,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
-  <data name="tsmiAutomate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automate...</value>
-  </data>
   <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1434,12 +1428,6 @@
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
-  <data name="tsmiTrayAutomate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automate...</value>
-  </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1983,12 +1971,6 @@
   <data name="&gt;&gt;tsmiRuler.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiAutomate.Name" xml:space="preserve">
-    <value>tsmiAutomate</value>
-  </data>
-  <data name="&gt;&gt;tsmiAutomate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiIndexFolder.Name" xml:space="preserve">
     <value>tsmiIndexFolder</value>
   </data>
@@ -2091,16 +2073,16 @@
   <data name="&gt;&gt;tsmiDestinationSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
-    <value>tsbApplicationSettings</value>
-  </data>
-  <data name="&gt;&gt;tsbApplicationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsbTaskSettings.Name" xml:space="preserve">
     <value>tsbTaskSettings</value>
   </data>
   <data name="&gt;&gt;tsbTaskSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
+    <value>tsbApplicationSettings</value>
+  </data>
+  <data name="&gt;&gt;tsbApplicationSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbHotkeySettings.Name" xml:space="preserve">
@@ -2685,12 +2667,6 @@
   <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayAutomate.Name" xml:space="preserve">
-    <value>tsmiTrayAutomate</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayAutomate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
     <value>tsmiTrayIndexFolder</value>
   </data>
@@ -2793,16 +2769,16 @@
   <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayApplicationSettings.Name" xml:space="preserve">
-    <value>tsmiTrayApplicationSettings</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayApplicationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayTaskSettings.Name" xml:space="preserve">
     <value>tsmiTrayTaskSettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTaskSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayApplicationSettings.Name" xml:space="preserve">
+    <value>tsmiTrayApplicationSettings</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayApplicationSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHotkeySettings.Name" xml:space="preserve">
@@ -2935,6 +2911,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.2.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.4.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
