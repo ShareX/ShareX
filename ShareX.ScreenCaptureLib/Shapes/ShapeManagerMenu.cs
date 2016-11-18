@@ -474,13 +474,21 @@ namespace ShareX.ScreenCaptureLib
                 tsMain.Items.Add(tsddbCapture);
 
                 tsmiRegionCapture = new ToolStripMenuItem("Capture regions");
-                tsmiRegionCapture.Image = Resources.layers;
+                tsmiRegionCapture.Image = Resources.layer;
                 tsmiRegionCapture.MouseDown += (sender, e) =>
                 {
                     form.UpdateRegionPath();
                     form.Close(RegionResult.Region);
                 };
                 tsddbCapture.DropDownItems.Add(tsmiRegionCapture);
+
+                if (RegionCaptureForm.LastRegionFillPath != null)
+                {
+                    ToolStripMenuItem tsmiLastRegionCapture = new ToolStripMenuItem("Capture last region");
+                    tsmiLastRegionCapture.Image = Resources.layers;
+                    tsmiLastRegionCapture.MouseDown += (sender, e) => form.Close(RegionResult.LastRegion);
+                    tsddbCapture.DropDownItems.Add(tsmiLastRegionCapture);
+                }
 
                 ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
                 tsmiFullscreenCapture.Image = Resources.layer_fullscreen;

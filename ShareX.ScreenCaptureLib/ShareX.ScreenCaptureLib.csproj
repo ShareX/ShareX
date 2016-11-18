@@ -165,6 +165,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layer.png" />
     <None Include="Resources\test_32.png" />
     <None Include="Resources\layers.png" />
     <None Include="Resources\eraser.png" />

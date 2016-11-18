@@ -1072,11 +1072,22 @@ namespace ShareX.ScreenCaptureLib
 
                 return img;
             }
-            else if (Result == RegionResult.Region)
+            else if (Result == RegionResult.Region || Result == RegionResult.LastRegion)
             {
+                GraphicsPath gp;
+
+                if (Result == RegionResult.LastRegion)
+                {
+                    gp = LastRegionFillPath;
+                }
+                else
+                {
+                    gp = regionFillPath;
+                }
+
                 using (Image img = GetOutputImage())
                 {
-                    return RegionCaptureTasks.ApplyRegionPathToImage(img, regionFillPath);
+                    return RegionCaptureTasks.ApplyRegionPathToImage(img, gp);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
@@ -1148,15 +1159,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (regionFillPath != null)
             {
-                if (LastRegionFillPath != null) LastRegionFillPath.Dispose();
-                LastRegionFillPath = regionFillPath;
-            }
-            else
-            {
-                if (regionFillPath != null) regionFillPath.Dispose();
-                if (regionDrawPath != null) regionDrawPath.Dispose();
+                if (Result == RegionResult.Region)
+                {
+                    if (LastRegionFillPath != null) LastRegionFillPath.Dispose();
+
+                    LastRegionFillPath = regionFillPath;
+                }
+                else
+                {
+                    regionFillPath.Dispose();
+                }
             }
 
+            if (regionDrawPath != null) regionDrawPath.Dispose();
             if (Image != null) Image.Dispose();
 
             base.Dispose(disposing);

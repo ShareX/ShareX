@@ -46,6 +46,7 @@ namespace ShareX.ScreenCaptureLib
     {
         Close,
         Region,
+        LastRegion,
         Fullscreen,
         Monitor,
         ActiveMonitor,
