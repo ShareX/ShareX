@@ -658,9 +658,9 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateMenu();
 
-            CurrentShapeTypeChanged += shapeType => UpdateMenu();
-
             CurrentShapeChanged += shape => UpdateMenu();
+            CurrentShapeTypeChanged += shapeType => UpdateMenu();
+            ShapeCreated += shape => UpdateMenu();
 
             ConfigureMenuState();
 

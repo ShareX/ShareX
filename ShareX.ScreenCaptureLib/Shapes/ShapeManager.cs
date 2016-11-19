@@ -175,6 +175,7 @@ namespace ShareX.ScreenCaptureLib
 
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
+        public event Action<BaseShape> ShapeCreated;
 
         private RegionCaptureForm form;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
@@ -654,6 +655,8 @@ namespace ShareX.ScreenCaptureLib
                         if (wasCreating)
                         {
                             shape.OnCreated();
+
+                            OnShapeCreated(shape);
                         }
 
                         SelectCurrentShape();
@@ -1108,6 +1111,14 @@ namespace ShareX.ScreenCaptureLib
             if (CurrentShapeTypeChanged != null)
             {
                 CurrentShapeTypeChanged(shapeType);
+            }
+        }
+
+        private void OnShapeCreated(BaseShape shape)
+        {
+            if (ShapeCreated != null)
+            {
+                ShapeCreated(shape);
             }
         }
 
