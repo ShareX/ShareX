@@ -1,4 +1,4 @@
-﻿namespace ShareX.HelpersLib
+﻿namespace ShareX
 {
     partial class QRCodeForm
     {

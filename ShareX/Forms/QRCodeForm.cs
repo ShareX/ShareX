@@ -25,13 +25,14 @@
 
 using Gma.QrCodeNet.Encoding;
 using Gma.QrCodeNet.Encoding.Windows.Render;
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX
 {
     public partial class QRCodeForm : Form
     {

@@ -62,10 +62,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -160,12 +156,6 @@
     </Compile>
     <Compile Include="Forms\OutputBox.Designer.cs">
       <DependentUpon>OutputBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QRCodeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QRCodeForm.Designer.cs">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ScreenTearingTestForm.cs">
       <SubType>Form</SubType>
@@ -825,30 +815,6 @@
     <EmbeddedResource Include="Forms\OutputBox.resx">
       <DependentUpon>OutputBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.es.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.fr.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.hu.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.ko-KR.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.nl-NL.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.pt-BR.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -857,18 +823,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TabToTreeView.resx">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.ru.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.tr.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.vi-VN.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QRCodeForm.zh-CN.resx">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.de.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
