@@ -84,6 +84,7 @@
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Input\KeyboardHook.cs" />
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="NameParser\CodeMenu.cs" />
