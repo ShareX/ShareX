@@ -361,15 +361,6 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static IntPtr SetHook(int hookType, HookProc hookProc)
-        {
-            using (Process currentProcess = Process.GetCurrentProcess())
-            using (ProcessModule currentModule = currentProcess.MainModule)
-            {
-                return SetWindowsHookEx(hookType, hookProc, GetModuleHandle(currentModule.ModuleName), 0);
-            }
-        }
-
         public static void RestoreWindow(IntPtr handle)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();

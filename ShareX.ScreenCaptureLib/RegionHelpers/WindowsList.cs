@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public List<WindowInfo> GetWindowsList()
         {
             windows = new List<WindowInfo>();
-            NativeMethods.EnumWindowsProc ewp = EvalWindows;
+            EnumWindowsProc ewp = EvalWindows;
             NativeMethods.EnumWindows(ewp, IntPtr.Zero);
             return windows;
         }

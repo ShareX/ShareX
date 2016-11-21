@@ -69,7 +69,7 @@ namespace ShareX.ScreenCaptureLib
             windows = new List<SimpleWindowInfo>();
             parentHandles = new HashSet<IntPtr>();
 
-            NativeMethods.EnumWindowsProc ewp = EvalWindow;
+            EnumWindowsProc ewp = EvalWindow;
             NativeMethods.EnumWindows(ewp, IntPtr.Zero);
 
             List<SimpleWindowInfo> result = new List<SimpleWindowInfo>();
@@ -137,7 +137,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 parentHandles.Add(handle);
 
-                NativeMethods.EnumWindowsProc ewp = EvalControl;
+                EnumWindowsProc ewp = EvalControl;
                 NativeMethods.EnumChildWindows(handle, ewp, IntPtr.Zero);
             }
 
