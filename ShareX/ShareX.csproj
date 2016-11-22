@@ -244,7 +244,6 @@
     <Compile Include="Forms\HotkeyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotkeyInfo.cs" />
     <Compile Include="Controls\HotkeySelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

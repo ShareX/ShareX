@@ -202,13 +202,6 @@ namespace ShareX
         OpenImageHistory
     }
 
-    public enum HotkeyStatus
-    {
-        Registered,
-        Failed,
-        NotConfigured
-    }
-
     public enum PopUpNotificationType // Localized
     {
         None,

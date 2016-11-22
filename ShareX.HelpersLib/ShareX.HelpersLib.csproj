@@ -81,9 +81,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\CustomToolStripProfessionalRenderer.cs" />
+    <Compile Include="Controls\HotkeySelectionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Input\HotkeyInfo.cs" />
     <Compile Include="Input\KeyboardHook.cs" />
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
     <Compile Include="ClipboardFormat.cs" />

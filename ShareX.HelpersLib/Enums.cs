@@ -160,4 +160,11 @@ namespace ShareX.HelpersLib
         VerticalLines,
         HorizontalLines
     }
+
+    public enum HotkeyStatus
+    {
+        Registered,
+        Failed,
+        NotConfigured
+    }
 }

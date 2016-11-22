@@ -24,11 +24,10 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.HelpersLib
 {
     public class HotkeyInfo
     {
