@@ -52,8 +52,7 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool DisableDeselect { get; set; }
 
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
         {
             get

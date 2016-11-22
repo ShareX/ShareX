@@ -82,9 +82,16 @@ namespace ShareX.HelpersLib.Controls
             UpdateHotkeyText();
         }
 
+        public void UpdateHotkey(HotkeyInfo hotkeyInfo)
+        {
+            HotkeyInfo = hotkeyInfo;
+            UpdateHotkeyText();
+        }
+
         private void UpdateHotkeyText()
         {
             Text = HotkeyInfo.ToString();
+            Invalidate();
         }
 
         protected override void OnMouseClick(MouseEventArgs e)
