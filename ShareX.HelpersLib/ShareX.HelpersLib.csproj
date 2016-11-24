@@ -399,6 +399,7 @@
     <Compile Include="Controls\MyPictureBox.Designer.cs">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateChecker\GitHubUpdateManager.cs" />
     <Compile Include="UpdateChecker\UpdateMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>

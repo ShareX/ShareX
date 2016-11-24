@@ -92,6 +92,7 @@ namespace ShareX
         public static Stopwatch StartTimer { get; private set; }
         public static HotkeyManager HotkeyManager { get; set; }
         public static WatchFolderManager WatchFolderManager { get; set; }
+        public static GitHubUpdateManager UpdateManager { get; set; }
         public static CLIManager CLI { get; private set; }
 
         private static bool restarting;
@@ -340,6 +341,8 @@ namespace ShareX
             UploaderSettingsResetEvent = new ManualResetEvent(false);
             HotkeySettingsResetEvent = new ManualResetEvent(false);
             TaskEx.Run(LoadSettings);
+
+            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 

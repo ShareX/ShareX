@@ -45,7 +45,6 @@ namespace ShareX
         private bool forceClose, trayMenuSaveSettings = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
-        private UpdateManager updateManager;
 
         public MainForm()
         {
@@ -179,8 +178,6 @@ namespace ShareX
             }
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
-
-            updateManager = new UpdateManager();
 
             HandleCreated += MainForm_HandleCreated;
         }
@@ -670,7 +667,9 @@ namespace ShareX
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
 #if RELEASE
-            updateManager.ConfigureAutoUpdate();
+            Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps;
+            Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
+            Program.UpdateManager.ConfigureAutoUpdate();
 #endif
         }
 

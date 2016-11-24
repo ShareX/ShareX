@@ -52,7 +52,7 @@ namespace ShareX
 
             if (!Program.PortableApps)
             {
-                UpdateChecker updateChecker = UpdateManager.CreateUpdateChecker();
+                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
                 uclUpdate.CheckUpdate(updateChecker);
             }
             else

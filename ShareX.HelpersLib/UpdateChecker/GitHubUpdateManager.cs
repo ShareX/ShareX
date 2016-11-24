@@ -23,39 +23,48 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
 using Timer = System.Threading.Timer;
 
-namespace ShareX
+namespace ShareX.HelpersLib
 {
-    public class UpdateManager : IDisposable
+    public class GitHubUpdateManager : IDisposable
     {
-        public double UpdateCheckInterval { get; private set; } = 1; // Hour
+        public bool AutoUpdateEnabled { get; set; } // ConfigureAutoUpdate function must be called after change this
+        public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
+        public TimeSpan UpdateReCheckInterval { get; private set; } = TimeSpan.FromHours(24); // If "No" button pressed in update message box then this interval will be used
+        public string GitHubOwner { get; set; }
+        public string GitHubRepo { get; set; }
+        public bool IsBeta { get; set; } // If current build is beta and latest stable release is same version as current build then it will be downloaded
+        public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
+        public bool CheckPreReleaseUpdates { get; set; }
 
         private bool firstUpdateCheck = true;
         private Timer updateTimer = null;
         private readonly object updateTimerLock = new object();
 
-        public UpdateManager()
+        public GitHubUpdateManager(string owner, string repo)
         {
+            GitHubOwner = owner;
+            GitHubRepo = repo;
         }
 
-        public UpdateManager(double updateCheckInterval)
+        public GitHubUpdateManager(string owner, string repo, bool beta, bool portable) : this(owner, repo)
         {
-            UpdateCheckInterval = updateCheckInterval;
+            IsBeta = beta;
+            IsPortable = portable;
         }
 
         public void ConfigureAutoUpdate()
         {
             lock (updateTimerLock)
             {
-                if (Program.Settings.AutoCheckUpdate && !Program.PortableApps)
+                if (AutoUpdateEnabled)
                 {
                     if (updateTimer == null)
                     {
-                        updateTimer = new Timer(state => CheckUpdate(), null, TimeSpan.Zero, TimeSpan.FromHours(UpdateCheckInterval));
+                        updateTimer = new Timer(state => CheckUpdate(), null, TimeSpan.Zero, UpdateCheckInterval);
                     }
                 }
                 else
@@ -74,21 +83,20 @@ namespace ShareX
 
                 if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) != DialogResult.Yes)
                 {
-                    TimeSpan interval = TimeSpan.FromHours(24);
-                    updateTimer.Change(interval, interval);
+                    updateTimer.Change(UpdateReCheckInterval, UpdateReCheckInterval);
                 }
 
                 firstUpdateCheck = false;
             }
         }
 
-        public static UpdateChecker CreateUpdateChecker()
+        public GitHubUpdateChecker CreateUpdateChecker()
         {
-            return new GitHubUpdateChecker("ShareX", "ShareX")
+            return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {
-                IsBeta = Program.Beta,
-                IsPortable = Program.Portable,
-                IncludePreRelease = Program.Settings.CheckPreReleaseUpdates,
+                IsBeta = IsBeta,
+                IsPortable = IsPortable,
+                IncludePreRelease = CheckPreReleaseUpdates,
                 Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
             };
         }
