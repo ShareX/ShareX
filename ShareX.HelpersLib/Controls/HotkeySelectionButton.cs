@@ -51,6 +51,14 @@ namespace ShareX.HelpersLib.Controls
         private void SetDefaultButtonText()
         {
             Text = "Select a hotkey...";
+            Invalidate();
+        }
+
+        public void Reset()
+        {
+            EditingHotkey = false;
+            HotkeyInfo = new HotkeyInfo();
+            SetDefaultButtonText();
         }
 
         private void StartEditing()

@@ -92,7 +92,7 @@ namespace ShareX
         public static Stopwatch StartTimer { get; private set; }
         public static HotkeyManager HotkeyManager { get; set; }
         public static WatchFolderManager WatchFolderManager { get; set; }
-        public static GitHubUpdateManager UpdateManager { get; set; }
+        public static GitHubUpdateManager UpdateManager { get; private set; }
         public static CLIManager CLI { get; private set; }
 
         private static bool restarting;
