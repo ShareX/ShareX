@@ -178,7 +178,7 @@
     <value>Fehler</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Einstellungen in Zwischenbalge kopiert</value>
+    <value>Einstellungen in Zwischenablage kopiert</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Dateiname: {0}</value>
