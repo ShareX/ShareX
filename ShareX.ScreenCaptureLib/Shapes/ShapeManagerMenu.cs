@@ -437,7 +437,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudPixelateSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Pixel_size_);
             tslnudPixelateSize.Content.Minimum = 2;
-            tslnudPixelateSize.Content.Maximum = 100;
+            tslnudPixelateSize.Content.Maximum = 10000;
             tslnudPixelateSize.Content.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.Content.Value;
