@@ -45,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
             DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
         }
 
-        private void DrawRectangle(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, int cornerRadius)
+        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, int cornerRadius)
         {
             Brush brush = null;
             Pen pen = null;

@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
             DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
         }
 
-        private void DrawEllipse(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect)
+        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
