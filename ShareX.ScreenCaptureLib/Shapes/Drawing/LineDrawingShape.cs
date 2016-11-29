@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Shadow)
             {
-                DrawLine(g, ShadowColor, BorderSize, StartPosition.Add(ShadowDirection), EndPosition.Add(ShadowDirection), CenterPosition.Add(ShadowDirection));
+                DrawLine(g, ShadowColor, BorderSize, StartPosition.Add(ShadowOffset), EndPosition.Add(ShadowOffset), CenterPosition.Add(ShadowOffset));
             }
 
             DrawLine(g, BorderColor, BorderSize, StartPosition, EndPosition, CenterPosition);

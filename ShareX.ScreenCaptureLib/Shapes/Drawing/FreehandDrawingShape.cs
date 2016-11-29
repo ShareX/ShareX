@@ -111,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Shadow)
             {
-                DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowDirection)).ToArray());
+                DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());
             }
 
             DrawFreehand(g, BorderColor, BorderSize, positions.ToArray());

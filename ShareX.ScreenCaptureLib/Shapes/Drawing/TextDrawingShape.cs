@@ -58,19 +58,24 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnDraw(g);
 
-            DrawText(g);
+            if (Shadow)
+            {
+                DrawText(g, Text, ShadowColor, TextOptions, Rectangle.LocationOffset(ShadowOffset));
+            }
+
+            DrawText(g, Text, TextOptions.Color, TextOptions, Rectangle);
         }
 
-        protected void DrawText(Graphics g)
+        protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, Rectangle rect)
         {
-            if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
+            if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
             {
-                using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
-                using (Brush textBrush = new SolidBrush(TextOptions.Color))
-                using (StringFormat sf = new StringFormat { Alignment = TextOptions.AlignmentHorizontal, LineAlignment = TextOptions.AlignmentVertical })
+                using (Font font = new Font(options.Font, options.Size, options.Style))
+                using (Brush textBrush = new SolidBrush(textColor))
+                using (StringFormat sf = new StringFormat { Alignment = options.AlignmentHorizontal, LineAlignment = options.AlignmentVertical })
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    g.DrawString(Text, font, textBrush, Rectangle, sf);
+                    g.DrawString(text, font, textBrush, rect, sf);
                     g.TextRenderingHint = TextRenderingHint.SystemDefault;
                 }
             }

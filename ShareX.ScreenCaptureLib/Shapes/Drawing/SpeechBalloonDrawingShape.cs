@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
                     gpTail.Dispose();
                 }
 
-                DrawText(g);
+                DrawText(g, Text, TextOptions.Color, TextOptions, Rectangle);
             }
         }
 

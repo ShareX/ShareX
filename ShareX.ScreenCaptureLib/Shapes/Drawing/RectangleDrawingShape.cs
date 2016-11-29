@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Shadow && IsBorderVisible)
             {
-                DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowDirection), CornerRadius);
+                DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
             }
 
             DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
