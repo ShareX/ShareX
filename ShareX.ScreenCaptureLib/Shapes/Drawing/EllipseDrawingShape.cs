@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -34,21 +35,31 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            if (Shadow && IsBorderVisible)
+            {
+                DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowDirection));
+            }
+
+            DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
+        }
+
+        private void DrawEllipse(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect)
+        {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
-            if (FillColor.A > 0)
+            if (fillColor.A > 0)
             {
-                using (Brush brush = new SolidBrush(FillColor))
+                using (Brush brush = new SolidBrush(fillColor))
                 {
-                    g.FillEllipse(brush, Rectangle);
+                    g.FillEllipse(brush, rect);
                 }
             }
 
-            if (BorderSize > 0 && BorderColor.A > 0)
+            if (borderSize > 0 && borderColor.A > 0)
             {
-                using (Pen pen = new Pen(BorderColor, BorderSize))
+                using (Pen pen = new Pen(borderColor, borderSize))
                 {
-                    g.DrawEllipse(pen, Rectangle);
+                    g.DrawEllipse(pen, rect);
                 }
             }
 
