@@ -406,7 +406,6 @@ namespace ShareX.ScreenCaptureLib
             tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
             tslnudCornerRadius.Content.Minimum = 0;
             tslnudCornerRadius.Content.Maximum = 150;
-            tslnudCornerRadius.Content.Increment = 3;
             tslnudCornerRadius.Content.ValueChanged = (sender, e) =>
             {
                 ShapeType shapeType = CurrentShapeType;

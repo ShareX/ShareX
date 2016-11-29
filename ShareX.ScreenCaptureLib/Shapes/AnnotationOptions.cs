@@ -31,11 +31,11 @@ namespace ShareX.ScreenCaptureLib
     {
         // Drawing
         public Color BorderColor { get; set; } = Color.Red;
-        public int BorderSize { get; set; } = 2;
+        public int BorderSize { get; set; } = 3;
         public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
 
         // Rounded rectangle region, rounded rectangle drawing
-        public int RoundedRectangleRadius { get; set; } = 15;
+        public int RoundedRectangleRadius { get; set; } = 8;
 
         // Text drawing
         public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
