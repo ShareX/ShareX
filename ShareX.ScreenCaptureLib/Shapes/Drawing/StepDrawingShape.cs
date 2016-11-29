@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 
 namespace ShareX.ScreenCaptureLib
@@ -60,6 +59,7 @@ namespace ShareX.ScreenCaptureLib
             BorderColor = AnnotationOptions.StepBorderColor;
             BorderSize = AnnotationOptions.StepBorderSize;
             FillColor = AnnotationOptions.StepFillColor;
+            Shadow = AnnotationOptions.Shadow;
         }
 
         public override void OnConfigSave()
@@ -67,6 +67,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.StepBorderColor = BorderColor;
             AnnotationOptions.StepBorderSize = BorderSize;
             AnnotationOptions.StepFillColor = FillColor;
+            AnnotationOptions.Shadow = Shadow;
         }
 
         public override void OnDraw(Graphics g)

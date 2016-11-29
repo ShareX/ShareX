@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor, tsbUndoObject, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiQuickCrop, tsmiRegionCapture;
+        private ToolStripMenuItem tsmiShadow, tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
@@ -373,7 +373,6 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsddbShapeOptions.HideImageMargin();
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
 
@@ -443,6 +442,16 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
+
+            tsmiShadow = new ToolStripMenuItem("Drop shadow");
+            tsmiShadow.Checked = true;
+            tsmiShadow.CheckOnClick = true;
+            tsmiShadow.Click += (sender, e) =>
+            {
+                AnnotationOptions.Shadow = tsmiShadow.Checked;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiShadow);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -902,6 +911,8 @@ namespace ShareX.ScreenCaptureLib
             if (tsbHighlightColor.Image != null) tsbHighlightColor.Image.Dispose();
             tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
+            tsmiShadow.Checked = AnnotationOptions.Shadow;
+
             switch (shapeType)
             {
                 default:
@@ -930,6 +941,7 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tsbBorderColor.Visible = false;
                     tslnudBorderSize.Visible = false;
+                    tsmiShadow.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingRoundedRectangle:
@@ -942,6 +954,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingStep:
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
+                    tsmiShadow.Visible = true;
                     break;
             }
 
