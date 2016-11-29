@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -34,29 +35,29 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingFreehand;
 
-        public override bool IsValidShape => points.Count > 0;
+        public override bool IsValidShape => positions.Count > 0;
 
         public Point LastPosition
         {
             get
             {
-                if (points.Count > 0)
+                if (positions.Count > 0)
                 {
-                    return points[points.Count - 1];
+                    return positions[positions.Count - 1];
                 }
 
                 return Point.Empty;
             }
             set
             {
-                if (points.Count > 0)
+                if (positions.Count > 0)
                 {
-                    points[points.Count - 1] = value;
+                    positions[positions.Count - 1] = value;
                 }
             }
         }
 
-        private List<Point> points = new List<Point>();
+        private List<Point> positions = new List<Point>();
         private bool isPolygonMode;
 
         public override bool Intersects(Point position)
@@ -80,16 +81,16 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Point pos = InputManager.MousePosition0Based;
 
-                    if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
+                    if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
-                        points.Add(pos);
+                        positions.Add(pos);
                     }
 
                     if (Manager.IsProportionalResizing)
                     {
                         if (!isPolygonMode)
                         {
-                            points.Add(pos);
+                            positions.Add(pos);
                         }
 
                         LastPosition = pos;
@@ -97,7 +98,7 @@ namespace ShareX.ScreenCaptureLib
 
                     isPolygonMode = Manager.IsProportionalResizing;
 
-                    Rectangle = points.CreateRectangle();
+                    Rectangle = positions.CreateRectangle();
                 }
             }
             else if (Manager.IsMoving)
@@ -108,21 +109,31 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (points.Count > 0 && BorderSize > 0 && BorderColor.A > 0)
+            if (Shadow)
+            {
+                DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowDirection)).ToArray());
+            }
+
+            DrawFreehand(g, BorderColor, BorderSize, positions.ToArray());
+        }
+
+        private void DrawFreehand(Graphics g, Color borderColor, int borderSize, Point[] points)
+        {
+            if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                if (points.Count == 1)
+                if (points.Length == 1)
                 {
-                    using (Brush brush = new SolidBrush(BorderColor))
+                    using (Brush brush = new SolidBrush(borderColor))
                     {
-                        Rectangle rect = new Rectangle((int)(points[0].X - BorderSize / 2f), (int)(points[0].Y - BorderSize / 2f), BorderSize, BorderSize);
+                        Rectangle rect = new Rectangle((int)(points[0].X - borderSize / 2f), (int)(points[0].Y - borderSize / 2f), borderSize, borderSize);
                         g.FillEllipse(brush, rect);
                     }
                 }
                 else
                 {
-                    using (Pen pen = new Pen(BorderColor, BorderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round })
+                    using (Pen pen = new Pen(borderColor, borderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round })
                     {
                         g.DrawLines(pen, points.ToArray());
                     }
@@ -134,9 +145,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Move(int x, int y)
         {
-            for (int i = 0; i < points.Count; i++)
+            for (int i = 0; i < positions.Count; i++)
             {
-                points[i] = points[i].Add(x, y);
+                positions[i] = positions[i].Add(x, y);
             }
 
             Rectangle = Rectangle.LocationOffset(x, y);
