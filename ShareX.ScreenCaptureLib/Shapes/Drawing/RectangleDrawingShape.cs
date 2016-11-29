@@ -37,32 +37,42 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            if (Shadow && IsBorderVisible)
+            {
+                DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowDirection), CornerRadius);
+            }
+
+            DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
+        }
+
+        private void DrawRectangle(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, int cornerRadius)
+        {
             Brush brush = null;
             Pen pen = null;
 
             try
             {
-                if (FillColor.A > 0)
+                if (IsFillVisible)
                 {
-                    brush = new SolidBrush(FillColor);
+                    brush = new SolidBrush(fillColor);
                 }
 
-                if (BorderSize > 0 && BorderColor.A > 0)
+                if (IsBorderVisible)
                 {
-                    pen = new Pen(BorderColor, BorderSize);
+                    pen = new Pen(borderColor, borderSize);
                 }
 
-                if (CornerRadius > 0)
+                if (cornerRadius > 0)
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
 
-                    if (BorderSize.IsEvenNumber())
+                    if (borderSize.IsEvenNumber())
                     {
                         g.PixelOffsetMode = PixelOffsetMode.Half;
                     }
                 }
 
-                g.DrawRoundedRectangle(brush, pen, Rectangle, CornerRadius);
+                g.DrawRoundedRectangle(brush, pen, rect, cornerRadius);
 
                 g.SmoothingMode = SmoothingMode.None;
                 g.PixelOffsetMode = PixelOffsetMode.Default;
