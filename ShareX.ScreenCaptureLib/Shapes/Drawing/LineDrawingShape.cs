@@ -56,18 +56,35 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (BorderSize > 0 && BorderColor.A > 0)
+            if (Shadow)
+            {
+                DrawLine(g, ShadowColor, BorderSize, StartPosition.Add(ShadowDirection), EndPosition.Add(ShadowDirection), CenterPosition.Add(ShadowDirection));
+            }
+
+            DrawLine(g, BorderColor, BorderSize, StartPosition, EndPosition, CenterPosition);
+        }
+
+        protected virtual void DrawLine(Graphics g, Color borderColor, int borderSize, Point startPosition, Point endPosition, Point centerPosition)
+        {
+            if (borderSize > 0 && borderColor.A > 0)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                if (BorderSize.IsEvenNumber())
+                if (borderSize.IsEvenNumber())
                 {
                     g.PixelOffsetMode = PixelOffsetMode.Half;
                 }
 
-                using (Pen pen = new Pen(BorderColor, BorderSize))
+                using (Pen pen = CreatePen(borderColor, borderSize))
                 {
-                    DrawLine(g, pen);
+                    if (CenterNodeActive)
+                    {
+                        g.DrawCurve(pen, new Point[] { startPosition, centerPosition, endPosition });
+                    }
+                    else
+                    {
+                        g.DrawLine(pen, startPosition, endPosition);
+                    }
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
@@ -75,19 +92,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected virtual void DrawLine(Graphics g, Pen pen)
+        protected virtual Pen CreatePen(Color borderColor, int borderSize)
         {
-            pen.StartCap = LineCap.Round;
-            pen.EndCap = LineCap.Round;
-
-            if (CenterNodeActive)
+            return new Pen(borderColor, borderSize)
             {
-                g.DrawCurve(pen, new Point[] { StartPosition, CenterPosition, EndPosition });
-            }
-            else
-            {
-                g.DrawLine(pen, StartPosition, EndPosition);
-            }
+                StartCap = LineCap.Round,
+                EndCap = LineCap.Round
+            };
         }
 
         public override void Move(int x, int y)

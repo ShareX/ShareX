@@ -32,21 +32,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
 
-        protected override void DrawLine(Graphics g, Pen pen)
+        protected override Pen CreatePen(Color borderColor, int borderSize)
         {
-            using (AdjustableArrowCap arrowCap = new AdjustableArrowCap(4, 6))
+            return new Pen(borderColor, borderSize)
             {
-                pen.CustomEndCap = arrowCap;
-
-                if (CenterNodeActive)
-                {
-                    g.DrawCurve(pen, new Point[] { StartPosition, CenterPosition, EndPosition });
-                }
-                else
-                {
-                    g.DrawLine(pen, StartPosition, EndPosition);
-                }
-            }
+                CustomEndCap = new AdjustableArrowCap(4, 6)
+            };
         }
     }
 }
