@@ -56,14 +56,23 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            base.OnDraw(g);
+            DrawRectangle(g);
+            DrawText(g);
+        }
 
+        protected void DrawText(Graphics g)
+        {
             if (Shadow)
             {
                 DrawText(g, Text, ShadowColor, TextOptions, Rectangle.LocationOffset(ShadowOffset));
             }
 
-            DrawText(g, Text, TextOptions.Color, TextOptions, Rectangle);
+            DrawText(g, Text, TextOptions, Rectangle);
+        }
+
+        protected void DrawText(Graphics g, string text, TextDrawingOptions options, Rectangle rect)
+        {
+            DrawText(g, text, options.Color, options, rect);
         }
 
         protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, Rectangle rect)

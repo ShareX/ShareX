@@ -71,8 +71,12 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            base.OnDraw(g);
+            DrawEllipse(g);
+            DrawNumber(g);
+        }
 
+        protected void DrawNumber(Graphics g)
+        {
             if (Shadow)
             {
                 DrawNumber(g, Number, ShadowColor, Rectangle.LocationOffset(ShadowOffset));

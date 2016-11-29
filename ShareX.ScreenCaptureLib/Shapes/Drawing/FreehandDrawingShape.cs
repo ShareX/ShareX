@@ -109,6 +109,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawFreehand(g);
+        }
+
+        protected void DrawFreehand(Graphics g)
+        {
             if (Shadow)
             {
                 DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());

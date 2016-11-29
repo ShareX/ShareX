@@ -91,6 +91,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawSpeechBalloon(g);
+        }
+
+        protected void DrawSpeechBalloon(Graphics g)
+        {
             if (Rectangle.Width > 10 && Rectangle.Height > 10)
             {
                 GraphicsPath gpTail = null;
@@ -164,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
                     gpTail.Dispose();
                 }
 
-                DrawText(g, Text, TextOptions.Color, TextOptions, Rectangle);
+                DrawText(g);
             }
         }
 

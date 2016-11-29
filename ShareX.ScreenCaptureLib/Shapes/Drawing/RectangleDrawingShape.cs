@@ -37,6 +37,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawRectangle(g);
+        }
+
+        protected void DrawRectangle(Graphics g)
+        {
             if (Shadow && IsBorderVisible)
             {
                 DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);

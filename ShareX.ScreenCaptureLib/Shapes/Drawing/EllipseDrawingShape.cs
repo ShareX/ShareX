@@ -35,6 +35,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawEllipse(g);
+        }
+
+        protected void DrawEllipse(Graphics g)
+        {
             if (Shadow && IsBorderVisible)
             {
                 DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));

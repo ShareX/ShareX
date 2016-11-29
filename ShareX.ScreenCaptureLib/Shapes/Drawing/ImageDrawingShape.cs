@@ -81,6 +81,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawImage(g);
+        }
+
+        protected void DrawImage(Graphics g)
+        {
             if (Image != null)
             {
                 g.DrawImage(Image, Rectangle);

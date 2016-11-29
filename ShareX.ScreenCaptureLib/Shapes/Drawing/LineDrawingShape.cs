@@ -56,6 +56,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
+            DrawLine(g);
+        }
+
+        protected void DrawLine(Graphics g)
+        {
             if (Shadow)
             {
                 DrawLine(g, ShadowColor, BorderSize, StartPosition.Add(ShadowOffset), EndPosition.Add(ShadowOffset), CenterPosition.Add(ShadowOffset));
@@ -64,7 +69,7 @@ namespace ShareX.ScreenCaptureLib
             DrawLine(g, BorderColor, BorderSize, StartPosition, EndPosition, CenterPosition);
         }
 
-        protected virtual void DrawLine(Graphics g, Color borderColor, int borderSize, Point startPosition, Point endPosition, Point centerPosition)
+        protected void DrawLine(Graphics g, Color borderColor, int borderSize, Point startPosition, Point endPosition, Point centerPosition)
         {
             if (borderSize > 0 && borderColor.A > 0)
             {
