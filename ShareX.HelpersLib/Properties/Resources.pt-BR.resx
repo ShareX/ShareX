@@ -865,9 +865,6 @@ Gostaria de baixá-la?</value>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Desenho: Retângulo</value>
   </data>
-  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
-    <value>Desenho: Retângulo arredondado</value>
-  </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Desenho: Passo</value>
   </data>
@@ -879,9 +876,6 @@ Gostaria de baixá-la?</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Região: Retângulo</value>
-  </data>
-  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
-    <value>Região: Retângulo arredondado</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Remover forma</value>

@@ -883,9 +883,6 @@
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>绘图：矩形</value>
   </data>
-  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
-    <value>绘图：圆角矩形</value>
-  </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>绘图：序号</value>
   </data>
@@ -897,9 +894,6 @@
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>区域：矩形</value>
-  </data>
-  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
-    <value>区域：圆角矩形</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
     <value>绘图：鼠绘</value>

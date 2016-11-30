@@ -920,9 +920,6 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Drawing: Rectangle</value>
   </data>
-  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
-    <value>Drawing: Rounded rectangle</value>
-  </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Drawing: Step</value>
   </data>
@@ -934,9 +931,6 @@ Would you like to download it?</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Region: Rectangle</value>
-  </data>
-  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
-    <value>Region: Rounded rectangle</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>Automatically try all methods until one works</value>

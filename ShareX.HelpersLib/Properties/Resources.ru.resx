@@ -886,9 +886,6 @@
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Рисование: Прямоугольник</value>
   </data>
-  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
-    <value>Рисование: Скругленный прямоугольник</value>
-  </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Рисование: Шаг</value>
   </data>
@@ -900,9 +897,6 @@
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Область: Прямоугольник</value>
-  </data>
-  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
-    <value>Область: Скругленный прямоугольник</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>Область: От руки</value>

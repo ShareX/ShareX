@@ -898,9 +898,6 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Dessin : Rectangle</value>
   </data>
-  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
-    <value>Dessin : Rectangle arrondi</value>
-  </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Dessin : Etape</value>
   </data>
@@ -921,9 +918,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Région : Rectangle</value>
-  </data>
-  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
-    <value>Région : Rectangle arrondi</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>Région : Main levée</value>

@@ -2393,15 +2393,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Rounded rectangle.
-        /// </summary>
-        internal static string ShapeType_DrawingRoundedRectangle {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingRoundedRectangle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Drawing: Speech balloon.
         /// </summary>
         internal static string ShapeType_DrawingSpeechBalloon {
@@ -2479,15 +2470,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShapeType_RegionRectangle {
             get {
                 return ResourceManager.GetString("ShapeType_RegionRectangle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Region: Rounded rectangle.
-        /// </summary>
-        internal static string ShapeType_RegionRoundedRectangle {
-            get {
-                return ResourceManager.GetString("ShapeType_RegionRoundedRectangle", resourceCulture);
             }
         }
         
