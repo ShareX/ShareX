@@ -427,6 +427,18 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.Control | Keys.V:
                             PasteFromClipboard();
                             break;
+                        case Keys.Home:
+                            MoveCurrentShapeTop();
+                            break;
+                        case Keys.End:
+                            MoveCurrentShapeBottom();
+                            break;
+                        case Keys.PageUp:
+                            MoveCurrentShapeUp();
+                            break;
+                        case Keys.PageDown:
+                            MoveCurrentShapeDown();
+                            break;
                     }
                 }
             }
@@ -1004,6 +1016,86 @@ namespace ShareX.ScreenCaptureLib
             {
                 DeleteShape(Shapes[Shapes.Count - 1]);
             }
+        }
+
+        public void MoveShapeBottom(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                for (int i = 0; i < Shapes.Count; i++)
+                {
+                    if (Shapes[i] == shape)
+                    {
+                        Shapes.Move(i, 0);
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void MoveCurrentShapeBottom()
+        {
+            MoveShapeBottom(CurrentShape);
+        }
+
+        public void MoveShapeTop(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                for (int i = 0; i < Shapes.Count; i++)
+                {
+                    if (Shapes[i] == shape)
+                    {
+                        Shapes.Move(i, Shapes.Count - 1);
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void MoveCurrentShapeTop()
+        {
+            MoveShapeTop(CurrentShape);
+        }
+
+        public void MoveShapeDown(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                for (int i = 1; i < Shapes.Count; i++)
+                {
+                    if (Shapes[i] == shape)
+                    {
+                        Shapes.Move(i, --i);
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void MoveCurrentShapeDown()
+        {
+            MoveShapeDown(CurrentShape);
+        }
+
+        public void MoveShapeUp(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                for (int i = 0; i < Shapes.Count - 1; i++)
+                {
+                    if (Shapes[i] == shape)
+                    {
+                        Shapes.Move(i, ++i);
+                        return;
+                    }
+                }
+            }
+        }
+
+        public void MoveCurrentShapeUp()
+        {
+            MoveShapeUp(CurrentShape);
         }
 
         private bool IsShapeTypeRegion(ShapeType shapeType)
