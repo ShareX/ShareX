@@ -43,7 +43,6 @@ namespace ShareX
             InitializeComponent();
             btnOK.Visible = false;
             btnCancel.Text = Resources.ScreenColorPicker_ScreenColorPicker_Close;
-            colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
 
             UpdateControls(false);

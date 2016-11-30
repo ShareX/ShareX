@@ -49,7 +49,7 @@ namespace ShareX.HelpersLib
 
         private void DrawCrosshair(Graphics g, Pen pen, int offset, int height)
         {
-            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - height / 2, ClientWidth - offset * 2, height));
+            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - height / 2, clientWidth - offset * 2, height));
         }
 
         // Y = Hue 360 -> 0
@@ -59,13 +59,13 @@ namespace ShareX.HelpersLib
             {
                 HSB color = new HSB(0.0, 1.0, 1.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Hue = 1.0 - (double)y / (ClientHeight - 1);
+                    color.Hue = 1.0 - (double)y / (clientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }
@@ -78,13 +78,13 @@ namespace ShareX.HelpersLib
             {
                 HSB color = new HSB(SelectedColor.HSB.Hue, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Saturation = 1.0 - (double)y / (ClientHeight - 1);
+                    color.Saturation = 1.0 - (double)y / (clientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }
@@ -97,13 +97,13 @@ namespace ShareX.HelpersLib
             {
                 HSB color = new HSB(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Brightness = 1.0 - (double)y / (ClientHeight - 1);
+                    color.Brightness = 1.0 - (double)y / (clientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }
@@ -116,13 +116,13 @@ namespace ShareX.HelpersLib
             {
                 RGBA color = new RGBA(0, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Red = 255 - Round(255 * (double)y / (ClientHeight - 1));
+                    color.Red = 255 - Round(255 * (double)y / (clientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }
@@ -135,13 +135,13 @@ namespace ShareX.HelpersLib
             {
                 RGBA color = new RGBA(SelectedColor.RGBA.Red, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Green = 255 - Round(255 * (double)y / (ClientHeight - 1));
+                    color.Green = 255 - Round(255 * (double)y / (clientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }
@@ -154,13 +154,13 @@ namespace ShareX.HelpersLib
             {
                 RGBA color = new RGBA(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Blue = 255 - Round(255 * (double)y / (ClientHeight - 1));
+                    color.Blue = 255 - Round(255 * (double)y / (clientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, ClientWidth, y);
+                        g.DrawLine(pen, 0, y, clientWidth, y);
                     }
                 }
             }

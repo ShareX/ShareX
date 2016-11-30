@@ -72,12 +72,12 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public bool DrawCrosshair
+        public bool CrosshairVisible
         {
             set
             {
-                colorBox.drawCrosshair = value;
-                colorSlider.drawCrosshair = value;
+                colorBox.CrosshairVisible = value;
+                colorSlider.CrosshairVisible = value;
             }
         }
 

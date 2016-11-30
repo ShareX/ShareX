@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
         public void SetCurrentColor(Color currentColor, bool keepPreviousColor)
         {
             oldColorExist = keepPreviousColor;
-            colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
+            lblOld.Visible = oldColorExist;
             NewColor = OldColor = currentColor;
             colorPicker.ChangeColor(currentColor);
             nudAlpha.SetValue(currentColor.A);

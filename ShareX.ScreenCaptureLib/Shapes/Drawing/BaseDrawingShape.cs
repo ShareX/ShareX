@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
         public int BorderSize { get; set; }
         public Color FillColor { get; set; }
 
-        public bool Shadow { get; set; } = true;
+        public bool Shadow { get; set; }
         public Color ShadowColor { get; set; } = Color.FromArgb(125, 0, 0, 0);
         public Point ShadowOffset { get; set; } = new Point(0, 1);
 
