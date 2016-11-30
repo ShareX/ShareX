@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
             BorderColor = AnnotationOptions.TextBorderColor;
             BorderSize = AnnotationOptions.TextBorderSize;
             FillColor = AnnotationOptions.TextFillColor;
-            CornerRadius = AnnotationOptions.TextCornerRadius;
+            CornerRadius = AnnotationOptions.DrawingCornerRadius;
             Shadow = AnnotationOptions.Shadow;
         }
 
@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.TextBorderColor = BorderColor;
             AnnotationOptions.TextBorderSize = BorderSize;
             AnnotationOptions.TextFillColor = FillColor;
-            AnnotationOptions.TextCornerRadius = CornerRadius;
+            AnnotationOptions.DrawingCornerRadius = CornerRadius;
             AnnotationOptions.Shadow = Shadow;
         }
 

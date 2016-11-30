@@ -401,10 +401,10 @@ namespace ShareX.ScreenCaptureLib
                             CurrentShapeType = ShapeType.DrawingRectangle;
                             break;
                         case Keys.NumPad2:
-                            CurrentShapeType = ShapeType.DrawingRoundedRectangle;
+                            CurrentShapeType = ShapeType.DrawingEllipse;
                             break;
                         case Keys.NumPad3:
-                            CurrentShapeType = ShapeType.DrawingEllipse;
+                            CurrentShapeType = ShapeType.DrawingFreehand;
                             break;
                         case Keys.NumPad4:
                             CurrentShapeType = ShapeType.DrawingLine;
@@ -693,9 +693,6 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.RegionRectangle:
                     shape = new RectangleRegionShape();
                     break;
-                case ShapeType.RegionRoundedRectangle:
-                    shape = new RoundedRectangleRegionShape();
-                    break;
                 case ShapeType.RegionEllipse:
                     shape = new EllipseRegionShape();
                     break;
@@ -704,9 +701,6 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.DrawingRectangle:
                     shape = new RectangleDrawingShape();
-                    break;
-                case ShapeType.DrawingRoundedRectangle:
-                    shape = new RoundedRectangleDrawingShape();
                     break;
                 case ShapeType.DrawingEllipse:
                     shape = new EllipseDrawingShape();
@@ -1017,7 +1011,6 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 case ShapeType.RegionRectangle:
-                case ShapeType.RegionRoundedRectangle:
                 case ShapeType.RegionEllipse:
                 case ShapeType.RegionFreehand:
                     return true;

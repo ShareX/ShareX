@@ -35,6 +35,18 @@ namespace ShareX.ScreenCaptureLib
 
         public int CornerRadius { get; set; }
 
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            CornerRadius = AnnotationOptions.DrawingCornerRadius;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.DrawingCornerRadius = CornerRadius;
+        }
+
         public override void OnDraw(Graphics g)
         {
             DrawRectangle(g);

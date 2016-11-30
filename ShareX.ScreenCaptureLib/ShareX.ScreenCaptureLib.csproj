@@ -106,7 +106,6 @@
     <Compile Include="Shapes\Drawing\LineDrawingShape.cs" />
     <Compile Include="Shapes\Effect\PixelateEffectShape.cs" />
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BaseEffectShape.cs" />
     <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
     <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
@@ -140,7 +139,6 @@
     <Compile Include="RegionHelpers\ResizeNode.cs" />
     <Compile Include="RegionCaptureTasks.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
-    <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
     <Compile Include="RegionHelpers\SimpleWindowInfo.cs" />
     <Compile Include="RegionHelpers\SnapSize.cs" />
     <Compile Include="RegionCaptureOptions.cs" />

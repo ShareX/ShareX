@@ -29,26 +29,30 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AnnotationOptions
     {
-        // Drawing
-        public Color BorderColor { get; set; } = Color.Red;
-        public int BorderSize { get; set; } = 5;
-        public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
-        public bool Shadow { get; set; } = true;
+        public static readonly Color PrimaryColor = Color.Red;
+        public static readonly Color SecondaryColor = Color.White;
+        public static readonly Color TransparentColor = Color.FromArgb(0, 0, 0, 0);
 
-        // Rounded rectangle region, rounded rectangle drawing
-        public int RoundedRectangleRadius { get; set; } = 8;
+        // Region
+        public int RegionCornerRadius { get; set; } = 0;
+
+        // Drawing
+        public Color BorderColor { get; set; } = PrimaryColor;
+        public int BorderSize { get; set; } = 5;
+        public Color FillColor { get; set; } = TransparentColor;
+        public int DrawingCornerRadius { get; set; } = 3;
+        public bool Shadow { get; set; } = true;
 
         // Text drawing
         public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
-        public Color TextBorderColor { get; set; } = Color.White;
-        public int TextBorderSize { get; set; } = 0;
-        public Color TextFillColor { get; set; } = Color.FromArgb(150, Color.Black);
-        public int TextCornerRadius { get; set; } = 0;
+        public Color TextBorderColor { get; set; } = SecondaryColor;
+        public int TextBorderSize { get; set; } = 2;
+        public Color TextFillColor { get; set; } = PrimaryColor;
 
         // Step drawing
-        public Color StepBorderColor { get; set; } = Color.White;
+        public Color StepBorderColor { get; set; } = SecondaryColor;
         public int StepBorderSize { get; set; } = 2;
-        public Color StepFillColor { get; set; } = Color.Red;
+        public Color StepFillColor { get; set; } = PrimaryColor;
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;

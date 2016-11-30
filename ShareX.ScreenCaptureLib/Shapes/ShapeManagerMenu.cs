@@ -184,9 +184,6 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.RegionRectangle:
                         img = Resources.layer_shape_region;
                         break;
-                    case ShapeType.RegionRoundedRectangle:
-                        img = Resources.layer_shape_round_region;
-                        break;
                     case ShapeType.RegionEllipse:
                         img = Resources.layer_shape_ellipse_region;
                         break;
@@ -195,9 +192,6 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.DrawingRectangle:
                         img = Resources.layer_shape;
-                        break;
-                    case ShapeType.DrawingRoundedRectangle:
-                        img = Resources.layer_shape_round;
                         break;
                     case ShapeType.DrawingEllipse:
                         img = Resources.layer_shape_ellipse;
@@ -409,13 +403,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 ShapeType shapeType = CurrentShapeType;
 
-                if (shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle)
+                if (shapeType == ShapeType.RegionRectangle)
                 {
-                    AnnotationOptions.RoundedRectangleRadius = (int)tslnudCornerRadius.Content.Value;
+                    AnnotationOptions.RegionCornerRadius = (int)tslnudCornerRadius.Content.Value;
                 }
-                else if (shapeType == ShapeType.DrawingText)
+                else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingText)
                 {
-                    AnnotationOptions.TextCornerRadius = (int)tslnudCornerRadius.Content.Value;
+                    AnnotationOptions.DrawingCornerRadius = (int)tslnudCornerRadius.Content.Value;
                 }
 
                 UpdateCurrentShape();
@@ -893,13 +887,13 @@ namespace ShareX.ScreenCaptureLib
 
             int cornerRadius = 0;
 
-            if (shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle)
+            if (shapeType == ShapeType.RegionRectangle)
             {
-                cornerRadius = AnnotationOptions.RoundedRectangleRadius;
+                cornerRadius = AnnotationOptions.RegionCornerRadius;
             }
-            else if (shapeType == ShapeType.DrawingText)
+            else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingText)
             {
-                cornerRadius = AnnotationOptions.TextCornerRadius;
+                cornerRadius = AnnotationOptions.DrawingCornerRadius;
             }
 
             tslnudCornerRadius.Content.Value = cornerRadius;
@@ -918,9 +912,8 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tsddbShapeOptions.Visible = false;
                     break;
-                case ShapeType.RegionRoundedRectangle:
+                case ShapeType.RegionRectangle:
                 case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
@@ -944,7 +937,6 @@ namespace ShareX.ScreenCaptureLib
                     tsmiShadow.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
@@ -964,7 +956,6 @@ namespace ShareX.ScreenCaptureLib
                     tsbFillColor.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingText:
                 case ShapeType.DrawingSpeechBalloon:
@@ -978,8 +969,8 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tslnudCornerRadius.Visible = false;
                     break;
-                case ShapeType.RegionRoundedRectangle:
-                case ShapeType.DrawingRoundedRectangle:
+                case ShapeType.RegionRectangle:
+                case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingText:
                     tslnudCornerRadius.Visible = true;
                     break;
