@@ -171,6 +171,10 @@ namespace ShareX.ScreenCaptureLib
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                         args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                         break;
+                    case FFmpegVideoCodec.h264_nvenc:
+                        args.AppendFormat("-preset {0} ", FFmpeg.x264nvenc_Preset); // TODO: make this configurable.
+                        args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // otherwise you will get a No NVENC capable devices found.
+                        break;
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");
                         args.AppendFormat("-b:v {0}k ", FFmpeg.VPx_bitrate);

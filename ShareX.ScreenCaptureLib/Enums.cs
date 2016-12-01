@@ -89,6 +89,8 @@ namespace ShareX.ScreenCaptureLib
     {
         [Description("x264 (mp4)")]
         libx264,
+        [Description("x264-nvenc (mp4)")]
+        h264_nvenc,
         [Description("VP8 (webm)")]
         libvpx,
         [Description("Xvid (avi)")]
