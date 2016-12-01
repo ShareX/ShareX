@@ -381,6 +381,9 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
+                case Keys.Control | Keys.Shift | Keys.Delete:
+                    DeleteAllShapes();
+                    break;
                 case Keys.F1:
                     Config.ShowHotkeys = !Config.ShowHotkeys;
                     tsmiTips.Checked = Config.ShowHotkeys;
