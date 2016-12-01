@@ -332,9 +332,6 @@
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>Размер пикселя:</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
-    <value>Удалить все объекты</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Радиус скругления</value>
   </data>

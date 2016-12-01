@@ -324,9 +324,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Cor da borda...</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
-    <value>Deletar todos os objetos</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[Scroll] Alterar tamanho da lupa</value>
   </data>

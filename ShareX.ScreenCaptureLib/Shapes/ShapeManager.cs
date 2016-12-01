@@ -373,9 +373,6 @@ namespace ShareX.ScreenCaptureLib
                         StartRegionSelection();
                     }
                     break;
-                case Keys.Control | Keys.Z:
-                    UndoShape();
-                    break;
             }
 
             if (!IsCreating)
@@ -426,6 +423,9 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard();
+                            break;
+                        case Keys.Control | Keys.Z:
+                            UndoShape();
                             break;
                         case Keys.Home:
                             MoveCurrentShapeTop();

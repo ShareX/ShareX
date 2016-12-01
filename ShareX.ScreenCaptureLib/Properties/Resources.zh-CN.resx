@@ -314,9 +314,6 @@
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>边框颜色...</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
-    <value>删除所有对象</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[鼠标滚轮] 更改当前工具</value>
   </data>

@@ -266,9 +266,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
     <value>Afficher les raccourcis clavier</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
-    <value>Supprimer tous les objets</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Options</value>
   </data>

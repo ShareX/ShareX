@@ -163,6 +163,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wrench-screwdriver.png" />
+    <None Include="Resources\layers-stack-arrange.png" />
+    <None Include="Resources\layers-stack-arrange-back.png" />
+    <None Include="Resources\layers-arrange-back.png" />
+    <None Include="Resources\layers-arrange.png" />
+    <None Include="Resources\layer--minus.png" />
     <None Include="Resources\layer.png" />
     <None Include="Resources\test_32.png" />
     <None Include="Resources\layers.png" />
