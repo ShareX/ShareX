@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiUndoObject, tsmiDeleteAll, tsmiQuickCrop, tsmiRegionCapture;
+        private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
@@ -459,19 +459,19 @@ namespace ShareX.ScreenCaptureLib
             tsddbEdit.Image = Resources.wrench_screwdriver;
             tsMain.Items.Add(tsddbEdit);
 
-            tsmiUndoObject = new ToolStripMenuItem("Undo");
-            tsmiUndoObject.Image = Resources.arrow_circle_225_left;
-            tsmiUndoObject.ShortcutKeyDisplayString = "Ctrl+Z";
-            tsmiUndoObject.MouseDown += (sender, e) => UndoShape();
-            tsddbEdit.DropDownItems.Add(tsmiUndoObject);
+            tsmiUndo = new ToolStripMenuItem("Undo");
+            tsmiUndo.Image = Resources.arrow_circle_225_left;
+            tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
+            tsmiUndo.MouseDown += (sender, e) => UndoShape();
+            tsddbEdit.DropDownItems.Add(tsmiUndo);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiDeleteObject = new ToolStripMenuItem("Delete");
-            tsmiDeleteObject.Image = Resources.layer__minus;
-            tsmiDeleteObject.ShortcutKeyDisplayString = "Del";
-            tsmiDeleteObject.MouseDown += (sender, e) => DeleteCurrentShape();
-            tsddbEdit.DropDownItems.Add(tsmiDeleteObject);
+            tsmiDelete = new ToolStripMenuItem("Delete");
+            tsmiDelete.Image = Resources.layer__minus;
+            tsmiDelete.ShortcutKeyDisplayString = "Del";
+            tsmiDelete.MouseDown += (sender, e) => DeleteCurrentShape();
+            tsddbEdit.DropDownItems.Add(tsmiDelete);
 
             tsmiDeleteAll = new ToolStripMenuItem("Delete all");
             tsmiDeleteAll.Image = Resources.eraser;
@@ -481,25 +481,25 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiMoveTop = new ToolStripMenuItem("Bring to front");
+            tsmiMoveTop = new ToolStripMenuItem("Bring to front");
             tsmiMoveTop.Image = Resources.layers_stack_arrange;
             tsmiMoveTop.ShortcutKeyDisplayString = "Home";
             tsmiMoveTop.MouseDown += (sender, e) => MoveCurrentShapeTop();
             tsddbEdit.DropDownItems.Add(tsmiMoveTop);
 
-            ToolStripMenuItem tsmiMoveUp = new ToolStripMenuItem("Bring forward");
+            tsmiMoveUp = new ToolStripMenuItem("Bring forward");
             tsmiMoveUp.Image = Resources.layers_arrange;
             tsmiMoveUp.ShortcutKeyDisplayString = "Page up";
             tsmiMoveUp.MouseDown += (sender, e) => MoveCurrentShapeUp();
             tsddbEdit.DropDownItems.Add(tsmiMoveUp);
 
-            ToolStripMenuItem tsmiMoveDown = new ToolStripMenuItem("Send backward");
+            tsmiMoveDown = new ToolStripMenuItem("Send backward");
             tsmiMoveDown.Image = Resources.layers_arrange_back;
             tsmiMoveDown.ShortcutKeyDisplayString = "Page down";
             tsmiMoveDown.MouseDown += (sender, e) => MoveCurrentShapeDown();
             tsddbEdit.DropDownItems.Add(tsmiMoveDown);
 
-            ToolStripMenuItem tsmiMoveBottom = new ToolStripMenuItem("Send to back");
+            tsmiMoveBottom = new ToolStripMenuItem("Send to back");
             tsmiMoveBottom.Image = Resources.layers_stack_arrange_back;
             tsmiMoveBottom.ShortcutKeyDisplayString = "End";
             tsmiMoveBottom.MouseDown += (sender, e) => MoveCurrentShapeBottom();
@@ -970,7 +970,8 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndoObject.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
+            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
+            tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
             {
