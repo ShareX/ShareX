@@ -225,9 +225,6 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyData)
             {
-                case Keys.F1:
-                    Config.ShowHotkeys = !Config.ShowHotkeys;
-                    break;
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
                     break;

@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiQuickCrop, tsmiRegionCapture;
+        private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
@@ -112,10 +112,10 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.Items.Add(tslDragLeft);
 
-            #region Editor mode
-
             if (form.Mode == RegionCaptureMode.Editor)
             {
+                #region Editor mode
+
                 ToolStripButton tsbCompleteEdit = new ToolStripButton("Run after capture tasks");
                 tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCompleteEdit.Image = Resources.tick;
@@ -154,9 +154,9 @@ namespace ShareX.ScreenCaptureLib
                 tsMain.Items.Add(tsbPrintImage);
 
                 tsMain.Items.Add(new ToolStripSeparator());
-            }
 
-            #endregion Editor mode
+                #endregion Editor mode
+            }
 
             #region Tools
 
@@ -507,11 +507,11 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Edit
 
-            #region Capture
-
             if (form.Mode != RegionCaptureMode.Editor)
             {
                 tsMain.Items.Add(new ToolStripSeparator());
+
+                #region Capture
 
                 ToolStripDropDownButton tsddbCapture = new ToolStripDropDownButton("Capture");
                 tsddbCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -520,6 +520,7 @@ namespace ShareX.ScreenCaptureLib
 
                 tsmiRegionCapture = new ToolStripMenuItem("Capture regions");
                 tsmiRegionCapture.Image = Resources.layer;
+                tsmiRegionCapture.ShortcutKeyDisplayString = "Enter";
                 tsmiRegionCapture.MouseDown += (sender, e) =>
                 {
                     form.UpdateRegionPath();
@@ -537,11 +538,13 @@ namespace ShareX.ScreenCaptureLib
 
                 ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
                 tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
+                tsmiFullscreenCapture.ShortcutKeyDisplayString = "Space";
                 tsmiFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
                 tsddbCapture.DropDownItems.Add(tsmiFullscreenCapture);
 
                 ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
                 tsmiActiveMonitorCapture.Image = Resources.monitor;
+                tsmiActiveMonitorCapture.ShortcutKeyDisplayString = "~";
                 tsmiActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
                 tsddbCapture.DropDownItems.Add(tsmiActiveMonitorCapture);
 
@@ -555,7 +558,8 @@ namespace ShareX.ScreenCaptureLib
                 for (int i = 0; i < screens.Length; i++)
                 {
                     Screen screen = screens[i];
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem($"{screen.Bounds.Width}x{screen.Bounds.Height}");
+                    tsmi.ShortcutKeyDisplayString = (i + 1).ToString();
                     int index = i;
                     tsmi.MouseDown += (sender, e) =>
                     {
@@ -564,15 +568,10 @@ namespace ShareX.ScreenCaptureLib
                     };
                     tsmiMonitorCapture.DropDownItems.Add(tsmi);
                 }
-            }
 
-            #endregion Capture
+                #endregion Capture
 
-            #region Options
-
-            if (form.Mode != RegionCaptureMode.Editor)
-            {
-                tsMain.Items.Add(new ToolStripSeparator());
+                #region Options
 
                 ToolStripDropDownButton tsddbOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Options);
                 tsddbOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -582,12 +581,14 @@ namespace ShareX.ScreenCaptureLib
                 tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
                 tsmiQuickCrop.Checked = !Config.QuickCrop;
                 tsmiQuickCrop.CheckOnClick = true;
+                tsmiQuickCrop.ShortcutKeyDisplayString = "Q";
                 tsmiQuickCrop.Click += (sender, e) => Config.QuickCrop = !tsmiQuickCrop.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
 
-                ToolStripMenuItem tsmiTips = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_tips);
+                tsmiTips = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_tips);
                 tsmiTips.Checked = Config.ShowHotkeys;
                 tsmiTips.CheckOnClick = true;
+                tsmiTips.ShortcutKeyDisplayString = "F1";
                 tsmiTips.Click += (sender, e) => Config.ShowHotkeys = tsmiTips.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiTips);
 
@@ -657,9 +658,9 @@ namespace ShareX.ScreenCaptureLib
                 tsmiRememberMenuState.CheckOnClick = true;
                 tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
-            }
 
-            #endregion Options
+                #endregion Options
+            }
 
             ToolStripLabel tslDragRight = new ToolStripLabel()
             {

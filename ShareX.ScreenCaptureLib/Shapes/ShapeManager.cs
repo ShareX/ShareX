@@ -373,6 +373,18 @@ namespace ShareX.ScreenCaptureLib
                         StartRegionSelection();
                     }
                     break;
+                case Keys.Delete:
+                    DeleteCurrentShape();
+
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
+                    break;
+                case Keys.F1:
+                    Config.ShowHotkeys = !Config.ShowHotkeys;
+                    tsmiTips.Checked = Config.ShowHotkeys;
+                    break;
             }
 
             if (!IsCreating)
@@ -438,6 +450,10 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.PageDown:
                             MoveCurrentShapeDown();
+                            break;
+                        case Keys.Q:
+                            Config.QuickCrop = !Config.QuickCrop;
+                            tsmiQuickCrop.Checked = !Config.QuickCrop;
                             break;
                     }
                 }
@@ -529,29 +545,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.S:
                     isDownPressed = false;
                     break;
-            }
-
-            switch (e.KeyData)
-            {
-                case Keys.Delete:
-                    DeleteCurrentShape();
-
-                    if (IsCreating)
-                    {
-                        EndRegionSelection();
-                    }
-                    break;
-            }
-
-            if (form.IsAnnotationMode)
-            {
-                switch (e.KeyData)
-                {
-                    case Keys.Q:
-                        Config.QuickCrop = !Config.QuickCrop;
-                        tsmiQuickCrop.Checked = !Config.QuickCrop;
-                        break;
-                }
             }
         }
 
