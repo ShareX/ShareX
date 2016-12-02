@@ -455,7 +455,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>120, 20</value>
   </data>
   <data name="cboVideoCodec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>160, 21</value>
   </data>
   <data name="cboVideoCodec.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

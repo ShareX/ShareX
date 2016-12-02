@@ -92,6 +92,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case FFmpegVideoCodec.libx264:
                         case FFmpegVideoCodec.libx265:
+                        case FFmpegVideoCodec.h264_nvenc:
+                        case FFmpegVideoCodec.hevc_nvenc:
                         case FFmpegVideoCodec.gif:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:

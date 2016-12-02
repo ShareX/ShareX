@@ -179,6 +179,12 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                         args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
                         break;
+                    case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
+                    case FFmpegVideoCodec.hevc_nvenc:
+                        args.AppendFormat("-preset {0} ", "default"); // TODO: Add preset option
+                        args.AppendFormat("-b:v {0}k ", "10000"); // TODO: Add bitrate option
+                        args.AppendFormat("-pix_fmt {0} ", "yuv420p");
+                        break;
                     case FFmpegVideoCodec.gif:
                         args.AppendFormat("-preset {0} ", FFmpegPreset.ultrafast);
                         args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);

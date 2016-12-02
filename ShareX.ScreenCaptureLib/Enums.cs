@@ -96,7 +96,11 @@ namespace ShareX.ScreenCaptureLib
         [Description("Animated GIF (gif)")]
         gif,
         [Description("x265 (mp4)")]
-        libx265
+        libx265,
+        [Description("H.264 NVENC (mp4)")]
+        h264_nvenc,
+        [Description("HEVC NVENC (mp4)")]
+        hevc_nvenc
     }
 
     public enum FFmpegPreset
