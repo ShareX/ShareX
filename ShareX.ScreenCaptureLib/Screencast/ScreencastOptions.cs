@@ -41,12 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle CaptureArea { get; set; }
         public float Duration { get; set; }
         public bool DrawCursor { get; set; }
-        public FFmpegOptions FFmpeg { get; set; }
-
-        public ScreencastOptions()
-        {
-            FFmpeg = new FFmpegOptions();
-        }
+        public FFmpegOptions FFmpeg { get; set; } = new FFmpegOptions();
 
         public string GetFFmpegCommands()
         {
@@ -181,8 +176,8 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                     case FFmpegVideoCodec.hevc_nvenc:
-                        args.AppendFormat("-preset {0} ", "default"); // TODO: Add preset option
-                        args.AppendFormat("-b:v {0}k ", "10000"); // TODO: Add bitrate option
+                        args.AppendFormat("-preset {0} ", FFmpeg.NVENC_preset);
+                        args.AppendFormat("-b:v {0}k ", FFmpeg.NVENC_bitrate);
                         args.AppendFormat("-pix_fmt {0} ", "yuv420p");
                         break;
                     case FFmpegVideoCodec.gif:

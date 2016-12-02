@@ -31,29 +31,31 @@ namespace ShareX.ScreenCaptureLib
     public class FFmpegOptions
     {
         // General
-        public bool OverrideCLIPath { get; set; }
-        public string CLIPath { get; set; }
-        public string VideoSource { get; set; }
-        public string AudioSource { get; set; }
-        public FFmpegVideoCodec VideoCodec { get; set; }
-        public FFmpegAudioCodec AudioCodec { get; set; }
-        public string UserArgs { get; set; }
-        public bool UseCustomCommands { get; set; }
-        public string CustomCommands { get; set; }
-        public bool ShowError { get; set; }
+        public bool OverrideCLIPath { get; set; } = false;
+        public string CLIPath { get; set; } = "";
+        public string VideoSource { get; set; } = FFmpegHelper.SourceGDIGrab;
+        public string AudioSource { get; set; } = FFmpegHelper.SourceNone;
+        public FFmpegVideoCodec VideoCodec { get; set; } = FFmpegVideoCodec.libx264;
+        public FFmpegAudioCodec AudioCodec { get; set; } = FFmpegAudioCodec.libvoaacenc;
+        public string UserArgs { get; set; } = "";
+        public bool UseCustomCommands { get; set; } = false;
+        public string CustomCommands { get; set; } = "";
+        public bool ShowError { get; set; } = true;
 
         // Video
-        public FFmpegPreset x264_Preset { get; set; }
-        public int x264_CRF { get; set; }
-        public int VPx_bitrate { get; set; }  // kbit/s
-        public int XviD_qscale { get; set; }
-        public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; }
-        public FFmpegPaletteUseDither GIFDither { get; set; }
+        public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;
+        public int x264_CRF { get; set; } = 28;
+        public int VPx_bitrate { get; set; } = 3000; // kbit/s
+        public int XviD_qscale { get; set; } = 10;
+        public FFmpegNVENCPreset NVENC_preset { get; set; } = FFmpegNVENCPreset.@default;
+        public int NVENC_bitrate { get; set; } = 3000; // kbit/s
+        public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
+        public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
 
         // Audio
-        public int AAC_bitrate { get; set; }  // kbit/s
-        public int Vorbis_qscale { get; set; }
-        public int MP3_qscale { get; set; }
+        public int AAC_bitrate { get; set; } = 128; // kbit/s
+        public int Vorbis_qscale { get; set; } = 3;
+        public int MP3_qscale { get; set; } = 4;
 
         public string FFmpegPath
         {
@@ -119,57 +121,18 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsSourceSelected
-        {
-            get
-            {
-                return IsVideoSourceSelected || IsAudioSourceSelected;
-            }
-        }
+        public bool IsSourceSelected => IsVideoSourceSelected || IsAudioSourceSelected;
 
-        public bool IsVideoSourceSelected
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
-            }
-        }
+        public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
 
-        public bool IsAudioSourceSelected
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
-                    (!IsVideoSourceSelected || VideoCodec != FFmpegVideoCodec.gif);
-            }
-        }
+        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
+            (!IsVideoSourceSelected || VideoCodec != FFmpegVideoCodec.gif);
 
         public FFmpegOptions()
         {
-            // General
-            OverrideCLIPath = false;
-            VideoSource = FFmpegHelper.SourceGDIGrab;
-            AudioSource = FFmpegHelper.SourceNone;
-            VideoCodec = FFmpegVideoCodec.libx264;
-            AudioCodec = FFmpegAudioCodec.libvoaacenc;
-            UserArgs = "";
-            ShowError = true;
-
-            // Video
-            x264_CRF = 28;
-            x264_Preset = FFmpegPreset.ultrafast;
-            VPx_bitrate = 3000;
-            XviD_qscale = 10;
-            GIFStatsMode = FFmpegPaletteGenStatsMode.full;
-            GIFDither = FFmpegPaletteUseDither.sierra2_4a;
-
-            // Audio
-            AAC_bitrate = 128;
-            Vorbis_qscale = 3;
-            MP3_qscale = 4;
         }
 
-        public FFmpegOptions(string ffmpegPath) : this()
+        public FFmpegOptions(string ffmpegPath)
         {
             CLIPath = Helpers.GetVariableFolderPath(ffmpegPath);
         }

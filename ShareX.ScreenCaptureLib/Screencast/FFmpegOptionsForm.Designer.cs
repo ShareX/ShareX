@@ -90,6 +90,11 @@
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.tpNVENC = new System.Windows.Forms.TabPage();
+            this.lblNVENCBitrate = new System.Windows.Forms.Label();
+            this.nudNVENCBitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblNVENCPreset = new System.Windows.Forms.Label();
+            this.cbNVENCPreset = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -112,6 +117,8 @@
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
+            this.tpNVENC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -357,6 +364,7 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpX264);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpVpx);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpXvid);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tpNVENC);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpGIF);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
@@ -615,6 +623,55 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
+            // tpNVENC
+            // 
+            this.tpNVENC.Controls.Add(this.cbNVENCPreset);
+            this.tpNVENC.Controls.Add(this.lblNVENCPreset);
+            this.tpNVENC.Controls.Add(this.nudNVENCBitrate);
+            this.tpNVENC.Controls.Add(this.lblNVENCBitrate);
+            resources.ApplyResources(this.tpNVENC, "tpNVENC");
+            this.tpNVENC.Name = "tpNVENC";
+            this.tpNVENC.UseVisualStyleBackColor = true;
+            // 
+            // lblNVENCBitrate
+            // 
+            resources.ApplyResources(this.lblNVENCBitrate, "lblNVENCBitrate");
+            this.lblNVENCBitrate.Name = "lblNVENCBitrate";
+            // 
+            // nudNVENCBitrate
+            // 
+            resources.ApplyResources(this.nudNVENCBitrate, "nudNVENCBitrate");
+            this.nudNVENCBitrate.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.nudNVENCBitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudNVENCBitrate.Name = "nudNVENCBitrate";
+            this.nudNVENCBitrate.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nudNVENCBitrate.ValueChanged += new System.EventHandler(this.nudNVENCBitrate_ValueChanged);
+            // 
+            // lblNVENCPreset
+            // 
+            resources.ApplyResources(this.lblNVENCPreset, "lblNVENCPreset");
+            this.lblNVENCPreset.Name = "lblNVENCPreset";
+            // 
+            // cbNVENCPreset
+            // 
+            this.cbNVENCPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNVENCPreset.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNVENCPreset, "cbNVENCPreset");
+            this.cbNVENCPreset.Name = "cbNVENCPreset";
+            this.cbNVENCPreset.SelectedIndexChanged += new System.EventHandler(this.cbNVENCPreset_SelectedIndexChanged);
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -669,6 +726,9 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
+            this.tpNVENC.ResumeLayout(false);
+            this.tpNVENC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,5 +796,10 @@
         private System.Windows.Forms.CheckBox cbOverrideFFmpegPath;
         private System.Windows.Forms.PictureBox pbAudioCodecWarning;
         private System.Windows.Forms.PictureBox pbx264PresetWarning;
+        private System.Windows.Forms.TabPage tpNVENC;
+        private System.Windows.Forms.ComboBox cbNVENCPreset;
+        private System.Windows.Forms.Label lblNVENCPreset;
+        private System.Windows.Forms.NumericUpDown nudNVENCBitrate;
+        private System.Windows.Forms.Label lblNVENCBitrate;
     }
 }
