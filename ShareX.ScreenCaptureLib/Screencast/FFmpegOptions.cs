@@ -44,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Video
         public FFmpegPreset x264_Preset { get; set; }
+        public string x264nvenc_Preset { get; set; }
         public int x264_CRF { get; set; }
         public int VPx_bitrate { get; set; }  // kbit/s
         public int XviD_qscale { get; set; }
@@ -91,6 +92,7 @@ namespace ShareX.ScreenCaptureLib
                     switch (VideoCodec)
                     {
                         case FFmpegVideoCodec.libx264:
+                        case FFmpegVideoCodec.h264_nvenc:
                         case FFmpegVideoCodec.libx265:
                         case FFmpegVideoCodec.h264_nvenc:
                         case FFmpegVideoCodec.hevc_nvenc:
@@ -158,6 +160,7 @@ namespace ShareX.ScreenCaptureLib
             // Video
             x264_CRF = 28;
             x264_Preset = FFmpegPreset.ultrafast;
+            x264nvenc_Preset = "default";
             VPx_bitrate = 3000;
             XviD_qscale = 10;
             GIFStatsMode = FFmpegPaletteGenStatsMode.full;

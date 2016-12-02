@@ -293,6 +293,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     default:
                     case FFmpegVideoCodec.libx264:
+                    case FFmpegVideoCodec.h264_nvenc:
                     case FFmpegVideoCodec.libx265:
                         tcFFmpegVideoCodecs.SelectedIndex = 0;
                         break;
