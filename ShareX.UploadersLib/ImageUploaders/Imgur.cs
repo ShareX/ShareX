@@ -275,7 +275,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             }
                             else
                             {
-                                result.URL = "http://imgur.com/" + imageData.id;
+                                result.URL = "https://imgur.com/" + imageData.id;
                             }
 
                             string thumbnail = "";
@@ -302,8 +302,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                     break;
                             }
 
-                            result.ThumbnailURL = string.Format("http://i.imgur.com/{0}{1}.jpg", imageData.id, thumbnail); // Thumbnails always jpg
-                            result.DeletionURL = "http://imgur.com/delete/" + imageData.deletehash;
+                            result.ThumbnailURL = string.Format("https://i.imgur.com/{0}{1}.jpg", imageData.id, thumbnail); // Thumbnails always jpg
+                            result.DeletionURL = "https://imgur.com/delete/" + imageData.deletehash;
                         }
                     }
                     else
