@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,7 @@ namespace ShareX
 
         public static string TitleLong => $"{Title} ({Build})";
 
-        public static bool Beta { get; } = false;
+        public static bool Beta { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
         public static bool PortableApps { get; private set; }
@@ -425,6 +426,15 @@ namespace ShareX
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
+
+            // TODO: Remove this next version
+            if (Settings.IsUpgrade)
+            {
+                RegionCaptureOptions regionCaptureOptions = DefaultTaskSettings.CaptureSettings.SurfaceOptions;
+                regionCaptureOptions.AnnotationOptions = new AnnotationOptions();
+                regionCaptureOptions.LastRegionTool = ShapeType.RegionRectangle;
+                regionCaptureOptions.LastAnnotationTool = ShapeType.DrawingRectangle;
+            }
         }
 
         public static void LoadUploadersConfig()
