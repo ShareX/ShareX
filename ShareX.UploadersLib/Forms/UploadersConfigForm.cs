@@ -185,6 +185,7 @@ namespace ShareX.UploadersLib
             cbImgurThumbnailType.Items.Clear();
             cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
+            cbImgurUseHTTPS.Checked = Config.ImgurUseHTTPS;
             cbImgurUseGIFV.Checked = Config.ImgurUseGIFV;
             cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
             ImgurFillAlbumList();
@@ -718,6 +719,11 @@ namespace ShareX.UploadersLib
         private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
+        }
+
+        private void cbImgurUseHTTPS_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.ImgurUseHTTPS = cbImgurUseHTTPS.Checked;
         }
 
         private void cbImgurUseGIFV_CheckedChanged(object sender, EventArgs e)

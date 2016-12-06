@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -72,6 +73,14 @@ namespace ShareX.UploadersLib
         {
             Response = source;
             URL = url;
+        }
+
+        public void ForceHTTPS()
+        {
+            URL = URLHelpers.ForcePrefix(URL);
+            ThumbnailURL = URLHelpers.ForcePrefix(ThumbnailURL);
+            DeletionURL = URLHelpers.ForcePrefix(DeletionURL);
+            ShortenedURL = URLHelpers.ForcePrefix(ShortenedURL);
         }
 
         public override string ToString()

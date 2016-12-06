@@ -83,6 +83,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 UploadMethod = config.ImgurAccountType,
                 DirectLink = config.ImgurDirectLink,
                 ThumbnailType = config.ImgurThumbnailType,
+                UseHTTPS = config.ImgurUseHTTPS,
                 UseGIFV = config.ImgurUseGIFV,
                 UploadAlbumID = albumID
             };
@@ -98,6 +99,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public ImgurThumbnailType ThumbnailType { get; set; }
         public string UploadAlbumID { get; set; }
         public bool DirectLink { get; set; }
+        public bool UseHTTPS { get; set; }
         public bool UseGIFV { get; set; }
 
         public Imgur(OAuth2Info oauth)
@@ -275,7 +277,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             }
                             else
                             {
-                                result.URL = "http://imgur.com/" + imageData.id;
+                                result.URL = $"http://imgur.com/{imageData.id}";
                             }
 
                             string thumbnail = "";
@@ -302,8 +304,13 @@ namespace ShareX.UploadersLib.ImageUploaders
                                     break;
                             }
 
-                            result.ThumbnailURL = string.Format("http://i.imgur.com/{0}{1}.jpg", imageData.id, thumbnail); // Thumbnails always jpg
-                            result.DeletionURL = "http://imgur.com/delete/" + imageData.deletehash;
+                            result.ThumbnailURL = $"http://i.imgur.com/{imageData.id}{thumbnail}.jpg"; // Imgur thumbnails always jpg
+                            result.DeletionURL = $"http://imgur.com/delete/{imageData.deletehash}";
+
+                            if (UseHTTPS)
+                            {
+                                result.ForceHTTPS();
+                            }
                         }
                     }
                     else

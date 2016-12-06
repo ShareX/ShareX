@@ -557,6 +557,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbImgurUseHTTPS = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3838,6 +3839,7 @@
             // 
             // tpImgur
             // 
+            this.tpImgur.Controls.Add(this.cbImgurUseHTTPS);
             this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
             this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
             this.tpImgur.Controls.Add(this.cbImgurDirectLink);
@@ -4471,6 +4473,13 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            // 
+            // cbImgurUseHTTPS
+            // 
+            resources.ApplyResources(this.cbImgurUseHTTPS, "cbImgurUseHTTPS");
+            this.cbImgurUseHTTPS.Name = "cbImgurUseHTTPS";
+            this.cbImgurUseHTTPS.UseVisualStyleBackColor = true;
+            this.cbImgurUseHTTPS.CheckedChanged += new System.EventHandler(this.cbImgurUseHTTPS_CheckedChanged);
             // 
             // UploadersConfigForm
             // 
@@ -5160,5 +5169,6 @@
         private System.Windows.Forms.CheckBox cbUpleaIsPremium;
         private System.Windows.Forms.TextBox txtUpleaEmailAddress;
         public System.Windows.Forms.TabPage tpUplea;
+        private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
     }
 }
