@@ -467,6 +467,8 @@
             this.lblOneTimeSecretEmail = new System.Windows.Forms.Label();
             this.txtOneTimeSecretAPIKey = new System.Windows.Forms.TextBox();
             this.txtOneTimeSecretEmail = new System.Windows.Forms.TextBox();
+            this.tpPastie = new System.Windows.Forms.TabPage();
+            this.cbPastieIsPublic = new System.Windows.Forms.CheckBox();
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
@@ -625,6 +627,7 @@
             this.tpUpaste.SuspendLayout();
             this.tpHastebin.SuspendLayout();
             this.tpOneTimeSecret.SuspendLayout();
+            this.tpPastie.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
             this.tpImgur.SuspendLayout();
@@ -3529,6 +3532,7 @@
             this.tcTextUploaders.Controls.Add(this.tpUpaste);
             this.tcTextUploaders.Controls.Add(this.tpHastebin);
             this.tcTextUploaders.Controls.Add(this.tpOneTimeSecret);
+            this.tcTextUploaders.Controls.Add(this.tpPastie);
             resources.ApplyResources(this.tcTextUploaders, "tcTextUploaders");
             this.tcTextUploaders.Name = "tcTextUploaders";
             this.tcTextUploaders.SelectedIndex = 0;
@@ -3730,6 +3734,13 @@
             this.cbUpasteIsPublic.UseVisualStyleBackColor = true;
             this.cbUpasteIsPublic.CheckedChanged += new System.EventHandler(this.cbUpasteIsPublic_CheckedChanged);
             // 
+            // cbPastieIsPublic
+            // 
+            resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
+            this.cbPastieIsPublic.Name = "cbPastieIsPublic";
+            this.cbPastieIsPublic.UseVisualStyleBackColor = true;
+            this.cbPastieIsPublic.CheckedChanged += new System.EventHandler(this.cbPastieIsPublic_CheckedChanged);
+            // 
             // lblUpasteUserKey
             // 
             resources.ApplyResources(this.lblUpasteUserKey, "lblUpasteUserKey");
@@ -3814,6 +3825,19 @@
             resources.ApplyResources(this.txtOneTimeSecretEmail, "txtOneTimeSecretEmail");
             this.txtOneTimeSecretEmail.Name = "txtOneTimeSecretEmail";
             this.txtOneTimeSecretEmail.TextChanged += new System.EventHandler(this.txtOneTimeSecretEmail_TextChanged);
+            // 
+            // tpPastie
+            // 
+            this.tpPastie.Controls.Add(this.cbPastieIsPublic);
+            resources.ApplyResources(this.tpPastie, "tpPastie");
+            this.tpPastie.Name = "tpPastie";
+            this.tpPastie.UseVisualStyleBackColor = true;
+            // 
+            // cbPastieIsPublic
+            // 
+            resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
+            this.cbPastieIsPublic.Name = "cbPastieIsPublic";
+            this.cbPastieIsPublic.UseVisualStyleBackColor = true;
             // 
             // tpImageUploaders
             // 
@@ -4611,6 +4635,8 @@
             this.tpHastebin.PerformLayout();
             this.tpOneTimeSecret.ResumeLayout(false);
             this.tpOneTimeSecret.PerformLayout();
+            this.tpPastie.ResumeLayout(false);
+            this.tpPastie.PerformLayout();
             this.tpImageUploaders.ResumeLayout(false);
             this.tcImageUploaders.ResumeLayout(false);
             this.tpImgur.ResumeLayout(false);
@@ -5170,5 +5196,7 @@
         private System.Windows.Forms.TextBox txtUpleaEmailAddress;
         public System.Windows.Forms.TabPage tpUplea;
         private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
+        public System.Windows.Forms.TabPage tpPastie;
+        private System.Windows.Forms.CheckBox cbPastieIsPublic;
     }
 }
