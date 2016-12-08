@@ -314,6 +314,10 @@ namespace ShareX.UploadersLib
             txtOneTimeSecretEmail.Text = Config.OneTimeSecretAPIUsername;
             txtOneTimeSecretAPIKey.Text = Config.OneTimeSecretAPIKey;
 
+            // Pastie
+
+            cbPastieIsPublic.Checked = Config.PastieIsPublic;
+
             #endregion Text uploaders
 
             #region File uploaders
@@ -1222,6 +1226,13 @@ namespace ShareX.UploadersLib
         }
 
         #endregion OneTimeSecret
+
+        #region Pastie
+        private void cbPastieIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PastieIsPublic = cbPastieIsPublic.Checked;
+        }
+        #endregion
 
         #endregion Text Uploaders
 

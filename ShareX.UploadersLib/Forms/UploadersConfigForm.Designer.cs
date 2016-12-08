@@ -557,6 +557,8 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.tpPastie = new System.Windows.Forms.TabPage();
+            this.cbPastieIsPublic = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -639,6 +641,7 @@
             this.tpVgyme.SuspendLayout();
             this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.tpPastie.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -3528,6 +3531,7 @@
             this.tcTextUploaders.Controls.Add(this.tpUpaste);
             this.tcTextUploaders.Controls.Add(this.tpHastebin);
             this.tcTextUploaders.Controls.Add(this.tpOneTimeSecret);
+            this.tcTextUploaders.Controls.Add(this.tpPastie);
             resources.ApplyResources(this.tcTextUploaders, "tcTextUploaders");
             this.tcTextUploaders.Name = "tcTextUploaders";
             this.tcTextUploaders.SelectedIndex = 0;
@@ -3728,7 +3732,13 @@
             this.cbUpasteIsPublic.Name = "cbUpasteIsPublic";
             this.cbUpasteIsPublic.UseVisualStyleBackColor = true;
             this.cbUpasteIsPublic.CheckedChanged += new System.EventHandler(this.cbUpasteIsPublic_CheckedChanged);
-            // 
+            //
+            // cbPastieIsPublic
+            //
+            resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
+            this.cbPastieIsPublic.Name = "cbPastieIsPublic";
+            this.cbPastieIsPublic.UseVisualStyleBackColor = true;
+            this.cbPastieIsPublic.CheckedChanged += new System.EventHandler(this.cbPastieIsPublic_CheckedChanged);
             // lblUpasteUserKey
             // 
             resources.ApplyResources(this.lblUpasteUserKey, "lblUpasteUserKey");
@@ -4472,6 +4482,19 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // tpPastie
+            // 
+            this.tpPastie.Controls.Add(this.cbPastieIsPublic);
+            resources.ApplyResources(this.tpPastie, "tpPastie");
+            this.tpPastie.Name = "tpPastie";
+            this.tpPastie.UseVisualStyleBackColor = true;
+            // 
+            // cbPastieIsPublic
+            // 
+            resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
+            this.cbPastieIsPublic.Name = "cbPastieIsPublic";
+            this.cbPastieIsPublic.UseVisualStyleBackColor = true;
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4627,6 +4650,8 @@
             this.tpSomeImage.ResumeLayout(false);
             this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.tpPastie.ResumeLayout(false);
+            this.tpPastie.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5160,5 +5185,7 @@
         private System.Windows.Forms.CheckBox cbUpleaIsPremium;
         private System.Windows.Forms.TextBox txtUpleaEmailAddress;
         public System.Windows.Forms.TabPage tpUplea;
+        private System.Windows.Forms.CheckBox cbPastieIsPublic;
+        public System.Windows.Forms.TabPage tpPastie;
     }
 }

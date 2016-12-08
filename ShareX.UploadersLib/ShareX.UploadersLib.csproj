@@ -242,6 +242,7 @@
     <Compile Include="SharingServices\VkSharingService.cs" />
     <Compile Include="Helpers\TaskReferenceHelper.cs" />
     <Compile Include="BaseServices\TextUploaderService.cs" />
+    <Compile Include="TextUploaders\Pastie.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
@@ -880,6 +881,7 @@
     <None Include="Resources\document.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Favicons\Pastie.png" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <ItemGroup>

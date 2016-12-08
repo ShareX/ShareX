@@ -123,6 +123,10 @@ namespace ShareX.UploadersLib
         public string OneTimeSecretAPIKey = "";
         public string OneTimeSecretAPIUsername = "";
 
+        // Pastie
+
+        public bool PastieIsPublic = false;
+
         #endregion Text uploaders
 
         #region File uploaders
