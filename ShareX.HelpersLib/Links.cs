@@ -29,7 +29,7 @@ namespace ShareX.HelpersLib
     {
         public const string URL_WEBSITE = "https://getsharex.com";
         public const string URL_PROJECT = "https://github.com/ShareX/ShareX";
-        public const string URL_ISSUES = URL_PROJECT + "/issues";
+        public const string URL_ISSUES = URL_PROJECT + "/issues?q=is%3Aissue";
         public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
         public const string URL_CHANGELOG = URL_PROJECT + "/wiki/Changelog";
         public const string URL_DONATE = URL_WEBSITE + "/donate/";
