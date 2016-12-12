@@ -68,7 +68,7 @@ namespace ShareX.HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
-        // Extension without dot
+        /// <summary>Get file name extension without dot.</summary>
         public static string GetFilenameExtension(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath))
@@ -124,6 +124,26 @@ namespace ShareX.HelpersLib
 
                     return filePath + "." + extension;
                 }
+            }
+
+            return filePath;
+        }
+
+        public static string RenameFile(string filePath, string newFileName)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string directory = Path.GetDirectoryName(filePath);
+                    string newPath = Path.Combine(directory, newFileName);
+                    File.Move(filePath, newPath);
+                    return newPath;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Rename error:\r\n" + e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return filePath;

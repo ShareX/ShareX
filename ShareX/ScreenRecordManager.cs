@@ -307,6 +307,17 @@ namespace ShareX
 
                 if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, null, path))
                 {
+                    if (!string.IsNullOrEmpty(customFileName))
+                    {
+                        string currentFilename = Path.GetFileNameWithoutExtension(path);
+                        string ext = Path.GetExtension(path);
+
+                        if (!currentFilename.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            path = Helpers.RenameFile(path, customFileName + ext);
+                        }
+                    }
+
                     WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
                     TaskManager.Start(task);
                 }
