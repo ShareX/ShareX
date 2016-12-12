@@ -38,7 +38,7 @@ namespace ShareX
         public TaskSettings TaskSettings { get; private set; }
         public string FileName { get; private set; }
 
-        public AfterCaptureForm(TaskSettings taskSettings)
+        private AfterCaptureForm(TaskSettings taskSettings)
         {
             TaskSettings = taskSettings;
 
@@ -55,9 +55,6 @@ namespace ShareX
 
             AddAfterCaptureItems(TaskSettings.AfterCaptureJob);
             AddAfterUploadItems(TaskSettings.AfterUploadJob);
-
-            FileName = TaskHelpers.GetFilename(TaskSettings);
-            txtFileName.Text = FileName;
         }
 
         public AfterCaptureForm(Image img, TaskSettings taskSettings) : this(taskSettings)
