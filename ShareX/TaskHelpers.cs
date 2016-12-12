@@ -124,7 +124,7 @@ namespace ShareX
                     OpenWebpageCapture(safeTaskSettings);
                     break;
                 case HotkeyType.TextCapture:
-                    OpenOCR(safeTaskSettings);
+                    OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture();
@@ -918,26 +918,47 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
-        public static void OpenOCR(TaskSettings taskSettings = null)
+        public static void OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
-                if (img != null)
+                OCRImage(img);
+            }
+        }
+
+        public static void OCRImage(Image img)
+        {
+            if (img != null)
+            {
+                using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
-                    using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
-                    {
-                        if (stream != null)
-                        {
-                            using (OCRSpaceForm form = new OCRSpaceForm(stream, "ShareX.png"))
-                            {
-                                form.Language = Program.Settings.OCRLanguage;
-                                form.ShowDialog();
-                                Program.Settings.OCRLanguage = form.Language;
-                            }
-                        }
-                    }
+                    OCRImage(stream, "ShareX.png");
+                }
+            }
+        }
+
+        public static void OCRImage(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    OCRImage(fs, Path.GetFileName(filePath));
+                }
+            }
+        }
+
+        public static void OCRImage(Stream stream, string fileName)
+        {
+            if (stream != null)
+            {
+                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName))
+                {
+                    form.Language = Program.Settings.OCRLanguage;
+                    form.ShowDialog();
+                    Program.Settings.OCRLanguage = form.Language;
                 }
             }
         }

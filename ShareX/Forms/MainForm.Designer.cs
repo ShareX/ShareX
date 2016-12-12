@@ -154,6 +154,7 @@
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowResponse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearList = new System.Windows.Forms.ToolStripMenuItem();
             this.tssUploadInfo1 = new System.Windows.Forms.ToolStripSeparator();
@@ -908,6 +909,7 @@
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
             this.tsmiShowQRCode,
+            this.tsmiOCRImage,
             this.tsmiShowResponse,
             this.tsmiClearList,
             this.tssUploadInfo1,
@@ -1211,6 +1213,13 @@
             this.tsmiShowQRCode.Name = "tsmiShowQRCode";
             resources.ApplyResources(this.tsmiShowQRCode, "tsmiShowQRCode");
             this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
+            // 
+            // tsmiOCRImage
+            // 
+            this.tsmiOCRImage.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiOCRImage.Name = "tsmiOCRImage";
+            resources.ApplyResources(this.tsmiOCRImage, "tsmiOCRImage");
+            this.tsmiOCRImage.Click += new System.EventHandler(this.tsmiOCRImage_Click);
             // 
             // tsmiShowResponse
             // 
@@ -2096,5 +2105,6 @@
         private System.Windows.Forms.PictureBox pbPatreonHide;
         private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOCRImage;
     }
 }

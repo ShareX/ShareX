@@ -1188,6 +1188,12 @@
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Show QR code...</value>
   </data>
+  <data name="tsmiOCRImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>OCR image...</value>
+  </data>
   <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
@@ -1240,7 +1246,7 @@
     <value>Image preview</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 362</value>
+    <value>173, 384</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -2427,6 +2433,12 @@
   <data name="&gt;&gt;tsmiShowQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiOCRImage.Name" xml:space="preserve">
+    <value>tsmiOCRImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiOCRImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiShowResponse.Name" xml:space="preserve">
     <value>tsmiShowResponse</value>
   </data>
@@ -2911,6 +2923,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

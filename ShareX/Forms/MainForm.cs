@@ -610,6 +610,7 @@ namespace ShareX
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
@@ -1319,7 +1320,7 @@ namespace ShareX
 
             try
             {
-                TaskHelpers.OpenOCR();
+                TaskHelpers.OCRImage();
             }
             catch (Exception ex)
             {
@@ -1647,7 +1648,7 @@ namespace ShareX
 
         private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenOCR();
+            TaskHelpers.OCRImage();
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
@@ -1866,6 +1867,11 @@ namespace ShareX
         private void tsmiShowQRCode_Click(object sender, EventArgs e)
         {
             uim.ShowQRCode();
+        }
+
+        private void tsmiOCRImage_Click(object sender, EventArgs e)
+        {
+            uim.OCRImage();
         }
 
         private void tsmiShowResponse_Click(object sender, EventArgs e)

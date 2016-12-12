@@ -342,6 +342,11 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
+        public void OCRImage()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
+        }
+
         public void ShowResponse()
         {
             if (IsItemSelected && SelectedItem.Info.Result != null && !string.IsNullOrEmpty(SelectedItem.Info.Result.Response))
