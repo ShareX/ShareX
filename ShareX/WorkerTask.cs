@@ -44,36 +44,15 @@ namespace ShareX
         public delegate void TaskEventHandler(WorkerTask task);
         public delegate void UploaderServiceEventHandler(IUploaderService uploaderService);
 
-        public event TaskEventHandler StatusChanged;
-        public event TaskEventHandler UploadStarted;
-        public event TaskEventHandler UploadProgressChanged;
-        public event TaskEventHandler UploadCompleted;
-        public event TaskEventHandler TaskCompleted;
+        public event TaskEventHandler StatusChanged, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
         public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
         public TaskInfo Info { get; private set; }
-
         public TaskStatus Status { get; private set; }
-
-        public bool IsBusy
-        {
-            get
-            {
-                return Status == TaskStatus.InQueue || IsWorking;
-            }
-        }
-
-        public bool IsWorking
-        {
-            get
-            {
-                return Status == TaskStatus.Preparing || Status == TaskStatus.Working || Status == TaskStatus.Stopping;
-            }
-        }
-
+        public bool IsBusy => Status == TaskStatus.InQueue || IsWorking;
+        public bool IsWorking => Status == TaskStatus.Preparing || Status == TaskStatus.Working || Status == TaskStatus.Stopping;
         public bool StopRequested { get; private set; }
         public bool RequestSettingUpdate { get; private set; }
-
         public Stream Data { get; private set; }
 
         private Image tempImage;
@@ -1015,12 +994,7 @@ namespace ShareX
         {
             if (Data != null && Info.DataType == EDataType.Image)
             {
-                using (OCRSpaceForm form = new OCRSpaceForm(Data, Info.FileName))
-                {
-                    form.Language = Program.Settings.OCRLanguage;
-                    form.ShowDialog();
-                    Program.Settings.OCRLanguage = form.Language;
-                }
+                TaskHelpers.OCRImage(Data, Info.FileName);
             }
         }
 
