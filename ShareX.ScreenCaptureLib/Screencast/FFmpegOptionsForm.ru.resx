@@ -236,4 +236,10 @@
     <value>Для кодирования в реальном времени, например, для записи экрана, рекомендуется выбрать самую быструю предустановку.
 Иначе оно будет отставать от захвата и терять кадры.</value>
   </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Установка:</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
 </root>
