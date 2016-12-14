@@ -381,7 +381,7 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
-                case Keys.Control | Keys.Shift | Keys.Delete:
+                case Keys.Shift | Keys.Delete:
                     DeleteAllShapes();
                     break;
                 case Keys.F1:

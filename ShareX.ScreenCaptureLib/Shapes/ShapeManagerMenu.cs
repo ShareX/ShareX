@@ -475,7 +475,7 @@ namespace ShareX.ScreenCaptureLib
 
             tsmiDeleteAll = new ToolStripMenuItem("Delete all");
             tsmiDeleteAll.Image = Resources.eraser;
-            tsmiDeleteAll.ShortcutKeyDisplayString = "Ctrl+Shift+Del";
+            tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
             tsmiDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
             tsddbEdit.DropDownItems.Add(tsmiDeleteAll);
 
