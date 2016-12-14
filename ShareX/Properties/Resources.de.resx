@@ -381,9 +381,6 @@ Soll ShareX neu gestartet werden?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome Unterstützung deaktiviert.</value>
   </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Fehler</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Start</value>
   </data>

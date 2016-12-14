@@ -88,15 +88,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Issues.
-        /// </summary>
-        public static string AboutForm_AboutForm_Issues {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Issues", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Project page.
         /// </summary>
         public static string AboutForm_AboutForm_Project_page {

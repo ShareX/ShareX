@@ -281,9 +281,6 @@
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome浏览器扩展支持已禁用。</value>
   </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>问题</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>开始</value>
   </data>

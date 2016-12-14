@@ -65,12 +65,9 @@ namespace ShareX
             lblBerk.Text = "Jaex (Berk)";
             lblMike.Text = "mcored (Michael Delpach)";
 
-            rtbShareXInfo.Text = string.Format(@"{0}: {1}
-{2}: {3}
-{4}: {5}
-{6}: {7}",
-Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES,
-Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
+            rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}
+{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
 
             rtbCredits.Text = string.Format(@"{0}:
 

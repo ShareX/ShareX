@@ -418,9 +418,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome desteği devre dışı bırakıldı.</value>
   </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Sorunlar</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Başlat</value>
   </data>

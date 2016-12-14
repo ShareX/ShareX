@@ -281,9 +281,6 @@ Gostaria de reiniciar agora?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Suporte ao Chrome desabilitado.</value>
   </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Problemas</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Iniciar</value>
   </data>

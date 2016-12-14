@@ -418,9 +418,6 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Support pour Chrome désactivé.</value>
   </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Problèmes</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Démarrer</value>
   </data>

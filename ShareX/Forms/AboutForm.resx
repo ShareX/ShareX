@@ -130,7 +130,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProductName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 8</value>
+    <value>12, 14</value>
   </data>
   <data name="lblProductName.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 23</value>
@@ -238,7 +238,7 @@
     <value>8</value>
   </data>
   <data name="rtbShareXInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 66</value>
+    <value>16, 80</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>368, 62</value>
@@ -406,7 +406,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSteamBuild.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 40</value>
+    <value>37, 46</value>
   </data>
   <data name="lblSteamBuild.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 16</value>
@@ -433,7 +433,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 40</value>
+    <value>17, 46</value>
   </data>
   <data name="pbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -577,7 +577,7 @@
     <value>0</value>
   </data>
   <data name="uclUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 35</value>
+    <value>14, 41</value>
   </data>
   <data name="uclUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 24</value>
