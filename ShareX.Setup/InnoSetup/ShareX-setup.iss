@@ -1,7 +1,7 @@
 #define MyAppName "ShareX"
 #define MyAppRootDirectory "..\.."
 #define MyAppReleaseDirectory MyAppRootDirectory + "\ShareX\bin\Release"
-#define MyAppFilename "ShareX.exe"
+#define MyAppFilename MyAppName + ".exe"
 #define MyAppFilepath MyAppReleaseDirectory + "\" + MyAppFilename
 #dim Version[4]
 #expr ParseVersion(MyAppFilepath, Version[0], Version[1], Version[2], Version[3])

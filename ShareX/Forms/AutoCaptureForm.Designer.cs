@@ -115,6 +115,7 @@
             // 
             // nudRepeatTime
             // 
+            this.nudRepeatTime.DecimalPlaces = 1;
             resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.Maximum = new decimal(new int[] {
             86400,
