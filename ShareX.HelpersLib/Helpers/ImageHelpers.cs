@@ -1112,7 +1112,7 @@ namespace ShareX.HelpersLib
             int w = unsafeBitmap.Width;
             int h = unsafeBitmap.Height;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[w];
+            ColorBgra[] newColors = new ColorBgra[h];
 
             for (int x = 0; x < w; x++)
             {
