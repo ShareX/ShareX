@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
-            string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
+            string response = SendRequest(HttpMethod.PUT, url, stream, Helpers.GetMimeType(fileName), null, headers);
 
             UploadResult result = new UploadResult(response);
 

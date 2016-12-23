@@ -57,10 +57,10 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            if (!string.IsNullOrEmpty(UserKey)) arguments.Add("userkey", UserKey);
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(UserKey)) args.Add("userkey", UserKey);
 
-            UploadResult result = UploadData(stream, "https://vgy.me/upload", fileName, arguments: arguments);
+            UploadResult result = UploadData(stream, "https://vgy.me/upload", fileName, "file", args);
 
             if (result.IsSuccess)
             {

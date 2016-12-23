@@ -160,7 +160,7 @@ namespace ShareX.UploadersLib.FileUploaders
             try
             {
                 AllowReportProgress = true;
-                return SendRequestStream(url.ToString(), dataStream, "application/octet-stream");
+                return SendRequest(HttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
             }
             finally
             {

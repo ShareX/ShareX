@@ -126,7 +126,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             HttpWebResponse response = null;
@@ -135,11 +135,11 @@ namespace ShareX.UploadersLib
             {
                 if (method == HttpMethod.POST) // Multipart form data
                 {
-                    response = SendRequestMultiPart(url, arguments, headers, cookies);
+                    response = SendRequestMultiPart(url, args, headers, cookies);
                 }
                 else
                 {
-                    response = GetResponse(method, url, null, null, arguments, headers, cookies);
+                    response = GetResponse(method, url, null, null, args, headers, cookies);
                 }
 
                 return ResponseToString(response, responseType);
@@ -153,7 +153,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             byte[] data = Encoding.UTF8.GetBytes(content);
@@ -161,32 +161,24 @@ namespace ShareX.UploadersLib
             using (MemoryStream ms = new MemoryStream())
             {
                 ms.Write(data, 0, data.Length);
-                return SendRequest(method, url, ms, arguments, headers, cookies, responseType);
+
+                return SendRequest(method, url, ms, null, args, headers, cookies, responseType);
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Stream content, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+        protected string SendRequest(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
-            using (HttpWebResponse response = GetResponse(method, url, content, null, arguments, headers, cookies))
+            using (HttpWebResponse response = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
                 return ResponseToString(response, responseType);
             }
         }
 
-        protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
-        {
-            using (HttpWebResponse response = GetResponse(method, url, stream, contentType, null, headers, cookies))
-            {
-                return ResponseToString(response, responseType);
-            }
-        }
-
-        protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> arguments = null,
+        protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
-            using (HttpWebResponse response = GetResponse(method, url, null, contentType, arguments, headers, cookies))
+            using (HttpWebResponse response = GetResponse(method, url, null, contentType, args, headers, cookies))
             {
                 if (response != null)
                 {
@@ -210,7 +202,7 @@ namespace ShareX.UploadersLib
                     stream = new MemoryStream(data);
                 }
 
-                return SendRequestStream(url, stream, ContentTypeJSON, headers, cookies, method);
+                return SendRequest(method, url, stream, ContentTypeJSON, null, headers, cookies);
             }
             finally
             {
@@ -218,24 +210,24 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequestURLEncoded(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null,
+        protected string SendRequestURLEncoded(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
         {
-            string query = CreateQuery(arguments);
+            string query = CreateQuery(args);
             byte[] data = Encoding.UTF8.GetBytes(query);
 
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
 
-                return SendRequestStream(url, stream, ContentTypeURLEncoded, headers, cookies, method, responseType);
+                return SendRequest(method, url, stream, ContentTypeURLEncoded, null, headers, cookies, responseType);
             }
         }
 
-        protected NameValueCollection SendRequestStreamGetHeaders(string url, Stream stream, string contentType, NameValueCollection headers = null,
+        protected NameValueCollection SendRequestStreamGetHeaders(string url, Stream data, string contentType, NameValueCollection headers = null,
             CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = GetResponse(method, url, stream, contentType, null, headers, cookies))
+            using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
             {
                 if (response != null)
                 {
@@ -246,12 +238,12 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null,
+        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             HttpMethod method = HttpMethod.POST)
         {
             string boundary = CreateBoundary();
             string contentType = ContentTypeMultipartFormData + "; boundary=" + boundary;
-            byte[] data = MakeInputContent(boundary, arguments);
+            byte[] data = MakeInputContent(boundary, args);
 
             using (MemoryStream stream = new MemoryStream())
             {
@@ -309,7 +301,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file", Dictionary<string, string> arguments = null,
+        protected UploadResult UploadData(Stream data, string url, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
             string contentType = ContentTypeMultipartFormData, string metadata = null)
         {
@@ -323,7 +315,7 @@ namespace ShareX.UploadersLib
                 string boundary = CreateBoundary();
                 contentType += "; boundary=" + boundary;
 
-                byte[] bytesArguments = MakeInputContent(boundary, arguments, false);
+                byte[] bytesArguments = MakeInputContent(boundary, args, false);
                 byte[] bytesDataOpen;
                 byte[] bytesDataDatafile = { };
 
@@ -339,7 +331,7 @@ namespace ShareX.UploadersLib
 
                 byte[] bytesDataClose = MakeFileInputContentClose(boundary);
 
-                long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + dataStream.Length + bytesDataClose.Length;
+                long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
                 HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
@@ -347,7 +339,7 @@ namespace ShareX.UploadersLib
                     requestStream.Write(bytesArguments, 0, bytesArguments.Length);
                     requestStream.Write(bytesDataOpen, 0, bytesDataOpen.Length);
                     requestStream.Write(bytesDataDatafile, 0, bytesDataDatafile.Length);
-                    if (!TransferData(dataStream, requestStream)) return null;
+                    if (!TransferData(data, requestStream)) return null;
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
                 }
 

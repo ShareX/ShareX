@@ -204,7 +204,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             NameValueCollection headers = GetAuthHeaders();
             headers.Add("Slug", URLHelpers.URLEncode(fileName));
 
-            ur.Response = SendRequestStream(url, stream, contentType, headers);
+            ur.Response = SendRequest(HttpMethod.POST, url, stream, contentType, null, headers);
 
             if (ur.Response != null)
             {
