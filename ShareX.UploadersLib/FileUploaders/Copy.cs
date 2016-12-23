@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
             // There's a 1GB and 5 hour(max time for a single upload) limit to all uploads through the API.
-            UploadResult result = UploadData(stream, query, fileName, "file", headers: APIHeaders);
+            UploadResult result = UploadData(query, stream, fileName, "file", headers: APIHeaders);
 
             if (result.IsSuccess)
             {

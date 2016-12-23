@@ -68,7 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("signature", "mk9t/U/wRN4/uU01mXfeTe2Kcoc=");
             args.Add("Content-Type", Helpers.GetMimeType(fileName));
 
-            UploadResult result = UploadData(stream, "https://gifaffe.s3.amazonaws.com/", fileName, "file", args);
+            UploadResult result = UploadData("https://gifaffe.s3.amazonaws.com/", stream, fileName, "file", args);
 
             if (!result.IsError)
             {

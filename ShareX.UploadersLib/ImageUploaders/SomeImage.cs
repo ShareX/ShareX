@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("apikey", API_KEY);
             arguments.Add("familysafe", "0"); // Set to 0 as images could possibly not be family safe.
 
-            UploadResult result = UploadData(stream, API_ENDPOINT, fileName, "file", arguments);
+            UploadResult result = UploadData(API_ENDPOINT, stream, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {

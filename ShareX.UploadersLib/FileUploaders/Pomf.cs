@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, Uploader.UploadURL, fileName, "files[]");
+            UploadResult result = UploadData(Uploader.UploadURL, stream, fileName, "files[]");
 
             if (result.IsSuccess)
             {

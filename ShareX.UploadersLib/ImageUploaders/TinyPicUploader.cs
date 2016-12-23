@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 arguments.Add("type", "image");
                 arguments.Add("tags", "");
 
-                result = UploadData(stream, URLAPI, fileName, "uploadfile", arguments);
+                result = UploadData(URLAPI, stream, fileName, "uploadfile", arguments);
 
                 if (result.IsSuccess && CheckResponse(result.Response))
                 {

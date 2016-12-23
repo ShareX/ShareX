@@ -199,7 +199,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 putRequest.Headers["x-amz-acl"] = "public-read";
                 putRequest.Headers["x-amz-storage-class"] = GetObjectStorageClass();
 
-                NameValueCollection responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
+                NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), null, requestHeaders);
                 if (responseHeaders.Count == 0)
                 {
                     Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");

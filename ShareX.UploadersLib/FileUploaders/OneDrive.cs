@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("code", code);
             args.Add("grant_type", "authorization_code");
 
-            string response = SendRequestURLEncoded("https://login.live.com/oauth20_token.srf", args);
+            string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -122,7 +122,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("refresh_token", AuthInfo.Token.refresh_token);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequestURLEncoded("https://login.live.com/oauth20_token.srf", args);
+                string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -183,7 +183,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
 
-            UploadResult result = UploadData(stream, url, fileName);
+            UploadResult result = UploadData(url, stream, fileName);
 
             if (result.IsSuccess)
             {

@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = "https://s-ul.eu";
             url = URLHelpers.CombineURL(url, "upload.php");
 
-            UploadResult result = UploadData(stream, url, fileName, "file", args);
+            UploadResult result = UploadData(url, stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {

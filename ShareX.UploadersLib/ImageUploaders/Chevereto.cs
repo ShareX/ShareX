@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             string url = URLHelpers.FixPrefix(Uploader.UploadURL);
 
-            UploadResult result = UploadData(stream, url, fileName, "source", args);
+            UploadResult result = UploadData(url, stream, fileName, "source", args);
 
             if (result.IsSuccess)
             {

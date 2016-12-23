@@ -507,7 +507,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Dictionary<string, string> args = PrepareArguments(uploadInfo.MaxFileSize, uploadInfo.UploadIdentifier, uploadInfo.ExtraInfo);
 
-                result = UploadData(stream, uploadInfo.URL, fileName, "userfile", args);
+                result = UploadData(uploadInfo.URL, stream, fileName, "userfile", args);
 
                 if (result.IsSuccess)
                 {

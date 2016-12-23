@@ -33,7 +33,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, uploadURL, fileName, "fileup");
+            UploadResult result = UploadData(uploadURL, stream, fileName, "fileup");
 
             if (result.IsSuccess)
             {

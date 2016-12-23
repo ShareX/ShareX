@@ -38,12 +38,12 @@ namespace ShareX.UploadersLib
 {
     public class Uploader
     {
-        private static readonly string UserAgent = "ShareX";
+        protected const string ContentTypeMultipartFormData = "multipart/form-data";
+        protected const string ContentTypeJSON = "application/json";
+        protected const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
+        protected const string ContentTypeOctetStream = "application/octet-stream";
 
-        public const string ContentTypeMultipartFormData = "multipart/form-data";
-        public const string ContentTypeJSON = "application/json";
-        public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
-        public const string ContentTypeOctetStream = "application/octet-stream";
+        private const string UserAgent = "ShareX";
 
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
@@ -53,19 +53,12 @@ namespace ShareX.UploadersLib
         public List<string> Errors { get; private set; }
         public bool IsUploading { get; protected set; }
         public int BufferSize { get; set; }
-        public bool AllowReportProgress { get; set; }
-        public bool WebExceptionReturnResponse { get; set; }
-        public bool WebExceptionThrow { get; set; }
-
-        public bool IsError
-        {
-            get
-            {
-                return !StopUploadRequested && Errors != null && Errors.Count > 0;
-            }
-        }
-
+        public bool AllowReportProgress { get; protected set; }
+        public bool WebExceptionReturnResponse { get; protected set; }
+        public bool WebExceptionThrow { get; protected set; }
         public bool StopUploadRequested { get; protected set; }
+
+        public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
 
         private HttpWebRequest currentRequest;
 
@@ -190,8 +183,8 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        protected string SendRequestURLEncoded(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
+        protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+            ResponseType responseType = ResponseType.Text)
         {
             string query = CreateQuery(args);
             byte[] data = Encoding.UTF8.GetBytes(query);
@@ -204,8 +197,8 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected NameValueCollection SendRequestStreamGetHeaders(string url, Stream data, string contentType, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
+        protected NameValueCollection SendRequestGetHeaders(HttpMethod method, string url, Stream data, string contentType, Dictionary<string, string> args,
+            NameValueCollection headers = null, CookieCollection cookies = null)
         {
             using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
             {
@@ -218,8 +211,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null)
         {
             string boundary = CreateBoundary();
             string contentType = ContentTypeMultipartFormData + "; boundary=" + boundary;
@@ -228,7 +220,8 @@ namespace ShareX.UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponse(method, url, stream, contentType, null, headers, cookies);
+
+                return GetResponse(HttpMethod.POST, url, stream, contentType, null, headers, cookies);
             }
         }
 
@@ -268,7 +261,11 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (WebExceptionThrow && e is WebException) throw;
+                    if (WebExceptionThrow && e is WebException)
+                    {
+                        throw;
+                    }
+
                     AddWebError(e);
                 }
             }
@@ -281,7 +278,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        protected UploadResult UploadData(Stream data, string url, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
+        protected UploadResult UploadData(string url, Stream data, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
             string contentType = ContentTypeMultipartFormData, string metadata = null)
         {

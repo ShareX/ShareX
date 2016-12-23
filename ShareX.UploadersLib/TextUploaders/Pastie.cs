@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("paste[restricted]", IsPublic ? "0" : "1");
                 arguments.Add("paste[authorization]", "burger");
 
-                ur.Response = SendRequestURLEncoded("http://pastie.org/pastes", arguments, responseType: ResponseType.RedirectionURL);
+                ur.Response = SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments, responseType: ResponseType.RedirectionURL);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

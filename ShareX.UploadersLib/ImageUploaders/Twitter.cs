@@ -146,7 +146,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
 
-            UploadResult result = UploadData(stream, query, fileName, "media[]", args);
+            UploadResult result = UploadData(query, stream, fileName, "media[]", args);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

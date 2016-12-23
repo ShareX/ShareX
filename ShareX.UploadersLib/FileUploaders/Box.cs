@@ -220,7 +220,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("parent_id", FolderID);
 
-            UploadResult result = UploadData(stream, "https://upload.box.com/api/2.0/files/content", fileName, "filename", args, GetAuthHeaders());
+            UploadResult result = UploadData("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args, GetAuthHeaders());
 
             if (result.IsSuccess)
             {

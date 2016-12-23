@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("json", JsonConvert.SerializeObject(upleaRequest));
-            return SendRequestURLEncoded(upleaBaseUrl + upleaRequest.RequestType, parameters);
+            return SendRequestURLEncoded(HttpMethod.POST, upleaBaseUrl + upleaRequest.RequestType, parameters);
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -124,7 +124,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", upleaBestNode.Token);
             args.Add("file_id[]", Guid.NewGuid().ToString());
 
-            UploadResult result = UploadData(stream, string.Format("http://{0}/", upleaBestNode.Name), fileName, "files[]", args);
+            UploadResult result = UploadData(string.Format("http://{0}/", upleaBestNode.Name), stream, fileName, "files[]", args);
             UpleaGetUpleaUploadResponse uploadResult = JsonConvert.DeserializeObject<UpleaGetUpleaUploadResponse>(result.Response);
 
             if (uploadResult.Files.Length > 0)

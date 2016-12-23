@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://file1.share.cx/cgi-bin/upload.cgi", fileName, "file_0");
+            UploadResult result = UploadData("http://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0");
 
             if (result.IsSuccess)
             {

@@ -68,7 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("key", Config.UserAPIKey);
-            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
+            UploadResult result = UploadData(uploadUrl, stream, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {

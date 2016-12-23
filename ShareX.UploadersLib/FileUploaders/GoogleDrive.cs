@@ -260,7 +260,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = GetMetadata(fileName, FolderID);
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", fileName, headers: GetAuthHeaders(),
+            UploadResult result = UploadData("https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", stream, fileName, headers: GetAuthHeaders(),
                 contentType: "multipart/related", metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))

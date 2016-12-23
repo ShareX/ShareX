@@ -116,7 +116,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (file != null)
                 {
-                    result = UploadData(stream, file.Upload.PostURL, fileName);
+                    result = UploadData(file.Upload.PostURL, stream, fileName);
 
                     if (result.IsSuccess)
                     {

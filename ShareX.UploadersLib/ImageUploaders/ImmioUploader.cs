@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://imm.io/store/", fileName, "image");
+            UploadResult result = UploadData("http://imm.io/store/", stream, fileName, "image");
             if (result.IsSuccess)
             {
                 ImmioResponse response = JsonConvert.DeserializeObject<ImmioResponse>(result.Response);

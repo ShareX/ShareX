@@ -442,7 +442,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("filename", fileName);
                 args.Add("parent_dir", Path);
 
-                UploadResult result = UploadData(stream, responseURL, fileName, "file", args, headers);
+                UploadResult result = UploadData(responseURL, stream, fileName, "file", args, headers);
 
                 if (!IsError)
                 {
@@ -491,7 +491,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                return SendRequestURLEncoded(url, args, headers, method: HttpMethod.PUT, responseType: ResponseType.LocationHeader);
+                return SendRequestURLEncoded(HttpMethod.PUT, url, args, headers, null, ResponseType.LocationHeader);
             }
             finally
             {

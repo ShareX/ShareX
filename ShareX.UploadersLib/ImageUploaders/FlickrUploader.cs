@@ -261,7 +261,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             args.Add("api_sig", GetAPISig(args));
 
-            UploadResult result = UploadData(stream, "https://up.flickr.com/services/upload/", fileName, "photo", args);
+            UploadResult result = UploadData("https://up.flickr.com/services/upload/", stream, fileName, "photo", args);
 
             if (result.IsSuccess)
             {

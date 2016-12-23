@@ -35,7 +35,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("MAX_FILE_SIZE", "82428800");
 
-            UploadResult result = UploadData(stream, "http://filebin.ca/upload.php", fileName, "file", args);
+            UploadResult result = UploadData("http://filebin.ca/upload.php", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {

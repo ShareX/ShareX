@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "https://transfer.sh", fileName);
+            UploadResult result = UploadData("https://transfer.sh", stream, fileName);
 
             if (result.IsSuccess)
             {
