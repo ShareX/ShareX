@@ -38,27 +38,26 @@ namespace ShareX.UploadersLib
 {
     public class Uploader
     {
+        protected const string UserAgent = "ShareX";
         protected const string ContentTypeMultipartFormData = "multipart/form-data";
         protected const string ContentTypeJSON = "application/json";
         protected const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
         protected const string ContentTypeOctetStream = "application/octet-stream";
-
-        private const string UserAgent = "ShareX";
 
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
 
         public event Action<string> EarlyURLCopyRequested;
 
-        public List<string> Errors { get; private set; }
         public bool IsUploading { get; protected set; }
-        public int BufferSize { get; set; }
-        public bool AllowReportProgress { get; protected set; }
-        public bool WebExceptionReturnResponse { get; protected set; }
-        public bool WebExceptionThrow { get; protected set; }
-        public bool StopUploadRequested { get; protected set; }
-
+        public List<string> Errors { get; private set; }
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
+        public int BufferSize { get; set; }
+
+        protected bool StopUploadRequested { get; set; }
+        protected bool AllowReportProgress { get; set; }
+        protected bool WebExceptionReturnResponse { get; set; }
+        protected bool WebExceptionThrow { get; set; }
 
         private HttpWebRequest currentRequest;
 
@@ -126,7 +125,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                if (method == HttpMethod.POST) // Multipart form data
+                if (method == HttpMethod.POST)
                 {
                     response = SendRequestMultiPart(url, args, headers, cookies);
                 }
@@ -168,6 +167,28 @@ namespace ShareX.UploadersLib
             }
         }
 
+        protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+            ResponseType responseType = ResponseType.Text)
+        {
+            string query = CreateQuery(args);
+
+            return SendRequest(method, url, query, ContentTypeURLEncoded, args, headers, cookies, responseType);
+        }
+
+        protected NameValueCollection SendRequestGetHeaders(HttpMethod method, string url, Stream data, string contentType, Dictionary<string, string> args,
+            NameValueCollection headers = null, CookieCollection cookies = null)
+        {
+            using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
+            {
+                if (response != null)
+                {
+                    return response.Headers;
+                }
+
+                return null;
+            }
+        }
+
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
@@ -181,34 +202,6 @@ namespace ShareX.UploadersLib
             }
 
             return false;
-        }
-
-        protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            ResponseType responseType = ResponseType.Text)
-        {
-            string query = CreateQuery(args);
-            byte[] data = Encoding.UTF8.GetBytes(query);
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                stream.Write(data, 0, data.Length);
-
-                return SendRequest(method, url, stream, ContentTypeURLEncoded, null, headers, cookies, responseType);
-            }
-        }
-
-        protected NameValueCollection SendRequestGetHeaders(HttpMethod method, string url, Stream data, string contentType, Dictionary<string, string> args,
-            NameValueCollection headers = null, CookieCollection cookies = null)
-        {
-            using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
-            {
-                if (response != null)
-                {
-                    return response.Headers;
-                }
-
-                return new NameValueCollection();
-            }
         }
 
         private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null)
@@ -524,7 +517,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        protected string CreateQuery(Dictionary<string, string> args)
+        private string CreateQuery(Dictionary<string, string> args)
         {
             if (args != null && args.Count > 0)
             {
@@ -535,38 +528,6 @@ namespace ShareX.UploadersLib
         }
 
         protected string CreateQuery(string url, Dictionary<string, string> args)
-        {
-            string query = CreateQuery(args);
-
-            if (!string.IsNullOrEmpty(query))
-            {
-                return url + "?" + query;
-            }
-
-            return url;
-        }
-
-        protected string CreateQuery(NameValueCollection args)
-        {
-            if (args != null && args.Count > 0)
-            {
-                List<string> commands = new List<string>();
-
-                foreach (string key in args.AllKeys)
-                {
-                    string[] values = args.GetValues(key);
-                    string isArray = values.Length > 1 ? "[]" : "";
-
-                    commands.AddRange(values.Select(value => key + isArray + "=" + HttpUtility.UrlEncode(value)));
-                }
-
-                return string.Join("&", commands.ToArray());
-            }
-
-            return "";
-        }
-
-        protected string CreateQuery(string url, NameValueCollection args)
         {
             string query = CreateQuery(args);
 

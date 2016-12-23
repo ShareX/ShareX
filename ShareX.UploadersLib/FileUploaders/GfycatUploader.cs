@@ -84,8 +84,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (NoResize) args.Add("noResize", "true");
             if (IgnoreExisting) args.Add("noMd5", "true");
 
-            string url = CreateQuery("https://upload.gfycat.com/transcodeRelease/" + key, args);
-            string transcodeJson = SendRequest(HttpMethod.GET, url);
+            string transcodeJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/transcodeRelease/" + key, args);
             GfycatTranscodeResponse transcodeResponse = JsonConvert.DeserializeObject<GfycatTranscodeResponse>(transcodeJson);
 
             if (transcodeResponse.IsOk)

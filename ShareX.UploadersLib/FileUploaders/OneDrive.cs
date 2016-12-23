@@ -223,9 +223,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
             }
 
-            string url = CreateQuery(string.Format("https://apis.live.net/v5.0/{0}/{1}", id, linkTypeValue), args);
-
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(HttpMethod.GET, $"https://apis.live.net/v5.0/{id}/{linkTypeValue}", args);
 
             OneDriveShareableLinkInfo shareableLinkInfo = JsonConvert.DeserializeObject<OneDriveShareableLinkInfo>(response);
 
@@ -246,9 +244,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!path.EndsWith("files")) path += "/files";
 
-            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
-
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
 
             if (response != null)
             {
