@@ -102,8 +102,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
+            
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-
+            headers["OCS-APIREQUEST"] = "true";
+            
             string response = SendRequest(HttpMethod.PUT, url, stream, Helpers.GetMimeType(fileName), null, headers);
 
             UploadResult result = new UploadResult(response);
