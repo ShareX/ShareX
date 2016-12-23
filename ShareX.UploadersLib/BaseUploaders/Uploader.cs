@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    response = GetResponse(method, url, arguments, headers, cookies);
+                    response = GetResponse(method, url, null, null, arguments, headers, cookies);
                 }
 
                 return ResponseToString(response, responseType);
@@ -168,7 +168,16 @@ namespace ShareX.UploadersLib
         protected string SendRequest(HttpMethod method, string url, Stream content, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
-            using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, content))
+            using (HttpWebResponse response = GetResponse(method, url, content, null, arguments, headers, cookies))
+            {
+                return ResponseToString(response, responseType);
+            }
+        }
+
+        protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
+        {
+            using (HttpWebResponse response = GetResponse(method, url, stream, contentType, null, headers, cookies))
             {
                 return ResponseToString(response, responseType);
             }
@@ -177,7 +186,7 @@ namespace ShareX.UploadersLib
         protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> arguments = null,
             NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
-            using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, null, contentType))
+            using (HttpWebResponse response = GetResponse(method, url, null, contentType, arguments, headers, cookies))
             {
                 if (response != null)
                 {
@@ -187,48 +196,6 @@ namespace ShareX.UploadersLib
             }
 
             return false;
-        }
-
-        private HttpWebResponse GetResponse(HttpMethod method, string url, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
-            CookieCollection cookies = null, Stream dataStream = null, string contentType = null)
-        {
-            IsUploading = true;
-            StopUploadRequested = false;
-
-            url = CreateQuery(url, arguments);
-
-            try
-            {
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType);
-
-                if (dataStream != null)
-                {
-                    using (Stream requestStream = request.GetRequestStream())
-                    {
-                        if (!TransferData(dataStream, requestStream))
-                        {
-                            return null;
-                        }
-                    }
-                }
-
-                return (HttpWebResponse)request.GetResponse();
-            }
-            catch (Exception e)
-            {
-                if (!StopUploadRequested)
-                {
-                    if (WebExceptionThrow && e is WebException) throw;
-                    AddWebError(e);
-                }
-            }
-            finally
-            {
-                currentRequest = null;
-                IsUploading = false;
-            }
-
-            return null;
         }
 
         protected string SendRequestJSON(string url, string json, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
@@ -265,19 +232,10 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
-        {
-            using (HttpWebResponse response = GetResponse(url, stream, contentType, headers, cookies, method))
-            {
-                return ResponseToString(response, responseType);
-            }
-        }
-
         protected NameValueCollection SendRequestStreamGetHeaders(string url, Stream stream, string contentType, NameValueCollection headers = null,
             CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = GetResponse(url, stream, contentType, headers, cookies, method))
+            using (HttpWebResponse response = GetResponse(method, url, stream, contentType, null, headers, cookies))
             {
                 if (response != null)
                 {
@@ -298,23 +256,25 @@ namespace ShareX.UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponse(url, stream, contentType, headers, cookies, method);
+                return GetResponse(method, url, stream, contentType, null, headers, cookies);
             }
         }
 
-        private HttpWebResponse GetResponse(string url, Stream dataStream, string contentType, NameValueCollection headers = null, CookieCollection cookies = null,
-            HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null)
         {
             IsUploading = true;
             StopUploadRequested = false;
 
             try
             {
+                url = CreateQuery(url, args);
+
                 long length = 0;
 
-                if (dataStream != null)
+                if (data != null)
                 {
-                    length = dataStream.Length;
+                    length = data.Length;
                 }
 
                 HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, length);
@@ -323,7 +283,10 @@ namespace ShareX.UploadersLib
                 {
                     using (Stream requestStream = request.GetRequestStream())
                     {
-                        if (!TransferData(dataStream, requestStream)) return null;
+                        if (!TransferData(data, requestStream))
+                        {
+                            return null;
+                        }
                     }
                 }
 
