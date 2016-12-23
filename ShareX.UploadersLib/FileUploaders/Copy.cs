@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
-                return SendRequest(HttpMethod.GET, downloadStream, query);
+                return SendRequestDownload(HttpMethod.GET, query, downloadStream);
             }
 
             return false;

@@ -183,7 +183,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 string json = JsonConvert.SerializeObject(new { longUrl = url });
 
-                result.Response = SendRequestJSON(query, json);
+                result.Response = SendRequest(HttpMethod.POST, query, json, ContentTypeJSON);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

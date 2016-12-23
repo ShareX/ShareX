@@ -217,7 +217,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 withLink = withLink.ToString()
             });
 
-            string response = SendRequestJSON(url, json, GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, null, GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)

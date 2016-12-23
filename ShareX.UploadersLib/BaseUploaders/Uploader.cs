@@ -153,7 +153,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> args = null, NameValueCollection headers = null,
+        protected string SendRequest(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             byte[] data = Encoding.UTF8.GetBytes(content);
@@ -162,7 +162,7 @@ namespace ShareX.UploadersLib
             {
                 ms.Write(data, 0, data.Length);
 
-                return SendRequest(method, url, ms, null, args, headers, cookies, responseType);
+                return SendRequest(method, url, ms, contentType, args, headers, cookies, responseType);
             }
         }
 
@@ -175,7 +175,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> args = null,
+        protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
             using (HttpWebResponse response = GetResponse(method, url, null, contentType, args, headers, cookies))
@@ -188,26 +188,6 @@ namespace ShareX.UploadersLib
             }
 
             return false;
-        }
-
-        protected string SendRequestJSON(string url, string json, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
-        {
-            MemoryStream stream = null;
-
-            try
-            {
-                if (!string.IsNullOrEmpty(json))
-                {
-                    byte[] data = Encoding.UTF8.GetBytes(json);
-                    stream = new MemoryStream(data);
-                }
-
-                return SendRequest(method, url, stream, ContentTypeJSON, null, headers, cookies);
-            }
-            finally
-            {
-                if (stream != null) stream.Dispose();
-            }
         }
 
         protected string SendRequestURLEncoded(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,

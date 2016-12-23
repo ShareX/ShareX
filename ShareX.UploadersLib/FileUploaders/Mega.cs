@@ -152,7 +152,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendRequestJSON(url.ToString(), jsonData);
+            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, ContentTypeJSON);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)

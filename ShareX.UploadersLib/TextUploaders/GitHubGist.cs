@@ -132,7 +132,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 };
 
-                string argsJson = JsonConvert.SerializeObject(gistUploadObject);
+                string json = JsonConvert.SerializeObject(gistUploadObject);
 
                 string url = URLGists;
 
@@ -141,7 +141,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     url += "?access_token=" + AuthInfo.Token.access_token;
                 }
 
-                string response = SendRequestJSON(url, argsJson);
+                string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON);
 
                 if (response != null)
                 {

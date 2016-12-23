@@ -71,9 +71,9 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string argsJSON = JsonConvert.SerializeObject(args);
+            string json = JsonConvert.SerializeObject(args);
 
-            string response = SendRequestJSON("https://open.ge.tt/1/users/login", argsJSON);
+            string response = SendRequest(HttpMethod.POST, "https://open.ge.tt/1/users/login", json, ContentTypeJSON);
 
             return JsonConvert.DeserializeObject<Ge_ttLogin>(response);
         }
@@ -94,14 +94,12 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("accesstoken", accessToken);
 
-            string url = CreateQuery(string.Format("https://open.ge.tt/1/files/{0}/create", shareName), args);
-
             Dictionary<string, string> args2 = new Dictionary<string, string>();
             args2.Add("filename", fileName);
 
-            string argsJSON = JsonConvert.SerializeObject(args2);
+            string json = JsonConvert.SerializeObject(args2);
 
-            string response = SendRequestJSON(url, argsJSON);
+            string response = SendRequest(HttpMethod.POST, $"https://open.ge.tt/1/files/{shareName}/create", json, ContentTypeJSON, args);
 
             return JsonConvert.DeserializeObject<Ge_ttFile>(response);
         }
