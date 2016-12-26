@@ -59,11 +59,7 @@ namespace ShareX.HelpersLib
         public IWebProxy Proxy { get; set; }
         public string AcceptHeader { get; set; }
 
-        public event EventHandler FileSizeReceived;
-        public event EventHandler DownloadStarted;
-        public event EventHandler ProgressChanged;
-        public event EventHandler DownloadCompleted;
-        public event EventHandler ExceptionThrowed;
+        public event EventHandler FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted, ExceptionThrowed;
 
         private BackgroundWorker worker;
         private Stream stream;
@@ -82,11 +78,6 @@ namespace ShareX.HelpersLib
             worker.DoWork += worker_DoWork;
             worker.ProgressChanged += worker_ProgressChanged;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-        }
-
-        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            IsDownloading = false;
         }
 
         public void StartDownload()
@@ -123,10 +114,13 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void ThrowEvent(EventHandler eventHandler)
+        {
+            worker.ReportProgress(0, eventHandler);
+        }
+
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            HttpWebResponse response = null;
-
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
@@ -138,65 +132,73 @@ namespace ShareX.HelpersLib
                     request.Accept = AcceptHeader;
                 }
 
-                response = (HttpWebResponse)request.GetResponse();
-                FileSize = response.ContentLength;
-                ThrowEvent(FileSizeReceived);
-
-                if (FileSize > 0)
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    Stopwatch timer = new Stopwatch();
-                    Stopwatch progressEventTimer = new Stopwatch();
-                    long speedTest = 0;
+                    FileSize = response.ContentLength;
 
-                    byte[] buffer = new byte[(int)Math.Min(bufferSize, FileSize)];
-                    int bytesRead;
+                    ThrowEvent(FileSizeReceived);
 
-                    ThrowEvent(DownloadStarted);
-
-                    while (DownloadedSize < FileSize && !worker.CancellationPending)
+                    if (FileSize > 0)
                     {
-                        while (IsPaused && !IsCanceled)
-                        {
-                            timer.Reset();
-                            Thread.Sleep(10);
-                        }
+                        Stopwatch timer = new Stopwatch();
+                        Stopwatch progressEventTimer = new Stopwatch();
+                        long speedTest = 0;
 
-                        if (IsCanceled)
-                        {
-                            return;
-                        }
+                        byte[] buffer = new byte[(int)Math.Min(bufferSize, FileSize)];
+                        int bytesRead;
 
-                        if (!timer.IsRunning)
+                        using (stream)
+                        using (Stream responseStream = response.GetResponseStream())
                         {
-                            timer.Start();
-                        }
+                            ThrowEvent(DownloadStarted);
 
-                        if (!progressEventTimer.IsRunning)
-                        {
-                            progressEventTimer.Start();
-                        }
+                            while (DownloadedSize < FileSize && !worker.CancellationPending)
+                            {
+                                while (IsPaused && !IsCanceled)
+                                {
+                                    timer.Reset();
+                                    Thread.Sleep(10);
+                                }
 
-                        bytesRead = response.GetResponseStream().Read(buffer, 0, buffer.Length);
-                        stream.Write(buffer, 0, bytesRead);
-                        DownloadedSize += bytesRead;
-                        speedTest += bytesRead;
+                                if (IsCanceled)
+                                {
+                                    return;
+                                }
 
-                        if (timer.ElapsedMilliseconds > 500)
-                        {
-                            DownloadSpeed = (double)speedTest / timer.ElapsedMilliseconds * 1000;
-                            speedTest = 0;
-                            timer.Reset();
-                        }
+                                if (!timer.IsRunning)
+                                {
+                                    timer.Start();
+                                }
 
-                        if (progressEventTimer.ElapsedMilliseconds > 100)
-                        {
+                                if (!progressEventTimer.IsRunning)
+                                {
+                                    progressEventTimer.Start();
+                                }
+
+                                bytesRead = responseStream.Read(buffer, 0, buffer.Length);
+                                stream.Write(buffer, 0, bytesRead);
+                                DownloadedSize += bytesRead;
+                                speedTest += bytesRead;
+
+                                if (timer.ElapsedMilliseconds > 500)
+                                {
+                                    DownloadSpeed = (double)speedTest / timer.ElapsedMilliseconds * 1000;
+                                    speedTest = 0;
+                                    timer.Reset();
+                                }
+
+                                if (progressEventTimer.ElapsedMilliseconds > 100)
+                                {
+                                    ThrowEvent(ProgressChanged);
+
+                                    progressEventTimer.Reset();
+                                }
+                            }
+
                             ThrowEvent(ProgressChanged);
-                            progressEventTimer.Reset();
+                            ThrowEvent(DownloadCompleted);
                         }
                     }
-
-                    ThrowEvent(ProgressChanged);
-                    ThrowEvent(DownloadCompleted);
                 }
             }
             catch (Exception ex)
@@ -204,13 +206,9 @@ namespace ShareX.HelpersLib
                 if (!IsCanceled)
                 {
                     LastException = ex;
+
                     ThrowEvent(ExceptionThrowed);
                 }
-            }
-            finally
-            {
-                if (response != null) response.Close();
-                if (stream != null) stream.Close();
             }
         }
 
@@ -224,9 +222,9 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void ThrowEvent(EventHandler eventHandler)
+        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            worker.ReportProgress(0, eventHandler);
+            IsDownloading = false;
         }
     }
 }

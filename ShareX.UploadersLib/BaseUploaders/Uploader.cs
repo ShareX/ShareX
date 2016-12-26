@@ -175,7 +175,11 @@ namespace ShareX.UploadersLib
             {
                 if (response != null)
                 {
-                    response.GetResponseStream().CopyStreamTo(downloadStream, BufferSize);
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        responseStream.CopyStreamTo(downloadStream, BufferSize);
+                    }
+
                     return true;
                 }
             }
@@ -243,7 +247,11 @@ namespace ShareX.UploadersLib
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
                 }
 
-                result.Response = ResponseToString(request.GetResponse(), responseType);
+                using (WebResponse response = request.GetResponse())
+                {
+                    result.Response = ResponseToString(response, responseType);
+                }
+
                 result.IsSuccess = true;
             }
             catch (Exception e)
@@ -477,7 +485,8 @@ namespace ShareX.UploadersLib
                     switch (responseType)
                     {
                         case ResponseType.Text:
-                            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                            using (Stream responseStream = response.GetResponseStream())
+                            using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
                             {
                                 return reader.ReadToEnd();
                             }

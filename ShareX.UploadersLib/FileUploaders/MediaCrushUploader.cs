@@ -132,7 +132,8 @@ namespace ShareX.UploadersLib.FileUploaders
         private UploadResult HandleDuplicate(HttpWebResponse httpResponse)
         {
             JToken response;
-            using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            using (Stream responseStream = httpResponse.GetResponseStream())
+            using (StreamReader streamReader = new StreamReader(responseStream))
             {
                 response = JToken.Parse(streamReader.ReadToEnd());
             }
