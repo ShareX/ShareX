@@ -442,7 +442,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("filename", fileName);
                 args.Add("parent_dir", Path);
 
-                UploadResult result = UploadData(responseURL, stream, fileName, "file", args, headers);
+                UploadResult result = SendRequestFile(responseURL, stream, fileName, "file", args, headers);
 
                 if (!IsError)
                 {

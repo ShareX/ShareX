@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", drop.AdminToken);
             args.Add("drop_name", drop.Name);
 
-            UploadResult result = UploadData("http://assets.drop.io/upload", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("http://assets.drop.io/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {

@@ -183,7 +183,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
 
-            UploadResult result = UploadData(url, stream, fileName);
+            UploadResult result = SendRequestFile(url, stream, fileName);
 
             if (result.IsSuccess)
             {

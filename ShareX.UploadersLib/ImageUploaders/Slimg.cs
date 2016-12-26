@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("type", "binary");
             arguments.Add("shared", "false");
 
-            UploadResult result = UploadData("https://api.sli.mg/media", stream, fileName, "data", arguments, GetAuthHeaders());
+            UploadResult result = SendRequestFile("https://api.sli.mg/media", stream, fileName, "data", arguments, GetAuthHeaders());
 
             if (result.IsSuccess)
             {

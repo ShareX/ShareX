@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", upleaBestNode.Token);
             args.Add("file_id[]", Guid.NewGuid().ToString());
 
-            UploadResult result = UploadData(string.Format("http://{0}/", upleaBestNode.Name), stream, fileName, "files[]", args);
+            UploadResult result = SendRequestFile(string.Format("http://{0}/", upleaBestNode.Name), stream, fileName, "files[]", args);
             UpleaGetUpleaUploadResponse uploadResult = JsonConvert.DeserializeObject<UpleaGetUpleaUploadResponse>(result.Response);
 
             if (uploadResult.Files.Length > 0)

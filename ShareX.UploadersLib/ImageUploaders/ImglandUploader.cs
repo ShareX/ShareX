@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("usubmit", "true");
 
-            UploadResult result = UploadData(uploadUrl, stream, fileName, "imagefile[]", arguments);
+            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "imagefile[]", arguments);
 
             if (result.IsSuccess)
             {

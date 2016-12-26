@@ -101,7 +101,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     byte[] byteArray = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(byteArray))
                     {
-                        result = UploadData(requestURL, stream, fileName, customUploader.GetFileFormName(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                        result = SendRequestFile(requestURL, stream, fileName, customUploader.GetFileFormName(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
                     }
                 }
             }

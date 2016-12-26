@@ -121,10 +121,7 @@ namespace ShareX.UploadersLib
         protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
-            using (HttpWebResponse response = GetResponse(method, url, null, null, args, headers, cookies))
-            {
-                return ResponseToString(response, responseType);
-            }
+            return SendRequest(method, url, (Stream)null, null, args, headers, cookies, responseType);
         }
 
         protected string SendRequest(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
@@ -204,7 +201,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected UploadResult UploadData(string url, Stream data, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
+        protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
             string contentType = ContentTypeMultipartFormData, string metadata = null)
         {

@@ -121,7 +121,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/simple.php", args));
             string url = CreateQuery(_apiUrl + "upload/simple.php", args);
-            UploadResult res = UploadData(url, stream, fileName, "Filedata");
+            UploadResult res = SendRequestFile(url, stream, fileName, "Filedata");
             if (!res.IsSuccess) throw new IOException(res.ErrorsToString());
             SimpleUploadResponse resp = DeserializeResponse<SimpleUploadResponse>(res.Response);
             EnsureSuccess(resp);

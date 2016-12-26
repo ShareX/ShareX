@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("oauth_secret", AuthInfo.UserSecret);
             args.Add("message", msg);
 
-            UploadResult result = UploadData(url, stream, fileName, "media", args);
+            UploadResult result = SendRequestFile(url, stream, fileName, "media", args);
 
             TwitPicResponse response = JsonConvert.DeserializeObject<TwitPicResponse>(result.Response);
 

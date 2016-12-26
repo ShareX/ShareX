@@ -101,7 +101,7 @@ namespace ShareX.UploadersLib.FileUploaders
             upArgs.Add("policy", fileInfo.data.policy);
             upArgs.Add("content-type", fileInfo.data.content_type);
 
-            UploadResult uploadResult = UploadData(fileInfo.upload_url, stream, fileName, "file", upArgs);
+            UploadResult uploadResult = SendRequestFile(fileInfo.upload_url, stream, fileName, "file", upArgs);
 
             if (uploadResult == null) return null;
 

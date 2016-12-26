@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
             arguments.Add("k", APIKey);
             arguments.Add("z", "ShareX");
 
-            UploadResult result = UploadData(PuushAPIUploadURL, stream, fileName, "f", arguments);
+            UploadResult result = SendRequestFile(PuushAPIUploadURL, stream, fileName, "f", arguments);
 
             if (result.IsSuccess)
             {

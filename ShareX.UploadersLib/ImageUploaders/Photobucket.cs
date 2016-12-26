@@ -124,7 +124,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
-            UploadResult result = UploadData(query, stream, fileName, "uploadfile");
+            UploadResult result = SendRequestFile(query, stream, fileName, "uploadfile");
 
             if (result.IsSuccess)
             {

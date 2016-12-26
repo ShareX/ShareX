@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", Config.UserAPIKey);
-            UploadResult result = UploadData(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
+            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
 
             if (result.Response == null)
             {

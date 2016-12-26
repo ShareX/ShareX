@@ -250,7 +250,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             WebExceptionReturnResponse = true;
-            UploadResult result = UploadData("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
+            UploadResult result = SendRequestFile("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

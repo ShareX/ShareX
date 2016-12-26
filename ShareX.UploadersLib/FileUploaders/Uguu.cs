@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 arguments.Add("name", CustomName);
             }
 
-            UploadResult result = UploadData("https://uguu.se/api.php?d=upload-tool", stream, fileName, "file", arguments);
+            UploadResult result = SendRequestFile("https://uguu.se/api.php?d=upload-tool", stream, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {

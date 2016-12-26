@@ -233,7 +233,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     NameValueCollection headers = new NameValueCollection();
                     headers.Set("X-Atlassian-Token", "nocheck");
 
-                    UploadResult res = UploadData(query, stream, fileName, headers: headers);
+                    UploadResult res = SendRequestFile(query, stream, fileName, headers: headers);
                     if (res.Response.Contains("errorMessages"))
                     {
                         Errors.Add(res.Response);

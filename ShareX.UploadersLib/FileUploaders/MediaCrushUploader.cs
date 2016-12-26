@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                result = UploadData(URLHelpers.CombineURL(APIURL, "api/upload/file"), stream, fileName);
+                result = SendRequestFile(URLHelpers.CombineURL(APIURL, "api/upload/file"), stream, fileName);
             }
             catch (WebException e)
             {

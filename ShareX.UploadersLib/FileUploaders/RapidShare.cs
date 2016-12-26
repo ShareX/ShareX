@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("folder", FolderID);
             }
 
-            UploadResult result = UploadData(url, stream, fileName, "filecontent", args);
+            UploadResult result = SendRequestFile(url, stream, fileName, "filecontent", args);
 
             if (result.IsSuccess)
             {

@@ -246,7 +246,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("caption", fileName);
             args.Add("filename", fileName);
 
-            UploadResult result = UploadData(url, stream, fileName, "file", args);
+            UploadResult result = SendRequestFile(url, stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {

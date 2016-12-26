@@ -119,7 +119,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             arguments.Add("key", Options.DeveloperKey);
 
-            UploadResult result = UploadData(url, stream, fileName, "media", arguments);
+            UploadResult result = SendRequestFile(url, stream, fileName, "media", arguments);
 
             return ParseResult(result);
         }

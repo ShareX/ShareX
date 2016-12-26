@@ -67,7 +67,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("message", msg);
             }
 
-            UploadResult result = UploadData(APIURL, stream, fileName, "media", args);
+            UploadResult result = SendRequestFile(APIURL, stream, fileName, "media", args);
 
             return ParseResult(result);
         }

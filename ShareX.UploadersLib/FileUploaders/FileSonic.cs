@@ -52,7 +52,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(url))
             {
-                result = UploadData(url, stream, fileName);
+                result = SendRequestFile(url, stream, fileName);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

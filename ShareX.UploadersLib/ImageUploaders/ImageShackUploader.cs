@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("auth_token", Config.Auth_token);
             arguments.Add("public", Config.IsPublic ? "y" : "n");
 
-            UploadResult result = UploadData(URLUpload, stream, fileName, "file", arguments);
+            UploadResult result = SendRequestFile(URLUpload, stream, fileName, "file", arguments);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api", "1");
 
-            UploadResult result = UploadData(URLUpload, stream, fileName, "videoFile", arguments);
+            UploadResult result = SendRequestFile(URLUpload, stream, fileName, "videoFile", arguments);
 
             result.URL = result.Response;
 

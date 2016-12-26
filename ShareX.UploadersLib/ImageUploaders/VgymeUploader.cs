@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             if (!string.IsNullOrEmpty(UserKey)) args.Add("userkey", UserKey);
 
-            UploadResult result = UploadData("https://vgy.me/upload", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://vgy.me/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
