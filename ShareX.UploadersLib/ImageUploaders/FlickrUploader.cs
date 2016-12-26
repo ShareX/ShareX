@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("auth_token", token);
             args.Add("api_sig", GetAPISig(args));
 
-            string response = SendRequest(HttpMethod.POST, API_URL, args);
+            string response = SendRequestMultiPart(API_URL, args);
 
             Auth = new FlickrAuthInfo(ParseResponse(response, "auth"));
 
@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("api_key", API_Key);
             args.Add("api_sig", GetAPISig(args));
 
-            string response = SendRequest(HttpMethod.POST, API_URL, args);
+            string response = SendRequestMultiPart(API_URL, args);
 
             XElement eFrob = ParseResponse(response, "frob");
 
@@ -142,7 +142,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("mini_token", frob);
             args.Add("api_sig", GetAPISig(args));
 
-            string response = SendRequest(HttpMethod.POST, API_URL, args);
+            string response = SendRequestMultiPart(API_URL, args);
 
             Auth = new FlickrAuthInfo(ParseResponse(response, "auth"));
 
@@ -162,7 +162,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("frob", frob);
             args.Add("api_sig", GetAPISig(args));
 
-            string response = SendRequest(HttpMethod.POST, API_URL, args);
+            string response = SendRequestMultiPart(API_URL, args);
 
             Auth = new FlickrAuthInfo(ParseResponse(response, "auth"));
 

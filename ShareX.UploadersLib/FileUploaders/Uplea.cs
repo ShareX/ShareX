@@ -76,7 +76,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private UpleaNode GetBestNode()
         {
-            UpleaGetBestNodeResponse getBestNodeResponse = JsonConvert.DeserializeObject<UpleaGetBestNodeResponse>(SendRequest(HttpMethod.POST, upleaBaseUrl + "get-best-node"));
+            string response = SendRequest(HttpMethod.POST, upleaBaseUrl + "get-best-node");
+            UpleaGetBestNodeResponse getBestNodeResponse = JsonConvert.DeserializeObject<UpleaGetBestNodeResponse>(response);
             return new UpleaNode(getBestNodeResponse.Result.Name, getBestNodeResponse.Result.Token);
         }
 

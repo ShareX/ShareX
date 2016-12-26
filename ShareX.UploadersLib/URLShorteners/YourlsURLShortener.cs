@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 //arguments.Add("title", "");
                 arguments.Add("format", "simple");
 
-                result.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
+                result.Response = SendRequestMultiPart(APIURL, arguments);
                 result.ShortenedURL = result.Response;
             }
 

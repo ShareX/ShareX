@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             upArgs.Add("file_name", fileName);
 
-            string uploadRequest = SendRequest(HttpMethod.POST, apiRequestFileUploadURL, upArgs, headers);
+            string uploadRequest = SendRequestMultiPart(apiRequestFileUploadURL, upArgs, headers);
 
             if (uploadRequest == null) return null;
 
@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("file_url", fileInfo.file_url);
             pushArgs.Add("body", "Sent via ShareX");
 
-            string pushResult = SendRequest(HttpMethod.POST, apiSendPushURL, pushArgs, headers);
+            string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
 
             if (pushResult == null) return null;
 
@@ -140,7 +140,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     args.Add("body", "Sent via ShareX");
             }
 
-            string response = SendRequest(HttpMethod.POST, apiSendPushURL, args, headers);
+            string response = SendRequestMultiPart(apiSendPushURL, args, headers);
 
             if (response == null) return null;
 

@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     headers = CreateAuthenticationHeader(API_USERNAME, API_KEY);
                 }
 
-                result.Response = SendRequest(HttpMethod.POST, API_ENDPOINT, args, headers);
+                result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

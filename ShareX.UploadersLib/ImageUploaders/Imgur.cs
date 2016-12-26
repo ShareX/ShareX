@@ -124,7 +124,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("grant_type", "pin");
             args.Add("pin", pin);
 
-            string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
+            string response = SendRequestMultiPart("https://api.imgur.com/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -151,7 +151,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
+                string response = SendRequestMultiPart("https://api.imgur.com/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {

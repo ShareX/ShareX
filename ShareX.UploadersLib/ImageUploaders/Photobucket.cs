@@ -151,7 +151,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
-            string response = SendRequest(HttpMethod.POST, query, args);
+            string response = SendRequestMultiPart(query, args);
 
             if (!string.IsNullOrEmpty(response))
             {

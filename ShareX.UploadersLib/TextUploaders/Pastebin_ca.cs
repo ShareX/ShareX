@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("tags", settings.Tags);
                 arguments.Add("type", settings.TextFormat);
 
-                ur.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
+                ur.Response = SendRequestMultiPart(APIURL, arguments);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

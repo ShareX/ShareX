@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("user", Config.Username);
                 args.Add("password", Config.Password);
 
-                string response = SendRequest(HttpMethod.POST, URLAccessToken, args);
+                string response = SendRequestMultiPart(URLAccessToken, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {

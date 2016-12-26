@@ -140,7 +140,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            string response = SendRequest(HttpMethod.POST, url, args, headers);
+            string response = SendRequestMultiPart(url, args, headers);
 
             if (!string.IsNullOrEmpty(response))
             {

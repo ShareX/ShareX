@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token_version", "2");
             args.Add("response_format", "json");
             args.Add("signature", GetInitSignature());
-            string respStr = SendRequest(HttpMethod.POST, _apiUrl + "user/get_session_token.php", args);
+            string respStr = SendRequestMultiPart(_apiUrl + "user/get_session_token.php", args);
             GetSessionTokenResponse resp = DeserializeResponse<GetSessionTokenResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.session_token == null || resp.time == null || resp.secret_key == null)
@@ -137,7 +137,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("filename", fileName);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/poll_upload.php", args));
-            string respStr = SendRequest(HttpMethod.POST, _apiUrl + "upload/poll_upload.php", args);
+            string respStr = SendRequestMultiPart(_apiUrl + "upload/poll_upload.php", args);
             PollUploadResponse resp = DeserializeResponse<PollUploadResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException("Invalid response");

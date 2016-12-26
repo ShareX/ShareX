@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
             // determines whether guests can delete assets
             args.Add("guests_can_delete", guests_can_delete.ToString());
 
-            string response = SendRequest(HttpMethod.POST, "http://api.drop.io/drops", args);
+            string response = SendRequestMultiPart("http://api.drop.io/drops", args);
 
             XDocument doc = XDocument.Parse(response);
             XElement root = doc.Element("drop");

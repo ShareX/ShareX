@@ -91,7 +91,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("code", code);
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            string response = SendRequest(HttpMethod.POST, URLAccessToken, args);
+            string response = SendRequestMultiPart(URLAccessToken, args);
 
             if (!string.IsNullOrEmpty(response))
             {

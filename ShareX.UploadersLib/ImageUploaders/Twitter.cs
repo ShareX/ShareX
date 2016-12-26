@@ -123,7 +123,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
 
-            string response = SendRequest(HttpMethod.POST, query, args);
+            string response = SendRequestMultiPart(query, args);
 
             if (!string.IsNullOrEmpty(response))
             {

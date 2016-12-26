@@ -101,7 +101,7 @@ namespace ShareX.UploadersLib.TextUploaders
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", ContentTypeJSON);
 
-            string response = SendRequest(HttpMethod.POST, "https://github.com/login/oauth/access_token", args, headers);
+            string response = SendRequestMultiPart("https://github.com/login/oauth/access_token", args, headers);
 
             if (!string.IsNullOrEmpty(response))
             {

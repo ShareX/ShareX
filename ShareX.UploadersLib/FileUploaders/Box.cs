@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
+            string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("client_id", AuthInfo.Client_ID);
                 args.Add("client_secret", AuthInfo.Client_Secret);
 
-                string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
+                string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {

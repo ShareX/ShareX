@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 { "password", password }
             };
 
-            string response = SendRequest(HttpMethod.POST, url, args);
+            string response = SendRequestMultiPart(url, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -365,7 +365,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                string response = SendRequest(HttpMethod.POST, url, args, headers);
+                string response = SendRequestMultiPart(url, args, headers);
 
                 if (!string.IsNullOrEmpty(response))
                 {

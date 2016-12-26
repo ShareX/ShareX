@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
-                    result.Response = SendRequest(HttpMethod.POST, requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                    result.Response = SendRequestMultiPart(requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
                 }
                 else
                 {

@@ -124,7 +124,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 { "pass", password }
             };
 
-            string response = SendRequest(HttpMethod.POST, URLAPI, args);
+            string response = SendRequestMultiPart(URLAPI, args);
 
             if (!string.IsNullOrEmpty(response))
             {

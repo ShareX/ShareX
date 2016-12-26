@@ -81,7 +81,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("expire", "0");
                 arguments.Add("json", "true");
 
-                ur.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
+                ur.Response = SendRequestMultiPart(APIURL, arguments);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

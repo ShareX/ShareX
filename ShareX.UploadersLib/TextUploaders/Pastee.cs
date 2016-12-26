@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     arguments.Add("key", Key);
                 }
 
-                ur.URL = SendRequest(HttpMethod.POST, "https://pastee.org/submit", arguments, responseType: ResponseType.RedirectionURL);
+                ur.URL = SendRequestMultiPart("https://pastee.org/submit", arguments, responseType: ResponseType.RedirectionURL);
             }
 
             return ur;

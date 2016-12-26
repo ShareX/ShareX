@@ -136,7 +136,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("grant_type", "authorization_code");
             args.Add("code", code);
 
-            string response = SendRequest(HttpMethod.POST, URLOAuth2Token, args);
+            string response = SendRequestMultiPart(URLOAuth2Token, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -363,7 +363,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
-                string response = SendRequest(HttpMethod.POST, url, args, GetAuthHeaders());
+                string response = SendRequestMultiPart(url, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {

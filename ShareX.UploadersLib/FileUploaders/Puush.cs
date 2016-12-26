@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
             arguments.Add("p", password);
             arguments.Add("z", "ShareX");
 
-            string response = SendRequest(HttpMethod.POST, PuushAPILoginURL, arguments);
+            string response = SendRequestMultiPart(PuushAPILoginURL, arguments);
 
             if (!string.IsNullOrEmpty(response))
             {
