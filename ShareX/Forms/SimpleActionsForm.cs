@@ -34,7 +34,8 @@ namespace ShareX
 {
     public partial class SimpleActionsForm : Form
     {
-        public List<HotkeyType> Actions { get; set; } = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer };
+        public List<HotkeyType> Actions { get; set; } = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
+            HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
         private IContainer components;
         private ToolStripEx tsMain;
@@ -47,41 +48,35 @@ namespace ShareX
 
         private void InitializeComponent()
         {
-            components = new Container();
-            tsMain = new ToolStripEx();
-            ttMain = new ToolTip(components);
-            tsMain.SuspendLayout();
             SuspendLayout();
-
-            tsMain.CanOverflow = false;
-            tsMain.ClickThrough = true;
-            tsMain.Dock = DockStyle.None;
-            tsMain.GripStyle = ToolStripGripStyle.Hidden;
-            tsMain.Location = new Point(0, 0);
-            tsMain.MinimumSize = new Size(10, 30);
-            tsMain.Padding = new Padding(2);
-            tsMain.Renderer = new CustomToolStripProfessionalRenderer();
-            tsMain.ShowItemToolTips = false;
-            tsMain.Size = new Size(86, 30);
-            tsMain.TabIndex = 0;
-            tsMain.MouseLeave += new EventHandler(tsMain_MouseLeave);
-
-            ttMain.AutoPopDelay = 15000;
-            ttMain.InitialDelay = 300;
-            ttMain.ReshowDelay = 100;
-            ttMain.ShowAlways = true;
 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(284, 261);
-            Controls.Add(tsMain);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ShareX";
+            Text = "ShareX - Simple actions";
             TopMost = true;
+
             Shown += new EventHandler(SimpleActionsForm_Shown);
+
+            tsMain = new ToolStripEx()
+            {
+                AutoSize = true,
+                CanOverflow = false,
+                ClickThrough = true,
+                Dock = DockStyle.None,
+                GripStyle = ToolStripGripStyle.Hidden,
+                Location = new Point(0, 0),
+                MinimumSize = new Size(10, 30),
+                Padding = new Padding(0),
+                Renderer = new CustomToolStripProfessionalRenderer(),
+                TabIndex = 0,
+                ShowItemToolTips = false
+            };
 
             // https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
             using (Graphics g = CreateGraphics())
@@ -96,10 +91,29 @@ namespace ShareX
                 }
             }
 
-            ToolStripLabel tslTitle = new ToolStripLabel();
-            tslTitle.Margin = new Padding(3, 1, 3, 2);
-            tslTitle.Text = "ShareX";
-            tslTitle.ToolTipText = "Hold left down to drag\r\nRight click to close";
+            tsMain.MouseLeave += new EventHandler(tsMain_MouseLeave);
+
+            tsMain.SuspendLayout();
+
+            Controls.Add(tsMain);
+
+            components = new Container();
+
+            ttMain = new ToolTip(components)
+            {
+                AutoPopDelay = 15000,
+                InitialDelay = 300,
+                ReshowDelay = 100,
+                ShowAlways = true
+            };
+
+            ToolStripLabel tslTitle = new ToolStripLabel()
+            {
+                Margin = new Padding(4, 0, 3, 0),
+                Text = "ShareX",
+                ToolTipText = "Hold left down to drag\r\nRight click to close"
+            };
+
             tslTitle.MouseDown += new MouseEventHandler(tslTitle_MouseDown);
             tslTitle.MouseEnter += new EventHandler(tslTitle_MouseEnter);
             tslTitle.MouseLeave += new EventHandler(tslTitle_MouseLeave);
@@ -109,19 +123,33 @@ namespace ShareX
 
             foreach (HotkeyType action in Actions)
             {
-                ToolStripButton tsb = new ToolStripButton();
-                tsb.Text = action.GetLocalizedDescription();
-                tsb.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsb.Image = TaskHelpers.GetHotkeyTypeIcon(action);
-
-                tsb.Click += (sender, e) =>
+                if (action == HotkeyType.None)
                 {
-                    TopMost = false;
-                    TaskHelpers.ExecuteJob(action);
-                    TopMost = true;
-                };
+                    ToolStripSeparator tss = new ToolStripSeparator()
+                    {
+                        Margin = new Padding(0)
+                    };
 
-                tsMain.Items.Add(tsb);
+                    tsMain.Items.Add(tss);
+                }
+                else
+                {
+                    ToolStripButton tsb = new ToolStripButton()
+                    {
+                        Text = action.GetLocalizedDescription(),
+                        DisplayStyle = ToolStripItemDisplayStyle.Image,
+                        Image = TaskHelpers.GetHotkeyTypeIcon(action)
+                    };
+
+                    tsb.Click += (sender, e) =>
+                    {
+                        TopMost = false;
+                        TaskHelpers.ExecuteJob(action);
+                        TopMost = true;
+                    };
+
+                    tsMain.Items.Add(tsb);
+                }
             }
 
             foreach (ToolStripItem tsi in tsMain.Items)
