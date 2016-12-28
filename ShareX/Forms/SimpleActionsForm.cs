@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -33,13 +34,54 @@ namespace ShareX
 {
     public partial class SimpleActionsForm : Form
     {
-        public List<HotkeyType> Actions { get; set; }
+        public List<HotkeyType> Actions { get; set; } = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer };
+
+        private IContainer components;
+        private ToolStripEx tsMain;
+        private ToolTip ttMain;
 
         public SimpleActionsForm()
         {
             InitializeComponent();
+        }
 
+        private void InitializeComponent()
+        {
+            components = new Container();
+            tsMain = new ToolStripEx();
+            ttMain = new ToolTip(components);
+            tsMain.SuspendLayout();
+            SuspendLayout();
+
+            tsMain.CanOverflow = false;
+            tsMain.ClickThrough = true;
+            tsMain.Dock = DockStyle.None;
+            tsMain.GripStyle = ToolStripGripStyle.Hidden;
+            tsMain.Location = new Point(0, 0);
+            tsMain.MinimumSize = new Size(10, 30);
+            tsMain.Padding = new Padding(2);
             tsMain.Renderer = new CustomToolStripProfessionalRenderer();
+            tsMain.ShowItemToolTips = false;
+            tsMain.Size = new Size(86, 30);
+            tsMain.TabIndex = 0;
+            tsMain.MouseLeave += new EventHandler(tsMain_MouseLeave);
+
+            ttMain.AutoPopDelay = 15000;
+            ttMain.InitialDelay = 300;
+            ttMain.ReshowDelay = 100;
+            ttMain.ShowAlways = true;
+
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(284, 261);
+            Controls.Add(tsMain);
+            FormBorderStyle = FormBorderStyle.None;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "ShareX";
+            TopMost = true;
+            Shown += new EventHandler(SimpleActionsForm_Shown);
 
             // https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
             using (Graphics g = CreateGraphics())
@@ -54,7 +96,16 @@ namespace ShareX
                 }
             }
 
-            Actions = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer };
+            ToolStripLabel tslTitle = new ToolStripLabel();
+            tslTitle.Margin = new Padding(3, 1, 3, 2);
+            tslTitle.Text = "ShareX";
+            tslTitle.ToolTipText = "Hold left down to drag\r\nRight click to close";
+            tslTitle.MouseDown += new MouseEventHandler(tslTitle_MouseDown);
+            tslTitle.MouseEnter += new EventHandler(tslTitle_MouseEnter);
+            tslTitle.MouseLeave += new EventHandler(tslTitle_MouseLeave);
+            tslTitle.MouseUp += new MouseEventHandler(tslTitle_MouseUp);
+
+            tsMain.Items.Add(tslTitle);
 
             foreach (HotkeyType action in Actions)
             {
@@ -63,8 +114,61 @@ namespace ShareX
                 tsb.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsb.Image = TaskHelpers.GetHotkeyTypeIcon(action);
 
+                tsb.Click += (sender, e) =>
+                {
+                    TopMost = false;
+                    TaskHelpers.ExecuteJob(action);
+                    TopMost = true;
+                };
+
                 tsMain.Items.Add(tsb);
             }
+
+            foreach (ToolStripItem tsi in tsMain.Items)
+            {
+                tsi.MouseEnter += (sender, e) =>
+                {
+                    string text;
+
+                    if (!string.IsNullOrEmpty(tsi.ToolTipText))
+                    {
+                        text = tsi.ToolTipText;
+                    }
+                    else
+                    {
+                        text = tsi.Text;
+                    }
+
+                    ttMain.SetToolTip(tsMain, text);
+                };
+
+                tsi.MouseLeave += tsMain_MouseLeave;
+            }
+
+            tsMain.ResumeLayout(false);
+            tsMain.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        private void SimpleActionsForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
+        private void tsMain_MouseLeave(object sender, EventArgs e)
+        {
+            ttMain.RemoveAll();
         }
 
         private void tslTitle_MouseEnter(object sender, EventArgs e)

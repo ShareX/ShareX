@@ -207,9 +207,6 @@
     <Compile Include="Forms\SimpleActionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SimpleActionsForm.Designer.cs">
-      <DependentUpon>SimpleActionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="HotkeyTypeEnumConverter.cs" />
     <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
@@ -991,9 +988,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SimpleActionsForm.resx">
-      <DependentUpon>SimpleActionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
