@@ -1257,6 +1257,36 @@ namespace ShareX
             return null;
         }
 
+        public static Image GetHotkeyTypeIcon(HotkeyType hotkeyType)
+        {
+            switch (hotkeyType)
+            {
+                default: return null;
+                // Upload
+                case HotkeyType.FileUpload: return Resources.folder_open_document;
+                case HotkeyType.FolderUpload: return Resources.folder;
+                case HotkeyType.ClipboardUpload: return Resources.clipboard;
+                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard; // TODO: Find better icon
+                case HotkeyType.UploadURL: return Resources.drive;
+                case HotkeyType.DragDropUpload: return Resources.inbox;
+                case HotkeyType.StopUploads: return Resources.cross_button; // TODO: Find better icon
+                // Screen capture
+                case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
+                case HotkeyType.ActiveWindow: return Resources.application_blue;
+                case HotkeyType.ActiveMonitor: return Resources.monitor;
+                case HotkeyType.RectangleRegion: return Resources.layer_shape;
+                case HotkeyType.RectangleLight: return Resources.Rectangle;
+                case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
+                case HotkeyType.CustomRegion: return Resources.layer_shape; // TODO: Find better icon
+                case HotkeyType.LastRegion: return Resources.layers;
+                case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
+                case HotkeyType.CaptureWebpage: return Resources.document_globe;
+                case HotkeyType.TextCapture: return Resources.edit_drop_cap;
+                case HotkeyType.AutoCapture: return Resources.clock;
+                case HotkeyType.StartAutoCapture: return Resources.clock; // TODO: Find better icon
+            }
+        }
+
         public static Screenshot GetScreenshot(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

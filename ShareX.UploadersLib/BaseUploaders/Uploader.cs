@@ -50,12 +50,12 @@ namespace ShareX.UploadersLib
         public event Action<string> EarlyURLCopyRequested;
 
         public bool IsUploading { get; protected set; }
-        public List<string> Errors { get; private set; }
+        public List<string> Errors { get; private set; } = new List<string>();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
-        public int BufferSize { get; set; }
+        public int BufferSize { get; set; } = 8192;
 
         protected bool StopUploadRequested { get; set; }
-        protected bool AllowReportProgress { get; set; }
+        protected bool AllowReportProgress { get; set; } = true;
         protected bool WebExceptionReturnResponse { get; set; }
         protected bool WebExceptionThrow { get; set; }
 
@@ -63,10 +63,6 @@ namespace ShareX.UploadersLib
 
         public Uploader()
         {
-            Errors = new List<string>();
-            BufferSize = 8192;
-            AllowReportProgress = true;
-
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.UseNagleAlgorithm = false;

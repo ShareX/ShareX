@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -33,6 +34,7 @@ namespace ShareX.HelpersLib
     {
         private bool clickThrough = false;
 
+        [DefaultValue(false)]
         public bool ClickThrough
         {
             get
