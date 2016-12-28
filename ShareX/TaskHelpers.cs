@@ -1261,7 +1261,8 @@ namespace ShareX
         {
             switch (hotkeyType)
             {
-                default: return null;
+                default: throw new Exception("Icon missing for hotkey type.");
+                case HotkeyType.None: return Resources.cross;
                 // Upload
                 case HotkeyType.FileUpload: return Resources.folder_open_document;
                 case HotkeyType.FolderUpload: return Resources.folder;
@@ -1284,6 +1285,37 @@ namespace ShareX
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
                 case HotkeyType.StartAutoCapture: return Resources.clock; // TODO: Find better icon
+                // Screen record
+                case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
+                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder_image; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder_image; // TODO: Find better icon
+                case HotkeyType.StartScreenRecorder: return Resources.camcorder_image; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderGIF: return Resources.film;
+                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film; // TODO: Find better icon
+                case HotkeyType.StartScreenRecorderGIF: return Resources.film; // TODO: Find better icon
+                case HotkeyType.AbortScreenRecording: return Resources.cross_button; // TODO: Find better icon
+                // Tools
+                case HotkeyType.ColorPicker: return Resources.color;
+                case HotkeyType.ScreenColorPicker: return Resources.pipette;
+                case HotkeyType.ImageEditor: return Resources.image_pencil;
+                case HotkeyType.ImageEffects: return Resources.image_saturation;
+                case HotkeyType.HashCheck: return Resources.application_task;
+                case HotkeyType.DNSChanger: return Resources.network_ip;
+                case HotkeyType.QRCode: return Resources.barcode_2d;
+                case HotkeyType.Ruler: return Resources.ruler_triangle;
+                case HotkeyType.IndexFolder: return Resources.folder_tree;
+                case HotkeyType.ImageCombiner: return Resources.document_break;
+                case HotkeyType.VideoThumbnailer: return Resources.images_stack;
+                case HotkeyType.FTPClient: return Resources.application_network;
+                case HotkeyType.TweetMessage: return Resources.Twitter;
+                case HotkeyType.MonitorTest: return Resources.monitor;
+                // Other
+                case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
+                case HotkeyType.OpenMainWindow: return Resources.tick_button; // TODO: Find better icon
+                case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
+                case HotkeyType.OpenHistory: return Resources.application_blog;
+                case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
             }
         }
 
