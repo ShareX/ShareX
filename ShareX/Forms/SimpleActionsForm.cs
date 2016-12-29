@@ -224,6 +224,10 @@ namespace ShareX
             {
                 Close();
             }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                new SimpleActionsEditForm(Actions).Show();
+            }
         }
     }
 }
