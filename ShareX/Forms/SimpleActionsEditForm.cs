@@ -148,5 +148,10 @@ namespace ShareX
                 RemoveAction(lvActions.SelectedIndex);
             }
         }
+
+        private void lvActions_ItemMoved(object sender, int oldIndex, int newIndex)
+        {
+            Actions.Move(oldIndex, newIndex);
+        }
     }
 }

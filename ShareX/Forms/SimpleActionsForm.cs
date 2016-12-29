@@ -38,6 +38,7 @@ namespace ShareX
             HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
         public bool LockPosition { get; set; }
+        public bool StayTopMost { get; set; } = true;
 
         private IContainer components;
         private ToolStripEx tsMain;
@@ -62,7 +63,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ShareX - Simple actions";
-            TopMost = true;
+            TopMost = StayTopMost;
 
             Shown += new EventHandler(SimpleActionsForm_Shown);
 
@@ -111,39 +112,69 @@ namespace ShareX
             cmsTitle = new ContextMenuStrip(components);
 
             ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
-            tsmiClose.Click += (sender, e) => Close();
+            tsmiClose.Click += TsmiClose_Click;
             cmsTitle.Items.Add(tsmiClose);
 
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit");
-            tsmiEdit.Click += (sender, e) =>
-            {
-                using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
-                {
-                    TopMost = false;
-                    form.ShowDialog();
-                    TopMost = true;
-
-                    UpdateToolbar(Actions);
-                }
-            };
-            cmsTitle.Items.Add(tsmiEdit);
+            cmsTitle.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiLock = new ToolStripMenuItem("Lock position");
             tsmiLock.CheckOnClick = true;
-            tsmiLock.Checked = false;
-            tsmiLock.Click += (sender, e) => LockPosition = tsmiLock.Checked;
+            tsmiLock.Checked = LockPosition;
+            tsmiLock.Click += TsmiLock_Click;
             cmsTitle.Items.Add(tsmiLock);
 
             ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem("Stay top most");
             tsmiTopMost.CheckOnClick = true;
-            tsmiTopMost.Checked = true;
-            tsmiTopMost.Click += (sender, e) => TopMost = tsmiTopMost.Checked;
+            tsmiTopMost.Checked = StayTopMost;
+            tsmiTopMost.Click += TsmiTopMost_Click;
             cmsTitle.Items.Add(tsmiTopMost);
+
+            cmsTitle.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit...");
+            tsmiEdit.Click += TsmiEdit_Click;
+            cmsTitle.Items.Add(tsmiEdit);
 
             UpdateToolbar(Actions);
 
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void TsmiClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TsmiLock_Click(object sender, EventArgs e)
+        {
+            LockPosition = ((ToolStripMenuItem)sender).Checked;
+        }
+
+        private void TsmiTopMost_Click(object sender, EventArgs e)
+        {
+            StayTopMost = ((ToolStripMenuItem)sender).Checked;
+            TopMost = StayTopMost;
+        }
+
+        private void TsmiEdit_Click(object sender, EventArgs e)
+        {
+            using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
+            {
+                if (StayTopMost)
+                {
+                    TopMost = false;
+                }
+
+                form.ShowDialog();
+
+                if (StayTopMost)
+                {
+                    TopMost = true;
+                }
+
+                UpdateToolbar(Actions);
+            }
         }
 
         private void UpdateToolbar(List<HotkeyType> actions)
@@ -188,9 +219,17 @@ namespace ShareX
 
                     tsb.Click += (sender, e) =>
                     {
-                        TopMost = false;
+                        if (StayTopMost)
+                        {
+                            TopMost = false;
+                        }
+
                         TaskHelpers.ExecuteJob(action);
-                        TopMost = true;
+
+                        if (StayTopMost)
+                        {
+                            TopMost = true;
+                        }
                     };
 
                     tsMain.Items.Add(tsb);

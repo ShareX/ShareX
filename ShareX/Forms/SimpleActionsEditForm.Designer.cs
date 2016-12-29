@@ -64,6 +64,8 @@
             // 
             // lvActions
             // 
+            this.lvActions.AllowDrop = true;
+            this.lvActions.AllowItemDrag = true;
             this.lvActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -81,6 +83,7 @@
             this.lvActions.TabIndex = 3;
             this.lvActions.UseCompatibleStateImageBehavior = false;
             this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
             // 
             // chAction
             // 
