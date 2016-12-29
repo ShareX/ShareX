@@ -159,6 +159,8 @@
             this.txtCoinURLUUID = new System.Windows.Forms.TextBox();
             this.lblCoinURLUUID = new System.Windows.Forms.Label();
             this.tpPolr = new System.Windows.Forms.TabPage();
+            this.cbPolrUseAPIv1 = new System.Windows.Forms.CheckBox();
+            this.cbPolrIsSecret = new System.Windows.Forms.CheckBox();
             this.txtPolrAPIKey = new System.Windows.Forms.TextBox();
             this.lblPolrAPIKey = new System.Windows.Forms.Label();
             this.txtPolrAPIHostname = new System.Windows.Forms.TextBox();
@@ -472,6 +474,7 @@
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
+            this.cbImgurUseHTTPS = new System.Windows.Forms.CheckBox();
             this.cbImgurUseGIFV = new System.Windows.Forms.CheckBox();
             this.cbImgurUploadSelectedAlbum = new System.Windows.Forms.CheckBox();
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
@@ -559,7 +562,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbImgurUseHTTPS = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1595,6 +1597,8 @@
             // 
             // tpPolr
             // 
+            this.tpPolr.Controls.Add(this.cbPolrUseAPIv1);
+            this.tpPolr.Controls.Add(this.cbPolrIsSecret);
             this.tpPolr.Controls.Add(this.txtPolrAPIKey);
             this.tpPolr.Controls.Add(this.lblPolrAPIKey);
             this.tpPolr.Controls.Add(this.txtPolrAPIHostname);
@@ -1602,6 +1606,20 @@
             resources.ApplyResources(this.tpPolr, "tpPolr");
             this.tpPolr.Name = "tpPolr";
             this.tpPolr.UseVisualStyleBackColor = true;
+            // 
+            // cbPolrUseAPIv1
+            // 
+            resources.ApplyResources(this.cbPolrUseAPIv1, "cbPolrUseAPIv1");
+            this.cbPolrUseAPIv1.Name = "cbPolrUseAPIv1";
+            this.cbPolrUseAPIv1.UseVisualStyleBackColor = true;
+            this.cbPolrUseAPIv1.CheckedChanged += new System.EventHandler(this.cbPolrUseAPIv1_CheckedChanged);
+            // 
+            // cbPolrIsSecret
+            // 
+            resources.ApplyResources(this.cbPolrIsSecret, "cbPolrIsSecret");
+            this.cbPolrIsSecret.Name = "cbPolrIsSecret";
+            this.cbPolrIsSecret.UseVisualStyleBackColor = true;
+            this.cbPolrIsSecret.CheckedChanged += new System.EventHandler(this.cbPolrIsSecret_CheckedChanged);
             // 
             // txtPolrAPIKey
             // 
@@ -3734,13 +3752,6 @@
             this.cbUpasteIsPublic.UseVisualStyleBackColor = true;
             this.cbUpasteIsPublic.CheckedChanged += new System.EventHandler(this.cbUpasteIsPublic_CheckedChanged);
             // 
-            // cbPastieIsPublic
-            // 
-            resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
-            this.cbPastieIsPublic.Name = "cbPastieIsPublic";
-            this.cbPastieIsPublic.UseVisualStyleBackColor = true;
-            this.cbPastieIsPublic.CheckedChanged += new System.EventHandler(this.cbPastieIsPublic_CheckedChanged);
-            // 
             // lblUpasteUserKey
             // 
             resources.ApplyResources(this.lblUpasteUserKey, "lblUpasteUserKey");
@@ -3838,6 +3849,7 @@
             resources.ApplyResources(this.cbPastieIsPublic, "cbPastieIsPublic");
             this.cbPastieIsPublic.Name = "cbPastieIsPublic";
             this.cbPastieIsPublic.UseVisualStyleBackColor = true;
+            this.cbPastieIsPublic.CheckedChanged += new System.EventHandler(this.cbPastieIsPublic_CheckedChanged);
             // 
             // tpImageUploaders
             // 
@@ -3876,6 +3888,13 @@
             resources.ApplyResources(this.tpImgur, "tpImgur");
             this.tpImgur.Name = "tpImgur";
             this.tpImgur.UseVisualStyleBackColor = true;
+            // 
+            // cbImgurUseHTTPS
+            // 
+            resources.ApplyResources(this.cbImgurUseHTTPS, "cbImgurUseHTTPS");
+            this.cbImgurUseHTTPS.Name = "cbImgurUseHTTPS";
+            this.cbImgurUseHTTPS.UseVisualStyleBackColor = true;
+            this.cbImgurUseHTTPS.CheckedChanged += new System.EventHandler(this.cbImgurUseHTTPS_CheckedChanged);
             // 
             // cbImgurUseGIFV
             // 
@@ -4497,13 +4516,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // cbImgurUseHTTPS
-            // 
-            resources.ApplyResources(this.cbImgurUseHTTPS, "cbImgurUseHTTPS");
-            this.cbImgurUseHTTPS.Name = "cbImgurUseHTTPS";
-            this.cbImgurUseHTTPS.UseVisualStyleBackColor = true;
-            this.cbImgurUseHTTPS.CheckedChanged += new System.EventHandler(this.cbImgurUseHTTPS_CheckedChanged);
             // 
             // UploadersConfigForm
             // 
@@ -5198,5 +5210,7 @@
         private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
         public System.Windows.Forms.TabPage tpPastie;
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
+        private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
+        private System.Windows.Forms.CheckBox cbPolrIsSecret;
     }
 }

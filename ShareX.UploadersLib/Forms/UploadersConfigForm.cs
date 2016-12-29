@@ -631,6 +631,8 @@ namespace ShareX.UploadersLib
 
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
             txtPolrAPIKey.Text = Config.PolrAPIKey;
+            cbPolrIsSecret.Checked = Config.PolrIsSecret;
+            cbPolrUseAPIv1.Checked = Config.PolrUseAPIv1;
 
             #endregion URL shorteners
 
@@ -2742,6 +2744,16 @@ namespace ShareX.UploadersLib
         private void txtPolrAPIKey_TextChanged(object sender, EventArgs e)
         {
             Config.PolrAPIKey = txtPolrAPIKey.Text;
+        }
+
+        private void cbPolrIsSecret_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PolrIsSecret = cbPolrIsSecret.Checked;
+        }
+
+        private void cbPolrUseAPIv1_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PolrUseAPIv1 = cbPolrUseAPIv1.Checked;
         }
 
         #endregion Polr

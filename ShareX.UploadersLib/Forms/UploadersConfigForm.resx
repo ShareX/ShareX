@@ -3256,11 +3256,71 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cbPolrUseAPIv1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPolrUseAPIv1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="cbPolrUseAPIv1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>Use deprecated API v1</value>
+  </data>
+  <data name="&gt;&gt;cbPolrUseAPIv1.Name" xml:space="preserve">
+    <value>cbPolrUseAPIv1</value>
+  </data>
+  <data name="&gt;&gt;cbPolrUseAPIv1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPolrUseAPIv1.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;cbPolrUseAPIv1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbPolrIsSecret.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPolrIsSecret.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPolrIsSecret.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 104</value>
+  </data>
+  <data name="cbPolrIsSecret.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 17</value>
+  </data>
+  <data name="cbPolrIsSecret.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>Is secret URL</value>
+  </data>
+  <data name="&gt;&gt;cbPolrIsSecret.Name" xml:space="preserve">
+    <value>cbPolrIsSecret</value>
+  </data>
+  <data name="&gt;&gt;cbPolrIsSecret.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPolrIsSecret.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;cbPolrIsSecret.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="txtPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 72</value>
   </data>
   <data name="txtPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtPolrAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -3275,7 +3335,7 @@ store.book[0].title</value>
     <value>tpPolr</value>
   </data>
   <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblPolrAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3305,13 +3365,13 @@ store.book[0].title</value>
     <value>tpPolr</value>
   </data>
   <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="txtPolrAPIHostname.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
   <data name="txtPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3326,7 +3386,7 @@ store.book[0].title</value>
     <value>tpPolr</value>
   </data>
   <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblPolrAPIHostname.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3338,13 +3398,13 @@ store.book[0].title</value>
     <value>13, 16</value>
   </data>
   <data name="lblPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 13</value>
+    <value>286, 13</value>
   </data>
   <data name="lblPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API hostname: (e.g. http://example.com/api.php, Leave blank to use polr.me)</value>
+    <value>API URL: (e.g. http://demo.polr.me/api/v2/action/shorten)</value>
   </data>
   <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
     <value>lblPolrAPIHostname</value>
@@ -3356,7 +3416,7 @@ store.book[0].title</value>
     <value>tpPolr</value>
   </data>
   <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="tpPolr.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3644,7 +3704,7 @@ store.book[0].title</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 432</value>
+    <value>792, 414</value>
   </data>
   <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -11395,6 +11455,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbPastieIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbPastieIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbPastieIsPublic.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 22</value>
   </data>
@@ -11499,6 +11562,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbImgurUseHTTPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbImgurUseHTTPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbImgurUseHTTPS.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 376</value>

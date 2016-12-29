@@ -329,6 +329,8 @@ namespace ShareX.UploadersLib
         // polr
         public string PolrAPIHostname = "";
         public string PolrAPIKey = "";
+        public bool PolrIsSecret = false;
+        public bool PolrUseAPIv1 = false;
 
         #endregion URL shorteners
 
