@@ -58,6 +58,7 @@ namespace ShareX
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(284, 261);
             FormBorderStyle = FormBorderStyle.None;
             Icon = ShareXResources.Icon;
@@ -65,7 +66,7 @@ namespace ShareX
             Text = "ShareX - Simple actions";
             TopMost = StayTopMost;
 
-            Shown += new EventHandler(SimpleActionsForm_Shown);
+            Shown += SimpleActionsForm_Shown;
 
             tsMain = new ToolStripEx()
             {
@@ -74,7 +75,8 @@ namespace ShareX
                 ClickThrough = true,
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
-                Location = new Point(0, 0),
+                Location = new Point(1, 1),
+                Margin = new Padding(1),
                 MinimumSize = new Size(10, 30),
                 Padding = new Padding(0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
@@ -95,7 +97,7 @@ namespace ShareX
                 }
             }
 
-            tsMain.MouseLeave += new EventHandler(tsMain_MouseLeave);
+            tsMain.MouseLeave += tsMain_MouseLeave;
 
             Controls.Add(tsMain);
 
@@ -190,10 +192,10 @@ namespace ShareX
                 ToolTipText = "Hold left down to drag\r\nRight click to open menu\r\nMiddle click to close"
             };
 
-            tslTitle.MouseDown += new MouseEventHandler(tslTitle_MouseDown);
-            tslTitle.MouseEnter += new EventHandler(tslTitle_MouseEnter);
-            tslTitle.MouseLeave += new EventHandler(tslTitle_MouseLeave);
-            tslTitle.MouseUp += new MouseEventHandler(tslTitle_MouseUp);
+            tslTitle.MouseDown += tslTitle_MouseDown;
+            tslTitle.MouseEnter += tslTitle_MouseEnter;
+            tslTitle.MouseLeave += tslTitle_MouseLeave;
+            tslTitle.MouseUp += tslTitle_MouseUp;
 
             tsMain.Items.Add(tslTitle);
 
