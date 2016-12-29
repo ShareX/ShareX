@@ -37,6 +37,8 @@ namespace ShareX
         public List<HotkeyType> Actions { get; set; } = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
             HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
+        public bool LockPosition { get; set; }
+
         private IContainer components;
         private ToolStripEx tsMain;
         private ToolTip ttMain;
@@ -128,8 +130,15 @@ namespace ShareX
 
             ToolStripMenuItem tsmiLock = new ToolStripMenuItem("Lock position");
             tsmiLock.CheckOnClick = true;
-            tsmiLock.Checked = true;
+            tsmiLock.Checked = false;
+            tsmiLock.Click += (sender, e) => LockPosition = tsmiLock.Checked;
             cmsTitle.Items.Add(tsmiLock);
+
+            ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem("Stay top most");
+            tsmiTopMost.CheckOnClick = true;
+            tsmiTopMost.Checked = true;
+            tsmiTopMost.Click += (sender, e) => TopMost = tsmiTopMost.Checked;
+            cmsTitle.Items.Add(tsmiTopMost);
 
             UpdateToolbar(Actions);
 
@@ -245,7 +254,7 @@ namespace ShareX
 
         private void tslTitle_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && !LockPosition)
             {
                 NativeMethods.ReleaseCapture();
                 NativeMethods.DefWindowProc(Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
