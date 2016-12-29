@@ -64,12 +64,17 @@
             // 
             // lvActions
             // 
+            this.lvActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvActions.AutoFillColumn = true;
             this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chAction});
             this.lvActions.FullRowSelect = true;
             this.lvActions.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvActions.HideSelection = false;
             this.lvActions.Location = new System.Drawing.Point(8, 40);
+            this.lvActions.MultiSelect = false;
             this.lvActions.Name = "lvActions";
             this.lvActions.Size = new System.Drawing.Size(448, 368);
             this.lvActions.SmallImageList = this.ilMain;
@@ -92,11 +97,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(466, 417);
+            this.ClientSize = new System.Drawing.Size(465, 417);
             this.Controls.Add(this.lvActions);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRemove);
             this.Name = "SimpleActionsEditForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Simple actions edit";
             this.ResumeLayout(false);

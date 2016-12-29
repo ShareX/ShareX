@@ -27,11 +27,8 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -63,10 +60,7 @@ namespace ShareX
                 ilMain.Images.Add(hotkeyType.ToString(), img);
             }
 
-            AddEnumItemsContextMenu(x =>
-            {
-                AddActionToList(x);
-            }, cmsAction);
+            AddEnumItemsContextMenu(AddAction, cmsAction);
 
             foreach (HotkeyType action in Actions)
             {
@@ -124,6 +118,12 @@ namespace ShareX
             }
         }
 
+        private void AddAction(HotkeyType hotkeyType)
+        {
+            Actions.Add(hotkeyType);
+            AddActionToList(hotkeyType);
+        }
+
         private void AddActionToList(HotkeyType hotkeyType)
         {
             ListViewItem lvi = new ListViewItem()
@@ -135,11 +135,17 @@ namespace ShareX
             lvActions.Items.Add(lvi);
         }
 
+        private void RemoveAction(int index)
+        {
+            Actions.RemoveAt(index);
+            lvActions.Items.RemoveAt(index);
+        }
+
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lvActions.SelectedItems.Count > 0)
+            if (lvActions.SelectedIndex >= 0)
             {
-                lvActions.Items.Remove(lvActions.SelectedItems[0]);
+                RemoveAction(lvActions.SelectedIndex);
             }
         }
     }

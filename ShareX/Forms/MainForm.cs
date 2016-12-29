@@ -60,6 +60,9 @@ namespace ShareX
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
             UseCommandLineArgs(Program.CLI.Commands);
+
+            // TODO: For testing
+            new SimpleActionsForm().Show();
         }
 
         private void InitializeControls()

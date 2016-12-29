@@ -93,8 +93,6 @@ namespace ShareX
 
             tsMain.MouseLeave += new EventHandler(tsMain_MouseLeave);
 
-            tsMain.SuspendLayout();
-
             Controls.Add(tsMain);
 
             components = new Container();
@@ -106,6 +104,18 @@ namespace ShareX
                 ReshowDelay = 100,
                 ShowAlways = true
             };
+
+            UpdateToolbar(Actions);
+
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        private void UpdateToolbar(List<HotkeyType> actions)
+        {
+            tsMain.SuspendLayout();
+
+            tsMain.Items.Clear();
 
             ToolStripLabel tslTitle = new ToolStripLabel()
             {
@@ -175,8 +185,6 @@ namespace ShareX
 
             tsMain.ResumeLayout(false);
             tsMain.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
         }
 
         protected override void Dispose(bool disposing)
@@ -226,7 +234,14 @@ namespace ShareX
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                new SimpleActionsEditForm(Actions).Show();
+                using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
+                {
+                    TopMost = false;
+                    form.ShowDialog();
+                    TopMost = true;
+
+                    UpdateToolbar(Actions);
+                }
             }
         }
     }
