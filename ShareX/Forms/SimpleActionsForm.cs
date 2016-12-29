@@ -40,6 +40,7 @@ namespace ShareX
         private IContainer components;
         private ToolStripEx tsMain;
         private ToolTip ttMain;
+        private ContextMenuStrip cmsTitle;
 
         public SimpleActionsForm()
         {
@@ -105,6 +106,31 @@ namespace ShareX
                 ShowAlways = true
             };
 
+            cmsTitle = new ContextMenuStrip(components);
+
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
+            tsmiClose.Click += (sender, e) => Close();
+            cmsTitle.Items.Add(tsmiClose);
+
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit");
+            tsmiEdit.Click += (sender, e) =>
+            {
+                using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
+                {
+                    TopMost = false;
+                    form.ShowDialog();
+                    TopMost = true;
+
+                    UpdateToolbar(Actions);
+                }
+            };
+            cmsTitle.Items.Add(tsmiEdit);
+
+            ToolStripMenuItem tsmiLock = new ToolStripMenuItem("Lock position");
+            tsmiLock.CheckOnClick = true;
+            tsmiLock.Checked = true;
+            cmsTitle.Items.Add(tsmiLock);
+
             UpdateToolbar(Actions);
 
             ResumeLayout(false);
@@ -121,7 +147,7 @@ namespace ShareX
             {
                 Margin = new Padding(4, 0, 3, 0),
                 Text = "ShareX",
-                ToolTipText = "Hold left down to drag\r\nRight click to close"
+                ToolTipText = "Hold left down to drag\r\nRight click to open menu\r\nMiddle click to close"
             };
 
             tslTitle.MouseDown += new MouseEventHandler(tslTitle_MouseDown);
@@ -230,18 +256,11 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Right)
             {
-                Close();
+                cmsTitle.Show(Location.X, Location.Y + Size.Height);
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
-                {
-                    TopMost = false;
-                    form.ShowDialog();
-                    TopMost = true;
-
-                    UpdateToolbar(Actions);
-                }
+                Close();
             }
         }
     }
