@@ -269,5 +269,18 @@ namespace ShareX
         public OCRSpaceLanguages OCRLanguage = OCRSpaceLanguages.eng;
 
         #endregion OCR Form
+
+        #region Simple actions form
+
+        public List<HotkeyType> SimpleActionsList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
+            HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
+
+        public Point SimpleActionsFormPosition;
+
+        public bool SimpleActionsFormLockPosition = false;
+
+        public bool SimpleActionsFormStayTopMost = true;
+
+        #endregion Simple actions form
     }
 }

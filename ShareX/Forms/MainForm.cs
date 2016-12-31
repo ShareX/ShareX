@@ -62,7 +62,7 @@ namespace ShareX
             UseCommandLineArgs(Program.CLI.Commands);
 
             // TODO: For testing
-            new SimpleActionsForm().Show();
+            SimpleActionsForm.Instance.ForceActivate();
         }
 
         private void InitializeControls()

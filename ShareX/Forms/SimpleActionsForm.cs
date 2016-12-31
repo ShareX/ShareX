@@ -34,18 +34,27 @@ namespace ShareX
 {
     public partial class SimpleActionsForm : Form
     {
-        public List<HotkeyType> Actions { get; set; } = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
-            HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
+        private static SimpleActionsForm instance;
 
-        public bool LockPosition { get; set; }
-        public bool StayTopMost { get; set; } = true;
+        public static SimpleActionsForm Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new SimpleActionsForm();
+                }
+
+                return instance;
+            }
+        }
 
         private IContainer components;
         private ToolStripEx tsMain;
         private ToolTip ttMain;
         private ContextMenuStrip cmsTitle;
 
-        public SimpleActionsForm()
+        private SimpleActionsForm()
         {
             InitializeComponent();
         }
@@ -64,7 +73,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ShareX - Simple actions";
-            TopMost = StayTopMost;
+            TopMost = Program.Settings.SimpleActionsFormStayTopMost;
 
             Shown += SimpleActionsForm_Shown;
 
@@ -121,13 +130,13 @@ namespace ShareX
 
             ToolStripMenuItem tsmiLock = new ToolStripMenuItem("Lock position");
             tsmiLock.CheckOnClick = true;
-            tsmiLock.Checked = LockPosition;
+            tsmiLock.Checked = Program.Settings.SimpleActionsFormLockPosition;
             tsmiLock.Click += TsmiLock_Click;
             cmsTitle.Items.Add(tsmiLock);
 
             ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem("Stay top most");
             tsmiTopMost.CheckOnClick = true;
-            tsmiTopMost.Checked = StayTopMost;
+            tsmiTopMost.Checked = Program.Settings.SimpleActionsFormStayTopMost;
             tsmiTopMost.Click += TsmiTopMost_Click;
             cmsTitle.Items.Add(tsmiTopMost);
 
@@ -137,7 +146,7 @@ namespace ShareX
             tsmiEdit.Click += TsmiEdit_Click;
             cmsTitle.Items.Add(tsmiEdit);
 
-            UpdateToolbar(Actions);
+            UpdateToolbar(Program.Settings.SimpleActionsList);
 
             ResumeLayout(false);
             PerformLayout();
@@ -150,32 +159,32 @@ namespace ShareX
 
         private void TsmiLock_Click(object sender, EventArgs e)
         {
-            LockPosition = ((ToolStripMenuItem)sender).Checked;
+            Program.Settings.SimpleActionsFormLockPosition = ((ToolStripMenuItem)sender).Checked;
         }
 
         private void TsmiTopMost_Click(object sender, EventArgs e)
         {
-            StayTopMost = ((ToolStripMenuItem)sender).Checked;
-            TopMost = StayTopMost;
+            Program.Settings.SimpleActionsFormStayTopMost = ((ToolStripMenuItem)sender).Checked;
+            TopMost = Program.Settings.SimpleActionsFormStayTopMost;
         }
 
         private void TsmiEdit_Click(object sender, EventArgs e)
         {
-            using (SimpleActionsEditForm form = new SimpleActionsEditForm(Actions))
+            using (SimpleActionsEditForm form = new SimpleActionsEditForm(Program.Settings.SimpleActionsList))
             {
-                if (StayTopMost)
+                if (Program.Settings.SimpleActionsFormStayTopMost)
                 {
                     TopMost = false;
                 }
 
                 form.ShowDialog();
 
-                if (StayTopMost)
+                if (Program.Settings.SimpleActionsFormStayTopMost)
                 {
                     TopMost = true;
                 }
 
-                UpdateToolbar(Actions);
+                UpdateToolbar(Program.Settings.SimpleActionsList);
             }
         }
 
@@ -199,7 +208,7 @@ namespace ShareX
 
             tsMain.Items.Add(tslTitle);
 
-            foreach (HotkeyType action in Actions)
+            foreach (HotkeyType action in Program.Settings.SimpleActionsList)
             {
                 if (action == HotkeyType.None)
                 {
@@ -221,14 +230,14 @@ namespace ShareX
 
                     tsb.Click += (sender, e) =>
                     {
-                        if (StayTopMost)
+                        if (Program.Settings.SimpleActionsFormStayTopMost)
                         {
                             TopMost = false;
                         }
 
                         TaskHelpers.ExecuteJob(action);
 
-                        if (StayTopMost)
+                        if (Program.Settings.SimpleActionsFormStayTopMost)
                         {
                             TopMost = true;
                         }
@@ -295,7 +304,7 @@ namespace ShareX
 
         private void tslTitle_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && !LockPosition)
+            if (e.Button == MouseButtons.Left && !Program.Settings.SimpleActionsFormLockPosition)
             {
                 NativeMethods.ReleaseCapture();
                 NativeMethods.DefWindowProc(Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
@@ -306,7 +315,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Right)
             {
-                cmsTitle.Show(Location.X, Location.Y + Size.Height);
+                cmsTitle.Show(Location.X, Location.Y + Size.Height - 1);
             }
             else if (e.Button == MouseButtons.Middle)
             {

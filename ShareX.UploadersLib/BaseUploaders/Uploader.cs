@@ -570,7 +570,7 @@ namespace ShareX.UploadersLib
 
                 string errorText = str.ToString().Trim();
                 Errors.Add(errorText);
-                DebugHelper.WriteLine("AddWebError(): " + errorText);
+                DebugHelper.WriteLine("Error:\r\n" + errorText);
             }
 
             return response;
