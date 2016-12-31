@@ -61,8 +61,10 @@ namespace ShareX
 
             UseCommandLineArgs(Program.CLI.Commands);
 
-            // TODO: For testing
-            SimpleActionsForm.Instance.ForceActivate();
+            if (Program.Settings.SimpleActionsFormRunAtStartup)
+            {
+                SimpleActionsForm.Instance.ForceActivate();
+            }
         }
 
         private void InitializeControls()

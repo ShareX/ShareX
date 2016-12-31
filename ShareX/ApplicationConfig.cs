@@ -272,10 +272,12 @@ namespace ShareX
 
         #region Simple actions form
 
+        public bool SimpleActionsFormRunAtStartup = true;
+
         public List<HotkeyType> SimpleActionsList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
             HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
-        public Point SimpleActionsFormPosition;
+        public Point SimpleActionsFormPosition = Point.Empty;
 
         public bool SimpleActionsFormLockPosition = false;
 

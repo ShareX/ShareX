@@ -71,10 +71,11 @@ namespace ShareX
             ClientSize = new Size(284, 261);
             FormBorderStyle = FormBorderStyle.None;
             Icon = ShareXResources.Icon;
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "ShareX - Simple actions";
             TopMost = Program.Settings.SimpleActionsFormStayTopMost;
 
+            LocationChanged += SimpleActionsForm_LocationChanged;
             Shown += SimpleActionsForm_Shown;
 
             tsMain = new ToolStripEx()
@@ -150,6 +151,41 @@ namespace ShareX
 
             ResumeLayout(false);
             PerformLayout();
+
+            UpdatePosition();
+        }
+
+        private void SimpleActionsForm_LocationChanged(object sender, EventArgs e)
+        {
+            Program.Settings.SimpleActionsFormPosition = Location;
+        }
+
+        private void SimpleActionsForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
+        private void UpdatePosition()
+        {
+            Rectangle rectScreen = CaptureHelpers.GetScreenWorkingArea();
+
+            if (!Program.Settings.SimpleActionsFormPosition.IsEmpty && rectScreen.Contains(Program.Settings.SimpleActionsFormPosition))
+            {
+                Location = Program.Settings.SimpleActionsFormPosition;
+            }
+            else
+            {
+                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenWorkingArea();
+
+                if (Width < rectActiveScreen.Width)
+                {
+                    Location = new Point(rectActiveScreen.X + rectActiveScreen.Width - Width, rectActiveScreen.Y + rectActiveScreen.Height - Height);
+                }
+                else
+                {
+                    Location = rectActiveScreen.Location;
+                }
+            }
         }
 
         private void TsmiClose_Click(object sender, EventArgs e)
@@ -280,11 +316,6 @@ namespace ShareX
             }
 
             base.Dispose(disposing);
-        }
-
-        private void SimpleActionsForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
         }
 
         private void tsMain_MouseLeave(object sender, EventArgs e)

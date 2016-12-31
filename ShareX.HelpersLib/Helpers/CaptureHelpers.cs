@@ -84,6 +84,11 @@ namespace ShareX.HelpersLib
             return Screen.FromPoint(GetCursorPosition()).Bounds;
         }
 
+        public static Rectangle GetActiveScreenWorkingArea()
+        {
+            return Screen.FromPoint(GetCursorPosition()).WorkingArea;
+        }
+
         public static Rectangle GetPrimaryScreenBounds()
         {
             return Screen.PrimaryScreen.Bounds;
