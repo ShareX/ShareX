@@ -141,6 +141,12 @@ namespace ShareX
             tsmiTopMost.Click += TsmiTopMost_Click;
             cmsTitle.Items.Add(tsmiTopMost);
 
+            ToolStripMenuItem tsmiRunAtStartup = new ToolStripMenuItem("Open at ShareX startup");
+            tsmiRunAtStartup.CheckOnClick = true;
+            tsmiRunAtStartup.Checked = Program.Settings.SimpleActionsFormRunAtStartup;
+            tsmiRunAtStartup.Click += TsmiRunAtStartup_Click;
+            cmsTitle.Items.Add(tsmiRunAtStartup);
+
             cmsTitle.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit...");
@@ -202,6 +208,11 @@ namespace ShareX
         {
             Program.Settings.SimpleActionsFormStayTopMost = ((ToolStripMenuItem)sender).Checked;
             TopMost = Program.Settings.SimpleActionsFormStayTopMost;
+        }
+
+        private void TsmiRunAtStartup_Click(object sender, EventArgs e)
+        {
+            Program.Settings.SimpleActionsFormRunAtStartup = ((ToolStripMenuItem)sender).Checked;
         }
 
         private void TsmiEdit_Click(object sender, EventArgs e)
