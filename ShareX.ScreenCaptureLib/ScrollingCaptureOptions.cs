@@ -62,9 +62,6 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(false)]
         public bool AutoUpload { get; set; } = false;
 
-        [DefaultValue(false), Description("Automatically close scrolling capture window after completing the task.")]
-        public bool AutoClose { get; set; } = false;
-
         public int TrimLeftEdge = 0;
         public int TrimTopEdge = 0;
         public int TrimRightEdge = 0;

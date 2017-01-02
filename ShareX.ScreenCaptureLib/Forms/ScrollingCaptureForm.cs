@@ -234,7 +234,6 @@ namespace ShareX.ScreenCaptureLib
             isCapturing = false;
 
             if (Options.AutoUpload) StartProcess();
-            if (Options.AutoClose) Close();
         }
 
         private void Clean()
@@ -663,11 +662,6 @@ namespace ShareX.ScreenCaptureLib
         private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoUpload = chkAutoUpload.Checked;
-        }
-
-        private void cbAutoClose_CheckedChanged(object sender, EventArgs e)
-        {
-            Options.AutoClose = cbAutoClose.Checked;
         }
 
         private Padding GuessEdges(Image img1, Image img2)

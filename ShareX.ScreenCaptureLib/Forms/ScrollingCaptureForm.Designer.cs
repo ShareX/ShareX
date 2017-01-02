@@ -35,7 +35,6 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.gbAfterCapture = new System.Windows.Forms.GroupBox();
-            this.cbAutoClose = new System.Windows.Forms.CheckBox();
             this.cbRemoveDuplicates = new System.Windows.Forms.CheckBox();
             this.cbAutoCombine = new System.Windows.Forms.CheckBox();
             this.chkAutoUpload = new System.Windows.Forms.CheckBox();
@@ -177,19 +176,11 @@ namespace ShareX.ScreenCaptureLib
             // gbAfterCapture
             // 
             resources.ApplyResources(this.gbAfterCapture, "gbAfterCapture");
-            this.gbAfterCapture.Controls.Add(this.cbAutoClose);
             this.gbAfterCapture.Controls.Add(this.cbRemoveDuplicates);
             this.gbAfterCapture.Controls.Add(this.cbAutoCombine);
             this.gbAfterCapture.Controls.Add(this.chkAutoUpload);
             this.gbAfterCapture.Name = "gbAfterCapture";
             this.gbAfterCapture.TabStop = false;
-            // 
-            // cbAutoClose
-            // 
-            resources.ApplyResources(this.cbAutoClose, "cbAutoClose");
-            this.cbAutoClose.Name = "cbAutoClose";
-            this.cbAutoClose.UseVisualStyleBackColor = true;
-            this.cbAutoClose.CheckedChanged += new System.EventHandler(this.cbAutoClose_CheckedChanged);
             // 
             // cbRemoveDuplicates
             // 
@@ -635,6 +626,5 @@ namespace ShareX.ScreenCaptureLib
         private GroupBox gbAfterCapture;
         private GroupBox gbWhileCapturing;
         private GroupBox gbBeforeCapture;
-        private CheckBox cbAutoClose;
     }
 }

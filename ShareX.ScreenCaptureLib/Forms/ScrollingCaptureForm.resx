@@ -184,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 480</value>
+    <value>8, 456</value>
   </data>
   <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>960, 48</value>
@@ -315,36 +315,6 @@
   <data name="gbAfterCapture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="cbAutoClose.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAutoClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbAutoClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
-  </data>
-  <data name="cbAutoClose.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Close this window after processing</value>
-  </data>
-  <data name="&gt;&gt;cbAutoClose.Name" xml:space="preserve">
-    <value>cbAutoClose</value>
-  </data>
-  <data name="&gt;&gt;cbAutoClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAutoClose.Parent" xml:space="preserve">
-    <value>gbAfterCapture</value>
-  </data>
-  <data name="&gt;&gt;cbAutoClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cbRemoveDuplicates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -370,7 +340,7 @@
     <value>gbAfterCapture</value>
   </data>
   <data name="&gt;&gt;cbRemoveDuplicates.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbAutoCombine.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +367,7 @@
     <value>gbAfterCapture</value>
   </data>
   <data name="&gt;&gt;cbAutoCombine.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="chkAutoUpload.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -427,13 +397,13 @@
     <value>gbAfterCapture</value>
   </data>
   <data name="&gt;&gt;chkAutoUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="gbAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 344</value>
   </data>
   <data name="gbAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 128</value>
+    <value>960, 104</value>
   </data>
   <data name="gbAfterCapture.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -769,7 +739,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 544</value>
+    <value>8, 512</value>
   </data>
   <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
     <value>960, 80</value>
