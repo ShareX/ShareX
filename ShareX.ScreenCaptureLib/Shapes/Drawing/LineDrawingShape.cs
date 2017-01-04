@@ -102,7 +102,8 @@ namespace ShareX.ScreenCaptureLib
             return new Pen(borderColor, borderSize)
             {
                 StartCap = LineCap.Round,
-                EndCap = LineCap.Round
+                EndCap = LineCap.Round,
+                LineJoin = LineJoin.Round
             };
         }
 

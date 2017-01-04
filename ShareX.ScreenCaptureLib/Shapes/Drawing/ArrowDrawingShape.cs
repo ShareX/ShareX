@@ -34,10 +34,24 @@ namespace ShareX.ScreenCaptureLib
 
         protected override Pen CreatePen(Color borderColor, int borderSize)
         {
-            return new Pen(borderColor, borderSize)
+            using (GraphicsPath gp = new GraphicsPath())
             {
-                CustomEndCap = new AdjustableArrowCap(4, 6)
-            };
+                int arrowWidth = 2, arrowHeight = 6, arrowCurve = 1;
+                gp.AddLine(new Point(0, 0), new Point(-arrowWidth, -arrowHeight));
+                gp.AddCurve(new Point[] { new Point(-arrowWidth, -arrowHeight), new Point(0, -arrowHeight + arrowCurve), new Point(arrowWidth, -arrowHeight) });
+                gp.CloseFigure();
+
+                CustomLineCap lineCap = new CustomLineCap(gp, null)
+                {
+                    BaseInset = arrowHeight - arrowCurve
+                };
+
+                return new Pen(borderColor, borderSize)
+                {
+                    CustomEndCap = lineCap,
+                    LineJoin = LineJoin.Round
+                };
+            }
         }
     }
 }

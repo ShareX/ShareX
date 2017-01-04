@@ -71,6 +71,7 @@ namespace ShareX
             ClientSize = new Size(284, 261);
             FormBorderStyle = FormBorderStyle.None;
             Icon = ShareXResources.Icon;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
             Text = "ShareX - Simple actions";
             TopMost = Program.Settings.SimpleActionsFormStayTopMost;
