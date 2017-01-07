@@ -238,6 +238,7 @@
             this.pTips = new System.Windows.Forms.Panel();
             this.lblTips = new System.Windows.Forms.Label();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -910,6 +911,7 @@
             this.tsmiShareSelectedURL,
             this.tsmiShowQRCode,
             this.tsmiOCRImage,
+            this.tsmiCombineImages,
             this.tsmiShowResponse,
             this.tsmiClearList,
             this.tssUploadInfo1,
@@ -1855,6 +1857,13 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
+            // tsmiCombineImages
+            // 
+            this.tsmiCombineImages.Image = global::ShareX.Properties.Resources.document_break;
+            this.tsmiCombineImages.Name = "tsmiCombineImages";
+            resources.ApplyResources(this.tsmiCombineImages, "tsmiCombineImages");
+            this.tsmiCombineImages.Click += new System.EventHandler(this.tsmiCombineImages_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2106,5 +2115,6 @@
         private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiOCRImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
     }
 }

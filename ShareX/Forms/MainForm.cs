@@ -526,8 +526,8 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
-                tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
-                tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiDeleteSelectedFile.Visible =
+                tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -616,6 +616,7 @@ namespace ShareX
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
+                    tsmiCombineImages.Visible = uim.SelectedItems.Where(x => x.IsImageFile).Count() > 1;
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
@@ -1877,6 +1878,11 @@ namespace ShareX
         private void tsmiOCRImage_Click(object sender, EventArgs e)
         {
             uim.OCRImage();
+        }
+
+        private void tsmiCombineImages_Click(object sender, EventArgs e)
+        {
+            uim.CombineImages();
         }
 
         private void tsmiShowResponse_Click(object sender, EventArgs e)

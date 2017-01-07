@@ -50,6 +50,17 @@ namespace ShareX
             nudSpace.SetValue(Options.Space);
         }
 
+        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
+        {
+            if (imageFiles != null)
+            {
+                foreach (string image in imageFiles)
+                {
+                    lvImages.Items.Add(image);
+                }
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string[] images = ImageHelpers.OpenImageFileDialog(true);
