@@ -51,6 +51,15 @@ namespace ShareX.HelpersLib
         private static readonly string ShellExtIcon = ApplicationPath + ",0";
         private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
 
+        private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
+        private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
+        private static readonly string ShellCustomUploaderAssociatePath = @"Software\Classes\" + ShellCustomUploaderExtensionValue;
+        private static readonly string ShellCustomUploaderAssociateValue = "ShareX custom uploader";
+        private static readonly string ShellCustomUploaderIconPath = ShellCustomUploaderAssociatePath + @"\DefaultIcon";
+        private static readonly string ShellCustomUploaderIconValue = ApplicationPath + ",0";
+        private static readonly string ShellCustomUploaderCommandPath = ShellCustomUploaderAssociatePath + @"\shell\open\command";
+        private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " \"%1\"";
+
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
 
         public static bool CheckStartWithWindows()
@@ -139,12 +148,59 @@ namespace ShareX.HelpersLib
 
         public static void UnregisterShellContextMenu()
         {
-            RemoveRegistry(ShellExtMenuFilesCmd);
-            RemoveRegistry(ShellExtMenuFiles);
-            RemoveRegistry(ShellExtMenuDirectoryCmd);
-            RemoveRegistry(ShellExtMenuDirectory);
-            RemoveRegistry(ShellExtMenuFoldersCmd);
-            RemoveRegistry(ShellExtMenuFolders);
+            RemoveRegistry(ShellExtMenuFiles, true);
+            RemoveRegistry(ShellExtMenuDirectory, true);
+            RemoveRegistry(ShellExtMenuFolders, true);
+        }
+
+        public static bool CheckCustomUploaderExtension()
+        {
+            try
+            {
+                return CheckRegistry(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) && CheckRegistry(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void SetCustomUploaderExtension(bool register)
+        {
+            try
+            {
+                if (register)
+                {
+                    UnregisterCustomUploaderExtension();
+                    RegisterCustomUploaderExtension();
+                }
+                else
+                {
+                    UnregisterCustomUploaderExtension();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        public static void RegisterCustomUploaderExtension()
+        {
+            CreateRegistry(ShellCustomUploaderExtensionPath, ShellCustomUploaderExtensionValue);
+            CreateRegistry(ShellCustomUploaderAssociatePath, ShellCustomUploaderAssociateValue);
+            CreateRegistry(ShellCustomUploaderIconPath, ShellCustomUploaderIconValue);
+            CreateRegistry(ShellCustomUploaderCommandPath, ShellCustomUploaderCommandValue);
+
+            NativeMethods.SHChangeNotify(HChangeNotifyEventID.SHCNE_ASSOCCHANGED, HChangeNotifyFlags.SHCNF_FLUSH, IntPtr.Zero, IntPtr.Zero);
+        }
+
+        public static void UnregisterCustomUploaderExtension()
+        {
+            RemoveRegistry(ShellCustomUploaderExtensionPath);
+            RemoveRegistry(ShellCustomUploaderAssociatePath, true);
         }
 
         public static void RegisterChromeSupport(string filepath)
@@ -237,13 +293,20 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void RemoveRegistry(string path)
+        public static void RemoveRegistry(string path, bool recursive = false)
         {
             using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(path))
             {
                 if (rk != null)
                 {
-                    Registry.CurrentUser.DeleteSubKey(path);
+                    if (recursive)
+                    {
+                        Registry.CurrentUser.DeleteSubKeyTree(path);
+                    }
+                    else
+                    {
+                        Registry.CurrentUser.DeleteSubKey(path);
+                    }
                 }
             }
         }

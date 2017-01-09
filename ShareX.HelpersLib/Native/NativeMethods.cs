@@ -375,6 +375,9 @@ namespace ShareX.HelpersLib
         [DllImport("shell32.dll")]
         public static extern int SHOpenFolderAndSelectItems(IntPtr pidlFolder, int cild, IntPtr apidl, int dwFlags);
 
+        [DllImport("shell32.dll")]
+        public static extern void SHChangeNotify(HChangeNotifyEventID wEventId, HChangeNotifyFlags uFlags, IntPtr dwItem1, IntPtr dwItem2);
+
         [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr ILCreateFromPathW(string pszPath);
 

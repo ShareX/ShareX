@@ -314,6 +314,15 @@ namespace ShareX.UploadersLib
         Xml
     }
 
+    public enum CustomUploaderDestinationType
+    {
+        Any,
+        ImageUploader,
+        TextUploader,
+        FileUploader,
+        URLShortener
+    }
+
     public enum FTPSEncryption
     {
         /// <summary>

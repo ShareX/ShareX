@@ -62,6 +62,16 @@ namespace ShareX
             RegistryHelpers.SetShellContextMenu(create);
         }
 
+        public static bool CheckCustomUploaderExtension()
+        {
+            return RegistryHelpers.CheckCustomUploaderExtension();
+        }
+
+        public static void CreateCustomUploaderExtension(bool create)
+        {
+            RegistryHelpers.SetCustomUploaderExtension(create);
+        }
+
         public static bool CheckSendToMenuButton()
         {
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);

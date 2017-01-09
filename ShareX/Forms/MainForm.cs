@@ -257,6 +257,11 @@ namespace ShareX
 
             InitHotkeys();
 
+            if (!IntegrationHelpers.CheckCustomUploaderExtension())
+            {
+                IntegrationHelpers.CreateCustomUploaderExtension(true);
+            }
+
             IsReady = true;
         }
 
