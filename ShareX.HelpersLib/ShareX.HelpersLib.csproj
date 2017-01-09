@@ -87,6 +87,7 @@
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="Input\HotkeyInfo.cs" />
     <Compile Include="Input\KeyboardHook.cs" />
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />

@@ -750,6 +750,13 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("CommandLine: " + command.Command);
 
+                if (command.IsCommand && command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    TaskHelpers.AddCustomUploader(command.Parameter);
+
+                    continue;
+                }
+
                 if (command.IsCommand && (CheckCLIHotkey(command) || CheckCLIWorkflow(command)))
                 {
                     continue;

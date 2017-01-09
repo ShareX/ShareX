@@ -1335,5 +1335,25 @@ namespace ShareX
 
             return screenshot;
         }
+
+        public static void AddCustomUploader(string filePath)
+        {
+            if (Program.UploadersConfig != null)
+            {
+                try
+                {
+                    CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+
+                    if (cui != null)
+                    {
+                        Program.UploadersConfig.CustomUploadersList.Add(cui);
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+        }
     }
 }

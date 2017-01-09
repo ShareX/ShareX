@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
         private static readonly string ShellCustomUploaderIconPath = ShellCustomUploaderAssociatePath + @"\DefaultIcon";
         private static readonly string ShellCustomUploaderIconValue = ApplicationPath + ",0";
         private static readonly string ShellCustomUploaderCommandPath = ShellCustomUploaderAssociatePath + @"\shell\open\command";
-        private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " \"%1\"";
+        private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " -CustomUploader \"%1\"";
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
 
