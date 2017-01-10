@@ -221,7 +221,7 @@ namespace ShareX.ScreenCaptureLib
             this.ForceActivate();
         }
 
-        private void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
+        internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyData)
             {
@@ -231,7 +231,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RegionCaptureForm_KeyUp(object sender, KeyEventArgs e)
+        internal void RegionCaptureForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Escape)
             {
