@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 }
                 else
                 {
-                    domain = "http://hastebin.com";
+                    domain = "https://hastebin.com";
                 }
 
                 ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
