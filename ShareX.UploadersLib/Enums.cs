@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
@@ -314,13 +315,14 @@ namespace ShareX.UploadersLib
         Xml
     }
 
+    [Flags]
     public enum CustomUploaderDestinationType
     {
-        Any,
-        ImageUploader,
-        TextUploader,
-        FileUploader,
-        URLShortener
+        None = 0,
+        ImageUploader = 1,
+        TextUploader = 1 << 1,
+        FileUploader = 1 << 2,
+        URLShortener = 1 << 3
     }
 
     public enum FTPSEncryption

@@ -1346,6 +1346,39 @@ namespace ShareX
 
                     if (cui != null)
                     {
+                        if (cui.DestinationType == CustomUploaderDestinationType.None)
+                        {
+                            DialogResult result = MessageBox.Show($"Would you like to add \"{cui.Name}\" custom uploader?",
+                                "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                            if (result == DialogResult.No)
+                            {
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            List<string> destinations = new List<string>();
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener)) destinations.Add("urls");
+
+                            string destinationsText = string.Join("/", destinations);
+
+                            DialogResult result = MessageBox.Show($"Would you like to set \"{cui.Name}\" as the active custom uploader for {destinationsText}?",
+                                "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // TODO: Select custom uploader
+                            }
+                            else if (result == DialogResult.Cancel)
+                            {
+                                return;
+                            }
+                        }
+
                         Program.UploadersConfig.CustomUploadersList.Add(cui);
                     }
                 }
