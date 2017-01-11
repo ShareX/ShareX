@@ -136,8 +136,8 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info DropboxOAuth2Info = null;
         //public DropboxAccount DropboxAccount = null;
-        public string DropboxUploadPath = "Public/ShareX/%y/%mo";
-        public bool DropboxAutoCreateShareableLink = false;
+        public string DropboxUploadPath = "ShareX/%y/%mo";
+        public bool DropboxAutoCreateShareableLink = true;
         public DropboxURLType DropboxURLType = DropboxURLType.Default;
         public DropboxAccountInfo DropboxAccountInfo = null; // API v1
 
