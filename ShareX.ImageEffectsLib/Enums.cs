@@ -23,11 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
+
 namespace ShareX.ImageEffectsLib
 {
     public enum WatermarkType
     {
         Text,
         Image
+    }
+
+    public enum ResizeMode
+    {
+        [Description("Resizes all images to the specified size.")]
+        ResizeAll,
+        [Description("Only resize image if it is bigger than specified size.")]
+        ResizeIfBigger,
+        [Description("Only resize image if it is smaller than specified size.")]
+        ResizeIfSmaller
     }
 }
