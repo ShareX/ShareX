@@ -167,4 +167,14 @@ namespace ShareX.HelpersLib
         Failed,
         NotConfigured
     }
+
+	public enum ResizeMode
+	{
+		[Description("Resizes all images to the specified size.")]
+		ResizeAll,
+		[Description("Only resize image if it is bigger than specified size.")]
+		ResizeIfBigger,
+		[Description("Only resize image if it is smaller than specified size.")]
+		ResizeIfSmaller
+	}
 }
