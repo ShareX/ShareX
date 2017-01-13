@@ -117,6 +117,7 @@ namespace ShareX
         {
             CreateStartupShortcut(false);
             CreateShellContextMenuButton(false);
+            CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);
         }
     }
