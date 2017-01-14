@@ -1862,15 +1862,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload with {0}.
-        /// </summary>
-        internal static string RegistryHelpers_ShellExtDesc_Upload_with__0_ {
-            get {
-                return ResourceManager.GetString("RegistryHelpers_ShellExtDesc_Upload_with__0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Computer.
         /// </summary>
         internal static string ReplCodeMenuCategory_Computer {

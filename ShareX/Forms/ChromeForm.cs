@@ -65,7 +65,7 @@ namespace ShareX
             {
                 CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
 
-                RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestFilePath);
+                IntegrationHelpers.RegisterChromeSupport(Program.ChromeHostManifestFilePath);
 
                 MessageBox.Show(Resources.ChromeForm_btnRegister_Click_Chrome_support_enabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -84,7 +84,7 @@ namespace ShareX
                     File.Delete(Program.ChromeHostManifestFilePath);
                 }
 
-                RegistryHelpers.UnregisterChromeSupport();
+                IntegrationHelpers.UnregisterChromeSupport();
 
                 MessageBox.Show(Resources.ChromeForm_btnUnregister_Click_Chrome_support_disabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

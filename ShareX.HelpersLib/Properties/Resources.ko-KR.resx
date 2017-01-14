@@ -210,9 +210,6 @@
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>클립보드 내용이 없거나 알 수 없는 데이터를 포함하고 있음</value>
   </data>
-  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
-    <value>{0} 프로그램으로 업로드하기</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>이름: {0}, 크기: {1}</value>
   </data>

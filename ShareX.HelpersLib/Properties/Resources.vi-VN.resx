@@ -147,9 +147,6 @@
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Vùng nhớ tạm trống hoặc chứa dữ liệu chưa biết.</value>
   </data>
-  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
-    <value>Tải lên với {0}</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Tên: {0}, Kích thước: {1}</value>
   </data>
