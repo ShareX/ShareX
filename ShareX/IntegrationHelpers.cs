@@ -36,8 +36,16 @@ namespace ShareX
     {
         private static readonly string ApplicationName = "ShareX";
         private static readonly string ApplicationPath = string.Format("\"{0}\"", Application.ExecutablePath);
-        private static readonly string StartupPath = ApplicationPath + " -silent";
-        private static readonly string WindowsStartupRun = @"Software\Microsoft\Windows\CurrentVersion\Run";
+
+        private static readonly string StartupTargetPath =
+#if STEAM
+            Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+#else
+            Application.ExecutablePath;
+#endif
+
+        private static readonly string StartupRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
+        private static readonly string StartupRegistryValue = $"\"{StartupTargetPath}\" -silent";
 
         private static readonly string ShellExtMenuFiles = @"Software\Classes\*\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFilesCmd = ShellExtMenuFiles + @"\command";
@@ -63,11 +71,21 @@ namespace ShareX
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
 
+        public static bool CheckStartupShortcut()
+        {
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
+        }
+
+        public static void CreateStartupShortcut(bool create)
+        {
+            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+        }
+
         public static bool CheckStartWithWindows()
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(WindowsStartupRun, ApplicationName, StartupPath);
+                return RegistryHelpers.CheckRegistry(StartupRegistryPath, ApplicationName, StartupRegistryValue);
             }
             catch (Exception e)
             {
@@ -77,17 +95,17 @@ namespace ShareX
             return false;
         }
 
-        public static void SetStartWithWindows(bool startWithWindows)
+        public static void CreateStartWithWindows(bool create)
         {
             try
             {
-                using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(WindowsStartupRun, true))
+                using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(StartupRegistryPath, true))
                 {
                     if (rk != null)
                     {
-                        if (startWithWindows)
+                        if (create)
                         {
-                            rk.SetValue(ApplicationName, StartupPath, RegistryValueKind.String);
+                            rk.SetValue(ApplicationName, StartupRegistryValue, RegistryValueKind.String);
                         }
                         else
                         {
@@ -213,25 +231,6 @@ namespace ShareX
         public static void UnregisterChromeSupport()
         {
             RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
-        }
-
-        private static string GetStartupTargetPath()
-        {
-#if STEAM
-            return Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-            return Application.ExecutablePath;
-#endif
-        }
-
-        public static bool CheckStartupShortcut()
-        {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, GetStartupTargetPath());
-        }
-
-        public static void CreateStartupShortcut(bool create)
-        {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, GetStartupTargetPath(), "-silent");
         }
 
         public static bool CheckSendToMenuButton()
