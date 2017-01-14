@@ -318,10 +318,15 @@ namespace ShareX.UploadersLib
     [Flags]
     public enum CustomUploaderDestinationType
     {
+        [Description("None")]
         None = 0,
+        [Description("Image uploader")]
         ImageUploader = 1,
+        [Description("Text uploader")]
         TextUploader = 1 << 1,
+        [Description("File uploader")]
         FileUploader = 1 << 2,
+        [Description("URL shortener")]
         URLShortener = 1 << 3
     }
 

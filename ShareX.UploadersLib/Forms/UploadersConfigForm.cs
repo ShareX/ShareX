@@ -120,10 +120,17 @@ namespace ShareX.UploadersLib
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
 
+            txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark("Name");
+            AddMultiEnumItemsContextMenu(x => SwapCustomUploaderDestinationType(x), cmsCustomUploaderDestinationType);
+
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
             btnPomfTest.Visible = true;
 #endif
+        }
+
+        private void SwapCustomUploaderDestinationType(CustomUploaderDestinationType type)
+        {
         }
 
         private void AddIconToTabs()
@@ -163,6 +170,34 @@ namespace ShareX.UploadersLib
             if (tp != null)
             {
                 ttlvMain.NavigateToTabPage(tp);
+            }
+        }
+
+        private void AddMultiEnumItemsContextMenu(Action<CustomUploaderDestinationType> selectedEnum, params ToolStripDropDown[] parents)
+        {
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<CustomUploaderDestinationType>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
+
+            foreach (ToolStripDropDown parent in parents)
+            {
+                for (int i = 0; i < enums.Length; i++)
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+
+                    int index = i;
+
+                    tsmi.Click += (sender, e) =>
+                    {
+                        foreach (ToolStripDropDown parent2 in parents)
+                        {
+                            ToolStripMenuItem tsmi2 = (ToolStripMenuItem)parent2.Items[index];
+                            tsmi2.Checked = !tsmi2.Checked;
+                        }
+
+                        selectedEnum((CustomUploaderDestinationType)Enum.ToObject(typeof(CustomUploaderDestinationType), 1 << index));
+                    };
+
+                    parent.Items.Add(tsmi);
+                }
             }
         }
 
