@@ -1486,6 +1486,54 @@ namespace ShareX.UploadersLib
 
         #region Custom uploader
 
+        private void AddCustomUploaderDestinationTypes()
+        {
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<CustomUploaderDestinationType>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
+
+            for (int i = 0; i < enums.Length; i++)
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+
+                int index = i;
+
+                tsmi.Click += (sender, e) =>
+                {
+                    ToolStripMenuItem tsmi2 = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[index];
+                    tsmi2.Checked = !tsmi2.Checked;
+                };
+
+                cmsCustomUploaderDestinationType.Items.Add(tsmi);
+            }
+
+            cmsCustomUploaderDestinationType.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+        }
+
+        private void SetCustomUploaderDestinationType(CustomUploaderDestinationType destinationType)
+        {
+            for (int i = 0; i < cmsCustomUploaderDestinationType.Items.Count; i++)
+            {
+                ToolStripMenuItem tsmi = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[i];
+                tsmi.Checked = destinationType.HasFlag(1 << i);
+            }
+        }
+
+        private CustomUploaderDestinationType GetCustomUploaderDestinationType()
+        {
+            CustomUploaderDestinationType destinationType = CustomUploaderDestinationType.None;
+
+            for (int i = 0; i < cmsCustomUploaderDestinationType.Items.Count; i++)
+            {
+                ToolStripMenuItem tsmi = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[i];
+
+                if (tsmi.Checked)
+                {
+                    destinationType |= (CustomUploaderDestinationType)(1 << i);
+                }
+            }
+
+            return destinationType;
+        }
+
         private void UpdateCustomUploader()
         {
             int index = lbCustomUploaderList.SelectedIndex;
@@ -1622,6 +1670,7 @@ namespace ShareX.UploadersLib
         private void LoadCustomUploader(CustomUploaderItem customUploader)
         {
             txtCustomUploaderName.Text = customUploader.Name ?? "";
+            SetCustomUploaderDestinationType(customUploader.DestinationType);
 
             cbCustomUploaderRequestType.SelectedIndex = (int)customUploader.RequestType;
             txtCustomUploaderRequestURL.Text = customUploader.RequestURL ?? "";
@@ -1671,6 +1720,8 @@ namespace ShareX.UploadersLib
         private CustomUploaderItem GetCustomUploaderFromFields()
         {
             CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
+
+            item.DestinationType = GetCustomUploaderDestinationType();
 
             item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
 
