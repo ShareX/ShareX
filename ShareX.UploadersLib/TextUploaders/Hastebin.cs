@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     domain = "https://hastebin.com";
                 }
 
-                ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
+                ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text.Replace("\r\n", "\n"));
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {
