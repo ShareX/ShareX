@@ -304,17 +304,12 @@ namespace ShareX.HelpersLib
 
         public static void RadioCheck(this ToolStripMenuItem tsmi)
         {
-            ToolStrip parent = tsmi.GetCurrentParent();
+            ToolStripDropDownItem tsddiParent = tsmi.OwnerItem as ToolStripDropDownItem;
 
-            foreach (ToolStripMenuItem tsmiParent in parent.Items.OfType<ToolStripMenuItem>())
+            foreach (ToolStripMenuItem tsmiChild in tsddiParent.DropDownItems.OfType<ToolStripMenuItem>())
             {
-                if (tsmiParent != tsmi)
-                {
-                    tsmiParent.Checked = false;
-                }
+                tsmiChild.Checked = tsmiChild == tsmi;
             }
-
-            tsmi.Checked = true;
         }
 
         public static void RadioCheck(this ToolStripButton tsb)

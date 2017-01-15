@@ -93,6 +93,7 @@
             this.tsddbThumbnailSize,
             this.tsddbMaxImageLimit});
             this.tsMain.Name = "tsMain";
+            this.tsMain.ShowItemToolTips = false;
             // 
             // tsddbViewMode
             // 

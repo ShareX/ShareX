@@ -328,7 +328,7 @@
     <value>3, 1, 3, 1</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 25</value>
+    <value>360, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

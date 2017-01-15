@@ -468,7 +468,7 @@ namespace ShareX
 
             foreach (ToolStripDropDownItem parent in parents)
             {
-                ((ToolStripMenuItem)parent.DropDownItems[index]).Checked = true;
+                ((ToolStripMenuItem)parent.DropDownItems[index]).RadioCheck();
             }
         }
 
@@ -722,7 +722,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateUploaderMenuNames()
+        public void UpdateUploaderMenuNames()
         {
             string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 Program.DefaultTaskSettings.ImageFileDestination.GetLocalizedDescription() : Program.DefaultTaskSettings.ImageDestination.GetLocalizedDescription();

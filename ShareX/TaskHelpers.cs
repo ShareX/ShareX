@@ -1346,6 +1346,8 @@ namespace ShareX
 
                     if (cui != null)
                     {
+                        bool activate = false;
+
                         if (cui.DestinationType == CustomUploaderDestinationType.None)
                         {
                             DialogResult result = MessageBox.Show($"Would you like to add \"{cui.Name}\" custom uploader?",
@@ -1371,7 +1373,7 @@ namespace ShareX
 
                             if (result == DialogResult.Yes)
                             {
-                                // TODO: Select custom uploader
+                                activate = true;
                             }
                             else if (result == DialogResult.Cancel)
                             {
@@ -1380,6 +1382,38 @@ namespace ShareX
                         }
 
                         Program.UploadersConfig.CustomUploadersList.Add(cui);
+
+                        if (activate)
+                        {
+                            int index = Program.UploadersConfig.CustomUploadersList.Count - 1;
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader))
+                            {
+                                Program.UploadersConfig.CustomImageUploaderSelected = index;
+                                Program.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader))
+                            {
+                                Program.UploadersConfig.CustomTextUploaderSelected = index;
+                                Program.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader))
+                            {
+                                Program.UploadersConfig.CustomFileUploaderSelected = index;
+                                Program.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener))
+                            {
+                                Program.UploadersConfig.CustomURLShortenerSelected = index;
+                                Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
+                            }
+
+                            Program.MainForm.UpdateCheckStates();
+                            Program.MainForm.UpdateUploaderMenuNames();
+                        }
                     }
                 }
                 catch (Exception e)
