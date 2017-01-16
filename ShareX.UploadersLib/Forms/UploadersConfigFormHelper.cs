@@ -1647,7 +1647,7 @@ namespace ShareX.UploadersLib
                         foreach (CustomUploaderItem item in Config.CustomUploadersList)
                         {
                             string json = eiCustomUploaders.Serialize(item);
-                            string filepath = Path.Combine(fsd.FileName, item.Name + ".json");
+                            string filepath = Path.Combine(fsd.FileName, item.Name + ".sxcu");
                             File.WriteAllText(filepath, json, Encoding.UTF8);
                         }
                     }

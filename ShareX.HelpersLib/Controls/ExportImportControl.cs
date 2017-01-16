@@ -52,6 +52,9 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ExportIgnoreNull { get; set; }
 
+        [DefaultValue("")]
+        public string CustomFilter { get; set; } = "";
+
         public ExportImportControl()
         {
             InitializeComponent();
@@ -116,7 +119,14 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Settings (*.json)|*.json" })
+                    string filter = "Settings (*.json)|*.json";
+
+                    if (!string.IsNullOrEmpty(CustomFilter))
+                    {
+                        filter = CustomFilter + "|" + filter;
+                    }
+
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = filter })
                     {
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
@@ -195,7 +205,14 @@ namespace ShareX.HelpersLib
         {
             if (ImportRequested != null)
             {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Settings (*.json)|*.json|All files (*.*)|*.*", Multiselect = true })
+                string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+
+                if (!string.IsNullOrEmpty(CustomFilter))
+                {
+                    filter = CustomFilter + "|" + filter;
+                }
+
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
