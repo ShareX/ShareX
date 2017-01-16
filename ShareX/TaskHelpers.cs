@@ -1166,8 +1166,9 @@ namespace ShareX
                 Program.UploaderSettingsResetEvent.WaitOne();
             }
 
-            bool firstInstance;
-            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig, out firstInstance);
+            bool firstInstance = !UploadersConfigForm.IsInstanceActive;
+
+            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig);
 
             if (firstInstance)
             {
@@ -1413,6 +1414,11 @@ namespace ShareX
 
                             Program.MainForm.UpdateCheckStates();
                             Program.MainForm.UpdateUploaderMenuNames();
+
+                            if (UploadersConfigForm.IsInstanceActive)
+                            {
+                                UploadersConfigForm.UpdateCustomUploaderTab();
+                            }
                         }
                     }
                 }

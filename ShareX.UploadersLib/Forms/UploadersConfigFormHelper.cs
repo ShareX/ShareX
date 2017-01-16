@@ -1486,6 +1486,45 @@ namespace ShareX.UploadersLib
 
         #region Custom uploader
 
+        private void LoadCustomUploaderTab(bool selectLastItem = false)
+        {
+            lbCustomUploaderList.Items.Clear();
+
+            if (Config.CustomUploadersList == null)
+            {
+                Config.CustomUploadersList = new List<CustomUploaderItem>();
+            }
+            else
+            {
+                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
+                {
+                    lbCustomUploaderList.Items.Add(customUploader.Name);
+                }
+
+                PrepareCustomUploaderList();
+            }
+
+#if DEBUG
+            btnCustomUploadersExportAll.Visible = true;
+#endif
+
+            CustomUploaderClearFields();
+
+            if (selectLastItem && lbCustomUploaderList.Items.Count > 0)
+            {
+                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+            }
+        }
+
+        public static void UpdateCustomUploaderTab()
+        {
+            if (IsInstanceActive)
+            {
+                UploadersConfigForm form = GetFormInstance(null);
+                form.LoadCustomUploaderTab(true);
+            }
+        }
+
         private void AddCustomUploaderDestinationTypes()
         {
             string[] enums = Helpers.GetLocalizedEnumDescriptions<CustomUploaderDestinationType>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();

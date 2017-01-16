@@ -41,6 +41,8 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {
+        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
+
         private static UploadersConfigForm instance;
 
         public UploadersConfig Config { get; private set; }
@@ -55,16 +57,11 @@ namespace ShareX.UploadersLib
             InitializeControls();
         }
 
-        public static UploadersConfigForm GetFormInstance(UploadersConfig config, out bool firstInstance)
+        public static UploadersConfigForm GetFormInstance(UploadersConfig config)
         {
-            if (instance == null || instance.IsDisposed)
+            if (!IsInstanceActive)
             {
                 instance = new UploadersConfigForm(config);
-                firstInstance = true;
-            }
-            else
-            {
-                firstInstance = false;
             }
 
             return instance;
@@ -122,6 +119,8 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark("Name");
             AddCustomUploaderDestinationTypes();
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
@@ -662,30 +661,7 @@ namespace ShareX.UploadersLib
 
             // Custom uploaders
 
-            lbCustomUploaderList.Items.Clear();
-
-            if (Config.CustomUploadersList == null)
-            {
-                Config.CustomUploadersList = new List<CustomUploaderItem>();
-            }
-            else
-            {
-                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
-                {
-                    lbCustomUploaderList.Items.Add(customUploader.Name);
-                }
-
-                PrepareCustomUploaderList();
-            }
-
-#if DEBUG
-            btnCustomUploadersExportAll.Visible = true;
-#endif
-
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
-            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
-
-            CustomUploaderClearFields();
+            LoadCustomUploaderTab();
 
             #endregion Other uploaders
         }
