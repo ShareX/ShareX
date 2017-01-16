@@ -162,14 +162,52 @@ namespace ShareX
             UpdatePosition();
         }
 
-        private void SimpleActionsForm_LocationChanged(object sender, EventArgs e)
-        {
-            Program.Settings.SimpleActionsFormPosition = Location;
-        }
-
         private void SimpleActionsForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+        }
+
+        private void SimpleActionsForm_LocationChanged(object sender, EventArgs e)
+        {
+            CheckToolbarPosition();
+        }
+
+        private void CheckToolbarPosition()
+        {
+            Rectangle rectToolbar = Bounds;
+            Rectangle rectScreen = CaptureHelpers.GetScreenWorkingArea();
+            Point pos = rectToolbar.Location;
+
+            if (rectToolbar.Width < rectScreen.Width)
+            {
+                if (rectToolbar.X < rectScreen.X)
+                {
+                    pos.X = rectScreen.X;
+                }
+                else if (rectToolbar.Right > rectScreen.Right)
+                {
+                    pos.X = rectScreen.Right - rectToolbar.Width;
+                }
+            }
+
+            if (rectToolbar.Height < rectScreen.Height)
+            {
+                if (rectToolbar.Y < rectScreen.Y)
+                {
+                    pos.Y = rectScreen.Y;
+                }
+                else if (rectToolbar.Bottom > rectScreen.Bottom)
+                {
+                    pos.Y = rectScreen.Bottom - rectToolbar.Height;
+                }
+            }
+
+            if (pos != rectToolbar.Location)
+            {
+                Location = pos;
+            }
+
+            Program.Settings.SimpleActionsFormPosition = pos;
         }
 
         private void UpdatePosition()
