@@ -275,7 +275,7 @@ namespace ShareX
         public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,
             HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
-        public bool ActionsToolbarRunAtStartup = true;
+        public bool ActionsToolbarRunAtStartup = false;
 
         public Point ActionsToolbarPosition = Point.Empty;
 

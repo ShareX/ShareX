@@ -1428,5 +1428,10 @@ namespace ShareX
                 }
             }
         }
+
+        public static void OpenActionsToolbar()
+        {
+            ActionsToolbarForm.Instance.ForceActivate();
+        }
     }
 }

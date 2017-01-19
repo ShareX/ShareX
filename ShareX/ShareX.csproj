@@ -1332,6 +1332,7 @@
     <None Include="Resources\drive-download.png" />
     <None Include="Resources\drive-upload.png" />
     <None Include="Resources\ui-splitter.png" />
+    <None Include="Resources\ui-toolbar--arrow.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

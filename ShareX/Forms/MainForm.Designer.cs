@@ -155,6 +155,7 @@
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowResponse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearList = new System.Windows.Forms.ToolStripMenuItem();
             this.tssUploadInfo1 = new System.Windows.Forms.ToolStripSeparator();
@@ -232,13 +233,13 @@
             this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpenActionsToolbar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pTips = new System.Windows.Forms.Panel();
             this.lblTips = new System.Windows.Forms.Label();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1223,6 +1224,13 @@
             resources.ApplyResources(this.tsmiOCRImage, "tsmiOCRImage");
             this.tsmiOCRImage.Click += new System.EventHandler(this.tsmiOCRImage_Click);
             // 
+            // tsmiCombineImages
+            // 
+            this.tsmiCombineImages.Image = global::ShareX.Properties.Resources.document_break;
+            this.tsmiCombineImages.Name = "tsmiCombineImages";
+            resources.ApplyResources(this.tsmiCombineImages, "tsmiCombineImages");
+            this.tsmiCombineImages.Click += new System.EventHandler(this.tsmiCombineImages_Click);
+            // 
             // tsmiShowResponse
             // 
             this.tsmiShowResponse.Image = global::ShareX.Properties.Resources.application_browser;
@@ -1318,6 +1326,7 @@
             this.tsmiTrayAbout,
             this.tssTray3,
             this.tsmiTrayRecentItems,
+            this.tsmiOpenActionsToolbar,
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
@@ -1815,6 +1824,13 @@
             this.tsmiTrayRecentItems.Name = "tsmiTrayRecentItems";
             resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
             // 
+            // tsmiOpenActionsToolbar
+            // 
+            this.tsmiOpenActionsToolbar.Image = global::ShareX.Properties.Resources.ui_toolbar__arrow;
+            this.tsmiOpenActionsToolbar.Name = "tsmiOpenActionsToolbar";
+            resources.ApplyResources(this.tsmiOpenActionsToolbar, "tsmiOpenActionsToolbar");
+            this.tsmiOpenActionsToolbar.Click += new System.EventHandler(this.tsmiOpenActionsToolbar_Click);
+            // 
             // tsmiTrayShow
             // 
             this.tsmiTrayShow.Image = global::ShareX.Properties.Resources.tick_button;
@@ -1856,13 +1872,6 @@
             this.ttMain.AutoPopDelay = 10000;
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
-            // 
-            // tsmiCombineImages
-            // 
-            this.tsmiCombineImages.Image = global::ShareX.Properties.Resources.document_break;
-            this.tsmiCombineImages.Name = "tsmiCombineImages";
-            resources.ApplyResources(this.tsmiCombineImages, "tsmiCombineImages");
-            this.tsmiCombineImages.Click += new System.EventHandler(this.tsmiCombineImages_Click);
             // 
             // MainForm
             // 
@@ -2116,5 +2125,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiOCRImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
     }
 }

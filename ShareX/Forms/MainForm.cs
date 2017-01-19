@@ -63,7 +63,7 @@ namespace ShareX
 
             if (Program.Settings.ActionsToolbarRunAtStartup)
             {
-                ActionsToolbarForm.Instance.ForceActivate();
+                TaskHelpers.OpenActionsToolbar();
             }
         }
 
@@ -1672,6 +1672,11 @@ namespace ShareX
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
         {
             TaskHelpers.ToggleHotkeys();
+        }
+
+        private void tsmiOpenActionsToolbar_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenActionsToolbar();
         }
 
         private void tsmiTrayShow_Click(object sender, EventArgs e)
