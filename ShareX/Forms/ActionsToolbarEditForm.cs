@@ -33,11 +33,11 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class SimpleActionsEditForm : Form
+    public partial class ActionsToolbarEditForm : Form
     {
         public List<HotkeyType> Actions { get; private set; }
 
-        public SimpleActionsEditForm(List<HotkeyType> actions)
+        public ActionsToolbarEditForm(List<HotkeyType> actions)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;

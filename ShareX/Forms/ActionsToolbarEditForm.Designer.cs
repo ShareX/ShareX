@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class SimpleActionsEditForm
+    partial class ActionsToolbarEditForm
     {
         /// <summary>
         /// Required designer variable.

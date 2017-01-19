@@ -270,19 +270,19 @@ namespace ShareX
 
         #endregion OCR Form
 
-        #region Simple actions form
+        #region Actions toolbar
 
-        public bool SimpleActionsFormRunAtStartup = true;
-
-        public List<HotkeyType> SimpleActionsList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
+        public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,
             HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
 
-        public Point SimpleActionsFormPosition = Point.Empty;
+        public bool ActionsToolbarRunAtStartup = true;
 
-        public bool SimpleActionsFormLockPosition = false;
+        public Point ActionsToolbarPosition = Point.Empty;
 
-        public bool SimpleActionsFormStayTopMost = true;
+        public bool ActionsToolbarLockPosition = false;
 
-        #endregion Simple actions form
+        public bool ActionsToolbarStayTopMost = true;
+
+        #endregion Actions toolbar
     }
 }

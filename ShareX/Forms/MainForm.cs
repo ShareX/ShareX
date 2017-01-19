@@ -61,9 +61,9 @@ namespace ShareX
 
             UseCommandLineArgs(Program.CLI.Commands);
 
-            if (Program.Settings.SimpleActionsFormRunAtStartup)
+            if (Program.Settings.ActionsToolbarRunAtStartup)
             {
-                SimpleActionsForm.Instance.ForceActivate();
+                ActionsToolbarForm.Instance.ForceActivate();
             }
         }
 
