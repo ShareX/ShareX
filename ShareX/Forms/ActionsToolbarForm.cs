@@ -40,7 +40,7 @@ namespace ShareX
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
+                if (!IsInstanceActive)
                 {
                     instance = new ActionsToolbarForm();
                 }
@@ -48,6 +48,8 @@ namespace ShareX
                 return instance;
             }
         }
+
+        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
 
         private IContainer components;
         private ToolStripEx tsMain;

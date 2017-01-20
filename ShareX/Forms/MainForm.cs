@@ -1676,7 +1676,7 @@ namespace ShareX
 
         private void tsmiOpenActionsToolbar_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenActionsToolbar();
+            TaskHelpers.ToggleActionsToolbar();
         }
 
         private void tsmiTrayShow_Click(object sender, EventArgs e)

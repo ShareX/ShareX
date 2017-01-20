@@ -1433,5 +1433,17 @@ namespace ShareX
         {
             ActionsToolbarForm.Instance.ForceActivate();
         }
+
+        public static void ToggleActionsToolbar()
+        {
+            if (ActionsToolbarForm.IsInstanceActive)
+            {
+                ActionsToolbarForm.Instance.Close();
+            }
+            else
+            {
+                ActionsToolbarForm.Instance.ForceActivate();
+            }
+        }
     }
 }
