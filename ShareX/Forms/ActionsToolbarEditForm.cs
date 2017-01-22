@@ -37,6 +37,8 @@ namespace ShareX
     {
         public List<HotkeyType> Actions { get; private set; }
 
+        private const string Separator = "Separator"; // TODO: Translate
+
         public ActionsToolbarEditForm(List<HotkeyType> actions)
         {
             InitializeComponent();
@@ -78,18 +80,21 @@ namespace ShareX
                 {
                     HotkeyType hotkeyType = (HotkeyType)Enum.ToObject(typeof(HotkeyType), enumInfo.Value);
 
+                    string text;
                     Image img;
 
                     if (hotkeyType == HotkeyType.None)
                     {
+                        text = Separator;
                         img = Resources.ui_splitter;
                     }
                     else
                     {
+                        text = enumInfo.Description.Replace("&", "&&");
                         img = TaskHelpers.GetHotkeyTypeIcon(hotkeyType);
                     }
 
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(text);
                     tsmi.Image = img;
                     tsmi.Tag = enumInfo;
 
@@ -126,9 +131,20 @@ namespace ShareX
 
         private void AddActionToList(HotkeyType hotkeyType)
         {
+            string text;
+
+            if (hotkeyType == HotkeyType.None)
+            {
+                text = Separator;
+            }
+            else
+            {
+                text = hotkeyType.GetLocalizedDescription();
+            }
+
             ListViewItem lvi = new ListViewItem()
             {
-                Text = hotkeyType.GetLocalizedDescription(),
+                Text = text,
                 ImageKey = hotkeyType.ToString()
             };
 
