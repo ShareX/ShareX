@@ -107,7 +107,7 @@
             this.Name = "ActionsToolbarEditForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Actions toolbar edit";
+            this.Text = "ShareX - Edit actions toolbar";
             this.ResumeLayout(false);
 
         }
