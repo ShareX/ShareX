@@ -273,6 +273,7 @@ namespace ShareX
                 }
 
                 UpdateToolbar(Program.Settings.ActionsToolbarList);
+                CheckToolbarPosition();
             }
         }
 
