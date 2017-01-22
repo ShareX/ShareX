@@ -200,7 +200,8 @@ namespace ShareX
         OpenScreenshotsFolder,
         OpenHistory,
         OpenImageHistory,
-        ToggleActionsToolbar
+        ToggleActionsToolbar,
+        ExitShareX
     }
 
     public enum PopUpNotificationType // Localized

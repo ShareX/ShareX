@@ -970,6 +970,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exit ShareX.
+        /// </summary>
+        internal static string HotkeyType_ExitShareX {
+            get {
+                return ResourceManager.GetString("HotkeyType_ExitShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_ExitShareX_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ExitShareX_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload file.
         /// </summary>
         internal static string HotkeyType_FileUpload {

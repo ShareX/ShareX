@@ -859,4 +859,10 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>Ekran kaydetme iptal et</value>
   </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
 </root>

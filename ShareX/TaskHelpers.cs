@@ -229,6 +229,9 @@ namespace ShareX
                 case HotkeyType.ToggleActionsToolbar:
                     ToggleActionsToolbar();
                     break;
+                case HotkeyType.ExitShareX:
+                    Program.MainForm.ForceClose();
+                    break;
             }
         }
 
@@ -1266,7 +1269,7 @@ namespace ShareX
             switch (hotkeyType)
             {
                 default: throw new Exception("Icon missing for hotkey type.");
-                case HotkeyType.None: return Resources.cross;
+                case HotkeyType.None: return null;
                 // Upload
                 case HotkeyType.FileUpload: return Resources.folder_open_document;
                 case HotkeyType.FolderUpload: return Resources.folder;
@@ -1321,6 +1324,7 @@ namespace ShareX
                 case HotkeyType.OpenHistory: return Resources.application_blog;
                 case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
                 case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
+                case HotkeyType.ExitShareX: return Resources.cross;
             }
         }
 

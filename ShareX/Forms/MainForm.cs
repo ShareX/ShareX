@@ -986,6 +986,12 @@ namespace ShareX
             });
         }
 
+        public void ForceClose()
+        {
+            forceClose = true;
+            Close();
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)
@@ -1701,8 +1707,7 @@ namespace ShareX
 
         private void tsmiTrayExit_Click(object sender, EventArgs e)
         {
-            forceClose = true;
-            Close();
+            ForceClose();
         }
 
         #endregion Tray events

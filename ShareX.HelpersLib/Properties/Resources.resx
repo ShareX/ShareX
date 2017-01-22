@@ -977,4 +977,10 @@ Would you like to download it?</value>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Exit ShareX</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>
