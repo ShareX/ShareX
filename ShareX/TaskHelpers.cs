@@ -1271,10 +1271,10 @@ namespace ShareX
                 case HotkeyType.FileUpload: return Resources.folder_open_document;
                 case HotkeyType.FolderUpload: return Resources.folder;
                 case HotkeyType.ClipboardUpload: return Resources.clipboard;
-                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard; // TODO: Find better icon
+                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
-                case HotkeyType.StopUploads: return Resources.cross_button; // TODO: Find better icon
+                case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
                 case HotkeyType.ActiveWindow: return Resources.application_blue;
@@ -1282,23 +1282,23 @@ namespace ShareX
                 case HotkeyType.RectangleRegion: return Resources.layer_shape;
                 case HotkeyType.RectangleLight: return Resources.Rectangle;
                 case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
-                case HotkeyType.CustomRegion: return Resources.layer_shape; // TODO: Find better icon
+                case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
                 case HotkeyType.CaptureWebpage: return Resources.document_globe;
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
-                case HotkeyType.StartAutoCapture: return Resources.clock; // TODO: Find better icon
+                case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
                 // Screen record
                 case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
-                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder_image; // TODO: Find better icon
-                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder_image; // TODO: Find better icon
-                case HotkeyType.StartScreenRecorder: return Resources.camcorder_image; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;
+                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder__arrow;
+                case HotkeyType.StartScreenRecorder: return Resources.camcorder__arrow;
                 case HotkeyType.ScreenRecorderGIF: return Resources.film;
-                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film; // TODO: Find better icon
-                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film; // TODO: Find better icon
-                case HotkeyType.StartScreenRecorderGIF: return Resources.film; // TODO: Find better icon
-                case HotkeyType.AbortScreenRecording: return Resources.cross_button; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film__arrow;
+                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
+                case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
+                case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
                 // Tools
                 case HotkeyType.ColorPicker: return Resources.color;
                 case HotkeyType.ScreenColorPicker: return Resources.pipette;
@@ -1316,7 +1316,7 @@ namespace ShareX
                 case HotkeyType.MonitorTest: return Resources.monitor;
                 // Other
                 case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
-                case HotkeyType.OpenMainWindow: return Resources.tick_button; // TODO: Find better icon
+                case HotkeyType.OpenMainWindow: return Resources.application_home;
                 case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
                 case HotkeyType.OpenHistory: return Resources.application_blog;
                 case HotkeyType.OpenImageHistory: return Resources.application_icon_large;

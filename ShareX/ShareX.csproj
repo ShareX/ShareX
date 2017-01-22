@@ -1333,6 +1333,13 @@
     <None Include="Resources\drive-upload.png" />
     <None Include="Resources\ui-splitter.png" />
     <None Include="Resources\ui-toolbar--arrow.png" />
+    <None Include="Resources\layer--arrow.png" />
+    <None Include="Resources\clock--arrow.png" />
+    <None Include="Resources\camcorder--arrow.png" />
+    <None Include="Resources\film--arrow.png" />
+    <None Include="Resources\camcorder--exclamation.png" />
+    <None Include="Resources\application-home.png" />
+    <None Include="Resources\clipboard-task.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
