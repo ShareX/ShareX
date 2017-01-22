@@ -226,6 +226,9 @@ namespace ShareX
                 case HotkeyType.OpenImageHistory:
                     OpenImageHistory();
                     break;
+                case HotkeyType.ToggleActionsToolbar:
+                    ToggleActionsToolbar();
+                    break;
             }
         }
 
@@ -1317,6 +1320,7 @@ namespace ShareX
                 case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
                 case HotkeyType.OpenHistory: return Resources.application_blog;
                 case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
+                case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
             }
         }
 

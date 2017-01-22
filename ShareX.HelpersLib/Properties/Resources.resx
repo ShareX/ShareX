@@ -971,4 +971,10 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Drawing: Speech balloon</value>
   </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Toggle actions toolbar</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

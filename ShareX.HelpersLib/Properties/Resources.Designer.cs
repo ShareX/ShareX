@@ -1573,6 +1573,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toggle actions toolbar.
+        /// </summary>
+        internal static string HotkeyType_ToggleActionsToolbar {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleActionsToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_ToggleActionsToolbar_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleActionsToolbar_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet message.
         /// </summary>
         internal static string HotkeyType_TweetMessage {
