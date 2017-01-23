@@ -259,7 +259,7 @@ namespace ShareX.UploadersLib
                         throw;
                     }
 
-                    string response = AddWebError(e);
+                    string response = AddWebError(e, url);
 
                     if (WebExceptionReturnResponse && e is WebException)
                     {
@@ -317,7 +317,7 @@ namespace ShareX.UploadersLib
                         throw;
                     }
 
-                    AddWebError(e);
+                    AddWebError(e, url);
                 }
             }
             finally
@@ -536,15 +536,22 @@ namespace ShareX.UploadersLib
             return headers;
         }
 
-        private string AddWebError(Exception e)
+        private string AddWebError(Exception e, string url)
         {
             string response = null;
 
             if (Errors != null && e != null)
             {
-                StringBuilder str = new StringBuilder();
-                str.AppendLine("Message:");
-                str.AppendLine(e.Message);
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Message:");
+                sb.AppendLine(e.Message);
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine("Request URL:");
+                    sb.AppendLine(url);
+                }
 
                 if (e is WebException)
                 {
@@ -554,9 +561,9 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(response))
                         {
-                            str.AppendLine();
-                            str.AppendLine("Response:");
-                            str.AppendLine(response);
+                            sb.AppendLine();
+                            sb.AppendLine("Response:");
+                            sb.AppendLine(response);
                         }
                     }
                     catch
@@ -564,11 +571,11 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                str.AppendLine();
-                str.AppendLine("StackTrace:");
-                str.AppendLine(e.StackTrace);
+                sb.AppendLine();
+                sb.AppendLine("Stack trace:");
+                sb.AppendLine(e.StackTrace);
 
-                string errorText = str.ToString().Trim();
+                string errorText = sb.ToString().Trim();
                 Errors.Add(errorText);
                 DebugHelper.WriteLine("Error:\r\n" + errorText);
             }
