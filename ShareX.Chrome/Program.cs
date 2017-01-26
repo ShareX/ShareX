@@ -66,7 +66,7 @@ namespace ShareX.Chrome
                     {
                         string filepath = Helpers.GetTempPath("txt");
                         File.WriteAllText(filepath, chromeInput.Text, Encoding.UTF8);
-                        argument = Helpers.EscapeCLIText(filepath);
+                        argument = $"\"{filepath}\"";
                     }
 
                     if (!string.IsNullOrEmpty(argument))
