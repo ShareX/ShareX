@@ -24,10 +24,11 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -73,7 +74,8 @@ namespace ShareX.Chrome
                     if (!string.IsNullOrEmpty(argument))
                     {
                         string path = GetAbsolutePath("ShareX.exe");
-                        Process.Start(path, argument);
+
+                        CreateProcess(path, argument);
                     }
                 }
             }
@@ -97,7 +99,7 @@ namespace ShareX.Chrome
             return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
         }
 
-        public static string GetAbsolutePath(string path)
+        private static string GetAbsolutePath(string path)
         {
             if (!Path.IsPathRooted(path)) // Is relative path?
             {
@@ -108,10 +110,23 @@ namespace ShareX.Chrome
             return Path.GetFullPath(path);
         }
 
-        public static string GetTempPath(string extension)
+        private static string GetTempPath(string extension)
         {
             string path = Path.GetTempFileName();
             return Path.ChangeExtension(path, extension);
+        }
+
+        private static bool CreateProcess(string path, string arguments)
+        {
+            PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
+            STARTUPINFO sInfo = new STARTUPINFO();
+            SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
+            SECURITY_ATTRIBUTES tSec = new SECURITY_ATTRIBUTES();
+            pSec.nLength = Marshal.SizeOf(pSec);
+            tSec.nLength = Marshal.SizeOf(tSec);
+
+            return NativeMethods.CreateProcess(null, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB,
+                IntPtr.Zero, null, ref sInfo, out pInfo);
         }
     }
 }
