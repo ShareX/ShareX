@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -66,14 +65,14 @@ namespace ShareX.Chrome
                     }
                     else if (!string.IsNullOrEmpty(chromeInput.Text))
                     {
-                        string filepath = GetTempPath("txt");
+                        string filepath = Helpers.GetTempPath("txt");
                         File.WriteAllText(filepath, chromeInput.Text, Encoding.UTF8);
                         argument = EscapeText(filepath);
                     }
 
                     if (!string.IsNullOrEmpty(argument))
                     {
-                        string path = GetAbsolutePath("ShareX.exe");
+                        string path = Helpers.GetAbsolutePath("ShareX.exe");
 
                         CreateProcess(path, argument);
                     }
@@ -97,23 +96,6 @@ namespace ShareX.Chrome
         private static string EscapeText(string text)
         {
             return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
-        }
-
-        private static string GetAbsolutePath(string path)
-        {
-            if (!Path.IsPathRooted(path)) // Is relative path?
-            {
-                string startupDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                path = Path.Combine(startupDirectory, path);
-            }
-
-            return Path.GetFullPath(path);
-        }
-
-        private static string GetTempPath(string extension)
-        {
-            string path = Path.GetTempFileName();
-            return Path.ChangeExtension(path, extension);
         }
 
         private static bool CreateProcess(string path, string arguments)
