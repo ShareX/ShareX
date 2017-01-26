@@ -590,6 +590,11 @@ namespace ShareX.UploadersLib
             cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
             cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
 
+            // Azure Storage
+            txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
+            txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
+            txtAzureStorageContainer.Text = Config.AzureStorageContainer;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -2602,6 +2607,30 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Uplea
+
+        #region Azure Storage
+
+        private void txtAzureStorageAccountName_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageAccountName = txtAzureStorageAccountName.Text;
+        }
+
+        private void txtAzureStorageAccessKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageAccountAccessKey = txtAzureStorageAccessKey.Text;
+        }
+
+        private void txtAzureStorageContainer_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageContainer = txtAzureStorageContainer.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
+        }
+
+        #endregion Azure Storage
 
         #endregion File Uploaders
 

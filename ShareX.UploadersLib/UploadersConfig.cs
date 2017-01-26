@@ -298,6 +298,12 @@ namespace ShareX.UploadersLib
         public bool UpleaIsPremiumMember = false;
         public bool UpleaInstantDownloadEnabled = false;
 
+        // Azure Storage
+
+        public string AzureStorageAccountName = "";
+        public string AzureStorageAccountAccessKey = "";
+        public string AzureStorageContainer = "";
+
         #endregion File uploaders
 
         #region URL shorteners
