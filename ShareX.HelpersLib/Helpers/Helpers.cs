@@ -1159,5 +1159,10 @@ namespace ShareX.HelpersLib
                 return new Cursor(ms);
             }
         }
+
+        public static string EscapeCLIText(string text)
+        {
+            return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
+        }
     }
 }

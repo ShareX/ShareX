@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -61,20 +60,20 @@ namespace ShareX.Chrome
 
                     if (!string.IsNullOrEmpty(chromeInput.URL))
                     {
-                        argument = EscapeText(chromeInput.URL);
+                        argument = Helpers.EscapeCLIText(chromeInput.URL);
                     }
                     else if (!string.IsNullOrEmpty(chromeInput.Text))
                     {
                         string filepath = Helpers.GetTempPath("txt");
                         File.WriteAllText(filepath, chromeInput.Text, Encoding.UTF8);
-                        argument = EscapeText(filepath);
+                        argument = Helpers.EscapeCLIText(filepath);
                     }
 
                     if (!string.IsNullOrEmpty(argument))
                     {
                         string path = Helpers.GetAbsolutePath("ShareX.exe");
 
-                        CreateProcess(path, argument);
+                        NativeMethods.CreateProcess(path, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
                     }
                 }
             }
@@ -91,24 +90,6 @@ namespace ShareX.Chrome
             byte[] bytesInput = new byte[inputLength];
             inputStream.Read(bytesInput, 0, bytesInput.Length);
             return Encoding.UTF8.GetString(bytesInput);
-        }
-
-        private static string EscapeText(string text)
-        {
-            return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
-        }
-
-        private static bool CreateProcess(string path, string arguments)
-        {
-            PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
-            STARTUPINFO sInfo = new STARTUPINFO();
-            SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
-            SECURITY_ATTRIBUTES tSec = new SECURITY_ATTRIBUTES();
-            pSec.nLength = Marshal.SizeOf(pSec);
-            tSec.nLength = Marshal.SizeOf(tSec);
-
-            return NativeMethods.CreateProcess(null, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB,
-                IntPtr.Zero, null, ref sInfo, out pInfo);
         }
     }
 }
