@@ -19,8 +19,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private string azureStorageAccountAccessKey;
         private string azureStorageContainer;
         private const string apiVersion = "2016-05-31";
-        private string uri;
-        private string date;
+        //private string date;
 
         public AzureStorage(string asAccountName, string asAccessKey, string asContainer)
         {
@@ -40,11 +39,10 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-
             CreateContainerIfNotExists();
 
-            uri = string.Format("https://{0}.blob.core.windows.net/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
+            var date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
+            var uri = string.Format("https://{0}.blob.core.windows.net/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;
@@ -73,7 +71,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void CreateContainerIfNotExists()
         {
-            uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container", azureStorageAccountName, azureStorageContainer);
+            var date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
+            var uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container", azureStorageAccountName, azureStorageContainer);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
@@ -109,7 +108,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void SetContainerACL()
         {
-            uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container&comp=acl", azureStorageAccountName, azureStorageContainer);
+            var date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
+            var uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container&comp=acl", azureStorageAccountName, azureStorageContainer);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
@@ -134,18 +134,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             HashAlgorithm hashAlgorithm = new HMACSHA256(Convert.FromBase64String(azureStorageAccountAccessKey));
             byte[] messageBuffer = Encoding.UTF8.GetBytes(stringToSign);
-            return Convert.ToBase64String(hashAlgorithm.ComputeHash(messageBuffer));
-        }
-
-        private HttpWebRequest GenerateBasicWebRequest(string uri)
-        {
-            var request = (HttpWebRequest)WebRequest.Create(uri);
-
-            request.Method = "PUT";
-            request.Headers.Add("x-ms-date", date);
-            request.Headers.Add("x-ms-version", apiVersion);
-
-            return request;
+            var hashedString = Convert.ToBase64String(hashAlgorithm.ComputeHash(messageBuffer));
+            hashAlgorithm.Clear();
+            return hashedString;
         }
 
         private string GenerateStringToSign(string canonicalizedHeaders, string canonicalizedResource, string contentLength = "")

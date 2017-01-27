@@ -2625,7 +2625,7 @@ namespace ShareX.UploadersLib
             Config.AzureStorageContainer = txtAzureStorageContainer.Text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAzureStoragePortal_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
         }

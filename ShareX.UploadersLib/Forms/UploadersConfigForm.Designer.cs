@@ -240,6 +240,10 @@
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
+            this.btnAzureStoragePortal = new System.Windows.Forms.Button();
+            this.txtAzureStorageContainer = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageContainer = new System.Windows.Forms.Label();
+            this.txtAzureStorageAccessKey = new System.Windows.Forms.TextBox();
             this.lblAzureStorageAccessKey = new System.Windows.Forms.Label();
             this.txtAzureStorageAccountName = new System.Windows.Forms.TextBox();
             this.lblAzureStorageAccountName = new System.Windows.Forms.Label();
@@ -568,10 +572,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.txtAzureStorageAccessKey = new System.Windows.Forms.TextBox();
-            this.lblAzureStorageContainer = new System.Windows.Forms.Label();
-            this.txtAzureStorageContainer = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2228,7 +2228,7 @@
             // 
             // tpAzureStorage
             // 
-            this.tpAzureStorage.Controls.Add(this.button1);
+            this.tpAzureStorage.Controls.Add(this.btnAzureStoragePortal);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageContainer);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageContainer);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageAccessKey);
@@ -2238,6 +2238,31 @@
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
             this.tpAzureStorage.UseVisualStyleBackColor = true;
+            // 
+            // btnAzureStoragePortal
+            // 
+            resources.ApplyResources(this.btnAzureStoragePortal, "btnAzureStoragePortal");
+            this.btnAzureStoragePortal.Name = "btnAzureStoragePortal";
+            this.btnAzureStoragePortal.UseVisualStyleBackColor = true;
+            this.btnAzureStoragePortal.Click += new System.EventHandler(this.btnAzureStoragePortal_Click);
+            // 
+            // txtAzureStorageContainer
+            // 
+            resources.ApplyResources(this.txtAzureStorageContainer, "txtAzureStorageContainer");
+            this.txtAzureStorageContainer.Name = "txtAzureStorageContainer";
+            this.txtAzureStorageContainer.TextChanged += new System.EventHandler(this.txtAzureStorageContainer_TextChanged);
+            // 
+            // lblAzureStorageContainer
+            // 
+            resources.ApplyResources(this.lblAzureStorageContainer, "lblAzureStorageContainer");
+            this.lblAzureStorageContainer.Name = "lblAzureStorageContainer";
+            // 
+            // txtAzureStorageAccessKey
+            // 
+            resources.ApplyResources(this.txtAzureStorageAccessKey, "txtAzureStorageAccessKey");
+            this.txtAzureStorageAccessKey.Name = "txtAzureStorageAccessKey";
+            this.txtAzureStorageAccessKey.UseSystemPasswordChar = true;
+            this.txtAzureStorageAccessKey.TextChanged += new System.EventHandler(this.txtAzureStorageAccessKey_TextChanged);
             // 
             // lblAzureStorageAccessKey
             // 
@@ -4576,31 +4601,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // txtAzureStorageAccessKey
-            // 
-            resources.ApplyResources(this.txtAzureStorageAccessKey, "txtAzureStorageAccessKey");
-            this.txtAzureStorageAccessKey.Name = "txtAzureStorageAccessKey";
-            this.txtAzureStorageAccessKey.UseSystemPasswordChar = true;
-            this.txtAzureStorageAccessKey.TextChanged += new System.EventHandler(this.txtAzureStorageAccessKey_TextChanged);
-            // 
-            // lblAzureStorageContainer
-            // 
-            resources.ApplyResources(this.lblAzureStorageContainer, "lblAzureStorageContainer");
-            this.lblAzureStorageContainer.Name = "lblAzureStorageContainer";
-            // 
-            // txtAzureStorageContainer
-            // 
-            resources.ApplyResources(this.txtAzureStorageContainer, "txtAzureStorageContainer");
-            this.txtAzureStorageContainer.Name = "txtAzureStorageContainer";
-            this.txtAzureStorageContainer.TextChanged += new System.EventHandler(this.txtAzureStorageContainer_TextChanged);
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5307,6 +5307,6 @@
         private System.Windows.Forms.TextBox txtAzureStorageAccessKey;
         private System.Windows.Forms.TextBox txtAzureStorageContainer;
         private System.Windows.Forms.Label lblAzureStorageContainer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAzureStoragePortal;
     }
 }
