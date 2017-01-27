@@ -19,7 +19,6 @@ namespace ShareX.UploadersLib.FileUploaders
         private string azureStorageAccountAccessKey;
         private string azureStorageContainer;
         private const string apiVersion = "2016-05-31";
-        //private string date;
 
         public AzureStorage(string asAccountName, string asAccessKey, string asContainer)
         {
@@ -132,10 +131,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string HashRequest(string stringToSign)
         {
-            HashAlgorithm hashAlgorithm = new HMACSHA256(Convert.FromBase64String(azureStorageAccountAccessKey));
-            byte[] messageBuffer = Encoding.UTF8.GetBytes(stringToSign);
-            var hashedString = Convert.ToBase64String(hashAlgorithm.ComputeHash(messageBuffer));
-            hashAlgorithm.Clear();
+            string hashedString;
+
+            using (HashAlgorithm hashAlgorithm = new HMACSHA256(Convert.FromBase64String(azureStorageAccountAccessKey)))
+            {
+                byte[] messageBuffer = Encoding.UTF8.GetBytes(stringToSign);
+                hashedString = Convert.ToBase64String(hashAlgorithm.ComputeHash(messageBuffer));
+            }
+
             return hashedString;
         }
 
