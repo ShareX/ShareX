@@ -1,6 +1,7 @@
 ﻿using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -45,47 +46,27 @@ namespace ShareX.UploadersLib.FileUploaders
 
             uri = string.Format("https://{0}.blob.core.windows.net/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
 
-            HttpWebRequest request = GenerateBasicWebRequest(uri);
-            request.ContentLength = stream.Length;
-            request.Headers.Add("x-ms-blob-type", "BlockBlob");
+            NameValueCollection requestHeaders = new NameValueCollection();
+            requestHeaders["x-ms-date"] = date;
+            requestHeaders["x-ms-version"] = apiVersion;
+            requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             var canonicalizedHeaders = string.Format("x-ms-blob-type:BlockBlob\nx-ms-date:{0}\nx-ms-version:{1}\n", date, apiVersion);
             var canonicalizedResource = string.Format("/{0}/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
 
-            var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, request.ContentLength.ToString());
+            var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString());
 
-            request.Headers.Add("Authorization", string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign)));
+            requestHeaders["Authorization"] = string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign));
 
-            byte[] byteArray = new byte[stream.Length];
-            stream.Read(byteArray, 0, (int)stream.Length);
+            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, uri, stream, null, null, requestHeaders, null);
 
-            var requestStream = request.GetRequestStream();
-            requestStream.Write(byteArray, 0, (int)stream.Length);
-            requestStream.Close();
-
-            try
+            if (responseHeaders != null)
             {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-                if ((int)response.StatusCode == 201)
-                {
-                    return new UploadResult { IsSuccess = true, URL = uri };
-                }
-                else
-                {
-                    Errors.Add("An error has occured. Please try again later.");
-                    return null;
-                }
+                return new UploadResult { IsSuccess = true, URL = uri };
             }
-            catch (WebException ex)
+            else
             {
-                if ((int)((HttpWebResponse)ex.Response).StatusCode == 403)
-                {
-                    Errors.Add("Unauthorized. Check your credentials.");
-                    return null;
-                }
-
-                Errors.Add("An error has occured. Please try again later.");
+                Errors.Add("Upload failed.");
                 return null;
             }
         }
@@ -94,29 +75,35 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container", azureStorageAccountName, azureStorageContainer);
 
-            HttpWebRequest request = GenerateBasicWebRequest(uri);
-            request.ContentLength = 0;
+            NameValueCollection requestHeaders = new NameValueCollection();
+            requestHeaders["Content-Length"] = "0";
+            requestHeaders["x-ms-date"] = date;
+            requestHeaders["x-ms-version"] = apiVersion;
 
             var canonicalizedHeaders = string.Format("x-ms-date:{0}\nx-ms-version:{1}\n", date, apiVersion);
             var canonicalizedResource = string.Format("/{0}/{1}\nrestype:container", azureStorageAccountName, azureStorageContainer);
 
             var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
 
-            request.Headers.Add("Authorization", string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign)));
+            requestHeaders["Authorization"] = string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign));
 
-            try
+            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, uri, null, null, null, requestHeaders, null);
+
+            if (responseHeaders != null)
             {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 SetContainerACL();
             }
-            catch (WebException ex)
+            else
             {
-                if ((int)((HttpWebResponse)ex.Response).StatusCode == 409)
+                if (Errors.Count != 0)
                 {
-                    return;
+                    if (Errors[0].Contains("409"))
+                        SetContainerACL();
+                    else
+                    {
+                        Errors.Add("Upload to Azure storage failed.");
+                    }
                 }
-
-                Errors.Add("An error has occured. Please try again later.");
             }
         }
 
@@ -124,25 +111,23 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container&comp=acl", azureStorageAccountName, azureStorageContainer);
 
-            HttpWebRequest request = GenerateBasicWebRequest(uri);
-            request.ContentLength = 0;
-            request.Headers.Add("x-ms-blob-public-access", "container");
+            NameValueCollection requestHeaders = new NameValueCollection();
+            requestHeaders["Content-Length"] = "0";
+            requestHeaders["x-ms-date"] = date;
+            requestHeaders["x-ms-version"] = apiVersion;
+            requestHeaders["x-ms-blob-public-access"] = "container";
 
             var canonicalizedHeaders = string.Format("x-ms-blob-public-access:container\nx-ms-date:{0}\nx-ms-version:{1}\n", date, apiVersion);
             var canonicalizedResource = string.Format("/{0}/{1}\ncomp:acl\nrestype:container", azureStorageAccountName, azureStorageContainer);
 
             var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
 
-            request.Headers.Add("Authorization", string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign)));
+            requestHeaders["Authorization"] = string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign));
 
-            try
-            {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            }
-            catch
-            {
-                Errors.Add("An error has occured. Please try again later.");
-            }
+            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, uri, null, null, null, requestHeaders, null);
+
+            if (responseHeaders == null)
+                Errors.Add("There was an issue with setting ACL on the container.");
         }
 
         private string HashRequest(string stringToSign)
