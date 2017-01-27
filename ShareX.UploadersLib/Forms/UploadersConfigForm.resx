@@ -208,6 +208,207 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+   <data name="btnAzureStoragePortal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>556, 48</value>
+  </data>
+  <data name="btnAzureStoragePortal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 26</value>
+  </data>
+  <data name="btnAzureStoragePortal.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnAzureStoragePortal.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Name" xml:space="preserve">
+    <value>btnAzureStoragePortal</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 201</value>
+  </data>
+  <data name="txtAzureStorageContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Name" xml:space="preserve">
+    <value>txtAzureStorageContainer</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAzureStorageContainer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 178</value>
+  </data>
+  <data name="lblAzureStorageContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="lblAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Name" xml:space="preserve">
+    <value>lblAzureStorageContainer</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 121</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Name" xml:space="preserve">
+    <value>txtAzureStorageAccessKey</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 98</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>Access key:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Name" xml:space="preserve">
+    <value>lblAzureStorageAccessKey</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 48</value>
+  </data>
+  <data name="txtAzureStorageAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageAccountName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Name" xml:space="preserve">
+    <value>txtAzureStorageAccountName</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblAzureStorageAccountName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 25</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 20</value>
+  </data>
+  <data name="lblAzureStorageAccountName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
+    <value>Account name:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Name" xml:space="preserve">
+    <value>lblAzureStorageAccountName</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 54</value>
+  </data>
+  <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1468, 746</value>
+  </data>
+  <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="tpAzureStorage.Text" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

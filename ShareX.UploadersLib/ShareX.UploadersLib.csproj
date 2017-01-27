@@ -124,6 +124,8 @@
     <Compile Include="BaseUploaders\GenericUploader.cs" />
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
+    <Compile Include="FileUploaders\AzureStorage.cs" />
+    <Compile Include="FileUploaders\AzureStorageSettings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
@@ -882,6 +884,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Pastie.png" />
+    <Content Include="Favicons\AzureStorage.png" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <ItemGroup>

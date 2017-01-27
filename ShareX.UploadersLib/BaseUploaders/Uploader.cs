@@ -345,6 +345,12 @@ namespace ShareX.UploadersLib
                     headers.Remove("Accept");
                 }
 
+                if (headers["Content-Length"] != null)
+                {
+                    request.ContentLength = Convert.ToInt32(headers["Content-Length"]);
+                    headers.Remove("Content-Length");
+                }
+
                 request.Headers.Add(headers);
             }
 

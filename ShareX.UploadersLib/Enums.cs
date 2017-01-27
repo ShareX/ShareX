@@ -105,6 +105,8 @@ namespace ShareX.UploadersLib
         Mega,
         [Description("Amazon S3")]
         AmazonS3,
+        [Description("Azure Storage")]
+        AzureStorage,
         [Description("ownCloud")]
         OwnCloud,
         [Description("MediaFire")]
