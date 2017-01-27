@@ -58,6 +58,7 @@
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -106,6 +107,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.CancelButton = this.btnClose;
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.txtException);

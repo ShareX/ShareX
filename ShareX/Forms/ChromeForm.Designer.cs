@@ -35,6 +35,7 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.btnInstallExtension = new System.Windows.Forms.Button();
             this.lbl3 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegister
@@ -76,11 +77,21 @@
             resources.ApplyResources(this.lbl3, "lbl3");
             this.lbl3.Name = "lbl3";
             // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ChromeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.btnInstallExtension);
             this.Controls.Add(this.lbl2);
@@ -102,5 +113,6 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Button btnInstallExtension;
         private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Button btnClose;
     }
 }
