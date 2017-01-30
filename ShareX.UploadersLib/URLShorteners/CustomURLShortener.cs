@@ -85,7 +85,14 @@ namespace ShareX.UploadersLib.URLShorteners
 
             Dictionary<string, string> args = customUploader.GetArguments(url);
 
-            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            {
+                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+            }
+            else
+            {
+                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+            }
 
             try
             {
