@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://nya.is/upload"),
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
-            new PomfUploader("https://pomf.gocataclysm.com/upload.php"),
+            new PomfUploader("https://pomf.space/upload.php"),
             new PomfUploader("https://pomf.is/upload.php"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
             new PomfUploader("https://pomfe.co/upload.php", "https://a.pomfe.co"),
