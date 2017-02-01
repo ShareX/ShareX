@@ -61,11 +61,21 @@ namespace ShareX.UploadersLib
 
         private HttpWebRequest currentRequest;
 
-        public Uploader()
+        static Uploader()
         {
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.UseNagleAlgorithm = false;
+
+            try
+            {
+                // Default value for .NET Framework 4.0 and 4.5: SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls
+                // Default value for .NET Framework 4.6: SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)192 | (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            }
+            catch (NotSupportedException)
+            {
+            }
         }
 
         protected void OnProgressChanged(ProgressManager progress)
