@@ -719,7 +719,7 @@
     <value>图片上传者</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 目标设定</value>
+    <value>ShareX - 上传至...设定</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API密钥:</value>

@@ -133,7 +133,7 @@
     <value>截图后</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>目的地</value>
+    <value>上传至...</value>
   </data>
   <data name="tpAfterUpload.Text" xml:space="preserve">
     <value>上传后</value>
