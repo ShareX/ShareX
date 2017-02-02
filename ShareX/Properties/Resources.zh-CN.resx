@@ -173,7 +173,7 @@
     <value>任务设置</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>请选择一个目的地.</value>
+    <value>请选择一个上传地址.</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>开始</value>
@@ -306,7 +306,7 @@
     <value>完成</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} 是将要上载至 {1}. 您可以选择不同的目的地.</value>
+    <value>{0} 是将要上载至 {1}. 您可以选择不同的上传地址.</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>网站</value>
@@ -500,7 +500,7 @@
     <value>编辑此菜单...</value>
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
-    <value>{0} 配置无效或丢失。请查阅“目的地设置”窗口中进行配置。</value>
+    <value>{0} 配置无效或丢失。请转到“上传至...”窗口中进行设置。</value>
   </data>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>隐藏列</value>
