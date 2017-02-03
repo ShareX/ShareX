@@ -378,7 +378,10 @@ namespace ShareX
 
         private void tslTitle_MouseEnter(object sender, EventArgs e)
         {
-            Cursor = Cursors.SizeAll;
+            if (!Program.Settings.ActionsToolbarLockPosition)
+            {
+                Cursor = Cursors.SizeAll;
+            }
         }
 
         private void tslTitle_MouseLeave(object sender, EventArgs e)
