@@ -249,7 +249,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
             }
 
-            WebExceptionReturnResponse = true;
+            ReturnResponseOnError = true;
             UploadResult result = SendRequestFile("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))

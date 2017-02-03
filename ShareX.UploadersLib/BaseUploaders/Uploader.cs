@@ -56,8 +56,7 @@ namespace ShareX.UploadersLib
 
         protected bool StopUploadRequested { get; set; }
         protected bool AllowReportProgress { get; set; } = true;
-        protected bool WebExceptionReturnResponse { get; set; }
-        protected bool WebExceptionThrow { get; set; }
+        protected bool ReturnResponseOnError { get; set; }
 
         private HttpWebRequest currentRequest;
 
@@ -264,14 +263,9 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (WebExceptionThrow && e is WebException)
-                    {
-                        throw;
-                    }
-
                     string response = AddWebError(e, url);
 
-                    if (WebExceptionReturnResponse && e is WebException)
+                    if (ReturnResponseOnError && e is WebException)
                     {
                         result.Response = response;
                     }
@@ -322,11 +316,6 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (WebExceptionThrow && e is WebException)
-                    {
-                        throw;
-                    }
-
                     AddWebError(e, url);
                 }
             }
