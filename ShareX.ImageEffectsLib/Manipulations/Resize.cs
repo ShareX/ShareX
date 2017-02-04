@@ -45,6 +45,12 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
+        public Resize(int width, int height)
+        {
+            Width = width;
+            Height = height;
+        }
+
         public override Image Apply(Image img)
         {
             if (Width <= 0 && Height <= 0) return img;

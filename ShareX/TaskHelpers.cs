@@ -267,18 +267,10 @@ namespace ShareX
                     try
                     {
                         thumbImage = (Image)img.Clone();
-                        thumbImage = new Resize
-                        {
-                            Width = taskSettings.ImageSettings.ThumbnailWidth,
-                            Height = taskSettings.ImageSettings.ThumbnailHeight
-                        }.Apply(thumbImage);
+                        thumbImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbImage);
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
                         return thumbnailFilePath;
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
                     }
                     finally
                     {
@@ -308,8 +300,16 @@ namespace ShareX
                     img.Save(stream, ImageFormat.Png);
                     break;
                 case EImageFormat.JPEG:
-                    img = ImageHelpers.FillBackground(img, Color.White);
-                    img.SaveJPG(stream, jpegQuality);
+                    try
+                    {
+                        img = (Image)img.Clone();
+                        img = ImageHelpers.FillBackground(img, Color.White);
+                        img.SaveJPG(stream, jpegQuality);
+                    }
+                    finally
+                    {
+                        if (img != null) img.Dispose();
+                    }
                     break;
                 case EImageFormat.GIF:
                     img.SaveGIF(stream, gifQuality);
