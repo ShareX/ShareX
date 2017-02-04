@@ -215,7 +215,18 @@ namespace ShareX
 
         public static void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Annotation);
+            RegionCaptureMode mode;
+
+            if (taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation)
+            {
+                mode = RegionCaptureMode.Default;
+            }
+            else
+            {
+                mode = RegionCaptureMode.Annotation;
+            }
+
+            RegionCaptureForm form = new RegionCaptureForm(mode);
 
             DoCapture(() =>
             {
