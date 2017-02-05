@@ -74,6 +74,7 @@ namespace ShareX.UploadersLib
             }
             catch (NotSupportedException)
             {
+                DebugHelper.WriteLine("Unable to configure TLS 1.2 as the default security protocol. .NET Framework 4.5 or newer version must be installed in your system to support it.");
             }
         }
 
