@@ -65,6 +65,7 @@ namespace ShareX
         {
             SuspendLayout();
 
+            AllowDrop = true;
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
@@ -78,8 +79,10 @@ namespace ShareX
             Text = "ShareX - Actions toolbar";
             TopMost = Program.Settings.ActionsToolbarStayTopMost;
 
-            LocationChanged += SimpleActionsForm_LocationChanged;
-            Shown += SimpleActionsForm_Shown;
+            Shown += ActionsToolbarForm_Shown;
+            LocationChanged += ActionsToolbarForm_LocationChanged;
+            DragEnter += ActionsToolbarForm_DragEnter;
+            DragDrop += ActionsToolbarForm_DragDrop;
 
             tsMain = new ToolStripEx()
             {
@@ -164,14 +167,33 @@ namespace ShareX
             UpdatePosition();
         }
 
-        private void SimpleActionsForm_Shown(object sender, EventArgs e)
+        private void ActionsToolbarForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void SimpleActionsForm_LocationChanged(object sender, EventArgs e)
+        private void ActionsToolbarForm_LocationChanged(object sender, EventArgs e)
         {
             CheckToolbarPosition();
+        }
+
+        private void ActionsToolbarForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) ||
+                e.Data.GetDataPresent(DataFormats.Bitmap, false) ||
+                e.Data.GetDataPresent(DataFormats.Text, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ActionsToolbarForm_DragDrop(object sender, DragEventArgs e)
+        {
+            UploadManager.DragDropUpload(e.Data);
         }
 
         private void CheckToolbarPosition()
