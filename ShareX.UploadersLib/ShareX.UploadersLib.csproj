@@ -227,7 +227,6 @@
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
-    <Compile Include="ImageUploaders\Slimg.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
