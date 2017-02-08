@@ -198,7 +198,7 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.layer_shape_ellipse;
                         break;
                     case ShapeType.DrawingFreehand:
-                        img = Resources.layer_shape_curve;
+                        img = Resources.pencil;
                         break;
                     case ShapeType.DrawingLine:
                         img = Resources.layer_shape_line;
