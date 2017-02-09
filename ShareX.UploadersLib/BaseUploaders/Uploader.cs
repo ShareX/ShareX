@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib
 
         private HttpWebRequest currentRequest;
 
-        static Uploader()
+        public static void UpdateServicePointManager()
         {
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;

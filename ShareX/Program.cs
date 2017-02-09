@@ -343,6 +343,7 @@ namespace ShareX
             HotkeySettingsResetEvent = new ManualResetEvent(false);
             TaskEx.Run(LoadSettings);
 
+            Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
