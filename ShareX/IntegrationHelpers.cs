@@ -226,24 +226,6 @@ namespace ShareX
             RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath, true);
         }
 
-        private static void CreateChromeHostManifest(string filepath)
-        {
-            Helpers.CreateDirectoryFromFilePath(filepath);
-
-            var manifest = new
-            {
-                name = "com.getsharex.sharex",
-                description = "ShareX",
-                path = Program.NativeMessagingHostFilePath,
-                type = "stdio",
-                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
-            };
-
-            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
-
-            File.WriteAllText(filepath, json, Encoding.UTF8);
-        }
-
         public static bool CheckChromeExtensionSupport()
         {
             try
@@ -264,12 +246,12 @@ namespace ShareX
             {
                 if (create)
                 {
-                    UnregisterChromeSupport();
-                    RegisterChromeSupport();
+                    UnregisterChromeExtensionSupport();
+                    RegisterChromeExtensionSupport();
                 }
                 else
                 {
-                    UnregisterChromeSupport();
+                    UnregisterChromeExtensionSupport();
                 }
             }
             catch (Exception e)
@@ -278,14 +260,32 @@ namespace ShareX
             }
         }
 
-        private static void RegisterChromeSupport()
+        private static void CreateChromeHostManifest(string filepath)
+        {
+            Helpers.CreateDirectoryFromFilePath(filepath);
+
+            var manifest = new
+            {
+                name = "com.getsharex.sharex",
+                description = "ShareX",
+                path = Program.NativeMessagingHostFilePath,
+                type = "stdio",
+                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
+            };
+
+            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+
+            File.WriteAllText(filepath, json, Encoding.UTF8);
+        }
+
+        private static void RegisterChromeExtensionSupport()
         {
             CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
 
             RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, Program.ChromeHostManifestFilePath);
         }
 
-        private static void UnregisterChromeSupport()
+        private static void UnregisterChromeExtensionSupport()
         {
             if (File.Exists(Program.ChromeHostManifestFilePath))
             {
@@ -293,6 +293,40 @@ namespace ShareX
             }
 
             RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
+        }
+
+        public static bool CheckFirefoxAddonSupport()
+        {
+            try
+            {
+                return RegistryHelpers.CheckRegistry(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) && File.Exists(Program.FirefoxHostManifestFilePath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreateFirefoxAddonSupport(bool create)
+        {
+            try
+            {
+                if (create)
+                {
+                    UnregisterFirefoxAddonSupport();
+                    RegisterFirefoxAddonSupport();
+                }
+                else
+                {
+                    UnregisterFirefoxAddonSupport();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         private static void CreateFirefoxHostManifest(string filepath)
@@ -313,14 +347,14 @@ namespace ShareX
             File.WriteAllText(filepath, json, Encoding.UTF8);
         }
 
-        public static void RegisterFirefoxSupport()
+        private static void RegisterFirefoxAddonSupport()
         {
             CreateFirefoxHostManifest(Program.FirefoxHostManifestFilePath);
 
             RegistryHelpers.CreateRegistry(FirefoxNativeMessagingHosts, Program.FirefoxHostManifestFilePath);
         }
 
-        public static void UnregisterFirefoxSupport()
+        private static void UnregisterFirefoxAddonSupport()
         {
             if (File.Exists(Program.FirefoxHostManifestFilePath))
             {

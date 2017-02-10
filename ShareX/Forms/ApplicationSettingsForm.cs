@@ -124,6 +124,7 @@ namespace ShareX
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
+            cbFirefoxAddonSupport.Checked = IntegrationHelpers.CheckFirefoxAddonSupport();
 
 #if STEAM
             cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
@@ -441,31 +442,11 @@ namespace ShareX
             URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
         }
 
-        private void btnFirefoxEnableSupport_Click(object sender, EventArgs e)
+        private void cbFirefoxAddonSupport_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            if (ready)
             {
-                IntegrationHelpers.RegisterFirefoxSupport();
-
-                MessageBox.Show("Firefox addon support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnFirefoxDisableSupport_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                IntegrationHelpers.UnregisterFirefoxSupport();
-
-                MessageBox.Show("Firefox addon support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                IntegrationHelpers.CreateFirefoxAddonSupport(cbFirefoxAddonSupport.Checked);
             }
         }
 

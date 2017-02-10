@@ -600,20 +600,47 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbFirefoxAddonSupport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Enable Firefox addon support</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Name" xml:space="preserve">
+    <value>cbFirefoxAddonSupport</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Parent" xml:space="preserve">
+    <value>gpFirefox</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnFirefoxOpenAddonPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 48</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 23</value>
+    <value>288, 23</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>2. Install ShareX Firefox addon...</value>
+    <value>Install ShareX Firefox addon...</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.Name" xml:space="preserve">
     <value>btnFirefoxOpenAddonPage</value>
@@ -625,67 +652,13 @@
     <value>gpFirefox</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnFirefoxDisableSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnFirefoxDisableSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 24</value>
-  </data>
-  <data name="btnFirefoxDisableSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnFirefoxDisableSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnFirefoxDisableSupport.Text" xml:space="preserve">
-    <value>Disable Firefox support</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxDisableSupport.Name" xml:space="preserve">
-    <value>btnFirefoxDisableSupport</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxDisableSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxDisableSupport.Parent" xml:space="preserve">
-    <value>gpFirefox</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxDisableSupport.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnFirefoxEnableSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnFirefoxEnableSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="btnFirefoxEnableSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnFirefoxEnableSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnFirefoxEnableSupport.Text" xml:space="preserve">
-    <value>1. Enable Firefox support</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxEnableSupport.Name" xml:space="preserve">
-    <value>btnFirefoxEnableSupport</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxEnableSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxEnableSupport.Parent" xml:space="preserve">
-    <value>gpFirefox</value>
-  </data>
-  <data name="&gt;&gt;btnFirefoxEnableSupport.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="gpFirefox.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 216</value>
   </data>
   <data name="gpFirefox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 96</value>
+    <value>536, 88</value>
   </data>
   <data name="gpFirefox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -733,7 +706,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 320</value>
+    <value>8, 312</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>

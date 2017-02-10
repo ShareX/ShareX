@@ -141,9 +141,8 @@ namespace ShareX
             this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
             this.gpFirefox = new System.Windows.Forms.GroupBox();
             this.btnFirefoxOpenAddonPage = new System.Windows.Forms.Button();
-            this.btnFirefoxDisableSupport = new System.Windows.Forms.Button();
-            this.btnFirefoxEnableSupport = new System.Windows.Forms.Button();
             this.cbChromeExtensionSupport = new System.Windows.Forms.CheckBox();
+            this.cbFirefoxAddonSupport = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -1009,9 +1008,8 @@ namespace ShareX
             // 
             // gpFirefox
             // 
+            this.gpFirefox.Controls.Add(this.cbFirefoxAddonSupport);
             this.gpFirefox.Controls.Add(this.btnFirefoxOpenAddonPage);
-            this.gpFirefox.Controls.Add(this.btnFirefoxDisableSupport);
-            this.gpFirefox.Controls.Add(this.btnFirefoxEnableSupport);
             resources.ApplyResources(this.gpFirefox, "gpFirefox");
             this.gpFirefox.Name = "gpFirefox";
             this.gpFirefox.TabStop = false;
@@ -1023,26 +1021,19 @@ namespace ShareX
             this.btnFirefoxOpenAddonPage.UseVisualStyleBackColor = true;
             this.btnFirefoxOpenAddonPage.Click += new System.EventHandler(this.btnFirefoxOpenAddonPage_Click);
             // 
-            // btnFirefoxDisableSupport
-            // 
-            resources.ApplyResources(this.btnFirefoxDisableSupport, "btnFirefoxDisableSupport");
-            this.btnFirefoxDisableSupport.Name = "btnFirefoxDisableSupport";
-            this.btnFirefoxDisableSupport.UseVisualStyleBackColor = true;
-            this.btnFirefoxDisableSupport.Click += new System.EventHandler(this.btnFirefoxDisableSupport_Click);
-            // 
-            // btnFirefoxEnableSupport
-            // 
-            resources.ApplyResources(this.btnFirefoxEnableSupport, "btnFirefoxEnableSupport");
-            this.btnFirefoxEnableSupport.Name = "btnFirefoxEnableSupport";
-            this.btnFirefoxEnableSupport.UseVisualStyleBackColor = true;
-            this.btnFirefoxEnableSupport.Click += new System.EventHandler(this.btnFirefoxEnableSupport_Click);
-            // 
             // cbChromeExtensionSupport
             // 
             resources.ApplyResources(this.cbChromeExtensionSupport, "cbChromeExtensionSupport");
             this.cbChromeExtensionSupport.Name = "cbChromeExtensionSupport";
             this.cbChromeExtensionSupport.UseVisualStyleBackColor = true;
             this.cbChromeExtensionSupport.CheckedChanged += new System.EventHandler(this.cbChromeExtensionSupport_CheckedChanged);
+            // 
+            // cbFirefoxAddonSupport
+            // 
+            resources.ApplyResources(this.cbFirefoxAddonSupport, "cbFirefoxAddonSupport");
+            this.cbFirefoxAddonSupport.Name = "cbFirefoxAddonSupport";
+            this.cbFirefoxAddonSupport.UseVisualStyleBackColor = true;
+            this.cbFirefoxAddonSupport.CheckedChanged += new System.EventHandler(this.cbFirefoxAddonSupport_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1097,6 +1088,7 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
             this.tpAdvanced.ResumeLayout(false);
             this.gpFirefox.ResumeLayout(false);
+            this.gpFirefox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1215,8 +1207,7 @@ namespace ShareX
         private System.Windows.Forms.Button btnChromeOpenExtensionPage;
         private System.Windows.Forms.GroupBox gpFirefox;
         private System.Windows.Forms.Button btnFirefoxOpenAddonPage;
-        private System.Windows.Forms.Button btnFirefoxDisableSupport;
-        private System.Windows.Forms.Button btnFirefoxEnableSupport;
         private System.Windows.Forms.CheckBox cbChromeExtensionSupport;
+        private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
     }
 }
