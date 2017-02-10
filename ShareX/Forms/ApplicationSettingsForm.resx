@@ -682,7 +682,7 @@
     <value>2</value>
   </data>
   <data name="gpFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 224</value>
+    <value>8, 216</value>
   </data>
   <data name="gpFirefox.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 96</value>
@@ -733,7 +733,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 328</value>
+    <value>8, 320</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -756,17 +756,44 @@
   <data name="&gt;&gt;gbSteam.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbChromeExtensionSupport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
+  </data>
+  <data name="cbChromeExtensionSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Enable Chrome extension support</value>
+  </data>
+  <data name="&gt;&gt;cbChromeExtensionSupport.Name" xml:space="preserve">
+    <value>cbChromeExtensionSupport</value>
+  </data>
+  <data name="&gt;&gt;cbChromeExtensionSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbChromeExtensionSupport.Parent" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;cbChromeExtensionSupport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnChromeOpenExtensionPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 48</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 23</value>
+    <value>288, 23</value>
   </data>
   <data name="btnChromeOpenExtensionPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>2. Install ShareX Chrome extension...</value>
+    <value>Install ShareX Chrome extension...</value>
   </data>
   <data name="&gt;&gt;btnChromeOpenExtensionPage.Name" xml:space="preserve">
     <value>btnChromeOpenExtensionPage</value>
@@ -778,61 +805,13 @@
     <value>gbChrome</value>
   </data>
   <data name="&gt;&gt;btnChromeOpenExtensionPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnChromeDisableSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 24</value>
-  </data>
-  <data name="btnChromeDisableSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnChromeDisableSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnChromeDisableSupport.Text" xml:space="preserve">
-    <value>Disable Chrome support</value>
-  </data>
-  <data name="&gt;&gt;btnChromeDisableSupport.Name" xml:space="preserve">
-    <value>btnChromeDisableSupport</value>
-  </data>
-  <data name="&gt;&gt;btnChromeDisableSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChromeDisableSupport.Parent" xml:space="preserve">
-    <value>gbChrome</value>
-  </data>
-  <data name="&gt;&gt;btnChromeDisableSupport.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnChromeEnableSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="btnChromeEnableSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnChromeEnableSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnChromeEnableSupport.Text" xml:space="preserve">
-    <value>1. Enable Chrome support</value>
-  </data>
-  <data name="&gt;&gt;btnChromeEnableSupport.Name" xml:space="preserve">
-    <value>btnChromeEnableSupport</value>
-  </data>
-  <data name="&gt;&gt;btnChromeEnableSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChromeEnableSupport.Parent" xml:space="preserve">
-    <value>gbChrome</value>
-  </data>
-  <data name="&gt;&gt;btnChromeEnableSupport.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 120</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 96</value>
+    <value>536, 88</value>
   </data>
   <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

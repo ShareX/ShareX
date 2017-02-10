@@ -244,14 +244,48 @@ namespace ShareX
             File.WriteAllText(filepath, json, Encoding.UTF8);
         }
 
-        public static void RegisterChromeSupport()
+        public static bool CheckChromeExtensionSupport()
+        {
+            try
+            {
+                return RegistryHelpers.CheckRegistry(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) && File.Exists(Program.ChromeHostManifestFilePath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreateChromeExtensionSupport(bool create)
+        {
+            try
+            {
+                if (create)
+                {
+                    UnregisterChromeSupport();
+                    RegisterChromeSupport();
+                }
+                else
+                {
+                    UnregisterChromeSupport();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterChromeSupport()
         {
             CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
 
             RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, Program.ChromeHostManifestFilePath);
         }
 
-        public static void UnregisterChromeSupport()
+        private static void UnregisterChromeSupport()
         {
             if (File.Exists(Program.ChromeHostManifestFilePath))
             {

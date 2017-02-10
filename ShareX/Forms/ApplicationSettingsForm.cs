@@ -123,6 +123,7 @@ namespace ShareX
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
+            cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
 
 #if STEAM
             cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
@@ -427,31 +428,11 @@ namespace ShareX
             }
         }
 
-        private void btnChromeEnableSupport_Click(object sender, EventArgs e)
+        private void cbChromeExtensionSupport_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            if (ready)
             {
-                IntegrationHelpers.RegisterChromeSupport();
-
-                MessageBox.Show("Chrome extension support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnChromeDisableSupport_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                IntegrationHelpers.UnregisterChromeSupport();
-
-                MessageBox.Show("Chrome extension support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                IntegrationHelpers.CreateChromeExtensionSupport(cbChromeExtensionSupport.Checked);
             }
         }
 
