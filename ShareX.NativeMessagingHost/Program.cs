@@ -30,7 +30,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.Chrome
+namespace ShareX.NativeMessagingHost
 {
     internal class Program
     {
@@ -42,7 +42,7 @@ namespace ShareX.Chrome
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString(), "ShareX Chrome - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.ToString(), "ShareX NativeMessagingHost - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ShareX.Chrome
 
             if (!string.IsNullOrEmpty(input))
             {
-                ChromeInput chromeInput = JsonConvert.DeserializeObject<ChromeInput>(input);
+                NativeMessageInput chromeInput = JsonConvert.DeserializeObject<NativeMessageInput>(input);
 
                 if (chromeInput != null)
                 {

@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.Chrome
+namespace ShareX.NativeMessagingHost
 {
-    public class ChromeInput
+    public class NativeMessageInput
     {
         public string URL { get; set; }
         public string Text { get; set; }

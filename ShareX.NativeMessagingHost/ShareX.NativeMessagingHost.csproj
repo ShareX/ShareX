@@ -7,8 +7,8 @@
     <ProjectGuid>{254E398D-F7F5-4B2A-9024-5C121EA6C564}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShareX.Chrome</RootNamespace>
-    <AssemblyName>ShareX_Chrome</AssemblyName>
+    <RootNamespace>ShareX.NativeMessagingHost</RootNamespace>
+    <AssemblyName>ShareX_NativeMessagingHost</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,7 +46,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChromeInput.cs" />
+    <Compile Include="NativeMessageInput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
