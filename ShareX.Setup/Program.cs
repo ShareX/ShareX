@@ -71,7 +71,7 @@ namespace ShareX.Setup
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
-        private static string ChromeDir => Path.Combine(ParentDir, @"ShareX.Chrome\bin\Release");
+        private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
@@ -219,7 +219,7 @@ namespace ShareX.Setup
             }
 
             Helpers.CopyFile(RecorderDevicesSetupPath, destination);
-            Helpers.CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
+            Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 

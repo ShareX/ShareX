@@ -49,7 +49,7 @@ namespace ShareX
             {
                 name = "com.getsharex.sharex",
                 description = "ShareX",
-                path = Program.ChromeHostFilePath,
+                path = Program.NativeMessagingHostFilePath,
                 type = "stdio",
                 allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
             };

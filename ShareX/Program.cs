@@ -126,7 +126,7 @@ namespace ShareX
 
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
         private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
-        public static readonly string ChromeHostFilePath = Helpers.GetAbsolutePath("ShareX_Chrome.exe");
+        public static readonly string NativeMessagingHostFilePath = Helpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
         public static readonly string SteamInAppFilePath = Helpers.GetAbsolutePath("Steam");
 
         private static string CustomPersonalPath { get; set; }
