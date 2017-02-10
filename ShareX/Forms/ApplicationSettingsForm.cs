@@ -460,6 +460,39 @@ namespace ShareX
             URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
         }
 
+        private void btnFirefoxEnableSupport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IntegrationHelpers.RegisterFirefoxSupport();
+
+                MessageBox.Show("Firefox addon support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFirefoxDisableSupport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IntegrationHelpers.UnregisterFirefoxSupport();
+
+                MessageBox.Show("Firefox addon support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFirefoxOpenAddonPage_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://addons.mozilla.org/en-US/firefox/addon/sharex/");
+        }
+
         private void cbSteamShowInApp_CheckedChanged(object sender, EventArgs e)
         {
             if (ready)

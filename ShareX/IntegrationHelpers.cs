@@ -72,6 +72,7 @@ namespace ShareX
         private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " -CustomUploader \"%1\"";
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
+        private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
 
         public static bool CheckStartupShortcut()
         {
@@ -258,6 +259,41 @@ namespace ShareX
             }
 
             RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
+        }
+
+        private static void CreateFirefoxHostManifest(string filepath)
+        {
+            Helpers.CreateDirectoryFromFilePath(filepath);
+
+            var manifest = new
+            {
+                name = "ShareX",
+                description = "ShareX",
+                path = Program.NativeMessagingHostFilePath,
+                type = "stdio",
+                allowed_extensions = new string[] { "firefox@getsharex.com" }
+            };
+
+            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+
+            File.WriteAllText(filepath, json, Encoding.UTF8);
+        }
+
+        public static void RegisterFirefoxSupport()
+        {
+            CreateFirefoxHostManifest(Program.FirefoxHostManifestFilePath);
+
+            RegistryHelpers.CreateRegistry(FirefoxNativeMessagingHosts, Program.FirefoxHostManifestFilePath);
+        }
+
+        public static void UnregisterFirefoxSupport()
+        {
+            if (File.Exists(Program.FirefoxHostManifestFilePath))
+            {
+                File.Delete(Program.FirefoxHostManifestFilePath);
+            }
+
+            RegistryHelpers.RemoveRegistry(FirefoxNativeMessagingHosts);
         }
 
         public static bool CheckSendToMenuButton()

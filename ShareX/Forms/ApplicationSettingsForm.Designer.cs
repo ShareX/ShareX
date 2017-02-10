@@ -1037,18 +1037,21 @@ namespace ShareX
             resources.ApplyResources(this.btnFirefoxOpenAddonPage, "btnFirefoxOpenAddonPage");
             this.btnFirefoxOpenAddonPage.Name = "btnFirefoxOpenAddonPage";
             this.btnFirefoxOpenAddonPage.UseVisualStyleBackColor = true;
+            this.btnFirefoxOpenAddonPage.Click += new System.EventHandler(this.btnFirefoxOpenAddonPage_Click);
             // 
             // btnFirefoxDisableSupport
             // 
             resources.ApplyResources(this.btnFirefoxDisableSupport, "btnFirefoxDisableSupport");
             this.btnFirefoxDisableSupport.Name = "btnFirefoxDisableSupport";
             this.btnFirefoxDisableSupport.UseVisualStyleBackColor = true;
+            this.btnFirefoxDisableSupport.Click += new System.EventHandler(this.btnFirefoxDisableSupport_Click);
             // 
             // btnFirefoxEnableSupport
             // 
             resources.ApplyResources(this.btnFirefoxEnableSupport, "btnFirefoxEnableSupport");
             this.btnFirefoxEnableSupport.Name = "btnFirefoxEnableSupport";
             this.btnFirefoxEnableSupport.UseVisualStyleBackColor = true;
+            this.btnFirefoxEnableSupport.Click += new System.EventHandler(this.btnFirefoxEnableSupport_Click);
             // 
             // ApplicationSettingsForm
             // 
