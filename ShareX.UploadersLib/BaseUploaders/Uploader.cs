@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -56,16 +56,26 @@ namespace ShareX.UploadersLib
 
         protected bool StopUploadRequested { get; set; }
         protected bool AllowReportProgress { get; set; } = true;
-        protected bool WebExceptionReturnResponse { get; set; }
-        protected bool WebExceptionThrow { get; set; }
+        protected bool ReturnResponseOnError { get; set; }
 
         private HttpWebRequest currentRequest;
 
-        public Uploader()
+        public static void UpdateServicePointManager()
         {
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.UseNagleAlgorithm = false;
+
+            try
+            {
+                // Default value for .NET Framework 4.0 and 4.5: SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls
+                // Default value for .NET Framework 4.6: SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)192 | (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            }
+            catch (NotSupportedException)
+            {
+                DebugHelper.WriteLine("Unable to configure TLS 1.2 as the default security protocol. .NET Framework 4.5 or newer version must be installed in your system to support it.");
+            }
         }
 
         protected void OnProgressChanged(ProgressManager progress)
@@ -254,14 +264,9 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (WebExceptionThrow && e is WebException)
-                    {
-                        throw;
-                    }
+                    string response = AddWebError(e, url);
 
-                    string response = AddWebError(e);
-
-                    if (WebExceptionReturnResponse && e is WebException)
+                    if (ReturnResponseOnError && e is WebException)
                     {
                         result.Response = response;
                     }
@@ -312,12 +317,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (WebExceptionThrow && e is WebException)
-                    {
-                        throw;
-                    }
-
-                    AddWebError(e);
+                    AddWebError(e, url);
                 }
             }
             finally
@@ -343,6 +343,12 @@ namespace ShareX.UploadersLib
                 {
                     request.Accept = headers["Accept"];
                     headers.Remove("Accept");
+                }
+
+                if (headers["Content-Length"] != null)
+                {
+                    request.ContentLength = Convert.ToInt32(headers["Content-Length"]);
+                    headers.Remove("Content-Length");
                 }
 
                 request.Headers.Add(headers);
@@ -536,15 +542,22 @@ namespace ShareX.UploadersLib
             return headers;
         }
 
-        private string AddWebError(Exception e)
+        private string AddWebError(Exception e, string url)
         {
             string response = null;
 
             if (Errors != null && e != null)
             {
-                StringBuilder str = new StringBuilder();
-                str.AppendLine("Message:");
-                str.AppendLine(e.Message);
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Message:");
+                sb.AppendLine(e.Message);
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine("Request URL:");
+                    sb.AppendLine(url);
+                }
 
                 if (e is WebException)
                 {
@@ -554,9 +567,9 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(response))
                         {
-                            str.AppendLine();
-                            str.AppendLine("Response:");
-                            str.AppendLine(response);
+                            sb.AppendLine();
+                            sb.AppendLine("Response:");
+                            sb.AppendLine(response);
                         }
                     }
                     catch
@@ -564,11 +577,11 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                str.AppendLine();
-                str.AppendLine("StackTrace:");
-                str.AppendLine(e.StackTrace);
+                sb.AppendLine();
+                sb.AppendLine("Stack trace:");
+                sb.AppendLine(e.StackTrace);
 
-                string errorText = str.ToString().Trim();
+                string errorText = sb.ToString().Trim();
                 Errors.Add(errorText);
                 DebugHelper.WriteLine("Error:\r\n" + errorText);
             }

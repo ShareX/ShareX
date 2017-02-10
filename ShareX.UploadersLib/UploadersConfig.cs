@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -136,8 +136,8 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info DropboxOAuth2Info = null;
         //public DropboxAccount DropboxAccount = null;
-        public string DropboxUploadPath = "Public/ShareX/%y/%mo";
-        public bool DropboxAutoCreateShareableLink = false;
+        public string DropboxUploadPath = "ShareX/%y/%mo";
+        public bool DropboxAutoCreateShareableLink = true;
         public DropboxURLType DropboxURLType = DropboxURLType.Default;
         public DropboxAccountInfo DropboxAccountInfo = null; // API v1
 
@@ -297,6 +297,12 @@ namespace ShareX.UploadersLib
         public string UpleaEmailAddress = "";
         public bool UpleaIsPremiumMember = false;
         public bool UpleaInstantDownloadEnabled = false;
+
+        // Azure Storage
+
+        public string AzureStorageAccountName = "";
+        public string AzureStorageAccountAccessKey = "";
+        public string AzureStorageContainer = "";
 
         #endregion File uploaders
 

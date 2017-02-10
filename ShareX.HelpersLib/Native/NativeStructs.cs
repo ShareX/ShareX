@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -273,8 +273,8 @@ namespace ShareX.HelpersLib
     [StructLayout(LayoutKind.Sequential)]
     public struct CursorInfo
     {
-        public Int32 cbSize; // Specifies the size, in bytes, of the structure.
-        public Int32 flags; // Specifies the cursor state. This parameter can be one of the following values:
+        public int cbSize; // Specifies the size, in bytes, of the structure.
+        public int flags; // Specifies the cursor state. This parameter can be one of the following values:
         public IntPtr hCursor; // Handle to the cursor.
         public Point ptScreenPos; // A POINT structure that receives the screen coordinates of the cursor.
     }
@@ -283,8 +283,8 @@ namespace ShareX.HelpersLib
     public struct IconInfo
     {
         public bool fIcon; // Specifies whether this structure defines an icon or a cursor. A value of TRUE specifies
-        public Int32 xHotspot; // Specifies the x-coordinate of a cursor's hot spot. If this structure defines an icon, the hot
-        public Int32 yHotspot; // Specifies the y-coordinate of the cursor's hot spot. If this structure defines an icon, the hot
+        public int xHotspot; // Specifies the x-coordinate of a cursor's hot spot. If this structure defines an icon, the hot
+        public int yHotspot; // Specifies the y-coordinate of the cursor's hot spot. If this structure defines an icon, the hot
         public IntPtr hbmMask; // (HBITMAP) Specifies the icon bitmask bitmap. If this structure defines a black and white icon,
         public IntPtr hbmColor; // (HBITMAP) Handle to the icon color bitmap. This member can be optional if this
     }
@@ -720,5 +720,45 @@ namespace ShareX.HelpersLib
         public uint nPage;
         public int nPos;
         public int nTrackPos;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SECURITY_ATTRIBUTES
+    {
+        public int nLength;
+        public IntPtr lpSecurityDescriptor;
+        public int bInheritHandle;
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    public struct STARTUPINFO
+    {
+        public int cb;
+        public string lpReserved;
+        public string lpDesktop;
+        public string lpTitle;
+        public int dwX;
+        public int dwY;
+        public int dwXSize;
+        public int dwYSize;
+        public int dwXCountChars;
+        public int dwYCountChars;
+        public int dwFillAttribute;
+        public int dwFlags;
+        public short wShowWindow;
+        public short cbReserved2;
+        public IntPtr lpReserved2;
+        public IntPtr hStdInput;
+        public IntPtr hStdOutput;
+        public IntPtr hStdError;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct PROCESS_INFORMATION
+    {
+        public IntPtr hProcess;
+        public IntPtr hThread;
+        public int dwProcessId;
+        public int dwThreadId;
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,6 +51,9 @@ namespace ShareX.HelpersLib
 
         [DefaultValue(false)]
         public bool ExportIgnoreNull { get; set; }
+
+        [DefaultValue("")]
+        public string CustomFilter { get; set; } = "";
 
         public ExportImportControl()
         {
@@ -116,7 +119,14 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Settings (*.json)|*.json" })
+                    string filter = "Settings (*.json)|*.json";
+
+                    if (!string.IsNullOrEmpty(CustomFilter))
+                    {
+                        filter = CustomFilter + "|" + filter;
+                    }
+
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = filter })
                     {
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
@@ -195,7 +205,14 @@ namespace ShareX.HelpersLib
         {
             if (ImportRequested != null)
             {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Settings (*.json)|*.json|All files (*.*)|*.*", Multiselect = true })
+                string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+
+                if (!string.IsNullOrEmpty(CustomFilter))
+                {
+                    filter = CustomFilter + "|" + filter;
+                }
+
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {

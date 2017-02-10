@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -61,9 +61,9 @@ namespace ShareX
 
             UseCommandLineArgs(Program.CLI.Commands);
 
-            if (Program.Settings.SimpleActionsFormRunAtStartup)
+            if (Program.Settings.ActionsToolbarRunAtStartup)
             {
-                SimpleActionsForm.Instance.ForceActivate();
+                TaskHelpers.OpenActionsToolbar();
             }
         }
 
@@ -468,7 +468,7 @@ namespace ShareX
 
             foreach (ToolStripDropDownItem parent in parents)
             {
-                ((ToolStripMenuItem)parent.DropDownItems[index]).Checked = true;
+                ((ToolStripMenuItem)parent.DropDownItems[index]).RadioCheck();
             }
         }
 
@@ -722,7 +722,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateUploaderMenuNames()
+        public void UpdateUploaderMenuNames()
         {
             string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 Program.DefaultTaskSettings.ImageFileDestination.GetLocalizedDescription() : Program.DefaultTaskSettings.ImageDestination.GetLocalizedDescription();
@@ -984,6 +984,12 @@ namespace ShareX
                 tsmiWindow.Invalidate();
                 tsmiMonitor.Invalidate();
             });
+        }
+
+        public void ForceClose()
+        {
+            forceClose = true;
+            Close();
         }
 
         #region Form events
@@ -1674,6 +1680,11 @@ namespace ShareX
             TaskHelpers.ToggleHotkeys();
         }
 
+        private void tsmiOpenActionsToolbar_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleActionsToolbar();
+        }
+
         private void tsmiTrayShow_Click(object sender, EventArgs e)
         {
             this.ForceActivate();
@@ -1696,8 +1707,7 @@ namespace ShareX
 
         private void tsmiTrayExit_Click(object sender, EventArgs e)
         {
-            forceClose = true;
-            Close();
+            ForceClose();
         }
 
         #endregion Tray events

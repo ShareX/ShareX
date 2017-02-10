@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
@@ -33,43 +34,203 @@ namespace ShareX
 {
     public static class IntegrationHelpers
     {
-        private static string GetStartupTargetPath()
-        {
+        private static readonly string ApplicationName = "ShareX";
+        private static readonly string ApplicationPath = string.Format("\"{0}\"", Application.ExecutablePath);
+
+        private static readonly string StartupTargetPath =
 #if STEAM
-            return Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+            Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
 #else
-            return Application.ExecutablePath;
+            Application.ExecutablePath;
 #endif
-        }
+
+        private static readonly string StartupRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
+        private static readonly string StartupRegistryValue = $"\"{StartupTargetPath}\" -silent";
+
+        private static readonly string ShellExtMenuFiles = @"Software\Classes\*\shell\" + ApplicationName;
+        private static readonly string ShellExtMenuFilesCmd = ShellExtMenuFiles + @"\command";
+
+        private static readonly string ShellExtMenuDirectory = @"Software\Classes\Directory\shell\" + ApplicationName;
+        private static readonly string ShellExtMenuDirectoryCmd = ShellExtMenuDirectory + @"\command";
+
+        private static readonly string ShellExtMenuFolders = @"Software\Classes\Folder\shell\" + ApplicationName;
+        private static readonly string ShellExtMenuFoldersCmd = ShellExtMenuFolders + @"\command";
+
+        private static readonly string ShellExtDesc = string.Format("Upload with {0}", ApplicationName); // TODO: Translate
+        private static readonly string ShellExtIcon = ApplicationPath + ",0";
+        private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
+
+        private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
+        private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
+        private static readonly string ShellCustomUploaderAssociatePath = @"Software\Classes\" + ShellCustomUploaderExtensionValue;
+        private static readonly string ShellCustomUploaderAssociateValue = "ShareX custom uploader";
+        private static readonly string ShellCustomUploaderIconPath = ShellCustomUploaderAssociatePath + @"\DefaultIcon";
+        private static readonly string ShellCustomUploaderIconValue = ApplicationPath + ",0";
+        private static readonly string ShellCustomUploaderCommandPath = ShellCustomUploaderAssociatePath + @"\shell\open\command";
+        private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " -CustomUploader \"%1\"";
+
+        private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
 
         public static bool CheckStartupShortcut()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, GetStartupTargetPath());
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
         }
 
         public static void CreateStartupShortcut(bool create)
         {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, GetStartupTargetPath(), "-silent");
+            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+        }
+
+        public static bool CheckStartWithWindows()
+        {
+            try
+            {
+                return RegistryHelpers.CheckRegistry(StartupRegistryPath, ApplicationName, StartupRegistryValue);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreateStartWithWindows(bool create)
+        {
+            try
+            {
+                using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(StartupRegistryPath, true))
+                {
+                    if (rk != null)
+                    {
+                        if (create)
+                        {
+                            rk.SetValue(ApplicationName, StartupRegistryValue, RegistryValueKind.String);
+                        }
+                        else
+                        {
+                            rk.DeleteValue(ApplicationName, false);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         public static bool CheckShellContextMenuButton()
         {
-            return RegistryHelpers.CheckShellContextMenu();
+            try
+            {
+                return RegistryHelpers.CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) && RegistryHelpers.CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
         }
 
         public static void CreateShellContextMenuButton(bool create)
         {
-            RegistryHelpers.SetShellContextMenu(create);
+            try
+            {
+                if (create)
+                {
+                    UnregisterShellContextMenuButton();
+                    RegisterShellContextMenuButton();
+                }
+                else
+                {
+                    UnregisterShellContextMenuButton();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterShellContextMenuButton()
+        {
+            RegistryHelpers.CreateRegistry(ShellExtMenuFiles, ShellExtDesc);
+            RegistryHelpers.CreateRegistry(ShellExtMenuFiles, "Icon", ShellExtIcon);
+            RegistryHelpers.CreateRegistry(ShellExtMenuFilesCmd, ShellExtPath);
+
+            RegistryHelpers.CreateRegistry(ShellExtMenuDirectory, ShellExtDesc);
+            RegistryHelpers.CreateRegistry(ShellExtMenuDirectory, "Icon", ShellExtIcon);
+            RegistryHelpers.CreateRegistry(ShellExtMenuDirectoryCmd, ShellExtPath);
+        }
+
+        private static void UnregisterShellContextMenuButton()
+        {
+            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles, true);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory, true);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuFolders, true);
         }
 
         public static bool CheckCustomUploaderExtension()
         {
-            return RegistryHelpers.CheckCustomUploaderExtension();
+            try
+            {
+                return RegistryHelpers.CheckRegistry(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) &&
+                    RegistryHelpers.CheckRegistry(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
         }
 
         public static void CreateCustomUploaderExtension(bool create)
         {
-            RegistryHelpers.SetCustomUploaderExtension(create);
+            try
+            {
+                if (create)
+                {
+                    UnregisterCustomUploaderExtension();
+                    RegisterCustomUploaderExtension();
+                }
+                else
+                {
+                    UnregisterCustomUploaderExtension();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterCustomUploaderExtension()
+        {
+            RegistryHelpers.CreateRegistry(ShellCustomUploaderExtensionPath, ShellCustomUploaderExtensionValue);
+            RegistryHelpers.CreateRegistry(ShellCustomUploaderAssociatePath, ShellCustomUploaderAssociateValue);
+            RegistryHelpers.CreateRegistry(ShellCustomUploaderIconPath, ShellCustomUploaderIconValue);
+            RegistryHelpers.CreateRegistry(ShellCustomUploaderCommandPath, ShellCustomUploaderCommandValue);
+
+            NativeMethods.SHChangeNotify(HChangeNotifyEventID.SHCNE_ASSOCCHANGED, HChangeNotifyFlags.SHCNF_FLUSH, IntPtr.Zero, IntPtr.Zero);
+        }
+
+        private static void UnregisterCustomUploaderExtension()
+        {
+            RegistryHelpers.RemoveRegistry(ShellCustomUploaderExtensionPath);
+            RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath, true);
+        }
+
+        public static void RegisterChromeSupport(string filepath)
+        {
+            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, filepath);
+        }
+
+        public static void UnregisterChromeSupport()
+        {
+            RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
         }
 
         public static bool CheckSendToMenuButton()
@@ -117,6 +278,7 @@ namespace ShareX
         {
             CreateStartupShortcut(false);
             CreateShellContextMenuButton(false);
+            CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);
         }
     }

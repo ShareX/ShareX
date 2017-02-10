@@ -970,6 +970,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exit ShareX.
+        /// </summary>
+        internal static string HotkeyType_ExitShareX {
+            get {
+                return ResourceManager.GetString("HotkeyType_ExitShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_ExitShareX_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ExitShareX_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload file.
         /// </summary>
         internal static string HotkeyType_FileUpload {
@@ -1573,6 +1591,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toggle actions toolbar.
+        /// </summary>
+        internal static string HotkeyType_ToggleActionsToolbar {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleActionsToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_ToggleActionsToolbar_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleActionsToolbar_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet message.
         /// </summary>
         internal static string HotkeyType_TweetMessage {
@@ -1858,15 +1894,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string RegionCaptureAction_SwapToolType {
             get {
                 return ResourceManager.GetString("RegionCaptureAction_SwapToolType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload with {0}.
-        /// </summary>
-        internal static string RegistryHelpers_ShellExtDesc_Upload_with__0_ {
-            get {
-                return ResourceManager.GetString("RegistryHelpers_ShellExtDesc_Upload_with__0_", resourceCulture);
             }
         }
         

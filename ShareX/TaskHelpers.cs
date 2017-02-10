@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -226,6 +226,12 @@ namespace ShareX
                 case HotkeyType.OpenImageHistory:
                     OpenImageHistory();
                     break;
+                case HotkeyType.ToggleActionsToolbar:
+                    ToggleActionsToolbar();
+                    break;
+                case HotkeyType.ExitShareX:
+                    Program.MainForm.ForceClose();
+                    break;
             }
         }
 
@@ -261,18 +267,10 @@ namespace ShareX
                     try
                     {
                         thumbImage = (Image)img.Clone();
-                        thumbImage = new Resize
-                        {
-                            Width = taskSettings.ImageSettings.ThumbnailWidth,
-                            Height = taskSettings.ImageSettings.ThumbnailHeight
-                        }.Apply(thumbImage);
+                        thumbImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbImage);
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
                         return thumbnailFilePath;
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
                     }
                     finally
                     {
@@ -302,8 +300,16 @@ namespace ShareX
                     img.Save(stream, ImageFormat.Png);
                     break;
                 case EImageFormat.JPEG:
-                    img = ImageHelpers.FillBackground(img, Color.White);
-                    img.SaveJPG(stream, jpegQuality);
+                    try
+                    {
+                        img = (Image)img.Clone();
+                        img = ImageHelpers.FillBackground(img, Color.White);
+                        img.SaveJPG(stream, jpegQuality);
+                    }
+                    finally
+                    {
+                        if (img != null) img.Dispose();
+                    }
                     break;
                 case EImageFormat.GIF:
                     img.SaveGIF(stream, gifQuality);
@@ -1166,8 +1172,9 @@ namespace ShareX
                 Program.UploaderSettingsResetEvent.WaitOne();
             }
 
-            bool firstInstance;
-            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig, out firstInstance);
+            bool firstInstance = !UploadersConfigForm.IsInstanceActive;
+
+            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig);
 
             if (firstInstance)
             {
@@ -1262,15 +1269,15 @@ namespace ShareX
             switch (hotkeyType)
             {
                 default: throw new Exception("Icon missing for hotkey type.");
-                case HotkeyType.None: return Resources.cross;
+                case HotkeyType.None: return null;
                 // Upload
                 case HotkeyType.FileUpload: return Resources.folder_open_document;
                 case HotkeyType.FolderUpload: return Resources.folder;
                 case HotkeyType.ClipboardUpload: return Resources.clipboard;
-                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard; // TODO: Find better icon
+                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
-                case HotkeyType.StopUploads: return Resources.cross_button; // TODO: Find better icon
+                case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
                 case HotkeyType.ActiveWindow: return Resources.application_blue;
@@ -1278,23 +1285,23 @@ namespace ShareX
                 case HotkeyType.RectangleRegion: return Resources.layer_shape;
                 case HotkeyType.RectangleLight: return Resources.Rectangle;
                 case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
-                case HotkeyType.CustomRegion: return Resources.layer_shape; // TODO: Find better icon
+                case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
                 case HotkeyType.CaptureWebpage: return Resources.document_globe;
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
-                case HotkeyType.StartAutoCapture: return Resources.clock; // TODO: Find better icon
+                case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
                 // Screen record
                 case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
-                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder_image; // TODO: Find better icon
-                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder_image; // TODO: Find better icon
-                case HotkeyType.StartScreenRecorder: return Resources.camcorder_image; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;
+                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder__arrow;
+                case HotkeyType.StartScreenRecorder: return Resources.camcorder__arrow;
                 case HotkeyType.ScreenRecorderGIF: return Resources.film;
-                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film; // TODO: Find better icon
-                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film; // TODO: Find better icon
-                case HotkeyType.StartScreenRecorderGIF: return Resources.film; // TODO: Find better icon
-                case HotkeyType.AbortScreenRecording: return Resources.cross_button; // TODO: Find better icon
+                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film__arrow;
+                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
+                case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
+                case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
                 // Tools
                 case HotkeyType.ColorPicker: return Resources.color;
                 case HotkeyType.ScreenColorPicker: return Resources.pipette;
@@ -1312,10 +1319,12 @@ namespace ShareX
                 case HotkeyType.MonitorTest: return Resources.monitor;
                 // Other
                 case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
-                case HotkeyType.OpenMainWindow: return Resources.tick_button; // TODO: Find better icon
+                case HotkeyType.OpenMainWindow: return Resources.application_home;
                 case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
                 case HotkeyType.OpenHistory: return Resources.application_blog;
                 case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
+                case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
+                case HotkeyType.ExitShareX: return Resources.cross;
             }
         }
 
@@ -1346,6 +1355,8 @@ namespace ShareX
 
                     if (cui != null)
                     {
+                        bool activate = false;
+
                         if (cui.DestinationType == CustomUploaderDestinationType.None)
                         {
                             DialogResult result = MessageBox.Show($"Would you like to add \"{cui.Name}\" custom uploader?",
@@ -1371,7 +1382,7 @@ namespace ShareX
 
                             if (result == DialogResult.Yes)
                             {
-                                // TODO: Select custom uploader
+                                activate = true;
                             }
                             else if (result == DialogResult.Cancel)
                             {
@@ -1380,12 +1391,66 @@ namespace ShareX
                         }
 
                         Program.UploadersConfig.CustomUploadersList.Add(cui);
+
+                        if (activate)
+                        {
+                            int index = Program.UploadersConfig.CustomUploadersList.Count - 1;
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader))
+                            {
+                                Program.UploadersConfig.CustomImageUploaderSelected = index;
+                                Program.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader))
+                            {
+                                Program.UploadersConfig.CustomTextUploaderSelected = index;
+                                Program.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader))
+                            {
+                                Program.UploadersConfig.CustomFileUploaderSelected = index;
+                                Program.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener))
+                            {
+                                Program.UploadersConfig.CustomURLShortenerSelected = index;
+                                Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
+                            }
+
+                            Program.MainForm.UpdateCheckStates();
+                            Program.MainForm.UpdateUploaderMenuNames();
+
+                            if (UploadersConfigForm.IsInstanceActive)
+                            {
+                                UploadersConfigForm.UpdateCustomUploaderTab();
+                            }
+                        }
                     }
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
                 }
+            }
+        }
+
+        public static void OpenActionsToolbar()
+        {
+            ActionsToolbarForm.Instance.ForceActivate();
+        }
+
+        public static void ToggleActionsToolbar()
+        {
+            if (ActionsToolbarForm.IsInstanceActive)
+            {
+                ActionsToolbarForm.Instance.Close();
+            }
+            else
+            {
+                ActionsToolbarForm.Instance.ForceActivate();
             }
         }
     }

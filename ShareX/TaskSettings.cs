@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -428,6 +428,9 @@ namespace ShareX
         [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
         Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
+
+        [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
+        public bool RegionCaptureDisableAnnotation { get; set; }
 
         [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]

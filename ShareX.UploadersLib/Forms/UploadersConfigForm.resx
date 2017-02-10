@@ -208,6 +208,207 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+   <data name="btnAzureStoragePortal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>556, 48</value>
+  </data>
+  <data name="btnAzureStoragePortal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 26</value>
+  </data>
+  <data name="btnAzureStoragePortal.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnAzureStoragePortal.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Name" xml:space="preserve">
+    <value>btnAzureStoragePortal</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;btnAzureStoragePortal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 201</value>
+  </data>
+  <data name="txtAzureStorageContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Name" xml:space="preserve">
+    <value>txtAzureStorageContainer</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageContainer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAzureStorageContainer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 178</value>
+  </data>
+  <data name="lblAzureStorageContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="lblAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Name" xml:space="preserve">
+    <value>lblAzureStorageContainer</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageContainer.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 121</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Name" xml:space="preserve">
+    <value>txtAzureStorageAccessKey</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccessKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 98</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>Access key:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Name" xml:space="preserve">
+    <value>lblAzureStorageAccessKey</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccessKey.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 48</value>
+  </data>
+  <data name="txtAzureStorageAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 26</value>
+  </data>
+  <data name="txtAzureStorageAccountName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Name" xml:space="preserve">
+    <value>txtAzureStorageAccountName</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageAccountName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblAzureStorageAccountName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 25</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 20</value>
+  </data>
+  <data name="lblAzureStorageAccountName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
+    <value>Account name:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Name" xml:space="preserve">
+    <value>lblAzureStorageAccountName</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 54</value>
+  </data>
+  <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1468, 746</value>
+  </data>
+  <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="tpAzureStorage.Text" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpAzureStorage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1457,10 +1658,10 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderExamples.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>504, 8</value>
   </data>
   <data name="btnCustomUploaderExamples.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 24</value>
+    <value>176, 24</value>
   </data>
   <data name="btnCustomUploaderExamples.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -1514,7 +1715,7 @@ store.book[0].title</value>
     <value>272, 8</value>
   </data>
   <data name="btnCustomUploaderClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 24</value>
+    <value>192, 24</value>
   </data>
   <data name="btnCustomUploaderClear.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1831,11 +2032,53 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbCustomUploaderURLShortener.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="mbCustomUploaderDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <metadata name="cmsCustomUploaderDestinationType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>119, 17</value>
+  </metadata>
+  <data name="cmsCustomUploaderDestinationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;cmsCustomUploaderDestinationType.Name" xml:space="preserve">
+    <value>cmsCustomUploaderDestinationType</value>
+  </data>
+  <data name="&gt;&gt;cmsCustomUploaderDestinationType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
+    <value>Destination type</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
+    <value>Currently destination type is used when users import custom uploader by double clicking the .sxcu file.</value>
+  </data>
+  <data name="&gt;&gt;mbCustomUploaderDestinationType.Name" xml:space="preserve">
+    <value>mbCustomUploaderDestinationType</value>
+  </data>
+  <data name="&gt;&gt;mbCustomUploaderDestinationType.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mbCustomUploaderDestinationType.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;mbCustomUploaderDestinationType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCustomUploadersExportAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploadersExportAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 280</value>
+    <value>200, 312</value>
   </data>
   <data name="btnCustomUploadersExportAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 24</value>
@@ -1859,13 +2102,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploadersExportAll.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 248</value>
+    <value>8, 280</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 24</value>
@@ -1886,10 +2129,10 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderClearUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="eiCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 280</value>
+    <value>8, 312</value>
   </data>
   <data name="eiCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 26</value>
@@ -1907,13 +2150,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbCustomUploaderList.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="lbCustomUploaderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>8, 104</value>
   </data>
   <data name="lbCustomUploaderList.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 168</value>
@@ -1931,13 +2174,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lbCustomUploaderList.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnCustomUploaderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 40</value>
+    <value>88, 72</value>
   </data>
   <data name="btnCustomUploaderRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -1958,13 +2201,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCustomUploaderUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 40</value>
+    <value>168, 72</value>
   </data>
   <data name="btnCustomUploaderUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -1985,7 +2228,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderUpdate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
@@ -2006,13 +2249,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnCustomUploaderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>8, 72</value>
   </data>
   <data name="btnCustomUploaderAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -2033,13 +2276,13 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderAdd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="gbCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>8, 8</value>
   </data>
   <data name="gbCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 312</value>
+    <value>248, 344</value>
   </data>
   <data name="gbCustomUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3704,7 +3947,7 @@ store.book[0].title</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 414</value>
+    <value>792, 378</value>
   </data>
   <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3722,13 +3965,13 @@ store.book[0].title</value>
     <value>8</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpFTP.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4075,13 +4318,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4207,13 +4450,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -4459,13 +4702,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4753,13 +4996,13 @@ store.book[0].title</value>
     <value>9</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4948,13 +5191,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5365,13 +5608,13 @@ store.book[0].title</value>
     <value>16</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5686,10 +5929,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6034,13 +6277,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -6247,13 +6490,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6409,13 +6652,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -6586,13 +6829,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6772,13 +7015,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -6931,13 +7174,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -7381,13 +7624,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7591,10 +7834,10 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -7747,13 +7990,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpLambda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpLambda.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -13751,7 +13994,7 @@ Using an encrypted library disables sharing.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblWidthHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -13778,7 +14021,7 @@ Using an encrypted library disables sharing.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWidthHint.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ttlvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -13805,7 +14048,7 @@ Using an encrypted library disables sharing.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ttlvMain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="actRapidShareAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
@@ -13833,6 +14076,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

@@ -169,7 +169,7 @@
     <value>调试</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>目的地</value>
+    <value>上传至...</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -253,7 +253,7 @@
     <value>删除本地文件</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>目标设置...</value>
+    <value>上传至...设置</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>更换DNS...</value>
@@ -418,10 +418,10 @@
     <value>截图</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>目的地</value>
+    <value>上传至...</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>目标设置...</value>
+    <value>上传至...设置</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS更换...</value>

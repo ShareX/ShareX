@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,10 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
-using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -61,19 +60,20 @@ namespace ShareX.Chrome
 
                     if (!string.IsNullOrEmpty(chromeInput.URL))
                     {
-                        argument = EscapeText(chromeInput.URL);
+                        argument = Helpers.EscapeCLIText(chromeInput.URL);
                     }
                     else if (!string.IsNullOrEmpty(chromeInput.Text))
                     {
-                        string filepath = GetTempPath("txt");
+                        string filepath = Helpers.GetTempPath("txt");
                         File.WriteAllText(filepath, chromeInput.Text, Encoding.UTF8);
-                        argument = EscapeText(filepath);
+                        argument = $"\"{filepath}\"";
                     }
 
                     if (!string.IsNullOrEmpty(argument))
                     {
-                        string path = GetAbsolutePath("ShareX.exe");
-                        Process.Start(path, argument);
+                        string path = Helpers.GetAbsolutePath("ShareX.exe");
+
+                        NativeMethods.CreateProcess(path, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
                     }
                 }
             }
@@ -90,28 +90,6 @@ namespace ShareX.Chrome
             byte[] bytesInput = new byte[inputLength];
             inputStream.Read(bytesInput, 0, bytesInput.Length);
             return Encoding.UTF8.GetString(bytesInput);
-        }
-
-        private static string EscapeText(string text)
-        {
-            return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
-        }
-
-        public static string GetAbsolutePath(string path)
-        {
-            if (!Path.IsPathRooted(path)) // Is relative path?
-            {
-                string startupDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                path = Path.Combine(startupDirectory, path);
-            }
-
-            return Path.GetFullPath(path);
-        }
-
-        public static string GetTempPath(string extension)
-        {
-            string path = Path.GetTempFileName();
-            return Path.ChangeExtension(path, extension);
         }
     }
 }

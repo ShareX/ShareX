@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class SimpleActionsEditForm
+    partial class ActionsToolbarEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -95,7 +95,7 @@
             this.ilMain.ImageSize = new System.Drawing.Size(16, 16);
             this.ilMain.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // SimpleActionsEditForm
+            // ActionsToolbarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,10 +104,10 @@
             this.Controls.Add(this.lvActions);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRemove);
-            this.Name = "SimpleActionsEditForm";
+            this.Name = "ActionsToolbarEditForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Simple actions edit";
+            this.Text = "ShareX - Edit actions toolbar";
             this.ResumeLayout(false);
 
         }

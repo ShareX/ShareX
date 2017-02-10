@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -66,18 +66,19 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://biyori.moe/upload.php"),
             new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("https://comfy.moe/upload.php"),
-            new PomfUploader("https://cuntflaps.me/upload.php"),
+            new PomfUploader("https://cuntflaps.me/api/upload"),
             new PomfUploader("https://desu.sh/upload.php", "https://a.desu.sh"),
             new PomfUploader("https://filebox.moe/upload.php"),
             new PomfUploader("https://filebunker.pw/upload.php"),
-            new PomfUploader("https://fluntcaps.me/upload.php"),
+            new PomfUploader("https://fluntcaps.me/api/upload"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://nya.is/upload"),
+            new PomfUploader("https://lolisafe.moe/api/upload"),
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
-            new PomfUploader("https://pomf.gocataclysm.com/upload.php"),
+            new PomfUploader("https://pomf.space/upload.php"),
             new PomfUploader("https://pomf.is/upload.php"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
             new PomfUploader("https://pomfe.co/upload.php", "https://a.pomfe.co"),

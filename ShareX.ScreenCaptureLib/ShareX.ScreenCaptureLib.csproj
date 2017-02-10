@@ -163,6 +163,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pencil.png" />
     <None Include="Resources\wrench-screwdriver.png" />
     <None Include="Resources\layers-stack-arrange.png" />
     <None Include="Resources\layers-stack-arrange-back.png" />

@@ -124,7 +124,7 @@
     <value>使用默认的"上传后"设置</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>使用默认的"目的地"设置</value>
+    <value>使用默认的"上传至..."设置</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>说明:</value>
@@ -406,7 +406,7 @@
     <value>图片类上传</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
-    <value>目的地...</value>
+    <value>上传至...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>上传后...</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,6 +41,8 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {
+        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
+
         private static UploadersConfigForm instance;
 
         public UploadersConfig Config { get; private set; }
@@ -55,16 +57,11 @@ namespace ShareX.UploadersLib
             InitializeControls();
         }
 
-        public static UploadersConfigForm GetFormInstance(UploadersConfig config, out bool firstInstance)
+        public static UploadersConfigForm GetFormInstance(UploadersConfig config)
         {
-            if (instance == null || instance.IsDisposed)
+            if (!IsInstanceActive)
             {
                 instance = new UploadersConfigForm(config);
-                firstInstance = true;
-            }
-            else
-            {
-                firstInstance = false;
             }
 
             return instance;
@@ -119,6 +116,11 @@ namespace ShareX.UploadersLib
 
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
+
+            txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark("Name");
+            AddCustomUploaderDestinationTypes();
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
@@ -588,6 +590,11 @@ namespace ShareX.UploadersLib
             cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
             cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
 
+            // Azure Storage
+            txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
+            txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
+            txtAzureStorageContainer.Text = Config.AzureStorageContainer;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -659,30 +666,7 @@ namespace ShareX.UploadersLib
 
             // Custom uploaders
 
-            lbCustomUploaderList.Items.Clear();
-
-            if (Config.CustomUploadersList == null)
-            {
-                Config.CustomUploadersList = new List<CustomUploaderItem>();
-            }
-            else
-            {
-                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
-                {
-                    lbCustomUploaderList.Items.Add(customUploader.Name);
-                }
-
-                PrepareCustomUploaderList();
-            }
-
-#if DEBUG
-            btnCustomUploadersExportAll.Visible = true;
-#endif
-
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
-            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
-
-            CustomUploaderClearFields();
+            LoadCustomUploaderTab();
 
             #endregion Other uploaders
         }
@@ -2623,6 +2607,30 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Uplea
+
+        #region Azure Storage
+
+        private void txtAzureStorageAccountName_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageAccountName = txtAzureStorageAccountName.Text;
+        }
+
+        private void txtAzureStorageAccessKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageAccountAccessKey = txtAzureStorageAccessKey.Text;
+        }
+
+        private void txtAzureStorageContainer_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageContainer = txtAzureStorageContainer.Text;
+        }
+
+        private void btnAzureStoragePortal_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
+        }
+
+        #endregion Azure Storage
 
         #endregion File Uploaders
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -1486,6 +1486,93 @@ namespace ShareX.UploadersLib
 
         #region Custom uploader
 
+        private void LoadCustomUploaderTab(bool selectLastItem = false)
+        {
+            lbCustomUploaderList.Items.Clear();
+
+            if (Config.CustomUploadersList == null)
+            {
+                Config.CustomUploadersList = new List<CustomUploaderItem>();
+            }
+            else
+            {
+                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
+                {
+                    lbCustomUploaderList.Items.Add(customUploader.Name);
+                }
+
+                PrepareCustomUploaderList();
+            }
+
+#if DEBUG
+            btnCustomUploadersExportAll.Visible = true;
+#endif
+
+            CustomUploaderClearFields();
+
+            if (selectLastItem && lbCustomUploaderList.Items.Count > 0)
+            {
+                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+            }
+        }
+
+        public static void UpdateCustomUploaderTab()
+        {
+            if (IsInstanceActive)
+            {
+                UploadersConfigForm form = GetFormInstance(null);
+                form.LoadCustomUploaderTab(true);
+            }
+        }
+
+        private void AddCustomUploaderDestinationTypes()
+        {
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<CustomUploaderDestinationType>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
+
+            for (int i = 0; i < enums.Length; i++)
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+
+                int index = i;
+
+                tsmi.Click += (sender, e) =>
+                {
+                    ToolStripMenuItem tsmi2 = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[index];
+                    tsmi2.Checked = !tsmi2.Checked;
+                };
+
+                cmsCustomUploaderDestinationType.Items.Add(tsmi);
+            }
+
+            cmsCustomUploaderDestinationType.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+        }
+
+        private void SetCustomUploaderDestinationType(CustomUploaderDestinationType destinationType)
+        {
+            for (int i = 0; i < cmsCustomUploaderDestinationType.Items.Count; i++)
+            {
+                ToolStripMenuItem tsmi = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[i];
+                tsmi.Checked = destinationType.HasFlag(1 << i);
+            }
+        }
+
+        private CustomUploaderDestinationType GetCustomUploaderDestinationType()
+        {
+            CustomUploaderDestinationType destinationType = CustomUploaderDestinationType.None;
+
+            for (int i = 0; i < cmsCustomUploaderDestinationType.Items.Count; i++)
+            {
+                ToolStripMenuItem tsmi = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[i];
+
+                if (tsmi.Checked)
+                {
+                    destinationType |= (CustomUploaderDestinationType)(1 << i);
+                }
+            }
+
+            return destinationType;
+        }
+
         private void UpdateCustomUploader()
         {
             int index = lbCustomUploaderList.SelectedIndex;
@@ -1560,7 +1647,7 @@ namespace ShareX.UploadersLib
                         foreach (CustomUploaderItem item in Config.CustomUploadersList)
                         {
                             string json = eiCustomUploaders.Serialize(item);
-                            string filepath = Path.Combine(fsd.FileName, item.Name + ".json");
+                            string filepath = Path.Combine(fsd.FileName, item.Name + ".sxcu");
                             File.WriteAllText(filepath, json, Encoding.UTF8);
                         }
                     }
@@ -1622,6 +1709,7 @@ namespace ShareX.UploadersLib
         private void LoadCustomUploader(CustomUploaderItem customUploader)
         {
             txtCustomUploaderName.Text = customUploader.Name ?? "";
+            SetCustomUploaderDestinationType(customUploader.DestinationType);
 
             cbCustomUploaderRequestType.SelectedIndex = (int)customUploader.RequestType;
             txtCustomUploaderRequestURL.Text = customUploader.RequestURL ?? "";
@@ -1671,6 +1759,8 @@ namespace ShareX.UploadersLib
         private CustomUploaderItem GetCustomUploaderFromFields()
         {
             CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
+
+            item.DestinationType = GetCustomUploaderDestinationType();
 
             item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
 

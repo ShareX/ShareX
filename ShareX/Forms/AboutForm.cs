@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -105,7 +105,7 @@ AWS SDK: http://aws.amazon.com/sdk-for-net/
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: http://ocr.space
 
-Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
+Copyright (c) 2007-2017 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)

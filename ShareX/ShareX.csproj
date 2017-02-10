@@ -204,13 +204,13 @@
     <Compile Include="Forms\FirstTimeConfigForm.Designer.cs">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SimpleActionsEditForm.cs">
+    <Compile Include="Forms\ActionsToolbarEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SimpleActionsEditForm.Designer.cs">
-      <DependentUpon>SimpleActionsEditForm.cs</DependentUpon>
+    <Compile Include="Forms\ActionsToolbarEditForm.Designer.cs">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SimpleActionsForm.cs">
+    <Compile Include="Forms\ActionsToolbarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HotkeyTypeEnumConverter.cs" />
@@ -995,8 +995,8 @@
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SimpleActionsEditForm.resx">
-      <DependentUpon>SimpleActionsEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1332,6 +1332,14 @@
     <None Include="Resources\drive-download.png" />
     <None Include="Resources\drive-upload.png" />
     <None Include="Resources\ui-splitter.png" />
+    <None Include="Resources\ui-toolbar--arrow.png" />
+    <None Include="Resources\layer--arrow.png" />
+    <None Include="Resources\clock--arrow.png" />
+    <None Include="Resources\camcorder--arrow.png" />
+    <None Include="Resources\film--arrow.png" />
+    <None Include="Resources\camcorder--exclamation.png" />
+    <None Include="Resources\application-home.png" />
+    <None Include="Resources\clipboard-task.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

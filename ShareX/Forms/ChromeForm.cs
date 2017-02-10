@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -65,7 +65,7 @@ namespace ShareX
             {
                 CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
 
-                RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestFilePath);
+                IntegrationHelpers.RegisterChromeSupport(Program.ChromeHostManifestFilePath);
 
                 MessageBox.Show(Resources.ChromeForm_btnRegister_Click_Chrome_support_enabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -84,7 +84,7 @@ namespace ShareX
                     File.Delete(Program.ChromeHostManifestFilePath);
                 }
 
-                RegistryHelpers.UnregisterChromeSupport();
+                IntegrationHelpers.UnregisterChromeSupport();
 
                 MessageBox.Show(Resources.ChromeForm_btnUnregister_Click_Chrome_support_disabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

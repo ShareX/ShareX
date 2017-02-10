@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -270,19 +270,19 @@ namespace ShareX
 
         #endregion OCR Form
 
-        #region Simple actions form
+        #region Actions toolbar
 
-        public bool SimpleActionsFormRunAtStartup = true;
+        public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,
+            HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer };
 
-        public List<HotkeyType> SimpleActionsList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.LastRegion,
-            HotkeyType.None, HotkeyType.FileUpload, HotkeyType.ClipboardUploadWithContentViewer, HotkeyType.None, HotkeyType.ScreenColorPicker };
+        public bool ActionsToolbarRunAtStartup = false;
 
-        public Point SimpleActionsFormPosition = Point.Empty;
+        public Point ActionsToolbarPosition = Point.Empty;
 
-        public bool SimpleActionsFormLockPosition = false;
+        public bool ActionsToolbarLockPosition = false;
 
-        public bool SimpleActionsFormStayTopMost = true;
+        public bool ActionsToolbarStayTopMost = true;
 
-        #endregion Simple actions form
+        #endregion Actions toolbar
     }
 }

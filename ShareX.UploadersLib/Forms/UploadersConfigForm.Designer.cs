@@ -34,6 +34,8 @@
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.cbAmazonS3UseRRS = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
+            this.mbCustomUploaderDestinationType = new ShareX.HelpersLib.MenuButton();
+            this.cmsCustomUploaderDestinationType = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
@@ -237,6 +239,14 @@
             this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpAzureStorage = new System.Windows.Forms.TabPage();
+            this.btnAzureStoragePortal = new System.Windows.Forms.Button();
+            this.txtAzureStorageContainer = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageContainer = new System.Windows.Forms.Label();
+            this.txtAzureStorageAccessKey = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageAccessKey = new System.Windows.Forms.Label();
+            this.txtAzureStorageAccountName = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageAccountName = new System.Windows.Forms.Label();
             this.tpMega = new System.Windows.Forms.TabPage();
             this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
             this.lblMegaStatus = new System.Windows.Forms.Label();
@@ -593,6 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
+            this.tpAzureStorage.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
             this.tpMediaFire.SuspendLayout();
@@ -678,6 +689,20 @@
             this.ttHelpTip.SetToolTip(this.cbAmazonS3CustomCNAME, resources.GetString("cbAmazonS3CustomCNAME.ToolTip"));
             this.cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             this.cbAmazonS3CustomCNAME.CheckedChanged += new System.EventHandler(this.cbAmazonS3CustomCNAME_CheckedChanged);
+            // 
+            // mbCustomUploaderDestinationType
+            // 
+            resources.ApplyResources(this.mbCustomUploaderDestinationType, "mbCustomUploaderDestinationType");
+            this.mbCustomUploaderDestinationType.Menu = this.cmsCustomUploaderDestinationType;
+            this.mbCustomUploaderDestinationType.Name = "mbCustomUploaderDestinationType";
+            this.ttHelpTip.SetToolTip(this.mbCustomUploaderDestinationType, resources.GetString("mbCustomUploaderDestinationType.ToolTip"));
+            this.mbCustomUploaderDestinationType.UseVisualStyleBackColor = true;
+            // 
+            // cmsCustomUploaderDestinationType
+            // 
+            this.cmsCustomUploaderDestinationType.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.cmsCustomUploaderDestinationType.Name = "cmsCustomUploaderDestinationType";
+            resources.ApplyResources(this.cmsCustomUploaderDestinationType, "cmsCustomUploaderDestinationType");
             // 
             // tpOtherUploaders
             // 
@@ -1221,6 +1246,7 @@
             // 
             // gbCustomUploaders
             // 
+            this.gbCustomUploaders.Controls.Add(this.mbCustomUploaderDestinationType);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploadersExportAll);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderClearUploaders);
             this.gbCustomUploaders.Controls.Add(this.eiCustomUploaders);
@@ -1249,6 +1275,7 @@
             // 
             // eiCustomUploaders
             // 
+            this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
             this.eiCustomUploaders.ExportIgnoreNull = true;
             resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
@@ -1660,6 +1687,7 @@
             this.tcFileUploaders.Controls.Add(this.tpPuush);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
+            this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
@@ -2197,6 +2225,60 @@
             resources.ApplyResources(this.txtAmazonS3AccessKey, "txtAmazonS3AccessKey");
             this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
+            // 
+            // tpAzureStorage
+            // 
+            this.tpAzureStorage.Controls.Add(this.btnAzureStoragePortal);
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageContainer);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageContainer);
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageAccessKey);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageAccessKey);
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageAccountName);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageAccountName);
+            resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
+            this.tpAzureStorage.Name = "tpAzureStorage";
+            this.tpAzureStorage.UseVisualStyleBackColor = true;
+            // 
+            // btnAzureStoragePortal
+            // 
+            resources.ApplyResources(this.btnAzureStoragePortal, "btnAzureStoragePortal");
+            this.btnAzureStoragePortal.Name = "btnAzureStoragePortal";
+            this.btnAzureStoragePortal.UseVisualStyleBackColor = true;
+            this.btnAzureStoragePortal.Click += new System.EventHandler(this.btnAzureStoragePortal_Click);
+            // 
+            // txtAzureStorageContainer
+            // 
+            resources.ApplyResources(this.txtAzureStorageContainer, "txtAzureStorageContainer");
+            this.txtAzureStorageContainer.Name = "txtAzureStorageContainer";
+            this.txtAzureStorageContainer.TextChanged += new System.EventHandler(this.txtAzureStorageContainer_TextChanged);
+            // 
+            // lblAzureStorageContainer
+            // 
+            resources.ApplyResources(this.lblAzureStorageContainer, "lblAzureStorageContainer");
+            this.lblAzureStorageContainer.Name = "lblAzureStorageContainer";
+            // 
+            // txtAzureStorageAccessKey
+            // 
+            resources.ApplyResources(this.txtAzureStorageAccessKey, "txtAzureStorageAccessKey");
+            this.txtAzureStorageAccessKey.Name = "txtAzureStorageAccessKey";
+            this.txtAzureStorageAccessKey.UseSystemPasswordChar = true;
+            this.txtAzureStorageAccessKey.TextChanged += new System.EventHandler(this.txtAzureStorageAccessKey_TextChanged);
+            // 
+            // lblAzureStorageAccessKey
+            // 
+            resources.ApplyResources(this.lblAzureStorageAccessKey, "lblAzureStorageAccessKey");
+            this.lblAzureStorageAccessKey.Name = "lblAzureStorageAccessKey";
+            // 
+            // txtAzureStorageAccountName
+            // 
+            resources.ApplyResources(this.txtAzureStorageAccountName, "txtAzureStorageAccountName");
+            this.txtAzureStorageAccountName.Name = "txtAzureStorageAccountName";
+            this.txtAzureStorageAccountName.TextChanged += new System.EventHandler(this.txtAzureStorageAccountName_TextChanged);
+            // 
+            // lblAzureStorageAccountName
+            // 
+            resources.ApplyResources(this.lblAzureStorageAccountName, "lblAzureStorageAccountName");
+            this.lblAzureStorageAccountName.Name = "lblAzureStorageAccountName";
             // 
             // tpMega
             // 
@@ -4126,6 +4208,7 @@
             // 
             this.pgFlickrAuthInfo.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.pgFlickrAuthInfo.CommandsVisibleIfAvailable = false;
+            this.pgFlickrAuthInfo.LineColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.pgFlickrAuthInfo, "pgFlickrAuthInfo");
             this.pgFlickrAuthInfo.Name = "pgFlickrAuthInfo";
             this.pgFlickrAuthInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
@@ -4135,6 +4218,7 @@
             // 
             this.pgFlickrSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.pgFlickrSettings.CommandsVisibleIfAvailable = false;
+            this.pgFlickrSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.pgFlickrSettings, "pgFlickrSettings");
             this.pgFlickrSettings.Name = "pgFlickrSettings";
             this.pgFlickrSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
@@ -4580,6 +4664,8 @@
             this.tpBox.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
+            this.tpAzureStorage.ResumeLayout(false);
+            this.tpAzureStorage.PerformLayout();
             this.tpMega.ResumeLayout(false);
             this.tpMega.PerformLayout();
             this.tpOwnCloud.ResumeLayout(false);
@@ -4688,55 +4774,55 @@
         private System.Windows.Forms.TabControl tcOtherUploaders;
         private System.Windows.Forms.Button btnCustomUploaderHelp;
         private System.Windows.Forms.Label lblCustomUploaderImageUploader;
-        internal System.Windows.Forms.Button btnCustomUploaderFileUploaderTest;
+        private System.Windows.Forms.Button btnCustomUploaderFileUploaderTest;
         private System.Windows.Forms.Label lblCustomUploaderFileUploader;
-        internal System.Windows.Forms.Button btnCustomUploaderImageUploaderTest;
+        private System.Windows.Forms.Button btnCustomUploaderImageUploaderTest;
         private System.Windows.Forms.Label lblCustomUploaderTestResult;
-        internal System.Windows.Forms.TextBox txtCustomUploaderDeletionURL;
+        private System.Windows.Forms.TextBox txtCustomUploaderDeletionURL;
         private System.Windows.Forms.ComboBox cbCustomUploaderFileUploader;
-        internal System.Windows.Forms.Label lblCustomUploaderDeletionURL;
+        private System.Windows.Forms.Label lblCustomUploaderDeletionURL;
         private System.Windows.Forms.Button btnCustomUploaderShowLastResponse;
         private System.Windows.Forms.Label lblCustomUploaderResponseType;
         private System.Windows.Forms.ComboBox cbCustomUploaderURLShortener;
-        internal System.Windows.Forms.GroupBox gbCustomUploaders;
-        internal System.Windows.Forms.ListBox lbCustomUploaderList;
-        internal System.Windows.Forms.Button btnCustomUploaderRemove;
-        internal System.Windows.Forms.Button btnCustomUploaderClear;
-        internal System.Windows.Forms.Button btnCustomUploaderUpdate;
-        internal System.Windows.Forms.TextBox txtCustomUploaderName;
-        internal System.Windows.Forms.Button btnCustomUploaderAdd;
+        private System.Windows.Forms.GroupBox gbCustomUploaders;
+        private System.Windows.Forms.ListBox lbCustomUploaderList;
+        private System.Windows.Forms.Button btnCustomUploaderRemove;
+        private System.Windows.Forms.Button btnCustomUploaderClear;
+        private System.Windows.Forms.Button btnCustomUploaderUpdate;
+        private System.Windows.Forms.TextBox txtCustomUploaderName;
+        private System.Windows.Forms.Button btnCustomUploaderAdd;
         private System.Windows.Forms.Label lblCustomUploaderTextUploader;
-        internal System.Windows.Forms.Label lblCustomUploaderRequestURL;
-        internal System.Windows.Forms.Button btnCustomUploaderURLShortenerTest;
-        internal System.Windows.Forms.Button btnCustomUploaderRegexpUpdate;
-        internal System.Windows.Forms.TextBox txtCustomUploaderRegexp;
-        internal ShareX.HelpersLib.MyListView lvCustomUploaderRegexps;
-        internal System.Windows.Forms.ColumnHeader lvRegexpsColumn;
-        internal System.Windows.Forms.Button btnCustomUploaderRegexpRemove;
-        internal System.Windows.Forms.Button btnCustomUploaderRegexpAdd;
+        private System.Windows.Forms.Label lblCustomUploaderRequestURL;
+        private System.Windows.Forms.Button btnCustomUploaderURLShortenerTest;
+        private System.Windows.Forms.Button btnCustomUploaderRegexpUpdate;
+        private System.Windows.Forms.TextBox txtCustomUploaderRegexp;
+        private ShareX.HelpersLib.MyListView lvCustomUploaderRegexps;
+        private System.Windows.Forms.ColumnHeader lvRegexpsColumn;
+        private System.Windows.Forms.Button btnCustomUploaderRegexpRemove;
+        private System.Windows.Forms.Button btnCustomUploaderRegexpAdd;
         private System.Windows.Forms.ComboBox cbCustomUploaderTextUploader;
-        internal System.Windows.Forms.TextBox txtCustomUploaderThumbnailURL;
+        private System.Windows.Forms.TextBox txtCustomUploaderThumbnailURL;
         private System.Windows.Forms.Label lblCustomUploaderURLShortener;
         private System.Windows.Forms.ComboBox cbCustomUploaderResponseType;
-        internal System.Windows.Forms.Button btnCustomUploaderTextUploaderTest;
-        internal System.Windows.Forms.TextBox txtCustomUploaderURL;
+        private System.Windows.Forms.Button btnCustomUploaderTextUploaderTest;
+        private System.Windows.Forms.TextBox txtCustomUploaderURL;
         private System.Windows.Forms.ComboBox cbCustomUploaderImageUploader;
-        internal System.Windows.Forms.TextBox txtCustomUploaderRequestURL;
-        internal System.Windows.Forms.RichTextBox txtCustomUploaderLog;
-        internal System.Windows.Forms.Label lblCustomUploaderThumbnailURL;
-        internal System.Windows.Forms.Label lblCustomUploaderFileForm;
+        private System.Windows.Forms.TextBox txtCustomUploaderRequestURL;
+        private System.Windows.Forms.RichTextBox txtCustomUploaderLog;
+        private System.Windows.Forms.Label lblCustomUploaderThumbnailURL;
+        private System.Windows.Forms.Label lblCustomUploaderFileForm;
         private System.Windows.Forms.Label lblCustomUploaderRequestType;
         private System.Windows.Forms.ComboBox cbCustomUploaderRequestType;
-        internal System.Windows.Forms.TextBox txtCustomUploaderFileForm;
-        internal System.Windows.Forms.Label lblCustomUploaderURL;
-        internal System.Windows.Forms.Button btnCustomUploaderArgUpdate;
-        internal System.Windows.Forms.TextBox txtCustomUploaderArgValue;
-        internal System.Windows.Forms.Button btnCustomUploaderArgRemove;
-        internal ShareX.HelpersLib.MyListView lvCustomUploaderArguments;
-        internal System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsName;
-        internal System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsValue;
-        internal System.Windows.Forms.Button btnCustomUploaderArgAdd;
-        internal System.Windows.Forms.TextBox txtCustomUploaderArgName;
+        private System.Windows.Forms.TextBox txtCustomUploaderFileForm;
+        private System.Windows.Forms.Label lblCustomUploaderURL;
+        private System.Windows.Forms.Button btnCustomUploaderArgUpdate;
+        private System.Windows.Forms.TextBox txtCustomUploaderArgValue;
+        private System.Windows.Forms.Button btnCustomUploaderArgRemove;
+        private ShareX.HelpersLib.MyListView lvCustomUploaderArguments;
+        private System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsName;
+        private System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsValue;
+        private System.Windows.Forms.Button btnCustomUploaderArgAdd;
+        private System.Windows.Forms.TextBox txtCustomUploaderArgName;
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
         private OAuthControl oauth2Bitly;
@@ -4751,8 +4837,8 @@
         private System.Windows.Forms.Label lblYourlsSignature;
         private System.Windows.Forms.TextBox txtYourlsAPIURL;
         private System.Windows.Forms.Label lblYourlsAPIURL;
-        public System.Windows.Forms.TabPage tpFileUploaders;
-        public System.Windows.Forms.TabControl tcFileUploaders;
+        internal System.Windows.Forms.TabPage tpFileUploaders;
+        private System.Windows.Forms.TabControl tcFileUploaders;
         private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
@@ -4761,7 +4847,7 @@
         private System.Windows.Forms.Label lblDropboxPath;
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;
-        public System.Windows.Forms.TabPage tpFTP;
+        internal System.Windows.Forms.TabPage tpFTP;
         private System.Windows.Forms.Button btnFtpClient;
         private System.Windows.Forms.Label lblFtpFiles;
         private System.Windows.Forms.Label lblFtpText;
@@ -4865,7 +4951,7 @@
         private System.Windows.Forms.NumericUpDown nudEmailSmtpPort;
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
-        internal AccountsControl ucLocalhostAccounts;
+        private AccountsControl ucLocalhostAccounts;
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
         private System.Windows.Forms.Label lblSharedFolderImages;
@@ -4895,20 +4981,20 @@
         private System.Windows.Forms.Label lblImgurThumbnailType;
         private AccountTypeControl atcImgurAccountType;
         private System.Windows.Forms.Button btnImageShackLogin;
-        internal System.Windows.Forms.Button btnImageShackOpenPublicProfile;
+        private System.Windows.Forms.Button btnImageShackOpenPublicProfile;
         private System.Windows.Forms.CheckBox cbImageShackIsPublic;
-        internal System.Windows.Forms.Button btnImageShackOpenMyImages;
-        internal System.Windows.Forms.Label lblImageShackUsername;
+        private System.Windows.Forms.Button btnImageShackOpenMyImages;
+        private System.Windows.Forms.Label lblImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
-        internal System.Windows.Forms.Label lblImageShackPassword;
+        private System.Windows.Forms.Label lblImageShackPassword;
         private AccountTypeControl atcTinyPicAccountType;
         private System.Windows.Forms.Button btnTinyPicLogin;
         private System.Windows.Forms.TextBox txtTinyPicPassword;
         private System.Windows.Forms.Label lblTinyPicPassword;
         private System.Windows.Forms.TextBox txtTinyPicUsername;
         private System.Windows.Forms.Label lblTinyPicUsername;
-        internal System.Windows.Forms.Button btnTinyPicOpenMyImages;
+        private System.Windows.Forms.Button btnTinyPicOpenMyImages;
         private System.Windows.Forms.Button btnFlickrOpenImages;
         private System.Windows.Forms.PropertyGrid pgFlickrAuthInfo;
         private System.Windows.Forms.PropertyGrid pgFlickrSettings;
@@ -4941,7 +5027,7 @@
         private System.Windows.Forms.ColumnHeader chPicasaDescription;
         private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
         private OAuthControl oauth2Picasa;
-        public System.Windows.Forms.TabControl tcUploaders;
+        private System.Windows.Forms.TabControl tcUploaders;
         private ShareX.HelpersLib.ExportImportControl eiCustomUploaders;
         private ShareX.HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
@@ -5084,14 +5170,14 @@
         private System.Windows.Forms.TabControl tcCustomUploaderArguments;
         private System.Windows.Forms.TabPage tpCustomUploaderArguments;
         private System.Windows.Forms.TabPage tpCustomUploaderHeaders;
-        internal System.Windows.Forms.Button btnCustomUploaderHeaderUpdate;
-        internal System.Windows.Forms.TextBox txtCustomUploaderHeaderName;
-        internal System.Windows.Forms.TextBox txtCustomUploaderHeaderValue;
-        internal System.Windows.Forms.Button btnCustomUploaderHeaderAdd;
-        internal System.Windows.Forms.Button btnCustomUploaderHeaderRemove;
-        internal HelpersLib.MyListView lvCustomUploaderHeaders;
-        internal System.Windows.Forms.ColumnHeader chCustomUploaderHeadersName;
-        internal System.Windows.Forms.ColumnHeader chCustomUploaderHeadersValue;
+        private System.Windows.Forms.Button btnCustomUploaderHeaderUpdate;
+        private System.Windows.Forms.TextBox txtCustomUploaderHeaderName;
+        private System.Windows.Forms.TextBox txtCustomUploaderHeaderValue;
+        private System.Windows.Forms.Button btnCustomUploaderHeaderAdd;
+        private System.Windows.Forms.Button btnCustomUploaderHeaderRemove;
+        private HelpersLib.MyListView lvCustomUploaderHeaders;
+        private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersName;
+        private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersValue;
         private System.Windows.Forms.Button btnPomfTest;
         private System.Windows.Forms.TextBox txtStreamablePassword;
         private System.Windows.Forms.TextBox txtStreamableUsername;
@@ -5131,51 +5217,51 @@
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
-        public System.Windows.Forms.TabPage tpImgur;
-        public System.Windows.Forms.TabPage tpImageShack;
-        public System.Windows.Forms.TabPage tpTinyPic;
-        public System.Windows.Forms.TabPage tpFlickr;
-        public System.Windows.Forms.TabPage tpPhotobucket;
-        public System.Windows.Forms.TabPage tpPicasa;
-        public System.Windows.Forms.TabPage tpChevereto;
-        public System.Windows.Forms.TabPage tpSomeImage;
-        public System.Windows.Forms.TabPage tpVgyme;
-        public System.Windows.Forms.TabPage tpPastebin;
-        public System.Windows.Forms.TabPage tpPaste_ee;
-        public System.Windows.Forms.TabPage tpGist;
-        public System.Windows.Forms.TabPage tpUpaste;
-        public System.Windows.Forms.TabPage tpHastebin;
-        public System.Windows.Forms.TabPage tpOneTimeSecret;
-        public System.Windows.Forms.TabPage tpDropbox;
-        public System.Windows.Forms.TabPage tpOneDrive;
-        public System.Windows.Forms.TabPage tpGoogleDrive;
-        public System.Windows.Forms.TabPage tpBox;
-        public System.Windows.Forms.TabPage tpAmazonS3;
-        public System.Windows.Forms.TabPage tpMega;
-        public System.Windows.Forms.TabPage tpOwnCloud;
-        public System.Windows.Forms.TabPage tpMediaFire;
-        public System.Windows.Forms.TabPage tpPushbullet;
-        public System.Windows.Forms.TabPage tpSendSpace;
-        public System.Windows.Forms.TabPage tpGe_tt;
-        public System.Windows.Forms.TabPage tpHostr;
-        public System.Windows.Forms.TabPage tpMinus;
-        public System.Windows.Forms.TabPage tpJira;
-        public System.Windows.Forms.TabPage tpLambda;
-        public System.Windows.Forms.TabPage tpLithiio;
-        public System.Windows.Forms.TabPage tpPomf;
-        public System.Windows.Forms.TabPage tpSeafile;
-        public System.Windows.Forms.TabPage tpSul;
-        public System.Windows.Forms.TabPage tpStreamable;
-        public System.Windows.Forms.TabPage tpSharedFolder;
-        public System.Windows.Forms.TabPage tpEmail;
-        public System.Windows.Forms.TabPage tpBitly;
-        public System.Windows.Forms.TabPage tpGoogleURLShortener;
-        public System.Windows.Forms.TabPage tpYourls;
-        public System.Windows.Forms.TabPage tpAdFly;
-        public System.Windows.Forms.TabPage tpCoinURL;
-        public System.Windows.Forms.TabPage tpPolr;
-        public System.Windows.Forms.TabPage tpTwitter;
-        public System.Windows.Forms.TabPage tpCustomUploaders;
+        internal System.Windows.Forms.TabPage tpImgur;
+        internal System.Windows.Forms.TabPage tpImageShack;
+        internal System.Windows.Forms.TabPage tpTinyPic;
+        internal System.Windows.Forms.TabPage tpFlickr;
+        internal System.Windows.Forms.TabPage tpPhotobucket;
+        internal System.Windows.Forms.TabPage tpPicasa;
+        internal System.Windows.Forms.TabPage tpChevereto;
+        internal System.Windows.Forms.TabPage tpSomeImage;
+        internal System.Windows.Forms.TabPage tpVgyme;
+        internal System.Windows.Forms.TabPage tpPastebin;
+        internal System.Windows.Forms.TabPage tpPaste_ee;
+        internal System.Windows.Forms.TabPage tpGist;
+        internal System.Windows.Forms.TabPage tpUpaste;
+        internal System.Windows.Forms.TabPage tpHastebin;
+        internal System.Windows.Forms.TabPage tpOneTimeSecret;
+        internal System.Windows.Forms.TabPage tpDropbox;
+        internal System.Windows.Forms.TabPage tpOneDrive;
+        internal System.Windows.Forms.TabPage tpGoogleDrive;
+        internal System.Windows.Forms.TabPage tpBox;
+        internal System.Windows.Forms.TabPage tpAmazonS3;
+        internal System.Windows.Forms.TabPage tpMega;
+        internal System.Windows.Forms.TabPage tpOwnCloud;
+        internal System.Windows.Forms.TabPage tpMediaFire;
+        internal System.Windows.Forms.TabPage tpPushbullet;
+        internal System.Windows.Forms.TabPage tpSendSpace;
+        internal System.Windows.Forms.TabPage tpGe_tt;
+        internal System.Windows.Forms.TabPage tpHostr;
+        internal System.Windows.Forms.TabPage tpMinus;
+        internal System.Windows.Forms.TabPage tpJira;
+        internal System.Windows.Forms.TabPage tpLambda;
+        internal System.Windows.Forms.TabPage tpLithiio;
+        internal System.Windows.Forms.TabPage tpPomf;
+        internal System.Windows.Forms.TabPage tpSeafile;
+        internal System.Windows.Forms.TabPage tpSul;
+        internal System.Windows.Forms.TabPage tpStreamable;
+        internal System.Windows.Forms.TabPage tpSharedFolder;
+        internal System.Windows.Forms.TabPage tpEmail;
+        internal System.Windows.Forms.TabPage tpBitly;
+        internal System.Windows.Forms.TabPage tpGoogleURLShortener;
+        internal System.Windows.Forms.TabPage tpYourls;
+        internal System.Windows.Forms.TabPage tpAdFly;
+        internal System.Windows.Forms.TabPage tpCoinURL;
+        internal System.Windows.Forms.TabPage tpPolr;
+        internal System.Windows.Forms.TabPage tpTwitter;
+        internal System.Windows.Forms.TabPage tpCustomUploaders;
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;
@@ -5189,7 +5275,7 @@
         private System.Windows.Forms.TextBox txtPuushEmail;
         private System.Windows.Forms.Label lblPuushEmail;
         private System.Windows.Forms.Label lblPuushPassword;
-        public System.Windows.Forms.TabPage tpPuush;
+        internal System.Windows.Forms.TabPage tpPuush;
         private System.Windows.Forms.PictureBox pbPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
         private System.Windows.Forms.Label lblOwnCloudHostExample;
@@ -5206,11 +5292,21 @@
         private System.Windows.Forms.CheckBox cbUpleaInstantDownloadEnabled;
         private System.Windows.Forms.CheckBox cbUpleaIsPremium;
         private System.Windows.Forms.TextBox txtUpleaEmailAddress;
-        public System.Windows.Forms.TabPage tpUplea;
+        internal System.Windows.Forms.TabPage tpUplea;
         private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
-        public System.Windows.Forms.TabPage tpPastie;
+        internal System.Windows.Forms.TabPage tpPastie;
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
         private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
         private System.Windows.Forms.CheckBox cbPolrIsSecret;
+        private HelpersLib.MenuButton mbCustomUploaderDestinationType;
+        private System.Windows.Forms.ContextMenuStrip cmsCustomUploaderDestinationType;
+        internal System.Windows.Forms.TabPage tpAzureStorage;
+        private System.Windows.Forms.Label lblAzureStorageAccessKey;
+        private System.Windows.Forms.TextBox txtAzureStorageAccountName;
+        private System.Windows.Forms.Label lblAzureStorageAccountName;
+        private System.Windows.Forms.TextBox txtAzureStorageAccessKey;
+        private System.Windows.Forms.TextBox txtAzureStorageContainer;
+        private System.Windows.Forms.Label lblAzureStorageContainer;
+        private System.Windows.Forms.Button btnAzureStoragePortal;
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -53,8 +53,6 @@ namespace ShareX.UploadersLib
         SomeImage,
         [Description("Imgland")]
         Imgland,
-        [Description("SLiMG")]
-        Slimg,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
@@ -105,6 +103,8 @@ namespace ShareX.UploadersLib
         Mega,
         [Description("Amazon S3")]
         AmazonS3,
+        [Description("Azure Storage")]
+        AzureStorage,
         [Description("ownCloud")]
         OwnCloud,
         [Description("MediaFire")]
@@ -318,10 +318,15 @@ namespace ShareX.UploadersLib
     [Flags]
     public enum CustomUploaderDestinationType
     {
+        [Description("None")]
         None = 0,
+        [Description("Image uploader")]
         ImageUploader = 1,
+        [Description("Text uploader")]
         TextUploader = 1 << 1,
+        [Description("File uploader")]
         FileUploader = 1 << 2,
+        [Description("URL shortener")]
         URLShortener = 1 << 3
     }
 

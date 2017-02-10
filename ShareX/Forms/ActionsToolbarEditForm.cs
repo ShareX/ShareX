@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2016 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,11 +33,13 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class SimpleActionsEditForm : Form
+    public partial class ActionsToolbarEditForm : Form
     {
         public List<HotkeyType> Actions { get; private set; }
 
-        public SimpleActionsEditForm(List<HotkeyType> actions)
+        private const string Separator = "Separator"; // TODO: Translate
+
+        public ActionsToolbarEditForm(List<HotkeyType> actions)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -78,18 +80,21 @@ namespace ShareX
                 {
                     HotkeyType hotkeyType = (HotkeyType)Enum.ToObject(typeof(HotkeyType), enumInfo.Value);
 
+                    string text;
                     Image img;
 
                     if (hotkeyType == HotkeyType.None)
                     {
+                        text = Separator;
                         img = Resources.ui_splitter;
                     }
                     else
                     {
+                        text = enumInfo.Description.Replace("&", "&&");
                         img = TaskHelpers.GetHotkeyTypeIcon(hotkeyType);
                     }
 
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(text);
                     tsmi.Image = img;
                     tsmi.Tag = enumInfo;
 
@@ -126,9 +131,20 @@ namespace ShareX
 
         private void AddActionToList(HotkeyType hotkeyType)
         {
+            string text;
+
+            if (hotkeyType == HotkeyType.None)
+            {
+                text = Separator;
+            }
+            else
+            {
+                text = hotkeyType.GetLocalizedDescription();
+            }
+
             ListViewItem lvi = new ListViewItem()
             {
-                Text = hotkeyType.GetLocalizedDescription(),
+                Text = text,
                 ImageKey = hotkeyType.ToString()
             };
 
