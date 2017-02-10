@@ -25,7 +25,7 @@
 
 namespace ShareX.NativeMessagingHost
 {
-    public class NativeMessageInput
+    public class NativeMessagingInput
     {
         public string URL { get; set; }
         public string Text { get; set; }

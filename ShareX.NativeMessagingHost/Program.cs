@@ -52,7 +52,7 @@ namespace ShareX.NativeMessagingHost
 
             if (!string.IsNullOrEmpty(input))
             {
-                NativeMessageInput chromeInput = JsonConvert.DeserializeObject<NativeMessageInput>(input);
+                NativeMessagingInput chromeInput = JsonConvert.DeserializeObject<NativeMessagingInput>(input);
 
                 if (chromeInput != null)
                 {
