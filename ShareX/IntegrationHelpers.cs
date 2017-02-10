@@ -24,10 +24,12 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -223,13 +225,38 @@ namespace ShareX
             RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath, true);
         }
 
-        public static void RegisterChromeSupport(string filepath)
+        private static void CreateChromeHostManifest(string filepath)
         {
-            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, filepath);
+            Helpers.CreateDirectoryFromFilePath(filepath);
+
+            var manifest = new
+            {
+                name = "com.getsharex.sharex",
+                description = "ShareX",
+                path = Program.NativeMessagingHostFilePath,
+                type = "stdio",
+                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
+            };
+
+            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+
+            File.WriteAllText(filepath, json, Encoding.UTF8);
+        }
+
+        public static void RegisterChromeSupport()
+        {
+            CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
+
+            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, Program.ChromeHostManifestFilePath);
         }
 
         public static void UnregisterChromeSupport()
         {
+            if (File.Exists(Program.ChromeHostManifestFilePath))
+            {
+                File.Delete(Program.ChromeHostManifestFilePath);
+            }
+
             RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
         }
 

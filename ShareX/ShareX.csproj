@@ -116,12 +116,6 @@
     <Compile Include="Forms\BeforeUploadForm.Designer.cs">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChromeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChromeForm.Designer.cs">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ClipboardFormatForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -579,33 +573,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-CN.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.de.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.fr.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.nl-NL.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.pt-BR.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.ru.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.tr.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.vi-VN.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChromeForm.zh-CN.resx">
-      <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.de.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>

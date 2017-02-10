@@ -427,9 +427,37 @@ namespace ShareX
             }
         }
 
-        private void btnChromeSupport_Click(object sender, EventArgs e)
+        private void btnChromeEnableSupport_Click(object sender, EventArgs e)
         {
-            new ChromeForm().Show();
+            try
+            {
+                IntegrationHelpers.RegisterChromeSupport();
+
+                MessageBox.Show("Chrome extension support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnChromeDisableSupport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IntegrationHelpers.UnregisterChromeSupport();
+
+                MessageBox.Show("Chrome extension support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnChromeOpenExtensionPage_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
         }
 
         private void cbSteamShowInApp_CheckedChanged(object sender, EventArgs e)

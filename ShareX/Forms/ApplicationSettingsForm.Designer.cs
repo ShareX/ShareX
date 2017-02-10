@@ -54,7 +54,6 @@ namespace ShareX
             this.gbSteam = new System.Windows.Forms.GroupBox();
             this.cbSteamShowInApp = new System.Windows.Forms.CheckBox();
             this.gbChrome = new System.Windows.Forms.GroupBox();
-            this.btnChromeSupport = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
@@ -139,6 +138,13 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnChromeEnableSupport = new System.Windows.Forms.Button();
+            this.btnChromeDisableSupport = new System.Windows.Forms.Button();
+            this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
+            this.gpFirefox = new System.Windows.Forms.GroupBox();
+            this.btnFirefoxOpenAddonPage = new System.Windows.Forms.Button();
+            this.btnFirefoxDisableSupport = new System.Windows.Forms.Button();
+            this.btnFirefoxEnableSupport = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -167,6 +173,7 @@ namespace ShareX
             this.tpProxy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).BeginInit();
             this.tpAdvanced.SuspendLayout();
+            this.gpFirefox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcSettings
@@ -320,6 +327,7 @@ namespace ShareX
             // 
             // tpIntegration
             // 
+            this.tpIntegration.Controls.Add(this.gpFirefox);
             this.tpIntegration.Controls.Add(this.gbSteam);
             this.tpIntegration.Controls.Add(this.gbChrome);
             this.tpIntegration.Controls.Add(this.gbWindows);
@@ -343,17 +351,12 @@ namespace ShareX
             // 
             // gbChrome
             // 
-            this.gbChrome.Controls.Add(this.btnChromeSupport);
+            this.gbChrome.Controls.Add(this.btnChromeOpenExtensionPage);
+            this.gbChrome.Controls.Add(this.btnChromeDisableSupport);
+            this.gbChrome.Controls.Add(this.btnChromeEnableSupport);
             resources.ApplyResources(this.gbChrome, "gbChrome");
             this.gbChrome.Name = "gbChrome";
             this.gbChrome.TabStop = false;
-            // 
-            // btnChromeSupport
-            // 
-            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
-            this.btnChromeSupport.Name = "btnChromeSupport";
-            this.btnChromeSupport.UseVisualStyleBackColor = true;
-            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
             // 
             // gbWindows
             // 
@@ -999,6 +1002,54 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
+            // btnChromeEnableSupport
+            // 
+            resources.ApplyResources(this.btnChromeEnableSupport, "btnChromeEnableSupport");
+            this.btnChromeEnableSupport.Name = "btnChromeEnableSupport";
+            this.btnChromeEnableSupport.UseVisualStyleBackColor = true;
+            this.btnChromeEnableSupport.Click += new System.EventHandler(this.btnChromeEnableSupport_Click);
+            // 
+            // btnChromeDisableSupport
+            // 
+            resources.ApplyResources(this.btnChromeDisableSupport, "btnChromeDisableSupport");
+            this.btnChromeDisableSupport.Name = "btnChromeDisableSupport";
+            this.btnChromeDisableSupport.UseVisualStyleBackColor = true;
+            this.btnChromeDisableSupport.Click += new System.EventHandler(this.btnChromeDisableSupport_Click);
+            // 
+            // btnChromeOpenExtensionPage
+            // 
+            resources.ApplyResources(this.btnChromeOpenExtensionPage, "btnChromeOpenExtensionPage");
+            this.btnChromeOpenExtensionPage.Name = "btnChromeOpenExtensionPage";
+            this.btnChromeOpenExtensionPage.UseVisualStyleBackColor = true;
+            this.btnChromeOpenExtensionPage.Click += new System.EventHandler(this.btnChromeOpenExtensionPage_Click);
+            // 
+            // gpFirefox
+            // 
+            this.gpFirefox.Controls.Add(this.btnFirefoxOpenAddonPage);
+            this.gpFirefox.Controls.Add(this.btnFirefoxDisableSupport);
+            this.gpFirefox.Controls.Add(this.btnFirefoxEnableSupport);
+            resources.ApplyResources(this.gpFirefox, "gpFirefox");
+            this.gpFirefox.Name = "gpFirefox";
+            this.gpFirefox.TabStop = false;
+            // 
+            // btnFirefoxOpenAddonPage
+            // 
+            resources.ApplyResources(this.btnFirefoxOpenAddonPage, "btnFirefoxOpenAddonPage");
+            this.btnFirefoxOpenAddonPage.Name = "btnFirefoxOpenAddonPage";
+            this.btnFirefoxOpenAddonPage.UseVisualStyleBackColor = true;
+            // 
+            // btnFirefoxDisableSupport
+            // 
+            resources.ApplyResources(this.btnFirefoxDisableSupport, "btnFirefoxDisableSupport");
+            this.btnFirefoxDisableSupport.Name = "btnFirefoxDisableSupport";
+            this.btnFirefoxDisableSupport.UseVisualStyleBackColor = true;
+            // 
+            // btnFirefoxEnableSupport
+            // 
+            resources.ApplyResources(this.btnFirefoxEnableSupport, "btnFirefoxEnableSupport");
+            this.btnFirefoxEnableSupport.Name = "btnFirefoxEnableSupport";
+            this.btnFirefoxEnableSupport.UseVisualStyleBackColor = true;
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1050,6 +1101,7 @@ namespace ShareX
             this.tpProxy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
             this.tpAdvanced.ResumeLayout(false);
+            this.gpFirefox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1134,7 +1186,6 @@ namespace ShareX
         private TabToTreeView tttvMain;
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;
-        private System.Windows.Forms.Button btnChromeSupport;
         private System.Windows.Forms.GroupBox gbWindows;
         private System.Windows.Forms.GroupBox gbChrome;
         private System.Windows.Forms.CheckBox cbSteamShowInApp;
@@ -1166,5 +1217,12 @@ namespace ShareX
         private System.Windows.Forms.ComboBox cbTrayLeftDoubleClickAction;
         private System.Windows.Forms.ComboBox cbTrayLeftClickAction;
         private System.Windows.Forms.CheckBox cbCheckPreReleaseUpdates;
+        private System.Windows.Forms.Button btnChromeEnableSupport;
+        private System.Windows.Forms.Button btnChromeOpenExtensionPage;
+        private System.Windows.Forms.Button btnChromeDisableSupport;
+        private System.Windows.Forms.GroupBox gpFirefox;
+        private System.Windows.Forms.Button btnFirefoxOpenAddonPage;
+        private System.Windows.Forms.Button btnFirefoxDisableSupport;
+        private System.Windows.Forms.Button btnFirefoxEnableSupport;
     }
 }

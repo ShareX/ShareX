@@ -600,6 +600,111 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnFirefoxOpenAddonPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 23</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>2. Install ShareX Firefox addon...</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Name" xml:space="preserve">
+    <value>btnFirefoxOpenAddonPage</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Parent" xml:space="preserve">
+    <value>gpFirefox</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFirefoxDisableSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFirefoxDisableSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 24</value>
+  </data>
+  <data name="btnFirefoxDisableSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="btnFirefoxDisableSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnFirefoxDisableSupport.Text" xml:space="preserve">
+    <value>Disable Firefox support</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxDisableSupport.Name" xml:space="preserve">
+    <value>btnFirefoxDisableSupport</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxDisableSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxDisableSupport.Parent" xml:space="preserve">
+    <value>gpFirefox</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxDisableSupport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnFirefoxEnableSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFirefoxEnableSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="btnFirefoxEnableSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="btnFirefoxEnableSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnFirefoxEnableSupport.Text" xml:space="preserve">
+    <value>1. Enable Firefox support</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxEnableSupport.Name" xml:space="preserve">
+    <value>btnFirefoxEnableSupport</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxEnableSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxEnableSupport.Parent" xml:space="preserve">
+    <value>gpFirefox</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxEnableSupport.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gpFirefox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 224</value>
+  </data>
+  <data name="gpFirefox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 96</value>
+  </data>
+  <data name="gpFirefox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gpFirefox.Text" xml:space="preserve">
+    <value>Firefox addon</value>
+  </data>
+  <data name="&gt;&gt;gpFirefox.Name" xml:space="preserve">
+    <value>gpFirefox</value>
+  </data>
+  <data name="&gt;&gt;gpFirefox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpFirefox.Parent" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;gpFirefox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -628,7 +733,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 192</value>
+    <value>8, 328</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -649,43 +754,91 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbSteam.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="btnChromeSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+  <data name="btnChromeOpenExtensionPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
   </data>
-  <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
+  <data name="btnChromeOpenExtensionPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 23</value>
   </data>
-  <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnChromeOpenExtensionPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome extension support...</value>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>2. Install ShareX Chrome extension...</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
-    <value>btnChromeSupport</value>
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Name" xml:space="preserve">
+    <value>btnChromeOpenExtensionPage</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Parent" xml:space="preserve">
     <value>gbChrome</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnChromeDisableSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 24</value>
+  </data>
+  <data name="btnChromeDisableSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="btnChromeDisableSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnChromeDisableSupport.Text" xml:space="preserve">
+    <value>Disable Chrome support</value>
+  </data>
+  <data name="&gt;&gt;btnChromeDisableSupport.Name" xml:space="preserve">
+    <value>btnChromeDisableSupport</value>
+  </data>
+  <data name="&gt;&gt;btnChromeDisableSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChromeDisableSupport.Parent" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;btnChromeDisableSupport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnChromeEnableSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="btnChromeEnableSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="btnChromeEnableSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnChromeEnableSupport.Text" xml:space="preserve">
+    <value>1. Enable Chrome support</value>
+  </data>
+  <data name="&gt;&gt;btnChromeEnableSupport.Name" xml:space="preserve">
+    <value>btnChromeEnableSupport</value>
+  </data>
+  <data name="&gt;&gt;btnChromeEnableSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChromeEnableSupport.Parent" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;btnChromeEnableSupport.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 120</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 64</value>
+    <value>536, 96</value>
   </data>
   <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
-    <value>Chrome</value>
+    <value>Chrome extension</value>
   </data>
   <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
     <value>gbChrome</value>
@@ -697,7 +850,7 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -811,7 +964,7 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbWindows.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tpIntegration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
