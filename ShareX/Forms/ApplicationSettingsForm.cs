@@ -124,7 +124,9 @@ namespace ShareX
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
+            btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
             cbFirefoxAddonSupport.Checked = IntegrationHelpers.CheckFirefoxAddonSupport();
+            btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
 
 #if STEAM
             cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
@@ -434,6 +436,7 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateChromeExtensionSupport(cbChromeExtensionSupport.Checked);
+                btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
             }
         }
 
@@ -447,6 +450,7 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateFirefoxAddonSupport(cbFirefoxAddonSupport.Checked);
+                btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
             }
         }
 
