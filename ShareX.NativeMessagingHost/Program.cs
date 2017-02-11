@@ -36,13 +36,21 @@ namespace ShareX.NativeMessagingHost
     {
         private static void Main(string[] args)
         {
-            try
+            if (args.Length > 0)
             {
-                Run();
+                try
+                {
+                    Run();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "ShareX NativeMessagingHost - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show(e.ToString(), "ShareX NativeMessagingHost - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This executable is used to receive input from browser addon and send it to ShareX executable.",
+                    "ShareX NativeMessagingHost", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -52,20 +60,20 @@ namespace ShareX.NativeMessagingHost
 
             if (!string.IsNullOrEmpty(input))
             {
-                NativeMessagingInput chromeInput = JsonConvert.DeserializeObject<NativeMessagingInput>(input);
+                NativeMessagingInput nativeMessagingInput = JsonConvert.DeserializeObject<NativeMessagingInput>(input);
 
-                if (chromeInput != null)
+                if (nativeMessagingInput != null)
                 {
                     string argument = null;
 
-                    if (!string.IsNullOrEmpty(chromeInput.URL))
+                    if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                     {
-                        argument = Helpers.EscapeCLIText(chromeInput.URL);
+                        argument = Helpers.EscapeCLIText(nativeMessagingInput.URL);
                     }
-                    else if (!string.IsNullOrEmpty(chromeInput.Text))
+                    else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
                     {
                         string filepath = Helpers.GetTempPath("txt");
-                        File.WriteAllText(filepath, chromeInput.Text, Encoding.UTF8);
+                        File.WriteAllText(filepath, nativeMessagingInput.Text, Encoding.UTF8);
                         argument = $"\"{filepath}\"";
                     }
 
