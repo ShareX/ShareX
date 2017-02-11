@@ -429,13 +429,25 @@ namespace ShareX
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
 
-            // TODO: Remove this next version
-            if (Settings.IsUpgrade)
+            RunBackwardCompatibilityTasks();
+        }
+
+        private static void RunBackwardCompatibilityTasks()
+        {
+            if (Settings.IsUpgradeFrom("11.4.1"))
             {
                 RegionCaptureOptions regionCaptureOptions = DefaultTaskSettings.CaptureSettings.SurfaceOptions;
                 regionCaptureOptions.AnnotationOptions = new AnnotationOptions();
                 regionCaptureOptions.LastRegionTool = ShapeType.RegionRectangle;
                 regionCaptureOptions.LastAnnotationTool = ShapeType.DrawingRectangle;
+            }
+
+            if (Settings.IsUpgradeFrom("11.5.0"))
+            {
+                if (IntegrationHelpers.CheckChromeExtensionSupport())
+                {
+                    IntegrationHelpers.CreateChromeExtensionSupport(true);
+                }
             }
         }
 

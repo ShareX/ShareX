@@ -49,6 +49,11 @@ namespace ShareX.HelpersLib
         [Browsable(false)]
         public bool IsUpgrade { get; private set; }
 
+        public bool IsUpgradeFrom(string version)
+        {
+            return IsUpgrade && Helpers.CompareVersion(ApplicationVersion, version) <= 0;
+        }
+
         protected virtual void OnSettingsSaved(string filePath, bool result)
         {
             if (SettingsSaved != null)
