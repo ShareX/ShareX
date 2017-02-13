@@ -1140,11 +1140,17 @@ namespace ShareX
                 case Keys.Control | Keys.Enter:
                     uim.OpenFile();
                     break;
+                case Keys.Shift | Keys.Enter:
+                    uim.OpenFolder();
+                    break;
                 case Keys.Control | Keys.C:
                     uim.TryCopy();
                     break;
                 case Keys.Shift | Keys.C:
                     uim.CopyFile();
+                    break;
+                case Keys.Alt | Keys.C:
+                    uim.CopyImage();
                     break;
                 case Keys.Control | Keys.Shift | Keys.C:
                     uim.CopyFilePath();
@@ -1155,6 +1161,15 @@ namespace ShareX
                     break;
                 case Keys.Control | Keys.V:
                     UploadManager.ClipboardUploadMainWindow();
+                    break;
+                case Keys.Control | Keys.U:
+                    uim.Upload();
+                    break;
+                case Keys.Control | Keys.D:
+                    uim.Download();
+                    break;
+                case Keys.Control | Keys.E:
+                    uim.EditImage();
                     break;
                 case Keys.Delete:
                     RemoveSelectedItems();
