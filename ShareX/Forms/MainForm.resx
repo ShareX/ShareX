@@ -125,40 +125,6 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 0</value>
   </data>
-  <data name="pbTips.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="pbTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 0</value>
-  </data>
-  <data name="pbTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="pbTips.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbTips.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>567, 17</value>
-  </metadata>
-  <data name="pbTips.ToolTip" xml:space="preserve">
-    <value>Show tips and hotkeys</value>
-  </data>
-  <data name="&gt;&gt;pbTips.Name" xml:space="preserve">
-    <value>pbTips</value>
-  </data>
-  <data name="&gt;&gt;pbTips.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTips.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;pbTips.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblMainFormTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -177,6 +143,7 @@
   <data name="lblMainFormTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 344</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblMainFormTip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -190,7 +157,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lblMainFormTip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lblSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -214,7 +181,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lblSplitter.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -277,7 +244,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -372,6 +339,9 @@
   <data name="pbPatreonOpen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>567, 17</value>
+  </metadata>
   <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
     <value>Open ShareX Patreon campaign web page</value>
   </data>
@@ -1734,69 +1704,6 @@
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
-  <data name="pTips.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="pTips.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTips.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTips.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lblTips.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblTips.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="lblTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 36</value>
-  </data>
-  <data name="lblTips.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblTips.Name" xml:space="preserve">
-    <value>lblTips</value>
-  </data>
-  <data name="&gt;&gt;lblTips.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTips.Parent" xml:space="preserve">
-    <value>pTips</value>
-  </data>
-  <data name="&gt;&gt;lblTips.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 29</value>
-  </data>
-  <data name="pTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>818, 370</value>
-  </data>
-  <data name="pTips.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="pTips.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pTips.Name" xml:space="preserve">
-    <value>pTips</value>
-  </data>
-  <data name="&gt;&gt;pTips.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pTips.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pTips.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -1411,26 +1411,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Main window tips:
-        ///- Drag files, image or text to main window to upload them.
-        ///- Drag items from task list to copy files to anywhere. Hold &quot;Ctrl&quot; before dragging to copy URL or file path instead of file.
-        ///
-        ///Main window task list hotkeys:
-        ///[Enter] Open URL or file
-        ///[Ctrl + Enter] Open file
-        ///[Ctrl + C] Copy URL or file path
-        ///[Shift + C] Copy file
-        ///[Ctrl + Shift + C] Copy file path
-        ///[Ctrl + X] Copy URL or file path then remove selected items from list
-        ///[Ctrl + V] Open clipboard content viewer so you can upload [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string MainForm_UpdateMainFormTip_Tips {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainFormTip_Tips", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hide columns.
         /// </summary>
         public static string MainForm_UpdateMainWindowLayout_Hide_columns {

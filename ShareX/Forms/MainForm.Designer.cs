@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.pbTips = new System.Windows.Forms.PictureBox();
             this.lblMainFormTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
             this.lvUploads = new ShareX.HelpersLib.MyListView();
@@ -238,21 +237,17 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.pTips = new System.Windows.Forms.Panel();
-            this.lblTips = new System.Windows.Forms.Label();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTips)).BeginInit();
             this.flpPatreon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPatreonOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPatreonHide)).BeginInit();
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
-            this.pTips.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -263,7 +258,6 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.pbTips);
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
@@ -273,17 +267,6 @@
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
-            // 
-            // pbTips
-            // 
-            resources.ApplyResources(this.pbTips, "pbTips");
-            this.pbTips.BackColor = System.Drawing.Color.Transparent;
-            this.pbTips.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbTips.Image = global::ShareX.Properties.Resources.information;
-            this.pbTips.Name = "pbTips";
-            this.pbTips.TabStop = false;
-            this.ttMain.SetToolTip(this.pbTips, resources.GetString("pbTips.ToolTip"));
-            this.pbTips.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbTips_MouseUp);
             // 
             // lblMainFormTip
             // 
@@ -320,7 +303,6 @@
             this.lvUploads.ShowItemToolTips = true;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
-            this.lvUploads.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.lvUploads_ColumnWidthChanged);
             this.lvUploads.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvUploads_ItemDrag);
             this.lvUploads.SelectedIndexChanged += new System.EventHandler(this.lvUploads_SelectedIndexChanged);
             this.lvUploads.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.lvUploads_QueryContinueDrag);
@@ -1859,23 +1841,6 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
-            // pTips
-            // 
-            resources.ApplyResources(this.pTips, "pTips");
-            this.pTips.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pTips.Controls.Add(this.lblTips);
-            this.pTips.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pTips.Name = "pTips";
-            this.pTips.Click += new System.EventHandler(this.lblTips_Click);
-            // 
-            // lblTips
-            // 
-            resources.ApplyResources(this.lblTips, "lblTips");
-            this.lblTips.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblTips.Name = "lblTips";
-            this.lblTips.UseMnemonic = false;
-            this.lblTips.Click += new System.EventHandler(this.lblTips_Click);
-            // 
             // ttMain
             // 
             this.ttMain.AutoPopDelay = 10000;
@@ -1891,7 +1856,6 @@
             this.Controls.Add(this.flpPatreon);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
-            this.Controls.Add(this.pTips);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -1907,7 +1871,6 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbTips)).EndInit();
             this.flpPatreon.ResumeLayout(false);
             this.flpPatreon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPatreonOpen)).EndInit();
@@ -1916,8 +1879,6 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
-            this.pTips.ResumeLayout(false);
-            this.pTips.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2122,9 +2083,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLShortener;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLSharing;
         private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
-        private System.Windows.Forms.PictureBox pbTips;
-        private System.Windows.Forms.Panel pTips;
-        private System.Windows.Forms.Label lblTips;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
         private System.Windows.Forms.FlowLayoutPanel flpPatreon;

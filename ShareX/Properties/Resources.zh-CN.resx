@@ -470,29 +470,6 @@
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>历史</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Tips" xml:space="preserve">
-    <value>主窗口提示：
-- 拖动文件，图片或文本主窗口上传。
-- 从任务列表中拖动项目可以将文件复制到任何地方。拖动前按住“Ctrl”键复制URL或文件路径来代替文件。
-
-主窗口任务列表中的快捷键：
-[Enter] 打开网址或文件
-[Ctrl + Enter] 打开文件
-[Ctrl+ C] 复制网址或文件路径
-[Shift+ C] 复制文件
-[Ctrl + Shift+ C] 复制文件路径
-[Ctrl + X] 复制网址或文件路径然后从列表中删除项目
-[Ctrl + V] 在图片查看其中打开剪贴板中的内容，因此你可以上传剪贴板中的内容
-[Delete] 从列表中删除选择项目
-[Shift + Delete] 删除本地文件，并从列表中删除
-[Esc] 关闭主窗口
-
-托盘图标任务：
-[左键单击] {0}
-[左键双击] {1}
-[单击鼠标中键] {2}
-- 您可以在“应用程序设置”窗口中更改这些托盘图标任务。</value>
-  </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>重置所有快速任务为默认值？</value>
   </data>

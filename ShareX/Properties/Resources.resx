@@ -385,29 +385,6 @@ Press yes to open image from clipboard. Alternatively, press no to open image fi
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Image uploader: {0}</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Tips" xml:space="preserve">
-    <value>Main window tips:
-- Drag files, image or text to main window to upload them.
-- Drag items from task list to copy files to anywhere. Hold "Ctrl" before dragging to copy URL or file path instead of file.
-
-Main window task list hotkeys:
-[Enter] Open URL or file
-[Ctrl + Enter] Open file
-[Ctrl + C] Copy URL or file path
-[Shift + C] Copy file
-[Ctrl + Shift + C] Copy file path
-[Ctrl + X] Copy URL or file path then remove selected items from list
-[Ctrl + V] Open clipboard content viewer so you can upload your clipboard content
-[Delete] Remove selected items from list
-[Shift + Delete] Delete files locally then remove them from list
-[Esc] Close main window
-
-Tray icon tasks:
-[Left click] {0}
-[Double left click] {1}
-[Middle click] {2}
-- You can change these tray icon tasks from "Application settings" window.</value>
-  </data>
   <data name="images_stack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images-stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

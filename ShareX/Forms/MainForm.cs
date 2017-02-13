@@ -168,9 +168,6 @@ namespace ShareX
 
             // Required for BackColor Transparent to work
             lblMainFormTip.Parent = lvUploads;
-            pbTips.Parent = lvUploads;
-
-            pTips.BringToFront();
 
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
             {
@@ -379,9 +376,6 @@ namespace ShareX
             {
                 lblMainFormTip.Text = "";
             }
-
-            lblTips.Text = string.Format(Resources.MainForm_UpdateMainFormTip_Tips, Program.Settings.TrayLeftClickAction.GetLocalizedDescription(),
-                Program.Settings.TrayLeftDoubleClickAction.GetLocalizedDescription(), Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
@@ -1250,24 +1244,6 @@ namespace ShareX
             {
                 AllowDrop = true;
             }
-        }
-
-        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
-            lvUploads.Invalidate(pbTips.Region);
-        }
-
-        private void pbTips_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                pTips.Visible = !pTips.Visible;
-            }
-        }
-
-        private void lblTips_Click(object sender, EventArgs e)
-        {
-            pTips.Visible = false;
         }
 
         private void pbPatreonOpen_Click(object sender, EventArgs e)

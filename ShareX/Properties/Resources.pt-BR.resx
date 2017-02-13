@@ -485,27 +485,4 @@ Tem certeza de que quer continuar?</value>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>Configuração de {0} está inválida ou faltando. Por favor reconfigure o destino novamente.</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Tips" xml:space="preserve">
-    <value>Dicas da janela principal:
-- Arraste arquivos, imagens ou texto à janela principal para enviá-los.
-- Arraste itens da lista de tarefas para copiar arquivos para qualquer lugar. Segure "Control" enquanto arrasta para copiar a URL ou o caminho do arquivo.
-
-Atalhos da lista de tarefas da janela principal:
-[Enter] Abrir URL ou arquivo
-[Ctrl + Enter] Abrir arquivo
-[Ctrl + C] Copiar URL ou caminho do arquivo
-[Shift + C] Copiar arquivo
-[Ctrl + Shift + C] Copiar caminho do arquivo
-[Ctrl + X] Copiar URL ou caminho do arquivo e depois remover os itens selecionados da lista
-[Ctrl + V] Abrir visualizador da área de transferência para enviar seu conteúdo
-[Delete] Remover itens selecionados da lista
-[Shift + Delete] Deletar arquivos localmente e removê-los da lista
-[Esc] Fechar janela principal
-
-Tarefas da bandeja:
-[Clique esquerdo] {0}
-[Clique duplo esquerdo] {1}
-[Clique do scroll] {2}
-- Você pode alterar estas tarefas na janela de "Config. do programa"</value>
-  </data>
 </root>
