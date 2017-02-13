@@ -1307,6 +1307,7 @@
     <None Include="Resources\camcorder--exclamation.png" />
     <None Include="Resources\application-home.png" />
     <None Include="Resources\clipboard-task.png" />
+    <None Include="Resources\script--minus.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
