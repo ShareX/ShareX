@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 
 namespace ShareX.ScreenCaptureLib
@@ -35,6 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public string Text { get; set; }
         public TextDrawingOptions TextOptions { get; set; }
+        public bool OutlineMode { get; set; }
 
         public override void OnConfigLoad()
         {
@@ -58,8 +60,15 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            DrawRectangle(g);
-            DrawText(g);
+            if (OutlineMode)
+            {
+                DrawTextWithOutline(g, Text, TextOptions, TextOptions.Color, BorderColor, BorderSize, Rectangle);
+            }
+            else
+            {
+                DrawRectangle(g);
+                DrawText(g);
+            }
         }
 
         protected void DrawText(Graphics g)
@@ -88,6 +97,56 @@ namespace ShareX.ScreenCaptureLib
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                     g.DrawString(text, font, textBrush, rect, sf);
                     g.TextRenderingHint = TextRenderingHint.SystemDefault;
+                }
+            }
+        }
+
+        protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions options, Color textColor, Color borderColor, int borderSize, Rectangle rect)
+        {
+            if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
+            {
+                using (GraphicsPath gp = new GraphicsPath())
+                {
+                    using (Font font = new Font(options.Font, options.Size, options.Style))
+                    using (StringFormat sf = new StringFormat { Alignment = options.AlignmentHorizontal, LineAlignment = options.AlignmentVertical })
+                    {
+                        gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, rect, sf);
+                    }
+
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+
+                    if (IsBorderVisible)
+                    {
+                        if (Shadow)
+                        {
+                            using (Matrix matrix = new Matrix())
+                            {
+                                matrix.Translate(ShadowOffset.X, ShadowOffset.Y);
+                                gp.Transform(matrix);
+
+                                using (Pen shadowPen = new Pen(ShadowColor, borderSize) { LineJoin = LineJoin.Round })
+                                {
+                                    g.DrawPath(shadowPen, gp);
+                                }
+
+                                matrix.Reset();
+                                matrix.Translate(-ShadowOffset.X, -ShadowOffset.Y);
+                                gp.Transform(matrix);
+                            }
+                        }
+
+                        using (Pen borderPen = new Pen(borderColor, borderSize) { LineJoin = LineJoin.Round })
+                        {
+                            g.DrawPath(borderPen, gp);
+                        }
+                    }
+
+                    using (Brush textBrush = new SolidBrush(textColor))
+                    {
+                        g.FillPath(textBrush, gp);
+                    }
+
+                    g.SmoothingMode = SmoothingMode.None;
                 }
             }
         }
