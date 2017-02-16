@@ -51,6 +51,7 @@
             this.tsmiAlignmentTop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlignmentMiddle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlignmentBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTip = new System.Windows.Forms.Label();
             this.flpProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).BeginInit();
             this.cmsAlignmentHorizontal.SuspendLayout();
@@ -64,6 +65,7 @@
             this.txtInput.Name = "txtInput";
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
+            this.txtInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyUp);
             // 
             // btnTextColor
             // 
@@ -229,11 +231,17 @@
             resources.ApplyResources(this.tsmiAlignmentBottom, "tsmiAlignmentBottom");
             this.tsmiAlignmentBottom.Click += new System.EventHandler(this.tsmiAlignmentBottom_Click);
             // 
+            // lblTip
+            // 
+            resources.ApplyResources(this.lblTip, "lblTip");
+            this.lblTip.Name = "lblTip";
+            // 
             // TextDrawingInputBox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.txtInput);
@@ -276,5 +284,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAlignmentTop;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlignmentMiddle;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlignmentBottom;
+        private System.Windows.Forms.Label lblTip;
     }
 }
