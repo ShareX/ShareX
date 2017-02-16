@@ -774,8 +774,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
-                if (ShapeManager.CurrentShapeType == ShapeType.DrawingText) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingText.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.DrawingTextOutline) sb.Append("-> ");
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingTextOutline.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingSpeechBalloon) sb.Append("-> ");
                 sb.AppendLine(ShapeType.DrawingSpeechBalloon.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingStep) sb.Append("-> ");

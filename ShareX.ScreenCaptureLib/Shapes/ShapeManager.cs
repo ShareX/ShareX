@@ -425,7 +425,7 @@ namespace ShareX.ScreenCaptureLib
                             CurrentShapeType = ShapeType.DrawingArrow;
                             break;
                         case Keys.NumPad6:
-                            CurrentShapeType = ShapeType.DrawingText;
+                            CurrentShapeType = ShapeType.DrawingTextOutline;
                             break;
                         case Keys.NumPad7:
                             CurrentShapeType = ShapeType.DrawingStep;
@@ -722,7 +722,10 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingArrow:
                     shape = new ArrowDrawingShape();
                     break;
-                case ShapeType.DrawingText:
+                case ShapeType.DrawingTextOutline:
+                    shape = new TextOutlineDrawingShape();
+                    break;
+                case ShapeType.DrawingTextBackground:
                     shape = new TextDrawingShape();
                     break;
                 case ShapeType.DrawingSpeechBalloon:
@@ -823,7 +826,8 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingFreehand:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
-                        case ShapeType.DrawingText:
+                        case ShapeType.DrawingTextOutline:
+                        case ShapeType.DrawingTextBackground:
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
@@ -1168,8 +1172,8 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    CurrentShapeType = ShapeType.DrawingText;
-                    TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingText);
+                    CurrentShapeType = ShapeType.DrawingTextBackground;
+                    TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
                     shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
                     shape.Text = text.Trim();
                     shape.AutoSize(true);

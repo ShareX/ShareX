@@ -43,8 +43,22 @@ namespace ShareX.ScreenCaptureLib
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
 
-        // Text drawing
-        public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
+        // Text (Outline) drawing
+        public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
+        {
+            Color = PrimaryColor,
+            Size = 40,
+            Bold = true
+        };
+        public Color TextOutlineBorderColor { get; set; } = SecondaryColor;
+        public int TextOutlineBorderSize { get; set; } = 3;
+
+        // Text (Background) drawing
+        public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions()
+        {
+            Color = SecondaryColor,
+            Size = 18
+        };
         public Color TextBorderColor { get; set; } = SecondaryColor;
         public int TextBorderSize { get; set; } = 2;
         public Color TextFillColor { get; set; } = PrimaryColor;

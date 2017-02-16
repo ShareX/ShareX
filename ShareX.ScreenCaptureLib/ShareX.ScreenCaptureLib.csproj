@@ -96,6 +96,7 @@
     <Compile Include="Shapes\Drawing\FreehandDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\ImageDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\StepDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\TextOutlineDrawingShape.cs" />
     <Compile Include="Shapes\Region\FreehandRegionShape.cs" />
     <Compile Include="Shapes\ShapeManagerMenu.cs" />
     <Compile Include="Shapes\TextDrawingOptions.cs" />
@@ -163,6 +164,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit-shade.png" />
+    <None Include="Resources\edit-outline.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\wrench-screwdriver.png" />
     <None Include="Resources\layers-stack-arrange.png" />

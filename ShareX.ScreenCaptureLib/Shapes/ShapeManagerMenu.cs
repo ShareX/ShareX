@@ -206,8 +206,11 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingArrow:
                         img = Resources.layer_shape_arrow;
                         break;
-                    case ShapeType.DrawingText:
-                        img = Resources.layer_shape_text;
+                    case ShapeType.DrawingTextOutline:
+                        img = Resources.edit_outline;
+                        break;
+                    case ShapeType.DrawingTextBackground:
+                        img = Resources.edit_shade;
                         break;
                     case ShapeType.DrawingSpeechBalloon:
                         img = Resources.balloon_box_left;
@@ -258,9 +261,13 @@ namespace ShareX.ScreenCaptureLib
 
                 Color borderColor;
 
-                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     borderColor = AnnotationOptions.TextBorderColor;
+                }
+                else if (shapeType == ShapeType.DrawingTextOutline)
+                {
+                    borderColor = AnnotationOptions.TextOutlineBorderColor;
                 }
                 else if (shapeType == ShapeType.DrawingStep)
                 {
@@ -275,9 +282,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                        if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                         {
                             AnnotationOptions.TextBorderColor = dialogColor.NewColor;
+                        }
+                        else if (shapeType == ShapeType.DrawingTextOutline)
+                        {
+                            AnnotationOptions.TextOutlineBorderColor = dialogColor.NewColor;
                         }
                         else if (shapeType == ShapeType.DrawingStep)
                         {
@@ -307,7 +318,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Color fillColor;
 
-                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     fillColor = AnnotationOptions.TextFillColor;
                 }
@@ -324,7 +335,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                        if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                         {
                             AnnotationOptions.TextFillColor = dialogColor.NewColor;
                         }
@@ -380,9 +391,13 @@ namespace ShareX.ScreenCaptureLib
 
                 int borderSize = (int)tslnudBorderSize.Content.Value;
 
-                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     AnnotationOptions.TextBorderSize = borderSize;
+                }
+                else if (shapeType == ShapeType.DrawingTextOutline)
+                {
+                    AnnotationOptions.TextOutlineBorderSize = borderSize;
                 }
                 else if (shapeType == ShapeType.DrawingStep)
                 {
@@ -408,7 +423,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     AnnotationOptions.RegionCornerRadius = (int)tslnudCornerRadius.Content.Value;
                 }
-                else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingText)
+                else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingTextBackground)
                 {
                     AnnotationOptions.DrawingCornerRadius = (int)tslnudCornerRadius.Content.Value;
                 }
@@ -887,9 +902,13 @@ namespace ShareX.ScreenCaptureLib
 
             Color borderColor;
 
-            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+            if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 borderColor = AnnotationOptions.TextBorderColor;
+            }
+            else if (shapeType == ShapeType.DrawingTextOutline)
+            {
+                borderColor = AnnotationOptions.TextOutlineBorderColor;
             }
             else if (shapeType == ShapeType.DrawingStep)
             {
@@ -905,9 +924,13 @@ namespace ShareX.ScreenCaptureLib
 
             int borderSize;
 
-            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+            if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 borderSize = AnnotationOptions.TextBorderSize;
+            }
+            else if (shapeType == ShapeType.DrawingTextOutline)
+            {
+                borderSize = AnnotationOptions.TextOutlineBorderSize;
             }
             else if (shapeType == ShapeType.DrawingStep)
             {
@@ -922,7 +945,7 @@ namespace ShareX.ScreenCaptureLib
 
             Color fillColor;
 
-            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+            if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 fillColor = AnnotationOptions.TextFillColor;
             }
@@ -944,7 +967,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 cornerRadius = AnnotationOptions.RegionCornerRadius;
             }
-            else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingText)
+            else if (shapeType == ShapeType.DrawingRectangle || shapeType == ShapeType.DrawingTextBackground)
             {
                 cornerRadius = AnnotationOptions.DrawingCornerRadius;
             }
@@ -971,7 +994,8 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
-                case ShapeType.DrawingText:
+                case ShapeType.DrawingTextOutline:
+                case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                 case ShapeType.EffectBlur:
@@ -995,7 +1019,8 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
-                case ShapeType.DrawingText:
+                case ShapeType.DrawingTextOutline:
+                case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                     tsbBorderColor.Visible = true;
@@ -1011,7 +1036,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
-                case ShapeType.DrawingText:
+                case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                     tsbFillColor.Visible = true;
@@ -1025,7 +1050,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.RegionRectangle:
                 case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingText:
+                case ShapeType.DrawingTextBackground:
                     tslnudCornerRadius.Visible = true;
                     break;
             }
