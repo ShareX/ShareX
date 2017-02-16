@@ -73,6 +73,18 @@ namespace ShareX.ScreenCaptureLib
             UpdateVerticalAlignmentImage();
         }
 
+        private void Close(DialogResult result)
+        {
+            DialogResult = result;
+
+            if (result == DialogResult.OK)
+            {
+                InputText = txtInput.Text;
+            }
+
+            Close();
+        }
+
         private void TextDrawingInputBox_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
@@ -165,7 +177,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
             {
                 e.SuppressKeyPress = true;
             }
@@ -175,18 +187,22 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyData == Keys.Enter)
             {
-                Close();
+                Close(DialogResult.OK);
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                Close(DialogResult.Cancel);
             }
         }
 
-        private void txtInput_TextChanged(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            InputText = txtInput.Text;
+            Close(DialogResult.OK);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(DialogResult.Cancel);
         }
 
         private void UpdateInputBox()
