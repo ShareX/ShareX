@@ -63,7 +63,8 @@ namespace ShareX.ScreenCaptureLib
                     using (Font font = new Font(options.Font, options.Size, options.Style))
                     using (StringFormat sf = new StringFormat { Alignment = options.AlignmentHorizontal, LineAlignment = options.AlignmentVertical })
                     {
-                        gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, rect, sf);
+                        float emSize = g.DpiY * font.SizeInPoints / 72;
+                        gp.AddString(text, font.FontFamily, (int)font.Style, emSize, rect, sf);
                     }
 
                     g.SmoothingMode = SmoothingMode.HighQuality;

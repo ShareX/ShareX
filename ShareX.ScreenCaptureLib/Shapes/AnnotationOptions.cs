@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
         public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
         {
             Color = PrimaryColor,
-            Size = 40,
+            Size = 30,
             Bold = true
         };
         public Color TextOutlineBorderColor { get; set; } = SecondaryColor;

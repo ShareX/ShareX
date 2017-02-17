@@ -177,12 +177,16 @@ namespace ShareX.HelpersLib
             {
                 using (StringFormat sf = new StringFormat())
                 {
-                    gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, position, sf);
+                    float emSize = g.DpiY * font.SizeInPoints / 72;
+                    gp.AddString(text, font.FontFamily, (int)font.Style, emSize, position, sf);
                 }
 
-                using (Pen borderPen = new Pen(borderColor, borderSize) { LineJoin = LineJoin.Round })
+                if (borderSize > 0)
                 {
-                    g.DrawPath(borderPen, gp);
+                    using (Pen borderPen = new Pen(borderColor, borderSize) { LineJoin = LineJoin.Round })
+                    {
+                        g.DrawPath(borderPen, gp);
+                    }
                 }
 
                 using (Brush textBrush = new SolidBrush(textColor))
