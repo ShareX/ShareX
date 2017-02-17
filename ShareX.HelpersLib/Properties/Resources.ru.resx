@@ -886,9 +886,6 @@
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Рисование: Шаг</value>
   </data>
-  <data name="ShapeType_DrawingText" xml:space="preserve">
-    <value>Рисование: Текст</value>
-  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Область: Эллипс</value>
   </data>

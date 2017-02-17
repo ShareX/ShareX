@@ -2438,11 +2438,20 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Text.
+        ///   Looks up a localized string similar to Drawing: Text (Background).
         /// </summary>
-        internal static string ShapeType_DrawingText {
+        internal static string ShapeType_DrawingTextBackground {
             get {
-                return ResourceManager.GetString("ShapeType_DrawingText", resourceCulture);
+                return ResourceManager.GetString("ShapeType_DrawingTextBackground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drawing: Text (Outline).
+        /// </summary>
+        internal static string ShapeType_DrawingTextOutline {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingTextOutline", resourceCulture);
             }
         }
         

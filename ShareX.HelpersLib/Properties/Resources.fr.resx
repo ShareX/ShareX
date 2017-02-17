@@ -898,9 +898,6 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Dessin : Etape</value>
   </data>
-  <data name="ShapeType_DrawingText" xml:space="preserve">
-    <value>Dessin : Texte</value>
-  </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
     <value>Dessin : Main levée</value>
   </data>

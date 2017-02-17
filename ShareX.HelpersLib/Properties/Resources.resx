@@ -920,9 +920,6 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Drawing: Step</value>
   </data>
-  <data name="ShapeType_DrawingText" xml:space="preserve">
-    <value>Drawing: Text</value>
-  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Region: Ellipse</value>
   </data>
@@ -982,5 +979,11 @@ Would you like to download it?</value>
   </data>
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>Other</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Drawing: Text (Outline)</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Drawing: Text (Background)</value>
   </data>
 </root>

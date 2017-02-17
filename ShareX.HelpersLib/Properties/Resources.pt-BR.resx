@@ -865,9 +865,6 @@ Gostaria de baixá-la?</value>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Desenho: Passo</value>
   </data>
-  <data name="ShapeType_DrawingText" xml:space="preserve">
-    <value>Desenho: Texto</value>
-  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Região: Elipse</value>
   </data>

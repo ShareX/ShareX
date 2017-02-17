@@ -883,9 +883,6 @@
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>绘图：序号</value>
   </data>
-  <data name="ShapeType_DrawingText" xml:space="preserve">
-    <value>绘图：文本</value>
-  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>区域：椭圆形</value>
   </data>
