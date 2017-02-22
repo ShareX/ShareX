@@ -1177,7 +1177,7 @@
     <value>228, 22</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>Delete item from list</value>
+    <value>Remove task from list</value>
   </data>
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Del</value>
@@ -1246,19 +1246,19 @@
     <value>Hide columns</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
