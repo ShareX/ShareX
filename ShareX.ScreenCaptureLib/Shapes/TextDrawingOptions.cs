@@ -29,7 +29,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class TextDrawingOptions
     {
-        public string Font { get; set; } = "Arial";
+        public string Font { get; set; } = AnnotationOptions.DefaultFont;
         public int Size { get; set; } = 18;
         public Color Color { get; set; } = Color.White;
         public bool Bold { get; set; } = false;

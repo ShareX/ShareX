@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                cbFonts.SelectedItem = "Arial";
+                cbFonts.SelectedItem = AnnotationOptions.DefaultFont;
             }
 
             nudTextSize.SetValue(Options.Size);
@@ -215,7 +215,7 @@ namespace ShareX.ScreenCaptureLib
             }
             catch
             {
-                Options.Font = "Arial";
+                Options.Font = AnnotationOptions.DefaultFont;
                 font = new Font(Options.Font, Options.Size, Options.Style);
             }
 

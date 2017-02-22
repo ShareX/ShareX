@@ -29,6 +29,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AnnotationOptions
     {
+        public static readonly string DefaultFont = "Arial";
         public static readonly Color PrimaryColor = Color.Red;
         public static readonly Color SecondaryColor = Color.White;
         public static readonly Color TransparentColor = Color.FromArgb(0, 0, 0, 0);
