@@ -69,6 +69,7 @@
             // 
             // ilvImages
             // 
+            this.ilvImages.AllowDrag = true;
             this.ilvImages.AllowDuplicateFileNames = true;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
