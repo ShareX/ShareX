@@ -147,4 +147,7 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>ОК</value>
   </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Новая строка: Ctrl + Enter</value>
+  </data>
 </root>

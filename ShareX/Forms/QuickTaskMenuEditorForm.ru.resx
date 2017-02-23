@@ -130,7 +130,7 @@
     <value>Закрыть</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Подсказка: если вы добавите пустую задачу, она будет сконвертирована в разделитель.</value>
+    <value>Подсказка: если вы добавите пустую задачу, она превратится в разделитель.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Редактор быстрых задач</value>

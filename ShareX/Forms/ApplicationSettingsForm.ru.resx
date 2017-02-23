@@ -336,4 +336,22 @@
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Проверять наличие пре-релизных обновлений</value>
   </data>
+  <data name="gpFirefox.Text" xml:space="preserve">
+    <value>Дополнение для Firefox</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Установить дополнение ShareX для Firefox...</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Включить поддержку дополнения для Firefox</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Включить поддержку расширения для Chrome</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Установить расширение ShareX для Chrome...</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Расширение для Chrome</value>
+  </data>
 </root>
