@@ -254,7 +254,7 @@ namespace ShareX
 
             InitHotkeys();
 
-            if (!IntegrationHelpers.CheckCustomUploaderExtension())
+            if (!Program.Portable && !IntegrationHelpers.CheckCustomUploaderExtension())
             {
                 IntegrationHelpers.CreateCustomUploaderExtension(true);
             }
