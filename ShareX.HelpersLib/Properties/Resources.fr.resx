@@ -931,4 +931,19 @@ Voulez-vous la télécharger ?</value>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>Automatiquement essayer toutes les méthodes jusqu'à ce qu'une fonctionne</value>
   </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Quitter ShareX</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Changer le type d'outil</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Simuler un appui sur la touche "Page suivante"</value>
+  </data>
 </root>

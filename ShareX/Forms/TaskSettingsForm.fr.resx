@@ -286,7 +286,7 @@
     <value>Utiliser les paramètres de transfert dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>FPS (IPS) des GIFs :</value>
+    <value>IPS des GIFs :</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durée fixée :</value>
@@ -298,7 +298,7 @@
     <value>Exécuter CLI après :</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>IPS (FPS) de l'enregistrement d'écran :</value>
+    <value>IPS de l'enregistrement d'écran :</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>secondes</value>
@@ -515,5 +515,20 @@
   </data>
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Mode région à taille fixe :</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Afficher la large croix sur l'écran</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Action du bouton 5 de la souris :</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Action du bouton 4 de la souris :</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Utiliser un texte informatif personnalisé près du curseur :</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Détecter des régions de la fenêtre et permettre l'apparition du curseur sur la capture</value>
   </data>
 </root>

@@ -282,7 +282,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Nombre de pixels de la loupe :</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
-    <value>Forme carrée de la loupe</value>
+    <value>Loupe de forme carrée</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
     <value>[Maintenir Ctrl + Touches fléchées] Déplacer la région</value>
@@ -331,5 +331,8 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Mode région à taille fixe</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Afficher la large croix sur l'écran</value>
   </data>
 </root>

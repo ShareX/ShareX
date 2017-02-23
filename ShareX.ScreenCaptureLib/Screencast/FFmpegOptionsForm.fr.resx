@@ -232,4 +232,10 @@ Pour un encodage en temps réel (ex : enregistrement d'écran), le préréglage 
     <value>Pour un encodage en temps réel comme l'enregistrement d'écran, il est recommandé de sélectionner le préréglage le plus rapide possible.
 Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de sauts d'images.</value>
   </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bitrate :</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Préréglage :</value>
+  </data>
 </root>

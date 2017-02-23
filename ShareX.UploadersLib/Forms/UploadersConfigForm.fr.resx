@@ -983,4 +983,34 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="lblUpleaUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
   </data>
+  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
+    <value>Utiliser les liens "https://"</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>Clé d'accès :</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>URL secrète</value>
+  </data>
+  <data name="cbPastieIsPublic.Text" xml:space="preserve">
+    <value>Mise en ligne publique ?</value>
+  </data>
+  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
+    <value>Informations de l'utilisateur</value>
+  </data>
+  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
+    <value>Membre Premium</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
+    <value>Nom du compte :</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
+    <value>Type de destination</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
+    <value>Actuellement, le type de destination est utilisé quand les utilisateurs importent un service de mise en ligne personnalisé en double cliquant sur le fichier .sxcu.</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>Utiliser l'API dépréciée v1</value>
+  </data>
 </root>

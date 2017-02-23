@@ -144,4 +144,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Saisie de texte</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Nouvelle ligne : Ctrl+Entrée</value>
+  </data>
 </root>

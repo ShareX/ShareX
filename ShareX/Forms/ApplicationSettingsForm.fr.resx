@@ -216,9 +216,6 @@
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Hébergeurs de textes secondaires</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Support de l'extension Chrome...</value>
-  </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Utiliser de préférence le service de mise en ligne secondaire lors de la nouvelle tentative</value>
   </data>
@@ -335,5 +332,23 @@
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Vérifier des mises à jour de pré-version</value>
+  </data>
+  <data name="gpFirefox.Text" xml:space="preserve">
+    <value>Extension Firefox</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Installer l'extension ShareX pour Firefox...</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Activer le support pour l'extension Firefox</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Activer le support pour l'extension Chrome</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Extension Chrome</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Installer l'extension ShareX pour Chrome...</value>
   </data>
 </root>
