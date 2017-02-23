@@ -866,7 +866,7 @@
     <value>Рисование: Стрелка</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Эффект: размытие</value>
+    <value>Эффект: Размытие</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Рисование: Эллипс</value>
@@ -945,5 +945,23 @@
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Рисование: Сноска</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Переключить панель действий</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Выйти из ShareX</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Рисование: Текст с обводкой</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Рисование: Текст с фоном</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Другие</value>
   </data>
 </root>

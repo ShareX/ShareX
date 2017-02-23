@@ -992,4 +992,19 @@ store.book[0].title</value>
   <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
     <value>Адрес Email:</value>
   </data>
+  <data name="cbPastieIsPublic.Text" xml:space="preserve">
+    <value>Публичная загрузка?</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>Контейнер:</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>Ключ доступа:</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
+    <value>Картинка аккаунта:</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
+    <value>Тип сервиса</value>
+  </data>
 </root>

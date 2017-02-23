@@ -654,4 +654,7 @@
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Скачать</value>
   </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Переключить панель действий</value>
+  </data>
 </root>
