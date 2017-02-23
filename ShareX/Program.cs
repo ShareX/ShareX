@@ -444,7 +444,7 @@ namespace ShareX
 
             if (Settings.IsUpgradeFrom("11.5.0"))
             {
-                if (IntegrationHelpers.CheckChromeExtensionSupport())
+                if (File.Exists(Program.ChromeHostManifestFilePath))
                 {
                     IntegrationHelpers.CreateChromeExtensionSupport(true);
                 }
