@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -71,28 +71,17 @@ namespace ShareX.UploadersLib.FileUploaders
             string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
-            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files[GetMetaDataFileKey(metaData)].id.ToString()}/{fileName}";
+            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id.ToString()}/{fileName}";
             UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
 
             return ConvertResult(metaData, FileDatReq);
-        }
-
-        private string GetMetaDataFileKey(UploadMetadataResponse md)
-        {
-            string firstElement = "";
-            foreach (var key in md.files)
-            {
-                firstElement = key.Key;
-                break;
-            }
-            return firstElement;
         }
 
         private UploadResult ConvertResult(UploadMetadataResponse metaData, UploadResult fileDataReq)
         {
             UploadResult result = new UploadResult(fileDataReq.Response);
             UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
-            UploadMetadataResponseFile actFile = metaData.files[GetMetaDataFileKey(metaData)];
+            UploadMetadataResponseFile actFile = metaData.files.First().Value;
             result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
             return result;
         }

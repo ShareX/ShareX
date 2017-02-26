@@ -10777,34 +10777,34 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbxPlikTTLUnit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblPlikTTL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblPlikTTL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblPlikTTL.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 202</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblPlikTTL.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblPlikTTL.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>Files will be automatically removed in </value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;lblPlikTTL.Name" xml:space="preserve">
+    <value>lblPlikTTL</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblPlikTTL.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblPlikTTL.Parent" xml:space="preserve">
     <value>gpPlikLoginCredentials</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblPlikTTL.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="txtPlikURL.Location" type="System.Drawing.Point, System.Drawing">
@@ -14595,9 +14595,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

@@ -308,7 +308,6 @@ namespace ShareX.UploadersLib
 
         public PlikSettings PlikSettings = new PlikSettings()
         {
-            TTL = 30
         };
 
         #endregion File uploaders
