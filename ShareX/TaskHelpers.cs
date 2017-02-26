@@ -811,6 +811,29 @@ namespace ShareX
             }
         }
 
+        public static Image AnnotateImageUsingShareX(Image img, TaskSettings taskSettings = null)
+        {
+            if (img != null)
+            {
+                using (Image annotateImage = (Image)img.Clone())
+                {
+                    RegionCaptureTasks.AnnotateImage(annotateImage, null, taskSettings.CaptureSettingsReference.SurfaceOptions,
+                        x =>
+                        {
+                            img.Dispose();
+                            img = x;
+                        },
+                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
+                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
+                        x => ClipboardHelpers.CopyImage(x),
+                        x => UploadManager.UploadImage(x),
+                        x => PrintImage(x));
+                }
+            }
+
+            return img;
+        }
+
         public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
         {
             return AnnotateImageUsingGreenshot(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
