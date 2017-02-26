@@ -23,23 +23,32 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Drawing;
 
 namespace ShareX
 {
-    public class CaptureData
+    public class ImageInfo : IDisposable
     {
         public Image Image { get; set; }
         public string WindowTitle { get; set; }
         public string ProcessName { get; set; }
 
-        public CaptureData()
+        public ImageInfo()
         {
         }
 
-        public CaptureData(Image image)
+        public ImageInfo(Image image)
         {
             Image = image;
+        }
+
+        public void Dispose()
+        {
+            if (Image != null)
+            {
+                Image.Dispose();
+            }
         }
     }
 }

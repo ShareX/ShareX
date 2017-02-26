@@ -35,7 +35,7 @@ namespace ShareX
 {
     public static class CaptureTaskHelpers
     {
-        private delegate CaptureData ScreenCaptureDelegate();
+        private delegate ImageInfo ScreenCaptureDelegate();
 
         private enum LastRegionCaptureType { Default, Light, Transparent }
 
@@ -98,11 +98,11 @@ namespace ShareX
                 Thread.Sleep(250);
             }
 
-            CaptureData captureData = null;
+            ImageInfo imageInfo = null;
 
             try
             {
-                captureData = capture();
+                imageInfo = capture();
             }
             catch (Exception ex)
             {
@@ -115,13 +115,13 @@ namespace ShareX
                     Program.MainForm.ForceActivate();
                 }
 
-                AfterCapture(captureData, captureType, taskSettings);
+                AfterCapture(imageInfo, captureType, taskSettings);
             }
         }
 
-        private static void AfterCapture(CaptureData captureData, CaptureType captureType, TaskSettings taskSettings)
+        private static void AfterCapture(ImageInfo imageInfo, CaptureType captureType, TaskSettings taskSettings)
         {
-            if (captureData != null && captureData.Image != null)
+            if (imageInfo != null && imageInfo.Image != null)
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
@@ -134,7 +134,7 @@ namespace ShareX
 
                     if (captureType != CaptureType.Region)
                     {
-                        captureData.Image = TaskHelpers.AnnotateImageUsingShareX(captureData.Image, taskSettings);
+                        imageInfo.Image = TaskHelpers.AnnotateImageUsingShareX(imageInfo.Image, taskSettings);
                     }
                 }
 
@@ -143,7 +143,7 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                UploadManager.RunImageTask(captureData.Image, taskSettings);
+                UploadManager.RunImageTask(imageInfo, taskSettings);
             }
         }
 
@@ -157,7 +157,7 @@ namespace ShareX
             DoCapture(() =>
             {
                 Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.Fullscreen, taskSettings, autoHideForm);
         }
 
@@ -188,7 +188,7 @@ namespace ShareX
                     img = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(handle);
                 }
 
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.Window, taskSettings, autoHideForm);
         }
 
@@ -217,7 +217,7 @@ namespace ShareX
                     img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
                 }
 
-                return new CaptureData()
+                return new ImageInfo()
                 {
                     Image = img,
                     WindowTitle = activeWindowTitle,
@@ -231,7 +231,7 @@ namespace ShareX
             DoCapture(() =>
             {
                 Image img = TaskHelpers.GetScreenshot().CaptureRectangle(rect);
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.Monitor, taskSettings, autoHideForm);
         }
 
@@ -240,7 +240,7 @@ namespace ShareX
             DoCapture(() =>
             {
                 Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
         }
 
@@ -250,7 +250,7 @@ namespace ShareX
             {
                 Rectangle regionBounds = taskSettings.CaptureSettings.CaptureCustomRegion;
                 Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(regionBounds);
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.CustomRegion, taskSettings, autoHideForm);
         }
 
@@ -271,7 +271,7 @@ namespace ShareX
 
             DoCapture(() =>
             {
-                CaptureData captureData = new CaptureData();
+                ImageInfo imageInfo = new ImageInfo();
 
                 try
                 {
@@ -279,9 +279,9 @@ namespace ShareX
                     form.Prepare(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen());
                     form.ShowDialog();
 
-                    captureData.Image = form.GetResultImage();
+                    imageInfo.Image = form.GetResultImage();
 
-                    if (captureData.Image != null)
+                    if (imageInfo.Image != null)
                     {
                         if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                         {
@@ -289,8 +289,8 @@ namespace ShareX
 
                             if (windowInfo != null)
                             {
-                                captureData.WindowTitle = windowInfo.Text;
-                                captureData.ProcessName = windowInfo.ProcessName;
+                                imageInfo.WindowTitle = windowInfo.Text;
+                                imageInfo.ProcessName = windowInfo.ProcessName;
                             }
                         }
 
@@ -305,7 +305,7 @@ namespace ShareX
                     }
                 }
 
-                return captureData;
+                return imageInfo;
             }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
@@ -330,7 +330,7 @@ namespace ShareX
                     }
                 }
 
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
@@ -355,7 +355,7 @@ namespace ShareX
                     }
                 }
 
-                return new CaptureData(img);
+                return new ImageInfo(img);
             }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
@@ -371,7 +371,7 @@ namespace ShareX
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
                                 Image img = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
-                                return new CaptureData(img);
+                                return new ImageInfo(img);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -388,7 +388,7 @@ namespace ShareX
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
                                 Image img = ImageHelpers.CropImage(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
-                                return new CaptureData(img);
+                                return new ImageInfo(img);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -405,7 +405,7 @@ namespace ShareX
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
                                 Image img = ImageHelpers.CropImage(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
-                                return new CaptureData(img);
+                                return new ImageInfo(img);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

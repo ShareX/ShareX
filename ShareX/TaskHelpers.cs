@@ -340,7 +340,13 @@ namespace ShareX
             }
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension = null, Image image = null)
+        public static string GetFilename(TaskSettings taskSettings, string extension, Image image)
+        {
+            ImageInfo imageInfo = new ImageInfo(image);
+            return GetFilename(taskSettings, extension, imageInfo);
+        }
+
+        public static string GetFilename(TaskSettings taskSettings, string extension = null, ImageInfo imageInfo = null)
         {
             string filename;
 
@@ -352,18 +358,12 @@ namespace ShareX
                 CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
-            if (image != null)
+            if (imageInfo != null && imageInfo.Image != null)
             {
-                nameParser.ImageWidth = image.Width;
-                nameParser.ImageHeight = image.Height;
-
-                CaptureData imageTag = image.Tag as CaptureData;
-
-                if (imageTag != null)
-                {
-                    nameParser.WindowText = imageTag.WindowTitle;
-                    nameParser.ProcessName = imageTag.ProcessName;
-                }
+                nameParser.ImageWidth = imageInfo.Image.Width;
+                nameParser.ImageHeight = imageInfo.Image.Height;
+                nameParser.WindowText = imageInfo.WindowTitle;
+                nameParser.ProcessName = imageInfo.ProcessName;
             }
 
             if (!string.IsNullOrEmpty(nameParser.WindowText))
@@ -385,7 +385,7 @@ namespace ShareX
             return filename;
         }
 
-        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, Image img = null, string filePath = null)
+        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, ImageInfo imageInfo = null, string filePath = null)
         {
             fileName = null;
 
@@ -401,14 +401,14 @@ namespace ShareX
                     }
                     else
                     {
-                        afterCaptureForm = new AfterCaptureForm(img, taskSettings);
+                        afterCaptureForm = new AfterCaptureForm(imageInfo, taskSettings);
                     }
 
                     if (afterCaptureForm.ShowDialog() == DialogResult.Cancel)
                     {
-                        if (img != null)
+                        if (imageInfo != null)
                         {
-                            img.Dispose();
+                            imageInfo.Dispose();
                         }
 
                         return false;
