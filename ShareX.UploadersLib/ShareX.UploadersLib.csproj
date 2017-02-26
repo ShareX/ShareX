@@ -128,6 +128,8 @@
     <Compile Include="FileUploaders\AzureStorageSettings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
+    <Compile Include="FileUploaders\Plik.cs" />
+    <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
     <Compile Include="FileUploaders\Dropfile.cs" />
@@ -882,6 +884,7 @@
   <ItemGroup>
     <None Include="Favicons\Pastie.png" />
     <Content Include="Favicons\AzureStorage.png" />
+    <None Include="Favicons\Plik.ico" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <ItemGroup>

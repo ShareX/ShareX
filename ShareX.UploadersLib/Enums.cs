@@ -145,6 +145,8 @@ namespace ShareX.UploadersLib
         Transfersh,
         [Description("Uplea")]
         Uplea,
+        [Description("Plik")]
+        Plik,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

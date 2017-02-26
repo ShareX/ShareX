@@ -304,6 +304,12 @@ namespace ShareX.UploadersLib
         public string AzureStorageAccountAccessKey = "";
         public string AzureStorageContainer = "";
 
+        // Plik
+
+        public PlikSettings PlikSettings = new PlikSettings()
+        {
+        };
+
         #endregion File uploaders
 
         #region URL shorteners

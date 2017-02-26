@@ -10588,6 +10588,513 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
+  <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPlikOneShot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPlikOneShot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="cbPlikOneShot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <data name="cbPlikOneShot.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbPlikOneShot.Text" xml:space="preserve">
+    <value>Destruct after the first download</value>
+  </data>
+  <data name="&gt;&gt;cbPlikOneShot.Name" xml:space="preserve">
+    <value>cbPlikOneShot</value>
+  </data>
+  <data name="&gt;&gt;cbPlikOneShot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPlikOneShot.Parent" xml:space="preserve">
+    <value>gpPlikSettings</value>
+  </data>
+  <data name="&gt;&gt;cbPlikOneShot.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtPlikComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 74</value>
+  </data>
+  <data name="txtPlikComment.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtPlikComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 164</value>
+  </data>
+  <data name="txtPlikComment.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtPlikComment.Name" xml:space="preserve">
+    <value>txtPlikComment</value>
+  </data>
+  <data name="&gt;&gt;txtPlikComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPlikComment.Parent" xml:space="preserve">
+    <value>gpPlikSettings</value>
+  </data>
+  <data name="&gt;&gt;txtPlikComment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbPlikComment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPlikComment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPlikComment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 54</value>
+  </data>
+  <data name="cbPlikComment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="cbPlikComment.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbPlikComment.Text" xml:space="preserve">
+    <value>Comment (Markdown)</value>
+  </data>
+  <data name="&gt;&gt;cbPlikComment.Name" xml:space="preserve">
+    <value>cbPlikComment</value>
+  </data>
+  <data name="&gt;&gt;cbPlikComment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPlikComment.Parent" xml:space="preserve">
+    <value>gpPlikSettings</value>
+  </data>
+  <data name="&gt;&gt;cbPlikComment.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbPlikRemovable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPlikRemovable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPlikRemovable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 15</value>
+  </data>
+  <data name="cbPlikRemovable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 17</value>
+  </data>
+  <data name="cbPlikRemovable.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbPlikRemovable.Text" xml:space="preserve">
+    <value>Removable</value>
+  </data>
+  <data name="&gt;&gt;cbPlikRemovable.Name" xml:space="preserve">
+    <value>cbPlikRemovable</value>
+  </data>
+  <data name="&gt;&gt;cbPlikRemovable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPlikRemovable.Parent" xml:space="preserve">
+    <value>gpPlikSettings</value>
+  </data>
+  <data name="&gt;&gt;cbPlikRemovable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gpPlikSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 19</value>
+  </data>
+  <data name="gpPlikSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 247</value>
+  </data>
+  <data name="gpPlikSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="gpPlikSettings.Text" xml:space="preserve">
+    <value>Other settings</value>
+  </data>
+  <data name="&gt;&gt;gpPlikSettings.Name" xml:space="preserve">
+    <value>gpPlikSettings</value>
+  </data>
+  <data name="&gt;&gt;gpPlikSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpPlikSettings.Parent" xml:space="preserve">
+    <value>tpPlik</value>
+  </data>
+  <data name="&gt;&gt;gpPlikSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudPlikTTL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 217</value>
+  </data>
+  <data name="nudPlikTTL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 20</value>
+  </data>
+  <data name="nudPlikTTL.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;nudPlikTTL.Name" xml:space="preserve">
+    <value>nudPlikTTL</value>
+  </data>
+  <data name="&gt;&gt;nudPlikTTL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudPlikTTL.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;nudPlikTTL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 217</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="cbxPlikTTLUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;cbxPlikTTLUnit.Name" xml:space="preserve">
+    <value>cbxPlikTTLUnit</value>
+  </data>
+  <data name="&gt;&gt;cbxPlikTTLUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbxPlikTTLUnit.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;cbxPlikTTLUnit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPlikTTL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlikTTL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPlikTTL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 202</value>
+  </data>
+  <data name="lblPlikTTL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 13</value>
+  </data>
+  <data name="lblPlikTTL.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>Files will be automatically removed in </value>
+  </data>
+  <data name="&gt;&gt;lblPlikTTL.Name" xml:space="preserve">
+    <value>lblPlikTTL</value>
+  </data>
+  <data name="&gt;&gt;lblPlikTTL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlikTTL.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPlikTTL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtPlikURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 31</value>
+  </data>
+  <data name="txtPlikURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 20</value>
+  </data>
+  <data name="txtPlikURL.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtPlikURL.Name" xml:space="preserve">
+    <value>txtPlikURL</value>
+  </data>
+  <data name="&gt;&gt;txtPlikURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPlikURL.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPlikURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPlikURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlikURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPlikURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 15</value>
+  </data>
+  <data name="lblPlikURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lblPlikURL.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblPlikURL.Text" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="&gt;&gt;lblPlikURL.Name" xml:space="preserve">
+    <value>lblPlikURL</value>
+  </data>
+  <data name="&gt;&gt;lblPlikURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlikURL.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPlikURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbPlikIsSecured.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPlikIsSecured.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPlikIsSecured.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 100</value>
+  </data>
+  <data name="cbPlikIsSecured.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="cbPlikIsSecured.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbPlikIsSecured.Text" xml:space="preserve">
+    <value>Username and password required?</value>
+  </data>
+  <data name="&gt;&gt;cbPlikIsSecured.Name" xml:space="preserve">
+    <value>cbPlikIsSecured</value>
+  </data>
+  <data name="&gt;&gt;cbPlikIsSecured.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPlikIsSecured.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;cbPlikIsSecured.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblPlikAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlikAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPlikAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 58</value>
+  </data>
+  <data name="lblPlikAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="lblPlikAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblPlikAPIKey.Text" xml:space="preserve">
+    <value>API Key: </value>
+  </data>
+  <data name="&gt;&gt;lblPlikAPIKey.Name" xml:space="preserve">
+    <value>lblPlikAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblPlikAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlikAPIKey.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPlikAPIKey.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtPlikAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 74</value>
+  </data>
+  <data name="txtPlikAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 20</value>
+  </data>
+  <data name="txtPlikAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtPlikAPIKey.Name" xml:space="preserve">
+    <value>txtPlikAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtPlikAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPlikAPIKey.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPlikAPIKey.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblPlikPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlikPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPlikPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 159</value>
+  </data>
+  <data name="lblPlikPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblPlikPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblPlikPassword.Name" xml:space="preserve">
+    <value>lblPlikPassword</value>
+  </data>
+  <data name="&gt;&gt;lblPlikPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlikPassword.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPlikPassword.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblPlikUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlikUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPlikUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 120</value>
+  </data>
+  <data name="lblPlikUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblPlikUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblPlikUsername.Name" xml:space="preserve">
+    <value>lblPlikUsername</value>
+  </data>
+  <data name="&gt;&gt;lblPlikUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlikUsername.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblPlikUsername.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtPlikPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 175</value>
+  </data>
+  <data name="txtPlikPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="txtPlikPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 20</value>
+  </data>
+  <data name="txtPlikPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtPlikPassword.Name" xml:space="preserve">
+    <value>txtPlikPassword</value>
+  </data>
+  <data name="&gt;&gt;txtPlikPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPlikPassword.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPlikPassword.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtPlikLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 136</value>
+  </data>
+  <data name="txtPlikLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 20</value>
+  </data>
+  <data name="txtPlikLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtPlikLogin.Name" xml:space="preserve">
+    <value>txtPlikLogin</value>
+  </data>
+  <data name="&gt;&gt;txtPlikLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPlikLogin.Parent" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtPlikLogin.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="gpPlikLoginCredentials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 19</value>
+  </data>
+  <data name="gpPlikLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 247</value>
+  </data>
+  <data name="gpPlikLoginCredentials.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="gpPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Login Credentials</value>
+  </data>
+  <data name="&gt;&gt;gpPlikLoginCredentials.Name" xml:space="preserve">
+    <value>gpPlikLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;gpPlikLoginCredentials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpPlikLoginCredentials.Parent" xml:space="preserve">
+    <value>tpPlik</value>
+  </data>
+  <data name="&gt;&gt;gpPlikLoginCredentials.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpPlik.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpPlik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="tpPlik.Text" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="&gt;&gt;tpPlik.Name" xml:space="preserve">
+    <value>tpPlik</value>
+  </data>
+  <data name="&gt;&gt;tpPlik.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPlik.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -14088,9 +14595,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
