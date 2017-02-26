@@ -596,17 +596,17 @@ namespace ShareX.UploadersLib
             txtAzureStorageContainer.Text = Config.AzureStorageContainer;
 
             // Plik
-            txtPlikAPIKey.Text = Config.PlikAPIKey;
-            txtPlikURL.Text = Config.PlikURL;
-            txtPlikPassword.Text = Config.PlikPassword;
-            txtPlikLogin.Text = Config.PlikLogin;
-            txtPlikComment.Text = Config.PlikComment;
-            cbPlikComment.Checked = Config.PlikhasComment;
-            cbPlikIsSecured.Checked = Config.PlikIsSecured;
-            cbPlikRemovable.Checked = Config.PlikRemovable;
-            cbPlikOneShot.Checked = Config.PlikOneShot;
-            nudPlikTTL.Value = Config.PlikTTL;
-            cbxPlikTTLUnit.SelectedIndex = Config.PlikTTLUnit;
+            txtPlikAPIKey.Text = Config.PlikSettings.APIKey;
+            txtPlikURL.Text = Config.PlikSettings.URL;
+            txtPlikPassword.Text = Config.PlikSettings.Password;
+            txtPlikLogin.Text = Config.PlikSettings.Login;
+            txtPlikComment.Text = Config.PlikSettings.Comment;
+            cbPlikComment.Checked = Config.PlikSettings.hasComment;
+            cbPlikIsSecured.Checked = Config.PlikSettings.isSecured;
+            cbPlikRemovable.Checked = Config.PlikSettings.Removable;
+            cbPlikOneShot.Checked = Config.PlikSettings.OneShot;
+            nudPlikTTL.Value = Config.PlikSettings.TTL;
+            cbxPlikTTLUnit.SelectedIndex = Config.PlikSettings.TTLUnit;
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
@@ -2652,61 +2652,61 @@ namespace ShareX.UploadersLib
 
         private void txtPlikURL_TextChanged(object sender, EventArgs e)
         {
-            Config.PlikURL = txtPlikURL.Text;
+            Config.PlikSettings.URL = txtPlikURL.Text;
         }
 
         private void txtPlikAPIKey_TextChanged(object sender, EventArgs e)
         {
-            Config.PlikAPIKey = txtPlikAPIKey.Text;
+            Config.PlikSettings.APIKey = txtPlikAPIKey.Text;
         }
 
         private void txtPlikLogin_TextChanged(object sender, EventArgs e)
         {
-            Config.PlikLogin = txtPlikLogin.Text;
+            Config.PlikSettings.Login = txtPlikLogin.Text;
         }
 
         private void txtPlikPassword_TextChanged(object sender, EventArgs e)
         {
-            Config.PlikPassword = txtPlikPassword.Text;
+            Config.PlikSettings.Password = txtPlikPassword.Text;
         }
 
         private void cbPlikIsSecured_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikIsSecured = cbPlikIsSecured.Checked;
+            Config.PlikSettings.isSecured = cbPlikIsSecured.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
         }
 
         private void cbPlikRemovable_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikRemovable = cbPlikRemovable.Checked;
+            Config.PlikSettings.Removable = cbPlikRemovable.Checked;
         }
 
         private void cbPlikComment_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikhasComment = cbPlikComment.Checked;
+            Config.PlikSettings.hasComment = cbPlikComment.Checked;
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
         }
 
         private void txtPlikComment_TextChanged(object sender, EventArgs e)
         {
-            Config.PlikComment = txtPlikComment.Text;
+            Config.PlikSettings.Comment = txtPlikComment.Text;
         }
 
         private void cbPlikOneShot_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikOneShot = cbPlikOneShot.Checked;
+            Config.PlikSettings.OneShot = cbPlikOneShot.Checked;
         }
 
         private void cbxPlikTTLUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nudPlikTTL.Value = nudPlikTTL.Value * Plik.GetMultiplyIndex(cbxPlikTTLUnit.SelectedIndex, Config.PlikTTLUnit); ;
-            Config.PlikTTLUnit = cbxPlikTTLUnit.SelectedIndex;
+            nudPlikTTL.Value = nudPlikTTL.Value * Plik.GetMultiplyIndex(cbxPlikTTLUnit.SelectedIndex, Config.PlikSettings.TTLUnit); ;
+            Config.PlikSettings.TTLUnit = cbxPlikTTLUnit.SelectedIndex;
         }
 
         private void nudPlikTTL_ValueChanged(object sender, EventArgs e)
         {
-            Config.PlikTTL = nudPlikTTL.Value;
+            Config.PlikSettings.TTL = nudPlikTTL.Value;
         }
 
         #endregion Plik

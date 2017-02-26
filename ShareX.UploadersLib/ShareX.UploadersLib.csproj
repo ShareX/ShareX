@@ -129,6 +129,7 @@
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
     <Compile Include="FileUploaders\Plik.cs" />
+    <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
     <Compile Include="FileUploaders\Dropfile.cs" />
@@ -881,6 +882,7 @@
     <None Include="Resources\document.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Plik.ico" />
     <None Include="Favicons\Pastie.png" />
     <Content Include="Favicons\AzureStorage.png" />
     <Content Include="Favicons\Uplea.ico" />

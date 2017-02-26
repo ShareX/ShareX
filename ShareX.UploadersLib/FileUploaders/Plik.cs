@@ -17,18 +17,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Plik(config.PlikURL, config.PlikAPIKey)
+            return new Plik(config.PlikSettings)
             {
-                APIKey = config.PlikAPIKey,
-                Removable = config.PlikRemovable,
-                OneShot = config.PlikOneShot,
-                hasComment = config.PlikhasComment,
-                Comment = config.PlikComment,
-                isSecured = config.PlikIsSecured,
-                Login = config.PlikLogin,
-                Password = config.PlikPassword,
-                TTL = config.PlikTTL,
-                TTLUnit = config.PlikTTLUnit
+                Settings = config.PlikSettings
             };
         }
 
@@ -36,7 +27,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Regex APIrgx = new Regex(@"^([0-9A-Fa-f]{8}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{12})$");
             Regex URLrgex = new Regex(@"^http(s)?://([\w-]+.)+[\w-]+(/[\w- ./?%&=])?$");
-            return URLrgex.IsMatch(config.PlikURL) && APIrgx.IsMatch(config.PlikAPIKey);
+            return URLrgex.IsMatch(config.PlikSettings.URL) && APIrgx.IsMatch(config.PlikSettings.APIKey);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPlik;
@@ -46,55 +37,43 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Plik : FileUploader
     {
-        public string URL { get; set; }
-        public string APIKey { get; set; }
-        public bool OneShot { get; set; }
-        public bool Removable { get; set; }
-        public bool isSecured { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public bool hasComment { get; set; }
-        public string Comment { get; set; }
-        public decimal TTL { get; set; }
-        public int TTLUnit { get; set; }
+        public PlikSettings Settings { get; set; }
 
-        public Plik(string url, string apikey)
+        public Plik(PlikSettings s)
         {
-            URL = url;
-            APIKey = apikey;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(URL))
+            if (string.IsNullOrEmpty(Settings.URL))
             {
                 throw new Exception("Plik Host is empty.");
             }
             NameValueCollection requestHeaders = new NameValueCollection();
-            requestHeaders["X-PlikToken"] = APIKey;
+            requestHeaders["X-PlikToken"] = Settings.APIKey;
             UploadMetadataRequest metaDataReq = new UploadMetadataRequest();
             metaDataReq.Files = new UploadMetadataRequestFile0();
             metaDataReq.Files.File0 = new UploadMetadataRequestFile();
             metaDataReq.Files.File0.FileName = fileName;
             metaDataReq.Files.File0.FileType = Helpers.GetMimeType(fileName);
             metaDataReq.Files.File0.FileSize = Convert.ToInt32(stream.Length);
-            metaDataReq.Removable = Removable;
-            metaDataReq.OneShot = OneShot;
-            metaDataReq.Ttl = Convert.ToInt32(GetMultiplyIndex(2, TTLUnit) * TTL * 60);
+            metaDataReq.Removable = Settings.Removable;
+            metaDataReq.OneShot = Settings.OneShot;
+            metaDataReq.Ttl = Convert.ToInt32(GetMultiplyIndex(2, Settings.TTLUnit) * Settings.TTL * 60);
 
-            if (hasComment)
+            if (Settings.hasComment)
             {
-                metaDataReq.Comment = Comment;
+                metaDataReq.Comment = Settings.Comment;
             }
-            if (isSecured)
+            if (Settings.isSecured)
             {
-                metaDataReq.Login = Login;
-                metaDataReq.Password = Password;
+                metaDataReq.Login = Settings.Login;
+                metaDataReq.Password = Settings.Password;
             }
-            string metaDataResp = SendRequest(HttpMethod.POST, URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
+            string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
-            string url = $"{URL}/file/{metaData.id}/{metaData.files[getMetaFileKey(metaData)].id.ToString()}/{fileName}";
+            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files[getMetaFileKey(metaData)].id.ToString()}/{fileName}";
             UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
 
             return ConvertResult(metaData, FileDatReq);
@@ -116,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult(fileDataReq.Response);
             UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
             UploadMetadataResponseFile actFile = metaData.files[getMetaFileKey(metaData)];
-            result.URL = $"{URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
+            result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
             return result;
         }
 

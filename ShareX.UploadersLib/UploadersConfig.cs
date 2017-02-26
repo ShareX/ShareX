@@ -306,17 +306,10 @@ namespace ShareX.UploadersLib
 
         // Plik
 
-        public string PlikURL = "";
-        public string PlikAPIKey = "";
-        public bool PlikIsSecured = false;
-        public string PlikLogin = "";
-        public string PlikPassword = "";
-        public bool PlikRemovable = false;
-        public bool PlikOneShot = false;
-        public int PlikTTLUnit = 0;
-        public decimal PlikTTL = 30;
-        public string PlikComment = "";
-        public bool PlikhasComment = false;
+        public PlikSettings PlikSettings = new PlikSettings()
+        {
+            TTL = 30
+        };
 
         #endregion File uploaders
 
