@@ -179,6 +179,7 @@ namespace ShareX.ScreenCaptureLib
                         default:
                             result.Dispose();
                             break;
+                        case RegionResult.Region:
                         case RegionResult.AnnotateRunAfterCaptureTasks:
                             afterCaptureTasksRequested(result);
                             break;
