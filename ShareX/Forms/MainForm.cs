@@ -1282,10 +1282,10 @@ namespace ShareX
         private void tsmiMonitorItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            Rectangle rectangle = (Rectangle)tsi.Tag;
-            if (!rectangle.IsEmpty)
+            Rectangle rect = (Rectangle)tsi.Tag;
+            if (!rect.IsEmpty)
             {
-                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor);
+                CaptureTaskHelpers.CaptureMonitor(rect);
             }
         }
 
@@ -1635,10 +1635,10 @@ namespace ShareX
         private void tsmiTrayMonitorItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            Rectangle rectangle = (Rectangle)tsi.Tag;
-            if (!rectangle.IsEmpty)
+            Rectangle rect = (Rectangle)tsi.Tag;
+            if (!rect.IsEmpty)
             {
-                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
+                CaptureTaskHelpers.CaptureMonitor(rect, null, false);
             }
         }
 

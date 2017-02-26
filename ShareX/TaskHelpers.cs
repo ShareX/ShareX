@@ -357,7 +357,7 @@ namespace ShareX
                 nameParser.ImageWidth = image.Width;
                 nameParser.ImageHeight = image.Height;
 
-                ImageTag imageTag = image.Tag as ImageTag;
+                CaptureData imageTag = image.Tag as CaptureData;
 
                 if (imageTag != null)
                 {

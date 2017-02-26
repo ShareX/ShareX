@@ -23,11 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using System.Drawing;
+
 namespace ShareX
 {
-    public class ImageTag
+    public class CaptureData
     {
+        public Image Image { get; set; }
         public string WindowTitle { get; set; }
         public string ProcessName { get; set; }
+
+        public CaptureData()
+        {
+        }
+
+        public CaptureData(Image image)
+        {
+            Image = image;
+        }
     }
 }
