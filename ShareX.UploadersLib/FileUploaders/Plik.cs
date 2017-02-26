@@ -25,9 +25,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            Regex APIrgx = new Regex(@"^([0-9A-Fa-f]{8}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{4}[-][0-9A-Fa-f]{12})$");
-            Regex URLrgex = new Regex(@"^http(s)?://([\w-]+.)+[\w-]+(/[\w- ./?%&=])?$");
-            return URLrgex.IsMatch(config.PlikSettings.URL) && APIrgx.IsMatch(config.PlikSettings.APIKey);
+            return !string.IsNullOrEmpty(config.PlikSettings.URL) && !string.IsNullOrEmpty(config.PlikSettings.APIKey);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPlik;
@@ -61,11 +59,11 @@ namespace ShareX.UploadersLib.FileUploaders
             metaDataReq.OneShot = Settings.OneShot;
             metaDataReq.Ttl = Convert.ToInt32(GetMultiplyIndex(2, Settings.TTLUnit) * Settings.TTL * 60);
 
-            if (Settings.hasComment)
+            if (Settings.HasComment)
             {
                 metaDataReq.Comment = Settings.Comment;
             }
-            if (Settings.isSecured)
+            if (Settings.IsSecured)
             {
                 metaDataReq.Login = Settings.Login;
                 metaDataReq.Password = Settings.Password;
@@ -73,13 +71,13 @@ namespace ShareX.UploadersLib.FileUploaders
             string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
-            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files[getMetaFileKey(metaData)].id.ToString()}/{fileName}";
+            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files[GetMetaDataFileKey(metaData)].id.ToString()}/{fileName}";
             UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
 
             return ConvertResult(metaData, FileDatReq);
         }
 
-        private string getMetaFileKey(UploadMetadataResponse md)
+        private string GetMetaDataFileKey(UploadMetadataResponse md)
         {
             string firstElement = "";
             foreach (var key in md.files)
@@ -94,7 +92,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             UploadResult result = new UploadResult(fileDataReq.Response);
             UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
-            UploadMetadataResponseFile actFile = metaData.files[getMetaFileKey(metaData)];
+            UploadMetadataResponseFile actFile = metaData.files[GetMetaDataFileKey(metaData)];
             result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
             return result;
         }

@@ -601,8 +601,8 @@ namespace ShareX.UploadersLib
             txtPlikPassword.Text = Config.PlikSettings.Password;
             txtPlikLogin.Text = Config.PlikSettings.Login;
             txtPlikComment.Text = Config.PlikSettings.Comment;
-            cbPlikComment.Checked = Config.PlikSettings.hasComment;
-            cbPlikIsSecured.Checked = Config.PlikSettings.isSecured;
+            cbPlikComment.Checked = Config.PlikSettings.HasComment;
+            cbPlikIsSecured.Checked = Config.PlikSettings.IsSecured;
             cbPlikRemovable.Checked = Config.PlikSettings.Removable;
             cbPlikOneShot.Checked = Config.PlikSettings.OneShot;
             nudPlikTTL.Value = Config.PlikSettings.TTL;
@@ -2672,7 +2672,7 @@ namespace ShareX.UploadersLib
 
         private void cbPlikIsSecured_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikSettings.isSecured = cbPlikIsSecured.Checked;
+            Config.PlikSettings.IsSecured = cbPlikIsSecured.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
         }
@@ -2684,7 +2684,7 @@ namespace ShareX.UploadersLib
 
         private void cbPlikComment_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PlikSettings.hasComment = cbPlikComment.Checked;
+            Config.PlikSettings.HasComment = cbPlikComment.Checked;
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
         }
 

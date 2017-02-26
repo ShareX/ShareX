@@ -882,9 +882,9 @@
     <None Include="Resources\document.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Plik.ico" />
     <None Include="Favicons\Pastie.png" />
     <Content Include="Favicons\AzureStorage.png" />
+    <None Include="Favicons\Plik.ico" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <ItemGroup>
