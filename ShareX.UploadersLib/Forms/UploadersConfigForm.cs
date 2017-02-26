@@ -595,6 +595,22 @@ namespace ShareX.UploadersLib
             txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
             txtAzureStorageContainer.Text = Config.AzureStorageContainer;
 
+            // Plik
+            txtPlikAPIKey.Text = Config.PlikAPIKey;
+            txtPlikURL.Text = Config.PlikURL;
+            txtPlikPassword.Text = Config.PlikPassword;
+            txtPlikLogin.Text = Config.PlikLogin;
+            txtPlikComment.Text = Config.PlikComment;
+            cbPlikComment.Checked = Config.PlikhasComment;
+            cbPlikIsSecured.Checked = Config.PlikIsSecured;
+            cbPlikRemovable.Checked = Config.PlikRemovable;
+            cbPlikOneShot.Checked = Config.PlikOneShot;
+            nudPlikTTL.Value = Config.PlikTTL;
+            cbxPlikTTLUnit.SelectedIndex = Config.PlikTTLUnit;
+            txtPlikComment.ReadOnly = !cbPlikComment.Checked;
+            txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
+            txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -2631,6 +2647,69 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Azure Storage
+
+        #region Plik
+
+        private void txtPlikURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.PlikURL = txtPlikURL.Text;
+        }
+
+        private void txtPlikAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.PlikAPIKey = txtPlikAPIKey.Text;
+        }
+
+        private void txtPlikLogin_TextChanged(object sender, EventArgs e)
+        {
+            Config.PlikLogin = txtPlikLogin.Text;
+        }
+
+        private void txtPlikPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PlikPassword = txtPlikPassword.Text;
+        }
+
+        private void cbPlikIsSecured_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PlikIsSecured = cbPlikIsSecured.Checked;
+            txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
+            txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
+        }
+
+        private void cbPlikRemovable_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PlikRemovable = cbPlikRemovable.Checked;
+        }
+
+        private void cbPlikComment_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PlikhasComment = cbPlikComment.Checked;
+            txtPlikComment.ReadOnly = !cbPlikComment.Checked;
+        }
+
+        private void txtPlikComment_TextChanged(object sender, EventArgs e)
+        {
+            Config.PlikComment = txtPlikComment.Text;
+        }
+
+        private void cbPlikOneShot_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PlikOneShot = cbPlikOneShot.Checked;
+        }
+
+        private void cbxPlikTTLUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudPlikTTL.Value = nudPlikTTL.Value * Plik.GetMultiplyIndex(cbxPlikTTLUnit.SelectedIndex, Config.PlikTTLUnit); ;
+            Config.PlikTTLUnit = cbxPlikTTLUnit.SelectedIndex;
+        }
+
+        private void nudPlikTTL_ValueChanged(object sender, EventArgs e)
+        {
+            Config.PlikTTL = nudPlikTTL.Value;
+        }
+
+        #endregion Plik
 
         #endregion File Uploaders
 

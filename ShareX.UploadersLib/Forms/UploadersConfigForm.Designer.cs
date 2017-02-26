@@ -424,6 +424,25 @@
             this.nudEmailSmtpPort = new System.Windows.Forms.NumericUpDown();
             this.lblEmailSmtpPort = new System.Windows.Forms.Label();
             this.txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
+            this.tpPlik = new System.Windows.Forms.TabPage();
+            this.gpPlikSettings = new System.Windows.Forms.GroupBox();
+            this.cbPlikOneShot = new System.Windows.Forms.CheckBox();
+            this.txtPlikComment = new System.Windows.Forms.TextBox();
+            this.cbPlikComment = new System.Windows.Forms.CheckBox();
+            this.cbPlikRemovable = new System.Windows.Forms.CheckBox();
+            this.gpPlikLoginCredentials = new System.Windows.Forms.GroupBox();
+            this.nudPlikTTL = new System.Windows.Forms.NumericUpDown();
+            this.cbxPlikTTLUnit = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPlikURL = new System.Windows.Forms.TextBox();
+            this.lblPlikURL = new System.Windows.Forms.Label();
+            this.cbPlikIsSecured = new System.Windows.Forms.CheckBox();
+            this.lblPlikAPIKey = new System.Windows.Forms.Label();
+            this.txtPlikAPIKey = new System.Windows.Forms.TextBox();
+            this.lblPlikPassword = new System.Windows.Forms.Label();
+            this.lblPlikUsername = new System.Windows.Forms.Label();
+            this.txtPlikPassword = new System.Windows.Forms.TextBox();
+            this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -632,6 +651,10 @@
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
+            this.tpPlik.SuspendLayout();
+            this.gpPlikSettings.SuspendLayout();
+            this.gpPlikLoginCredentials.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).BeginInit();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1672,6 +1695,7 @@
             this.tcFileUploaders.Controls.Add(this.tpUplea);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
+            this.tcFileUploaders.Controls.Add(this.tpPlik);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";
@@ -3516,6 +3540,155 @@
             this.txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
             this.txtEmailDefaultSubject.TextChanged += new System.EventHandler(this.txtDefaultSubject_TextChanged);
             // 
+            // tpPlik
+            // 
+            this.tpPlik.Controls.Add(this.gpPlikSettings);
+            this.tpPlik.Controls.Add(this.gpPlikLoginCredentials);
+            resources.ApplyResources(this.tpPlik, "tpPlik");
+            this.tpPlik.Name = "tpPlik";
+            this.tpPlik.UseVisualStyleBackColor = true;
+            // 
+            // gpPlikSettings
+            // 
+            this.gpPlikSettings.Controls.Add(this.cbPlikOneShot);
+            this.gpPlikSettings.Controls.Add(this.txtPlikComment);
+            this.gpPlikSettings.Controls.Add(this.cbPlikComment);
+            this.gpPlikSettings.Controls.Add(this.cbPlikRemovable);
+            resources.ApplyResources(this.gpPlikSettings, "gpPlikSettings");
+            this.gpPlikSettings.Name = "gpPlikSettings";
+            this.gpPlikSettings.TabStop = false;
+            // 
+            // cbPlikOneShot
+            // 
+            resources.ApplyResources(this.cbPlikOneShot, "cbPlikOneShot");
+            this.cbPlikOneShot.Name = "cbPlikOneShot";
+            this.cbPlikOneShot.UseVisualStyleBackColor = true;
+            this.cbPlikOneShot.CheckedChanged += new System.EventHandler(this.cbPlikOneShot_CheckedChanged);
+            // 
+            // txtPlikComment
+            // 
+            resources.ApplyResources(this.txtPlikComment, "txtPlikComment");
+            this.txtPlikComment.Name = "txtPlikComment";
+            this.txtPlikComment.ReadOnly = true;
+            this.txtPlikComment.TextChanged += new System.EventHandler(this.txtPlikComment_TextChanged);
+            // 
+            // cbPlikComment
+            // 
+            resources.ApplyResources(this.cbPlikComment, "cbPlikComment");
+            this.cbPlikComment.Name = "cbPlikComment";
+            this.cbPlikComment.UseVisualStyleBackColor = true;
+            this.cbPlikComment.CheckedChanged += new System.EventHandler(this.cbPlikComment_CheckedChanged);
+            // 
+            // cbPlikRemovable
+            // 
+            resources.ApplyResources(this.cbPlikRemovable, "cbPlikRemovable");
+            this.cbPlikRemovable.Name = "cbPlikRemovable";
+            this.cbPlikRemovable.UseVisualStyleBackColor = true;
+            this.cbPlikRemovable.CheckedChanged += new System.EventHandler(this.cbPlikRemovable_CheckedChanged);
+            // 
+            // gpPlikLoginCredentials
+            // 
+            this.gpPlikLoginCredentials.Controls.Add(this.nudPlikTTL);
+            this.gpPlikLoginCredentials.Controls.Add(this.cbxPlikTTLUnit);
+            this.gpPlikLoginCredentials.Controls.Add(this.label1);
+            this.gpPlikLoginCredentials.Controls.Add(this.txtPlikURL);
+            this.gpPlikLoginCredentials.Controls.Add(this.lblPlikURL);
+            this.gpPlikLoginCredentials.Controls.Add(this.cbPlikIsSecured);
+            this.gpPlikLoginCredentials.Controls.Add(this.lblPlikAPIKey);
+            this.gpPlikLoginCredentials.Controls.Add(this.txtPlikAPIKey);
+            this.gpPlikLoginCredentials.Controls.Add(this.lblPlikPassword);
+            this.gpPlikLoginCredentials.Controls.Add(this.lblPlikUsername);
+            this.gpPlikLoginCredentials.Controls.Add(this.txtPlikPassword);
+            this.gpPlikLoginCredentials.Controls.Add(this.txtPlikLogin);
+            resources.ApplyResources(this.gpPlikLoginCredentials, "gpPlikLoginCredentials");
+            this.gpPlikLoginCredentials.Name = "gpPlikLoginCredentials";
+            this.gpPlikLoginCredentials.TabStop = false;
+            // 
+            // nudPlikTTL
+            // 
+            this.nudPlikTTL.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudPlikTTL, "nudPlikTTL");
+            this.nudPlikTTL.Maximum = new decimal(new int[] {
+            1661992960,
+            1808227885,
+            5,
+            0});
+            this.nudPlikTTL.Name = "nudPlikTTL";
+            this.nudPlikTTL.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPlikTTL.ValueChanged += new System.EventHandler(this.nudPlikTTL_ValueChanged);
+            // 
+            // cbxPlikTTLUnit
+            // 
+            this.cbxPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPlikTTLUnit.FormattingEnabled = true;
+            this.cbxPlikTTLUnit.Items.AddRange(new object[] {
+            resources.GetString("cbxPlikTTLUnit.Items"),
+            resources.GetString("cbxPlikTTLUnit.Items1"),
+            resources.GetString("cbxPlikTTLUnit.Items2")});
+            resources.ApplyResources(this.cbxPlikTTLUnit, "cbxPlikTTLUnit");
+            this.cbxPlikTTLUnit.Name = "cbxPlikTTLUnit";
+            this.cbxPlikTTLUnit.SelectedIndexChanged += new System.EventHandler(this.cbxPlikTTLUnit_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // txtPlikURL
+            // 
+            resources.ApplyResources(this.txtPlikURL, "txtPlikURL");
+            this.txtPlikURL.Name = "txtPlikURL";
+            this.txtPlikURL.TextChanged += new System.EventHandler(this.txtPlikURL_TextChanged);
+            // 
+            // lblPlikURL
+            // 
+            resources.ApplyResources(this.lblPlikURL, "lblPlikURL");
+            this.lblPlikURL.Name = "lblPlikURL";
+            // 
+            // cbPlikIsSecured
+            // 
+            resources.ApplyResources(this.cbPlikIsSecured, "cbPlikIsSecured");
+            this.cbPlikIsSecured.Name = "cbPlikIsSecured";
+            this.cbPlikIsSecured.UseVisualStyleBackColor = true;
+            this.cbPlikIsSecured.CheckedChanged += new System.EventHandler(this.cbPlikIsSecured_CheckedChanged);
+            // 
+            // lblPlikAPIKey
+            // 
+            resources.ApplyResources(this.lblPlikAPIKey, "lblPlikAPIKey");
+            this.lblPlikAPIKey.Name = "lblPlikAPIKey";
+            // 
+            // txtPlikAPIKey
+            // 
+            resources.ApplyResources(this.txtPlikAPIKey, "txtPlikAPIKey");
+            this.txtPlikAPIKey.Name = "txtPlikAPIKey";
+            this.txtPlikAPIKey.TextChanged += new System.EventHandler(this.txtPlikAPIKey_TextChanged);
+            // 
+            // lblPlikPassword
+            // 
+            resources.ApplyResources(this.lblPlikPassword, "lblPlikPassword");
+            this.lblPlikPassword.Name = "lblPlikPassword";
+            // 
+            // lblPlikUsername
+            // 
+            resources.ApplyResources(this.lblPlikUsername, "lblPlikUsername");
+            this.lblPlikUsername.Name = "lblPlikUsername";
+            // 
+            // txtPlikPassword
+            // 
+            resources.ApplyResources(this.txtPlikPassword, "txtPlikPassword");
+            this.txtPlikPassword.Name = "txtPlikPassword";
+            this.txtPlikPassword.TextChanged += new System.EventHandler(this.txtPlikPassword_TextChanged);
+            // 
+            // txtPlikLogin
+            // 
+            resources.ApplyResources(this.txtPlikLogin, "txtPlikLogin");
+            this.txtPlikLogin.Name = "txtPlikLogin";
+            this.txtPlikLogin.TextChanged += new System.EventHandler(this.txtPlikLogin_TextChanged);
+            // 
             // btnCopyShowFiles
             // 
             resources.ApplyResources(this.btnCopyShowFiles, "btnCopyShowFiles");
@@ -4719,6 +4892,12 @@
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
+            this.tpPlik.ResumeLayout(false);
+            this.gpPlikSettings.ResumeLayout(false);
+            this.gpPlikSettings.PerformLayout();
+            this.gpPlikLoginCredentials.ResumeLayout(false);
+            this.gpPlikLoginCredentials.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).EndInit();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -5308,5 +5487,24 @@
         private System.Windows.Forms.TextBox txtAzureStorageContainer;
         private System.Windows.Forms.Label lblAzureStorageContainer;
         private System.Windows.Forms.Button btnAzureStoragePortal;
+        internal System.Windows.Forms.TabPage tpPlik;
+        private System.Windows.Forms.GroupBox gpPlikSettings;
+        private System.Windows.Forms.TextBox txtPlikComment;
+        private System.Windows.Forms.CheckBox cbPlikComment;
+        private System.Windows.Forms.CheckBox cbPlikRemovable;
+        private System.Windows.Forms.GroupBox gpPlikLoginCredentials;
+        private System.Windows.Forms.CheckBox cbPlikIsSecured;
+        private System.Windows.Forms.Label lblPlikAPIKey;
+        private System.Windows.Forms.TextBox txtPlikAPIKey;
+        private System.Windows.Forms.Label lblPlikPassword;
+        private System.Windows.Forms.Label lblPlikUsername;
+        private System.Windows.Forms.TextBox txtPlikPassword;
+        private System.Windows.Forms.TextBox txtPlikLogin;
+        private System.Windows.Forms.Label lblPlikURL;
+        private System.Windows.Forms.TextBox txtPlikURL;
+        private System.Windows.Forms.CheckBox cbPlikOneShot;
+        private System.Windows.Forms.ComboBox cbxPlikTTLUnit;
+        private System.Windows.Forms.NumericUpDown nudPlikTTL;
+        private System.Windows.Forms.Label label1;
     }
 }
