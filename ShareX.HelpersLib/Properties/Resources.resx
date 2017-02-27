@@ -502,7 +502,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Add image effects / watermark</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Open in image editor</value>
+    <value>Annotate image</value>
   </data>
   <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
     <value>Copy file path to clipboard</value>
