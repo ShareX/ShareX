@@ -306,9 +306,7 @@ namespace ShareX.UploadersLib
 
         // Plik
 
-        public PlikSettings PlikSettings = new PlikSettings()
-        {
-        };
+        public PlikSettings PlikSettings = new PlikSettings();
 
         #endregion File uploaders
 
