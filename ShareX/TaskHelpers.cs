@@ -789,7 +789,37 @@ namespace ShareX
             }
         }
 
-        public static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings = null)
+        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
+        {
+            if (img != null)
+            {
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
+                {
+                    Image annotateImage = (Image)img.Clone();
+
+                    AnnotateImageUsingShareX(annotateImage, filePath, x =>
+                    {
+                        img.Dispose();
+                        img = x;
+                    }, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+                    return img;
+                }
+                else
+                {
+                    return AnnotateImageUsingGreenshot(img, filePath);
+                }
+            }
+
+            return null;
+        }
+
+        private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
+        {
+            AnnotateImageUsingShareX(img, filePath, x => UploadManager.RunImageTask(x, taskSettings), taskSettings.CaptureSettingsReference.SurfaceOptions);
+        }
+
+        private static void AnnotateImageUsingShareX(Image img, string filePath, Action<Image> onImageOutput, RegionCaptureOptions options)
         {
             if (img == null && File.Exists(filePath))
             {
@@ -800,8 +830,8 @@ namespace ShareX
             {
                 using (img)
                 {
-                    RegionCaptureTasks.AnnotateImage(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions,
-                        x => UploadManager.RunImageTask(x, taskSettings),
+                    RegionCaptureTasks.AnnotateImage(img, filePath, options,
+                        x => onImageOutput(x),
                         (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
                         (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
                         x => ClipboardHelpers.CopyImage(x),
@@ -811,30 +841,7 @@ namespace ShareX
             }
         }
 
-        public static Image AnnotateImageUsingShareX(Image img, TaskSettings taskSettings = null)
-        {
-            if (img != null)
-            {
-                using (Image annotateImage = (Image)img.Clone())
-                {
-                    RegionCaptureTasks.AnnotateImage(annotateImage, null, taskSettings.CaptureSettingsReference.SurfaceOptions,
-                        x =>
-                        {
-                            img.Dispose();
-                            img = x;
-                        },
-                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
-                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
-                        x => ClipboardHelpers.CopyImage(x),
-                        x => UploadManager.UploadImage(x),
-                        x => PrintImage(x));
-                }
-            }
-
-            return img;
-        }
-
-        public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
+        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
         {
             return AnnotateImageUsingGreenshot(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),

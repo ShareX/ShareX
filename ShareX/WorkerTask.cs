@@ -578,7 +578,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                tempImage = TaskHelpers.AnnotateImageUsingGreenshot(tempImage, Info.FileName);
+                tempImage = TaskHelpers.AnnotateImageForTask(tempImage, Info.FilePath, Info.TaskSettings);
 
                 if (tempImage == null)
                 {

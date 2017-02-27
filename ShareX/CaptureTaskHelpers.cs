@@ -128,14 +128,10 @@ namespace ShareX
                     TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage)
+                    && captureType == CaptureType.Region)
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
-
-                    if (captureType != CaptureType.Region)
-                    {
-                        imageInfo.Image = TaskHelpers.AnnotateImageUsingShareX(imageInfo.Image, taskSettings);
-                    }
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
