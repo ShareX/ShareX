@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -125,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ToolStripButton tsbSaveImage = new ToolStripButton("Save image");
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbSaveImage.Enabled = !string.IsNullOrEmpty(form.ImageFilePath);
+                tsbSaveImage.Enabled = File.Exists(form.ImageFilePath);
                 tsbSaveImage.Image = Resources.disk_black;
                 tsbSaveImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateSaveImage);
                 tsMain.Items.Add(tsbSaveImage);
