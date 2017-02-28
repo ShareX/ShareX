@@ -23,20 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.FileUploaders
+using System.Drawing;
+
+namespace ShareX
 {
-    public class PlikSettings
+    public class CaptureActiveMonitor : CaptureBase
     {
-        public string URL = "";
-        public string APIKey = "";
-        public bool IsSecured = false;
-        public string Login = "";
-        public string Password = "";
-        public bool Removable = false;
-        public bool OneShot = false;
-        public int TTLUnit = 0;
-        public decimal TTL = 30;
-        public bool HasComment = false;
-        public string Comment = "";
+        protected override ImageInfo Execute(TaskSettings taskSettings)
+        {
+            Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
+            return new ImageInfo(img);
+        }
     }
 }

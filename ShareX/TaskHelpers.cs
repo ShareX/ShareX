@@ -94,28 +94,28 @@ namespace ShareX
                     break;
                 // Screen capture
                 case HotkeyType.PrintScreen:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, safeTaskSettings, false);
+                    new CaptureFullscreen().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.ActiveWindow:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.ActiveWindow, safeTaskSettings, false);
+                    new CaptureActiveWindow().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.ActiveMonitor:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
+                    new CaptureActiveMonitor().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.RectangleRegion:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, safeTaskSettings, false);
+                    new CaptureRegion().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.RectangleLight:
-                    CaptureTaskHelpers.CaptureRectangleLight(safeTaskSettings, false);
+                    new CaptureRegion(RegionCaptureType.Light).Capture(safeTaskSettings);
                     break;
                 case HotkeyType.RectangleTransparent:
-                    CaptureTaskHelpers.CaptureRectangleTransparent(safeTaskSettings, false);
+                    new CaptureRegion(RegionCaptureType.Transparent).Capture(safeTaskSettings);
                     break;
                 case HotkeyType.CustomRegion:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
+                    new CaptureCustomRegion().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.LastRegion:
-                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
+                    new CaptureLastRegion().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.ScrollingCapture:
                     OpenScrollingCapture(safeTaskSettings, true);

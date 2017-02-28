@@ -247,4 +247,9 @@ namespace ShareX
     {
         Waiting, BeforeStart, AfterStart, AfterRecordingStart, AfterStop
     }
+
+    public enum RegionCaptureType
+    {
+        Default, Light, Transparent
+    }
 }

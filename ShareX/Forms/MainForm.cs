@@ -1261,7 +1261,7 @@ namespace ShareX
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen);
+            new CaptureFullscreen().Capture(true);
         }
 
         private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
@@ -1275,7 +1275,7 @@ namespace ShareX
             WindowInfo wi = tsi.Tag as WindowInfo;
             if (wi != null)
             {
-                CaptureTaskHelpers.CaptureWindow(wi.Handle);
+                new CaptureWindow(wi.Handle).Capture(true);
             }
         }
 
@@ -1285,28 +1285,28 @@ namespace ShareX
             Rectangle rect = (Rectangle)tsi.Tag;
             if (!rect.IsEmpty)
             {
-                CaptureTaskHelpers.CaptureMonitor(rect);
+                new CaptureMonitor(rect).Capture(true);
             }
         }
 
         private void tsmiRectangle_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region);
+            new CaptureRegion().Capture(true);
         }
 
         private void tsmiRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureRectangleLight();
+            new CaptureRegion(RegionCaptureType.Light).Capture(true);
         }
 
         private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureRectangleTransparent();
+            new CaptureRegion(RegionCaptureType.Transparent).Capture(true);
         }
 
         private void tsmiLastRegion_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion);
+            new CaptureLastRegion().Capture(true);
         }
 
         private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
@@ -1614,7 +1614,7 @@ namespace ShareX
 
         private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, null, false);
+            new CaptureFullscreen().Capture();
         }
 
         private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
@@ -1628,7 +1628,7 @@ namespace ShareX
             WindowInfo wi = tsi.Tag as WindowInfo;
             if (wi != null)
             {
-                CaptureTaskHelpers.CaptureWindow(wi.Handle, null, false);
+                new CaptureWindow(wi.Handle).Capture();
             }
         }
 
@@ -1638,28 +1638,28 @@ namespace ShareX
             Rectangle rect = (Rectangle)tsi.Tag;
             if (!rect.IsEmpty)
             {
-                CaptureTaskHelpers.CaptureMonitor(rect, null, false);
+                new CaptureMonitor(rect).Capture();
             }
         }
 
         private void tsmiTrayRectangle_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, null, false);
+            new CaptureRegion().Capture();
         }
 
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureRectangleLight(null, false);
+            new CaptureRegion(RegionCaptureType.Light).Capture();
         }
 
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureRectangleTransparent(null, false);
+            new CaptureRegion(RegionCaptureType.Transparent).Capture();
         }
 
         private void tsmiTrayLastRegion_Click(object sender, EventArgs e)
         {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, null, false);
+            new CaptureLastRegion().Capture();
         }
 
         private void tsmiTrayTextCapture_Click(object sender, EventArgs e)

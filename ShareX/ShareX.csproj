@@ -102,7 +102,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaptureTaskHelpers.cs" />
+    <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
+    <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
+    <Compile Include="CaptureHelpers\CaptureBase.cs" />
+    <Compile Include="CaptureHelpers\CaptureCustomRegion.cs" />
+    <Compile Include="CaptureHelpers\CaptureFullscreen.cs" />
+    <Compile Include="CaptureHelpers\CaptureLastRegion.cs" />
+    <Compile Include="CaptureHelpers\CaptureMonitor.cs" />
+    <Compile Include="CaptureHelpers\CaptureRegion.cs" />
+    <Compile Include="CaptureHelpers\CaptureWindow.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
