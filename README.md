@@ -9,6 +9,23 @@
 
 [![Screenshot](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
+# Table of Contents
+
+* [Features](#features)
+  * [Capturing](#capturing)
+    * [Region Capture Tools](#region-capture-tools)
+    * [After Capture Tasks](#after-capture-tasks)
+  * [Uploading](#uploading)
+    * [After Upload Tasks](#after-upload-tasks)
+  * [Destinations](#destinations)
+    * [Image Uploaders](#image-uploaders)
+    * [Text Uploaders](#text-uploaders)
+    * [File Uploaders](#file-uploaders)
+    * [URL Shorteners](#url-shorteners)
+    * [URL Sharing Services](#url-sharing-services)
+* [Tools](#tools)
+  
+
 # Features
 
 ## Capturing
@@ -47,7 +64,7 @@ ShareX incorporates the following methods to allow screen capture.
   * Line
   * Arrow
   * Text
-  * Speech balloon
+  * Speech balloonC
   * Step
   * Image
 * Effect
@@ -64,7 +81,7 @@ You can select any or all of these tasks to be automatically run after each scre
 * Add image effects / watermark
 * Open in image editor
 * Copy image to clipboard
-* Print image
+* Print imagep
 * Save image to file
 * Save image to file as
 * Save thumbnail image to file
