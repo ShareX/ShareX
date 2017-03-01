@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
+using System.Drawing;
 using System.Threading;
 
 namespace ShareX
@@ -111,6 +113,33 @@ namespace ShareX
 
                 UploadManager.RunImageTask(imageInfo, taskSettings);
             }
+        }
+
+        protected ImageInfo CreateImageInfo()
+        {
+            return CreateImageInfo(Rectangle.Empty, null);
+        }
+
+        protected ImageInfo CreateImageInfo(Rectangle insideRect)
+        {
+            return CreateImageInfo(insideRect, "explorer");
+        }
+
+        protected ImageInfo CreateImageInfo(Rectangle insideRect, string ignoreProcess)
+        {
+            ImageInfo imageInfo = new ImageInfo();
+
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+            WindowInfo windowInfo = new WindowInfo(handle);
+
+            if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.InvariantCultureIgnoreCase)) &&
+                (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
+            {
+                imageInfo.WindowTitle = windowInfo.Text;
+                imageInfo.ProcessName = windowInfo.ProcessName;
+            }
+
+            return imageInfo;
         }
     }
 }

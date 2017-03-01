@@ -31,9 +31,10 @@ namespace ShareX
     {
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            Rectangle regionBounds = taskSettings.CaptureSettings.CaptureCustomRegion;
-            Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(regionBounds);
-            return new ImageInfo(img);
+            Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
+            ImageInfo imageInfo = CreateImageInfo(rect);
+            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+            return imageInfo;
         }
     }
 }

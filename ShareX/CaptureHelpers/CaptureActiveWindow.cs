@@ -23,19 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System.Diagnostics;
-using System.Drawing;
-
 namespace ShareX
 {
     public class CaptureActiveWindow : CaptureBase
     {
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = new ImageInfo();
-            imageInfo.WindowTitle = NativeMethods.GetForegroundWindowText();
-            imageInfo.ProcessName = NativeMethods.GetForegroundWindowProcessName();
+            ImageInfo imageInfo = CreateImageInfo();
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {

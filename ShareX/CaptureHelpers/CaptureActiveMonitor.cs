@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX
@@ -31,8 +32,10 @@ namespace ShareX
     {
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
-            return new ImageInfo(img);
+            Rectangle rect = CaptureHelpers.GetActiveScreenWorkingArea();
+            ImageInfo imageInfo = CreateImageInfo(rect);
+            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
+            return imageInfo;
         }
     }
 }
