@@ -38,12 +38,16 @@ namespace ShareX
 
             IntPtr handle = NativeMethods.GetForegroundWindow();
             WindowInfo windowInfo = new WindowInfo(handle);
-            Rectangle screenRect = CaptureHelpers.GetScreenWorkingArea();
 
-            if (windowInfo.Rectangle.Contains(screenRect))
+            if (!windowInfo.ProcessName.Equals("explorer", StringComparison.InvariantCultureIgnoreCase))
             {
-                imageInfo.WindowTitle = windowInfo.Text;
-                imageInfo.ProcessName = windowInfo.ProcessName;
+                Rectangle screenRect = CaptureHelpers.GetScreenWorkingArea();
+
+                if (windowInfo.Rectangle.Contains(screenRect))
+                {
+                    imageInfo.WindowTitle = windowInfo.Text;
+                    imageInfo.ProcessName = windowInfo.ProcessName;
+                }
             }
 
             imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
