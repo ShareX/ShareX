@@ -46,15 +46,12 @@ namespace ShareX
 
             if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
             {
-                TaskEx.Run(() =>
-                {
-                    int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
-                    Thread.Sleep(sleep);
-                },
-                () =>
+                int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+
+                TaskEx.RunDelayed(() =>
                 {
                     CaptureInternal(taskSettings, autoHideForm);
-                });
+                }, delay);
             }
             else
             {

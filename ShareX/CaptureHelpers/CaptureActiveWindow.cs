@@ -33,33 +33,20 @@ namespace ShareX
     {
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            Image img;
-            string activeWindowTitle = NativeMethods.GetForegroundWindowText();
-            string activeProcessName = null;
-
-            using (Process process = NativeMethods.GetForegroundWindowProcess())
-            {
-                if (process != null)
-                {
-                    activeProcessName = process.ProcessName;
-                }
-            }
+            ImageInfo imageInfo = new ImageInfo();
+            imageInfo.WindowTitle = NativeMethods.GetForegroundWindowText();
+            imageInfo.ProcessName = NativeMethods.GetForegroundWindowProcessName();
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
+                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
             }
             else
             {
-                img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
+                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
             }
 
-            return new ImageInfo()
-            {
-                Image = img,
-                WindowTitle = activeWindowTitle,
-                ProcessName = activeProcessName
-            };
+            return imageInfo;
         }
     }
 }

@@ -74,6 +74,19 @@ namespace ShareX.HelpersLib
             return GetProcessByWindowHandle(handle);
         }
 
+        public static string GetForegroundWindowProcessName()
+        {
+            using (Process process = GetForegroundWindowProcess())
+            {
+                if (process != null)
+                {
+                    return process.ProcessName;
+                }
+            }
+
+            return null;
+        }
+
         public static Process GetProcessByWindowHandle(IntPtr hwnd)
         {
             if (hwnd.ToInt32() > 0)
