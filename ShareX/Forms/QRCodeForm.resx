@@ -125,7 +125,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="tsmiCopy.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
@@ -135,7 +135,7 @@
     <value>Copy to clipboard</value>
   </data>
   <data name="tsmiSaveAs.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="tsmiSaveAs.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
