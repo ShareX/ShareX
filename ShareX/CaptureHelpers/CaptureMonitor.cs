@@ -38,8 +38,9 @@ namespace ShareX
 
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            Image img = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
-            return new ImageInfo(img);
+            ImageInfo imageInfo = CreateImageInfo(MonitorRectangle);
+            imageInfo.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
+            return imageInfo;
         }
     }
 }

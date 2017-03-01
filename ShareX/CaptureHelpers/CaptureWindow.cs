@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -51,18 +52,21 @@ namespace ShareX
             NativeMethods.SetForegroundWindow(WindowHandle);
             Thread.Sleep(250);
 
-            Image img;
+            ImageInfo imageInfo = new ImageInfo();
+            WindowInfo windowInfo = new WindowInfo(WindowHandle);
+            imageInfo.WindowTitle = windowInfo.Text;
+            imageInfo.ProcessName = windowInfo.ProcessName;
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                img = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle);
+                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle);
             }
             else
             {
-                img = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle);
+                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle);
             }
 
-            return new ImageInfo(img);
+            return imageInfo;
         }
     }
 }
