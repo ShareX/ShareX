@@ -54,8 +54,7 @@ namespace ShareX
 
             ImageInfo imageInfo = new ImageInfo();
             WindowInfo windowInfo = new WindowInfo(WindowHandle);
-            imageInfo.WindowTitle = windowInfo.Text;
-            imageInfo.ProcessName = windowInfo.ProcessName;
+            imageInfo.UpdateInfo(windowInfo);
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {

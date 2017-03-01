@@ -135,8 +135,7 @@ namespace ShareX
             if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.InvariantCultureIgnoreCase)) &&
                 (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
             {
-                imageInfo.WindowTitle = windowInfo.Text;
-                imageInfo.ProcessName = windowInfo.ProcessName;
+                imageInfo.UpdateInfo(windowInfo);
             }
 
             return imageInfo;

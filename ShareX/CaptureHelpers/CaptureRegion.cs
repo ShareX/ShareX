@@ -89,12 +89,7 @@ namespace ShareX
                     if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();
-
-                        if (windowInfo != null)
-                        {
-                            imageInfo.WindowTitle = windowInfo.Text;
-                            imageInfo.ProcessName = windowInfo.ProcessName;
-                        }
+                        imageInfo.UpdateInfo(windowInfo);
                     }
 
                     lastRegionCaptureType = RegionCaptureType.Default;

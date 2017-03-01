@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 
@@ -41,6 +42,15 @@ namespace ShareX
         public ImageInfo(Image image)
         {
             Image = image;
+        }
+
+        public void UpdateInfo(WindowInfo windowInfo)
+        {
+            if (windowInfo != null)
+            {
+                WindowTitle = windowInfo.Text;
+                ProcessName = windowInfo.ProcessName;
+            }
         }
 
         public void Dispose()
