@@ -149,10 +149,10 @@
     <value>File path without extension + "Output file name extension"</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Title of active window</value>
+    <value>Title of window</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Process name of active window</value>
+    <value>Process name of window</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
     <value>Current year</value>

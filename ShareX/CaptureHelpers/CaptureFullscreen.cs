@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
+using System;
 using System.Drawing;
 
 namespace ShareX
@@ -31,8 +34,21 @@ namespace ShareX
     {
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
-            return new ImageInfo(img);
+            ImageInfo imageInfo = new ImageInfo();
+
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+            WindowInfo windowInfo = new WindowInfo(handle);
+            Rectangle screenRect = CaptureHelpers.GetScreenWorkingArea();
+
+            if (windowInfo.Rectangle.Contains(screenRect))
+            {
+                imageInfo.WindowTitle = windowInfo.Text;
+                imageInfo.ProcessName = windowInfo.ProcessName;
+            }
+
+            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+
+            return imageInfo;
         }
     }
 }

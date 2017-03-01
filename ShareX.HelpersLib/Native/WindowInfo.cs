@@ -40,7 +40,16 @@ namespace ShareX.ScreenCaptureLib
 
         public Process Process => NativeMethods.GetProcessByWindowHandle(Handle);
 
-        public string ProcessName => Process?.ProcessName;
+        public string ProcessName
+        {
+            get
+            {
+                using (Process process = Process)
+                {
+                    return process?.ProcessName;
+                }
+            }
+        }
 
         public Rectangle Rectangle => CaptureHelpers.GetWindowRectangle(Handle);
 

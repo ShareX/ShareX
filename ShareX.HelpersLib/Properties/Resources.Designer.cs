@@ -2105,7 +2105,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Process name of active window.
+        ///   Looks up a localized string similar to Process name of window.
         /// </summary>
         internal static string ReplCodeMenuEntry_pn_Process_name_of_active_window {
             get {
@@ -2150,7 +2150,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title of active window.
+        ///   Looks up a localized string similar to Title of window.
         /// </summary>
         internal static string ReplCodeMenuEntry_t_Title_of_active_window {
             get {

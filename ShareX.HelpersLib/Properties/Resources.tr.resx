@@ -172,7 +172,7 @@
     <value>Güncel saniye</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Aktif pencerenin işlem ismi</value>
+    <value>Pencerenin işlem ismi</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Rastgele alfanumerik karakter. {n} haneli</value>
@@ -181,7 +181,7 @@
     <value>Rastgele 0 ile 9 arasında sayı. {n} haneli</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Aktif pencerenin başlığı</value>
+    <value>Pencerenin başlığı</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
     <value>Güncel yıl</value>
