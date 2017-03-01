@@ -358,10 +358,14 @@ namespace ShareX
                 CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
-            if (imageInfo != null && imageInfo.Image != null)
+            if (imageInfo != null)
             {
-                nameParser.ImageWidth = imageInfo.Image.Width;
-                nameParser.ImageHeight = imageInfo.Image.Height;
+                if (imageInfo.Image != null)
+                {
+                    nameParser.ImageWidth = imageInfo.Image.Width;
+                    nameParser.ImageHeight = imageInfo.Image.Height;
+                }
+
                 nameParser.WindowText = imageInfo.WindowTitle;
                 nameParser.ProcessName = imageInfo.ProcessName;
             }
