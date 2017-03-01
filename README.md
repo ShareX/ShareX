@@ -1,5 +1,4 @@
 # ShareX
-### Screen capture, file sharing and productivity tool
 
 [![Website](https://img.shields.io/badge/ShareX-website-blue.svg)](https://getsharex.com)
 [![IRC](https://img.shields.io/badge/IRC-%23ShareX-blue.svg)](https://webchat.freenode.net/?channels=%23ShareX)
