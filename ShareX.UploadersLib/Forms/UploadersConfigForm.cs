@@ -3112,7 +3112,7 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("http://www.w3schools.com/xsl/xpath_syntax.asp");
+            URLHelpers.OpenURL("https://www.w3schools.com/xml/xpath_syntax.asp");
         }
 
         private void btnCustomUploaderXmlSyntaxAdd_Click(object sender, EventArgs e)

@@ -541,6 +541,342 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Name" xml:space="preserve">
+    <value>btnCustomUploaderJsonAddSyntax</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Parent" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 22</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Name" xml:space="preserve">
+    <value>btnCustomUploadJsonPathHelp</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Parent" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 56</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 52</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Name" xml:space="preserve">
+    <value>lblCustomUploaderJsonPathExample</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Parent" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPath.Name" xml:space="preserve">
+    <value>lblCustomUploaderJsonPath</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPath.Parent" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderJsonPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtCustomUploaderJsonPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="txtCustomUploaderJsonPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtCustomUploaderJsonPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderJsonPath.Name" xml:space="preserve">
+    <value>txtCustomUploaderJsonPath</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderJsonPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderJsonPath.Parent" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderJsonPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 158</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Name" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Parent" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Name" xml:space="preserve">
+    <value>btnCustomUploaderXmlSyntaxAdd</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Parent" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 22</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Name" xml:space="preserve">
+    <value>btnCustomUploaderXPathHelp</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Parent" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderXPathHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 56</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 52</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPathExample.Name" xml:space="preserve">
+    <value>lblCustomUploaderXPathExample</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPathExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPathExample.Parent" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPathExample.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblCustomUploaderXPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderXPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblCustomUploaderXPath.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPath.Name" xml:space="preserve">
+    <value>lblCustomUploaderXPath</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPath.Parent" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderXPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtCustomUploaderXPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="txtCustomUploaderXPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtCustomUploaderXPath.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderXPath.Name" xml:space="preserve">
+    <value>txtCustomUploaderXPath</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderXPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderXPath.Parent" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderXPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 158</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Name" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Parent" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnCustomUploaderRegexHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -749,342 +1085,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcCustomUploaderResponseParse</value>
   </data>
   <data name="&gt;&gt;tpCustomUploaderRegexParse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 128</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 23</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Add syntax to URL field</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Name" xml:space="preserve">
-    <value>btnCustomUploaderJsonAddSyntax</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Parent" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 22</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Name" xml:space="preserve">
-    <value>btnCustomUploadJsonPathHelp</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Parent" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploadJsonPathHelp.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 52</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Examples:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Name" xml:space="preserve">
-    <value>lblCustomUploaderJsonPathExample</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.Parent" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPathExample.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPath.Name" xml:space="preserve">
-    <value>lblCustomUploaderJsonPath</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPath.Parent" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderJsonPath.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtCustomUploaderJsonPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="txtCustomUploaderJsonPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtCustomUploaderJsonPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderJsonPath.Name" xml:space="preserve">
-    <value>txtCustomUploaderJsonPath</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderJsonPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderJsonPath.Parent" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderJsonPath.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 158</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Name" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Parent" xml:space="preserve">
-    <value>tcCustomUploaderResponseParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 128</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 23</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Add syntax to URL field</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Name" xml:space="preserve">
-    <value>btnCustomUploaderXmlSyntaxAdd</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.Parent" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXmlSyntaxAdd.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 22</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Name" xml:space="preserve">
-    <value>btnCustomUploaderXPathHelp</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXPathHelp.Parent" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderXPathHelp.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 52</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Examples:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPathExample.Name" xml:space="preserve">
-    <value>lblCustomUploaderXPathExample</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPathExample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPathExample.Parent" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPathExample.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblCustomUploaderXPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderXPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="lblCustomUploaderXPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPath.Name" xml:space="preserve">
-    <value>lblCustomUploaderXPath</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPath.Parent" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderXPath.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtCustomUploaderXPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="txtCustomUploaderXPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtCustomUploaderXPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderXPath.Name" xml:space="preserve">
-    <value>txtCustomUploaderXPath</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderXPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderXPath.Parent" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderXPath.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 158</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Name" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Parent" xml:space="preserve">
-    <value>tcCustomUploaderResponseParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="tcCustomUploaderResponseParse.Location" type="System.Drawing.Point, System.Drawing">
@@ -4117,13 +4117,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4249,13 +4249,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -4501,13 +4501,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4795,13 +4795,13 @@ store.book[0].title</value>
     <value>9</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4990,13 +4990,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5407,13 +5407,13 @@ store.book[0].title</value>
     <value>16</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5620,13 +5620,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -5941,10 +5941,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6289,13 +6289,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -6502,13 +6502,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6664,13 +6664,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -6841,13 +6841,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -7027,13 +7027,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -7186,13 +7186,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -7636,13 +7636,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7846,10 +7846,10 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -9961,633 +9961,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpUplea.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 16</value>
-  </data>
-  <data name="lblSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="lblSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>File:</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
-    <value>lblSharedFolderFiles</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSharedFolderText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 16</value>
-  </data>
-  <data name="lblSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="lblSharedFolderText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Text:</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Name" xml:space="preserve">
-    <value>lblSharedFolderText</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 12</value>
-  </data>
-  <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Name" xml:space="preserve">
-    <value>cboSharedFolderFiles</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="lblSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="lblSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Image:</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Name" xml:space="preserve">
-    <value>lblSharedFolderImages</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderImages.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 12</value>
-  </data>
-  <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Name" xml:space="preserve">
-    <value>cboSharedFolderText</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
-  </data>
-  <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Name" xml:space="preserve">
-    <value>cboSharedFolderImages</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 424</value>
-  </data>
-  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
-    <value>ucLocalhostAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
-  </data>
-  <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Shared folder</value>
-  </data>
-  <data name="&gt;&gt;tpSharedFolder.Name" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;tpSharedFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpSharedFolder.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 408</value>
-  </data>
-  <data name="txtEmailAutomaticSendTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtEmailAutomaticSendTo.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;txtEmailAutomaticSendTo.Name" xml:space="preserve">
-    <value>txtEmailAutomaticSendTo</value>
-  </data>
-  <data name="&gt;&gt;txtEmailAutomaticSendTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailAutomaticSendTo.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailAutomaticSendTo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbEmailAutomaticSend.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbEmailAutomaticSend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbEmailAutomaticSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 384</value>
-  </data>
-  <data name="cbEmailAutomaticSend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 17</value>
-  </data>
-  <data name="cbEmailAutomaticSend.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
-    <value>Send email without show dialog to this email address:</value>
-  </data>
-  <data name="&gt;&gt;cbEmailAutomaticSend.Name" xml:space="preserve">
-    <value>cbEmailAutomaticSend</value>
-  </data>
-  <data name="&gt;&gt;cbEmailAutomaticSend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbEmailAutomaticSend.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;cbEmailAutomaticSend.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblEmailSmtpServer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailSmtpServer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblEmailSmtpServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="lblEmailSmtpServer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>SMTP server:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpServer.Name" xml:space="preserve">
-    <value>lblEmailSmtpServer</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpServer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpServer.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpServer.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblEmailPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
-  </data>
-  <data name="lblEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblEmailPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailPassword.Name" xml:space="preserve">
-    <value>lblEmailPassword</value>
-  </data>
-  <data name="&gt;&gt;lblEmailPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailPassword.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailPassword.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbEmailRememberLastTo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbEmailRememberLastTo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
-  </data>
-  <data name="cbEmailRememberLastTo.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>Remember last recipient address</value>
-  </data>
-  <data name="&gt;&gt;cbEmailRememberLastTo.Name" xml:space="preserve">
-    <value>cbEmailRememberLastTo</value>
-  </data>
-  <data name="&gt;&gt;cbEmailRememberLastTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbEmailRememberLastTo.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;cbEmailRememberLastTo.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtEmailFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtEmailFrom.Name" xml:space="preserve">
-    <value>txtEmailFrom</value>
-  </data>
-  <data name="&gt;&gt;txtEmailFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailFrom.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailFrom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
-  </data>
-  <data name="txtEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtEmailPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtEmailPassword.Name" xml:space="preserve">
-    <value>txtEmailPassword</value>
-  </data>
-  <data name="&gt;&gt;txtEmailPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailPassword.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 248</value>
-  </data>
-  <data name="txtEmailDefaultBody.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtEmailDefaultBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 128</value>
-  </data>
-  <data name="txtEmailDefaultBody.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultBody.Name" xml:space="preserve">
-    <value>txtEmailDefaultBody</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultBody.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultBody.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblEmailFrom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailFrom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="lblEmailFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailFrom.Name" xml:space="preserve">
-    <value>lblEmailFrom</value>
-  </data>
-  <data name="&gt;&gt;lblEmailFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailFrom.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailFrom.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="txtEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtEmailSmtpServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtEmailSmtpServer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtEmailSmtpServer.Name" xml:space="preserve">
-    <value>txtEmailSmtpServer</value>
-  </data>
-  <data name="&gt;&gt;txtEmailSmtpServer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailSmtpServer.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailSmtpServer.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="lblEmailDefaultSubject.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailDefaultSubject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 184</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblEmailDefaultSubject.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>Default subject:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultSubject.Name" xml:space="preserve">
-    <value>lblEmailDefaultSubject</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultSubject.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultSubject.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultSubject.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblEmailDefaultBody.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailDefaultBody.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 232</value>
-  </data>
-  <data name="lblEmailDefaultBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="lblEmailDefaultBody.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>Default message:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultBody.Name" xml:space="preserve">
-    <value>lblEmailDefaultBody</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultBody.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailDefaultBody.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="nudEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 32</value>
-  </data>
-  <data name="nudEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudEmailSmtpPort.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudEmailSmtpPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudEmailSmtpPort.Name" xml:space="preserve">
-    <value>nudEmailSmtpPort</value>
-  </data>
-  <data name="&gt;&gt;nudEmailSmtpPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudEmailSmtpPort.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;nudEmailSmtpPort.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblEmailSmtpPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmailSmtpPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 16</value>
-  </data>
-  <data name="lblEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="lblEmailSmtpPort.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpPort.Name" xml:space="preserve">
-    <value>lblEmailSmtpPort</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpPort.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;lblEmailSmtpPort.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="txtEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 200</value>
-  </data>
-  <data name="txtEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 20</value>
-  </data>
-  <data name="txtEmailDefaultSubject.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultSubject.Name" xml:space="preserve">
-    <value>txtEmailDefaultSubject</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultSubject.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultSubject.Parent" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;txtEmailDefaultSubject.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="tpEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpEmail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
-  </data>
-  <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="&gt;&gt;tpEmail.Name" xml:space="preserve">
-    <value>tpEmail</value>
-  </data>
-  <data name="&gt;&gt;tpEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpEmail.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -11093,6 +10466,633 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>544, 16</value>
+  </data>
+  <data name="lblSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="lblSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
+    <value>lblSharedFolderFiles</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderFiles.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSharedFolderText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 16</value>
+  </data>
+  <data name="lblSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="lblSharedFolderText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderText.Name" xml:space="preserve">
+    <value>lblSharedFolderText</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderText.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 12</value>
+  </data>
+  <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderFiles.Name" xml:space="preserve">
+    <value>cboSharedFolderFiles</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderFiles.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="lblSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Image:</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderImages.Name" xml:space="preserve">
+    <value>lblSharedFolderImages</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderImages.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;lblSharedFolderImages.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 12</value>
+  </data>
+  <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderText.Name" xml:space="preserve">
+    <value>cboSharedFolderText</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderText.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 12</value>
+  </data>
+  <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderImages.Name" xml:space="preserve">
+    <value>cboSharedFolderImages</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderImages.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 424</value>
+  </data>
+  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
+    <value>ucLocalhostAccounts</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Shared folder</value>
+  </data>
+  <data name="&gt;&gt;tpSharedFolder.Name" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;tpSharedFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpSharedFolder.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 408</value>
+  </data>
+  <data name="txtEmailAutomaticSendTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtEmailAutomaticSendTo.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtEmailAutomaticSendTo.Name" xml:space="preserve">
+    <value>txtEmailAutomaticSendTo</value>
+  </data>
+  <data name="&gt;&gt;txtEmailAutomaticSendTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailAutomaticSendTo.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailAutomaticSendTo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbEmailAutomaticSend.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbEmailAutomaticSend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 384</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 17</value>
+  </data>
+  <data name="cbEmailAutomaticSend.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Send email without show dialog to this email address:</value>
+  </data>
+  <data name="&gt;&gt;cbEmailAutomaticSend.Name" xml:space="preserve">
+    <value>cbEmailAutomaticSend</value>
+  </data>
+  <data name="&gt;&gt;cbEmailAutomaticSend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbEmailAutomaticSend.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;cbEmailAutomaticSend.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblEmailSmtpServer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailSmtpServer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblEmailSmtpServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblEmailSmtpServer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>SMTP server:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpServer.Name" xml:space="preserve">
+    <value>lblEmailSmtpServer</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpServer.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpServer.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblEmailPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblEmailPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailPassword.Name" xml:space="preserve">
+    <value>lblEmailPassword</value>
+  </data>
+  <data name="&gt;&gt;lblEmailPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailPassword.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailPassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbEmailRememberLastTo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbEmailRememberLastTo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="cbEmailRememberLastTo.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Remember last recipient address</value>
+  </data>
+  <data name="&gt;&gt;cbEmailRememberLastTo.Name" xml:space="preserve">
+    <value>cbEmailRememberLastTo</value>
+  </data>
+  <data name="&gt;&gt;cbEmailRememberLastTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbEmailRememberLastTo.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;cbEmailRememberLastTo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtEmailFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtEmailFrom.Name" xml:space="preserve">
+    <value>txtEmailFrom</value>
+  </data>
+  <data name="&gt;&gt;txtEmailFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailFrom.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailFrom.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="txtEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtEmailPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtEmailPassword.Name" xml:space="preserve">
+    <value>txtEmailPassword</value>
+  </data>
+  <data name="&gt;&gt;txtEmailPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailPassword.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailPassword.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 248</value>
+  </data>
+  <data name="txtEmailDefaultBody.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtEmailDefaultBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 128</value>
+  </data>
+  <data name="txtEmailDefaultBody.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultBody.Name" xml:space="preserve">
+    <value>txtEmailDefaultBody</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultBody.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultBody.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblEmailFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailFrom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblEmailFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailFrom.Name" xml:space="preserve">
+    <value>lblEmailFrom</value>
+  </data>
+  <data name="&gt;&gt;lblEmailFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailFrom.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailFrom.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtEmailSmtpServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtEmailSmtpServer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtEmailSmtpServer.Name" xml:space="preserve">
+    <value>txtEmailSmtpServer</value>
+  </data>
+  <data name="&gt;&gt;txtEmailSmtpServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailSmtpServer.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailSmtpServer.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblEmailDefaultSubject.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailDefaultSubject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 184</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblEmailDefaultSubject.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Default subject:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultSubject.Name" xml:space="preserve">
+    <value>lblEmailDefaultSubject</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultSubject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultSubject.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultSubject.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblEmailDefaultBody.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailDefaultBody.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 232</value>
+  </data>
+  <data name="lblEmailDefaultBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="lblEmailDefaultBody.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Default message:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultBody.Name" xml:space="preserve">
+    <value>lblEmailDefaultBody</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultBody.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailDefaultBody.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="nudEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 32</value>
+  </data>
+  <data name="nudEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="nudEmailSmtpPort.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudEmailSmtpPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudEmailSmtpPort.Name" xml:space="preserve">
+    <value>nudEmailSmtpPort</value>
+  </data>
+  <data name="&gt;&gt;nudEmailSmtpPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudEmailSmtpPort.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;nudEmailSmtpPort.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblEmailSmtpPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmailSmtpPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 16</value>
+  </data>
+  <data name="lblEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lblEmailSmtpPort.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpPort.Name" xml:space="preserve">
+    <value>lblEmailSmtpPort</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpPort.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmailSmtpPort.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txtEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <data name="txtEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 20</value>
+  </data>
+  <data name="txtEmailDefaultSubject.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultSubject.Name" xml:space="preserve">
+    <value>txtEmailDefaultSubject</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultSubject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultSubject.Parent" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmailDefaultSubject.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="tpEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpEmail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="&gt;&gt;tpEmail.Name" xml:space="preserve">
+    <value>tpEmail</value>
+  </data>
+  <data name="&gt;&gt;tpEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpEmail.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

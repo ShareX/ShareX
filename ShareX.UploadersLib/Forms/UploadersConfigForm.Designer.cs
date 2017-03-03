@@ -866,9 +866,9 @@
             // 
             // tcCustomUploaderResponseParse
             // 
-            this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderRegexParse);
             this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderJsonParse);
             this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderXmlParse);
+            this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderRegexParse);
             resources.ApplyResources(this.tcCustomUploaderResponseParse, "tcCustomUploaderResponseParse");
             this.tcCustomUploaderResponseParse.Name = "tcCustomUploaderResponseParse";
             this.tcCustomUploaderResponseParse.SelectedIndex = 0;
@@ -1727,9 +1727,9 @@
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpUplea);
+            this.tcFileUploaders.Controls.Add(this.tpPlik);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
-            this.tcFileUploaders.Controls.Add(this.tpPlik);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";
