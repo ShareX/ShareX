@@ -4117,13 +4117,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4249,13 +4249,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -4501,13 +4501,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4795,13 +4795,13 @@ store.book[0].title</value>
     <value>9</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4990,13 +4990,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5407,13 +5407,13 @@ store.book[0].title</value>
     <value>16</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5620,13 +5620,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -5941,10 +5941,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6289,13 +6289,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -6502,13 +6502,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6664,13 +6664,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -6841,13 +6841,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -7027,13 +7027,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -7186,13 +7186,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -7636,13 +7636,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7846,10 +7846,10 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -11689,6 +11689,84 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPaste_ee.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblGistOAuthInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGistOAuthInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 59</value>
+  </data>
+  <data name="lblGistOAuthInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 13</value>
+  </data>
+  <data name="lblGistOAuthInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>OAuth is only working for Github directly (no Github Enterprise)</value>
+  </data>
+  <data name="&gt;&gt;lblGistOAuthInfo.Name" xml:space="preserve">
+    <value>lblGistOAuthInfo</value>
+  </data>
+  <data name="&gt;&gt;lblGistOAuthInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGistOAuthInfo.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;lblGistOAuthInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGistCustomURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGistCustomURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 327</value>
+  </data>
+  <data name="lblGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="lblGistCustomURL.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblGistCustomURL.Text" xml:space="preserve">
+    <value>Custom domain:</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURL.Name" xml:space="preserve">
+    <value>lblGistCustomURL</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURL.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURL.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 343</value>
+  </data>
+  <data name="txtGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtGistCustomURL.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;txtGistCustomURL.Name" xml:space="preserve">
+    <value>txtGistCustomURL</value>
+  </data>
+  <data name="&gt;&gt;txtGistCustomURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGistCustomURL.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;txtGistCustomURL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="cbGistUseRawURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -11696,7 +11774,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistUseRawURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 307</value>
   </data>
   <data name="cbGistUseRawURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -11717,7 +11795,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;cbGistUseRawURL.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="cbGistPublishPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11726,7 +11804,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistPublishPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 272</value>
+    <value>16, 283</value>
   </data>
   <data name="cbGistPublishPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -11747,13 +11825,13 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;cbGistPublishPublic.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 75</value>
   </data>
   <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 205</value>
@@ -11771,7 +11849,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -11792,7 +11870,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="tpGist.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

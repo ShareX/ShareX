@@ -300,6 +300,7 @@ namespace ShareX.UploadersLib
 
             cbGistPublishPublic.Checked = Config.GistPublishPublic;
             cbGistUseRawURL.Checked = Config.GistRawURL;
+            txtGistCustomURL.Text = Config.GistCustomURL;
 
             // Upaste
 
@@ -1184,6 +1185,11 @@ namespace ShareX.UploadersLib
         private void cbGistUseRawURL_CheckedChanged(object sender, EventArgs e)
         {
             Config.GistRawURL = cbGistUseRawURL.Checked;
+        }
+
+        private void txtGistCustomURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.GistCustomURL = txtGistCustomURL.Text;
         }
 
         #endregion Gist
