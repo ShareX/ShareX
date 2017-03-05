@@ -107,7 +107,7 @@ namespace ShareX.UploadersLib
         public OAuth2Info GistOAuth2Info = null;
         public bool GistPublishPublic = false;
         public bool GistRawURL = false;
-        public string GistCustomURL = "https://api.github.com";
+        public string GistCustomURL = "";
 
         // uPaste
 

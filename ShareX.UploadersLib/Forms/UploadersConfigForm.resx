@@ -11689,20 +11689,47 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPaste_ee.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblGistCustomURLExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGistCustomURLExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 364</value>
+  </data>
+  <data name="lblGistCustomURLExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 13</value>
+  </data>
+  <data name="lblGistCustomURLExample.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="lblGistCustomURLExample.Text" xml:space="preserve">
+    <value>Example: https://api.github.com</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURLExample.Name" xml:space="preserve">
+    <value>lblGistCustomURLExample</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURLExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURLExample.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;lblGistCustomURLExample.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblGistOAuthInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblGistOAuthInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 59</value>
+    <value>16, 64</value>
   </data>
   <data name="lblGistOAuthInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 13</value>
+    <value>282, 13</value>
   </data>
   <data name="lblGistOAuthInfo.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="lblGistOAuthInfo.Text" xml:space="preserve">
-    <value>OAuth is only working for Github directly (no Github Enterprise)</value>
+    <value>Note: User account is not supported for GitHub Enterprise.</value>
   </data>
   <data name="&gt;&gt;lblGistOAuthInfo.Name" xml:space="preserve">
     <value>lblGistOAuthInfo</value>
@@ -11714,7 +11741,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;lblGistOAuthInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblGistCustomURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11723,7 +11750,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 327</value>
+    <value>13, 344</value>
   </data>
   <data name="lblGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -11744,10 +11771,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;lblGistCustomURL.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 343</value>
+    <value>16, 360</value>
   </data>
   <data name="txtGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -11765,7 +11792,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;txtGistCustomURL.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGistUseRawURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11774,7 +11801,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistUseRawURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 307</value>
+    <value>16, 320</value>
   </data>
   <data name="cbGistUseRawURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -11795,7 +11822,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;cbGistUseRawURL.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbGistPublishPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11804,7 +11831,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistPublishPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 283</value>
+    <value>16, 296</value>
   </data>
   <data name="cbGistPublishPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -11825,13 +11852,13 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;cbGistPublishPublic.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 75</value>
+    <value>16, 88</value>
   </data>
   <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 205</value>
@@ -11849,7 +11876,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -11870,7 +11897,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGist</value>
   </data>
   <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tpGist.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

@@ -479,6 +479,7 @@
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
+            this.lblGistOAuthInfo = new System.Windows.Forms.Label();
             this.lblGistCustomURL = new System.Windows.Forms.Label();
             this.txtGistCustomURL = new System.Windows.Forms.TextBox();
             this.cbGistUseRawURL = new System.Windows.Forms.CheckBox();
@@ -593,7 +594,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblGistOAuthInfo = new System.Windows.Forms.Label();
+            this.lblGistCustomURLExample = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3956,6 +3957,7 @@
             // 
             // tpGist
             // 
+            this.tpGist.Controls.Add(this.lblGistCustomURLExample);
             this.tpGist.Controls.Add(this.lblGistOAuthInfo);
             this.tpGist.Controls.Add(this.lblGistCustomURL);
             this.tpGist.Controls.Add(this.txtGistCustomURL);
@@ -3966,6 +3968,11 @@
             resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
             this.tpGist.UseVisualStyleBackColor = true;
+            // 
+            // lblGistOAuthInfo
+            // 
+            resources.ApplyResources(this.lblGistOAuthInfo, "lblGistOAuthInfo");
+            this.lblGistOAuthInfo.Name = "lblGistOAuthInfo";
             // 
             // lblGistCustomURL
             // 
@@ -4791,10 +4798,10 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lblGistOAuthInfo
+            // lblGistCustomURLExample
             // 
-            resources.ApplyResources(this.lblGistOAuthInfo, "lblGistOAuthInfo");
-            this.lblGistOAuthInfo.Name = "lblGistOAuthInfo";
+            resources.ApplyResources(this.lblGistCustomURLExample, "lblGistCustomURLExample");
+            this.lblGistCustomURLExample.Name = "lblGistCustomURLExample";
             // 
             // UploadersConfigForm
             // 
@@ -5531,5 +5538,6 @@
         private System.Windows.Forms.TextBox txtGistCustomURL;
         private System.Windows.Forms.Label lblGistCustomURL;
         private System.Windows.Forms.Label lblGistOAuthInfo;
+        private System.Windows.Forms.Label lblGistCustomURLExample;
     }
 }

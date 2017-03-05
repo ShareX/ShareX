@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 PublicUpload = config.GistPublishPublic,
                 RawURL = config.GistRawURL,
-                URLAPI = config.GistCustomURL
+                CustomURLAPI = config.GistCustomURL
             };
         }
 
@@ -65,11 +65,13 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class GitHubGist : TextUploader, IOAuth2Basic
     {
+        private const string URLAPI = "https://api.github.com/";
+
         public OAuth2Info AuthInfo { get; private set; }
 
         public bool PublicUpload { get; set; }
         public bool RawURL { get; set; }
-        public string URLAPI { get; set; }
+        public string CustomURLAPI { get; set; }
 
         public GitHubGist()
         {
@@ -133,7 +135,18 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 string json = JsonConvert.SerializeObject(gistUploadObject);
 
-                string url = $"{URLAPI}/gists";
+                string url;
+
+                if (!string.IsNullOrEmpty(CustomURLAPI))
+                {
+                    url = CustomURLAPI;
+                }
+                else
+                {
+                    url = URLAPI;
+                }
+
+                url = URLHelpers.CombineURL(url, "gists");
 
                 if (AuthInfo != null)
                 {
