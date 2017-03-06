@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class GitHubGist : TextUploader, IOAuth2Basic
     {
-        private const string URLAPI = "https://api.github.com/";
+        private const string URLAPI = "https://api.github.com";
 
         public OAuth2Info AuthInfo { get; private set; }
 

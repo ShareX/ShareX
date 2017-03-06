@@ -1018,6 +1018,7 @@ namespace ShareX
 
         private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
+#if !DEBUG
             if (Visible)
             {
                 tsmiDonate.StartAnimation();
@@ -1026,6 +1027,7 @@ namespace ShareX
             {
                 tsmiDonate.StopAnimation();
             }
+#endif
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
