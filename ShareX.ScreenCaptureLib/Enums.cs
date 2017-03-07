@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor,
         AnnotateRunAfterCaptureTasks,
         AnnotateContinueTask,
-        AnntoateCancelTask,
+        AnnotateCancelTask,
         AnnotateSaveImage,
         AnnotateSaveImageAs,
         AnnotateCopyImage,

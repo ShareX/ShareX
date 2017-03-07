@@ -171,9 +171,13 @@ namespace ShareX.ScreenCaptureLib
 
                 switch (form.Result)
                 {
-                    case RegionResult.Region:
+                    case RegionResult.Close: // Esc
+                    case RegionResult.AnnotateCancelTask:
+                        return null;
+                    case RegionResult.Region: // Enter
                     case RegionResult.AnnotateRunAfterCaptureTasks:
                         return form.GetResultImage();
+                    case RegionResult.Fullscreen: // Space
                     case RegionResult.AnnotateContinueTask:
                         return (Image)img.Clone();
                     case RegionResult.AnnotateSaveImage:

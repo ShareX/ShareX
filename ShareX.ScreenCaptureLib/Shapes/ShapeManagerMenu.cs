@@ -136,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (form.Mode == RegionCaptureMode.TaskEditor)
                 {
-                    ToolStripButton tsbClose = new ToolStripButton("Continue task (Right click)");
+                    ToolStripButton tsbClose = new ToolStripButton("Continue task (Space or right click)");
                     tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbClose.Image = Resources.control;
                     tsbClose.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateContinueTask);
@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib
                     ToolStripButton tsbCloseCancel = new ToolStripButton("Cancel task (Esc)");
                     tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbCloseCancel.Image = Resources.cross;
-                    tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnntoateCancelTask);
+                    tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateCancelTask);
                     tsMain.Items.Add(tsbCloseCancel);
                 }
 
