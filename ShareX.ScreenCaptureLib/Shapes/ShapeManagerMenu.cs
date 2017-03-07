@@ -139,13 +139,13 @@ namespace ShareX.ScreenCaptureLib
                     ToolStripButton tsbClose = new ToolStripButton("Continue task (Right click)");
                     tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbClose.Image = Resources.control;
-                    tsbClose.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                    tsbClose.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateContinueTask);
                     tsMain.Items.Add(tsbClose);
 
                     ToolStripButton tsbCloseCancel = new ToolStripButton("Cancel task (Esc)");
                     tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbCloseCancel.Image = Resources.cross;
-                    tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                    tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnntoateCancelTask);
                     tsMain.Items.Add(tsbCloseCancel);
                 }
 

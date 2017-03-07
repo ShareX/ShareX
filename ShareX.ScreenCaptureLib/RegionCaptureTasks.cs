@@ -150,8 +150,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static void AnnotateImage(Image img, string filePath, RegionCaptureOptions options,
-            Action<Image> afterCaptureTasksRequested,
+        public static Image AnnotateImage(Image img, string filePath, RegionCaptureOptions options,
             Action<Image, string> saveImageRequested,
             Action<Image, string> saveImageAsRequested,
             Action<Image> copyImageRequested,
@@ -170,41 +169,45 @@ namespace ShareX.ScreenCaptureLib
                 form.Prepare(img);
                 form.ShowDialog();
 
-                if (form.Result != RegionResult.Close)
+                switch (form.Result)
                 {
-                    Image result = form.GetResultImage();
-
-                    switch (form.Result)
-                    {
-                        default:
-                            result.Dispose();
-                            break;
-                        case RegionResult.Region:
-                        case RegionResult.AnnotateRunAfterCaptureTasks:
-                            afterCaptureTasksRequested(result);
-                            break;
-                        case RegionResult.AnnotateSaveImage:
-                            saveImageRequested(result, form.ImageFilePath);
-                            result.Dispose();
-                            break;
-                        case RegionResult.AnnotateSaveImageAs:
-                            saveImageAsRequested(result, form.ImageFilePath);
-                            result.Dispose();
-                            break;
-                        case RegionResult.AnnotateCopyImage:
-                            copyImageRequested(result);
-                            result.Dispose();
-                            break;
-                        case RegionResult.AnnotateUploadImage:
-                            uploadImageRequested(result);
-                            break;
-                        case RegionResult.AnnotatePrintImage:
-                            printImageRequested(result);
-                            result.Dispose();
-                            break;
-                    }
+                    case RegionResult.Region:
+                    case RegionResult.AnnotateRunAfterCaptureTasks:
+                        return form.GetResultImage();
+                    case RegionResult.AnnotateContinueTask:
+                        return (Image)img.Clone();
+                    case RegionResult.AnnotateSaveImage:
+                        using (Image resultSaveImage = form.GetResultImage())
+                        {
+                            saveImageRequested(resultSaveImage, form.ImageFilePath);
+                        }
+                        break;
+                    case RegionResult.AnnotateSaveImageAs:
+                        using (Image resultSaveImageAs = form.GetResultImage())
+                        {
+                            saveImageAsRequested(resultSaveImageAs, form.ImageFilePath);
+                        }
+                        break;
+                    case RegionResult.AnnotateCopyImage:
+                        using (Image resultCopyImage = form.GetResultImage())
+                        {
+                            copyImageRequested(resultCopyImage);
+                        }
+                        break;
+                    case RegionResult.AnnotateUploadImage:
+                        Image resultUploadImage = form.GetResultImage();
+                        uploadImageRequested(resultUploadImage);
+                        break;
+                    case RegionResult.AnnotatePrintImage:
+                        using (Image resultPrintImage = form.GetResultImage())
+                        {
+                            printImageRequested(resultPrintImage);
+                        }
+                        break;
                 }
             }
+
+            return null;
         }
 
         public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp)

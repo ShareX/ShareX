@@ -799,15 +799,7 @@ namespace ShareX
             {
                 if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                 {
-                    Image annotateImage = (Image)img.Clone();
-
-                    AnnotateImageUsingShareX(annotateImage, filePath, x =>
-                    {
-                        img.Dispose();
-                        img = x;
-                    }, taskSettings.CaptureSettingsReference.SurfaceOptions);
-
-                    return img;
+                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
                 }
                 else
                 {
@@ -820,10 +812,15 @@ namespace ShareX
 
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
-            AnnotateImageUsingShareX(img, filePath, x => UploadManager.RunImageTask(x, taskSettings), taskSettings.CaptureSettingsReference.SurfaceOptions);
+            Image result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+            if (result != null)
+            {
+                UploadManager.RunImageTask(result, taskSettings);
+            }
         }
 
-        private static void AnnotateImageUsingShareX(Image img, string filePath, Action<Image> onImageOutput, RegionCaptureOptions options)
+        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options)
         {
             if (img == null && File.Exists(filePath))
             {
@@ -834,8 +831,7 @@ namespace ShareX
             {
                 using (img)
                 {
-                    RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        x => onImageOutput(x),
+                    return RegionCaptureTasks.AnnotateImage(img, filePath, options,
                         (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
                         (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
                         x => ClipboardHelpers.CopyImage(x),
@@ -843,6 +839,8 @@ namespace ShareX
                         x => PrintImage(x));
                 }
             }
+
+            return null;
         }
 
         private static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
