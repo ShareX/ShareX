@@ -60,6 +60,8 @@ namespace ShareX
 
         protected ImageInfo ExecuteRegionCapture(TaskSettings taskSettings)
         {
+            AllowAnnotation = false;
+
             ImageInfo imageInfo = new ImageInfo();
 
             RegionCaptureMode mode;

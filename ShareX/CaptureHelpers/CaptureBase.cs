@@ -34,8 +34,7 @@ namespace ShareX
     public abstract class CaptureBase
     {
         public bool AllowAutoHideForm { get; set; } = true;
-
-        protected abstract ImageInfo Execute(TaskSettings taskSettings);
+        public bool AllowAnnotation { get; set; } = true;
 
         public void Capture(bool autoHideForm)
         {
@@ -61,6 +60,8 @@ namespace ShareX
             }
         }
 
+        protected abstract ImageInfo Execute(TaskSettings taskSettings);
+
         private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
         {
             if (autoHideForm && AllowAutoHideForm)
@@ -73,6 +74,7 @@ namespace ShareX
 
             try
             {
+                AllowAnnotation = true;
                 imageInfo = Execute(taskSettings);
             }
             catch (Exception ex)
@@ -99,8 +101,7 @@ namespace ShareX
                     TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) &&
-                    this.GetType() == typeof(CaptureRegion))
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                 }
