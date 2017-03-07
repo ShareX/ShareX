@@ -579,11 +579,11 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
-  <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Image editor...</value>
+  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
+    <value>Annotate image...</value>
   </data>
   <data name="tsmiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
@@ -1246,19 +1246,19 @@
     <value>Hide columns</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
@@ -1422,11 +1422,11 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Image editor...</value>
+  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
+    <value>Annotate image...</value>
   </data>
   <data name="tsmiTrayImageEffects.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
@@ -1908,10 +1908,10 @@
   <data name="&gt;&gt;tsmiScreenColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiImageEditor.Name" xml:space="preserve">
-    <value>tsmiImageEditor</value>
+  <data name="&gt;&gt;tsmiAnnotateImage.Name" xml:space="preserve">
+    <value>tsmiAnnotateImage</value>
   </data>
-  <data name="&gt;&gt;tsmiImageEditor.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiAnnotateImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageEffects.Name" xml:space="preserve">
@@ -2622,10 +2622,10 @@
   <data name="&gt;&gt;tsmiTrayScreenColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayImageEditor.Name" xml:space="preserve">
-    <value>tsmiTrayImageEditor</value>
+  <data name="&gt;&gt;tsmiTrayAnnotateImage.Name" xml:space="preserve">
+    <value>tsmiTrayAnnotateImage</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayImageEditor.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiTrayAnnotateImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEffects.Name" xml:space="preserve">
@@ -2908,6 +2908,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.6.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
