@@ -190,7 +190,8 @@ namespace ShareX.ScreenCaptureLib
         ScreenColorPicker,
         Ruler,
         OneClick,
-        Editor
+        Editor,
+        TaskEditor
     }
 
     public enum RegionCaptureAction // Localized

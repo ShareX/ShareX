@@ -53,7 +53,8 @@ namespace ShareX.ScreenCaptureLib
 
         public RegionCaptureMode Mode { get; private set; }
 
-        public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || Mode == RegionCaptureMode.Editor;
+        public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
+        public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
 
         public Point CurrentPosition { get; private set; }
 
@@ -156,7 +157,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Image = img;
 
-            if (Mode == RegionCaptureMode.Editor)
+            if (IsEditorMode)
             {
                 Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
 
@@ -1049,7 +1050,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Image GetResultImage()
         {
-            if (Mode == RegionCaptureMode.Editor)
+            if (IsEditorMode)
             {
                 foreach (BaseShape shape in ShapeManager.Shapes)
                 {

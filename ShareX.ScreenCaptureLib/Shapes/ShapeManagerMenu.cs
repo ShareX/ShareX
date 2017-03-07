@@ -114,15 +114,45 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.Items.Add(tslDragLeft);
 
-            if (form.Mode == RegionCaptureMode.Editor)
+            if (form.IsEditorMode)
             {
                 #region Editor mode
 
-                ToolStripButton tsbCompleteEdit = new ToolStripButton("Run after capture tasks");
+                ToolStripButton tsbCompleteEdit = new ToolStripButton();
+
+                if (form.Mode == RegionCaptureMode.Editor)
+                {
+                    tsbCompleteEdit.Text = "Run after capture tasks";
+                }
+                else
+                {
+                    tsbCompleteEdit.Text = "Apply changes & continue task (Enter)";
+                }
+
                 tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCompleteEdit.Image = Resources.tick;
                 tsbCompleteEdit.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
                 tsMain.Items.Add(tsbCompleteEdit);
+
+                if (form.Mode == RegionCaptureMode.TaskEditor)
+                {
+                    ToolStripButton tsbClose = new ToolStripButton("Continue task (Right click)");
+                    tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                    tsbClose.Image = Resources.control;
+                    tsbClose.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                    tsMain.Items.Add(tsbClose);
+
+                    ToolStripButton tsbCloseCancel = new ToolStripButton("Cancel task (Esc)");
+                    tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                    tsbCloseCancel.Image = Resources.cross;
+                    tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                    tsMain.Items.Add(tsbCloseCancel);
+                }
+
+                if (form.Mode == RegionCaptureMode.TaskEditor)
+                {
+                    tsMain.Items.Add(new ToolStripSeparator());
+                }
 
                 ToolStripButton tsbSaveImage = new ToolStripButton("Save image");
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -164,7 +194,7 @@ namespace ShareX.ScreenCaptureLib
 
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
-                if (form.Mode == RegionCaptureMode.Editor)
+                if (form.IsEditorMode)
                 {
                     if (IsShapeTypeRegion(shapeType))
                     {
@@ -524,7 +554,7 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Edit
 
-            if (form.Mode != RegionCaptureMode.Editor)
+            if (!form.IsEditorMode)
             {
                 tsMain.Items.Add(new ToolStripSeparator());
 

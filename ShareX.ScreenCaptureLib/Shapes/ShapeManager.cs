@@ -211,7 +211,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 CurrentShapeType = Config.LastRegionTool;
             }
-            else if (form.Mode == RegionCaptureMode.Editor)
+            else if (form.IsEditorMode)
             {
                 CurrentShapeType = Config.LastAnnotationTool;
             }

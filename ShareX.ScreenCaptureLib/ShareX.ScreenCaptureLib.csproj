@@ -217,6 +217,8 @@
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\arrow-circle-225-left.png" />
     <None Include="Resources\camera.png" />
+    <None Include="Resources\control.png" />
+    <None Include="Resources\cross.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
