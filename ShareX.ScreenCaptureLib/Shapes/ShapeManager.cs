@@ -556,12 +556,23 @@ namespace ShareX.ScreenCaptureLib
             switch (action)
             {
                 case RegionCaptureAction.CancelCapture:
-                    form.Close();
+                    if (form.Mode == RegionCaptureMode.TaskEditor)
+                    {
+                        form.Close(RegionResult.AnnotateContinueTask);
+                    }
+                    else
+                    {
+                        form.Close();
+                    }
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
                     if (IsShapeIntersect())
                     {
                         DeleteIntersectShape();
+                    }
+                    else if (form.Mode == RegionCaptureMode.TaskEditor)
+                    {
+                        form.Close(RegionResult.AnnotateContinueTask);
                     }
                     else
                     {
