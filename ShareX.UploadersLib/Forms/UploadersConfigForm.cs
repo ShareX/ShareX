@@ -3334,7 +3334,7 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/Custom-Uploader");
+            URLHelpers.OpenURL("https://getsharex.com/docs/custom-uploader");
         }
 
         private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
