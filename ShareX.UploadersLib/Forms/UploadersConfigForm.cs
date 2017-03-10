@@ -523,8 +523,8 @@ namespace ShareX.UploadersLib
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
 
-            cbAmazonS3Endpoint.Items.AddRange(AmazonS3.RegionEndpoints.ToArray());
-            cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
+            //cbAmazonS3Endpoint.Items.AddRange(AmazonS3.RegionEndpoints.ToArray());
+            //cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
             cbAmazonS3Endpoint.DisplayMember = "Name";
             UpdateAmazonS3Status();
 
@@ -1977,12 +1977,12 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            AmazonS3Region region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
+            /*AmazonS3Region region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
             if (region != null)
             {
                 Config.AmazonS3Settings.Endpoint = region.Identifier;
                 UpdateAmazonS3Status();
-            }
+            }*/
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
