@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.UploadersLib.Properties;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -67,20 +68,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
             var date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             var uri = string.Format("https://{0}.blob.core.windows.net/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
+			var contentType = Helpers.GetMimeType(fileName);
 
-            NameValueCollection requestHeaders = new NameValueCollection();
+			NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;
             requestHeaders["x-ms-version"] = apiVersion;
-            requestHeaders["x-ms-blob-type"] = "BlockBlob";
+            requestHeaders["x-ms-blob-type"] = "BlockBlob";			
 
-            var canonicalizedHeaders = string.Format("x-ms-blob-type:BlockBlob\nx-ms-date:{0}\nx-ms-version:{1}\n", date, apiVersion);
+			var canonicalizedHeaders = string.Format("x-ms-blob-type:BlockBlob\nx-ms-date:{0}\nx-ms-version:{1}\n", date, apiVersion);
             var canonicalizedResource = string.Format("/{0}/{1}/{2}", azureStorageAccountName, azureStorageContainer, fileName);
 
-            var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString());
+            var StringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
             requestHeaders["Authorization"] = string.Format("SharedKey {0}:{1}", azureStorageAccountName, HashRequest(StringToSign));
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, uri, stream, null, null, requestHeaders, null);
+			NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, uri, stream, contentType, null, requestHeaders, null);
 
             if (responseHeaders != null)
             {
@@ -98,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
             var date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             var uri = string.Format("https://{0}.blob.core.windows.net/{1}?restype=container", azureStorageAccountName, azureStorageContainer);
 
-            NameValueCollection requestHeaders = new NameValueCollection();
+			NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
             requestHeaders["x-ms-date"] = date;
             requestHeaders["x-ms-version"] = apiVersion;
@@ -167,14 +169,14 @@ namespace ShareX.UploadersLib.FileUploaders
             return hashedString;
         }
 
-        private string GenerateStringToSign(string canonicalizedHeaders, string canonicalizedResource, string contentLength = "")
+        private string GenerateStringToSign(string canonicalizedHeaders, string canonicalizedResource, string contentLength = "", string contentType = "")
         {
             var stringToSign = "PUT" + "\n" +
                 "\n" +
                 "\n" +
                 (string.IsNullOrEmpty(contentLength) ? string.Empty : contentLength) + "\n" +
                 "\n" +
-                "\n" +
+                (string.IsNullOrEmpty(contentType) ? string.Empty : contentType) + "\n" +
                 "\n" +
                 "\n" +
                 "\n" +
