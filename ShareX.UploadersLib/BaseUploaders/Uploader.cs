@@ -511,7 +511,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private string CreateQuery(Dictionary<string, string> args)
+        protected string CreateQuery(Dictionary<string, string> args)
         {
             if (args != null && args.Count > 0)
             {
