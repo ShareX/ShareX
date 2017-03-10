@@ -199,7 +199,7 @@ namespace ShareX
         private void CheckToolbarPosition()
         {
             Rectangle rectToolbar = Bounds;
-            Rectangle rectScreen = CaptureHelpers.GetScreenWorkingArea();
+            Rectangle rectScreen = SystemInformation.VirtualScreen;
             Point pos = rectToolbar.Location;
 
             if (rectToolbar.Width < rectScreen.Width)
