@@ -79,26 +79,27 @@ namespace ShareX.UploadersLib.FileUploaders
             string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
             string contentType = Helpers.GetMimeType(fileName);
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("X-Amz-Algorithm", algorithm);
-            args.Add("X-Amz-Credential", credential);
-            args.Add("X-Amz-Date", longDate);
-            args.Add("X-Amz-Expires", expiresTotalSeconds);
-            args.Add("X-Amz-SignedHeaders", "content-type;host;x-amz-acl;x-amz-storage-class");
-
             NameValueCollection headers = new NameValueCollection();
             headers["content-type"] = contentType;
             headers["host"] = host;
             headers["x-amz-acl"] = "public-read";
             headers["x-amz-storage-class"] = Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
 
+            string signedHeaders = GetSignedHeaders(headers);
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("X-Amz-Algorithm", algorithm);
+            args.Add("X-Amz-Credential", credential);
+            args.Add("X-Amz-Date", longDate);
+            args.Add("X-Amz-Expires", expiresTotalSeconds);
+            args.Add("X-Amz-SignedHeaders", signedHeaders);
+
             string uploadPath = GetUploadPath(fileName);
             string canonicalURI = URLHelpers.AddSlash(uploadPath, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
-            string canonicalQueryString = CreateQuery(args);
+            string canonicalQueryString = CreateQueryString(args);
             string canonicalHeaders = CreateCanonicalHeaders(headers);
-            string signedHeaders = GetSignedHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
                 canonicalURI + "\n" +
@@ -112,21 +113,20 @@ namespace ShareX.UploadersLib.FileUploaders
                 scope + "\n" +
                 BytesToHex(ComputeHash(canonicalRequest));
 
-            string dateKey = ComputeHMAC("AWS4" + Settings.SecretAccessKey, credentialDate);
-            string dateRegionKey = ComputeHMAC(dateKey, Settings.Endpoint);
-            string dateRegionServiceKey = ComputeHMAC(dateRegionKey, "s3");
-            string signingKey = ComputeHMAC(dateRegionServiceKey, "aws4_request");
-
-            string signature = StringToHex(ComputeHMAC(signingKey, stringToSign));
+            byte[] secretKey = Encoding.UTF8.GetBytes("AWS4" + Settings.SecretAccessKey);
+            byte[] dateKey = ComputeHMAC(Encoding.UTF8.GetBytes(credentialDate), secretKey);
+            byte[] dateRegionKey = ComputeHMAC(Encoding.UTF8.GetBytes(Settings.Endpoint), dateKey);
+            byte[] dateRegionServiceKey = ComputeHMAC(Encoding.UTF8.GetBytes("s3"), dateRegionKey);
+            byte[] signingKey = ComputeHMAC(Encoding.UTF8.GetBytes("aws4_request"), dateRegionServiceKey);
+            string signature = BytesToHex(ComputeHMAC(Encoding.UTF8.GetBytes(stringToSign), signingKey));
 
             args.Add("X-Amz-Signature", signature);
 
             headers.Remove("content-type");
             headers.Remove("host");
 
-            string url = URLHelpers.ForcePrefix(host, "https://");
-            url = URLHelpers.CombineURL(url, canonicalURI);
-            url = CreateQuery(url, args);
+            string url = URLHelpers.CombineURL(host, canonicalURI) + "?" + CreateQueryString(args);
+            url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
 
@@ -136,9 +136,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            string eTag = responseHeaders.Get("ETag");
-
-            if (eTag == null)
+            if (responseHeaders["ETag"] == null)
             {
                 Errors.Add("Upload to Amazon S3 failed.");
                 return null;
@@ -147,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return new UploadResult
             {
                 IsSuccess = true,
-                URL = URLHelpers.CombineURL($"https://s3.{Settings.Endpoint}.amazonaws.com", Settings.Bucket, uploadPath, fileName)
+                URL = GenerateURL(fileName)
             };
         }
 
@@ -157,13 +155,19 @@ namespace ShareX.UploadersLib.FileUploaders
             return URLHelpers.CombineURL(path, fileName);
         }
 
+        private string GenerateURL(string fileName)
+        {
+            string uploadPath = GetUploadPath(fileName);
+            return URLHelpers.CombineURL($"https://s3.{Settings.Endpoint}.amazonaws.com", Settings.Bucket, uploadPath);
+        }
+
         private string CreateCanonicalHeaders(NameValueCollection headers)
         {
             string result = "";
 
             foreach (string key in headers)
             {
-                result += key.ToLowerInvariant() + ":" + headers[key].ToLowerInvariant().Trim() + "\n";
+                result += key.ToLowerInvariant() + ":" + headers[key].Trim() + "\n";
             }
 
             return result;
@@ -182,12 +186,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return hash;
         }
 
-        private string ComputeHMAC(string data, string key)
+        private byte[] ComputeHMAC(byte[] data, byte[] key)
         {
-            using (HashAlgorithm hashAlgorithm = new HMACSHA256(Encoding.UTF8.GetBytes(key)))
+            using (HashAlgorithm hashAlgorithm = new HMACSHA256(key))
             {
-                byte[] buffer = Encoding.UTF8.GetBytes(data);
-                return Convert.ToBase64String(hashAlgorithm.ComputeHash(buffer));
+                return hashAlgorithm.ComputeHash(data);
             }
         }
 
@@ -201,9 +204,14 @@ namespace ShareX.UploadersLib.FileUploaders
             return sb.ToString();
         }
 
-        private string StringToHex(string text)
+        private string CreateQueryString(Dictionary<string, string> args)
         {
-            return BytesToHex(Encoding.UTF8.GetBytes(text));
+            if (args != null && args.Count > 0)
+            {
+                return string.Join("&", args.Select(x => x.Key + "=" + URLHelpers.URLEncode(x.Value)).ToArray());
+            }
+
+            return "";
         }
     }
 }
