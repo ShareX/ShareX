@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
 
         public static Rectangle GetScreenWorkingArea()
         {
-            return SystemInformation.WorkingArea;
+            return Screen.AllScreens.Select(x => x.WorkingArea).Combine();
         }
 
         public static Rectangle GetScreenBounds2()
