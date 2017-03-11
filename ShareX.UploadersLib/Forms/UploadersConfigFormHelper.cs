@@ -528,7 +528,7 @@ namespace ShareX.UploadersLib
 
         private void UpdateAmazonS3Status()
         {
-            //lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GetURL("Example.png");
+            lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GenerateURL("Example.png");
         }
 
         #endregion Amazon S3

@@ -479,6 +479,7 @@
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
+            this.lblGistCustomURLExample = new System.Windows.Forms.Label();
             this.lblGistOAuthInfo = new System.Windows.Forms.Label();
             this.lblGistCustomURL = new System.Windows.Forms.Label();
             this.txtGistCustomURL = new System.Windows.Forms.TextBox();
@@ -594,7 +595,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblGistCustomURLExample = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2198,11 +2198,10 @@
             // 
             // cbAmazonS3Endpoint
             // 
-            this.cbAmazonS3Endpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAmazonS3Endpoint.FormattingEnabled = true;
             resources.ApplyResources(this.cbAmazonS3Endpoint, "cbAmazonS3Endpoint");
             this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
-            this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
+            this.cbAmazonS3Endpoint.TextChanged += new System.EventHandler(this.cbAmazonS3Endpoint_TextChanged);
             // 
             // lblAmazonS3BucketName
             // 
@@ -3969,6 +3968,11 @@
             this.tpGist.Name = "tpGist";
             this.tpGist.UseVisualStyleBackColor = true;
             // 
+            // lblGistCustomURLExample
+            // 
+            resources.ApplyResources(this.lblGistCustomURLExample, "lblGistCustomURLExample");
+            this.lblGistCustomURLExample.Name = "lblGistCustomURLExample";
+            // 
             // lblGistOAuthInfo
             // 
             resources.ApplyResources(this.lblGistOAuthInfo, "lblGistOAuthInfo");
@@ -4797,11 +4801,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // lblGistCustomURLExample
-            // 
-            resources.ApplyResources(this.lblGistCustomURLExample, "lblGistCustomURLExample");
-            this.lblGistCustomURLExample.Name = "lblGistCustomURLExample";
             // 
             // UploadersConfigForm
             // 

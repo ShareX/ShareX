@@ -155,7 +155,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return URLHelpers.CombineURL(path, fileName);
         }
 
-        private string GenerateURL(string fileName)
+        public string GenerateURL(string fileName)
         {
             string uploadPath = GetUploadPath(fileName);
             return URLHelpers.CombineURL($"https://s3.{Settings.Endpoint}.amazonaws.com", Settings.Bucket, uploadPath);
