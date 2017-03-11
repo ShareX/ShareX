@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
             using (WebClient wc = new WebClient())
             {
                 wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                wc.Headers.Add("user-agent", ShareXResources.UserAgent);
+                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                 wc.Proxy = Proxy;
 
                 string response = wc.DownloadString(ReleasesURL);
