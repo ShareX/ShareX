@@ -124,7 +124,7 @@ namespace ShareX.HelpersLib
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
-                request.UserAgent = "ShareX";
+                request.UserAgent = ShareXResources.UserAgent;
                 request.Proxy = Proxy;
 
                 if (!string.IsNullOrEmpty(AcceptHeader))

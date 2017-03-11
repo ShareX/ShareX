@@ -36,10 +36,10 @@ namespace ShareX.Setup
         {
             Console.WriteLine("Downloading: " + url);
 
-            using (WebClient webClient = new WebClient())
+            using (WebClient wc = new WebClient())
             {
                 string filename = Path.GetFileName(url);
-                webClient.DownloadFile(url, filename);
+                wc.DownloadFile(url, filename);
                 return filename;
             }
         }

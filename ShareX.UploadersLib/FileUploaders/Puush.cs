@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("e", email);
             arguments.Add("p", password);
-            arguments.Add("z", UserAgent);
+            arguments.Add("z", ShareXResources.UserAgent);
 
             // Successful: status,apikey,expire,usage
             // Failed: status
@@ -109,7 +109,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("k", APIKey);
             arguments.Add("i", id);
-            arguments.Add("z", UserAgent);
+            arguments.Add("z", ShareXResources.UserAgent);
 
             // Successful: status\nlist of history items
             // Failed: status
@@ -134,7 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("k", APIKey);
-            arguments.Add("z", UserAgent);
+            arguments.Add("z", ShareXResources.UserAgent);
 
             // Successful: status,url,id,usage
             // Failed: status

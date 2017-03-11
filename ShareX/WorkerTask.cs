@@ -969,6 +969,7 @@ namespace ShareX
 
                     using (WebClient wc = new WebClient())
                     {
+                        wc.Headers.Add("user-agent", ShareXResources.UserAgent);
                         wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                         wc.DownloadFile(url, Info.FilePath);
                     }
