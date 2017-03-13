@@ -62,11 +62,11 @@ namespace ShareX
             else
             {
                 tbDescription.Text = TaskSettings.Description ?? "";
-                cbUseDefaultAfterCaptureSettings.Checked = TaskSettings.UseDefaultAfterCaptureJob;
+                cbOverrideAfterCaptureSettings.Checked = !TaskSettings.UseDefaultAfterCaptureJob;
                 btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
-                cbUseDefaultAfterUploadSettings.Checked = TaskSettings.UseDefaultAfterUploadJob;
+                cbOverrideAfterUploadSettings.Checked = !TaskSettings.UseDefaultAfterUploadJob;
                 btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
-                cbUseDefaultDestinationSettings.Checked = TaskSettings.UseDefaultDestinations;
+                cbOverrideDestinationSettings.Checked = !TaskSettings.UseDefaultDestinations;
                 btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
                 chkUseDefaultGeneralSettings.Checked = TaskSettings.UseDefaultGeneralSettings;
                 chkUseDefaultImageSettings.Checked = TaskSettings.UseDefaultImageSettings;
@@ -643,19 +643,19 @@ namespace ShareX
 
         private void cbUseDefaultAfterCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultAfterCaptureJob = cbUseDefaultAfterCaptureSettings.Checked;
+            TaskSettings.UseDefaultAfterCaptureJob = !cbOverrideAfterCaptureSettings.Checked;
             btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
         }
 
         private void cbUseDefaultAfterUploadSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultAfterUploadJob = cbUseDefaultAfterUploadSettings.Checked;
+            TaskSettings.UseDefaultAfterUploadJob = !cbOverrideAfterUploadSettings.Checked;
             btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
         }
 
         private void cbUseDefaultDestinationSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultDestinations = cbUseDefaultDestinationSettings.Checked;
+            TaskSettings.UseDefaultDestinations = !cbOverrideDestinationSettings.Checked;
             btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
         }
 

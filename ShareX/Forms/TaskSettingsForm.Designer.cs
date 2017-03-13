@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskSettingsForm));
             this.cmsAfterCapture = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsAfterUpload = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbUseDefaultAfterCaptureSettings = new System.Windows.Forms.CheckBox();
-            this.cbUseDefaultAfterUploadSettings = new System.Windows.Forms.CheckBox();
-            this.cbUseDefaultDestinationSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideAfterCaptureSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideAfterUploadSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideDestinationSettings = new System.Windows.Forms.CheckBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -199,6 +199,18 @@
             this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
+            this.tpUploaderFilters = new System.Windows.Forms.TabPage();
+            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
+            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
+            this.btnUploaderFiltersUpdate = new System.Windows.Forms.Button();
+            this.btnUploaderFiltersAdd = new System.Windows.Forms.Button();
+            this.lblUploaderFiltersDestination = new System.Windows.Forms.Label();
+            this.cbUploaderFiltersDestination = new System.Windows.Forms.ComboBox();
+            this.lblUploaderFiltersExtensionsExample = new System.Windows.Forms.Label();
+            this.lblUploaderFiltersExtensions = new System.Windows.Forms.Label();
+            this.txtUploaderFiltersExtensions = new System.Windows.Forms.TextBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
@@ -228,18 +240,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.tpUploaderFilters = new System.Windows.Forms.TabPage();
-            this.txtUploaderFiltersExtensions = new System.Windows.Forms.TextBox();
-            this.lblUploaderFiltersExtensions = new System.Windows.Forms.Label();
-            this.lblUploaderFiltersExtensionsExample = new System.Windows.Forms.Label();
-            this.cbUploaderFiltersDestination = new System.Windows.Forms.ComboBox();
-            this.lblUploaderFiltersDestination = new System.Windows.Forms.Label();
-            this.btnUploaderFiltersAdd = new System.Windows.Forms.Button();
-            this.btnUploaderFiltersUpdate = new System.Windows.Forms.Button();
-            this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
-            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
-            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -284,13 +284,13 @@
             this.tpUploadMain.SuspendLayout();
             this.tpFileNaming.SuspendLayout();
             this.tpUploadClipboard.SuspendLayout();
+            this.tpUploaderFilters.SuspendLayout();
             this.tpActions.SuspendLayout();
             this.pActions.SuspendLayout();
             this.tpWatchFolders.SuspendLayout();
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tpUploaderFilters.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -303,26 +303,26 @@
             this.cmsAfterUpload.Name = "cmsAfterCapture";
             resources.ApplyResources(this.cmsAfterUpload, "cmsAfterUpload");
             // 
-            // cbUseDefaultAfterCaptureSettings
+            // cbOverrideAfterCaptureSettings
             // 
-            resources.ApplyResources(this.cbUseDefaultAfterCaptureSettings, "cbUseDefaultAfterCaptureSettings");
-            this.cbUseDefaultAfterCaptureSettings.Name = "cbUseDefaultAfterCaptureSettings";
-            this.cbUseDefaultAfterCaptureSettings.UseVisualStyleBackColor = true;
-            this.cbUseDefaultAfterCaptureSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterCaptureSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideAfterCaptureSettings, "cbOverrideAfterCaptureSettings");
+            this.cbOverrideAfterCaptureSettings.Name = "cbOverrideAfterCaptureSettings";
+            this.cbOverrideAfterCaptureSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideAfterCaptureSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterCaptureSettings_CheckedChanged);
             // 
-            // cbUseDefaultAfterUploadSettings
+            // cbOverrideAfterUploadSettings
             // 
-            resources.ApplyResources(this.cbUseDefaultAfterUploadSettings, "cbUseDefaultAfterUploadSettings");
-            this.cbUseDefaultAfterUploadSettings.Name = "cbUseDefaultAfterUploadSettings";
-            this.cbUseDefaultAfterUploadSettings.UseVisualStyleBackColor = true;
-            this.cbUseDefaultAfterUploadSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterUploadSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideAfterUploadSettings, "cbOverrideAfterUploadSettings");
+            this.cbOverrideAfterUploadSettings.Name = "cbOverrideAfterUploadSettings";
+            this.cbOverrideAfterUploadSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideAfterUploadSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterUploadSettings_CheckedChanged);
             // 
-            // cbUseDefaultDestinationSettings
+            // cbOverrideDestinationSettings
             // 
-            resources.ApplyResources(this.cbUseDefaultDestinationSettings, "cbUseDefaultDestinationSettings");
-            this.cbUseDefaultDestinationSettings.Name = "cbUseDefaultDestinationSettings";
-            this.cbUseDefaultDestinationSettings.UseVisualStyleBackColor = true;
-            this.cbUseDefaultDestinationSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultDestinationSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideDestinationSettings, "cbOverrideDestinationSettings");
+            this.cbOverrideDestinationSettings.Name = "cbOverrideDestinationSettings";
+            this.cbOverrideDestinationSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideDestinationSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultDestinationSettings_CheckedChanged);
             // 
             // lblDescription
             // 
@@ -365,10 +365,10 @@
             this.tpTask.Controls.Add(this.btnAfterCapture);
             this.tpTask.Controls.Add(this.btnAfterUpload);
             this.tpTask.Controls.Add(this.btnDestinations);
-            this.tpTask.Controls.Add(this.cbUseDefaultAfterCaptureSettings);
+            this.tpTask.Controls.Add(this.cbOverrideAfterCaptureSettings);
             this.tpTask.Controls.Add(this.btnTask);
-            this.tpTask.Controls.Add(this.cbUseDefaultAfterUploadSettings);
-            this.tpTask.Controls.Add(this.cbUseDefaultDestinationSettings);
+            this.tpTask.Controls.Add(this.cbOverrideAfterUploadSettings);
+            this.tpTask.Controls.Add(this.cbOverrideDestinationSettings);
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
@@ -377,8 +377,8 @@
             // cbOverrideCustomUploader
             // 
             this.cbOverrideCustomUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cbOverrideCustomUploader, "cbOverrideCustomUploader");
             this.cbOverrideCustomUploader.FormattingEnabled = true;
+            resources.ApplyResources(this.cbOverrideCustomUploader, "cbOverrideCustomUploader");
             this.cbOverrideCustomUploader.Name = "cbOverrideCustomUploader";
             this.cbOverrideCustomUploader.SelectedIndexChanged += new System.EventHandler(this.cbOverrideCustomUploader_SelectedIndexChanged);
             // 
@@ -399,8 +399,8 @@
             // cboFTPaccounts
             // 
             this.cboFTPaccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cboFTPaccounts, "cboFTPaccounts");
             this.cboFTPaccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.cboFTPaccounts, "cboFTPaccounts");
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
@@ -1755,6 +1755,91 @@
             this.cbClipboardUploadShortenURL.UseVisualStyleBackColor = true;
             this.cbClipboardUploadShortenURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
             // 
+            // tpUploaderFilters
+            // 
+            this.tpUploaderFilters.Controls.Add(this.lvUploaderFiltersList);
+            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersRemove);
+            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersUpdate);
+            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersAdd);
+            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersDestination);
+            this.tpUploaderFilters.Controls.Add(this.cbUploaderFiltersDestination);
+            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersExtensionsExample);
+            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersExtensions);
+            this.tpUploaderFilters.Controls.Add(this.txtUploaderFiltersExtensions);
+            resources.ApplyResources(this.tpUploaderFilters, "tpUploaderFilters");
+            this.tpUploaderFilters.Name = "tpUploaderFilters";
+            this.tpUploaderFilters.UseVisualStyleBackColor = true;
+            // 
+            // lvUploaderFiltersList
+            // 
+            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
+            this.lvUploaderFiltersList.AutoFillColumn = true;
+            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chUploaderFiltersName,
+            this.chUploaderFiltersExtension});
+            this.lvUploaderFiltersList.FullRowSelect = true;
+            this.lvUploaderFiltersList.HideSelection = false;
+            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
+            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
+            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
+            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
+            // 
+            // chUploaderFiltersName
+            // 
+            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
+            // 
+            // chUploaderFiltersExtension
+            // 
+            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
+            // 
+            // btnUploaderFiltersRemove
+            // 
+            resources.ApplyResources(this.btnUploaderFiltersRemove, "btnUploaderFiltersRemove");
+            this.btnUploaderFiltersRemove.Name = "btnUploaderFiltersRemove";
+            this.btnUploaderFiltersRemove.UseVisualStyleBackColor = true;
+            this.btnUploaderFiltersRemove.Click += new System.EventHandler(this.btnUploaderFiltersRemove_Click);
+            // 
+            // btnUploaderFiltersUpdate
+            // 
+            resources.ApplyResources(this.btnUploaderFiltersUpdate, "btnUploaderFiltersUpdate");
+            this.btnUploaderFiltersUpdate.Name = "btnUploaderFiltersUpdate";
+            this.btnUploaderFiltersUpdate.UseVisualStyleBackColor = true;
+            this.btnUploaderFiltersUpdate.Click += new System.EventHandler(this.btnUploaderFiltersUpdate_Click);
+            // 
+            // btnUploaderFiltersAdd
+            // 
+            resources.ApplyResources(this.btnUploaderFiltersAdd, "btnUploaderFiltersAdd");
+            this.btnUploaderFiltersAdd.Name = "btnUploaderFiltersAdd";
+            this.btnUploaderFiltersAdd.UseVisualStyleBackColor = true;
+            this.btnUploaderFiltersAdd.Click += new System.EventHandler(this.btnUploaderFiltersAdd_Click);
+            // 
+            // lblUploaderFiltersDestination
+            // 
+            resources.ApplyResources(this.lblUploaderFiltersDestination, "lblUploaderFiltersDestination");
+            this.lblUploaderFiltersDestination.Name = "lblUploaderFiltersDestination";
+            // 
+            // cbUploaderFiltersDestination
+            // 
+            this.cbUploaderFiltersDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUploaderFiltersDestination.FormattingEnabled = true;
+            resources.ApplyResources(this.cbUploaderFiltersDestination, "cbUploaderFiltersDestination");
+            this.cbUploaderFiltersDestination.Name = "cbUploaderFiltersDestination";
+            // 
+            // lblUploaderFiltersExtensionsExample
+            // 
+            resources.ApplyResources(this.lblUploaderFiltersExtensionsExample, "lblUploaderFiltersExtensionsExample");
+            this.lblUploaderFiltersExtensionsExample.Name = "lblUploaderFiltersExtensionsExample";
+            // 
+            // lblUploaderFiltersExtensions
+            // 
+            resources.ApplyResources(this.lblUploaderFiltersExtensions, "lblUploaderFiltersExtensions");
+            this.lblUploaderFiltersExtensions.Name = "lblUploaderFiltersExtensions";
+            // 
+            // txtUploaderFiltersExtensions
+            // 
+            resources.ApplyResources(this.txtUploaderFiltersExtensions, "txtUploaderFiltersExtensions");
+            this.txtUploaderFiltersExtensions.Name = "txtUploaderFiltersExtensions";
+            // 
             // tpActions
             // 
             this.tpActions.Controls.Add(this.pActions);
@@ -1972,91 +2057,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // tpUploaderFilters
-            // 
-            this.tpUploaderFilters.Controls.Add(this.lvUploaderFiltersList);
-            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersRemove);
-            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersUpdate);
-            this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersAdd);
-            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersDestination);
-            this.tpUploaderFilters.Controls.Add(this.cbUploaderFiltersDestination);
-            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersExtensionsExample);
-            this.tpUploaderFilters.Controls.Add(this.lblUploaderFiltersExtensions);
-            this.tpUploaderFilters.Controls.Add(this.txtUploaderFiltersExtensions);
-            resources.ApplyResources(this.tpUploaderFilters, "tpUploaderFilters");
-            this.tpUploaderFilters.Name = "tpUploaderFilters";
-            this.tpUploaderFilters.UseVisualStyleBackColor = true;
-            // 
-            // txtUploaderFiltersExtensions
-            // 
-            resources.ApplyResources(this.txtUploaderFiltersExtensions, "txtUploaderFiltersExtensions");
-            this.txtUploaderFiltersExtensions.Name = "txtUploaderFiltersExtensions";
-            // 
-            // lblUploaderFiltersExtensions
-            // 
-            resources.ApplyResources(this.lblUploaderFiltersExtensions, "lblUploaderFiltersExtensions");
-            this.lblUploaderFiltersExtensions.Name = "lblUploaderFiltersExtensions";
-            // 
-            // lblUploaderFiltersExtensionsExample
-            // 
-            resources.ApplyResources(this.lblUploaderFiltersExtensionsExample, "lblUploaderFiltersExtensionsExample");
-            this.lblUploaderFiltersExtensionsExample.Name = "lblUploaderFiltersExtensionsExample";
-            // 
-            // cbUploaderFiltersDestination
-            // 
-            this.cbUploaderFiltersDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUploaderFiltersDestination.FormattingEnabled = true;
-            resources.ApplyResources(this.cbUploaderFiltersDestination, "cbUploaderFiltersDestination");
-            this.cbUploaderFiltersDestination.Name = "cbUploaderFiltersDestination";
-            // 
-            // lblUploaderFiltersDestination
-            // 
-            resources.ApplyResources(this.lblUploaderFiltersDestination, "lblUploaderFiltersDestination");
-            this.lblUploaderFiltersDestination.Name = "lblUploaderFiltersDestination";
-            // 
-            // btnUploaderFiltersAdd
-            // 
-            resources.ApplyResources(this.btnUploaderFiltersAdd, "btnUploaderFiltersAdd");
-            this.btnUploaderFiltersAdd.Name = "btnUploaderFiltersAdd";
-            this.btnUploaderFiltersAdd.UseVisualStyleBackColor = true;
-            this.btnUploaderFiltersAdd.Click += new System.EventHandler(this.btnUploaderFiltersAdd_Click);
-            // 
-            // btnUploaderFiltersUpdate
-            // 
-            resources.ApplyResources(this.btnUploaderFiltersUpdate, "btnUploaderFiltersUpdate");
-            this.btnUploaderFiltersUpdate.Name = "btnUploaderFiltersUpdate";
-            this.btnUploaderFiltersUpdate.UseVisualStyleBackColor = true;
-            this.btnUploaderFiltersUpdate.Click += new System.EventHandler(this.btnUploaderFiltersUpdate_Click);
-            // 
-            // btnUploaderFiltersRemove
-            // 
-            resources.ApplyResources(this.btnUploaderFiltersRemove, "btnUploaderFiltersRemove");
-            this.btnUploaderFiltersRemove.Name = "btnUploaderFiltersRemove";
-            this.btnUploaderFiltersRemove.UseVisualStyleBackColor = true;
-            this.btnUploaderFiltersRemove.Click += new System.EventHandler(this.btnUploaderFiltersRemove_Click);
-            // 
-            // lvUploaderFiltersList
-            // 
-            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
-            this.lvUploaderFiltersList.AutoFillColumn = true;
-            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUploaderFiltersName,
-            this.chUploaderFiltersExtension});
-            this.lvUploaderFiltersList.FullRowSelect = true;
-            this.lvUploaderFiltersList.HideSelection = false;
-            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
-            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
-            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
-            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
-            // 
-            // chUploaderFiltersName
-            // 
-            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
-            // 
-            // chUploaderFiltersExtension
-            // 
-            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2127,6 +2127,8 @@
             this.tpFileNaming.PerformLayout();
             this.tpUploadClipboard.ResumeLayout(false);
             this.tpUploadClipboard.PerformLayout();
+            this.tpUploaderFilters.ResumeLayout(false);
+            this.tpUploaderFilters.PerformLayout();
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
             this.pActions.ResumeLayout(false);
@@ -2138,8 +2140,6 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.tpUploaderFilters.ResumeLayout(false);
-            this.tpUploaderFilters.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2151,9 +2151,9 @@
         private HelpersLib.MenuButton btnAfterUpload;
         private HelpersLib.MenuButton btnDestinations;
         private System.Windows.Forms.ContextMenuStrip cmsAfterUpload;
-        private System.Windows.Forms.CheckBox cbUseDefaultAfterCaptureSettings;
-        private System.Windows.Forms.CheckBox cbUseDefaultAfterUploadSettings;
-        private System.Windows.Forms.CheckBox cbUseDefaultDestinationSettings;
+        private System.Windows.Forms.CheckBox cbOverrideAfterCaptureSettings;
+        private System.Windows.Forms.CheckBox cbOverrideAfterUploadSettings;
+        private System.Windows.Forms.CheckBox cbOverrideDestinationSettings;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox tbDescription;
         private HelpersLib.MenuButton btnTask;
