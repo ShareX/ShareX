@@ -56,8 +56,8 @@ namespace ShareX
             if (IsDefault)
             {
                 tcTaskSettings.TabPages.Remove(tpTask);
-                chkUseDefaultGeneralSettings.Visible = chkUseDefaultImageSettings.Visible = chkUseDefaultCaptureSettings.Visible = chkUseDefaultActions.Visible =
-                    chkUseDefaultUploadSettings.Visible = chkUseDefaultToolsSettings.Visible = chkUseDefaultAdvancedSettings.Visible = false;
+                chkOverrideGeneralSettings.Visible = chkOverrideImageSettings.Visible = chkOverrideCaptureSettings.Visible = chkOverrideActions.Visible =
+                    chkOverrideUploadSettings.Visible = chkOverrideToolsSettings.Visible = chkOverrideAdvancedSettings.Visible = false;
             }
             else
             {
@@ -68,13 +68,13 @@ namespace ShareX
                 btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
                 cbOverrideDestinationSettings.Checked = !TaskSettings.UseDefaultDestinations;
                 btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
-                chkUseDefaultGeneralSettings.Checked = TaskSettings.UseDefaultGeneralSettings;
-                chkUseDefaultImageSettings.Checked = TaskSettings.UseDefaultImageSettings;
-                chkUseDefaultCaptureSettings.Checked = TaskSettings.UseDefaultCaptureSettings;
-                chkUseDefaultActions.Checked = TaskSettings.UseDefaultActions;
-                chkUseDefaultUploadSettings.Checked = TaskSettings.UseDefaultUploadSettings;
-                chkUseDefaultToolsSettings.Checked = TaskSettings.UseDefaultToolsSettings;
-                chkUseDefaultAdvancedSettings.Checked = TaskSettings.UseDefaultAdvancedSettings;
+                chkOverrideGeneralSettings.Checked = !TaskSettings.UseDefaultGeneralSettings;
+                chkOverrideImageSettings.Checked = !TaskSettings.UseDefaultImageSettings;
+                chkOverrideCaptureSettings.Checked = !TaskSettings.UseDefaultCaptureSettings;
+                chkOverrideActions.Checked = !TaskSettings.UseDefaultActions;
+                chkOverrideUploadSettings.Checked = !TaskSettings.UseDefaultUploadSettings;
+                chkOverrideToolsSettings.Checked = !TaskSettings.UseDefaultToolsSettings;
+                chkOverrideAdvancedSettings.Checked = !TaskSettings.UseDefaultAdvancedSettings;
             }
 
             UpdateDefaultSettingVisibility();
@@ -687,7 +687,7 @@ namespace ShareX
 
         private void chkUseDefaultGeneralSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultGeneralSettings = chkUseDefaultGeneralSettings.Checked;
+            TaskSettings.UseDefaultGeneralSettings = !chkOverrideGeneralSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -712,7 +712,7 @@ namespace ShareX
 
         private void chkUseDefaultImageSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultImageSettings = chkUseDefaultImageSettings.Checked;
+            TaskSettings.UseDefaultImageSettings = !chkOverrideImageSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -797,7 +797,7 @@ namespace ShareX
 
         private void chkUseDefaultCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultCaptureSettings = chkUseDefaultCaptureSettings.Checked;
+            TaskSettings.UseDefaultCaptureSettings = !chkOverrideCaptureSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1175,7 +1175,7 @@ namespace ShareX
 
         private void chkUseDefaultUploadSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultUploadSettings = chkUseDefaultUploadSettings.Checked;
+            TaskSettings.UseDefaultUploadSettings = !chkOverrideUploadSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1358,7 +1358,7 @@ namespace ShareX
 
         private void chkUseDefaultActions_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultActions = chkUseDefaultActions.Checked;
+            TaskSettings.UseDefaultActions = !chkOverrideActions.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1517,7 +1517,7 @@ namespace ShareX
 
         private void chkUseDefaultToolsSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultToolsSettings = chkUseDefaultToolsSettings.Checked;
+            TaskSettings.UseDefaultToolsSettings = !chkOverrideToolsSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1532,7 +1532,7 @@ namespace ShareX
 
         private void chkUseDefaultAdvancedSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultAdvancedSettings = chkUseDefaultAdvancedSettings.Checked;
+            TaskSettings.UseDefaultAdvancedSettings = !chkOverrideAdvancedSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 

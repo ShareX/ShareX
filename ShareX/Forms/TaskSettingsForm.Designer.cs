@@ -60,7 +60,7 @@
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
-            this.chkUseDefaultGeneralSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
             this.tpImage = new System.Windows.Forms.TabPage();
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
@@ -77,7 +77,7 @@
             this.lblImageGIFQuality = new System.Windows.Forms.Label();
             this.lblImageJPEGQuality = new System.Windows.Forms.Label();
             this.cbImageGIFQuality = new System.Windows.Forms.ComboBox();
-            this.chkUseDefaultImageSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideImageSettings = new System.Windows.Forms.CheckBox();
             this.tpEffects = new System.Windows.Forms.TabPage();
             this.lblImageEffectsNote = new System.Windows.Forms.Label();
             this.chkShowImageEffectsWindowAfterCapture = new System.Windows.Forms.CheckBox();
@@ -116,7 +116,7 @@
             this.nudScreenshotDelay = new System.Windows.Forms.NumericUpDown();
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
             this.cbScreenshotDelay = new System.Windows.Forms.CheckBox();
-            this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
@@ -180,7 +180,7 @@
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
-            this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideUploadSettings = new System.Windows.Forms.CheckBox();
             this.tpFileNaming = new System.Windows.Forms.TabPage();
             this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
             this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
@@ -222,7 +222,7 @@
             this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
-            this.chkUseDefaultActions = new System.Windows.Forms.CheckBox();
+            this.chkOverrideActions = new System.Windows.Forms.CheckBox();
             this.tpWatchFolders = new System.Windows.Forms.TabPage();
             this.cbWatchFolderEnabled = new System.Windows.Forms.CheckBox();
             this.lvWatchFolderList = new System.Windows.Forms.ListView();
@@ -235,10 +235,10 @@
             this.pTools = new System.Windows.Forms.Panel();
             this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
-            this.chkUseDefaultToolsSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideToolsSettings = new System.Windows.Forms.CheckBox();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
-            this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
@@ -480,7 +480,7 @@
             // tpGeneral
             // 
             this.tpGeneral.Controls.Add(this.pGeneral);
-            this.tpGeneral.Controls.Add(this.chkUseDefaultGeneralSettings);
+            this.tpGeneral.Controls.Add(this.chkOverrideGeneralSettings);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -521,14 +521,14 @@
             this.cbPlaySoundAfterCapture.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterCapture.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterCapture_CheckedChanged);
             // 
-            // chkUseDefaultGeneralSettings
+            // chkOverrideGeneralSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultGeneralSettings, "chkUseDefaultGeneralSettings");
-            this.chkUseDefaultGeneralSettings.Checked = true;
-            this.chkUseDefaultGeneralSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultGeneralSettings.Name = "chkUseDefaultGeneralSettings";
-            this.chkUseDefaultGeneralSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideGeneralSettings, "chkOverrideGeneralSettings");
+            this.chkOverrideGeneralSettings.Checked = true;
+            this.chkOverrideGeneralSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideGeneralSettings.Name = "chkOverrideGeneralSettings";
+            this.chkOverrideGeneralSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
             // 
             // tpImage
             // 
@@ -549,7 +549,7 @@
             // tpQuality
             // 
             this.tpQuality.Controls.Add(this.pImage);
-            this.tpQuality.Controls.Add(this.chkUseDefaultImageSettings);
+            this.tpQuality.Controls.Add(this.chkOverrideImageSettings);
             resources.ApplyResources(this.tpQuality, "tpQuality");
             this.tpQuality.Name = "tpQuality";
             this.tpQuality.UseVisualStyleBackColor = true;
@@ -664,14 +664,14 @@
             this.cbImageGIFQuality.Name = "cbImageGIFQuality";
             this.cbImageGIFQuality.SelectedIndexChanged += new System.EventHandler(this.cbImageGIFQuality_SelectedIndexChanged);
             // 
-            // chkUseDefaultImageSettings
+            // chkOverrideImageSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultImageSettings, "chkUseDefaultImageSettings");
-            this.chkUseDefaultImageSettings.Checked = true;
-            this.chkUseDefaultImageSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultImageSettings.Name = "chkUseDefaultImageSettings";
-            this.chkUseDefaultImageSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultImageSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultImageSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideImageSettings, "chkOverrideImageSettings");
+            this.chkOverrideImageSettings.Checked = true;
+            this.chkOverrideImageSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideImageSettings.Name = "chkOverrideImageSettings";
+            this.chkOverrideImageSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideImageSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultImageSettings_CheckedChanged);
             // 
             // tpEffects
             // 
@@ -797,7 +797,7 @@
             // tpCaptureGeneral
             // 
             this.tpCaptureGeneral.Controls.Add(this.pCapture);
-            this.tpCaptureGeneral.Controls.Add(this.chkUseDefaultCaptureSettings);
+            this.tpCaptureGeneral.Controls.Add(this.chkOverrideCaptureSettings);
             resources.ApplyResources(this.tpCaptureGeneral, "tpCaptureGeneral");
             this.tpCaptureGeneral.Name = "tpCaptureGeneral";
             this.tpCaptureGeneral.UseVisualStyleBackColor = true;
@@ -1008,14 +1008,14 @@
             this.cbScreenshotDelay.UseVisualStyleBackColor = true;
             this.cbScreenshotDelay.CheckedChanged += new System.EventHandler(this.cbScreenshotDelay_CheckedChanged);
             // 
-            // chkUseDefaultCaptureSettings
+            // chkOverrideCaptureSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultCaptureSettings, "chkUseDefaultCaptureSettings");
-            this.chkUseDefaultCaptureSettings.Checked = true;
-            this.chkUseDefaultCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultCaptureSettings.Name = "chkUseDefaultCaptureSettings";
-            this.chkUseDefaultCaptureSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideCaptureSettings, "chkOverrideCaptureSettings");
+            this.chkOverrideCaptureSettings.Checked = true;
+            this.chkOverrideCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideCaptureSettings.Name = "chkOverrideCaptureSettings";
+            this.chkOverrideCaptureSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
             // 
             // tpRegionCapture
             // 
@@ -1612,19 +1612,19 @@
             // 
             // tpUploadMain
             // 
-            this.tpUploadMain.Controls.Add(this.chkUseDefaultUploadSettings);
+            this.tpUploadMain.Controls.Add(this.chkOverrideUploadSettings);
             resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
             this.tpUploadMain.Name = "tpUploadMain";
             this.tpUploadMain.UseVisualStyleBackColor = true;
             // 
-            // chkUseDefaultUploadSettings
+            // chkOverrideUploadSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultUploadSettings, "chkUseDefaultUploadSettings");
-            this.chkUseDefaultUploadSettings.Checked = true;
-            this.chkUseDefaultUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultUploadSettings.Name = "chkUseDefaultUploadSettings";
-            this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideUploadSettings, "chkOverrideUploadSettings");
+            this.chkOverrideUploadSettings.Checked = true;
+            this.chkOverrideUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideUploadSettings.Name = "chkOverrideUploadSettings";
+            this.chkOverrideUploadSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
             // 
             // tpFileNaming
             // 
@@ -1843,7 +1843,7 @@
             // tpActions
             // 
             this.tpActions.Controls.Add(this.pActions);
-            this.tpActions.Controls.Add(this.chkUseDefaultActions);
+            this.tpActions.Controls.Add(this.chkOverrideActions);
             resources.ApplyResources(this.tpActions, "tpActions");
             this.tpActions.Name = "tpActions";
             this.tpActions.UseVisualStyleBackColor = true;
@@ -1922,14 +1922,14 @@
             this.btnActionsRemove.UseVisualStyleBackColor = true;
             this.btnActionsRemove.Click += new System.EventHandler(this.btnActionsRemove_Click);
             // 
-            // chkUseDefaultActions
+            // chkOverrideActions
             // 
-            resources.ApplyResources(this.chkUseDefaultActions, "chkUseDefaultActions");
-            this.chkUseDefaultActions.Checked = true;
-            this.chkUseDefaultActions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultActions.Name = "chkUseDefaultActions";
-            this.chkUseDefaultActions.UseVisualStyleBackColor = true;
-            this.chkUseDefaultActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideActions, "chkOverrideActions");
+            this.chkOverrideActions.Checked = true;
+            this.chkOverrideActions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideActions.Name = "chkOverrideActions";
+            this.chkOverrideActions.UseVisualStyleBackColor = true;
+            this.chkOverrideActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
             // 
             // tpWatchFolders
             // 
@@ -1990,7 +1990,7 @@
             // tpTools
             // 
             this.tpTools.Controls.Add(this.pTools);
-            this.tpTools.Controls.Add(this.chkUseDefaultToolsSettings);
+            this.tpTools.Controls.Add(this.chkOverrideToolsSettings);
             resources.ApplyResources(this.tpTools, "tpTools");
             this.tpTools.Name = "tpTools";
             this.tpTools.UseVisualStyleBackColor = true;
@@ -2013,19 +2013,19 @@
             resources.ApplyResources(this.lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
             this.lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
             // 
-            // chkUseDefaultToolsSettings
+            // chkOverrideToolsSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultToolsSettings, "chkUseDefaultToolsSettings");
-            this.chkUseDefaultToolsSettings.Checked = true;
-            this.chkUseDefaultToolsSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultToolsSettings.Name = "chkUseDefaultToolsSettings";
-            this.chkUseDefaultToolsSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultToolsSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultToolsSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideToolsSettings, "chkOverrideToolsSettings");
+            this.chkOverrideToolsSettings.Checked = true;
+            this.chkOverrideToolsSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideToolsSettings.Name = "chkOverrideToolsSettings";
+            this.chkOverrideToolsSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideToolsSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultToolsSettings_CheckedChanged);
             // 
             // tpAdvanced
             // 
             this.tpAdvanced.Controls.Add(this.pgTaskSettings);
-            this.tpAdvanced.Controls.Add(this.chkUseDefaultAdvancedSettings);
+            this.tpAdvanced.Controls.Add(this.chkOverrideAdvancedSettings);
             resources.ApplyResources(this.tpAdvanced, "tpAdvanced");
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -2038,14 +2038,14 @@
             this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgTaskSettings.ToolbarVisible = false;
             // 
-            // chkUseDefaultAdvancedSettings
+            // chkOverrideAdvancedSettings
             // 
-            resources.ApplyResources(this.chkUseDefaultAdvancedSettings, "chkUseDefaultAdvancedSettings");
-            this.chkUseDefaultAdvancedSettings.Checked = true;
-            this.chkUseDefaultAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultAdvancedSettings.Name = "chkUseDefaultAdvancedSettings";
-            this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
+            resources.ApplyResources(this.chkOverrideAdvancedSettings, "chkOverrideAdvancedSettings");
+            this.chkOverrideAdvancedSettings.Checked = true;
+            this.chkOverrideAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOverrideAdvancedSettings.Name = "chkOverrideAdvancedSettings";
+            this.chkOverrideAdvancedSettings.UseVisualStyleBackColor = true;
+            this.chkOverrideAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
             // tttvMain
             // 
@@ -2210,12 +2210,12 @@
         private System.Windows.Forms.CheckBox cbClipboardUploadShortenURL;
         private System.Windows.Forms.TabPage tpAdvanced;
         private System.Windows.Forms.PropertyGrid pgTaskSettings;
-        private System.Windows.Forms.CheckBox chkUseDefaultImageSettings;
-        private System.Windows.Forms.CheckBox chkUseDefaultCaptureSettings;
-        private System.Windows.Forms.CheckBox chkUseDefaultActions;
-        private System.Windows.Forms.CheckBox chkUseDefaultUploadSettings;
+        private System.Windows.Forms.CheckBox chkOverrideImageSettings;
+        private System.Windows.Forms.CheckBox chkOverrideCaptureSettings;
+        private System.Windows.Forms.CheckBox chkOverrideActions;
+        private System.Windows.Forms.CheckBox chkOverrideUploadSettings;
         private System.Windows.Forms.Panel pActions;
-        private System.Windows.Forms.CheckBox chkUseDefaultAdvancedSettings;
+        private System.Windows.Forms.CheckBox chkOverrideAdvancedSettings;
         private System.Windows.Forms.CheckBox cbScreenRecorderFixedDuration;
         private System.Windows.Forms.NumericUpDown nudGIFFPS;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderDuration;
@@ -2231,7 +2231,7 @@
         private System.Windows.Forms.TabPage tpGeneral;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
-        private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
+        private System.Windows.Forms.CheckBox chkOverrideGeneralSettings;
         private System.Windows.Forms.Panel pGeneral;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
@@ -2293,7 +2293,7 @@
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
-        private System.Windows.Forms.CheckBox chkUseDefaultToolsSettings;
+        private System.Windows.Forms.CheckBox chkOverrideToolsSettings;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
         private System.Windows.Forms.TabPage tpFileNaming;
         private System.Windows.Forms.Label lblAutoIncrementNumber;

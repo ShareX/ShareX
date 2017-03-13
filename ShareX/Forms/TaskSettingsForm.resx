@@ -297,15 +297,6 @@
   <data name="&gt;&gt;cmsTask.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 328</value>
-  </data>
-  <data name="cbOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 21</value>
-  </data>
-  <data name="cbOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="&gt;&gt;cbOverrideCustomUploader.Name" xml:space="preserve">
     <value>cbOverrideCustomUploader</value>
   </data>
@@ -317,24 +308,6 @@
   </data>
   <data name="&gt;&gt;cbOverrideCustomUploader.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkOverrideCustomUploader.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkOverrideCustomUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 304</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
-  </data>
-  <data name="chkOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Override default custom uploader:</value>
   </data>
   <data name="&gt;&gt;chkOverrideCustomUploader.Name" xml:space="preserve">
     <value>chkOverrideCustomUploader</value>
@@ -348,24 +321,6 @@
   <data name="&gt;&gt;chkOverrideCustomUploader.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chkOverrideFTP.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkOverrideFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkOverrideFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 248</value>
-  </data>
-  <data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
-  </data>
-  <data name="chkOverrideFTP.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Override default FTP account:</value>
-  </data>
   <data name="&gt;&gt;chkOverrideFTP.Name" xml:space="preserve">
     <value>chkOverrideFTP</value>
   </data>
@@ -377,15 +332,6 @@
   </data>
   <data name="&gt;&gt;chkOverrideFTP.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 272</value>
-  </data>
-  <data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 21</value>
-  </data>
-  <data name="cboFTPaccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
   </data>
   <data name="&gt;&gt;cboFTPaccounts.Name" xml:space="preserve">
     <value>cboFTPaccounts</value>
@@ -399,24 +345,6 @@
   <data name="&gt;&gt;cboFTPaccounts.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
-  </data>
-  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 23</value>
-  </data>
-  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>After capture...</value>
-  </data>
-  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
     <value>btnAfterCapture</value>
   </data>
@@ -428,24 +356,6 @@
   </data>
   <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
-  </data>
-  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 23</value>
-  </data>
-  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>After upload...</value>
-  </data>
-  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
     <value>btnAfterUpload</value>
@@ -459,36 +369,6 @@
   <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
-  </data>
-  <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 17</value>
-  </metadata>
-  <data name="cmsDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 114</value>
-  </data>
-  <data name="&gt;&gt;cmsDestinations.Name" xml:space="preserve">
-    <value>cmsDestinations</value>
-  </data>
-  <data name="&gt;&gt;cmsDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 23</value>
-  </data>
-  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Destinations...</value>
-  </data>
-  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
     <value>btnDestinations</value>
   </data>
@@ -500,24 +380,6 @@
   </data>
   <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 23</value>
-  </data>
-  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Task...</value>
-  </data>
-  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
     <value>btnTask</value>
@@ -570,16 +432,16 @@
   <data name="&gt;&gt;pGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultGeneralSettings</value>
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Name" xml:space="preserve">
+    <value>chkOverrideGeneralSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Parent" xml:space="preserve">
     <value>tpGeneral</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
@@ -735,16 +597,16 @@
   <data name="&gt;&gt;pActions.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Name" xml:space="preserve">
-    <value>chkUseDefaultActions</value>
+  <data name="&gt;&gt;chkOverrideActions.Name" xml:space="preserve">
+    <value>chkOverrideActions</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.Parent" xml:space="preserve">
     <value>tpActions</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpActions.Location" type="System.Drawing.Point, System.Drawing">
@@ -858,16 +720,16 @@
   <data name="&gt;&gt;pTools.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultToolsSettings</value>
+  <data name="&gt;&gt;chkOverrideToolsSettings.Name" xml:space="preserve">
+    <value>chkOverrideToolsSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.Parent" xml:space="preserve">
     <value>tpTools</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpTools.Location" type="System.Drawing.Point, System.Drawing">
@@ -894,6 +756,18 @@
   <data name="&gt;&gt;tpTools.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="pgTaskSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pgTaskSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="pgTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 443</value>
+  </data>
+  <data name="pgTaskSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;pgTaskSettings.Name" xml:space="preserve">
     <value>pgTaskSettings</value>
   </data>
@@ -906,16 +780,40 @@
   <data name="&gt;&gt;pgTaskSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultAdvancedSettings</value>
+  <data name="chkOverrideAdvancedSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Type" xml:space="preserve">
+  <data name="chkOverrideAdvancedSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 8</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 30</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Override advanced settings</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideAdvancedSettings.Name" xml:space="preserve">
+    <value>chkOverrideAdvancedSettings</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideAdvancedSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideAdvancedSettings.Parent" xml:space="preserve">
     <value>tpAdvanced</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideAdvancedSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpAdvanced.Location" type="System.Drawing.Point, System.Drawing">
@@ -972,6 +870,210 @@
   <data name="&gt;&gt;tcTaskSettings.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cbOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 328</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 21</value>
+  </data>
+  <data name="cbOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Name" xml:space="preserve">
+    <value>cbOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkOverrideCustomUploader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkOverrideCustomUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 304</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 17</value>
+  </data>
+  <data name="chkOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Override default custom uploader</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Name" xml:space="preserve">
+    <value>chkOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkOverrideFTP.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkOverrideFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkOverrideFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 248</value>
+  </data>
+  <data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
+  </data>
+  <data name="chkOverrideFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Override default FTP account</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideFTP.Name" xml:space="preserve">
+    <value>chkOverrideFTP</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideFTP.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideFTP.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 272</value>
+  </data>
+  <data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 21</value>
+  </data>
+  <data name="cboFTPaccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cboFTPaccounts.Name" xml:space="preserve">
+    <value>cboFTPaccounts</value>
+  </data>
+  <data name="&gt;&gt;cboFTPaccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboFTPaccounts.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;cboFTPaccounts.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 104</value>
+  </data>
+  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>After capture...</value>
+  </data>
+  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
+    <value>btnAfterCapture</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 160</value>
+  </data>
+  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>After upload...</value>
+  </data>
+  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
+    <value>btnAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 216</value>
+  </data>
+  <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>396, 17</value>
+  </metadata>
+  <data name="cmsDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 114</value>
+  </data>
+  <data name="&gt;&gt;cmsDestinations.Name" xml:space="preserve">
+    <value>cmsDestinations</value>
+  </data>
+  <data name="&gt;&gt;cmsDestinations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Destinations...</value>
+  </data>
+  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
+    <value>btnDestinations</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
   </data>
@@ -1001,6 +1103,36 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL sharing services</value>
+  </data>
+  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Task...</value>
+  </data>
+  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
+    <value>btnTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;lblAfterTaskNotification.Name" xml:space="preserve">
     <value>lblAfterTaskNotification</value>
@@ -1185,40 +1317,40 @@
   <data name="&gt;&gt;cbPlaySoundAfterCapture.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideGeneralSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideGeneralSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideGeneralSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideGeneralSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideGeneralSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideGeneralSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 25</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideGeneralSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Use general settings in main window task settings</value>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Override general settings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultGeneralSettings</value>
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Name" xml:space="preserve">
+    <value>chkOverrideGeneralSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.Parent" xml:space="preserve">
     <value>tpGeneral</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultGeneralSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideGeneralSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;tpQuality.Name" xml:space="preserve">
@@ -1293,16 +1425,16 @@
   <data name="&gt;&gt;pImage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultImageSettings</value>
+  <data name="&gt;&gt;chkOverrideImageSettings.Name" xml:space="preserve">
+    <value>chkOverrideImageSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.Parent" xml:space="preserve">
     <value>tpQuality</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpQuality.Location" type="System.Drawing.Point, System.Drawing">
@@ -1812,40 +1944,40 @@
   <data name="&gt;&gt;cbImageGIFQuality.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="chkUseDefaultImageSettings.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideImageSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideImageSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideImageSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideImageSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideImageSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>557, 25</value>
   </data>
-  <data name="chkUseDefaultImageSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideImageSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Use image settings in main window task settings</value>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Override image settings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultImageSettings</value>
+  <data name="&gt;&gt;chkOverrideImageSettings.Name" xml:space="preserve">
+    <value>chkOverrideImageSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.Parent" xml:space="preserve">
     <value>tpQuality</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideImageSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;lblImageEffectsNote.Name" xml:space="preserve">
@@ -2454,16 +2586,16 @@
   <data name="&gt;&gt;pCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultCaptureSettings</value>
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Name" xml:space="preserve">
+    <value>chkOverrideCaptureSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Parent" xml:space="preserve">
     <value>tpCaptureGeneral</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpCaptureGeneral.Location" type="System.Drawing.Point, System.Drawing">
@@ -3294,40 +3426,40 @@
   <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideCaptureSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideCaptureSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideCaptureSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>557, 25</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideCaptureSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Use capture settings in main window task settings</value>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Override capture settings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultCaptureSettings</value>
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Name" xml:space="preserve">
+    <value>chkOverrideCaptureSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.Parent" xml:space="preserve">
     <value>tpCaptureGeneral</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideCaptureSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowFPS.Name" xml:space="preserve">
@@ -5682,16 +5814,16 @@
   <data name="&gt;&gt;tcUpload.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultUploadSettings</value>
+  <data name="&gt;&gt;chkOverrideUploadSettings.Name" xml:space="preserve">
+    <value>chkOverrideUploadSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.Parent" xml:space="preserve">
     <value>tpUploadMain</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tpUploadMain.Location" type="System.Drawing.Point, System.Drawing">
@@ -5715,40 +5847,40 @@
   <data name="&gt;&gt;tpUploadMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideUploadSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideUploadSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideUploadSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>557, 25</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideUploadSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Use upload settings in main window task settings</value>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Override upload settings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultUploadSettings</value>
+  <data name="&gt;&gt;chkOverrideUploadSettings.Name" xml:space="preserve">
+    <value>chkOverrideUploadSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.Parent" xml:space="preserve">
     <value>tpUploadMain</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideUploadSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
@@ -7050,40 +7182,40 @@
   <data name="&gt;&gt;btnActionsRemove.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="chkUseDefaultActions.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideActions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultActions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideActions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultActions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideActions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultActions.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideActions.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultActions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideActions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultActions.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideActions.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 25</value>
   </data>
-  <data name="chkUseDefaultActions.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideActions.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Use actions in main window task settings</value>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Override actions</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Name" xml:space="preserve">
-    <value>chkUseDefaultActions</value>
+  <data name="&gt;&gt;chkOverrideActions.Name" xml:space="preserve">
+    <value>chkOverrideActions</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.Parent" xml:space="preserve">
     <value>tpActions</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultActions.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideActions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cbWatchFolderEnabled.AutoSize" type="System.Boolean, mscorlib">
@@ -7308,100 +7440,40 @@
   <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkOverrideToolsSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="chkOverrideToolsSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkOverrideToolsSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkOverrideToolsSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="chkOverrideToolsSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 0</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkOverrideToolsSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 25</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkOverrideToolsSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Use tools settings in main window task settings</value>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Override tools settings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultToolsSettings</value>
+  <data name="&gt;&gt;chkOverrideToolsSettings.Name" xml:space="preserve">
+    <value>chkOverrideToolsSettings</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.Parent" xml:space="preserve">
     <value>tpTools</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultToolsSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pgTaskSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgTaskSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="pgTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>565, 443</value>
-  </data>
-  <data name="pgTaskSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pgTaskSettings.Name" xml:space="preserve">
-    <value>pgTaskSettings</value>
-  </data>
-  <data name="&gt;&gt;pgTaskSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgTaskSettings.Parent" xml:space="preserve">
-    <value>tpAdvanced</value>
-  </data>
-  <data name="&gt;&gt;pgTaskSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 8</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>565, 30</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Use advanced settings in main window task settings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultAdvancedSettings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Parent" xml:space="preserve">
-    <value>tpAdvanced</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkOverrideToolsSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
