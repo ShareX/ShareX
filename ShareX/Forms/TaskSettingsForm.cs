@@ -63,8 +63,11 @@ namespace ShareX
             {
                 tbDescription.Text = TaskSettings.Description ?? "";
                 cbUseDefaultAfterCaptureSettings.Checked = TaskSettings.UseDefaultAfterCaptureJob;
+                btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
                 cbUseDefaultAfterUploadSettings.Checked = TaskSettings.UseDefaultAfterUploadJob;
+                btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
                 cbUseDefaultDestinationSettings.Checked = TaskSettings.UseDefaultDestinations;
+                btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
                 chkUseDefaultGeneralSettings.Checked = TaskSettings.UseDefaultGeneralSettings;
                 chkUseDefaultImageSettings.Checked = TaskSettings.UseDefaultImageSettings;
                 chkUseDefaultCaptureSettings.Checked = TaskSettings.UseDefaultCaptureSettings;
@@ -142,17 +145,23 @@ namespace ShareX
 
             if (Program.UploadersConfig != null)
             {
+                chkOverrideFTP.Enabled = cboFTPaccounts.Enabled = Program.UploadersConfig.FTPAccountList.Count > 0;
+
                 if (Program.UploadersConfig.FTPAccountList.Count > 0)
                 {
                     chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
+                    cboFTPaccounts.Enabled = TaskSettings.OverrideFTP;
                     cboFTPaccounts.Items.Clear();
                     cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
                     cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
                 }
 
+                chkOverrideCustomUploader.Enabled = cbOverrideCustomUploader.Enabled = Program.UploadersConfig.CustomUploadersList.Count > 0;
+
                 if (Program.UploadersConfig.CustomUploadersList.Count > 0)
                 {
                     chkOverrideCustomUploader.Checked = TaskSettings.OverrideCustomUploader;
+                    cbOverrideCustomUploader.Enabled = TaskSettings.OverrideCustomUploader;
                     cbOverrideCustomUploader.Items.Clear();
                     cbOverrideCustomUploader.Items.AddRange(Program.UploadersConfig.CustomUploadersList.ToArray());
                     cbOverrideCustomUploader.SelectedIndex = TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
@@ -431,8 +440,6 @@ namespace ShareX
                 EnableDisableToolStripMenuItems<FileDestination>(tsmiFileUploaders);
                 EnableDisableToolStripMenuItems<UrlShortenerType>(tsmiURLShorteners);
                 EnableDisableToolStripMenuItems<URLSharingServices>(tsmiURLSharingServices);
-                chkOverrideFTP.Enabled = cboFTPaccounts.Enabled = Program.UploadersConfig.FTPAccountList.Count > 1;
-                chkOverrideCustomUploader.Enabled = cbOverrideCustomUploader.Enabled = Program.UploadersConfig.CustomUploadersList.Count > 1;
             }
         }
 
