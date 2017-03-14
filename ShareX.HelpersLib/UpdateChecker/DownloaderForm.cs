@@ -196,6 +196,41 @@ namespace ShareX.HelpersLib
             lblStatus.Text = string.Format(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
         }
 
+        private void HandleDownloadException(Exception ex)
+        {
+            if(ex is WebException)
+            {
+                var webEx = (WebException)ex;
+
+                if (webEx.Status == WebExceptionStatus.ProtocolError)
+                {
+                    var response = webEx.Response as HttpWebResponse;
+                    if (response != null)
+                    {
+                        var responseCode = (int)response.StatusCode;
+
+                        if (responseCode == 401)
+                        {
+                            ChangeFormForPossibleProxyDetected();
+                            return;
+                        }
+                    }
+                }
+            }
+
+            ChangeStatus(ex.Message);
+        }
+
+        private void ChangeFormForPossibleProxyDetected()
+        {
+            txtChangelog.WordWrap = true;
+            txtChangelog.Text = Resources.DownloaderForm_ProxyDetected;
+            cbShowChangelog.Checked = true;
+            ChangeStatus(Resources.Error);
+            ChangeProgressForCanceledDownload();
+            UpdateFormSize();
+        }
+
         private void ChangeProgress()
         {
             if (fileDownloader != null)
@@ -204,6 +239,12 @@ namespace ShareX.HelpersLib
                 lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
                     fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
             }
+        }
+
+        private void ChangeProgressForCanceledDownload()
+        {
+            lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress___0_,
+                Resources.DownloaderForm_Download_Canceled);
         }
 
         private void StartDownload()
@@ -223,7 +264,7 @@ namespace ShareX.HelpersLib
                 fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
-                fileDownloader.ExceptionThrowed += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
+                fileDownloader.ExceptionThrowed += (v1, v2) => HandleDownloadException(fileDownloader.LastException);
                 fileDownloader.StartDownload();
 
                 ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
