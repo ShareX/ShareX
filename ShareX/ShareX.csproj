@@ -1316,6 +1316,7 @@
     <None Include="Resources\application-home.png" />
     <None Include="Resources\clipboard-task.png" />
     <None Include="Resources\script--minus.png" />
+    <None Include="Resources\Google.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -198,16 +198,17 @@ namespace ShareX.HelpersLib
 
         private void HandleDownloadException(Exception ex)
         {
-            if(ex is WebException)
+            if (ex is WebException)
             {
-                var webEx = (WebException)ex;
+                WebException webEx = (WebException)ex;
 
                 if (webEx.Status == WebExceptionStatus.ProtocolError)
                 {
-                    var response = webEx.Response as HttpWebResponse;
+                    HttpWebResponse response = webEx.Response as HttpWebResponse;
+
                     if (response != null)
                     {
-                        var responseCode = (int)response.StatusCode;
+                        int responseCode = (int)response.StatusCode;
 
                         if (responseCode == 401)
                         {

@@ -977,6 +977,11 @@ namespace ShareX
             }
         }
 
+        public static void SearchImage(string url)
+        {
+            URLHelpers.OpenURL("https://www.google.com/searchbyimage?image_url=" + URLHelpers.URLEncode(url));
+        }
+
         public static void OCRImage(string filePath)
         {
             if (File.Exists(filePath))
@@ -1102,8 +1107,7 @@ namespace ShareX
                 if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegPath),
                     "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-
-                    var downloadDialogResult = FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
+                    DialogResult downloadDialogResult = FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
 
                     if (downloadDialogResult == DialogResult.OK)
                     {
@@ -1115,7 +1119,7 @@ namespace ShareX
                           taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
 #endif
                     }
-                    else if(downloadDialogResult == DialogResult.Cancel)
+                    else if (downloadDialogResult == DialogResult.Cancel)
                     {
                         return false;
                     }
