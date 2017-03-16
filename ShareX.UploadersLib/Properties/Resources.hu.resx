@@ -126,17 +126,11 @@
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>A felhatalmazás frissítése nem támogatott.</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Felhasználó ID:</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Helytelen eszköznév</value>
   </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
     <value>Állapot: Sikertelen bejelentkezés.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Bo mappalista frissítés sikertelen</value>
@@ -173,9 +167,6 @@
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Tweet hiba</value>
-  </data>
-  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
-    <value>Sikeres bejelentkezés, de a fiók információk lekérdezése sikertelen.</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Hitelesítés szükséges.</value>
@@ -225,14 +216,5 @@
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Csatlakozva!
 Létrehozott mappák:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
-    <value>Letöltési útvonal:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
-    <value>Név:</value>
   </data>
 </root>

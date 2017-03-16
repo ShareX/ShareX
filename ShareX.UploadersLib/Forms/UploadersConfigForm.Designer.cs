@@ -184,8 +184,6 @@
             this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
-            this.lblDropboxStatus = new System.Windows.Forms.Label();
-            this.lblDropboxPathTip = new System.Windows.Forms.Label();
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpOneDrive = new System.Windows.Forms.TabPage();
@@ -1819,8 +1817,6 @@
             this.tpDropbox.Controls.Add(this.cbDropboxURLType);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
-            this.tpDropbox.Controls.Add(this.lblDropboxStatus);
-            this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
             this.tpDropbox.Controls.Add(this.txtDropboxPath);
             resources.ApplyResources(this.tpDropbox, "tpDropbox");
@@ -1858,16 +1854,6 @@
             this.pbDropboxLogo.Name = "pbDropboxLogo";
             this.pbDropboxLogo.TabStop = false;
             this.pbDropboxLogo.Click += new System.EventHandler(this.pbDropboxLogo_Click);
-            // 
-            // lblDropboxStatus
-            // 
-            resources.ApplyResources(this.lblDropboxStatus, "lblDropboxStatus");
-            this.lblDropboxStatus.Name = "lblDropboxStatus";
-            // 
-            // lblDropboxPathTip
-            // 
-            resources.ApplyResources(this.lblDropboxPathTip, "lblDropboxPathTip");
-            this.lblDropboxPathTip.Name = "lblDropboxPathTip";
             // 
             // lblDropboxPath
             // 
@@ -5049,8 +5035,6 @@
         private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
-        private System.Windows.Forms.Label lblDropboxStatus;
-        private System.Windows.Forms.Label lblDropboxPathTip;
         private System.Windows.Forms.Label lblDropboxPath;
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;

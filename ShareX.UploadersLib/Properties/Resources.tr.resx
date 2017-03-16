@@ -126,12 +126,6 @@
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Durum: Giriş yapılmamış.</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>Eposta:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
-    <value>Ad:</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Seçili dizin:</value>
   </data>
@@ -169,9 +163,6 @@
     <value>Bağlandı!
 Oluşturulmuş dizinler:</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
-    <value>İndirme yolu:</value>
-  </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Anahtar dosyası için gözat...</value>
   </data>
@@ -196,17 +187,11 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Yetkilendirme yenileme desteklenmiyor.</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Kullanıcı ID:</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Hatalı cihaz adı</value>
   </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
     <value>Durum: Giriş başarısız.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Yükleme yolu:</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box dizin listesi yenileme başarısız</value>
@@ -225,9 +210,6 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Oluşturulacak dizin adı</value>
-  </data>
-  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
-    <value>Giriş başarılı fakat hesap bilgilerini alma başarısız.</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Sertifika dosyası için gözat...</value>

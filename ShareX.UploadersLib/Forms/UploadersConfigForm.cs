@@ -353,7 +353,6 @@ namespace ShareX.UploadersLib
             cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
             cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
             cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
-            UpdateDropboxStatus();
 
             // OneDrive
 
@@ -1375,7 +1374,6 @@ namespace ShareX.UploadersLib
         private void txtDropboxPath_TextChanged(object sender, EventArgs e)
         {
             Config.DropboxUploadPath = txtDropboxPath.Text;
-            UpdateDropboxStatus();
         }
 
         private void cbDropboxAutoCreateShareableLink_CheckedChanged(object sender, EventArgs e)

@@ -468,21 +468,8 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        Config.DropboxAccountInfo = dropbox.GetCurrentAccountAPIv1();
-                        UpdateDropboxStatus();
-
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
-
-                        if (Config.DropboxAccountInfo != null)
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_, "ShareX",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -491,34 +478,11 @@ namespace ShareX.UploadersLib
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-                Config.DropboxAccountInfo = null;
-                UpdateDropboxStatus();
             }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
                 MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void UpdateDropboxStatus()
-        {
-            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.DropboxAccountInfo.Email);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.DropboxAccountInfo.Display_name);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.DropboxAccountInfo.Uid);
-                string uploadPath = NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(Config.DropboxUploadPath));
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + uploadPath);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " +
-                    Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid.ToString(), URLHelpers.CombineURL(uploadPath, "Example.png")));
-                lblDropboxStatus.Text = sb.ToString();
-            }
-            else
-            {
-                lblDropboxStatus.Text = "";
             }
         }
 

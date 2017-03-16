@@ -126,17 +126,11 @@
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>不支持刷新授权。</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>用户ID:</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>无效的设备名称</value>
   </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
     <value>状态:登录失败。</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>上传路径:</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box刷新文件夹列表失败</value>
@@ -173,9 +167,6 @@
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Tweet 错误</value>
-  </data>
-  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
-    <value>登录成功,但帐户信息获取失败。</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>要求认证。</value>
@@ -225,15 +216,6 @@
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>连接成功!
 创建的文件夹:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
-    <value>下载路径:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>电子邮件:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
-    <value>名称:</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP客户端只支持FTP和FTPS。</value>
