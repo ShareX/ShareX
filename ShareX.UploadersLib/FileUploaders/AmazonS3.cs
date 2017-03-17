@@ -47,8 +47,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public override bool CheckConfig(UploadersConfig config)
         {
             return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
-                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket) &&
-                !string.IsNullOrEmpty(config.AmazonS3Settings.RegionHostname) && !string.IsNullOrEmpty(config.AmazonS3Settings.RegionIdentifier);
+                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.RegionHostname) &&
+                !string.IsNullOrEmpty(config.AmazonS3Settings.RegionIdentifier) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -178,9 +178,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GenerateURL(string fileName)
         {
-            string uploadPath = GetUploadPath(fileName);
-            string url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
-            return URLHelpers.ForcePrefix(url, "https://");
+            if (!string.IsNullOrEmpty(Settings.RegionHostname) && !string.IsNullOrEmpty(Settings.Bucket))
+            {
+                string uploadPath = GetUploadPath(fileName);
+                string url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
+                return URLHelpers.ForcePrefix(url, "https://");
+            }
+
+            return "";
         }
 
         private string CreateCanonicalHeaders(NameValueCollection headers)
