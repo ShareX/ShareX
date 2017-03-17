@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
                 !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket) &&
-                !string.IsNullOrEmpty(config.AmazonS3Settings.Endpoint);
+                !string.IsNullOrEmpty(config.AmazonS3Settings.RegionHostname) && !string.IsNullOrEmpty(config.AmazonS3Settings.RegionIdentifier);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -61,6 +61,26 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class AmazonS3 : FileUploader
     {
+        public static List<AmazonS3Region> Regions { get; } = new List<AmazonS3Region>()
+        {
+            new AmazonS3Region("Asia Pacific (Tokyo)", "s3-ap-northeast-1.amazonaws.com", "ap-northeast-1"),
+            new AmazonS3Region("Asia Pacific (Seoul)", "s3.ap-northeast-2.amazonaws.com", "ap-northeast-2"),
+            new AmazonS3Region("Asia Pacific (Mumbai)", "s3.ap-south-1.amazonaws.com", "ap-south-1"),
+            new AmazonS3Region("Asia Pacific (Singapore)", "s3-ap-southeast-1.amazonaws.com", "ap-southeast-1"),
+            new AmazonS3Region("Asia Pacific (Sydney)", "s3-ap-southeast-2.amazonaws.com", "ap-southeast-2"),
+            new AmazonS3Region("Canada (Central)", "s3.ca-central-1.amazonaws.com", "ca-central-1"),
+            new AmazonS3Region("EU Central (Frankfurt)", "s3.eu-central-1.amazonaws.com", "eu-central-1"),
+            new AmazonS3Region("EU West (Ireland)", "s3-eu-west-1.amazonaws.com", "eu-west-1"),
+            new AmazonS3Region("EU West (London)", "s3.eu-west-2.amazonaws.com", "eu-west-2"),
+            new AmazonS3Region("South America (Sao Paulo)", "s3-sa-east-1.amazonaws.com", "sa-east-1"),
+            new AmazonS3Region("US East (Virginia)", "s3.amazonaws.com", "us-east-1"),
+            new AmazonS3Region("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
+            new AmazonS3Region("US West (N. California)", "s3-us-west-1.amazonaws.com", "us-west-1"),
+            new AmazonS3Region("US West (Oregon)", "s3-us-west-2.amazonaws.com", "us-west-2"),
+            new AmazonS3Region("China (Beijing)", "s3.cn-north-1.amazonaws.com.cn", "cn-north-1"),
+            new AmazonS3Region("US GovCloud West (Oregon)", "s3-us-gov-west-1.amazonaws.com", "us-gov-west-1")
+        };
+
         private AmazonS3Settings Settings { get; set; }
 
         public AmazonS3(AmazonS3Settings settings)
@@ -70,10 +90,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string host = $"{Settings.Bucket}.s3.{Settings.Endpoint}.amazonaws.com";
+            string hostname = URLHelpers.RemovePrefixes(Settings.RegionHostname);
+            string host = $"{Settings.Bucket}.{hostname}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
-            string scope = $"{credentialDate}/{Settings.Endpoint}/s3/aws4_request";
+            string scope = $"{credentialDate}/{Settings.RegionIdentifier}/s3/aws4_request";
             string credential = $"{Settings.AccessKeyID}/{scope}";
             string longDate = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
@@ -115,7 +136,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             byte[] secretKey = Encoding.UTF8.GetBytes("AWS4" + Settings.SecretAccessKey);
             byte[] dateKey = ComputeHMAC(Encoding.UTF8.GetBytes(credentialDate), secretKey);
-            byte[] dateRegionKey = ComputeHMAC(Encoding.UTF8.GetBytes(Settings.Endpoint), dateKey);
+            byte[] dateRegionKey = ComputeHMAC(Encoding.UTF8.GetBytes(Settings.RegionIdentifier), dateKey);
             byte[] dateRegionServiceKey = ComputeHMAC(Encoding.UTF8.GetBytes("s3"), dateRegionKey);
             byte[] signingKey = ComputeHMAC(Encoding.UTF8.GetBytes("aws4_request"), dateRegionServiceKey);
             string signature = BytesToHex(ComputeHMAC(Encoding.UTF8.GetBytes(stringToSign), signingKey));
@@ -158,7 +179,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GenerateURL(string fileName)
         {
             string uploadPath = GetUploadPath(fileName);
-            return URLHelpers.CombineURL($"https://s3.{Settings.Endpoint}.amazonaws.com", Settings.Bucket, uploadPath);
+            string url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
+            return URLHelpers.ForcePrefix(url, "https://");
         }
 
         private string CreateCanonicalHeaders(NameValueCollection headers)
