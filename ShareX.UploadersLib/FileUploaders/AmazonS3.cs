@@ -181,8 +181,19 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(Settings.RegionHostname) && !string.IsNullOrEmpty(Settings.Bucket))
             {
                 string uploadPath = GetUploadPath(fileName);
-                string url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
-                return URLHelpers.ForcePrefix(url, "https://");
+
+                string url;
+
+                if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
+                {
+                    url = URLHelpers.CombineURL(Settings.CustomDomain, uploadPath);
+                }
+                else
+                {
+                    url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
+                }
+
+                return URLHelpers.FixPrefix(url, "https://");
             }
 
             return "";

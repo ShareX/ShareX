@@ -222,6 +222,10 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.lblAmazonS3Hostname = new System.Windows.Forms.Label();
+            this.txtAmazonS3Hostname = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3Identifier = new System.Windows.Forms.Label();
+            this.txtAmazonS3Identifier = new System.Windows.Forms.TextBox();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
             this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
@@ -593,11 +597,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.txtAmazonS3Identifier = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Identifier = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtAmazonS3Hostname = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Hostname = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2160,6 +2160,28 @@
             resources.ApplyResources(this.tpAmazonS3, "tpAmazonS3");
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // lblAmazonS3Hostname
+            // 
+            resources.ApplyResources(this.lblAmazonS3Hostname, "lblAmazonS3Hostname");
+            this.lblAmazonS3Hostname.Name = "lblAmazonS3Hostname";
+            // 
+            // txtAmazonS3Hostname
+            // 
+            resources.ApplyResources(this.txtAmazonS3Hostname, "txtAmazonS3Hostname");
+            this.txtAmazonS3Hostname.Name = "txtAmazonS3Hostname";
+            this.txtAmazonS3Hostname.TextChanged += new System.EventHandler(this.txtAmazonS3Hostname_TextChanged);
+            // 
+            // lblAmazonS3Identifier
+            // 
+            resources.ApplyResources(this.lblAmazonS3Identifier, "lblAmazonS3Identifier");
+            this.lblAmazonS3Identifier.Name = "lblAmazonS3Identifier";
+            // 
+            // txtAmazonS3Identifier
+            // 
+            resources.ApplyResources(this.txtAmazonS3Identifier, "txtAmazonS3Identifier");
+            this.txtAmazonS3Identifier.Name = "txtAmazonS3Identifier";
+            this.txtAmazonS3Identifier.TextChanged += new System.EventHandler(this.txtAmazonS3Identifier_TextChanged);
             // 
             // txtAmazonS3CustomDomain
             // 
@@ -4797,28 +4819,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // txtAmazonS3Identifier
-            // 
-            resources.ApplyResources(this.txtAmazonS3Identifier, "txtAmazonS3Identifier");
-            this.txtAmazonS3Identifier.Name = "txtAmazonS3Identifier";
-            this.txtAmazonS3Identifier.TextChanged += new System.EventHandler(this.txtAmazonS3Identifier_TextChanged);
-            // 
-            // lblAmazonS3Identifier
-            // 
-            resources.ApplyResources(this.lblAmazonS3Identifier, "lblAmazonS3Identifier");
-            this.lblAmazonS3Identifier.Name = "lblAmazonS3Identifier";
-            // 
-            // txtAmazonS3Hostname
-            // 
-            resources.ApplyResources(this.txtAmazonS3Hostname, "txtAmazonS3Hostname");
-            this.txtAmazonS3Hostname.Name = "txtAmazonS3Hostname";
-            this.txtAmazonS3Hostname.TextChanged += new System.EventHandler(this.txtAmazonS3Hostname_TextChanged);
-            // 
-            // lblAmazonS3Hostname
-            // 
-            resources.ApplyResources(this.lblAmazonS3Hostname, "lblAmazonS3Hostname");
-            this.lblAmazonS3Hostname.Name = "lblAmazonS3Hostname";
             // 
             // UploadersConfigForm
             // 
