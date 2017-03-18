@@ -153,6 +153,7 @@
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSearchImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,7 +166,6 @@
             this.tsmiImagePreviewShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewHide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewAutomatic = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSearchImage = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiTrayCapture = new System.Windows.Forms.ToolStripMenuItem();
@@ -1203,6 +1203,13 @@
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
+            // tsmiSearchImage
+            // 
+            this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
+            this.tsmiSearchImage.Name = "tsmiSearchImage";
+            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
+            this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
+            // 
             // tsmiShowQRCode
             // 
             this.tsmiShowQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
@@ -1286,13 +1293,6 @@
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
             resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
-            // 
-            // tsmiSearchImage
-            // 
-            this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
-            this.tsmiSearchImage.Name = "tsmiSearchImage";
-            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
-            this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
             // 
             // niTray
             // 
