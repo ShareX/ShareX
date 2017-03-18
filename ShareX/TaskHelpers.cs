@@ -793,23 +793,6 @@ namespace ShareX
             }
         }
 
-        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
-        {
-            if (img != null)
-            {
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
-                }
-                else
-                {
-                    return AnnotateImageUsingGreenshot(img, filePath);
-                }
-            }
-
-            return null;
-        }
-
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
             Image result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
@@ -820,7 +803,24 @@ namespace ShareX
             }
         }
 
-        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options)
+        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
+        {
+            if (img != null)
+            {
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
+                {
+                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
+                }
+                else
+                {
+                    return AnnotateImageUsingGreenshot(img, filePath);
+                }
+            }
+
+            return null;
+        }
+
+        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
         {
             if (img == null && File.Exists(filePath))
             {
@@ -836,7 +836,8 @@ namespace ShareX
                         (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
                         x => ClipboardHelpers.CopyImage(x),
                         x => UploadManager.UploadImage(x),
-                        x => PrintImage(x));
+                        x => PrintImage(x),
+                        taskMode);
                 }
             }
 
