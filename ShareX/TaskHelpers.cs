@@ -36,6 +36,7 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -980,7 +981,7 @@ namespace ShareX
 
         public static void SearchImage(string url)
         {
-            URLHelpers.OpenURL("https://www.google.com/searchbyimage?image_url=" + URLHelpers.URLEncode(url));
+            new GoogleImageSearchSharingService().ShareURL(url, null);
         }
 
         public static void OCRImage(string filePath)

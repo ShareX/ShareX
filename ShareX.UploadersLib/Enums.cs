@@ -209,7 +209,9 @@ namespace ShareX.UploadersLib
         [Description("VK")]
         VK,
         [Description("Pushbullet")]
-        Pushbullet
+        Pushbullet,
+        [Description("Google image search")]
+        GoogleImageSearch
     }
 
     public enum HttpMethod
