@@ -36,5 +36,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool UseCustomCNAME { get; set; }
         public string CustomDomain { get; set; }
         public bool UseReducedRedundancyStorage { get; set; }
+
+        // For backward compatibility
+        public string Endpoint { get; set; }
     }
 }

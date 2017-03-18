@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.FileUploaders;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -418,6 +419,9 @@ namespace ShareX
         {
             LoadUploadersConfig();
             UploaderSettingsResetEvent.Set();
+
+            RunUploaderBackwardCompatibilityTasks();
+
             LoadHotkeySettings();
             HotkeySettingsResetEvent.Set();
 
@@ -444,9 +448,29 @@ namespace ShareX
 
             if (Settings.IsUpgradeFrom("11.5.0"))
             {
-                if (File.Exists(Program.ChromeHostManifestFilePath))
+                if (File.Exists(ChromeHostManifestFilePath))
                 {
                     IntegrationHelpers.CreateChromeExtensionSupport(true);
+                }
+            }
+        }
+
+        private static void RunUploaderBackwardCompatibilityTasks()
+        {
+            if (UploadersConfig.IsUpgradeFrom("11.6.0"))
+            {
+                if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint) && string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionHostname) &&
+                    string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionIdentifier))
+                {
+                    foreach (AmazonS3Region region in AmazonS3.Regions)
+                    {
+                        if (region.Identifier.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            UploadersConfig.AmazonS3Settings.RegionHostname = region.Hostname;
+                            UploadersConfig.AmazonS3Settings.RegionIdentifier = region.Identifier;
+                            break;
+                        }
+                    }
                 }
             }
         }
