@@ -2143,6 +2143,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap tw {
+            get {
+                object obj = ResourceManager.GetObject("tw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Twitter {
             get {
                 object obj = ResourceManager.GetObject("Twitter", resourceCulture);

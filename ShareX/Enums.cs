@@ -62,6 +62,8 @@ namespace ShareX
         Spanish,
         [Description("Türkçe (Turkish)")]
         Turkish,
+        [Description("繁體中文 (Traditional Chinese)")]
+        TraditionalChinese,
         [Description("Tiếng Việt (Vietnamese)")]
         Vietnamese
     }
