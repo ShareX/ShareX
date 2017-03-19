@@ -118,7 +118,6 @@
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\AzureStorage.cs" />
-    <Compile Include="FileUploaders\AzureStorageSettings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
     <Compile Include="FileUploaders\Plik.cs" />

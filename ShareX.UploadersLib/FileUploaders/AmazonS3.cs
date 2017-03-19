@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
                 !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.RegionHostname) &&
-                !string.IsNullOrEmpty(config.AmazonS3Settings.RegionIdentifier) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket);
+                !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -78,7 +78,8 @@ namespace ShareX.UploadersLib.FileUploaders
             new AmazonS3Region("US West (N. California)", "s3-us-west-1.amazonaws.com", "us-west-1"),
             new AmazonS3Region("US West (Oregon)", "s3-us-west-2.amazonaws.com", "us-west-2"),
             new AmazonS3Region("China (Beijing)", "s3.cn-north-1.amazonaws.com.cn", "cn-north-1"),
-            new AmazonS3Region("US GovCloud West (Oregon)", "s3-us-gov-west-1.amazonaws.com", "us-gov-west-1")
+            new AmazonS3Region("US GovCloud West (Oregon)", "s3-us-gov-west-1.amazonaws.com", "us-gov-west-1"),
+            new AmazonS3Region("DreamObjects", "objects-us-west-1.dream.io")
         };
 
         private AmazonS3Settings Settings { get; set; }
@@ -94,7 +95,8 @@ namespace ShareX.UploadersLib.FileUploaders
             string host = $"{Settings.Bucket}.{hostname}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
-            string scope = $"{credentialDate}/{Settings.RegionIdentifier}/s3/aws4_request";
+            string identifier = GetIdentifier();
+            string scope = $"{credentialDate}/{identifier}/s3/aws4_request";
             string credential = $"{Settings.AccessKeyID}/{scope}";
             string longDate = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
@@ -134,12 +136,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 scope + "\n" +
                 BytesToHex(ComputeHash(canonicalRequest));
 
-            byte[] secretKey = Encoding.UTF8.GetBytes("AWS4" + Settings.SecretAccessKey);
-            byte[] dateKey = ComputeHMAC(Encoding.UTF8.GetBytes(credentialDate), secretKey);
-            byte[] dateRegionKey = ComputeHMAC(Encoding.UTF8.GetBytes(Settings.RegionIdentifier), dateKey);
-            byte[] dateRegionServiceKey = ComputeHMAC(Encoding.UTF8.GetBytes("s3"), dateRegionKey);
-            byte[] signingKey = ComputeHMAC(Encoding.UTF8.GetBytes("aws4_request"), dateRegionServiceKey);
-            string signature = BytesToHex(ComputeHMAC(Encoding.UTF8.GetBytes(stringToSign), signingKey));
+            byte[] dateKey = ComputeHMAC(credentialDate, "AWS4" + Settings.SecretAccessKey);
+            byte[] dateRegionKey = ComputeHMAC(identifier, dateKey);
+            byte[] dateRegionServiceKey = ComputeHMAC("s3", dateRegionKey);
+            byte[] signingKey = ComputeHMAC("aws4_request", dateRegionServiceKey);
+            string signature = BytesToHex(ComputeHMAC(stringToSign, signingKey));
 
             args.Add("X-Amz-Signature", signature);
 
@@ -168,6 +169,18 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsSuccess = true,
                 URL = GenerateURL(fileName)
             };
+        }
+
+        private string GetIdentifier()
+        {
+            if (!string.IsNullOrEmpty(Settings.RegionIdentifier))
+            {
+                return Settings.RegionIdentifier;
+            }
+
+            string hostname = URLHelpers.RemovePrefixes(Settings.RegionHostname);
+            int index = hostname.IndexOf('.');
+            return hostname.Substring(0, index);
         }
 
         private string GetUploadPath(string fileName)
@@ -216,20 +229,40 @@ namespace ShareX.UploadersLib.FileUploaders
             return string.Join(";", headers.AllKeys.Select(x => x.ToLowerInvariant()));
         }
 
+        private byte[] ComputeHash(byte[] data)
+        {
+            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            {
+                return hashAlgorithm.ComputeHash(data);
+            }
+        }
+
         private byte[] ComputeHash(string data)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
-            SHA256Managed hashstring = new SHA256Managed();
-            byte[] hash = hashstring.ComputeHash(bytes);
-            return hash;
+            return ComputeHash(Encoding.UTF8.GetBytes(data));
         }
 
         private byte[] ComputeHMAC(byte[] data, byte[] key)
         {
-            using (HashAlgorithm hashAlgorithm = new HMACSHA256(key))
+            using (HMACSHA256 hashAlgorithm = new HMACSHA256(key))
             {
                 return hashAlgorithm.ComputeHash(data);
             }
+        }
+
+        private byte[] ComputeHMAC(string data, string key)
+        {
+            return ComputeHMAC(Encoding.UTF8.GetBytes(data), Encoding.UTF8.GetBytes(key));
+        }
+
+        private byte[] ComputeHMAC(byte[] data, string key)
+        {
+            return ComputeHMAC(data, Encoding.UTF8.GetBytes(key));
+        }
+
+        private byte[] ComputeHMAC(string data, byte[] key)
+        {
+            return ComputeHMAC(Encoding.UTF8.GetBytes(data), key);
         }
 
         private string BytesToHex(byte[] bytes)

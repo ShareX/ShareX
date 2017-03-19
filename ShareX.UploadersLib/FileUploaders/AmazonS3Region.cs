@@ -31,6 +31,12 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Hostname { get; set; }
         public string Identifier { get; set; }
 
+        public AmazonS3Region(string name, string hostname)
+        {
+            Name = name;
+            Hostname = hostname;
+        }
+
         public AmazonS3Region(string name, string hostname, string identifier)
         {
             Name = name;
@@ -40,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override string ToString()
         {
-            return $"{Name} [{Identifier}]";
+            return $"{Name} [{Hostname}]";
         }
     }
 }
