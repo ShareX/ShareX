@@ -350,9 +350,8 @@ namespace ShareX.UploadersLib
 
             txtDropboxPath.Text = Config.DropboxUploadPath;
             cbDropboxAutoCreateShareableLink.Checked = Config.DropboxAutoCreateShareableLink;
-            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
-            cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
-            cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
+            cbDropboxUseDirectLink.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxUseDirectLink.Checked = Config.DropboxUseDirectLink;
 
             // OneDrive
 
@@ -1384,12 +1383,12 @@ namespace ShareX.UploadersLib
         private void cbDropboxAutoCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.DropboxAutoCreateShareableLink = cbDropboxAutoCreateShareableLink.Checked;
-            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxUseDirectLink.Enabled = Config.DropboxAutoCreateShareableLink;
         }
 
-        private void cbDropboxURLType_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbDropboxUseDirectLink_CheckedChanged(object sender, EventArgs e)
         {
-            Config.DropboxURLType = (DropboxURLType)cbDropboxURLType.SelectedIndex;
+            Config.DropboxUseDirectLink = cbDropboxUseDirectLink.Checked;
         }
 
         #endregion Dropbox

@@ -138,6 +138,9 @@ namespace ShareX.UploadersLib
         public OAuth2Info DropboxOAuth2Info = null;
         public string DropboxUploadPath = "ShareX/%y/%mo";
         public bool DropboxAutoCreateShareableLink = true;
+        public bool DropboxUseDirectLink = false;
+
+        // TEMP: For backward compatibility
         public DropboxURLType DropboxURLType = DropboxURLType.Default;
 
         // FTP Server

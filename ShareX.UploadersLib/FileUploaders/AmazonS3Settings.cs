@@ -37,7 +37,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string CustomDomain { get; set; }
         public bool UseReducedRedundancyStorage { get; set; }
 
-        // For backward compatibility
+        // TEMP: For backward compatibility
         public string Endpoint { get; set; }
     }
 }

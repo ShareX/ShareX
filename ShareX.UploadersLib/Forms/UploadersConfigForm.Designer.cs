@@ -181,7 +181,6 @@
             this.ucFTPAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
-            this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
             this.lblDropboxPath = new System.Windows.Forms.Label();
@@ -598,6 +597,7 @@
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbDropboxUseDirectLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1818,8 +1818,8 @@
             // 
             // tpDropbox
             // 
+            this.tpDropbox.Controls.Add(this.cbDropboxUseDirectLink);
             this.tpDropbox.Controls.Add(this.oauth2Dropbox);
-            this.tpDropbox.Controls.Add(this.cbDropboxURLType);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
@@ -1836,14 +1836,6 @@
             this.oauth2Dropbox.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
             this.oauth2Dropbox.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             this.oauth2Dropbox.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
-            // 
-            // cbDropboxURLType
-            // 
-            this.cbDropboxURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDropboxURLType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDropboxURLType, "cbDropboxURLType");
-            this.cbDropboxURLType.Name = "cbDropboxURLType";
-            this.cbDropboxURLType.SelectedIndexChanged += new System.EventHandler(this.cbDropboxURLType_SelectedIndexChanged);
             // 
             // cbDropboxAutoCreateShareableLink
             // 
@@ -4820,6 +4812,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbDropboxUseDirectLink
+            // 
+            resources.ApplyResources(this.cbDropboxUseDirectLink, "cbDropboxUseDirectLink");
+            this.cbDropboxUseDirectLink.Name = "cbDropboxUseDirectLink";
+            this.cbDropboxUseDirectLink.UseVisualStyleBackColor = true;
+            this.cbDropboxUseDirectLink.CheckedChanged += new System.EventHandler(this.cbDropboxUseDirectLink_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5064,7 +5063,6 @@
         private System.Windows.Forms.Label lblYourlsAPIURL;
         internal System.Windows.Forms.TabPage tpFileUploaders;
         private System.Windows.Forms.TabControl tcFileUploaders;
-        private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
         private System.Windows.Forms.Label lblDropboxPath;
@@ -5559,5 +5557,6 @@
         private System.Windows.Forms.Label lblAmazonS3Identifier;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblAmazonS3Hostname;
+        private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
     }
 }

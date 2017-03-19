@@ -52,13 +52,14 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(config.DropboxUploadPath)),
                 AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
-                ShareURLType = config.DropboxURLType
+                UseDirectLink = config.DropboxUseDirectLink
             };
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpDropbox;
     }
 
+    // TEMP: For backward compatibility
     public enum DropboxURLType
     {
         Default,
@@ -68,11 +69,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
-        public OAuth2Info AuthInfo { get; set; }
-        public string UploadPath { get; set; }
-        public bool AutoCreateShareableLink { get; set; }
-        public DropboxURLType ShareURLType { get; set; }
-
         private const string APIVersion = "2";
 
         private const string URLWEB = "https://www.dropbox.com";
@@ -93,10 +89,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLCreateFolder = URLAPI + "/files/create_folder";
         private const string URLDelete = URLAPI + "/files/delete";
         private const string URLMove = URLAPI + "/files/move";
-        private const string URLShares = "https://api.dropbox.com/1/shares/dropbox"; // API v1
 
-        private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
         private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
+        private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
+
+        public OAuth2Info AuthInfo { get; set; }
+        public string UploadPath { get; set; }
+        public bool AutoCreateShareableLink { get; set; }
+        public bool UseDirectLink { get; set; }
 
         public Dropbox(OAuth2Info oauth)
         {
@@ -105,7 +105,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
+            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, UseDirectLink);
         }
 
         public string GetAuthorizationURL()
@@ -204,7 +204,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public UploadResult UploadFile(Stream stream, string path, string filename, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
+        public UploadResult UploadFile(Stream stream, string path, string filename, bool createShareableLink = false, bool useDirectLink = false)
         {
             if (stream.Length > 150000000)
             {
@@ -231,11 +231,11 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 DropboxMetadata metadata = JsonConvert.DeserializeObject<DropboxMetadata>(ur.Response);
 
-                if (metadata != null && createShareableURL)
+                if (metadata != null && createShareableLink)
                 {
                     AllowReportProgress = false;
 
-                    ur.URL = CreateShareableLinkAPIv1(metadata.path_display, urlType);
+                    ur.URL = CreateShareableLink(metadata.path_display, useDirectLink);
                 }
             }
 
@@ -274,7 +274,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return metadata != null && !metadata.tag.Equals("deleted", StringComparison.InvariantCultureIgnoreCase);
         }
 
-        public string CreateShareableLink(string path, DropboxURLType urlType)
+        public string CreateShareableLink(string path, bool directLink)
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
@@ -293,42 +293,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     DropboxLinkMetadata linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
 
-                    if (urlType == DropboxURLType.Direct)
+                    if (directLink)
                     {
                         return GetDirectShareableURL(linkMetadata.url);
                     }
                     else
                     {
                         return linkMetadata.url;
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        public string CreateShareableLinkAPIv1(string path, DropboxURLType urlType)
-        {
-            if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                string url = URLHelpers.CombineURL(URLShares, URLHelpers.URLPathEncode(path));
-
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
-
-                string response = SendRequestMultiPart(url, args, GetAuthHeaders());
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    DropboxShares shares = JsonConvert.DeserializeObject<DropboxShares>(response);
-
-                    if (urlType == DropboxURLType.Direct)
-                    {
-                        return GetDirectShareableURL(shares.URL);
-                    }
-                    else
-                    {
-                        return shares.URL;
                     }
                 }
             }
@@ -563,14 +534,4 @@ namespace ShareX.UploadersLib.FileUploaders
         public string id { get; set; }
         public string name { get; set; }
     }
-
-    #region API v1
-
-    public class DropboxShares
-    {
-        public string URL { get; set; }
-        public string Expires { get; set; }
-    }
-
-    #endregion API v1
 }
