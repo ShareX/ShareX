@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>高階設定</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 應用程式設定</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>瀏覽...</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>開啟...</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>編輯...</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25（0禁用）</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>緩衝區大小:</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX個人資料夾:</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>注意: 必須重新開啟ShareX才能使個人資料夾更改生效.</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>綜合</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>不顯示Windows列印對話方塊</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>輔助檔案上傳程式</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>顯示系統匣圖示</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>開始時最小化到系統匣</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>在"傳送到"選單顯示ShareX</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Windows啟動時運行ShareX </value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>記住主視窗的位置</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>瀏覽...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>新增...</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>剪貼簿格式</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>重試時使用輔助上傳程式優先順序順序</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>輔助圖像上傳程式</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>同時上傳限制:</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>在工作列顯示進度</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>圖片列印設定..</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>域名:</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>代理伺服器的設定:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>埠:</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>使用自定義截圖資料夾:</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>開啟...</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>在系統系統匣顯示進展</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>使用者名:</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>記住主視窗的大小</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>子資料夾模式:</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>路徑</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>不顯示圖像的列印設定對話方塊</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>密碼:</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>重試</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>上傳失敗重試次數:</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>輔助文字上傳程式</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>當ShareX開啟時，在Steam內顯示ShareX</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>在Windows資源管理器右鍵選單顯示"使用ShareX上傳"按鈕</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>常規</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>語言:</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>檢查預覽版更新</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>滑鼠中鍵單擊系統匣圖示：</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>滑鼠左鍵雙擊系統匣圖示：</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>滑鼠左鍵單擊系統匣圖示：</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>編輯快速任務選單...</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>匯出設定</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>匯出歷史</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>匯出日誌</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>匯出...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>匯入...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>匯出 / 匯入</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>儲存任務歷史</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>最大數量的儲存任務</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>僅儲存URL（截圖並上傳圖床之後）</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>歷史</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>在系統匣選單顯示最新的一個任務</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>在系統匣選單顯示近期任務</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>儲存近期的任務</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>近期任務</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>歷史</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>在啟動主視窗時顯示近期的任務</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>啟用Firefox附加元件支援</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>安裝ShareX Firefox附加元件</value>
+  </data>
+  <data name="gpFirefox.Text" xml:space="preserve">
+    <value>Firefox附加元件</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>啟用Chrome附加元件支援</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>安裝ShareX Chrome附加元件</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome附加元件</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome瀏覽器擴充 支援</value>
+  </data>
+</root>
