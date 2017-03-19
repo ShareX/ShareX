@@ -459,6 +459,11 @@ namespace ShareX
         {
             if (UploadersConfig.IsUpgradeFrom("11.6.0"))
             {
+                if (UploadersConfig.DropboxURLType == DropboxURLType.Direct)
+                {
+                    UploadersConfig.DropboxUseDirectLink = true;
+                }
+
                 if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint) && string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionHostname) &&
                     string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionIdentifier))
                 {
