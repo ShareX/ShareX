@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class AzureStorage : FileUploader
     {
-        private const string apiVersion = "2016-05-31";
+        private const string APIVersion = "2016-05-31";
 
         public string AzureStorageAccountName { get; private set; }
         public string AzureStorageAccountAccessKey { get; private set; }
@@ -91,10 +91,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = apiVersion;
+            requestHeaders["x-ms-version"] = APIVersion;
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
-            string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{apiVersion}\n";
+            string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
             string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{fileName}";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
@@ -121,9 +121,9 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
             requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = apiVersion;
+            requestHeaders["x-ms-version"] = APIVersion;
 
-            string canonicalizedHeaders = $"x-ms-date:{date}\nx-ms-version:{apiVersion}\n";
+            string canonicalizedHeaders = $"x-ms-date:{date}\nx-ms-version:{APIVersion}\n";
             string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\nrestype:container";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
 
@@ -154,15 +154,15 @@ namespace ShareX.UploadersLib.FileUploaders
         private void SetContainerACL()
         {
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = "https://{azureStorageAccountName}.blob.core.windows.net/{azureStorageContainer}?restype=container&comp=acl";
+            string url = $"https://{AzureStorageAccountName}.blob.core.windows.net/{AzureStorageContainer}?restype=container&comp=acl";
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
             requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = apiVersion;
+            requestHeaders["x-ms-version"] = APIVersion;
             requestHeaders["x-ms-blob-public-access"] = "container";
 
-            string canonicalizedHeaders = $"x-ms-blob-public-access:container\nx-ms-date:{date}\nx-ms-version:{apiVersion}\n";
+            string canonicalizedHeaders = $"x-ms-blob-public-access:container\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
             string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\ncomp:acl\nrestype:container";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
 

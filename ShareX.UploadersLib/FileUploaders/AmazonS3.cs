@@ -32,8 +32,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -121,7 +119,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string canonicalURI = URLHelpers.AddSlash(uploadPath, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
-            string canonicalQueryString = CreateQueryString(args);
+            string canonicalQueryString = URLHelpers.CreateQuery(args);
             string canonicalHeaders = CreateCanonicalHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
@@ -134,20 +132,21 @@ namespace ShareX.UploadersLib.FileUploaders
             string stringToSign = algorithm + "\n" +
                 longDate + "\n" +
                 scope + "\n" +
-                BytesToHex(ComputeHash(canonicalRequest));
+                Helpers.BytesToHex(Helpers.ComputeSHA256(canonicalRequest));
 
-            byte[] dateKey = ComputeHMAC(credentialDate, "AWS4" + Settings.SecretAccessKey);
-            byte[] dateRegionKey = ComputeHMAC(identifier, dateKey);
-            byte[] dateRegionServiceKey = ComputeHMAC("s3", dateRegionKey);
-            byte[] signingKey = ComputeHMAC("aws4_request", dateRegionServiceKey);
-            string signature = BytesToHex(ComputeHMAC(stringToSign, signingKey));
+            byte[] dateKey = Helpers.ComputeHMACSHA256(credentialDate, "AWS4" + Settings.SecretAccessKey);
+            byte[] dateRegionKey = Helpers.ComputeHMACSHA256(identifier, dateKey);
+            byte[] dateRegionServiceKey = Helpers.ComputeHMACSHA256("s3", dateRegionKey);
+            byte[] signingKey = Helpers.ComputeHMACSHA256("aws4_request", dateRegionServiceKey);
+            string signature = Helpers.BytesToHex(Helpers.ComputeHMACSHA256(stringToSign, signingKey));
 
             args.Add("X-Amz-Signature", signature);
 
             headers.Remove("content-type");
             headers.Remove("host");
 
-            string url = URLHelpers.CombineURL(host, canonicalURI) + "?" + CreateQueryString(args);
+            string url = URLHelpers.CombineURL(host, canonicalURI);
+            url = URLHelpers.CreateQuery(url, args);
             url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
@@ -227,62 +226,6 @@ namespace ShareX.UploadersLib.FileUploaders
         private string GetSignedHeaders(NameValueCollection headers)
         {
             return string.Join(";", headers.AllKeys.Select(x => x.ToLowerInvariant()));
-        }
-
-        private byte[] ComputeHash(byte[] data)
-        {
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
-            {
-                return hashAlgorithm.ComputeHash(data);
-            }
-        }
-
-        private byte[] ComputeHash(string data)
-        {
-            return ComputeHash(Encoding.UTF8.GetBytes(data));
-        }
-
-        private byte[] ComputeHMAC(byte[] data, byte[] key)
-        {
-            using (HMACSHA256 hashAlgorithm = new HMACSHA256(key))
-            {
-                return hashAlgorithm.ComputeHash(data);
-            }
-        }
-
-        private byte[] ComputeHMAC(string data, string key)
-        {
-            return ComputeHMAC(Encoding.UTF8.GetBytes(data), Encoding.UTF8.GetBytes(key));
-        }
-
-        private byte[] ComputeHMAC(byte[] data, string key)
-        {
-            return ComputeHMAC(data, Encoding.UTF8.GetBytes(key));
-        }
-
-        private byte[] ComputeHMAC(string data, byte[] key)
-        {
-            return ComputeHMAC(Encoding.UTF8.GetBytes(data), key);
-        }
-
-        private string BytesToHex(byte[] bytes)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (byte x in bytes)
-            {
-                sb.Append(string.Format("{0:x2}", x));
-            }
-            return sb.ToString();
-        }
-
-        private string CreateQueryString(Dictionary<string, string> args)
-        {
-            if (args != null && args.Count > 0)
-            {
-                return string.Join("&", args.Select(x => x.Key + "=" + URLHelpers.URLEncode(x.Value)).ToArray());
-            }
-
-            return "";
         }
     }
 }
