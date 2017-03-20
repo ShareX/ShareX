@@ -29,15 +29,12 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public string AccessKeyID { get; set; }
         public string SecretAccessKey { get; set; }
-        public string RegionHostname { get; set; }
-        public string RegionIdentifier { get; set; }
+        public string Endpoint { get; set; }
+        public string Region { get; set; }
         public string Bucket { get; set; }
         public string ObjectPrefix { get; set; }
         public bool UseCustomCNAME { get; set; }
         public string CustomDomain { get; set; }
         public bool UseReducedRedundancyStorage { get; set; }
-
-        // TEMP: For backward compatibility
-        public string Endpoint { get; set; }
     }
 }

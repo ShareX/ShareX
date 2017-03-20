@@ -464,15 +464,14 @@ namespace ShareX
                     UploadersConfig.DropboxUseDirectLink = true;
                 }
 
-                if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint) && string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionHostname) &&
-                    string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.RegionIdentifier))
+                if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint))
                 {
-                    foreach (AmazonS3Region region in AmazonS3.Regions)
+                    foreach (AmazonS3Region region in AmazonS3.Endpoints)
                     {
-                        if (region.Identifier.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                        if (region.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            UploadersConfig.AmazonS3Settings.RegionHostname = region.Hostname;
-                            UploadersConfig.AmazonS3Settings.RegionIdentifier = region.Identifier;
+                            UploadersConfig.AmazonS3Settings.Endpoint = region.Endpoint;
+                            UploadersConfig.AmazonS3Settings.Region = region.Region;
                             break;
                         }
                     }

@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public override bool CheckConfig(UploadersConfig config)
         {
             return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
-                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.RegionHostname) &&
+                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.Endpoint) &&
                 !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket);
         }
 
@@ -61,7 +61,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private const string DefaultRegion = "us-east-1";
 
-        public static List<AmazonS3Region> Regions { get; } = new List<AmazonS3Region>()
+        public static List<AmazonS3Region> Endpoints { get; } = new List<AmazonS3Region>()
         {
             new AmazonS3Region("Asia Pacific (Tokyo)", "s3-ap-northeast-1.amazonaws.com", "ap-northeast-1"),
             new AmazonS3Region("Asia Pacific (Seoul)", "s3.ap-northeast-2.amazonaws.com", "ap-northeast-2"),
@@ -91,13 +91,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string hostname = URLHelpers.RemovePrefixes(Settings.RegionHostname);
-            string host = $"{Settings.Bucket}.{hostname}";
+            string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
+            string host = $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
-            string identifier = GetIdentifier();
-            string scope = $"{credentialDate}/{identifier}/s3/aws4_request";
-            string credential = $"{Settings.AccessKeyID}/{scope}";
+            string region = GetRegion();
+            string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
+            string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string longDate = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
             string contentType = Helpers.GetMimeType(fileName);
@@ -137,7 +137,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 Helpers.BytesToHex(Helpers.ComputeSHA256(canonicalRequest));
 
             byte[] dateKey = Helpers.ComputeHMACSHA256(credentialDate, "AWS4" + Settings.SecretAccessKey);
-            byte[] dateRegionKey = Helpers.ComputeHMACSHA256(identifier, dateKey);
+            byte[] dateRegionKey = Helpers.ComputeHMACSHA256(region, dateKey);
             byte[] dateRegionServiceKey = Helpers.ComputeHMACSHA256("s3", dateRegionKey);
             byte[] signingKey = Helpers.ComputeHMACSHA256("aws4_request", dateRegionServiceKey);
             string signature = Helpers.BytesToHex(Helpers.ComputeHMACSHA256(stringToSign, signingKey));
@@ -172,14 +172,14 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        private string GetIdentifier()
+        private string GetRegion()
         {
-            if (!string.IsNullOrEmpty(Settings.RegionIdentifier))
+            if (!string.IsNullOrEmpty(Settings.Region))
             {
-                return Settings.RegionIdentifier;
+                return Settings.Region;
             }
 
-            string url = Settings.RegionHostname;
+            string url = Settings.Endpoint;
 
             int delimIndex = url.IndexOf("//", StringComparison.Ordinal);
             if (delimIndex >= 0)
@@ -199,7 +199,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string serviceAndRegion = url.Substring(0, awsIndex);
-
             if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
             {
                 serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
@@ -222,7 +221,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GenerateURL(string fileName)
         {
-            if (!string.IsNullOrEmpty(Settings.RegionHostname) && !string.IsNullOrEmpty(Settings.Bucket))
+            if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
                 string uploadPath = GetUploadPath(fileName);
 
@@ -234,7 +233,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 else
                 {
-                    url = URLHelpers.CombineURL(Settings.RegionHostname, Settings.Bucket, uploadPath);
+                    url = URLHelpers.CombineURL(Settings.Endpoint, Settings.Bucket, uploadPath);
                 }
 
                 return URLHelpers.FixPrefix(url, "https://");

@@ -180,6 +180,7 @@
             this.cboFtpText = new System.Windows.Forms.ComboBox();
             this.ucFTPAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
+            this.cbDropboxUseDirectLink = new System.Windows.Forms.CheckBox();
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
@@ -221,19 +222,19 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
-            this.lblAmazonS3Hostname = new System.Windows.Forms.Label();
-            this.txtAmazonS3Hostname = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Identifier = new System.Windows.Forms.Label();
-            this.txtAmazonS3Identifier = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
+            this.txtAmazonS3Endpoint = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3Region = new System.Windows.Forms.Label();
+            this.txtAmazonS3Region = new System.Windows.Forms.TextBox();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
             this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
             this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
             this.btnAmazonS3AccessKeyOpen = new System.Windows.Forms.Button();
-            this.cbAmazonS3Endpoint = new System.Windows.Forms.ComboBox();
+            this.cbAmazonS3Endpoints = new System.Windows.Forms.ComboBox();
             this.lblAmazonS3BucketName = new System.Windows.Forms.Label();
             this.txtAmazonS3BucketName = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Regions = new System.Windows.Forms.Label();
+            this.lblAmazonS3Endpoints = new System.Windows.Forms.Label();
             this.txtAmazonS3ObjectPrefix = new System.Windows.Forms.TextBox();
             this.lblAmazonS3ObjectPrefix = new System.Windows.Forms.Label();
             this.txtAmazonS3SecretKey = new System.Windows.Forms.TextBox();
@@ -597,7 +598,6 @@
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbDropboxUseDirectLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1828,6 +1828,13 @@
             this.tpDropbox.Name = "tpDropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
             // 
+            // cbDropboxUseDirectLink
+            // 
+            resources.ApplyResources(this.cbDropboxUseDirectLink, "cbDropboxUseDirectLink");
+            this.cbDropboxUseDirectLink.Name = "cbDropboxUseDirectLink";
+            this.cbDropboxUseDirectLink.UseVisualStyleBackColor = true;
+            this.cbDropboxUseDirectLink.CheckedChanged += new System.EventHandler(this.cbDropboxUseDirectLink_CheckedChanged);
+            // 
             // oauth2Dropbox
             // 
             this.oauth2Dropbox.IsRefreshable = false;
@@ -2128,20 +2135,20 @@
             // 
             // tpAmazonS3
             // 
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Hostname);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Hostname);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Identifier);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Identifier);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Region);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Region);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3CustomDomain);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreviewLabel);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreview);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3BucketNameOpen);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3AccessKeyOpen);
             this.tpAmazonS3.Controls.Add(this.cbAmazonS3CustomCNAME);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoints);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3BucketName);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3BucketName);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Regions);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoints);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3ObjectPrefix);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3ObjectPrefix);
             this.tpAmazonS3.Controls.Add(this.cbAmazonS3UseRRS);
@@ -2153,27 +2160,27 @@
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
             // 
-            // lblAmazonS3Hostname
+            // lblAmazonS3Endpoint
             // 
-            resources.ApplyResources(this.lblAmazonS3Hostname, "lblAmazonS3Hostname");
-            this.lblAmazonS3Hostname.Name = "lblAmazonS3Hostname";
+            resources.ApplyResources(this.lblAmazonS3Endpoint, "lblAmazonS3Endpoint");
+            this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
             // 
-            // txtAmazonS3Hostname
+            // txtAmazonS3Endpoint
             // 
-            resources.ApplyResources(this.txtAmazonS3Hostname, "txtAmazonS3Hostname");
-            this.txtAmazonS3Hostname.Name = "txtAmazonS3Hostname";
-            this.txtAmazonS3Hostname.TextChanged += new System.EventHandler(this.txtAmazonS3Hostname_TextChanged);
+            resources.ApplyResources(this.txtAmazonS3Endpoint, "txtAmazonS3Endpoint");
+            this.txtAmazonS3Endpoint.Name = "txtAmazonS3Endpoint";
+            this.txtAmazonS3Endpoint.TextChanged += new System.EventHandler(this.txtAmazonS3Endpoint_TextChanged);
             // 
-            // lblAmazonS3Identifier
+            // lblAmazonS3Region
             // 
-            resources.ApplyResources(this.lblAmazonS3Identifier, "lblAmazonS3Identifier");
-            this.lblAmazonS3Identifier.Name = "lblAmazonS3Identifier";
+            resources.ApplyResources(this.lblAmazonS3Region, "lblAmazonS3Region");
+            this.lblAmazonS3Region.Name = "lblAmazonS3Region";
             // 
-            // txtAmazonS3Identifier
+            // txtAmazonS3Region
             // 
-            resources.ApplyResources(this.txtAmazonS3Identifier, "txtAmazonS3Identifier");
-            this.txtAmazonS3Identifier.Name = "txtAmazonS3Identifier";
-            this.txtAmazonS3Identifier.TextChanged += new System.EventHandler(this.txtAmazonS3Identifier_TextChanged);
+            resources.ApplyResources(this.txtAmazonS3Region, "txtAmazonS3Region");
+            this.txtAmazonS3Region.Name = "txtAmazonS3Region";
+            this.txtAmazonS3Region.TextChanged += new System.EventHandler(this.txtAmazonS3Region_TextChanged);
             // 
             // txtAmazonS3CustomDomain
             // 
@@ -2205,13 +2212,13 @@
             this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
             // 
-            // cbAmazonS3Endpoint
+            // cbAmazonS3Endpoints
             // 
-            this.cbAmazonS3Endpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmazonS3Endpoint.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAmazonS3Endpoint, "cbAmazonS3Endpoint");
-            this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
-            this.cbAmazonS3Endpoint.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3Endpoint_SelectedIndexChanged);
+            this.cbAmazonS3Endpoints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmazonS3Endpoints.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAmazonS3Endpoints, "cbAmazonS3Endpoints");
+            this.cbAmazonS3Endpoints.Name = "cbAmazonS3Endpoints";
+            this.cbAmazonS3Endpoints.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3Endpoints_SelectedIndexChanged);
             // 
             // lblAmazonS3BucketName
             // 
@@ -2224,10 +2231,10 @@
             this.txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
             this.txtAmazonS3BucketName.TextChanged += new System.EventHandler(this.txtAmazonS3BucketName_TextChanged);
             // 
-            // lblAmazonS3Regions
+            // lblAmazonS3Endpoints
             // 
-            resources.ApplyResources(this.lblAmazonS3Regions, "lblAmazonS3Regions");
-            this.lblAmazonS3Regions.Name = "lblAmazonS3Regions";
+            resources.ApplyResources(this.lblAmazonS3Endpoints, "lblAmazonS3Endpoints");
+            this.lblAmazonS3Endpoints.Name = "lblAmazonS3Endpoints";
             // 
             // txtAmazonS3ObjectPrefix
             // 
@@ -4812,13 +4819,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbDropboxUseDirectLink
-            // 
-            resources.ApplyResources(this.cbDropboxUseDirectLink, "cbDropboxUseDirectLink");
-            this.cbDropboxUseDirectLink.Name = "cbDropboxUseDirectLink";
-            this.cbDropboxUseDirectLink.UseVisualStyleBackColor = true;
-            this.cbDropboxUseDirectLink.CheckedChanged += new System.EventHandler(this.cbDropboxUseDirectLink_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5094,10 +5094,10 @@
         private System.Windows.Forms.Button btnAmazonS3BucketNameOpen;
         private System.Windows.Forms.Button btnAmazonS3AccessKeyOpen;
         private System.Windows.Forms.CheckBox cbAmazonS3CustomCNAME;
-        private System.Windows.Forms.ComboBox cbAmazonS3Endpoint;
+        private System.Windows.Forms.ComboBox cbAmazonS3Endpoints;
         private System.Windows.Forms.Label lblAmazonS3BucketName;
         private System.Windows.Forms.TextBox txtAmazonS3BucketName;
-        private System.Windows.Forms.Label lblAmazonS3Regions;
+        private System.Windows.Forms.Label lblAmazonS3Endpoints;
         private System.Windows.Forms.TextBox txtAmazonS3ObjectPrefix;
         private System.Windows.Forms.Label lblAmazonS3ObjectPrefix;
         private System.Windows.Forms.CheckBox cbAmazonS3UseRRS;
@@ -5552,11 +5552,11 @@
         private System.Windows.Forms.Label lblGistCustomURL;
         private System.Windows.Forms.Label lblGistOAuthInfo;
         private System.Windows.Forms.Label lblGistCustomURLExample;
-        private System.Windows.Forms.TextBox txtAmazonS3Identifier;
-        private System.Windows.Forms.TextBox txtAmazonS3Hostname;
-        private System.Windows.Forms.Label lblAmazonS3Identifier;
+        private System.Windows.Forms.TextBox txtAmazonS3Region;
+        private System.Windows.Forms.TextBox txtAmazonS3Endpoint;
+        private System.Windows.Forms.Label lblAmazonS3Region;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label lblAmazonS3Hostname;
+        private System.Windows.Forms.Label lblAmazonS3Endpoint;
         private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
     }
 }

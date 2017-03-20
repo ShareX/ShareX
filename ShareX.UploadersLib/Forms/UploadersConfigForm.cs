@@ -514,9 +514,9 @@ namespace ShareX.UploadersLib
 
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
-            cbAmazonS3Endpoint.Items.AddRange(AmazonS3.Regions.ToArray());
-            txtAmazonS3Hostname.Text = Config.AmazonS3Settings.RegionHostname;
-            txtAmazonS3Identifier.Text = Config.AmazonS3Settings.RegionIdentifier;
+            cbAmazonS3Endpoints.Items.AddRange(AmazonS3.Endpoints.ToArray());
+            txtAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
+            txtAmazonS3Region.Text = Config.AmazonS3Settings.Region;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
@@ -1974,26 +1974,26 @@ namespace ShareX.UploadersLib
             Config.AmazonS3Settings.SecretAccessKey = txtAmazonS3SecretKey.Text;
         }
 
-        private void cbAmazonS3Endpoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbAmazonS3Endpoints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AmazonS3Region region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
+            AmazonS3Region region = cbAmazonS3Endpoints.SelectedItem as AmazonS3Region;
 
             if (region != null)
             {
-                txtAmazonS3Identifier.Text = region.Identifier;
-                txtAmazonS3Hostname.Text = region.Hostname;
+                txtAmazonS3Region.Text = region.Region;
+                txtAmazonS3Endpoint.Text = region.Endpoint;
             }
         }
 
-        private void txtAmazonS3Hostname_TextChanged(object sender, EventArgs e)
+        private void txtAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
         {
-            Config.AmazonS3Settings.RegionHostname = txtAmazonS3Hostname.Text;
+            Config.AmazonS3Settings.Endpoint = txtAmazonS3Endpoint.Text;
             UpdateAmazonS3Status();
         }
 
-        private void txtAmazonS3Identifier_TextChanged(object sender, EventArgs e)
+        private void txtAmazonS3Region_TextChanged(object sender, EventArgs e)
         {
-            Config.AmazonS3Settings.RegionIdentifier = txtAmazonS3Identifier.Text;
+            Config.AmazonS3Settings.Region = txtAmazonS3Region.Text;
             UpdateAmazonS3Status();
         }
 

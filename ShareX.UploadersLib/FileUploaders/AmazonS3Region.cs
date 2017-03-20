@@ -28,25 +28,25 @@ namespace ShareX.UploadersLib.FileUploaders
     public class AmazonS3Region
     {
         public string Name { get; set; }
-        public string Hostname { get; set; }
-        public string Identifier { get; set; }
+        public string Endpoint { get; set; }
+        public string Region { get; set; }
 
-        public AmazonS3Region(string name, string hostname)
+        public AmazonS3Region(string name, string endpoint)
         {
             Name = name;
-            Hostname = hostname;
+            Endpoint = endpoint;
         }
 
-        public AmazonS3Region(string name, string hostname, string identifier)
+        public AmazonS3Region(string name, string endpoint, string region)
         {
             Name = name;
-            Hostname = hostname;
-            Identifier = identifier;
+            Endpoint = endpoint;
+            Region = region;
         }
 
         public override string ToString()
         {
-            return $"{Name} [{Hostname}]";
+            return $"{Name} [{Endpoint}]";
         }
     }
 }
