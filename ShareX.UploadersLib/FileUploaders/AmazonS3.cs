@@ -59,6 +59,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class AmazonS3 : FileUploader
     {
+        private const string DefaultRegion = "us-east-1";
+
         public static List<AmazonS3Region> Regions { get; } = new List<AmazonS3Region>()
         {
             new AmazonS3Region("Asia Pacific (Tokyo)", "s3-ap-northeast-1.amazonaws.com", "ap-northeast-1"),
@@ -177,9 +179,39 @@ namespace ShareX.UploadersLib.FileUploaders
                 return Settings.RegionIdentifier;
             }
 
-            string hostname = URLHelpers.RemovePrefixes(Settings.RegionHostname);
-            int index = hostname.IndexOf('.');
-            return hostname.Substring(0, index);
+            string url = Settings.RegionHostname;
+
+            int delimIndex = url.IndexOf("//", StringComparison.Ordinal);
+            if (delimIndex >= 0)
+            {
+                url = url.Substring(delimIndex + 2);
+            }
+
+            if (url.EndsWith("/", StringComparison.Ordinal))
+            {
+                url = url.Substring(0, url.Length - 1);
+            }
+
+            int awsIndex = url.IndexOf(".amazonaws.com", StringComparison.Ordinal);
+            if (awsIndex < 0)
+            {
+                return DefaultRegion;
+            }
+
+            string serviceAndRegion = url.Substring(0, awsIndex);
+
+            if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
+            {
+                serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
+            }
+
+            int separatorIndex = serviceAndRegion.LastIndexOf('.');
+            if (separatorIndex == -1)
+            {
+                return DefaultRegion;
+            }
+
+            return serviceAndRegion.Substring(separatorIndex + 1);
         }
 
         private string GetUploadPath(string fileName)
