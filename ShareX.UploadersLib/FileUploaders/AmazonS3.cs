@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
-            string host = $"{Settings.Bucket}.{endpoint}";
+            string host = Settings.UsePathStyle ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             string region = GetRegion();
@@ -118,6 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("X-Amz-SignedHeaders", signedHeaders);
 
             string uploadPath = GetUploadPath(fileName);
+            if (Settings.UsePathStyle) uploadPath = URLHelpers.CombineURL(Settings.Bucket, uploadPath);
             string canonicalURI = URLHelpers.AddSlash(uploadPath, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 

@@ -517,6 +517,7 @@ namespace ShareX.UploadersLib
             cbAmazonS3Endpoints.Items.AddRange(AmazonS3.Endpoints.ToArray());
             txtAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
             txtAmazonS3Region.Text = Config.AmazonS3Settings.Region;
+            cbAmazonS3UsePathStyle.Checked = Config.AmazonS3Settings.UsePathStyle;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
@@ -1995,6 +1996,11 @@ namespace ShareX.UploadersLib
         {
             Config.AmazonS3Settings.Region = txtAmazonS3Region.Text;
             UpdateAmazonS3Status();
+        }
+
+        private void cbAmazonS3UsePathStyle_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.UsePathStyle = cbAmazonS3UsePathStyle.Checked;
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)

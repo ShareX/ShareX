@@ -598,6 +598,7 @@
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2135,6 +2136,7 @@
             // 
             // tpAmazonS3
             // 
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UsePathStyle);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Region);
@@ -4819,6 +4821,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbAmazonS3UsePathStyle
+            // 
+            resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
+            this.cbAmazonS3UsePathStyle.Name = "cbAmazonS3UsePathStyle";
+            this.cbAmazonS3UsePathStyle.UseVisualStyleBackColor = true;
+            this.cbAmazonS3UsePathStyle.CheckedChanged += new System.EventHandler(this.cbAmazonS3UsePathStyle_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5558,5 +5567,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblAmazonS3Endpoint;
         private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
+        private System.Windows.Forms.CheckBox cbAmazonS3UsePathStyle;
     }
 }

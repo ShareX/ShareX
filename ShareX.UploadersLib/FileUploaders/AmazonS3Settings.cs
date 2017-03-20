@@ -31,6 +31,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string SecretAccessKey { get; set; }
         public string Endpoint { get; set; }
         public string Region { get; set; }
+        public bool UsePathStyle { get; set; }
         public string Bucket { get; set; }
         public string ObjectPrefix { get; set; }
         public bool UseCustomCNAME { get; set; }
