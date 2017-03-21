@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return config.EDFileSettings != null; //&& !string.IsNullOrEmpty(config.EDFileSettings.UserUploadToken);
+            return config.EDFileSettings != null;
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
