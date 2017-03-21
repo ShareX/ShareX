@@ -264,6 +264,10 @@ namespace ShareX.UploadersLib
 
         public PomfUploader PomfUploader = new PomfUploader("https://mixtape.moe/upload.php");
 
+        // EDFile
+
+        public EDFileSettings EDFileSettings = new EDFileSettings();
+
         // s-ul
 
         public string SulAPIKey = "";

@@ -171,6 +171,16 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon EDFile {
+            get {
+                object obj = ResourceManager.GetObject("EDFile", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon Flickr {
             get {
                 object obj = ResourceManager.GetObject("Flickr", resourceCulture);

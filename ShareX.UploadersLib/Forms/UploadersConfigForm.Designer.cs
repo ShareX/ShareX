@@ -598,6 +598,12 @@
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tpEDFile = new System.Windows.Forms.TabPage();
+            this.txtEDFileUserToken = new System.Windows.Forms.TextBox();
+            this.lblEDFileUserToken = new System.Windows.Forms.Label();
+            this.btnEDFileGetUserToken = new System.Windows.Forms.Button();
+            this.chkEDFileDirectImage = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -686,6 +692,8 @@
             this.tpVgyme.SuspendLayout();
             this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.tpEDFile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1728,6 +1736,7 @@
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpEDFile);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
@@ -4815,10 +4824,50 @@
             this.ttlvMain.Name = "ttlvMain";
             // 
             // actRapidShareAccountType
+            // tpEDFile
+            // 
+            this.tpEDFile.Controls.Add(this.pictureBox1);
+            this.tpEDFile.Controls.Add(this.chkEDFileDirectImage);
+            this.tpEDFile.Controls.Add(this.btnEDFileGetUserToken);
+            this.tpEDFile.Controls.Add(this.lblEDFileUserToken);
+            this.tpEDFile.Controls.Add(this.txtEDFileUserToken);
+            resources.ApplyResources(this.tpEDFile, "tpEDFile");
+            this.tpEDFile.Name = "tpEDFile";
+            this.tpEDFile.UseVisualStyleBackColor = true;
+            // 
+            // txtEDFileUserToken
+            // 
+            resources.ApplyResources(this.txtEDFileUserToken, "txtEDFileUserToken");
+            this.txtEDFileUserToken.Name = "txtEDFileUserToken";
+            this.txtEDFileUserToken.TextChanged += new System.EventHandler(this.txtEDFileUserToken_TextChanged);
+            // 
+            // lblEDFileUserToken
+            // 
+            resources.ApplyResources(this.lblEDFileUserToken, "lblEDFileUserToken");
+            this.lblEDFileUserToken.Name = "lblEDFileUserToken";
+            // 
+            // btnEDFileGetUserToken
+            // 
+            resources.ApplyResources(this.btnEDFileGetUserToken, "btnEDFileGetUserToken");
+            this.btnEDFileGetUserToken.Name = "btnEDFileGetUserToken";
+            this.btnEDFileGetUserToken.UseVisualStyleBackColor = true;
+            this.btnEDFileGetUserToken.Click += new System.EventHandler(this.btnEDFileGetUserToken_Click);
+            // 
+            // chkEDFileDirectImage
+            // 
+            resources.ApplyResources(this.chkEDFileDirectImage, "chkEDFileDirectImage");
+            this.chkEDFileDirectImage.Name = "chkEDFileDirectImage";
+            this.chkEDFileDirectImage.UseVisualStyleBackColor = true;
+            this.chkEDFileDirectImage.CheckedChanged += new System.EventHandler(this.chkEDFileDirectImage_CheckedChanged);
+            // 
+            // pictureBox1
             // 
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // UploadersConfigForm
             // 
@@ -4985,6 +5034,9 @@
             this.tpSomeImage.ResumeLayout(false);
             this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.tpEDFile.ResumeLayout(false);
+            this.tpEDFile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5559,5 +5611,11 @@
         private System.Windows.Forms.Label lblAmazonS3Identifier;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblAmazonS3Hostname;
+        internal System.Windows.Forms.TabPage tpEDFile;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chkEDFileDirectImage;
+        private System.Windows.Forms.Button btnEDFileGetUserToken;
+        private System.Windows.Forms.Label lblEDFileUserToken;
+        private System.Windows.Forms.TextBox txtEDFileUserToken;
     }
 }

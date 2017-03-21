@@ -129,6 +129,8 @@ namespace ShareX.UploadersLib
         VideoBin,
         [Description("Pomf")]
         Pomf,
+        [Description("ED File")]
+        EDFile,
         [Description("Uguu")]
         Uguu,
         [Description("Dropfile")]

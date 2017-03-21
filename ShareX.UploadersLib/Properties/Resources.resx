@@ -299,6 +299,9 @@ Created folders:</value>
   <data name="Pushbullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pushbullet.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EDFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\EDFile.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pomf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pomf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

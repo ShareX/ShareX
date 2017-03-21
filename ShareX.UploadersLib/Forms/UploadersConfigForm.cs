@@ -560,6 +560,11 @@ namespace ShareX.UploadersLib
             txtPomfUploadURL.Text = Config.PomfUploader.UploadURL;
             txtPomfResultURL.Text = Config.PomfUploader.ResultURL;
 
+            // EDFile
+
+            txtEDFileUserToken.Text = Config.EDFileSettings.UserUploadToken;
+            chkEDFileDirectImage.Checked = Config.EDFileSettings.ImageDirect;
+
             // Seafile
 
             cbSeafileAPIURL.Text = Config.SeafileAPIURL;
@@ -2296,6 +2301,25 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pomf
+
+        #region EDFile
+
+        private void btnEDFileGetUserToken_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://edfile.pro/user/uploadtoken");
+        }
+
+        private void txtEDFileUserToken_TextChanged(object sender, EventArgs e)
+        {
+            Config.EDFileSettings.UserUploadToken = txtEDFileUserToken.Text;
+        }
+
+        private void chkEDFileDirectImage_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.EDFileSettings.ImageDirect = chkEDFileDirectImage.Checked;
+        }
+
+        #endregion EDFile
 
         #region Sul
 
