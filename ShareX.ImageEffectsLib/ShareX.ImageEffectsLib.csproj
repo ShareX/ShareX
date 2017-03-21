@@ -199,6 +199,9 @@
     <EmbeddedResource Include="ImageEffectsForm.zh-CN.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageEffectsForm.zh-TW.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
@@ -214,6 +217,7 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
