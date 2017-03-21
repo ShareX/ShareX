@@ -115,7 +115,7 @@
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
-    <Compile Include="FileUploaders\AmazonS3Region.cs" />
+    <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\AzureStorage.cs" />
     <Compile Include="FileUploaders\Box.cs" />

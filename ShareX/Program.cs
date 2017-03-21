@@ -466,14 +466,22 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint))
                 {
-                    foreach (AmazonS3Region region in AmazonS3.Endpoints)
+                    bool endpointFound = false;
+
+                    foreach (AmazonS3Endpoint endpoint in AmazonS3.Endpoints)
                     {
-                        if (region.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                        if (endpoint.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            UploadersConfig.AmazonS3Settings.Endpoint = region.Endpoint;
-                            UploadersConfig.AmazonS3Settings.Region = region.Region;
+                            UploadersConfig.AmazonS3Settings.Endpoint = endpoint.Endpoint;
+                            UploadersConfig.AmazonS3Settings.Region = endpoint.Region;
+                            endpointFound = true;
                             break;
                         }
+                    }
+
+                    if (!endpointFound)
+                    {
+                        UploadersConfig.AmazonS3Settings.Endpoint = "";
                     }
                 }
             }

@@ -515,6 +515,14 @@ namespace ShareX.UploadersLib
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
             cbAmazonS3Endpoints.Items.AddRange(AmazonS3.Endpoints.ToArray());
+            for (int i = 0; i < cbAmazonS3Endpoints.Items.Count; i++)
+            {
+                if (((AmazonS3Endpoint)cbAmazonS3Endpoints.Items[i]).Endpoint.Equals(Config.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    cbAmazonS3Endpoints.SelectedIndex = i;
+                    break;
+                }
+            }
             txtAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
             txtAmazonS3Region.Text = Config.AmazonS3Settings.Region;
             cbAmazonS3UsePathStyle.Checked = Config.AmazonS3Settings.UsePathStyle;
@@ -1977,12 +1985,12 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AmazonS3Region region = cbAmazonS3Endpoints.SelectedItem as AmazonS3Region;
+            AmazonS3Endpoint endpoint = cbAmazonS3Endpoints.SelectedItem as AmazonS3Endpoint;
 
-            if (region != null)
+            if (endpoint != null)
             {
-                txtAmazonS3Region.Text = region.Region;
-                txtAmazonS3Endpoint.Text = region.Endpoint;
+                txtAmazonS3Region.Text = endpoint.Region;
+                txtAmazonS3Endpoint.Text = endpoint.Endpoint;
             }
         }
 

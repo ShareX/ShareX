@@ -25,19 +25,19 @@
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class AmazonS3Region
+    public class AmazonS3Endpoint
     {
         public string Name { get; set; }
         public string Endpoint { get; set; }
         public string Region { get; set; }
 
-        public AmazonS3Region(string name, string endpoint)
+        public AmazonS3Endpoint(string name, string endpoint)
         {
             Name = name;
             Endpoint = endpoint;
         }
 
-        public AmazonS3Region(string name, string endpoint, string region)
+        public AmazonS3Endpoint(string name, string endpoint, string region)
         {
             Name = name;
             Endpoint = endpoint;
