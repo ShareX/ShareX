@@ -75,7 +75,7 @@ namespace ShareX
             foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
-                tsmi.Image = GetLanguageIcon(language);
+                tsmi.Image = LanguageHelper.GetLanguageIcon(language);
                 tsmi.ImageScaling = ToolStripItemImageScaling.None;
                 SupportedLanguage lang = language;
                 tsmi.Click += (sender, e) => ChangeLanguage(lang);
@@ -215,64 +215,10 @@ namespace ShareX
             ready = true;
         }
 
-        private Image GetLanguageIcon(SupportedLanguage language)
-        {
-            Image icon;
-
-            switch (language)
-            {
-                default:
-                case SupportedLanguage.Automatic:
-                    icon = Resources.globe;
-                    break;
-                case SupportedLanguage.Dutch:
-                    icon = Resources.nl;
-                    break;
-                case SupportedLanguage.English:
-                    icon = Resources.us;
-                    break;
-                case SupportedLanguage.French:
-                    icon = Resources.fr;
-                    break;
-                case SupportedLanguage.German:
-                    icon = Resources.de;
-                    break;
-                case SupportedLanguage.Hungarian:
-                    icon = Resources.hu;
-                    break;
-                case SupportedLanguage.Korean:
-                    icon = Resources.kr;
-                    break;
-                case SupportedLanguage.PortugueseBrazil:
-                    icon = Resources.br;
-                    break;
-                case SupportedLanguage.Russian:
-                    icon = Resources.ru;
-                    break;
-                case SupportedLanguage.SimplifiedChinese:
-                    icon = Resources.cn;
-                    break;
-                case SupportedLanguage.Spanish:
-                    icon = Resources.es;
-                    break;
-                case SupportedLanguage.Turkish:
-                    icon = Resources.tr;
-                    break;
-                case SupportedLanguage.TraditionalChinese:
-                    icon = Resources.tw;
-                    break;
-                case SupportedLanguage.Vietnamese:
-                    icon = Resources.vn;
-                    break;
-            }
-
-            return icon;
-        }
-
         private void ChangeLanguage(SupportedLanguage language)
         {
             btnLanguages.Text = language.GetLocalizedDescription();
-            btnLanguages.Image = GetLanguageIcon(language);
+            btnLanguages.Image = LanguageHelper.GetLanguageIcon(language);
 
             if (ready)
             {
