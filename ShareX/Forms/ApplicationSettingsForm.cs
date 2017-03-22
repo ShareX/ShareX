@@ -258,6 +258,9 @@ namespace ShareX
                 case SupportedLanguage.Turkish:
                     icon = Resources.tr;
                     break;
+                case SupportedLanguage.TraditionalChinese:
+                    icon = Resources.tw;
+                    break;
                 case SupportedLanguage.Vietnamese:
                     icon = Resources.vn;
                     break;
