@@ -30,7 +30,6 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -38,21 +37,9 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public FTPAccount Account { get; private set; }
 
-        public bool IsValidAccount
-        {
-            get
-            {
-                return (!string.IsNullOrEmpty(Account.Keypath) && File.Exists(Account.Keypath)) || !string.IsNullOrEmpty(Account.Password);
-            }
-        }
+        public bool IsValidAccount => (!string.IsNullOrEmpty(Account.Keypath) && File.Exists(Account.Keypath)) || !string.IsNullOrEmpty(Account.Password);
 
-        public bool IsConnected
-        {
-            get
-            {
-                return client != null && client.IsConnected;
-            }
-        }
+        public bool IsConnected => client != null && client.IsConnected;
 
         private SftpClient client;
 
@@ -74,7 +61,8 @@ namespace ShareX.UploadersLib.FileUploaders
             try
             {
                 IsUploading = true;
-                bool uploadResult = UploadStream(stream, path);
+
+                bool uploadResult = UploadStream(stream, path, true);
 
                 if (uploadResult && !StopUploadRequested && !IsError)
                 {
@@ -84,6 +72,7 @@ namespace ShareX.UploadersLib.FileUploaders
             finally
             {
                 Dispose();
+
                 IsUploading = false;
             }
 
@@ -158,7 +147,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public void ChangeDirectory(string path)
+        public void ChangeDirectory(string path, bool autoCreateDirectory = false)
         {
             if (Connect())
             {
@@ -166,28 +155,10 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     client.ChangeDirectory(path);
                 }
-                catch (SftpPathNotFoundException)
+                catch (SftpPathNotFoundException) when (autoCreateDirectory)
                 {
-                    CreateDirectory(path);
-                    ChangeDirectory(path);
-                }
-            }
-        }
-
-        public void CreateDirectory(string path)
-        {
-            if (Connect())
-            {
-                try
-                {
-                    client.CreateDirectory(path);
-                }
-                catch (SftpPathNotFoundException)
-                {
-                    CreateMultiDirectory(path);
-                }
-                catch (SftpPermissionDeniedException)
-                {
+                    CreateDirectory(path, true);
+                    client.ChangeDirectory(path);
                 }
             }
         }
@@ -202,18 +173,37 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
+        public void CreateDirectory(string path, bool createMultiDirectory = false)
+        {
+            if (Connect())
+            {
+                try
+                {
+                    client.CreateDirectory(path);
+
+                    DebugHelper.WriteLine($"SFTP directory created: {path}");
+                }
+                catch (SftpPathNotFoundException) when (createMultiDirectory)
+                {
+                    CreateMultiDirectory(path);
+                }
+                catch (SftpPermissionDeniedException)
+                {
+                }
+            }
+        }
+
         public List<string> CreateMultiDirectory(string path)
         {
             List<string> directoryList = new List<string>();
 
-            IEnumerable<string> paths = URLHelpers.GetPaths(path).Select(x => x.TrimStart('/'));
+            IEnumerable<string> paths = URLHelpers.GetPaths(path);
 
             foreach (string directory in paths)
             {
                 if (!DirectoryExists(directory))
                 {
                     CreateDirectory(directory);
-                    DebugHelper.WriteLine("FTP directory created: " + path);
                     directoryList.Add(directory);
                 }
             }
@@ -221,7 +211,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return directoryList;
         }
 
-        private bool UploadStream(Stream stream, string remotePath)
+        private bool UploadStream(Stream stream, string remotePath, bool autoCreateDirectory = false)
         {
             if (Connect())
             {
@@ -232,11 +222,11 @@ namespace ShareX.UploadersLib.FileUploaders
                         return TransferData(stream, sftpStream);
                     }
                 }
-                catch (SftpPathNotFoundException)
+                catch (SftpPathNotFoundException) when (autoCreateDirectory)
                 {
                     // Happens when directory not exist, create directory and retry uploading
 
-                    CreateDirectory(URLHelpers.GetDirectoryPath(remotePath));
+                    CreateDirectory(URLHelpers.GetDirectoryPath(remotePath), true);
 
                     using (SftpFileStream sftpStream = client.Create(remotePath))
                     {
