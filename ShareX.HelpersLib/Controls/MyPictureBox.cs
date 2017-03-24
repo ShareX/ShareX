@@ -192,7 +192,7 @@ namespace ShareX.HelpersLib
                 if (pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckers();
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern();
                 }
             }
             else

@@ -604,7 +604,7 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(Image img)
         {
-            return DrawCheckers(img, 10, Color.LightGray, Color.White);
+            return DrawCheckers(img, 10, Color.FromArgb(230, 230, 230), Color.White);
         }
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
@@ -612,7 +612,7 @@ namespace ShareX.HelpersLib
             Bitmap bmp = img.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckers(size, color1, color2))
+            using (Image checker = CreateCheckerPattern(size, size, color1, color2))
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             using (img)
             {
@@ -629,7 +629,7 @@ namespace ShareX.HelpersLib
             Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckers())
+            using (Image checker = CreateCheckerPattern())
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
@@ -638,17 +638,17 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image CreateCheckers()
+        public static Image CreateCheckerPattern()
         {
-            return CreateCheckers(10, Color.LightGray, Color.White);
+            return CreateCheckerPattern(10, 10);
         }
 
-        public static Image CreateCheckers(int size, Color color1, Color color2)
+        public static Image CreateCheckerPattern(int width, int height)
         {
-            return CreateCheckers(size, size, color1, color2);
+            return CreateCheckerPattern(width, height, Color.FromArgb(230, 230, 230), Color.White);
         }
 
-        public static Image CreateCheckers(int width, int height, Color color1, Color color2)
+        private static Image CreateCheckerPattern(int width, int height, Color color1, Color color2)
         {
             Bitmap bmp = new Bitmap(width * 2, height * 2);
 
@@ -1561,7 +1561,7 @@ namespace ShareX.HelpersLib
         {
             if (color.A < 255)
             {
-                using (Image checker = CreateCheckers(rect.Width / 2, rect.Height / 2, Color.LightGray, Color.White))
+                using (Image checker = CreateCheckerPattern(rect.Width / 2, rect.Height / 2))
                 {
                     g.DrawImage(checker, rect);
                 }

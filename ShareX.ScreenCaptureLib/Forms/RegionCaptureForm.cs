@@ -168,9 +168,16 @@ namespace ShareX.ScreenCaptureLib
 
                 ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
 
-                using (Image background = ImageHelpers.DrawCheckers(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
+                using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
+                    g.Clear(Color.FromArgb(14, 14, 14));
+
+                    using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
+                    {
+                        g.DrawImage(checkers, ImageRectangle);
+                    }
+
                     g.DrawImage(Image, ImageRectangle);
 
                     backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
