@@ -158,7 +158,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 catch (SftpPathNotFoundException) when (autoCreateDirectory)
                 {
                     CreateDirectory(path, true);
-                    client.ChangeDirectory(path);
+                    ChangeDirectory(path);
                 }
             }
         }
@@ -227,15 +227,11 @@ namespace ShareX.UploadersLib.FileUploaders
                     // Happens when directory not exist, create directory and retry uploading
 
                     CreateDirectory(URLHelpers.GetDirectoryPath(remotePath), true);
-
-                    using (SftpFileStream sftpStream = client.Create(remotePath))
-                    {
-                        return TransferData(stream, sftpStream);
-                    }
+                    UploadStream(stream, remotePath);
                 }
                 catch (NullReferenceException)
                 {
-                    // Happens when disconnected while uploading
+                    // Happens when disconnect while uploading
                 }
             }
 
