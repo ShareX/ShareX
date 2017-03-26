@@ -638,7 +638,7 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
+            HistoryForm historyForm = new HistoryForm(SettingManager.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
             historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
             historyForm.Show();
@@ -646,7 +646,7 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(SettingManager.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
                 Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
             Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
             imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
@@ -1212,10 +1212,7 @@ namespace ShareX
 
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
         {
-            if (Program.UploadersConfig == null)
-            {
-                Program.UploaderSettingsResetEvent.WaitOne();
-            }
+            SettingManager.WaitUploadersConfig();
 
             bool firstInstance = !UploadersConfigForm.IsInstanceActive;
 
@@ -1223,7 +1220,7 @@ namespace ShareX
 
             if (firstInstance)
             {
-                form.FormClosed += (sender, e) => Program.UploadersConfigSaveAsync();
+                form.FormClosed += (sender, e) => SettingManager.UploadersConfigSaveAsync();
 
                 if (uploaderService != null)
                 {

@@ -286,10 +286,7 @@ namespace ShareX
         {
             TaskEx.Run(() =>
             {
-                if (Program.HotkeysConfig == null)
-                {
-                    Program.HotkeySettingsResetEvent.WaitOne();
-                }
+                SettingManager.WaitHotkeysConfig();
             },
             () =>
             {
@@ -912,10 +909,7 @@ namespace ShareX
                         Program.DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
                         Program.DefaultTaskSettings.FileDestination = FileDestination.Puush;
 
-                        if (Program.UploadersConfig == null)
-                        {
-                            Program.UploaderSettingsResetEvent.WaitOne(5000);
-                        }
+                        SettingManager.WaitUploadersConfig();
 
                         if (Program.UploadersConfig != null)
                         {
@@ -1059,7 +1053,7 @@ namespace ShareX
             {
                 e.Cancel = true;
                 Hide();
-                Program.SaveAllSettingsAsync();
+                SettingManager.SaveAllSettingsAsync();
             }
         }
 
@@ -1469,7 +1463,7 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+            Program.Settings.SaveAsync(SettingManager.ApplicationConfigFilePath);
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
@@ -1481,8 +1475,8 @@ namespace ShareX
 
             AfterSettingsJobs();
             UpdateWorkflowsMenu();
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
-            Program.ConfigureUploadersConfigWatcher();
+            Program.Settings.SaveAsync(SettingManager.ApplicationConfigFilePath);
+            SettingManager.ConfigureUploadersConfigWatcher();
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
@@ -1495,7 +1489,7 @@ namespace ShareX
                 }
 
                 UpdateWorkflowsMenu();
-                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
+                Program.HotkeysConfig.SaveAsync(SettingManager.HotkeysConfigFilePath);
             }
         }
 
@@ -1695,7 +1689,7 @@ namespace ShareX
         {
             if (trayMenuSaveSettings)
             {
-                Program.SaveAllSettingsAsync();
+                SettingManager.SaveAllSettingsAsync();
             }
 
             trayMenuSaveSettings = true;

@@ -367,7 +367,7 @@ namespace ShareX
                                 if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
                                    (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
                                 {
-                                    HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
+                                    HistoryManager.AddHistoryItemAsync(SettingManager.HistoryFilePath, info.GetHistoryItem());
                                 }
 
                                 RecentManager.Add(task);
@@ -441,7 +441,7 @@ namespace ShareX
 
                     if (Program.Settings.SaveSettingsAfterTaskCompleted && !IsBusy)
                     {
-                        Program.SaveAllSettingsAsync();
+                        SettingManager.SaveAllSettingsAsync();
                     }
                 }
             }

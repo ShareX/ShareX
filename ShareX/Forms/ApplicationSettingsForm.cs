@@ -497,6 +497,7 @@ namespace ShareX
                 {
                     btnExport.Enabled = false;
                     btnImport.Enabled = false;
+                    pbExportImport.Location = btnExport.Location;
                     pbExportImport.Visible = true;
 
                     string exportPath = sfd.FileName;
@@ -505,9 +506,8 @@ namespace ShareX
 
                     TaskEx.Run(() =>
                     {
-                        Program.SaveAllSettings();
-
-                        ExportImportManager.Export(exportPath);
+                        SettingManager.SaveAllSettings();
+                        SettingManager.Export(exportPath);
                     },
                     () =>
                     {
@@ -534,6 +534,7 @@ namespace ShareX
                 {
                     btnExport.Enabled = false;
                     btnImport.Enabled = false;
+                    pbExportImport.Location = btnImport.Location;
                     pbExportImport.Visible = true;
 
                     string importPath = ofd.FileName;
@@ -542,9 +543,8 @@ namespace ShareX
 
                     TaskEx.Run(() =>
                     {
-                        ExportImportManager.Import(importPath);
-
-                        Program.LoadAllSettings();
+                        SettingManager.Import(importPath);
+                        SettingManager.LoadAllSettings();
                     },
                     () =>
                     {

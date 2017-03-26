@@ -116,7 +116,7 @@
     <Compile Include="Controls\BeforeUploadControl.Designer.cs">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExportImportManager.cs" />
+    <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>

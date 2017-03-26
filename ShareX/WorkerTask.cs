@@ -371,10 +371,7 @@ namespace ShareX
             {
                 Program.Settings.ShowUploadWarning = false;
 
-                if (Program.UploadersConfig == null)
-                {
-                    Program.UploaderSettingsResetEvent.WaitOne();
-                }
+                SettingManager.WaitUploadersConfig();
 
                 Status = TaskStatus.Working;
                 Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
