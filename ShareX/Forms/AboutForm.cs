@@ -63,7 +63,7 @@ namespace ShareX
 
             lblTeam.Text = "ShareX Team:";
             lblBerk.Text = "Jaex (Berk)";
-            lblMike.Text = "mcored (Michael Delpach)";
+            lblMike.Text = "McoreD (Michael Delpach)";
 
             rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
 {Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}

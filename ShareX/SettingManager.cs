@@ -36,9 +36,9 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public static class SettingManager
+    internal static class SettingManager
     {
-        public static string ApplicationConfigFilePath
+        private static string ApplicationConfigFilePath
         {
             get
             {
@@ -48,7 +48,7 @@ namespace ShareX
             }
         }
 
-        public static string UploadersConfigFilePath
+        private static string UploadersConfigFilePath
         {
             get
             {
@@ -69,7 +69,7 @@ namespace ShareX
             }
         }
 
-        public static string HotkeysConfigFilePath
+        private static string HotkeysConfigFilePath
         {
             get
             {
@@ -90,19 +90,9 @@ namespace ShareX
             }
         }
 
-        public static string HistoryFilePath
-        {
-            get
-            {
-                if (Program.Sandbox) return null;
+        private static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
 
-                return Path.Combine(Program.PersonalFolder, "History.xml");
-            }
-        }
-
-        public static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
-
-        public static string GreenshotImageEditorConfigFilePath => Path.Combine(Program.PersonalFolder, "GreenshotImageEditor.ini");
+        private static string GreenshotImageEditorConfigFilePath => Path.Combine(Program.PersonalFolder, "GreenshotImageEditor.ini");
 
         private static ApplicationConfig Settings { get => Program.Settings; set => Program.Settings = value; }
         private static TaskSettings DefaultTaskSettings { get => Program.DefaultTaskSettings; set => Program.DefaultTaskSettings = value; }
@@ -112,20 +102,27 @@ namespace ShareX
         private static ManualResetEvent uploadersConfigResetEvent = new ManualResetEvent(false);
         private static ManualResetEvent hotkeysConfigResetEvent = new ManualResetEvent(false);
 
-        public static void InitialLoadSettings()
+        public static void LoadInitialSettings()
         {
-            LoadUploadersConfig();
-            uploadersConfigResetEvent.Set();
+            LoadApplicationConfig();
 
-            RunUploaderBackwardCompatibilityTasks();
+            ApplicationConfigBackwardCompatibilityTasks();
 
-            LoadHotkeySettings();
-            hotkeysConfigResetEvent.Set();
+            TaskEx.Run(() =>
+            {
+                LoadUploadersConfig();
+                uploadersConfigResetEvent.Set();
+
+                UploadersConfigBackwardCompatibilityTasks();
+
+                LoadHotkeysConfig();
+                hotkeysConfigResetEvent.Set();
+            });
         }
 
         public static void WaitUploadersConfig()
         {
-            if (Program.UploadersConfig == null)
+            if (UploadersConfig == null)
             {
                 uploadersConfigResetEvent.WaitOne();
             }
@@ -133,21 +130,36 @@ namespace ShareX
 
         public static void WaitHotkeysConfig()
         {
-            if (Program.HotkeysConfig == null)
+            if (HotkeysConfig == null)
             {
                 hotkeysConfigResetEvent.WaitOne();
             }
         }
 
-        public static void LoadProgramSettings()
+        public static void LoadApplicationConfig()
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
-
-            RunBackwardCompatibilityTasks();
         }
 
-        private static void RunBackwardCompatibilityTasks()
+        public static void LoadUploadersConfig()
+        {
+            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath);
+        }
+
+        public static void LoadHotkeysConfig()
+        {
+            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
+        }
+
+        public static void LoadAllSettings()
+        {
+            LoadApplicationConfig();
+            LoadUploadersConfig();
+            LoadHotkeysConfig();
+        }
+
+        private static void ApplicationConfigBackwardCompatibilityTasks()
         {
             if (Settings.IsUpgradeFrom("11.4.1"))
             {
@@ -166,7 +178,7 @@ namespace ShareX
             }
         }
 
-        private static void RunUploaderBackwardCompatibilityTasks()
+        private static void UploadersConfigBackwardCompatibilityTasks()
         {
             if (UploadersConfig.IsUpgradeFrom("11.6.0"))
             {
@@ -198,23 +210,6 @@ namespace ShareX
             }
         }
 
-        public static void LoadUploadersConfig()
-        {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath);
-        }
-
-        public static void LoadHotkeySettings()
-        {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
-        }
-
-        public static void LoadAllSettings()
-        {
-            LoadProgramSettings();
-            LoadUploadersConfig();
-            LoadHotkeySettings();
-        }
-
         public static void SaveAllSettings()
         {
             if (Settings != null) Settings.Save(ApplicationConfigFilePath);
@@ -222,19 +217,34 @@ namespace ShareX
             if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
         }
 
-        public static void SaveAllSettingsAsync()
+        public static void SaveApplicationConfigAsync()
         {
             if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
+        }
+
+        public static void SaveUploadersConfigAsync()
+        {
             if (UploadersConfig != null) UploadersConfig.SaveAsync(UploadersConfigFilePath);
+        }
+
+        public static void SaveHotkeysConfigAsync()
+        {
             if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+        }
+
+        public static void SaveAllSettingsAsync()
+        {
+            SaveApplicationConfigAsync();
+            SaveUploadersConfigAsync();
+            SaveHotkeysConfigAsync();
         }
 
         public static void BackupSettings()
         {
             Helpers.BackupFileWeekly(ApplicationConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
             Helpers.BackupFileWeekly(UploadersConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HistoryFilePath, BackupFolder);
+            Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
+            Helpers.BackupFileWeekly(Program.HistoryFilePath, BackupFolder);
         }
 
         public static void ResetSettings()
@@ -258,13 +268,16 @@ namespace ShareX
             {
                 Set7ZipLibraryPath();
 
-                SevenZipCompressor zip = new SevenZipCompressor();
-                zip.ArchiveFormat = OutArchiveFormat.SevenZip;
-                zip.CompressionLevel = CompressionLevel.Normal;
-                zip.CompressionMethod = CompressionMethod.Lzma2;
+                SevenZipCompressor zip = new SevenZipCompressor()
+                {
+                    ArchiveFormat = OutArchiveFormat.SevenZip,
+                    CompressionLevel = CompressionLevel.Normal,
+                    CompressionMethod = CompressionMethod.Lzma2
+                };
 
                 Dictionary<string, string> files = new Dictionary<string, string>();
-                if (Program.Settings.ExportSettings)
+
+                if (Settings.ExportSettings)
                 {
                     AddFileToDictionary(files, ApplicationConfigFilePath);
                     AddFileToDictionary(files, HotkeysConfigFilePath);
@@ -272,12 +285,12 @@ namespace ShareX
                     AddFileToDictionary(files, GreenshotImageEditorConfigFilePath);
                 }
 
-                if (Program.Settings.ExportHistory)
+                if (Settings.ExportHistory)
                 {
-                    AddFileToDictionary(files, HistoryFilePath);
+                    AddFileToDictionary(files, Program.HistoryFilePath);
                 }
 
-                if (Program.Settings.ExportLogs)
+                if (Settings.ExportLogs)
                 {
                     foreach (string file in Directory.GetFiles(Program.LogsFolder, "*.txt", SearchOption.TopDirectoryOnly))
                     {

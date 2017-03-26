@@ -138,6 +138,16 @@ namespace ShareX
             }
         }
 
+        public static string HistoryFilePath
+        {
+            get
+            {
+                if (Sandbox) return null;
+
+                return Path.Combine(PersonalFolder, "History.xml");
+            }
+        }
+
         public static string LogsFolder => Path.Combine(PersonalFolder, "Logs");
 
         public static string LogsFilePath
@@ -257,9 +267,8 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
             CleanTempFiles();
-            SettingManager.LoadProgramSettings();
 
-            TaskEx.Run(SettingManager.InitialLoadSettings);
+            SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);

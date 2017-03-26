@@ -1463,7 +1463,7 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
-            Program.Settings.SaveAsync(SettingManager.ApplicationConfigFilePath);
+            SettingManager.SaveApplicationConfigAsync();
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
@@ -1475,7 +1475,7 @@ namespace ShareX
 
             AfterSettingsJobs();
             UpdateWorkflowsMenu();
-            Program.Settings.SaveAsync(SettingManager.ApplicationConfigFilePath);
+            SettingManager.SaveApplicationConfigAsync();
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
@@ -1488,7 +1488,7 @@ namespace ShareX
                 }
 
                 UpdateWorkflowsMenu();
-                Program.HotkeysConfig.SaveAsync(SettingManager.HotkeysConfigFilePath);
+                SettingManager.SaveHotkeysConfigAsync();
             }
         }
 

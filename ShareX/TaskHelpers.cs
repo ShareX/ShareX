@@ -638,7 +638,7 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(SettingManager.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
             historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
             historyForm.Show();
@@ -646,7 +646,7 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(SettingManager.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
                 Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
             Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
             imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
@@ -1220,7 +1220,7 @@ namespace ShareX
 
             if (firstInstance)
             {
-                form.FormClosed += (sender, e) => Program.UploadersConfig.SaveAsync(SettingManager.UploadersConfigFilePath);
+                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
 
                 if (uploaderService != null)
                 {
