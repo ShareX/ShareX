@@ -1220,7 +1220,7 @@ namespace ShareX
 
             if (firstInstance)
             {
-                form.FormClosed += (sender, e) => SettingManager.UploadersConfigSaveAsync();
+                form.FormClosed += (sender, e) => Program.UploadersConfig.SaveAsync(SettingManager.UploadersConfigFilePath);
 
                 if (uploaderService != null)
                 {

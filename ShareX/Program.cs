@@ -230,6 +230,7 @@ namespace ShareX
 
             if (restarting)
             {
+                DebugHelper.WriteLine("ShareX restarting.");
                 Process.Start(Application.ExecutablePath);
             }
         }
@@ -258,16 +259,16 @@ namespace ShareX
             CleanTempFiles();
             SettingManager.LoadProgramSettings();
 
-            TaskEx.Run(SettingManager.LoadSettings);
+            TaskEx.Run(SettingManager.InitialLoadSettings);
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
-            DebugHelper.WriteLine("MainForm init started");
+            DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
-            DebugHelper.WriteLine("MainForm init finished");
+            DebugHelper.WriteLine("MainForm init finished.");
 
             Application.Run(MainForm);
 
@@ -276,7 +277,7 @@ namespace ShareX
             SettingManager.BackupSettings();
 
             DebugHelper.Logger.Async = false;
-            DebugHelper.WriteLine("ShareX closing");
+            DebugHelper.WriteLine("ShareX closing.");
         }
 
         public static void Restart()
@@ -521,7 +522,7 @@ namespace ShareX
                         {
                             Directory.Delete(folderPath, true);
 
-                            DebugHelper.WriteLine("Temp files cleaned: " + folderPath);
+                            DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
                         }
                     }
                 }

@@ -111,10 +111,8 @@ namespace ShareX
 
         private static ManualResetEvent uploadersConfigResetEvent = new ManualResetEvent(false);
         private static ManualResetEvent hotkeysConfigResetEvent = new ManualResetEvent(false);
-        private static FileSystemWatcher uploaderConfigWatcher;
-        private static WatchFolderDuplicateEventTimer uploaderConfigWatcherTimer;
 
-        public static void LoadSettings()
+        public static void InitialLoadSettings()
         {
             LoadUploadersConfig();
             uploadersConfigResetEvent.Set();
@@ -123,8 +121,6 @@ namespace ShareX
 
             LoadHotkeySettings();
             hotkeysConfigResetEvent.Set();
-
-            ConfigureUploadersConfigWatcher();
         }
 
         public static void WaitUploadersConfig()
@@ -229,7 +225,7 @@ namespace ShareX
         public static void SaveAllSettingsAsync()
         {
             if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
-            UploadersConfigSaveAsync();
+            if (UploadersConfig != null) UploadersConfig.SaveAsync(UploadersConfigFilePath);
             if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
         }
 
@@ -241,52 +237,19 @@ namespace ShareX
             Helpers.BackupFileWeekly(HistoryFilePath, BackupFolder);
         }
 
-        public static void ConfigureUploadersConfigWatcher()
+        public static void ResetSettings()
         {
-            if (Settings.DetectUploaderConfigFileChanges && uploaderConfigWatcher == null)
-            {
-                uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(UploadersConfigFilePath), Path.GetFileName(UploadersConfigFilePath));
-                uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
-                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(UploadersConfigFilePath);
-                uploaderConfigWatcher.EnableRaisingEvents = true;
-            }
-            else if (uploaderConfigWatcher != null)
-            {
-                uploaderConfigWatcher.Dispose();
-                uploaderConfigWatcher = null;
-            }
-        }
+            Settings = new ApplicationConfig();
+            DefaultTaskSettings = Settings.DefaultTaskSettings;
+            UploadersConfig = new UploadersConfig();
+            HotkeysConfig = new HotkeysConfig();
 
-        private static void ReloadUploadersConfig(string filePath)
-        {
-            UploadersConfig = UploadersConfig.Load(filePath);
-        }
-
-        private static void uploaderConfigWatcher_Changed(object sender, FileSystemEventArgs e)
-        {
-            if (!uploaderConfigWatcherTimer.IsDuplicateEvent(e.FullPath))
+            if (File.Exists(GreenshotImageEditorConfigFilePath))
             {
-                Action onCompleted = () => ReloadUploadersConfig(e.FullPath);
-                Helpers.WaitWhileAsync(() => Helpers.IsFileLocked(e.FullPath), 250, 5000, onCompleted, 1000);
-                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(e.FullPath);
+                File.Delete(GreenshotImageEditorConfigFilePath);
             }
-        }
 
-        public static void UploadersConfigSaveAsync()
-        {
-            if (UploadersConfig != null)
-            {
-                if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
-
-                TaskEx.Run(() =>
-                {
-                    UploadersConfig.Save(UploadersConfigFilePath);
-                },
-                () =>
-                {
-                    if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
-                });
-            }
+            SaveAllSettings();
         }
 
         public static bool Export(string exportPath)

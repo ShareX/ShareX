@@ -502,7 +502,7 @@ namespace ShareX
 
                     string exportPath = sfd.FileName;
 
-                    DebugHelper.WriteLine("Export started: " + exportPath);
+                    DebugHelper.WriteLine($"Export started: {exportPath}");
 
                     TaskEx.Run(() =>
                     {
@@ -518,7 +518,7 @@ namespace ShareX
                             btnImport.Enabled = true;
                         }
 
-                        DebugHelper.WriteLine("Export completed: " + exportPath);
+                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     });
                 }
             }
@@ -539,7 +539,7 @@ namespace ShareX
 
                     string importPath = ofd.FileName;
 
-                    DebugHelper.WriteLine("Import started: " + importPath);
+                    DebugHelper.WriteLine($"Import started: {importPath}");
 
                     TaskEx.Run(() =>
                     {
@@ -561,9 +561,25 @@ namespace ShareX
 
                         Program.MainForm.UpdateControls();
 
-                        DebugHelper.WriteLine("Import completed: " + importPath);
+                        DebugHelper.WriteLine($"Import completed: {importPath}");
                     });
                 }
+            }
+        }
+
+        private void btnResetSettings_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                SettingManager.ResetSettings();
+
+                UpdateControls();
+
+                LanguageHelper.ChangeLanguage(Program.Settings.Language);
+
+                Program.MainForm.UpdateControls();
+
+                DebugHelper.WriteLine("Settings reset.");
             }
         }
 

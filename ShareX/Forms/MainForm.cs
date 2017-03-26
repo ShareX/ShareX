@@ -1476,7 +1476,6 @@ namespace ShareX
             AfterSettingsJobs();
             UpdateWorkflowsMenu();
             Program.Settings.SaveAsync(SettingManager.ApplicationConfigFilePath);
-            SettingManager.ConfigureUploadersConfigWatcher();
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
