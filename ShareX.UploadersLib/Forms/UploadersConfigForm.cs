@@ -621,6 +621,17 @@ namespace ShareX.UploadersLib
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
 
+            // Gfycat
+
+            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
+
+            if (OAuth2Info.CheckOAuth(Config.GfycatOAuth2Info))
+            {
+                oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -2742,6 +2753,41 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Plik
+
+        #region Gfycat
+
+        private void atcGfycatAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.GfycatAccountType = accountType;
+            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
+        }
+
+        private void oauth2Gfycat_OpenButtonClicked()
+        {
+            GfycatAuthOpen();
+        }
+
+        private void oauth2Gfycat_CompleteButtonClicked(string code)
+        {
+            GfycatAuthComplete(code);
+        }
+
+        private void oauth2Gfycat_ClearButtonClicked()
+        {
+            Config.GfycatOAuth2Info = null;
+        }
+
+        private void oauth2Gfycat_RefreshButtonClicked()
+        {
+            GfycatAuthRefresh();
+        }
+
+        private void cbGfycatIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GfycatIsPublic = cbGfycatIsPublic.Checked;
+        }
+
+        #endregion Gfycat
 
         #endregion File Uploaders
 

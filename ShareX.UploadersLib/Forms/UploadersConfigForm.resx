@@ -11161,6 +11161,105 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
+  <data name="cbGfycatIsPublic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGfycatIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGfycatIsPublic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 310</value>
+  </data>
+  <data name="cbGfycatIsPublic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="cbGfycatIsPublic.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
+    <value>Is public upload?</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Name" xml:space="preserve">
+    <value>cbGfycatIsPublic</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
+    <value>atcGfycatAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
+    <value>oauth2Gfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="tpGfycat.Text" xml:space="preserve">
+    <value>Gfycat</value>
+  </data>
+  <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;tpGfycat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpGfycat.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpGfycat.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

@@ -156,6 +156,12 @@ namespace ShareX.UploadersLib
         public OneDriveFileInfo OneDriveSelectedFolder = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink = true;
 
+        // Gfycat
+
+        public OAuth2Info GfycatOAuth2Info = null;
+        public AccountType GfycatAccountType = AccountType.Anonymous;
+        public bool GfycatIsPublic = false;
+
         // Google Drive
 
         public OAuth2Info GoogleDriveOAuth2Info = null;
