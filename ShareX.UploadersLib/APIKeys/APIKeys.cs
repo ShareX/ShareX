@@ -61,6 +61,8 @@ namespace ShareX.UploadersLib
         public static string MediaFireApiKey = "";
         public static string OneDriveClientID = "";
         public static string OneDriveClientSecret = "";
+        public static string GfycatClientID = "";
+        public static string GfycatClientSecret = "";
 
         // Text Uploaders
         public static string PastebinKey = "";
