@@ -232,7 +232,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.URL = "https://gfycat.com/" + response.GfyName;
                     break;
                 }
-                else if (response.Task == "NotFound" && iterations > 10)
+                else if (response.Task == "NotFoundo" && iterations > 10)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;
