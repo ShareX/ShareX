@@ -298,7 +298,7 @@ namespace ShareX
 
                 Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
 
-                DebugHelper.WriteLine("HotkeyManager started");
+                DebugHelper.WriteLine("HotkeyManager started.");
 
                 if (Program.WatchFolderManager == null)
                 {
@@ -307,7 +307,7 @@ namespace ShareX
 
                 Program.WatchFolderManager.UpdateWatchFolders();
 
-                DebugHelper.WriteLine("WatchFolderManager started");
+                DebugHelper.WriteLine("WatchFolderManager started.");
 
                 UpdateWorkflowsMenu();
             });

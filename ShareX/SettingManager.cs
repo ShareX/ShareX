@@ -258,8 +258,6 @@ namespace ShareX
             {
                 File.Delete(GreenshotImageEditorConfigFilePath);
             }
-
-            SaveAllSettings();
         }
 
         public static bool Export(string exportPath)
@@ -311,21 +309,6 @@ namespace ShareX
             return false;
         }
 
-        private static void AddFileToDictionary(Dictionary<string, string> files, string filePath, string subFolder = null)
-        {
-            if (File.Exists(filePath))
-            {
-                string destinationPath = Path.GetFileName(filePath);
-
-                if (!string.IsNullOrEmpty(subFolder))
-                {
-                    destinationPath = Path.Combine(subFolder, destinationPath);
-                }
-
-                files.Add(destinationPath, filePath);
-            }
-        }
-
         public static bool Import(string importPath)
         {
             try
@@ -357,6 +340,21 @@ namespace ShareX
             else
             {
                 SevenZipBase.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
+            }
+        }
+
+        private static void AddFileToDictionary(Dictionary<string, string> files, string filePath, string subFolder = null)
+        {
+            if (File.Exists(filePath))
+            {
+                string destinationPath = Path.GetFileName(filePath);
+
+                if (!string.IsNullOrEmpty(subFolder))
+                {
+                    destinationPath = Path.Combine(subFolder, destinationPath);
+                }
+
+                files.Add(destinationPath, filePath);
             }
         }
     }

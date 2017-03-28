@@ -572,6 +572,7 @@ namespace ShareX
             if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();
+                SettingManager.SaveAllSettings();
 
                 UpdateControls();
 

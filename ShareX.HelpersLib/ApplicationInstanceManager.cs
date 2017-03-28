@@ -64,7 +64,7 @@ namespace ShareX.HelpersLib
             catch (AbandonedMutexException)
             {
                 // Log the mutex was abandoned in another process, it will still get acquired
-                DebugHelper.WriteLine("Single instance mutex found abandoned from another process");
+                DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
                 IsFirstInstance = true;
             }
 
