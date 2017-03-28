@@ -27,8 +27,10 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -38,6 +40,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class GfycatFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Gfycat;
+
+        public override Image ServiceImage => Resources.Gfycat;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -50,6 +54,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 config.GfycatOAuth2Info = new OAuth2Info(APIKeys.GfycatClientID, APIKeys.GfycatClientSecret);
             }
+
             return new GfycatUploader(config.GfycatOAuth2Info)
             {
                 UploadMethod = config.GfycatAccountType,
@@ -57,17 +62,17 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImgur;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGfycat;
     }
 
     public class GfycatUploader : FileUploader, IOAuth2
     {
-        public bool NoResize { get; set; }
-        public bool IgnoreExisting { get; set; }
-        public bool Private { get; set; }
         public OAuth2Info AuthInfo { get; set; }
         public AccountType UploadMethod { get; set; }
         public OAuth2Token AnonymousToken { get; set; }
+        public bool NoResize { get; set; }
+        public bool IgnoreExisting { get; set; }
+        public bool Private { get; set; }
 
         private const string URL_AUTHORIZE = "https://gfycat.com/oauth/authorize";
         private const string URL_UPLOAD = "https://filedrop.gfycat.com";
@@ -88,7 +93,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("scope", "all");
-            args.Add("state", "sharex");
+            args.Add("state", "ShareX");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
@@ -179,13 +184,16 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 return null;
             }
+
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + token.access_token);
+
             GfycatCreateResponse gfy = CreateGfycat(headers);
             if (gfy == null)
             {
                 return null;
             }
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("key", gfy.GfyName);
             UploadResult result = SendRequestFile(URL_UPLOAD, stream, fileName, "file", args);
@@ -223,7 +231,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.IsSuccess = true;
                     result.URL = "https://gfycat.com/" + response.GfyName;
                     break;
-                } else if (response.Task == "NotFoundo" && iterations > 10)
+                }
+                else if (response.Task == "NotFound" && iterations > 10)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;
@@ -246,7 +255,10 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("private", Private);
             args.Add("noResize", NoResize);
             args.Add("noMd5", IgnoreExisting);
-            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, JsonConvert.SerializeObject(args), ContentTypeJSON, null, headers);
+
+            string json = JsonConvert.SerializeObject(args);
+
+            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, ContentTypeJSON, null, headers);
             if (!string.IsNullOrEmpty(response))
             {
                 return JsonConvert.DeserializeObject<GfycatCreateResponse>(response);
@@ -288,6 +300,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         }
                     }
                 }
+
                 return AnonymousToken;
             }
         }

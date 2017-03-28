@@ -623,6 +623,8 @@ namespace ShareX.UploadersLib
 
             // Gfycat
 
+            atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
+
             oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
 
             if (OAuth2Info.CheckOAuth(Config.GfycatOAuth2Info))
@@ -630,7 +632,7 @@ namespace ShareX.UploadersLib
                 oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
-            atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
+            cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
 
             #endregion File uploaders
 

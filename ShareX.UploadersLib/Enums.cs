@@ -105,12 +105,12 @@ namespace ShareX.UploadersLib
         AmazonS3,
         [Description("Azure Storage")]
         AzureStorage,
+        [Description("Gfycat")]
+        Gfycat,
         [Description("ownCloud")]
         OwnCloud,
         [Description("MediaFire")]
         MediaFire,
-        [Description("Gfycat")]
-        Gfycat,
         [Description("Pushbullet")]
         Pushbullet,
         [Description("SendSpace")]
