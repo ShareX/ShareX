@@ -28,6 +28,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
@@ -232,7 +233,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.URL = "https://gfycat.com/" + response.GfyName;
                     break;
                 }
-                else if (response.Task == "NotFoundo" && iterations > 10)
+                else if ((response.Task.Equals("NotFoundo", StringComparison.InvariantCultureIgnoreCase) ||
+                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 10)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;
