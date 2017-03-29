@@ -1979,6 +1979,7 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gist
+
         #region Gfycat
 
         private void GfycatAuthOpen()
