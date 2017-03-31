@@ -84,7 +84,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 loginArgs.Add("api_user_name", Settings.Username);
                 loginArgs.Add("api_user_password", Settings.Password);
 
-                string loginResponse = SendRequestMultiPart("http://pastebin.com/api/api_login.php", loginArgs);
+                string loginResponse = SendRequestMultiPart("https://pastebin.com/api/api_login.php", loginArgs);
 
                 if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
                 {
@@ -121,14 +121,14 @@ namespace ShareX.UploadersLib.TextUploaders
                     args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
                 }
 
-                ur.Response = SendRequestMultiPart("http://pastebin.com/api/api_post.php", args);
+                ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
 
                 if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
                 {
                     if (Settings.RawURL)
                     {
-                        string paste_key = URLHelpers.GetFileName(ur.Response);
-                        ur.URL = "http://pastebin.com/raw/" + paste_key;
+                        string id = URLHelpers.GetFileName(ur.Response);
+                        ur.URL = "https://pastebin.com/raw/" + id;
                     }
                     else
                     {
@@ -226,6 +226,7 @@ cpp-qt = C++ (with Qt extensions)
 c_loadrunner = C: Loadrunner
 caddcl = CAD DCL
 cadlisp = CAD Lisp
+ceylon = Ceylon
 cfdg = CFDG
 chaiscript = ChaiScript
 chapel = Chapel
@@ -255,8 +256,10 @@ eiffel = Eiffel
 email = Email
 epc = EPC
 erlang = Erlang
+euphoria = Euphoria
 fsharp = F#
 falcon = Falcon
+filemaker = Filemaker
 fo = FO Language
 f1 = Formula One
 fortran = Fortran
@@ -293,6 +296,7 @@ jquery = jQuery
 json = JSON
 julia = Julia
 kixtart = KiXtart
+kotlin = Kotlin
 latex = Latex
 ldif = LDIF
 lb = Liberty BASIC
@@ -310,6 +314,7 @@ m68k = M68000 Assembler
 magiksf = MagikSF
 make = Make
 mapbasic = MapBasic
+markdown = Markdown
 matlab = MatLab
 mirc = mIRC
 mmix = MIX Assembler
@@ -331,6 +336,7 @@ objc = Objective C
 ocaml-brief = OCalm Brief
 ocaml = OCaml
 octave = Octave
+oorexx = Open Object Rexx
 pf = OpenBSD PACKET FILTER
 glsl = OpenGL Shading
 oobas = Openoffice BASIC
@@ -350,6 +356,7 @@ php-brief = PHP Brief
 pic16 = Pic 16
 pike = Pike
 pixelbender = Pixel Bender
+pli = PL/I
 plsql = PL/SQL
 postgresql = PostgreSQL
 postscript = PostScript
@@ -405,7 +412,7 @@ thinbasic = thinBasic
 typoscript = TypoScript
 unicon = Unicon
 uscript = UnrealScript
-ups = UPC
+upc = UPC
 urbi = Urbi
 vala = Vala
 vbnet = VB.NET
