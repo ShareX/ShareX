@@ -227,7 +227,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     // Happens when directory not exist, create directory and retry uploading
 
                     CreateDirectory(URLHelpers.GetDirectoryPath(remotePath), true);
-                    UploadStream(stream, remotePath);
+                    return UploadStream(stream, remotePath);
                 }
                 catch (NullReferenceException)
                 {
