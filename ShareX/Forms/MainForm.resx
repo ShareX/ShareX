@@ -1168,7 +1168,7 @@
     <value>228, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Edit image...</value>
+    <value>Annotate image...</value>
   </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>

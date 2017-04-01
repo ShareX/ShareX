@@ -24,51 +24,29 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ColorBlinkAnimation : BaseAnimation
+    internal class TwoPointAnimation : BaseAnimation
     {
-        public Color FromColor { get; set; }
-        public Color ToColor { get; set; }
-        public float Min { get; set; }
-        public float Max { get; set; }
-        public float Speed { get; set; }
+        public override bool IsActive => current < 1;
+
+        public Point FromPosition { get; set; }
+        public Point ToPosition { get; set; }
+        public float Speed { get; set; } = 1;
 
         private float current;
-        private int direction;
 
-        public ColorBlinkAnimation()
-        {
-            FromColor = Color.FromArgb(30, 30, 30);
-            ToColor = Color.FromArgb(100, 100, 100);
-            Min = 0;
-            Max = 1;
-            Speed = 0.75f;
-
-            current = Min;
-            direction = 1;
-        }
-
-        public Color GetColor()
+        public Point GetCurrentPosition()
         {
             Update();
 
-            current += (float)Elapsed.TotalSeconds * Speed * direction;
+            current += (float)Elapsed.TotalSeconds * Speed;
+            current = Math.Min(current, 1);
 
-            if (current > Max)
-            {
-                current = Max; //Max - (Current - Max);
-                direction = -1;
-            }
-            else if (current < Min)
-            {
-                current = Min; //Min + (Min - Current);
-                direction = 1;
-            }
-
-            return ColorHelpers.Lerp(FromColor, ToColor, current);
+            return (Point)MathHelpers.Lerp(FromPosition, ToPosition, current);
         }
     }
 }

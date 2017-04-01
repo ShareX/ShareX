@@ -116,5 +116,12 @@ namespace ShareX.HelpersLib
         {
             return value1 + (value2 - value1) * amount;
         }
+
+        public static Vector2 Lerp(Vector2 pos1, Vector2 pos2, float amount)
+        {
+            float x = Lerp(pos1.X, pos2.X, amount);
+            float y = Lerp(pos1.Y, pos2.Y, amount);
+            return new Vector2(x, y);
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace ShareX.ScreenCaptureLib
                 TopMost = true
             };
 
+            menuForm.Shown += MenuForm_Shown;
             menuForm.KeyDown += MenuForm_KeyDown;
             menuForm.KeyUp += MenuForm_KeyUp;
             menuForm.LocationChanged += MenuForm_LocationChanged;
@@ -758,6 +759,25 @@ namespace ShareX.ScreenCaptureLib
             ConfigureMenuState();
 
             form.Activate();
+        }
+
+        private void MenuForm_Shown(object sender, EventArgs e)
+        {
+            Point clientLocation = CaptureHelpers.ScreenToClient(menuForm.Location);
+
+            form.toolbarAnimation = new TwoPointAnimation()
+            {
+                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
+                ToPosition = new Point(clientLocation.X, clientLocation.Y + menuForm.Height + 1),
+                Speed = 2f
+            };
+
+            form.toolbarAnimation2 = new TwoPointAnimation()
+            {
+                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
+                ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),
+                Speed = 2f
+            };
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)

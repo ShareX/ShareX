@@ -78,7 +78,8 @@ namespace ShareX.ScreenCaptureLib
         internal ShapeManager ShapeManager { get; private set; }
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
-        public IContainer components = null;
+        internal IContainer components = null;
+        internal TwoPointAnimation toolbarAnimation, toolbarAnimation2;
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
@@ -555,6 +556,15 @@ namespace ShareX.ScreenCaptureLib
             if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
             {
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
+            }
+
+            if (toolbarAnimation != null && toolbarAnimation2 != null && toolbarAnimation.IsActive)
+            {
+                using (Pen toolbarAnimationPen = new Pen(Color.FromArgb(5, 100, 255), 4))
+                {
+                    g.DrawLine(toolbarAnimationPen, toolbarAnimation.FromPosition, toolbarAnimation.GetCurrentPosition());
+                    g.DrawLine(toolbarAnimationPen, toolbarAnimation2.FromPosition, toolbarAnimation2.GetCurrentPosition());
+                }
             }
         }
 
