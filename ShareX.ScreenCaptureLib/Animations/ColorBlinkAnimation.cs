@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -32,26 +33,11 @@ namespace ShareX.ScreenCaptureLib
     {
         public Color FromColor { get; set; }
         public Color ToColor { get; set; }
-        public float Min { get; set; }
-        public float Max { get; set; }
-        public float Speed { get; set; }
+        public TimeSpan Duration { get; set; }
 
         public Color CurrentColor { get; set; }
 
-        private float current;
-        private int direction;
-
-        public ColorBlinkAnimation()
-        {
-            FromColor = Color.FromArgb(30, 30, 30);
-            ToColor = Color.FromArgb(100, 100, 100);
-            Min = 0;
-            Max = 1;
-            Speed = 0.75f;
-
-            current = Min;
-            direction = 1;
-        }
+        private bool backward;
 
         public override bool Update()
         {
@@ -59,20 +45,27 @@ namespace ShareX.ScreenCaptureLib
             {
                 base.Update();
 
-                current += (float)Elapsed.TotalSeconds * Speed * direction;
+                float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
 
-                if (current > Max)
+                if (backward)
                 {
-                    current = Max; //Max - (Current - Max);
-                    direction = -1;
-                }
-                else if (current < Min)
-                {
-                    current = Min; //Min + (Min - Current);
-                    direction = 1;
+                    amount = 1 - amount;
                 }
 
-                CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, current);
+                if (amount > 1)
+                {
+                    amount = 1;
+                    backward = true;
+                    Start();
+                }
+                else if (amount < 0)
+                {
+                    amount = 0;
+                    backward = false;
+                    Start();
+                }
+
+                CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, amount);
             }
 
             return IsActive;

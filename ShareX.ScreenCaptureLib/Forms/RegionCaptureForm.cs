@@ -107,7 +107,12 @@ namespace ShareX.ScreenCaptureLib
             DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
-            borderColorAnimation = new ColorBlinkAnimation();
+            borderColorAnimation = new ColorBlinkAnimation()
+            {
+                FromColor = Color.FromArgb(30, 30, 30),
+                ToColor = Color.FromArgb(100, 100, 100),
+                Duration = TimeSpan.FromMilliseconds(1500)
+            };
             borderColorAnimation.Start();
             regionAnimation = new RectangleAnimation()
             {
