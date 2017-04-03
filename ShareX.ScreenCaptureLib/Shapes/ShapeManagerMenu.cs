@@ -772,7 +772,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Point clientLocation = CaptureHelpers.ScreenToClient(menuForm.Location);
 
-            form.toolbarAnimation = new TwoPointAnimation()
+            form.toolbarAnimation = new PointAnimation()
             {
                 FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
                 ToPosition = new Point(clientLocation.X, clientLocation.Y + menuForm.Height + 1),
@@ -781,7 +781,7 @@ namespace ShareX.ScreenCaptureLib
 
             form.toolbarAnimation.Start();
 
-            form.toolbarAnimation2 = new TwoPointAnimation()
+            form.toolbarAnimation2 = new PointAnimation()
             {
                 FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
                 ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),

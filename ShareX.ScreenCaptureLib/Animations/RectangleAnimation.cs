@@ -24,34 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ColorBlinkAnimation : BaseAnimation
+    internal class RectangleAnimation : BaseAnimation
     {
-        public Color FromColor { get; set; }
-        public Color ToColor { get; set; }
-        public float Min { get; set; }
-        public float Max { get; set; }
-        public float Speed { get; set; }
+        public Rectangle FromRectangle { get; set; }
+        public Rectangle ToRectangle { get; set; }
+        public float Speed { get; set; } = 1;
 
-        public Color CurrentColor { get; set; }
-
-        private float current;
-        private int direction;
-
-        public ColorBlinkAnimation()
-        {
-            FromColor = Color.FromArgb(30, 30, 30);
-            ToColor = Color.FromArgb(100, 100, 100);
-            Min = 0;
-            Max = 1;
-            Speed = 0.75f;
-
-            current = Min;
-            direction = 1;
-        }
+        public Rectangle CurrentRectangle { get; private set; }
 
         public override bool Update()
         {
@@ -59,20 +43,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 base.Update();
 
-                current += (float)Elapsed.TotalSeconds * Speed * direction;
+                float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
+                amount = Math.Min(amount, 1);
 
-                if (current > Max)
-                {
-                    current = Max; //Max - (Current - Max);
-                    direction = -1;
-                }
-                else if (current < Min)
-                {
-                    current = Min; //Min + (Min - Current);
-                    direction = 1;
-                }
+                int x = (int)MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
+                int y = (int)MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
+                int width = (int)MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
+                int height = (int)MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
 
-                CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, current);
+                CurrentRectangle = new Rectangle(x, y, width, height);
+
+                if (amount >= 1)
+                {
+                    Stop();
+                }
             }
 
             return IsActive;

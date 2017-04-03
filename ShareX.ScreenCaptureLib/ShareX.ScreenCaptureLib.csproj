@@ -60,7 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animations\BaseAnimation.cs" />
-    <Compile Include="Animations\TwoPointAnimation.cs" />
+    <Compile Include="Animations\PointAnimation.cs" />
+    <Compile Include="Animations\RectangleAnimation.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">

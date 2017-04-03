@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class TwoPointAnimation : BaseAnimation
+    internal class PointAnimation : BaseAnimation
     {
         public Point FromPosition { get; set; }
         public Point ToPosition { get; set; }
@@ -39,17 +39,20 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool Update()
         {
-            base.Update();
-
-            float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
-            amount = Math.Min(amount, 1);
-
-            if (amount >= 1)
+            if (IsActive)
             {
-                Stop();
-            }
+                base.Update();
 
-            CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);
+                float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
+                amount = Math.Min(amount, 1);
+
+                CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);
+
+                if (amount >= 1)
+                {
+                    Stop();
+                }
+            }
 
             return IsActive;
         }

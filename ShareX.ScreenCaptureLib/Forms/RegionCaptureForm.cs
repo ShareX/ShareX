@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
         internal IContainer components = null;
-        internal TwoPointAnimation toolbarAnimation, toolbarAnimation2;
+        internal PointAnimation toolbarAnimation, toolbarAnimation2;
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
