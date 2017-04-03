@@ -24,53 +24,50 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Drawing;
+using System;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ColorBlinkAnimation : BaseAnimation
+    internal class OpacityAnimation : BaseAnimation
     {
-        public Color FromColor { get; set; }
-        public Color ToColor { get; set; }
-        public float Min { get; set; }
-        public float Max { get; set; }
-        public float Speed { get; set; }
+        private double opacity;
 
-        public Color CurrentColor { get; set; }
-
-        private float current;
-        private int direction;
-
-        public ColorBlinkAnimation()
+        public double Opacity
         {
-            FromColor = Color.FromArgb(30, 30, 30);
-            ToColor = Color.FromArgb(100, 100, 100);
-            Min = 0;
-            Max = 1;
-            Speed = 0.75f;
-
-            current = Min;
-            direction = 1;
+            get
+            {
+                return opacity;
+            }
+            private set
+            {
+                opacity = value.Between(0, 1);
+            }
         }
+
+        public TimeSpan FadeInDuration { get; set; } = TimeSpan.Zero;
+        public TimeSpan Duration { get; set; } = TimeSpan.Zero;
+        public TimeSpan FadeOutDuration { get; set; } = TimeSpan.Zero;
+
+        public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
 
         public override bool Update()
         {
-            base.Update();
-
-            current += (float)Elapsed.TotalSeconds * Speed * direction;
-
-            if (current > Max)
+            if (IsActive)
             {
-                current = Max; //Max - (Current - Max);
-                direction = -1;
-            }
-            else if (current < Min)
-            {
-                current = Min; //Min + (Min - Current);
-                direction = 1;
-            }
+                if (Timer.Elapsed < FadeInDuration)
+                {
+                    Opacity = Timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds;
+                }
+                else
+                {
+                    Opacity = 1 - (Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
+                }
 
-            CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, current);
+                if (Opacity == 0)
+                {
+                    Timer.Stop();
+                }
+            }
 
             return IsActive;
         }

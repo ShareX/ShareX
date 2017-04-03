@@ -31,22 +31,27 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class TwoPointAnimation : BaseAnimation
     {
-        public override bool IsActive => current < 1;
-
         public Point FromPosition { get; set; }
         public Point ToPosition { get; set; }
         public float Speed { get; set; } = 1;
 
-        private float current;
+        public Point CurrentPosition { get; private set; }
 
-        public Point GetCurrentPosition()
+        public override bool Update()
         {
-            Update();
+            base.Update();
 
-            current += (float)Elapsed.TotalSeconds * Speed;
-            current = Math.Min(current, 1);
+            float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
+            amount = Math.Min(amount, 1);
 
-            return (Point)MathHelpers.Lerp(FromPosition, ToPosition, current);
+            if (amount >= 1)
+            {
+                Stop();
+            }
+
+            CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);
+
+            return IsActive;
         }
     }
 }

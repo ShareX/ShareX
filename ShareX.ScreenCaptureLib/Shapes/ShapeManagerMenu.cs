@@ -37,7 +37,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public bool IsMenuCollapsed { get; private set; }
 
-        internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+        internal TextAnimation MenuTextAnimation = new TextAnimation()
+        {
+            FadeInDuration = TimeSpan.FromSeconds(0),
+            Duration = TimeSpan.FromSeconds(5),
+            FadeOutDuration = TimeSpan.FromSeconds(0.5)
+        };
 
         private Form menuForm;
         private ToolStripEx tsMain;
@@ -742,8 +747,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
                         pos.Y += tsi.Height + 8;
+
+                        MenuTextAnimation.Text = tsi.Text;
                         MenuTextAnimation.Position = pos;
-                        MenuTextAnimation.Start(tsi.Text);
+                        MenuTextAnimation.Start();
                     };
 
                     tsi.MouseLeave += TsMain_MouseLeave;
@@ -772,12 +779,16 @@ namespace ShareX.ScreenCaptureLib
                 Speed = 2f
             };
 
+            form.toolbarAnimation.Start();
+
             form.toolbarAnimation2 = new TwoPointAnimation()
             {
                 FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
                 ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),
                 Speed = 2f
             };
+
+            form.toolbarAnimation2.Start();
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)

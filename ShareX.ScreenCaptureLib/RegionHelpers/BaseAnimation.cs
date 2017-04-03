@@ -30,24 +30,41 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class BaseAnimation
     {
-        public virtual bool IsActive => true;
+        public virtual bool IsActive { get; protected set; }
 
+        protected Stopwatch Timer { get; private set; }
         protected TimeSpan TotalElapsed { get; private set; }
         protected TimeSpan Elapsed { get; private set; }
 
-        private Stopwatch timer;
-        private TimeSpan previousElapsed;
+        protected TimeSpan previousElapsed;
 
         public BaseAnimation()
         {
-            timer = Stopwatch.StartNew();
+            Timer = new Stopwatch();
         }
 
-        protected void Update()
+        public virtual void Start()
         {
-            TotalElapsed = timer.Elapsed;
-            Elapsed = TotalElapsed - previousElapsed;
-            previousElapsed = TotalElapsed;
+            IsActive = true;
+            Timer.Restart();
+        }
+
+        public virtual void Stop()
+        {
+            Timer.Stop();
+            IsActive = false;
+        }
+
+        public virtual bool Update()
+        {
+            if (IsActive)
+            {
+                TotalElapsed = Timer.Elapsed;
+                Elapsed = TotalElapsed - previousElapsed;
+                previousElapsed = TotalElapsed;
+            }
+
+            return IsActive;
         }
     }
 }

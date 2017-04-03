@@ -107,6 +107,7 @@ namespace ShareX.ScreenCaptureLib
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
             colorBlinkAnimation = new ColorBlinkAnimation();
+            colorBlinkAnimation.Start();
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
@@ -464,7 +465,9 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 // Blink borders of all regions slightly to make non active regions to be visible in both dark and light backgrounds
-                using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.GetColor()))
+                colorBlinkAnimation.Update();
+
+                using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.CurrentColor))
                 {
                     g.DrawPath(blinkBorderPen, regionDrawPath);
                 }
@@ -558,12 +561,16 @@ namespace ShareX.ScreenCaptureLib
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
             }
 
+            // Draw animation under toolbar on startup
             if (toolbarAnimation != null && toolbarAnimation2 != null && toolbarAnimation.IsActive)
             {
                 using (Pen toolbarAnimationPen = new Pen(Color.FromArgb(5, 100, 255), 4))
                 {
-                    g.DrawLine(toolbarAnimationPen, toolbarAnimation.FromPosition, toolbarAnimation.GetCurrentPosition());
-                    g.DrawLine(toolbarAnimationPen, toolbarAnimation2.FromPosition, toolbarAnimation2.GetCurrentPosition());
+                    toolbarAnimation.Update();
+                    g.DrawLine(toolbarAnimationPen, toolbarAnimation.FromPosition, toolbarAnimation.CurrentPosition);
+
+                    toolbarAnimation2.Update();
+                    g.DrawLine(toolbarAnimationPen, toolbarAnimation2.FromPosition, toolbarAnimation2.CurrentPosition);
                 }
             }
         }
