@@ -89,7 +89,8 @@ namespace ShareX.ScreenCaptureLib
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
         private bool pause, isKeyAllowed;
-        private ColorBlinkAnimation colorBlinkAnimation;
+        private ColorBlinkAnimation borderColorAnimation;
+        private RectangleAnimation regionAnimation;
         private Bitmap bmpBackgroundImage;
 
         public RegionCaptureForm(RegionCaptureMode mode)
@@ -106,8 +107,9 @@ namespace ShareX.ScreenCaptureLib
             DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
-            colorBlinkAnimation = new ColorBlinkAnimation();
-            colorBlinkAnimation.Start();
+            borderColorAnimation = new ColorBlinkAnimation();
+            borderColorAnimation.Start();
+            regionAnimation = new RectangleAnimation();
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
@@ -465,9 +467,9 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 // Blink borders of all regions slightly to make non active regions to be visible in both dark and light backgrounds
-                colorBlinkAnimation.Update();
+                borderColorAnimation.Update();
 
-                using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.CurrentColor))
+                using (Pen blinkBorderPen = new Pen(borderColorAnimation.CurrentColor))
                 {
                     g.DrawPath(blinkBorderPen, regionDrawPath);
                 }
@@ -488,9 +490,26 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on hover area
             if (ShapeManager.IsCurrentHoverShapeValid)
             {
+                if (!ShapeManager.PreviousHoverRectangle.IsEmpty && ShapeManager.CurrentHoverShape.Rectangle != ShapeManager.PreviousHoverRectangle)
+                {
+                    regionAnimation.FromRectangle = ShapeManager.PreviousHoverRectangle;
+                    regionAnimation.ToRectangle = ShapeManager.CurrentHoverShape.Rectangle;
+                    regionAnimation.Speed = 5f;
+                    regionAnimation.Start();
+                }
+
+                regionAnimation.Update();
+
                 using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    ShapeManager.CurrentHoverShape.AddShapePath(hoverDrawPath, -1);
+                    if (regionAnimation.IsActive && regionAnimation.CurrentRectangle.Width > 2 && regionAnimation.CurrentRectangle.Height > 2)
+                    {
+                        ShapeManager.CurrentHoverShape.OnShapePathRequested(hoverDrawPath, regionAnimation.CurrentRectangle.SizeOffset(-1));
+                    }
+                    else
+                    {
+                        ShapeManager.CurrentHoverShape.AddShapePath(hoverDrawPath, -1);
+                    }
 
                     g.DrawPath(borderPen, hoverDrawPath);
                     g.DrawPath(borderDotPen, hoverDrawPath);

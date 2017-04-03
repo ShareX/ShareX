@@ -110,17 +110,30 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseEffectShape[] EffectShapes => Shapes.OfType<BaseEffectShape>().ToArray();
 
-        public BaseShape CurrentHoverShape { get; private set; }
+        private BaseShape currentHoverShape;
 
-        public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
-
-        public bool IsCurrentShapeTypeRegion
+        public BaseShape CurrentHoverShape
         {
             get
             {
-                return IsShapeTypeRegion(CurrentShapeType);
+                return currentHoverShape;
+            }
+            private set
+            {
+                if (currentHoverShape != null && (PreviousHoverRectangle == Rectangle.Empty || PreviousHoverRectangle != currentHoverShape.Rectangle))
+                {
+                    PreviousHoverRectangle = currentHoverShape.Rectangle;
+                }
+
+                currentHoverShape = value;
             }
         }
+
+        public Rectangle PreviousHoverRectangle { get; private set; }
+
+        public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
+
+        public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentShapeType);
 
         public bool IsCreating { get; set; }
         public bool IsMoving { get; set; }
