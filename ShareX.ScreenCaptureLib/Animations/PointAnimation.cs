@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public Point FromPosition { get; set; }
         public Point ToPosition { get; set; }
-        public float Speed { get; set; } = 1;
+        public TimeSpan Duration { get; set; }
 
         public Point CurrentPosition { get; private set; }
 
@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 base.Update();
 
-                float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
+                float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
                 amount = Math.Min(amount, 1);
 
                 CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);

@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public Rectangle FromRectangle { get; set; }
         public Rectangle ToRectangle { get; set; }
-        public float Speed { get; set; } = 1;
+        public TimeSpan Duration { get; set; }
 
         public Rectangle CurrentRectangle { get; private set; }
 
@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 base.Update();
 
-                float amount = (float)Timer.Elapsed.TotalSeconds * Speed;
+                float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
                 amount = Math.Min(amount, 1);
 
                 int x = (int)MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);

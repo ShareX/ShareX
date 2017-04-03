@@ -39,9 +39,9 @@ namespace ShareX.ScreenCaptureLib
 
         internal TextAnimation MenuTextAnimation = new TextAnimation()
         {
-            FadeInDuration = TimeSpan.FromSeconds(0),
-            Duration = TimeSpan.FromSeconds(5),
-            FadeOutDuration = TimeSpan.FromSeconds(0.5)
+            FadeInDuration = TimeSpan.FromMilliseconds(0),
+            Duration = TimeSpan.FromMilliseconds(5000),
+            FadeOutDuration = TimeSpan.FromMilliseconds(500)
         };
 
         private Form menuForm;
@@ -776,7 +776,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
                 ToPosition = new Point(clientLocation.X, clientLocation.Y + menuForm.Height + 1),
-                Speed = 2f
+                Duration = TimeSpan.FromMilliseconds(500)
             };
 
             form.toolbarAnimation.Start();
@@ -785,7 +785,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
                 ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),
-                Speed = 2f
+                Duration = TimeSpan.FromMilliseconds(500)
             };
 
             form.toolbarAnimation2.Start();

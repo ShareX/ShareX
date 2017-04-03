@@ -109,7 +109,10 @@ namespace ShareX.ScreenCaptureLib
             timerFPS = new Stopwatch();
             borderColorAnimation = new ColorBlinkAnimation();
             borderColorAnimation.Start();
-            regionAnimation = new RectangleAnimation();
+            regionAnimation = new RectangleAnimation()
+            {
+                Duration = TimeSpan.FromMilliseconds(250)
+            };
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
@@ -494,7 +497,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     regionAnimation.FromRectangle = ShapeManager.PreviousHoverRectangle;
                     regionAnimation.ToRectangle = ShapeManager.CurrentHoverShape.Rectangle;
-                    regionAnimation.Speed = 5f;
                     regionAnimation.Start();
                 }
 

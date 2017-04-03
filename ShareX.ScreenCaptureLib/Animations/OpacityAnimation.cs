@@ -44,9 +44,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public TimeSpan FadeInDuration { get; set; } = TimeSpan.Zero;
-        public TimeSpan Duration { get; set; } = TimeSpan.Zero;
-        public TimeSpan FadeOutDuration { get; set; } = TimeSpan.Zero;
+        public TimeSpan FadeInDuration { get; set; }
+        public TimeSpan Duration { get; set; }
+        public TimeSpan FadeOutDuration { get; set; }
 
         public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
 
