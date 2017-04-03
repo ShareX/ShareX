@@ -59,8 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegionHelpers\BaseAnimation.cs" />
-    <Compile Include="RegionHelpers\TwoPointAnimation.cs" />
+    <Compile Include="Animations\BaseAnimation.cs" />
+    <Compile Include="Animations\TwoPointAnimation.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
@@ -88,9 +88,9 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RectangleAnnotateOptions.cs" />
-    <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
+    <Compile Include="Animations\ColorBlinkAnimation.cs" />
     <Compile Include="RegionHelpers\PointInfo.cs" />
-    <Compile Include="RegionHelpers\OpacityAnimation.cs" />
+    <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
@@ -150,7 +150,7 @@
     <Compile Include="Screenshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />
-    <Compile Include="RegionHelpers\TextAnimation.cs" />
+    <Compile Include="Animations\TextAnimation.cs" />
     <Compile Include="WebpageCapture.cs" />
     <Compile Include="WebpageCaptureOptions.cs" />
     <Compile Include="RegionHelpers\WindowsList.cs" />
