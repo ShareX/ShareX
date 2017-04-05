@@ -326,13 +326,12 @@ namespace ShareX
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions(Program.DefaultFFmpegFilePath);
         public int ScreenRecordFPS = 30;
-        public int GIFFPS = 10;
-        public ScreenRecordGIFEncoding GIFEncoding = ScreenRecordGIFEncoding.FFmpeg;
-        public bool ScreenRecordFixedDuration = false;
-        public float ScreenRecordDuration = 3f;
+        public int GIFFPS = 15;
+        public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordAutoStart = true;
         public float ScreenRecordStartDelay = 0f;
-        public bool ScreenRecordShowCursor = true;
+        public bool ScreenRecordFixedDuration = false;
+        public float ScreenRecordDuration = 3f;
         public bool RunScreencastCLI = false;
         public int VideoEncoderSelected = 0;
 

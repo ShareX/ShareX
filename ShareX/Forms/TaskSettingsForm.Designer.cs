@@ -161,8 +161,6 @@
             this.txtRegionCaptureCustomInfoText = new System.Windows.Forms.TextBox();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
-            this.cbGIFEncoding = new System.Windows.Forms.ComboBox();
-            this.lblGIFEncoding = new System.Windows.Forms.Label();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
             this.chkScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
@@ -1399,8 +1397,6 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
-            this.tpScreenRecorder.Controls.Add(this.cbGIFEncoding);
-            this.tpScreenRecorder.Controls.Add(this.lblGIFEncoding);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
             this.tpScreenRecorder.Controls.Add(this.chkScreenRecordAutoStart);
@@ -1425,19 +1421,6 @@
             this.cbScreenRecorderShowCursor.Name = "cbScreenRecorderShowCursor";
             this.cbScreenRecorderShowCursor.UseVisualStyleBackColor = true;
             this.cbScreenRecorderShowCursor.CheckedChanged += new System.EventHandler(this.cbScreenRecorderShowCursor_CheckedChanged);
-            // 
-            // cbGIFEncoding
-            // 
-            this.cbGIFEncoding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGIFEncoding.FormattingEnabled = true;
-            resources.ApplyResources(this.cbGIFEncoding, "cbGIFEncoding");
-            this.cbGIFEncoding.Name = "cbGIFEncoding";
-            this.cbGIFEncoding.SelectedIndexChanged += new System.EventHandler(this.cbGIFEncoding_SelectedIndexChanged);
-            // 
-            // lblGIFEncoding
-            // 
-            resources.ApplyResources(this.lblGIFEncoding, "lblGIFEncoding");
-            this.lblGIFEncoding.Name = "lblGIFEncoding";
             // 
             // btnScreenRecorderFFmpegOptions
             // 
@@ -2290,8 +2273,6 @@
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionWidth;
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionY;
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionX;
-        private System.Windows.Forms.ComboBox cbGIFEncoding;
-        private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
         private System.Windows.Forms.CheckBox chkOverrideToolsSettings;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;

@@ -285,8 +285,6 @@ namespace ShareX
 
             nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
             nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
-            cbGIFEncoding.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScreenRecordGIFEncoding>());
-            cbGIFEncoding.SelectedIndex = (int)TaskSettings.CaptureSettings.GIFEncoding;
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
@@ -1091,11 +1089,6 @@ namespace ShareX
             {
                 nudGIFFPS.ForeColor = SystemColors.WindowText;
             }
-        }
-
-        private void cbGIFEncoding_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.GIFEncoding = (ScreenRecordGIFEncoding)cbGIFEncoding.SelectedIndex;
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)
