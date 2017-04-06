@@ -137,7 +137,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-			headers.Add("GData-Version", "3");
+            headers.Add("GData-Version", "3");
             return headers;
         }
 
