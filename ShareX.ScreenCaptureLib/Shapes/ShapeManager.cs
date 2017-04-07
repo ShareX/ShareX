@@ -120,9 +120,16 @@ namespace ShareX.ScreenCaptureLib
             }
             private set
             {
-                if (currentHoverShape != null && (PreviousHoverRectangle == Rectangle.Empty || PreviousHoverRectangle != currentHoverShape.Rectangle))
+                if (currentHoverShape != null)
                 {
-                    PreviousHoverRectangle = currentHoverShape.Rectangle;
+                    if (PreviousHoverRectangle == Rectangle.Empty || PreviousHoverRectangle != currentHoverShape.Rectangle)
+                    {
+                        PreviousHoverRectangle = currentHoverShape.Rectangle;
+                    }
+                }
+                else
+                {
+                    PreviousHoverRectangle = Rectangle.Empty;
                 }
 
                 currentHoverShape = value;
@@ -618,7 +625,7 @@ namespace ShareX.ScreenCaptureLib
                 shape.OnUpdate();
             }
 
-            CheckHover();
+            UpdateCurrentHoverShape();
 
             UpdateNodes();
         }
@@ -662,7 +669,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     shape.Rectangle = Rectangle.Empty;
 
-                    CheckHover();
+                    UpdateCurrentHoverShape();
 
                     if (IsCurrentHoverShapeValid)
                     {
@@ -830,17 +837,20 @@ namespace ShareX.ScreenCaptureLib
             return posCurrent;
         }
 
-        private void CheckHover()
+        private void UpdateCurrentHoverShape()
         {
-            CurrentHoverShape = null;
+            CurrentHoverShape = CheckHover();
+        }
 
+        private BaseShape CheckHover()
+        {
             if (!IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
             {
                 BaseShape shape = GetIntersectShape();
 
                 if (shape != null && shape.IsValidShape)
                 {
-                    CurrentHoverShape = shape;
+                    return shape;
                 }
                 else
                 {
@@ -855,14 +865,14 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
-                            return;
+                            return null;
                     }
 
                     if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
                         Point location = InputManager.MousePosition0Based;
 
-                        CurrentHoverShape = new RectangleRegionShape()
+                        return new RectangleRegionShape()
                         {
                             Rectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize)
                         };
@@ -875,7 +885,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
 
-                            CurrentHoverShape = new RectangleRegionShape()
+                            return new RectangleRegionShape()
                             {
                                 Rectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea)
                             };
@@ -883,6 +893,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+
+            return null;
         }
 
         public SimpleWindowInfo FindSelectedWindow()
