@@ -226,6 +226,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gfycat {
+            get {
+                object obj = ResourceManager.GetObject("Gfycat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon GitHub {
@@ -687,16 +697,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login successful but getting account info failed..
-        /// </summary>
-        internal static string UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info" +
-                        "_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string UploadersConfigForm_Error {
@@ -902,51 +902,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_TestFTPAccount_Connected_Created_folders {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_Created_folders", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download path:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Download_path_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Download_path_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Email_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Email_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Name_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Name_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload path:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Upload_path_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Upload_path_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User ID:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
             }
         }
         

@@ -36,6 +36,7 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -793,23 +794,6 @@ namespace ShareX
             }
         }
 
-        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
-        {
-            if (img != null)
-            {
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
-                }
-                else
-                {
-                    return AnnotateImageUsingGreenshot(img, filePath);
-                }
-            }
-
-            return null;
-        }
-
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
             Image result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
@@ -820,7 +804,24 @@ namespace ShareX
             }
         }
 
-        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options)
+        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
+        {
+            if (img != null)
+            {
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
+                {
+                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
+                }
+                else
+                {
+                    return AnnotateImageUsingGreenshot(img, filePath);
+                }
+            }
+
+            return null;
+        }
+
+        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
         {
             if (img == null && File.Exists(filePath))
             {
@@ -836,7 +837,8 @@ namespace ShareX
                         (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
                         x => ClipboardHelpers.CopyImage(x),
                         x => UploadManager.UploadImage(x),
-                        x => PrintImage(x));
+                        x => PrintImage(x),
+                        taskMode);
                 }
             }
 
@@ -977,6 +979,11 @@ namespace ShareX
             }
         }
 
+        public static void SearchImage(string url)
+        {
+            new GoogleImageSearchSharingService().ShareURL(url, null);
+        }
+
         public static void OCRImage(string filePath)
         {
             if (File.Exists(filePath))
@@ -1102,7 +1109,9 @@ namespace ShareX
                 if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegPath),
                     "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                    DialogResult downloadDialogResult = FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
+
+                    if (downloadDialogResult == DialogResult.OK)
                     {
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                             taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
@@ -1111,6 +1120,10 @@ namespace ShareX
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
                           taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
 #endif
+                    }
+                    else if (downloadDialogResult == DialogResult.Cancel)
+                    {
+                        return false;
                     }
                 }
                 else
@@ -1199,10 +1212,7 @@ namespace ShareX
 
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
         {
-            if (Program.UploadersConfig == null)
-            {
-                Program.UploaderSettingsResetEvent.WaitOne();
-            }
+            SettingManager.WaitUploadersConfig();
 
             bool firstInstance = !UploadersConfigForm.IsInstanceActive;
 
@@ -1210,7 +1220,7 @@ namespace ShareX
 
             if (firstInstance)
             {
-                form.FormClosed += (sender, e) => Program.UploadersConfigSaveAsync();
+                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
 
                 if (uploaderService != null)
                 {

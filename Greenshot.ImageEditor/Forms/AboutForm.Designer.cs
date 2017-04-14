@@ -188,6 +188,7 @@ namespace Greenshot {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(530, 293);
             this.Controls.Add(this.lblTranslation);
             this.Controls.Add(this.linkLabel1);

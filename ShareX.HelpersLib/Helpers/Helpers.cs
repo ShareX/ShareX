@@ -41,6 +41,7 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -970,6 +971,7 @@ namespace ShareX.HelpersLib
                     using (WebClient wc = new WebClient())
                     {
                         wc.Encoding = Encoding.UTF8;
+                        wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                         wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                         return wc.DownloadString(url);
                     }
@@ -1163,6 +1165,52 @@ namespace ShareX.HelpersLib
         public static string EscapeCLIText(string text)
         {
             return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
+        }
+
+        public static string BytesToHex(byte[] bytes)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (byte x in bytes)
+            {
+                sb.Append(string.Format("{0:x2}", x));
+            }
+            return sb.ToString();
+        }
+
+        public static byte[] ComputeSHA256(byte[] data)
+        {
+            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            {
+                return hashAlgorithm.ComputeHash(data);
+            }
+        }
+
+        public static byte[] ComputeSHA256(string data)
+        {
+            return ComputeSHA256(Encoding.UTF8.GetBytes(data));
+        }
+
+        public static byte[] ComputeHMACSHA256(byte[] data, byte[] key)
+        {
+            using (HMACSHA256 hashAlgorithm = new HMACSHA256(key))
+            {
+                return hashAlgorithm.ComputeHash(data);
+            }
+        }
+
+        public static byte[] ComputeHMACSHA256(string data, string key)
+        {
+            return ComputeHMACSHA256(Encoding.UTF8.GetBytes(data), Encoding.UTF8.GetBytes(key));
+        }
+
+        public static byte[] ComputeHMACSHA256(byte[] data, string key)
+        {
+            return ComputeHMACSHA256(data, Encoding.UTF8.GetBytes(key));
+        }
+
+        public static byte[] ComputeHMACSHA256(string data, byte[] key)
+        {
+            return ComputeHMACSHA256(Encoding.UTF8.GetBytes(data), key);
         }
     }
 }

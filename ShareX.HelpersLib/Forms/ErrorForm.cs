@@ -87,7 +87,7 @@ namespace ShareX.HelpersLib
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception");
+            DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception.");
             Application.Exit();
         }
 

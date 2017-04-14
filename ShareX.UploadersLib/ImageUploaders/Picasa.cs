@@ -137,6 +137,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            headers.Add("GData-Version", "3");
             return headers;
         }
 
@@ -177,7 +178,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                     {
                         PicasaAlbumInfo album = new PicasaAlbumInfo();
                         album.ID = entry.GetElementValue(GPhotoNS + "id");
-                        album.Name = entry.GetElementValue(GPhotoNS + "name");
+                        album.Name = entry.GetElementValue(AtomNS + "title");
                         album.Summary = entry.GetElementValue(AtomNS + "summary");
                         albumList.Add(album);
                     }

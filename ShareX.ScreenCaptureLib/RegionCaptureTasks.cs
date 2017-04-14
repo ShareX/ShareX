@@ -155,9 +155,12 @@ namespace ShareX.ScreenCaptureLib
             Action<Image, string> saveImageAsRequested,
             Action<Image> copyImageRequested,
             Action<Image> uploadImageRequested,
-            Action<Image> printImageRequested)
+            Action<Image> printImageRequested,
+            bool taskMode = false)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.TaskEditor))
+            RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+
+            using (RegionCaptureForm form = new RegionCaptureForm(mode))
             {
                 form.ImageFilePath = filePath;
 

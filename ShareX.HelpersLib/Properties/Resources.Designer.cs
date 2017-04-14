@@ -439,11 +439,29 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progress: {0}.
+        /// </summary>
+        internal static string DownloaderForm_ChangeProgress_Progress___0_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_ChangeProgress_Progress___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status: {0}.
         /// </summary>
         internal static string DownloaderForm_ChangeStatus_Status___0_ {
             get {
                 return ResourceManager.GetString("DownloaderForm_ChangeStatus_Status___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download canceled..
+        /// </summary>
+        internal static string DownloaderForm_Download_Canceled {
+            get {
+                return ResourceManager.GetString("DownloaderForm_Download_Canceled", resourceCulture);
             }
         }
         
@@ -480,6 +498,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string DownloaderForm_fileDownloader_DownloadCompleted_Install {
             get {
                 return ResourceManager.GetString("DownloaderForm_fileDownloader_DownloadCompleted_Install", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Possible proxy detected. Please open the Application Settings from the main menu and choose Proxy to enter your proxy server settings..
+        /// </summary>
+        internal static string DownloaderForm_ProxyDetected {
+            get {
+                return ResourceManager.GetString("DownloaderForm_ProxyDetected", resourceCulture);
             }
         }
         

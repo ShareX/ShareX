@@ -111,6 +111,9 @@
     <EmbeddedResource Include="Forms\VideoThumbnailerForm.zh-CN.resx">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoThumbnailerForm.zh-TW.resx">
+      <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
@@ -123,6 +126,7 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

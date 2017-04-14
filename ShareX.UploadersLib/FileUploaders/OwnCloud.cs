@@ -102,10 +102,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
-            
+
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
-            
+
             string response = SendRequest(HttpMethod.PUT, url, stream, Helpers.GetMimeType(fileName), null, headers);
 
             UploadResult result = new UploadResult(response);
@@ -139,10 +139,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
             url = URLHelpers.FixPrefix(url);
-            
+
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
-            
+
             string response = SendRequestMultiPart(url, args, headers);
 
             if (!string.IsNullOrEmpty(response))

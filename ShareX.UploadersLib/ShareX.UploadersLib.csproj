@@ -78,21 +78,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.3.8.1\lib\net35\AWSSDK.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.S3.3.3.5.6\lib\net35\AWSSDK.S3.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="MegaApiClient, Version=1.3.1.269, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
       <HintPath>..\packages\MegaApiClient.1.3.1\lib\net40\MegaApiClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2014.4.6-beta2\lib\net40\Renci.SshNet.dll</HintPath>
@@ -122,10 +113,10 @@
     <Compile Include="BaseServices\IGenericUploaderService.cs" />
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
-    <Compile Include="FileUploaders\AmazonS3Region.cs" />
+    <Compile Include="FileUploaders\AmazonS3.cs" />
+    <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\AzureStorage.cs" />
-    <Compile Include="FileUploaders\AzureStorageSettings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
     <Compile Include="FileUploaders\Plik.cs" />
@@ -137,7 +128,6 @@
     <Compile Include="FileUploaders\Copy.cs" />
     <Compile Include="FileUploaders\Email.cs" />
     <Compile Include="FileUploaders\Ge_tt.cs" />
-    <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\GoogleDrive.cs" />
     <Compile Include="FileUploaders\Jira.cs" />
     <Compile Include="FileUploaders\Hostr.cs" />
@@ -230,9 +220,15 @@
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
+    <Compile Include="SharingServices\GoogleImageSearchSharingService.cs" />
     <Compile Include="SharingServices\GooglePlusSharingService.cs" />
     <Compile Include="SharingServices\LinkedInSharingService.cs" />
     <Compile Include="SharingServices\PinterestSharingService.cs" />
@@ -327,11 +323,6 @@
     <Compile Include="ImageUploaders\YfrogUploader.cs" />
     <Compile Include="FileUploaders\LocalhostAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="BaseUploaders\TextUploader.cs" />
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
@@ -391,6 +382,9 @@
     <EmbeddedResource Include="Controls\AccountsControl.zh-CN.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountsControl.zh-TW.resx">
+      <DependentUpon>AccountsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.de.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +416,9 @@
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.zh-CN.resx">
+      <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountTypeControl.zh-TW.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.de.resx">
@@ -457,6 +454,9 @@
     <EmbeddedResource Include="Controls\OAuthControl.zh-CN.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.zh-TW.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,6 +488,9 @@
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.zh-CN.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForm.zh-TW.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.de.resx">
@@ -523,6 +526,10 @@
     <EmbeddedResource Include="Forms\JiraUpload.zh-CN.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JiraUpload.zh-TW.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OAuthControl.zh-TW.resx" />
     <EmbeddedResource Include="Forms\OAuthWebForm.de.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,6 +561,9 @@
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.zh-CN.resx">
+      <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OAuthWebForm.zh-TW.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
@@ -595,6 +605,9 @@
     <EmbeddedResource Include="Forms\ResponseForm.zh-CN.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponseForm.zh-TW.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.de.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,6 +639,9 @@
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.zh-CN.resx">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TwitterTweetForm.zh-TW.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.de.resx">
@@ -661,6 +677,9 @@
     <EmbeddedResource Include="Forms\UploadersConfigForm.zh-CN.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadersConfigForm.zh-TW.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.de.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +711,9 @@
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.zh-CN.resx">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserPassBox.zh-TW.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.de.resx">
@@ -763,6 +785,9 @@
     <EmbeddedResource Include="FTPClient\FTPClientForm.zh-CN.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\FTPClientForm.zh-TW.resx">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -774,13 +799,14 @@
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -885,10 +911,8 @@
     <None Include="Favicons\Pastie.png" />
     <Content Include="Favicons\AzureStorage.png" />
     <None Include="Favicons\Plik.ico" />
+    <Content Include="Favicons\Gfycat.png" />
     <Content Include="Favicons\Uplea.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.S3.3.3.5.6\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

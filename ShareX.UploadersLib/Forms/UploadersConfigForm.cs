@@ -350,10 +350,8 @@ namespace ShareX.UploadersLib
 
             txtDropboxPath.Text = Config.DropboxUploadPath;
             cbDropboxAutoCreateShareableLink.Checked = Config.DropboxAutoCreateShareableLink;
-            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
-            cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
-            cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
-            UpdateDropboxStatus();
+            cbDropboxUseDirectLink.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxUseDirectLink.Checked = Config.DropboxUseDirectLink;
 
             // OneDrive
 
@@ -516,16 +514,24 @@ namespace ShareX.UploadersLib
 
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
+            cbAmazonS3Endpoints.Items.AddRange(AmazonS3.Endpoints.ToArray());
+            for (int i = 0; i < cbAmazonS3Endpoints.Items.Count; i++)
+            {
+                if (((AmazonS3Endpoint)cbAmazonS3Endpoints.Items[i]).Endpoint.Equals(Config.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    cbAmazonS3Endpoints.SelectedIndex = i;
+                    break;
+                }
+            }
+            txtAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
+            txtAmazonS3Region.Text = Config.AmazonS3Settings.Region;
+            cbAmazonS3UsePathStyle.Checked = Config.AmazonS3Settings.UsePathStyle;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
-
-            cbAmazonS3Endpoint.Items.AddRange(AmazonS3.RegionEndpoints.ToArray());
-            cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
-            cbAmazonS3Endpoint.DisplayMember = "Name";
             UpdateAmazonS3Status();
 
             // ownCloud
@@ -586,17 +592,20 @@ namespace ShareX.UploadersLib
             cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
             // Uplea
+
             txtUpleaApiKey.Text = Config.UpleaApiKey;
             txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
             cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
             cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
 
             // Azure Storage
+
             txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
             txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
             txtAzureStorageContainer.Text = Config.AzureStorageContainer;
 
             // Plik
+
             txtPlikAPIKey.Text = Config.PlikSettings.APIKey;
             txtPlikURL.Text = Config.PlikSettings.URL;
             txtPlikPassword.Text = Config.PlikSettings.Password;
@@ -611,6 +620,19 @@ namespace ShareX.UploadersLib
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
+
+            // Gfycat
+
+            atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
+
+            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
+
+            if (OAuth2Info.CheckOAuth(Config.GfycatOAuth2Info))
+            {
+                oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
 
             #endregion File uploaders
 
@@ -1378,18 +1400,17 @@ namespace ShareX.UploadersLib
         private void txtDropboxPath_TextChanged(object sender, EventArgs e)
         {
             Config.DropboxUploadPath = txtDropboxPath.Text;
-            UpdateDropboxStatus();
         }
 
         private void cbDropboxAutoCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.DropboxAutoCreateShareableLink = cbDropboxAutoCreateShareableLink.Checked;
-            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxUseDirectLink.Enabled = Config.DropboxAutoCreateShareableLink;
         }
 
-        private void cbDropboxURLType_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbDropboxUseDirectLink_CheckedChanged(object sender, EventArgs e)
         {
-            Config.DropboxURLType = (DropboxURLType)cbDropboxURLType.SelectedIndex;
+            Config.DropboxUseDirectLink = cbDropboxUseDirectLink.Checked;
         }
 
         #endregion Dropbox
@@ -1975,14 +1996,32 @@ namespace ShareX.UploadersLib
             Config.AmazonS3Settings.SecretAccessKey = txtAmazonS3SecretKey.Text;
         }
 
-        private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cbAmazonS3Endpoints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AmazonS3Region region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
-            if (region != null)
+            AmazonS3Endpoint endpoint = cbAmazonS3Endpoints.SelectedItem as AmazonS3Endpoint;
+
+            if (endpoint != null)
             {
-                Config.AmazonS3Settings.Endpoint = region.Identifier;
-                UpdateAmazonS3Status();
+                txtAmazonS3Region.Text = endpoint.Region;
+                txtAmazonS3Endpoint.Text = endpoint.Endpoint;
             }
+        }
+
+        private void txtAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.Endpoint = txtAmazonS3Endpoint.Text;
+            UpdateAmazonS3Status();
+        }
+
+        private void txtAmazonS3Region_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.Region = txtAmazonS3Region.Text;
+            UpdateAmazonS3Status();
+        }
+
+        private void cbAmazonS3UsePathStyle_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.UsePathStyle = cbAmazonS3UsePathStyle.Checked;
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
@@ -2717,6 +2756,41 @@ namespace ShareX.UploadersLib
 
         #endregion Plik
 
+        #region Gfycat
+
+        private void atcGfycatAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.GfycatAccountType = accountType;
+            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
+        }
+
+        private void oauth2Gfycat_OpenButtonClicked()
+        {
+            GfycatAuthOpen();
+        }
+
+        private void oauth2Gfycat_CompleteButtonClicked(string code)
+        {
+            GfycatAuthComplete(code);
+        }
+
+        private void oauth2Gfycat_ClearButtonClicked()
+        {
+            Config.GfycatOAuth2Info = null;
+        }
+
+        private void oauth2Gfycat_RefreshButtonClicked()
+        {
+            GfycatAuthRefresh();
+        }
+
+        private void cbGfycatIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GfycatIsPublic = cbGfycatIsPublic.Checked;
+        }
+
+        #endregion Gfycat
+
         #endregion File Uploaders
 
         #region URL Shorteners
@@ -3334,12 +3408,12 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/Custom-Uploader");
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
         }
 
         private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://github.com/ShareX/CustomUploaders");
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)

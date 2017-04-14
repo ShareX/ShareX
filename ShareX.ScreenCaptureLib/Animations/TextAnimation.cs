@@ -23,35 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using Amazon;
+using System.Drawing;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.ScreenCaptureLib
 {
-    public class AmazonS3Region
+    internal class TextAnimation : OpacityAnimation
     {
-        public AmazonS3Region(string name)
-        {
-            Name = name;
-        }
-
-        public AmazonS3Region(string name, string identifier, string hostname)
-        {
-            Name = name;
-            Identifier = identifier;
-            Hostname = hostname;
-        }
-
-        public AmazonS3Region(RegionEndpoint region)
-        {
-            Name = region.DisplayName;
-            Identifier = region.SystemName;
-            AmazonRegion = region;
-            Hostname = region.GetEndpointForService("s3").Hostname;
-        }
-
-        public string Name { get; private set; }
-        public string Identifier { get; private set; }
-        public RegionEndpoint AmazonRegion { get; private set; }
-        public string Hostname { get; private set; }
+        public string Text { get; set; }
+        public Point Position { get; set; }
     }
 }

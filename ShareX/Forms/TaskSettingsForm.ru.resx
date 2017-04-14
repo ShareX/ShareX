@@ -537,4 +537,34 @@
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>Фильтры загрузчиков</value>
   </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Переопределить задачи после захвата</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Переопределить задачи после загрузки</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Переопределить сервисы загрузки</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Переопределить действия</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Переопределить расширенные настройки</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Переопределить настройки захвата</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Переопределить общие настройки</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Переопределить настройки изображений</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Переопределить настройки инструментов</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Переопределить настройки загрузок</value>
+  </data>
 </root>

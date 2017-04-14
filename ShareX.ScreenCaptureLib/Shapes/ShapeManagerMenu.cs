@@ -37,7 +37,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public bool IsMenuCollapsed { get; private set; }
 
-        internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+        internal TextAnimation MenuTextAnimation = new TextAnimation()
+        {
+            FadeInDuration = TimeSpan.FromMilliseconds(0),
+            Duration = TimeSpan.FromMilliseconds(5000),
+            FadeOutDuration = TimeSpan.FromMilliseconds(500)
+        };
 
         private Form menuForm;
         private ToolStripEx tsMain;
@@ -64,6 +69,7 @@ namespace ShareX.ScreenCaptureLib
                 TopMost = true
             };
 
+            menuForm.Shown += MenuForm_Shown;
             menuForm.KeyDown += MenuForm_KeyDown;
             menuForm.KeyUp += MenuForm_KeyUp;
             menuForm.LocationChanged += MenuForm_LocationChanged;
@@ -79,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
                 GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
-                Padding = new Padding(0, 0, 0, 0),
+                Padding = new Padding(0, 1, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
@@ -741,8 +747,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
                         pos.Y += tsi.Height + 8;
+
+                        MenuTextAnimation.Text = tsi.Text;
                         MenuTextAnimation.Position = pos;
-                        MenuTextAnimation.Start(tsi.Text);
+                        MenuTextAnimation.Start();
                     };
 
                     tsi.MouseLeave += TsMain_MouseLeave;
@@ -758,6 +766,29 @@ namespace ShareX.ScreenCaptureLib
             ConfigureMenuState();
 
             form.Activate();
+        }
+
+        private void MenuForm_Shown(object sender, EventArgs e)
+        {
+            Point clientLocation = CaptureHelpers.ScreenToClient(menuForm.Location);
+
+            form.toolbarAnimation = new PointAnimation()
+            {
+                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
+                ToPosition = new Point(clientLocation.X, clientLocation.Y + menuForm.Height + 1),
+                Duration = TimeSpan.FromMilliseconds(500)
+            };
+
+            form.toolbarAnimation.Start();
+
+            form.toolbarAnimation2 = new PointAnimation()
+            {
+                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
+                ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),
+                Duration = TimeSpan.FromMilliseconds(500)
+            };
+
+            form.toolbarAnimation2.Start();
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)

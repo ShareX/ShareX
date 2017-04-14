@@ -371,10 +371,7 @@ namespace ShareX
             {
                 Program.Settings.ShowUploadWarning = false;
 
-                if (Program.UploadersConfig == null)
-                {
-                    Program.UploaderSettingsResetEvent.WaitOne();
-                }
+                SettingManager.WaitUploadersConfig();
 
                 Status = TaskStatus.Working;
                 Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
@@ -969,6 +966,7 @@ namespace ShareX
 
                     using (WebClient wc = new WebClient())
                     {
+                        wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                         wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                         wc.DownloadFile(url, Info.FilePath);
                     }

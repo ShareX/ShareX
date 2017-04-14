@@ -468,21 +468,8 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        Config.DropboxAccountInfo = dropbox.GetCurrentAccountAPIv1();
-                        UpdateDropboxStatus();
-
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
-
-                        if (Config.DropboxAccountInfo != null)
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_, "ShareX",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -491,34 +478,11 @@ namespace ShareX.UploadersLib
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-                Config.DropboxAccountInfo = null;
-                UpdateDropboxStatus();
             }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
                 MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void UpdateDropboxStatus()
-        {
-            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.DropboxAccountInfo.Email);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.DropboxAccountInfo.Display_name);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.DropboxAccountInfo.Uid);
-                string uploadPath = NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(Config.DropboxUploadPath));
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + uploadPath);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " +
-                    Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid.ToString(), URLHelpers.CombineURL(uploadPath, "Example.png")));
-                lblDropboxStatus.Text = sb.ToString();
-            }
-            else
-            {
-                lblDropboxStatus.Text = "";
             }
         }
 
@@ -528,7 +492,7 @@ namespace ShareX.UploadersLib
 
         private void UpdateAmazonS3Status()
         {
-            lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GetURL("Example.png");
+            lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GenerateURL("Example.png");
         }
 
         #endregion Amazon S3
@@ -2015,5 +1979,87 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gist
+
+        #region Gfycat
+
+        private void GfycatAuthOpen()
+        {
+            try
+            {
+                OAuth2Info oauth = new OAuth2Info(APIKeys.GfycatClientID, APIKeys.GfycatClientSecret);
+
+                string url = new GfycatUploader(oauth).GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    Config.GfycatOAuth2Info = oauth;
+                    URLHelpers.OpenURL(url);
+                    DebugHelper.WriteLine("GfycatAuthOpen - Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("GfycatAuthOpen - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GfycatAuthComplete(string code)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && Config.GfycatOAuth2Info != null)
+                {
+                    bool result = new GfycatUploader(Config.GfycatOAuth2Info).GetAccessToken(code);
+
+                    if (result)
+                    {
+                        oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2Gfycat.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GfycatAuthRefresh()
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(Config.GfycatOAuth2Info))
+                {
+                    bool result = new GfycatUploader(Config.GfycatOAuth2Info).RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2Gfycat.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        atcGfycatAccountType.SelectedAccountType = AccountType.Anonymous;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion Gfycat
     }
 }

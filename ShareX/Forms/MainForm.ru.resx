@@ -657,4 +657,22 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Переключить панель действий</value>
   </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Убрать задачу из списка</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Искать изображение в Google...</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Распознать текст (OCR)</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Объединить изображения...</value>
+  </data>
+  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
+    <value>Редактировать изображение…</value>
+  </data>
+  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
+    <value>Редактировать изображение…</value>
+  </data>
 </root>

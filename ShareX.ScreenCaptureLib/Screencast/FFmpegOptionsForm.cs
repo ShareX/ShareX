@@ -417,11 +417,6 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void buttonFFmpegHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/FFmpeg-options#additional-commands");
-        }
-
         private void btnDownload_Click(object sender, EventArgs e)
         {
             FFmpegDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
@@ -498,11 +493,6 @@ namespace ShareX.ScreenCaptureLib
         private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
-        }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/FFmpeg-options");
         }
 
         private object eiFFmpeg_ExportRequested()

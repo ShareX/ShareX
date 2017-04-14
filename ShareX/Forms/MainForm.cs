@@ -286,10 +286,7 @@ namespace ShareX
         {
             TaskEx.Run(() =>
             {
-                if (Program.HotkeysConfig == null)
-                {
-                    Program.HotkeySettingsResetEvent.WaitOne();
-                }
+                SettingManager.WaitHotkeysConfig();
             },
             () =>
             {
@@ -301,7 +298,7 @@ namespace ShareX
 
                 Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
 
-                DebugHelper.WriteLine("HotkeyManager started");
+                DebugHelper.WriteLine("HotkeyManager started.");
 
                 if (Program.WatchFolderManager == null)
                 {
@@ -310,7 +307,7 @@ namespace ShareX
 
                 Program.WatchFolderManager.UpdateWatchFolders();
 
-                DebugHelper.WriteLine("WatchFolderManager started");
+                DebugHelper.WriteLine("WatchFolderManager started.");
 
                 UpdateWorkflowsMenu();
             });
@@ -524,9 +521,10 @@ namespace ShareX
         {
             cmsTaskInfo.SuspendLayout();
 
-            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
-                tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible =
-                tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
+                tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
+                tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
+                tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -614,6 +612,7 @@ namespace ShareX
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiSearchImage.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
                     tsmiCombineImages.Visible = uim.SelectedItems.Where(x => x.IsImageFile).Count() > 1;
@@ -910,10 +909,7 @@ namespace ShareX
                         Program.DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
                         Program.DefaultTaskSettings.FileDestination = FileDestination.Puush;
 
-                        if (Program.UploadersConfig == null)
-                        {
-                            Program.UploaderSettingsResetEvent.WaitOne(5000);
-                        }
+                        SettingManager.WaitUploadersConfig();
 
                         if (Program.UploadersConfig != null)
                         {
@@ -1057,7 +1053,7 @@ namespace ShareX
             {
                 e.Cancel = true;
                 Hide();
-                Program.SaveAllSettingsAsync();
+                SettingManager.SaveAllSettingsAsync();
             }
         }
 
@@ -1467,7 +1463,7 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+            SettingManager.SaveApplicationConfigAsync();
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
@@ -1479,8 +1475,7 @@ namespace ShareX
 
             AfterSettingsJobs();
             UpdateWorkflowsMenu();
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
-            Program.ConfigureUploadersConfigWatcher();
+            SettingManager.SaveApplicationConfigAsync();
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
@@ -1493,7 +1488,7 @@ namespace ShareX
                 }
 
                 UpdateWorkflowsMenu();
-                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
+                SettingManager.SaveHotkeysConfigAsync();
             }
         }
 
@@ -1693,7 +1688,7 @@ namespace ShareX
         {
             if (trayMenuSaveSettings)
             {
-                Program.SaveAllSettingsAsync();
+                SettingManager.SaveAllSettingsAsync();
             }
 
             trayMenuSaveSettings = true;
@@ -1889,6 +1884,11 @@ namespace ShareX
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
         {
             uim.EditImage();
+        }
+
+        private void tsmiSearchImage_Click(object sender, EventArgs e)
+        {
+            uim.SearchImage();
         }
 
         private void tsmiShowQRCode_Click(object sender, EventArgs e)

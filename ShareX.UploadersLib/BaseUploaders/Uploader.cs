@@ -38,7 +38,6 @@ namespace ShareX.UploadersLib
 {
     public class Uploader
     {
-        protected const string UserAgent = "ShareX";
         protected const string ContentTypeMultipartFormData = "multipart/form-data";
         protected const string ContentTypeJSON = "application/json";
         protected const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
@@ -358,7 +357,7 @@ namespace ShareX.UploadersLib
             if (cookies != null) request.CookieContainer.Add(cookies);
             IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             if (proxy != null) request.Proxy = proxy;
-            request.UserAgent = UserAgent;
+            request.UserAgent = ShareXResources.UserAgent;
             request.ContentType = contentType;
 
             if (contentLength > 0)
@@ -511,7 +510,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private string CreateQuery(Dictionary<string, string> args)
+        protected string CreateQuery(Dictionary<string, string> args)
         {
             if (args != null && args.Count > 0)
             {

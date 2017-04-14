@@ -1007,4 +1007,67 @@ store.book[0].title</value>
   <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
     <value>Тип сервиса</value>
   </data>
+  <data name="cbPlikComment.Text" xml:space="preserve">
+    <value>Комментарий (Markdown)</value>
+  </data>
+  <data name="cbPlikOneShot.Text" xml:space="preserve">
+    <value>Уничтожить после первой загрузки</value>
+  </data>
+  <data name="cbPlikRemovable.Text" xml:space="preserve">
+    <value>Удаляемый</value>
+  </data>
+  <data name="cbPlikIsSecured.Text" xml:space="preserve">
+    <value>Логин/Пароль требуются?</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
+    <value>Сейчас тип сервиса используется когда пользователи импортируют сервис загрузок двойным кликом по файлу .sxcu</value>
+  </data>
+  <data name="lblGistCustomURL.Text" xml:space="preserve">
+    <value>Пользовательский домен:</value>
+  </data>
+  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
+    <value>Публичная загрузка?</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblPlikURL.Text" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>Файлы автоматически удалятся через</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
+    <value>часов</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
+    <value>минут</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
+    <value>дней</value>
+  </data>
+  <data name="lblPlikAPIKey.Text" xml:space="preserve">
+    <value>Ключи API:</value>
+  </data>
+  <data name="gpPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Данные для входа</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="gpPlikSettings.Text" xml:space="preserve">
+    <value>Другие настройки</value>
+  </data>
+  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
+    <value>Использовать ссылки "https://"</value>
+  </data>
+  <data name="lblGistCustomURLExample.Text" xml:space="preserve">
+    <value>Пример: https://api.github.com</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>Примечание: Учетные записи не поддерживаются для GitHub Enterprise.</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
+    <value>Использовать прямую ссылку</value>
+  </data>
 </root>

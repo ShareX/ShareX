@@ -964,4 +964,13 @@
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>Другие</value>
   </data>
+  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
+    <value>Загрузка отменена.</value>
+  </data>
+  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
+    <value>Возможно используется прокси. Откройте Настройки приложения из главного меню и выберите Прокси для ввода настроек своего прокси сервера.</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
+    <value>Прогресс: {0}</value>
+  </data>
 </root>

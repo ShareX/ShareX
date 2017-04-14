@@ -166,7 +166,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Default .NET method can't copy image with alpha channel to clipboard. Alternatively, when this setting is false, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
         public bool UseDefaultClipboardCopyImage { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Default .NET method can't get image with alpha channel from clipboard. Alternatively, when this setting is false, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
+        [Category("Application"), DefaultValue(true), Description("Default .NET method can't get image with alpha channel from clipboard. Alternatively, when this setting is false, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
         public bool UseDefaultClipboardGetImage { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
@@ -193,9 +193,6 @@ namespace ShareX
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settings to memory.")]
-        public bool DetectUploaderConfigFileChanges { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
         public bool TrayTextMoreInfo { get; set; }

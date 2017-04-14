@@ -1323,6 +1323,30 @@
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 24</value>
+  </data>
+  <data name="btnResetSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Reset settings...</value>
+  </data>
+  <data name="&gt;&gt;btnResetSettings.Name" xml:space="preserve">
+    <value>btnResetSettings</value>
+  </data>
+  <data name="&gt;&gt;btnResetSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnResetSettings.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1351,7 +1375,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1381,7 +1405,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,13 +1432,13 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>208, 96</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 24</value>
+    <value>184, 23</value>
   </data>
   <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1432,7 +1456,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
@@ -1456,7 +1480,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1483,7 +1507,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

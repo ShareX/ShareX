@@ -63,17 +63,17 @@ namespace ShareX
 
             lblTeam.Text = "ShareX Team:";
             lblBerk.Text = "Jaex (Berk)";
-            lblMike.Text = "mcored (Michael Delpach)";
+            lblMike.Text = "McoreD (Michael Delpach)";
 
             rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
 {Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}
 {Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
 
-            rtbCredits.Text = string.Format(@"{0}:
+            rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
 
 https://github.com/ShareX/ShareX/graphs/contributors
 
-{1}:
+{Resources.AboutForm_AboutForm_Translators}:
 
 Turkish: https://github.com/Jaex & https://github.com/muratmoon
 German: https://github.com/Starbug2 & https://github.com/Kaeltis
@@ -86,8 +86,9 @@ Dutch: https://github.com/canihavesomecoffee
 Portuguese (Brazil): https://github.com/RockyTV & https://github.com/athosbr99
 Vietnamese: https://github.com/thanhpd
 Russian: https://github.com/L1Q
+Traditional Chinese: https://github.com/alantsai
 
-{2}:
+{Resources.AboutForm_AboutForm_External_libraries}:
 
 Greenshot Image Editor: https://github.com/greenshot/greenshot
 Json.NET: https://github.com/JamesNK/Newtonsoft.Json
@@ -101,11 +102,10 @@ SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
-AWS SDK: http://aws.amazon.com/sdk-for-net/
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: http://ocr.space
 
-Copyright (c) 2007-2017 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
+Copyright (c) 2007-2017 ShareX Team";
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)

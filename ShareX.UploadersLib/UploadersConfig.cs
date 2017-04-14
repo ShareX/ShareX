@@ -136,11 +136,12 @@ namespace ShareX.UploadersLib
         // Dropbox
 
         public OAuth2Info DropboxOAuth2Info = null;
-        //public DropboxAccount DropboxAccount = null;
         public string DropboxUploadPath = "ShareX/%y/%mo";
         public bool DropboxAutoCreateShareableLink = true;
+        public bool DropboxUseDirectLink = false;
+
+        // TEMP: For backward compatibility
         public DropboxURLType DropboxURLType = DropboxURLType.Default;
-        public DropboxAccountInfo DropboxAccountInfo = null; // API v1
 
         // FTP Server
 
@@ -154,6 +155,12 @@ namespace ShareX.UploadersLib
         public OAuth2Info OneDriveOAuth2Info = null;
         public OneDriveFileInfo OneDriveSelectedFolder = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink = true;
+
+        // Gfycat
+
+        public OAuth2Info GfycatOAuth2Info = null;
+        public AccountType GfycatAccountType = AccountType.Anonymous;
+        public bool GfycatIsPublic = false;
 
         // Google Drive
 

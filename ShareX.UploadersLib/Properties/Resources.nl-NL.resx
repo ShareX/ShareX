@@ -126,17 +126,11 @@
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Verversen authorisatie is niet ondersteund.</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Gebruikers ID:</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Ongeldige apparaatnaam</value>
   </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
     <value>Status: Inloggen mislukt.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Uploadpad:</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>vernieuwen mappenlijst Box mislukt</value>
@@ -173,9 +167,6 @@
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Fout tijdens tweeten</value>
-  </data>
-  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
-    <value>Login geslaagd maar ophalen accountinformatie mislukt.</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Aanmelden vereist.</value>
@@ -225,15 +216,6 @@
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Verbonden!
 Aangemaakte mappen:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
-    <value>Downloadpad:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
-    <value>Naam:</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP client ondersteund enkel FTP of FTPS.</value>

@@ -1,5 +1,5 @@
 version: 1.0.0.{build}
-image: Visual Studio 2015
+image: Visual Studio 2017
 configuration:
 - Release
 - Debug
@@ -8,7 +8,7 @@ platform: Any CPU
 shallow_clone: true
 environment:
   APIKeys:
-    secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA2Hk2acXHrWkg9z6FCGASxRMJjv0+in1v5DxN1BfEPdASmhnYFu6pcINmwibGYjsxySek57cbYUDc69yQfyqX6FUI0kQcEGp8Dh3tHF981Dy
+    secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
 install:
 - ps: AppVeyor\install.ps1
 before_build:

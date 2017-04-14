@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
-using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -81,24 +80,19 @@ namespace ShareX
         public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
 
-        public static ApplicationConfig Settings { get; private set; }
-        public static TaskSettings DefaultTaskSettings { get; private set; }
-        public static UploadersConfig UploadersConfig { get; private set; }
-        public static HotkeysConfig HotkeysConfig { get; private set; }
+        internal static ApplicationConfig Settings { get; set; }
+        internal static TaskSettings DefaultTaskSettings { get; set; }
+        internal static UploadersConfig UploadersConfig { get; set; }
+        internal static HotkeysConfig HotkeysConfig { get; set; }
 
-        public static ManualResetEvent UploaderSettingsResetEvent { get; private set; }
-        public static ManualResetEvent HotkeySettingsResetEvent { get; private set; }
-
-        public static MainForm MainForm { get; private set; }
-        public static Stopwatch StartTimer { get; private set; }
-        public static HotkeyManager HotkeyManager { get; set; }
-        public static WatchFolderManager WatchFolderManager { get; set; }
-        public static GitHubUpdateManager UpdateManager { get; private set; }
-        public static CLIManager CLI { get; private set; }
+        internal static MainForm MainForm { get; private set; }
+        internal static Stopwatch StartTimer { get; private set; }
+        internal static HotkeyManager HotkeyManager { get; set; }
+        internal static WatchFolderManager WatchFolderManager { get; set; }
+        internal static GitHubUpdateManager UpdateManager { get; private set; }
+        internal static CLIManager CLI { get; private set; }
 
         private static bool restarting;
-        private static FileSystemWatcher uploaderConfigWatcher;
-        private static WatchFolderDuplicateEventTimer uploaderConfigWatcherTimer;
 
         #region Paths
 
@@ -144,77 +138,13 @@ namespace ShareX
             }
         }
 
-        public static string ApplicationConfigFilePath
-        {
-            get
-            {
-                if (!Sandbox)
-                {
-                    return Path.Combine(PersonalFolder, "ApplicationConfig.json");
-                }
-
-                return null;
-            }
-        }
-
-        public static string UploadersConfigFilePath
-        {
-            get
-            {
-                if (!Sandbox)
-                {
-                    string uploadersConfigFolder;
-
-                    if (Settings != null && !string.IsNullOrEmpty(Settings.CustomUploadersConfigPath))
-                    {
-                        uploadersConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomUploadersConfigPath);
-                    }
-                    else
-                    {
-                        uploadersConfigFolder = PersonalFolder;
-                    }
-
-                    return Path.Combine(uploadersConfigFolder, "UploadersConfig.json");
-                }
-
-                return null;
-            }
-        }
-
-        public static string HotkeysConfigFilePath
-        {
-            get
-            {
-                if (!Sandbox)
-                {
-                    string hotkeysConfigFolder;
-
-                    if (Settings != null && !string.IsNullOrEmpty(Settings.CustomHotkeysConfigPath))
-                    {
-                        hotkeysConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomHotkeysConfigPath);
-                    }
-                    else
-                    {
-                        hotkeysConfigFolder = PersonalFolder;
-                    }
-
-                    return Path.Combine(hotkeysConfigFolder, "HotkeysConfig.json");
-                }
-
-                return null;
-            }
-        }
-
         public static string HistoryFilePath
         {
             get
             {
-                if (!Sandbox)
-                {
-                    return Path.Combine(PersonalFolder, "History.xml");
-                }
+                if (Sandbox) return null;
 
-                return null;
+                return Path.Combine(PersonalFolder, "History.xml");
             }
         }
 
@@ -272,9 +202,7 @@ namespace ShareX
             }
         }
 
-        public static string BackupFolder => Path.Combine(PersonalFolder, "Backup");
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
-        public static string GreenshotImageEditorConfigFilePath => Path.Combine(PersonalFolder, "GreenshotImageEditor.ini");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
         public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
@@ -312,6 +240,7 @@ namespace ShareX
 
             if (restarting)
             {
+                DebugHelper.WriteLine("ShareX restarting.");
                 Process.Start(Application.ExecutablePath);
             }
         }
@@ -338,29 +267,26 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
             CleanTempFiles();
-            LoadProgramSettings();
 
-            UploaderSettingsResetEvent = new ManualResetEvent(false);
-            HotkeySettingsResetEvent = new ManualResetEvent(false);
-            TaskEx.Run(LoadSettings);
+            SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
-            DebugHelper.WriteLine("MainForm init started");
+            DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
-            DebugHelper.WriteLine("MainForm init finished");
+            DebugHelper.WriteLine("MainForm init finished.");
 
             Application.Run(MainForm);
 
             if (WatchFolderManager != null) WatchFolderManager.Dispose();
-            SaveAllSettings();
-            BackupSettings();
+            SettingManager.SaveAllSettings();
+            SettingManager.BackupSettings();
 
             DebugHelper.Logger.Async = false;
-            DebugHelper.WriteLine("ShareX closing");
+            DebugHelper.WriteLine("ShareX closing.");
         }
 
         public static void Restart()
@@ -412,82 +338,6 @@ namespace ShareX
             }
 
             return false;
-        }
-
-        public static void LoadSettings()
-        {
-            LoadUploadersConfig();
-            UploaderSettingsResetEvent.Set();
-            LoadHotkeySettings();
-            HotkeySettingsResetEvent.Set();
-
-            ConfigureUploadersConfigWatcher();
-        }
-
-        public static void LoadProgramSettings()
-        {
-            Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
-            DefaultTaskSettings = Settings.DefaultTaskSettings;
-
-            RunBackwardCompatibilityTasks();
-        }
-
-        private static void RunBackwardCompatibilityTasks()
-        {
-            if (Settings.IsUpgradeFrom("11.4.1"))
-            {
-                RegionCaptureOptions regionCaptureOptions = DefaultTaskSettings.CaptureSettings.SurfaceOptions;
-                regionCaptureOptions.AnnotationOptions = new AnnotationOptions();
-                regionCaptureOptions.LastRegionTool = ShapeType.RegionRectangle;
-                regionCaptureOptions.LastAnnotationTool = ShapeType.DrawingRectangle;
-            }
-
-            if (Settings.IsUpgradeFrom("11.5.0"))
-            {
-                if (File.Exists(Program.ChromeHostManifestFilePath))
-                {
-                    IntegrationHelpers.CreateChromeExtensionSupport(true);
-                }
-            }
-        }
-
-        public static void LoadUploadersConfig()
-        {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath);
-        }
-
-        public static void LoadHotkeySettings()
-        {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
-        }
-
-        public static void LoadAllSettings()
-        {
-            LoadProgramSettings();
-            LoadUploadersConfig();
-            LoadHotkeySettings();
-        }
-
-        public static void SaveAllSettings()
-        {
-            if (Settings != null) Settings.Save(ApplicationConfigFilePath);
-            if (UploadersConfig != null) UploadersConfig.Save(UploadersConfigFilePath);
-            if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
-        }
-
-        public static void SaveAllSettingsAsync()
-        {
-            if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
-            UploadersConfigSaveAsync();
-            if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
-        }
-
-        public static void BackupSettings()
-        {
-            Helpers.BackupFileWeekly(ApplicationConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(UploadersConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HistoryFilePath, BackupFolder);
         }
 
         private static void UpdatePersonalPath()
@@ -605,54 +455,6 @@ namespace ShareX
             }
         }
 
-        public static void ConfigureUploadersConfigWatcher()
-        {
-            if (Settings.DetectUploaderConfigFileChanges && uploaderConfigWatcher == null)
-            {
-                uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(UploadersConfigFilePath), Path.GetFileName(UploadersConfigFilePath));
-                uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
-                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(UploadersConfigFilePath);
-                uploaderConfigWatcher.EnableRaisingEvents = true;
-            }
-            else if (uploaderConfigWatcher != null)
-            {
-                uploaderConfigWatcher.Dispose();
-                uploaderConfigWatcher = null;
-            }
-        }
-
-        private static void uploaderConfigWatcher_Changed(object sender, FileSystemEventArgs e)
-        {
-            if (!uploaderConfigWatcherTimer.IsDuplicateEvent(e.FullPath))
-            {
-                Action onCompleted = () => ReloadUploadersConfig(e.FullPath);
-                Helpers.WaitWhileAsync(() => Helpers.IsFileLocked(e.FullPath), 250, 5000, onCompleted, 1000);
-                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(e.FullPath);
-            }
-        }
-
-        private static void ReloadUploadersConfig(string filePath)
-        {
-            UploadersConfig = UploadersConfig.Load(filePath);
-        }
-
-        public static void UploadersConfigSaveAsync()
-        {
-            if (UploadersConfig != null)
-            {
-                if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
-
-                TaskEx.Run(() =>
-                {
-                    UploadersConfig.Save(UploadersConfigFilePath);
-                },
-                () =>
-                {
-                    if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
-                });
-            }
-        }
-
         private static bool CheckAdminTasks()
         {
             if (CLI.IsCommandExist("dnschanger"))
@@ -729,7 +531,7 @@ namespace ShareX
                         {
                             Directory.Delete(folderPath, true);
 
-                            DebugHelper.WriteLine("Temp files cleaned: " + folderPath);
+                            DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
                         }
                     }
                 }

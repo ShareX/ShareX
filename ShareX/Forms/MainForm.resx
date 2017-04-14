@@ -1168,7 +1168,7 @@
     <value>228, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Edit image...</value>
+    <value>Annotate image...</value>
   </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
@@ -1199,6 +1199,12 @@
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Share URL</value>
+  </data>
+  <data name="tsmiSearchImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google image search...</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1270,7 +1276,7 @@
     <value>Image preview</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 428</value>
+    <value>229, 450</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -2398,6 +2404,12 @@
     <value>tsmiShareSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiShareSelectedURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiSearchImage.Name" xml:space="preserve">
+    <value>tsmiSearchImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiSearchImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowQRCode.Name" xml:space="preserve">

@@ -75,7 +75,7 @@ namespace ShareX
             foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
-                tsmi.Image = GetLanguageIcon(language);
+                tsmi.Image = LanguageHelper.GetLanguageIcon(language);
                 tsmi.ImageScaling = ToolStripItemImageScaling.None;
                 SupportedLanguage lang = language;
                 tsmi.Click += (sender, e) => ChangeLanguage(lang);
@@ -215,61 +215,10 @@ namespace ShareX
             ready = true;
         }
 
-        private Image GetLanguageIcon(SupportedLanguage language)
-        {
-            Image icon;
-
-            switch (language)
-            {
-                default:
-                case SupportedLanguage.Automatic:
-                    icon = Resources.globe;
-                    break;
-                case SupportedLanguage.Dutch:
-                    icon = Resources.nl;
-                    break;
-                case SupportedLanguage.English:
-                    icon = Resources.us;
-                    break;
-                case SupportedLanguage.French:
-                    icon = Resources.fr;
-                    break;
-                case SupportedLanguage.German:
-                    icon = Resources.de;
-                    break;
-                case SupportedLanguage.Hungarian:
-                    icon = Resources.hu;
-                    break;
-                case SupportedLanguage.Korean:
-                    icon = Resources.kr;
-                    break;
-                case SupportedLanguage.PortugueseBrazil:
-                    icon = Resources.br;
-                    break;
-                case SupportedLanguage.Russian:
-                    icon = Resources.ru;
-                    break;
-                case SupportedLanguage.SimplifiedChinese:
-                    icon = Resources.cn;
-                    break;
-                case SupportedLanguage.Spanish:
-                    icon = Resources.es;
-                    break;
-                case SupportedLanguage.Turkish:
-                    icon = Resources.tr;
-                    break;
-                case SupportedLanguage.Vietnamese:
-                    icon = Resources.vn;
-                    break;
-            }
-
-            return icon;
-        }
-
         private void ChangeLanguage(SupportedLanguage language)
         {
             btnLanguages.Text = language.GetLocalizedDescription();
-            btnLanguages.Image = GetLanguageIcon(language);
+            btnLanguages.Image = LanguageHelper.GetLanguageIcon(language);
 
             if (ready)
             {
@@ -548,17 +497,17 @@ namespace ShareX
                 {
                     btnExport.Enabled = false;
                     btnImport.Enabled = false;
+                    pbExportImport.Location = btnExport.Location;
                     pbExportImport.Visible = true;
 
                     string exportPath = sfd.FileName;
 
-                    DebugHelper.WriteLine("Export started: " + exportPath);
+                    DebugHelper.WriteLine($"Export started: {exportPath}");
 
                     TaskEx.Run(() =>
                     {
-                        Program.SaveAllSettings();
-
-                        ExportImportManager.Export(exportPath);
+                        SettingManager.SaveAllSettings();
+                        SettingManager.Export(exportPath);
                     },
                     () =>
                     {
@@ -569,7 +518,7 @@ namespace ShareX
                             btnImport.Enabled = true;
                         }
 
-                        DebugHelper.WriteLine("Export completed: " + exportPath);
+                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     });
                 }
             }
@@ -585,17 +534,17 @@ namespace ShareX
                 {
                     btnExport.Enabled = false;
                     btnImport.Enabled = false;
+                    pbExportImport.Location = btnImport.Location;
                     pbExportImport.Visible = true;
 
                     string importPath = ofd.FileName;
 
-                    DebugHelper.WriteLine("Import started: " + importPath);
+                    DebugHelper.WriteLine($"Import started: {importPath}");
 
                     TaskEx.Run(() =>
                     {
-                        ExportImportManager.Import(importPath);
-
-                        Program.LoadAllSettings();
+                        SettingManager.Import(importPath);
+                        SettingManager.LoadAllSettings();
                     },
                     () =>
                     {
@@ -612,9 +561,26 @@ namespace ShareX
 
                         Program.MainForm.UpdateControls();
 
-                        DebugHelper.WriteLine("Import completed: " + importPath);
+                        DebugHelper.WriteLine($"Import completed: {importPath}");
                     });
                 }
+            }
+        }
+
+        private void btnResetSettings_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                SettingManager.ResetSettings();
+                SettingManager.SaveAllSettings();
+
+                UpdateControls();
+
+                LanguageHelper.ChangeLanguage(Program.Settings.Language);
+
+                Program.MainForm.UpdateControls();
+
+                DebugHelper.WriteLine("Settings reset.");
             }
         }
 

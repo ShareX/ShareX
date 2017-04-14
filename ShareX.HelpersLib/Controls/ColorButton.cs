@@ -95,7 +95,7 @@ namespace ShareX.HelpersLib
 
             if (Color.A < 255)
             {
-                using (Image checker = ImageHelpers.CreateCheckers(boxSize, boxSize, Color.LightGray, Color.White))
+                using (Image checker = ImageHelpers.CreateCheckerPattern(boxSize, boxSize))
                 {
                     g.DrawImage(checker, boxRectangle);
                 }

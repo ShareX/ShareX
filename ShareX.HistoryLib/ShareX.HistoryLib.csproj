@@ -143,6 +143,9 @@
     <EmbeddedResource Include="HistoryForm.zh-CN.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.zh-TW.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.de.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +180,9 @@
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.zh-CN.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryItemInfoForm.zh-TW.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.de.resx">
@@ -215,6 +221,9 @@
     <EmbeddedResource Include="ImageHistoryForm.zh-CN.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageHistoryForm.zh-TW.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
@@ -230,6 +239,7 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

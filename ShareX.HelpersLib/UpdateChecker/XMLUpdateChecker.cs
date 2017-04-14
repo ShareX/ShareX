@@ -50,7 +50,7 @@ namespace ShareX.HelpersLib
                 using (WebClient wc = new WebClient())
                 {
                     wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                    wc.Headers.Add("user-agent", "ShareX");
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                     wc.Proxy = Proxy;
 
                     using (MemoryStream ms = new MemoryStream(wc.DownloadData(URL)))

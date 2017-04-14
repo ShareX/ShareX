@@ -153,6 +153,7 @@
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSearchImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
@@ -894,6 +895,7 @@
             this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
+            this.tsmiSearchImage,
             this.tsmiShowQRCode,
             this.tsmiOCRImage,
             this.tsmiCombineImages,
@@ -1200,6 +1202,13 @@
             this.tsmiShareSelectedURL.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
+            // 
+            // tsmiSearchImage
+            // 
+            this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
+            this.tsmiSearchImage.Name = "tsmiSearchImage";
+            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
+            this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
             // 
             // tsmiShowQRCode
             // 
@@ -2094,5 +2103,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
     }
 }

@@ -83,8 +83,7 @@ namespace ShareX
             }
             else
             {
-                debugText = string.Format("Starting Animated GIF recording. GIF encoding: \"{0}\", FPS: {1}",
-                    taskSettings.CaptureSettings.GIFEncoding.GetDescription(), taskSettings.CaptureSettings.GIFFPS);
+                debugText = string.Format("Starting Animated GIF recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
             }
 
             DebugHelper.WriteLine(debugText);
@@ -107,26 +106,22 @@ namespace ShareX
                 }
             }
 
-            if (outputType == ScreenRecordOutput.GIF && taskSettings.CaptureSettings.GIFEncoding == ScreenRecordGIFEncoding.FFmpeg)
+            if (outputType == ScreenRecordOutput.GIF)
             {
-                outputType = ScreenRecordOutput.FFmpeg;
                 taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
                 taskSettings.CaptureSettings.FFmpegOptions.UseCustomCommands = false;
             }
 
-            if (outputType == ScreenRecordOutput.FFmpeg)
+            if (!TaskHelpers.CheckFFmpeg(taskSettings))
             {
-                if (!TaskHelpers.CheckFFmpeg(taskSettings))
-                {
-                    return;
-                }
+                return;
+            }
 
-                if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
-                {
-                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__,
-                        "ShareX - " + Resources.ScreenRecordForm_StartRecording_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+            if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
+            {
+                MessageBox.Show(Resources.ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__,
+                    "ShareX - " + Resources.ScreenRecordForm_StartRecording_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             Rectangle captureRectangle = Rectangle.Empty;
@@ -178,15 +173,8 @@ namespace ShareX
             {
                 try
                 {
-                    if (outputType == ScreenRecordOutput.FFmpeg)
-                    {
-                        string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
-                        path = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
-                    }
-                    else
-                    {
-                        path = Program.ScreenRecorderCacheFilePath;
-                    }
+                    string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
+                    path = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
                     {
@@ -234,7 +222,7 @@ namespace ShareX
                             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
                             screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
-                            screenRecorder = new ScreenRecorder(outputType, options, screenshot, captureRectangle);
+                            screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
                             screenRecorder.RecordingStarted += () => recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
                             screenRecorder.StartRecording();
@@ -258,13 +246,6 @@ namespace ShareX
                         recordForm.ChangeState(ScreenRecordState.AfterStop);
 
                         if (outputType == ScreenRecordOutput.GIF)
-                        {
-                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.EncodingProgressChanged += progress => recordForm.ChangeStateProgress(progress);
-                            GIFQuality gifQuality = taskSettings.CaptureSettings.GIFEncoding == ScreenRecordGIFEncoding.OctreeQuantizer ? GIFQuality.Bit8 : GIFQuality.Default;
-                            screenRecorder.SaveAsGIF(path, gifQuality);
-                        }
-                        else if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
                             screenRecorder.FFmpegEncodeAsGIF(path);
@@ -293,8 +274,7 @@ namespace ShareX
 
                     if (screenRecorder != null)
                     {
-                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI ||
-                            (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)) &&
+                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI) &&
                             !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                         {
                             File.Delete(screenRecorder.CachePath);

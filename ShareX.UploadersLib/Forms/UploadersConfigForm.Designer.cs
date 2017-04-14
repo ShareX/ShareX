@@ -180,12 +180,10 @@
             this.cboFtpText = new System.Windows.Forms.ComboBox();
             this.ucFTPAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
+            this.cbDropboxUseDirectLink = new System.Windows.Forms.CheckBox();
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
-            this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
-            this.lblDropboxStatus = new System.Windows.Forms.Label();
-            this.lblDropboxPathTip = new System.Windows.Forms.Label();
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpOneDrive = new System.Windows.Forms.TabPage();
@@ -224,15 +222,20 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
+            this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
+            this.txtAmazonS3Endpoint = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3Region = new System.Windows.Forms.Label();
+            this.txtAmazonS3Region = new System.Windows.Forms.TextBox();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
             this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
             this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
             this.btnAmazonS3AccessKeyOpen = new System.Windows.Forms.Button();
-            this.cbAmazonS3Endpoint = new System.Windows.Forms.ComboBox();
+            this.cbAmazonS3Endpoints = new System.Windows.Forms.ComboBox();
             this.lblAmazonS3BucketName = new System.Windows.Forms.Label();
             this.txtAmazonS3BucketName = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
+            this.lblAmazonS3Endpoints = new System.Windows.Forms.Label();
             this.txtAmazonS3ObjectPrefix = new System.Windows.Forms.TextBox();
             this.lblAmazonS3ObjectPrefix = new System.Windows.Forms.Label();
             this.txtAmazonS3SecretKey = new System.Windows.Forms.TextBox();
@@ -455,6 +458,10 @@
             this.nudEmailSmtpPort = new System.Windows.Forms.NumericUpDown();
             this.lblEmailSmtpPort = new System.Windows.Forms.Label();
             this.txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
+            this.tpGfycat = new System.Windows.Forms.TabPage();
+            this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
+            this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.oauth2Gfycat = new ShareX.UploadersLib.OAuthControl();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -479,6 +486,7 @@
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
+            this.lblGistCustomURLExample = new System.Windows.Forms.Label();
             this.lblGistOAuthInfo = new System.Windows.Forms.Label();
             this.lblGistCustomURL = new System.Windows.Forms.Label();
             this.txtGistCustomURL = new System.Windows.Forms.TextBox();
@@ -594,7 +602,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblGistCustomURLExample = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -659,6 +667,7 @@
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
+            this.tpGfycat.SuspendLayout();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1715,6 +1724,7 @@
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
+            this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
@@ -1815,17 +1825,22 @@
             // 
             // tpDropbox
             // 
+            this.tpDropbox.Controls.Add(this.cbDropboxUseDirectLink);
             this.tpDropbox.Controls.Add(this.oauth2Dropbox);
-            this.tpDropbox.Controls.Add(this.cbDropboxURLType);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
-            this.tpDropbox.Controls.Add(this.lblDropboxStatus);
-            this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
             this.tpDropbox.Controls.Add(this.txtDropboxPath);
             resources.ApplyResources(this.tpDropbox, "tpDropbox");
             this.tpDropbox.Name = "tpDropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
+            // 
+            // cbDropboxUseDirectLink
+            // 
+            resources.ApplyResources(this.cbDropboxUseDirectLink, "cbDropboxUseDirectLink");
+            this.cbDropboxUseDirectLink.Name = "cbDropboxUseDirectLink";
+            this.cbDropboxUseDirectLink.UseVisualStyleBackColor = true;
+            this.cbDropboxUseDirectLink.CheckedChanged += new System.EventHandler(this.cbDropboxUseDirectLink_CheckedChanged);
             // 
             // oauth2Dropbox
             // 
@@ -1835,14 +1850,6 @@
             this.oauth2Dropbox.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
             this.oauth2Dropbox.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             this.oauth2Dropbox.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
-            // 
-            // cbDropboxURLType
-            // 
-            this.cbDropboxURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDropboxURLType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDropboxURLType, "cbDropboxURLType");
-            this.cbDropboxURLType.Name = "cbDropboxURLType";
-            this.cbDropboxURLType.SelectedIndexChanged += new System.EventHandler(this.cbDropboxURLType_SelectedIndexChanged);
             // 
             // cbDropboxAutoCreateShareableLink
             // 
@@ -1858,16 +1865,6 @@
             this.pbDropboxLogo.Name = "pbDropboxLogo";
             this.pbDropboxLogo.TabStop = false;
             this.pbDropboxLogo.Click += new System.EventHandler(this.pbDropboxLogo_Click);
-            // 
-            // lblDropboxStatus
-            // 
-            resources.ApplyResources(this.lblDropboxStatus, "lblDropboxStatus");
-            this.lblDropboxStatus.Name = "lblDropboxStatus";
-            // 
-            // lblDropboxPathTip
-            // 
-            resources.ApplyResources(this.lblDropboxPathTip, "lblDropboxPathTip");
-            this.lblDropboxPathTip.Name = "lblDropboxPathTip";
             // 
             // lblDropboxPath
             // 
@@ -2145,16 +2142,21 @@
             // 
             // tpAmazonS3
             // 
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UsePathStyle);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Region);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3Region);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3CustomDomain);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreviewLabel);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreview);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3BucketNameOpen);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3AccessKeyOpen);
             this.tpAmazonS3.Controls.Add(this.cbAmazonS3CustomCNAME);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoints);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3BucketName);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3BucketName);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoints);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3ObjectPrefix);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3ObjectPrefix);
             this.tpAmazonS3.Controls.Add(this.cbAmazonS3UseRRS);
@@ -2165,6 +2167,35 @@
             resources.ApplyResources(this.tpAmazonS3, "tpAmazonS3");
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // cbAmazonS3UsePathStyle
+            // 
+            resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
+            this.cbAmazonS3UsePathStyle.Name = "cbAmazonS3UsePathStyle";
+            this.cbAmazonS3UsePathStyle.UseVisualStyleBackColor = true;
+            this.cbAmazonS3UsePathStyle.CheckedChanged += new System.EventHandler(this.cbAmazonS3UsePathStyle_CheckedChanged);
+            // 
+            // lblAmazonS3Endpoint
+            // 
+            resources.ApplyResources(this.lblAmazonS3Endpoint, "lblAmazonS3Endpoint");
+            this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
+            // 
+            // txtAmazonS3Endpoint
+            // 
+            resources.ApplyResources(this.txtAmazonS3Endpoint, "txtAmazonS3Endpoint");
+            this.txtAmazonS3Endpoint.Name = "txtAmazonS3Endpoint";
+            this.txtAmazonS3Endpoint.TextChanged += new System.EventHandler(this.txtAmazonS3Endpoint_TextChanged);
+            // 
+            // lblAmazonS3Region
+            // 
+            resources.ApplyResources(this.lblAmazonS3Region, "lblAmazonS3Region");
+            this.lblAmazonS3Region.Name = "lblAmazonS3Region";
+            // 
+            // txtAmazonS3Region
+            // 
+            resources.ApplyResources(this.txtAmazonS3Region, "txtAmazonS3Region");
+            this.txtAmazonS3Region.Name = "txtAmazonS3Region";
+            this.txtAmazonS3Region.TextChanged += new System.EventHandler(this.txtAmazonS3Region_TextChanged);
             // 
             // txtAmazonS3CustomDomain
             // 
@@ -2196,13 +2227,13 @@
             this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
             // 
-            // cbAmazonS3Endpoint
+            // cbAmazonS3Endpoints
             // 
-            this.cbAmazonS3Endpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmazonS3Endpoint.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAmazonS3Endpoint, "cbAmazonS3Endpoint");
-            this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
-            this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
+            this.cbAmazonS3Endpoints.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmazonS3Endpoints.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAmazonS3Endpoints, "cbAmazonS3Endpoints");
+            this.cbAmazonS3Endpoints.Name = "cbAmazonS3Endpoints";
+            this.cbAmazonS3Endpoints.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3Endpoints_SelectedIndexChanged);
             // 
             // lblAmazonS3BucketName
             // 
@@ -2215,10 +2246,10 @@
             this.txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
             this.txtAmazonS3BucketName.TextChanged += new System.EventHandler(this.txtAmazonS3BucketName_TextChanged);
             // 
-            // lblAmazonS3Endpoint
+            // lblAmazonS3Endpoints
             // 
-            resources.ApplyResources(this.lblAmazonS3Endpoint, "lblAmazonS3Endpoint");
-            this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
+            resources.ApplyResources(this.lblAmazonS3Endpoints, "lblAmazonS3Endpoints");
+            this.lblAmazonS3Endpoints.Name = "lblAmazonS3Endpoints";
             // 
             // txtAmazonS3ObjectPrefix
             // 
@@ -3789,6 +3820,38 @@
             this.txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
             this.txtEmailDefaultSubject.TextChanged += new System.EventHandler(this.txtDefaultSubject_TextChanged);
             // 
+            // tpGfycat
+            // 
+            this.tpGfycat.Controls.Add(this.cbGfycatIsPublic);
+            this.tpGfycat.Controls.Add(this.atcGfycatAccountType);
+            this.tpGfycat.Controls.Add(this.oauth2Gfycat);
+            resources.ApplyResources(this.tpGfycat, "tpGfycat");
+            this.tpGfycat.Name = "tpGfycat";
+            this.tpGfycat.UseVisualStyleBackColor = true;
+            // 
+            // cbGfycatIsPublic
+            // 
+            resources.ApplyResources(this.cbGfycatIsPublic, "cbGfycatIsPublic");
+            this.cbGfycatIsPublic.Name = "cbGfycatIsPublic";
+            this.cbGfycatIsPublic.UseVisualStyleBackColor = true;
+            this.cbGfycatIsPublic.CheckedChanged += new System.EventHandler(this.cbGfycatIsPublic_CheckedChanged);
+            // 
+            // atcGfycatAccountType
+            // 
+            resources.ApplyResources(this.atcGfycatAccountType, "atcGfycatAccountType");
+            this.atcGfycatAccountType.Name = "atcGfycatAccountType";
+            this.atcGfycatAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            this.atcGfycatAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGfycatAccountType_AccountTypeChanged);
+            // 
+            // oauth2Gfycat
+            // 
+            resources.ApplyResources(this.oauth2Gfycat, "oauth2Gfycat");
+            this.oauth2Gfycat.Name = "oauth2Gfycat";
+            this.oauth2Gfycat.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Gfycat_OpenButtonClicked);
+            this.oauth2Gfycat.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Gfycat_CompleteButtonClicked);
+            this.oauth2Gfycat.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Gfycat_ClearButtonClicked);
+            this.oauth2Gfycat.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Gfycat_RefreshButtonClicked);
+            // 
             // btnCopyShowFiles
             // 
             resources.ApplyResources(this.btnCopyShowFiles, "btnCopyShowFiles");
@@ -3968,6 +4031,11 @@
             resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
             this.tpGist.UseVisualStyleBackColor = true;
+            // 
+            // lblGistCustomURLExample
+            // 
+            resources.ApplyResources(this.lblGistCustomURLExample, "lblGistCustomURLExample");
+            this.lblGistCustomURLExample.Name = "lblGistCustomURLExample";
             // 
             // lblGistOAuthInfo
             // 
@@ -4798,11 +4866,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lblGistCustomURLExample
-            // 
-            resources.ApplyResources(this.lblGistCustomURLExample, "lblGistCustomURLExample");
-            this.lblGistCustomURLExample.Name = "lblGistCustomURLExample";
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4927,6 +4990,8 @@
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
+            this.tpGfycat.ResumeLayout(false);
+            this.tpGfycat.PerformLayout();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -5047,11 +5112,8 @@
         private System.Windows.Forms.Label lblYourlsAPIURL;
         internal System.Windows.Forms.TabPage tpFileUploaders;
         private System.Windows.Forms.TabControl tcFileUploaders;
-        private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
-        private System.Windows.Forms.Label lblDropboxStatus;
-        private System.Windows.Forms.Label lblDropboxPathTip;
         private System.Windows.Forms.Label lblDropboxPath;
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;
@@ -5081,10 +5143,10 @@
         private System.Windows.Forms.Button btnAmazonS3BucketNameOpen;
         private System.Windows.Forms.Button btnAmazonS3AccessKeyOpen;
         private System.Windows.Forms.CheckBox cbAmazonS3CustomCNAME;
-        private System.Windows.Forms.ComboBox cbAmazonS3Endpoint;
+        private System.Windows.Forms.ComboBox cbAmazonS3Endpoints;
         private System.Windows.Forms.Label lblAmazonS3BucketName;
         private System.Windows.Forms.TextBox txtAmazonS3BucketName;
-        private System.Windows.Forms.Label lblAmazonS3Endpoint;
+        private System.Windows.Forms.Label lblAmazonS3Endpoints;
         private System.Windows.Forms.TextBox txtAmazonS3ObjectPrefix;
         private System.Windows.Forms.Label lblAmazonS3ObjectPrefix;
         private System.Windows.Forms.CheckBox cbAmazonS3UseRRS;
@@ -5539,5 +5601,16 @@
         private System.Windows.Forms.Label lblGistCustomURL;
         private System.Windows.Forms.Label lblGistOAuthInfo;
         private System.Windows.Forms.Label lblGistCustomURLExample;
+        private System.Windows.Forms.TextBox txtAmazonS3Region;
+        private System.Windows.Forms.TextBox txtAmazonS3Endpoint;
+        private System.Windows.Forms.Label lblAmazonS3Region;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblAmazonS3Endpoint;
+        private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
+        private System.Windows.Forms.CheckBox cbAmazonS3UsePathStyle;
+        private OAuthControl oauth2Gfycat;
+        private AccountTypeControl atcGfycatAccountType;
+        private System.Windows.Forms.CheckBox cbGfycatIsPublic;
+        internal System.Windows.Forms.TabPage tpGfycat;
     }
 }

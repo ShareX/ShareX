@@ -30,28 +30,12 @@ namespace ShareX.HelpersLib
 {
     public static class ShareXResources
     {
-        public static Icon Icon
-        {
-            get
-            {
-                return Resources.ShareX_Icon;
-            }
-        }
+        public const string UserAgent = "ShareX";
 
-        public static Image Logo
-        {
-            get
-            {
-                return Resources.ShareX_Logo;
-            }
-        }
+        public static Icon Icon => Resources.ShareX_Icon;
 
-        public static Image LogoBlack
-        {
-            get
-            {
-                return Resources.ShareX_Logo_Black;
-            }
-        }
+        public static Image Logo => Resources.ShareX_Logo;
+
+        public static Image LogoBlack => Resources.ShareX_Logo_Black;
     }
 }

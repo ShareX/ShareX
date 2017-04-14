@@ -25,17 +25,11 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Diagnostics;
-using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class TextAnimation
+    internal class OpacityAnimation : BaseAnimation
     {
-        public string Text { get; private set; }
-
-        public Point Position { get; set; }
-
         private double opacity;
 
         public double Opacity
@@ -50,63 +44,32 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public TimeSpan Duration { get; private set; } = TimeSpan.Zero;
-        public TimeSpan FadeInDuration { get; private set; } = TimeSpan.Zero;
-        public TimeSpan FadeOutDuration { get; private set; } = TimeSpan.Zero;
+        public TimeSpan FadeInDuration { get; set; }
+        public TimeSpan Duration { get; set; }
+        public TimeSpan FadeOutDuration { get; set; }
 
         public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
 
-        public bool Active => timer.IsRunning && timer.Elapsed <= TotalDuration;
-
-        private Stopwatch timer = new Stopwatch();
-
-        public TextAnimation(TimeSpan duration)
+        public override bool Update()
         {
-            Duration = duration;
-        }
-
-        public TextAnimation(TimeSpan duration, TimeSpan fadeInDuration, TimeSpan fadeOutDuration)
-        {
-            Duration = duration;
-            FadeInDuration = fadeInDuration;
-            FadeOutDuration = fadeOutDuration;
-        }
-
-        public void Start(string text)
-        {
-            Text = text;
-            timer.Restart();
-        }
-
-        public void Stop()
-        {
-            timer.Stop();
-        }
-
-        public bool Update()
-        {
-            if (Active)
+            if (IsActive)
             {
-                if (timer.Elapsed < FadeInDuration)
+                if (Timer.Elapsed < FadeInDuration)
                 {
-                    Opacity = timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds;
+                    Opacity = Timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds;
                 }
                 else
                 {
-                    Opacity = 1 - (timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
+                    Opacity = 1 - (Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
                 }
 
                 if (Opacity == 0)
                 {
-                    timer.Stop();
-                }
-                else
-                {
-                    return true;
+                    Timer.Stop();
                 }
             }
 
-            return false;
+            return IsActive;
         }
     }
 }

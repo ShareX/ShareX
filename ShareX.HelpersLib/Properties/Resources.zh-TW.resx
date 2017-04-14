@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>檔案路徑</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>檔案路徑沒有副檔名+"輸出檔案的副檔名"</value>
+  </data>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>瀏覽層疊樣式表...</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>剪貼簿中的內容:圖片（尺寸大小: {0} X {1}）</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>剪貼簿中的內容:文字（長度: {0}）</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>剪貼簿中的內容:檔案（計數: {0}）</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>剪貼簿為空或包含未知資料.</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>名稱: {0}, 大小: {1}</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>檢查更新失敗</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>新版本 {0} 可用</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} 是最新</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>等待中。</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>選擇一個資料夾</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>匯出失敗。</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
+    <value>設定複製到剪貼簿。</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>檔名: {0}</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>色調: {0:0.0}度, 飽和度: {1:0.0}%, 亮度: {2:0.0}%</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>青色: {0:0.0}%, 品紅: {1:0.0}%, 黃色: {2:0.0}%, 鍵: {3:0.0}%</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>匯入失敗。</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>DNS設定成功。</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>DNS設定成功.必需重新啟動。</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
+    <value>DNS設定失敗, 錯誤程式碼:</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>DNS設定失敗。</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>狀態: {0}</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
+    <value>進度: {0:0.0}%
+下載速度: {1:0.0} KB/s
+檔案大小: {2:n0} / {3:n0} KB</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>圖片載入中...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>剪下</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>貼上</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>設定下載的URL</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>下載中。</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>獲取檔案的大小中。</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>載入圖像:{0}%</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>下載完成。</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>安裝</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>資料夾不存在:</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>下載失敗:</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>16色</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>256色（編碼慢, 但質量更好）</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>預設情況下.NET編碼（快速編碼, 但質量一般）</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>灰度256色</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>拍攝活動監視器</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>擷取活動視窗</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>自動擷取</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>從剪貼簿上傳</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>從剪貼簿內容檢視器上傳</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>拖放上傳</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>上傳檔案</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>上傳資料夾</value>
+  </data>
+  <data name="HotkeyType_FTPClient" xml:space="preserve">
+    <value>FTP客戶端</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>雜湊值(Hash)檢查</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>圖像效果</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>索引資料夾</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>擷取最後一個區域</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>開啟截圖資料夾</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>擷取整個螢幕</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>二維碼</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>擷取矩形區域（光）</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>擷取矩形區域</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>標尺</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>螢幕顏色選擇器</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>停止所有活動上傳</value>
+  </data>
+  <data name="HotkeyType_TweetMessage" xml:space="preserve">
+    <value>推特訊息</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>從URL上傳</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>自定義檔案上傳</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>共享資料夾</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>自定義圖像上傳</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>檔案上傳</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>響應頭</value>
+  </data>
+  <data name="ResponseType_RedirectionURL" xml:space="preserve">
+    <value>重定向URL</value>
+  </data>
+  <data name="ResponseType_Text" xml:space="preserve">
+    <value>響應文字</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>自定義文字上傳</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>檔案上傳</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>自定義URL短鏈</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>新增圖片特效/水印</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>開啟圖像編輯器</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>複製檔案路徑到剪貼簿</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>將檔案複製到剪貼簿</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>圖像複製到剪貼簿</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>刪除本地檔案</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>執行操作</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>儲存圖像檔案</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>儲存圖像檔案為...</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>在資源管理器中顯示檔案</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>儲存微縮圖像檔案</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>列印圖像</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>上傳圖片</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>URL複製到剪貼簿</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>開啟網址</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>分享網址</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>顯示二維碼</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>縮短URL</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>請問該怎麼辦</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>不要儲存</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>覆蓋檔案</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>附加數字的檔名</value>
+  </data>
+  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
+    <value>顯示系統匣氣球提示</value>
+  </data>
+  <data name="PopUpNotificationType_None" xml:space="preserve">
+    <value>什麼都不顯示</value>
+  </data>
+  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
+    <value>顯示與預覽Toast通知</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>使用最後一個區域開始自動採集</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>使用最後一個區域開始螢幕錄製</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>有一個新版本 {0} 可用.
+你要下載安裝嗎?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>更新可用</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>無法創建目錄, 檢查你的路徑設定.</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>顏色選擇器</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>螢幕錄製(GIF)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>使用上一次的區域開始螢幕錄製(GIF)</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>擷取矩形區域（透明度）</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>擷取自定義區域</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (高品質)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET(質量差)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (中等品質)</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>使用活動視窗開始螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>使用活動視窗開始螢幕錄製(GIF)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>圖像編輯器</value>
+  </data>
+  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>更改DNS</value>
+  </data>
+  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>顯示器測試</value>
+  </data>
+  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>網頁擷取</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>禁用/啟用快速鍵</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>隨機GUID</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>日期時間</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>增量</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>隨機</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>圖像</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>計算機</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>目標</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>捲動擷取</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>圖像合併</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>視訊縮圖</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>位置頭</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>有一個新版本 {0} 可用.
+你要下載安裝嗎?</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>顯示"擷取後"視窗</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>顯示"上傳前"視窗</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>顯示"上傳後"視窗</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>瀏覽資料夾...</value>
+  </data>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>瀏覽可執行檔案...</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>計算機名稱</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>當天</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>當前小時</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>圖像高度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>自動遞增數</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>當前分鐘</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>本月</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>當月名（本地語言）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>當月名稱（英文）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>當前毫秒</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>新線</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>獲取AM/ PM</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>活動視窗的程式名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>隨機字母數字字元</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>隨機數0至9</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>目前秒</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>活動視窗標題</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>使用者登入名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>使用者名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Unix時間戳</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>當前周名（本地語言）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>本週名稱（英文）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>圖像寬度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>本年度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>本年度（2位）</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>顯示快速任務選單</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>開啟歷史記錄</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>開啟歷史圖片</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>檔案不存在</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>選擇資料夾</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>選擇檔案</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>開啟主頁面</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>使用自定義區域開始螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>使用自定義區域開始螢幕錄製（GIF）</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>文字識別（OCR）</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>文字擷取（OCR）</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>螢幕擷取</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>擷取活動顯示器</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>擷取全屏</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>什麼都不做</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>刪除形狀</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>刪除形狀或取消擷取</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>互換工具類型</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>繪圖：箭頭</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>效果：朦朧</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>繪圖：橢圓</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>效果：高亮</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>繪圖：線條</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>效果：馬賽克</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>繪圖：矩形</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>繪圖：序號</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>區域：橢圓形</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>區域：矩形</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>繪圖：鼠繪</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>繪圖：圖片</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>區域：鼠繪</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>中止螢幕錄製</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>模擬滑鼠滾輪捲動</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>模擬按下“Page Down”鍵</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>模擬按下“Home”鍵</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>隨機的十六進位制字元。重複使用 {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>自動遞增的字母數字不區分大小寫。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>自動遞增的十六進位制。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>自動遞增的字母數字區分大小寫。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>由 {n} 為基礎制動遞增的字母數字 (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>傳送捲動訊息至視窗或控制項</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>先模擬按下“Home”鍵，然後傳送捲動至訊息上方</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>禁用捲動至頂部</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>傳送捲動訊息至頂部</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>自動嘗試所有方法，直到一個作品</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>繪圖：言語氣球</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
+    <value>進度: {0}</value>
+  </data>
+  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
+    <value>下載取消</value>
+  </data>
+  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
+    <value>找到可能可用的代理。請從主選單開啟應用程式設定，然後選擇"代理"來修改代理設定.</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>畫:文字(外框)</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>畫:文字(背景)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>結束 ShareX</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>切換動作工具列</value>
+  </data>
+</root>

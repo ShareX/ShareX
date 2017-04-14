@@ -386,5 +386,27 @@ namespace ShareX.HelpersLib
 
             return url;
         }
+
+        public static string CreateQuery(string url, Dictionary<string, string> args)
+        {
+            string query = CreateQuery(args);
+
+            if (!string.IsNullOrEmpty(query))
+            {
+                return url + "?" + query;
+            }
+
+            return url;
+        }
+
+        public static string CreateQuery(Dictionary<string, string> args)
+        {
+            if (args != null && args.Count > 0)
+            {
+                return string.Join("&", args.Select(x => x.Key + "=" + URLEncode(x.Value)).ToArray());
+            }
+
+            return "";
+        }
     }
 }
