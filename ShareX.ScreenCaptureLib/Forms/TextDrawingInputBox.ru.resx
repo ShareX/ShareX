@@ -150,4 +150,7 @@
   <data name="lblTip.Text" xml:space="preserve">
     <value>Новая строка: Ctrl + Enter</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
 </root>
