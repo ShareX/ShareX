@@ -354,4 +354,7 @@
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Расширение для Chrome</value>
   </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Сбросить настройки...</value>
+  </data>
 </root>
