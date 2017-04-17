@@ -63,6 +63,7 @@ namespace ShareX.ScreenCaptureLib
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public int MagnifierPixelSize = 10;
         public bool ShowCrosshair = false;
+        public bool EnableAnimations = true;
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;

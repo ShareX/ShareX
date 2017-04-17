@@ -498,18 +498,21 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on hover area
             if (ShapeManager.IsCurrentHoverShapeValid)
             {
-                if (!ShapeManager.PreviousHoverRectangle.IsEmpty && ShapeManager.CurrentHoverShape.Rectangle != ShapeManager.PreviousHoverRectangle)
+                if (Config.EnableAnimations)
                 {
-                    regionAnimation.FromRectangle = ShapeManager.PreviousHoverRectangle;
-                    regionAnimation.ToRectangle = ShapeManager.CurrentHoverShape.Rectangle;
-                    regionAnimation.Start();
-                }
+                    if (!ShapeManager.PreviousHoverRectangle.IsEmpty && ShapeManager.CurrentHoverShape.Rectangle != ShapeManager.PreviousHoverRectangle)
+                    {
+                        regionAnimation.FromRectangle = ShapeManager.PreviousHoverRectangle;
+                        regionAnimation.ToRectangle = ShapeManager.CurrentHoverShape.Rectangle;
+                        regionAnimation.Start();
+                    }
 
-                regionAnimation.Update();
+                    regionAnimation.Update();
+                }
 
                 using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    if (regionAnimation.IsActive && regionAnimation.CurrentRectangle.Width > 2 && regionAnimation.CurrentRectangle.Height > 2)
+                    if (Config.EnableAnimations && regionAnimation.IsActive && regionAnimation.CurrentRectangle.Width > 2 && regionAnimation.CurrentRectangle.Height > 2)
                     {
                         ShapeManager.CurrentHoverShape.OnShapePathRequested(hoverDrawPath, regionAnimation.CurrentRectangle.SizeOffset(-1));
                     }
@@ -588,7 +591,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw animation under toolbar on startup
-            if (toolbarAnimation != null && toolbarAnimation2 != null && toolbarAnimation.IsActive)
+            if (Config.EnableAnimations && toolbarAnimation != null && toolbarAnimation2 != null && toolbarAnimation.IsActive)
             {
                 using (Pen toolbarAnimationPen = new Pen(Color.FromArgb(5, 100, 255), 4))
                 {

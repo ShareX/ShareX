@@ -684,6 +684,12 @@ namespace ShareX.ScreenCaptureLib
                 tsmiShowCrosshair.Click += (sender, e) => Config.ShowCrosshair = tsmiShowCrosshair.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiShowCrosshair);
 
+                ToolStripMenuItem tsmiEnableAnimations = new ToolStripMenuItem("Enable animations"); // TODO: Translate
+                tsmiEnableAnimations.Checked = Config.EnableAnimations;
+                tsmiEnableAnimations.CheckOnClick = true;
+                tsmiEnableAnimations.Click += (sender, e) => Config.EnableAnimations = tsmiEnableAnimations.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiEnableAnimations);
+
                 ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fixed_size_region_mode);
                 tsmiFixedSize.Checked = Config.IsFixedSize;
                 tsmiFixedSize.CheckOnClick = true;
