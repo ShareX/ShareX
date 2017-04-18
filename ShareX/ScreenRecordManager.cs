@@ -73,20 +73,21 @@ namespace ShareX
 
         private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
-            string debugText;
+            if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+            {
+                outputType = ScreenRecordOutput.GIF;
+            }
 
             if (outputType == ScreenRecordOutput.FFmpeg)
             {
-                debugText = string.Format("Starting FFmpeg recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
+                DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
                     taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(),
                     taskSettings.CaptureSettings.ScreenRecordFPS);
             }
             else
             {
-                debugText = string.Format("Starting Animated GIF recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
+                DebugHelper.WriteLine("Starting screen recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
             }
-
-            DebugHelper.WriteLine(debugText);
 
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
