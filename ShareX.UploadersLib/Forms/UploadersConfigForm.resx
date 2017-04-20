@@ -5023,6 +5023,195 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbFTPAppendRemoteDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>Append remote directory to URL path</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAppendRemoteDirectory.Name" xml:space="preserve">
+    <value>cbFTPAppendRemoteDirectory</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAppendRemoteDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAppendRemoteDirectory.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAppendRemoteDirectory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 296</value>
+  </data>
+  <data name="btnFTPTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 24</value>
+  </data>
+  <data name="btnFTPTest.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="btnFTPTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Name" xml:space="preserve">
+    <value>btnFTPTest</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblFTPProtocol.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblFTPProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="lblFTPProtocol.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>Protocol:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPProtocol.Name" xml:space="preserve">
+    <value>lblFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;lblFTPProtocol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPProtocol.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPProtocol.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblFTPName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblFTPName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblFTPName.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblFTPName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPName.Name" xml:space="preserve">
+    <value>lblFTPName</value>
+  </data>
+  <data name="&gt;&gt;lblFTPName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPName.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 240</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
+    <value>Remove file extension from URL path</value>
+  </data>
+  <data name="&gt;&gt;cbFTPRemoveFileExtension.Name" xml:space="preserve">
+    <value>cbFTPRemoveFileExtension</value>
+  </data>
+  <data name="&gt;&gt;cbFTPRemoveFileExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPRemoveFileExtension.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;cbFTPRemoveFileExtension.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtFTPName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="txtFTPName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPName.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtFTPName.Name" xml:space="preserve">
+    <value>txtFTPName</value>
+  </data>
+  <data name="&gt;&gt;txtFTPName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPName.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblFTPHost.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="lblFTPHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblFTPHost.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblFTPHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPHost.Name" xml:space="preserve">
+    <value>lblFTPHost</value>
+  </data>
+  <data name="&gt;&gt;lblFTPHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPHost.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPHost.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 296</value>
+  </data>
+  <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 24</value>
+  </data>
+  <data name="eiFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;eiFTP.Name" xml:space="preserve">
     <value>eiFTP</value>
   </data>
@@ -5030,106 +5219,820 @@ store.book[0].title</value>
     <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
-    <value>tpFTP</value>
+    <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;eiFTP.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnFtpClient.Name" xml:space="preserve">
-    <value>btnFtpClient</value>
-  </data>
-  <data name="&gt;&gt;btnFtpClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFtpClient.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;btnFtpClient.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblFtpFiles.Name" xml:space="preserve">
-    <value>lblFtpFiles</value>
-  </data>
-  <data name="&gt;&gt;lblFtpFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFtpFiles.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;lblFtpFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Name" xml:space="preserve">
-    <value>lblFtpText</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblFtpImages.Name" xml:space="preserve">
-    <value>lblFtpImages</value>
-  </data>
-  <data name="&gt;&gt;lblFtpImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFtpImages.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;lblFtpImages.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cboFtpImages.Name" xml:space="preserve">
-    <value>cboFtpImages</value>
-  </data>
-  <data name="&gt;&gt;cboFtpImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboFtpImages.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;cboFtpImages.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cboFtpFiles.Name" xml:space="preserve">
-    <value>cboFtpFiles</value>
-  </data>
-  <data name="&gt;&gt;cboFtpFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboFtpFiles.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;cboFtpFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Name" xml:space="preserve">
-    <value>cboFtpText</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;ucFTPAccounts.Name" xml:space="preserve">
-    <value>ucFTPAccounts</value>
+  <data name="pFTPTransferMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;ucFTPAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="pFTPTransferMode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;ucFTPAccounts.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rbFTPTransferModeActive.Name" xml:space="preserve">
+    <value>rbFTPTransferModeActive</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModeActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModeActive.Parent" xml:space="preserve">
+    <value>pFTPTransferMode</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModeActive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Name" xml:space="preserve">
+    <value>rbFTPTransferModePassive</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Parent" xml:space="preserve">
+    <value>pFTPTransferMode</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModePassive.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pFTPTransferMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 140</value>
+  </data>
+  <data name="pFTPTransferMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="pFTPTransferMode.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;pFTPTransferMode.Name" xml:space="preserve">
+    <value>pFTPTransferMode</value>
+  </data>
+  <data name="&gt;&gt;pFTPTransferMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pFTPTransferMode.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;pFTPTransferMode.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnFTPClient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFTPClient.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 296</value>
+  </data>
+  <data name="btnFTPClient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 24</value>
+  </data>
+  <data name="btnFTPClient.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnFTPClient.Text" xml:space="preserve">
+    <value>Client...</value>
+  </data>
+  <data name="&gt;&gt;btnFTPClient.Name" xml:space="preserve">
+    <value>btnFTPClient</value>
+  </data>
+  <data name="&gt;&gt;btnFTPClient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPClient.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;btnFTPClient.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtFTPHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 68</value>
+  </data>
+  <data name="txtFTPHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPHost.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtFTPHost.Name" xml:space="preserve">
+    <value>txtFTPHost</value>
+  </data>
+  <data name="&gt;&gt;txtFTPHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPHost.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPHost.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pFTPProtocol.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pFTPProtocol.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Name" xml:space="preserve">
+    <value>rbFTPProtocolFTP</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Name" xml:space="preserve">
+    <value>rbFTPProtocolFTPS</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Name" xml:space="preserve">
+    <value>rbFTPProtocolSFTP</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pFTPProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 44</value>
+  </data>
+  <data name="pFTPProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 20</value>
+  </data>
+  <data name="pFTPProtocol.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;pFTPProtocol.Name" xml:space="preserve">
+    <value>pFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;pFTPProtocol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pFTPProtocol.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;pFTPProtocol.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblFTPPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 72</value>
+  </data>
+  <data name="lblFTPPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lblFTPPort.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblFTPPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPort.Name" xml:space="preserve">
+    <value>lblFTPPort</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPort.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPort.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblFTPTransferMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPTransferMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 144</value>
+  </data>
+  <data name="lblFTPTransferMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblFTPTransferMode.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>Transfer mode:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPTransferMode.Name" xml:space="preserve">
+    <value>lblFTPTransferMode</value>
+  </data>
+  <data name="&gt;&gt;lblFTPTransferMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPTransferMode.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPTransferMode.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="nudFTPPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>496, 68</value>
+  </data>
+  <data name="nudFTPPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudFTPPort.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="nudFTPPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudFTPPort.Name" xml:space="preserve">
+    <value>nudFTPPort</value>
+  </data>
+  <data name="&gt;&gt;nudFTPPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudFTPPort.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;nudFTPPort.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblFTPPreviewOutput.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPPreviewOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 264</value>
+  </data>
+  <data name="lblFTPPreviewOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="lblFTPPreviewOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lblFTPPreviewOutput.Text" xml:space="preserve">
+    <value>https://example.com/image.png</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPreviewOutput.Name" xml:space="preserve">
+    <value>lblFTPPreviewOutput</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPreviewOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPreviewOutput.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPreviewOutput.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblFTPUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="lblFTPUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblFTPUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPUsername.Name" xml:space="preserve">
+    <value>lblFTPUsername</value>
+  </data>
+  <data name="&gt;&gt;lblFTPUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPUsername.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPUsername.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblFTPURLPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPURLPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 264</value>
+  </data>
+  <data name="lblFTPURLPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblFTPURLPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lblFTPURLPreview.Text" xml:space="preserve">
+    <value>URL preview:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPreview.Name" xml:space="preserve">
+    <value>lblFTPURLPreview</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPreview.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPreview.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtFTPUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 92</value>
+  </data>
+  <data name="txtFTPUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtFTPUsername.Name" xml:space="preserve">
+    <value>txtFTPUsername</value>
+  </data>
+  <data name="&gt;&gt;txtFTPUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPUsername.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPUsername.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="cbFTPURLPathProtocol.Items" xml:space="preserve">
+    <value>https://</value>
+  </data>
+  <data name="cbFTPURLPathProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 188</value>
+  </data>
+  <data name="cbFTPURLPathProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="cbFTPURLPathProtocol.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;cbFTPURLPathProtocol.Name" xml:space="preserve">
+    <value>cbFTPURLPathProtocol</value>
+  </data>
+  <data name="&gt;&gt;cbFTPURLPathProtocol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPURLPathProtocol.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;cbFTPURLPathProtocol.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblFTPPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 120</value>
+  </data>
+  <data name="lblFTPPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblFTPPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPassword.Name" xml:space="preserve">
+    <value>lblFTPPassword</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPassword.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPPassword.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtFTPURLPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 188</value>
+  </data>
+  <data name="txtFTPURLPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPURLPath.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;txtFTPURLPath.Name" xml:space="preserve">
+    <value>txtFTPURLPath</value>
+  </data>
+  <data name="&gt;&gt;txtFTPURLPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPURLPath.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPURLPath.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="txtFTPPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 116</value>
+  </data>
+  <data name="txtFTPPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;txtFTPPassword.Name" xml:space="preserve">
+    <value>txtFTPPassword</value>
+  </data>
+  <data name="&gt;&gt;txtFTPPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPPassword.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPPassword.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="lblFTPURLPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPURLPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 192</value>
+  </data>
+  <data name="lblFTPURLPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblFTPURLPath.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>URL path:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPath.Name" xml:space="preserve">
+    <value>lblFTPURLPath</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPath.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPURLPath.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 168</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
+    <value>Remote directory:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPRemoteDirectory.Name" xml:space="preserve">
+    <value>lblFTPRemoteDirectory</value>
+  </data>
+  <data name="&gt;&gt;lblFTPRemoteDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPRemoteDirectory.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;lblFTPRemoteDirectory.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="txtFTPRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 164</value>
+  </data>
+  <data name="txtFTPRemoteDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtFTPRemoteDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;txtFTPRemoteDirectory.Name" xml:space="preserve">
+    <value>txtFTPRemoteDirectory</value>
+  </data>
+  <data name="&gt;&gt;txtFTPRemoteDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPRemoteDirectory.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;txtFTPRemoteDirectory.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="gbFTPAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="gbFTPAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 384</value>
+  </data>
+  <data name="gbFTPAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="gbFTPAccount.Text" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="&gt;&gt;gbFTPAccount.Name" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;gbFTPAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFTPAccount.Parent" xml:space="preserve">
     <value>tpFTP</value>
   </data>
-  <data name="&gt;&gt;ucFTPAccounts.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbFTPAccount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFTPDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 51</value>
+  </data>
+  <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnFTPDuplicate.Name" xml:space="preserve">
+    <value>btnFTPDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnFTPDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPDuplicate.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;btnFTPDuplicate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnFTPRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 51</value>
+  </data>
+  <data name="btnFTPRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnFTPRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnFTPRemove.Name" xml:space="preserve">
+    <value>btnFTPRemove</value>
+  </data>
+  <data name="&gt;&gt;btnFTPRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPRemove.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;btnFTPRemove.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnFTPAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 51</value>
+  </data>
+  <data name="btnFTPAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnFTPAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnFTPAdd.Name" xml:space="preserve">
+    <value>btnFTPAdd</value>
+  </data>
+  <data name="&gt;&gt;btnFTPAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPAdd.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;btnFTPAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 52</value>
+  </data>
+  <data name="cbFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 21</value>
+  </data>
+  <data name="cbFTPAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAccounts.Name" xml:space="preserve">
+    <value>cbFTPAccounts</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAccounts.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;cbFTPAccounts.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblFTPAccounts.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 56</value>
+  </data>
+  <data name="lblFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblFTPAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblFTPAccounts.Text" xml:space="preserve">
+    <value>Accounts:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPAccounts.Name" xml:space="preserve">
+    <value>lblFTPAccounts</value>
+  </data>
+  <data name="&gt;&gt;lblFTPAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPAccounts.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;lblFTPAccounts.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblFTPFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFTPFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>541, 16</value>
+  </data>
+  <data name="lblFTPFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="lblFTPFile.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPFile.Name" xml:space="preserve">
+    <value>lblFTPFile</value>
+  </data>
+  <data name="&gt;&gt;lblFTPFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPFile.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;lblFTPFile.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblFTPText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFTPText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>277, 16</value>
+  </data>
+  <data name="lblFTPText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="lblFTPText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblFTPText.Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPText.Name" xml:space="preserve">
+    <value>lblFTPText</value>
+  </data>
+  <data name="&gt;&gt;lblFTPText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPText.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;lblFTPText.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblFTPImage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFTPImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblFTPImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblFTPImage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>Image:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPImage.Name" xml:space="preserve">
+    <value>lblFTPImage</value>
+  </data>
+  <data name="&gt;&gt;lblFTPImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPImage.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;lblFTPImage.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="cbFTPImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 12</value>
+  </data>
+  <data name="cbFTPImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbFTPImage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbFTPImage.Name" xml:space="preserve">
+    <value>cbFTPImage</value>
+  </data>
+  <data name="&gt;&gt;cbFTPImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPImage.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;cbFTPImage.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbFTPFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 12</value>
+  </data>
+  <data name="cbFTPFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbFTPFile.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbFTPFile.Name" xml:space="preserve">
+    <value>cbFTPFile</value>
+  </data>
+  <data name="&gt;&gt;cbFTPFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPFile.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;cbFTPFile.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cbFTPText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 12</value>
+  </data>
+  <data name="cbFTPText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbFTPText.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbFTPText.Name" xml:space="preserve">
+    <value>cbFTPText</value>
+  </data>
+  <data name="&gt;&gt;cbFTPText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPText.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;cbFTPText.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -5231,13 +6134,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5306,13 +6209,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -5429,13 +6332,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5576,13 +6479,13 @@ store.book[0].title</value>
     <value>9</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -5675,13 +6578,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5942,13 +6845,13 @@ store.book[0].title</value>
     <value>21</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -6053,13 +6956,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -6079,24 +6982,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpAzureStorage.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="cbGfycatIsPublic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGfycatIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGfycatIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
-  </data>
-  <data name="cbGfycatIsPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
-  </data>
-  <data name="cbGfycatIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Is public upload?</value>
-  </data>
   <data name="&gt;&gt;cbGfycatIsPublic.Name" xml:space="preserve">
     <value>cbGfycatIsPublic</value>
   </data>
@@ -6109,15 +6994,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbGfycatIsPublic.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
     <value>atcGfycatAccountType</value>
   </data>
@@ -6129,15 +7005,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
     <value>oauth2Gfycat</value>
@@ -6311,10 +7178,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6479,13 +7346,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -6590,13 +7457,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6677,13 +7544,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -6776,13 +7643,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6875,13 +7742,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -6962,13 +7829,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -8293,233 +9160,146 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpFileUploaders.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 48</value>
+  <data name="rbFTPTransferModeActive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 24</value>
+  <data name="rbFTPTransferModeActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 0</value>
   </data>
-  <data name="eiFTP.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="rbFTPTransferModeActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
   </data>
-  <data name="&gt;&gt;eiFTP.Name" xml:space="preserve">
-    <value>eiFTP</value>
+  <data name="rbFTPTransferModeActive.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
   </data>
-  <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>Active</value>
   </data>
-  <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
-    <value>tpFTP</value>
+  <data name="&gt;&gt;rbFTPTransferModeActive.Name" xml:space="preserve">
+    <value>rbFTPTransferModeActive</value>
   </data>
-  <data name="&gt;&gt;eiFTP.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rbFTPTransferModeActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModeActive.Parent" xml:space="preserve">
+    <value>pFTPTransferMode</value>
+  </data>
+  <data name="&gt;&gt;rbFTPTransferModeActive.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnFtpClient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="rbFTPTransferModePassive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="btnFtpClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 48</value>
+  <data name="rbFTPTransferModePassive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="btnFtpClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+  <data name="rbFTPTransferModePassive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
   </data>
-  <data name="btnFtpClient.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="rbFTPTransferModePassive.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Client...</value>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>Passive</value>
   </data>
-  <data name="&gt;&gt;btnFtpClient.Name" xml:space="preserve">
-    <value>btnFtpClient</value>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Name" xml:space="preserve">
+    <value>rbFTPTransferModePassive</value>
   </data>
-  <data name="&gt;&gt;btnFtpClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnFtpClient.Parent" xml:space="preserve">
-    <value>tpFTP</value>
+  <data name="&gt;&gt;rbFTPTransferModePassive.Parent" xml:space="preserve">
+    <value>pFTPTransferMode</value>
   </data>
-  <data name="&gt;&gt;btnFtpClient.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rbFTPTransferModePassive.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblFtpFiles.AutoSize" type="System.Boolean, mscorlib">
+  <data name="rbFTPProtocolFTP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblFtpFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="rbFTPProtocolFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="lblFtpFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 16</value>
+  <data name="rbFTPProtocolFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
   </data>
-  <data name="lblFtpFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
+  <data name="rbFTPProtocolFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="lblFtpFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
+    <value>FTP</value>
   </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>File:</value>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Name" xml:space="preserve">
+    <value>rbFTPProtocolFTP</value>
   </data>
-  <data name="&gt;&gt;lblFtpFiles.Name" xml:space="preserve">
-    <value>lblFtpFiles</value>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblFtpFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rbFTPProtocolFTP.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
   </data>
-  <data name="&gt;&gt;lblFtpFiles.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;lblFtpFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblFtpText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFtpText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFtpText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 16</value>
-  </data>
-  <data name="lblFtpText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="lblFtpText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Text:</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Name" xml:space="preserve">
-    <value>lblFtpText</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;lblFtpText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblFtpImages.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFtpImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFtpImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="lblFtpImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="lblFtpImages.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;rbFTPProtocolFTP.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Image:</value>
+  <data name="rbFTPProtocolFTPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;lblFtpImages.Name" xml:space="preserve">
-    <value>lblFtpImages</value>
+  <data name="rbFTPProtocolFTPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblFtpImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="rbFTPProtocolFTPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 0</value>
   </data>
-  <data name="&gt;&gt;lblFtpImages.Parent" xml:space="preserve">
-    <value>tpFTP</value>
+  <data name="rbFTPProtocolFTPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
   </data>
-  <data name="&gt;&gt;lblFtpImages.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="rbFTPProtocolFTPS.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="cboFtpImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
+  <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
   </data>
-  <data name="cboFtpImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Name" xml:space="preserve">
+    <value>rbFTPProtocolFTPS</value>
   </data>
-  <data name="cboFtpImages.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
+  </data>
+  <data name="&gt;&gt;rbFTPProtocolFTPS.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cboFtpImages.Name" xml:space="preserve">
-    <value>cboFtpImages</value>
+  <data name="rbFTPProtocolSFTP.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;cboFtpImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="rbFTPProtocolSFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;cboFtpImages.Parent" xml:space="preserve">
-    <value>tpFTP</value>
+  <data name="rbFTPProtocolSFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 0</value>
   </data>
-  <data name="&gt;&gt;cboFtpImages.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="rbFTPProtocolSFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
   </data>
-  <data name="cboFtpFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 12</value>
+  <data name="rbFTPProtocolSFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="cboFtpFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
+  <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
   </data>
-  <data name="cboFtpFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Name" xml:space="preserve">
+    <value>rbFTPProtocolSFTP</value>
   </data>
-  <data name="&gt;&gt;cboFtpFiles.Name" xml:space="preserve">
-    <value>cboFtpFiles</value>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboFtpFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.Parent" xml:space="preserve">
+    <value>pFTPProtocol</value>
   </data>
-  <data name="&gt;&gt;cboFtpFiles.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;cboFtpFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cboFtpText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 12</value>
-  </data>
-  <data name="cboFtpText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboFtpText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Name" xml:space="preserve">
-    <value>cboFtpText</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;cboFtpText.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="ucFTPAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucFTPAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 424</value>
-  </data>
-  <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Name" xml:space="preserve">
-    <value>ucFTPAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;rbFTPProtocolSFTP.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="cbDropboxUseDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10253,6 +11033,78 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="cbGfycatIsPublic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGfycatIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGfycatIsPublic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 304</value>
+  </data>
+  <data name="cbGfycatIsPublic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="cbGfycatIsPublic.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
+    <value>Is public upload?</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Name" xml:space="preserve">
+    <value>cbGfycatIsPublic</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;cbGfycatIsPublic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
+    <value>atcGfycatAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
+    <value>oauth2Gfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnMegaRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -20938,9 +21790,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
     <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>373, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -21072,12 +21921,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UploadersConfigForm</value>

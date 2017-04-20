@@ -950,6 +950,7 @@ namespace ShareX.UploadersLib
             return Config.FTPAccountList.IsValidIndex(Config.FTPSelectedImage);
         }
 
+        /*
         public FTPAccount GetSelectedFTPAccount()
         {
             if (CheckFTPAccounts())
@@ -1074,6 +1075,7 @@ namespace ShareX.UploadersLib
 
             MessageBox.Show(msg, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        */
 
         #endregion FTP
 

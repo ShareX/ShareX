@@ -100,12 +100,14 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderLog.AddContextMenu();
 
+            /*
             // FTP
             ucFTPAccounts.btnAdd.Click += FTPAccountAddButton_Click;
             ucFTPAccounts.btnRemove.Click += FTPAccountRemoveButton_Click;
             ucFTPAccounts.btnDuplicate.Click += FTPAccountDuplicateButton_Click;
             ucFTPAccounts.btnTest.Click += FTPAccountTestButton_Click;
             ucFTPAccounts.pgSettings.PropertyValueChanged += FtpAccountSettingsGrid_PropertyValueChanged;
+            */
 
             // Localhost
             ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
@@ -326,6 +328,7 @@ namespace ShareX.UploadersLib
 
             #region File uploaders
 
+            /*
             // FTP
 
             if (Config.FTPAccountList == null || Config.FTPAccountList.Count == 0)
@@ -340,6 +343,7 @@ namespace ShareX.UploadersLib
                     ucFTPAccounts.lbAccounts.SelectedIndex = 0;
                 }
             }
+            */
 
             // Dropbox
 
@@ -1280,19 +1284,20 @@ namespace ShareX.UploadersLib
 
         private void cboFtpImages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.FTPSelectedImage = cboFtpImages.SelectedIndex;
+            Config.FTPSelectedImage = cbFTPImage.SelectedIndex;
         }
 
         private void cboFtpText_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.FTPSelectedText = cboFtpText.SelectedIndex;
+            Config.FTPSelectedText = cbFTPText.SelectedIndex;
         }
 
         private void cboFtpFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.FTPSelectedFile = cboFtpFiles.SelectedIndex;
+            Config.FTPSelectedFile = cbFTPFile.SelectedIndex;
         }
 
+        /*
         private void btnFtpClient_Click(object sender, EventArgs e)
         {
             FTPOpenClient();
@@ -1372,6 +1377,7 @@ namespace ShareX.UploadersLib
         {
             FTPSetup(Config.FTPAccountList);
         }
+        */
 
         #endregion FTP
 
