@@ -945,12 +945,12 @@ namespace ShareX.UploadersLib
 
         #region FTP
 
-        public bool FTPCheckAccount(int index)
+        private bool FTPCheckAccount(int index)
         {
             return Config.FTPAccountList.IsValidIndex(index);
         }
 
-        public FTPAccount FTPGetSelectedAccount()
+        private FTPAccount FTPGetSelectedAccount()
         {
             int index = cbFTPAccounts.SelectedIndex;
 
@@ -962,7 +962,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        public void FTPAddAccount(FTPAccount account)
+        private void FTPAddAccount(FTPAccount account)
         {
             if (account != null)
             {
@@ -1022,6 +1022,7 @@ namespace ShareX.UploadersLib
             {
                 gbFTPS.Visible = account.Protocol == FTPProtocol.FTPS;
                 gbSFTP.Visible = account.Protocol == FTPProtocol.SFTP;
+                pFTPTransferMode.Enabled = account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS;
             }
             else
             {
@@ -1029,7 +1030,15 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void FTPLoadSelectedAccount()
+        private void FTPRefreshNames()
+        {
+            cbFTPAccounts.RefreshItems();
+            cbFTPImage.RefreshItems();
+            cbFTPText.RefreshItems();
+            cbFTPFile.RefreshItems();
+        }
+
+        private void FTPLoadSelectedAccount()
         {
             FTPAccount account = FTPGetSelectedAccount();
 
@@ -1039,7 +1048,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void FTPLoadAccount(FTPAccount account)
+        private void FTPLoadAccount(FTPAccount account)
         {
             txtFTPName.Text = account.Name;
 
@@ -1086,7 +1095,7 @@ namespace ShareX.UploadersLib
             FTPUpdateEnabledStates();
         }
 
-        public void FTPClearFields()
+        private void FTPClearFields()
         {
             FTPAccount account = new FTPAccount()
             {
@@ -1097,7 +1106,7 @@ namespace ShareX.UploadersLib
             FTPLoadAccount(account);
         }
 
-        public void FTPUpdateURLPreview()
+        private void FTPUpdateURLPreview()
         {
             FTPAccount account = FTPGetSelectedAccount();
 
@@ -1107,7 +1116,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void FTPTestAccountAsync(FTPAccount account)
+        private void FTPTestAccountAsync(FTPAccount account)
         {
             if (account != null)
             {
@@ -1124,7 +1133,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public static void FTPTestAccount(FTPAccount account)
+        private void FTPTestAccount(FTPAccount account)
         {
             string msg = "";
             string remotePath = account.GetSubFolderPath();

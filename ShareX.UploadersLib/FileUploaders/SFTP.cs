@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (!File.Exists(Account.Keypath))
                     {
-                        throw new FileNotFoundException("Key path is invalid.", Account.Keypath);
+                        throw new FileNotFoundException("Key file not exists.", Account.Keypath);
                     }
 
                     PrivateKeyFile keyFile;

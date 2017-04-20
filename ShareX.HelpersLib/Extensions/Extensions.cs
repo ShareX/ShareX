@@ -32,6 +32,7 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Encoder = System.Drawing.Imaging.Encoder;
@@ -574,6 +575,11 @@ namespace ShareX.HelpersLib
         public static Point Center(this Rectangle rect)
         {
             return new Point(rect.X + rect.Width / 2, rect.Y + rect.Height / 2);
+        }
+
+        public static void RefreshItems(this ComboBox cb)
+        {
+            typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
     }
 }

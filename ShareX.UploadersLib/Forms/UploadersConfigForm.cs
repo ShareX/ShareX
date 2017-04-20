@@ -1341,6 +1341,7 @@ namespace ShareX.UploadersLib
             if (account != null)
             {
                 account.Name = txtFTPName.Text;
+                FTPRefreshNames();
             }
         }
 
