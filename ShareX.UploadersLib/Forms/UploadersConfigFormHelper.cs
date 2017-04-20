@@ -1005,10 +1005,16 @@ namespace ShareX.UploadersLib
                     cbFTPImage.SelectedIndex = Config.FTPSelectedImage.Between(0, Config.FTPAccountList.Count - 1);
                     cbFTPText.SelectedIndex = Config.FTPSelectedText.Between(0, Config.FTPAccountList.Count - 1);
                     cbFTPFile.SelectedIndex = Config.FTPSelectedFile.Between(0, Config.FTPAccountList.Count - 1);
-
-                    FTPLoadSelectedAccount();
                 }
+
+                FTPUpdateEnabledStates();
             }
+        }
+
+        private void FTPUpdateEnabledStates()
+        {
+            cbFTPImage.Enabled = cbFTPText.Enabled = cbFTPFile.Enabled = cbFTPAccounts.Enabled = cbFTPAccounts.Items.Count > 0;
+            btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
         }
 
         public void FTPLoadSelectedAccount()
@@ -1053,13 +1059,32 @@ namespace ShareX.UploadersLib
             }
 
             txtFTPRemoteDirectory.Text = account.SubFolderPath;
-
-            // cbFTPURLPathProtocol
-
+            cbFTPURLPathProtocol.SelectedIndex = (int)account.BrowserProtocol;
             txtFTPURLPath.Text = account.HttpHomePath;
             cbFTPAppendRemoteDirectory.Checked = account.HttpHomePathAutoAddSubFolderPath;
             cbFTPRemoveFileExtension.Checked = account.HttpHomePathNoExtension;
-            lblFTPPreviewOutput.Text = account.PreviewHttpPath;
+            lblFTPURLPreviewValue.Text = account.PreviewHttpPath;
+        }
+
+        public void FTPClearFields()
+        {
+            FTPAccount account = new FTPAccount()
+            {
+                Name = "",
+                HttpHomePathAutoAddSubFolderPath = false
+            };
+
+            FTPLoadAccount(account);
+        }
+
+        public void FTPUpdateURLPreview()
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                lblFTPURLPreviewValue.Text = account.PreviewHttpPath;
+            }
         }
 
         public void FTPTestAccountAsync(FTPAccount account)

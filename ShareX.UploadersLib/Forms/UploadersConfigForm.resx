@@ -5464,31 +5464,31 @@ store.book[0].title</value>
   <data name="&gt;&gt;nudFTPPort.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="lblFTPPreviewOutput.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblFTPURLPreviewValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblFTPPreviewOutput.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblFTPURLPreviewValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 264</value>
   </data>
-  <data name="lblFTPPreviewOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
+  <data name="lblFTPURLPreviewValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 13</value>
   </data>
-  <data name="lblFTPPreviewOutput.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblFTPURLPreviewValue.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
-  <data name="lblFTPPreviewOutput.Text" xml:space="preserve">
-    <value>https://example.com/image.png</value>
+  <data name="lblFTPURLPreviewValue.Text" xml:space="preserve">
+    <value>http://example.com/screenshot.png</value>
   </data>
-  <data name="&gt;&gt;lblFTPPreviewOutput.Name" xml:space="preserve">
-    <value>lblFTPPreviewOutput</value>
+  <data name="&gt;&gt;lblFTPURLPreviewValue.Name" xml:space="preserve">
+    <value>lblFTPURLPreviewValue</value>
   </data>
-  <data name="&gt;&gt;lblFTPPreviewOutput.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblFTPURLPreviewValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblFTPPreviewOutput.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblFTPURLPreviewValue.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
   </data>
-  <data name="&gt;&gt;lblFTPPreviewOutput.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblFTPURLPreviewValue.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="lblFTPUsername.AutoSize" type="System.Boolean, mscorlib">
@@ -5566,9 +5566,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtFTPUsername.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="cbFTPURLPathProtocol.Items" xml:space="preserve">
-    <value>https://</value>
-  </data>
   <data name="cbFTPURLPathProtocol.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 188</value>
   </data>
@@ -5621,7 +5618,7 @@ store.book[0].title</value>
     <value>240, 188</value>
   </data>
   <data name="txtFTPURLPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
+    <value>368, 20</value>
   </data>
   <data name="txtFTPURLPath.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -5717,7 +5714,7 @@ store.book[0].title</value>
     <value>160, 164</value>
   </data>
   <data name="txtFTPRemoteDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
+    <value>448, 20</value>
   </data>
   <data name="txtFTPRemoteDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -5735,7 +5732,7 @@ store.book[0].title</value>
     <value>25</value>
   </data>
   <data name="gbFTPAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>16, 72</value>
   </data>
   <data name="gbFTPAccount.Size" type="System.Drawing.Size, System.Drawing">
     <value>776, 384</value>
@@ -5762,10 +5759,10 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 51</value>
+    <value>696, 43</value>
   </data>
   <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>96, 23</value>
   </data>
   <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -5786,10 +5783,10 @@ store.book[0].title</value>
     <value>1</value>
   </data>
   <data name="btnFTPRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 51</value>
+    <value>592, 43</value>
   </data>
   <data name="btnFTPRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>96, 23</value>
   </data>
   <data name="btnFTPRemove.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -5810,10 +5807,10 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="btnFTPAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 51</value>
+    <value>488, 43</value>
   </data>
   <data name="btnFTPAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>96, 23</value>
   </data>
   <data name="btnFTPAdd.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -5834,10 +5831,10 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="cbFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 52</value>
+    <value>128, 44</value>
   </data>
   <data name="cbFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 21</value>
+    <value>352, 21</value>
   </data>
   <data name="cbFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -5858,7 +5855,7 @@ store.book[0].title</value>
     <value>True</value>
   </data>
   <data name="lblFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>13, 48</value>
   </data>
   <data name="lblFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -7954,16 +7951,16 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblJiraIssuePrefix.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Name" xml:space="preserve">
-    <value>gpJiraServer</value>
+  <data name="&gt;&gt;gbJiraServer.Name" xml:space="preserve">
+    <value>gbJiraServer</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.Parent" xml:space="preserve">
     <value>tpJira</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Name" xml:space="preserve">
@@ -8740,28 +8737,28 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpUplea.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Name" xml:space="preserve">
-    <value>gpPlikSettings</value>
+  <data name="&gt;&gt;gbPlikSettings.Name" xml:space="preserve">
+    <value>gbPlikSettings</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.Parent" xml:space="preserve">
     <value>tpPlik</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Name" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+  <data name="&gt;&gt;gbPlikLoginCredentials.Name" xml:space="preserve">
+    <value>gbPlikLoginCredentials</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.Parent" xml:space="preserve">
     <value>tpPlik</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tpPlik.Location" type="System.Drawing.Point, System.Drawing">
@@ -13114,7 +13111,7 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtJiraConfigHelp.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;txtJiraConfigHelp.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -13126,7 +13123,7 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtJiraHost.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;txtJiraHost.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -13138,33 +13135,33 @@ store.book[0].title</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblJiraHost.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;lblJiraHost.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="gpJiraServer.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gbJiraServer.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 13</value>
   </data>
-  <data name="gpJiraServer.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="gbJiraServer.Size" type="System.Drawing.Size, System.Drawing">
     <value>451, 358</value>
   </data>
-  <data name="gpJiraServer.TabIndex" type="System.Int32, mscorlib">
+  <data name="gbJiraServer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
+  <data name="gbJiraServer.Text" xml:space="preserve">
     <value>Jira server</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Name" xml:space="preserve">
-    <value>gpJiraServer</value>
+  <data name="&gt;&gt;gbJiraServer.Name" xml:space="preserve">
+    <value>gbJiraServer</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.Parent" xml:space="preserve">
     <value>tpJira</value>
   </data>
-  <data name="&gt;&gt;gpJiraServer.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbJiraServer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="txtJiraConfigHelp.Location" type="System.Drawing.Point, System.Drawing">
@@ -13192,7 +13189,7 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtJiraConfigHelp.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;txtJiraConfigHelp.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -13216,7 +13213,7 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtJiraHost.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;txtJiraHost.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -13246,7 +13243,7 @@ store.book[0].title</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblJiraHost.Parent" xml:space="preserve">
-    <value>gpJiraServer</value>
+    <value>gbJiraServer</value>
   </data>
   <data name="&gt;&gt;lblJiraHost.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15485,7 +15482,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikOneShot.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikOneShot.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -15497,7 +15494,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikComment.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;txtPlikComment.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -15509,7 +15506,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikComment.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikComment.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15521,33 +15518,33 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikRemovable.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikRemovable.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="gpPlikSettings.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gbPlikSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>292, 19</value>
   </data>
-  <data name="gpPlikSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="gbPlikSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 247</value>
   </data>
-  <data name="gpPlikSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="gbPlikSettings.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="gpPlikSettings.Text" xml:space="preserve">
+  <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>Other settings</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Name" xml:space="preserve">
-    <value>gpPlikSettings</value>
+  <data name="&gt;&gt;gbPlikSettings.Name" xml:space="preserve">
+    <value>gbPlikSettings</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.Parent" xml:space="preserve">
     <value>tpPlik</value>
   </data>
-  <data name="&gt;&gt;gpPlikSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
@@ -15575,7 +15572,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikOneShot.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikOneShot.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -15599,7 +15596,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikComment.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;txtPlikComment.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -15629,7 +15626,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikComment.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikComment.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15659,7 +15656,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikRemovable.Parent" xml:space="preserve">
-    <value>gpPlikSettings</value>
+    <value>gbPlikSettings</value>
   </data>
   <data name="&gt;&gt;cbPlikRemovable.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -15671,7 +15668,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudPlikTTL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;nudPlikTTL.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -15683,7 +15680,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbxPlikTTLUnit.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;cbxPlikTTLUnit.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -15695,7 +15692,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15707,7 +15704,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikURL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikURL.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -15719,7 +15716,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikURL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikURL.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -15731,7 +15728,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikIsSecured.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;cbPlikIsSecured.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -15743,7 +15740,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -15755,7 +15752,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikAPIKey.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikAPIKey.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -15767,7 +15764,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikPassword.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikPassword.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -15779,7 +15776,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikUsername.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikUsername.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -15791,7 +15788,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikPassword.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikPassword.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -15803,33 +15800,33 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikLogin.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikLogin.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="gpPlikLoginCredentials.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gbPlikLoginCredentials.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 19</value>
   </data>
-  <data name="gpPlikLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="gbPlikLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 247</value>
   </data>
-  <data name="gpPlikLoginCredentials.TabIndex" type="System.Int32, mscorlib">
+  <data name="gbPlikLoginCredentials.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="gpPlikLoginCredentials.Text" xml:space="preserve">
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Login Credentials</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Name" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+  <data name="&gt;&gt;gbPlikLoginCredentials.Name" xml:space="preserve">
+    <value>gbPlikLoginCredentials</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.Parent" xml:space="preserve">
     <value>tpPlik</value>
   </data>
-  <data name="&gt;&gt;gpPlikLoginCredentials.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbPlikLoginCredentials.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="nudPlikTTL.Location" type="System.Drawing.Point, System.Drawing">
@@ -15848,7 +15845,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudPlikTTL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;nudPlikTTL.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -15878,7 +15875,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbxPlikTTLUnit.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;cbxPlikTTLUnit.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -15908,7 +15905,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15929,7 +15926,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikURL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikURL.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -15959,7 +15956,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikURL.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikURL.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -15989,7 +15986,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbPlikIsSecured.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;cbPlikIsSecured.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -16019,7 +16016,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -16040,7 +16037,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikAPIKey.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikAPIKey.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -16070,7 +16067,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikPassword.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikPassword.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -16100,7 +16097,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlikUsername.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;lblPlikUsername.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -16124,7 +16121,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikPassword.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikPassword.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -16145,7 +16142,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPlikLogin.Parent" xml:space="preserve">
-    <value>gpPlikLoginCredentials</value>
+    <value>gbPlikLoginCredentials</value>
   </data>
   <data name="&gt;&gt;txtPlikLogin.ZOrder" xml:space="preserve">
     <value>11</value>
