@@ -42,18 +42,20 @@ namespace ShareX.Setup
             CreatePortableAppsFolder = 1 << 3,
             OpenOutputDirectory = 1 << 4,
             UploadOutputFile = 1 << 5,
+            CreateWindowsStoreFolder = 1 << 6,
 
             Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
+            WindowsStore = CreateWindowsStoreFolder | OpenOutputDirectory,
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
             AppVeyorSteam = CreateSteamFolder
         }
 
-        private static SetupJobs Job = SetupJobs.None;
+        private static SetupJobs Job = SetupJobs.WindowsStore;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
@@ -62,11 +64,13 @@ namespace ShareX.Setup
         private static string DebugDir => Path.Combine(BinDir, "Debug");
         private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
+        private static string WindowsStoreDir => Path.Combine(BinDir, "WindowsStore");
 
         private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
         private static string OutputDir => Path.Combine(InnoSetupDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
+        private static string WindowsStoreOutputDir => Path.Combine(OutputDir, "ShareX-WindowsStore");
         private static string PortableAppsOutputDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
@@ -116,6 +120,11 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
             {
                 CreateSteamFolder();
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateWindowsStoreFolder))
+            {
+                CreateWindowsStoreFolder();
             }
 
             if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
@@ -197,6 +206,20 @@ namespace ShareX.Setup
             CreatePortable(SteamUpdatesDir, SteamDir);
         }
 
+        private static void CreateWindowsStoreFolder()
+        {
+            Console.WriteLine("Creating Windows Store folder:" + WindowsStoreOutputDir);
+
+            if (Directory.Exists(WindowsStoreOutputDir))
+            {
+                Directory.Delete(WindowsStoreOutputDir, true);
+            }
+
+            Directory.CreateDirectory(WindowsStoreOutputDir);
+
+            CreatePortable(WindowsStoreOutputDir, WindowsStoreDir);
+        }
+
         private static void CreatePortable(string destination, string releaseDirectory)
         {
             Console.WriteLine("Creating portable: " + destination);
@@ -235,6 +258,10 @@ namespace ShareX.Setup
             else if (destination.Equals(PortableAppsOutputDir, StringComparison.InvariantCultureIgnoreCase))
             {
                 File.Create(Path.Combine(destination, "PortableApps")).Dispose();
+            }
+            else if (destination.Equals(WindowsStoreOutputDir, StringComparison.InvariantCultureIgnoreCase))
+            {
+
             }
             else
             {
