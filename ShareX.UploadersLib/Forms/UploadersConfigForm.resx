@@ -5051,7 +5051,7 @@ store.book[0].title</value>
     <value>0</value>
   </data>
   <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 344</value>
   </data>
   <data name="btnFTPTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
@@ -5204,7 +5204,7 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 296</value>
+    <value>208, 344</value>
   </data>
   <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 24</value>
@@ -5279,7 +5279,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnFTPClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 296</value>
+    <value>112, 344</value>
   </data>
   <data name="btnFTPClient.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>

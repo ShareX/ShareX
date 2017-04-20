@@ -100,15 +100,6 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderLog.AddContextMenu();
 
-            /*
-            // FTP
-            ucFTPAccounts.btnAdd.Click += FTPAccountAddButton_Click;
-            ucFTPAccounts.btnRemove.Click += FTPAccountRemoveButton_Click;
-            ucFTPAccounts.btnDuplicate.Click += FTPAccountDuplicateButton_Click;
-            ucFTPAccounts.btnTest.Click += FTPAccountTestButton_Click;
-            ucFTPAccounts.pgSettings.PropertyValueChanged += FtpAccountSettingsGrid_PropertyValueChanged;
-            */
-
             // Localhost
             ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
             ucLocalhostAccounts.btnRemove.Click += LocalhostAccountRemoveButton_Click;
@@ -328,22 +319,21 @@ namespace ShareX.UploadersLib
 
             #region File uploaders
 
-            /*
             // FTP
 
             if (Config.FTPAccountList == null || Config.FTPAccountList.Count == 0)
             {
-                FTPSetup(new List<FTPAccount>());
+                FTPUpdateControls(new List<FTPAccount>());
             }
             else
             {
-                FTPSetup(Config.FTPAccountList);
-                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
+                FTPUpdateControls();
+
+                if (cbFTPAccounts.Items.Count > 0)
                 {
-                    ucFTPAccounts.lbAccounts.SelectedIndex = 0;
+                    cbFTPAccounts.SelectedIndex = cbFTPImage.SelectedIndex;
                 }
             }
-            */
 
             // Dropbox
 
@@ -1282,102 +1272,98 @@ namespace ShareX.UploadersLib
 
         #region FTP
 
-        private void cboFtpImages_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFTPImage_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.FTPSelectedImage = cbFTPImage.SelectedIndex;
         }
 
-        private void cboFtpText_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFTPText_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.FTPSelectedText = cbFTPText.SelectedIndex;
         }
 
-        private void cboFtpFiles_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFTPFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.FTPSelectedFile = cbFTPFile.SelectedIndex;
         }
 
-        /*
-        private void btnFtpClient_Click(object sender, EventArgs e)
+        private void cbFTPAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FTPOpenClient();
+            FTPLoadSelectedAccount();
+        }
+
+        private void btnFTPAdd_Click(object sender, EventArgs e)
+        {
+            FTPAddAccount(new FTPAccount());
+
+            cbFTPAccounts.SelectedIndex = cbFTPAccounts.Items.Count - 1;
+        }
+
+        private void btnFTPRemove_Click(object sender, EventArgs e)
+        {
+            int selected = cbFTPAccounts.SelectedIndex;
+
+            cbFTPAccounts.Items.RemoveAt(selected);
+            Config.FTPAccountList.RemoveAt(selected);
+
+            if (cbFTPAccounts.Items.Count > 0)
+            {
+                cbFTPAccounts.SelectedIndex = selected == cbFTPAccounts.Items.Count ? cbFTPAccounts.Items.Count - 1 : selected;
+            }
+
+            FTPUpdateControls();
+        }
+
+        private void btnFTPDuplicate_Click(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                FTPAccount clone = account.Clone();
+                FTPAddAccount(clone);
+
+                cbFTPAccounts.SelectedIndex = cbFTPAccounts.Items.Count - 1;
+            }
+        }
+
+        private void btnFTPTest_Click(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                FTPTestAccountAsync(account);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnFTPClient_Click(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                FTPOpenClient(account);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private object eiFTP_ExportRequested()
         {
-            return GetSelectedFTPAccount();
+            return FTPGetSelectedAccount();
         }
 
         private void eiFTP_ImportRequested(object obj)
         {
-            AddFTPAccount(obj as FTPAccount);
+            FTPAddAccount(obj as FTPAccount);
         }
-
-        private void FTPSetup(IEnumerable<FTPAccount> accs)
-        {
-            if (accs != null)
-            {
-                int selFtpList = ucFTPAccounts.lbAccounts.SelectedIndex;
-
-                ucFTPAccounts.lbAccounts.Items.Clear();
-                ucFTPAccounts.pgSettings.PropertySort = PropertySort.Categorized;
-                cboFtpImages.Items.Clear();
-                cboFtpText.Items.Clear();
-                cboFtpFiles.Items.Clear();
-
-                Config.FTPAccountList = new List<FTPAccount>();
-                Config.FTPAccountList.AddRange(accs);
-
-                foreach (FTPAccount acc in Config.FTPAccountList)
-                {
-                    ucFTPAccounts.lbAccounts.Items.Add(acc);
-                    cboFtpImages.Items.Add(acc);
-                    cboFtpText.Items.Add(acc);
-                    cboFtpFiles.Items.Add(acc);
-                }
-
-                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
-                {
-                    ucFTPAccounts.lbAccounts.SelectedIndex = selFtpList.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
-                    cboFtpImages.SelectedIndex = Config.FTPSelectedImage.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
-                    cboFtpText.SelectedIndex = Config.FTPSelectedText.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
-                    cboFtpFiles.SelectedIndex = Config.FTPSelectedFile.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
-                }
-            }
-        }
-
-        private void FTPAccountAddButton_Click(object sender, EventArgs e)
-        {
-            AddFTPAccount(new FTPAccount());
-        }
-
-        private void FTPAccountRemoveButton_Click(object sender, EventArgs e)
-        {
-            int sel = ucFTPAccounts.lbAccounts.SelectedIndex;
-            if (ucFTPAccounts.RemoveItem(sel))
-            {
-                Config.FTPAccountList.RemoveAt(sel);
-            }
-            FTPSetup(Config.FTPAccountList);
-        }
-
-        private void FTPAccountDuplicateButton_Click(object sender, EventArgs e)
-        {
-            FTPAccount src = (FTPAccount)ucFTPAccounts.lbAccounts.Items[ucFTPAccounts.lbAccounts.SelectedIndex];
-            FTPAccount clone = src.Clone();
-            AddFTPAccount(clone);
-        }
-
-        private void FTPAccountTestButton_Click(object sender, EventArgs e)
-        {
-            TestFTPAccountAsync(GetSelectedFTPAccount());
-        }
-
-        private void FtpAccountSettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-            FTPSetup(Config.FTPAccountList);
-        }
-        */
 
         #endregion FTP
 

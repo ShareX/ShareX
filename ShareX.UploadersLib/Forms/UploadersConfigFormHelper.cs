@@ -945,71 +945,141 @@ namespace ShareX.UploadersLib
 
         #region FTP
 
-        public bool CheckFTPAccounts()
+        public bool FTPCheckAccount(int index)
         {
-            return Config.FTPAccountList.IsValidIndex(Config.FTPSelectedImage);
+            return Config.FTPAccountList.IsValidIndex(index);
         }
 
-        /*
-        public FTPAccount GetSelectedFTPAccount()
+        public FTPAccount FTPGetSelectedAccount()
         {
-            if (CheckFTPAccounts())
+            int index = cbFTPAccounts.SelectedIndex;
+
+            if (FTPCheckAccount(index))
             {
-                return Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex];
+                return Config.FTPAccountList[index];
             }
 
             return null;
         }
 
-        public void AddFTPAccount(FTPAccount account)
+        public void FTPAddAccount(FTPAccount account)
         {
             if (account != null)
             {
                 Config.FTPAccountList.Add(account);
-                ucFTPAccounts.AddItem(account);
-                FTPSetup(Config.FTPAccountList);
+                cbFTPAccounts.Items.Add(account);
+                FTPUpdateControls();
             }
         }
 
-        public void TestFTPAccountAsync(FTPAccount acc)
+        private void FTPUpdateControls()
         {
-            if (acc != null)
+            FTPUpdateControls(Config.FTPAccountList);
+        }
+
+        private void FTPUpdateControls(List<FTPAccount> accounts)
+        {
+            if (accounts != null)
             {
-                ucFTPAccounts.btnTest.Enabled = false;
+                int selected = cbFTPAccounts.SelectedIndex;
+
+                cbFTPAccounts.Items.Clear();
+                cbFTPImage.Items.Clear();
+                cbFTPText.Items.Clear();
+                cbFTPFile.Items.Clear();
+
+                Config.FTPAccountList = new List<FTPAccount>();
+                Config.FTPAccountList.AddRange(accounts);
+
+                if (Config.FTPAccountList.Count > 0)
+                {
+                    foreach (FTPAccount account in Config.FTPAccountList)
+                    {
+                        cbFTPAccounts.Items.Add(account);
+                        cbFTPImage.Items.Add(account);
+                        cbFTPText.Items.Add(account);
+                        cbFTPFile.Items.Add(account);
+                    }
+
+                    cbFTPAccounts.SelectedIndex = selected.Between(0, Config.FTPAccountList.Count - 1);
+                    cbFTPImage.SelectedIndex = Config.FTPSelectedImage.Between(0, Config.FTPAccountList.Count - 1);
+                    cbFTPText.SelectedIndex = Config.FTPSelectedText.Between(0, Config.FTPAccountList.Count - 1);
+                    cbFTPFile.SelectedIndex = Config.FTPSelectedFile.Between(0, Config.FTPAccountList.Count - 1);
+
+                    FTPLoadSelectedAccount();
+                }
+            }
+        }
+
+        public void FTPLoadSelectedAccount()
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                FTPLoadAccount(account);
+            }
+        }
+
+        public void FTPLoadAccount(FTPAccount account)
+        {
+            txtFTPName.Text = account.Name;
+
+            switch (account.Protocol)
+            {
+                case FTPProtocol.FTP:
+                    rbFTPProtocolFTP.Checked = true;
+                    break;
+                case FTPProtocol.FTPS:
+                    rbFTPProtocolFTPS.Checked = true;
+                    break;
+                case FTPProtocol.SFTP:
+                    rbFTPProtocolSFTP.Checked = true;
+                    break;
+            }
+
+            txtFTPHost.Text = account.Host;
+            nudFTPPort.Value = account.Port;
+            txtFTPUsername.Text = account.Username;
+            txtFTPPassword.Text = account.Password;
+
+            if (account.IsActive)
+            {
+                rbFTPTransferModeActive.Checked = true;
+            }
+            else
+            {
+                rbFTPTransferModePassive.Checked = true;
+            }
+
+            txtFTPRemoteDirectory.Text = account.SubFolderPath;
+
+            // cbFTPURLPathProtocol
+
+            txtFTPURLPath.Text = account.HttpHomePath;
+            cbFTPAppendRemoteDirectory.Checked = account.HttpHomePathAutoAddSubFolderPath;
+            cbFTPRemoveFileExtension.Checked = account.HttpHomePathNoExtension;
+            lblFTPPreviewOutput.Text = account.PreviewHttpPath;
+        }
+
+        public void FTPTestAccountAsync(FTPAccount account)
+        {
+            if (account != null)
+            {
+                btnFTPTest.Enabled = false;
 
                 TaskEx.Run(() =>
                 {
-                    TestFTPAccount(acc);
+                    FTPTestAccount(account);
                 },
                 () =>
                 {
-                    ucFTPAccounts.btnTest.Enabled = true;
+                    btnFTPTest.Enabled = true;
                 });
             }
         }
 
-        private void FTPOpenClient()
-        {
-            FTPAccount account = GetSelectedFTPAccount();
-
-            if (account != null)
-            {
-                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
-                {
-                    new FTPClientForm(account).Show();
-                }
-                else
-                {
-                    MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                return;
-            }
-
-            MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static void TestFTPAccount(FTPAccount account)
+        public static void FTPTestAccount(FTPAccount account)
         {
             string msg = "";
             string remotePath = account.GetSubFolderPath();
@@ -1075,7 +1145,18 @@ namespace ShareX.UploadersLib
 
             MessageBox.Show(msg, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        */
+
+        private void FTPOpenClient(FTPAccount account)
+        {
+            if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+            {
+                new FTPClientForm(account).Show();
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         #endregion FTP
 
