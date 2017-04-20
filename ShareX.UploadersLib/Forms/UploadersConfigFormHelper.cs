@@ -1015,6 +1015,18 @@ namespace ShareX.UploadersLib
         {
             cbFTPImage.Enabled = cbFTPText.Enabled = cbFTPFile.Enabled = cbFTPAccounts.Enabled = cbFTPAccounts.Items.Count > 0;
             btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
+
+            FTPAccount account = FTPGetSelectedAccount();
+
+            if (account != null)
+            {
+                gbFTPS.Visible = account.Protocol == FTPProtocol.FTPS;
+                gbSFTP.Visible = account.Protocol == FTPProtocol.SFTP;
+            }
+            else
+            {
+                gbFTPS.Visible = gbSFTP.Visible = false;
+            }
         }
 
         public void FTPLoadSelectedAccount()
@@ -1064,6 +1076,14 @@ namespace ShareX.UploadersLib
             cbFTPAppendRemoteDirectory.Checked = account.HttpHomePathAutoAddSubFolderPath;
             cbFTPRemoveFileExtension.Checked = account.HttpHomePathNoExtension;
             lblFTPURLPreviewValue.Text = account.PreviewHttpPath;
+
+            cbFTPSEncryption.SelectedIndex = (int)account.FTPSEncryption;
+            txtFTPSCertificateLocation.Text = account.FTPSCertificateLocation;
+
+            txtSFTPKeyLocation.Text = account.Keypath;
+            txtSFTPKeyPassphrase.Text = account.Passphrase;
+
+            FTPUpdateEnabledStates();
         }
 
         public void FTPClearFields()

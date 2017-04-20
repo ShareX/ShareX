@@ -100,6 +100,7 @@ namespace ShareX.UploadersLib
 
             // FTP
             cbFTPURLPathProtocol.Items.AddRange(Helpers.GetEnumDescriptions<BrowserProtocol>());
+            cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Localhost
@@ -1349,6 +1350,7 @@ namespace ShareX.UploadersLib
             if (account != null)
             {
                 account.Protocol = FTPProtocol.FTP;
+                FTPUpdateEnabledStates();
             }
         }
 
@@ -1358,6 +1360,7 @@ namespace ShareX.UploadersLib
             if (account != null)
             {
                 account.Protocol = FTPProtocol.FTPS;
+                FTPUpdateEnabledStates();
             }
         }
 
@@ -1367,6 +1370,7 @@ namespace ShareX.UploadersLib
             if (account != null)
             {
                 account.Protocol = FTPProtocol.SFTP;
+                FTPUpdateEnabledStates();
             }
         }
 
@@ -1473,6 +1477,76 @@ namespace ShareX.UploadersLib
             {
                 account.HttpHomePathNoExtension = cbFTPRemoveFileExtension.Checked;
                 FTPUpdateURLPreview();
+            }
+        }
+
+        private void cbFTPSEncryption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                account.FTPSEncryption = (FTPSEncryption)cbFTPSEncryption.SelectedIndex;
+            }
+        }
+
+        private void txtFTPSCertificateLocation_TextChanged(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                account.FTPSCertificateLocation = txtFTPSCertificateLocation.Text;
+            }
+        }
+
+        private void btnFTPSCertificateLocationBrowse_Click(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                using (OpenFileDialog dlg = new OpenFileDialog())
+                {
+                    dlg.Title = Resources.CertFileNameEditor_EditValue_Browse_for_a_certificate_file___;
+                    dlg.Filter = "Certificate file (*.cer)|*.cer";
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        txtFTPSCertificateLocation.Text = dlg.FileName;
+                    }
+                }
+            }
+        }
+
+        private void txtSFTPKeyLocation_TextChanged(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                account.Keypath = txtSFTPKeyLocation.Text;
+            }
+        }
+
+        private void btnSFTPKeyLocationBrowse_Click(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                using (OpenFileDialog dlg = new OpenFileDialog())
+                {
+                    dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
+                    dlg.Filter = "Key file (*.*)|*.*";
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        txtSFTPKeyLocation.Text = dlg.FileName;
+                    }
+                }
+            }
+        }
+
+        private void txtSFTPKeyPassphrase_TextChanged(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                account.Passphrase = txtSFTPKeyPassphrase.Text;
             }
         }
 

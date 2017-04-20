@@ -5051,10 +5051,10 @@ store.book[0].title</value>
     <value>0</value>
   </data>
   <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 344</value>
+    <value>16, 376</value>
   </data>
   <data name="btnFTPTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPTest.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -5204,7 +5204,7 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 344</value>
+    <value>224, 376</value>
   </data>
   <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 24</value>
@@ -5279,10 +5279,10 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnFTPClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 344</value>
+    <value>120, 376</value>
   </data>
   <data name="btnFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPClient.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -5731,11 +5731,179 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtFTPRemoteDirectory.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Name" xml:space="preserve">
+    <value>txtSFTPKeyPassphrase</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Name" xml:space="preserve">
+    <value>btnSFTPKeyLocationBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Name" xml:space="preserve">
+    <value>lblSFTPKeyPassphrase</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Name" xml:space="preserve">
+    <value>txtSFTPKeyLocation</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Name" xml:space="preserve">
+    <value>lblSFTPKeyLocation</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbSFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 288</value>
+  </data>
+  <data name="gbSFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 76</value>
+  </data>
+  <data name="gbSFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gbSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="&gt;&gt;gbSFTP.Name" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;gbSFTP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSFTP.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;gbSFTP.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Name" xml:space="preserve">
+    <value>btnFTPSCertificateLocationBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Name" xml:space="preserve">
+    <value>txtFTPSCertificateLocation</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Name" xml:space="preserve">
+    <value>lblFTPSCertificateLocation</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Name" xml:space="preserve">
+    <value>cbFTPSEncryption</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Name" xml:space="preserve">
+    <value>lblFTPSEncryption</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbFTPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 288</value>
+  </data>
+  <data name="gbFTPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 76</value>
+  </data>
+  <data name="gbFTPS.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="gbFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
+  </data>
+  <data name="&gt;&gt;gbFTPS.Name" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;gbFTPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFTPS.Parent" xml:space="preserve">
+    <value>gbFTPAccount</value>
+  </data>
+  <data name="&gt;&gt;gbFTPS.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
   <data name="gbFTPAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 72</value>
   </data>
   <data name="gbFTPAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 384</value>
+    <value>776, 416</value>
   </data>
   <data name="gbFTPAccount.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -5759,10 +5927,10 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 43</value>
+    <value>336, 10</value>
   </data>
   <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -5783,10 +5951,10 @@ store.book[0].title</value>
     <value>1</value>
   </data>
   <data name="btnFTPRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 43</value>
+    <value>232, 10</value>
   </data>
   <data name="btnFTPRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPRemove.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -5807,10 +5975,10 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="btnFTPAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 43</value>
+    <value>128, 10</value>
   </data>
   <data name="btnFTPAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPAdd.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -5831,7 +5999,7 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="cbFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 44</value>
+    <value>440, 12</value>
   </data>
   <data name="cbFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 21</value>
@@ -5855,7 +6023,7 @@ store.book[0].title</value>
     <value>True</value>
   </data>
   <data name="lblFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+    <value>13, 16</value>
   </data>
   <data name="lblFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -5885,7 +6053,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblFTPFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>541, 16</value>
+    <value>541, 48</value>
   </data>
   <data name="lblFTPFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -5915,7 +6083,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblFTPText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 16</value>
+    <value>277, 48</value>
   </data>
   <data name="lblFTPText.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -5945,7 +6113,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblFTPImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>13, 48</value>
   </data>
   <data name="lblFTPImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -5969,7 +6137,7 @@ store.book[0].title</value>
     <value>8</value>
   </data>
   <data name="cbFTPImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
+    <value>80, 44</value>
   </data>
   <data name="cbFTPImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
@@ -5990,7 +6158,7 @@ store.book[0].title</value>
     <value>9</value>
   </data>
   <data name="cbFTPFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 12</value>
+    <value>608, 44</value>
   </data>
   <data name="cbFTPFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
@@ -6011,7 +6179,7 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="cbFTPText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 12</value>
+    <value>344, 44</value>
   </data>
   <data name="cbFTPText.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
@@ -21786,6 +21954,246 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
     <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblFTPSEncryption.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPSEncryption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblFTPSEncryption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblFTPSEncryption.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>Encryption:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Name" xml:space="preserve">
+    <value>lblFTPSEncryption</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSEncryption.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbFTPSEncryption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 20</value>
+  </data>
+  <data name="cbFTPSEncryption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 21</value>
+  </data>
+  <data name="cbFTPSEncryption.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Name" xml:space="preserve">
+    <value>cbFTPSEncryption</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;cbFTPSEncryption.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>Certificate location:</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Name" xml:space="preserve">
+    <value>lblFTPSCertificateLocation</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;lblFTPSCertificateLocation.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtFTPSCertificateLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 44</value>
+  </data>
+  <data name="txtFTPSCertificateLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 20</value>
+  </data>
+  <data name="txtFTPSCertificateLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Name" xml:space="preserve">
+    <value>txtFTPSCertificateLocation</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;txtFTPSCertificateLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 43</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Name" xml:space="preserve">
+    <value>btnFTPSCertificateLocationBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Parent" xml:space="preserve">
+    <value>gbFTPS</value>
+  </data>
+  <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSFTPKeyLocation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblSFTPKeyLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Key location:</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Name" xml:space="preserve">
+    <value>lblSFTPKeyLocation</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyLocation.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtSFTPKeyLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 20</value>
+  </data>
+  <data name="txtSFTPKeyLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 20</value>
+  </data>
+  <data name="txtSFTPKeyLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Name" xml:space="preserve">
+    <value>txtSFTPKeyLocation</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyLocation.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
+    <value>Key passphrase:</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Name" xml:space="preserve">
+    <value>lblSFTPKeyPassphrase</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;lblSFTPKeyPassphrase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 19</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Name" xml:space="preserve">
+    <value>btnSFTPKeyLocationBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;btnSFTPKeyLocationBrowse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSFTPKeyPassphrase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 44</value>
+  </data>
+  <data name="txtSFTPKeyPassphrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 20</value>
+  </data>
+  <data name="txtSFTPKeyPassphrase.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Name" xml:space="preserve">
+    <value>txtSFTPKeyPassphrase</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.Parent" xml:space="preserve">
+    <value>gbSFTP</value>
+  </data>
+  <data name="&gt;&gt;txtSFTPKeyPassphrase.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
