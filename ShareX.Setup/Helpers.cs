@@ -110,5 +110,10 @@ namespace ShareX.Setup
 
             return false;
         }
+
+        public static void CreateEmptyFile(string path)
+        {
+            File.Create(path).Dispose();
+        }
     }
 }
