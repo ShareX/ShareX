@@ -56,7 +56,7 @@ namespace ShareX.HelpersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                Helpers.ShowError(e);
+                e.ShowError();
             }
 
             return false;

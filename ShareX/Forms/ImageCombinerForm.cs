@@ -143,8 +143,7 @@ namespace ShareX
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
-
-                    MessageBox.Show(ex.ToString(), $"ShareX - {Resources.Program_Run_Error}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
                 finally
                 {

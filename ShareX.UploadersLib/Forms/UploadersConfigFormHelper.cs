@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -91,7 +91,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -179,7 +179,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -199,7 +199,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -221,7 +221,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -262,7 +262,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -297,7 +297,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -339,7 +339,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -367,7 +367,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -395,7 +395,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -424,7 +424,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -453,7 +453,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -482,7 +482,7 @@ namespace ShareX.UploadersLib
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -520,7 +520,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -548,7 +548,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -576,7 +576,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -604,7 +604,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -633,7 +633,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -661,7 +661,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -689,7 +689,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -752,7 +752,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -781,7 +781,7 @@ namespace ShareX.UploadersLib
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -809,7 +809,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -872,7 +872,7 @@ namespace ShareX.UploadersLib
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(Resources.UploadersConfigForm_Error + ": " + ex.Message, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
                 finally
                 {
@@ -905,7 +905,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
             finally
             {
@@ -1249,7 +1249,7 @@ namespace ShareX.UploadersLib
             {
                 Config.Ge_ttLogin = null;
                 lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_failed;
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -1278,7 +1278,7 @@ namespace ShareX.UploadersLib
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
             }
         }
@@ -1393,7 +1393,7 @@ namespace ShareX.UploadersLib
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
             }
         }
@@ -1425,7 +1425,7 @@ namespace ShareX.UploadersLib
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
             }
         }
@@ -1472,7 +1472,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -1498,7 +1498,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -1524,7 +1524,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -1553,7 +1553,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -1579,7 +1579,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2034,7 +2034,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2061,7 +2061,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2084,7 +2084,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2111,7 +2111,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2140,7 +2140,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2166,7 +2166,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 
@@ -2193,7 +2193,7 @@ namespace ShareX.UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ShowError();
             }
         }
 

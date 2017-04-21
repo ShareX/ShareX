@@ -581,5 +581,10 @@ namespace ShareX.HelpersLib
         {
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
+
+        public static void ShowError(this Exception e)
+        {
+            MessageBox.Show(e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

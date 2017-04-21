@@ -142,7 +142,7 @@ namespace ShareX.UploadersLib
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
-                    MessageBox.Show(ex.ToString(), "ShareX - " + Resources.TwitterTweetForm_SendTweet_Tweet_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ex.ShowError();
                 }
             }
         }
