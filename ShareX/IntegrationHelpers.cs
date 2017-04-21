@@ -443,9 +443,9 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
-        public static void CreateSendToMenuButton(bool create)
+        public static bool CreateSendToMenuButton(bool create)
         {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
         public static bool CheckSteamShowInApp()

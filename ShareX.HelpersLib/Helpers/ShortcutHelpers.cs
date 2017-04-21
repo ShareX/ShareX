@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using IWshRuntimeLibrary;
+using ShareX.HelpersLib.Properties;
 using Shell32;
 using System;
 using System.IO;
+using System.Windows.Forms;
 using File = System.IO.File;
 using Folder = Shell32.Folder;
 
@@ -42,12 +44,22 @@ namespace ShareX.HelpersLib
 
         public static bool SetShortcut(bool create, string shortcutPath, string targetPath = "", string arguments = "")
         {
-            if (create)
+            try
+            { 
+                if (create)
+                {
+                    return Create(shortcutPath, targetPath, arguments);
+                }
+
+                return Delete(shortcutPath);
+            }
+            catch (Exception e)
             {
-                return Create(shortcutPath, targetPath, arguments);
+                DebugHelper.WriteException(e);
+                Helpers.ShowError(e);
             }
 
-            return Delete(shortcutPath);
+            return false;
         }
 
         public static bool CheckShortcut(Environment.SpecialFolder specialFolder, string checkPath)
@@ -73,21 +85,14 @@ namespace ShareX.HelpersLib
             {
                 Delete(shortcutPath);
 
-                try
-                {
-                    IWshShell wsh = new WshShellClass();
-                    IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(shortcutPath);
-                    shortcut.TargetPath = targetPath;
-                    shortcut.Arguments = arguments;
-                    shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
-                    shortcut.Save();
+                IWshShell wsh = new WshShellClass();
+                IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(shortcutPath);
+                shortcut.TargetPath = targetPath;
+                shortcut.Arguments = arguments;
+                shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
+                shortcut.Save();
 
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
+                return true;
             }
 
             return false;
