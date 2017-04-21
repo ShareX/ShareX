@@ -28,6 +28,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -79,9 +80,82 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
         }
 
-        public static void CreateStartupShortcut(bool create)
+        public static bool CreateStartupShortcut(bool create)
         {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+#if WindowsStore
+            return CreateStartupShortcutWindowsStore(create);
+#else
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+#endif
+        }
+
+        private static bool CreateStartupShortcutWindowsStore(bool create)
+        {
+            string filepath = Helpers.GetAbsolutePath("DesktopBridgeHelper.exe");
+
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                try
+                {
+                    string argument;
+
+                    if (create)
+                    {
+                        argument = "-StartupEnable";
+                    }
+                    else
+                    {
+                        argument = "-StartupDisable";
+                    }
+
+                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    {
+                        FileName = filepath,
+                        Arguments = argument,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    Process process = Process.Start(startInfo);
+
+                    if (process.WaitForExit(5000))
+                    {
+                        int code = process.ExitCode;
+
+                        if (code > -1)
+                        {
+                            StartupTaskState state = (StartupTaskState)code;
+
+                            if (create)
+                            {
+                                if (state == StartupTaskState.Enabled)
+                                {
+                                    MessageBox.Show("Startup successfully enabled.", "ShareX");
+                                    return true;
+                                }
+                                else if (state == StartupTaskState.DisabledByUser)
+                                {
+                                    MessageBox.Show("The startup has been disabled by the user.", "ShareX");
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Startup successfully disabled.", "ShareX");
+                                return true;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Startup configuration failed:\r\n" + e.ToString(), "ShareX");
+                    return false;
+                }
+            }
+
+            MessageBox.Show("Startup configuration failed.", "ShareX");
+            return false;
         }
 
         public static bool CheckStartWithWindows()

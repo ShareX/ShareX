@@ -255,4 +255,11 @@ namespace ShareX
     {
         Default, Light, Transparent
     }
+
+    public enum StartupTaskState
+    {
+        Disabled = 0,
+        DisabledByUser = 1,
+        Enabled = 2
+    }
 }
