@@ -42,12 +42,14 @@ namespace ShareX
         {
             get
             {
-#if STEAM
-                return ShareXBuild.Steam;
+#if DEBUG
+                return ShareXBuild.Debug;
 #elif RELEASE
                 return ShareXBuild.Release;
-#elif DEBUG
-                return ShareXBuild.Debug;
+#elif STEAM
+                return ShareXBuild.Steam;
+#elif WindowsStore
+                return ShareXBuild.WindowsStore;
 #else
                 return ShareXBuild.Unknown;
 #endif
