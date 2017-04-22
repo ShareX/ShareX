@@ -13,7 +13,7 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
 OutputBaseFilename=Recorder-devices-setup
-OutputDir=Output\
+OutputDir=..\..\Output\
 ShowLanguageDialog=no
 
 [Languages]
