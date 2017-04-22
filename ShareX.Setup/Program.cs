@@ -69,11 +69,14 @@ namespace ShareX.Setup
         private static string WindowsStoreDir => Path.Combine(BinDir, "WindowsStore");
         private static string WindowsStoreDebugDir => Path.Combine(BinDir, "WindowsStoreDebug");
 
-        private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
-        private static string OutputDir => Path.Combine(InnoSetupDir, "Output");
+        private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
         private static string WindowsStoreOutputDir => Path.Combine(OutputDir, "ShareX-WindowsStore");
+
+        private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
+        private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
+        private static string WindowsStorePackageFilesDir => Path.Combine(SetupDir, "WindowsStore");
         private static string PortableAppsOutputDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
@@ -261,7 +264,7 @@ namespace ShareX.Setup
             }
             else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-
+                Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)
             {
