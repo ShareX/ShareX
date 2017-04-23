@@ -202,6 +202,18 @@
             this.lblFTPURLPath = new System.Windows.Forms.Label();
             this.lblFTPRemoteDirectory = new System.Windows.Forms.Label();
             this.txtFTPRemoteDirectory = new System.Windows.Forms.TextBox();
+            this.gbSFTP = new System.Windows.Forms.GroupBox();
+            this.txtSFTPKeyPassphrase = new System.Windows.Forms.TextBox();
+            this.btnSFTPKeyLocationBrowse = new System.Windows.Forms.Button();
+            this.lblSFTPKeyPassphrase = new System.Windows.Forms.Label();
+            this.txtSFTPKeyLocation = new System.Windows.Forms.TextBox();
+            this.lblSFTPKeyLocation = new System.Windows.Forms.Label();
+            this.gbFTPS = new System.Windows.Forms.GroupBox();
+            this.btnFTPSCertificateLocationBrowse = new System.Windows.Forms.Button();
+            this.txtFTPSCertificateLocation = new System.Windows.Forms.TextBox();
+            this.lblFTPSCertificateLocation = new System.Windows.Forms.Label();
+            this.cbFTPSEncryption = new System.Windows.Forms.ComboBox();
+            this.lblFTPSEncryption = new System.Windows.Forms.Label();
             this.btnFTPDuplicate = new System.Windows.Forms.Button();
             this.btnFTPRemove = new System.Windows.Forms.Button();
             this.btnFTPAdd = new System.Windows.Forms.Button();
@@ -636,18 +648,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.gbFTPS = new System.Windows.Forms.GroupBox();
-            this.lblFTPSEncryption = new System.Windows.Forms.Label();
-            this.cbFTPSEncryption = new System.Windows.Forms.ComboBox();
-            this.lblFTPSCertificateLocation = new System.Windows.Forms.Label();
-            this.txtFTPSCertificateLocation = new System.Windows.Forms.TextBox();
-            this.btnFTPSCertificateLocationBrowse = new System.Windows.Forms.Button();
-            this.gbSFTP = new System.Windows.Forms.GroupBox();
-            this.lblSFTPKeyLocation = new System.Windows.Forms.Label();
-            this.txtSFTPKeyLocation = new System.Windows.Forms.TextBox();
-            this.lblSFTPKeyPassphrase = new System.Windows.Forms.Label();
-            this.btnSFTPKeyLocationBrowse = new System.Windows.Forms.Button();
-            this.txtSFTPKeyPassphrase = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -675,6 +675,8 @@
             this.pFTPTransferMode.SuspendLayout();
             this.pFTPProtocol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFTPPort)).BeginInit();
+            this.gbSFTP.SuspendLayout();
+            this.gbFTPS.SuspendLayout();
             this.tpDropbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).BeginInit();
             this.tpOneDrive.SuspendLayout();
@@ -741,8 +743,6 @@
             this.tpVgyme.SuspendLayout();
             this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.gbFTPS.SuspendLayout();
-            this.gbSFTP.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1820,6 +1820,7 @@
             // 
             // gbFTPAccount
             // 
+            this.gbFTPAccount.Controls.Add(this.gbSFTP);
             this.gbFTPAccount.Controls.Add(this.cbFTPAppendRemoteDirectory);
             this.gbFTPAccount.Controls.Add(this.btnFTPTest);
             this.gbFTPAccount.Controls.Add(this.lblFTPProtocol);
@@ -1846,7 +1847,6 @@
             this.gbFTPAccount.Controls.Add(this.lblFTPURLPath);
             this.gbFTPAccount.Controls.Add(this.lblFTPRemoteDirectory);
             this.gbFTPAccount.Controls.Add(this.txtFTPRemoteDirectory);
-            this.gbFTPAccount.Controls.Add(this.gbSFTP);
             this.gbFTPAccount.Controls.Add(this.gbFTPS);
             resources.ApplyResources(this.gbFTPAccount, "gbFTPAccount");
             this.gbFTPAccount.Name = "gbFTPAccount";
@@ -2062,6 +2062,89 @@
             resources.ApplyResources(this.txtFTPRemoteDirectory, "txtFTPRemoteDirectory");
             this.txtFTPRemoteDirectory.Name = "txtFTPRemoteDirectory";
             this.txtFTPRemoteDirectory.TextChanged += new System.EventHandler(this.txtFTPRemoteDirectory_TextChanged);
+            // 
+            // gbSFTP
+            // 
+            this.gbSFTP.Controls.Add(this.txtSFTPKeyPassphrase);
+            this.gbSFTP.Controls.Add(this.btnSFTPKeyLocationBrowse);
+            this.gbSFTP.Controls.Add(this.lblSFTPKeyPassphrase);
+            this.gbSFTP.Controls.Add(this.txtSFTPKeyLocation);
+            this.gbSFTP.Controls.Add(this.lblSFTPKeyLocation);
+            resources.ApplyResources(this.gbSFTP, "gbSFTP");
+            this.gbSFTP.Name = "gbSFTP";
+            this.gbSFTP.TabStop = false;
+            // 
+            // txtSFTPKeyPassphrase
+            // 
+            resources.ApplyResources(this.txtSFTPKeyPassphrase, "txtSFTPKeyPassphrase");
+            this.txtSFTPKeyPassphrase.Name = "txtSFTPKeyPassphrase";
+            this.txtSFTPKeyPassphrase.UseSystemPasswordChar = true;
+            this.txtSFTPKeyPassphrase.TextChanged += new System.EventHandler(this.txtSFTPKeyPassphrase_TextChanged);
+            // 
+            // btnSFTPKeyLocationBrowse
+            // 
+            resources.ApplyResources(this.btnSFTPKeyLocationBrowse, "btnSFTPKeyLocationBrowse");
+            this.btnSFTPKeyLocationBrowse.Name = "btnSFTPKeyLocationBrowse";
+            this.btnSFTPKeyLocationBrowse.UseVisualStyleBackColor = true;
+            this.btnSFTPKeyLocationBrowse.Click += new System.EventHandler(this.btnSFTPKeyLocationBrowse_Click);
+            // 
+            // lblSFTPKeyPassphrase
+            // 
+            resources.ApplyResources(this.lblSFTPKeyPassphrase, "lblSFTPKeyPassphrase");
+            this.lblSFTPKeyPassphrase.Name = "lblSFTPKeyPassphrase";
+            // 
+            // txtSFTPKeyLocation
+            // 
+            resources.ApplyResources(this.txtSFTPKeyLocation, "txtSFTPKeyLocation");
+            this.txtSFTPKeyLocation.Name = "txtSFTPKeyLocation";
+            this.txtSFTPKeyLocation.TextChanged += new System.EventHandler(this.txtSFTPKeyLocation_TextChanged);
+            // 
+            // lblSFTPKeyLocation
+            // 
+            resources.ApplyResources(this.lblSFTPKeyLocation, "lblSFTPKeyLocation");
+            this.lblSFTPKeyLocation.Name = "lblSFTPKeyLocation";
+            // 
+            // gbFTPS
+            // 
+            this.gbFTPS.Controls.Add(this.btnFTPSCertificateLocationBrowse);
+            this.gbFTPS.Controls.Add(this.txtFTPSCertificateLocation);
+            this.gbFTPS.Controls.Add(this.lblFTPSCertificateLocation);
+            this.gbFTPS.Controls.Add(this.cbFTPSEncryption);
+            this.gbFTPS.Controls.Add(this.lblFTPSEncryption);
+            resources.ApplyResources(this.gbFTPS, "gbFTPS");
+            this.gbFTPS.Name = "gbFTPS";
+            this.gbFTPS.TabStop = false;
+            // 
+            // btnFTPSCertificateLocationBrowse
+            // 
+            resources.ApplyResources(this.btnFTPSCertificateLocationBrowse, "btnFTPSCertificateLocationBrowse");
+            this.btnFTPSCertificateLocationBrowse.Name = "btnFTPSCertificateLocationBrowse";
+            this.btnFTPSCertificateLocationBrowse.UseVisualStyleBackColor = true;
+            this.btnFTPSCertificateLocationBrowse.Click += new System.EventHandler(this.btnFTPSCertificateLocationBrowse_Click);
+            // 
+            // txtFTPSCertificateLocation
+            // 
+            resources.ApplyResources(this.txtFTPSCertificateLocation, "txtFTPSCertificateLocation");
+            this.txtFTPSCertificateLocation.Name = "txtFTPSCertificateLocation";
+            this.txtFTPSCertificateLocation.TextChanged += new System.EventHandler(this.txtFTPSCertificateLocation_TextChanged);
+            // 
+            // lblFTPSCertificateLocation
+            // 
+            resources.ApplyResources(this.lblFTPSCertificateLocation, "lblFTPSCertificateLocation");
+            this.lblFTPSCertificateLocation.Name = "lblFTPSCertificateLocation";
+            // 
+            // cbFTPSEncryption
+            // 
+            this.cbFTPSEncryption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFTPSEncryption.FormattingEnabled = true;
+            resources.ApplyResources(this.cbFTPSEncryption, "cbFTPSEncryption");
+            this.cbFTPSEncryption.Name = "cbFTPSEncryption";
+            this.cbFTPSEncryption.SelectedIndexChanged += new System.EventHandler(this.cbFTPSEncryption_SelectedIndexChanged);
+            // 
+            // lblFTPSEncryption
+            // 
+            resources.ApplyResources(this.lblFTPSEncryption, "lblFTPSEncryption");
+            this.lblFTPSEncryption.Name = "lblFTPSEncryption";
             // 
             // btnFTPDuplicate
             // 
@@ -5179,89 +5262,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // gbFTPS
-            // 
-            this.gbFTPS.Controls.Add(this.btnFTPSCertificateLocationBrowse);
-            this.gbFTPS.Controls.Add(this.txtFTPSCertificateLocation);
-            this.gbFTPS.Controls.Add(this.lblFTPSCertificateLocation);
-            this.gbFTPS.Controls.Add(this.cbFTPSEncryption);
-            this.gbFTPS.Controls.Add(this.lblFTPSEncryption);
-            resources.ApplyResources(this.gbFTPS, "gbFTPS");
-            this.gbFTPS.Name = "gbFTPS";
-            this.gbFTPS.TabStop = false;
-            // 
-            // lblFTPSEncryption
-            // 
-            resources.ApplyResources(this.lblFTPSEncryption, "lblFTPSEncryption");
-            this.lblFTPSEncryption.Name = "lblFTPSEncryption";
-            // 
-            // cbFTPSEncryption
-            // 
-            this.cbFTPSEncryption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFTPSEncryption.FormattingEnabled = true;
-            resources.ApplyResources(this.cbFTPSEncryption, "cbFTPSEncryption");
-            this.cbFTPSEncryption.Name = "cbFTPSEncryption";
-            this.cbFTPSEncryption.SelectedIndexChanged += new System.EventHandler(this.cbFTPSEncryption_SelectedIndexChanged);
-            // 
-            // lblFTPSCertificateLocation
-            // 
-            resources.ApplyResources(this.lblFTPSCertificateLocation, "lblFTPSCertificateLocation");
-            this.lblFTPSCertificateLocation.Name = "lblFTPSCertificateLocation";
-            // 
-            // txtFTPSCertificateLocation
-            // 
-            resources.ApplyResources(this.txtFTPSCertificateLocation, "txtFTPSCertificateLocation");
-            this.txtFTPSCertificateLocation.Name = "txtFTPSCertificateLocation";
-            this.txtFTPSCertificateLocation.TextChanged += new System.EventHandler(this.txtFTPSCertificateLocation_TextChanged);
-            // 
-            // btnFTPSCertificateLocationBrowse
-            // 
-            resources.ApplyResources(this.btnFTPSCertificateLocationBrowse, "btnFTPSCertificateLocationBrowse");
-            this.btnFTPSCertificateLocationBrowse.Name = "btnFTPSCertificateLocationBrowse";
-            this.btnFTPSCertificateLocationBrowse.UseVisualStyleBackColor = true;
-            this.btnFTPSCertificateLocationBrowse.Click += new System.EventHandler(this.btnFTPSCertificateLocationBrowse_Click);
-            // 
-            // gbSFTP
-            // 
-            this.gbSFTP.Controls.Add(this.txtSFTPKeyPassphrase);
-            this.gbSFTP.Controls.Add(this.btnSFTPKeyLocationBrowse);
-            this.gbSFTP.Controls.Add(this.lblSFTPKeyPassphrase);
-            this.gbSFTP.Controls.Add(this.txtSFTPKeyLocation);
-            this.gbSFTP.Controls.Add(this.lblSFTPKeyLocation);
-            resources.ApplyResources(this.gbSFTP, "gbSFTP");
-            this.gbSFTP.Name = "gbSFTP";
-            this.gbSFTP.TabStop = false;
-            // 
-            // lblSFTPKeyLocation
-            // 
-            resources.ApplyResources(this.lblSFTPKeyLocation, "lblSFTPKeyLocation");
-            this.lblSFTPKeyLocation.Name = "lblSFTPKeyLocation";
-            // 
-            // txtSFTPKeyLocation
-            // 
-            resources.ApplyResources(this.txtSFTPKeyLocation, "txtSFTPKeyLocation");
-            this.txtSFTPKeyLocation.Name = "txtSFTPKeyLocation";
-            this.txtSFTPKeyLocation.TextChanged += new System.EventHandler(this.txtSFTPKeyLocation_TextChanged);
-            // 
-            // lblSFTPKeyPassphrase
-            // 
-            resources.ApplyResources(this.lblSFTPKeyPassphrase, "lblSFTPKeyPassphrase");
-            this.lblSFTPKeyPassphrase.Name = "lblSFTPKeyPassphrase";
-            // 
-            // btnSFTPKeyLocationBrowse
-            // 
-            resources.ApplyResources(this.btnSFTPKeyLocationBrowse, "btnSFTPKeyLocationBrowse");
-            this.btnSFTPKeyLocationBrowse.Name = "btnSFTPKeyLocationBrowse";
-            this.btnSFTPKeyLocationBrowse.UseVisualStyleBackColor = true;
-            this.btnSFTPKeyLocationBrowse.Click += new System.EventHandler(this.btnSFTPKeyLocationBrowse_Click);
-            // 
-            // txtSFTPKeyPassphrase
-            // 
-            resources.ApplyResources(this.txtSFTPKeyPassphrase, "txtSFTPKeyPassphrase");
-            this.txtSFTPKeyPassphrase.Name = "txtSFTPKeyPassphrase";
-            this.txtSFTPKeyPassphrase.UseSystemPasswordChar = true;
-            this.txtSFTPKeyPassphrase.TextChanged += new System.EventHandler(this.txtSFTPKeyPassphrase_TextChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5318,6 +5318,10 @@
             this.pFTPProtocol.ResumeLayout(false);
             this.pFTPProtocol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFTPPort)).EndInit();
+            this.gbSFTP.ResumeLayout(false);
+            this.gbSFTP.PerformLayout();
+            this.gbFTPS.ResumeLayout(false);
+            this.gbFTPS.PerformLayout();
             this.tpDropbox.ResumeLayout(false);
             this.tpDropbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).EndInit();
@@ -5436,10 +5440,6 @@
             this.tpSomeImage.ResumeLayout(false);
             this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.gbFTPS.ResumeLayout(false);
-            this.gbFTPS.PerformLayout();
-            this.gbSFTP.ResumeLayout(false);
-            this.gbSFTP.PerformLayout();
             this.ResumeLayout(false);
 
         }

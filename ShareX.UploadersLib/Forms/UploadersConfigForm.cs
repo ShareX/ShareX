@@ -1298,6 +1298,8 @@ namespace ShareX.UploadersLib
             FTPAddAccount(new FTPAccount());
 
             cbFTPAccounts.SelectedIndex = cbFTPAccounts.Items.Count - 1;
+
+            txtFTPName.Focus();
         }
 
         private void btnFTPRemove_Click(object sender, EventArgs e)
@@ -1316,6 +1318,8 @@ namespace ShareX.UploadersLib
                 else
                 {
                     FTPClearFields();
+
+                    btnFTPAdd.Focus();
                 }
 
                 FTPUpdateControls();
