@@ -384,7 +384,9 @@ namespace ShareX
 
         private static void CheckPersonalPathConfig()
         {
+#if !WindowsStore
             MigratePersonalPathConfig();
+#endif
 
             string customPersonalPath = ReadPersonalPathConfig();
 
