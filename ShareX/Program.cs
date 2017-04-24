@@ -116,9 +116,14 @@ namespace ShareX
                     return oldPath;
                 }
 
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), AppName, PersonalPathConfigFileName);
+                return CurrentPersonalPathConfigFilePath;
             }
         }
+
+        private static readonly string CurrentPersonalPathConfigFilePath = Path.Combine(DefaultPersonalFolder, PersonalPathConfigFileName);
+
+        private static readonly string PreviousPersonalPathConfigFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            AppName, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
         private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
@@ -379,6 +384,8 @@ namespace ShareX
 
         private static void CheckPersonalPathConfig()
         {
+            MigratePersonalPathConfig();
+
             string customPersonalPath = ReadPersonalPathConfig();
 
             if (!string.IsNullOrEmpty(customPersonalPath))
@@ -393,6 +400,24 @@ namespace ShareX
             else if (Portable)
             {
                 CustomPersonalPath = PortablePersonalFolder;
+            }
+        }
+
+        private static void MigratePersonalPathConfig()
+        {
+            if (File.Exists(PreviousPersonalPathConfigFilePath))
+            {
+                try
+                {
+                    Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
+                    File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
+                    File.Delete(PreviousPersonalPathConfigFilePath);
+                    Directory.Delete(Path.GetDirectoryName(PreviousPersonalPathConfigFilePath));
+                }
+                catch (Exception e)
+                {
+                    e.ShowError();
+                }
             }
         }
 
