@@ -461,7 +461,7 @@ namespace ShareX
             {
                 if (showInApp)
                 {
-                    File.Create(path).Dispose();
+                    Helpers.CreateEmptyFile(path);
                 }
                 else if (File.Exists(path))
                 {

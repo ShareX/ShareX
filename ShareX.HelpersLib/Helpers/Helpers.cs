@@ -1207,5 +1207,10 @@ namespace ShareX.HelpersLib
         {
             return ComputeHMACSHA256(Encoding.UTF8.GetBytes(data), key);
         }
+
+        public static void CreateEmptyFile(string path)
+        {
+            File.Create(path).Dispose();
+        }
     }
 }
