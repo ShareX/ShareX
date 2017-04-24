@@ -125,8 +125,10 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("X-Amz-SignedHeaders", signedHeaders);
 
             string uploadPath = GetUploadPath(fileName);
-            if (forcePathStyle) uploadPath = URLHelpers.CombineURL(Settings.Bucket, uploadPath);
-            string canonicalURI = URLHelpers.AddSlash(uploadPath, SlashType.Prefix);
+
+            string canonicalURI = uploadPath;
+            if (forcePathStyle) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
+            canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
             string canonicalQueryString = URLHelpers.CreateQuery(args);
@@ -176,7 +178,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return new UploadResult
             {
                 IsSuccess = true,
-                URL = GenerateURL(fileName)
+                URL = GenerateURL(uploadPath)
             };
         }
 
@@ -221,18 +223,16 @@ namespace ShareX.UploadersLib.FileUploaders
             return serviceAndRegion.Substring(separatorIndex + 1);
         }
 
-        private string GetUploadPath(string fileName)
+        public string GetUploadPath(string fileName)
         {
             string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(path, fileName);
         }
 
-        public string GenerateURL(string fileName)
+        public string GenerateURL(string uploadPath)
         {
             if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
-                string uploadPath = GetUploadPath(fileName);
-
                 string url;
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
