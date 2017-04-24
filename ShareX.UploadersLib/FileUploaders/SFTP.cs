@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult();
 
             string subFolderPath = Account.GetSubFolderPath();
-            string path = subFolderPath.CombineURL(fileName);
+            string path = URLHelpers.CombineURL(subFolderPath, fileName);
             string url = Account.GetUriPath(fileName, subFolderPath);
 
             OnEarlyURLCopyRequested(url);

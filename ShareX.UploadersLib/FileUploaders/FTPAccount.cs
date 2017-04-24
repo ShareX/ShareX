@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string exampleFilename = "screenshot.png";
+        private string exampleFilename = "example.png";
 
         [Category("FTP"), Description("Preview of the FTP path based on the settings above")]
         public string PreviewFtpPath => GetFtpPath(exampleFilename);

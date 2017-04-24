@@ -123,7 +123,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
 
-                if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
+                if (URLHelpers.IsValidURL(ur.Response))
                 {
                     if (Settings.RawURL)
                     {

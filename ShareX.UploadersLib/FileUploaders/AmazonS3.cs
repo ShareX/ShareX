@@ -223,7 +223,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return serviceAndRegion.Substring(separatorIndex + 1);
         }
 
-        public string GetUploadPath(string fileName)
+        private string GetUploadPath(string fileName)
         {
             string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(path, fileName);
@@ -248,6 +248,12 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return "";
+        }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
         }
 
         private string CreateCanonicalHeaders(NameValueCollection headers)

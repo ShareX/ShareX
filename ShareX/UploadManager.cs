@@ -168,7 +168,7 @@ namespace ShareX
                 {
                     string url = text.Trim();
 
-                    if (URLHelpers.IsValidURLRegex(url))
+                    if (URLHelpers.IsValidURL(url))
                     {
                         if (taskSettings.UploadSettings.ClipboardUploadURLContents)
                         {
@@ -276,7 +276,7 @@ namespace ShareX
             {
                 string text = Clipboard.GetText();
 
-                if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                if (URLHelpers.IsValidURL(text))
                 {
                     inputText = text;
                 }

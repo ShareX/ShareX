@@ -756,7 +756,7 @@ namespace ShareX
                     continue;
                 }
 
-                if (URLHelpers.IsValidURLRegex(command.Command))
+                if (URLHelpers.IsValidURL(command.Command))
                 {
                     UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
                 }

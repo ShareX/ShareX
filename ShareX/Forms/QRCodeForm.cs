@@ -60,7 +60,7 @@ namespace ShareX
                 {
                     text = Clipboard.GetText();
 
-                    if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                    if (URLHelpers.IsValidURL(text))
                     {
                         txtQRCode.Text = text;
                     }
