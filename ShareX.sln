@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Steam", "ShareX.Stea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.NativeMessagingHost", "ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj", "{254E398D-F7F5-4B2A-9024-5C121EA6C564}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.DesktopBridgeHelper", "ShareX.DesktopBridgeHelper\ShareX.DesktopBridgeHelper.csproj", "{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -154,8 +156,8 @@ Global
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -164,8 +166,18 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
+		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
+		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Steam|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Steam|Any CPU.Build.0 = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

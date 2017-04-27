@@ -32,7 +32,7 @@
         </uap:DefaultTile>
       </uap:VisualElements>
       <Extensions>
-        <desktop:Extension Category="windows.startupTask" Executable="ShareX.exe" EntryPoint="Windows.FullTrustApplication">
+        <desktop:Extension Category="windows.startupTask" Executable="ShareX_DesktopBridgeHelper.exe" EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask TaskId="ShareX" Enabled="true" DisplayName="ShareX" />
         </desktop:Extension>
       </Extensions>

@@ -49,8 +49,8 @@ namespace ShareX.Setup
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
-            WindowsStore = CreateWindowsStoreFolder | OpenOutputDirectory,
-            WindowsStoreDebug = CreateWindowsStoreDebugFolder | OpenOutputDirectory,
+            WindowsStore = CreateWindowsStoreFolder,
+            WindowsStoreDebug = CreateWindowsStoreDebugFolder,
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
@@ -82,6 +82,7 @@ namespace ShareX.Setup
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
+        private static string DesktopBridgeHelperDir => Path.Combine(ParentDir, @"ShareX.DesktopBridgeHelper\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
@@ -264,6 +265,7 @@ namespace ShareX.Setup
             }
             else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
+                Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)

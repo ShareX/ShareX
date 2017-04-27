@@ -91,7 +91,7 @@ namespace ShareX
 
         private static bool CreateStartupShortcutWindowsStore(bool create)
         {
-            string filepath = Helpers.GetAbsolutePath("DesktopBridgeHelper.exe");
+            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
 
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
