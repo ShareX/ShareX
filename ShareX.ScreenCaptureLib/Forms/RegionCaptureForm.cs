@@ -83,13 +83,12 @@ namespace ShareX.ScreenCaptureLib
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
-        private Pen borderPen, borderDotPen, textOuterBorderPen, textInnerBorderPen, markerPen;
+        private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen;
         private Brush nodeBackgroundBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
         private bool pause, isKeyAllowed;
-        private ColorBlinkAnimation borderColorAnimation;
         private RectangleAnimation regionAnimation;
         private Bitmap bmpBackgroundImage;
 
@@ -107,13 +106,6 @@ namespace ShareX.ScreenCaptureLib
             DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
-            borderColorAnimation = new ColorBlinkAnimation()
-            {
-                FromColor = Color.FromArgb(30, 30, 30),
-                ToColor = Color.FromArgb(100, 100, 100),
-                Duration = TimeSpan.FromMilliseconds(1500)
-            };
-            borderColorAnimation.Start();
             regionAnimation = new RectangleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(250)
@@ -121,6 +113,7 @@ namespace ShareX.ScreenCaptureLib
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
+            borderDotStaticPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
             nodeBackgroundBrush = new SolidBrush(Color.White);
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
@@ -474,13 +467,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                // Blink borders of all regions slightly to make non active regions to be visible in both dark and light backgrounds
-                borderColorAnimation.Update();
-
-                using (Pen blinkBorderPen = new Pen(borderColorAnimation.CurrentColor))
-                {
-                    g.DrawPath(blinkBorderPen, regionDrawPath);
-                }
+                g.DrawPath(borderPen, regionDrawPath);
+                g.DrawPath(borderDotStaticPen, regionDrawPath);
             }
 
             // Draw effect shapes
@@ -1195,6 +1183,7 @@ namespace ShareX.ScreenCaptureLib
             if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
             if (borderPen != null) borderPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
+            if (borderDotStaticPen != null) borderDotStaticPen.Dispose();
             if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
             if (infoFont != null) infoFont.Dispose();
             if (infoFontMedium != null) infoFontMedium.Dispose();
