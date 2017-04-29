@@ -142,22 +142,22 @@
     <value>垂直线</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>尺寸:</value>
+    <value>尺寸：</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
     <value>您可以点击外面隐藏/显示此面板.</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>黑色,  白色:</value>
+    <value>黑色,  白色：</value>
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
-    <value>梯度:</value>
+    <value>梯度：</value>
   </data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
-    <value>红,  绿,  蓝:</value>
+    <value>红,  绿,  蓝：</value>
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
-    <value>形状:</value>
+    <value>形状：</value>
   </data>
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
     <value>屏幕撕裂测试</value>

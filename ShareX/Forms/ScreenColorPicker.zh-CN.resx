@@ -121,7 +121,7 @@
     <value>启动屏幕的颜色选择器</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
-    <value>光标位置:</value>
+    <value>光标位置：</value>
   </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>按下"Ctrl"键,   停止当前窗口的屏幕拾色器。</value>

@@ -309,7 +309,7 @@
     <value>FTP客户端</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>哈希值(Hash)检查</value>
+    <value>哈希（Hash）检查</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>图像效果</value>
@@ -333,7 +333,7 @@
     <value>二维码</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>捕捉矩形区域（光）</value>
+    <value>捕捉矩形区域（高亮）</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>捕捉矩形区域</value>
@@ -490,10 +490,10 @@
     <value>颜色选择器</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>屏幕录制(GIF)</value>
+    <value>屏幕录制（GIF）</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>使用上一次的区域开始屏幕录制(GIF)</value>
+    <value>使用上一次的区域开始屏幕录制（GIF）</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>捕捉矩形区域（透明度）</value>
@@ -502,13 +502,13 @@
     <value>捕捉自定义区域</value>
   </data>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (高品质)</value>
+    <value>FFmpeg（高质量）</value>
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET(质量差)</value>
+    <value>.NET（低质量）</value>
   </data>
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>Octree quantizer (中等品质)</value>
+    <value>Octree quantizer（中等质量）</value>
   </data>
   <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
     <value>屏幕捕捉</value>
@@ -613,7 +613,7 @@
     <value>屏幕录制</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>使用活动窗口开始屏幕录制(GIF)</value>
+    <value>使用活动窗口开始屏幕录制（GIF）</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
     <value>屏幕录制</value>
@@ -625,7 +625,7 @@
     <value>工具</value>
   </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>更改DNS</value>
+    <value>修改 DNS</value>
   </data>
   <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
     <value>工具</value>
@@ -643,7 +643,7 @@
     <value>屏幕捕获</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
-    <value>禁用/启用热键</value>
+    <value>禁用/启用快捷键</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>其他</value>
@@ -731,7 +731,7 @@
     <value>当前分钟</value>
   </data>
   <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>本月</value>
+    <value>当前月度</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>当月名（本地语言）</value>
@@ -782,10 +782,10 @@
     <value>图像宽度</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>本年度</value>
+    <value>当前年度</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>本年度（2位）</value>
+    <value>当前年度（2位）</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>显示快速任务菜单</value>
@@ -945,5 +945,32 @@
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>绘图：言语气球</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
+    <value>进度: {0}</value>
+  </data>
+  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
+    <value>取消下载</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>切换动作工作栏</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>退出 Sharex</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>绘图：文字（轮廓线）</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>绘图：文字（底色）</value>
+  </data>
+  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
+    <value>检测可用的代理。请从主菜单打开应用程序设置，选择代理并设置代理服务器。</value>
   </data>
 </root>

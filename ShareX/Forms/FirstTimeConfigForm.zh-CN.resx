@@ -133,6 +133,9 @@
     <value>当ShareX打开时，在Steam内显示ShareX</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>ShareX首次配置</value>
+    <value>ShareX 首次配置</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>确定</value>
   </data>
 </root>

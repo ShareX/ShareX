@@ -135,4 +135,19 @@
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>缩略图</value>
   </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>最小 100</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>最小 250</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>最小 1000</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>无限制</value>
+  </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>最大图像限制</value>
+  </data>
 </root>

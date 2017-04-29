@@ -139,13 +139,13 @@
     <value>0 - 25（0禁用）</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>缓冲区大小:</value>
+    <value>缓冲区大小：</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX个人文件夹:</value>
+    <value>ShareX 个人文件夹：</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意: 必须重新打开ShareX才能使个人文件夹更改生效.</value>
+    <value>注意: 必须重新打开 ShareX 才能使个人文件夹更改生效。</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>综合</value>
@@ -163,10 +163,10 @@
     <value>开始时最小化到托盘</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>在"发送到"菜单显示ShareX</value>
+    <value>在 "发送到" 菜单显示 ShareX</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Windows启动时运行ShareX </value>
+    <value>Windows 启动时运行 ShareX </value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>记住主窗口的位置</value>
@@ -199,7 +199,7 @@
     <value>辅助图像上传程序</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>同时上传限制:</value>
+    <value>同时上传限制：</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>在任务栏显示进度</value>
@@ -211,13 +211,13 @@
     <value>图片打印设置..</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>域名:</value>
+    <value>域名：</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>代理服务器的配置:</value>
+    <value>代理服务器的配置：</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>端口:</value>
+    <value>端口：</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>使用自定义截图文件夹:</value>
@@ -229,7 +229,7 @@
     <value>在系统托盘显示进展</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
+    <value>用户名：</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>记住主窗口的大小</value>
@@ -244,7 +244,7 @@
     <value>不显示图像的打印设置对话框</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>密码:</value>
+    <value>密码：</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>重试</value>
@@ -253,7 +253,7 @@
     <value>上传</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>上传失败重试次数:</value>
+    <value>上传失败重试次数：</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>格式</value>
@@ -262,10 +262,10 @@
     <value>辅助文本上传程序</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>当ShareX打开时，在Steam内显示ShareX</value>
+    <value>当 ShareX 打开时，在 Steam 状态显示 ShareX</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>在Windows资源管理器右键菜单显示"使用ShareX上传"按钮</value>
+    <value>在 Windows 资源管理器右键菜单显示 "使用ShareX上传" 按钮</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>常规</value>
@@ -335,5 +335,38 @@
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>在启动主窗口时显示近期的任务</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome 扩展程序</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>安装 ShareX Chrome 扩展程序</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>启用 Chrome 扩展程序支持</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>启用 Firefox 扩展程序支持</value>
+  </data>
+  <data name="gpFirefox.Text" xml:space="preserve">
+    <value>Firefox 扩展程序支持</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>安装 Sharex Firefox 扩展程序支持</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>重置设置...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
   </data>
 </root>

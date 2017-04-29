@@ -184,7 +184,7 @@
     <value>文本</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>缩略图网址</value>
+    <value>缩略图URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
