@@ -124,10 +124,10 @@
     <value>开始滚动捕捉</value>
   </data>
   <data name="lblScrollDelay.Text" xml:space="preserve">
-    <value>滚动延迟:</value>
+    <value>滚动延迟：</value>
   </data>
   <data name="lblMaximumScrollCount.Text" xml:space="preserve">
-    <value>最大滚动次数:</value>
+    <value>最大滚动次数：</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>捕捉</value>
@@ -148,7 +148,7 @@
     <value>（可选）选择窗口中自定义区域...</value>
   </data>
   <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>开始延迟:</value>
+    <value>开始延迟：</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>捕捉区域选择后立即开始滚动捕捉</value>
@@ -160,7 +160,7 @@
     <value>检测滚动结束</value>
   </data>
   <data name="lblScrollMethod.Text" xml:space="preserve">
-    <value>滚动方式:</value>
+    <value>滚动方式：</value>
   </data>
   <data name="tpOutput.Text" xml:space="preserve">
     <value>输出</value>
@@ -169,10 +169,10 @@
     <value>图像</value>
   </data>
   <data name="lblImageCount.Text" xml:space="preserve">
-    <value>图像数:</value>
+    <value>图像数：</value>
   </data>
   <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>删除最后:</value>
+    <value>删除最后：</value>
   </data>
   <data name="btnResetCombine.Text" xml:space="preserve">
     <value>重置输出选项</value>

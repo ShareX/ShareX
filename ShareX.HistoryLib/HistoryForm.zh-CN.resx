@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>历史记录</value>
+    <value>ShareX - 历史记录</value>
   </data>
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>使用过滤器</value>
@@ -127,10 +127,10 @@
     <value>删除过滤器</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>日期过滤器:</value>
+    <value>日期过滤器：</value>
   </data>
   <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>文件名过滤器:</value>
+    <value>文件名过滤器：</value>
   </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>包含</value>
@@ -145,10 +145,10 @@
     <value>精确匹配</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>域名过滤器:</value>
+    <value>域名过滤器：</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>文件类型过滤器:</value>
+    <value>文件类型过滤器：</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>日期时间</value>
@@ -160,9 +160,9 @@
     <value>过滤器</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>从:</value>
+    <value>从：</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>到:</value>
+    <value>到：</value>
   </data>
 </root>

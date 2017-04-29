@@ -130,6 +130,6 @@
     <value>概要</value>
   </data>
   <data name="lblIssueId.Text" xml:space="preserve">
-    <value>问题ID:</value>
+    <value>问题ID：</value>
   </data>
 </root>

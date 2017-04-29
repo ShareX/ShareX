@@ -124,6 +124,6 @@
     <value>普通用户</value>
   </data>
   <data name="lblAccountType.Text" xml:space="preserve">
-    <value>账号类型:</value>
+    <value>账号类型：</value>
   </data>
 </root>

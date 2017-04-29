@@ -127,16 +127,16 @@
     <value>开始</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>文件路径:</value>
+    <value>文件路径：</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
-    <value>哈希类型:</value>
+    <value>哈希（Hash）类型：</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
-    <value>结果:</value>
+    <value>结果：</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
-    <value>目标:</value>
+    <value>目标：</value>
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>文件哈希（Hash）检查</value>
