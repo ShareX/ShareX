@@ -148,9 +148,6 @@ Une valeur élevée signifie une mauvaise qualité d'image mais un fichier lége
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Télécharger</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Aide...</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Qualité :</value>
   </data>

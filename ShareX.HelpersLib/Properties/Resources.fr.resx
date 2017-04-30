@@ -396,7 +396,7 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Ajouter des effets d'image / filigrane</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Ouvrir dans l'éditeur d'images</value>
+    <value>Modifier l'image</value>
   </data>
   <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
     <value>Copier le chemin du fichier dans le presse-papier</value>
@@ -945,5 +945,23 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>Simuler un appui sur la touche "Page suivante"</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Activer la barre d'outils des actions</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Dessin : Texte (arrière-plan)</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Dessin : Texte (contour)</value>
+  </data>
+  <data name="ShapeType_DrawingCrop" xml:space="preserve">
+    <value>Recadrer l'image</value>
+  </data>
+  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
+    <value>Téléchargement annulé.</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
+    <value>Progression : {0}</value>
   </data>
 </root>
