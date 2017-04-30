@@ -768,6 +768,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImage:
                     shape = new ImageDrawingShape();
                     break;
+                case ShapeType.DrawingCrop:
+                    shape = new CropDrawingShape();
+                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -1215,6 +1218,31 @@ namespace ShareX.ScreenCaptureLib
                     shape.AutoSize(true);
                     AddShape(shape);
                     SelectCurrentShape();
+                }
+            }
+        }
+
+        public void DrawRegionArea(Graphics g, Rectangle rect)
+        {
+            form.DrawRegionArea(g, rect);
+        }
+
+        public void CropArea(Rectangle rect)
+        {
+            rect.X -= form.ImageRectangle.X;
+            rect.Y -= form.ImageRectangle.Y;
+
+            rect = CaptureHelpers.ScreenToClient(rect);
+
+            rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
+
+            if (rect.IsValid() && rect.Size != form.Image.Size)
+            {
+                Image img = ImageHelpers.CropImage(form.Image, rect);
+
+                if (img != null)
+                {
+                    form.InitBackground(img);
                 }
             }
         }

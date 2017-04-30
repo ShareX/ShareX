@@ -2402,6 +2402,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crop image.
+        /// </summary>
+        internal static string ShapeType_DrawingCrop {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingCrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Ellipse.
         /// </summary>
         internal static string ShapeType_DrawingEllipse {

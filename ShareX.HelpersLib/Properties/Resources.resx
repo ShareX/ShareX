@@ -995,4 +995,7 @@ Would you like to download it?</value>
   <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
     <value>Progress: {0}</value>
   </data>
+  <data name="ShapeType_DrawingCrop" xml:space="preserve">
+    <value>Crop image</value>
+  </data>
 </root>

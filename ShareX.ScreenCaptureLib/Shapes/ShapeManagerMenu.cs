@@ -211,6 +211,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
+                else if (shapeType == ShapeType.DrawingCrop)
+                {
+                    continue;
+                }
 
                 ToolStripButton tsbShapeType = new ToolStripButton(shapeType.GetLocalizedDescription());
                 tsbShapeType.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -257,6 +261,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.DrawingImage:
                         img = Resources.image;
+                        break;
+                    case ShapeType.DrawingCrop:
+                        img = Resources.image_crop;
                         break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;

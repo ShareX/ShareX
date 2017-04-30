@@ -160,6 +160,32 @@ namespace ShareX.ScreenCaptureLib
         // Must be called before show form
         public void Prepare(Image img)
         {
+            InitBackground(img);
+
+            ShapeManager = new ShapeManager(this);
+            ShapeManager.WindowCaptureMode = Config.DetectWindows;
+            ShapeManager.IncludeControls = Config.DetectControls;
+
+            if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
+            {
+                IntPtr handle = Handle;
+
+                TaskEx.Run(() =>
+                {
+                    WindowsRectangleList wla = new WindowsRectangleList();
+                    wla.IgnoreHandle = handle;
+                    wla.IncludeChildWindows = ShapeManager.IncludeControls;
+                    ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
+                });
+            }
+        }
+
+        internal void InitBackground(Image img)
+        {
+            if (Image != null) Image.Dispose();
+            if (backgroundBrush != null) backgroundBrush.Dispose();
+            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
+
             Image = img;
 
             if (IsEditorMode)
@@ -206,25 +232,9 @@ namespace ShareX.ScreenCaptureLib
                 backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
             }
 
-            ShapeManager = new ShapeManager(this);
-            ShapeManager.WindowCaptureMode = Config.DetectWindows;
-            ShapeManager.IncludeControls = Config.DetectControls;
-
-            if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
-            {
-                IntPtr handle = Handle;
-
-                TaskEx.Run(() =>
-                {
-                    WindowsRectangleList wla = new WindowsRectangleList();
-                    wla.IgnoreHandle = handle;
-                    wla.IncludeChildWindows = ShapeManager.IncludeControls;
-                    ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
-                });
-            }
-
             if (Config.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
             {
+                if (bmpBackgroundImage != null) bmpBackgroundImage.Dispose();
                 bmpBackgroundImage = new Bitmap(Image);
             }
         }
@@ -308,19 +318,19 @@ namespace ShareX.ScreenCaptureLib
             Close(RegionResult.Monitor);
         }
 
-        public void Close(RegionResult result)
+        internal void Close(RegionResult result)
         {
             Result = result;
 
             Close();
         }
 
-        public void Pause()
+        internal void Pause()
         {
             pause = true;
         }
 
-        public void Resume()
+        internal void Resume()
         {
             pause = false;
 
@@ -517,8 +527,7 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on selection area
             if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentShapeValid)
             {
-                g.DrawRectangleProper(borderPen, ShapeManager.CurrentRectangle);
-                g.DrawRectangleProper(borderDotPen, ShapeManager.CurrentRectangle);
+                DrawRegionArea(g, ShapeManager.CurrentRectangle);
 
                 if (Mode == RegionCaptureMode.Ruler)
                 {
@@ -590,6 +599,12 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawLine(toolbarAnimationPen, toolbarAnimation2.FromPosition, toolbarAnimation2.CurrentPosition);
                 }
             }
+        }
+
+        internal void DrawRegionArea(Graphics g, Rectangle rect)
+        {
+            g.DrawRectangleProper(borderPen, rect);
+            g.DrawRectangleProper(borderDotPen, rect);
         }
 
         private void DrawObjects(Graphics g)
@@ -1060,7 +1075,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void UpdateRegionPath()
+        internal void UpdateRegionPath()
         {
             if (regionFillPath != null)
             {

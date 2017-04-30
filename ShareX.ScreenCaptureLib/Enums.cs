@@ -231,7 +231,8 @@ namespace ShareX.ScreenCaptureLib
         DrawingImage,
         EffectBlur,
         EffectPixelate,
-        EffectHighlight
+        EffectHighlight,
+        DrawingCrop
     }
 
     public enum RegionAnnotateMode
