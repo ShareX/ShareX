@@ -180,9 +180,6 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran...</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Éditeur d'images...</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Effets d'image...</value>
   </data>
@@ -447,9 +444,6 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Éditeur d'images...</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Effets d'image...</value>
   </data>
@@ -695,5 +689,17 @@
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Image OCR...</value>
+  </data>
+  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
+    <value>Modifier l'image...</value>
+  </data>
+  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
+    <value>Modifier l'image...</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Rechercher une image avec Google...</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Activer la barre d'outils des actions</value>
   </data>
 </root>

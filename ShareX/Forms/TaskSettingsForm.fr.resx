@@ -159,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Délai de la capture d'écran :</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de capture dans la fenêtre principale des paramètres des tâches</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Capture d'une région </value>
   </data>
@@ -189,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres des tâches</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres avancés dans la fenêtre principale des paramètres des tâches</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres d'outils dans la fenêtre principale des paramètres des tâches</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Ajouter...</value>
   </data>
@@ -212,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Surveiller le dossier et si un nouveau fichier est créé, le mettre en ligne</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Utiliser les actions dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
@@ -282,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nommage des fichiers</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de transfert dans la fenêtre principale des paramètres des tâches</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>IPS des GIFs :</value>
   </data>
@@ -311,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Options de l'enregistrement de l'écran...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>Encodeur GIF :</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Montrer le curseur durant l'enregistrement</value>
@@ -351,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres d'images dans la fenêtre principale des paramètres des tâches</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Qualité JPEG :</value>
   </data>
@@ -365,9 +344,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Format d'image :</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres généraux dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Jouer un son après une capture</value>
@@ -410,15 +386,6 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Remplacer le service de mise en ligne personnalisé par défaut :</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Utiliser par défaut les paramètres "Après la capture"</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Utiliser par défaut les paramètres "Après la mise en ligne"</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Utiliser par défaut les paramètres "Destination"</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Séléctionner une région...</value>
@@ -530,5 +497,35 @@
   </data>
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Détecter des régions de la fenêtre et permettre l'apparition du curseur sur la capture</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres de mise en ligne</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres des outils</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres des images</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres généraux</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres des captures</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Remplacer les actions</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres de destination</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres "Après la mise en ligne"</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres avancés</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Remplacer les paramètres "Après la capture"</value>
   </data>
 </root>
