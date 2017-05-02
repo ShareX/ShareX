@@ -163,24 +163,8 @@ namespace ShareX.Setup
             CompileISSFile("ShareX-setup.iss");
         }
 
-        private static void InstallInnoSetup()
-        {
-            string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9.exe");
-
-            Console.WriteLine("Installing InnoSetup.");
-
-            Process.Start(innoSetupFilename, "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-").WaitForExit();
-
-            Console.WriteLine("InnoSetup installed.");
-        }
-
         private static void CompileISSFile(string filename)
         {
-            if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
-            {
-                InstallInnoSetup();
-            }
-
             if (File.Exists(InnoSetupCompilerPath))
             {
                 Console.WriteLine("Compiling setup file: " + filename);
