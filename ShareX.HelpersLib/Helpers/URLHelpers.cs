@@ -221,7 +221,7 @@ namespace ShareX.HelpersLib
                 return Regex.IsMatch(url, pattern, RegexOptions.IgnoreCase);
             }
 
-            return !url.StartsWith("file://") && Uri.IsWellFormedUriString(url, UriKind.Absolute);    
+            return !url.StartsWith("file://") && Uri.IsWellFormedUriString(url, UriKind.Absolute);
         }
 
         public static string AddSlash(string url, SlashType slashType)
@@ -305,19 +305,26 @@ namespace ShareX.HelpersLib
 
         public static List<string> GetPaths(string path)
         {
-            List<string> result = new List<string>();
-            string temp = "";
-            string[] dirs = path.Split('/');
-            foreach (string dir in dirs)
+            List<string> paths = new List<string>();
+
+            for (int i = 0; i < path.Length; i++)
             {
-                if (!string.IsNullOrEmpty(dir))
+                if (path[i] == '/')
                 {
-                    temp += "/" + dir;
-                    result.Add(temp);
+                    string currentPath = path.Remove(i);
+
+                    if (!string.IsNullOrEmpty(currentPath))
+                    {
+                        paths.Add(currentPath);
+                    }
+                }
+                else if (i == path.Length - 1)
+                {
+                    paths.Add(path);
                 }
             }
 
-            return result;
+            return paths;
         }
 
         private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://", "//" };

@@ -197,7 +197,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             List<string> directoryList = new List<string>();
 
-            IEnumerable<string> paths = URLHelpers.GetPaths(path);
+            List<string> paths = URLHelpers.GetPaths(path);
 
             foreach (string directory in paths)
             {

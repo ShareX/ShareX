@@ -401,7 +401,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (CreateDirectory(path))
                 {
-                    DebugHelper.WriteLine("FTP directory created: " + path);
+                    DebugHelper.WriteLine($"FTP directory created: {path}");
                 }
             }
 
