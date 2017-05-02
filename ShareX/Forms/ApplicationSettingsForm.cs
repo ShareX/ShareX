@@ -136,15 +136,20 @@ namespace ShareX
                     cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
                 }
             });
+
+            cbShellContextMenu.Visible = false;
+            cbSendToMenu.Visible = false;
+            gbChrome.Visible = false;
+            gbFirefox.Visible = false;
 #else
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
-#endif
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
             btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
             cbFirefoxAddonSupport.Checked = IntegrationHelpers.CheckFirefoxAddonSupport();
             btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
+#endif
 
 #if STEAM
             cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
