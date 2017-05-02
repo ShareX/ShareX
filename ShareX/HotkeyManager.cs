@@ -41,6 +41,9 @@ namespace ShareX
         public delegate void HotkeyTriggerEventHandler(HotkeySettings hotkeySetting);
         public delegate void HotkeysToggledEventHandler(bool hotkeysEnabled);
 
+        /// <summary>
+        /// bug
+        /// </summary>
         public HotkeyTriggerEventHandler HotkeyTrigger;
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
