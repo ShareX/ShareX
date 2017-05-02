@@ -705,14 +705,8 @@
   <data name="lblFtpImages.Text" xml:space="preserve">
     <value>图片:</value>
   </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>文字:</value>
-  </data>
   <data name="lblFtpFiles.Text" xml:space="preserve">
     <value>文件:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>客户端...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>图片上传</value>
