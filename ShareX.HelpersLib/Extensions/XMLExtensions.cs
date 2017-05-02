@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
 
                 string[] splitPath = path.Split('/');
 
-                if (splitPath != null && splitPath.Length > 0)
+                if (splitPath.Length > 0)
                 {
                     foreach (string name in splitPath)
                     {
