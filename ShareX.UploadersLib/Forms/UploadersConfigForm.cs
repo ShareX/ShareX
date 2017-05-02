@@ -1386,6 +1386,7 @@ namespace ShareX.UploadersLib
             {
                 account.Host = txtFTPHost.Text;
                 FTPUpdateURLPreview();
+                FTPRefreshNames();
             }
         }
 

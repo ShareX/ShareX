@@ -768,9 +768,6 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImage:
                     shape = new ImageDrawingShape();
                     break;
-                case ShapeType.DrawingCrop:
-                    shape = new CropDrawingShape();
-                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -779,6 +776,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
+                    break;
+                case ShapeType.DrawingCrop:
+                    shape = new CropDrawingShape();
                     break;
             }
 

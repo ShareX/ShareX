@@ -262,9 +262,6 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingImage:
                         img = Resources.image;
                         break;
-                    case ShapeType.DrawingCrop:
-                        img = Resources.image_crop;
-                        break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;
                         break;
@@ -273,6 +270,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.EffectHighlight:
                         img = Resources.highlighter_text;
+                        break;
+                    case ShapeType.DrawingCrop:
+                        img = Resources.image_crop;
                         break;
                 }
 

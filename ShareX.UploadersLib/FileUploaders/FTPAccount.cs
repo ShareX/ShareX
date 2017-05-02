@@ -105,7 +105,20 @@ namespace ShareX.UploadersLib
         public string PreviewFtpPath => GetFtpPath(exampleFilename);
 
         [Category("FTP"), Description("Preview of the HTTP path based on the settings above")]
-        public string PreviewHttpPath => GetUriPath(exampleFilename);
+        public string PreviewHttpPath
+        {
+            get
+            {
+                try
+                {
+                    return GetUriPath(exampleFilename);
+                }
+                catch
+                {
+                    return "";
+                }
+            }
+        }
 
         [Category("FTPS"), Description("Type of SSL to use. Explicit is TLS, Implicit is SSL."), DefaultValue(FTPSEncryption.Explicit)]
         public FTPSEncryption FTPSEncryption { get; set; }
@@ -120,7 +133,6 @@ namespace ShareX.UploadersLib
 
         [Category("SFTP"), Description("OpenSSH key passphrase"), PasswordPropertyText(true)]
         public string Passphrase { get; set; }
-
 
         public FTPAccount()
         {
