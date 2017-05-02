@@ -80,16 +80,51 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
         }
 
-        public static bool CreateStartupShortcut(bool create)
+        public static StartupTaskState CheckStartupWindowsStore()
         {
-#if WindowsStore
-            return CreateStartupShortcutWindowsStore(create);
-#else
-            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
-#endif
+            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
+
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                try
+                {
+                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    {
+                        FileName = filepath,
+                        Arguments = "-StartupState",
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    Process process = Process.Start(startInfo);
+
+                    if (process.WaitForExit(5000))
+                    {
+                        int code = process.ExitCode;
+
+                        DebugHelper.WriteLine($"CheckStartupWindowsStore: {code}");
+
+                        if (code > -1)
+                        {
+                            return (StartupTaskState)code;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Startup state check failed:\r\n" + e.ToString(), "ShareX");
+                }
+            }
+
+            return StartupTaskState.Error;
         }
 
-        private static bool CreateStartupShortcutWindowsStore(bool create)
+        public static bool CreateStartupShortcut(bool create)
+        {
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+        }
+
+        public static bool SetStartupWindowsStore(bool enable)
         {
             string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
 
@@ -99,7 +134,7 @@ namespace ShareX
                 {
                     string argument;
 
-                    if (create)
+                    if (enable)
                     {
                         argument = "-StartupEnable";
                     }
@@ -122,15 +157,16 @@ namespace ShareX
                     {
                         int code = process.ExitCode;
 
+                        DebugHelper.WriteLine($"CreateStartupWindowsStore: {code}");
+
                         if (code > -1)
                         {
                             StartupTaskState state = (StartupTaskState)code;
 
-                            if (create)
+                            if (enable)
                             {
                                 if (state == StartupTaskState.Enabled)
                                 {
-                                    MessageBox.Show("Startup successfully enabled.", "ShareX");
                                     return true;
                                 }
                                 else if (state == StartupTaskState.DisabledByUser)
@@ -141,7 +177,6 @@ namespace ShareX
                             }
                             else
                             {
-                                MessageBox.Show("Startup successfully disabled.", "ShareX");
                                 return true;
                             }
                         }

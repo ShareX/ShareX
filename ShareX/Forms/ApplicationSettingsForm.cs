@@ -113,14 +113,32 @@ namespace ShareX
             cbTrayLeftClickAction.SelectedIndex = (int)Program.Settings.TrayLeftClickAction;
             cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
-#if STEAM
+#if STEAM || WindowsStore
             cbCheckPreReleaseUpdates.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
+#if WindowsStore
+            cbStartWithWindows.Enabled = false;
+            StartupTaskState state = StartupTaskState.Error;
+
+            TaskEx.Run(() =>
+            {
+                state = IntegrationHelpers.CheckStartupWindowsStore();
+            },
+            () =>
+            {
+                if (!IsDisposed && state != StartupTaskState.Error && state != StartupTaskState.DisabledByUser)
+                {
+                    cbStartWithWindows.Enabled = true;
+                    cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+                }
+            });
+#else
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
+#endif
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
@@ -360,7 +378,11 @@ namespace ShareX
         {
             if (ready)
             {
+#if WindowsStore
+                IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
+#else
                 IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
+#endif
             }
         }
 
