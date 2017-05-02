@@ -351,4 +351,7 @@
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
     <value>Installer l'extension ShareX pour Chrome...</value>
   </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Restaurer les paramètres...</value>
+  </data>
 </root>
