@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProductName.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="lblBerk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBerk.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="lblMike.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -205,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMike.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="rtbCredits.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -221,7 +221,7 @@
   </data>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbCredits.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="rtbShareXInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -248,7 +248,7 @@
   </data>
   <data name="rtbShareXInfo.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -259,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbShareXInfo.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="pbMikeURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -286,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbMikeURL.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="pbAU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -313,7 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbAU.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="pbBerkURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -340,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbBerkURL.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="pbTR.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -367,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbTR.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="lblTeam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -394,67 +394,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTeam.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblSteamBuild.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSteamBuild.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lblSteamBuild.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSteamBuild.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 46</value>
-  </data>
-  <data name="lblSteamBuild.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 16</value>
-  </data>
-  <data name="lblSteamBuild.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="lblSteamBuild.Text" xml:space="preserve">
-    <value>Steam build</value>
-  </data>
-  <data name="&gt;&gt;lblSteamBuild.Name" xml:space="preserve">
-    <value>lblSteamBuild</value>
-  </data>
-  <data name="&gt;&gt;lblSteamBuild.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSteamBuild.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblSteamBuild.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="pbSteam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 46</value>
-  </data>
-  <data name="pbSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbSteam.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="pbSteam.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pbSteam.Name" xml:space="preserve">
-    <value>pbSteam</value>
-  </data>
-  <data name="&gt;&gt;pbSteam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbSteam.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbSteam.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="pbLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -484,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbLogo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -514,7 +454,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnShareXLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -544,7 +484,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnShareXLicense.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnLicenses.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -574,7 +514,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLicenses.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="uclUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 41</value>
@@ -595,7 +535,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;uclUpdate.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -619,7 +559,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cLogo.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
+  </data>
+  <data name="lblBuild.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBuild.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lblBuild.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 45</value>
+  </data>
+  <data name="lblBuild.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 16</value>
+  </data>
+  <data name="lblBuild.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="lblBuild.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblBuild.Name" xml:space="preserve">
+    <value>lblBuild</value>
+  </data>
+  <data name="&gt;&gt;lblBuild.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBuild.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblBuild.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

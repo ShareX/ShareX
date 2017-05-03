@@ -44,12 +44,19 @@ namespace ShareX
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();
 
-#if STEAM
+#if STEAM || WindowsStore
             uclUpdate.Visible = false;
-#else
-            pbSteam.Visible = false;
-            lblSteamBuild.Visible = false;
+            lblBuild.Visible = true;
 
+            if (Program.Build == ShareXBuild.Steam)
+            {
+                lblBuild.Text = "Steam build";
+            }
+            else if (Program.Build == ShareXBuild.WindowsStore)
+            {
+                lblBuild.Text = "Windows Store build";
+            }
+#else
             if (!Program.PortableApps)
             {
                 UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();

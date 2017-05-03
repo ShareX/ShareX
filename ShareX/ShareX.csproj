@@ -1273,7 +1273,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application-task.png" />
-    <None Include="Resources\steam.ico" />
     <None Include="Resources\camcorder-image.png" />
     <None Include="Resources\toolbox.png" />
     <None Include="Resources\application-icon-large.png" />
