@@ -224,13 +224,17 @@ namespace ShareX.Setup
 
             Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
 
-            if (!File.Exists(RecorderDevicesSetupPath))
+            if (job != SetupJobs.CreateWindowsStoreFolder && job != SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                CompileISSFile("Recorder-devices-setup.iss");
-            }
+                if (!File.Exists(RecorderDevicesSetupPath))
+                {
+                    CompileISSFile("Recorder-devices-setup.iss");
+                }
 
-            Helpers.CopyFile(RecorderDevicesSetupPath, destination);
-            Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+                Helpers.CopyFile(RecorderDevicesSetupPath, destination);
+
+                Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+            }
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
 
