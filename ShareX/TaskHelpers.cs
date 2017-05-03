@@ -924,6 +924,9 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
+#if WindowsStore
+            MessageBox.Show("Not supported in Windows Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+#else
             if (Helpers.IsAdministrator())
             {
                 new DNSChangerForm().Show();
@@ -932,6 +935,7 @@ namespace ShareX
             {
                 RunShareXAsAdmin("-dnschanger");
             }
+#endif
         }
 
         public static void RunShareXAsAdmin(string arguments)

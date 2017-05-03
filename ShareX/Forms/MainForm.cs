@@ -182,6 +182,11 @@ namespace ShareX
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
 
             HandleCreated += MainForm_HandleCreated;
+
+#if WindowsStore
+            tsmiDNSChanger.Visible = false;
+            tsmiTrayDNSChanger.Visible = false;
+#endif
         }
 
         public void UpdateControls()

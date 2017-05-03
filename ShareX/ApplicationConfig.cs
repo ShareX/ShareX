@@ -176,7 +176,7 @@ namespace ShareX
         public bool WorkflowsOnlyShowEdited { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM
+#if STEAM || WindowsStore
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }
