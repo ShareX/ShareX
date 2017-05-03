@@ -77,6 +77,12 @@ namespace ShareX.ScreenCaptureLib
 
             RefreshSourcesAsync();
 
+#if WindowsStore
+            btnInstallHelperDevices.Visible = false;
+            btnHelperDevicesHelp.Visible = false;
+            lblHelperDevices.Visible = false;
+#endif
+
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
 
