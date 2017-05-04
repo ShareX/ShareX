@@ -57,7 +57,7 @@ namespace ShareX.Setup
             AppVeyorSteam = CreateSteamFolder
         }
 
-        private static SetupJobs Job = SetupJobs.WindowsStoreDebug;
+        private static SetupJobs Job = SetupJobs.WindowsStore;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
