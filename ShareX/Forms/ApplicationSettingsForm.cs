@@ -132,8 +132,8 @@ namespace ShareX
             {
                 if (!IsDisposed && state != StartupTaskState.Error && state != StartupTaskState.DisabledByUser)
                 {
-                    cbStartWithWindows.Enabled = true;
                     cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+                    cbStartWithWindows.Enabled = true;
                 }
             });
 
@@ -384,7 +384,10 @@ namespace ShareX
             if (ready)
             {
 #if WindowsStore
-                IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
+                if (cbStartWithWindows.Enabled)
+                {
+                    IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
+                }
 #else
                 IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
 #endif
