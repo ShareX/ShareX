@@ -357,6 +357,9 @@ namespace ShareX.HelpersLib
 
             form.BringToFront();
             form.Activate();
+            form.TopMost = true;
+            form.TopMost = false;
+            form.Focus();
         }
 
         public static int WeekOfYear(this DateTime dateTime)
