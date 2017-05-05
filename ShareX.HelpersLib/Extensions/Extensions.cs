@@ -357,10 +357,12 @@ namespace ShareX.HelpersLib
 
             form.BringToFront();
             form.Activate();
+
             if (!form.TopMost) {
                 form.TopMost = true;
                 form.TopMost = false;
             }
+
             form.Focus();
         }
 
