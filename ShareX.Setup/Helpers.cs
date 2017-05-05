@@ -27,6 +27,8 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ShareX.Setup
 {
@@ -49,7 +51,7 @@ namespace ShareX.Setup
             CopyFiles(new string[] { path }, toFolder);
         }
 
-        public static void CopyFiles(string[] files, string toFolder)
+        public static void CopyFiles(IEnumerable<string> files, string toFolder)
         {
             if (!Directory.Exists(toFolder))
             {
@@ -64,9 +66,28 @@ namespace ShareX.Setup
             }
         }
 
-        public static void CopyFiles(string directory, string searchPattern, string toFolder)
+        public static void CopyFiles(string directory, string searchPattern, string toFolder, string[] ignoreFiles = null)
         {
-            CopyFiles(Directory.GetFiles(directory, searchPattern), toFolder);
+            string[] files = Directory.GetFiles(directory, searchPattern);
+
+            if (ignoreFiles != null)
+            {
+                List<string> newFiles = new List<string>();
+
+                foreach (string file in files)
+                {
+                    string filename = Path.GetFileName(file);
+
+                    if (ignoreFiles.All(x => !filename.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                        newFiles.Add(file);
+                    }
+                }
+
+                files = newFiles.ToArray();
+            }
+
+            CopyFiles(files, toFolder);
         }
 
         public static void CopyAll(string sourceDirectory, string targetDirectory)

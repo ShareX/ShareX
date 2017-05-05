@@ -466,7 +466,11 @@ namespace ShareX.HelpersLib
 
         public static bool Is64Bit()
         {
+#if WindowsStore
+            return true;
+#else
             return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
+#endif
         }
 
         private static bool Is32BitProcessOn64BitProcessor()

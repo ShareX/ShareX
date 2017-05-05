@@ -215,7 +215,15 @@ namespace ShareX.Setup
 
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
-            Helpers.CopyFiles(source, "*.dll", destination);
+
+            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
+            {
+                Helpers.CopyFiles(source, "*.dll", destination, new string[] { "7z.dll" });
+            }
+            else
+            {
+                Helpers.CopyFiles(source, "*.dll", destination);
+            }
 
             if (job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
