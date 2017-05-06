@@ -1232,6 +1232,16 @@ namespace ShareX.ScreenCaptureLib
 
         public void CropArea(Rectangle rect)
         {
+            Image img = CropImage(rect, true);
+
+            if (img != null)
+            {
+                form.InitBackground(img);
+            }
+        }
+
+        public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
+        {
             rect.X -= form.ImageRectangle.X;
             rect.Y -= form.ImageRectangle.Y;
 
@@ -1239,23 +1249,7 @@ namespace ShareX.ScreenCaptureLib
 
             rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
 
-            if (rect.IsValid() && rect.Size != form.Image.Size)
-            {
-                Image img = ImageHelpers.CropImage(form.Image, rect);
-
-                if (img != null)
-                {
-                    form.InitBackground(img);
-                }
-            }
-        }
-
-        public Image CropImage(Rectangle rect)
-        {
-            rect = CaptureHelpers.ScreenToClient(rect);
-            rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
-
-            if (rect.IsValid())
+            if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != form.Image.Size))
             {
                 return ImageHelpers.CropImage(form.Image, rect);
             }
