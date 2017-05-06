@@ -260,10 +260,10 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.counter_reset;
                         break;
                     case ShapeType.DrawingImage:
-                        img = Resources.image;
+                        img = Resources.folder_open_image;
                         break;
                     case ShapeType.DrawingImageScreen:
-                        img = Resources.monitor;
+                        img = Resources.monitor_image;
                         break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;

@@ -963,7 +963,7 @@ Would you like to download it?</value>
     <value>Drawing: Freehand</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Drawing: Image</value>
+    <value>Drawing: Image (File)</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Drawing: Speech balloon</value>
@@ -997,5 +997,8 @@ Would you like to download it?</value>
   </data>
   <data name="ShapeType_DrawingCrop" xml:space="preserve">
     <value>Crop image</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Drawing: Image (Screen)</value>
   </data>
 </root>

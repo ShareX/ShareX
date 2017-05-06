@@ -189,6 +189,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\monitor-image.png" />
+    <None Include="Resources\folder-open-image.png" />
     <None Include="Resources\image-crop.png" />
     <None Include="Resources\edit-shade.png" />
     <None Include="Resources\edit-outline.png" />
@@ -210,7 +212,6 @@
     <None Include="Resources\disks-black.png" />
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\tick.png" />
-    <None Include="Resources\image.png" />
     <None Include="Resources\layer-shape-polygon.png" />
     <None Include="Resources\layer-shape-curve.png" />
     <None Include="Resources\edit-vertical-alignment.png" />
