@@ -114,6 +114,7 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\CropDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageScreenDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\FreehandDrawingShape.cs" />

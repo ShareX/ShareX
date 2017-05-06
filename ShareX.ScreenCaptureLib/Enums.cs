@@ -229,6 +229,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingSpeechBalloon,
         DrawingStep,
         DrawingImage,
+        DrawingImageScreen,
         EffectBlur,
         EffectPixelate,
         EffectHighlight,

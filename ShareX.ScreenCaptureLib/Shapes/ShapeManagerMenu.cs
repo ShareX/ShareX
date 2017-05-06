@@ -262,6 +262,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingImage:
                         img = Resources.image;
                         break;
+                    case ShapeType.DrawingImageScreen:
+                        img = Resources.monitor;
+                        break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;
                         break;

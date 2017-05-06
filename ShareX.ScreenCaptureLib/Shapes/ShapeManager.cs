@@ -768,6 +768,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImage:
                     shape = new ImageDrawingShape();
                     break;
+                case ShapeType.DrawingImageScreen:
+                    shape = new ImageScreenDrawingShape();
+                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -1245,6 +1248,19 @@ namespace ShareX.ScreenCaptureLib
                     form.InitBackground(img);
                 }
             }
+        }
+
+        public Image CropImage(Rectangle rect)
+        {
+            rect = CaptureHelpers.ScreenToClient(rect);
+            rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
+
+            if (rect.IsValid())
+            {
+                return ImageHelpers.CropImage(form.Image, rect);
+            }
+
+            return null;
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)
