@@ -980,6 +980,12 @@ Would you like to download it?</value>
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="HotkeyType_RestartShareX" xml:space="preserve">
+    <value>Restart ShareX</value>
+  </data>
+  <data name="HotkeyType_RestartShareX_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Drawing: Text (Outline)</value>
   </data>

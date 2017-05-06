@@ -1366,6 +1366,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart ShareX.
+        /// </summary>
+        internal static string HotkeyType_RestartShareX {
+            get {
+                return ResourceManager.GetString("HotkeyType_RestartShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_RestartShareX_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_RestartShareX_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ruler.
         /// </summary>
         internal static string HotkeyType_Ruler {

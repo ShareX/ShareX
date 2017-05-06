@@ -233,6 +233,9 @@ namespace ShareX
                 case HotkeyType.ExitShareX:
                     Program.MainForm.ForceClose();
                     break;
+                case HotkeyType.RestartShareX:
+                    Program.Restart();
+                    break;
             }
         }
 
@@ -1371,6 +1374,7 @@ namespace ShareX
                 case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
                 case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
                 case HotkeyType.ExitShareX: return Resources.cross;
+                case HotkeyType.RestartShareX: return Resources.cross;
             }
         }
 
