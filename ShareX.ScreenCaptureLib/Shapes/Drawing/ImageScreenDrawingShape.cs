@@ -38,7 +38,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Image == null)
             {
-                Manager.DrawRegionArea(g, Rectangle);
+                if (IsValidShape)
+                {
+                    Manager.DrawRegionArea(g, Rectangle);
+                }
             }
             else
             {
@@ -56,7 +59,10 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            Image = Manager.CropImage(Rectangle);
+            if (IsValidShape)
+            {
+                Image = Manager.CropImage(Rectangle);
+            }
 
             if (Image == null)
             {

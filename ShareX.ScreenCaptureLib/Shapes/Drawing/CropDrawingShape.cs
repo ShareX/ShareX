@@ -33,12 +33,19 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            Manager.DrawRegionArea(g, Rectangle);
+            if (IsValidShape)
+            {
+                Manager.DrawRegionArea(g, Rectangle);
+            }
         }
 
         public override void OnCreated()
         {
-            Manager.CropArea(Rectangle);
+            if (IsValidShape)
+            {
+                Manager.CropArea(Rectangle);
+            }
+
             Remove();
         }
     }
