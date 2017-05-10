@@ -231,11 +231,18 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 DropboxMetadata metadata = JsonConvert.DeserializeObject<DropboxMetadata>(ur.Response);
 
-                if (metadata != null && createShareableLink)
+                if (metadata != null)
                 {
-                    AllowReportProgress = false;
+                    if (createShareableLink)
+                    {
+                        AllowReportProgress = false;
 
-                    ur.URL = CreateShareableLink(metadata.path_display, useDirectLink);
+                        ur.URL = CreateShareableLink(metadata.path_display, useDirectLink);
+                    }
+                    else
+                    {
+                        ur.IsURLExpected = false;
+                    }
                 }
             }
 
