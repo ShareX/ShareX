@@ -297,6 +297,37 @@ namespace ShareX.ScreenCaptureLib
             Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
             Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
             Manager.ResizeNodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
+
+            for (int i = 0; i < 8; i++)
+            {
+                Manager.ResizeNodes[i].Visible = true;
+            }
+
+            if (Manager.ResizeNodes[(int)NodePosition.Right].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+            {
+                Manager.ResizeNodes[(int)NodePosition.Left].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.Right].Visible = false;
+            }
+
+            if (Manager.ResizeNodes[(int)NodePosition.Bottom].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+            {
+                Manager.ResizeNodes[(int)NodePosition.Top].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.Bottom].Visible = false;
+            }
+
+            if (Manager.ResizeNodes[(int)NodePosition.TopRight].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+            {
+                Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.Top].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.TopRight].Visible = false;
+            }
+
+            if (Manager.ResizeNodes[(int)NodePosition.BottomLeft].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+            {
+                Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.Left].Visible =
+                    Manager.ResizeNodes[(int)NodePosition.BottomLeft].Visible = false;
+            }
         }
 
         public virtual void Dispose()

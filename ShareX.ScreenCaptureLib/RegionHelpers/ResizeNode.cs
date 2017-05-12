@@ -30,6 +30,8 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class ResizeNode : DrawableObject
     {
+        public const int DefaultSize = 13;
+
         private Point position;
 
         public Point Position
@@ -52,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
 
         public ResizeNode(int x = 0, int y = 0)
         {
-            Size = 13;
+            Size = DefaultSize;
             Shape = NodeShape.Square;
             Position = new Point(x, y);
         }
