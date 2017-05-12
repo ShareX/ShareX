@@ -167,6 +167,12 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Manager.ResizeNodes[(int)NodePosition.Extra].Position = CenterPosition;
+
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
+                !Manager.ResizeNodes[(int)NodePosition.TopLeft].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle);
+
+            Manager.ResizeNodes[(int)NodePosition.Extra].Visible =
+                !Manager.ResizeNodes[(int)NodePosition.Extra].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle);
         }
     }
 }
