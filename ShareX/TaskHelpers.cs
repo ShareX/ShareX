@@ -691,6 +691,11 @@ namespace ShareX
             new HashCheckForm().Show();
         }
 
+        public static void OpenTextConversion()
+        {
+            new TextConversionForm.Show();
+        }
+
         public static void OpenDirectoryIndexer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

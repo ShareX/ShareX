@@ -107,6 +107,12 @@
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\TextConversionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextConversionForm.Designer.cs">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="Input\HotkeyInfo.cs" />
     <Compile Include="Input\KeyboardHook.cs" />
@@ -754,6 +760,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.zh-TW.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.de.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.es.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.fr.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.hu.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.ko-KR.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.nl-NL.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.pt-BR.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.ru.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.tr.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.vi-VN.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.zh-CN.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextConversionForm.zh-TW.resx">
+      <DependentUpon>TextConversionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HashCheckForm.de.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
