@@ -682,9 +682,11 @@ namespace ShareX
                 {
                     Program.MainForm.niTray.Tag = null;
 
-                    //Only show the balloon notification if BalloonTip is selected in settings
-                    if (taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
-                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+                    if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
+                    {
+                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX",
+                            string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+                    }
                 }
             }
         }
