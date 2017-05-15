@@ -1295,79 +1295,59 @@ namespace ShareX.HelpersLib
 
             List<Point> points = new List<Point>();
 
-            Point previousPoint = Point.Empty, currentPoint;
             int horizontalTornCount = img.Width / tornRange;
             int verticalTornCount = img.Height / tornRange;
 
             if (sides.HasFlag(AnchorStyles.Top))
             {
-                for (int i = 0; i < horizontalTornCount; i++)
+                for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    currentPoint = new Point(previousPoint.X + tornRange, MathHelpers.Random(0, tornDepth));
-                    points.Add(currentPoint);
-                    previousPoint = currentPoint;
+                    points.Add(new Point(tornRange * x, MathHelpers.Random(0, tornDepth)));
                 }
             }
             else
             {
-                points.Add(previousPoint);
-                currentPoint = new Point(img.Width - 1, 0);
-                points.Add(currentPoint);
-                previousPoint = currentPoint;
+                points.Add(new Point(0, 0));
+                points.Add(new Point(img.Width - 1, 0));
             }
 
             if (sides.HasFlag(AnchorStyles.Right))
             {
-                for (int i = 0; i < verticalTornCount; i++)
+                for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    currentPoint = new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), previousPoint.Y + tornRange);
-                    points.Add(currentPoint);
-                    previousPoint = currentPoint;
+                    points.Add(new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), tornRange * y));
                 }
             }
             else
             {
-                currentPoint = new Point(img.Width - 1, 0);
-                points.Add(currentPoint);
-                currentPoint = new Point(img.Width - 1, img.Height - 1);
-                points.Add(currentPoint);
-                previousPoint = currentPoint;
+                points.Add(new Point(img.Width - 1, 0));
+                points.Add(new Point(img.Width - 1, img.Height - 1));
             }
 
             if (sides.HasFlag(AnchorStyles.Bottom))
             {
-                for (int i = 0; i < horizontalTornCount; i++)
+                for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    currentPoint = new Point(previousPoint.X - tornRange, img.Height - 1 - MathHelpers.Random(0, tornDepth));
-                    points.Add(currentPoint);
-                    previousPoint = currentPoint;
+                    points.Add(new Point(img.Width - 1 - tornRange * x, img.Height - 1 - MathHelpers.Random(0, tornDepth)));
                 }
             }
             else
             {
-                currentPoint = new Point(img.Width - 1, img.Height - 1);
-                points.Add(currentPoint);
-                currentPoint = new Point(0, img.Height - 1);
-                points.Add(currentPoint);
-                previousPoint = currentPoint;
+                points.Add(new Point(img.Width - 1, img.Height - 1));
+                points.Add(new Point(0, img.Height - 1));
             }
 
             if (sides.HasFlag(AnchorStyles.Left))
             {
-                for (int i = 0; i < verticalTornCount; i++)
+                for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    currentPoint = new Point(MathHelpers.Random(0, tornDepth), previousPoint.Y - tornRange);
-                    points.Add(currentPoint);
-                    previousPoint = currentPoint;
+                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - tornRange * y));
                 }
             }
             else
             {
-                currentPoint = new Point(0, img.Height - 1);
-                points.Add(currentPoint);
-                currentPoint = new Point(0, 0);
-                points.Add(currentPoint);
-                previousPoint = currentPoint;
+                points.Add(new Point(0, img.Height - 1));
+                points.Add(new Point(0, 0));
             }
 
             Bitmap result = img.CreateEmptyBitmap();
@@ -1378,13 +1358,15 @@ namespace ShareX.HelpersLib
             {
                 g.SetHighQuality();
 
+                Point[] fillPoints = points.Distinct().ToArray();
+
                 if (curvedEdges)
                 {
-                    g.FillClosedCurve(brush, points.ToArray());
+                    g.FillClosedCurve(brush, fillPoints);
                 }
                 else
                 {
-                    g.FillPolygon(brush, points.ToArray());
+                    g.FillPolygon(brush, fillPoints);
                 }
 
                 return result;
