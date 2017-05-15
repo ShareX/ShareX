@@ -32,14 +32,17 @@ namespace ShareX.UploadersLib
 {
     public class SSLBypassHelper : IDisposable
     {
+        private readonly RemoteCertificateValidationCallback previousValue;
+
         public SSLBypassHelper()
         {
-            ServicePointManager.ServerCertificateValidationCallback += ServerCertificateValidationCallback;
+            previousValue = ServicePointManager.ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback = ServerCertificateValidationCallback;
         }
 
         public void Dispose()
         {
-            ServicePointManager.ServerCertificateValidationCallback -= ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback = previousValue;
         }
 
         private bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
