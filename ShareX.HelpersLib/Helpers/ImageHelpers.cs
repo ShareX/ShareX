@@ -1286,7 +1286,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides)
+        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges)
         {
             if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
             {
@@ -1375,7 +1375,15 @@ namespace ShareX.HelpersLib
             using (TextureBrush brush = new TextureBrush(img))
             {
                 g.SetHighQuality();
-                g.FillPolygon(brush, points.ToArray());
+
+                if (curvedEdges)
+                {
+                    g.FillClosedCurve(brush, points.ToArray());
+                }
+                else
+                {
+                    g.FillPolygon(brush, points.ToArray());
+                }
 
                 return result;
             }

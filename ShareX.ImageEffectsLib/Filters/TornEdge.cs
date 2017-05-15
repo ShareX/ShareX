@@ -42,6 +42,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
         public AnchorStyles Sides { get; set; }
 
+        [DefaultValue(true)]
+        public bool CurvedEdges { get; set; }
+
         public TornEdge()
         {
             this.ApplyDefaultPropertyValues();
@@ -49,7 +52,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            return ImageHelpers.TornEdges(img, Depth, Range, Sides);
+            return ImageHelpers.TornEdges(img, Depth, Range, Sides, CurvedEdges);
         }
     }
 }
