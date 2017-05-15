@@ -71,7 +71,6 @@ namespace ShareX
             else
             {
                 mode = RegionCaptureMode.Annotation;
-                AllowAnnotation = false;
             }
 
             RegionCaptureForm form = new RegionCaptureForm(mode);
@@ -87,6 +86,11 @@ namespace ShareX
 
                 if (imageInfo.Image != null)
                 {
+                    if (form.IsAnnotated)
+                    {
+                        AllowAnnotation = false;
+                    }
+
                     if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();

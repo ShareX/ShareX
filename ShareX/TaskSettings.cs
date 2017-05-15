@@ -428,7 +428,7 @@ namespace ShareX
         Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
-        [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture. Also allows after capture task \"Annotate image\" to work with region capture.")]
+        [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
         public bool RegionCaptureDisableAnnotation { get; set; }
 
         [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),

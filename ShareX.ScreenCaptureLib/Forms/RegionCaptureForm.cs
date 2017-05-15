@@ -55,6 +55,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
+        public bool IsAnnotated => ShapeManager != null && ShapeManager.IsEdited;
 
         public Point CurrentPosition { get; private set; }
 

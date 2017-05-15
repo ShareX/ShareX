@@ -149,6 +149,10 @@ namespace ShareX.ScreenCaptureLib
         public bool IsProportionalResizing { get; private set; }
         public bool IsSnapResizing { get; private set; }
 
+        private bool isEdited;
+
+        public bool IsEdited => isEdited || DrawingShapes.Length > 0 || EffectShapes.Length > 0;
+
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
@@ -1237,6 +1241,8 @@ namespace ShareX.ScreenCaptureLib
             if (img != null)
             {
                 form.InitBackground(img);
+
+                isEdited = true;
             }
         }
 
