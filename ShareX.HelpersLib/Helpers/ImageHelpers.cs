@@ -1295,16 +1295,13 @@ namespace ShareX.HelpersLib
 
             List<Point> points = new List<Point>();
 
-            Point previousPoint, currentPoint;
+            Point previousPoint = Point.Empty, currentPoint;
             int horizontalTornCount = img.Width / tornRange;
             int verticalTornCount = img.Height / tornRange;
 
             if (sides.HasFlag(AnchorStyles.Top))
             {
-                previousPoint = new Point(tornRange, MathHelpers.Random(0, tornDepth));
-                points.Add(previousPoint);
-
-                for (int i = 0; i < horizontalTornCount - 1; i++)
+                for (int i = 0; i < horizontalTornCount; i++)
                 {
                     currentPoint = new Point(previousPoint.X + tornRange, MathHelpers.Random(0, tornDepth));
                     points.Add(currentPoint);
@@ -1313,7 +1310,6 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                previousPoint = new Point(0, 0);
                 points.Add(previousPoint);
                 currentPoint = new Point(img.Width - 1, 0);
                 points.Add(currentPoint);
@@ -1331,6 +1327,8 @@ namespace ShareX.HelpersLib
             }
             else
             {
+                currentPoint = new Point(img.Width - 1, 0);
+                points.Add(currentPoint);
                 currentPoint = new Point(img.Width - 1, img.Height - 1);
                 points.Add(currentPoint);
                 previousPoint = currentPoint;
@@ -1347,6 +1345,8 @@ namespace ShareX.HelpersLib
             }
             else
             {
+                currentPoint = new Point(img.Width - 1, img.Height - 1);
+                points.Add(currentPoint);
                 currentPoint = new Point(0, img.Height - 1);
                 points.Add(currentPoint);
                 previousPoint = currentPoint;
@@ -1363,6 +1363,8 @@ namespace ShareX.HelpersLib
             }
             else
             {
+                currentPoint = new Point(0, img.Height - 1);
+                points.Add(currentPoint);
                 currentPoint = new Point(0, 0);
                 points.Add(currentPoint);
                 previousPoint = currentPoint;
