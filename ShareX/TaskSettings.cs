@@ -512,7 +512,7 @@ namespace ShareX
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
 
-        [Category("Interaction"), DefaultValue(false), Description("Disable notifications")]
+        [Category("Interaction"), DefaultValue(false), Description("Disable notifications.")]
         public bool DisableNotifications { get; set; }
 
         [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
