@@ -155,6 +155,10 @@ namespace ShareX.HelpersLib
             {
                 hex = hex.Remove(0, 1);
             }
+            else if (hex.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
+            {
+                hex = hex.Remove(0, 2);
+            }
 
             if (((format == ColorFormat.RGBA || format == ColorFormat.ARGB) && hex.Length != 8) ||
                 (format == ColorFormat.RGB && hex.Length != 6))
