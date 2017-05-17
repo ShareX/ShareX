@@ -84,6 +84,7 @@ namespace ShareX.Setup
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string DesktopBridgeHelperDir => Path.Combine(ParentDir, @"ShareX.DesktopBridgeHelper\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
+        private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
@@ -263,6 +264,11 @@ namespace ShareX.Setup
             {
                 Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
+
+                Process.Start(@"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
+                    $"pack /d \"{destination}\" /p \"{WindowsStoreAppxPath}\" /l /o").WaitForExit();
+
+                Directory.Delete(destination, true);
             }
             else if (job == SetupJobs.CreatePortable)
             {
@@ -279,10 +285,7 @@ namespace ShareX.Setup
 
                 Helpers.Zip(Path.GetFullPath(destination) + "\\*", Path.GetFullPath(zipPath));
 
-                if (Directory.Exists(destination))
-                {
-                    Directory.Delete(destination, true);
-                }
+                Directory.Delete(destination, true);
             }
 
             Console.WriteLine("Folder created.");
