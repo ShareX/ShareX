@@ -511,28 +511,27 @@ namespace ShareX
 
         public static Icon GetProgressIcon(int percentage)
         {
+            percentage = percentage.Between(0, 99);
+
             using (Bitmap bmp = new Bitmap(16, 16))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.Clear(Color.Black);
+                int y = (int)(16 * (percentage / 100f));
 
-                int width = (int)(16 * (percentage / 100f));
-
-                if (width > 0)
+                if (y > 0)
                 {
-                    using (Brush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 16), Color.DarkBlue, Color.DodgerBlue, LinearGradientMode.Vertical))
+                    using (Brush brush = new SolidBrush(Color.FromArgb(16, 116, 193)))
                     {
-                        g.FillRectangle(brush, 0, 0, width, 16);
+                        g.FillRectangle(brush, 0, 15 - y, 16, y);
                     }
                 }
 
-                using (Font font = new Font("Arial", 11, GraphicsUnit.Pixel))
+                using (Font font = new Font("Arial", 12, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.Black, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 7, sf);
                 }
-
-                g.DrawRectangleProper(Pens.WhiteSmoke, 0, 0, 16, 16);
 
                 return Icon.FromHandle(bmp.GetHicon());
             }
