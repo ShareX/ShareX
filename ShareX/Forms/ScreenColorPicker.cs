@@ -47,14 +47,6 @@ namespace ShareX
 
             UpdateControls(false);
 
-            foreach (Control control in Controls)
-            {
-                if (control is NumericUpDown || control is TextBox)
-                {
-                    control.DoubleClick += CopyToClipboard;
-                }
-            }
-
             if (checkClipboard)
             {
                 if (Clipboard.ContainsText())
@@ -66,25 +58,6 @@ namespace ShareX
                         SetCurrentColor(color, false);
                     }
                 }
-            }
-        }
-
-        private void CopyToClipboard(object sender, EventArgs e)
-        {
-            string text = "";
-
-            if (sender is NumericUpDown)
-            {
-                text = ((NumericUpDown)sender).Value.ToString();
-            }
-            else if (sender is TextBox)
-            {
-                text = ((TextBox)sender).Text;
-            }
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                ClipboardHelpers.CopyText(text);
             }
         }
 

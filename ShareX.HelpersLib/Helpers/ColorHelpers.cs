@@ -308,21 +308,24 @@ namespace ShareX.HelpersLib
             {
                 text = text.Trim();
 
-                Match matchHex = Regex.Match(text, @"^(?:#|0x)?((?:[0-9A-F]{2}){3})$", RegexOptions.IgnoreCase);
-
-                if (matchHex.Success)
+                if (text.Length <= 20)
                 {
-                    color = HexToColor(matchHex.Groups[1].Value);
-                    return true;
-                }
-                else
-                {
-                    Match matchRGB = Regex.Match(text, @"^(?:rgb\()?([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\)?$");
+                    Match matchHex = Regex.Match(text, @"^(?:#|0x)?((?:[0-9A-F]{2}){3})$", RegexOptions.IgnoreCase);
 
-                    if (matchRGB.Success)
+                    if (matchHex.Success)
                     {
-                        color = Color.FromArgb(int.Parse(matchRGB.Groups[1].Value), int.Parse(matchRGB.Groups[2].Value), int.Parse(matchRGB.Groups[3].Value));
+                        color = HexToColor(matchHex.Groups[1].Value);
                         return true;
+                    }
+                    else
+                    {
+                        Match matchRGB = Regex.Match(text, @"^(?:rgb\()?([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\)?$");
+
+                        if (matchRGB.Success)
+                        {
+                            color = Color.FromArgb(int.Parse(matchRGB.Groups[1].Value), int.Parse(matchRGB.Groups[2].Value), int.Parse(matchRGB.Groups[3].Value));
+                            return true;
+                        }
                     }
                 }
             }
