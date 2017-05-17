@@ -26,6 +26,7 @@
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
@@ -301,29 +302,33 @@ namespace ShareX.HelpersLib
             return Color.FromArgb(MathHelpers.Random(255), MathHelpers.Random(255), MathHelpers.Random(255));
         }
 
-        public static Color ParseColor(string color)
+        public static bool ParseColor(string text, out Color color)
         {
-            if (color.StartsWith("#"))
+            if (!string.IsNullOrEmpty(text))
             {
-                return HexToColor(color);
+                text = text.Trim();
+
+                Match matchHex = Regex.Match(text, @"^(?:#|0x)?((?:[0-9A-F]{2}){3})$", RegexOptions.IgnoreCase);
+
+                if (matchHex.Success)
+                {
+                    color = HexToColor(matchHex.Groups[1].Value);
+                    return true;
+                }
+                else
+                {
+                    Match matchRGB = Regex.Match(text, @"^(?:rgb\()?([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\)?$");
+
+                    if (matchRGB.Success)
+                    {
+                        color = Color.FromArgb(int.Parse(matchRGB.Groups[1].Value), int.Parse(matchRGB.Groups[2].Value), int.Parse(matchRGB.Groups[3].Value));
+                        return true;
+                    }
+                }
             }
 
-            if (color.Contains(','))
-            {
-                int[] colors = color.Split(',').Select(x => int.Parse(x.Trim())).ToArray();
-
-                if (colors.Length == 3)
-                {
-                    return Color.FromArgb(colors[0], colors[1], colors[2]);
-                }
-
-                if (colors.Length == 4)
-                {
-                    return Color.FromArgb(colors[0], colors[1], colors[2], colors[3]);
-                }
-            }
-
-            return Color.FromName(color);
+            color = Color.Empty;
+            return false;
         }
 
         public static int PerceivedBrightness(Color color)

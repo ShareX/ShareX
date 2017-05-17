@@ -662,7 +662,7 @@ namespace ShareX
 
         public static void OpenColorPicker()
         {
-            new ScreenColorPicker().Show();
+            new ScreenColorPicker(true).Show();
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)

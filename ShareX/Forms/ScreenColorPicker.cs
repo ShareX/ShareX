@@ -38,7 +38,7 @@ namespace ShareX
     {
         private Timer colorTimer = new Timer { Interval = 10 };
 
-        public ScreenColorPicker()
+        public ScreenColorPicker(bool checkClipboard = false)
         {
             InitializeComponent();
             btnOK.Visible = false;
@@ -52,6 +52,19 @@ namespace ShareX
                 if (control is NumericUpDown || control is TextBox)
                 {
                     control.DoubleClick += CopyToClipboard;
+                }
+            }
+
+            if (checkClipboard)
+            {
+                if (Clipboard.ContainsText())
+                {
+                    string text = Clipboard.GetText();
+
+                    if (ColorHelpers.ParseColor(text, out Color color))
+                    {
+                        SetCurrentColor(color, false);
+                    }
                 }
             }
         }
