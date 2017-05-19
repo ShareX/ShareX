@@ -68,10 +68,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 Remove();
             }
-            else
-            {
-                Rectangle = Rectangle.LocationOffset(10, 10);
-            }
         }
 
         public override void Dispose()
