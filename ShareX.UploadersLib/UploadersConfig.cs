@@ -311,6 +311,7 @@ namespace ShareX.UploadersLib
         public string AzureStorageAccountName = "";
         public string AzureStorageAccountAccessKey = "";
         public string AzureStorageContainer = "";
+        public string AzureStorageEnvironment = "blob.core.windows.net";
 
         // Plik
 

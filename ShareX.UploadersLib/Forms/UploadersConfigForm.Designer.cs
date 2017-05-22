@@ -648,6 +648,8 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblAzureStorageEnvironment = new System.Windows.Forms.Label();
+            this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2683,6 +2685,8 @@
             // 
             // tpAzureStorage
             // 
+            this.tpAzureStorage.Controls.Add(this.cbAzureStorageEnvironment);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageEnvironment);
             this.tpAzureStorage.Controls.Add(this.btnAzureStoragePortal);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageContainer);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageContainer);
@@ -5262,6 +5266,23 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblAzureStorageEnvironment
+            // 
+            resources.ApplyResources(this.lblAzureStorageEnvironment, "lblAzureStorageEnvironment");
+            this.lblAzureStorageEnvironment.Name = "lblAzureStorageEnvironment";
+            // 
+            // cbAzureStorageEnvironment
+            // 
+            this.cbAzureStorageEnvironment.FormattingEnabled = true;
+            this.cbAzureStorageEnvironment.Items.AddRange(new object[] {
+            resources.GetString("cbAzureStorageEnvironment.Items"),
+            resources.GetString("cbAzureStorageEnvironment.Items1"),
+            resources.GetString("cbAzureStorageEnvironment.Items2"),
+            resources.GetString("cbAzureStorageEnvironment.Items3")});
+            resources.ApplyResources(this.cbAzureStorageEnvironment, "cbAzureStorageEnvironment");
+            this.cbAzureStorageEnvironment.Name = "cbAzureStorageEnvironment";
+            this.cbAzureStorageEnvironment.SelectedIndexChanged += new System.EventHandler(this.cbAzureStorageEnvironment_SelectedIndexChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6064,5 +6085,7 @@
         private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
         private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
+        private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
+        private System.Windows.Forms.Label lblAzureStorageEnvironment;
     }
 }

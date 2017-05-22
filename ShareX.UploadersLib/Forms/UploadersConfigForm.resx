@@ -6639,6 +6639,69 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+	<data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
+    <value>blob.core.windows.net</value>
+  </data>
+	<data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
+    <value>blob.core.usgovcloudapi.net</value>
+  </data>
+	<data name="cbAzureStorageEnvironment.Items2" xml:space="preserve">
+    <value>blob.core.chinacloudapi.cn</value>
+  </data>
+	<data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
+    <value>blob.core.cloudapi.de</value>
+  </data>
+	<data name="cbAzureStorageEnvironment.Location" type="System.Drawing.Point, System.Drawing">
+		<value>16, 173</value>
+	</data>
+	<data name="cbAzureStorageEnvironment.Size" type="System.Drawing.Size, System.Drawing">
+		<value>526, 21</value>
+	</data>
+	<data name="cbAzureStorageEnvironment.TabIndex" type="System.Int32, mscorlib">
+		<value>8</value>
+	</data>
+	<data name="&gt;&gt;cbAzureStorageEnvironment.Name" xml:space="preserve">
+    <value>cbAzureStorageEnvironment</value>
+  </data>
+	<data name="&gt;&gt;cbAzureStorageEnvironment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;cbAzureStorageEnvironment.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+	<data name="&gt;&gt;cbAzureStorageEnvironment.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="lblAzureStorageEnvironment.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="lblAzureStorageEnvironment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblAzureStorageEnvironment.Location" type="System.Drawing.Point, System.Drawing">
+		<value>13, 156</value>
+	</data>
+	<data name="lblAzureStorageEnvironment.Size" type="System.Drawing.Size, System.Drawing">
+		<value>69, 13</value>
+	</data>
+	<data name="lblAzureStorageEnvironment.TabIndex" type="System.Int32, mscorlib">
+		<value>7</value>
+	</data>
+	<data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
+    <value>Environment:</value>
+  </data>
+	<data name="&gt;&gt;lblAzureStorageEnvironment.Name" xml:space="preserve">
+    <value>lblAzureStorageEnvironment</value>
+  </data>
+	<data name="&gt;&gt;lblAzureStorageEnvironment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;lblAzureStorageEnvironment.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+	<data name="&gt;&gt;lblAzureStorageEnvironment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnAzureStoragePortal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
