@@ -598,6 +598,7 @@ namespace ShareX.UploadersLib
             txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
             txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
             txtAzureStorageContainer.Text = Config.AzureStorageContainer;
+            cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
 
             // Plik
 
@@ -2905,6 +2906,11 @@ namespace ShareX.UploadersLib
         private void txtAzureStorageContainer_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageContainer = txtAzureStorageContainer.Text;
+        }
+
+        private void cbAzureStorageEnvironment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageEnvironment = cbAzureStorageEnvironment.Text;
         }
 
         private void btnAzureStoragePortal_Click(object sender, EventArgs e)
