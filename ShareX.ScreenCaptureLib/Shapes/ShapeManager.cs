@@ -1248,10 +1248,12 @@ namespace ShareX.ScreenCaptureLib
 
         public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
         {
-            rect.X -= form.ImageRectangle.X;
-            rect.Y -= form.ImageRectangle.Y;
-
             rect = CaptureHelpers.ScreenToClient(rect);
+
+            Point offset = CaptureHelpers.ScreenToClient(form.ImageRectangle.Location);
+
+            rect.X -= offset.X;
+            rect.Y -= offset.Y;
 
             rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
 
