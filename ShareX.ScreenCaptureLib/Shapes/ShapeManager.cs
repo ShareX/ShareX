@@ -148,6 +148,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCornerMoving { get; private set; }
         public bool IsProportionalResizing { get; private set; }
         public bool IsSnapResizing { get; private set; }
+        public bool IsRenderingOutput { get; private set; }
 
         private bool isEdited;
 
@@ -938,6 +939,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {
+                IsRenderingOutput = true;
+
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
                     foreach (BaseEffectShape shape in EffectShapes)
@@ -956,6 +959,8 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                 }
+
+                IsRenderingOutput = false;
             }
 
             return bmp;

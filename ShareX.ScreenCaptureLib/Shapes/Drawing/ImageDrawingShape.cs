@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -88,7 +89,18 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Image != null)
             {
+                if (Manager.IsRenderingOutput)
+                {
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                }
+                else
+                {
+                    g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                }
+
                 g.DrawImage(Image, Rectangle);
+
+                g.InterpolationMode = InterpolationMode.Bilinear;
             }
         }
 
