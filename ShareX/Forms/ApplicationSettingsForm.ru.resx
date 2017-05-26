@@ -357,4 +357,7 @@
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Сбросить настройки...</value>
   </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Дополнение для Firefox</value>
+  </data>
 </root>

@@ -941,7 +941,7 @@
     <value>Отключить прокрутку вверх</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Рисование: Картинка</value>
+    <value>Рисование: Картинка из файла</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Рисование: Сноска</value>
@@ -972,5 +972,11 @@
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
     <value>Прогресс: {0}</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Рисование: Картинка с экрана</value>
+  </data>
+  <data name="ShapeType_DrawingCrop" xml:space="preserve">
+    <value>Кадрировать</value>
   </data>
 </root>
