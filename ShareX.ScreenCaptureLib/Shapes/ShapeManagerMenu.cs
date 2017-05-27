@@ -136,7 +136,6 @@ namespace ShareX.ScreenCaptureLib
                     tsbCompleteEdit.Text = "Apply changes & continue task (Enter)";
                 }
 
-                tsbCompleteEdit.Padding = new Padding(buttonPadding);
                 tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCompleteEdit.Image = Resources.tick;
                 tsbCompleteEdit.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
@@ -145,14 +144,12 @@ namespace ShareX.ScreenCaptureLib
                 if (form.Mode == RegionCaptureMode.TaskEditor)
                 {
                     ToolStripButton tsbClose = new ToolStripButton("Continue task (Space or right click)");
-                    tsbClose.Padding = new Padding(buttonPadding);
                     tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbClose.Image = Resources.control;
                     tsbClose.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateContinueTask);
                     tsMain.Items.Add(tsbClose);
 
                     ToolStripButton tsbCloseCancel = new ToolStripButton("Cancel task (Esc)");
-                    tsbCloseCancel.Padding = new Padding(buttonPadding);
                     tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbCloseCancel.Image = Resources.cross;
                     tsbCloseCancel.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateCancelTask);
@@ -165,7 +162,6 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 ToolStripButton tsbSaveImage = new ToolStripButton("Save image");
-                tsbSaveImage.Padding = new Padding(buttonPadding);
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbSaveImage.Enabled = File.Exists(form.ImageFilePath);
                 tsbSaveImage.Image = Resources.disk_black;
@@ -173,28 +169,24 @@ namespace ShareX.ScreenCaptureLib
                 tsMain.Items.Add(tsbSaveImage);
 
                 ToolStripButton tsbSaveImageAs = new ToolStripButton("Save image as...");
-                tsbSaveImageAs.Padding = new Padding(buttonPadding);
                 tsbSaveImageAs.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbSaveImageAs.Image = Resources.disks_black;
                 tsbSaveImageAs.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateSaveImageAs);
                 tsMain.Items.Add(tsbSaveImageAs);
 
                 ToolStripButton tsbCopyImage = new ToolStripButton("Copy image to clipboard");
-                tsbCopyImage.Padding = new Padding(buttonPadding);
                 tsbCopyImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCopyImage.Image = Resources.clipboard;
                 tsbCopyImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateCopyImage);
                 tsMain.Items.Add(tsbCopyImage);
 
                 ToolStripButton tsbUploadImage = new ToolStripButton("Upload image");
-                tsbUploadImage.Padding = new Padding(buttonPadding);
                 tsbUploadImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbUploadImage.Image = Resources.drive_globe;
                 tsbUploadImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateUploadImage);
                 tsMain.Items.Add(tsbUploadImage);
 
                 ToolStripButton tsbPrintImage = new ToolStripButton("Print image...");
-                tsbPrintImage.Padding = new Padding(buttonPadding);
                 tsbPrintImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbPrintImage.Image = Resources.printer;
                 tsbPrintImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotatePrintImage);
@@ -226,7 +218,6 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 ToolStripButton tsbShapeType = new ToolStripButton(shapeType.GetLocalizedDescription());
-                tsbShapeType.Padding = new Padding(buttonPadding);
                 tsbShapeType.DisplayStyle = ToolStripItemDisplayStyle.Image;
 
                 Image img = null;
@@ -309,7 +300,6 @@ namespace ShareX.ScreenCaptureLib
             tsMain.Items.Add(new ToolStripSeparator());
 
             tsbBorderColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Border_color___);
-            tsbBorderColor.Padding = new Padding(buttonPadding);
             tsbBorderColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbBorderColor.Click += (sender, e) =>
             {
@@ -367,7 +357,6 @@ namespace ShareX.ScreenCaptureLib
             tsMain.Items.Add(tsbBorderColor);
 
             tsbFillColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Fill_color___);
-            tsbFillColor.Padding = new Padding(buttonPadding);
             tsbFillColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbFillColor.Click += (sender, e) =>
             {
@@ -417,7 +406,6 @@ namespace ShareX.ScreenCaptureLib
             tsMain.Items.Add(tsbFillColor);
 
             tsbHighlightColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
-            tsbHighlightColor.Padding = new Padding(buttonPadding);
             tsbHighlightColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbHighlightColor.Click += (sender, e) =>
             {
@@ -438,7 +426,6 @@ namespace ShareX.ScreenCaptureLib
             tsMain.Items.Add(tsbHighlightColor);
 
             tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
-            tsddbShapeOptions.Padding = new Padding(buttonPadding);
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
@@ -532,7 +519,6 @@ namespace ShareX.ScreenCaptureLib
             #region Edit
 
             ToolStripDropDownButton tsddbEdit = new ToolStripDropDownButton("Edit");
-            tsddbEdit.Padding = new Padding(buttonPadding);
             tsddbEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbEdit.Image = Resources.wrench_screwdriver;
             tsMain.Items.Add(tsddbEdit);
@@ -592,7 +578,6 @@ namespace ShareX.ScreenCaptureLib
                 #region Capture
 
                 ToolStripDropDownButton tsddbCapture = new ToolStripDropDownButton("Capture");
-                tsddbCapture.Padding = new Padding(buttonPadding);
                 tsddbCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsddbCapture.Image = Resources.camera;
                 tsMain.Items.Add(tsddbCapture);
@@ -653,7 +638,6 @@ namespace ShareX.ScreenCaptureLib
                 #region Options
 
                 ToolStripDropDownButton tsddbOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Options);
-                tsddbOptions.Padding = new Padding(buttonPadding);
                 tsddbOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsddbOptions.Image = Resources.gear;
                 tsMain.Items.Add(tsddbOptions);
@@ -766,16 +750,12 @@ namespace ShareX.ScreenCaptureLib
             tslDragLeft.MouseLeave += TslDrag_MouseLeave;
             tslDragRight.MouseLeave += TslDrag_MouseLeave;
 
-            tsMain.ResumeLayout(false);
-            tsMain.PerformLayout();
-            menuForm.ResumeLayout(false);
-
-            menuForm.Show(form);
-
             foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
             {
                 if (!string.IsNullOrEmpty(tsi.Text))
                 {
+                    tsi.Padding = new Padding(buttonPadding);
+
                     tsi.MouseEnter += (sender, e) =>
                     {
                         Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
@@ -789,6 +769,12 @@ namespace ShareX.ScreenCaptureLib
                     tsi.MouseLeave += TsMain_MouseLeave;
                 }
             }
+
+            tsMain.ResumeLayout(false);
+            tsMain.PerformLayout();
+            menuForm.ResumeLayout(false);
+
+            menuForm.Show(form);
 
             UpdateMenu();
 
