@@ -37,19 +37,19 @@ namespace ShareX.HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm() : this(Color.Red)
+        public ColorPickerForm() : this(Color.Red, false)
         {
         }
 
-        public ColorPickerForm(Color currentColor)
+        public ColorPickerForm(Color currentColor, bool showOldColor = true)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            SetCurrentColor(currentColor, false);
+            SetCurrentColor(currentColor, showOldColor);
         }
 
-        public static Color GetColor(Color currentColor)
+        public static bool PickColor(Color currentColor, out Color newColor)
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
@@ -57,11 +57,13 @@ namespace ShareX.HelpersLib
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    return dialog.NewColor;
+                    newColor = dialog.NewColor;
+                    return true;
                 }
             }
 
-            return currentColor;
+            newColor = currentColor;
+            return false;
         }
 
         public void SetCurrentColor(Color currentColor, bool keepPreviousColor)

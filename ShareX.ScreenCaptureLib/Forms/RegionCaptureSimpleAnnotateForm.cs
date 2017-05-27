@@ -163,7 +163,11 @@ namespace ShareX.ScreenCaptureLib
                 try
                 {
                     isBusy = true;
-                    Options.DrawingPenColor = ColorPickerForm.GetColor(Options.DrawingPenColor);
+
+                    if (ColorPickerForm.PickColor(Options.DrawingPenColor, out Color newColor))
+                    {
+                        Options.DrawingPenColor = newColor;
+                    }
                 }
                 finally
                 {

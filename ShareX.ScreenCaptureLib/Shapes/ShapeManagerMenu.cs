@@ -325,30 +325,27 @@ namespace ShareX.ScreenCaptureLib
                     borderColor = AnnotationOptions.BorderColor;
                 }
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(borderColor))
+                if (ColorPickerForm.PickColor(borderColor, out Color newColor))
                 {
-                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
-                        if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
-                        {
-                            AnnotationOptions.TextBorderColor = dialogColor.NewColor;
-                        }
-                        else if (shapeType == ShapeType.DrawingTextOutline)
-                        {
-                            AnnotationOptions.TextOutlineBorderColor = dialogColor.NewColor;
-                        }
-                        else if (shapeType == ShapeType.DrawingStep)
-                        {
-                            AnnotationOptions.StepBorderColor = dialogColor.NewColor;
-                        }
-                        else
-                        {
-                            AnnotationOptions.BorderColor = dialogColor.NewColor;
-                        }
-
-                        UpdateMenu();
-                        UpdateCurrentShape();
+                        AnnotationOptions.TextBorderColor = newColor;
                     }
+                    else if (shapeType == ShapeType.DrawingTextOutline)
+                    {
+                        AnnotationOptions.TextOutlineBorderColor = newColor;
+                    }
+                    else if (shapeType == ShapeType.DrawingStep)
+                    {
+                        AnnotationOptions.StepBorderColor = newColor;
+                    }
+                    else
+                    {
+                        AnnotationOptions.BorderColor = newColor;
+                    }
+
+                    UpdateMenu();
+                    UpdateCurrentShape();
                 }
 
                 ResumeForm();
@@ -378,26 +375,23 @@ namespace ShareX.ScreenCaptureLib
                     fillColor = AnnotationOptions.FillColor;
                 }
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(fillColor))
+                if (ColorPickerForm.PickColor(fillColor, out Color newColor))
                 {
-                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
-                        if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
-                        {
-                            AnnotationOptions.TextFillColor = dialogColor.NewColor;
-                        }
-                        else if (shapeType == ShapeType.DrawingStep)
-                        {
-                            AnnotationOptions.StepFillColor = dialogColor.NewColor;
-                        }
-                        else
-                        {
-                            AnnotationOptions.FillColor = dialogColor.NewColor;
-                        }
-
-                        UpdateMenu();
-                        UpdateCurrentShape();
+                        AnnotationOptions.TextFillColor = newColor;
                     }
+                    else if (shapeType == ShapeType.DrawingStep)
+                    {
+                        AnnotationOptions.StepFillColor = newColor;
+                    }
+                    else
+                    {
+                        AnnotationOptions.FillColor = newColor;
+                    }
+
+                    UpdateMenu();
+                    UpdateCurrentShape();
                 }
 
                 ResumeForm();
@@ -410,14 +404,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.HighlightColor))
+                if (ColorPickerForm.PickColor(AnnotationOptions.HighlightColor, out Color newColor))
                 {
-                    if (dialogColor.ShowDialog() == DialogResult.OK)
-                    {
-                        AnnotationOptions.HighlightColor = dialogColor.NewColor;
-                        UpdateMenu();
-                        UpdateCurrentShape();
-                    }
+                    AnnotationOptions.HighlightColor = newColor;
+                    UpdateMenu();
+                    UpdateCurrentShape();
                 }
 
                 ResumeForm();
