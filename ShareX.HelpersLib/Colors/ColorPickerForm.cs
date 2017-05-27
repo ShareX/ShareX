@@ -53,8 +53,6 @@ namespace ShareX.HelpersLib
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
-                dialog.rbSaturation.Checked = true;
-
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     newColor = dialog.NewColor;
