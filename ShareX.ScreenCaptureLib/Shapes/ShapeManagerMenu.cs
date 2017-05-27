@@ -51,7 +51,6 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
-        private int buttonPadding = 4;
 
         private void CreateToolbar()
         {
@@ -754,8 +753,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (!string.IsNullOrEmpty(tsi.Text))
                 {
-                    tsi.Padding = new Padding(buttonPadding);
-
                     tsi.MouseEnter += (sender, e) =>
                     {
                         Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
