@@ -80,7 +80,8 @@ namespace ShareX.ScreenCaptureLib
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
         internal IContainer components = null;
-        internal PointAnimation toolbarAnimation, toolbarAnimation2;
+        internal OpacityAnimation toolbarAnimation;
+        internal Rectangle toolbarAnimationRectangle;
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
@@ -589,15 +590,13 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw animation under toolbar on startup
-            if (Config.EnableAnimations && toolbarAnimation != null && toolbarAnimation2 != null && toolbarAnimation.IsActive)
+            if (Config.EnableAnimations && toolbarAnimation != null && toolbarAnimation.IsActive)
             {
-                using (Pen toolbarAnimationPen = new Pen(Color.FromArgb(5, 100, 255), 4))
-                {
-                    toolbarAnimation.Update();
-                    g.DrawLine(toolbarAnimationPen, toolbarAnimation.FromPosition, toolbarAnimation.CurrentPosition);
+                toolbarAnimation.Update();
 
-                    toolbarAnimation2.Update();
-                    g.DrawLine(toolbarAnimationPen, toolbarAnimation2.FromPosition, toolbarAnimation2.CurrentPosition);
+                using (Pen toolbarAnimationPen = new Pen(Color.FromArgb((int)(toolbarAnimation.Opacity * 255), 5, 100, 255), 3) { Alignment = PenAlignment.Inset })
+                {
+                    g.DrawRectangleProper(toolbarAnimationPen, toolbarAnimationRectangle.Offset(3));
                 }
             }
         }

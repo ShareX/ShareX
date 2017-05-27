@@ -789,25 +789,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
-            Point clientLocation = CaptureHelpers.ScreenToClient(menuForm.Location);
+            form.toolbarAnimationRectangle = CaptureHelpers.ScreenToClient(menuForm.Bounds);
 
-            form.toolbarAnimation = new PointAnimation()
+            form.toolbarAnimation = new OpacityAnimation()
             {
-                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
-                ToPosition = new Point(clientLocation.X, clientLocation.Y + menuForm.Height + 1),
-                Duration = TimeSpan.FromMilliseconds(500)
+                FadeInDuration = TimeSpan.FromMilliseconds(500),
+                Duration = TimeSpan.FromMilliseconds(500),
+                FadeOutDuration = TimeSpan.FromMilliseconds(500)
             };
 
             form.toolbarAnimation.Start();
-
-            form.toolbarAnimation2 = new PointAnimation()
-            {
-                FromPosition = new Point(clientLocation.X + menuForm.Width / 2, clientLocation.Y + menuForm.Height + 1),
-                ToPosition = new Point(clientLocation.X + menuForm.Width, clientLocation.Y + menuForm.Height + 1),
-                Duration = TimeSpan.FromMilliseconds(500)
-            };
-
-            form.toolbarAnimation2.Start();
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)
