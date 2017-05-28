@@ -1234,6 +1234,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public Rectangle LimitRectangleToImage(Rectangle rect)
+        {
+            return Rectangle.Intersect(rect, form.ImageRectangle);
+        }
+
         public void DrawRegionArea(Graphics g, Rectangle rect)
         {
             form.DrawRegionArea(g, rect);
