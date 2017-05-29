@@ -10,6 +10,6 @@ if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
     }
 	elseif ($env:CONFIGURATION -eq "WindowsStore")
     {
-        & "ShareX.Setup\bin\Release\ShareX.Setup.exe" -AppVeyorWindowsStore
+        & "ShareX.Setup\bin\WindowsStore\ShareX.Setup.exe" -AppVeyorWindowsStore
     }
 }
