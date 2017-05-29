@@ -147,6 +147,14 @@ namespace ShareX.Setup
                 CreateFolder(WindowsStoreDebugDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreDebugFolder);
             }
 
+            if (Job.HasFlag(SetupJobs.CompileAppx))
+            {
+                Process.Start(@"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
+                    $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o").WaitForExit();
+
+                Directory.Delete(WindowsStoreOutputDir, true);
+            }
+
             if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
             {
                 CreateFolder(ReleaseDir, PortableAppsOutputDir, SetupJobs.CreatePortableAppsFolder);
