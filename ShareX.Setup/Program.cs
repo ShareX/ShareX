@@ -44,6 +44,7 @@ namespace ShareX.Setup
             UploadOutputFile = 1 << 5,
             CreateWindowsStoreFolder = 1 << 6,
             CreateWindowsStoreDebugFolder = 1 << 7,
+            CompileAppx = 1 << 8,
 
             Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
@@ -55,7 +56,7 @@ namespace ShareX.Setup
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
             AppVeyorSteam = CreateSteamFolder,
-            AppVeyorWindowsStore = CreateWindowsStoreFolder
+            AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
         }
 
         private static SetupJobs Job = SetupJobs.WindowsStore;
@@ -270,11 +271,6 @@ namespace ShareX.Setup
             {
                 Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
-
-                Process.Start(@"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
-                    $"pack /d \"{destination}\" /p \"{WindowsStoreAppxPath}\" /l /o").WaitForExit();
-
-                Directory.Delete(destination, true);
             }
             else if (job == SetupJobs.CreatePortable)
             {
