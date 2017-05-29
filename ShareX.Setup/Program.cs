@@ -54,7 +54,8 @@ namespace ShareX.Setup
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
-            AppVeyorSteam = CreateSteamFolder
+            AppVeyorSteam = CreateSteamFolder,
+            AppVeyorWindowsStore = CreateWindowsStoreFolder
         }
 
         private static SetupJobs Job = SetupJobs.WindowsStore;
@@ -104,6 +105,11 @@ namespace ShareX.Setup
             {
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorSteam;
+            }
+            else if (Helpers.CheckArguments(args, "-AppVeyorWindowsStore"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorWindowsStore;
             }
 
             Console.WriteLine("Setup job: " + Job);

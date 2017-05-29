@@ -8,4 +8,8 @@ if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
     {
         & "ShareX.Setup\bin\Steam\ShareX.Setup.exe" -AppVeyorSteam
     }
+	elseif ($env:CONFIGURATION -eq "WindowsStore")
+    {
+        & "ShareX.Setup\bin\Release\ShareX.Setup.exe" -AppVeyorWindowsStore
+    }
 }
