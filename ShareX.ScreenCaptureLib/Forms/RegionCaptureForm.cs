@@ -110,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
             timerFPS = new Stopwatch();
             regionAnimation = new RectangleAnimation()
             {
-                Duration = TimeSpan.FromMilliseconds(250)
+                Duration = TimeSpan.FromMilliseconds(200)
             };
 
             borderPen = new Pen(Color.Black);
