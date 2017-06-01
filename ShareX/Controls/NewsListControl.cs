@@ -43,6 +43,8 @@ namespace ShareX
         {
             InitializeComponent();
 
+            tlpMain.CellPaint += TlpMain_CellPaint;
+
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!" });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.8.0 released." });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "We now have a Discord server!" });
@@ -56,28 +58,62 @@ namespace ShareX
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.0.0 released." });
         }
 
+        private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            Color color;
+
+            if (e.Row == 1)
+            {
+                color = Color.FromArgb(240, 255, 240);
+            }
+            else if (e.Row.IsEvenNumber())
+            {
+                color = Color.FromArgb(250, 250, 250);
+            }
+            else
+            {
+                color = Color.FromArgb(245, 245, 245);
+            }
+
+            using (Brush brush = new SolidBrush(color))
+            {
+                e.Graphics.FillRectangle(brush, e.CellBounds);
+            }
+
+            e.Graphics.DrawLine(Pens.LightGray, new Point(e.CellBounds.X, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1));
+        }
+
         public void AddNewsItem(NewsItem item)
         {
             NewsItems.Add(item);
-            Label lblNewsItem = new Label()
-            {
-                Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                AutoSize = true,
-                Font = new Font("Arial", 10),
-                Margin = new Padding(0),
-                Padding = new Padding(5, 8, 5, 8),
-                Text = item.DateTimeUTC.ToLocalTime().ToShortDateString() + " - " + item.Text
-            };
-            lblNewsItem.BackColor = NewsItems.Count.IsEvenNumber() ? Color.FromArgb(250, 250, 250) : Color.FromArgb(245, 245, 245);
-            AddRow(lblNewsItem);
-        }
 
-        private void AddRow(Label label)
-        {
             RowStyle style = new RowStyle(SizeType.AutoSize);
             tlpMain.RowStyles.Add(style);
             int index = tlpMain.RowCount++ - 1;
-            tlpMain.Controls.Add(label, 0, index);
+
+            Label lblDateTime = new Label()
+            {
+                Anchor = AnchorStyles.Left | AnchorStyles.Right,
+                AutoSize = true,
+                BackColor = Color.Transparent,
+                Font = new Font("Arial", 10),
+                Margin = new Padding(0),
+                Padding = new Padding(5, 8, 5, 8),
+                Text = item.DateTimeUTC.ToLocalTime().ToShortDateString()
+            };
+            tlpMain.Controls.Add(lblDateTime, 0, index);
+
+            Label lblText = new Label()
+            {
+                Anchor = AnchorStyles.Left | AnchorStyles.Right,
+                AutoSize = true,
+                BackColor = Color.Transparent,
+                Font = new Font("Arial", 10),
+                Margin = new Padding(0),
+                Padding = new Padding(5, 8, 5, 8),
+                Text = item.Text
+            };
+            tlpMain.Controls.Add(lblText, 1, index);
         }
     }
 }
