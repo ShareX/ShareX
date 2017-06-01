@@ -1741,13 +1741,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="newsListControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 8</value>
+    <value>280, 8</value>
   </data>
   <data name="newsListControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="newsListControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 384</value>
+    <value>544, 392</value>
   </data>
   <data name="newsListControl1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

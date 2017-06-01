@@ -32,6 +32,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ShareX.HelpersLib;
+using System.Drawing.Drawing2D;
 
 namespace ShareX
 {
@@ -45,8 +46,8 @@ namespace ShareX
 
             tlpMain.CellPaint += TlpMain_CellPaint;
 
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!" });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.8.0 released." });
+            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", IsUnread = true });
+            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "We now have a Discord server!" });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.7.0 released." });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.6.0 released." });
@@ -62,22 +63,23 @@ namespace ShareX
         {
             Color color;
 
-            if (e.Row == 1)
-            {
-                color = Color.FromArgb(240, 255, 240);
-            }
-            else if (e.Row.IsEvenNumber())
+            if (e.Row.IsEvenNumber())
             {
                 color = Color.FromArgb(250, 250, 250);
             }
             else
             {
-                color = Color.FromArgb(245, 245, 245);
+                color = Color.FromArgb(246, 246, 246);
             }
 
             using (Brush brush = new SolidBrush(color))
             {
                 e.Graphics.FillRectangle(brush, e.CellBounds);
+            }
+
+            if (NewsItems.IsValidIndex(e.Row) && NewsItems[e.Row].IsUnread && e.Column == 0)
+            {
+                e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));
             }
 
             e.Graphics.DrawLine(Pens.LightGray, new Point(e.CellBounds.X, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1));
@@ -98,7 +100,7 @@ namespace ShareX
                 BackColor = Color.Transparent,
                 Font = new Font("Arial", 10),
                 Margin = new Padding(0),
-                Padding = new Padding(5, 8, 5, 8),
+                Padding = new Padding(10, 8, 5, 8),
                 Text = item.DateTimeUTC.ToLocalTime().ToShortDateString()
             };
             tlpMain.Controls.Add(lblDateTime, 0, index);
