@@ -239,6 +239,7 @@
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.newsListControl1 = new ShareX.NewsListControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1856,6 +1857,12 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
+            // newsListControl1
+            // 
+            resources.ApplyResources(this.newsListControl1, "newsListControl1");
+            this.newsListControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newsListControl1.Name = "newsListControl1";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1865,6 +1872,7 @@
             this.Controls.Add(this.flpPatreon);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.newsListControl1);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -2104,5 +2112,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
+        private NewsListControl newsListControl1;
     }
 }

@@ -135,6 +135,13 @@
     <Compile Include="Controls\BeforeUploadControl.Designer.cs">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NewsListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NewsListControl.Designer.cs">
+      <DependentUpon>NewsListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsItem.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -357,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.zh-TW.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewsListControl.resx">
+      <DependentUpon>NewsListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.de.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
