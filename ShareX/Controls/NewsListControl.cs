@@ -46,9 +46,9 @@ namespace ShareX
 
             tlpMain.CellPaint += TlpMain_CellPaint;
 
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", IsUnread = true });
+            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", URL = "https://getsharex.com", IsUnread = true });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "We now have a Discord server!" });
+            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "We now have a Discord server!", URL = "https://getsharex.com" });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.7.0 released." });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.6.0 released." });
             AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.5.0 released.\nMulti line test.\nTest." });
@@ -103,6 +103,7 @@ namespace ShareX
                 Padding = new Padding(10, 8, 5, 8),
                 Text = item.DateTimeUTC.ToLocalTime().ToShortDateString()
             };
+
             tlpMain.Controls.Add(lblDateTime, 0, index);
 
             Label lblText = new Label()
@@ -115,6 +116,21 @@ namespace ShareX
                 Padding = new Padding(5, 8, 5, 8),
                 Text = item.Text
             };
+
+            if (!string.IsNullOrEmpty(item.URL))
+            {
+                lblText.Cursor = Cursors.Hand;
+                lblText.MouseEnter += (sender, e) => lblText.ForeColor = Color.Blue;
+                lblText.MouseLeave += (sender, e) => lblText.ForeColor = SystemColors.ControlText;
+                lblText.MouseClick += (sender, e) =>
+                {
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        URLHelpers.OpenURL(item.URL);
+                    }
+                };
+            }
+
             tlpMain.Controls.Add(lblText, 1, index);
         }
     }
