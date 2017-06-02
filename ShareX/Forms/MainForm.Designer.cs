@@ -239,7 +239,7 @@
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.newsListControl1 = new ShareX.NewsListControl();
+            this.nlcNews = new ShareX.NewsListControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1857,11 +1857,11 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
-            // newsListControl1
+            // nlcNews
             // 
-            resources.ApplyResources(this.newsListControl1, "newsListControl1");
-            this.newsListControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.newsListControl1.Name = "newsListControl1";
+            resources.ApplyResources(this.nlcNews, "nlcNews");
+            this.nlcNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nlcNews.Name = "nlcNews";
             // 
             // MainForm
             // 
@@ -1869,7 +1869,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.newsListControl1);
+            this.Controls.Add(this.nlcNews);
             this.Controls.Add(this.flpPatreon);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
@@ -2112,6 +2112,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
-        private NewsListControl newsListControl1;
+        private NewsListControl nlcNews;
     }
 }

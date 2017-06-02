@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,11 @@ namespace ShareX
 {
     public class NewsItem
     {
-        public DateTime DateTimeUTC { get; set; }
+        public DateTime DateTime { get; set; }
         public string Text { get; set; }
         public string URL { get; set; }
+
+        [JsonIgnore]
         public bool IsUnread { get; set; }
     }
 }

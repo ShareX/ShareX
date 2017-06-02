@@ -40,23 +40,31 @@ namespace ShareX
     {
         public List<NewsItem> NewsItems = new List<NewsItem>();
 
+        private ToolTip tooltip;
+
         public NewsListControl()
         {
             InitializeComponent();
 
+            tooltip = new ToolTip()
+            {
+                AutoPopDelay = 10000,
+                InitialDelay = 500
+            };
+
             tlpMain.CellPaint += TlpMain_CellPaint;
 
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", URL = "https://getsharex.com", IsUnread = true });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "We now have a Discord server!", URL = "https://getsharex.com" });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.7.0 released." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.6.0 released." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.5.0 released.\nMulti line test.\nTest." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.4.0 released." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.3.0 released.\n7 Long text test. 6 Long text test. 5 Long text test. 4 Long text test. 3 Long text test. 2 Long text test. 1 Long text test.\nMulti line test.\nTest." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.2.0 released." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.1.0 released." });
-            AddNewsItem(new NewsItem() { DateTimeUTC = DateTime.Now, Text = "ShareX 1.0.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", URL = "https://getsharex.com", IsUnread = true });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "We now have a Discord server!", URL = "https://getsharex.com" });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.7.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.6.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.5.0 released.\nMulti line test.\nTest." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.4.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.3.0 released.\n7 Long text test. 6 Long text test. 5 Long text test. 4 Long text test. 3 Long text test. 2 Long text test. 1 Long text test.\nMulti line test.\nTest." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.2.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.1.0 released." });
+            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.0.0 released." });
         }
 
         private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -101,7 +109,7 @@ namespace ShareX
                 Font = new Font("Arial", 10),
                 Margin = new Padding(0),
                 Padding = new Padding(10, 8, 5, 8),
-                Text = item.DateTimeUTC.ToLocalTime().ToShortDateString()
+                Text = item.DateTime.ToLocalTime().ToShortDateString()
             };
 
             tlpMain.Controls.Add(lblDateTime, 0, index);
@@ -117,8 +125,9 @@ namespace ShareX
                 Text = item.Text
             };
 
-            if (!string.IsNullOrEmpty(item.URL))
+            if (URLHelpers.IsValidURL(item.URL))
             {
+                tooltip.SetToolTip(lblText, item.URL);
                 lblText.Cursor = Cursors.Hand;
                 lblText.MouseEnter += (sender, e) => lblText.ForeColor = Color.Blue;
                 lblText.MouseLeave += (sender, e) => lblText.ForeColor = SystemColors.ControlText;
