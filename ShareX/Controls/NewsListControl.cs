@@ -70,14 +70,17 @@ namespace ShareX
 
         private void TlpMain_Layout(object sender, LayoutEventArgs e)
         {
-            if (tlpMain.HorizontalScroll.Visible)
+            TaskEx.RunDelayed(() =>
             {
-                tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-            }
-            else
-            {
-                tlpMain.Padding = new Padding(0);
-            }
+                if (tlpMain.HorizontalScroll.Visible)
+                {
+                    tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
+                }
+                else
+                {
+                    tlpMain.Padding = new Padding(0);
+                }
+            }, 1);
         }
 
         private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
