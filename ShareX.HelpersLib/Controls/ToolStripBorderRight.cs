@@ -25,7 +25,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,24 +32,18 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ToolStripButtonExtraImage : ToolStripButton
+    public class ToolStripBorderRight : ToolStrip
     {
-        [DefaultValue(false)]
-        public bool ShowExtraImage { get; set; }
-
-        [DefaultValue(null)]
-        public Image ExtraImage { get; set; }
-
-        private int extraImagePadding = 2;
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
-            if (ShowExtraImage && ExtraImage != null)
-            {
-                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - extraImagePadding, extraImagePadding));
-            }
+            e.Graphics.DrawLine(Pens.DarkGray, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
         }
     }
 }

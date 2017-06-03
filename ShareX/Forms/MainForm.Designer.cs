@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.lblMainFormTip = new System.Windows.Forms.Label();
-            this.lblSplitter = new System.Windows.Forms.Label();
             this.lvUploads = new ShareX.HelpersLib.MyListView();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,7 +44,7 @@
             this.flpPatreon = new System.Windows.Forms.FlowLayoutPanel();
             this.pbPatreonOpen = new System.Windows.Forms.PictureBox();
             this.pbPatreonHide = new System.Windows.Forms.PictureBox();
-            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.tsMain = new ShareX.HelpersLib.ToolStripBorderRight();
             this.tsddbCapture = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiFullscreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -262,7 +261,6 @@
             // scMain.Panel1
             // 
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
-            this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
             // 
             // scMain.Panel2
@@ -279,12 +277,6 @@
             this.lblMainFormTip.Name = "lblMainFormTip";
             this.lblMainFormTip.UseMnemonic = false;
             this.lblMainFormTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
-            // 
-            // lblSplitter
-            // 
-            this.lblSplitter.BackColor = System.Drawing.Color.DarkGray;
-            resources.ApplyResources(this.lblSplitter, "lblSplitter");
-            this.lblSplitter.Name = "lblSplitter";
             // 
             // lvUploads
             // 
@@ -1917,7 +1909,7 @@
         private System.Windows.Forms.ColumnHeader chURL;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chProgress;
-        private System.Windows.Forms.ToolStrip tsMain;
+        private ShareX.HelpersLib.ToolStripBorderRight tsMain;
         private System.Windows.Forms.ToolStripSeparator tssMain1;
         private System.Windows.Forms.ColumnHeader chSpeed;
         private System.Windows.Forms.ColumnHeader chRemaining;
@@ -1992,7 +1984,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayURLSharingServices;
         private System.Windows.Forms.ToolStripDropDownButton tsddbAfterUploadTasks;
         private System.Windows.Forms.ToolStripButton tsbScreenshotsFolder;
-        private System.Windows.Forms.Label lblSplitter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAfterUploadTasks;
         private System.Windows.Forms.ToolStripSeparator tssUploadInfo1;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreview;

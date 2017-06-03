@@ -104,6 +104,9 @@
     <Compile Include="Controls\HotkeySelectionButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ToolStripBorderRight.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripButtonExtraImage.cs">
       <SubType>Component</SubType>
     </Compile>

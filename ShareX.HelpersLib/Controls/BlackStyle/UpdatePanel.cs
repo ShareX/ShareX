@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Rectangle rect = e.ClipRectangle;
+            Rectangle rect = ClientRectangle;
 
             using (Brush backgroundBrush = new LinearGradientBrush(rect, Color.FromArgb(100, 100, 100), Color.FromArgb(70, 70, 70), LinearGradientMode.Vertical))
             {

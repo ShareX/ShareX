@@ -872,7 +872,7 @@ namespace ShareX
                 tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Show_menu;
             }
 
-            tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
+            tsMain.Visible = Program.Settings.ShowMenu;
 
             if (Program.Settings.ShowColumns)
             {

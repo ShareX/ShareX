@@ -90,7 +90,7 @@ namespace ShareX
             }
             else
             {
-                color = Color.FromArgb(246, 246, 246);
+                color = Color.FromArgb(247, 247, 247);
             }
 
             using (Brush brush = new SolidBrush(color))
