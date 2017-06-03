@@ -107,6 +107,7 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonExtraImage();
             this.tsmiDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -239,7 +240,7 @@
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.nlcNews = new ShareX.NewsListControl();
+            this.newsListControl1 = new ShareX.NewsListControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -400,6 +401,7 @@
             this.tsbHistory,
             this.tsbImageHistory,
             this.tsddbDebug,
+            this.tsbNews,
             this.tsmiDonate,
             this.tsmiAbout});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
@@ -866,6 +868,14 @@
             this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
             resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
+            // tsbNews
+            // 
+            this.tsbNews.ExtraImage = global::ShareX.Properties.Resources.Exclamation_16;
+            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
+            resources.ApplyResources(this.tsbNews, "tsbNews");
+            this.tsbNews.Name = "tsbNews";
+            this.tsbNews.ShowExtraImage = true;
             // 
             // tsmiDonate
             // 
@@ -1857,11 +1867,10 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
-            // nlcNews
+            // newsListControl1
             // 
-            resources.ApplyResources(this.nlcNews, "nlcNews");
-            this.nlcNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nlcNews.Name = "nlcNews";
+            resources.ApplyResources(this.newsListControl1, "newsListControl1");
+            this.newsListControl1.Name = "newsListControl1";
             // 
             // MainForm
             // 
@@ -1869,7 +1878,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.nlcNews);
+            this.Controls.Add(this.newsListControl1);
             this.Controls.Add(this.flpPatreon);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
@@ -2112,6 +2121,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
-        private NewsListControl nlcNews;
+        private ShareX.HelpersLib.ToolStripButtonExtraImage tsbNews;
+        private NewsListControl newsListControl1;
     }
 }

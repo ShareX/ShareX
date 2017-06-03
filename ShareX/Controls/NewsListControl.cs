@@ -53,6 +53,7 @@ namespace ShareX
             };
 
             tlpMain.CellPaint += TlpMain_CellPaint;
+            tlpMain.Layout += TlpMain_Layout;
 
             AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", URL = "https://getsharex.com", IsUnread = true });
             AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
@@ -65,6 +66,18 @@ namespace ShareX
             AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.2.0 released." });
             AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.1.0 released." });
             AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.0.0 released." });
+        }
+
+        private void TlpMain_Layout(object sender, LayoutEventArgs e)
+        {
+            if (tlpMain.HorizontalScroll.Visible)
+            {
+                tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
+            }
+            else
+            {
+                tlpMain.Padding = new Padding(0);
+            }
         }
 
         private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)

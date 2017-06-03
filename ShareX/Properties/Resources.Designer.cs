@@ -912,6 +912,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Exclamation_16 {
+            get {
+                object obj = ResourceManager.GetObject("Exclamation_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap exclamation_button {
             get {
                 object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
@@ -1480,6 +1490,16 @@ namespace ShareX.Properties {
         public static string MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___ {
             get {
                 return ResourceManager.GetString("MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap megaphone {
+            get {
+                object obj = ResourceManager.GetObject("megaphone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

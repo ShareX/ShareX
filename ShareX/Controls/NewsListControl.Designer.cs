@@ -43,18 +43,17 @@
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.Size = new System.Drawing.Size(500, 500);
+            this.tlpMain.Size = new System.Drawing.Size(502, 502);
             this.tlpMain.TabIndex = 0;
             // 
             // NewsListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tlpMain);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "NewsListControl";
-            this.Size = new System.Drawing.Size(500, 500);
+            this.Size = new System.Drawing.Size(502, 502);
             this.ResumeLayout(false);
 
         }
