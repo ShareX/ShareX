@@ -170,7 +170,7 @@ namespace ShareX
             return RunStartupWindowsStore("-StartupState", "Startup state check");
         }
 
-        public static StartupTaskState SetStartupWindowsStore(bool enable)
+        public static StartupTaskState ConfigureStartupWindowsStore(bool enable)
         {
             return RunStartupWindowsStore(enable ? "-StartupEnable" : "-StartupDisable", "Startup configuration");
         }

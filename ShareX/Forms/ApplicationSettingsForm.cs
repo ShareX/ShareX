@@ -336,6 +336,43 @@ namespace ShareX
             });
         }
 
+        private void ConfigureWindowsStoreStartup()
+        {
+            if (cbStartWithWindows.Enabled)
+            {
+                cbStartWithWindows.Enabled = false;
+                lblWindowsStoreStartupStatus.Text = "Configuring startup...";
+                lblWindowsStoreStartupStatus.Visible = true;
+
+                bool enable = cbStartWithWindows.Checked;
+                StartupTaskState state = StartupTaskState.Error;
+
+                TaskEx.Run(() =>
+                {
+                    state = IntegrationHelpers.ConfigureStartupWindowsStore(enable);
+                },
+                () =>
+                {
+                    if (!IsDisposed)
+                    {
+                        if (state == StartupTaskState.Error)
+                        {
+                            lblWindowsStoreStartupStatus.Text = "Startup configuration failed. Check debug log for more info.";
+                        }
+                        else if (state == StartupTaskState.DisabledByUser)
+                        {
+                            lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
+                        }
+                        else
+                        {
+                            lblWindowsStoreStartupStatus.Visible = false;
+                            cbStartWithWindows.Enabled = true;
+                        }
+                    }
+                });
+            }
+        }
+
         #region General
 
         private void cbShowTray_CheckedChanged(object sender, EventArgs e)
@@ -414,25 +451,7 @@ namespace ShareX
             if (ready)
             {
 #if WindowsStore
-                if (cbStartWithWindows.Enabled)
-                {
-                    StartupTaskState state = IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
-
-                    if (state == StartupTaskState.Error)
-                    {
-                        lblWindowsStoreStartupStatus.Text = "Startup configuration failed. Check debug log for more info.";
-                        lblWindowsStoreStartupStatus.Visible = true;
-                    }
-                    else if (state == StartupTaskState.DisabledByUser)
-                    {
-                        lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
-                        lblWindowsStoreStartupStatus.Visible = true;
-                    }
-                    else
-                    {
-                        lblWindowsStoreStartupStatus.Visible = false;
-                    }
-                }
+                ConfigureWindowsStoreStartup();
 #else
                 IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
 #endif
