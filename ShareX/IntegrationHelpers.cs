@@ -88,6 +88,8 @@ namespace ShareX
             {
                 try
                 {
+                    DebugHelper.WriteLine($"Start: {filepath} -StartupState");
+
                     ProcessStartInfo startInfo = new ProcessStartInfo()
                     {
                         FileName = filepath,
@@ -102,7 +104,7 @@ namespace ShareX
                     {
                         int code = process.ExitCode;
 
-                        DebugHelper.WriteLine($"CheckStartupWindowsStore: {code}");
+                        DebugHelper.WriteLine($"Startup check result: {code}");
 
                         if (code > -1)
                         {
@@ -112,7 +114,7 @@ namespace ShareX
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Startup state check failed:\r\n" + e.ToString(), "ShareX");
+                    DebugHelper.WriteException(e, "Startup state check failed");
                 }
             }
 
