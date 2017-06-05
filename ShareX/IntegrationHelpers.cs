@@ -80,119 +80,9 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
         }
 
-        public static StartupTaskState CheckStartupWindowsStore()
-        {
-            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
-
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-            {
-                try
-                {
-                    DebugHelper.WriteLine($"Start: {filepath} -StartupState");
-
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
-                    {
-                        FileName = filepath,
-                        Arguments = "-StartupState",
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    Process process = Process.Start(startInfo);
-
-                    if (process.WaitForExit(5000))
-                    {
-                        int code = process.ExitCode;
-
-                        DebugHelper.WriteLine($"Startup check result: {code}");
-
-                        if (code > -1)
-                        {
-                            return (StartupTaskState)code;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Startup state check failed");
-                }
-            }
-
-            return StartupTaskState.Error;
-        }
-
         public static bool CreateStartupShortcut(bool create)
         {
             return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
-        }
-
-        public static bool SetStartupWindowsStore(bool enable)
-        {
-            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
-
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-            {
-                try
-                {
-                    string argument;
-
-                    if (enable)
-                    {
-                        argument = "-StartupEnable";
-                    }
-                    else
-                    {
-                        argument = "-StartupDisable";
-                    }
-
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
-                    {
-                        FileName = filepath,
-                        Arguments = argument,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    Process process = Process.Start(startInfo);
-
-                    if (process.WaitForExit(5000))
-                    {
-                        int code = process.ExitCode;
-
-                        DebugHelper.WriteLine($"CreateStartupWindowsStore: {code}");
-
-                        if (code > -1)
-                        {
-                            StartupTaskState state = (StartupTaskState)code;
-
-                            if (enable)
-                            {
-                                if (state == StartupTaskState.Enabled)
-                                {
-                                    return true;
-                                }
-                                else if (state == StartupTaskState.DisabledByUser)
-                                {
-                                    MessageBox.Show("The startup has been disabled by the user.", "ShareX");
-                                    return false;
-                                }
-                            }
-                            else
-                            {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Startup configuration failed:\r\n" + e.ToString(), "ShareX");
-                    return false;
-                }
-            }
-
-            MessageBox.Show("Startup configuration failed.", "ShareX");
-            return false;
         }
 
         public static bool CheckStartWithWindows()
@@ -232,6 +122,57 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
             }
+        }
+
+        private static StartupTaskState RunStartupWindowsStore(string argument, string info)
+        {
+            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
+
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                try
+                {
+                    DebugHelper.WriteLine($"Start: {filepath} {argument}");
+
+                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    {
+                        FileName = filepath,
+                        Arguments = argument,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    Process process = Process.Start(startInfo);
+
+                    if (process.WaitForExit(5000))
+                    {
+                        int code = process.ExitCode;
+
+                        DebugHelper.WriteLine($"{info} result: {code}");
+
+                        if (code > -1)
+                        {
+                            return (StartupTaskState)code;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"{info} failed");
+                }
+            }
+
+            return StartupTaskState.Error;
+        }
+
+        public static StartupTaskState CheckStartupWindowsStore()
+        {
+            return RunStartupWindowsStore("-StartupState", "Startup state check");
+        }
+
+        public static StartupTaskState SetStartupWindowsStore(bool enable)
+        {
+            return RunStartupWindowsStore(enable ? "-StartupEnable" : "-StartupDisable", "Startup configuration");
         }
 
         public static bool CheckShellContextMenuButton()

@@ -416,7 +416,22 @@ namespace ShareX
 #if WindowsStore
                 if (cbStartWithWindows.Enabled)
                 {
-                    IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
+                    StartupTaskState state = IntegrationHelpers.SetStartupWindowsStore(cbStartWithWindows.Checked);
+
+                    if (state == StartupTaskState.Error)
+                    {
+                        lblWindowsStoreStartupStatus.Text = "Startup configuration failed. Check debug log for more info.";
+                        lblWindowsStoreStartupStatus.Visible = true;
+                    }
+                    else if (state == StartupTaskState.DisabledByUser)
+                    {
+                        lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
+                        lblWindowsStoreStartupStatus.Visible = true;
+                    }
+                    else
+                    {
+                        lblWindowsStoreStartupStatus.Visible = false;
+                    }
                 }
 #else
                 IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
