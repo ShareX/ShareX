@@ -1024,11 +1024,11 @@ namespace ShareX
 #if !DEBUG
             if (Visible)
             {
-                tsmiDonate.StartAnimation();
+                tsbDonate.StartAnimation();
             }
             else
             {
-                tsmiDonate.StopAnimation();
+                tsbDonate.StopAnimation();
             }
 #endif
         }
@@ -1542,6 +1542,11 @@ namespace ShareX
         private void tsmiTestURLSharing_Click(object sender, EventArgs e)
         {
             UploadManager.ShareURL(Links.URL_WEBSITE);
+        }
+
+        private void tsbNews_Click(object sender, EventArgs e)
+        {
+            ucNews.Visible = !ucNews.Visible;
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)

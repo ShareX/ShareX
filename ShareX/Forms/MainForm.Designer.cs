@@ -106,9 +106,8 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonExtraImage();
-            this.tsmiDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
+            this.tsbDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
+            this.tsbAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStopUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -240,6 +239,7 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.ucNews = new ShareX.NewsListControl();
+            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -394,8 +394,8 @@
             this.tsbImageHistory,
             this.tsddbDebug,
             this.tsbNews,
-            this.tsmiDonate,
-            this.tsmiAbout});
+            this.tsbDonate,
+            this.tsbAbout});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.tsMain.Name = "tsMain";
             this.tsMain.ShowItemToolTips = false;
@@ -861,28 +861,20 @@
             resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
             // 
-            // tsbNews
+            // tsbDonate
             // 
-            this.tsbNews.ExtraImage = global::ShareX.Properties.Resources.Exclamation_16;
-            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
-            resources.ApplyResources(this.tsbNews, "tsbNews");
-            this.tsbNews.Name = "tsbNews";
-            this.tsbNews.ShowExtraImage = true;
+            this.tsbDonate.AnimationSpeed = 0.8F;
+            this.tsbDonate.Image = global::ShareX.Properties.Resources.heart;
+            resources.ApplyResources(this.tsbDonate, "tsbDonate");
+            this.tsbDonate.Name = "tsbDonate";
+            this.tsbDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
-            // tsmiDonate
+            // tsbAbout
             // 
-            this.tsmiDonate.AnimationSpeed = 0.8F;
-            this.tsmiDonate.Image = global::ShareX.Properties.Resources.heart;
-            resources.ApplyResources(this.tsmiDonate, "tsmiDonate");
-            this.tsmiDonate.Name = "tsmiDonate";
-            this.tsmiDonate.Click += new System.EventHandler(this.tsbDonate_Click);
-            // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Image = global::ShareX.Properties.Resources.crown;
-            resources.ApplyResources(this.tsmiAbout, "tsmiAbout");
-            this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Click += new System.EventHandler(this.tsbAbout_Click);
+            this.tsbAbout.Image = global::ShareX.Properties.Resources.crown;
+            resources.ApplyResources(this.tsbAbout, "tsbAbout");
+            this.tsbAbout.Name = "tsbAbout";
+            this.tsbAbout.Click += new System.EventHandler(this.tsbAbout_Click);
             // 
             // cmsTaskInfo
             // 
@@ -1864,6 +1856,14 @@
             resources.ApplyResources(this.ucNews, "ucNews");
             this.ucNews.Name = "ucNews";
             // 
+            // tsbNews
+            // 
+            this.tsbNews.CheckOnClick = true;
+            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
+            resources.ApplyResources(this.tsbNews, "tsbNews");
+            this.tsbNews.Name = "tsbNews";
+            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2024,8 +2024,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayIndexFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEffects;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEffects;
-        private System.Windows.Forms.ToolStripButton tsmiAbout;
-        private ShareX.HelpersLib.ToolStripButtonColorAnimation tsmiDonate;
+        private System.Windows.Forms.ToolStripButton tsbAbout;
+        private ShareX.HelpersLib.ToolStripButtonColorAnimation tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShow;
@@ -2112,7 +2112,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
-        private ShareX.HelpersLib.ToolStripButtonExtraImage tsbNews;
         private NewsListControl ucNews;
+        private HelpersLib.ToolStripButtonColorAnimation tsbNews;
     }
 }
