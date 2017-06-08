@@ -1862,6 +1862,7 @@
             this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
             resources.ApplyResources(this.tsbNews, "tsbNews");
             this.tsbNews.Name = "tsbNews";
+            this.tsbNews.ToColor = System.Drawing.Color.LimeGreen;
             this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
             // 
             // MainForm

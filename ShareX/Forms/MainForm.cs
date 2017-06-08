@@ -1021,13 +1021,15 @@ namespace ShareX
 
         private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
-#if !DEBUG
+#if DEBUG
             if (Visible)
             {
+                tsbNews.StartAnimation();
                 tsbDonate.StartAnimation();
             }
             else
             {
+                tsbNews.StopAnimation();
                 tsbDonate.StopAnimation();
             }
 #endif
