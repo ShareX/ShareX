@@ -1,0 +1,8 @@
+root = true
+
+[*.cs]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = false
+indent_style = tab
+indent_size = 4
