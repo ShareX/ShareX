@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace Greenshot.Drawing.Fields
 {
@@ -53,6 +54,9 @@ namespace Greenshot.Drawing.Fields
         [NonSerialized]
         private Dictionary<FieldType, Field> fieldsByType = new Dictionary<FieldType, Field>();
         private readonly List<Field> fields = new List<Field>();
+        
+        [NonSerialized]
+        private Dictionary<Field, PropertyChangedEventHandler> _handlers = new Dictionary<Field, PropertyChangedEventHandler>();
 
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
@@ -61,13 +65,16 @@ namespace Greenshot.Drawing.Fields
             // listen to changing properties
             foreach (Field field in fields)
             {
-                field.PropertyChanged += delegate
+                PropertyChangedEventHandler handler = delegate
                 {
                     if (fieldChanged != null)
                     {
                         fieldChanged(this, new FieldChangedEventArgs(field));
                     }
                 };
+
+                _handlers.Add(field, handler);
+                field.PropertyChanged += handler;
                 fieldsByType[field.FieldType] = field;
             }
         }
@@ -89,20 +96,23 @@ namespace Greenshot.Drawing.Fields
 
             fields.Add(field);
             fieldsByType[field.FieldType] = field;
-            field.PropertyChanged += delegate { if (fieldChanged != null) fieldChanged(this, new FieldChangedEventArgs(field)); };
+
+            PropertyChangedEventHandler handler = delegate { if (fieldChanged != null) fieldChanged(this, new FieldChangedEventArgs(field)); };
+            _handlers.Add(field, handler);
+            field.PropertyChanged += handler;
         }
 
         public void RemoveField(Field field)
         {
             fields.Remove(field);
             fieldsByType.Remove(field.FieldType);
-            field.PropertyChanged -= delegate
+
+            PropertyChangedEventHandler handler;
+            if (_handlers.TryGetValue(field, out handler))
             {
-                if (fieldChanged != null)
-                {
-                    fieldChanged(this, new FieldChangedEventArgs(field));
-                }
-            };
+                field.PropertyChanged -= handler;
+                _handlers.Remove(field);
+            }
         }
 
         public List<Field> GetFields()
