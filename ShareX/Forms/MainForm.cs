@@ -1264,6 +1264,11 @@ namespace ShareX
             Program.Settings.ShowPatreonButton = false;
         }
 
+        private void btnCloseNews_Click(object sender, EventArgs e)
+        {
+            pNews.Visible = false;
+        }
+
         #region Menu events
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
@@ -1548,7 +1553,7 @@ namespace ShareX
 
         private void tsbNews_Click(object sender, EventArgs e)
         {
-            ucNews.Visible = !ucNews.Visible;
+            pNews.Visible = !pNews.Visible;
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)

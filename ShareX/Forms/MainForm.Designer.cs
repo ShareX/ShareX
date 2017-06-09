@@ -106,6 +106,7 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             this.tsbDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             this.tsbAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -239,7 +240,8 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.ucNews = new ShareX.NewsListControl();
-            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
+            this.pNews = new System.Windows.Forms.Panel();
+            this.btnCloseNews = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -250,6 +252,7 @@
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
+            this.pNews.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -860,6 +863,14 @@
             this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
             resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
+            // tsbNews
+            // 
+            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
+            resources.ApplyResources(this.tsbNews, "tsbNews");
+            this.tsbNews.Name = "tsbNews";
+            this.tsbNews.ToColor = System.Drawing.Color.LimeGreen;
+            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
             // 
             // tsbDonate
             // 
@@ -1856,14 +1867,19 @@
             resources.ApplyResources(this.ucNews, "ucNews");
             this.ucNews.Name = "ucNews";
             // 
-            // tsbNews
+            // pNews
             // 
-            this.tsbNews.CheckOnClick = true;
-            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
-            resources.ApplyResources(this.tsbNews, "tsbNews");
-            this.tsbNews.Name = "tsbNews";
-            this.tsbNews.ToColor = System.Drawing.Color.LimeGreen;
-            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
+            this.pNews.Controls.Add(this.btnCloseNews);
+            this.pNews.Controls.Add(this.ucNews);
+            resources.ApplyResources(this.pNews, "pNews");
+            this.pNews.Name = "pNews";
+            // 
+            // btnCloseNews
+            // 
+            resources.ApplyResources(this.btnCloseNews, "btnCloseNews");
+            this.btnCloseNews.Name = "btnCloseNews";
+            this.btnCloseNews.UseVisualStyleBackColor = true;
+            this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
             // MainForm
             // 
@@ -1871,7 +1887,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.ucNews);
+            this.Controls.Add(this.pNews);
             this.Controls.Add(this.flpPatreon);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
@@ -1898,6 +1914,7 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
+            this.pNews.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2115,5 +2132,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
         private NewsListControl ucNews;
         private HelpersLib.ToolStripButtonColorAnimation tsbNews;
+        private System.Windows.Forms.Panel pNews;
+        private System.Windows.Forms.Button btnCloseNews;
     }
 }
