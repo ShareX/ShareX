@@ -132,13 +132,13 @@
     <value>Farbe 2</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Checker</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Horizontalelinien</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Vertikalelinien</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Schachbrettmuster</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B:</value>
