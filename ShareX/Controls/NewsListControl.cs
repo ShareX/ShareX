@@ -38,8 +38,7 @@ namespace ShareX
 {
     public partial class NewsListControl : UserControl
     {
-        public List<NewsItem> NewsItems = new List<NewsItem>();
-
+        private NewsManager newsManager;
         private ToolTip tooltip;
 
         public NewsListControl()
@@ -55,17 +54,13 @@ namespace ShareX
             tlpMain.CellPaint += TlpMain_CellPaint;
             tlpMain.Layout += TlpMain_Layout;
 
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX released on Windows Store!\nMulti line test.", URL = "https://getsharex.com", IsUnread = true });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.8.0 released.", IsUnread = true });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "We now have a Discord server!", URL = "https://getsharex.com" });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.7.0 released." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.6.0 released." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.5.0 released.\nMulti line test.\nTest." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.4.0 released." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.3.0 released.\n7 Long text test. 6 Long text test. 5 Long text test. 4 Long text test. 3 Long text test. 2 Long text test. 1 Long text test.\nMulti line test.\nTest." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.2.0 released." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.1.0 released." });
-            AddNewsItem(new NewsItem() { DateTime = DateTime.Now, Text = "ShareX 1.0.0 released." });
+            newsManager = new NewsManager();
+            newsManager.UpdateNews();
+
+            foreach(NewsItem item in newsManager.NewsItems)
+            {
+                AddNewsItem(item);
+            }
         }
 
         private void TlpMain_Layout(object sender, LayoutEventArgs e)
@@ -101,7 +96,7 @@ namespace ShareX
                 e.Graphics.FillRectangle(brush, e.CellBounds);
             }
 
-            if (NewsItems.IsValidIndex(e.Row) && NewsItems[e.Row].IsUnread && e.Column == 0)
+            if (newsManager.NewsItems.IsValidIndex(e.Row) && newsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
             {
                 e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));
             }
@@ -111,8 +106,6 @@ namespace ShareX
 
         public void AddNewsItem(NewsItem item)
         {
-            NewsItems.Add(item);
-
             RowStyle style = new RowStyle(SizeType.AutoSize);
             tlpMain.RowStyles.Add(style);
             int index = tlpMain.RowCount++ - 1;
@@ -127,6 +120,24 @@ namespace ShareX
                 Padding = new Padding(10, 8, 5, 8),
                 Text = item.DateTime.ToLocalTime().ToShortDateString()
             };
+
+            string dateTimeTooltip;
+            double days = (DateTime.Now - item.DateTime).TotalDays;
+
+            if (days < 1)
+            {
+                dateTimeTooltip = "Today.";
+            }
+            else if (days < 2)
+            {
+                dateTimeTooltip = "Yesterday.";
+            }
+            else
+            {
+                dateTimeTooltip = (int)days + " days ago.";
+            }
+
+            tooltip.SetToolTip(lblDateTime, dateTimeTooltip);
 
             tlpMain.Controls.Add(lblDateTime, 0, index);
 
