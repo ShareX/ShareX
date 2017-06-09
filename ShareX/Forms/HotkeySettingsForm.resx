@@ -160,7 +160,7 @@
     <value>208, 23</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
     <value>Restore default hotkeys...</value>
@@ -193,7 +193,7 @@
     <value>591, 419</value>
   </data>
   <data name="flpHotkeys.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="flpHotkeys.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -307,7 +307,7 @@
     <value>32, 23</value>
   </data>
   <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
     <value>↑</value>
@@ -337,7 +337,7 @@
     <value>32, 23</value>
   </data>
   <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
     <value>↓</value>
