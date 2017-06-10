@@ -480,9 +480,6 @@ store.book[0].title</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Шаблон</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Сервер Jira</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Префикс запрос Jira:</value>
   </data>
@@ -681,26 +678,8 @@ store.book[0].title</value>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Путь загрузки:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Если вы используете публичную папку, общественная ссылка уже создана. Вам не нужно отмечать "Создать общественный URL".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Создать общественный URL:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Картинка:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Текст:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Файл:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Клиент...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Сервисы картинок</value>
@@ -929,9 +908,6 @@ store.book[0].title</value>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Ключ API:</value>
   </data>
-  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
-    <value>URL ссылки:</value>
-  </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Использовать прямую ссылку</value>
   </data>
@@ -1049,14 +1025,8 @@ store.book[0].title</value>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
     <value>Ключи API:</value>
   </data>
-  <data name="gpPlikLoginCredentials.Text" xml:space="preserve">
-    <value>Данные для входа</value>
-  </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="gpPlikSettings.Text" xml:space="preserve">
-    <value>Другие настройки</value>
   </data>
   <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
     <value>Использовать ссылки "https://"</value>

@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>下載</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>幫助...</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>重新整理</value>
   </data>

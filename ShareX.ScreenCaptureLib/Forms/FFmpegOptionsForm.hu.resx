@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Letöltés</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Súgó...</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Frissítés</value>
   </data>

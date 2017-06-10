@@ -1007,7 +1007,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1751,7 +1751,7 @@
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
   </data>
@@ -1781,7 +1781,7 @@
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
   </data>
@@ -2696,7 +2696,7 @@
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesRemove</value>
   </data>
@@ -2720,7 +2720,7 @@
   </data>
   <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
     <value>+</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesAdd</value>
   </data>
@@ -3902,7 +3902,7 @@
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>0</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
     <value>lblAutoIncrementNumber</value>
   </data>

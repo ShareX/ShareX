@@ -180,9 +180,6 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>快捷动作</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>关于...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>自动捕捉...</value>
   </data>
@@ -258,9 +255,6 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>修改 DNS...</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>捐赠...</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>编辑图像...</value>
   </data>
@@ -278,9 +272,6 @@
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>隐藏菜单</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>图像编辑器...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>图像效果...</value>
@@ -449,9 +440,6 @@
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>快捷键设置...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>图像编辑器...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>图像效果...</value>
@@ -647,9 +635,6 @@
   </data>
   <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
     <value>打开ShareX在Patreon上的捐助页面</value>
-  </data>
-  <data name="pbTips.ToolTip" xml:space="preserve">
-    <value>显示提示和快捷键</value>
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>隐藏列</value>

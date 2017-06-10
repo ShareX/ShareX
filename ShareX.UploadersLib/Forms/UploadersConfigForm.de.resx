@@ -525,9 +525,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Vorlage</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira Server</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira Ausgabe Prefix:</value>
   </data>
@@ -723,26 +720,8 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Hochladepfad:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Wenn du den "öffentlichen" Ordner benutzt, wurde schon eine teilbare URL generiert. Du musst nicht "Erstelle eine Teilbare URL" anklicken.</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Erstelle teilbare URL:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Bild:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Text:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Datei:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Gerät...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Bildhochlader</value>

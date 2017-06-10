@@ -171,9 +171,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>记住主窗口的位置</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome浏览器扩展支持</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>浏览...</value>
   </data>
@@ -347,9 +344,6 @@
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>启用 Firefox 扩展程序支持</value>
-  </data>
-  <data name="gpFirefox.Text" xml:space="preserve">
-    <value>Firefox 扩展程序支持</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>安装 Sharex Firefox 扩展程序支持</value>

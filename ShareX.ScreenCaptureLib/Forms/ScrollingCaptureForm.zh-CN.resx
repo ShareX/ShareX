@@ -225,9 +225,6 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>捕捉后</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>处理完成后关闭这个窗口</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 滚动捕捉</value>
   </data>

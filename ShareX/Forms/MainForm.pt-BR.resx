@@ -177,9 +177,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
-  </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Doar...</value>
   </data>
@@ -267,9 +264,6 @@
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Configurações de destino...</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Doar...</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Editar imagem...</value>
   </data>
@@ -281,9 +275,6 @@
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Esconder menu</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Editor de imagem...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
@@ -446,9 +437,6 @@
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Config. de atalhos...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Editor de imagem...</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Código QR...</value>
@@ -635,9 +623,6 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Esconder colunas</value>
-  </data>
-  <data name="pbTips.ToolTip" xml:space="preserve">
-    <value>Mostrar dicas e atalhos</value>
   </data>
   <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
     <value>Abrir página do Patreon do ShareX</value>

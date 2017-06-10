@@ -452,9 +452,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Plantilla</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Servidor Jira</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira problema prefijo:</value>
   </data>
@@ -647,26 +644,8 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Ruta de subir:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Crear URL compartible:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Imagen:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texto:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Archivo:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Cliente...</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Crear nuevo álbum</value>

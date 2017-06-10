@@ -273,12 +273,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Déboguer</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Dons...</value>
-  </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>À propos...</value>
-  </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Afficher les erreurs</value>
   </data>

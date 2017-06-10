@@ -221,7 +221,7 @@
   </data>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value />
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -248,7 +248,7 @@
   </data>
   <data name="rtbShareXInfo.Text" xml:space="preserve">
     <value />
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>

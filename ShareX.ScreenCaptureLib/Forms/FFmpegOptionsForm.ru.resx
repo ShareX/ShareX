@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Скачать</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Помощь…</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Установить устройства записи</value>
   </data>

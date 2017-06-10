@@ -504,9 +504,6 @@
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>模板</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira服务器</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>JIRA问题的前缀:</value>
   </data>
@@ -693,20 +690,8 @@
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>上传路径：</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>如果您使用的是"公共"文件夹中,已生成了可共享的URL.你并不需要检查"创建共享URL".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>状态</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>创建共享网址：</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>图片:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>文件:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>图片上传</value>

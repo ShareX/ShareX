@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>İndir</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Yardım...</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Yenile</value>
   </data>

@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Na vastleggen" instellingen</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Na upload" instellingen</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Bestemming" instellingen</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Beschrijving:</value>
   </data>
@@ -174,9 +165,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Vertraging schermafdruk:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Gebruik opname instellingen in het algemene taakvenster</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Regio vastleggen</value>
   </data>
@@ -204,12 +192,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Taak instellingen</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Gebruik geavanceerde instellingen in het algemene taakvenster</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Gebruik de instellingen van de hulpmiddelen in het algemene taakscherm</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Toevoegen...</value>
   </data>
@@ -227,9 +209,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Hou mappen in het oog en upload nieuw toegevoegde bestanden</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Gebruik acties in het algemene instellingen venster</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
@@ -291,9 +270,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Gebruik aangepaste tijdzone:</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Gebruik de upload instellingen in het algemene venster voor taakinstellingen</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
   </data>
@@ -320,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>FFmpeg opties...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encoder:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Toon de muis op de opname</value>
@@ -361,9 +334,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effecten</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Gebruik de instellingen voor afbeeldingen in het algemene venster voor taakinstellingen</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG kwaliteit:</value>
   </data>
@@ -375,9 +345,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Afbeeldingsformaat:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Gebruik de algemene instellingen in het hoofdvenster van de taakinstellingen</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Speel geluid af na vastleggen</value>

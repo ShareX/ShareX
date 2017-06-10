@@ -225,9 +225,6 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>擷取後</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>處理完成後關閉這個視窗</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 捲動擷取</value>
   </data>

@@ -123,9 +123,6 @@
   <data name="btnFFmpegHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Ayuda...</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Refrescar</value>
   </data>

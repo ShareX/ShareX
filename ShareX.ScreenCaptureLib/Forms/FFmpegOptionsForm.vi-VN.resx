@@ -167,9 +167,6 @@ Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu nh�
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Tải về</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Trợ giúp...</value>
-  </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>Kiểm tra với CMD</value>
   </data>

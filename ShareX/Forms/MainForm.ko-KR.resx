@@ -183,9 +183,6 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>워크플로우</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>ShareX에 대해...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>섬네일 URL</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>기부...</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>이미지 편집...</value>
@@ -425,12 +419,6 @@
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>단축키 설정...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>이미지 편집기...</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>이미지 편집기...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>이미지 효과...</value>

@@ -177,9 +177,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Behalte Hauptfensterposition</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome-Erweiterung...</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Schnellzugriff Menü bearbeiten...</value>
   </data>

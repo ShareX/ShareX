@@ -339,9 +339,6 @@
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>安裝ShareX Firefox附加元件</value>
   </data>
-  <data name="gpFirefox.Text" xml:space="preserve">
-    <value>Firefox附加元件</value>
-  </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>啟用Chrome附加元件支援</value>
   </data>
@@ -350,8 +347,5 @@
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome附加元件</value>
-  </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome瀏覽器擴充 支援</value>
   </data>
 </root>

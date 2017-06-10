@@ -333,9 +333,6 @@
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Vérifier des mises à jour de pré-version</value>
   </data>
-  <data name="gpFirefox.Text" xml:space="preserve">
-    <value>Extension Firefox</value>
-  </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>Installer l'extension ShareX pour Firefox...</value>
   </data>

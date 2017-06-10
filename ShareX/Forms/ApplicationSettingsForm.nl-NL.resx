@@ -171,9 +171,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Onthoud de positie van het algemene venster</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Ondersteuning voor Chrome extensie...</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Blader...</value>
   </data>

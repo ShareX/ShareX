@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập mặc định "Sau khi tải lên"</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập mặc định "Sau khi chụp"</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập mặc định "Dịch vụ tải lên"</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Mô tả:</value>
   </data>
@@ -168,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Độ trễ chụp</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập chụp ảnh ở phần thiết lập tác vụ của cửa sổ chính</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Chụp theo vùng</value>
   </data>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập tác vụ</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập nâng cao ở phần thiết lập tác vụ của cửa sổ chính</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập công cụ ở phần thiết lập tác vụ của cửa sổ chính</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Thêm...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Theo dõi thư mục, nếu có tệp mới được tạo thì tiến hành tải lên tệp đó</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Sử dụng hành động ở phần thiết lập tác vụ của cửa sổ chính</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Xóa</value>
@@ -285,9 +264,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Sử dụng múi giờ tùy chỉnh:</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập tải lên trong thiết lập tác vụ của cửa sổ chính</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>Hình/giây (FPS) của GIF:</value>
   </data>
@@ -314,9 +290,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Tùy chọn ghi lại màn hình...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encoder:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Hiện con trỏ khi đang ghi lại</value>
@@ -354,9 +327,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Hiệu ứng</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập ảnh ở phần thiết lập tác vụ của cửa sổ chính</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Chất lượng ảnh JPEG:</value>
   </data>
@@ -368,9 +338,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Định dạng ảnh:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Sử dụng thiết lập tổng quan ở phần thiết lập tác vụ của cửa sổ chính</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Bật nhạc sau khi chụp ảnh được thực hiện</value>

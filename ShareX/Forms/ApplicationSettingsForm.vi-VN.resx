@@ -171,9 +171,6 @@
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Chạy ShareX cùng Windows</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Hỗ trợ tiện ích mở rộng của Chrome...</value>
-  </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Tổng quan</value>
   </data>

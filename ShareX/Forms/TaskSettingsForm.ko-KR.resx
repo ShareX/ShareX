@@ -153,9 +153,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>촬영 딜레이:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 촬영 설정 사용하기</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
@@ -180,9 +177,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 작업 설정</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 고급 설정 사용하기</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>추가...</value>
   </data>
@@ -200,9 +194,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>폴더를 감시하고 새 파일이 생성되었다면 업로드하기</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>기본 작업 설정의 동작 실행하기</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>제거</value>
@@ -264,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>다른 시간대 사용:</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 업로드 설정 사용하기</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF 초당 프레임 수:</value>
   </data>
@@ -327,9 +315,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>효과</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 이미지 설정 사용하기</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG 품질:</value>
   </data>
@@ -344,9 +329,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>이미지 포맷:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 일반 설정 사용하기</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>촬영 뒤 소리 재생하기</value>
@@ -389,14 +371,5 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>기본 사용자 정의 업로더 덮어쓰기:</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>기본 "촬영 뒤 할 일" 설정 사용</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>기본 "업로드 뒤 할 일" 설정 사용</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>기본 "목적지" 설정 사용</value>
   </data>
 </root>

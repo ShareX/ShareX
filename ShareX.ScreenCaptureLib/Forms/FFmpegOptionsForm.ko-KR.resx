@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>다운로드</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>도움말...</value>
-  </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>기본값은 128k입니다.</value>
   </data>

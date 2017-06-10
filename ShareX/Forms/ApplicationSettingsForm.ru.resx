@@ -150,9 +150,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Показывать кнопку "Загрузить с помощью ShareX" в контекстном меню</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Поддержка плагина для Chrome...</value>
-  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показывать ShareX в меню "Отправить"</value>
   </data>
@@ -335,9 +332,6 @@
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Проверять наличие пре-релизных обновлений</value>
-  </data>
-  <data name="gpFirefox.Text" xml:space="preserve">
-    <value>Дополнение для Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
     <value>Установить дополнение ShareX для Firefox...</value>

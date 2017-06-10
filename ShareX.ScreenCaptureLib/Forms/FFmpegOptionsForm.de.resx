@@ -126,9 +126,6 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Herunterladen</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Hilfe...</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Erneuern</value>
   </data>

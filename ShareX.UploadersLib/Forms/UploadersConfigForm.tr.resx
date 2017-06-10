@@ -483,9 +483,6 @@ store.book[0].title</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Tasarım</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira sunucusu</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira sorun öneki:</value>
   </data>
@@ -684,26 +681,8 @@ store.book[0].title</value>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Yükleme yolu:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>"Public" klasörünü kullanıyorsanız, paylaşılabilir adres zaten yaratılır. "Paylaşılabilir URL oluştur" seçeneğini seçmenize gerek yoktur.</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Durum:</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Paylaşılabilir URL oluştur:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Resim:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Yazı:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Dosya:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>İstemci...</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Yazı yükleyiciler</value>

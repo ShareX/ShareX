@@ -180,9 +180,6 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>快捷動作</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>關於...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>自動擷取...</value>
   </data>
@@ -257,9 +254,6 @@
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>更換DNS...</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>捐贈...</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>編輯圖像...</value>
@@ -665,14 +659,5 @@
   </data>
   <data name="tsmiAnnotateImage.Text" xml:space="preserve">
     <value>注釋圖片...</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>圖像編輯器...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>圖像編輯器...</value>
-  </data>
-  <data name="pbTips.ToolTip" xml:space="preserve">
-    <value>顯示提示和快捷鍵</value>
   </data>
 </root>

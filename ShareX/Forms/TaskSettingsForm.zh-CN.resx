@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>使用默认的"截图后"设置</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>使用默认的"上传后"设置</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>使用默认的"上传至..."设置</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>说明：</value>
   </data>
@@ -168,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>截图延迟：</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置拍摄设置</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>区域截图</value>
   </data>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 任务设置</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置高级设置</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置工具设置</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>添加...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>监控文件夹, 如果发现新的文件自动上传。</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>使用主窗口中的任务设置行动</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -291,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>文件命名</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置上传设置</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
   </data>
@@ -320,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>屏幕录制选项...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF编码器：</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>在录像中显示光标（鼠标指针）</value>
@@ -360,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>效果</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置图像设置</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG质量：</value>
   </data>
@@ -374,9 +344,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>图像格式：</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置常规设置</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>截图后声音提示</value>

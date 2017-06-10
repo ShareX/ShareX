@@ -216,9 +216,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Область</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>О программе…</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Автозахват</value>
   </data>
@@ -405,12 +402,6 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Редактировать изображение…</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Редактор изображений…</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Редактор изображений…</value>
-  </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Скрыть меню</value>
   </data>
@@ -452,9 +443,6 @@
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Журнал отладки…</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Пожертвовать…</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Пожертвовать…</value>
@@ -635,9 +623,6 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Скрыть столбцы</value>
-  </data>
-  <data name="pbTips.ToolTip" xml:space="preserve">
-    <value>Показать подсказки и горячие клавиши</value>
   </data>
   <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
     <value>Открыть веб-страницу Patreon-кампании ShareX</value>

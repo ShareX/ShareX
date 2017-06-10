@@ -1050,7 +1050,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpNVENC.Text" xml:space="preserve">
     <value>NVENC</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpNVENC.Name" xml:space="preserve">
     <value>tpNVENC</value>
   </data>

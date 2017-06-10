@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Pós-captura"</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Pós-envio"</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Destino"</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Descrição:</value>
   </data>
@@ -168,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Atraso de captura de tela:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Usar opções de captura nas opções de tarefas da janela principal</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura de região</value>
   </data>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configurações de tarefas</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Usar opções avançadas nas opções de tarefas da janela principal</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Usar opções de ferramentas nas opções de tarefas da janela principal</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Monitorar pastas e se um arquivo for adicionado, enviá-lo</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Usar ações nas opções de tarefa da janela principal</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Remover</value>
@@ -291,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nomeação de arquivos</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Utilizar opções de upload nas opções de tarefas da janela principal</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>QPS do GIF:</value>
   </data>
@@ -320,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Opções de gravações de tela...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>Codificação do GIF:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Mostrar cursor na gravação</value>
@@ -360,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efeitos</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Usar opções de imagem nas opções de tarefas da janela principal</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Qualidade do JPEG:</value>
   </data>
@@ -377,9 +347,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Formato de imagem:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Usar opções gerais nas opções de tarefas da janela principal</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Tocar som após captura</value>
