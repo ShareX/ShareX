@@ -54,13 +54,21 @@ namespace ShareX
             tlpMain.CellPaint += TlpMain_CellPaint;
             tlpMain.Layout += TlpMain_Layout;
 
-            newsManager = new NewsManager();
-            newsManager.UpdateNews();
-
-            foreach(NewsItem item in newsManager.NewsItems)
+            TaskEx.Run(() =>
             {
-                AddNewsItem(item);
-            }
+                newsManager = new NewsManager();
+                newsManager.UpdateNews();
+            },
+            () =>
+            {
+                if (newsManager != null && newsManager.NewsItems != null)
+                {
+                    foreach (NewsItem item in newsManager.NewsItems)
+                    {
+                        AddNewsItem(item);
+                    }
+                }
+            });
         }
 
         private void TlpMain_Layout(object sender, LayoutEventArgs e)

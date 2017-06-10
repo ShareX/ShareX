@@ -42,8 +42,7 @@ namespace ShareX
         {
             try
             {
-                //NewsItems = GetNews();
-                ExportExample();
+                NewsItems = GetNews();
             }
             catch (Exception e)
             {
