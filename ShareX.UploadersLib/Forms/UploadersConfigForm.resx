@@ -11497,6 +11497,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
     <value>minutes</value>
   </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>never</value>
+  </data>
   <data name="cbxPlikTTLUnit.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 217</value>
   </data>
