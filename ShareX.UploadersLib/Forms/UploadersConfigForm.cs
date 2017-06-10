@@ -2972,7 +2972,7 @@ namespace ShareX.UploadersLib
 
         private void cbxPlikTTLUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nudPlikTTL.Value = nudPlikTTL.Value * Plik.GetMultiplyIndex(cbxPlikTTLUnit.SelectedIndex, Config.PlikSettings.TTLUnit); ;
+            Plik.CalculateTTLValue(nudPlikTTL, cbxPlikTTLUnit.SelectedIndex, Config.PlikSettings.TTLUnit);
             Config.PlikSettings.TTLUnit = cbxPlikTTLUnit.SelectedIndex;
         }
 

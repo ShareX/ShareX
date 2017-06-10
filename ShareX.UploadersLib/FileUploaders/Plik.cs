@@ -82,8 +82,14 @@ namespace ShareX.UploadersLib.FileUploaders
             metaDataReq.Files.File0.FileSize = Convert.ToInt32(stream.Length);
             metaDataReq.Removable = Settings.Removable;
             metaDataReq.OneShot = Settings.OneShot;
-            metaDataReq.Ttl = Convert.ToInt32(GetMultiplyIndex(2, Settings.TTLUnit) * Settings.TTL * 60);
-
+            if (Settings.TTLUnit != 3) // everything except the expire time -1
+            {
+                metaDataReq.Ttl = Convert.ToInt32(GetMultiplyIndex(2, Settings.TTLUnit) * Settings.TTL * 60);
+            }
+            else
+            {
+                metaDataReq.Ttl = -1;
+            }
             if (Settings.HasComment)
             {
                 metaDataReq.Comment = Settings.Comment;
@@ -109,6 +115,24 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadMetadataResponseFile actFile = metaData.files.First().Value;
             result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
             return result;
+        }
+
+        internal static void CalculateTTLValue(NumericUpDown ttlElement, int newUnit, int oldUnit)
+        {
+            if (newUnit != 3)
+            {
+                if (ttlElement.Value == -1)
+                {
+                    ttlElement.Value = 1;
+                }
+                ttlElement.Value = ttlElement.Value * GetMultiplyIndex(newUnit, oldUnit);
+                ttlElement.ReadOnly = false;
+            }
+            else
+            {
+                ttlElement.Value = -1;
+                ttlElement.ReadOnly = true;
+            }
         }
 
         internal static decimal GetMultiplyIndex(int newUnit, int oldUnit)
