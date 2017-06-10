@@ -59,7 +59,7 @@ namespace ShareX.Setup
             AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
         }
 
-        private static SetupJobs Job = SetupJobs.WindowsStore;
+        private static SetupJobs Job = SetupJobs.AppVeyorWindowsStore;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "" : @"..\..\..\";

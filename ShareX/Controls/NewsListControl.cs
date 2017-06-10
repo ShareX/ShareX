@@ -65,7 +65,10 @@ namespace ShareX
                 {
                     foreach (NewsItem item in newsManager.NewsItems)
                     {
-                        AddNewsItem(item);
+                        if (item != null)
+                        {
+                            AddNewsItem(item);
+                        }
                     }
                 }
             });
@@ -130,7 +133,7 @@ namespace ShareX
             };
 
             string dateTimeTooltip;
-            double days = (DateTime.Now - item.DateTime).TotalDays;
+            double days = (DateTime.Now - item.DateTime.ToLocalTime()).TotalDays;
 
             if (days < 1)
             {
