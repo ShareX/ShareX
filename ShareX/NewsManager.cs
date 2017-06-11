@@ -38,7 +38,7 @@ namespace ShareX
     {
         public List<NewsItem> NewsItems { get; private set; } = new List<NewsItem>();
         public DateTime LastReadDate { get; set; }
-        public bool IsUnread => NewsItems != null && NewsItems.Any(x => x.IsUnread(LastReadDate));
+        public bool IsUnread => NewsItems != null && NewsItems.Any(x => x.IsUnread);
 
         public void UpdateNews()
         {
@@ -49,6 +49,17 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
+            }
+        }
+
+        public void UpdateUnread()
+        {
+            if (NewsItems != null)
+            {
+                foreach (NewsItem newsItem in NewsItems)
+                {
+                    newsItem.IsUnread = newsItem.DateTime > LastReadDate;
+                }
             }
         }
 

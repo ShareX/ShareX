@@ -38,7 +38,8 @@ namespace ShareX
 {
     public partial class NewsListControl : UserControl
     {
-        private NewsManager newsManager;
+        public NewsManager NewsManager { get; private set; }
+
         private ToolTip tooltip;
 
         public NewsListControl()
@@ -56,14 +57,16 @@ namespace ShareX
 
             TaskEx.Run(() =>
             {
-                newsManager = new NewsManager();
-                newsManager.UpdateNews();
+                NewsManager = new NewsManager();
+                NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
+                NewsManager.UpdateNews();
+                NewsManager.UpdateUnread();
             },
             () =>
             {
-                if (newsManager != null && newsManager.NewsItems != null)
+                if (NewsManager != null && NewsManager.NewsItems != null)
                 {
-                    foreach (NewsItem item in newsManager.NewsItems)
+                    foreach (NewsItem item in NewsManager.NewsItems)
                     {
                         if (item != null)
                         {
@@ -72,6 +75,15 @@ namespace ShareX
                     }
                 }
             });
+        }
+
+        public void MarkRead()
+        {
+            if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.Count > 0)
+            {
+                Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = NewsManager.NewsItems.OrderByDescending(x => x.DateTime).First().DateTime;
+                NewsManager.UpdateUnread();
+            }
         }
 
         private void TlpMain_Layout(object sender, LayoutEventArgs e)
@@ -107,7 +119,8 @@ namespace ShareX
                 e.Graphics.FillRectangle(brush, e.CellBounds);
             }
 
-            if (newsManager.NewsItems.IsValidIndex(e.Row) && newsManager.NewsItems[e.Row].IsUnread(newsManager.LastReadDate) && e.Column == 0)
+            if (NewsManager != null && NewsManager.NewsItems != null & NewsManager.NewsItems.IsValidIndex(e.Row) &&
+                NewsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
             {
                 e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));
             }

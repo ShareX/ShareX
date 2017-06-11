@@ -927,6 +927,12 @@ namespace ShareX
             }
         }
 
+        private void HideNews()
+        {
+            pNews.Visible = false;
+            ucNews.MarkRead();
+        }
+
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
         {
             tsmiWindow.DropDownItems.Clear();
@@ -1266,7 +1272,7 @@ namespace ShareX
 
         private void btnCloseNews_Click(object sender, EventArgs e)
         {
-            pNews.Visible = false;
+            HideNews();
         }
 
         #region Menu events
@@ -1553,7 +1559,14 @@ namespace ShareX
 
         private void tsbNews_Click(object sender, EventArgs e)
         {
-            pNews.Visible = !pNews.Visible;
+            if (!pNews.Visible)
+            {
+                pNews.Visible = true;
+            }
+            else
+            {
+                HideNews();
+            }
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)

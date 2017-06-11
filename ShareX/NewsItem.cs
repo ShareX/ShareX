@@ -37,9 +37,7 @@ namespace ShareX
         public string Text { get; set; }
         public string URL { get; set; }
 
-        public bool IsUnread(DateTime lastReadDate)
-        {
-            return DateTime > lastReadDate;
-        }
+        [JsonIgnore]
+        public bool IsUnread { get; set; }
     }
 }
