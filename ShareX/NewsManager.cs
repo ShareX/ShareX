@@ -30,13 +30,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Cache;
+using System.Linq;
 
 namespace ShareX
 {
     public class NewsManager
     {
         public List<NewsItem> NewsItems { get; private set; } = new List<NewsItem>();
-        public bool IsUnread { get; private set; }
+        public DateTime LastReadDate { get; set; }
+        public bool IsUnread => NewsItems != null && NewsItems.Any(x => x.IsUnread(LastReadDate));
 
         public void UpdateNews()
         {
