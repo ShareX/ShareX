@@ -124,7 +124,9 @@ namespace ShareX.HelpersLib
                         using (StreamWriter streamWriter = new StreamWriter(fileStream))
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
+                            jsonWriter.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                             jsonWriter.Formatting = Formatting.Indented;
+
                             JsonSerializer serializer = new JsonSerializer();
                             serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                             serializer.Converters.Add(new StringEnumConverter());
@@ -181,6 +183,8 @@ namespace ShareX.HelpersLib
                                 using (StreamReader streamReader = new StreamReader(fileStream))
                                 using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                                 {
+                                    jsonReader.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+
                                     JsonSerializer serializer = new JsonSerializer();
                                     serializer.Converters.Add(new StringEnumConverter());
                                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;

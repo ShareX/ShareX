@@ -129,11 +129,11 @@ namespace ShareX
                 Font = new Font("Arial", 10),
                 Margin = new Padding(0),
                 Padding = new Padding(10, 8, 5, 8),
-                Text = item.DateTime.ToLocalTime().ToShortDateString()
+                Text = item.DateTime.ToShortDateString()
             };
 
             string dateTimeTooltip;
-            double days = (DateTime.Now - item.DateTime.ToLocalTime()).TotalDays;
+            double days = (DateTime.Now - item.DateTime).TotalDays;
 
             if (days < 1)
             {

@@ -63,7 +63,12 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    return JsonConvert.DeserializeObject<List<NewsItem>>(response);
+                    JsonSerializerSettings settings = new JsonSerializerSettings
+                    {
+                        DateTimeZoneHandling = DateTimeZoneHandling.Local
+                    };
+
+                    return JsonConvert.DeserializeObject<List<NewsItem>>(response, settings);
                 }
             }
 
