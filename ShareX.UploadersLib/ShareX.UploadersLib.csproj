@@ -292,7 +292,6 @@
     <Compile Include="FileUploaders\FileBin.cs" />
     <Compile Include="FileUploaders\FileSonic.cs" />
     <Compile Include="FileUploaders\FTPAccount.cs" />
-    <Compile Include="FileUploaders\FTPAdapter.cs" />
     <Compile Include="FileUploaders\FTP.cs" />
     <Compile Include="FileUploaders\SendSpace.cs" />
     <Compile Include="FileUploaders\SendSpaceManager.cs" />
