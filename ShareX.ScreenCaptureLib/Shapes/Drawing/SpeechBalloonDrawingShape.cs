@@ -100,9 +100,16 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawSpeechBalloon(Graphics g)
         {
-            if (Shadow && IsBorderVisible)
+            if (Shadow)
             {
-                DrawSpeechBalloon(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                if (IsBorderVisible)
+                {
+                    DrawSpeechBalloon(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                }
+                else if (FillColor.A == 255)
+                {
+                    DrawSpeechBalloon(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                }
             }
 
             DrawSpeechBalloon(g, BorderColor, BorderSize, FillColor, Rectangle, TailPosition);

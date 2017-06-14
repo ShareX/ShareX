@@ -54,9 +54,16 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawRectangle(Graphics g)
         {
-            if (Shadow && IsBorderVisible)
+            if (Shadow)
             {
-                DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                if (IsBorderVisible)
+                {
+                    DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                }
+                else if (FillColor.A == 255)
+                {
+                    DrawRectangle(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                }
             }
 
             DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
