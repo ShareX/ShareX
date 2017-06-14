@@ -40,6 +40,8 @@ namespace ShareX
     {
         public NewsManager NewsManager { get; private set; }
 
+        public event EventHandler NewsLoaded;
+
         private ToolTip tooltip;
 
         public NewsListControl()
@@ -54,7 +56,10 @@ namespace ShareX
 
             tlpMain.CellPaint += TlpMain_CellPaint;
             tlpMain.Layout += TlpMain_Layout;
+        }
 
+        public void Start()
+        {
             TaskEx.Run(() =>
             {
                 NewsManager = new NewsManager();
@@ -73,8 +78,18 @@ namespace ShareX
                             AddNewsItem(item);
                         }
                     }
+
+                    OnNewsLoaded();
                 }
             });
+        }
+
+        protected void OnNewsLoaded()
+        {
+            if (NewsLoaded != null)
+            {
+                NewsLoaded(this, EventArgs.Empty);
+            }
         }
 
         public void MarkRead()

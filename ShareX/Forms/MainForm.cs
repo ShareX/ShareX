@@ -181,6 +181,12 @@ namespace ShareX
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
 
+            ucNews.NewsLoaded += (sender, e) =>
+            {
+                if (ucNews.NewsManager.IsUnread && Visible) tsbNews.StartAnimation();
+            };
+            ucNews.Start();
+
             HandleCreated += MainForm_HandleCreated;
 
 #if WindowsStore
@@ -1030,7 +1036,11 @@ namespace ShareX
 #if DEBUG
             if (Visible)
             {
-                tsbNews.StartAnimation();
+                if (ucNews.NewsManager.IsUnread)
+                {
+                    tsbNews.StartAnimation();
+                }
+
                 tsbDonate.StartAnimation();
             }
             else
@@ -1562,6 +1572,7 @@ namespace ShareX
             if (!pNews.Visible)
             {
                 pNews.Visible = true;
+                tsbNews.ResetAnimation();
             }
             else
             {
