@@ -205,7 +205,14 @@ namespace ShareX.HelpersLib
 
         private void cbTransparent_Click(object sender, EventArgs e)
         {
-            nudAlpha.Value = 0;
+            if (nudAlpha.Value == 0)
+            {
+                nudAlpha.Value = 255;
+            }
+            else
+            {
+                nudAlpha.Value = 0;
+            }
         }
 
         private void HSB_ValueChanged(object sender, EventArgs e)
