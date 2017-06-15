@@ -1001,4 +1001,19 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Drawing: Image (Screen)</value>
   </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google image search</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL shortener</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>File uploader</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Text uploader</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Image uploader</value>
+  </data>
 </root>

@@ -82,18 +82,18 @@ https://github.com/ShareX/ShareX/graphs/contributors
 
 {Resources.AboutForm_AboutForm_Translators}:
 
-Turkish: https://github.com/Jaex & https://github.com/muratmoon
-German: https://github.com/Starbug2 & https://github.com/Kaeltis
-French: https://github.com/nwies & https://github.com/Shadorc
-Simplified Chinese: https://github.com/jiajiechan
-Hungarian: https://github.com/devBluestar
-Korean: https://github.com/123jimin
-Spanish: https://github.com/ovnisoftware
-Dutch: https://github.com/canihavesomecoffee
-Portuguese (Brazil): https://github.com/RockyTV & https://github.com/athosbr99
-Vietnamese: https://github.com/thanhpd
-Russian: https://github.com/L1Q
-Traditional Chinese: https://github.com/alantsai
+{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex & https://github.com/muratmoon
+{Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
+{Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
+{Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
+{Resources.AboutForm_AboutForm_Language_hu}: https://github.com/devBluestar
+{Resources.AboutForm_AboutForm_Language_ko_KR}: https://github.com/123jimin
+{Resources.AboutForm_AboutForm_Language_es}: https://github.com/ovnisoftware
+{Resources.AboutForm_AboutForm_Language_nl_NL}: https://github.com/canihavesomecoffee
+{Resources.AboutForm_AboutForm_Language_pt_BR}: https://github.com/RockyTV & https://github.com/athosbr99
+{Resources.AboutForm_AboutForm_Language_vi_VN}: https://github.com/thanhpd
+{Resources.AboutForm_AboutForm_Language_ru}: https://github.com/L1Q
+{Resources.AboutForm_AboutForm_Language_zh_TW}: https://github.com/alantsai
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 

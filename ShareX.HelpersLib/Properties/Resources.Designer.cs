@@ -374,6 +374,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File uploader.
+        /// </summary>
+        internal static string CustomUploaderDestinationType_FileUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderDestinationType_FileUploader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image uploader.
+        /// </summary>
+        internal static string CustomUploaderDestinationType_ImageUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderDestinationType_ImageUploader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text uploader.
+        /// </summary>
+        internal static string CustomUploaderDestinationType_TextUploader {
+            get {
+                return ResourceManager.GetString("CustomUploaderDestinationType_TextUploader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL shortener.
+        /// </summary>
+        internal static string CustomUploaderDestinationType_URLShortener {
+            get {
+                return ResourceManager.GetString("CustomUploaderDestinationType_URLShortener", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse for a folder....
         /// </summary>
         internal static string DirectoryNameEditor_EditValue_Browse_for_a_folder___ {
@@ -2701,6 +2737,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string URLSharingServices_Email {
             get {
                 return ResourceManager.GetString("URLSharingServices_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google image search.
+        /// </summary>
+        internal static string URLSharingServices_GoogleImageSearch {
+            get {
+                return ResourceManager.GetString("URLSharingServices_GoogleImageSearch", resourceCulture);
             }
         }
         

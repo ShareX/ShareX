@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib
             defaultGroupBoxSize = gbUserAccount.Size;
             smallGroupBoxSize = new Size(defaultGroupBoxSize.Width, (int)(defaultGroupBoxSize.Height / 1.16f));
             IsRefreshable = true;
-            txtVerificationCode.HandleCreated += (sender, e) => txtVerificationCode.SetWatermark("Paste verification code here");
+            txtVerificationCode.HandleCreated += (sender, e) => txtVerificationCode.SetWatermark(Resources.OAuthControl_OAuthControl_PasteVerificationCodeHere);
         }
 
         private void btnOpenAuthorizePage_Click(object sender, EventArgs e)

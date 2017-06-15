@@ -578,7 +578,7 @@
   </data>
   <data name="lblBuild.Text" xml:space="preserve">
     <value>Build</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblBuild.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

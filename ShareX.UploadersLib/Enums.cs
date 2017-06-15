@@ -210,8 +210,7 @@ namespace ShareX.UploadersLib
         VK,
         [Description("Pushbullet")]
         Pushbullet,
-        [Description("Google image search")]
-        GoogleImageSearch
+        GoogleImageSearch // Localized
     }
 
     public enum HttpMethod
@@ -324,14 +323,10 @@ namespace ShareX.UploadersLib
     {
         [Description("None")]
         None = 0,
-        [Description("Image uploader")]
-        ImageUploader = 1,
-        [Description("Text uploader")]
-        TextUploader = 1 << 1,
-        [Description("File uploader")]
-        FileUploader = 1 << 2,
-        [Description("URL shortener")]
-        URLShortener = 1 << 3
+        ImageUploader = 1, // Localized
+        TextUploader = 1 << 1, // Localized
+        FileUploader = 1 << 2, // Localized
+        URLShortener = 1 << 3 // Localized
     }
 
     public enum FTPSEncryption

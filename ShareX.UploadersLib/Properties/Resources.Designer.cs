@@ -404,6 +404,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paste verification code here.
+        /// </summary>
+        internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {
+            get {
+                return ResourceManager.GetString("OAuthControl_OAuthControl_PasteVerificationCodeHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status: Logged in..
         /// </summary>
         internal static string OAuthControl_Status_Status__Logged_in_ {
@@ -693,6 +702,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string UploadersConfigForm_CustomUploader_Name {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_CustomUploader_Name", resourceCulture);
             }
         }
         

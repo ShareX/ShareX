@@ -818,7 +818,7 @@
   </data>
   <data name="lblWindowsStoreStartupStatus.Text" xml:space="preserve">
     <value>Status</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblWindowsStoreStartupStatus.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
