@@ -979,4 +979,19 @@
   <data name="ShapeType_DrawingCrop" xml:space="preserve">
     <value>Кадрировать</value>
   </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Поиск по картинке в Google</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Сервис коротких ссылок</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Файловый сервис</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Сервис текстов</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Сервис картинок</value>
+  </data>
 </root>

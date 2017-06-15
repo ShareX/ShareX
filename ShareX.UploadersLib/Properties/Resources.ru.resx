@@ -229,4 +229,10 @@
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Убрать все пользовательские загрузчики?</value>
   </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Вставьте код подтверждения сюда</value>
+  </data>
+  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
 </root>
