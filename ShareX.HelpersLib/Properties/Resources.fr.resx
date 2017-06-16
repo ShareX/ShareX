@@ -357,7 +357,7 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Mise en ligne depuis l'URL</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Logiciel de mise en ligne de fichiers personnalisé</value>
+    <value>Service de mise en ligne de fichiers personnalisé</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Adresse e-mail</value>
@@ -366,10 +366,10 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Dossier partagé</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Logiciel de mise en ligne d'images personnalisé</value>
+    <value>Service de mise en ligne d'images personnalisé</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Logiciel de mise en ligne de fichiers</value>
+    <value>Service de mise en ligne de fichiers</value>
   </data>
   <data name="ResponseType_Headers" xml:space="preserve">
     <value>Entêtes de réponse</value>
@@ -381,10 +381,10 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Texte de réponse</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Logiciel de mise en ligne de textes personnalisé</value>
+    <value>Service de mise en ligne de textes personnalisé</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Logiciel de mise en ligne de fichiers</value>
+    <value>Service de mise en ligne de fichiers</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>Adresse e-mail</value>
@@ -902,7 +902,7 @@ Voulez-vous la télécharger ?</value>
     <value>Dessin : Main levée</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Dessin : Image</value>
+    <value>Dessin : Image (Fichier)</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Dessin : Bulle de dialogue</value>
@@ -950,10 +950,10 @@ Voulez-vous la télécharger ?</value>
     <value>Activer la barre d'outils des actions</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Dessin : Texte (arrière-plan)</value>
+    <value>Dessin : Texte (Arrière-plan)</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Dessin : Texte (contour)</value>
+    <value>Dessin : Texte (Contour)</value>
   </data>
   <data name="ShapeType_DrawingCrop" xml:space="preserve">
     <value>Recadrer l'image</value>
@@ -963,5 +963,26 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
     <value>Progression : {0}</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Service de mise en ligne d'images</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Service de mise en ligne de textes</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Service de mise en ligne de fichiers</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Raccourcisseur d'URL</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Recherche d'images Google</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Dessin : Image (Écran)</value>
+  </data>
+  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
+    <value>Proxy possiblement détecté. Merci d'ouvrir les Paramètres de l'application depuis le menu principal et choisissez Proxy pour entrer les paramètres du serveur proxy.</value>
   </data>
 </root>

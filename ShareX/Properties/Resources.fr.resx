@@ -485,4 +485,63 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>La configuration {0} est invalide ou manquante. Merci de vérifier les "Paramètres de destination".</value>
   </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Verrouiller la position</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Modifier...</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Turc</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Allemand</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Coréen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Hongrois</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Chinois simplifié</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Espagnol</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Néerlandais</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Vietnamien</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russe</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Chinois traditionnel</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Portugais (Brésil)</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Séparateur</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Mettre en ligne avec ShareX</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Ouvrir au démarrage de ShareX</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Maintenez clic gauche pour faire glisser
+Clique droit pour ouvrir le menu
+Clique de la molette pour fermer</value>
+  </data>
 </root>

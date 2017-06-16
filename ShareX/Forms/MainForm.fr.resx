@@ -696,4 +696,16 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Activer la barre d'outils des actions</value>
   </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Dons...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>À propos...</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Nouveautés</value>
+  </data>
 </root>
