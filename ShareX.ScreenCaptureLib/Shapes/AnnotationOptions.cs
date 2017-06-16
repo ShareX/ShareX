@@ -30,7 +30,7 @@ namespace ShareX.ScreenCaptureLib
     public class AnnotationOptions
     {
         public static readonly string DefaultFont = "Arial";
-        public static readonly Color PrimaryColor = Color.Red;
+        public static readonly Color PrimaryColor = Color.FromArgb(242, 60, 60);
         public static readonly Color SecondaryColor = Color.White;
         public static readonly Color TransparentColor = Color.FromArgb(0, 0, 0, 0);
 
@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Drawing
         public Color BorderColor { get; set; } = PrimaryColor;
-        public int BorderSize { get; set; } = 5;
+        public int BorderSize { get; set; } = 4;
         public Color FillColor { get; set; } = TransparentColor;
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
@@ -47,12 +47,12 @@ namespace ShareX.ScreenCaptureLib
         // Text (Outline) drawing
         public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
         {
-            Color = PrimaryColor,
+            Color = SecondaryColor,
             Size = 25,
             Bold = true
         };
-        public Color TextOutlineBorderColor { get; set; } = SecondaryColor;
-        public int TextOutlineBorderSize { get; set; } = 3;
+        public Color TextOutlineBorderColor { get; set; } = PrimaryColor;
+        public int TextOutlineBorderSize { get; set; } = 5;
 
         // Text (Background) drawing
         public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions()
@@ -61,12 +61,12 @@ namespace ShareX.ScreenCaptureLib
             Size = 18
         };
         public Color TextBorderColor { get; set; } = SecondaryColor;
-        public int TextBorderSize { get; set; } = 2;
+        public int TextBorderSize { get; set; } = 0;
         public Color TextFillColor { get; set; } = PrimaryColor;
 
         // Step drawing
         public Color StepBorderColor { get; set; } = SecondaryColor;
-        public int StepBorderSize { get; set; } = 2;
+        public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
 
         // Blur effect
