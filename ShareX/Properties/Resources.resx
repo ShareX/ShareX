@@ -886,4 +886,66 @@ Would you like to restart ShareX?</value>
   <data name="Exclamation_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exclamation-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Upload with ShareX</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Lock position</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Stay top most</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Open at ShareX startup</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Hold left down to drag
+Right click to open menu
+Middle click to close</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Simplified Chinese</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Hungarian</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Portuguese (Brazil)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Vietnamese</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Traditional Chinese</value>
+  </data>
 </root>

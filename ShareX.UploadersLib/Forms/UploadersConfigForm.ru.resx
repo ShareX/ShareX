@@ -1136,4 +1136,19 @@ store.book[0].title</value>
   <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
     <value>Конечные точки:</value>
   </data>
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Данные для входа</value>
+  </data>
+  <data name="gbPlikSettings.Text" xml:space="preserve">
+    <value>Другие настройки</value>
+  </data>
+  <data name="gbJiraServer.Text" xml:space="preserve">
+    <value>Сервер Jira</value>
+  </data>
+  <data name="lblAmazonS3Region.Text" xml:space="preserve">
+    <value>Регион:</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
+    <value>Использовать запрос в виде пути</value>
+  </data>
 </root>

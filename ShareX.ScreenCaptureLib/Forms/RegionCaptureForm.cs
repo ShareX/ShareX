@@ -730,7 +730,7 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
-                sb.AppendLine("[Right click] Cancel capture / remove region");
+                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion);
             }
 
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
@@ -745,8 +745,8 @@ namespace ShareX.ScreenCaptureLib
             if ((!Config.QuickCrop || !ShapeManager.IsCurrentShapeTypeRegion) && ShapeManager.CurrentShape != null && !ShapeManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region);
-                sb.AppendLine("[Arrow keys] Resize region from bottom right corner");
-                sb.AppendLine("[Hold Alt + Arrow keys] Resize region from top left corner");
+                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner);
+                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner);
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region);
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region);
@@ -770,7 +770,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.Shapes.Count > 0)
             {
-                sb.AppendLine("[Ctrl + Z] Undo shape");
+                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_CtrlZUndoShape);
             }
 
             sb.AppendLine();
@@ -790,7 +790,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsAnnotationMode)
             {
-                sb.AppendLine("[Ctrl + V] Paste image or text");
+                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_CtrlVPasteImageOrText);
             }
 
             sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool);
@@ -848,7 +848,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             sb.AppendLine();
-            sb.AppendLine("Note: Hiding these tips will increase FPS greatly.");
+            sb.AppendLine(Resources.RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly);
         }
 
         private string GetAreaText(Rectangle area)

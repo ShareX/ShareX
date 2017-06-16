@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib
             // Custom uploader
             txtCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
-            txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark("Name");
+            txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark(Resources.UploadersConfigForm_CustomUploader_Name);
             AddCustomUploaderDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());

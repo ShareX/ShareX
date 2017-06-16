@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,25 +130,25 @@ namespace ShareX
 
             cmsTitle = new ContextMenuStrip(components);
 
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.ActionsToolbar_Close);
             tsmiClose.Click += TsmiClose_Click;
             cmsTitle.Items.Add(tsmiClose);
 
             cmsTitle.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiLock = new ToolStripMenuItem("Lock position");
+            ToolStripMenuItem tsmiLock = new ToolStripMenuItem(Resources.ActionsToolbar__LockPosition);
             tsmiLock.CheckOnClick = true;
             tsmiLock.Checked = Program.Settings.ActionsToolbarLockPosition;
             tsmiLock.Click += TsmiLock_Click;
             cmsTitle.Items.Add(tsmiLock);
 
-            ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem("Stay top most");
+            ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem(Resources.ActionsToolbar_StayTopMost);
             tsmiTopMost.CheckOnClick = true;
             tsmiTopMost.Checked = Program.Settings.ActionsToolbarStayTopMost;
             tsmiTopMost.Click += TsmiTopMost_Click;
             cmsTitle.Items.Add(tsmiTopMost);
 
-            ToolStripMenuItem tsmiRunAtStartup = new ToolStripMenuItem("Open at ShareX startup");
+            ToolStripMenuItem tsmiRunAtStartup = new ToolStripMenuItem(Resources.ActionsToolbar_OpenAtShareXStartup);
             tsmiRunAtStartup.CheckOnClick = true;
             tsmiRunAtStartup.Checked = Program.Settings.ActionsToolbarRunAtStartup;
             tsmiRunAtStartup.Click += TsmiRunAtStartup_Click;
@@ -155,7 +156,7 @@ namespace ShareX
 
             cmsTitle.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit...");
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Resources.ActionsToolbar_Edit);
             tsmiEdit.Click += TsmiEdit_Click;
             cmsTitle.Items.Add(tsmiEdit);
 
@@ -309,7 +310,7 @@ namespace ShareX
             {
                 Margin = new Padding(4, 0, 3, 0),
                 Text = "ShareX",
-                ToolTipText = "Hold left down to drag\r\nRight click to open menu\r\nMiddle click to close"
+                ToolTipText = Resources.ActionsToolbar_Tip
             };
 
             tslTitle.MouseDown += tslTitle_MouseDown;

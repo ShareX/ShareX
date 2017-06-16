@@ -335,4 +335,94 @@
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Радиус скругления</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Включить анимации</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Помнить состояние меню</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
+    <value>Заметка: Спрячьте эти подсказки для повышения производительности (FPS).</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion" xml:space="preserve">
+    <value>[ПКМ] Отменить захват / удалить область</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
+    <value>[Ctrl + V] Вставить картинку или текст</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
+    <value>[Ctrl + Z] Отменить фигуру</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
+    <value>[Клавиши со стрелками] Масштабировать область за правый нижний угол</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
+    <value>[Удерживание Alt + Клавиши со стрелками] Масштабировать область за верхний левый угол</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Параметры фигур</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Тень</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Захват областей</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Удалить все</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Применить изменения и продолжить задачу (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Продолжить задачу (Пробел или ПКМ)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Отменить задачу (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Сохранить изображение</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Сохранить изображение как...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Скопировать изображение в буфер обмена</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Загрузить изображение</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Распечатать изображение...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Выполнить задачи после захвата</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>На задний план</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>На передний план</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Переместить назад</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Переместить вперед</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Захват последней области</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Захват</value>
+  </data>
 </root>

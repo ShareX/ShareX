@@ -37,8 +37,6 @@ namespace ShareX
     {
         public List<HotkeyType> Actions { get; private set; }
 
-        private const string Separator = "Separator"; // TODO: Translate
-
         public ActionsToolbarEditForm(List<HotkeyType> actions)
         {
             InitializeComponent();
@@ -85,7 +83,7 @@ namespace ShareX
 
                     if (hotkeyType == HotkeyType.None)
                     {
-                        text = Separator;
+                        text = Resources.ActionsToolbarEditForm_Separator;
                         img = Resources.ui_splitter;
                     }
                     else
@@ -135,7 +133,7 @@ namespace ShareX
 
             if (hotkeyType == HotkeyType.None)
             {
-                text = Separator;
+                text = Resources.ActionsToolbarEditForm_Separator;
             }
             else
             {

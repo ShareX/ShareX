@@ -59,7 +59,7 @@ namespace ShareX
         private static readonly string ShellExtMenuFolders = @"Software\Classes\Folder\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFoldersCmd = ShellExtMenuFolders + @"\command";
 
-        private static readonly string ShellExtDesc = string.Format("Upload with {0}", ApplicationName); // TODO: Translate
+        private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
         private static readonly string ShellExtIcon = ApplicationPath + ",0";
         private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
 
