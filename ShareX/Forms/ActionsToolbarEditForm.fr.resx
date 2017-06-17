@@ -117,122 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} a bien été créé.</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Authentification requise.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Modifier la barre d'outils des actions</value>
   </data>
-  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Chercher un fichier certificat...</value>
-  </data>
-  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Parcourir pour un fichier clé...</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Cliquez sur le bouton « Actualiser »</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Configuré</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Connecté !</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Connecté !
-Dossiers créés :</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Connexion à {0}</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Impossible d'actualiser l'autorisation.</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nom de périphérique invalide</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Statut : Échec de la connexion.</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Dossier racine</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Connecté en tant que {0}.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>L'analyse de la réponse a échoué.</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Nom du dossier à créer</value>
-  </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Erreur : Le résultat est vide.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Authentification invalide</value>
-  </data>
-  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>Problème non trouvé</value>
-  </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Échec de la connexion.</value>
-  </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Identification réussie.</value>
-  </data>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Nouveau compte</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Non configuré</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Non connecté.</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Chemin de l'album parent - Exemple :</value>
-  </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Demande des dossiers...</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Dossier sélectionné :</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>Enregistrement SendSpace</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Statut : Connecté.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Statut : Non connecté.</value>
-  </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Erreur du Tweet</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Client FTP de ShareX</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Impossible de trouver un compte FTP valide.</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Le client FTP ne prend en charge que FTP ou FTPS.</value>
-  </data>
-  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Supprimer tous les services de mise en ligne personnalisés ?</value>
-  </data>
-  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>Collez le code de vérification ici</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
   </data>
 </root>

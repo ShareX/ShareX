@@ -528,4 +528,7 @@
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres "Après la capture"</value>
   </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>La taille des régions s'adaptera à cette liste lors du maintient de la touche "Alt" :</value>
+  </data>
 </root>

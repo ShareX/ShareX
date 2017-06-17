@@ -351,4 +351,7 @@
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Restaurer les paramètres...</value>
   </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Extension Firefox</value>
+  </data>
 </root>
