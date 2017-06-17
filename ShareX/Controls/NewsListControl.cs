@@ -96,8 +96,14 @@ namespace ShareX
         {
             if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.Count > 0)
             {
-                Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = NewsManager.NewsItems.OrderByDescending(x => x.DateTime).First().DateTime;
-                NewsManager.UpdateUnread();
+                DateTime latestDate = NewsManager.NewsItems.OrderByDescending(x => x.DateTime).First().DateTime;
+                DateTime futureDate = DateTime.Now.AddMonths(1);
+
+                if (latestDate < futureDate)
+                {
+                    Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = latestDate;
+                    NewsManager.UpdateUnread();
+                }
             }
         }
 
