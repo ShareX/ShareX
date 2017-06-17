@@ -937,6 +937,7 @@ namespace ShareX
         {
             pNews.Visible = false;
             ucNews.MarkRead();
+            tsbNews.ResetAnimation();
         }
 
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -1033,7 +1034,7 @@ namespace ShareX
 
         private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
-#if DEBUG
+#if !DEBUG
             if (Visible)
             {
                 if (ucNews.NewsManager.IsUnread)
