@@ -272,6 +272,7 @@ namespace ShareX
         #region Image / General
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
+        public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Automatic;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
         public bool ImageAutoUseJPEG = true;

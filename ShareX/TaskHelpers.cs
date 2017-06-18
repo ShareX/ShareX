@@ -288,29 +288,22 @@ namespace ShareX
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
-            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
         }
 
-        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
             MemoryStream stream = new MemoryStream();
 
             switch (imageFormat)
             {
                 case EImageFormat.PNG:
-                    img.Save(stream, ImageFormat.Png);
+                    SaveImageAsPNGStream(img, stream, pngBitDepth);
                     break;
                 case EImageFormat.JPEG:
-                    try
-                    {
-                        img = (Image)img.Clone();
-                        img = ImageHelpers.FillBackground(img, Color.White);
-                        img.SaveJPG(stream, jpegQuality);
-                    }
-                    finally
-                    {
-                        if (img != null) img.Dispose();
-                    }
+                    SaveImageAsJPEGStream(img, stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:
                     img.SaveGIF(stream, gifQuality);
@@ -324,6 +317,60 @@ namespace ShareX
             }
 
             return stream;
+        }
+
+        private static void SaveImageAsPNGStream(Image img, Stream stream, PNGBitDepth bitDepth)
+        {
+            if (bitDepth == PNGBitDepth.Automatic)
+            {
+                if (ImageHelpers.IsImageTransparent((Bitmap)img))
+                {
+                    bitDepth = PNGBitDepth.Bit32;
+                }
+                else
+                {
+                    bitDepth = PNGBitDepth.Bit24;
+                }
+            }
+
+            if (bitDepth == PNGBitDepth.Bit32)
+            {
+                if (img.PixelFormat != PixelFormat.Format32bppArgb && img.PixelFormat != PixelFormat.Format32bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format32bppArgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+            else if (bitDepth == PNGBitDepth.Bit24)
+            {
+                if (img.PixelFormat != PixelFormat.Format24bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format24bppRgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+
+            img.Save(stream, ImageFormat.Png);
+        }
+
+        private static void SaveImageAsJPEGStream(Image img, Stream stream, int jpegQuality)
+        {
+            try
+            {
+                img = (Image)img.Clone();
+                img = ImageHelpers.FillBackground(img, Color.White);
+                img.SaveJPG(stream, jpegQuality);
+            }
+            finally
+            {
+                if (img != null) img.Dispose();
+            }
         }
 
         public static void SaveImageAsFile(Image img, TaskSettings taskSettings)

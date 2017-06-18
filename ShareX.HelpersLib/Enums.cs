@@ -36,6 +36,16 @@ namespace ShareX.HelpersLib
         URL
     }
 
+    public enum PNGBitDepth // TODO: Translate
+    {
+        [Description("Automatically detect")]
+        Automatic,
+        [Description("32 bit (Supports transparency)")]
+        Bit32,
+        [Description("24 bit")]
+        Bit24
+    }
+
     public enum GIFQuality // Localized
     {
         Default,

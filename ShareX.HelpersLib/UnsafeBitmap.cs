@@ -36,13 +36,7 @@ namespace ShareX.HelpersLib
         public int Width { get; private set; }
         public int Height { get; private set; }
 
-        public int PixelCount
-        {
-            get
-            {
-                return Width * Height;
-            }
-        }
+        public int PixelCount => Width * Height;
 
         private Bitmap bitmap;
         private BitmapData bitmapData;
@@ -127,6 +121,25 @@ namespace ShareX.HelpersLib
             }
 
             return true;
+        }
+
+        public bool IsTransparent()
+        {
+            int pixelCount = PixelCount;
+
+            ColorBgra* pointer = Pointer;
+
+            for (int i = 0; i < pixelCount; i++)
+            {
+                if (pointer->Alpha < 255)
+                {
+                    return true;
+                }
+
+                pointer++;
+            }
+
+            return false;
         }
 
         public ColorBgra GetPixel(int i)

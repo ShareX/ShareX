@@ -674,6 +674,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static bool IsImageTransparent(Bitmap bmp)
+        {
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            {
+                return unsafeBitmap.IsTransparent();
+            }
+        }
+
         public static bool AddMetadata(Image img, int id, string text)
         {
             PropertyItem pi;
