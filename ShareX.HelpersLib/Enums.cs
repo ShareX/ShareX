@@ -38,6 +38,8 @@ namespace ShareX.HelpersLib
 
     public enum PNGBitDepth // TODO: Translate
     {
+        [Description("Default")]
+        Default,
         [Description("Automatically detect")]
         Automatic,
         [Description("32 bit (Supports transparency)")]
