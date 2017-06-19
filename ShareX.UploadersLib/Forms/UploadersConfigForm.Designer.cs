@@ -650,6 +650,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.sulKeyLink = new System.Windows.Forms.LinkLabel();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3806,6 +3807,7 @@
             // 
             // tpSul
             // 
+            this.tpSul.Controls.Add(this.sulKeyLink);
             this.tpSul.Controls.Add(this.txtSulAPIKey);
             this.tpSul.Controls.Add(this.lblSulAPIKey);
             resources.ApplyResources(this.tpSul, "tpSul");
@@ -5289,6 +5291,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // sulKeyLink
+            // 
+            resources.ApplyResources(this.sulKeyLink, "sulKeyLink");
+            this.sulKeyLink.Name = "sulKeyLink";
+            this.sulKeyLink.TabStop = true;
+            this.sulKeyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.sulKeyLink_LinkClicked);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6093,5 +6102,6 @@
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
         private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
         private System.Windows.Forms.Label lblAzureStorageEnvironment;
+        private System.Windows.Forms.LinkLabel sulKeyLink;
     }
 }
