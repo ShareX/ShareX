@@ -586,6 +586,10 @@ namespace ShareX.UploadersLib
             txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
             cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
+            // s-ul
+
+            txtSulAPIKey.Text = Config.SulAPIKey;
+
             // Uplea
 
             txtUpleaApiKey.Text = Config.UpleaApiKey;
@@ -2550,6 +2554,11 @@ namespace ShareX.UploadersLib
         private void txtSulAPIKey_TextChanged(object sender, EventArgs e)
         {
             Config.SulAPIKey = txtSulAPIKey.Text;
+        }
+
+        private void sulKeyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://s-ul.eu/account/info");
         }
 
         #endregion Sul

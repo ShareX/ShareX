@@ -71,9 +71,9 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client", "sharex-native");
 
             string url = "https://s-ul.eu";
-            url = URLHelpers.CombineURL(url, "upload.php");
+            string upload_url = URLHelpers.CombineURL(url, "api/v1/upload");
 
-            UploadResult result = SendRequestFile(url, stream, fileName, "file", args);
+            UploadResult result = SendRequestFile(upload_url, stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 else
                 {
                     result.URL = protocol + domain + "/" + file + extension;
-                    result.DeletionURL = "https://s-ul.eu/delete.php?key=" + APIKey + "&file=" + file;
+                    result.DeletionURL = URLHelpers.CombineURL(url, "delete.php?key=" + APIKey + "&file=" + file);
                 }
             }
 
