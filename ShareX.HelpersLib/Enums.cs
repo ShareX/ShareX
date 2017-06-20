@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
         Default,
         [Description("Automatically detect")]
         Automatic,
-        [Description("32 bit (Supports transparency)")]
+        [Description("32 bit")]
         Bit32,
         [Description("24 bit")]
         Bit24
