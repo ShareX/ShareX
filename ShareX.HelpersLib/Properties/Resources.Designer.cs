@@ -1438,7 +1438,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start/Stop screen recording.
+        ///   Looks up a localized string similar to Start/Stop screen recording using custom region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorder {
             get {
@@ -1456,7 +1456,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording using active window region.
+        ///   Looks up a localized string similar to Start/Stop screen recording using active window region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorderActiveWindow {
             get {
@@ -1474,7 +1474,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording using custom region.
+        ///   Looks up a localized string similar to Start/Stop screen recording using pre configured custom region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorderCustomRegion {
             get {
@@ -1492,7 +1492,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start/Stop screen recording (GIF).
+        ///   Looks up a localized string similar to Start/Stop screen recording (GIF) using custom region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIF {
             get {
@@ -1510,7 +1510,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording (GIF) using active window region.
+        ///   Looks up a localized string similar to Start/Stop screen recording (GIF) using active window region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIFActiveWindow {
             get {
@@ -1528,7 +1528,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording (GIF) using custom region.
+        ///   Looks up a localized string similar to Start/Stop screen recording (GIF) using pre configured custom region.
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIFCustomRegion {
             get {
@@ -1582,7 +1582,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording using last region.
+        ///   Looks up a localized string similar to Start/Stop screen recording using last region.
         /// </summary>
         internal static string HotkeyType_StartScreenRecorder {
             get {
@@ -1600,7 +1600,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording (GIF) using last region.
+        ///   Looks up a localized string similar to Start/Stop screen recording (GIF) using last region.
         /// </summary>
         internal static string HotkeyType_StartScreenRecorderGIF {
             get {

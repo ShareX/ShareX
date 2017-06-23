@@ -451,7 +451,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Screen color picker</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Start/Stop screen recording</value>
+    <value>Start/Stop screen recording using custom region</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop all active uploads</value>
@@ -580,7 +580,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Start auto capture using last region</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Start screen recording using last region</value>
+    <value>Start/Stop screen recording using last region</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>A newer version of {0} is available.
@@ -596,10 +596,10 @@ Would you like to download and install it?</value>
     <value>Color picker</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Start/Stop screen recording (GIF)</value>
+    <value>Start/Stop screen recording (GIF) using custom region</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Start screen recording (GIF) using last region</value>
+    <value>Start/Stop screen recording (GIF) using last region</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Capture region (Transparent)</value>
@@ -713,13 +713,13 @@ Would you like to download and install it?</value>
     <value>Screen capture</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Start screen recording using active window region</value>
+    <value>Start/Stop screen recording using active window region</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Start screen recording (GIF) using active window region</value>
+    <value>Start/Stop screen recording (GIF) using active window region</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
     <value>Screen record</value>
@@ -855,13 +855,13 @@ Would you like to download it?</value>
     <value>Other</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
-    <value>Start screen recording using custom region</value>
+    <value>Start/Stop screen recording using pre configured custom region</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Start screen recording (GIF) using custom region</value>
+    <value>Start/Stop screen recording (GIF) using pre configured custom region</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
     <value>Screen record</value>
