@@ -65,6 +65,8 @@
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
             this.pImage = new System.Windows.Forms.Panel();
+            this.cbImagePNGBitDepth = new System.Windows.Forms.ComboBox();
+            this.lblImagePNGBitDepth = new System.Windows.Forms.Label();
             this.cbImageAutoUseJPEG = new System.Windows.Forms.CheckBox();
             this.lblImageFormat = new System.Windows.Forms.Label();
             this.cbImageFileExist = new System.Windows.Forms.ComboBox();
@@ -238,8 +240,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblImagePNGBitDepth = new System.Windows.Forms.Label();
-            this.cbImagePNGBitDepth = new System.Windows.Forms.ComboBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -572,6 +572,19 @@
             this.pImage.Controls.Add(this.cbImageGIFQuality);
             resources.ApplyResources(this.pImage, "pImage");
             this.pImage.Name = "pImage";
+            // 
+            // cbImagePNGBitDepth
+            // 
+            this.cbImagePNGBitDepth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImagePNGBitDepth.FormattingEnabled = true;
+            resources.ApplyResources(this.cbImagePNGBitDepth, "cbImagePNGBitDepth");
+            this.cbImagePNGBitDepth.Name = "cbImagePNGBitDepth";
+            this.cbImagePNGBitDepth.SelectedIndexChanged += new System.EventHandler(this.cbImagePNGBitDepth_SelectedIndexChanged);
+            // 
+            // lblImagePNGBitDepth
+            // 
+            resources.ApplyResources(this.lblImagePNGBitDepth, "lblImagePNGBitDepth");
+            this.lblImagePNGBitDepth.Name = "lblImagePNGBitDepth";
             // 
             // cbImageAutoUseJPEG
             // 
@@ -2043,19 +2056,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // lblImagePNGBitDepth
-            // 
-            resources.ApplyResources(this.lblImagePNGBitDepth, "lblImagePNGBitDepth");
-            this.lblImagePNGBitDepth.Name = "lblImagePNGBitDepth";
-            // 
-            // cbImagePNGBitDepth
-            // 
-            this.cbImagePNGBitDepth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImagePNGBitDepth.FormattingEnabled = true;
-            resources.ApplyResources(this.cbImagePNGBitDepth, "cbImagePNGBitDepth");
-            this.cbImagePNGBitDepth.Name = "cbImagePNGBitDepth";
-            this.cbImagePNGBitDepth.SelectedIndexChanged += new System.EventHandler(this.cbImagePNGBitDepth_SelectedIndexChanged);
             // 
             // TaskSettingsForm
             // 
