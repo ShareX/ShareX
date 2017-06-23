@@ -133,13 +133,13 @@
     <value>Kleur 2</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Dambordpatroon</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Horizontale lijnen</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Verticale lijnen</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Dambordpatroon</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B:</value>
