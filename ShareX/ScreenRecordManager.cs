@@ -242,20 +242,21 @@ namespace ShareX
 
                 try
                 {
-                    if (!abortRequested && screenRecorder != null)
+                    if (!abortRequested && screenRecorder != null && File.Exists(path))
                     {
                         recordForm.ChangeState(ScreenRecordState.AfterStop);
+
+                        string sourceFilePath = path;
 
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(path);
+                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected];
-                            string sourceFilePath = path;
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, encoder.OutputExtension));
                             screenRecorder.EncodeUsingCommandLine(encoder, sourceFilePath, path);
                         }
