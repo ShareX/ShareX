@@ -1259,7 +1259,7 @@ namespace ShareX
                 {
                     AllowDrop = false;
 
-                    lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
                 }
             }
         }
