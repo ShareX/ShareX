@@ -109,6 +109,8 @@ namespace ShareX.UploadersLib
         Gfycat,
         [Description("ownCloud")]
         OwnCloud,
+        [Description("NextCloud")]
+        NextCloud,
         [Description("MediaFire")]
         MediaFire,
         [Description("Pushbullet")]

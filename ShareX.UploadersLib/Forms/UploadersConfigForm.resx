@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -7681,6 +7681,327 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblNextCloudHostExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNextCloudHostExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNextCloudHostExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 36</value>
+  </data>
+  <data name="lblNextCloudHostExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 13</value>
+  </data>
+  <data name="lblNextCloudHostExample.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblNextCloudHostExample.Text" xml:space="preserve">
+    <value>Example: http://example.com/NextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHostExample.Name" xml:space="preserve">
+    <value>lblNextCloudHostExample</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHostExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHostExample.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHostExample.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbNextCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbNextCloudDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbNextCloudDirectLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 232</value>
+  </data>
+  <data name="cbNextCloudDirectLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="cbNextCloudDirectLink.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbNextCloudDirectLink.Text" xml:space="preserve">
+    <value>Direct link (Adds "/download" to URL)</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudDirectLink.Name" xml:space="preserve">
+    <value>cbNextCloudDirectLink</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudDirectLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudDirectLink.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudDirectLink.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbNextCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbNextCloudCreateShare.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbNextCloudCreateShare.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="cbNextCloudCreateShare.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="cbNextCloudCreateShare.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbNextCloudCreateShare.Text" xml:space="preserve">
+    <value>Create shareable URL</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudCreateShare.Name" xml:space="preserve">
+    <value>cbNextCloudCreateShare</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudCreateShare.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudCreateShare.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;cbNextCloudCreateShare.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtNextCloudPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 176</value>
+  </data>
+  <data name="txtNextCloudPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtNextCloudPath.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPath.Name" xml:space="preserve">
+    <value>txtNextCloudPath</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPath.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtNextCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="txtNextCloudPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtNextCloudPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPassword.Name" xml:space="preserve">
+    <value>txtNextCloudPassword</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPassword.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudPassword.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtNextCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtNextCloudUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtNextCloudUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudUsername.Name" xml:space="preserve">
+    <value>txtNextCloudUsername</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudUsername.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudUsername.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtNextCloudHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtNextCloudHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtNextCloudHost.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudHost.Name" xml:space="preserve">
+    <value>txtNextCloudHost</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudHost.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;txtNextCloudHost.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblNextCloudPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNextCloudPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNextCloudPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 160</value>
+  </data>
+  <data name="lblNextCloudPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblNextCloudPath.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblNextCloudPath.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPath.Name" xml:space="preserve">
+    <value>lblNextCloudPath</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPath.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPath.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblNextCloudPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNextCloudPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNextCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblNextCloudPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblNextCloudPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblNextCloudPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPassword.Name" xml:space="preserve">
+    <value>lblNextCloudPassword</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPassword.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudPassword.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblNextCloudUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNextCloudUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNextCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblNextCloudUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblNextCloudUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblNextCloudUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudUsername.Name" xml:space="preserve">
+    <value>lblNextCloudUsername</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudUsername.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudUsername.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblNextCloudHost.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNextCloudHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNextCloudHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblNextCloudHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblNextCloudHost.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblNextCloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHost.Name" xml:space="preserve">
+    <value>lblNextCloudHost</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHost.Parent" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;lblNextCloudHost.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tpNextCloud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpNextCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpNextCloud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpNextCloud.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="tpNextCloud.Text" xml:space="preserve">
+    <value>NextCloud</value>
+  <comment>@Invariant</comment></data>
+  <data name="&gt;&gt;tpNextCloud.Name" xml:space="preserve">
+    <value>tpNextCloud</value>
+  </data>
+  <data name="&gt;&gt;tpNextCloud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpNextCloud.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpNextCloud.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="cbMediaFireUseLongLink.AutoSize" type="System.Boolean, mscorlib">

@@ -138,6 +138,7 @@
     <Compile Include="FileUploaders\AzureStorage.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
+    <Compile Include="FileUploaders\NextCloud.cs" />
     <Compile Include="FileUploaders\Plik.cs" />
     <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
@@ -870,6 +871,7 @@
     <None Include="Favicons\Hostr.ico" />
     <None Include="Favicons\MediaFire.ico" />
     <None Include="Favicons\OwnCloud.png" />
+    <None Include="Favicons\NextCloud.ico" />
     <None Include="Favicons\Pushbullet.ico" />
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />

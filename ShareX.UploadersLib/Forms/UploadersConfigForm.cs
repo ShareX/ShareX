@@ -539,6 +539,15 @@ namespace ShareX.UploadersLib
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
 
+            // NextCloud
+
+            txtNextCloudHost.Text = Config.NextCloudHost;
+            txtNextCloudUsername.Text = Config.NextCloudUsername;
+            txtNextCloudPassword.Text = Config.NextCloudPassword;
+            txtNextCloudPath.Text = Config.NextCloudPath;
+            cbNextCloudCreateShare.Checked = Config.NextCloudCreateShare;
+            cbNextCloudDirectLink.Checked = Config.NextCloudDirectLink;
+
             // MediaFire
 
             txtMediaFireEmail.Text = Config.MediaFireUsername;
@@ -2326,6 +2335,41 @@ namespace ShareX.UploadersLib
         }
 
         #endregion ownCloud
+
+        #region NextCloud
+
+        private void txtNextCloudHost_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudHost = txtNextCloudHost.Text;
+        }
+
+        private void txtNextCloudUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudUsername = txtNextCloudUsername.Text;
+        }
+
+        private void txtNextCloudPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudPassword = txtNextCloudPassword.Text;
+        }
+
+        private void txtNextCloudPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudPath = txtNextCloudPath.Text;
+        }
+
+        private void cbNextCloudCreateShare_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudCreateShare = cbNextCloudCreateShare.Checked;
+        }
+
+        private void cbNextCloudDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextCloudDirectLink = cbNextCloudDirectLink.Checked;
+        }
+
+
+        #endregion NextCloud
 
         #region Pushbullet
 
