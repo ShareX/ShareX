@@ -10,8 +10,8 @@
 
 namespace ShareX.UploadersLib.Properties {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace ShareX.UploadersLib.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.Properties {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.Properties {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -109,7 +109,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Browse for a certificate file....
         /// </summary>
@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("CertFileNameEditor_EditValue_Browse_for_a_certificate_file___", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -128,7 +128,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -138,7 +138,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Response parse failed..
         /// </summary>
@@ -147,7 +147,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("CustomFileUploader_Upload_Response_parse_failed_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -157,7 +157,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -167,7 +167,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -177,7 +177,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -187,7 +187,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Connecting to {0}.
         /// </summary>
@@ -196,7 +196,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("FTPClientForm_FTPClientForm_Connecting_to__0_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to ShareX FTP client.
         /// </summary>
@@ -205,7 +205,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("FTPClientForm_FTPClientForm_ShareX_FTP_client", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Directory name to create.
         /// </summary>
@@ -214,7 +214,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("FTPClientForm_FTPCreateDirectory_Directory_name_to_create", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -224,7 +224,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -234,7 +234,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -244,7 +244,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -254,7 +254,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -264,7 +264,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -274,7 +274,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -284,7 +284,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -294,7 +294,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -304,7 +304,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -314,7 +314,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -324,7 +324,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Issue not found.
         /// </summary>
@@ -333,7 +333,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("JiraUpload_ValidateIssueId_Issue_not_found", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Browse for a key file....
         /// </summary>
@@ -342,7 +342,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("KeyFileNameEditor_EditValue_Browse_for_a_key_file___", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -352,7 +352,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -362,7 +362,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -372,7 +372,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -382,7 +382,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -392,7 +392,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -402,7 +402,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Paste verification code here.
         /// </summary>
@@ -411,7 +411,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OAuthControl_OAuthControl_PasteVerificationCodeHere", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Status: Logged in..
         /// </summary>
@@ -420,7 +420,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OAuthControl_Status_Status__Logged_in_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Status: Login failed..
         /// </summary>
@@ -429,7 +429,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OAuthControl_Status_Status__Login_failed_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Status: Not logged in..
         /// </summary>
@@ -438,7 +438,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OAuthControl_Status_Status__Not_logged_in_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to New account.
         /// </summary>
@@ -447,7 +447,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OAuthInfo_OAuthInfo_New_account", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -457,7 +457,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Root folder.
         /// </summary>
@@ -466,7 +466,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("OneDrive_RootFolder_Root_folder", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -476,7 +476,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -486,7 +486,17 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NextCloud {
+            get {
+                object obj = ResourceManager.GetObject("NextCloud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -496,7 +506,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -506,7 +516,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -516,7 +526,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -526,7 +536,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -536,7 +546,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -546,7 +556,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -556,7 +566,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -566,7 +576,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -576,7 +586,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -586,7 +596,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -596,7 +606,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -606,7 +616,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -616,7 +626,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -626,7 +636,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -636,7 +646,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -646,7 +656,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -656,7 +666,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -666,7 +676,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tweet error.
         /// </summary>
@@ -675,7 +685,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("TwitterTweetForm_SendTweet_Tweet_error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -685,7 +695,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -695,7 +705,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Box refresh folders list failed.
         /// </summary>
@@ -704,7 +714,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
@@ -713,7 +723,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_CustomUploader_Name", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
@@ -722,7 +732,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to FTP client only supports FTP or FTPS..
         /// </summary>
@@ -731,7 +741,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unable to find valid FTP account..
         /// </summary>
@@ -740,7 +750,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Authentication required..
         /// </summary>
@@ -749,7 +759,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_ListFolders_Authentication_required_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid device name.
         /// </summary>
@@ -758,7 +768,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Invalid_device_name", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Parent album path e.g..
         /// </summary>
@@ -767,7 +777,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Parent_album_path_e_g_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Selected folder:.
         /// </summary>
@@ -776,7 +786,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Selected_folder_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Login failed..
         /// </summary>
@@ -785,7 +795,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_Login_failed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Login successful..
         /// </summary>
@@ -794,7 +804,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_Login_successful", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Click refresh button.
         /// </summary>
@@ -803,7 +813,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Click_refresh_button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Configured.
         /// </summary>
@@ -812,7 +822,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Configured", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Invalid authentication.
         /// </summary>
@@ -821,7 +831,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Invalid_authentication", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Not configured.
         /// </summary>
@@ -830,7 +840,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Not_configured", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Logged in as {0}..
         /// </summary>
@@ -839,7 +849,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Not logged in..
         /// </summary>
@@ -848,7 +858,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Not_logged_in_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Refresh authorization is not supported..
         /// </summary>
@@ -858,7 +868,7 @@ namespace ShareX.UploadersLib.Properties {
                         "upported_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Querying folders....
         /// </summary>
@@ -867,7 +877,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_OneDriveAddFolder_Querying_folders___", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {0} successfully created..
         /// </summary>
@@ -876,7 +886,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Remove all custom uploaders?.
         /// </summary>
@@ -885,7 +895,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_Remove_all_custom_uploaders_Confirmation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to SendSpace registration.
         /// </summary>
@@ -894,7 +904,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error: Result is empty..
         /// </summary>
@@ -903,7 +913,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Connected!.
         /// </summary>
@@ -912,7 +922,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Connected!
         ///Created folders:.
@@ -922,7 +932,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_Created_folders", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -932,7 +942,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>

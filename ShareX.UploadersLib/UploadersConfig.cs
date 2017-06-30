@@ -250,6 +250,16 @@ namespace ShareX.UploadersLib
         public bool OwnCloudDirectLink = false;
         public bool OwnCloud81Compatibility = false;
 
+
+        // NextCloud
+
+        public string NextCloudHost = "";
+        public string NextCloudUsername = "";
+        public string NextCloudPassword = "";
+        public string NextCloudPath = "/";
+        public bool NextCloudCreateShare = true;
+        public bool NextCloudDirectLink = false;
+
         // MediaFire
 
         public string MediaFireUsername = "";
