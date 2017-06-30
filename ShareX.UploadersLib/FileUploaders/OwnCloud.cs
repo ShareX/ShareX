@@ -104,7 +104,6 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
 
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            headers["OCS-APIREQUEST"] = "true";
 
             string response = SendRequest(HttpMethod.PUT, url, stream, Helpers.GetMimeType(fileName), null, headers);
 
@@ -141,7 +140,6 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
 
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            headers["OCS-APIREQUEST"] = "true";
 
             string response = SendRequestMultiPart(url, args, headers);
 
