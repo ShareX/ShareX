@@ -348,7 +348,7 @@
     <value>Пипетка</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Запись экрана</value>
+    <value>Начать/Остановить запись области экрана</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Остановка всех активных загрузок</value>
@@ -477,7 +477,7 @@
     <value>Начать автозахват последней области</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Начать запись последней области экрана</value>
+    <value>Начать/Остановить запись последней области экрана</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Доступна более новая версия {0}.
@@ -493,16 +493,16 @@
     <value>Палитра</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Запись экрана (GIF)</value>
+    <value>Начать/Остановить запись области экрана (GIF)</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Начать запись последней области экрана (GIF)</value>
+    <value>Начать/Остановить запись последней области экрана (GIF)</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Захват области (Прозрачный фон)</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
-    <value>Захват определенной области</value>
+    <value>Захват подготовленной области экрана</value>
   </data>
   <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
     <value>FFmpeg (Хорошее качество)</value>
@@ -610,13 +610,13 @@
     <value>Захват экрана</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Начать запись области экрана с активным окном</value>
+    <value>Начать/Остановить запись области экрана с активным окном</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
     <value>Запись экрана</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Начать запись области экрана (GIF) с активным окном</value>
+    <value>Начать/Остановить запись области экрана с активным окном (GIF)</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
     <value>Запись экрана</value>
@@ -842,10 +842,10 @@
     <value>Запись экрана</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
-    <value>Начать запись экрана, используя пользовательскую область</value>
+    <value>Начать/Остановить запись подготовленной области экрана</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Начать запись экрана (GIF), используя пользовательскую область</value>
+    <value>Начать/Остановить запись подготовленной области экрана (GIF)</value>
   </data>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Открыть главное окно</value>

@@ -391,7 +391,7 @@
     <value>Выбрать область...</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>Пользовательская область:</value>
+    <value>Подготовленная область экрана:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Включить захват нескольких областей (с поддержкой изменения размера и перемещения областей)</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
     <value>Переопределить настройки загрузок</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Битность PNG:</value>
   </data>
 </root>
