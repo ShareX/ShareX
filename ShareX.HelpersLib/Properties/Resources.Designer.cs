@@ -1826,6 +1826,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically detect.
+        /// </summary>
+        internal static string PNGBitDepth_Automatic {
+            get {
+                return ResourceManager.GetString("PNGBitDepth_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24 bit.
+        /// </summary>
+        internal static string PNGBitDepth_Bit24 {
+            get {
+                return ResourceManager.GetString("PNGBitDepth_Bit24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 32 bit.
+        /// </summary>
+        internal static string PNGBitDepth_Bit32 {
+            get {
+                return ResourceManager.GetString("PNGBitDepth_Bit32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string PNGBitDepth_Default {
+            get {
+                return ResourceManager.GetString("PNGBitDepth_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show tray balloon tip.
         /// </summary>
         internal static string PopUpNotificationType_BalloonTip {

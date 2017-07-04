@@ -1016,4 +1016,16 @@ Would you like to download it?</value>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Image uploader</value>
   </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Automatically detect</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
 </root>

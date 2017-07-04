@@ -36,15 +36,11 @@ namespace ShareX.HelpersLib
         URL
     }
 
-    public enum PNGBitDepth // TODO: Translate
+    public enum PNGBitDepth // Localized
     {
-        [Description("Default")]
         Default,
-        [Description("Automatically detect")]
         Automatic,
-        [Description("32 bit")]
         Bit32,
-        [Description("24 bit")]
         Bit24
     }
 
