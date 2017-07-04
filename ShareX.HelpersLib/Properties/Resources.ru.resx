@@ -994,4 +994,16 @@
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Сервис картинок</value>
   </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Определять автоматически</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 бит</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 бит</value>
+  </data>
 </root>
