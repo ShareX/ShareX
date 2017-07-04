@@ -1151,4 +1151,10 @@ store.book[0].title</value>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Использовать запрос в виде пути</value>
   </data>
+  <data name="sulKeyLink.Text" xml:space="preserve">
+    <value>Кликните здесь, чтобы получить ваш ключ API!</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>никогда</value>
+  </data>
 </root>
