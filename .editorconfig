@@ -1,9 +1,28 @@
 root = true
 
-[*.{sln,csproj,cs,resx}]
+[*]
 indent_style = space
-indent_size = 4
 end_of_line = crlf
-charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = false
+
+# C# files
+[*.cs]
+indent_size = 4
+charset = utf-8
+
+# Xml project files
+[*.{csproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]
+indent_size = 2
+
+# Xml build files
+[*.builds]
+indent_size = 2
+
+# Xml files
+[*.{xml,stylecop,resx,ruleset}]
+indent_size = 2
+
+# Xml config files
+[*.{props,targets,config,nuspec}]
+indent_size = 2
