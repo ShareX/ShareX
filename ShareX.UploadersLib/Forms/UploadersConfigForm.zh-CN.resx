@@ -141,13 +141,13 @@
     <value>删除</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>清除上传者</value>
+    <value>清除上传</value>
   </data>
   <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
     <value>全部...</value>
   </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上传者</value>
+    <value>上传</value>
   </data>
   <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
     <value>值</value>
@@ -204,7 +204,7 @@
     <value>URL字段加入语法</value>
   </data>
   <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>自定义上传者</value>
+    <value>自定义上传</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
@@ -1120,5 +1120,11 @@ store.book[0].title</value>
   </data>
   <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
     <value>直接URL</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>永不</value>
+  </data>
+  <data name="sulKeyLink.Text" xml:space="preserve">
+    <value>点击这里获得你的API密钥！</value>
   </data>
 </root>

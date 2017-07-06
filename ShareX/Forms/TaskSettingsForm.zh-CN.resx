@@ -334,10 +334,10 @@
     <value>效果</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>JPEG质量：</value>
+    <value>JPEG 质量：</value>
   </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF质量：</value>
+    <value>GIF 质量：</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>如果文件存在：</value>
@@ -441,12 +441,6 @@
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>鼠标中键单击动作：</value>
   </data>
-  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>点击鼠标五次动作：</value>
-  </data>
-  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>点击鼠标四次动作：</value>
-  </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>鼠标右键单击动作：</value>
   </data>
@@ -508,7 +502,7 @@
     <value>上传到：</value>
   </data>
   <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
-    <value>栗子：png, jpg, jpeg</value>
+    <value>例子：png, jpg, jpeg</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
     <value>扩展筛选：</value>
@@ -530,5 +524,8 @@
   </data>
   <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
     <value>覆盖上传设置</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG 图像色深</value>
   </data>
 </root>

@@ -130,9 +130,9 @@
     <value>上传</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 网页捕获</value>
+    <value>ShareX - 网页捕捉</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+    <value>捕捉</value>
   </data>
 </root>

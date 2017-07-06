@@ -268,7 +268,7 @@
     <value>常规</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
-    <value>语言:</value>
+    <value>语言：</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>检查预览版更新</value>
@@ -362,5 +362,8 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Firefox 扩展程序</value>
   </data>
 </root>

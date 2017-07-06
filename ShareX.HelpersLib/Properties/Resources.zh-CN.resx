@@ -243,7 +243,7 @@
     <value>下载中。</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>获取文件的大小中。</value>
+    <value>获取文件大小中。</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
     <value>加载图像:{0}%</value>
@@ -282,7 +282,7 @@
     <value>无</value>
   </data>
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>拍摄活动监视器</value>
+    <value>捕捉活动监视器</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>捕捉活动窗口</value>
@@ -297,7 +297,7 @@
     <value>从剪贴板内容查看器上传</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>拖放上传</value>
+    <value>拖拽上传</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>上传文件</value>
@@ -604,7 +604,7 @@
     <value>上传</value>
   </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>屏幕捕获</value>
+    <value>屏幕捕捉</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>使用活动窗口开始屏幕录制</value>
@@ -637,10 +637,10 @@
     <value>工具</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
-    <value>网页捕获</value>
+    <value>网页捕捉</value>
   </data>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>屏幕捕获</value>
+    <value>屏幕捕捉获</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>禁用/启用快捷键</value>
@@ -716,7 +716,7 @@
     <value>计算机名称</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>当天</value>
+    <value>当前日期</value>
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>当前小时</value>
@@ -737,7 +737,7 @@
     <value>当月名（本地语言）</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>当月名称（英文）</value>
+    <value>当月名称（英语）</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>当前毫秒</value>
@@ -773,10 +773,10 @@
     <value>Unix时间戳</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>当前周名（本地语言）</value>
+    <value>当前周（本地语言）</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>本周名称（英文）</value>
+    <value>当前周（英语）</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>图像宽度</value>
@@ -836,13 +836,13 @@
     <value>文本捕捉（OCR）</value>
   </data>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>屏幕捕获</value>
+    <value>屏幕捕捉</value>
   </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
-    <value>屏幕捕获</value>
+    <value>屏幕捕捉</value>
   </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>捕获活动显示器</value>
+    <value>捕捉活动显示器</value>
   </data>
   <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
     <value>捕捉全屏</value>
@@ -941,7 +941,7 @@
     <value>发送滚动消息至顶部</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>自动尝试所有方法，直到一个作品</value>
+    <value>自动尝试所有方法，直到完成工作</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>绘图：言语气球</value>
@@ -972,5 +972,38 @@
   </data>
   <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
     <value>检测可用的代理。请从主菜单打开应用程序设置，选择代理并设置代理服务器。</value>
+  </data>
+  <data name="ShapeType_DrawingCrop" xml:space="preserve">
+    <value>图像剪贴</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>绘图：图像（屏幕）</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>谷歌图片搜索</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL短链</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>文件上传</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>文本上传</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>图像上传</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>缺省</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>自动检测</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
   </data>
 </root>
