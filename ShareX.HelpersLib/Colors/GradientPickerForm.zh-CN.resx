@@ -142,7 +142,7 @@
     <value>渐变类型：</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
-    <value>地点：</value>
+    <value>位置：</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>预览：</value>

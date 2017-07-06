@@ -663,4 +663,16 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>显示条形工作栏</value>
   </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>新闻</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>捐助</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
 </root>

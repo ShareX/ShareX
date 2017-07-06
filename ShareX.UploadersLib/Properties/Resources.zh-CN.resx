@@ -229,4 +229,7 @@
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>删除所有自定义上传？</value>
   </data>
+  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
 </root>
