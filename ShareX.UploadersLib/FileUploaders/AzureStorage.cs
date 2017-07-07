@@ -95,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
             {
                 // Azure Blob Storage does not support https with custom domains at this time
-                urlForCopy = URLHelpers.ForcePrefix(URLHelpers.CombineURL($"{AzureStorageCustomDomain}", $"{AzureStorageContainer}/{fileName}"), "http://");
+                urlForCopy = URLHelpers.ForcePrefix(URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, fileName), "http://");
             }
 
             string contentType = Helpers.GetMimeType(fileName);
