@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment);
+            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
@@ -65,13 +65,15 @@ namespace ShareX.UploadersLib.FileUploaders
         public string AzureStorageAccountAccessKey { get; private set; }
         public string AzureStorageContainer { get; private set; }
         public string AzureStorageEnvironment { get; private set; }
+        public string AzureStorageCustomDomain { get; private set; }
 
-        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment)
+        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain)
         {
             AzureStorageAccountName = azureStorageAccountName;
             AzureStorageAccountAccessKey = azureStorageAccessKey;
             AzureStorageContainer = azureStorageContainer;
             AzureStorageEnvironment = (!string.IsNullOrEmpty(azureStorageEnvironment)) ? azureStorageEnvironment : "blob.core.windows.net";
+            AzureStorageCustomDomain = customDomain;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -89,6 +91,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{fileName}";
+            string urlForCopy = url;
+            if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
+            {
+                urlForCopy = $"http://{AzureStorageCustomDomain}/{AzureStorageContainer}/{fileName}";
+            }
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -106,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (responseHeaders != null)
             {
-                return new UploadResult { IsSuccess = true, URL = url };
+                return new UploadResult { IsSuccess = true, URL = urlForCopy };
             }
             else
             {

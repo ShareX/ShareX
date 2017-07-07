@@ -298,6 +298,8 @@
             this.lblAzureStorageAccessKey = new System.Windows.Forms.Label();
             this.txtAzureStorageAccountName = new System.Windows.Forms.TextBox();
             this.lblAzureStorageAccountName = new System.Windows.Forms.Label();
+            this.txtAzureStorageCustomDomain = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageCustomDomain = new System.Windows.Forms.Label();
             this.tpGfycat = new System.Windows.Forms.TabPage();
             this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
             this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
@@ -447,6 +449,7 @@
             this.lblStreamablePassword = new System.Windows.Forms.Label();
             this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpSul = new System.Windows.Forms.TabPage();
+            this.sulKeyLink = new System.Windows.Forms.LinkLabel();
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
@@ -650,7 +653,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.sulKeyLink = new System.Windows.Forms.LinkLabel();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2695,6 +2697,8 @@
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageAccessKey);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageAccountName);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageAccountName);
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageCustomDomain);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageCustomDomain);
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
             this.tpAzureStorage.UseVisualStyleBackColor = true;
@@ -2756,6 +2760,17 @@
             // 
             resources.ApplyResources(this.lblAzureStorageAccountName, "lblAzureStorageAccountName");
             this.lblAzureStorageAccountName.Name = "lblAzureStorageAccountName";
+            // 
+            // txtAzureStorageCustomDomain
+            // 
+            resources.ApplyResources(this.txtAzureStorageCustomDomain, "txtAzureStorageCustomDomain");
+            this.txtAzureStorageCustomDomain.Name = "txtAzureStorageCustomDomain";
+            this.txtAzureStorageCustomDomain.TextChanged += new System.EventHandler(this.txtAzureStorageCustomDomain_TextChanged);
+            // 
+            // lblAzureStorageCustomDomain
+            // 
+            resources.ApplyResources(this.lblAzureStorageCustomDomain, "lblAzureStorageCustomDomain");
+            this.lblAzureStorageCustomDomain.Name = "lblAzureStorageCustomDomain";
             // 
             // tpGfycat
             // 
@@ -3813,6 +3828,13 @@
             resources.ApplyResources(this.tpSul, "tpSul");
             this.tpSul.Name = "tpSul";
             this.tpSul.UseVisualStyleBackColor = true;
+            // 
+            // sulKeyLink
+            // 
+            resources.ApplyResources(this.sulKeyLink, "sulKeyLink");
+            this.sulKeyLink.Name = "sulKeyLink";
+            this.sulKeyLink.TabStop = true;
+            this.sulKeyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.sulKeyLink_LinkClicked);
             // 
             // txtSulAPIKey
             // 
@@ -5291,13 +5313,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // sulKeyLink
-            // 
-            resources.ApplyResources(this.sulKeyLink, "sulKeyLink");
-            this.sulKeyLink.Name = "sulKeyLink";
-            this.sulKeyLink.TabStop = true;
-            this.sulKeyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.sulKeyLink_LinkClicked);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6020,6 +6035,10 @@
         private System.Windows.Forms.TextBox txtAzureStorageContainer;
         private System.Windows.Forms.Label lblAzureStorageContainer;
         private System.Windows.Forms.Button btnAzureStoragePortal;
+        private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
+        private System.Windows.Forms.Label lblAzureStorageEnvironment;
+        private System.Windows.Forms.TextBox txtAzureStorageCustomDomain;
+        private System.Windows.Forms.Label lblAzureStorageCustomDomain;
         internal System.Windows.Forms.TabPage tpPlik;
         private System.Windows.Forms.GroupBox gbPlikSettings;
         private System.Windows.Forms.TextBox txtPlikComment;
@@ -6100,8 +6119,7 @@
         private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
         private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
-        private System.Windows.Forms.ComboBox cbAzureStorageEnvironment;
-        private System.Windows.Forms.Label lblAzureStorageEnvironment;
         private System.Windows.Forms.LinkLabel sulKeyLink;
+
     }
 }
