@@ -25,7 +25,7 @@
 
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.MediaLib
 {
     public class ImageCombinerOptions
     {

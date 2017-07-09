@@ -24,14 +24,13 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.MediaLib
 {
     public partial class ImageCombinerForm : Form
     {

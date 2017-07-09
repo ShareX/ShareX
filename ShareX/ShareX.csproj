@@ -196,12 +196,6 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\ImageCombinerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ImageCombinerForm.Designer.cs">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\QRCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,7 +236,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HotkeyTypeEnumConverter.cs" />
-    <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="QuickTaskInfo.cs" />
     <Compile Include="QuickTaskMenu.cs" />
@@ -826,36 +819,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-TW.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.de.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.fr.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.nl-NL.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.pt-BR.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.ru.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.tr.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.vi-VN.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.zh-CN.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.zh-TW.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

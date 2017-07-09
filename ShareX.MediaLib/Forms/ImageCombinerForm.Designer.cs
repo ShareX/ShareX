@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ShareX.MediaLib
 {
     partial class ImageCombinerForm
     {
