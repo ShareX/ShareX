@@ -242,6 +242,8 @@
             this.ucNews = new ShareX.NewsListControl();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
+            this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -580,6 +582,7 @@
             this.tsmiRuler,
             this.tsmiIndexFolder,
             this.tsmiImageCombiner,
+            this.tsmiImageThumbnailer,
             this.tsmiVideoThumbnailer,
             this.tsmiFTPClient,
             this.tsmiTweetMessage,
@@ -1516,6 +1519,7 @@
             this.tsmiTrayRuler,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayImageCombiner,
+            this.tsmiTrayImageThumbnailer,
             this.tsmiTrayVideoThumbnailer,
             this.tsmiTrayFTPClient,
             this.tsmiTrayTweetMessage,
@@ -1881,6 +1885,18 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
+            // tsmiImageThumbnailer
+            // 
+            this.tsmiImageThumbnailer.Name = "tsmiImageThumbnailer";
+            resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
+            this.tsmiImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
+            // 
+            // tsmiTrayImageThumbnailer
+            // 
+            this.tsmiTrayImageThumbnailer.Name = "tsmiTrayImageThumbnailer";
+            resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
+            this.tsmiTrayImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2134,5 +2150,7 @@
         private HelpersLib.ToolStripButtonColorAnimation tsbNews;
         private System.Windows.Forms.Panel pNews;
         private System.Windows.Forms.Button btnCloseNews;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageThumbnailer;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageThumbnailer;
     }
 }

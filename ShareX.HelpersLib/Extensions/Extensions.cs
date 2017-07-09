@@ -252,10 +252,10 @@ namespace ShareX.HelpersLib
 
         public static void SaveJPG(this Image img, string filepath, int quality)
         {
-            quality = quality.Between(0, 100);
-            EncoderParameters encoderParameters = new EncoderParameters(1);
-            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
-            img.Save(filepath, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
+            using (FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveJPG(img, fs, quality);
+            }
         }
 
         public static void SaveGIF(this Image img, Stream stream, GIFQuality quality)

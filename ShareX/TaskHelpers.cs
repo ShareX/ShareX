@@ -41,7 +41,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Speech.Synthesis;
@@ -765,6 +764,14 @@ namespace ShareX
             ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions, imageFiles);
             imageCombinerForm.ProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             imageCombinerForm.Show();
+        }
+
+        public static void OpenImageThumbnailer(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            ImageThumbnailerForm imageThumbnailerForm = new ImageThumbnailerForm();
+            imageThumbnailerForm.Show();
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

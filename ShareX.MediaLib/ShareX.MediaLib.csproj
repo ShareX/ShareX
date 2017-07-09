@@ -85,6 +85,12 @@
     <Compile Include="Forms\ImageCombinerForm.Designer.cs">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ImageThumbnailerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageThumbnailerForm.Designer.cs">
+      <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VideoThumbnailerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.zh-TW.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageThumbnailerForm.resx">
+      <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoThumbnailerForm.de.resx">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>

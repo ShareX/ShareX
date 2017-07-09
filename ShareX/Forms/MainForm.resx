@@ -544,85 +544,91 @@
     <value>Workflows</value>
   </data>
   <data name="tsmiColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Color picker...</value>
   </data>
   <data name="tsmiScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
   <data name="tsmiAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiAnnotateImage.Text" xml:space="preserve">
     <value>Annotate image...</value>
   </data>
   <data name="tsmiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
   </data>
   <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
   <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
   <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
   <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Directory indexer...</value>
   </data>
   <data name="tsmiImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Image combiner...</value>
   </data>
+  <data name="tsmiImageThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Image thumbnailer...</value>
+  </data>
   <data name="tsmiVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
   <data name="tsmiFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP client...</value>
   </data>
   <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
   <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
@@ -917,7 +923,7 @@
   </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
@@ -947,7 +953,7 @@
   </data>
   <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Enter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
@@ -956,7 +962,7 @@
   </data>
   <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Enter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
@@ -977,7 +983,7 @@
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiCopyURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
@@ -1007,7 +1013,7 @@
   </data>
   <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+C</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiCopyFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
@@ -1016,7 +1022,7 @@
   </data>
   <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Alt+C</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiCopyImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
@@ -1088,7 +1094,7 @@
   </data>
   <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Shift+C</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiCopyFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
@@ -1127,7 +1133,7 @@
   </data>
   <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+U</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1136,7 +1142,7 @@
   </data>
   <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+D</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1145,7 +1151,7 @@
   </data>
   <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+E</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1154,7 +1160,7 @@
   </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiDeleteSelectedItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1163,7 +1169,7 @@
   </data>
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Del</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1399,85 +1405,91 @@
     <value>Workflows</value>
   </data>
   <data name="tsmiTrayColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Color picker...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
   <data name="tsmiTrayAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
     <value>Annotate image...</value>
   </data>
   <data name="tsmiTrayImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
   </data>
   <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
   <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Directory indexer...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Image combiner...</value>
   </data>
+  <data name="tsmiTrayImageThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Image thumbnailer...</value>
+  </data>
   <data name="tsmiTrayVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
   <data name="tsmiTrayFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP client...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
@@ -1678,7 +1690,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 484</value>
+    <value>193, 506</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1688,7 +1700,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -2984,6 +2996,18 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiTrayImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
