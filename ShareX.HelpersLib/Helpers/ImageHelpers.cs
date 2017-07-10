@@ -138,6 +138,55 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static Image CreateThumbnail(Image img, int width, int height)
+        {
+            double srcRatio = (double)img.Width / img.Height;
+            double dstRatio = (double)width / height;
+            int w, h;
+
+            if (srcRatio >= dstRatio)
+            {
+                if (srcRatio >= 1)
+                {
+                    w = (int)(img.Height * dstRatio);
+                }
+                else
+                {
+                    w = (int)(img.Width / srcRatio * dstRatio);
+                }
+
+                h = img.Height;
+            }
+            else
+            {
+                w = img.Width;
+
+                if (srcRatio >= 1)
+                {
+                    h = (int)(img.Height / dstRatio * srcRatio);
+                }
+                else
+                {
+                    h = (int)(img.Height * srcRatio / dstRatio);
+                }
+            }
+
+            int x = (img.Width - w) / 2;
+            int y = (img.Height - h) / 2;
+
+            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (img)
+            {
+                g.SetHighQuality();
+                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
+            }
+
+            return bmp;
+        }
+
         public static Image ResizeImageLimit(Image img, Size size)
         {
             return ResizeImageLimit(img, size.Width, size.Height);

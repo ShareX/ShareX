@@ -118,7 +118,7 @@ namespace ShareX.MediaLib
 
                             if (img != null)
                             {
-                                using (img = ImageHelpers.ResizeImage(img, width, height, allowEnlarge, centerImage, Color.White))
+                                using (img = ImageHelpers.CreateThumbnail(img, width, height))
                                 {
                                     string folder = Path.GetDirectoryName(filePath);
                                     string filename = Path.GetFileNameWithoutExtension(filePath);
