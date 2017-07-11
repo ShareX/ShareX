@@ -119,6 +119,26 @@ namespace ShareX.MediaLib
             }
         }
 
+        private void nudWidth_ValueChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+
+        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+
+        private void btnOutputFolder_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFolder(txtOutputFolder);
+        }
+
+        private void txtOutputFilename_TextChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             if (lvImages.Items.Count > 0)
@@ -157,21 +177,6 @@ namespace ShareX.MediaLib
                     ex.ShowError();
                 }
             }
-        }
-
-        private void nudWidth_ValueChanged(object sender, EventArgs e)
-        {
-            CheckState();
-        }
-
-        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
-        {
-            CheckState();
-        }
-
-        private void txtOutputFilename_TextChanged(object sender, EventArgs e)
-        {
-            CheckState();
         }
     }
 }

@@ -194,6 +194,7 @@
             this.btnOutputFolder.TabIndex = 14;
             this.btnOutputFolder.Text = "...";
             this.btnOutputFolder.UseVisualStyleBackColor = true;
+            this.btnOutputFolder.Click += new System.EventHandler(this.btnOutputFolder_Click);
             // 
             // ImageThumbnailerForm
             // 

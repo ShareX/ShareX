@@ -140,6 +140,11 @@ namespace ShareX.HelpersLib
 
         public static Image CreateThumbnail(Image img, int width, int height)
         {
+            if (img.Width == width && img.Height == height)
+            {
+                return img;
+            }
+
             double srcRatio = (double)img.Width / img.Height;
             double dstRatio = (double)width / height;
             int w, h;
