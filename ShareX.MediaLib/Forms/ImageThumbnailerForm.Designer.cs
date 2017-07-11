@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.lvImages = new ShareX.HelpersLib.MyListView();
+            this.chImages = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.lblWidth = new System.Windows.Forms.Label();
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
             this.lblHeight = new System.Windows.Forms.Label();
             this.nudHeight = new System.Windows.Forms.NumericUpDown();
-            this.cbAllowEnlarge = new System.Windows.Forms.CheckBox();
-            this.cbCenterImage = new System.Windows.Forms.CheckBox();
             this.lblOutputFilename = new System.Windows.Forms.Label();
             this.txtOutputFilename = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.chImages = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblOutputFolder = new System.Windows.Forms.Label();
+            this.txtOutputFolder = new System.Windows.Forms.TextBox();
+            this.btnOutputFolder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +105,12 @@
             this.nudWidth.Size = new System.Drawing.Size(80, 20);
             this.nudWidth.TabIndex = 4;
             this.nudWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudWidth.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.nudWidth.ValueChanged += new System.EventHandler(this.nudWidth_ValueChanged);
             // 
             // lblHeight
             // 
@@ -126,26 +133,12 @@
             this.nudHeight.Size = new System.Drawing.Size(80, 20);
             this.nudHeight.TabIndex = 6;
             this.nudHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cbAllowEnlarge
-            // 
-            this.cbAllowEnlarge.AutoSize = true;
-            this.cbAllowEnlarge.Location = new System.Drawing.Point(8, 464);
-            this.cbAllowEnlarge.Name = "cbAllowEnlarge";
-            this.cbAllowEnlarge.Size = new System.Drawing.Size(89, 17);
-            this.cbAllowEnlarge.TabIndex = 7;
-            this.cbAllowEnlarge.Text = "Allow enlarge";
-            this.cbAllowEnlarge.UseVisualStyleBackColor = true;
-            // 
-            // cbCenterImage
-            // 
-            this.cbCenterImage.AutoSize = true;
-            this.cbCenterImage.Location = new System.Drawing.Point(8, 488);
-            this.cbCenterImage.Name = "cbCenterImage";
-            this.cbCenterImage.Size = new System.Drawing.Size(88, 17);
-            this.cbCenterImage.TabIndex = 8;
-            this.cbCenterImage.Text = "Center image";
-            this.cbCenterImage.UseVisualStyleBackColor = true;
+            this.nudHeight.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.nudHeight.ValueChanged += new System.EventHandler(this.nudWidth_ValueChanged);
             // 
             // lblOutputFilename
             // 
@@ -160,30 +153,59 @@
             // 
             this.txtOutputFilename.Location = new System.Drawing.Point(8, 528);
             this.txtOutputFilename.Name = "txtOutputFilename";
-            this.txtOutputFilename.Size = new System.Drawing.Size(256, 20);
+            this.txtOutputFilename.Size = new System.Drawing.Size(560, 20);
             this.txtOutputFilename.TabIndex = 10;
             this.txtOutputFilename.Text = "Thumbnail_$filename";
+            this.txtOutputFilename.TextChanged += new System.EventHandler(this.txtOutputFilename_TextChanged);
             // 
             // btnGenerate
             // 
+            this.btnGenerate.Enabled = false;
             this.btnGenerate.Location = new System.Drawing.Point(8, 560);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(256, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(560, 23);
             this.btnGenerate.TabIndex = 11;
             this.btnGenerate.Text = "Generate thumbnails";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // lblOutputFolder
+            // 
+            this.lblOutputFolder.AutoSize = true;
+            this.lblOutputFolder.Location = new System.Drawing.Point(8, 464);
+            this.lblOutputFolder.Name = "lblOutputFolder";
+            this.lblOutputFolder.Size = new System.Drawing.Size(71, 13);
+            this.lblOutputFolder.TabIndex = 12;
+            this.lblOutputFolder.Text = "Output folder:";
+            // 
+            // txtOutputFolder
+            // 
+            this.txtOutputFolder.Location = new System.Drawing.Point(8, 480);
+            this.txtOutputFolder.Name = "txtOutputFolder";
+            this.txtOutputFolder.Size = new System.Drawing.Size(520, 20);
+            this.txtOutputFolder.TabIndex = 13;
+            this.txtOutputFolder.TextChanged += new System.EventHandler(this.txtOutputFolder_TextChanged);
+            // 
+            // btnOutputFolder
+            // 
+            this.btnOutputFolder.Location = new System.Drawing.Point(536, 479);
+            this.btnOutputFolder.Name = "btnOutputFolder";
+            this.btnOutputFolder.Size = new System.Drawing.Size(32, 23);
+            this.btnOutputFolder.TabIndex = 14;
+            this.btnOutputFolder.Text = "...";
+            this.btnOutputFolder.UseVisualStyleBackColor = true;
             // 
             // ImageThumbnailerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 593);
+            this.Controls.Add(this.btnOutputFolder);
+            this.Controls.Add(this.txtOutputFolder);
+            this.Controls.Add(this.lblOutputFolder);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.txtOutputFilename);
             this.Controls.Add(this.lblOutputFilename);
-            this.Controls.Add(this.cbCenterImage);
-            this.Controls.Add(this.cbAllowEnlarge);
             this.Controls.Add(this.nudHeight);
             this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.nudWidth);
@@ -191,6 +213,8 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvImages);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ImageThumbnailerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image thumbnailer";
@@ -210,11 +234,12 @@
         private System.Windows.Forms.NumericUpDown nudWidth;
         private System.Windows.Forms.Label lblHeight;
         private System.Windows.Forms.NumericUpDown nudHeight;
-        private System.Windows.Forms.CheckBox cbAllowEnlarge;
-        private System.Windows.Forms.CheckBox cbCenterImage;
         private System.Windows.Forms.Label lblOutputFilename;
         private System.Windows.Forms.TextBox txtOutputFilename;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.ColumnHeader chImages;
+        private System.Windows.Forms.Label lblOutputFolder;
+        private System.Windows.Forms.TextBox txtOutputFolder;
+        private System.Windows.Forms.Button btnOutputFolder;
     }
 }

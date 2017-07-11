@@ -44,6 +44,29 @@ namespace ShareX.MediaLib
             Icon = ShareXResources.Icon;
         }
 
+        private void CheckState()
+        {
+            btnGenerate.Enabled = lvImages.Items.Count > 0 && nudWidth.Value > 0 && nudHeight.Value > 0 && !string.IsNullOrEmpty(txtOutputFolder.Text) &&
+                !string.IsNullOrEmpty(txtOutputFilename.Text);
+        }
+
+        private void AddFile(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                return;
+            }
+
+            lvImages.Items.Add(filePath);
+
+            if (string.IsNullOrEmpty(txtOutputFolder.Text))
+            {
+                txtOutputFolder.Text = Path.GetDirectoryName(filePath);
+            }
+
+            CheckState();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string[] images = ImageHelpers.OpenImageFileDialog(true);
@@ -52,7 +75,7 @@ namespace ShareX.MediaLib
             {
                 foreach (string image in images)
                 {
-                    lvImages.Items.Add(image);
+                    AddFile(image);
                 }
             }
         }
@@ -90,7 +113,7 @@ namespace ShareX.MediaLib
                 {
                     foreach (string file in files)
                     {
-                        lvImages.Items.Add(file);
+                        AddFile(file);
                     }
                 }
             }
@@ -102,8 +125,7 @@ namespace ShareX.MediaLib
             {
                 int width = (int)nudWidth.Value;
                 int height = (int)nudHeight.Value;
-                bool allowEnlarge = cbAllowEnlarge.Checked;
-                bool centerImage = cbCenterImage.Checked;
+                string outputFolder = txtOutputFolder.Text;
                 string outputFilename = txtOutputFilename.Text;
 
                 try
@@ -120,9 +142,8 @@ namespace ShareX.MediaLib
                             {
                                 using (img = ImageHelpers.CreateThumbnail(img, width, height))
                                 {
-                                    string folder = Path.GetDirectoryName(filePath);
                                     string filename = Path.GetFileNameWithoutExtension(filePath);
-                                    string outputPath = Path.Combine(folder, outputFilename.Replace("$filename", filename));
+                                    string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));
                                     outputPath = Path.ChangeExtension(outputPath, "jpg");
                                     img.SaveJPG(outputPath, 90);
                                 }
@@ -136,6 +157,21 @@ namespace ShareX.MediaLib
                     ex.ShowError();
                 }
             }
+        }
+
+        private void nudWidth_ValueChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+
+        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+
+        private void txtOutputFilename_TextChanged(object sender, EventArgs e)
+        {
+            CheckState();
         }
     }
 }
