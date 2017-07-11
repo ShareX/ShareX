@@ -1389,6 +1389,7 @@
     <None Include="Resources\Google.png" />
     <None Include="Resources\megaphone.png" />
     <None Include="Resources\Exclamation-16.png" />
+    <None Include="Resources\image-resize-actual.png" />
     <Content Include="Resources\tw.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />

@@ -77,6 +77,7 @@
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,6 +201,7 @@
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -242,8 +244,6 @@
             this.ucNews = new ShareX.NewsListControl();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -660,6 +660,13 @@
             this.tsmiImageCombiner.Name = "tsmiImageCombiner";
             resources.ApplyResources(this.tsmiImageCombiner, "tsmiImageCombiner");
             this.tsmiImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
+            // 
+            // tsmiImageThumbnailer
+            // 
+            this.tsmiImageThumbnailer.Image = global::ShareX.Properties.Resources.image_resize_actual;
+            this.tsmiImageThumbnailer.Name = "tsmiImageThumbnailer";
+            resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
+            this.tsmiImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
             // 
             // tsmiVideoThumbnailer
             // 
@@ -1598,6 +1605,13 @@
             resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
             this.tsmiTrayImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
             // 
+            // tsmiTrayImageThumbnailer
+            // 
+            this.tsmiTrayImageThumbnailer.Image = global::ShareX.Properties.Resources.image_resize_actual;
+            this.tsmiTrayImageThumbnailer.Name = "tsmiTrayImageThumbnailer";
+            resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
+            this.tsmiTrayImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
+            // 
             // tsmiTrayVideoThumbnailer
             // 
             this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
@@ -1884,18 +1898,6 @@
             this.btnCloseNews.Name = "btnCloseNews";
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
-            // 
-            // tsmiImageThumbnailer
-            // 
-            this.tsmiImageThumbnailer.Name = "tsmiImageThumbnailer";
-            resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
-            this.tsmiImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
-            // 
-            // tsmiTrayImageThumbnailer
-            // 
-            this.tsmiTrayImageThumbnailer.Name = "tsmiTrayImageThumbnailer";
-            resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
-            this.tsmiTrayImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
             // 
             // MainForm
             // 

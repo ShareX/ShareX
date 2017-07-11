@@ -1690,7 +1690,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 506</value>
+    <value>193, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2035,6 +2035,12 @@
     <value>tsmiImageCombiner</value>
   </data>
   <data name="&gt;&gt;tsmiImageCombiner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Name" xml:space="preserve">
@@ -2763,6 +2769,12 @@
   <data name="&gt;&gt;tsmiTrayImageCombiner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiTrayImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Name" xml:space="preserve">
     <value>tsmiTrayVideoThumbnailer</value>
   </data>
@@ -2996,18 +3008,6 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiImageThumbnailer.Name" xml:space="preserve">
-    <value>tsmiImageThumbnailer</value>
-  </data>
-  <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
-    <value>tsmiTrayImageThumbnailer</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

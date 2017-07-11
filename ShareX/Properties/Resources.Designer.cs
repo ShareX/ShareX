@@ -1381,6 +1381,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap image_resize_actual {
+            get {
+                object obj = ResourceManager.GetObject("image-resize-actual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap image_saturation {
             get {
                 object obj = ResourceManager.GetObject("image_saturation", resourceCulture);

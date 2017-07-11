@@ -155,7 +155,7 @@
             this.txtOutputFilename.Name = "txtOutputFilename";
             this.txtOutputFilename.Size = new System.Drawing.Size(560, 20);
             this.txtOutputFilename.TabIndex = 10;
-            this.txtOutputFilename.Text = "Thumbnail_$filename";
+            this.txtOutputFilename.Text = "$filename_th";
             this.txtOutputFilename.TextChanged += new System.EventHandler(this.txtOutputFilename_TextChanged);
             // 
             // btnGenerate
