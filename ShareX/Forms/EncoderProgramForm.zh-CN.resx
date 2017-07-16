@@ -127,15 +127,15 @@
     <value>确定</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
-    <value>参数:</value>
+    <value>参数：</value>
   </data>
   <data name="lblExt.Text" xml:space="preserve">
-    <value>扩展:</value>
+    <value>扩展：</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
-    <value>名称:</value>
+    <value>名称：</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>路径:</value>
+    <value>路径：</value>
   </data>
 </root>

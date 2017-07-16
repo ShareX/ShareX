@@ -164,10 +164,10 @@
     <value>更新日志</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>热键</value>
+    <value>快捷键</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>选择热键…</value>
+    <value>选择快捷键…</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>任务设置</value>
@@ -193,7 +193,7 @@
     <value>单击托盘图标停止录制.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>您可以从热键设置添加快捷动作...</value>
+    <value>您可以从快捷键设置添加快捷动作...</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP客户端只支持FTP和FTPS。</value>
@@ -233,7 +233,7 @@
     <value>扩展不能为空.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>捕获后: {0}</value>
+    <value>捕捉后: {0}</value>
   </data>
   <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
     <value>配置CLI视频编码器---&gt;</value>
@@ -248,7 +248,7 @@
     <value>无法创建文件夹:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>当前配置的热键:</value>
+    <value>当前配置的快捷键:</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>左键点击复制网址到剪贴板，右键点击打开网址。</value>
@@ -288,7 +288,7 @@
     <value>关闭</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
-    <value>预览:</value>
+    <value>预览：</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>文字上传测试</value>
@@ -335,7 +335,7 @@
     <value>图片上传: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
-    <value>已复制到剪切板: {0}</value>
+    <value>已复制到剪贴板: {0}</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>隐藏菜单</value>
@@ -353,19 +353,19 @@
     <value>选择一个文件夹来保存</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
-    <value>启用热键</value>
+    <value>启用快捷键</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>热键注册失败</value>
+    <value>快捷键注册失败</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>热键已禁用。</value>
+    <value>快捷键已禁用。</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>上传文件</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>有可能是一个应用程序的冲突：</value>
+    <value>可能存在程序冲突：</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>错误</value>
@@ -378,10 +378,10 @@
 这里</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>热键已启用。</value>
+    <value>快捷键已启用。</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>热键</value>
+    <value>快捷键</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
     <value>路径不能为空。</value>
@@ -406,13 +406,13 @@
     <value>CLI视频编码器的文件不存在:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>为了使设置生效，ShareX需要从Steam重新开放。</value>
+    <value>为了使设置生效，ShareX需要从Steam重新开启。</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>名称不能为空。</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
-    <value>禁用热键</value>
+    <value>禁用快捷键</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>任务完成</value>
@@ -459,7 +459,7 @@
     <value>无法找到有效的FTP帐户。</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
-    <value>重置所有热键为默认值？</value>
+    <value>重置所有快捷键为默认值？</value>
   </data>
   <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
     <value>显示列</value>
@@ -484,5 +484,67 @@
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>继续</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>上传至Sharex</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>分隔符</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>锁定位置</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>保持在其他窗口前端</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>和ShareX一起打开</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>编辑...</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>按住鼠标左键拖拽
+单击右键打开菜单
+单击中键关闭</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>土耳其语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>德语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>法语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>匈牙利语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>韩语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>西班牙语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>荷兰语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>葡萄牙语 - 巴西</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>越南语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>俄语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>繁体中文</value>
   </data>
 </root>

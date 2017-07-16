@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.OtherServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -57,6 +58,7 @@ namespace ShareX
         public bool ShowColumns = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public int PreviewSplitterDistance = 335;
+        public DateTime NewsLastReadDate;
 
         #endregion Main Form
 
@@ -176,7 +178,7 @@ namespace ShareX
         public bool WorkflowsOnlyShowEdited { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM
+#if STEAM || WindowsStore
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }

@@ -42,18 +42,24 @@ namespace ShareX.Setup
             CreatePortableAppsFolder = 1 << 3,
             OpenOutputDirectory = 1 << 4,
             UploadOutputFile = 1 << 5,
+            CreateWindowsStoreFolder = 1 << 6,
+            CreateWindowsStoreDebugFolder = 1 << 7,
+            CompileAppx = 1 << 8,
 
             Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
+            WindowsStore = CreateWindowsStoreFolder,
+            WindowsStoreDebug = CreateWindowsStoreDebugFolder,
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
-            AppVeyorSteam = CreateSteamFolder
+            AppVeyorSteam = CreateSteamFolder,
+            AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
         }
 
-        private static SetupJobs Job = SetupJobs.None;
+        private static SetupJobs Job = SetupJobs.AppVeyorWindowsStore;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
@@ -62,17 +68,25 @@ namespace ShareX.Setup
         private static string DebugDir => Path.Combine(BinDir, "Debug");
         private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
+        private static string WindowsStoreDir => Path.Combine(BinDir, "WindowsStore");
+        private static string WindowsStoreDebugDir => Path.Combine(BinDir, "WindowsStoreDebug");
 
-        private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
-        private static string OutputDir => Path.Combine(InnoSetupDir, "Output");
+        private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
+        private static string WindowsStoreOutputDir => Path.Combine(OutputDir, "ShareX-WindowsStore");
+
+        private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
+        private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
+        private static string WindowsStorePackageFilesDir => Path.Combine(SetupDir, "WindowsStore");
         private static string PortableAppsOutputDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
+        private static string DesktopBridgeHelperDir => Path.Combine(ParentDir, @"ShareX.DesktopBridgeHelper\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
+        private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
@@ -93,6 +107,11 @@ namespace ShareX.Setup
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorSteam;
             }
+            else if (Helpers.CheckArguments(args, "-AppVeyorWindowsStore"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorWindowsStore;
+            }
 
             Console.WriteLine("Setup job: " + Job);
 
@@ -110,7 +129,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
-                CreatePortable(PortableOutputDir, ReleaseDir);
+                CreateFolder(ReleaseDir, PortableOutputDir, SetupJobs.CreatePortable);
             }
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
@@ -118,9 +137,27 @@ namespace ShareX.Setup
                 CreateSteamFolder();
             }
 
+            if (Job.HasFlag(SetupJobs.CreateWindowsStoreFolder))
+            {
+                CreateFolder(WindowsStoreDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreFolder);
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateWindowsStoreDebugFolder))
+            {
+                CreateFolder(WindowsStoreDebugDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreDebugFolder);
+            }
+
+            if (Job.HasFlag(SetupJobs.CompileAppx))
+            {
+                Process.Start(@"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
+                    $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o").WaitForExit();
+
+                Directory.Delete(WindowsStoreOutputDir, true);
+            }
+
             if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
             {
-                CreatePortable(PortableAppsOutputDir, ReleaseDir);
+                CreateFolder(ReleaseDir, PortableAppsOutputDir, SetupJobs.CreatePortableAppsFolder);
             }
 
             if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
@@ -142,24 +179,8 @@ namespace ShareX.Setup
             CompileISSFile("ShareX-setup.iss");
         }
 
-        private static void InstallInnoSetup()
-        {
-            string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9.exe");
-
-            Console.WriteLine("Installing InnoSetup.");
-
-            Process.Start(innoSetupFilename, "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-").WaitForExit();
-
-            Console.WriteLine("InnoSetup installed.");
-        }
-
         private static void CompileISSFile(string filename)
         {
-            if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
-            {
-                InstallInnoSetup();
-            }
-
             if (File.Exists(InnoSetupCompilerPath))
             {
                 Console.WriteLine("Compiling setup file: " + filename);
@@ -194,12 +215,12 @@ namespace ShareX.Setup
             Helpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
             Helpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
 
-            CreatePortable(SteamUpdatesDir, SteamDir);
+            CreateFolder(SteamDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
 
-        private static void CreatePortable(string destination, string releaseDirectory)
+        private static void CreateFolder(string source, string destination, SetupJobs job)
         {
-            Console.WriteLine("Creating portable: " + destination);
+            Console.WriteLine("Creating folder: " + destination);
 
             if (Directory.Exists(destination))
             {
@@ -208,37 +229,60 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe"), destination);
-            Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe.config"), destination);
-            Helpers.CopyFiles(releaseDirectory, "*.dll", destination);
-            Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            Helpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
+            Helpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
 
-            if (!File.Exists(RecorderDevicesSetupPath))
+            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                CompileISSFile("Recorder-devices-setup.iss");
+                Helpers.CopyFiles(source, "*.dll", destination, new string[] { "7z.dll" });
+            }
+            else
+            {
+                Helpers.CopyFiles(source, "*.dll", destination);
             }
 
-            Helpers.CopyFile(RecorderDevicesSetupPath, destination);
-            Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+            if (job == SetupJobs.CreateWindowsStoreDebugFolder)
+            {
+                Helpers.CopyFiles(source, "*.pdb", destination);
+            }
+
+            Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+
+            if (job != SetupJobs.CreateWindowsStoreFolder && job != SetupJobs.CreateWindowsStoreDebugFolder)
+            {
+                if (!File.Exists(RecorderDevicesSetupPath))
+                {
+                    CompileISSFile("Recorder-devices-setup.iss");
+                }
+
+                Helpers.CopyFile(RecorderDevicesSetupPath, destination);
+
+                Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+            }
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
-                Helpers.CopyFiles(Path.Combine(releaseDirectory, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
+                Helpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
-            if (destination.Equals(SteamUpdatesDir, StringComparison.InvariantCultureIgnoreCase))
+            if (job == SetupJobs.CreateSteamFolder)
             {
                 CopyFFmpeg(destination);
             }
-            else if (destination.Equals(PortableAppsOutputDir, StringComparison.InvariantCultureIgnoreCase))
+            else if (job == SetupJobs.CreatePortableAppsFolder)
             {
-                File.Create(Path.Combine(destination, "PortableApps")).Dispose();
+                Helpers.CreateEmptyFile(Path.Combine(destination, "PortableApps"));
             }
-            else
+            else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                File.Create(Path.Combine(destination, "Portable")).Dispose();
+                Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
+                Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
+            }
+            else if (job == SetupJobs.CreatePortable)
+            {
+                Helpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
 
                 //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
                 //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
@@ -251,13 +295,10 @@ namespace ShareX.Setup
 
                 Helpers.Zip(Path.GetFullPath(destination) + "\\*", Path.GetFullPath(zipPath));
 
-                if (Directory.Exists(destination))
-                {
-                    Directory.Delete(destination, true);
-                }
+                Directory.Delete(destination, true);
             }
 
-            Console.WriteLine("Portable created.");
+            Console.WriteLine("Folder created.");
         }
 
         private static void CopyFFmpeg(string destination)

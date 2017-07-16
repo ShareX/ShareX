@@ -44,7 +44,7 @@ namespace ShareX.NativeMessagingHost
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.ToString(), "ShareX NativeMessagingHost - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.ShowError();
                 }
             }
             else

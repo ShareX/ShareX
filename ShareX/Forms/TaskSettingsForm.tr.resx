@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Varsayılan "Yakalama sonrası" ayarlarını kullan</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Varsayılan "Yükleme sonrası" ayarlarını kullan</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Varsayılan "Hedef" ayarlarını kullan</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Açıklama:</value>
   </data>
@@ -168,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Beklemesi süresi:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Varsayılan yakalama ayarlarını kullan</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Bölge yakala</value>
   </data>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Görev ayarları</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Varsayılan gelişmiş ayarları kullan</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Varsayılan araç ayarlarını kullan</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Ekle...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Dizinleri takip et ve eğer yeni dosya yaratılırsa onu yükle</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Varsayılan aksiyon ayarlarını kullan</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
@@ -291,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dosya adlandırma</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Varsayılan yükleme ayarlarını kullan</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
   </data>
@@ -320,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Ekran kayıt ayarları...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF kodlayıcı:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Ekran kaydında imleç göster</value>
@@ -360,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efekt</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Varsayılan resim ayarlarını kullan</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG kalitesi:</value>
   </data>
@@ -374,9 +344,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Resim biçimi:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Varsayılan genel ayarları kullan</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Yakalama yapıldıktan sonra ses çal</value>

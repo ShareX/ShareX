@@ -41,7 +41,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Speech.Synthesis;
@@ -288,29 +287,22 @@ namespace ShareX
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
-            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
         }
 
-        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
             MemoryStream stream = new MemoryStream();
 
             switch (imageFormat)
             {
                 case EImageFormat.PNG:
-                    img.Save(stream, ImageFormat.Png);
+                    SaveImageAsPNGStream(img, stream, pngBitDepth);
                     break;
                 case EImageFormat.JPEG:
-                    try
-                    {
-                        img = (Image)img.Clone();
-                        img = ImageHelpers.FillBackground(img, Color.White);
-                        img.SaveJPG(stream, jpegQuality);
-                    }
-                    finally
-                    {
-                        if (img != null) img.Dispose();
-                    }
+                    SaveImageAsJPEGStream(img, stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:
                     img.SaveGIF(stream, gifQuality);
@@ -324,6 +316,60 @@ namespace ShareX
             }
 
             return stream;
+        }
+
+        private static void SaveImageAsPNGStream(Image img, Stream stream, PNGBitDepth bitDepth)
+        {
+            if (bitDepth == PNGBitDepth.Automatic)
+            {
+                if (ImageHelpers.IsImageTransparent((Bitmap)img))
+                {
+                    bitDepth = PNGBitDepth.Bit32;
+                }
+                else
+                {
+                    bitDepth = PNGBitDepth.Bit24;
+                }
+            }
+
+            if (bitDepth == PNGBitDepth.Bit32)
+            {
+                if (img.PixelFormat != PixelFormat.Format32bppArgb && img.PixelFormat != PixelFormat.Format32bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format32bppArgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+            else if (bitDepth == PNGBitDepth.Bit24)
+            {
+                if (img.PixelFormat != PixelFormat.Format24bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format24bppRgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+
+            img.Save(stream, ImageFormat.Png);
+        }
+
+        private static void SaveImageAsJPEGStream(Image img, Stream stream, int jpegQuality)
+        {
+            try
+            {
+                img = (Image)img.Clone();
+                img = ImageHelpers.FillBackground(img, Color.White);
+                img.SaveJPG(stream, jpegQuality);
+            }
+            finally
+            {
+                if (img != null) img.Dispose();
+            }
         }
 
         public static void SaveImageAsFile(Image img, TaskSettings taskSettings)
@@ -511,28 +557,27 @@ namespace ShareX
 
         public static Icon GetProgressIcon(int percentage)
         {
+            percentage = percentage.Between(0, 99);
+
             using (Bitmap bmp = new Bitmap(16, 16))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.Clear(Color.Black);
+                int y = (int)(16 * (percentage / 100f));
 
-                int width = (int)(16 * (percentage / 100f));
-
-                if (width > 0)
+                if (y > 0)
                 {
-                    using (Brush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 16), Color.DarkBlue, Color.DodgerBlue, LinearGradientMode.Vertical))
+                    using (Brush brush = new SolidBrush(Color.FromArgb(16, 116, 193)))
                     {
-                        g.FillRectangle(brush, 0, 0, width, 16);
+                        g.FillRectangle(brush, 0, 15 - y, 16, y);
                     }
                 }
 
-                using (Font font = new Font("Arial", 11, GraphicsUnit.Pixel))
+                using (Font font = new Font("Arial", 12, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.Black, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 7, sf);
                 }
-
-                g.DrawRectangleProper(Pens.WhiteSmoke, 0, 0, 16, 16);
 
                 return Icon.FromHandle(bmp.GetHicon());
             }
@@ -663,7 +708,7 @@ namespace ShareX
 
         public static void OpenColorPicker()
         {
-            new ScreenColorPicker().Show();
+            new ScreenColorPicker(true).Show();
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -681,7 +726,12 @@ namespace ShareX
                 if (Program.MainForm.niTray.Visible)
                 {
                     Program.MainForm.niTray.Tag = null;
-                    Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+
+                    if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
+                    {
+                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX",
+                            string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+                    }
                 }
             }
         }
@@ -714,6 +764,14 @@ namespace ShareX
             ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions, imageFiles);
             imageCombinerForm.ProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             imageCombinerForm.Show();
+        }
+
+        public static void OpenImageThumbnailer(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            ImageThumbnailerForm imageThumbnailerForm = new ImageThumbnailerForm();
+            imageThumbnailerForm.Show();
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)
@@ -924,6 +982,9 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
+#if WindowsStore
+            MessageBox.Show("Not supported in Windows Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+#else
             if (Helpers.IsAdministrator())
             {
                 new DNSChangerForm().Show();
@@ -932,6 +993,7 @@ namespace ShareX
             {
                 RunShareXAsAdmin("-dnschanger");
             }
+#endif
         }
 
         public static void RunShareXAsAdmin(string arguments)

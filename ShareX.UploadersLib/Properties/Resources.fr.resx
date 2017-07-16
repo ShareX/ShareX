@@ -229,4 +229,10 @@ Dossiers créés :</value>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Supprimer tous les services de mise en ligne personnalisés ?</value>
   </data>
+  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Collez le code de vérification ici</value>
+  </data>
 </root>

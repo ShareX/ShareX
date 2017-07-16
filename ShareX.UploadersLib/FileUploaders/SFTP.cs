@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult();
 
             string subFolderPath = Account.GetSubFolderPath();
-            string path = subFolderPath.CombineURL(fileName);
+            string path = URLHelpers.CombineURL(subFolderPath, fileName);
             string url = Account.GetUriPath(fileName, subFolderPath);
 
             OnEarlyURLCopyRequested(url);
@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (!File.Exists(Account.Keypath))
                     {
-                        throw new FileNotFoundException("Key path is invalid.", Account.Keypath);
+                        throw new FileNotFoundException("Key file not exists.", Account.Keypath);
                     }
 
                     PrivateKeyFile keyFile;
@@ -197,7 +197,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             List<string> directoryList = new List<string>();
 
-            IEnumerable<string> paths = URLHelpers.GetPaths(path);
+            List<string> paths = URLHelpers.GetPaths(path);
 
             foreach (string directory in paths)
             {

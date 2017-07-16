@@ -130,7 +130,7 @@
     <value>无效的设备名称</value>
   </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>状态:登录失败。</value>
+    <value>状态：登录失败。</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box刷新文件夹列表失败</value>
@@ -157,7 +157,7 @@
     <value>浏览密钥文件...</value>
   </data>
   <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>状态:已登录。</value>
+    <value>状态：已登录。</value>
   </data>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>状态:尚未登录。</value>
@@ -175,13 +175,13 @@
     <value>上级专辑路径例如</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>选定的文件夹:</value>
+    <value>选定的文件夹：</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>登录失败。</value>
   </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>登录成功.</value>
+    <value>登录成功。</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>点击刷新按钮</value>
@@ -196,7 +196,7 @@
     <value>未配置</value>
   </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>尚未登录.</value>
+    <value>尚未登录。</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>查询文件夹...</value>
@@ -208,14 +208,14 @@
     <value>SendSpace注册</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>错误:结果是空的。</value>
+    <value>错误：结果是空的。</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>连接成功!</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>连接成功!
-创建的文件夹:</value>
+创建的文件夹：</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP客户端只支持FTP和FTPS。</value>
@@ -228,5 +228,8 @@
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>删除所有自定义上传？</value>
+  </data>
+  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
+    <value>名称</value>
   </data>
 </root>

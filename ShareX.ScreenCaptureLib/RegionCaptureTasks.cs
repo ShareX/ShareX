@@ -180,9 +180,9 @@ namespace ShareX.ScreenCaptureLib
                     case RegionResult.Region: // Enter
                     case RegionResult.AnnotateRunAfterCaptureTasks:
                         return form.GetResultImage();
-                    case RegionResult.Fullscreen: // Space
+                    case RegionResult.Fullscreen: // Space or right click
                     case RegionResult.AnnotateContinueTask:
-                        return (Image)img.Clone();
+                        return (Image)form.Image.Clone();
                     case RegionResult.AnnotateSaveImage:
                         using (Image resultSaveImage = form.GetResultImage())
                         {

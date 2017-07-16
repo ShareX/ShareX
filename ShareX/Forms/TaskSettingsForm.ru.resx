@@ -159,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Задержка для скриншота</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Использовать настройки захвата из настроек задач главного окна</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захват области</value>
   </data>
@@ -189,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки задач</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Использовать дополнительные настройки задач из настроек задач главного окна</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Использовать настройки инструментов из настроек задач главного окна</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Добавить…</value>
   </data>
@@ -212,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Следить за папками и загружать все файлы, которые в них появляются</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Использовать действия из настроек задач главного окна</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -282,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Имена файлов</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Использовать настройки загрузки из настроек задач главного окна</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>Кадров в секунду в GIF:</value>
   </data>
@@ -311,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Настройки записи экрана</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>Кодировщик GIF:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Показывать курсор на записи</value>
@@ -351,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Эффекты</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Использовать настройки изображений из настроек задач главного окна</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Качество JPEG:</value>
   </data>
@@ -365,9 +344,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Формат изображения:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Использовать общие настройки из настроек задач главного окна</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Проиграть звук после выполнения захвата</value>
@@ -411,20 +387,11 @@
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Переопределить сервис загрузок по умолчанию:</value>
   </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Использовать настройки «После захвата» по умолчанию</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Использовать настройки «После загрузки» по умолчанию</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Использовать настройки сервисов загрузок по умолчанию</value>
-  </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Выбрать область...</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>Пользовательская область:</value>
+    <value>Подготовленная область экрана:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Включить захват нескольких областей (с поддержкой изменения размера и перемещения областей)</value>
@@ -566,5 +533,8 @@
   </data>
   <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
     <value>Переопределить настройки загрузок</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Битность PNG:</value>
   </data>
 </root>

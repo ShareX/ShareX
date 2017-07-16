@@ -133,6 +133,6 @@
     <value>预览...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>字体:</value>
+    <value>字体：</value>
   </data>
 </root>

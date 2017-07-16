@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Benutze Standard "Nach der Aufnahme" Einstellungen</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Benutze Standard "Nach dem Hochladen" Einstellungen</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Benutze Standard "Ziele" Einstellungen</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Beschreibung:</value>
   </data>
@@ -168,9 +159,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot Verzögerung:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Benutze Aufnahmeeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Regionsaufnahme</value>
   </data>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Aufgabeneinstellungen</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Benutze erweiterte Einstellungen in den Hauptfenster Aufgabeneinstellungen </value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Benutze Werkzeugeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Hinzufügen...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Beobachte Ordner und wenn eine neue Datei erstellt wurde lade diese hoch</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Benutze Aktionen im Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
@@ -291,9 +270,6 @@
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dateibenennung</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Benutze Hochladeeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
   </data>
@@ -320,9 +296,6 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>FFmpeg Optionen...</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encoder:</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Zeige Mauszeiger in der Aufnahme</value>
@@ -360,9 +333,6 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effekte</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Benutze Bildeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG Qualität:</value>
   </data>
@@ -377,9 +347,6 @@
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Bildformat:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Benutze allgemeine Einstellungen in den Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Spiele Ton nachdem eine Aufnahme gemacht wurde</value>

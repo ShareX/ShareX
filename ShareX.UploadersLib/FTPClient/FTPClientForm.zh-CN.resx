@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX FTP客户端</value>
+    <value>ShareX - FTP客户端</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>文件名</value>
@@ -145,7 +145,7 @@
     <value>控制台</value>
   </data>
   <data name="tpMain.Text" xml:space="preserve">
-    <value>文档</value>
+    <value>文件</value>
   </data>
   <data name="tsmiConnect.Text" xml:space="preserve">
     <value>连接</value>
@@ -172,6 +172,6 @@
     <value>创建目录</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>复制 RUL(s) 刀剪贴板</value>
+    <value>复制 URL (s) 到剪贴板</value>
   </data>
 </root>

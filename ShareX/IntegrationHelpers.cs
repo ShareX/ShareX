@@ -28,6 +28,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -58,7 +59,7 @@ namespace ShareX
         private static readonly string ShellExtMenuFolders = @"Software\Classes\Folder\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFoldersCmd = ShellExtMenuFolders + @"\command";
 
-        private static readonly string ShellExtDesc = string.Format("Upload with {0}", ApplicationName); // TODO: Translate
+        private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
         private static readonly string ShellExtIcon = ApplicationPath + ",0";
         private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
 
@@ -79,9 +80,9 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
         }
 
-        public static void CreateStartupShortcut(bool create)
+        public static bool CreateStartupShortcut(bool create)
         {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
         }
 
         public static bool CheckStartWithWindows()
@@ -121,6 +122,57 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
             }
+        }
+
+        private static StartupTaskState RunStartupWindowsStore(string argument, string info)
+        {
+            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
+
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                try
+                {
+                    DebugHelper.WriteLine($"Start: {filepath} {argument}");
+
+                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    {
+                        FileName = filepath,
+                        Arguments = argument,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    Process process = Process.Start(startInfo);
+
+                    if (process.WaitForExit(5000))
+                    {
+                        int code = process.ExitCode;
+
+                        DebugHelper.WriteLine($"{info} result: {code}");
+
+                        if (code > -1)
+                        {
+                            return (StartupTaskState)code;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"{info} failed");
+                }
+            }
+
+            return StartupTaskState.Error;
+        }
+
+        public static StartupTaskState CheckStartupWindowsStore()
+        {
+            return RunStartupWindowsStore("-StartupState", "Startup state check");
+        }
+
+        public static StartupTaskState ConfigureStartupWindowsStore(bool enable)
+        {
+            return RunStartupWindowsStore(enable ? "-StartupEnable" : "-StartupDisable", "Startup configuration");
         }
 
         public static bool CheckShellContextMenuButton()
@@ -369,9 +421,9 @@ namespace ShareX
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
-        public static void CreateSendToMenuButton(bool create)
+        public static bool CreateSendToMenuButton(bool create)
         {
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
         public static bool CheckSteamShowInApp()
@@ -387,7 +439,7 @@ namespace ShareX
             {
                 if (showInApp)
                 {
-                    File.Create(path).Dispose();
+                    Helpers.CreateEmptyFile(path);
                 }
                 else if (File.Exists(path))
                 {
@@ -397,7 +449,7 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show(e.ToString(), "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.ShowError();
                 return;
             }
 

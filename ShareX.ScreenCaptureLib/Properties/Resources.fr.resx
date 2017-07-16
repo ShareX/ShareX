@@ -335,4 +335,91 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Afficher la large croix sur l'écran</value>
   </data>
+  <data name="RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion" xml:space="preserve">
+    <value>[Clic droit] Annuler la capture / supprimer la région</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Continuer la tâche (Espace ou clic droit)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Enregistrer l'image...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Enregistrer l'image en tant que...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Supprimer tout</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>Envoyer en fond</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>Mettre au premier plan</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Envoyer vers l'arrière</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Avancer</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Options de forme</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Capturer des régions</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Imprimer une image ...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Capturer</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Mettre en ligne une image</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Annuler la tâche (Échap)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Activer les animations</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Mémoriser l'état du menu</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Copier l'image dans le presse-papier</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Capturer la dernière région</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Exécuter après les tâches de capture</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
+    <value>[Ctrl + Z] Annuler la forme</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
+    <value>[Ctrl + V] Coller une image ou du texte</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Appliquer les modifications et continuer la tâche (Entrée)</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
+    <value>[Maintenir Alt + Touches fléchées] Redimensionner la région du coin supérieur gauche</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
+    <value>[Touches fléchées] Redimensionner la région du coin inférieur droit</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
+    <value>Remarque: Cacher ces conseils augmentera considérablement les IPS.</value>
+  </data>
 </root>

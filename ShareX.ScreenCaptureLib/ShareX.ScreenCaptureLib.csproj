@@ -50,6 +50,25 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
+    <OutputPath>bin\WindowsStore\</OutputPath>
+    <DefineConstants>TRACE;WindowsStore</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WindowsStore</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -94,6 +113,8 @@
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\CropDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageScreenDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\FreehandDrawingShape.cs" />
@@ -116,10 +137,10 @@
     <Compile Include="Shapes\Region\BaseRegionShape.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
-    <Compile Include="Screencast\FFmpegOptionsForm.cs">
+    <Compile Include="Forms\FFmpegOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
+    <Compile Include="Forms\FFmpegOptionsForm.Designer.cs">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
@@ -168,6 +189,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\monitor-image.png" />
+    <None Include="Resources\folder-open-image.png" />
+    <None Include="Resources\image-crop.png" />
     <None Include="Resources\edit-shade.png" />
     <None Include="Resources\edit-outline.png" />
     <None Include="Resources\pencil.png" />
@@ -188,7 +212,6 @@
     <None Include="Resources\disks-black.png" />
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\tick.png" />
-    <None Include="Resources\image.png" />
     <None Include="Resources\layer-shape-polygon.png" />
     <None Include="Resources\layer-shape-curve.png" />
     <None Include="Resources\edit-vertical-alignment.png" />
@@ -332,43 +355,43 @@
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.de.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.de.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.es.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.es.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.fr.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.fr.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.hu.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.hu.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.ko-KR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.nl-NL.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.pt-BR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ru.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.ru.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.tr.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.tr.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.vi-VN.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.zh-CN.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.zh-TW.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

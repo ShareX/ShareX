@@ -165,9 +165,14 @@ namespace ShareX.Steam
                 }
 
                 // In case updating terminate middle of it, in next Launcher start it can repair
-                File.Create(UpdatingTempFilePath).Dispose();
+                Helpers.CreateEmptyFile(UpdatingTempFilePath);
                 Helpers.CopyAll(UpdateFolderPath, ContentFolderPath);
                 File.Delete(UpdatingTempFilePath);
+
+                if (IsFirstTimeRunning)
+                {
+                    Helpers.CreateEmptyFile(ContentSteamFilePath);
+                }
             }
             catch (Exception e)
             {

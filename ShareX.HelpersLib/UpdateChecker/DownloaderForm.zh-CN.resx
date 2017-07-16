@@ -124,15 +124,15 @@
     <value>下载</value>
   </data>
   <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>显示更新注意事项</value>
+    <value>显示更新说明</value>
   </data>
   <data name="lblFilename.Text" xml:space="preserve">
-    <value>文件名:</value>
+    <value>文件名：</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
-    <value>进度情况:</value>
+    <value>进度情况：</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
-    <value>状态:</value>
+    <value>状态：</value>
   </data>
 </root>

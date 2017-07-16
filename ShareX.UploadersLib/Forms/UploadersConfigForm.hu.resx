@@ -446,9 +446,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Sablon</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira szerver</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira probléma prefixum:</value>
   </data>
@@ -641,26 +638,8 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Feltöltési útvonal:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Ha "publikus" mappát használsz, egy megosztható URL már generálódott. Ez esetben nem szükséges külön megosztható URL-t készítened.</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Megosztható URL készítése:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Kép:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Szöveg:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Fájl:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Kliens...</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Új album létrehozása</value>

@@ -138,6 +138,60 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static Image CreateThumbnail(Image img, int width, int height)
+        {
+            if (img.Width == width && img.Height == height)
+            {
+                return img;
+            }
+
+            double srcRatio = (double)img.Width / img.Height;
+            double dstRatio = (double)width / height;
+            int w, h;
+
+            if (srcRatio >= dstRatio)
+            {
+                if (srcRatio >= 1)
+                {
+                    w = (int)(img.Height * dstRatio);
+                }
+                else
+                {
+                    w = (int)(img.Width / srcRatio * dstRatio);
+                }
+
+                h = img.Height;
+            }
+            else
+            {
+                w = img.Width;
+
+                if (srcRatio >= 1)
+                {
+                    h = (int)(img.Height / dstRatio * srcRatio);
+                }
+                else
+                {
+                    h = (int)(img.Height * srcRatio / dstRatio);
+                }
+            }
+
+            int x = (img.Width - w) / 2;
+            int y = (img.Height - h) / 2;
+
+            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (img)
+            {
+                g.SetHighQuality();
+                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
+            }
+
+            return bmp;
+        }
+
         public static Image ResizeImageLimit(Image img, Size size)
         {
             return ResizeImageLimit(img, size.Width, size.Height);
@@ -672,6 +726,19 @@ namespace ShareX.HelpersLib
             {
                 return unsafeBitmap1 == unsafeBitmap2;
             }
+        }
+
+        public static bool IsImageTransparent(Bitmap bmp)
+        {
+            if (bmp.PixelFormat == PixelFormat.Format32bppArgb)
+            {
+                using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+                {
+                    return unsafeBitmap.IsTransparent();
+                }
+            }
+
+            return false;
         }
 
         public static bool AddMetadata(Image img, int id, string text)
@@ -1286,99 +1353,90 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides)
+        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges)
         {
-            if (sides == AnchorStyles.None)
+            if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
             {
                 return img;
             }
 
-            using (GraphicsPath gp = new GraphicsPath())
+            List<Point> points = new List<Point>();
+
+            int horizontalTornCount = img.Width / tornRange;
+            int verticalTornCount = img.Height / tornRange;
+
+            if (sides.HasFlag(AnchorStyles.Top))
             {
-                Point previousPoint, currentPoint;
-                int horizontalTornCount = img.Width / tornRange;
-                int verticalTornCount = img.Height / tornRange;
-
-                if (sides.HasFlag(AnchorStyles.Top))
+                for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    previousPoint = new Point(tornRange, MathHelpers.Random(0, tornDepth));
+                    points.Add(new Point(tornRange * x, MathHelpers.Random(0, tornDepth)));
+                }
+            }
+            else
+            {
+                points.Add(new Point(0, 0));
+                points.Add(new Point(img.Width - 1, 0));
+            }
 
-                    for (int i = 0; i < horizontalTornCount - 1; i++)
-                    {
-                        currentPoint = new Point(previousPoint.X + tornRange, MathHelpers.Random(0, tornDepth));
-                        gp.AddLine(previousPoint, currentPoint);
-                        previousPoint = currentPoint;
-                    }
+            if (sides.HasFlag(AnchorStyles.Right))
+            {
+                for (int y = 0; y < verticalTornCount - 1; y++)
+                {
+                    points.Add(new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), tornRange * y));
+                }
+            }
+            else
+            {
+                points.Add(new Point(img.Width - 1, 0));
+                points.Add(new Point(img.Width - 1, img.Height - 1));
+            }
+
+            if (sides.HasFlag(AnchorStyles.Bottom))
+            {
+                for (int x = 0; x < horizontalTornCount - 1; x++)
+                {
+                    points.Add(new Point(img.Width - 1 - tornRange * x, img.Height - 1 - MathHelpers.Random(0, tornDepth)));
+                }
+            }
+            else
+            {
+                points.Add(new Point(img.Width - 1, img.Height - 1));
+                points.Add(new Point(0, img.Height - 1));
+            }
+
+            if (sides.HasFlag(AnchorStyles.Left))
+            {
+                for (int y = 0; y < verticalTornCount - 1; y++)
+                {
+                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - tornRange * y));
+                }
+            }
+            else
+            {
+                points.Add(new Point(0, img.Height - 1));
+                points.Add(new Point(0, 0));
+            }
+
+            Bitmap result = img.CreateEmptyBitmap();
+
+            using (img)
+            using (Graphics g = Graphics.FromImage(result))
+            using (TextureBrush brush = new TextureBrush(img))
+            {
+                g.SetHighQuality();
+
+                Point[] fillPoints = points.Distinct().ToArray();
+
+                if (curvedEdges)
+                {
+                    g.FillClosedCurve(brush, fillPoints);
                 }
                 else
                 {
-                    previousPoint = new Point(0, 0);
-                    currentPoint = new Point(img.Width - 1, 0);
-                    gp.AddLine(previousPoint, currentPoint);
-                    previousPoint = currentPoint;
+                    g.FillPolygon(brush, fillPoints);
                 }
 
-                if (sides.HasFlag(AnchorStyles.Right))
-                {
-                    for (int i = 0; i < verticalTornCount; i++)
-                    {
-                        currentPoint = new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), previousPoint.Y + tornRange);
-                        gp.AddLine(previousPoint, currentPoint);
-                        previousPoint = currentPoint;
-                    }
-                }
-                else
-                {
-                    currentPoint = new Point(img.Width - 1, img.Height - 1);
-                    gp.AddLine(previousPoint, currentPoint);
-                    previousPoint = currentPoint;
-                }
-
-                if (sides.HasFlag(AnchorStyles.Bottom))
-                {
-                    for (int i = 0; i < horizontalTornCount; i++)
-                    {
-                        currentPoint = new Point(previousPoint.X - tornRange, img.Height - 1 - MathHelpers.Random(0, tornDepth));
-                        gp.AddLine(previousPoint, currentPoint);
-                        previousPoint = currentPoint;
-                    }
-                }
-                else
-                {
-                    currentPoint = new Point(0, img.Height - 1);
-                    gp.AddLine(previousPoint, currentPoint);
-                    previousPoint = currentPoint;
-                }
-
-                if (sides.HasFlag(AnchorStyles.Left))
-                {
-                    for (int i = 0; i < verticalTornCount; i++)
-                    {
-                        currentPoint = new Point(MathHelpers.Random(0, tornDepth), previousPoint.Y - tornRange);
-                        gp.AddLine(previousPoint, currentPoint);
-                        previousPoint = currentPoint;
-                    }
-                }
-                else
-                {
-                    currentPoint = new Point(0, 0);
-                    gp.AddLine(previousPoint, currentPoint);
-                    previousPoint = currentPoint;
-                }
-
-                gp.CloseFigure();
-
-                Bitmap result = img.CreateEmptyBitmap();
-
-                using (img)
-                using (Graphics g = Graphics.FromImage(result))
-                using (TextureBrush brush = new TextureBrush(img))
-                {
-                    g.SetHighQuality();
-                    g.FillPath(brush, gp);
-
-                    return result;
-                }
+                return result;
             }
         }
 

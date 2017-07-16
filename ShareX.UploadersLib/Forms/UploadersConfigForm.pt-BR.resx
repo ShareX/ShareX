@@ -417,9 +417,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Modelo</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Servidor JIRA</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Prefixo de questão do Jira</value>
   </data>
@@ -624,26 +621,8 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Caminho de upload:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Se você está utilizando a pasta "Publica", uma URL compartilhavel já foi gerada. Você não precisa marcar "Criar URL compartilhavel".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Criar URL compartilhável:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Imagem:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texto:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Arquivo:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Cliente...</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
@@ -1102,9 +1081,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Chave de API:</value>
-  </data>
-  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
-    <value>URL:</value>
   </data>
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
     <value>Enviar para este email:</value>

@@ -148,6 +148,11 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCornerMoving { get; private set; }
         public bool IsProportionalResizing { get; private set; }
         public bool IsSnapResizing { get; private set; }
+        public bool IsRenderingOutput { get; private set; }
+
+        private bool isEdited;
+
+        public bool IsEdited => isEdited || DrawingShapes.Length > 0 || EffectShapes.Length > 0;
 
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
@@ -768,6 +773,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImage:
                     shape = new ImageDrawingShape();
                     break;
+                case ShapeType.DrawingImageScreen:
+                    shape = new ImageScreenDrawingShape();
+                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -776,6 +784,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
+                    break;
+                case ShapeType.DrawingCrop:
+                    shape = new CropDrawingShape();
                     break;
             }
 
@@ -928,6 +939,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {
+                IsRenderingOutput = true;
+
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
                     foreach (BaseEffectShape shape in EffectShapes)
@@ -946,6 +959,8 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                 }
+
+                IsRenderingOutput = false;
             }
 
             return bmp;
@@ -1217,6 +1232,47 @@ namespace ShareX.ScreenCaptureLib
                     SelectCurrentShape();
                 }
             }
+        }
+
+        public Rectangle LimitRectangleToImage(Rectangle rect)
+        {
+            return Rectangle.Intersect(rect, form.ImageRectangle);
+        }
+
+        public void DrawRegionArea(Graphics g, Rectangle rect)
+        {
+            form.DrawRegionArea(g, rect);
+        }
+
+        public void CropArea(Rectangle rect)
+        {
+            Image img = CropImage(rect, true);
+
+            if (img != null)
+            {
+                form.InitBackground(img);
+
+                isEdited = true;
+            }
+        }
+
+        public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
+        {
+            rect = CaptureHelpers.ScreenToClient(rect);
+
+            Point offset = CaptureHelpers.ScreenToClient(form.ImageRectangle.Location);
+
+            rect.X -= offset.X;
+            rect.Y -= offset.Y;
+
+            rect.Intersect(new Rectangle(0, 0, form.Image.Width, form.Image.Height));
+
+            if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != form.Image.Size))
+            {
+                return ImageHelpers.CropImage(form.Image, rect);
+            }
+
+            return null;
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer);
+            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
@@ -64,12 +64,16 @@ namespace ShareX.UploadersLib.FileUploaders
         public string AzureStorageAccountName { get; private set; }
         public string AzureStorageAccountAccessKey { get; private set; }
         public string AzureStorageContainer { get; private set; }
+        public string AzureStorageEnvironment { get; private set; }
+        public string AzureStorageCustomDomain { get; private set; }
 
-        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer)
+        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain)
         {
             AzureStorageAccountName = azureStorageAccountName;
             AzureStorageAccountAccessKey = azureStorageAccessKey;
             AzureStorageContainer = azureStorageContainer;
+            AzureStorageEnvironment = (!string.IsNullOrEmpty(azureStorageEnvironment)) ? azureStorageEnvironment : "blob.core.windows.net";
+            AzureStorageCustomDomain = customDomain;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -86,7 +90,14 @@ namespace ShareX.UploadersLib.FileUploaders
             CreateContainerIfNotExists();
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.blob.core.windows.net/{AzureStorageContainer}/{fileName}";
+            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{fileName}";
+            string urlForCopy = url;
+            if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
+            {
+                // Azure Blob Storage does not support https with custom domains at this time
+                urlForCopy = URLHelpers.ForcePrefix(URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, fileName), "http://");
+            }
+
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -104,7 +115,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (responseHeaders != null)
             {
-                return new UploadResult { IsSuccess = true, URL = url };
+                return new UploadResult { IsSuccess = true, URL = urlForCopy };
             }
             else
             {
@@ -116,7 +127,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private void CreateContainerIfNotExists()
         {
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.blob.core.windows.net/{AzureStorageContainer}?restype=container";
+            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container";
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";
@@ -154,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private void SetContainerACL()
         {
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.blob.core.windows.net/{AzureStorageContainer}?restype=container&comp=acl";
+            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container&comp=acl";
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["Content-Length"] = "0";

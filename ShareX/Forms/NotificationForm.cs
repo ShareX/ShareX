@@ -136,7 +136,7 @@ namespace ShareX
         {
             Graphics g = e.Graphics;
 
-            Rectangle rect = e.ClipRectangle;
+            Rectangle rect = ClientRectangle;
 
             if (ToastConfig.Image != null)
             {

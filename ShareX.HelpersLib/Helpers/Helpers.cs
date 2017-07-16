@@ -1070,11 +1070,6 @@ namespace ShareX.HelpersLib
             return true;
         }
 
-        public static void ShowError(Exception e)
-        {
-            MessageBox.Show(e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         public static void CopyAll(string sourceDirectory, string targetDirectory)
         {
             DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
@@ -1211,6 +1206,11 @@ namespace ShareX.HelpersLib
         public static byte[] ComputeHMACSHA256(string data, byte[] key)
         {
             return ComputeHMACSHA256(Encoding.UTF8.GetBytes(data), key);
+        }
+
+        public static void CreateEmptyFile(string path)
+        {
+            File.Create(path).Dispose();
         }
     }
 }

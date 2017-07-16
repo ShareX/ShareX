@@ -230,10 +230,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool FFmpegEncodeAsGIF(string path)
+        public bool FFmpegEncodeAsGIF(string sourceFilePath, string targetFilePath)
         {
-            Helpers.CreateDirectoryFromFilePath(path);
-            return ffmpegCli.EncodeGIF(Options.OutputPath, path);
+            Helpers.CreateDirectoryFromFilePath(targetFilePath);
+            return ffmpegCli.EncodeGIF(sourceFilePath, targetFilePath);
         }
 
         public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)

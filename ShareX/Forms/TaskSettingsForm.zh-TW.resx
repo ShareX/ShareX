@@ -297,9 +297,6 @@
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>螢幕錄製選項...</value>
   </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF編碼器：</value>
-  </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>在錄影中顯示遊標（滑鼠指針）</value>
   </data>
@@ -527,35 +524,5 @@
   </data>
   <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
     <value>覆寫工具設定</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>使用預設的"截圖後"設定</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>使用預設的"上傳後"設定</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>使用預設的"上傳至..."設定</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定拍攝設定</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定進階設定</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定工具設定</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>使用主視窗中的任務設定行動</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定上傳設定</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定圖像設定</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>使用主視窗任務設定常規設定</value>
   </data>
 </root>

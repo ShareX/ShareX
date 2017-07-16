@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHotkeyStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblHotkeyStatus.Name" xml:space="preserve">
     <value>lblHotkeyStatus</value>
@@ -160,7 +160,7 @@
     <value>227, 21</value>
   </data>
   <data name="lblHotkeyDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblHotkeyDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -190,7 +190,7 @@
     <value>190, 23</value>
   </data>
   <data name="btnHotkey.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Hotkey</value>
@@ -217,7 +217,7 @@
     <value>24, 23</value>
   </data>
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>

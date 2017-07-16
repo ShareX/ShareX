@@ -162,9 +162,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Lembrar posição da janela principal</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Extensão do Chrome...</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Procurar...</value>
   </data>

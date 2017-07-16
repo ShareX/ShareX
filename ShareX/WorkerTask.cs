@@ -81,7 +81,7 @@ namespace ShareX
             task.Info.Result.ThumbnailURL = recentTask.ThumbnailURL;
             task.Info.Result.DeletionURL = recentTask.DeletionURL;
             task.Info.Result.ShortenedURL = recentTask.ShortenedURL;
-            task.Info.TaskEndTime = recentTask.Time.ToLocalTime();
+            task.Info.TaskEndTime = recentTask.Time;
 
             return task;
         }
@@ -234,7 +234,7 @@ namespace ShareX
         {
             if (Status == TaskStatus.InQueue && !StopRequested)
             {
-                Info.TaskStartTime = DateTime.UtcNow;
+                Info.TaskStartTime = DateTime.Now;
 
                 threadWorker = new ThreadWorker();
                 Prepare();
@@ -1004,7 +1004,7 @@ namespace ShareX
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.ShowError();
                 return false;
             }
 
@@ -1060,7 +1060,7 @@ namespace ShareX
 
         private void OnTaskCompleted()
         {
-            Info.TaskEndTime = DateTime.UtcNow;
+            Info.TaskEndTime = DateTime.Now;
 
             Status = TaskStatus.Completed;
 

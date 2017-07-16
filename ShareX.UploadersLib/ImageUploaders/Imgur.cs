@@ -219,6 +219,30 @@ namespace ShareX.UploadersLib.ImageUploaders
             return null;
         }
 
+        public List<ImgurImageData> GetAlbumImages(string albumID)
+        {
+            if (CheckAuthorization())
+            {
+                string response = SendRequest(HttpMethod.GET, $"https://api.imgur.com/3/album/{albumID}/images", headers: GetAuthHeaders());
+
+                ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
+
+                if (imgurResponse != null)
+                {
+                    if (imgurResponse.success && imgurResponse.status == 200)
+                    {
+                        return ((JArray)imgurResponse.data).ToObject<List<ImgurImageData>>();
+                    }
+                    else
+                    {
+                        HandleErrors(imgurResponse);
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             return InternalUpload(stream, fileName, true);
@@ -376,7 +400,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public int height { get; set; }
         public int size { get; set; }
         public int views { get; set; }
-        public int bandwidth { get; set; }
+        public long bandwidth { get; set; }
         public string deletehash { get; set; }
         public string name { get; set; }
         public string section { get; set; }

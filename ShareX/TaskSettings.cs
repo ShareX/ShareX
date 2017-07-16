@@ -272,6 +272,7 @@ namespace ShareX
         #region Image / General
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
+        public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
         public bool ImageAutoUseJPEG = true;
@@ -512,7 +513,7 @@ namespace ShareX
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
 
-        [Category("Interaction"), DefaultValue(false), Description("Disable notifications")]
+        [Category("Interaction"), DefaultValue(false), Description("Disable notifications.")]
         public bool DisableNotifications { get; set; }
 
         [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]

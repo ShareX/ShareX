@@ -225,16 +225,14 @@ namespace ShareX.HelpersLib
 
         private void btnColorDialog_Click(object sender, EventArgs e)
         {
-            using (ColorPickerForm dialogColor = new ColorPickerForm(Color.FromArgb(tbRed.Value, tbGreen.Value, tbBlue.Value)))
+            Color currentColor = Color.FromArgb(tbRed.Value, tbGreen.Value, tbBlue.Value);
+
+            if (ColorPickerForm.PickColor(currentColor, out Color newColor))
             {
-                if (dialogColor.ShowDialog() == DialogResult.OK)
-                {
-                    Color color = dialogColor.NewColor;
-                    tbRed.Value = color.R;
-                    tbGreen.Value = color.G;
-                    tbBlue.Value = color.B;
-                    DrawRedGreenBlue();
-                }
+                tbRed.Value = newColor.R;
+                tbGreen.Value = newColor.G;
+                tbBlue.Value = newColor.B;
+                DrawRedGreenBlue();
             }
         }
 

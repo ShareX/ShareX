@@ -64,13 +64,13 @@ namespace ShareX
             {
                 string text = ToString().Truncate(50, "...", false);
 
-                return string.Format("[{0:HH:mm:ss}] {1}", Time.ToLocalTime(), text);
+                return string.Format("[{0:HH:mm:ss}] {1}", Time, text);
             }
         }
 
         public RecentTask()
         {
-            Time = DateTime.UtcNow;
+            Time = DateTime.Now;
         }
 
         public override string ToString()

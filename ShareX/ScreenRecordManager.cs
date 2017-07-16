@@ -73,20 +73,21 @@ namespace ShareX
 
         private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
-            string debugText;
+            if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+            {
+                outputType = ScreenRecordOutput.GIF;
+            }
 
             if (outputType == ScreenRecordOutput.FFmpeg)
             {
-                debugText = string.Format("Starting FFmpeg recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
+                DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
                     taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(),
                     taskSettings.CaptureSettings.ScreenRecordFPS);
             }
             else
             {
-                debugText = string.Format("Starting Animated GIF recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
+                DebugHelper.WriteLine("Starting screen recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
             }
-
-            DebugHelper.WriteLine(debugText);
 
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
@@ -241,20 +242,21 @@ namespace ShareX
 
                 try
                 {
-                    if (!abortRequested && screenRecorder != null)
+                    if (!abortRequested && screenRecorder != null && File.Exists(path))
                     {
                         recordForm.ChangeState(ScreenRecordState.AfterStop);
+
+                        string sourceFilePath = path;
 
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(path);
+                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected];
-                            string sourceFilePath = path;
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, encoder.OutputExtension));
                             screenRecorder.EncodeUsingCommandLine(encoder, sourceFilePath, path);
                         }

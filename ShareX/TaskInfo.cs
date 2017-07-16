@@ -143,13 +143,7 @@ namespace ShareX
         public DateTime TaskStartTime { get; set; }
         public DateTime TaskEndTime { get; set; }
 
-        public TimeSpan TaskDuration
-        {
-            get
-            {
-                return TaskEndTime - TaskStartTime;
-            }
-        }
+        public TimeSpan TaskDuration => TaskEndTime - TaskStartTime;
 
         public Stopwatch UploadDuration { get; set; }
 

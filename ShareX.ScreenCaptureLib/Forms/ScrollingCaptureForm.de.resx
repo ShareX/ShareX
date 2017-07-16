@@ -225,9 +225,6 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Nach der Aufnahme</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Schließe dieses Fenster nach der Verarbeitung</value>
-  </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Nach oben scroll Methode vor der Aufnahme:</value>
   </data>

@@ -429,9 +429,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="layer_shape_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-polygon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="balloon_box_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\balloon-box-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -509,5 +506,104 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image_crop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-crop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_open_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-open-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monitor_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monitor-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Enable animations</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Remember menu state</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
+    <value>Note: Hiding these tips will increase FPS greatly.</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion" xml:space="preserve">
+    <value>[Right click] Cancel capture / remove region</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
+    <value>[Ctrl + V] Paste image or text</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
+    <value>[Ctrl + Z] Undo shape</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
+    <value>[Arrow keys] Resize region from bottom right corner</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
+    <value>[Hold Alt + Arrow keys] Resize region from top left corner</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Shape options</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Drop shadow</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Capture regions</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Delete all</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Bring forward</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Send backward</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>Bring to front</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>Send to back</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Apply changes &amp; continue task (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Continue task (Space or right click)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Cancel task (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Save image</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Save image as...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Copy image to clipboard</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Upload image</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Print image...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Run after capture tasks</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Capture last region</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Capture</value>
   </data>
 </root>

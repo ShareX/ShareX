@@ -136,15 +136,15 @@
     <value>颜色</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
-    <value>地点</value>
+    <value>位置</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
-    <value>渐变类型:</value>
+    <value>渐变类型：</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
-    <value>地点:</value>
+    <value>位置：</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
-    <value>预览:</value>
+    <value>预览：</value>
   </data>
 </root>

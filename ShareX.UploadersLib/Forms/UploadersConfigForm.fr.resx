@@ -309,10 +309,10 @@ store.book[0].title</value>
     <value>Vous pouvez trouver votre clé API et UID ici</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Clé API  :</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>Clé API  :</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>Nom d'hôte de l'API : (ex: http://exemple.com/api.php - laissez ce champ vide pour utiliser polr.me)</value>
@@ -474,9 +474,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Modèle</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Serveur Jira</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Préfixe du problème Jira :</value>
   </data>
@@ -547,7 +544,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>S'inscrire...</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Clé API de l'utilisateur</value>
+    <value>Clé API de l'utilisateur :</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Obtenir la liste des périphériques</value>
@@ -631,7 +628,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Prévisualisation</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Prévisualisation d'URL :</value>
+    <value>Prévisualisation de l'URL :</value>
   </data>
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir la liste des dossiers</value>
@@ -675,26 +672,8 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne :</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si vous utilisez le dossier « Public », une URL partageable est déjà générée. Vous n'avez pas besoin de cliquer sur « Créer une URL partageable ».</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Créer une URL partageable :</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Image :</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texte :</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Fichier :</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Client...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne d'images</value>
@@ -969,7 +948,7 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
     <value>Adresse E-mail :</value>
   </data>
   <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>Clé API  :</value>
+    <value>Clé API :</value>
   </data>
   <data name="btnUpleaLogin.Text" xml:space="preserve">
     <value>Obtenir la clé API</value>
@@ -993,7 +972,7 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
     <value>URL secrète</value>
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
-    <value>Mise en ligne publique ?</value>
+    <value>Est-ce une mise en ligne publique ?</value>
   </data>
   <data name="gbUpleaUserInformation.Text" xml:space="preserve">
     <value>Informations de l'utilisateur</value>
@@ -1012,5 +991,164 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>Utiliser l'API dépréciée v1</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>Nom d'utilisateur :</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>Nom d'utilisateur :</value>
+  </data>
+  <data name="cbPlikIsSecured.Text" xml:space="preserve">
+    <value>Nom d'utilisateur et mot de passe requis ?</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
+    <value>Utiliser les liens directs</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
+    <value>Répertoire distant :</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>Ajouter le répertoire distant au chemin de l'URL</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
+    <value>Supprimer l'extension de fichier du chemin de l'URL</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>Chemin de l'URL :</value>
+  </data>
+  <data name="lblFTPURLPreview.Text" xml:space="preserve">
+    <value>Prévisualisation de l'URL :</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>Mode de transfert :</value>
+  </data>
+  <data name="lblFTPText.Text" xml:space="preserve">
+    <value>Texte :</value>
+  </data>
+  <data name="lblFTPPort.Text" xml:space="preserve">
+    <value>Port :</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>Mot de passe :</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>Mot de passe :</value>
+  </data>
+  <data name="gbFTPAccount.Text" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="lblFTPAccounts.Text" xml:space="preserve">
+    <value>Comptes :</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>Remarque : Le compte utilisateur n'est pas pris en charge pour GitHub Enterprise.</value>
+  </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="lblPlikAPIKey.Text" xml:space="preserve">
+    <value>Clé API :</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>Les fichiers seront automatiquement supprimés</value>
+  </data>
+  <data name="btnFTPTest.Text" xml:space="preserve">
+    <value>Tester</value>
+  </data>
+  <data name="btnFTPClient.Text" xml:space="preserve">
+    <value>Client...</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>Protocole :</value>
+  </data>
+  <data name="lblFTPHost.Text" xml:space="preserve">
+    <value>Hôte :</value>
+  </data>
+  <data name="lblFTPName.Text" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>Passif</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>Fichier :</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>Image :</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>Emplacement du certificat :</value>
+  </data>
+  <data name="lblAmazonS3Region.Text" xml:space="preserve">
+    <value>Région :</value>
+  </data>
+  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
+    <value>Est-ce une mise en ligne publique ?</value>
+  </data>
+  <data name="lblGistCustomURLExample.Text" xml:space="preserve">
+    <value>Exemple : https://api.github.com</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
+    <value>jours</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
+    <value>heures</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="cbPlikOneShot.Text" xml:space="preserve">
+    <value>Détruire après le premier téléchargement</value>
+  </data>
+  <data name="gbPlikSettings.Text" xml:space="preserve">
+    <value>Autres paramètres</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
+    <value>Identifiants de connexion</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>jamais</value>
+  </data>
+  <data name="lblPlikURL.Text" xml:space="preserve">
+    <value>Hôte</value>
+  </data>
+  <data name="lblGistCustomURL.Text" xml:space="preserve">
+    <value>Domaine personnalisé :</value>
+  </data>
+  <data name="gbJiraServer.Text" xml:space="preserve">
+    <value>Serveur Jira</value>
+  </data>
+  <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
+    <value>Environnement :</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>Chiffrement :</value>
+  </data>
+  <data name="cbPlikRemovable.Text" xml:space="preserve">
+    <value>Amovible</value>
+  </data>
+  <data name="cbPlikComment.Text" xml:space="preserve">
+    <value>Commentaire (Markdown)</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
+    <value>Téléchargement instantané activé</value>
+  </data>
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Identifiants de connexion</value>
+  </data>
+  <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
+    <value>Points de terminaison :</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>Conteneur :</value>
   </data>
 </root>

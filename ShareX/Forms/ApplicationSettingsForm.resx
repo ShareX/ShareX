@@ -622,7 +622,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbFirefoxAddonSupport.Parent" xml:space="preserve">
-    <value>gpFirefox</value>
+    <value>gbFirefox</value>
   </data>
   <data name="&gt;&gt;cbFirefoxAddonSupport.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -649,33 +649,33 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.Parent" xml:space="preserve">
-    <value>gpFirefox</value>
+    <value>gbFirefox</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="gpFirefox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 216</value>
   </data>
-  <data name="gpFirefox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
   </data>
-  <data name="gpFirefox.TabIndex" type="System.Int32, mscorlib">
+  <data name="gbFirefox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="gpFirefox.Text" xml:space="preserve">
+  <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox addon</value>
   </data>
-  <data name="&gt;&gt;gpFirefox.Name" xml:space="preserve">
-    <value>gpFirefox</value>
+  <data name="&gt;&gt;gbFirefox.Name" xml:space="preserve">
+    <value>gbFirefox</value>
   </data>
-  <data name="&gt;&gt;gpFirefox.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbFirefox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gpFirefox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbFirefox.Parent" xml:space="preserve">
     <value>tpIntegration</value>
   </data>
-  <data name="&gt;&gt;gpFirefox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbFirefox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
@@ -716,7 +716,7 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -804,6 +804,36 @@
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblWindowsStoreStartupStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblWindowsStoreStartupStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 56</value>
+  </data>
+  <data name="lblWindowsStoreStartupStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="lblWindowsStoreStartupStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblWindowsStoreStartupStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblWindowsStoreStartupStatus.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Name" xml:space="preserve">
+    <value>lblWindowsStoreStartupStatus</value>
+  </data>
+  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;lblWindowsStoreStartupStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -832,7 +862,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -862,7 +892,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -892,7 +922,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -905,7 +935,7 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -1019,7 +1049,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -1262,7 +1292,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>

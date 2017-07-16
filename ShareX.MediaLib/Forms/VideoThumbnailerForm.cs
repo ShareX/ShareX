@@ -75,7 +75,7 @@ namespace ShareX.MediaLib
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ShowError();
                     }
                     finally
                     {

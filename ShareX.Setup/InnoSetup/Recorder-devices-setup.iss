@@ -1,6 +1,7 @@
 #define MyAppName "Recorder Devices for ShareX"
 #define MyAppVersion "0.12.8"
 #define MyAppRootDirectory "..\.."
+#define MyAppOutputDirectory MyAppRootDirectory + "\Output"
 #define MyAppLibDirectory MyAppRootDirectory + "\Lib"
 
 [Setup]
@@ -13,7 +14,7 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
 OutputBaseFilename=Recorder-devices-setup
-OutputDir=Output\
+OutputDir={#MyAppOutputDirectory}
 ShowLanguageDialog=no
 
 [Languages]

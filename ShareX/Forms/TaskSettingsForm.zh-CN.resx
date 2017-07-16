@@ -117,17 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>使用默认的"截图后"设置</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>使用默认的"上传后"设置</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>使用默认的"上传至..."设置</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
-    <value>说明:</value>
+    <value>说明：</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>任务</value>
@@ -166,10 +157,7 @@
     <value>捕捉窗口或活动窗口时,   捕捉客户区</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>截图延迟:</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置拍摄设置</value>
+    <value>截图延迟：</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>区域截图</value>
@@ -198,12 +186,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 任务设置</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置高级设置</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置工具设置</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>添加...</value>
   </data>
@@ -221,9 +203,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>监控文件夹, 如果发现新的文件自动上传。</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>使用主窗口中的任务设置行动</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -265,7 +244,7 @@
     <value>剪贴板上传</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>截图或剪贴板的文件名设置:</value>
+    <value>截图或剪贴板的文件名设置：</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
@@ -274,13 +253,13 @@
     <value>重置自动递增数</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>预览:</value>
+    <value>预览：</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>文件夹监控自动上传的文件名设置:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>预览:</value>
+    <value>预览：</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>使用自定义时区：</value>
@@ -290,9 +269,6 @@
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>文件命名</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置上传设置</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
@@ -321,20 +297,17 @@
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>屏幕录制选项...</value>
   </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF编码器：</value>
-  </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>在录像中显示光标（鼠标指针）</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>宽:</value>
+    <value>宽：</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>高:</value>
+    <value>高：</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>缩略图的名字:</value>
+    <value>缩略图的名字：</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>预览</value>
@@ -360,23 +333,17 @@
   <data name="tpEffects.Text" xml:space="preserve">
     <value>效果</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置图像设置</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>JPEG质量:</value>
+    <value>JPEG 质量：</value>
   </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF质量:</value>
+    <value>GIF 质量：</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>如果文件存在:</value>
+    <value>如果文件存在：</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>图像格式:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置常规设置</value>
+    <value>图像格式：</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>截图后声音提示</value>
@@ -385,7 +352,7 @@
     <value>上传后声音提示</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>任务完成后:</value>
+    <value>任务完成后：</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>任务...</value>
@@ -397,13 +364,13 @@
     <value>URL短链</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>文件类上传</value>
+    <value>文件上传</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>文字类上传</value>
+    <value>文本上传</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>图片类上传</value>
+    <value>图片上传</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>上传至...</value>
@@ -415,10 +382,10 @@
     <value>截图后...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>覆盖默认的FTP帐户:</value>
+    <value>覆盖默认的FTP帐户：</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>覆盖默认的自定义上传:</value>
+    <value>覆盖默认的自定义上传：</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>如果图像大小比指定大小大，使用JPEG格式</value>
@@ -474,12 +441,6 @@
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>鼠标中键单击动作：</value>
   </data>
-  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>点击鼠标五次动作：</value>
-  </data>
-  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>点击鼠标四次动作：</value>
-  </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>鼠标右键单击动作：</value>
   </data>
@@ -506,5 +467,65 @@
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>屏幕拾色器格式：</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>覆盖“截图”设置</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>覆盖“上传”设置</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>覆盖“目标”设置</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>覆盖一般设置</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>覆盖图片设置</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>扩展</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>增加</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>上传到：</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>例子：png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>扩展筛选：</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>上传筛选：</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>覆盖动作</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>覆盖工具设定</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>覆盖进阶设定</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>覆盖捕捉设置</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>覆盖上传设置</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG 图像色深</value>
   </data>
 </root>

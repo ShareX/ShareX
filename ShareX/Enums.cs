@@ -34,6 +34,7 @@ namespace ShareX
         Debug,
         Release,
         Steam,
+        WindowsStore,
         Unknown
     }
 
@@ -253,5 +254,13 @@ namespace ShareX
     public enum RegionCaptureType
     {
         Default, Light, Transparent
+    }
+
+    public enum StartupTaskState
+    {
+        Error = -1,
+        Disabled = 0,
+        DisabledByUser = 1,
+        Enabled = 2
     }
 }

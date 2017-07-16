@@ -75,6 +75,25 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
+    <OutputPath>bin\WindowsStore\</OutputPath>
+    <DefineConstants>TRACE;WindowsStore</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WindowsStore</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
@@ -116,6 +135,14 @@
     <Compile Include="Controls\BeforeUploadControl.Designer.cs">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NewsListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NewsListControl.Designer.cs">
+      <DependentUpon>NewsListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsItem.cs" />
+    <Compile Include="NewsManager.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -169,12 +196,6 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\ImageCombinerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ImageCombinerForm.Designer.cs">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\QRCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,7 +236,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HotkeyTypeEnumConverter.cs" />
-    <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="QuickTaskInfo.cs" />
     <Compile Include="QuickTaskMenu.cs" />
@@ -339,6 +359,9 @@
     <EmbeddedResource Include="Controls\HotkeySelectionControl.zh-TW.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewsListControl.resx">
+      <DependentUpon>NewsListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.de.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +437,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.zh-TW.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.fr.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ru.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.zh-CN.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.de.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
@@ -787,36 +819,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-TW.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.de.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.fr.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.nl-NL.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.pt-BR.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.ru.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.tr.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.vi-VN.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.zh-CN.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageCombinerForm.zh-TW.resx">
-      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -1254,7 +1256,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application-task.png" />
-    <None Include="Resources\steam.ico" />
     <None Include="Resources\camcorder-image.png" />
     <None Include="Resources\toolbox.png" />
     <None Include="Resources\application-icon-large.png" />
@@ -1386,6 +1387,9 @@
     <None Include="Resources\clipboard-task.png" />
     <None Include="Resources\script--minus.png" />
     <None Include="Resources\Google.png" />
+    <None Include="Resources\megaphone.png" />
+    <None Include="Resources\Exclamation-16.png" />
+    <None Include="Resources\image-resize-actual.png" />
     <Content Include="Resources\tw.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />

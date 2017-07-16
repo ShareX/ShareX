@@ -60,8 +60,6 @@ namespace ShareX
 
         protected ImageInfo ExecuteRegionCapture(TaskSettings taskSettings)
         {
-            AllowAnnotation = false;
-
             ImageInfo imageInfo = new ImageInfo();
 
             RegionCaptureMode mode;
@@ -88,6 +86,11 @@ namespace ShareX
 
                 if (imageInfo.Image != null)
                 {
+                    if (form.IsAnnotated)
+                    {
+                        AllowAnnotation = false;
+                    }
+
                     if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();

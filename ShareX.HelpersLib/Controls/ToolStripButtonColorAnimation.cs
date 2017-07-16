@@ -68,6 +68,12 @@ namespace ShareX.HelpersLib
             timer.Stop();
         }
 
+        public void ResetAnimation()
+        {
+            StopAnimation();
+            ForeColor = FromColor;
+        }
+
         private void timer_Tick(object sender, EventArgs e)
         {
             progress += direction * speed;

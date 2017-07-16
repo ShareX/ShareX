@@ -386,9 +386,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Mẫu biểu</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Máy chủ Jira</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira issue prefix:</value>
   </data>
@@ -584,26 +581,8 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Đường dẫn tải lên:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Nếu bạn đang dùng thư mục "Public", url chia sẻ đã được tạo ra. Bạn không cần chọn "Tạo URL chia sẻ"</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Trạng thái</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Tạo liên kết để chia sẻ:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Ảnh:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Văn bản:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Tệp:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Trình...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Trình tải lên ảnh</value>

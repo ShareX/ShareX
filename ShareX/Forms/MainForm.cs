@@ -181,6 +181,19 @@ namespace ShareX
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
 
+#if !DEBUG
+            ucNews.NewsLoaded += (sender, e) =>
+            {
+                if (ucNews.NewsManager.IsUnread && Visible) tsbNews.StartAnimation();
+            };
+            ucNews.Start();
+#endif
+
+#if WindowsStore
+            tsmiDNSChanger.Visible = false;
+            tsmiTrayDNSChanger.Visible = false;
+#endif
+
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -254,10 +267,12 @@ namespace ShareX
 
             InitHotkeys();
 
+#if !WindowsStore
             if (!Program.Portable && !IntegrationHelpers.CheckCustomUploaderExtension())
             {
                 IntegrationHelpers.CreateCustomUploaderExtension(true);
             }
+#endif
 
             IsReady = true;
         }
@@ -756,7 +771,7 @@ namespace ShareX
                     continue;
                 }
 
-                if (URLHelpers.IsValidURLRegex(command.Command))
+                if (URLHelpers.IsValidURL(command.Command))
                 {
                     UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
                 }
@@ -865,7 +880,7 @@ namespace ShareX
                 tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Show_menu;
             }
 
-            tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
+            tsMain.Visible = Program.Settings.ShowMenu;
 
             if (Program.Settings.ShowColumns)
             {
@@ -918,6 +933,13 @@ namespace ShareX
                     }
                 }
             }
+        }
+
+        private void HideNews()
+        {
+            pNews.Visible = false;
+            ucNews.MarkRead();
+            tsbNews.ResetAnimation();
         }
 
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -1017,11 +1039,17 @@ namespace ShareX
 #if !DEBUG
             if (Visible)
             {
-                tsmiDonate.StartAnimation();
+                if (ucNews.NewsManager != null && ucNews.NewsManager.IsUnread)
+                {
+                    tsbNews.StartAnimation();
+                }
+
+                tsbDonate.StartAnimation();
             }
             else
             {
-                tsmiDonate.StopAnimation();
+                tsbNews.StopAnimation();
+                tsbDonate.StopAnimation();
             }
 #endif
         }
@@ -1231,7 +1259,7 @@ namespace ShareX
                 {
                     AllowDrop = false;
 
-                    lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy);
+                    lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
                 }
             }
         }
@@ -1253,6 +1281,11 @@ namespace ShareX
         {
             flpPatreon.Visible = false;
             Program.Settings.ShowPatreonButton = false;
+        }
+
+        private void btnCloseNews_Click(object sender, EventArgs e)
+        {
+            HideNews();
         }
 
         #region Menu events
@@ -1426,6 +1459,11 @@ namespace ShareX
             TaskHelpers.OpenImageCombiner();
         }
 
+        private void tsmiImageThumbnailer_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageThumbnailer();
+        }
+
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
@@ -1535,6 +1573,19 @@ namespace ShareX
         private void tsmiTestURLSharing_Click(object sender, EventArgs e)
         {
             UploadManager.ShareURL(Links.URL_WEBSITE);
+        }
+
+        private void tsbNews_Click(object sender, EventArgs e)
+        {
+            if (!pNews.Visible)
+            {
+                pNews.Visible = true;
+                tsbNews.ResetAnimation();
+            }
+            else
+            {
+                HideNews();
+            }
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)

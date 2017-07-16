@@ -63,11 +63,11 @@ namespace ShareX.MediaLib
             {
                 if (NativeMethods.Is64Bit())
                 {
-                    SevenZipBase.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z-x64.dll"));
+                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z-x64.dll"));
                 }
                 else
                 {
-                    SevenZipBase.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
+                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z.dll"));
                 }
 
                 Helpers.CreateDirectoryFromFilePath(extractPath);

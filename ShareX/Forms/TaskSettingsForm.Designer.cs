@@ -65,6 +65,8 @@
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
             this.pImage = new System.Windows.Forms.Panel();
+            this.cbImagePNGBitDepth = new System.Windows.Forms.ComboBox();
+            this.lblImagePNGBitDepth = new System.Windows.Forms.Label();
             this.cbImageAutoUseJPEG = new System.Windows.Forms.CheckBox();
             this.lblImageFormat = new System.Windows.Forms.Label();
             this.cbImageFileExist = new System.Windows.Forms.ComboBox();
@@ -554,6 +556,8 @@
             // 
             // pImage
             // 
+            this.pImage.Controls.Add(this.cbImagePNGBitDepth);
+            this.pImage.Controls.Add(this.lblImagePNGBitDepth);
             this.pImage.Controls.Add(this.cbImageAutoUseJPEG);
             this.pImage.Controls.Add(this.lblImageFormat);
             this.pImage.Controls.Add(this.cbImageFileExist);
@@ -568,6 +572,19 @@
             this.pImage.Controls.Add(this.cbImageGIFQuality);
             resources.ApplyResources(this.pImage, "pImage");
             this.pImage.Name = "pImage";
+            // 
+            // cbImagePNGBitDepth
+            // 
+            this.cbImagePNGBitDepth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImagePNGBitDepth.FormattingEnabled = true;
+            resources.ApplyResources(this.cbImagePNGBitDepth, "cbImagePNGBitDepth");
+            this.cbImagePNGBitDepth.Name = "cbImagePNGBitDepth";
+            this.cbImagePNGBitDepth.SelectedIndexChanged += new System.EventHandler(this.cbImagePNGBitDepth_SelectedIndexChanged);
+            // 
+            // lblImagePNGBitDepth
+            // 
+            resources.ApplyResources(this.lblImagePNGBitDepth, "lblImagePNGBitDepth");
+            this.lblImagePNGBitDepth.Name = "lblImagePNGBitDepth";
             // 
             // cbImageAutoUseJPEG
             // 
@@ -2337,5 +2354,7 @@
         private System.Windows.Forms.Label lblUploaderFiltersExtensionsExample;
         private System.Windows.Forms.Label lblUploaderFiltersExtensions;
         private System.Windows.Forms.TextBox txtUploaderFiltersExtensions;
+        private System.Windows.Forms.ComboBox cbImagePNGBitDepth;
+        private System.Windows.Forms.Label lblImagePNGBitDepth;
     }
 }

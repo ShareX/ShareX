@@ -166,7 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult();
 
             string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FolderPath);
-            string path = subFolderPath.CombineURL(fileName);
+            string path = URLHelpers.CombineURL(subFolderPath, fileName);
             string url = Account.GetUriPath(fileName, subFolderPath);
 
             OnEarlyURLCopyRequested(url);
@@ -401,7 +401,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (CreateDirectory(path))
                 {
-                    DebugHelper.WriteLine("FTP directory created: " + path);
+                    DebugHelper.WriteLine($"FTP directory created: {path}");
                 }
             }
 

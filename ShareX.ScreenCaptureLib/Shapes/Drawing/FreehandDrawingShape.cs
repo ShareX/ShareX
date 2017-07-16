@@ -126,7 +126,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
             {
-                g.SmoothingMode = SmoothingMode.HighQuality;
+                if (Manager.IsRenderingOutput)
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                }
+                else
+                {
+                    g.SmoothingMode = SmoothingMode.HighSpeed;
+                }
 
                 if (points.Length == 1)
                 {

@@ -461,9 +461,6 @@
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>템플릿</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira 서버</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira 이슈 접두사:</value>
   </data>
@@ -656,26 +653,8 @@
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>업로드 경로:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>"Public" 폴더를 쓴다면 공유 가능한 URL은 알아서 이미 생성될 것이기 때문에, "공유 가능한 URL"을 체크할 필요는 없습니다.</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>공유 가능한 URL 생성하기:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>이미지:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>텍스트:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>파일:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>클라이언트...</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>새 앨범 생성</value>

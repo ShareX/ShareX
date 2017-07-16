@@ -91,8 +91,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            bool forcePathStyle = Settings.UsePathStyle;
+
+            if (!forcePathStyle && Settings.Bucket.Contains("."))
+            {
+                forcePathStyle = true;
+            }
+
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
-            string host = Settings.UsePathStyle ? endpoint : $"{Settings.Bucket}.{endpoint}";
+            string host = forcePathStyle ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             string region = GetRegion();
@@ -118,8 +125,10 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("X-Amz-SignedHeaders", signedHeaders);
 
             string uploadPath = GetUploadPath(fileName);
-            if (Settings.UsePathStyle) uploadPath = URLHelpers.CombineURL(Settings.Bucket, uploadPath);
-            string canonicalURI = URLHelpers.AddSlash(uploadPath, SlashType.Prefix);
+
+            string canonicalURI = uploadPath;
+            if (forcePathStyle) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
+            canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
             string canonicalQueryString = URLHelpers.CreateQuery(args);
@@ -169,7 +178,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return new UploadResult
             {
                 IsSuccess = true,
-                URL = GenerateURL(fileName)
+                URL = GenerateURL(uploadPath)
             };
         }
 
@@ -220,11 +229,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return URLHelpers.CombineURL(path, fileName);
         }
 
-        public string GenerateURL(string fileName)
+        public string GenerateURL(string uploadPath)
         {
             if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
-                string uploadPath = GetUploadPath(fileName);
+                uploadPath = URLHelpers.URLPathEncode(uploadPath);
 
                 string url;
 
@@ -241,6 +250,12 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return "";
+        }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
         }
 
         private string CreateCanonicalHeaders(NameValueCollection headers)

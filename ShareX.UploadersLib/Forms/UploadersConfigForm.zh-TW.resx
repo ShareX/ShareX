@@ -507,9 +507,6 @@
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>模板</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira伺服器</value>
-  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>JIRA問題的字首:</value>
   </data>
@@ -696,26 +693,8 @@
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>上傳路徑:</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>如果您使用的是"公共"資料夾中,已生成了可共享的URL.你並不需要檢查"創建共享URL".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>狀態</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>創建共享網址:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>圖片:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>文字:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>檔案:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>客戶端...</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>圖片上傳者</value>
@@ -974,12 +953,6 @@ store.book[0].title</value>
   <data name="gbUpleaUserInformation.Text" xml:space="preserve">
     <value>使用者資訊</value>
   </data>
-  <data name="gpPlikLoginCredentials.Text" xml:space="preserve">
-    <value>登入認證</value>
-  </data>
-  <data name="gpPlikSettings.Text" xml:space="preserve">
-    <value>其他設定</value>
-  </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>存取金鑰</value>
   </data>
@@ -988,9 +961,6 @@ store.book[0].title</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
     <value>私密金鑰</value>
-  </data>
-  <data name="lblAmazonS3Regions.Text" xml:space="preserve">
-    <value>區域</value>
   </data>
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>帳號名稱</value>

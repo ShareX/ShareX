@@ -36,6 +36,14 @@ namespace ShareX.HelpersLib
         URL
     }
 
+    public enum PNGBitDepth // Localized
+    {
+        Default,
+        Automatic,
+        Bit32,
+        Bit24
+    }
+
     public enum GIFQuality // Localized
     {
         Default,

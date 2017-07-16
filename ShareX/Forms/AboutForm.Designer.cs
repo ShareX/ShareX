@@ -42,19 +42,17 @@
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
             this.lblTeam = new System.Windows.Forms.Label();
-            this.lblSteamBuild = new System.Windows.Forms.Label();
-            this.pbSteam = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnShareXLicense = new System.Windows.Forms.Button();
             this.btnLicenses = new System.Windows.Forms.Button();
             this.uclUpdate = new ShareX.HelpersLib.UpdateCheckerLabel();
             this.cLogo = new ShareX.HelpersLib.Canvas();
+            this.lblBuild = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,22 +133,6 @@
             resources.ApplyResources(this.lblTeam, "lblTeam");
             this.lblTeam.Name = "lblTeam";
             // 
-            // lblSteamBuild
-            // 
-            resources.ApplyResources(this.lblSteamBuild, "lblSteamBuild");
-            this.lblSteamBuild.BackColor = System.Drawing.Color.Transparent;
-            this.lblSteamBuild.Name = "lblSteamBuild";
-            // 
-            // pbSteam
-            // 
-            this.pbSteam.BackColor = System.Drawing.Color.Transparent;
-            this.pbSteam.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSteam.Image = global::ShareX.Properties.Resources.steam;
-            resources.ApplyResources(this.pbSteam, "pbSteam");
-            this.pbSteam.Name = "pbSteam";
-            this.pbSteam.TabStop = false;
-            this.pbSteam.Click += new System.EventHandler(this.pbSteam_Click);
-            // 
             // pbLogo
             // 
             resources.ApplyResources(this.pbLogo, "pbLogo");
@@ -194,18 +176,22 @@
             this.cLogo.Draw += new ShareX.HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
             this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
             // 
+            // lblBuild
+            // 
+            resources.ApplyResources(this.lblBuild, "lblBuild");
+            this.lblBuild.Name = "lblBuild";
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.lblBuild);
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnShareXLicense);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.pbSteam);
-            this.Controls.Add(this.lblSteamBuild);
             this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
@@ -226,7 +212,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,11 +232,10 @@
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
         private System.Windows.Forms.Label lblTeam;
-        private System.Windows.Forms.Label lblSteamBuild;
-        private System.Windows.Forms.PictureBox pbSteam;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnShareXLicense;
         private System.Windows.Forms.Button btnLicenses;
+        private System.Windows.Forms.Label lblBuild;
     }
 }

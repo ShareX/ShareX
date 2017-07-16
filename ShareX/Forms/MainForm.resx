@@ -129,7 +129,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lblMainFormTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14.25pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="lblMainFormTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -141,7 +141,7 @@
     <value>10, 0, 10, 0</value>
   </data>
   <data name="lblMainFormTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 344</value>
+    <value>320, 366</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblMainFormTip.TabIndex" type="System.Int32, mscorlib">
@@ -158,30 +158,6 @@
   </data>
   <data name="&gt;&gt;lblMainFormTip.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="lblSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1, 407</value>
-  </data>
-  <data name="lblSplitter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblSplitter.Name" xml:space="preserve">
-    <value>lblSplitter</value>
-  </data>
-  <data name="&gt;&gt;lblSplitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSplitter.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSplitter.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -229,7 +205,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 407</value>
+    <value>335, 429</value>
   </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -244,7 +220,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -265,7 +241,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 407</value>
+    <value>333, 429</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -295,7 +271,7 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 407</value>
+    <value>674, 429</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
@@ -316,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="flpPatreon.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -388,7 +364,7 @@
     <value>1</value>
   </data>
   <data name="flpPatreon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>613, 356</value>
+    <value>613, 378</value>
   </data>
   <data name="flpPatreon.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 45</value>
@@ -412,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpPatreon.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -568,85 +544,91 @@
     <value>Workflows</value>
   </data>
   <data name="tsmiColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Color picker...</value>
   </data>
   <data name="tsmiScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
   <data name="tsmiAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiAnnotateImage.Text" xml:space="preserve">
     <value>Annotate image...</value>
   </data>
   <data name="tsmiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
   </data>
   <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
   <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
   <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
   <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Directory indexer...</value>
   </data>
   <data name="tsmiImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Image combiner...</value>
   </data>
+  <data name="tsmiImageThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Image thumbnailer...</value>
+  </data>
   <data name="tsmiVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
   <data name="tsmiFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP client...</value>
   </data>
   <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
   <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
@@ -864,28 +846,40 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
   </data>
-  <data name="tsmiDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="tsbNews.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsmiDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsbNews.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsmiDonate.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsbNews.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 20</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donate...</value>
   </data>
-  <data name="tsmiAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsmiAbout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsbAbout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsbAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 20</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
+  <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
@@ -895,7 +889,7 @@
     <value>6, 6, 6, 6</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 407</value>
+    <value>160, 429</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -904,13 +898,13 @@
     <value>tsMain</value>
   </data>
   <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
@@ -980,9 +974,6 @@
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Thumbnail file</value>
-  </data>
-  <data name="tsmiOpen.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
   </data>
   <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1133,9 +1124,6 @@
   </data>
   <data name="tssCopy5.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="tsmiCopy.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
   </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1417,85 +1405,91 @@
     <value>Workflows</value>
   </data>
   <data name="tsmiTrayColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Color picker...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
   <data name="tsmiTrayAnnotateImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
     <value>Annotate image...</value>
   </data>
   <data name="tsmiTrayImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
   </data>
   <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
   <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Directory indexer...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Image combiner...</value>
   </data>
+  <data name="tsmiTrayImageThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Image thumbnailer...</value>
+  </data>
   <data name="tsmiTrayVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
   <data name="tsmiTrayFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP client...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
@@ -1710,6 +1704,87 @@
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
+  <data name="ucNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ucNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ucNews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 429</value>
+  </data>
+  <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Name" xml:space="preserve">
+    <value>ucNews</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
+    <value>ShareX.NewsListControl, ShareX, Version=11.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
+    <value>pNews</value>
+  </data>
+  <data name="&gt;&gt;ucNews.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCloseNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 400</value>
+  </data>
+  <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="btnCloseNews.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;btnCloseNews.Name" xml:space="preserve">
+    <value>btnCloseNews</value>
+  </data>
+  <data name="&gt;&gt;btnCloseNews.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCloseNews.Parent" xml:space="preserve">
+    <value>pNews</value>
+  </data>
+  <data name="&gt;&gt;btnCloseNews.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 0</value>
+  </data>
+  <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 429</value>
+  </data>
+  <data name="pNews.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pNews.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pNews.Name" xml:space="preserve">
+    <value>pNews</value>
+  </data>
+  <data name="&gt;&gt;pNews.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pNews.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1720,7 +1795,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>834, 407</value>
+    <value>834, 429</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 250</value>
@@ -1962,6 +2037,12 @@
   <data name="&gt;&gt;tsmiImageCombiner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Name" xml:space="preserve">
     <value>tsmiVideoThumbnailer</value>
   </data>
@@ -2136,16 +2217,22 @@
   <data name="&gt;&gt;tsmiTestURLSharing.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiDonate.Name" xml:space="preserve">
-    <value>tsmiDonate</value>
+  <data name="&gt;&gt;tsbNews.Name" xml:space="preserve">
+    <value>tsbNews</value>
   </data>
-  <data name="&gt;&gt;tsmiDonate.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
     <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;tsmiAbout.Name" xml:space="preserve">
-    <value>tsmiAbout</value>
+  <data name="&gt;&gt;tsbDonate.Name" xml:space="preserve">
+    <value>tsbDonate</value>
   </data>
-  <data name="&gt;&gt;tsmiAbout.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
+    <value>tsbAbout</value>
+  </data>
+  <data name="&gt;&gt;tsbAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowErrors.Name" xml:space="preserve">
@@ -2682,6 +2769,12 @@
   <data name="&gt;&gt;tsmiTrayImageCombiner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
+    <value>tsmiTrayImageThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Name" xml:space="preserve">
     <value>tsmiTrayVideoThumbnailer</value>
   </data>
@@ -2920,6 +3013,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

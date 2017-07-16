@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 string text = Clipboard.GetText();
 
-                if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                if (URLHelpers.IsValidURL(text))
                 {
                     txtURL.Text = text;
                 }

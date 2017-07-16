@@ -40,9 +40,16 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawEllipse(Graphics g)
         {
-            if (Shadow && IsBorderVisible)
+            if (Shadow)
             {
-                DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                if (IsBorderVisible)
+                {
+                    DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                }
+                else if (FillColor.A == 255)
+                {
+                    DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                }
             }
 
             DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);

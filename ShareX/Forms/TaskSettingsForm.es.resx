@@ -153,9 +153,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Retraso de la captura de pantalla:</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utilizar la configuración de captura en configuración de la tarea de la ventana principal</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura región</value>
   </data>
@@ -180,9 +177,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de la tarea</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utilizar la configuración avanzada en configuración de la tarea de la ventana principal</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Añadir...</value>
   </data>
@@ -200,9 +194,6 @@
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Ver carpetas y si el nuevo archivo creado luego subirlo</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Utilice acciones en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Quitar</value>
@@ -263,9 +254,6 @@
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Usar zona horaria personalizada:</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Utilice la configuración de subida en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
@@ -328,9 +316,6 @@ Agregar efectos de imagen".</value>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efectos</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Utilice configuración de la imagen en configuración de la tarea de la ventana principal</value>
-  </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Calidad de JPEG:</value>
   </data>
@@ -342,9 +327,6 @@ Agregar efectos de imagen".</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Formato de imagen:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Utilice la configuración general en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Reproducir sonido después de que se hizo la captura</value>
@@ -387,14 +369,5 @@ Agregar efectos de imagen".</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Sobrescribir la configuración predeterminada del uploader personalizado</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Utilizar la configuración predeterminada "Después de capturar"</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Utilizar la configuración predeterminada "Después de la carga"</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Utilizar la configuración predeterminada "Destinación"</value>
   </data>
 </root>

@@ -37,31 +37,31 @@ namespace ShareX.HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm() : this(Color.Red)
+        public ColorPickerForm() : this(Color.Red, false)
         {
         }
 
-        public ColorPickerForm(Color currentColor)
+        public ColorPickerForm(Color currentColor, bool showOldColor = true)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            SetCurrentColor(currentColor, false);
+            SetCurrentColor(currentColor, showOldColor);
         }
 
-        public static Color GetColor(Color currentColor)
+        public static bool PickColor(Color currentColor, out Color newColor)
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
-                dialog.rbSaturation.Checked = true;
-
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    return dialog.NewColor;
+                    newColor = dialog.NewColor;
+                    return true;
                 }
             }
 
-            return currentColor;
+            newColor = currentColor;
+            return false;
         }
 
         public void SetCurrentColor(Color currentColor, bool keepPreviousColor)
@@ -205,7 +205,14 @@ namespace ShareX.HelpersLib
 
         private void cbTransparent_Click(object sender, EventArgs e)
         {
-            nudAlpha.Value = 0;
+            if (nudAlpha.Value == 0)
+            {
+                nudAlpha.Value = 255;
+            }
+            else
+            {
+                nudAlpha.Value = 0;
+            }
         }
 
         private void HSB_ValueChanged(object sender, EventArgs e)

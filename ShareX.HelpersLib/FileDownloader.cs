@@ -63,7 +63,7 @@ namespace ShareX.HelpersLib
 
         private BackgroundWorker worker;
         private Stream stream;
-        private const int bufferSize = 4096;
+        private const int bufferSize = 32768;
 
         public FileDownloader(string url, Stream stream, IWebProxy proxy = null, string acceptHeader = null)
         {
