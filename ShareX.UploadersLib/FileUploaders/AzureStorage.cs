@@ -91,13 +91,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{fileName}";
-            string urlForCopy = url;
-            if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
-            {
-                // Azure Blob Storage does not support https with custom domains at this time
-                urlForCopy = URLHelpers.ForcePrefix(URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, fileName), "http://");
-            }
-
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -115,7 +108,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (responseHeaders != null)
             {
-                return new UploadResult { IsSuccess = true, URL = urlForCopy };
+                string result;
+
+                if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
+                {
+                    result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, fileName);
+                    result = URLHelpers.FixPrefix(result);
+                }
+                else
+                {
+                    result = url;
+                }
+
+                return new UploadResult { IsSuccess = true, URL = result };
             }
             else
             {
