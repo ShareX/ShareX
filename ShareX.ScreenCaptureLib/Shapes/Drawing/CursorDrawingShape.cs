@@ -46,21 +46,24 @@ namespace ShareX.ScreenCaptureLib
         public void SetCursor(CursorData cursorData)
         {
             Dispose();
-
             Cursor = new Cursor(cursorData.IconHandle);
-
             Rectangle = new Rectangle(cursorData.Position, Cursor.Size);
         }
 
-        public override void ShowNodes()
+        public override void OnCreating()
         {
+            Manager.IsMoving = true;
+            Dispose();
+            Cursor = new Cursor(Cursors.Arrow.CopyHandle());
+            Point pos = InputManager.MousePosition0Based;
+            Rectangle = new Rectangle(pos, Cursor.Size);
         }
 
         public override void OnDraw(Graphics g)
         {
             if (Cursor != null)
             {
-                Cursor.Draw(g, Rectangle.LocationOffset(Cursor.HotSpot));
+                Cursor.DrawStretched(g, Rectangle);
             }
         }
 
