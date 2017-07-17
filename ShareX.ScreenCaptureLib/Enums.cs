@@ -230,6 +230,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingStep,
         DrawingImage,
         DrawingImageScreen,
+        DrawingCursor,
         EffectBlur,
         EffectPixelate,
         EffectHighlight,

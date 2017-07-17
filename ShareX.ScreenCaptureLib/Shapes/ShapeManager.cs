@@ -776,6 +776,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImageScreen:
                     shape = new ImageScreenDrawingShape();
                     break;
+                case ShapeType.DrawingCursor:
+                    shape = new CursorDrawingShape();
+                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -876,6 +879,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
+                        case ShapeType.DrawingCursor:
                             return null;
                     }
 
@@ -1232,6 +1236,13 @@ namespace ShareX.ScreenCaptureLib
                     SelectCurrentShape();
                 }
             }
+        }
+
+        public void AddCursor(CursorData cursorData)
+        {
+            CursorDrawingShape shape = (CursorDrawingShape)CreateShape(ShapeType.DrawingCursor);
+            shape.SetCursor(cursorData);
+            Shapes.Add(shape);
         }
 
         public Rectangle LimitRectangleToImage(Rectangle rect)

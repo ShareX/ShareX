@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System.Drawing;
 using System.Windows.Forms;
@@ -78,8 +79,24 @@ namespace ShareX
             try
             {
                 form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+                Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+                screenshot.CaptureCursor = false;
+                Image img = screenshot.CaptureFullscreen();
+
+                CursorData cursorData = null;
+
+                if (taskSettings.CaptureSettings.ShowCursor)
+                {
+                    cursorData = new CursorData();
+                }
+
                 form.Prepare(img);
+
+                if (cursorData != null)
+                {
+                    form.AddCursor(cursorData);
+                }
+
                 form.ShowDialog();
 
                 imageInfo.Image = form.GetResultImage();
