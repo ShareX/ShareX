@@ -50,6 +50,10 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = new Rectangle(cursorData.Position, Cursor.Size);
         }
 
+        public override void ShowNodes()
+        {
+        }
+
         public override void OnCreating()
         {
             Manager.IsMoving = true;
@@ -63,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Cursor != null)
             {
-                Cursor.DrawStretched(g, Rectangle);
+                Cursor.Draw(g, Rectangle);
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentShapeType == ShapeType.DrawingCursor)
                 {
