@@ -2483,6 +2483,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drawing: Cursor.
+        /// </summary>
+        internal static string ShapeType_DrawingCursor {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingCursor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Ellipse.
         /// </summary>
         internal static string ShapeType_DrawingEllipse {

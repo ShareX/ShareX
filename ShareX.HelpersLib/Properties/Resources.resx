@@ -1028,4 +1028,7 @@ Would you like to download it?</value>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
   </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Drawing: Cursor</value>
+  </data>
 </root>
