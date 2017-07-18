@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
                 if (IsValidShape)
                 {
                     Rectangle rect = Manager.LimitRectangleToImage(Rectangle);
-                    Manager.DrawRegionArea(g, rect);
+                    Manager.DrawRegionArea(g, rect, true);
                 }
             }
             else

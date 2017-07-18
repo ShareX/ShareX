@@ -64,6 +64,11 @@ namespace ShareX.ScreenCaptureLib
             if (Cursor != null)
             {
                 Cursor.DrawStretched(g, Rectangle);
+
+                if (!Manager.IsRenderingOutput && Manager.CurrentShapeType == ShapeType.DrawingCursor)
+                {
+                    Manager.DrawRegionArea(g, Rectangle, false);
+                }
             }
         }
 

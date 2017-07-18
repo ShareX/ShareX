@@ -1250,9 +1250,9 @@ namespace ShareX.ScreenCaptureLib
             return Rectangle.Intersect(rect, form.ImageRectangle);
         }
 
-        public void DrawRegionArea(Graphics g, Rectangle rect)
+        public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
         {
-            form.DrawRegionArea(g, rect);
+            form.DrawRegionArea(g, rect, isAnimated);
         }
 
         public void CropArea(Rectangle rect)

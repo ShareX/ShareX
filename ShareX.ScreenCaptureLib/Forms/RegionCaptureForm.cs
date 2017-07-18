@@ -537,7 +537,7 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on selection area
             if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentShapeValid)
             {
-                DrawRegionArea(g, ShapeManager.CurrentRectangle);
+                DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
 
                 if (Mode == RegionCaptureMode.Ruler)
                 {
@@ -609,10 +609,18 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void DrawRegionArea(Graphics g, Rectangle rect)
+        internal void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
         {
             g.DrawRectangleProper(borderPen, rect);
-            g.DrawRectangleProper(borderDotPen, rect);
+
+            if (isAnimated)
+            {
+                g.DrawRectangleProper(borderDotPen, rect);
+            }
+            else
+            {
+                g.DrawRectangleProper(borderDotStaticPen, rect);
+            }
         }
 
         private void DrawObjects(Graphics g)
