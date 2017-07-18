@@ -315,7 +315,8 @@ namespace ShareX.UploadersLib
     {
         Regex,
         Json,
-        Xml
+        Xml,
+        Random
     }
 
     [Flags]

@@ -225,6 +225,11 @@ namespace ShareX.UploadersLib
                             parseType = CustomUploaderResponseParseType.Xml;
                             syntaxStartIndex = i + 5;
                         }
+                        else if (syntaxCheck.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
+                        {
+                            parseType = CustomUploaderResponseParseType.Random;
+                            syntaxStartIndex = i + 8;
+                        }
                         else
                         {
                             parseType = CustomUploaderResponseParseType.Regex;
@@ -250,6 +255,9 @@ namespace ShareX.UploadersLib
                                     break;
                                 case CustomUploaderResponseParseType.Xml:
                                     resultText = ParseXmlSyntax(parseText);
+                                    break;
+                                case CustomUploaderResponseParseType.Random:
+                                    resultText = ParseRandomSyntax(parseText);
                                     break;
                             }
 
@@ -341,6 +349,18 @@ namespace ShareX.UploadersLib
             }
 
             return null;
+        }
+
+        private string ParseRandomSyntax(string syntax)
+        {
+            string[] values = syntax.Split('|');
+
+            if (values.Length > 0)
+            {
+                return values[MathHelpers.Random(values.Length - 1)];
+            }
+
+            return "";
         }
     }
 }
