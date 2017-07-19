@@ -42,3 +42,5 @@ deploy:
   on:
     configuration: Release
     appveyor_repo_tag: true
+hosts:
+  api.nuget.org: 93.184.221.200
