@@ -37,17 +37,20 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingCursor;
 
-        public Cursor Cursor { get; private set; }
+        private Bitmap cursorBitmap;
 
         public CursorDrawingShape()
         {
         }
 
-        public void SetCursor(CursorData cursorData)
+        public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
             Dispose();
-            Cursor = new Cursor(cursorData.IconHandle);
-            Rectangle = new Rectangle(cursorData.Position, Cursor.Size);
+
+            Icon icon = Icon.FromHandle(cursorHandle);
+            cursorBitmap = icon.ToBitmap();
+
+            Rectangle = new Rectangle(position, cursorBitmap.Size);
         }
 
         public override void ShowNodes()
@@ -57,17 +60,15 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            Dispose();
-            Cursor = new Cursor(Cursors.Arrow.CopyHandle());
-            Point pos = InputManager.MousePosition0Based;
-            Rectangle = new Rectangle(pos, Cursor.Size);
+
+            UpdateCursor(Cursors.Arrow.Handle, InputManager.MousePosition0Based);
         }
 
         public override void OnDraw(Graphics g)
         {
-            if (Cursor != null)
+            if (cursorBitmap != null)
             {
-                Cursor.Draw(g, Rectangle);
+                g.DrawImage(cursorBitmap, Rectangle);
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentShapeType == ShapeType.DrawingCursor)
                 {
@@ -83,9 +84,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Dispose()
         {
-            if (Cursor != null)
+            if (cursorBitmap != null)
             {
-                Cursor.Dispose();
+                cursorBitmap.Dispose();
             }
         }
     }

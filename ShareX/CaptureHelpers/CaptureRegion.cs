@@ -85,16 +85,26 @@ namespace ShareX
 
                 CursorData cursorData = null;
 
-                if (taskSettings.CaptureSettings.ShowCursor)
+                try
                 {
-                    cursorData = new CursorData();
+                    if (taskSettings.CaptureSettings.ShowCursor)
+                    {
+                        cursorData = new CursorData();
+                    }
+
+                    form.Prepare(img);
+
+                    if (cursorData != null)
+                    {
+                        form.AddCursor(cursorData.Handle, cursorData.Position);
+                    }
                 }
-
-                form.Prepare(img);
-
-                if (cursorData != null)
+                finally
                 {
-                    form.AddCursor(cursorData);
+                    if (cursorData != null)
+                    {
+                        cursorData.Dispose();
+                    }
                 }
 
                 form.ShowDialog();

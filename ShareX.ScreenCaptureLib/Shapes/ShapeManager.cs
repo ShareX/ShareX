@@ -1238,10 +1238,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void AddCursor(CursorData cursorData)
+        public void AddCursor(IntPtr cursorHandle, Point position)
         {
             CursorDrawingShape shape = (CursorDrawingShape)CreateShape(ShapeType.DrawingCursor);
-            shape.SetCursor(cursorData);
+            shape.UpdateCursor(cursorHandle, position);
             Shapes.Add(shape);
         }
 

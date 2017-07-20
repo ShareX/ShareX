@@ -361,11 +361,11 @@ namespace ShareX.ScreenCaptureLib
             return ShapeManager.FindSelectedWindowInfo(CurrentPosition);
         }
 
-        public void AddCursor(CursorData cursorData)
+        public void AddCursor(IntPtr cursorHandle, Point position)
         {
             if (ShapeManager != null)
             {
-                ShapeManager.AddCursor(cursorData);
+                ShapeManager.AddCursor(cursorHandle, position);
             }
         }
 
