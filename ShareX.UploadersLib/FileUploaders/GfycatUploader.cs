@@ -86,7 +86,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             AuthInfo = oauth;
             NoResize = true;
-            IgnoreExisting = false;
+            IgnoreExisting = true;
         }
 
         public string GetAuthorizationURL()
