@@ -92,6 +92,9 @@ namespace ShareX
                 case SupportedLanguage.Hungarian:
                     icon = Resources.hu;
                     break;
+                case SupportedLanguage.Italian:
+                    icon = Resources.it;
+                    break;
                 case SupportedLanguage.Korean:
                     icon = Resources.kr;
                     break;
@@ -142,6 +145,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Hungarian:
                     cultureName = "hu-HU";
+                    break;
+                case SupportedLanguage.Italian:
+                    cultureName = "it-IT";
                     break;
                 case SupportedLanguage.Korean:
                     cultureName = "ko-KR";
