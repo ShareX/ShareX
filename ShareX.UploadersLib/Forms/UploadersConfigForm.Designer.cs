@@ -1707,6 +1707,7 @@
             // 
             resources.ApplyResources(this.txtCoinURLUUID, "txtCoinURLUUID");
             this.txtCoinURLUUID.Name = "txtCoinURLUUID";
+            this.txtCoinURLUUID.UseSystemPasswordChar = true;
             this.txtCoinURLUUID.TextChanged += new System.EventHandler(this.txtCoinURLUUID_TextChanged);
             // 
             // lblCoinURLUUID
@@ -3013,6 +3014,7 @@
             // 
             resources.ApplyResources(this.txtMediaFirePassword, "txtMediaFirePassword");
             this.txtMediaFirePassword.Name = "txtMediaFirePassword";
+            this.txtMediaFirePassword.UseSystemPasswordChar = true;
             this.txtMediaFirePassword.TextChanged += new System.EventHandler(this.txtMediaFirePassword_TextChanged);
             // 
             // txtMediaFireEmail
@@ -3840,6 +3842,7 @@
             // 
             resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
             this.txtSulAPIKey.Name = "txtSulAPIKey";
+            this.txtSulAPIKey.UseSystemPasswordChar = true;
             this.txtSulAPIKey.TextChanged += new System.EventHandler(this.txtSulAPIKey_TextChanged);
             // 
             // lblSulAPIKey
@@ -3912,6 +3915,7 @@
             // 
             resources.ApplyResources(this.txtUpleaApiKey, "txtUpleaApiKey");
             this.txtUpleaApiKey.Name = "txtUpleaApiKey";
+            this.txtUpleaApiKey.UseSystemPasswordChar = true;
             this.txtUpleaApiKey.TextChanged += new System.EventHandler(this.txtUpleaApiKey_TextChanged);
             // 
             // lblUpleaPassword
@@ -3928,6 +3932,7 @@
             // 
             resources.ApplyResources(this.txtUpleaPassword, "txtUpleaPassword");
             this.txtUpleaPassword.Name = "txtUpleaPassword";
+            this.txtUpleaPassword.UseSystemPasswordChar = true;
             // 
             // txtUpleaUsername
             // 
@@ -4100,6 +4105,7 @@
             // 
             resources.ApplyResources(this.txtPlikAPIKey, "txtPlikAPIKey");
             this.txtPlikAPIKey.Name = "txtPlikAPIKey";
+            this.txtPlikAPIKey.UseSystemPasswordChar = true;
             this.txtPlikAPIKey.TextChanged += new System.EventHandler(this.txtPlikAPIKey_TextChanged);
             // 
             // lblPlikPassword
@@ -4116,6 +4122,7 @@
             // 
             resources.ApplyResources(this.txtPlikPassword, "txtPlikPassword");
             this.txtPlikPassword.Name = "txtPlikPassword";
+            this.txtPlikPassword.UseSystemPasswordChar = true;
             this.txtPlikPassword.TextChanged += new System.EventHandler(this.txtPlikPassword_TextChanged);
             // 
             // txtPlikLogin
@@ -5213,6 +5220,7 @@
             // 
             resources.ApplyResources(this.txtCheveretoAPIKey, "txtCheveretoAPIKey");
             this.txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
+            this.txtCheveretoAPIKey.UseSystemPasswordChar = true;
             this.txtCheveretoAPIKey.TextChanged += new System.EventHandler(this.txtCheveretoAPIKey_TextChanged);
             // 
             // lblCheveretoAPIKey
@@ -5240,6 +5248,7 @@
             // 
             resources.ApplyResources(this.txtVgymeUserKey, "txtVgymeUserKey");
             this.txtVgymeUserKey.Name = "txtVgymeUserKey";
+            this.txtVgymeUserKey.UseSystemPasswordChar = true;
             this.txtVgymeUserKey.TextChanged += new System.EventHandler(this.txtVgymeUserKey_TextChanged);
             // 
             // lvlVgymeUserKey
@@ -5268,6 +5277,7 @@
             // 
             resources.ApplyResources(this.txtSomeImageAPIKey, "txtSomeImageAPIKey");
             this.txtSomeImageAPIKey.Name = "txtSomeImageAPIKey";
+            this.txtSomeImageAPIKey.UseSystemPasswordChar = true;
             this.txtSomeImageAPIKey.TextChanged += new System.EventHandler(this.txtSomeImageAPIKey_TextChanged);
             // 
             // lblSomeImageAPIKey
