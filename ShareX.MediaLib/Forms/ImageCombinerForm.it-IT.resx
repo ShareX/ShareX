@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -116,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Aggiungi...</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Muovi Su</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Muovi Giù</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Percorso Immagine</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Combina Immagini e Salva/Upload (Dipende dalle Impostazioni "Dopo la Cattura")</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Spazio Tra le Immagini</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>pixel</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Combina Immagini</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Orientamento della Combinazione:</value>
+  </data>
 </root>

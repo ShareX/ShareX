@@ -51,6 +51,8 @@ namespace ShareX
         German,
         [Description("Magyar (Hungarian)")]
         Hungarian,
+        [Description("Italiano (Italian)")]
+        Italian,
         [Description("한국어 (Korean)")]
         Korean,
         [Description("Português-Brasil (Portuguese-Brazil)")]

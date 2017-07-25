@@ -94,6 +94,7 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_vi_VN}: https://github.com/thanhpd
 {Resources.AboutForm_AboutForm_Language_ru}: https://github.com/L1Q
 {Resources.AboutForm_AboutForm_Language_zh_TW}: https://github.com/alantsai
+{Resources.AboutForm_AboutForm_Language_it_IT}: https://github.com/pjammo
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 
