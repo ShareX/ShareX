@@ -685,7 +685,7 @@ store.book[0].title</value>
     <value>Condividi Passworf:</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Cartelle Condivise</value>
+    <value>Cartella Condivisa</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Impostazioni Destinazione</value>
@@ -1064,10 +1064,10 @@ Usare una library criptata disabilita la condivisione.</value>
     <value>Dominio Personalizzato:</value>
   </data>
   <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento File Personalizzati</value>
+    <value>Servizi Caricamento Personalizzati</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Servizi Caricamento File Personalizzati...</value>
+    <value>Servizi Caricamento Personalizzati...</value>
   </data>
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
     <value>Giorni alla Scadenza:</value>
@@ -1153,5 +1153,236 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   </data>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Usa Path Style Request:</value>
+  </data>
+  <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAzureStoragePortal.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="gbFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
+  </data>
+  <data name="gbSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID API:</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>Dominio Personalizzato:</value>
+  </data>
+  <data name="lblCoinURLUUID.Text" xml:space="preserve">
+    <value>UUID:</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>URL API:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>URL API:</value>
+  </data>
+  <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
+  </data>
+  <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
+    <value>RegEx</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="tpDropbox.Text" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="tpFlickr.Text" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="tpFTP.Text" xml:space="preserve">
+    <value>FTP / FTPS / SFTP</value>
+  </data>
+  <data name="tpGe_tt.Text" xml:space="preserve">
+    <value>Ge.tt</value>
+  </data>
+  <data name="tpPicasa.Text" xml:space="preserve">
+    <value>Google Foto (Picasa)</value>
+  </data>
+  <data name="txtJiraHost.Text" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
+    <value>PROJECT-</value>
+  </data>
+  <data name="tpAdFly.Text" xml:space="preserve">
+    <value>adf.ly</value>
+  </data>
+  <data name="tpAmazonS3.Text" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="tpAzureStorage.Text" xml:space="preserve">
+    <value>Azure Storage</value>
+  </data>
+  <data name="tpBitly.Text" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="tpBox.Text" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="tpChevereto.Text" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="tpCoinURL.Text" xml:space="preserve">
+    <value>CoinURL</value>
+  </data>
+  <data name="tpGfycat.Text" xml:space="preserve">
+    <value>Gfycat</value>
+  </data>
+  <data name="tpGist.Text" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="tpGoogleDrive.Text" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="tpHastebin.Text" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="tpHostr.Text" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="tpImageShack.Text" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="tpImgur.Text" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="tpJira.Text" xml:space="preserve">
+    <value>Atlassian Jira</value>
+  </data>
+  <data name="tpLambda.Text" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="tpLithiio.Text" xml:space="preserve">
+    <value>Lithiio</value>
+  </data>
+  <data name="tpMediaFire.Text" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="tpMega.Text" xml:space="preserve">
+    <value>Mega</value>
+  </data>
+  <data name="tpMinus.Text" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="tpOneDrive.Text" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="tpOneTimeSecret.Text" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="tpOwnCloud.Text" xml:space="preserve">
+    <value>ownCloud</value>
+  </data>
+  <data name="tpPaste_ee.Text" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="tpPastebin.Text" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="tpPastie.Text" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="tpPhotobucket.Text" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="tpPlik.Text" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="tpPolr.Text" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="tpPomf.Text" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="tpPushbullet.Text" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="tpPuush.Text" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="tpSendSpace.Text" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="tpSomeImage.Text" xml:space="preserve">
+    <value>SomeImage</value>
+  </data>
+  <data name="tpStreamable.Text" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="tpTinyPic.Text" xml:space="preserve">
+    <value>TinyPic</value>
+  </data>
+  <data name="tpTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tpUpaste.Text" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="tpUplea.Text" xml:space="preserve">
+    <value>Uplea</value>
+  </data>
+  <data name="tpVgyme.Text" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="tpYourls.Text" xml:space="preserve">
+    <value>YOURLS</value>
+  </data>
+  <data name="tpSul.Text" xml:space="preserve">
+    <value>s-ul</value>
   </data>
 </root>

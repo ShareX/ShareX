@@ -548,4 +548,7 @@ Riavviare ShareX?</value>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Cinese (Tradizionale)</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
 </root>

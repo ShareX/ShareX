@@ -994,4 +994,19 @@ Vuoi scaricarla ora?</value>
   <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
     <value>Identificato possiblie proxy. Dalla fiestra principale aprire "Impostazioni Applicazione" -&gt; "Proxy" per inserire le impostazioni del server proxy.</value>
   </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Rileva Automaticamente</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Predefinita</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Disegna: Cursore</value>
+  </data>
 </root>
