@@ -184,7 +184,7 @@ namespace ShareX
 #if !DEBUG
             ucNews.NewsLoaded += (sender, e) =>
             {
-                if (ucNews.NewsManager.IsUnread && Visible) tsbNews.StartAnimation();
+                if (ucNews.NewsManager.IsUnread) tsbNews.Counter = ucNews.NewsManager.UnreadCount;
             };
             ucNews.Start();
 #endif
@@ -939,7 +939,6 @@ namespace ShareX
         {
             pNews.Visible = false;
             ucNews.MarkRead();
-            tsbNews.ResetAnimation();
         }
 
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -1039,16 +1038,10 @@ namespace ShareX
 #if !DEBUG
             if (Visible)
             {
-                if (ucNews.NewsManager != null && ucNews.NewsManager.IsUnread)
-                {
-                    tsbNews.StartAnimation();
-                }
-
                 tsbDonate.StartAnimation();
             }
             else
             {
-                tsbNews.StopAnimation();
                 tsbDonate.StopAnimation();
             }
 #endif
@@ -1580,7 +1573,7 @@ namespace ShareX
             if (!pNews.Visible)
             {
                 pNews.Visible = true;
-                tsbNews.ResetAnimation();
+                tsbNews.Counter = 0;
             }
             else
             {

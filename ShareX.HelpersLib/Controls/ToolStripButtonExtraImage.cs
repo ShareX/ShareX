@@ -38,10 +38,24 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ShowExtraImage { get; set; }
 
-        [DefaultValue(null)]
-        public Image ExtraImage { get; set; }
+        private Image extraImage;
 
-        private int extraImagePadding = 2;
+        [DefaultValue(null)]
+        public Image ExtraImage
+        {
+            get
+            {
+                return extraImage;
+            }
+            set
+            {
+                extraImage = value;
+                Invalidate();
+            }
+        }
+
+        [DefaultValue(2)]
+        public int ExtraImagePadding { get; set; } = 2;
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -49,8 +63,21 @@ namespace ShareX.HelpersLib
 
             if (ShowExtraImage && ExtraImage != null)
             {
-                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - extraImagePadding, extraImagePadding));
+                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - ExtraImagePadding, ExtraImagePadding));
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (ExtraImage != null)
+                {
+                    ExtraImage.Dispose();
+                }
+            }
+
+            base.Dispose(disposing);
         }
     }
 }
