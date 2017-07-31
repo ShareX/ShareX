@@ -67,8 +67,8 @@ namespace ShareX.HelpersLib
                 Bitmap bmp = new Bitmap(16, 16);
 
                 using (Graphics g = Graphics.FromImage(bmp))
-                using (Brush brush = new SolidBrush(Color.FromArgb(240, 0, 0)))
-                using (Font font = new Font("Arial", 9))
+                using (Brush brush = new SolidBrush(Color.FromArgb(230, 0, 0)))
+                using (Font font = new Font("Arial", 9, FontStyle.Bold))
                 using (StringFormat stringFormat = new StringFormat())
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;

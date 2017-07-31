@@ -1787,11 +1787,6 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL(Puush.PuushURL);
         }
 
-        private void llPuushCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(Puush.PuushRegisterURL);
-        }
-
         private void llPuushForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(Puush.PuushResetPasswordURL);
