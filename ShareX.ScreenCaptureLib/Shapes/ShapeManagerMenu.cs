@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
@@ -503,6 +503,15 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
+
+            tsmiArrowHeadsBothSide = new ToolStripMenuItem("Arrow heads in both side");
+            tsmiArrowHeadsBothSide.CheckOnClick = true;
+            tsmiArrowHeadsBothSide.Click += (sender, e) =>
+            {
+                AnnotationOptions.ArrowHeadsBothSide = tsmiArrowHeadsBothSide.Checked;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiArrowHeadsBothSide);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1058,6 +1067,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
 
+            tsmiArrowHeadsBothSide.Checked = AnnotationOptions.ArrowHeadsBothSide;
+
             switch (shapeType)
             {
                 default:
@@ -1131,6 +1142,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
+            tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
