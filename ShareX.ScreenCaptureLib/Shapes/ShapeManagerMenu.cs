@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
-        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
+        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
         private void CreateToolbar()
@@ -493,6 +493,16 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
+
+            tslnudCenterPoints = new ToolStripLabeledNumericUpDown("Center points:");
+            tslnudCenterPoints.Content.Minimum = 0;
+            tslnudCenterPoints.Content.Maximum = LineDrawingShape.MaximumCenterPointCount;
+            tslnudCenterPoints.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.LineCenterPointCount = (int)tslnudCenterPoints.Content.Value;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1046,6 +1056,8 @@ namespace ShareX.ScreenCaptureLib
 
             tsmiShadow.Checked = AnnotationOptions.Shadow;
 
+            tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
+
             switch (shapeType)
             {
                 default:
@@ -1118,6 +1130,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
+            tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;

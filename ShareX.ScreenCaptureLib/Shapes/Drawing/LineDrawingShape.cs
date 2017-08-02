@@ -32,15 +32,32 @@ namespace ShareX.ScreenCaptureLib
 {
     public class LineDrawingShape : BaseDrawingShape
     {
-        private const int MaximumCenterPointCount = 3;
+        public const int MaximumCenterPointCount = 5;
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
 
         public bool CenterNodeActive { get; set; }
         public Point[] CenterPoints { get; set; } = new Point[MaximumCenterPointCount];
-        public int CenterPointCount { get; set; } = 3;
+        public int CenterPointCount { get; set; }
 
         public override bool IsValidShape => StartPosition != EndPosition;
+
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            CenterPointCount = AnnotationOptions.LineCenterPointCount;
+
+            if (Manager.NodesVisible)
+            {
+                OnNodeVisible();
+            }
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.LineCenterPointCount = CenterPointCount;
+        }
 
         public override void OnUpdate()
         {
@@ -110,7 +127,10 @@ namespace ShareX.ScreenCaptureLib
             points.Add(StartPosition);
             if (CenterNodeActive)
             {
-                points.AddRange(CenterPoints);
+                for (int i = 0; i < CenterPointCount; i++)
+                {
+                    points.Add(CenterPoints[i]);
+                }
             }
             points.Add(EndPosition);
             return points;
@@ -151,9 +171,15 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeVisible()
         {
+            for (int i = 0; i < 8; i++)
+            {
+                ResizeNode node = Manager.ResizeNodes[i];
+                node.Shape = NodeShape.Circle;
+                node.Visible = false;
+            }
+
             for (int i = 0; i < 2 + CenterPointCount; i++)
             {
-                Manager.ResizeNodes[i].Shape = NodeShape.Circle;
                 Manager.ResizeNodes[i].Visible = true;
             }
         }
