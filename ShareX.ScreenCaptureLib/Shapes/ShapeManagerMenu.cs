@@ -504,7 +504,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
 
-            tsmiArrowHeadsBothSide = new ToolStripMenuItem("Arrow heads in both side");
+            tsmiArrowHeadsBothSide = new ToolStripMenuItem("Arrows on both ends");
             tsmiArrowHeadsBothSide.CheckOnClick = true;
             tsmiArrowHeadsBothSide.Click += (sender, e) =>
             {
