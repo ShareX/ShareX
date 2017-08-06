@@ -260,7 +260,7 @@ namespace ShareX.Setup
                 Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
-            string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
+            string[] languages = new string[] { "de", "es", "fr", "hu", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
