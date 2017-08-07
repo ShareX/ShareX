@@ -181,7 +181,7 @@
     <value>Estensione per Chrome</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostra il Pulsante "Upload con ShareX" nel Menu Contestiale di Windows Explorer</value>
+    <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Esegui ShareX all'Avvio di Windows</value>
@@ -247,7 +247,7 @@
     <value>Dimensione Buffer:</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Modifica:</value>
+    <value>Modifica</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Rimuovi</value>
@@ -271,13 +271,13 @@
     <value>Usare l'ordine di preferenza dei Servizi Caricamento Secondari quando si riprova</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento Immagini Secondari</value>
+    <value>Immagini: Servizi Secondari</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento File Secondari</value>
+    <value>File: Servizi Secondari</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento Testo Secondari</value>
+    <value>Testo: Servizi Secondari</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Numero di Tentativi se il Caricamento Fallisce:</value>

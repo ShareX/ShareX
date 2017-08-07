@@ -190,7 +190,7 @@
     <value>Carica/Salva (dipende dalle impostazione "Dopo la Cattura")</value>
   </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
-    <value>Metodo di Scorrimento in Cima Prima della Cattura:</value>
+    <value>Metodo Scorrimento in Cima Prima della Cattura:</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Inizia la Selezione della Regione di Cattura prima di Aprire questa Finestra</value>
