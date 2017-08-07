@@ -32,6 +32,20 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
 
+        public bool ArrowHeadsBothSide { get; set; }
+
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            ArrowHeadsBothSide = AnnotationOptions.ArrowHeadsBothSide;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.ArrowHeadsBothSide = ArrowHeadsBothSide;
+        }
+
         protected override Pen CreatePen(Color borderColor, int borderSize)
         {
             using (GraphicsPath gp = new GraphicsPath())
@@ -46,11 +60,16 @@ namespace ShareX.ScreenCaptureLib
                     BaseInset = arrowHeight - arrowCurve
                 };
 
-                return new Pen(borderColor, borderSize)
+                Pen pen = new Pen(borderColor, borderSize);
+                pen.CustomEndCap = lineCap;
+
+                if (ArrowHeadsBothSide)
                 {
-                    CustomEndCap = lineCap,
-                    LineJoin = LineJoin.Round
-                };
+                    pen.CustomStartCap = lineCap;
+                }
+
+                pen.LineJoin = LineJoin.Round;
+                return pen;
             }
         }
     }

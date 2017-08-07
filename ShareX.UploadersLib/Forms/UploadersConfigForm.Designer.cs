@@ -252,7 +252,6 @@
             this.pbPuush = new System.Windows.Forms.PictureBox();
             this.lblPuushAPIKey = new System.Windows.Forms.Label();
             this.txtPuushAPIKey = new System.Windows.Forms.TextBox();
-            this.llPuushCreateAccount = new System.Windows.Forms.LinkLabel();
             this.llPuushForgottenPassword = new System.Windows.Forms.LinkLabel();
             this.btnPuushLogin = new System.Windows.Forms.Button();
             this.txtPuushPassword = new System.Windows.Forms.TextBox();
@@ -2406,7 +2405,6 @@
             this.tpPuush.Controls.Add(this.pbPuush);
             this.tpPuush.Controls.Add(this.lblPuushAPIKey);
             this.tpPuush.Controls.Add(this.txtPuushAPIKey);
-            this.tpPuush.Controls.Add(this.llPuushCreateAccount);
             this.tpPuush.Controls.Add(this.llPuushForgottenPassword);
             this.tpPuush.Controls.Add(this.btnPuushLogin);
             this.tpPuush.Controls.Add(this.txtPuushPassword);
@@ -2437,13 +2435,6 @@
             this.txtPuushAPIKey.Name = "txtPuushAPIKey";
             this.txtPuushAPIKey.UseSystemPasswordChar = true;
             this.txtPuushAPIKey.TextChanged += new System.EventHandler(this.txtPuushAPIKey_TextChanged);
-            // 
-            // llPuushCreateAccount
-            // 
-            resources.ApplyResources(this.llPuushCreateAccount, "llPuushCreateAccount");
-            this.llPuushCreateAccount.Name = "llPuushCreateAccount";
-            this.llPuushCreateAccount.TabStop = true;
-            this.llPuushCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llPuushCreateAccount_LinkClicked);
             // 
             // llPuushForgottenPassword
             // 
@@ -6005,7 +5996,6 @@
         private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
         private System.Windows.Forms.Label lblPuushAPIKey;
         private System.Windows.Forms.TextBox txtPuushAPIKey;
-        private System.Windows.Forms.LinkLabel llPuushCreateAccount;
         private System.Windows.Forms.LinkLabel llPuushForgottenPassword;
         private System.Windows.Forms.Button btnPuushLogin;
         private System.Windows.Forms.TextBox txtPuushPassword;

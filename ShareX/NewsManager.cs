@@ -38,7 +38,8 @@ namespace ShareX
     {
         public List<NewsItem> NewsItems { get; private set; } = new List<NewsItem>();
         public DateTime LastReadDate { get; set; }
-        public bool IsUnread => NewsItems != null && NewsItems.Any(x => x.IsUnread);
+        public bool IsUnread => UnreadCount > 0;
+        public int UnreadCount => NewsItems != null ? NewsItems.Count(x => x.IsUnread) : 0;
 
         public void UpdateNews()
         {

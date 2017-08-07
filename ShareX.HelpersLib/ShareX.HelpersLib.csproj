@@ -107,6 +107,9 @@
     <Compile Include="Controls\ToolStripBorderRight.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ToolStripButtonCounter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripButtonExtraImage.cs">
       <SubType>Component</SubType>
     </Compile>

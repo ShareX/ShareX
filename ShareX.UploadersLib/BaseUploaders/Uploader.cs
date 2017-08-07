@@ -555,7 +555,7 @@ namespace ShareX.UploadersLib
                 {
                     sb.AppendLine();
                     sb.AppendLine("Request URL:");
-                    sb.AppendLine(url);
+                    sb.AppendLine(URLHelpers.RemoveQuery(url));
                 }
 
                 if (e is WebException)

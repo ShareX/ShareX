@@ -411,5 +411,20 @@ namespace ShareX.HelpersLib
 
             return "";
         }
+
+        public static string RemoveQuery(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                int index = url.IndexOf("?");
+
+                if (index > -1)
+                {
+                    return url.Remove(index);
+                }
+            }
+
+            return url;
+        }
     }
 }

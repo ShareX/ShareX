@@ -44,6 +44,12 @@ namespace ShareX.ScreenCaptureLib
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
 
+        // Line, arrow drawing
+        public int LineCenterPointCount { get; set; } = 1;
+
+        // Arrow drawing
+        public bool ArrowHeadsBothSide { get; set; } = false;
+
         // Text (Outline) drawing
         public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
         {
