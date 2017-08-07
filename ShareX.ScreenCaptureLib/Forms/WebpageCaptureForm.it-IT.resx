@@ -121,7 +121,7 @@
     <value>Cattura</value>
   </data>
   <data name="lblWebpageSize.Text" xml:space="preserve">
-    <value>Dimensione Browser:</value>
+    <value>Dim. Browser:</value>
   </data>
   <data name="lblCaptureDelay.Text" xml:space="preserve">
     <value>Ritardo:</value>

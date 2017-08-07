@@ -337,7 +337,7 @@
     <value>Mostra Scorciatoie e Suggerimenti in Alto a Destra</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>Premendo il Tasto "Alt" la Dimesione delle Regioni sarà Adattata a:</value>
+    <value>Premendo "Alt" la Dimesione delle Regioni sarà Adattata a:</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>Usa Informazioni Personalizzate Vicino al Cursore</value>

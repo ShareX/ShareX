@@ -130,7 +130,7 @@
     <value>Mentre ShareX è aperto, mostra "In-App" su Steam</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
-    <value>Mostra il Pulsante "Upload con ShareX" nel Menu Contestiale di Windows Explorer</value>
+    <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
   </data>
   <data name="cbRunStartup.Text" xml:space="preserve">
     <value>Esegui ShareX all'Avvio di Windows</value>

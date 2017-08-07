@@ -381,7 +381,7 @@ Dimensione File: {2:n0} / {3:n0} KB</value>
     <value>Cattura Regione (Semplice)</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Cattura Regionr</value>
+    <value>Cattura Regione</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Righello</value>

@@ -196,7 +196,7 @@
     <value>ShareX - Opzioni Registrazione Schermo</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Installa Dispositivi di Registrazione</value>
+    <value>Installa Disp. Registr.</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Installa le sorgenti video/audio "screen-capture-recorder" e "virtual-audio-capturer".</value>

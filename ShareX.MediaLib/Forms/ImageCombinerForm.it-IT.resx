@@ -133,7 +133,7 @@
     <value>Percorso Immagine</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
-    <value>Combina Immagini e Salva/Upload (Dipende dalle Impostazioni "Dopo la Cattura")</value>
+    <value>Combina Immagini e Salva/Carica (Dipende dalle Impostazioni "Dopo la Cattura")</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
     <value>Spazio Tra le Immagini</value>
