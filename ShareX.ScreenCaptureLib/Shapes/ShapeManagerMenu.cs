@@ -50,7 +50,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
-        private ToolStripLabel tslDragLeft;
+        private ToolStripLabel tslDragLeft, tslCursorType;
+        private ToolStripComboBox tscbCursorTypes;
 
         private void CreateToolbar()
         {
@@ -472,6 +473,20 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
+
+            tslCursorType = new ToolStripLabel("Cursor type:");
+            tsddbShapeOptions.DropDownItems.Add(tslCursorType);
+
+            tscbCursorTypes = new ToolStripComboBox();
+            tscbCursorTypes.DropDownStyle = ComboBoxStyle.DropDownList;
+            CursorConverter cursorConverter = new CursorConverter();
+            foreach (Cursor cursor in Helpers.CursorList)
+            {
+                string name = cursorConverter.ConvertToString(cursor);
+                tscbCursorTypes.Items.Add(name);
+            }
+            tscbCursorTypes.SelectedIndex = 3; // Cursors.Default
+            tsddbShapeOptions.DropDownItems.Add(tscbCursorTypes);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
             tslnudBlurRadius.Content.Minimum = 3;
@@ -1084,6 +1099,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
+                case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
                     tsddbShapeOptions.Visible = true;
@@ -1143,6 +1159,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
+            tslCursorType.Visible = tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
@@ -1151,6 +1168,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 tsmiRegionCapture.Visible = !Config.QuickCrop && ValidRegions.Length > 0;
             }
+        }
+
+        internal Cursor GetSelectedCursor()
+        {
+            if (tscbCursorTypes.SelectedIndex > -1)
+            {
+                return Helpers.CursorList[tscbCursorTypes.SelectedIndex];
+            }
+
+            return Cursors.Default;
         }
     }
 }
