@@ -94,7 +94,7 @@ namespace ShareX
 
                     form.Prepare(img);
 
-                    if (cursorData != null && cursorData.IsVisible)
+                    if (cursorData != null && cursorData.IsValid)
                     {
                         form.AddCursor(cursorData.Handle, cursorData.Position);
                     }
