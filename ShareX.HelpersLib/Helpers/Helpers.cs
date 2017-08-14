@@ -69,14 +69,6 @@ namespace ShareX.HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
-        public static Cursor[] CursorList = new Cursor[] {
-            Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
-            Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
-            Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
-            Cursors.PanSW, Cursors.PanWest, Cursors.SizeAll, Cursors.SizeNESW, Cursors.SizeNS, Cursors.SizeNWSE,
-            Cursors.SizeWE, Cursors.UpArrow, Cursors.VSplit, Cursors.WaitCursor
-        };
-
         /// <summary>Get file name extension without dot.</summary>
         public static string GetFilenameExtension(string filePath)
         {
