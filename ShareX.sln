@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -38,6 +38,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.NativeMessagingHost", "ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj", "{254E398D-F7F5-4B2A-9024-5C121EA6C564}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.DesktopBridgeHelper", "ShareX.DesktopBridgeHelper\ShareX.DesktopBridgeHelper.csproj", "{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelperLib.UnitTest", "ShareX.UnitTest\ShareX.HelperLib.UnitTest.csproj", "{20E54D1B-EE42-4ADE-9714-E7B18836510F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -178,6 +180,16 @@ Global
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Steam|Any CPU.ActiveCfg = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.Steam|Any CPU.Build.0 = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E54D1B-EE42-4ADE-9714-E7B18836510F}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
