@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.NativeMessagingHost"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.DesktopBridgeHelper", "ShareX.DesktopBridgeHelper\ShareX.DesktopBridgeHelper.csproj", "{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelperLib.UnitTest", "ShareX.UnitTest\ShareX.HelperLib.UnitTest.csproj", "{20E54D1B-EE42-4ADE-9714-E7B18836510F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelpersLib.UnitTest", "ShareX.HelpersLib.UnitTest\ShareX.HelpersLib.UnitTest.csproj", "{20E54D1B-EE42-4ADE-9714-E7B18836510F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
