@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -91,7 +91,9 @@ namespace ShareX.UploadersLib
                 throw new Exception("'Request URL' must be not empty.");
             }
 
-            return URLHelpers.FixPrefix(RequestURL);
+            string url = ParseURL(RequestURL, false);
+
+            return URLHelpers.FixPrefix(url);
         }
 
         public string GetFileFormName()
@@ -153,7 +155,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(URL))
                 {
-                    url = ParseURL(URL);
+                    url = ParseURL(URL, true);
                 }
                 else
                 {
@@ -169,8 +171,8 @@ namespace ShareX.UploadersLib
                     result.URL = url;
                 }
 
-                result.ThumbnailURL = ParseURL(ThumbnailURL);
-                result.DeletionURL = ParseURL(DeletionURL);
+                result.ThumbnailURL = ParseURL(ThumbnailURL, true);
+                result.DeletionURL = ParseURL(DeletionURL, true);
             }
         }
 
@@ -187,7 +189,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string ParseURL(string url)
+        private string ParseURL(string url, bool output)
         {
             if (string.IsNullOrEmpty(url))
             {
@@ -242,23 +244,28 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(parseText))
                         {
-                            string resultText;
+                            string resultText = null;
 
-                            switch (parseType)
+                            if (output)
                             {
-                                default:
-                                case CustomUploaderResponseParseType.Regex:
-                                    resultText = ParseRegexSyntax(parseText);
-                                    break;
-                                case CustomUploaderResponseParseType.Json:
-                                    resultText = ParseJsonSyntax(parseText);
-                                    break;
-                                case CustomUploaderResponseParseType.Xml:
-                                    resultText = ParseXmlSyntax(parseText);
-                                    break;
-                                case CustomUploaderResponseParseType.Random:
-                                    resultText = ParseRandomSyntax(parseText);
-                                    break;
+                                switch (parseType)
+                                {
+                                    default:
+                                    case CustomUploaderResponseParseType.Regex:
+                                        resultText = ParseRegexSyntax(parseText);
+                                        break;
+                                    case CustomUploaderResponseParseType.Json:
+                                        resultText = ParseJsonSyntax(parseText);
+                                        break;
+                                    case CustomUploaderResponseParseType.Xml:
+                                        resultText = ParseXmlSyntax(parseText);
+                                        break;
+                                }
+                            }
+
+                            if (parseType == CustomUploaderResponseParseType.Random)
+                            {
+                                resultText = ParseRandomSyntax(parseText);
                             }
 
                             if (!string.IsNullOrEmpty(resultText))
