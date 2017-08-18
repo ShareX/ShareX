@@ -187,6 +187,9 @@ Dossiers créés :</value>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
     <value>Identification réussie.</value>
   </data>
+  <data name="UploadersConfigForm_Logout_successful" xml:space="preserve">
+    <value>Logout  successful.</value>
+  </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Nouveau compte</value>
   </data>

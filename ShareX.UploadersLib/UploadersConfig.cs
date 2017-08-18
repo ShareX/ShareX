@@ -132,6 +132,10 @@ namespace ShareX.UploadersLib
         #endregion Text uploaders
 
         #region File uploaders
+        // ChuangYiBao
+        public string ChuangYiBaoDomain = "https://www.yuanchuangyun.com";
+        public string ChuangYiBaoEndPoint = "http://oss-cn-beijing.aliyuncs.com";
+        public ChuangYiBaoOptions ChuangYiBaoSettings = new ChuangYiBaoOptions();
 
         // Dropbox
 

@@ -161,6 +161,18 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon ChuangYiBao
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("ChuangYiBao", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon Dropbox {
             get {
                 object obj = ResourceManager.GetObject("Dropbox", resourceCulture);
@@ -792,6 +804,17 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_Login_successful {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_Login_successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout successful..
+        /// </summary>
+        internal static string UploadersConfigForm_Logout_successful
+        {
+            get
+            {
+                return ResourceManager.GetString("UploadersConfigForm_Logout_successful", resourceCulture);
             }
         }
         

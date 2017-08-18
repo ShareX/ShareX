@@ -14377,6 +14377,384 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpImageShack.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="llChuangYiBaoForgottenPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 34</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 12</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.Text" xml:space="preserve">
+    <value>Forgotten password?</value>
+  </data>
+  <data name="llChuangYiBaoForgottenPassword.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoForgottenPassword.Name" xml:space="preserve">
+    <value>llChuangYiBaoForgottenPassword</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoForgottenPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoForgottenPassword.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoForgottenPassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 34</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 12</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.Text" xml:space="preserve">
+    <value>Create an account...</value>
+  </data>
+  <data name="llChuangYiBaoCreateAccount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoCreateAccount.Name" xml:space="preserve">
+    <value>llChuangYiBaoCreateAccount</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoCreateAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoCreateAccount.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;llChuangYiBaoCreateAccount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnChuangYiBaoLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChuangYiBaoLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 82</value>
+  </data>
+  <data name="btnChuangYiBaoLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="btnChuangYiBaoLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnChuangYiBaoLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogin.Name" xml:space="preserve">
+    <value>btnChuangYiBaoLogin</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogin.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnChuangYiBaoLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChuangYiBaoLogout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 82</value>
+  </data>
+  <data name="btnChuangYiBaoLogout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="btnChuangYiBaoLogout.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnChuangYiBaoLogout.Text" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogout.Name" xml:space="preserve">
+    <value>btnChuangYiBaoLogout</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogout.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoLogout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>  
+  <data name="btnChuangYiBaoOpenPublicProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChuangYiBaoOpenPublicProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 152</value>
+  </data>
+  <data name="btnChuangYiBaoOpenPublicProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 24</value>
+  </data>
+  <data name="btnChuangYiBaoOpenPublicProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnChuangYiBaoOpenPublicProfile.Text" xml:space="preserve">
+    <value>Open public profile page...</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenPublicProfile.Name" xml:space="preserve">
+    <value>btnChuangYiBaoOpenPublicProfile</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenPublicProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenPublicProfile.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenPublicProfile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 120</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="rbChuangYiBaoIsEvidence.Text" xml:space="preserve">
+    <value>To evidence</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsEvidence.Name" xml:space="preserve">
+    <value>rbChuangYiBaoIsEvidence</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsEvidence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsEvidence.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsEvidence.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbChuangYiBaoIsCreation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbChuangYiBaoIsCreation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 120</value>
+  </data>
+  <data name="rbChuangYiBaoIsCreation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="rbChuangYiBaoIsCreation.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="rbChuangYiBaoIsCreation.Text" xml:space="preserve">
+    <value>To creation</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsCreation.Name" xml:space="preserve">
+    <value>rbChuangYiBaoIsCreation</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsCreation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsCreation.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;rbChuangYiBaoIsCreation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbChuangYiBaoCreationOrEvidence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 110</value>
+  </data>
+  <data name="gbChuangYiBaoCreationOrEvidence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 32</value>
+  </data>
+  <data name="gbChuangYiBaoCreationOrEvidence.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;gbChuangYiBaoCreationOrEvidence.Name" xml:space="preserve">
+    <value>gbChuangYiBaoCreationOrEvidence</value>
+  </data>
+  <data name="&gt;&gt;gbChuangYiBaoCreationOrEvidence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbChuangYiBaoCreationOrEvidence.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;gbChuangYiBaoCreationOrEvidence.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnChuangYiBaoOpenMyImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChuangYiBaoOpenMyImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 152</value>
+  </data>
+  <data name="btnChuangYiBaoOpenMyImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 24</value>
+  </data>
+  <data name="btnChuangYiBaoOpenMyImages.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnChuangYiBaoOpenMyImages.Text" xml:space="preserve">
+    <value>Open my creations page...</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenMyImages.Name" xml:space="preserve">
+    <value>btnChuangYiBaoOpenMyImages</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenMyImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenMyImages.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;btnChuangYiBaoOpenMyImages.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblChuangYiBaoUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoUsername.Name" xml:space="preserve">
+    <value>lblChuangYiBaoUsername</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoUsername.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoUsername.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtChuangYiBaoUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtChuangYiBaoUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 20</value>
+  </data>
+  <data name="txtChuangYiBaoUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoUsername.Name" xml:space="preserve">
+    <value>txtChuangYiBaoUsername</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoUsername.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoUsername.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtChuangYiBaoPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 82</value>
+  </data>
+  <data name="txtChuangYiBaoPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 20</value>
+  </data>
+  <data name="txtChuangYiBaoPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoPassword.Name" xml:space="preserve">
+    <value>txtChuangYiBaoPassword</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoPassword.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;txtChuangYiBaoPassword.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 66</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblChuangYiBaoPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoPassword.Name" xml:space="preserve">
+    <value>lblChuangYiBaoPassword</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoPassword.Parent" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;lblChuangYiBaoPassword.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tpChuangYiBao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpChuangYiBao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpChuangYiBao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpChuangYiBao.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpChuangYiBao.Text" xml:space="preserve">
+    <value>ChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;tpChuangYiBao.Name" xml:space="preserve">
+    <value>tpChuangYiBao</value>
+  </data>
+  <data name="&gt;&gt;tpChuangYiBao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpChuangYiBao.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpChuangYiBao.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>  
   <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>

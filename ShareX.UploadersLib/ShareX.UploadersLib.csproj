@@ -97,6 +97,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aliyun.OSS, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0ad4175f0dac0b9b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aliyun.OSS.SDK.2.3.0\lib\Aliyun.OSS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MegaApiClient, Version=1.3.1.269, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
       <HintPath>..\packages\MegaApiClient.1.3.1\lib\net40\MegaApiClient.dll</HintPath>
       <Private>True</Private>
@@ -238,6 +242,9 @@
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
+    <Compile Include="FileUploaders\ChuangYiBaoUploader.cs" />
+    <Compile Include="OtherServices\ChuangYiBaoAESCryptoService.cs" />
+    <Compile Include="OtherServices\ChuangYiBaoTripleDESCryptoService.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

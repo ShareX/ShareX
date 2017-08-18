@@ -586,6 +586,20 @@
             this.txtImageShackUsername = new System.Windows.Forms.TextBox();
             this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackPassword = new System.Windows.Forms.Label();
+            this.tpChuangYiBao = new System.Windows.Forms.TabPage();
+            this.llChuangYiBaoForgottenPassword = new System.Windows.Forms.LinkLabel();
+            this.llChuangYiBaoCreateAccount = new System.Windows.Forms.LinkLabel();
+            this.btnChuangYiBaoLogin = new System.Windows.Forms.Button();
+            this.btnChuangYiBaoLogout = new System.Windows.Forms.Button();
+            this.btnChuangYiBaoOpenPublicProfile = new System.Windows.Forms.Button();
+            this.rbChuangYiBaoIsCreation = new System.Windows.Forms.RadioButton();
+            this.rbChuangYiBaoIsEvidence = new System.Windows.Forms.RadioButton();
+            this.gbChuangYiBaoCreationOrEvidence = new System.Windows.Forms.GroupBox();
+            this.btnChuangYiBaoOpenMyImages = new System.Windows.Forms.Button();
+            this.lblChuangYiBaoUsername = new System.Windows.Forms.Label();
+            this.txtChuangYiBaoUsername = new System.Windows.Forms.TextBox();
+            this.txtChuangYiBaoPassword = new System.Windows.Forms.TextBox();
+            this.lblChuangYiBaoPassword = new System.Windows.Forms.Label();
             this.tpTinyPic = new System.Windows.Forms.TabPage();
             this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.btnTinyPicLogin = new System.Windows.Forms.Button();
@@ -736,6 +750,7 @@
             this.tcImageUploaders.SuspendLayout();
             this.tpImgur.SuspendLayout();
             this.tpImageShack.SuspendLayout();
+            this.tpChuangYiBao.SuspendLayout();
             this.tpTinyPic.SuspendLayout();
             this.tpFlickr.SuspendLayout();
             this.tpPhotobucket.SuspendLayout();
@@ -1772,6 +1787,7 @@
             // 
             // tcFileUploaders
             // 
+            this.tcFileUploaders.Controls.Add(this.tpChuangYiBao);
             this.tcFileUploaders.Controls.Add(this.tpFTP);
             this.tcFileUploaders.Controls.Add(this.tpDropbox);
             this.tcFileUploaders.Controls.Add(this.tpOneDrive);
@@ -4838,6 +4854,114 @@
             resources.ApplyResources(this.lblImageShackPassword, "lblImageShackPassword");
             this.lblImageShackPassword.Name = "lblImageShackPassword";
             // 
+            // tpChuangYiBao
+            // 
+            this.tpChuangYiBao.Controls.Add(this.llChuangYiBaoForgottenPassword);
+            this.tpChuangYiBao.Controls.Add(this.llChuangYiBaoCreateAccount);
+            this.tpChuangYiBao.Controls.Add(this.btnChuangYiBaoLogin);
+            this.tpChuangYiBao.Controls.Add(this.btnChuangYiBaoLogout);
+            this.tpChuangYiBao.Controls.Add(this.btnChuangYiBaoOpenPublicProfile);
+            resources.ApplyResources(this.rbChuangYiBaoIsCreation, "rbChuangYiBaoIsCreation");
+            this.tpChuangYiBao.Controls.Add(this.rbChuangYiBaoIsCreation);
+            resources.ApplyResources(this.rbChuangYiBaoIsEvidence, "rbChuangYiBaoIsEvidence");
+            this.tpChuangYiBao.Controls.Add(this.rbChuangYiBaoIsEvidence);
+            this.tpChuangYiBao.Controls.Add(this.btnChuangYiBaoOpenMyImages);
+            this.tpChuangYiBao.Controls.Add(this.lblChuangYiBaoUsername);
+            this.tpChuangYiBao.Controls.Add(this.txtChuangYiBaoUsername);
+            this.tpChuangYiBao.Controls.Add(this.txtChuangYiBaoPassword);
+            this.tpChuangYiBao.Controls.Add(this.lblChuangYiBaoPassword);
+            this.tpChuangYiBao.Controls.Add(this.gbChuangYiBaoCreationOrEvidence);
+            resources.ApplyResources(this.tpChuangYiBao, "tpChuangYiBao");
+            this.tpChuangYiBao.Name = "tpChuangYiBao";
+            this.tpChuangYiBao.UseVisualStyleBackColor = true;
+            // 
+            // llChuangYiBaoForgottenPassword
+            // 
+            resources.ApplyResources(this.llChuangYiBaoForgottenPassword, "llChuangYiBaoForgottenPassword");
+            this.llChuangYiBaoForgottenPassword.Name = "llChuangYiBaoForgottenPassword";
+            this.llChuangYiBaoForgottenPassword.TabStop = true;
+            this.llChuangYiBaoForgottenPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llChuangYiBaoForgottenPassword_LinkClicked);
+            // 
+            // llChuangYiBaoCreateAccount
+            // 
+            resources.ApplyResources(this.llChuangYiBaoCreateAccount, "llChuangYiBaoCreateAccount");
+            this.llChuangYiBaoCreateAccount.Name = "llChuangYiBaoCreateAccount";
+            this.llChuangYiBaoCreateAccount.TabStop = true;
+            this.llChuangYiBaoCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llChuangYiBaoCreateAccount_LinkClicked);
+            // 
+            // btnChuangYiBaoLogin
+            // 
+            resources.ApplyResources(this.btnChuangYiBaoLogin, "btnChuangYiBaoLogin");
+            this.btnChuangYiBaoLogin.Name = "btnChuangYiBaoLogin";
+            this.btnChuangYiBaoLogin.UseVisualStyleBackColor = true;
+            this.btnChuangYiBaoLogin.Click += new System.EventHandler(this.btnChuangYiBaoLogin_Click);
+            // 
+            // btnChuangYiBaoLogout
+            // 
+            resources.ApplyResources(this.btnChuangYiBaoLogout, "btnChuangYiBaoLogout");
+            this.btnChuangYiBaoLogout.Name = "btnChuangYiBaoLogout";
+            this.btnChuangYiBaoLogout.UseVisualStyleBackColor = true;
+            this.btnChuangYiBaoLogout.Click += new System.EventHandler(this.btnChuangYiBaoLogout_Click);
+            // 
+            // btnChuangYiBaoOpenPublicProfile
+            // 
+            resources.ApplyResources(this.btnChuangYiBaoOpenPublicProfile, "btnChuangYiBaoOpenPublicProfile");
+            this.btnChuangYiBaoOpenPublicProfile.Name = "btnChuangYiBaoOpenPublicProfile";
+            this.btnChuangYiBaoOpenPublicProfile.UseVisualStyleBackColor = true;
+            this.btnChuangYiBaoOpenPublicProfile.Click += new System.EventHandler(this.btnChuangYiBaoOpenPublicProfile_Click);
+            // 
+            // rbChuangYiBaoIsCreation
+            // 
+            resources.ApplyResources(this.rbChuangYiBaoIsCreation, "rbChuangYiBaoIsCreation");
+            this.rbChuangYiBaoIsCreation.Name = "rbChuangYiBaoIsCreation";
+            this.rbChuangYiBaoIsCreation.TabStop = true;
+            this.rbChuangYiBaoIsCreation.UseVisualStyleBackColor = true;
+            this.rbChuangYiBaoIsCreation.CheckedChanged += new System.EventHandler(this.rbChuangYiBaoIsCreation_CheckedChanged);
+            // 
+            // rbChuangYiBaoIsEvidence
+            // 
+            resources.ApplyResources(this.rbChuangYiBaoIsEvidence, "rbChuangYiBaoIsEvidence");
+            this.rbChuangYiBaoIsEvidence.Name = "rbChuangYiBaoIsEvidence";
+            this.rbChuangYiBaoIsEvidence.TabStop = true;
+            this.rbChuangYiBaoIsEvidence.UseVisualStyleBackColor = true;
+            this.rbChuangYiBaoIsEvidence.CheckedChanged += new System.EventHandler(this.rbChuangYiBaoIsEvidence_CheckedChanged);
+            // 
+            // gbChuangYiBaoCreationOrEvidence
+            // 
+            resources.ApplyResources(this.gbChuangYiBaoCreationOrEvidence, "gbChuangYiBaoCreationOrEvidence");
+            this.gbChuangYiBaoCreationOrEvidence.Name = "gbChuangYiBaoCreationOrEvidence";
+            this.gbChuangYiBaoCreationOrEvidence.TabStop = false;
+            // 
+            // btnChuangYiBaoOpenMyImages
+            // 
+            resources.ApplyResources(this.btnChuangYiBaoOpenMyImages, "btnChuangYiBaoOpenMyImages");
+            this.btnChuangYiBaoOpenMyImages.Name = "btnChuangYiBaoOpenMyImages";
+            this.btnChuangYiBaoOpenMyImages.UseVisualStyleBackColor = true;
+            this.btnChuangYiBaoOpenMyImages.Click += new System.EventHandler(this.btnChuangYiBaoOpenMyImages_Click);
+            // 
+            // lblChuangYiBaoUsername
+            // 
+            resources.ApplyResources(this.lblChuangYiBaoUsername, "lblChuangYiBaoUsername");
+            this.lblChuangYiBaoUsername.Name = "lblChuangYiBaoUsername";
+            // 
+            // txtChuangYiBaoUsername
+            // 
+            resources.ApplyResources(this.txtChuangYiBaoUsername, "txtChuangYiBaoUsername");
+            this.txtChuangYiBaoUsername.Name = "txtChuangYiBaoUsername";
+            this.txtChuangYiBaoUsername.TextChanged += new System.EventHandler(this.txtChuangYiBaoUsername_TextChanged);
+            // 
+            // txtChuangYiBaoPassword
+            // 
+            resources.ApplyResources(this.txtChuangYiBaoPassword, "txtChuangYiBaoPassword");
+            this.txtChuangYiBaoPassword.Name = "txtChuangYiBaoPassword";
+            this.txtChuangYiBaoPassword.UseSystemPasswordChar = true;
+            this.txtChuangYiBaoPassword.TextChanged += new System.EventHandler(this.txtChuangYiBaoPassword_TextChanged);
+            // 
+            // lblChuangYiBaoPassword
+            // 
+            resources.ApplyResources(this.lblChuangYiBaoPassword, "lblChuangYiBaoPassword");
+            this.lblChuangYiBaoPassword.Name = "lblChuangYiBaoPassword";
+            // 
             // tpTinyPic
             // 
             this.tpTinyPic.Controls.Add(this.atcTinyPicAccountType);
@@ -5473,6 +5597,8 @@
             this.tpImgur.PerformLayout();
             this.tpImageShack.ResumeLayout(false);
             this.tpImageShack.PerformLayout();
+            this.tpChuangYiBao.ResumeLayout(false);
+            this.tpChuangYiBao.PerformLayout();
             this.tpTinyPic.ResumeLayout(false);
             this.tpTinyPic.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
@@ -5716,6 +5842,19 @@
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
         private System.Windows.Forms.Label lblImageShackPassword;
+        private System.Windows.Forms.LinkLabel llChuangYiBaoForgottenPassword;
+        private System.Windows.Forms.LinkLabel llChuangYiBaoCreateAccount;
+        private System.Windows.Forms.Button btnChuangYiBaoLogin;
+        private System.Windows.Forms.Button btnChuangYiBaoLogout;
+        internal System.Windows.Forms.Button btnChuangYiBaoOpenPublicProfile;
+        private System.Windows.Forms.RadioButton rbChuangYiBaoIsCreation;
+        private System.Windows.Forms.RadioButton rbChuangYiBaoIsEvidence;
+        private System.Windows.Forms.GroupBox gbChuangYiBaoCreationOrEvidence;
+        internal System.Windows.Forms.Button btnChuangYiBaoOpenMyImages;
+        internal System.Windows.Forms.Label lblChuangYiBaoUsername;
+        private System.Windows.Forms.TextBox txtChuangYiBaoUsername;
+        private System.Windows.Forms.TextBox txtChuangYiBaoPassword;
+        internal System.Windows.Forms.Label lblChuangYiBaoPassword;
         private AccountTypeControl atcTinyPicAccountType;
         private System.Windows.Forms.Button btnTinyPicLogin;
         private System.Windows.Forms.TextBox txtTinyPicPassword;
@@ -5960,6 +6099,7 @@
         internal System.Windows.Forms.TabPage tpUpaste;
         internal System.Windows.Forms.TabPage tpHastebin;
         internal System.Windows.Forms.TabPage tpOneTimeSecret;
+        public System.Windows.Forms.TabPage tpChuangYiBao;
         internal System.Windows.Forms.TabPage tpDropbox;
         internal System.Windows.Forms.TabPage tpOneDrive;
         internal System.Windows.Forms.TabPage tpGoogleDrive;
