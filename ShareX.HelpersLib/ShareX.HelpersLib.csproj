@@ -205,6 +205,7 @@
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
     <Compile Include="NameParser\CodeMenuEntryPixelInfo.cs" />
+    <Compile Include="NameParser\CodeMenuItem.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>
