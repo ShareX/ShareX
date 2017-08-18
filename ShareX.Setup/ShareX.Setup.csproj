@@ -72,6 +72,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest" />
     <None Include="InnoSetup\Recorder-devices-setup.iss" />
     <None Include="InnoSetup\ShareX-setup.iss" />
   </ItemGroup>
