@@ -1,4 +1,4 @@
-﻿namespace ShareX
+namespace ShareX
 {
     partial class MainForm
     {
@@ -100,6 +100,7 @@
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
+            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonCounter();
             this.tsddbDebug = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiShowDebugLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestImageUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +109,8 @@
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
-            this.tsbAbout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbAboutUs = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStopUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -243,7 +245,6 @@
             this.ucNews = new ShareX.NewsListControl();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonCounter();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -381,6 +382,7 @@
             resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.CanOverflow = false;
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsddbCapture,
             this.tsddbUpload,
@@ -400,7 +402,8 @@
             this.tsbNews,
             this.tsddbDebug,
             this.tsbDonate,
-            this.tsbAbout});
+            this.toolStripButton1,
+            this.tsbAboutUs});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.tsMain.Name = "tsMain";
             this.tsMain.ShowItemToolTips = false;
@@ -819,6 +822,14 @@
             this.tsbImageHistory.Name = "tsbImageHistory";
             this.tsbImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
+            // tsbNews
+            // 
+            this.tsbNews.Counter = 0;
+            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
+            resources.ApplyResources(this.tsbNews, "tsbNews");
+            this.tsbNews.Name = "tsbNews";
+            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
+            // 
             // tsddbDebug
             // 
             this.tsddbDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -882,15 +893,21 @@
             this.tsbDonate.Name = "tsbDonate";
             this.tsbDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
-            // tsbAbout
+            // toolStripButton1
             // 
-            this.tsbAbout.Image = global::ShareX.Properties.Resources.crown;
-            resources.ApplyResources(this.tsbAbout, "tsbAbout");
-            this.tsbAbout.Name = "tsbAbout";
-            this.tsbAbout.Click += new System.EventHandler(this.tsbAbout_Click);
+            this.toolStripButton1.Image = global::ShareX.Properties.Resources.crown;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            // 
+            // tsbAboutUs
+            // 
+            resources.ApplyResources(this.tsbAboutUs, "tsbAboutUs");
+            this.tsbAboutUs.Name = "tsbAboutUs";
+            this.tsbAboutUs.Click += new System.EventHandler(this.tsbAboutUs_Click);
             // 
             // cmsTaskInfo
             // 
+            this.cmsTaskInfo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShowErrors,
             this.tsmiStopUpload,
@@ -1312,6 +1329,7 @@
             // 
             // cmsTray
             // 
+            this.cmsTray.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayCapture,
             this.tsmiTrayUpload,
@@ -1891,14 +1909,6 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
-            // tsbNews
-            // 
-            this.tsbNews.Counter = 0;
-            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
-            resources.ApplyResources(this.tsbNews, "tsbNews");
-            this.tsbNews.Name = "tsbNews";
-            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2060,7 +2070,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayIndexFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEffects;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEffects;
-        private System.Windows.Forms.ToolStripButton tsbAbout;
+        private System.Windows.Forms.ToolStripButton tsbAboutUs;
         private ShareX.HelpersLib.ToolStripButtonColorAnimation tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitorTest;
@@ -2154,5 +2164,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImageThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageThumbnailer;
         private HelpersLib.ToolStripButtonCounter tsbNews;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
