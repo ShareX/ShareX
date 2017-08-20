@@ -30,22 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QRCodeForm));
-            this.qrMain = new Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeGraphicControl();
             this.cmsQR = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.txtQRCode = new System.Windows.Forms.TextBox();
+            this.pbQRCode = new System.Windows.Forms.PictureBox();
             this.cmsQR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.SuspendLayout();
-            // 
-            // qrMain
-            // 
-            resources.ApplyResources(this.qrMain, "qrMain");
-            this.qrMain.ContextMenuStrip = this.cmsQR;
-            this.qrMain.ErrorCorrectLevel = Gma.QrCodeNet.Encoding.ErrorCorrectionLevel.M;
-            this.qrMain.Name = "qrMain";
-            this.qrMain.QuietZoneModule = Gma.QrCodeNet.Encoding.Windows.Render.QuietZoneModules.Two;
-            this.qrMain.Click += new System.EventHandler(this.qrMain_Click);
             // 
             // cmsQR
             // 
@@ -75,17 +67,26 @@
             this.txtQRCode.Name = "txtQRCode";
             this.txtQRCode.TextChanged += new System.EventHandler(this.txtQRCode_TextChanged);
             // 
+            // pbQRCode
+            // 
+            this.pbQRCode.ContextMenuStrip = this.cmsQR;
+            resources.ApplyResources(this.pbQRCode, "pbQRCode");
+            this.pbQRCode.Name = "pbQRCode";
+            this.pbQRCode.TabStop = false;
+            this.pbQRCode.Click += new System.EventHandler(this.pbQRCode_Click);
+            // 
             // QRCodeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.pbQRCode);
             this.Controls.Add(this.txtQRCode);
-            this.Controls.Add(this.qrMain);
             this.Name = "QRCodeForm";
             this.TopMost = true;
             this.Resize += new System.EventHandler(this.QRCodeForm_Resize);
             this.cmsQR.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,10 +94,10 @@
 
         #endregion
 
-        private Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeGraphicControl qrMain;
         private System.Windows.Forms.TextBox txtQRCode;
         private System.Windows.Forms.ContextMenuStrip cmsQR;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopy;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveAs;
+        private System.Windows.Forms.PictureBox pbQRCode;
     }
 }

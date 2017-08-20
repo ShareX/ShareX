@@ -117,66 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="qrMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <metadata name="cmsQR.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="tsmiCopy.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Control+C</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
   </data>
-  <data name="tsmiSaveAs.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Control+S</value>
-  </data>
   <data name="tsmiSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Save as image file...</value>
   </data>
   <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 48</value>
+    <value>152, 48</value>
   </data>
   <data name="cmsQR.Text" xml:space="preserve">
     <value>QR</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
     <value>cmsQR</value>
   </data>
   <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="qrMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 26</value>
-  </data>
-  <data name="qrMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 334</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="qrMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;qrMain.Name" xml:space="preserve">
-    <value>qrMain</value>
-  </data>
-  <data name="&gt;&gt;qrMain.Type" xml:space="preserve">
-    <value>Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeGraphicControl, Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;qrMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;qrMain.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtQRCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -186,6 +155,7 @@
   <data name="txtQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>380, 20</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtQRCode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -202,6 +172,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtQRCode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pbQRCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pbQRCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 22</value>
+  </data>
+  <data name="pbQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 337</value>
+  </data>
+  <data name="pbQRCode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pbQRCode.Name" xml:space="preserve">
+    <value>pbQRCode</value>
+  </data>
+  <data name="&gt;&gt;pbQRCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbQRCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbQRCode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -211,7 +205,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 362</value>
+    <value>384, 361</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 300</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>

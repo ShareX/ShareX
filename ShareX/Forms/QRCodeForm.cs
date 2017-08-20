@@ -23,14 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using Gma.QrCodeNet.Encoding;
-using Gma.QrCodeNet.Encoding.Windows.Render;
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.Rendering;
+using static ZXing.Rendering.SvgRenderer;
 
 namespace ShareX
 {
@@ -46,10 +48,9 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(text))
             {
-                qrMain.Dock = DockStyle.Fill;
-                qrMain.Cursor = Cursors.Hand;
+                pbQRCode.Cursor = Cursors.Hand;
                 Text += ": " + text;
-                qrMain.Text = text;
+                txtQRCode.Text = text;
             }
             else
             {
@@ -78,22 +79,60 @@ namespace ShareX
             }
         }
 
+        private void ClearQRCode()
+        {
+            if (pbQRCode.Image != null)
+            {
+                Image temp = pbQRCode.Image;
+                pbQRCode.Image = null;
+                temp.Dispose();
+            }
+        }
+
+        private void EncodeText(string text)
+        {
+            ClearQRCode();
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                try
+                {
+                    BarcodeWriter writer = new BarcodeWriter
+                    {
+                        Format = BarcodeFormat.QR_CODE,
+                        Options = new EncodingOptions
+                        {
+                            Width = pbQRCode.Width,
+                            Height = pbQRCode.Height
+                        },
+                        Renderer = new BitmapRenderer()
+                    };
+
+                    pbQRCode.Image = writer.Write(text);
+                }
+                catch (Exception e)
+                {
+                    e.ShowError();
+                }
+            }
+        }
+
         private void SetDefaultText()
         {
             txtQRCode.Text = "Input text to convert";
         }
 
-        private void txtQRCode_TextChanged(object sender, EventArgs e)
-        {
-            qrMain.Text = txtQRCode.Text;
-        }
-
         private void QRCodeForm_Resize(object sender, EventArgs e)
         {
-            qrMain.Refresh();
+            EncodeText(txtQRCode.Text);
         }
 
-        private void qrMain_Click(object sender, EventArgs e)
+        private void txtQRCode_TextChanged(object sender, EventArgs e)
+        {
+            EncodeText(txtQRCode.Text);
+        }
+
+        private void pbQRCode_Click(object sender, EventArgs e)
         {
             if (!EditMode)
             {
@@ -103,60 +142,46 @@ namespace ShareX
 
         private void tsmiCopy_Click(object sender, EventArgs e)
         {
-            GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
-            BitMatrix matrix = qrMain.GetQrMatrix();
-            using (MemoryStream stream = new MemoryStream())
+            if (pbQRCode.Image != null)
             {
-                gRender.WriteToStream(matrix, ImageFormat.Png, stream);
-
-                using (Image img = Image.FromStream(stream))
-                {
-                    ClipboardHelpers.CopyImage(img);
-                }
+                ClipboardHelpers.CopyImage(pbQRCode.Image);
             }
         }
 
         private void tsmiSaveAs_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            if (!string.IsNullOrEmpty(txtQRCode.Text))
             {
-                saveFileDialog.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
-                saveFileDialog.FileName = txtQRCode.Text;
-                saveFileDialog.DefaultExt = "png";
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    string filePath = saveFileDialog.FileName;
+                    saveFileDialog.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
+                    saveFileDialog.FileName = txtQRCode.Text;
+                    saveFileDialog.DefaultExt = "png";
 
-                    if (filePath.EndsWith("eps"))
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        // Initialize the EPS renderer
-                        EncapsulatedPostScriptRenderer renderer = new EncapsulatedPostScriptRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                            new FormColor(Color.Black), new FormColor(Color.White));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        string filePath = saveFileDialog.FileName;
+
+                        if (filePath.EndsWith("svg", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            renderer.WriteToStream(matrix, fs);
+                            BarcodeWriterSvg writer = new BarcodeWriterSvg
+                            {
+                                Format = BarcodeFormat.QR_CODE,
+                                Options = new EncodingOptions
+                                {
+                                    Width = pbQRCode.Width,
+                                    Height = pbQRCode.Height
+                                }
+                            };
+                            SvgImage svgImage = writer.Write(txtQRCode.Text);
+                            File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
                         }
-                    }
-                    else if (filePath.EndsWith("svg"))
-                    {
-                        // Initialize the EPS renderer
-                        SVGRenderer renderer = new SVGRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                            new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        else
                         {
-                            renderer.WriteToStream(matrix, fs, false);
-                        }
-                    }
-                    else
-                    {
-                        GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
-                        {
-                            gRender.WriteToStream(matrix, ImageHelpers.GetImageFormat(filePath), fs);
+                            if (pbQRCode.Image != null)
+                            {
+                                ImageHelpers.SaveImage(pbQRCode.Image, filePath);
+                            }
                         }
                     }
                 }
