@@ -24,15 +24,17 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 using ZXing.Rendering;
-using static ZXing.Rendering.SvgRenderer;
 
 namespace ShareX
 {
@@ -40,11 +42,12 @@ namespace ShareX
     {
         public bool EditMode { get; set; }
 
+        private bool isReady;
+
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            ClientSize = new Size(400, 400);
 
             if (!string.IsNullOrEmpty(text))
             {
@@ -79,6 +82,13 @@ namespace ShareX
             }
         }
 
+        private void QRCodeForm_Load(object sender, EventArgs e)
+        {
+            isReady = true;
+
+            EncodeText(txtQRCode.Text);
+        }
+
         private void ClearQRCode()
         {
             if (pbQRCode.Image != null)
@@ -91,30 +101,57 @@ namespace ShareX
 
         private void EncodeText(string text)
         {
-            ClearQRCode();
-
-            if (!string.IsNullOrEmpty(text))
+            if (isReady)
             {
-                try
-                {
-                    BarcodeWriter writer = new BarcodeWriter
-                    {
-                        Format = BarcodeFormat.QR_CODE,
-                        Options = new EncodingOptions
-                        {
-                            Width = pbQRCode.Width,
-                            Height = pbQRCode.Height
-                        },
-                        Renderer = new BitmapRenderer()
-                    };
+                ClearQRCode();
 
-                    pbQRCode.Image = writer.Write(text);
-                }
-                catch (Exception e)
+                if (!string.IsNullOrEmpty(text))
                 {
-                    e.ShowError();
+                    try
+                    {
+                        BarcodeWriter writer = new BarcodeWriter
+                        {
+                            Format = BarcodeFormat.QR_CODE,
+                            Options = new EncodingOptions
+                            {
+                                Width = pbQRCode.Width,
+                                Height = pbQRCode.Height
+                            },
+                            Renderer = new BitmapRenderer()
+                        };
+
+                        pbQRCode.Image = writer.Write(text);
+                    }
+                    catch (Exception e)
+                    {
+                        e.ShowError();
+                    }
                 }
             }
+        }
+
+        private void DecodeImage(Bitmap bmp)
+        {
+            BarcodeReader barcodeReader = new BarcodeReader
+            {
+                AutoRotate = true,
+                TryInverted = true,
+                Options = new DecodingOptions
+                {
+                    TryHarder = true
+                }
+            };
+
+            Result[] results = barcodeReader.DecodeMultiple(bmp);
+
+            string output = "";
+
+            if (results != null)
+            {
+                output = string.Join(Environment.NewLine + Environment.NewLine, results.Where(x => x != null && !string.IsNullOrEmpty(x.Text)).Select(x => x.Text));
+            }
+
+            txtDecodeResult.Text = output.Trim();
         }
 
         private void SetDefaultText()
@@ -173,7 +210,7 @@ namespace ShareX
                                     Height = pbQRCode.Height
                                 }
                             };
-                            SvgImage svgImage = writer.Write(txtQRCode.Text);
+                            SvgRenderer.SvgImage svgImage = writer.Write(txtQRCode.Text);
                             File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
                         }
                         else
@@ -185,6 +222,27 @@ namespace ShareX
                         }
                     }
                 }
+            }
+        }
+
+        private void btnDecodeFromScreen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Hide();
+                Thread.Sleep(250);
+
+                using (Image img = RegionCaptureTasks.GetRegionImage(null))
+                {
+                    if (img != null)
+                    {
+                        DecodeImage((Bitmap)img);
+                    }
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
             }
         }
     }
