@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -1591,6 +1591,14 @@ namespace ShareX
             using (AboutForm aboutForm = new AboutForm())
             {
                 aboutForm.ShowDialog();
+            }
+        }
+
+        private void tsbAboutUs_Click(object sender, EventArgs e)
+        {
+            using (Forms.AboutUs aboutusForm = new Forms.AboutUs())
+            {
+                aboutusForm.ShowDialog();
             }
         }
 
