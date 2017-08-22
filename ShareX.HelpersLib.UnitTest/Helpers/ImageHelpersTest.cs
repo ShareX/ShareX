@@ -37,6 +37,16 @@ namespace ShareX.HelpersLib.UnitTest
         }
 
         [TestMethod]
+        public void ResizeImage4Test()
+        {
+            Image originalImage = Image.FromFile(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImage(originalImage, 70, 90, true, true);
+            //actualImage.Save("C:\\Users\\horace92\\Desktop\\ResizeImage4TestResult.jpg");
+            Image expectImage = Image.FromFile(resourcePath + "ResizeImage4TestResult.jpg");
+            Assert.IsTrue(compareImage(expectImage, actualImage));
+        }
+
+        [TestMethod]
         public void ResizeImageByPercentage1Test()
         {
             Image originalImage = Image.FromFile(originalImagePath);
@@ -70,8 +80,8 @@ namespace ShareX.HelpersLib.UnitTest
             {
                 for (int i = 0; i < actualBitmapImage.Height; i++)
                 {
-                    for (int j = 0; j < actualBitmapImage.Height; j++)
-                        if (expectBitmapImage.GetPixel(i, j) != actualBitmapImage.GetPixel(i, j))
+                    for (int j = 0; j < actualBitmapImage.Width; j++)
+                        if (expectBitmapImage.GetPixel(j, i) != actualBitmapImage.GetPixel(j, i))
                         {
                             return false;
                         }
