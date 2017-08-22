@@ -7,74 +7,81 @@ namespace ShareX.HelpersLib.UnitTest
     public class ImageHelpersTest
     {
         public static string resourcePath = Directory.GetCurrentDirectory() + "/Resources/";
-        public static Image originalImage = Image.FromFile(Directory.GetCurrentDirectory() + "/Resources/TestImage.jpg");
+        public static string originalImagePath = resourcePath + "TestImage.jpg";
 
         [TestMethod]
         public void ResizeImage1Test()
         {
-            Size newImageSize = new Size(100, 100);
-            Image newImage = ImageHelpers.ResizeImage(originalImage, newImageSize);
+            Image originalImage = Image.FromFile(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImage(originalImage, new Size(100, 100));
             Image expectedImage = Image.FromFile(resourcePath + "ResizeImage1TestResult.jpg");
-
-            Assert.AreEqual(expectedImage.ToString(), newImage.ToString());
+            Assert.IsTrue(compareImage(expectedImage, actualImage));
         }
 
         [TestMethod]
         public void ResizeImage2Test()
         {
-            Image newImage = ImageHelpers.ResizeImage(originalImage, 100, 100);
-            Image expectedImage = Image.FromFile(resourcePath + "ResizeImage2TestResult.jpg");
-
-            Assert.AreEqual(expectedImage.ToString(), newImage.ToString());
+            Image originalImage = Image.FromFile(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImage(originalImage, 100, 100);
+            Image expectImage = Image.FromFile(resourcePath + "ResizeImage2TestResult.jpg");
+            Assert.IsTrue(compareImage(expectImage, actualImage));
         }
 
         [TestMethod]
         public void ResizeImage3Test()
         {
-            //System.AppDomain.CurrentDomain.BaseDirectory
-            Image originalImage = new Bitmap("C:\\Users\\horace92\\Pictures\\city.jpg");
-            Size newImageSize = new Size(100, 100);
-            int expectedWidth = 100;
-            int expectedHeight = 100;
-            Image newImage = ImageHelpers.ResizeImage(originalImage, newImageSize, true, true);
-            newImage.Save("C:\\Users\\horace92\\Pictures\\city1.jpg");
-            Assert.AreEqual(expectedWidth, newImage.Width);
-            Assert.AreEqual(expectedHeight, newImage.Height);
+            Image originalImage = Image.FromFile(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImage(originalImage, new Size(100, 100), true, true);
+            Image expectImage = Image.FromFile(resourcePath + "ResizeImage3TestResult.jpg");
+            Assert.IsTrue(compareImage(expectImage, actualImage));
         }
 
         [TestMethod]
         public void ResizeImageByPercentage1Test()
         {
-            float percentage = 90;
-            Image originalImage = new Bitmap("C:\\Users\\horace92\\Pictures\\city.jpg");
-            int expectedWidth = (int)(percentage / 100 * originalImage.Width);
-            int expectedHeight = (int)(percentage / 100 * originalImage.Height);
-            Image newImage = ImageHelpers.ResizeImageByPercentage(originalImage, percentage);
-
-            Assert.AreEqual(expectedWidth, newImage.Width);
-            Assert.AreEqual(expectedHeight, newImage.Height);
+            Image originalImage = Image.FromFile(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImageByPercentage(originalImage, 50);
+            Image expectImage = Image.FromFile(resourcePath + "ResizeImageByPercentage1TestResult.jpg");
+            Assert.IsTrue(compareImage(expectImage, actualImage));
         }
-        
-        
+
         [TestMethod]
         public void ResizeImageByPercentage2Test()
         {
-            float percentageWidth = 90;
-            float percentageHeight = 100;
-            Image originalImage = new Bitmap("C:\\Users\\horace92\\Pictures\\city.jpg");
-            int expectedWidth = (int)(percentageWidth / 100 * originalImage.Width);
-            int expectedHeight = (int)(percentageHeight / 100 * originalImage.Height);
-            Image newImage = ImageHelpers.ResizeImageByPercentage(originalImage, percentageWidth, percentageHeight);
-
-            Assert.AreEqual(expectedWidth, newImage.Width);
-            Assert.AreEqual(expectedHeight, newImage.Height);
+            Image originalImage = new Bitmap(originalImagePath);
+            Image actualImage = ImageHelpers.ResizeImageByPercentage(originalImage, 30, 30);
+            Image expectImage = Image.FromFile(resourcePath + "ResizeImageByPercentage2TestResult.jpg");
+            Assert.IsTrue(compareImage(expectImage, actualImage));
         }
-        
+
         [TestMethod]
         public void LoadImageTest()
         {
-            Image newImage = ImageHelpers.LoadImage("C:\\Users\\horace92\\Pictures\\city.jpg");
+            Image newImage = ImageHelpers.LoadImage(originalImagePath);
             Assert.IsNotNull(newImage);
+        }
+
+        //Compare Image Size and Every Single Pixel
+        public bool compareImage(Image expectImage, Image actualImage)
+        {
+            Bitmap expectBitmapImage = (Bitmap)expectImage;
+            Bitmap actualBitmapImage = (Bitmap)actualImage;
+            if (expectBitmapImage.Size == actualBitmapImage.Size)
+            {
+                for (int i = 0; i < actualBitmapImage.Height; i++)
+                {
+                    for (int j = 0; j < actualBitmapImage.Height; j++)
+                        if (expectBitmapImage.GetPixel(i, j) != actualBitmapImage.GetPixel(i, j))
+                        {
+                            return false;
+                        }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
