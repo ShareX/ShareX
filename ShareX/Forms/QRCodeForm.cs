@@ -245,5 +245,21 @@ namespace ShareX
                 this.ForceActivate();
             }
         }
+
+        private void btnDecodeFromFile_Click(object sender, EventArgs e)
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                using (Image img = ImageHelpers.LoadImage(filePath))
+                {
+                    if (img != null)
+                    {
+                        DecodeImage((Bitmap)img);
+                    }
+                }
+            }
+        }
     }
 }

@@ -38,9 +38,10 @@
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpEncode = new System.Windows.Forms.TabPage();
             this.tpDecode = new System.Windows.Forms.TabPage();
-            this.btnDecodeFromScreen = new System.Windows.Forms.Button();
-            this.lblDecodeResult = new System.Windows.Forms.Label();
             this.txtDecodeResult = new System.Windows.Forms.TextBox();
+            this.lblDecodeResult = new System.Windows.Forms.Label();
+            this.btnDecodeFromScreen = new System.Windows.Forms.Button();
+            this.btnDecodeFromFile = new System.Windows.Forms.Button();
             this.cmsQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.tcMain.SuspendLayout();
@@ -102,12 +103,23 @@
             // 
             // tpDecode
             // 
+            this.tpDecode.Controls.Add(this.btnDecodeFromFile);
             this.tpDecode.Controls.Add(this.txtDecodeResult);
             this.tpDecode.Controls.Add(this.lblDecodeResult);
             this.tpDecode.Controls.Add(this.btnDecodeFromScreen);
             resources.ApplyResources(this.tpDecode, "tpDecode");
             this.tpDecode.Name = "tpDecode";
             this.tpDecode.UseVisualStyleBackColor = true;
+            // 
+            // txtDecodeResult
+            // 
+            resources.ApplyResources(this.txtDecodeResult, "txtDecodeResult");
+            this.txtDecodeResult.Name = "txtDecodeResult";
+            // 
+            // lblDecodeResult
+            // 
+            resources.ApplyResources(this.lblDecodeResult, "lblDecodeResult");
+            this.lblDecodeResult.Name = "lblDecodeResult";
             // 
             // btnDecodeFromScreen
             // 
@@ -116,15 +128,12 @@
             this.btnDecodeFromScreen.UseVisualStyleBackColor = true;
             this.btnDecodeFromScreen.Click += new System.EventHandler(this.btnDecodeFromScreen_Click);
             // 
-            // lblDecodeResult
+            // btnDecodeFromFile
             // 
-            resources.ApplyResources(this.lblDecodeResult, "lblDecodeResult");
-            this.lblDecodeResult.Name = "lblDecodeResult";
-            // 
-            // txtDecodeResult
-            // 
-            resources.ApplyResources(this.txtDecodeResult, "txtDecodeResult");
-            this.txtDecodeResult.Name = "txtDecodeResult";
+            resources.ApplyResources(this.btnDecodeFromFile, "btnDecodeFromFile");
+            this.btnDecodeFromFile.Name = "btnDecodeFromFile";
+            this.btnDecodeFromFile.UseVisualStyleBackColor = true;
+            this.btnDecodeFromFile.Click += new System.EventHandler(this.btnDecodeFromFile_Click);
             // 
             // QRCodeForm
             // 
@@ -159,5 +168,6 @@
         private System.Windows.Forms.Button btnDecodeFromScreen;
         private System.Windows.Forms.TextBox txtDecodeResult;
         private System.Windows.Forms.Label lblDecodeResult;
+        private System.Windows.Forms.Button btnDecodeFromFile;
     }
 }

@@ -121,18 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 48</value>
-  </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
-    <value>cmsQR</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 22</value>
   </data>
@@ -144,6 +132,18 @@
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Save as image file...</value>
+  </data>
+  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 48</value>
+  </data>
+  <data name="cmsQR.Text" xml:space="preserve">
+    <value>QR</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
+    <value>cmsQR</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtQRCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -225,6 +225,30 @@
   <data name="&gt;&gt;tpEncode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnDecodeFromFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 8</value>
+  </data>
+  <data name="btnDecodeFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 32</value>
+  </data>
+  <data name="btnDecodeFromFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Decode from image file...</value>
+  </data>
+  <data name="&gt;&gt;btnDecodeFromFile.Name" xml:space="preserve">
+    <value>btnDecodeFromFile</value>
+  </data>
+  <data name="&gt;&gt;btnDecodeFromFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDecodeFromFile.Parent" xml:space="preserve">
+    <value>tpDecode</value>
+  </data>
+  <data name="&gt;&gt;btnDecodeFromFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtDecodeResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -253,7 +277,7 @@
     <value>tpDecode</value>
   </data>
   <data name="&gt;&gt;txtDecodeResult.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblDecodeResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -280,13 +304,13 @@
     <value>tpDecode</value>
   </data>
   <data name="&gt;&gt;lblDecodeResult.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnDecodeFromScreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="btnDecodeFromScreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 32</value>
+    <value>224, 32</value>
   </data>
   <data name="btnDecodeFromScreen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -304,7 +328,7 @@
     <value>tpDecode</value>
   </data>
   <data name="&gt;&gt;btnDecodeFromScreen.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tpDecode.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -355,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
