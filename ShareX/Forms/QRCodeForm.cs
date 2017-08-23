@@ -40,8 +40,6 @@ namespace ShareX
 {
     public partial class QRCodeForm : Form
     {
-        public bool EditMode { get; set; }
-
         private bool isReady;
 
         public QRCodeForm(string text = null)
@@ -51,15 +49,10 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(text))
             {
-                pbQRCode.Cursor = Cursors.Hand;
-                Text += ": " + text;
                 txtQRCode.Text = text;
             }
             else
             {
-                EditMode = true;
-                txtQRCode.Visible = true;
-
                 if (Clipboard.ContainsText())
                 {
                     text = Clipboard.GetText();
@@ -68,23 +61,15 @@ namespace ShareX
                     {
                         txtQRCode.Text = text;
                     }
-                    else
-                    {
-                        SetDefaultText();
-                    }
                 }
-                else
-                {
-                    SetDefaultText();
-                }
-
-                txtQRCode.SelectAll();
             }
         }
 
-        private void QRCodeForm_Load(object sender, EventArgs e)
+        private void QRCodeForm_Shown(object sender, EventArgs e)
         {
             isReady = true;
+
+            txtQRCode.SetWatermark("Input text to encode");
 
             EncodeText(txtQRCode.Text);
         }
@@ -154,11 +139,6 @@ namespace ShareX
             txtDecodeResult.Text = output.Trim();
         }
 
-        private void SetDefaultText()
-        {
-            txtQRCode.Text = "Input text to convert";
-        }
-
         private void QRCodeForm_Resize(object sender, EventArgs e)
         {
             EncodeText(txtQRCode.Text);
@@ -167,14 +147,6 @@ namespace ShareX
         private void txtQRCode_TextChanged(object sender, EventArgs e)
         {
             EncodeText(txtQRCode.Text);
-        }
-
-        private void pbQRCode_Click(object sender, EventArgs e)
-        {
-            if (!EditMode)
-            {
-                Close();
-            }
         }
 
         private void tsmiCopy_Click(object sender, EventArgs e)
