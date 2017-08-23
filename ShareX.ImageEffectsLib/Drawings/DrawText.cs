@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
 
         private Point offset;
 
-        [DefaultValue(typeof(Point), "5, 5")]
+        [DefaultValue(typeof(Point), "6, 6")]
         public Point Offset
         {
             get
@@ -64,7 +64,7 @@ namespace ShareX.ImageEffectsLib
         private FontSafe textFontSafe = new FontSafe();
 
         // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(Font), "Arial, 11.25pt")]
+        [DefaultValue(typeof(Font), "Times New Roman, 12pt")]
         public Font TextFont
         {
             get
