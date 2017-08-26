@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Dropbox(config.DropboxOAuth2Info)
             {
-                UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(config.DropboxUploadPath)),
+                UploadPath = NameParser.Parse(NameParserType.Default, Dropbox.VerifyPath(config.DropboxUploadPath)),
                 AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
                 UseDirectLink = config.DropboxUseDirectLink
             };

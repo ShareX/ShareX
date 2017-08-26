@@ -32,11 +32,12 @@ namespace ShareX.HelpersLib
 {
     public enum NameParserType
     {
+        Default,
         Text, // Allows new line
         FileName,
         FolderPath,
         FilePath,
-        URL
+        URL // URL path encodes
     }
 
     public class NameParser
