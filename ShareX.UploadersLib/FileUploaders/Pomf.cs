@@ -62,33 +62,20 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             //new PomfUploader("https://pomf.se/upload.php"),
-            new PomfUploader("https://u.aww.moe/upload", "https://aww.moe"),
-            new PomfUploader("https://biyori.moe/upload.php"),
-            new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("https://comfy.moe/upload.php"),
-            new PomfUploader("https://desu.sh/upload.php", "https://a.desu.sh"),
             new PomfUploader("https://edfile.pro/upload/archive"),
             new PomfUploader("https://filebox.moe/upload.php"),
-            new PomfUploader("https://filebunker.pw/upload.php"),
-            new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("https://mixtape.moe/upload.php"),
-            new PomfUploader("https://nya.is/upload"),
-            new PomfUploader("https://lolisafe.moe/api/upload"),
-            new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.space/upload.php"),
-            new PomfUploader("https://pomf.is/upload.php"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
             new PomfUploader("https://pomfe.co/upload.php", "https://a.pomfe.co"),
             new PomfUploader("http://reich.io/upload.php"),
             new PomfUploader("https://safe.moe/api/upload"),
             new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
-            new PomfUploader("https://u.xpw.us/upload"),
             new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
-            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),
-            new PomfUploader("https://vidga.me/upload.php"),
-            new PomfUploader("https://yiff.moe/upload.php")
+            new PomfUploader("https://vidga.me/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
