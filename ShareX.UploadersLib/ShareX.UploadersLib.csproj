@@ -264,7 +264,6 @@
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
-    <Compile Include="ImageUploaders\ImglandUploader.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
     <Compile Include="BaseServices\ImageUploaderService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
