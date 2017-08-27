@@ -245,6 +245,24 @@ namespace ShareX
             }
         }
 
+        public static void TextUpload(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            using (TextUploadForm form = new TextUploadForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    string text = form.Content;
+
+                    if (!string.IsNullOrEmpty(text))
+                    {
+                        UploadText(text, taskSettings);
+                    }
+                }
+            }
+        }
+
         public static void DragDropUpload(IDataObject data, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

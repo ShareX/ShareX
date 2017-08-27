@@ -507,6 +507,12 @@
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Upload from clipboard...</value>
   </data>
+  <data name="tsmiUploadText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Upload text...</value>
+  </data>
   <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
   </data>
@@ -518,6 +524,12 @@
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Drag and drop upload...</value>
+  </data>
+  <data name="tsmiShortenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Shorten URL...</value>
   </data>
   <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1380,6 +1392,12 @@
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Upload from clipboard...</value>
   </data>
+  <data name="tsmiTrayUploadText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Upload text...</value>
+  </data>
   <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
   </data>
@@ -1391,6 +1409,12 @@
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Drag and drop upload...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Shorten URL...</value>
   </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -1690,7 +1714,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 484</value>
+    <value>193, 506</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1723,7 +1747,7 @@
     <value>ucNews</value>
   </data>
   <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
-    <value>ShareX.NewsListControl, ShareX, Version=11.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.NewsListControl, ShareX, Version=11.9.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
     <value>pNews</value>
@@ -1953,6 +1977,12 @@
   <data name="&gt;&gt;tsmiUploadClipboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiUploadText.Name" xml:space="preserve">
+    <value>tsmiUploadText</value>
+  </data>
+  <data name="&gt;&gt;tsmiUploadText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiUploadURL.Name" xml:space="preserve">
     <value>tsmiUploadURL</value>
   </data>
@@ -1963,6 +1993,12 @@
     <value>tsmiUploadDragDrop</value>
   </data>
   <data name="&gt;&gt;tsmiUploadDragDrop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiShortenURL.Name" xml:space="preserve">
+    <value>tsmiShortenURL</value>
+  </data>
+  <data name="&gt;&gt;tsmiShortenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbWorkflows.Name" xml:space="preserve">
@@ -2174,6 +2210,12 @@
   </data>
   <data name="&gt;&gt;tsbImageHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbNews.Name" xml:space="preserve">
+    <value>tsbNews</value>
+  </data>
+  <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
@@ -3003,16 +3045,22 @@
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbNews.Name" xml:space="preserve">
-    <value>tsbNews</value>
+  <data name="&gt;&gt;tsmiTrayUploadText.Name" xml:space="preserve">
+    <value>tsmiTrayUploadText</value>
   </data>
-  <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;tsmiTrayUploadText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShortenURL.Name" xml:space="preserve">
+    <value>tsmiTrayShortenURL</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShortenURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.9.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
