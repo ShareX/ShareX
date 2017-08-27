@@ -1394,7 +1394,7 @@ namespace ShareX
 
         private void tsmiUploadText_Click(object sender, EventArgs e)
         {
-            UploadManager.TextUpload();
+            UploadManager.ShowTextUploadDialog();
         }
 
         private void tsmiUploadURL_Click(object sender, EventArgs e)
@@ -1409,6 +1409,7 @@ namespace ShareX
 
         private void tsmiShortenURL_Click(object sender, EventArgs e)
         {
+            UploadManager.ShowShortenURLDialog();
         }
 
         private void tsmiColorPicker_Click(object sender, EventArgs e)
