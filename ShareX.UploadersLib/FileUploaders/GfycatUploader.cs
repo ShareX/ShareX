@@ -227,6 +227,12 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.IsSuccess = false;
                     break;
                 }
+                else if (response.Task.Equals("error", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Errors.Add(response.Description);
+                    result.IsSuccess = false;
+                    break;
+                }
                 else if (response.GfyName != null)
                 {
                     result.IsSuccess = true;
@@ -320,5 +326,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public int Time { get; set; }
         public string GfyName { get; set; }
         public string Error { get; set; }
+        public string Description { get; set; }
     }
 }
