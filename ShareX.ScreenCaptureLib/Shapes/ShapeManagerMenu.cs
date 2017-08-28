@@ -50,8 +50,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
-        private ToolStripLabel tslDragLeft, tslCursorType;
-        private ToolStripComboBox tscbCursorTypes;
+        private ToolStripLabel tslDragLeft;
+        private ToolStripLabeledComboBox tscbCursorTypes;
 
         private void CreateToolbar()
         {
@@ -474,18 +474,14 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
-            tslCursorType = new ToolStripLabel("Cursor type:");
-            tsddbShapeOptions.DropDownItems.Add(tslCursorType);
-
-            tscbCursorTypes = new ToolStripComboBox();
-            tscbCursorTypes.DropDownStyle = ComboBoxStyle.DropDownList;
+            tscbCursorTypes = new ToolStripLabeledComboBox("Cursor type:");
             CursorConverter cursorConverter = new CursorConverter();
             foreach (Cursor cursor in Helpers.CursorList)
             {
                 string name = cursorConverter.ConvertToString(cursor);
-                tscbCursorTypes.Items.Add(name);
+                tscbCursorTypes.Content.Add(name);
             }
-            tscbCursorTypes.SelectedIndex = 3; // Cursors.Default
+            tscbCursorTypes.Content.SelectedIndex = 3; // Cursors.Default
             tsddbShapeOptions.DropDownItems.Add(tscbCursorTypes);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
@@ -1159,7 +1155,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
-            tslCursorType.Visible = tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
+            tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
@@ -1172,9 +1168,9 @@ namespace ShareX.ScreenCaptureLib
 
         internal Cursor GetSelectedCursor()
         {
-            if (tscbCursorTypes.SelectedIndex > -1)
+            if (tscbCursorTypes.Content.SelectedIndex > -1)
             {
-                return Helpers.CursorList[tscbCursorTypes.SelectedIndex];
+                return Helpers.CursorList[tscbCursorTypes.Content.SelectedIndex];
             }
 
             return Cursors.Default;

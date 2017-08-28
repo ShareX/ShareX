@@ -104,6 +104,12 @@
     <Compile Include="Controls\HotkeySelectionButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\LabeledComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LabeledComboBox.Designer.cs">
+      <DependentUpon>LabeledComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ToolStripBorderRight.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -572,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-TW.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabeledComboBox.resx">
+      <DependentUpon>LabeledComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LabeledNumericUpDown.resx">
       <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>

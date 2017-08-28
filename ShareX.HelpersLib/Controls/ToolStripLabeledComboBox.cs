@@ -31,16 +31,11 @@ namespace ShareX.HelpersLib
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
     public class ToolStripLabeledComboBox : ToolStripControlHost
     {
-        public LabeledNumericUpDown Content
-        {
-            get
-            {
-                return Control as LabeledNumericUpDown;
-            }
-        }
+        public LabeledComboBox Content => Control as LabeledComboBox;
 
-        public ToolStripLabeledComboBox() : base(new LabeledNumericUpDown())
+        public ToolStripLabeledComboBox(string text) : base(new LabeledComboBox())
         {
+            Content.Text = text;
         }
     }
 }

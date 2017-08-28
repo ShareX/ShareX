@@ -23,19 +23,45 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 
 namespace ShareX.HelpersLib
 {
-    [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
-    public class ToolStripLabeledNumericUpDown : ToolStripControlHost
+    public partial class LabeledComboBox : UserControl
     {
-        public LabeledNumericUpDown Content => Control as LabeledNumericUpDown;
-
-        public ToolStripLabeledNumericUpDown(string text) : base(new LabeledNumericUpDown())
+        public new string Text
         {
-            Content.Text = text;
+            get
+            {
+                return lblText.Text;
+            }
+            set
+            {
+                lblText.Text = value;
+            }
+        }
+
+        public int SelectedIndex
+        {
+            get
+            {
+                return cbList.SelectedIndex;
+            }
+            set
+            {
+                cbList.SelectedIndex = value;
+            }
+        }
+
+        public LabeledComboBox()
+        {
+            InitializeComponent();
+        }
+
+        public void Add(object item)
+        {
+            cbList.Items.Add(item);
         }
     }
 }
