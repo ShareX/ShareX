@@ -537,10 +537,13 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on selection area
             if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentShapeValid)
             {
-                DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
-
                 if (Mode == RegionCaptureMode.Ruler)
                 {
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, 255, 255, 255)))
+                    {
+                        g.FillRectangle(brush, ShapeManager.CurrentRectangle);
+                    }
+
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
 
@@ -549,6 +552,8 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
                     g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
                 }
+
+                DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
             }
 
             // Draw all regions rectangle info
