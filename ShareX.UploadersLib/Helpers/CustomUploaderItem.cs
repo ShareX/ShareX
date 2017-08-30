@@ -239,7 +239,11 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderResponseParseType parseType;
 
-            if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
+            if (syntax.Equals("response", StringComparison.InvariantCultureIgnoreCase)) // Example: $response$
+            {
+                return response;
+            }
+            else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
             {
                 parseType = CustomUploaderResponseParseType.Regex;
                 syntax = syntax.Substring(6);
