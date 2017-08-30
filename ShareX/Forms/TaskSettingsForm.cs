@@ -1073,29 +1073,11 @@ namespace ShareX
         private void nudScreenRecordFPS_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordFPS = (int)nudScreenRecordFPS.Value;
-
-            if (TaskSettings.CaptureSettings.ScreenRecordFPS > 30)
-            {
-                nudScreenRecordFPS.ForeColor = Color.Red;
-            }
-            else
-            {
-                nudScreenRecordFPS.ForeColor = SystemColors.WindowText;
-            }
         }
 
         private void nudGIFFPS_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.GIFFPS = (int)nudGIFFPS.Value;
-
-            if (TaskSettings.CaptureSettings.GIFFPS > 15)
-            {
-                nudGIFFPS.ForeColor = Color.Red;
-            }
-            else
-            {
-                nudGIFFPS.ForeColor = SystemColors.WindowText;
-            }
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)
