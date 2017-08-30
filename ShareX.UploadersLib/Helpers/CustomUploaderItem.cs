@@ -198,7 +198,6 @@ namespace ShareX.UploadersLib
             StringBuilder result = new StringBuilder();
 
             bool syntaxStart = false;
-            CustomUploaderResponseParseType parseType = CustomUploaderResponseParseType.Regex;
             int syntaxStartIndex = 0;
 
             for (int i = 0; i < url.Length; i++)
@@ -208,72 +207,23 @@ namespace ShareX.UploadersLib
                     if (!syntaxStart)
                     {
                         syntaxStart = true;
-
-                        string syntaxCheck = url.Substring(i + 1);
-
-                        if (syntaxCheck.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
-                        {
-                            parseType = CustomUploaderResponseParseType.Regex;
-                            syntaxStartIndex = i + 7;
-                        }
-                        else if (syntaxCheck.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
-                        {
-                            parseType = CustomUploaderResponseParseType.Json;
-                            syntaxStartIndex = i + 6;
-                        }
-                        else if (syntaxCheck.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
-                        {
-                            parseType = CustomUploaderResponseParseType.Xml;
-                            syntaxStartIndex = i + 5;
-                        }
-                        else if (syntaxCheck.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
-                        {
-                            parseType = CustomUploaderResponseParseType.Random;
-                            syntaxStartIndex = i + 8;
-                        }
-                        else
-                        {
-                            parseType = CustomUploaderResponseParseType.Regex;
-                            syntaxStartIndex = i + 1;
-                        }
+                        syntaxStartIndex = i + 1;
                     }
                     else
                     {
-                        string parseText = url.Substring(syntaxStartIndex, i - syntaxStartIndex).Trim();
+                        syntaxStart = false;
+                        int syntaxLength = i - syntaxStartIndex;
 
-                        if (!string.IsNullOrEmpty(parseText))
+                        if (syntaxLength > 0)
                         {
-                            string resultText = null;
+                            string syntax = url.Substring(syntaxStartIndex, syntaxLength);
+                            string syntaxResult = ParseSyntax(syntax, output);
 
-                            if (output)
+                            if (!string.IsNullOrEmpty(syntaxResult))
                             {
-                                switch (parseType)
-                                {
-                                    default:
-                                    case CustomUploaderResponseParseType.Regex:
-                                        resultText = ParseRegexSyntax(parseText);
-                                        break;
-                                    case CustomUploaderResponseParseType.Json:
-                                        resultText = ParseJsonSyntax(parseText);
-                                        break;
-                                    case CustomUploaderResponseParseType.Xml:
-                                        resultText = ParseXmlSyntax(parseText);
-                                        break;
-                                }
-                            }
-
-                            if (parseType == CustomUploaderResponseParseType.Random)
-                            {
-                                resultText = ParseRandomSyntax(parseText);
-                            }
-
-                            if (!string.IsNullOrEmpty(resultText))
-                            {
-                                result.Append(resultText);
+                                result.Append(syntaxResult);
                             }
                         }
-
-                        syntaxStart = false;
                     }
                 }
                 else if (!syntaxStart)
@@ -283,6 +233,59 @@ namespace ShareX.UploadersLib
             }
 
             return result.ToString();
+        }
+
+        private string ParseSyntax(string syntax, bool output)
+        {
+            CustomUploaderResponseParseType parseType;
+
+            if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
+            {
+                parseType = CustomUploaderResponseParseType.Regex;
+                syntax = syntax.Substring(6);
+            }
+            else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
+            {
+                parseType = CustomUploaderResponseParseType.Json;
+                syntax = syntax.Substring(5);
+            }
+            else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
+            {
+                parseType = CustomUploaderResponseParseType.Xml;
+                syntax = syntax.Substring(4);
+            }
+            else if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
+            {
+                parseType = CustomUploaderResponseParseType.Random;
+                syntax = syntax.Substring(7);
+            }
+            else // Example: $1,1$
+            {
+                parseType = CustomUploaderResponseParseType.Regex;
+            }
+
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                if (output)
+                {
+                    switch (parseType)
+                    {
+                        case CustomUploaderResponseParseType.Regex:
+                            return ParseRegexSyntax(syntax);
+                        case CustomUploaderResponseParseType.Json:
+                            return ParseJsonSyntax(syntax);
+                        case CustomUploaderResponseParseType.Xml:
+                            return ParseXmlSyntax(syntax);
+                    }
+                }
+
+                if (parseType == CustomUploaderResponseParseType.Random)
+                {
+                    return ParseRandomSyntax(syntax);
+                }
+            }
+
+            return null;
         }
 
         private string ParseRegexSyntax(string syntax)
