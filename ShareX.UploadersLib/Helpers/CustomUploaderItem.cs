@@ -116,7 +116,6 @@ namespace ShareX.UploadersLib
                 {
                     string value = arg.Value;
 
-                    value = value.Replace("%input", "$input$"); // For backward compatibility
                     value = NameParser.Parse(NameParserType.Text, value);
                     value = value.Replace("$input$", input);
 
