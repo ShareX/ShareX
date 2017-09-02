@@ -623,11 +623,6 @@
             this.llVgymeAccountDetailsPage = new System.Windows.Forms.LinkLabel();
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
-            this.tpSomeImage = new System.Windows.Forms.TabPage();
-            this.llSomeImageAPIKey = new System.Windows.Forms.LinkLabel();
-            this.txtSomeImageAPIKey = new System.Windows.Forms.TextBox();
-            this.lblSomeImageAPIKey = new System.Windows.Forms.Label();
-            this.cbSomeImageDirectURL = new System.Windows.Forms.CheckBox();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
@@ -744,7 +739,6 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
-            this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4535,7 +4529,6 @@
             this.tcImageUploaders.Controls.Add(this.tpPicasa);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
             this.tcImageUploaders.Controls.Add(this.tpVgyme);
-            this.tcImageUploaders.Controls.Add(this.tpSomeImage);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;
@@ -5090,42 +5083,6 @@
             resources.ApplyResources(this.lvlVgymeUserKey, "lvlVgymeUserKey");
             this.lvlVgymeUserKey.Name = "lvlVgymeUserKey";
             // 
-            // tpSomeImage
-            // 
-            this.tpSomeImage.Controls.Add(this.llSomeImageAPIKey);
-            this.tpSomeImage.Controls.Add(this.txtSomeImageAPIKey);
-            this.tpSomeImage.Controls.Add(this.lblSomeImageAPIKey);
-            this.tpSomeImage.Controls.Add(this.cbSomeImageDirectURL);
-            resources.ApplyResources(this.tpSomeImage, "tpSomeImage");
-            this.tpSomeImage.Name = "tpSomeImage";
-            this.tpSomeImage.UseVisualStyleBackColor = true;
-            // 
-            // llSomeImageAPIKey
-            // 
-            resources.ApplyResources(this.llSomeImageAPIKey, "llSomeImageAPIKey");
-            this.llSomeImageAPIKey.Name = "llSomeImageAPIKey";
-            this.llSomeImageAPIKey.TabStop = true;
-            this.llSomeImageAPIKey.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblSomeImageAPIKey_LinkClicked);
-            // 
-            // txtSomeImageAPIKey
-            // 
-            resources.ApplyResources(this.txtSomeImageAPIKey, "txtSomeImageAPIKey");
-            this.txtSomeImageAPIKey.Name = "txtSomeImageAPIKey";
-            this.txtSomeImageAPIKey.UseSystemPasswordChar = true;
-            this.txtSomeImageAPIKey.TextChanged += new System.EventHandler(this.txtSomeImageAPIKey_TextChanged);
-            // 
-            // lblSomeImageAPIKey
-            // 
-            resources.ApplyResources(this.lblSomeImageAPIKey, "lblSomeImageAPIKey");
-            this.lblSomeImageAPIKey.Name = "lblSomeImageAPIKey";
-            // 
-            // cbSomeImageDirectURL
-            // 
-            resources.ApplyResources(this.cbSomeImageDirectURL, "cbSomeImageDirectURL");
-            this.cbSomeImageDirectURL.Name = "cbSomeImageDirectURL";
-            this.cbSomeImageDirectURL.UseVisualStyleBackColor = true;
-            this.cbSomeImageDirectURL.CheckedChanged += new System.EventHandler(this.cbSomeImageDirectURL_CheckedChanged);
-            // 
             // tcUploaders
             // 
             this.tcUploaders.Controls.Add(this.tpImageUploaders);
@@ -5487,8 +5444,6 @@
             this.tpChevereto.PerformLayout();
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
-            this.tpSomeImage.ResumeLayout(false);
-            this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -5927,10 +5882,6 @@
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
-	    private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
-	    private System.Windows.Forms.TextBox txtSomeImageAPIKey;
-	    private System.Windows.Forms.Label lblSomeImageAPIKey;
-        private System.Windows.Forms.LinkLabel llSomeImageAPIKey;
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
         private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
@@ -5948,7 +5899,6 @@
         internal System.Windows.Forms.TabPage tpPhotobucket;
         internal System.Windows.Forms.TabPage tpPicasa;
         internal System.Windows.Forms.TabPage tpChevereto;
-        internal System.Windows.Forms.TabPage tpSomeImage;
         internal System.Windows.Forms.TabPage tpVgyme;
         internal System.Windows.Forms.TabPage tpPastebin;
         internal System.Windows.Forms.TabPage tpPaste_ee;

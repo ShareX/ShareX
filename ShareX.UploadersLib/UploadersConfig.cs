@@ -80,11 +80,6 @@ namespace ShareX.UploadersLib
         public CheveretoUploader CheveretoUploader = new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397");
         public bool CheveretoDirectURL = true;
 
-        // SomeImage
-
-        public string SomeImageAPIKey = "";
-        public bool SomeImageDirectURL = true;
-
         // vgy.me
 
         public string VgymeUserKey = "";

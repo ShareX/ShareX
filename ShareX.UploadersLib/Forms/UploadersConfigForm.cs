@@ -250,11 +250,6 @@ namespace ShareX.UploadersLib
             txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
-            // SomeImage
-
-            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
-            cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
-
             // vgy.me
 
             txtVgymeUserKey.Text = Config.VgymeUserKey;
@@ -1086,25 +1081,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
-
-        #region SomeImage
-
-        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
-        }
-
-        private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
-        }
-
-        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://someimage.com/api");
-        }
-
-        #endregion SomeImage
 
         #region vgy.me
 
