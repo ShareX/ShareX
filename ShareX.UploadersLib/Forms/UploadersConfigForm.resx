@@ -248,7 +248,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;mbCustomUploaderDestinationType.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1873,6 +1873,30 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbCustomUploaderURLShortener.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="btnCustomUploaderDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 72</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Name" xml:space="preserve">
+    <value>btnCustomUploaderDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCustomUploadersExportAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1901,7 +1925,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploadersExportAll.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1928,7 +1952,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderClearUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="eiCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 312</value>
@@ -1949,7 +1973,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lbCustomUploaderList.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1973,7 +1997,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lbCustomUploaderList.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCustomUploaderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2000,33 +2024,6 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderRemove.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 72</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Name" xml:space="preserve">
-    <value>btnCustomUploaderUpdate</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Parent" xml:space="preserve">
-    <value>gbCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">

@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib
 {
     public class CustomUploaderItem
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "example.com";
         public CustomUploaderDestinationType DestinationType { get; set; }
         public CustomUploaderRequestType RequestType { get; set; }
         public string RequestURL { get; set; }

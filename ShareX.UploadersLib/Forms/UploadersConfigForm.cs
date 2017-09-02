@@ -1340,7 +1340,6 @@ namespace ShareX.UploadersLib
         private void btnFTPDuplicate_Click(object sender, EventArgs e)
         {
             FTPAccount account = FTPGetSelectedAccount();
-
             if (account != null)
             {
                 FTPAccount clone = account.Clone();
@@ -3248,57 +3247,48 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCustomUploaderName.Text))
-            {
-                CustomUploaderItem item = GetCustomUploaderFromFields();
-                Config.CustomUploadersList.Add(item);
-                lbCustomUploaderList.Items.Add(item.Name);
-                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
-                PrepareCustomUploaderList();
-            }
+            CustomUploaderAdd();
+            lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+            txtCustomUploaderName.Focus();
         }
 
         private void btnCustomUploaderRemove_Click(object sender, EventArgs e)
         {
-            if (lbCustomUploaderList.SelectedIndex > -1)
+            int selected = lbCustomUploaderList.SelectedIndex;
+
+            if (selected > -1)
             {
-                int index = lbCustomUploaderList.SelectedIndex;
-                Config.CustomUploadersList.RemoveAt(index);
-                lbCustomUploaderList.Items.RemoveAt(index);
-                CustomUploaderClearFields();
-                CustomUploaderFixSelectedUploader(index);
+                lbCustomUploaderList.Items.RemoveAt(selected);
+                Config.CustomUploadersList.RemoveAt(selected);
+
+                if (lbCustomUploaderList.Items.Count > 0)
+                {
+                    lbCustomUploaderList.SelectedIndex = selected == lbCustomUploaderList.Items.Count ? lbCustomUploaderList.Items.Count - 1 : selected;
+                }
+                else
+                {
+                    CustomUploaderClearFields();
+                    btnCustomUploaderAdd.Focus();
+                }
+
                 PrepareCustomUploaderList();
             }
         }
 
-        private void btnCustomUploaderUpdate_Click(object sender, EventArgs e)
+        private void btnCustomUploaderDuplicate_Click(object sender, EventArgs e)
         {
-            UpdateCustomUploader();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null)
+            {
+                CustomUploaderItem clone = uploader.Copy();
+                CustomUploaderAdd(clone);
+                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+            }
         }
 
         private void lbCustomUploaderList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = lbCustomUploaderList.SelectedIndex;
-
-            if (index > -1)
-            {
-                LoadCustomUploader(Config.CustomUploadersList[index]);
-            }
-        }
-
-        private object eiCustomUploaders_ExportRequested()
-        {
-            return GetSelectedCustomUploader();
-        }
-
-        private void eiCustomUploaders_ImportRequested(object obj)
-        {
-            AddCustomUploader(obj as CustomUploaderItem);
-        }
-
-        private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
-        {
-            CustomUploaderExportAll();
+            CustomUploaderLoadSelected();
         }
 
         private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
@@ -3307,6 +3297,21 @@ namespace ShareX.UploadersLib
             {
                 CustomUploaderClearUploaders();
             }
+        }
+
+        private object eiCustomUploaders_ExportRequested()
+        {
+            return CustomUploaderGetSelected();
+        }
+
+        private void eiCustomUploaders_ImportRequested(object obj)
+        {
+            CustomUploaderAdd(obj as CustomUploaderItem);
+        }
+
+        private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
+        {
+            CustomUploaderExportAll();
         }
 
         private void btnCustomUploaderClear_Click(object sender, EventArgs e)
