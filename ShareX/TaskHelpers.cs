@@ -83,11 +83,17 @@ namespace ShareX
                 case HotkeyType.ClipboardUploadWithContentViewer:
                     UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
+                case HotkeyType.UploadText:
+                    UploadManager.ShowTextUploadDialog(safeTaskSettings);
+                    break;
                 case HotkeyType.UploadURL:
                     UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     OpenDropWindow(safeTaskSettings);
+                    break;
+                case HotkeyType.ShortenURL:
+                    UploadManager.ShowShortenURLDialog(safeTaskSettings);
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
@@ -1379,8 +1385,10 @@ namespace ShareX
                 case HotkeyType.FolderUpload: return Resources.folder;
                 case HotkeyType.ClipboardUpload: return Resources.clipboard;
                 case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
+                case HotkeyType.UploadText: return Resources.notebook;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
+                case HotkeyType.ShortenURL: return Resources.edit_scale;
                 case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;

@@ -1031,4 +1031,16 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Drawing: Cursor</value>
   </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Shorten URL</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Upload text</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Upload</value>
+  </data>
 </root>

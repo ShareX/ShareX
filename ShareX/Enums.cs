@@ -157,8 +157,10 @@ namespace ShareX
         FolderUpload,
         ClipboardUpload,
         ClipboardUploadWithContentViewer,
+        UploadText,
         UploadURL,
         DragDropUpload,
+        ShortenURL,
         StopUploads,
         // Screen capture
         PrintScreen,
