@@ -119,7 +119,7 @@ namespace ShareX.UploadersLib
             txtCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             txtCustomUploaderName.HandleCreated += (sender, e) => txtCustomUploaderName.SetWatermark(Resources.UploadersConfigForm_CustomUploader_Name);
-            AddCustomUploaderDestinationTypes();
+            CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
@@ -711,7 +711,7 @@ namespace ShareX.UploadersLib
 
             // Custom uploaders
 
-            LoadCustomUploaderTab();
+            CustomUploaderLoadTab();
 
             #endregion Other uploaders
         }
@@ -3271,7 +3271,7 @@ namespace ShareX.UploadersLib
                     btnCustomUploaderAdd.Focus();
                 }
 
-                PrepareCustomUploaderList();
+                CustomUploaderUpdateList();
             }
         }
 
@@ -3293,7 +3293,8 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Resources.UploadersConfigForm_Remove_all_custom_uploaders_Confirmation, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.UploadersConfigForm_Remove_all_custom_uploaders_Confirmation, "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CustomUploaderClearUploaders();
             }
@@ -3314,14 +3315,200 @@ namespace ShareX.UploadersLib
             CustomUploaderExportAll();
         }
 
-        private void btnCustomUploaderClear_Click(object sender, EventArgs e)
+        private void txtCustomUploaderName_TextChanged(object sender, EventArgs e)
         {
-            CustomUploaderClearFields();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.Name = txtCustomUploaderName.Text;
         }
 
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
             txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestType.POST;
+        }
+
+        private void txtCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.RequestURL = txtCustomUploaderRequestURL.Text;
+        }
+
+        private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.FileFormName = txtCustomUploaderFileForm.Text;
+        }
+
+        private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomUploaderArgName.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                string value = txtCustomUploaderArgValue.Text;
+                lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
+                txtCustomUploaderArgName.Text = "";
+                txtCustomUploaderArgValue.Text = "";
+                txtCustomUploaderArgName.Focus();
+
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.Arguments.Add(name, value);
+            }
+        }
+
+        private void btnCustomUploaderArgRemove_Click(object sender, EventArgs e)
+        {
+            // TODO
+            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
+            {
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.Arguments.Remove(lvCustomUploaderArguments.SelectedItems[0].Text);
+
+                lvCustomUploaderArguments.SelectedItems[0].Remove();
+            }
+        }
+
+        private void btnCustomUploaderArgUpdate_Click(object sender, EventArgs e)
+        {
+            // TODO
+            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
+            {
+                string name = txtCustomUploaderArgName.Text;
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    string value = txtCustomUploaderArgValue.Text;
+                    lvCustomUploaderArguments.SelectedItems[0].Text = name;
+                    lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text = value;
+                }
+            }
+        }
+
+        private void lvCustomUploaderArguments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = "";
+            string value = "";
+
+            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
+            {
+                name = lvCustomUploaderArguments.SelectedItems[0].Text;
+                value = lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text;
+            }
+
+            txtCustomUploaderArgName.Text = name;
+            txtCustomUploaderArgValue.Text = value;
+        }
+
+        private void btnCustomUploaderHeaderAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomUploaderHeaderName.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                string value = txtCustomUploaderHeaderValue.Text;
+                lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
+                txtCustomUploaderHeaderName.Text = "";
+                txtCustomUploaderHeaderValue.Text = "";
+                txtCustomUploaderHeaderName.Focus();
+
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.Headers.Add(name, value);
+            }
+        }
+
+        private void btnCustomUploaderHeaderRemove_Click(object sender, EventArgs e)
+        {
+            // TODO
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.Headers.Remove(lvCustomUploaderHeaders.SelectedItems[0].Text);
+
+                lvCustomUploaderHeaders.SelectedItems[0].Remove();
+            }
+        }
+
+        private void btnCustomUploaderHeaderUpdate_Click(object sender, EventArgs e)
+        {
+            // TODO
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                string name = txtCustomUploaderHeaderName.Text;
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    string value = txtCustomUploaderHeaderValue.Text;
+                    lvCustomUploaderHeaders.SelectedItems[0].Text = name;
+                    lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text = value;
+                }
+            }
+        }
+
+        private void lvCustomUploaderHeaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = "";
+            string value = "";
+
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                name = lvCustomUploaderHeaders.SelectedItems[0].Text;
+                value = lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text;
+            }
+
+            txtCustomUploaderHeaderName.Text = name;
+            txtCustomUploaderHeaderValue.Text = value;
+        }
+
+        private void cbCustomUploaderResponseType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.ResponseType = (ResponseType)cbCustomUploaderResponseType.SelectedIndex;
+        }
+
+        private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
+        {
+            btnCustomUploaderJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtCustomUploaderJsonPath.Text);
+        }
+
+        private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("http://goessner.net/articles/JsonPath/");
+        }
+
+        private void btnCustomUploaderJsonAddSyntax_Click(object sender, EventArgs e)
+        {
+            string syntax = txtCustomUploaderJsonPath.Text;
+
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                if (syntax.StartsWith("$."))
+                {
+                    syntax = syntax.Substring(2);
+                }
+
+                AddTextToActiveURLField($"$json:{syntax}$");
+            }
+        }
+
+        private void txtCustomUploaderXPath_TextChanged(object sender, EventArgs e)
+        {
+            btnCustomUploaderXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderXPath.Text);
+        }
+
+        private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://www.w3schools.com/xml/xpath_syntax.asp");
+        }
+
+        private void btnCustomUploaderXmlSyntaxAdd_Click(object sender, EventArgs e)
+        {
+            string syntax = txtCustomUploaderXPath.Text;
+
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                AddTextToActiveURLField($"$xml:{syntax}$");
+            }
         }
 
         private void btnCustomUploaderRegexpAdd_Click(object sender, EventArgs e)
@@ -3333,24 +3520,37 @@ namespace ShareX.UploadersLib
                 lvCustomUploaderRegexps.Items.Add(regexp);
                 txtCustomUploaderRegexp.Text = "";
                 txtCustomUploaderRegexp.Focus();
+
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.RegexList.Add(regexp);
             }
         }
 
         private void btnCustomUploaderRegexpRemove_Click(object sender, EventArgs e)
         {
-            if (lvCustomUploaderRegexps.SelectedItems.Count > 0)
+            int index = lvCustomUploaderRegexps.SelectedIndex;
+            if (index > -1)
             {
-                lvCustomUploaderRegexps.SelectedItems[0].Remove();
+                lvCustomUploaderRegexps.Items.RemoveAt(index);
+
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.RegexList.RemoveAt(index);
             }
         }
 
         private void btnCustomUploaderRegexpEdit_Click(object sender, EventArgs e)
         {
             string regexp = txtCustomUploaderRegexp.Text;
-
-            if (lvCustomUploaderRegexps.SelectedItems.Count > 0 && !string.IsNullOrEmpty(regexp))
+            if (!string.IsNullOrEmpty(regexp))
             {
-                lvCustomUploaderRegexps.SelectedItems[0].Text = regexp;
+                int index = lvCustomUploaderRegexps.SelectedIndex;
+                if (index > -1)
+                {
+                    lvCustomUploaderRegexps.Items[index].Text = regexp;
+
+                    CustomUploaderItem uploader = CustomUploaderGetSelected();
+                    if (uploader != null) uploader.RegexList[index] = regexp;
+                }
             }
         }
 
@@ -3406,56 +3606,15 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
-        {
-            btnCustomUploaderJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtCustomUploaderJsonPath.Text);
-        }
-
-        private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("http://goessner.net/articles/JsonPath/");
-        }
-
-        private void btnCustomUploaderJsonAddSyntax_Click(object sender, EventArgs e)
-        {
-            string syntax = txtCustomUploaderJsonPath.Text;
-
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                if (syntax.StartsWith("$."))
-                {
-                    syntax = syntax.Substring(2);
-                }
-
-                syntax = string.Format("$json:{0}$", syntax);
-                AddTextToActiveURLField(syntax);
-            }
-        }
-
-        private void txtCustomUploaderXPath_TextChanged(object sender, EventArgs e)
-        {
-            btnCustomUploaderXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderXPath.Text);
-        }
-
-        private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://www.w3schools.com/xml/xpath_syntax.asp");
-        }
-
-        private void btnCustomUploaderXmlSyntaxAdd_Click(object sender, EventArgs e)
-        {
-            string syntax = txtCustomUploaderXPath.Text;
-
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                syntax = string.Format("$xml:{0}$", syntax);
-                AddTextToActiveURLField(syntax);
-            }
-        }
-
         private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.URL;
+        }
+
+        private void txtCustomUploaderURL_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.URL = txtCustomUploaderURL.Text;
         }
 
         private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
@@ -3463,9 +3622,21 @@ namespace ShareX.UploadersLib
             customUploaderURLType = URLType.ThumbnailURL;
         }
 
+        private void txtCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
+        }
+
         private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.DeletionURL;
+        }
+
+        private void txtCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.DeletionURL = txtCustomUploaderDeletionURL.Text;
         }
 
         private void AddTextToActiveURLField(string text)
@@ -3489,113 +3660,17 @@ namespace ShareX.UploadersLib
             tb.AppendText(text);
         }
 
-        private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)
-        {
-            string name = txtCustomUploaderArgName.Text;
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                string value = txtCustomUploaderArgValue.Text;
-                lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderArgName.Text = "";
-                txtCustomUploaderArgValue.Text = "";
-                txtCustomUploaderArgName.Focus();
-            }
-        }
-
-        private void btnCustomUploaderArgRemove_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
-            {
-                lvCustomUploaderArguments.SelectedItems[0].Remove();
-            }
-        }
-
-        private void btnCustomUploaderArgUpdate_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
-            {
-                string name = txtCustomUploaderArgName.Text;
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    string value = txtCustomUploaderArgValue.Text;
-                    lvCustomUploaderArguments.SelectedItems[0].Text = name;
-                    lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text = value;
-                }
-            }
-        }
-
-        private void lvCustomUploaderArguments_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string name = "";
-            string value = "";
-
-            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
-            {
-                name = lvCustomUploaderArguments.SelectedItems[0].Text;
-                value = lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text;
-            }
-
-            txtCustomUploaderArgName.Text = name;
-            txtCustomUploaderArgValue.Text = value;
-        }
-
-        private void btnCustomUploaderHeaderAdd_Click(object sender, EventArgs e)
-        {
-            string name = txtCustomUploaderHeaderName.Text;
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                string value = txtCustomUploaderHeaderValue.Text;
-                lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderHeaderName.Text = "";
-                txtCustomUploaderHeaderValue.Text = "";
-                txtCustomUploaderHeaderName.Focus();
-            }
-        }
-
-        private void btnCustomUploaderHeaderRemove_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
-            {
-                lvCustomUploaderHeaders.SelectedItems[0].Remove();
-            }
-        }
-
-        private void btnCustomUploaderHeaderUpdate_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
-            {
-                string name = txtCustomUploaderHeaderName.Text;
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    string value = txtCustomUploaderHeaderValue.Text;
-                    lvCustomUploaderHeaders.SelectedItems[0].Text = name;
-                    lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text = value;
-                }
-            }
-        }
-
-        private void lvCustomUploaderHeaders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string name = "";
-            string value = "";
-
-            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
-            {
-                name = lvCustomUploaderHeaders.SelectedItems[0].Text;
-                value = lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text;
-            }
-
-            txtCustomUploaderHeaderName.Text = name;
-            txtCustomUploaderHeaderValue.Text = value;
-        }
-
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.CustomImageUploaderSelected = cbCustomUploaderImageUploader.SelectedIndex;
+        }
+
+        private void btnCustomUploaderImageUploaderTest_Click(object sender, EventArgs e)
+        {
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
+            {
+                TestCustomUploader(CustomUploaderType.Image, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
+            }
         }
 
         private void cbCustomUploaderTextUploader_SelectedIndexChanged(object sender, EventArgs e)
@@ -3603,9 +3678,25 @@ namespace ShareX.UploadersLib
             Config.CustomTextUploaderSelected = cbCustomUploaderTextUploader.SelectedIndex;
         }
 
+        private void btnCustomUploaderTextUploaderTest_Click(object sender, EventArgs e)
+        {
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
+            {
+                TestCustomUploader(CustomUploaderType.Text, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
+            }
+        }
+
         private void cbCustomUploaderFileUploader_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.CustomFileUploaderSelected = cbCustomUploaderFileUploader.SelectedIndex;
+        }
+
+        private void btnCustomUploaderFileUploaderTest_Click(object sender, EventArgs e)
+        {
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
+            {
+                TestCustomUploader(CustomUploaderType.File, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
+            }
         }
 
         private void cbCustomUploaderURLShortener_SelectedIndexChanged(object sender, EventArgs e)
@@ -3613,54 +3704,12 @@ namespace ShareX.UploadersLib
             Config.CustomURLShortenerSelected = cbCustomUploaderURLShortener.SelectedIndex;
         }
 
-        private void btnCustomUploaderImageUploaderTest_Click(object sender, EventArgs e)
-        {
-            UpdateCustomUploader();
-
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
-            {
-                TestCustomUploader(CustomUploaderType.Image, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
-            }
-        }
-
-        private void btnCustomUploaderTextUploaderTest_Click(object sender, EventArgs e)
-        {
-            UpdateCustomUploader();
-
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
-            {
-                TestCustomUploader(CustomUploaderType.Text, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
-            }
-        }
-
-        private void btnCustomUploaderFileUploaderTest_Click(object sender, EventArgs e)
-        {
-            UpdateCustomUploader();
-
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
-            {
-                TestCustomUploader(CustomUploaderType.File, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
-            }
-        }
-
         private void btnCustomUploaderURLShortenerTest_Click(object sender, EventArgs e)
         {
-            UpdateCustomUploader();
-
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
             {
                 TestCustomUploader(CustomUploaderType.URL, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
             }
-        }
-
-        private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
-        }
-
-        private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)
@@ -3679,6 +3728,16 @@ namespace ShareX.UploadersLib
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
+        }
+
+        private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
+        }
+
+        private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
         }
 
         #endregion Custom Uploaders

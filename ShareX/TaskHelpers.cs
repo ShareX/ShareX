@@ -1537,7 +1537,7 @@ namespace ShareX
 
                             if (UploadersConfigForm.IsInstanceActive)
                             {
-                                UploadersConfigForm.UpdateCustomUploaderTab();
+                                UploadersConfigForm.CustomUploaderUpdateTab();
                             }
                         }
                     }

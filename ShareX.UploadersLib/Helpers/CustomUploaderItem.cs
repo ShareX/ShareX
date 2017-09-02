@@ -41,10 +41,10 @@ namespace ShareX.UploadersLib
         public CustomUploaderRequestType RequestType { get; set; }
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
-        public Dictionary<string, string> Arguments { get; set; }
-        public Dictionary<string, string> Headers { get; set; }
+        public Dictionary<string, string> Arguments { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> Headers { get; set; } = new Dictionary<string, string>();
         public ResponseType ResponseType { get; set; }
-        public List<string> RegexList { get; set; }
+        public List<string> RegexList { get; set; } = new List<string>();
         public string URL { get; set; }
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }

@@ -1615,7 +1615,7 @@ namespace ShareX.UploadersLib
             {
                 Config.CustomUploadersList.Add(uploader);
                 lbCustomUploaderList.Items.Add(uploader);
-                PrepareCustomUploaderList();
+                CustomUploaderUpdateList();
             }
         }
 
@@ -1684,7 +1684,7 @@ namespace ShareX.UploadersLib
             lbCustomUploaderList.Items.Clear();
             CustomUploaderClearFields();
             Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
-            PrepareCustomUploaderList();
+            CustomUploaderUpdateList();
         }
 
         private void CustomUploaderClearFields()
@@ -1692,7 +1692,26 @@ namespace ShareX.UploadersLib
             CustomUploaderLoad(new CustomUploaderItem());
         }
 
-        private void LoadCustomUploaderTab(bool selectLastItem = false)
+        private void CustomUploaderExportAll()
+        {
+            if (Config.CustomUploadersList != null && Config.CustomUploadersList.Count > 0)
+            {
+                using (FolderSelectDialog fsd = new FolderSelectDialog())
+                {
+                    if (fsd.ShowDialog())
+                    {
+                        foreach (CustomUploaderItem uploader in Config.CustomUploadersList)
+                        {
+                            string json = eiCustomUploaders.Serialize(uploader);
+                            string filepath = Path.Combine(fsd.FileName, uploader.Name + ".sxcu");
+                            File.WriteAllText(filepath, json, Encoding.UTF8);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void CustomUploaderLoadTab(bool selectLastItem = false)
         {
             lbCustomUploaderList.Items.Clear();
 
@@ -1707,7 +1726,7 @@ namespace ShareX.UploadersLib
                     lbCustomUploaderList.Items.Add(customUploader.Name);
                 }
 
-                PrepareCustomUploaderList();
+                CustomUploaderUpdateList();
             }
 
 #if DEBUG
@@ -1722,16 +1741,16 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public static void UpdateCustomUploaderTab()
+        public static void CustomUploaderUpdateTab()
         {
             if (IsInstanceActive)
             {
                 UploadersConfigForm form = GetFormInstance(null);
-                form.LoadCustomUploaderTab(true);
+                form.CustomUploaderLoadTab(true);
             }
         }
 
-        private void AddCustomUploaderDestinationTypes()
+        private void CustomUploaderAddDestinationTypes()
         {
             string[] enums = Helpers.GetLocalizedEnumDescriptions<CustomUploaderDestinationType>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
 
@@ -1745,6 +1764,12 @@ namespace ShareX.UploadersLib
                 {
                     ToolStripMenuItem tsmi2 = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[index];
                     tsmi2.Checked = !tsmi2.Checked;
+
+                    CustomUploaderItem uploader = CustomUploaderGetSelected();
+                    if (uploader != null)
+                    {
+                        uploader.DestinationType = CustomUploaderGetDestinationType();
+                    }
                 };
 
                 cmsCustomUploaderDestinationType.Items.Add(tsmi);
@@ -1762,7 +1787,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private CustomUploaderDestinationType GetCustomUploaderDestinationType()
+        private CustomUploaderDestinationType CustomUploaderGetDestinationType()
         {
             CustomUploaderDestinationType destinationType = CustomUploaderDestinationType.None;
 
@@ -1777,74 +1802,6 @@ namespace ShareX.UploadersLib
             }
 
             return destinationType;
-        }
-
-        private void UpdateCustomUploader()
-        {
-            int index = lbCustomUploaderList.SelectedIndex;
-
-            if (index >= 0)
-            {
-                CustomUploaderItem customUploader = GetCustomUploaderFromFields();
-
-                if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
-                {
-                    Config.CustomUploadersList[index] = customUploader;
-                    lbCustomUploaderList.Items[index] = customUploader.Name;
-                    PrepareCustomUploaderList();
-                }
-            }
-        }
-
-        private CustomUploaderItem GetSelectedCustomUploader()
-        {
-            if (lbCustomUploaderList.SelectedIndex >= 0)
-            {
-                CustomUploaderItem customUploader = GetCustomUploaderFromFields();
-
-                if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
-                {
-                    return customUploader;
-                }
-            }
-
-            return null;
-        }
-
-        private void AddCustomUploader(CustomUploaderItem customUploader)
-        {
-            if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
-            {
-                Config.CustomUploadersList.Add(customUploader);
-                lbCustomUploaderList.Items.Add(customUploader.Name);
-                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
-                PrepareCustomUploaderList();
-            }
-        }
-
-        private void CustomUploaderExportAll()
-        {
-            if (Config.CustomUploadersList != null)
-            {
-                for (int i = 0; i < lbCustomUploaderList.Items.Count; i++)
-                {
-                    lbCustomUploaderList.SelectedIndex = i;
-                    UpdateCustomUploader();
-                }
-
-                using (FolderSelectDialog fsd = new FolderSelectDialog())
-                {
-                    if (fsd.ShowDialog())
-                    {
-                        foreach (CustomUploaderItem item in Config.CustomUploadersList)
-                        {
-                            string json = eiCustomUploaders.Serialize(item);
-                            string filepath = Path.Combine(fsd.FileName, item.Name + ".sxcu");
-                            File.WriteAllText(filepath, json, Encoding.UTF8);
-                        }
-                    }
-                }
-            }
         }
 
         private void CustomUploaderFixSelectedUploader(int removedIndex)
@@ -1862,7 +1819,7 @@ namespace ShareX.UploadersLib
             else if (Config.CustomURLShortenerSelected > removedIndex) Config.CustomURLShortenerSelected--;
         }
 
-        private void PrepareCustomUploaderList()
+        private void CustomUploaderUpdateList()
         {
             cbCustomUploaderImageUploader.Items.Clear();
             cbCustomUploaderTextUploader.Items.Clear();
@@ -1896,71 +1853,6 @@ namespace ShareX.UploadersLib
             {
                 cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected;
             }
-        }
-
-        private CustomUploaderItem GetCustomUploaderFromFields()
-        {
-            CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
-
-            item.DestinationType = GetCustomUploaderDestinationType();
-
-            item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
-
-            item.RequestURL = txtCustomUploaderRequestURL.Text;
-
-            if (!string.IsNullOrEmpty(txtCustomUploaderFileForm.Text))
-            {
-                item.FileFormName = txtCustomUploaderFileForm.Text;
-            }
-
-            if (lvCustomUploaderArguments.Items.Count > 0)
-            {
-                item.Arguments = new Dictionary<string, string>();
-
-                foreach (ListViewItem lvItem in lvCustomUploaderArguments.Items)
-                {
-                    item.Arguments.Add(lvItem.Text, lvItem.SubItems[1].Text);
-                }
-            }
-
-            if (lvCustomUploaderHeaders.Items.Count > 0)
-            {
-                item.Headers = new Dictionary<string, string>();
-
-                foreach (ListViewItem lvItem in lvCustomUploaderHeaders.Items)
-                {
-                    item.Headers.Add(lvItem.Text, lvItem.SubItems[1].Text);
-                }
-            }
-
-            item.ResponseType = (ResponseType)cbCustomUploaderResponseType.SelectedIndex;
-
-            if (lvCustomUploaderRegexps.Items.Count > 0)
-            {
-                item.RegexList = new List<string>();
-
-                foreach (ListViewItem lvItem in lvCustomUploaderRegexps.Items)
-                {
-                    item.RegexList.Add(lvItem.Text);
-                }
-            }
-
-            if (!string.IsNullOrEmpty(txtCustomUploaderURL.Text))
-            {
-                item.URL = txtCustomUploaderURL.Text;
-            }
-
-            if (!string.IsNullOrEmpty(txtCustomUploaderThumbnailURL.Text))
-            {
-                item.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
-            }
-
-            if (!string.IsNullOrEmpty(txtCustomUploaderDeletionURL.Text))
-            {
-                item.DeletionURL = txtCustomUploaderDeletionURL.Text;
-            }
-
-            return item;
         }
 
         private void TestCustomUploader(CustomUploaderType type, CustomUploaderItem item)
