@@ -3329,7 +3329,11 @@ namespace ShareX.UploadersLib
                 txtCustomUploaderArgName.Focus();
 
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null) uploader.Arguments.Add(name, value);
+                if (uploader != null)
+                {
+                    if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
+                    uploader.Arguments.Add(name, value);
+                }
             }
         }
 
@@ -3389,7 +3393,11 @@ namespace ShareX.UploadersLib
                 txtCustomUploaderHeaderName.Focus();
 
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null) uploader.Headers.Add(name, value);
+                if (uploader != null)
+                {
+                    if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
+                    uploader.Headers.Add(name, value);
+                }
             }
         }
 
@@ -3498,7 +3506,11 @@ namespace ShareX.UploadersLib
                 txtCustomUploaderRegexp.Focus();
 
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null) uploader.RegexList.Add(regexp);
+                if (uploader != null)
+                {
+                    if (uploader.RegexList == null) uploader.RegexList = new List<string>();
+                    uploader.RegexList.Add(regexp);
+                }
             }
         }
 

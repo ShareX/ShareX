@@ -36,15 +36,15 @@ namespace ShareX.UploadersLib
 {
     public class CustomUploaderItem
     {
-        public string Name { get; set; } = "example.com";
+        public string Name { get; set; }
         public CustomUploaderDestinationType DestinationType { get; set; }
         public CustomUploaderRequestType RequestType { get; set; }
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
-        public Dictionary<string, string> Arguments { get; set; } = new Dictionary<string, string>();
-        public Dictionary<string, string> Headers { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> Arguments { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
         public ResponseType ResponseType { get; set; }
-        public List<string> RegexList { get; set; } = new List<string>();
+        public List<string> RegexList { get; set; }
         public string URL { get; set; }
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
@@ -54,6 +54,7 @@ namespace ShareX.UploadersLib
 
         public CustomUploaderItem()
         {
+            Name = "example.com";
         }
 
         public CustomUploaderItem(string name)
