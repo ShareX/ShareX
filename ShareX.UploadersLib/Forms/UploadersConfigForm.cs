@@ -3322,17 +3322,25 @@ namespace ShareX.UploadersLib
 
             if (!string.IsNullOrEmpty(name))
             {
-                string value = txtCustomUploaderArgValue.Text;
-                lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderArgName.Text = "";
-                txtCustomUploaderArgValue.Text = "";
-                txtCustomUploaderArgName.Focus();
-
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
                 if (uploader != null)
                 {
-                    if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
-                    uploader.Arguments.Add(name, value);
+                    if (uploader.Arguments.ContainsKey(name))
+                    {
+                        // TODO: Translate
+                        MessageBox.Show("An argument with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        string value = txtCustomUploaderArgValue.Text;
+                        lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
+                        if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
+                        uploader.Arguments.Add(name, value);
+                    }
+              
+                    txtCustomUploaderArgName.Text = "";
+                    txtCustomUploaderArgValue.Text = "";
+                    txtCustomUploaderArgName.Focus();
                 }
             }
         }
@@ -3386,17 +3394,25 @@ namespace ShareX.UploadersLib
 
             if (!string.IsNullOrEmpty(name))
             {
-                string value = txtCustomUploaderHeaderValue.Text;
-                lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderHeaderName.Text = "";
-                txtCustomUploaderHeaderValue.Text = "";
-                txtCustomUploaderHeaderName.Focus();
-
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
                 if (uploader != null)
                 {
-                    if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
-                    uploader.Headers.Add(name, value);
+                    if (uploader.Headers.ContainsKey(name))
+                    {
+                        // TODO: Translate
+                        MessageBox.Show("A header with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        string value = txtCustomUploaderHeaderValue.Text;
+                        lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
+                        if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
+                        uploader.Headers.Add(name, value);
+                    }
+
+                    txtCustomUploaderHeaderName.Text = "";
+                    txtCustomUploaderHeaderValue.Text = "";
+                    txtCustomUploaderHeaderName.Focus();
                 }
             }
         }
