@@ -3334,20 +3334,21 @@ namespace ShareX.UploadersLib
                     {
                         string value = txtCustomUploaderArgValue.Text;
                         lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
+
                         if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
                         uploader.Arguments.Add(name, value);
+
+                        lvCustomUploaderArguments.SelectedItems.Clear();
+                        txtCustomUploaderArgName.Text = "";
+                        txtCustomUploaderArgValue.Text = "";
+                        txtCustomUploaderArgName.Focus();
                     }
-              
-                    txtCustomUploaderArgName.Text = "";
-                    txtCustomUploaderArgValue.Text = "";
-                    txtCustomUploaderArgName.Focus();
                 }
             }
         }
 
         private void btnCustomUploaderArgRemove_Click(object sender, EventArgs e)
         {
-            // TODO
             if (lvCustomUploaderArguments.SelectedItems.Count > 0)
             {
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
@@ -3359,7 +3360,6 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderArgUpdate_Click(object sender, EventArgs e)
         {
-            // TODO
             if (lvCustomUploaderArguments.SelectedItems.Count > 0)
             {
                 string name = txtCustomUploaderArgName.Text;
@@ -3367,6 +3367,14 @@ namespace ShareX.UploadersLib
                 if (!string.IsNullOrEmpty(name))
                 {
                     string value = txtCustomUploaderArgValue.Text;
+
+                    CustomUploaderItem uploader = CustomUploaderGetSelected();
+                    if (uploader != null)
+                    {
+                        uploader.Arguments.Remove(lvCustomUploaderArguments.SelectedItems[0].Text);
+                        uploader.Arguments.Add(name, value);
+                    }
+
                     lvCustomUploaderArguments.SelectedItems[0].Text = name;
                     lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text = value;
                 }
@@ -3406,20 +3414,21 @@ namespace ShareX.UploadersLib
                     {
                         string value = txtCustomUploaderHeaderValue.Text;
                         lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
+
                         if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
                         uploader.Headers.Add(name, value);
-                    }
 
-                    txtCustomUploaderHeaderName.Text = "";
-                    txtCustomUploaderHeaderValue.Text = "";
-                    txtCustomUploaderHeaderName.Focus();
+                        lvCustomUploaderHeaders.SelectedItems.Clear();
+                        txtCustomUploaderHeaderName.Text = "";
+                        txtCustomUploaderHeaderValue.Text = "";
+                        txtCustomUploaderHeaderName.Focus();
+                    }
                 }
             }
         }
 
         private void btnCustomUploaderHeaderRemove_Click(object sender, EventArgs e)
         {
-            // TODO
             if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
             {
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
@@ -3431,7 +3440,6 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderHeaderUpdate_Click(object sender, EventArgs e)
         {
-            // TODO
             if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
             {
                 string name = txtCustomUploaderHeaderName.Text;
@@ -3439,6 +3447,14 @@ namespace ShareX.UploadersLib
                 if (!string.IsNullOrEmpty(name))
                 {
                     string value = txtCustomUploaderHeaderValue.Text;
+
+                    CustomUploaderItem uploader = CustomUploaderGetSelected();
+                    if (uploader != null)
+                    {
+                        uploader.Headers.Remove(lvCustomUploaderHeaders.SelectedItems[0].Text);
+                        uploader.Headers.Add(name, value);
+                    }
+
                     lvCustomUploaderHeaders.SelectedItems[0].Text = name;
                     lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text = value;
                 }
