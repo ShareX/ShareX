@@ -1676,6 +1676,48 @@ namespace ShareX.UploadersLib
             txtCustomUploaderURL.Text = uploader.URL ?? "";
             txtCustomUploaderThumbnailURL.Text = uploader.ThumbnailURL ?? "";
             txtCustomUploaderDeletionURL.Text = uploader.DeletionURL ?? "";
+
+            CustomUploaderUpdateStates();
+        }
+
+        private void CustomUploaderUpdateStates()
+        {
+            CustomUploaderUpdateUploadersState();
+            CustomUploaderUpdateRequestState();
+            CustomUploaderUpdateArgumentsState();
+            CustomUploaderUpdateHeadersState();
+            CustomUploaderUpdateResponseState();
+        }
+
+        private void CustomUploaderUpdateUploadersState()
+        {
+            btnCustomUploaderRemove.Enabled = btnCustomUploaderDuplicate.Enabled = lbCustomUploaderList.SelectedIndex > -1;
+        }
+
+        private void CustomUploaderUpdateRequestState()
+        {
+            txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestType.POST;
+        }
+
+        private void CustomUploaderUpdateArgumentsState()
+        {
+            btnCustomUploaderArgAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderArgName.Text);
+            btnCustomUploaderArgRemove.Enabled = btnCustomUploaderArgUpdate.Enabled = lvCustomUploaderArguments.SelectedItems.Count > 0;
+        }
+
+        private void CustomUploaderUpdateHeadersState()
+        {
+            btnCustomUploaderHeaderAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderHeaderName.Text);
+            btnCustomUploaderHeaderRemove.Enabled = btnCustomUploaderHeaderUpdate.Enabled = lvCustomUploaderHeaders.SelectedItems.Count > 0;
+        }
+
+        private void CustomUploaderUpdateResponseState()
+        {
+            btnCustomUploaderJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtCustomUploaderJsonPath.Text);
+            btnCustomUploaderXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderXPath.Text);
+            btnCustomUploaderRegexpAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderRegexp.Text);
+            btnCustomUploaderRegexpRemove.Enabled = btnCustomUploaderRegexpUpdate.Enabled = btnCustomUploaderRegexAddSyntax.Enabled =
+                lvCustomUploaderRegexps.SelectedItems.Count > 0;
         }
 
         private void CustomUploaderClearUploaders()
@@ -1685,6 +1727,7 @@ namespace ShareX.UploadersLib
             CustomUploaderClearFields();
             Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
             CustomUploaderUpdateList();
+            CustomUploaderUpdateUploadersState();
         }
 
         private void CustomUploaderClearFields()
@@ -1739,6 +1782,8 @@ namespace ShareX.UploadersLib
             {
                 lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
             }
+
+            CustomUploaderUpdateStates();
         }
 
         public static void CustomUploaderUpdateTab()

@@ -3301,7 +3301,8 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
-            txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestType.POST;
+
+            CustomUploaderUpdateRequestState();
         }
 
         private void txtCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
@@ -3314,6 +3315,11 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.FileFormName = txtCustomUploaderFileForm.Text;
+        }
+
+        private void txtCustomUploaderArgName_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderUpdateArgumentsState();
         }
 
         private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)
@@ -3394,6 +3400,13 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderArgName.Text = name;
             txtCustomUploaderArgValue.Text = value;
+
+            CustomUploaderUpdateArgumentsState();
+        }
+
+        private void txtCustomUploaderHeaderName_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderUpdateHeadersState();
         }
 
         private void btnCustomUploaderHeaderAdd_Click(object sender, EventArgs e)
@@ -3474,6 +3487,8 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderHeaderName.Text = name;
             txtCustomUploaderHeaderValue.Text = value;
+
+            CustomUploaderUpdateHeadersState();
         }
 
         private void cbCustomUploaderResponseType_SelectedIndexChanged(object sender, EventArgs e)
@@ -3484,7 +3499,7 @@ namespace ShareX.UploadersLib
 
         private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
         {
-            btnCustomUploaderJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtCustomUploaderJsonPath.Text);
+            CustomUploaderUpdateResponseState();
         }
 
         private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
@@ -3509,7 +3524,7 @@ namespace ShareX.UploadersLib
 
         private void txtCustomUploaderXPath_TextChanged(object sender, EventArgs e)
         {
-            btnCustomUploaderXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderXPath.Text);
+            CustomUploaderUpdateResponseState();
         }
 
         private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
@@ -3525,6 +3540,11 @@ namespace ShareX.UploadersLib
             {
                 AddTextToActiveURLField($"$xml:{syntax}$");
             }
+        }
+
+        private void txtCustomUploaderRegexp_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderUpdateResponseState();
         }
 
         private void btnCustomUploaderRegexpAdd_Click(object sender, EventArgs e)
@@ -3590,7 +3610,7 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderRegexp.Text = regex;
 
-            btnCustomUploaderRegexAddSyntax.Enabled = lvCustomUploaderRegexps.SelectedItems.Count > 0;
+            CustomUploaderUpdateResponseState();
         }
 
         private void btnCustomUploaderRegexAddSyntax_Click(object sender, EventArgs e)
