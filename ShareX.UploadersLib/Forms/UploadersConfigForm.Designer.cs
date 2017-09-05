@@ -646,6 +646,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.pCustomUploader = new System.Windows.Forms.Panel();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -740,6 +741,7 @@
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.pCustomUploader.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -886,8 +888,7 @@
             // 
             // tpCustomUploaders
             // 
-            this.tpCustomUploaders.Controls.Add(this.tcCustomUploaderResponseParse);
-            this.tpCustomUploaders.Controls.Add(this.tcCustomUploaderArguments);
+            this.tpCustomUploaders.Controls.Add(this.pCustomUploader);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderExamples);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderHelp);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderImageUploader);
@@ -895,31 +896,17 @@
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderFileUploader);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderImageUploaderTest);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderTestResult);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderDeletionURL);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderFileUploader);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderDeletionURL);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderShowLastResponse);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderResponseType);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderURLShortener);
             this.tpCustomUploaders.Controls.Add(this.gbCustomUploaders);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderTextUploader);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderRequestURL);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderURLShortenerTest);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderTextUploader);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderThumbnailURL);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURLShortener);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderResponseType);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderTextUploaderTest);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderURL);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderImageUploader);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderRequestURL);
             this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderLog);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderThumbnailURL);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderFileForm);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderRequestType);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderRequestType);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderFileForm);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURL);
             resources.ApplyResources(this.tpCustomUploaders, "tpCustomUploaders");
             this.tpCustomUploaders.Name = "tpCustomUploaders";
             this.tpCustomUploaders.UseVisualStyleBackColor = true;
@@ -5272,6 +5259,27 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // pCustomUploader
+            // 
+            this.pCustomUploader.Controls.Add(this.cbCustomUploaderRequestType);
+            this.pCustomUploader.Controls.Add(this.tcCustomUploaderResponseParse);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderURL);
+            this.pCustomUploader.Controls.Add(this.tcCustomUploaderArguments);
+            this.pCustomUploader.Controls.Add(this.txtCustomUploaderFileForm);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestType);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderFileForm);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderThumbnailURL);
+            this.pCustomUploader.Controls.Add(this.txtCustomUploaderRequestURL);
+            this.pCustomUploader.Controls.Add(this.txtCustomUploaderURL);
+            this.pCustomUploader.Controls.Add(this.cbCustomUploaderResponseType);
+            this.pCustomUploader.Controls.Add(this.txtCustomUploaderThumbnailURL);
+            this.pCustomUploader.Controls.Add(this.txtCustomUploaderDeletionURL);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestURL);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderResponseType);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderDeletionURL);
+            resources.ApplyResources(this.pCustomUploader, "pCustomUploader");
+            this.pCustomUploader.Name = "pCustomUploader";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5448,6 +5456,8 @@
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.pCustomUploader.ResumeLayout(false);
+            this.pCustomUploader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6070,5 +6080,6 @@
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
         private System.Windows.Forms.LinkLabel sulKeyLink;
         private System.Windows.Forms.Button btnCustomUploaderDuplicate;
+        private System.Windows.Forms.Panel pCustomUploader;
     }
 }

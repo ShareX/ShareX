@@ -1682,16 +1682,18 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateStates()
         {
-            CustomUploaderUpdateUploadersState();
-            CustomUploaderUpdateRequestState();
-            CustomUploaderUpdateArgumentsState();
-            CustomUploaderUpdateHeadersState();
-            CustomUploaderUpdateResponseState();
-        }
+            bool isSelected = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
-        private void CustomUploaderUpdateUploadersState()
-        {
-            btnCustomUploaderRemove.Enabled = btnCustomUploaderDuplicate.Enabled = lbCustomUploaderList.SelectedIndex > -1;
+            txtCustomUploaderName.Enabled = btnCustomUploaderRemove.Enabled = btnCustomUploaderDuplicate.Enabled = eiCustomUploaders.Enabled =
+                pCustomUploader.Enabled = mbCustomUploaderDestinationType.Enabled = isSelected;
+
+            if (isSelected)
+            {
+                CustomUploaderUpdateRequestState();
+                CustomUploaderUpdateArgumentsState();
+                CustomUploaderUpdateHeadersState();
+                CustomUploaderUpdateResponseState();
+            }
         }
 
         private void CustomUploaderUpdateRequestState()
@@ -1727,7 +1729,7 @@ namespace ShareX.UploadersLib
             CustomUploaderClearFields();
             Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
             CustomUploaderUpdateList();
-            CustomUploaderUpdateUploadersState();
+            CustomUploaderUpdateStates();
         }
 
         private void CustomUploaderClearFields()
