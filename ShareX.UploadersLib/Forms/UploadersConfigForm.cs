@@ -3331,6 +3331,8 @@ namespace ShareX.UploadersLib
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
                 if (uploader != null)
                 {
+                    if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
+
                     if (uploader.Arguments.ContainsKey(name))
                     {
                         // TODO: Translate
@@ -3340,8 +3342,6 @@ namespace ShareX.UploadersLib
                     {
                         string value = txtCustomUploaderArgValue.Text;
                         lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
-
-                        if (uploader.Arguments == null) uploader.Arguments = new Dictionary<string, string>();
                         uploader.Arguments.Add(name, value);
 
                         lvCustomUploaderArguments.SelectedItems.Clear();
@@ -3418,6 +3418,8 @@ namespace ShareX.UploadersLib
                 CustomUploaderItem uploader = CustomUploaderGetSelected();
                 if (uploader != null)
                 {
+                    if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
+
                     if (uploader.Headers.ContainsKey(name))
                     {
                         // TODO: Translate
@@ -3427,8 +3429,6 @@ namespace ShareX.UploadersLib
                     {
                         string value = txtCustomUploaderHeaderValue.Text;
                         lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
-
-                        if (uploader.Headers == null) uploader.Headers = new Dictionary<string, string>();
                         uploader.Headers.Add(name, value);
 
                         lvCustomUploaderHeaders.SelectedItems.Clear();

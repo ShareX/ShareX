@@ -1774,7 +1774,7 @@ namespace ShareX.UploadersLib
             {
                 foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
                 {
-                    lbCustomUploaderList.Items.Add(customUploader.Name);
+                    lbCustomUploaderList.Items.Add(customUploader);
                 }
 
                 CustomUploaderUpdateList();

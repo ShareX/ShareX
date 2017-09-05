@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -36,17 +37,40 @@ namespace ShareX.UploadersLib
 {
     public class CustomUploaderItem
     {
+        [DefaultValue("")]
         public string Name { get; set; }
+
+        [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
+
+        [DefaultValue(CustomUploaderRequestType.POST)]
         public CustomUploaderRequestType RequestType { get; set; }
+
+        [DefaultValue("")]
         public string RequestURL { get; set; }
+
+        [DefaultValue("")]
         public string FileFormName { get; set; }
+
+        [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
+
+        [DefaultValue(null)]
         public Dictionary<string, string> Headers { get; set; }
+
+        [DefaultValue(ResponseType.Text)]
         public ResponseType ResponseType { get; set; }
+
+        [DefaultValue(null)]
         public List<string> RegexList { get; set; }
+
+        [DefaultValue("")]
         public string URL { get; set; }
+
+        [DefaultValue("")]
         public string ThumbnailURL { get; set; }
+
+        [DefaultValue("")]
         public string DeletionURL { get; set; }
 
         private string response;
@@ -54,7 +78,6 @@ namespace ShareX.UploadersLib
 
         public CustomUploaderItem()
         {
-            Name = "example.com";
         }
 
         public CustomUploaderItem(string name)
@@ -64,6 +87,26 @@ namespace ShareX.UploadersLib
 
         public override string ToString()
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                if (!string.IsNullOrEmpty(RequestURL) && Uri.TryCreate(RequestURL, UriKind.Absolute, out Uri uri))
+                {
+                    string host = uri.Host;
+
+                    if (!string.IsNullOrEmpty(host))
+                    {
+                        if (host.StartsWith("www."))
+                        {
+                            host = host.Substring(4);
+                        }
+
+                        return host;
+                    }
+                }
+
+                return "Name";
+            }
+
             return Name;
         }
 
