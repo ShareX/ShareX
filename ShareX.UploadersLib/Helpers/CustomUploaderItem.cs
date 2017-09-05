@@ -55,14 +55,20 @@ namespace ShareX.UploadersLib
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
 
+        public bool ShouldSerializeArguments() => Arguments != null && Arguments.Count > 0;
+
         [DefaultValue(null)]
         public Dictionary<string, string> Headers { get; set; }
+
+        public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
 
         [DefaultValue(ResponseType.Text)]
         public ResponseType ResponseType { get; set; }
 
         [DefaultValue(null)]
         public List<string> RegexList { get; set; }
+
+        public bool ShouldSerializeRegexList() => RegexList != null && RegexList.Count > 0;
 
         [DefaultValue("")]
         public string URL { get; set; }
