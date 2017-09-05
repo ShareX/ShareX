@@ -1694,6 +1694,11 @@ namespace ShareX.UploadersLib
                 CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateResponseState();
             }
+
+            btnCustomUploaderClearUploaders.Enabled = btnCustomUploadersExportAll.Enabled = cbCustomUploaderImageUploader.Enabled =
+                btnCustomUploaderImageUploaderTest.Enabled = cbCustomUploaderTextUploader.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
+                cbCustomUploaderFileUploader.Enabled = btnCustomUploaderFileUploaderTest.Enabled = cbCustomUploaderURLShortener.Enabled =
+                btnCustomUploaderURLShortenerTest.Enabled = lbCustomUploaderList.Items.Count > 0;
         }
 
         private void CustomUploaderUpdateRequestState()
@@ -1730,6 +1735,7 @@ namespace ShareX.UploadersLib
             Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
             CustomUploaderUpdateList();
             CustomUploaderUpdateStates();
+            btnCustomUploaderAdd.Focus();
         }
 
         private void CustomUploaderClearFields()
