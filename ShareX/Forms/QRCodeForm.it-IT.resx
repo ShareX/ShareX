@@ -126,4 +126,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Codice QR</value>
   </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Risultato:</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>Codifica</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>Decodifica</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Decodifica da File Immagine...</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>Decodifica da Schermo...</value>
+  </data>
 </root>

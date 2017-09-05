@@ -1241,4 +1241,7 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
   </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Duplica</value>
+  </data>
 </root>

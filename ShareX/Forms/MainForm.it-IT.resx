@@ -717,4 +717,16 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Crea Miniatura Immagine...</value>
   </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Carica Testo...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Carica Testo...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Accorcia URL...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Accorcia URL...</value>
+  </data>
 </root>
