@@ -139,9 +139,6 @@
   <data name="GitHub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\GitHub.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Picasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Picasa.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Parent album path e.g.</value>
   </data>
@@ -394,5 +391,8 @@ Created folders:</value>
   </data>
   <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\favicons\googlephotos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

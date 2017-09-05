@@ -1014,9 +1014,9 @@ namespace ShareX.UploadersLib
             if (lvPicasaAlbumList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvPicasaAlbumList.SelectedItems[0];
-                if (lvi.Tag is PicasaAlbumInfo)
+                if (lvi.Tag is GooglePhotosAlbumInfo)
                 {
-                    PicasaAlbumInfo album = (PicasaAlbumInfo)lvi.Tag;
+                    GooglePhotosAlbumInfo album = (GooglePhotosAlbumInfo)lvi.Tag;
                     txtPicasaAlbumID.Text = album.ID;
                 }
             }

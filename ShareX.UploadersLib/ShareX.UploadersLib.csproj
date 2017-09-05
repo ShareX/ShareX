@@ -306,7 +306,7 @@
     <Compile Include="Helpers\OAuth\OAuthInfo.cs" />
     <Compile Include="ImageUploaders\CustomImageUploader.cs" />
     <Compile Include="ImageUploaders\Imgur.cs" />
-    <Compile Include="ImageUploaders\Picasa.cs" />
+    <Compile Include="ImageUploaders\GooglePhotos.cs" />
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\GitHubGist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
@@ -909,7 +909,6 @@
     <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
-    <None Include="Favicons\Picasa.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="Favicons\Polr.ico" />
     <None Include="packages.config" />
@@ -961,6 +960,7 @@
     <Content Include="Favicons\AzureStorage.png" />
     <None Include="Favicons\Plik.ico" />
     <Content Include="Favicons\Gfycat.png" />
+    <Content Include="Favicons\GooglePhotos.ico" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

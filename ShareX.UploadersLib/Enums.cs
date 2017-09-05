@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         Flickr,
         [Description("Photobucket")]
         Photobucket,
-        [Description("Google Photos (Picasa)")]
+        [Description("Google Photos")]
         Picasa,
         [Description("Twitter")]
         Twitter,

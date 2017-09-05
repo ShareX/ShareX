@@ -619,7 +619,7 @@
             this.btnPhotobucketAuthComplete = new System.Windows.Forms.Button();
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
-            this.tpPicasa = new System.Windows.Forms.TabPage();
+            this.tpGooglePhotos = new System.Windows.Forms.TabPage();
             this.txtPicasaAlbumID = new System.Windows.Forms.TextBox();
             this.lblPicasaAlbumID = new System.Windows.Forms.Label();
             this.lvPicasaAlbumList = new System.Windows.Forms.ListView();
@@ -736,7 +736,7 @@
             this.gbPhotobucketAlbumPath.SuspendLayout();
             this.gbPhotobucketAlbums.SuspendLayout();
             this.gbPhotobucketUserAccount.SuspendLayout();
-            this.tpPicasa.SuspendLayout();
+            this.tpGooglePhotos.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
@@ -4652,7 +4652,7 @@
             this.tcImageUploaders.Controls.Add(this.tpTinyPic);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
-            this.tcImageUploaders.Controls.Add(this.tpPicasa);
+            this.tcImageUploaders.Controls.Add(this.tpGooglePhotos);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
             this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
@@ -5079,16 +5079,16 @@
             resources.ApplyResources(this.lblPhotobucketAccountStatus, "lblPhotobucketAccountStatus");
             this.lblPhotobucketAccountStatus.Name = "lblPhotobucketAccountStatus";
             // 
-            // tpPicasa
+            // tpGooglePhotos
             // 
-            this.tpPicasa.Controls.Add(this.txtPicasaAlbumID);
-            this.tpPicasa.Controls.Add(this.lblPicasaAlbumID);
-            this.tpPicasa.Controls.Add(this.lvPicasaAlbumList);
-            this.tpPicasa.Controls.Add(this.btnPicasaRefreshAlbumList);
-            this.tpPicasa.Controls.Add(this.oauth2Picasa);
-            resources.ApplyResources(this.tpPicasa, "tpPicasa");
-            this.tpPicasa.Name = "tpPicasa";
-            this.tpPicasa.UseVisualStyleBackColor = true;
+            this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
+            this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
+            this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
+            this.tpGooglePhotos.Controls.Add(this.btnPicasaRefreshAlbumList);
+            this.tpGooglePhotos.Controls.Add(this.oauth2Picasa);
+            resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
+            this.tpGooglePhotos.Name = "tpGooglePhotos";
+            this.tpGooglePhotos.UseVisualStyleBackColor = true;
             // 
             // txtPicasaAlbumID
             // 
@@ -5441,8 +5441,8 @@
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);
             this.gbPhotobucketUserAccount.PerformLayout();
-            this.tpPicasa.ResumeLayout(false);
-            this.tpPicasa.PerformLayout();
+            this.tpGooglePhotos.ResumeLayout(false);
+            this.tpGooglePhotos.PerformLayout();
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tpVgyme.ResumeLayout(false);
@@ -5900,7 +5900,7 @@
         internal System.Windows.Forms.TabPage tpTinyPic;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
-        internal System.Windows.Forms.TabPage tpPicasa;
+        internal System.Windows.Forms.TabPage tpGooglePhotos;
         internal System.Windows.Forms.TabPage tpChevereto;
         internal System.Windows.Forms.TabPage tpVgyme;
         internal System.Windows.Forms.TabPage tpPastebin;

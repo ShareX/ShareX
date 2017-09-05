@@ -324,7 +324,7 @@ namespace ShareX.UploadersLib
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
 
-                string url = new Picasa(oauth).GetAuthorizationURL();
+                string url = new GooglePhotos(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
@@ -407,11 +407,11 @@ namespace ShareX.UploadersLib
 
                 if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
                 {
-                    List<PicasaAlbumInfo> albums = new Picasa(Config.PicasaOAuth2Info).GetAlbumList();
+                    List<GooglePhotosAlbumInfo> albums = new GooglePhotos(Config.PicasaOAuth2Info).GetAlbumList();
 
                     if (albums != null && albums.Count > 0)
                     {
-                        foreach (PicasaAlbumInfo album in albums)
+                        foreach (GooglePhotosAlbumInfo album in albums)
                         {
                             ListViewItem lvi = new ListViewItem(album.ID);
                             lvi.SubItems.Add(album.Name ?? "");
