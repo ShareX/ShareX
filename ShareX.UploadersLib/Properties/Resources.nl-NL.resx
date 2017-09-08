@@ -183,6 +183,9 @@
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
     <value>Login geslaagd.</value>
   </data>
+  <data name="UploadersConfigForm_Logout_successful" xml:space="preserve">
+    <value>Logout  successful.</value>
+  </data>  
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Klik op de knop om te verversen</value>
   </data>

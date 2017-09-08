@@ -44,6 +44,7 @@ namespace ShareX.UploadersLib
         public static string SlimgClientSecret = "";
 
         // File Uploaders
+        public static string ChuangYiBaoKey = "";
         public static string DropboxConsumerKey = "";
         public static string DropboxConsumerSecret = "";
         public static string CopyConsumerKey = "";

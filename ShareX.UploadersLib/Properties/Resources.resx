@@ -245,6 +245,9 @@ Created folders:</value>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
     <value>Login successful.</value>
   </data>
+  <data name="UploadersConfigForm_Logout_successful" xml:space="preserve">
+    <value>Logout  successful.</value>
+  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentication required.</value>
   </data>
@@ -268,6 +271,9 @@ Created folders:</value>
   </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Directory name to create</value>
+  </data>
+  <data name="ChuangYiBao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\ChuangYiBao.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP client</value>

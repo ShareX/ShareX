@@ -27,6 +27,7 @@ using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.OtherServices;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
 using System;
@@ -321,6 +322,13 @@ namespace ShareX.UploadersLib
             #endregion Text uploaders
 
             #region File uploaders
+
+            // ChuangYiBao
+
+            txtChuangYiBaoUsername.Text = Config.ChuangYiBaoSettings.Username;
+            txtChuangYiBaoPassword.Text = ChuangYiBaoTripleDESCryptoService.Decrypt(Config.ChuangYiBaoSettings.Password);
+            rbChuangYiBaoIsCreation.Checked = !Config.ChuangYiBaoSettings.IsEvidence;
+            rbChuangYiBaoIsEvidence.Checked = Config.ChuangYiBaoSettings.IsEvidence;
 
             // FTP
 
@@ -1257,6 +1265,93 @@ namespace ShareX.UploadersLib
         #endregion Text Uploaders
 
         #region File Uploaders
+        #region ChuangYiBao
+        private void llChuangYiBaoCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(Config.ChuangYiBaoDomain + ChuangYiBaoUploader.RegisterURL);
+        }
+
+        private void llChuangYiBaoForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(Config.ChuangYiBaoDomain + ChuangYiBaoUploader.ResetPasswordURL);
+        }
+
+        private void txtChuangYiBaoUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.ChuangYiBaoSettings.Username = txtChuangYiBaoUsername.Text;
+        }
+
+        private void txtChuangYiBaoPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.ChuangYiBaoSettings.Password = ChuangYiBaoTripleDESCryptoService.Encrypt(txtChuangYiBaoPassword.Text);
+        }
+
+        private void btnChuangYiBaoLogin_Click(object sender, EventArgs e)
+        {
+            ChuangYiBaoUploader ChuangYiBaoUploader = new ChuangYiBaoUploader(APIKeys.ChuangYiBaoKey, Config);
+
+            try
+            {
+                if (ChuangYiBaoUploader.GetAccessToken())
+                {
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "创意宝", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.btnChuangYiBaoLogin.Enabled = false;
+                    this.btnChuangYiBaoLogout.Enabled = true;
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "创意宝", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnChuangYiBaoLogout_Click(object sender, EventArgs e)
+        {
+            this.txtChuangYiBaoPassword.Text = String.Empty;
+            Config.ChuangYiBaoSettings.Auth_token = String.Empty;
+
+            MessageBox.Show(Resources.UploadersConfigForm_Logout_successful, "创意宝", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.btnChuangYiBaoLogin.Enabled = true;
+            this.btnChuangYiBaoLogout.Enabled = false;
+        }
+
+        private void rbChuangYiBaoIsCreation_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.ChuangYiBaoSettings.IsEvidence = !rbChuangYiBaoIsCreation.Checked;
+        }
+
+        private void rbChuangYiBaoIsEvidence_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.ChuangYiBaoSettings.IsEvidence = rbChuangYiBaoIsEvidence.Checked;
+        }
+
+        private void btnChuangYiBaoOpenPublicProfile_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Config.ChuangYiBaoSettings.Username))
+            {
+                URLHelpers.OpenURL(Config.ChuangYiBaoDomain + "/business/personal/member/personalcenter.do?username=" + Config.ChuangYiBaoSettings.Username);
+            }
+            else
+            {
+                txtChuangYiBaoUsername.Focus();
+            }
+        }
+
+        private void btnChuangYiBaoOpenMyImages_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Config.ChuangYiBaoDomain + "/business/personal/creation/v_list.do");
+        }
+
+        #endregion ChuangYiBao
 
         #region FTP
 

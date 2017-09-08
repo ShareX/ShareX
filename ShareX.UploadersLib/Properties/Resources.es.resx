@@ -190,6 +190,9 @@ Creado carpetas:</value>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
     <value>Inicia sesión con éxito.</value>
   </data>
+  <data name="UploadersConfigForm_Logout_successful" xml:space="preserve">
+    <value>Logout  successful.</value>
+  </data>  
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Carpeta seleccionada:</value>
   </data>
