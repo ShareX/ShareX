@@ -1727,6 +1727,15 @@ namespace ShareX.UploadersLib
                 lvCustomUploaderRegexps.SelectedItems.Count > 0;
         }
 
+        private void CustomUploaderRefreshNames()
+        {
+            lbCustomUploaderList.RefreshSelectedItem();
+            cbCustomUploaderImageUploader.RefreshItems();
+            cbCustomUploaderTextUploader.RefreshItems();
+            cbCustomUploaderFileUploader.RefreshItems();
+            cbCustomUploaderURLShortener.RefreshItems();
+        }
+
         private void CustomUploaderClearUploaders()
         {
             Config.CustomUploadersList.Clear();

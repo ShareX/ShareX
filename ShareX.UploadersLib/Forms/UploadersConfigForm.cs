@@ -3296,7 +3296,7 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Name = txtCustomUploaderName.Text;
 
-            lbCustomUploaderList.RefreshSelectedItem();
+            CustomUploaderRefreshNames();
         }
 
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
@@ -3312,7 +3312,7 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RequestURL = txtCustomUploaderRequestURL.Text;
 
-            lbCustomUploaderList.RefreshSelectedItem();
+            CustomUploaderRefreshNames();
         }
 
         private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
