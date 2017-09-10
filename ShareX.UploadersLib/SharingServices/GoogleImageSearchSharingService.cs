@@ -25,10 +25,10 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class GoogleImageSearchSharingService : SimpleSharingService
+    public class GoogleImageSearchSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.GoogleImageSearch;
 
-        protected override string UrlFormatString { get; } = "https://www.google.com/searchbyimage?image_url={0}";
+        protected override string URLFormatString { get; } = "https://www.google.com/searchbyimage?image_url={0}";
     }
 }

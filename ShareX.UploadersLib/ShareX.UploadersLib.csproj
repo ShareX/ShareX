@@ -132,6 +132,7 @@
     <Compile Include="BaseServices\IGenericUploaderService.cs" />
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
+    <Compile Include="BaseUploaders\URLSharer.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
@@ -244,6 +245,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharingServices\CustomURLSharingService.cs" />
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
@@ -253,7 +255,7 @@
     <Compile Include="SharingServices\PinterestSharingService.cs" />
     <Compile Include="SharingServices\PushbulletSharingService.cs" />
     <Compile Include="SharingServices\RedditSharingService.cs" />
-    <Compile Include="SharingServices\SimpleSharingService.cs" />
+    <Compile Include="SharingServices\SimpleURLSharingService.cs" />
     <Compile Include="SharingServices\StumbleUponSharingService.cs" />
     <Compile Include="SharingServices\TumblrSharingService.cs" />
     <Compile Include="SharingServices\TwitterSharingService.cs" />

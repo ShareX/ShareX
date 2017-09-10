@@ -1049,7 +1049,7 @@ namespace ShareX
 
         public static void SearchImage(string url)
         {
-            new GoogleImageSearchSharingService().ShareURL(url, null);
+            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
         public static void OCRImage(string filePath)
@@ -1485,7 +1485,8 @@ namespace ShareX
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener)) destinations.Add("urls");
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener) ||
+                                (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
 
                             string destinationsText = string.Join("/", destinations);
 
@@ -1530,6 +1531,12 @@ namespace ShareX
                             {
                                 Program.UploadersConfig.CustomURLShortenerSelected = index;
                                 Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
+                            }
+
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))
+                            {
+                                Program.UploadersConfig.CustomURLSharingServiceSelected = index;
+                                Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
                             }
 
                             Program.MainForm.UpdateCheckStates();

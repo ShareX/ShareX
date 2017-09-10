@@ -24,23 +24,22 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.SharingServices
 {
-    public class CustomURLShortenerService : URLShortenerService
+    public class CustomURLSharingService : URLSharingService
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CustomURLShortener;
+        public override URLSharingServices EnumValue { get; } = URLSharingServices.CustomURLSharingService;
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomURLShortenerSelected);
+            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomURLSharingServiceSelected);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 
@@ -50,33 +49,33 @@ namespace ShareX.UploadersLib.URLShorteners
             }
             else
             {
-                index = config.CustomURLShortenerSelected;
+                index = config.CustomURLSharingServiceSelected;
             }
 
             CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
             if (customUploader != null)
             {
-                return new CustomURLShortener(customUploader);
+                new CustomURLSharer(customUploader);
             }
 
             return null;
         }
     }
 
-    public sealed class CustomURLShortener : URLShortener
+    public sealed class CustomURLSharer : URLSharer
     {
         private CustomUploaderItem customUploader;
 
-        public CustomURLShortener(CustomUploaderItem customUploaderItem)
+        public CustomURLSharer(CustomUploaderItem customUploaderItem)
         {
             customUploader = customUploaderItem;
         }
 
-        public override UploadResult ShortenURL(string url)
+        public override UploadResult ShareURL(string url)
         {
             if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
-                throw new Exception("'File form name' cannot be used with custom URL shortener.");
+                throw new Exception("'File form name' cannot be used with custom URL sharing service.");
 
             if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$")))
                 throw new Exception("Atleast one '$input$' required for argument value.");
@@ -92,15 +91,6 @@ namespace ShareX.UploadersLib.URLShorteners
             else
             {
                 result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
-            }
-
-            try
-            {
-                customUploader.ParseResponse(result, true);
-            }
-            catch (Exception e)
-            {
-                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
             }
 
             return result;

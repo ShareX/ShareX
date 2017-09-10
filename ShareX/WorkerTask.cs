@@ -929,9 +929,12 @@ namespace ShareX
                     return GetInvalidConfigResult(service);
                 }
 
-                service.ShareURL(url, Program.UploadersConfig);
+                URLSharer urlSharer = service.CreateSharer(Program.UploadersConfig, taskReferenceHelper);
 
-                return new UploadResult() { URL = url };
+                if (urlSharer != null)
+                {
+                    return urlSharer.ShareURL(url);
+                }
             }
 
             return null;

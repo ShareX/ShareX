@@ -367,6 +367,7 @@ namespace ShareX.UploadersLib
         public int CustomTextUploaderSelected = 0;
         public int CustomFileUploaderSelected = 0;
         public int CustomURLShortenerSelected = 0;
+        public int CustomURLSharingServiceSelected = 0;
 
         #endregion Custom Uploaders
     }

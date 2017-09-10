@@ -23,12 +23,40 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class DeliciousSharingService : SimpleURLSharingService
+    public abstract class SimpleURLSharingService : URLSharingService
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.Delicious;
+        protected abstract string URLFormatString { get; }
 
-        protected override string URLFormatString { get; } = "https://delicious.com/save?v=5&url={0}";
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new SimpleURLSharer(URLFormatString);
+        }
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+    }
+
+    public sealed class SimpleURLSharer : URLSharer
+    {
+        public string URLFormatString { get; private set; }
+
+        public SimpleURLSharer(string urlFormatString)
+        {
+            URLFormatString = urlFormatString;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url };
+
+            string encodedURL = URLHelpers.URLEncode(url);
+            string resultURL = string.Format(URLFormatString, encodedURL);
+            URLHelpers.OpenURL(resultURL);
+
+            return result;
+        }
     }
 }

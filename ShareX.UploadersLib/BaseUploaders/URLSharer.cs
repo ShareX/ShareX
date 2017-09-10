@@ -23,20 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib
 {
-    public abstract class SimpleSharingService : URLSharingService
+    public abstract class URLSharer : Uploader
     {
-        protected abstract string UrlFormatString { get; }
-
-        public override void ShareURL(string url, UploadersConfig config)
-        {
-            string encodedUrl = URLHelpers.URLEncode(url);
-            URLHelpers.OpenURL(string.Format(UrlFormatString, encodedUrl));
-        }
-
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public abstract UploadResult ShareURL(string url);
     }
 }
