@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.SharingServices
 
             if (customUploader != null)
             {
-                new CustomURLSharer(customUploader);
+                return new CustomURLSharer(customUploader);
             }
 
             return null;

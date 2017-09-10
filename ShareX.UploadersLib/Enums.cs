@@ -207,7 +207,7 @@ namespace ShareX.UploadersLib
         [Description("Pushbullet")]
         Pushbullet,
         GoogleImageSearch, // Localized
-        CustomURLSharingService // TODO: Translate
+        CustomURLSharingService // Localized
     }
 
     public enum HttpMethod
@@ -317,7 +317,7 @@ namespace ShareX.UploadersLib
         TextUploader = 1 << 1, // Localized
         FileUploader = 1 << 2, // Localized
         URLShortener = 1 << 3, // Localized
-        URLSharingService = 1 << 4 // TODO: Translate
+        URLSharingService = 1 << 4 // Localized
     }
 
     public enum FTPSEncryption

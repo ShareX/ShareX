@@ -401,6 +401,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to URL sharing service.
+        /// </summary>
+        internal static string CustomUploaderDestinationType_URLSharingService {
+            get {
+                return ResourceManager.GetString("CustomUploaderDestinationType_URLSharingService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to URL shortener.
         /// </summary>
         internal static string CustomUploaderDestinationType_URLShortener {
@@ -2809,6 +2818,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string UpdateMessageBox_UpdateMessageBox_update_is_available {
             get {
                 return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_update_is_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom URL sharing service.
+        /// </summary>
+        internal static string URLSharingServices_CustomURLSharingService {
+            get {
+                return ResourceManager.GetString("URLSharingServices_CustomURLSharingService", resourceCulture);
             }
         }
         

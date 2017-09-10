@@ -1043,4 +1043,10 @@ Would you like to download it?</value>
   <data name="HotkeyType_UploadText_Category" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL sharing service</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Custom URL sharing service</value>
+  </data>
 </root>
