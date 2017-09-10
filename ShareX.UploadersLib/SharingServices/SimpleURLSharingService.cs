@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override UploadResult ShareURL(string url)
         {
-            UploadResult result = new UploadResult { URL = url };
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             string encodedURL = URLHelpers.URLEncode(url);
             string resultURL = string.Format(URLFormatString, encodedURL);

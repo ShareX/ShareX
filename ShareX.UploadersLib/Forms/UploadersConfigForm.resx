@@ -377,7 +377,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 22</value>
   </data>
   <data name="tpTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTwitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -396,6 +396,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderURLSharingServiceTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 534</value>
@@ -445,6 +448,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderURLSharingService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderURLSharingService.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 520</value>
   </data>
@@ -469,21 +475,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderURLSharingService.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblCustomUploaderName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 0</value>
-  </data>
-  <data name="lblCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="lblCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="lblCustomUploaderName.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
   <data name="&gt;&gt;lblCustomUploaderName.Name" xml:space="preserve">
     <value>lblCustomUploaderName</value>
   </data>
@@ -495,15 +486,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCustomUploaderName.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 82</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 21</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaderRequestType.Name" xml:space="preserve">
     <value>cbCustomUploaderRequestType</value>
@@ -517,51 +499,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbCustomUploaderRequestType.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Name" xml:space="preserve">
-    <value>tpCustomUploaderJsonParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.Parent" xml:space="preserve">
-    <value>tcCustomUploaderResponseParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Name" xml:space="preserve">
-    <value>tpCustomUploaderXmlParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.Parent" xml:space="preserve">
-    <value>tcCustomUploaderResponseParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderXmlParse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderRegexParse.Name" xml:space="preserve">
-    <value>tpCustomUploaderRegexParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderRegexParse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderRegexParse.Parent" xml:space="preserve">
-    <value>tcCustomUploaderResponseParse</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderRegexParse.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tcCustomUploaderResponseParse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 48</value>
-  </data>
-  <data name="tcCustomUploaderResponseParse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 184</value>
-  </data>
-  <data name="tcCustomUploaderResponseParse.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
   <data name="&gt;&gt;tcCustomUploaderResponseParse.Name" xml:space="preserve">
     <value>tcCustomUploaderResponseParse</value>
   </data>
@@ -573,24 +510,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tcCustomUploaderResponseParse.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lblCustomUploaderURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 240</value>
-  </data>
-  <data name="lblCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
@@ -604,213 +523,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderURL.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Name" xml:space="preserve">
-    <value>btnCustomUploaderArgUpdate</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgName.Name" xml:space="preserve">
-    <value>txtCustomUploaderArgName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgName.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgValue.Name" xml:space="preserve">
-    <value>txtCustomUploaderArgValue</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgValue.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderArgValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgAdd.Name" xml:space="preserve">
-    <value>btnCustomUploaderArgAdd</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgAdd.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgRemove.Name" xml:space="preserve">
-    <value>btnCustomUploaderArgRemove</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgRemove.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderArgRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderArguments.Name" xml:space="preserve">
-    <value>lvCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderArguments.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderArguments.Parent" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderArguments.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 214</value>
-  </data>
-  <data name="tpCustomUploaderArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Arguments</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderArguments.Name" xml:space="preserve">
-    <value>tpCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderArguments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderArguments.Parent" xml:space="preserve">
-    <value>tcCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderArguments.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Name" xml:space="preserve">
-    <value>btnCustomUploaderHeaderUpdate</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderName.Name" xml:space="preserve">
-    <value>txtCustomUploaderHeaderName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderName.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Name" xml:space="preserve">
-    <value>txtCustomUploaderHeaderValue</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderHeaderValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Name" xml:space="preserve">
-    <value>btnCustomUploaderHeaderAdd</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Name" xml:space="preserve">
-    <value>btnCustomUploaderHeaderRemove</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderHeaders.Name" xml:space="preserve">
-    <value>lvCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderHeaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderHeaders.Parent" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;lvCustomUploaderHeaders.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 214</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Headers</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderHeaders.Name" xml:space="preserve">
-    <value>tpCustomUploaderHeaders</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderHeaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderHeaders.Parent" xml:space="preserve">
-    <value>tcCustomUploaderArguments</value>
-  </data>
-  <data name="&gt;&gt;tpCustomUploaderHeaders.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tcCustomUploaderArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 186</value>
-  </data>
-  <data name="tcCustomUploaderArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
-  </data>
-  <data name="tcCustomUploaderArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
   <data name="&gt;&gt;tcCustomUploaderArguments.Name" xml:space="preserve">
     <value>tcCustomUploaderArguments</value>
   </data>
@@ -822,15 +534,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tcCustomUploaderArguments.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 162</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderFileForm.Name" xml:space="preserve">
     <value>txtCustomUploaderFileForm</value>
@@ -844,24 +547,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtCustomUploaderFileForm.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="lblCustomUploaderRequestType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 66</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Request type:</value>
-  </data>
   <data name="&gt;&gt;lblCustomUploaderRequestType.Name" xml:space="preserve">
     <value>lblCustomUploaderRequestType</value>
   </data>
@@ -873,24 +558,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCustomUploaderRequestType.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 146</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>File form name:</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderFileForm.Name" xml:space="preserve">
     <value>lblCustomUploaderFileForm</value>
@@ -904,15 +571,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderFileForm.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 16</value>
-  </data>
-  <data name="txtCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="txtCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;txtCustomUploaderName.Name" xml:space="preserve">
     <value>txtCustomUploaderName</value>
   </data>
@@ -924,24 +582,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 280</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Thumbnail URL:</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Name" xml:space="preserve">
     <value>lblCustomUploaderThumbnailURL</value>
@@ -955,15 +595,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="txtCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 122</value>
-  </data>
-  <data name="txtCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="txtCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;txtCustomUploaderRequestURL.Name" xml:space="preserve">
     <value>txtCustomUploaderRequestURL</value>
   </data>
@@ -975,15 +606,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCustomUploaderRequestURL.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="txtCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 256</value>
-  </data>
-  <data name="txtCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderURL.Name" xml:space="preserve">
     <value>txtCustomUploaderURL</value>
@@ -997,15 +619,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtCustomUploaderURL.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="cbCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 16</value>
-  </data>
-  <data name="cbCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
-  </data>
-  <data name="cbCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="&gt;&gt;cbCustomUploaderResponseType.Name" xml:space="preserve">
     <value>cbCustomUploaderResponseType</value>
   </data>
@@ -1017,15 +630,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;cbCustomUploaderResponseType.ZOrder" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 296</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Name" xml:space="preserve">
     <value>txtCustomUploaderThumbnailURL</value>
@@ -1039,15 +643,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="txtCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 336</value>
-  </data>
-  <data name="txtCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
   <data name="&gt;&gt;txtCustomUploaderDeletionURL.Name" xml:space="preserve">
     <value>txtCustomUploaderDeletionURL</value>
   </data>
@@ -1059,24 +654,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
     <value>15</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, 106</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>Request URL:</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderRequestURL.Name" xml:space="preserve">
     <value>lblCustomUploaderRequestURL</value>
@@ -1090,24 +667,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderRequestURL.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="lblCustomUploaderResponseType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 0</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Response type:</value>
-  </data>
   <data name="&gt;&gt;lblCustomUploaderResponseType.Name" xml:space="preserve">
     <value>lblCustomUploaderResponseType</value>
   </data>
@@ -1119,24 +678,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCustomUploaderResponseType.ZOrder" xml:space="preserve">
     <value>17</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 320</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Deletion URL:</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderDeletionURL.Name" xml:space="preserve">
     <value>lblCustomUploaderDeletionURL</value>
@@ -1942,30 +1483,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 72</value>
-  </data>
-  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 208</value>
-  </data>
-  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
-    <value>oauthTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="txtTwitterDescription.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2073,6 +1590,114 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnTwitterAdd.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="lblCustomUploaderName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 0</value>
+  </data>
+  <data name="lblCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblCustomUploaderName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Name" xml:space="preserve">
+    <value>lblCustomUploaderName</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 82</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 21</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Name" xml:space="preserve">
+    <value>cbCustomUploaderRequestType</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Name" xml:space="preserve">
+    <value>tpCustomUploaderJsonParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.Parent" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Name" xml:space="preserve">
+    <value>tpCustomUploaderXmlParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.Parent" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderXmlParse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderRegexParse.Name" xml:space="preserve">
+    <value>tpCustomUploaderRegexParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderRegexParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderRegexParse.Parent" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderRegexParse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcCustomUploaderResponseParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 48</value>
+  </data>
+  <data name="tcCustomUploaderResponseParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 184</value>
+  </data>
+  <data name="tcCustomUploaderResponseParse.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderResponseParse.Name" xml:space="preserve">
+    <value>tcCustomUploaderResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderResponseParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderResponseParse.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderResponseParse.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderJsonAddSyntax.Name" xml:space="preserve">
     <value>btnCustomUploaderJsonAddSyntax</value>
@@ -2815,6 +2440,180 @@ store.book[0].title</value>
   <data name="lvRegexpsColumn.Width" type="System.Int32, mscorlib">
     <value>227</value>
   </data>
+  <data name="lblCustomUploaderURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 240</value>
+  </data>
+  <data name="lblCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Name" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Parent" xml:space="preserve">
+    <value>tcCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Name" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Parent" xml:space="preserve">
+    <value>tcCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcCustomUploaderArguments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 186</value>
+  </data>
+  <data name="tcCustomUploaderArguments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 240</value>
+  </data>
+  <data name="tcCustomUploaderArguments.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderArguments.Name" xml:space="preserve">
+    <value>tcCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderArguments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderArguments.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploaderArguments.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Name" xml:space="preserve">
+    <value>btnCustomUploaderArgUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgUpdate.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgName.Name" xml:space="preserve">
+    <value>txtCustomUploaderArgName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgName.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgValue.Name" xml:space="preserve">
+    <value>txtCustomUploaderArgValue</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgValue.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderArgValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgAdd.Name" xml:space="preserve">
+    <value>btnCustomUploaderArgAdd</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgAdd.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgRemove.Name" xml:space="preserve">
+    <value>btnCustomUploaderArgRemove</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgRemove.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderArgRemove.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderArguments.Name" xml:space="preserve">
+    <value>lvCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderArguments.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderArguments.Parent" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderArguments.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 214</value>
+  </data>
+  <data name="tpCustomUploaderArguments.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Arguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Name" xml:space="preserve">
+    <value>tpCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.Parent" xml:space="preserve">
+    <value>tcCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderArguments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCustomUploaderArgUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2971,6 +2770,105 @@ store.book[0].title</value>
   <data name="chCustomUploaderArgumentsValue.Width" type="System.Int32, mscorlib">
     <value>114</value>
   </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Name" xml:space="preserve">
+    <value>btnCustomUploaderHeaderUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderName.Name" xml:space="preserve">
+    <value>txtCustomUploaderHeaderName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderName.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Name" xml:space="preserve">
+    <value>txtCustomUploaderHeaderValue</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderValue.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderHeaderValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Name" xml:space="preserve">
+    <value>btnCustomUploaderHeaderAdd</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Name" xml:space="preserve">
+    <value>btnCustomUploaderHeaderRemove</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderHeaderRemove.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderHeaders.Name" xml:space="preserve">
+    <value>lvCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderHeaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderHeaders.Parent" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;lvCustomUploaderHeaders.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 214</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Headers</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Name" xml:space="preserve">
+    <value>tpCustomUploaderHeaders</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.Parent" xml:space="preserve">
+    <value>tcCustomUploaderArguments</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaderHeaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnCustomUploaderHeaderUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3126,6 +3024,333 @@ store.book[0].title</value>
   </data>
   <data name="chCustomUploaderHeadersValue.Width" type="System.Int32, mscorlib">
     <value>114</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 162</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Name" xml:space="preserve">
+    <value>txtCustomUploaderFileForm</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 66</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Request type:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Name" xml:space="preserve">
+    <value>lblCustomUploaderRequestType</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 146</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>File form name:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Name" xml:space="preserve">
+    <value>lblCustomUploaderFileForm</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="txtCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Name" xml:space="preserve">
+    <value>txtCustomUploaderName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 280</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 122</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="txtCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 256</value>
+  </data>
+  <data name="txtCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 16</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 21</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Name" xml:space="preserve">
+    <value>cbCustomUploaderResponseType</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 296</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 336</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 106</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>Request URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 0</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Response type:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Name" xml:space="preserve">
+    <value>lblCustomUploaderResponseType</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 320</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Deletion URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="btnCustomUploaderDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3329,7 +3554,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3428,7 +3653,7 @@ store.book[0].title</value>
     <value>3, 3</value>
   </data>
   <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3488,7 +3713,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpBitly.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3559,27 +3784,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 208</value>
-  </data>
-  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
-    <value>oauth2Bitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
     <value>oauth2GoogleURLShortener</value>
   </data>
@@ -3611,7 +3815,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3629,48 +3833,6 @@ store.book[0].title</value>
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
-    <value>oauth2GoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
-    <value>atcGoogleURLShortenerAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;txtYourlsPassword.Name" xml:space="preserve">
@@ -3788,7 +3950,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4109,7 +4271,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4289,7 +4451,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4436,7 +4598,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -4637,7 +4799,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5000,7 +5162,7 @@ store.book[0].title</value>
     <value>3, 3</value>
   </data>
   <data name="tcFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5162,13 +5324,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpFTP.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -7223,13 +7385,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7500,27 +7662,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtDropboxPath.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 200</value>
-  </data>
-  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
-    <value>oauth2Dropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
-    <value>tpDropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;tvOneDrive.Name" xml:space="preserve">
     <value>tvOneDrive</value>
   </data>
@@ -7570,13 +7711,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -7680,27 +7821,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbOneDriveCreateShareableLink.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="oAuth2OneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oAuth2OneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oAuth2OneDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Name" xml:space="preserve">
-    <value>oAuth2OneDrive</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
-    <value>tpOneDrive</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.Name" xml:space="preserve">
     <value>cbGoogleDriveDirectLink</value>
   </data>
@@ -7798,13 +7918,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -8028,27 +8148,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
-    <value>oauth2GoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
-    <value>tpGoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;pbPuush.Name" xml:space="preserve">
     <value>pbPuush</value>
   </data>
@@ -8158,13 +8257,13 @@ store.book[0].title</value>
     <value>8</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -8494,13 +8593,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8666,27 +8765,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;btnBoxRefreshFolders.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="oauth2Box.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Box.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Box.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Name" xml:space="preserve">
-    <value>oauth2Box</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
-    <value>tpBox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3UsePathStyle.Name" xml:space="preserve">
     <value>cbAmazonS3UsePathStyle</value>
@@ -8935,7 +9013,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -9610,13 +9688,13 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -9970,13 +10048,13 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -10025,48 +10103,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;cbGfycatIsPublic.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
-    <value>atcGfycatAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
-    <value>oauth2Gfycat</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;btnMegaRefreshFolders.Name" xml:space="preserve">
     <value>btnMegaRefreshFolders</value>
@@ -10201,10 +10237,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -10663,13 +10699,13 @@ store.book[0].title</value>
     <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -11098,13 +11134,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -11368,13 +11404,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -11602,13 +11638,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -11757,27 +11793,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtSendSpaceUserName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="atcSendSpaceAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcSendSpaceAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcSendSpaceAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Name" xml:space="preserve">
-    <value>atcSendSpaceAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
-    <value>tpSendSpace</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;lblGe_ttStatus.Name" xml:space="preserve">
     <value>lblGe_ttStatus</value>
   </data>
@@ -11851,13 +11866,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -12097,13 +12112,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 537</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -12310,7 +12325,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -12949,7 +12964,7 @@ store.book[0].title</value>
     <value>4, 40</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -13167,27 +13182,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblJiraHost.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="oAuthJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 13</value>
-  </data>
-  <data name="oAuthJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 243</value>
-  </data>
-  <data name="oAuthJira.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Name" xml:space="preserve">
-    <value>oAuthJira</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
-    <value>tpJira</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;lblLambdaInfo.Name" xml:space="preserve">
     <value>lblLambdaInfo</value>
   </data>
@@ -13255,7 +13249,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -13498,7 +13492,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPomf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPomf.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -13960,7 +13954,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -15158,7 +15152,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 40</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -15398,7 +15392,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -15542,7 +15536,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -15671,7 +15665,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUplea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpUplea.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -16202,7 +16196,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -16985,7 +16979,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -17157,33 +17151,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 424</value>
-  </data>
-  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
-    <value>ucLocalhostAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;txtEmailAutomaticSendTo.Name" xml:space="preserve">
     <value>txtEmailAutomaticSendTo</value>
@@ -17372,7 +17339,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -17822,7 +17789,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -17933,7 +17900,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -18149,7 +18116,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPastebin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -18620,7 +18587,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaste_ee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -18791,7 +18758,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -18982,51 +18949,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbGistPublishPublic.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 205</value>
-  </data>
-  <data name="oAuth2Gist.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Name" xml:space="preserve">
-    <value>oAuth2Gist</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
-    <value>tpGist</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Name" xml:space="preserve">
-    <value>atcGistAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
-    <value>tpGist</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;cbUpasteIsPublic.Name" xml:space="preserve">
     <value>cbUpasteIsPublic</value>
   </data>
@@ -19070,7 +18992,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -19238,7 +19160,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -19445,7 +19367,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneTimeSecret.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -19586,7 +19508,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPastie.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -19655,7 +19577,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -19781,7 +19703,7 @@ Using an encrypted library disables sharing.</value>
     <value>780, 480</value>
   </data>
   <data name="tcImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -19925,7 +19847,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -20064,48 +19986,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;cbImgurDirectLink.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="atcImgurAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Name" xml:space="preserve">
-    <value>atcImgurAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2Imgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Imgur.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Name" xml:space="preserve">
-    <value>oauth2Imgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="lvImgurAlbumList.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 48</value>
@@ -20327,7 +20207,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageShack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImageShack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -20651,7 +20531,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTinyPic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -20670,27 +20550,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcTinyPicAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 40</value>
-  </data>
-  <data name="atcTinyPicAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
-    <value>atcTinyPicAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnTinyPicLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -20927,7 +20786,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFlickr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -21143,7 +21002,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPhotobucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -21875,7 +21734,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGooglePhotos.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -22015,27 +21874,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
-    <value>oauth2Picasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;btnCheveretoTestAll.Name" xml:space="preserve">
     <value>btnCheveretoTestAll</value>
   </data>
@@ -22151,7 +21989,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpChevereto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -22457,7 +22295,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpVgyme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpVgyme.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -22639,6 +22477,417 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;ttlvMain.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="atcImgurAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Name" xml:space="preserve">
+    <value>atcImgurAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
+    <value>tpImgur</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2Imgur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Imgur.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Name" xml:space="preserve">
+    <value>oauth2Imgur</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
+    <value>tpImgur</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcTinyPicAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 40</value>
+  </data>
+  <data name="atcTinyPicAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
+    <value>atcTinyPicAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
+    <value>oauth2Picasa</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
+    <value>tpGooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 205</value>
+  </data>
+  <data name="oAuth2Gist.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Name" xml:space="preserve">
+    <value>oAuth2Gist</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Name" xml:space="preserve">
+    <value>atcGistAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 200</value>
+  </data>
+  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
+    <value>oauth2Dropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
+    <value>tpDropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oAuth2OneDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oAuth2OneDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oAuth2OneDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Name" xml:space="preserve">
+    <value>oAuth2OneDrive</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="oauth2Box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Box.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Name" xml:space="preserve">
+    <value>oauth2Box</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
+    <value>tpBox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 72</value>
+  </data>
+  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 208</value>
+  </data>
+  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
+    <value>oauthTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 208</value>
+  </data>
+  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
+    <value>oauth2Bitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
+    <value>oauth2GoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
+    <value>atcGoogleURLShortenerAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
+    <value>atcGfycatAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
+    <value>oauth2Gfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
+    <value>tpGfycat</value>
+  </data>
+  <data name="&gt;&gt;oauth2Gfycat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="atcSendSpaceAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcSendSpaceAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcSendSpaceAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Name" xml:space="preserve">
+    <value>atcSendSpaceAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
+    <value>tpSendSpace</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oAuthJira.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 13</value>
+  </data>
+  <data name="oAuthJira.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 243</value>
+  </data>
+  <data name="oAuthJira.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Name" xml:space="preserve">
+    <value>oAuthJira</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
+    <value>tpJira</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 468</value>
+  </data>
+  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
+    <value>ucLocalhostAccounts</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="actRapidShareAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -22665,6 +22914,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 601</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

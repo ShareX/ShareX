@@ -3713,7 +3713,7 @@ namespace ShareX.UploadersLib
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderType.Image, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
+                TestCustomUploader(CustomUploaderDestinationType.ImageUploader, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
             }
         }
 
@@ -3726,7 +3726,7 @@ namespace ShareX.UploadersLib
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderType.Text, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
+                TestCustomUploader(CustomUploaderDestinationType.TextUploader, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
             }
         }
 
@@ -3739,7 +3739,7 @@ namespace ShareX.UploadersLib
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderType.File, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
+                TestCustomUploader(CustomUploaderDestinationType.FileUploader, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
             }
         }
 
@@ -3752,7 +3752,20 @@ namespace ShareX.UploadersLib
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
             {
-                TestCustomUploader(CustomUploaderType.URL, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
+                TestCustomUploader(CustomUploaderDestinationType.URLShortener, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
+            }
+        }
+
+        private void cbCustomUploaderURLSharingService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.CustomURLSharingServiceSelected = cbCustomUploaderURLSharingService.SelectedIndex;
+        }
+
+        private void btnCustomUploaderURLSharingServiceTest_Click(object sender, EventArgs e)
+        {
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
+            {
+                TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
             }
         }
 

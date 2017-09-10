@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
+using ShareX.UploadersLib.SharingServices;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
 using System;
@@ -1698,7 +1699,8 @@ namespace ShareX.UploadersLib
             btnCustomUploaderClearUploaders.Enabled = btnCustomUploadersExportAll.Enabled = cbCustomUploaderImageUploader.Enabled =
                 btnCustomUploaderImageUploaderTest.Enabled = cbCustomUploaderTextUploader.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                 cbCustomUploaderFileUploader.Enabled = btnCustomUploaderFileUploaderTest.Enabled = cbCustomUploaderURLShortener.Enabled =
-                btnCustomUploaderURLShortenerTest.Enabled = lbCustomUploaderList.Items.Count > 0;
+                btnCustomUploaderURLShortenerTest.Enabled = cbCustomUploaderURLSharingService.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled =
+                lbCustomUploaderList.Items.Count > 0;
         }
 
         private void CustomUploaderUpdateRequestState()
@@ -1734,6 +1736,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderTextUploader.RefreshItems();
             cbCustomUploaderFileUploader.RefreshItems();
             cbCustomUploaderURLShortener.RefreshItems();
+            cbCustomUploaderURLSharingService.RefreshItems();
         }
 
         private void CustomUploaderClearUploaders()
@@ -1741,7 +1744,8 @@ namespace ShareX.UploadersLib
             Config.CustomUploadersList.Clear();
             lbCustomUploaderList.Items.Clear();
             CustomUploaderClearFields();
-            Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
+            Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected =
+                Config.CustomURLSharingServiceSelected = 0;
             CustomUploaderUpdateList();
             CustomUploaderUpdateStates();
             btnCustomUploaderAdd.Focus();
@@ -1879,6 +1883,9 @@ namespace ShareX.UploadersLib
 
             if (Config.CustomURLShortenerSelected == removedIndex) Config.CustomURLShortenerSelected = 0;
             else if (Config.CustomURLShortenerSelected > removedIndex) Config.CustomURLShortenerSelected--;
+
+            if (Config.CustomURLSharingServiceSelected == removedIndex) Config.CustomURLSharingServiceSelected = 0;
+            else if (Config.CustomURLSharingServiceSelected > removedIndex) Config.CustomURLSharingServiceSelected--;
         }
 
         private void CustomUploaderUpdateList()
@@ -1887,6 +1894,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderTextUploader.Items.Clear();
             cbCustomUploaderFileUploader.Items.Clear();
             cbCustomUploaderURLShortener.Items.Clear();
+            cbCustomUploaderURLSharingService.Items.Clear();
 
             foreach (CustomUploaderItem item in Config.CustomUploadersList)
             {
@@ -1894,6 +1902,7 @@ namespace ShareX.UploadersLib
                 cbCustomUploaderTextUploader.Items.Add(item);
                 cbCustomUploaderFileUploader.Items.Add(item);
                 cbCustomUploaderURLShortener.Items.Add(item);
+                cbCustomUploaderURLSharingService.Items.Add(item);
             }
 
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
@@ -1915,12 +1924,17 @@ namespace ShareX.UploadersLib
             {
                 cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected;
             }
+
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
+            {
+                cbCustomUploaderURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected;
+            }
         }
 
-        private void TestCustomUploader(CustomUploaderType type, CustomUploaderItem item)
+        private void TestCustomUploader(CustomUploaderDestinationType type, CustomUploaderItem item)
         {
-            btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
+            btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
+                btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = false;
 
             UploadResult result = null;
 
@@ -1932,7 +1946,7 @@ namespace ShareX.UploadersLib
                 {
                     switch (type)
                     {
-                        case CustomUploaderType.Image:
+                        case CustomUploaderDestinationType.ImageUploader:
                             using (Stream stream = ShareXResources.Logo.GetStream())
                             {
                                 CustomImageUploader imageUploader = new CustomImageUploader(item);
@@ -1940,12 +1954,12 @@ namespace ShareX.UploadersLib
                                 result.Errors = imageUploader.Errors;
                             }
                             break;
-                        case CustomUploaderType.Text:
+                        case CustomUploaderDestinationType.TextUploader:
                             CustomTextUploader textUploader = new CustomTextUploader(item);
                             result = textUploader.UploadText("ShareX text upload test", "Test.txt");
                             result.Errors = textUploader.Errors;
                             break;
-                        case CustomUploaderType.File:
+                        case CustomUploaderDestinationType.FileUploader:
                             using (Stream stream = ShareXResources.Logo.GetStream())
                             {
                                 CustomFileUploader fileUploader = new CustomFileUploader(item);
@@ -1953,10 +1967,15 @@ namespace ShareX.UploadersLib
                                 result.Errors = fileUploader.Errors;
                             }
                             break;
-                        case CustomUploaderType.URL:
+                        case CustomUploaderDestinationType.URLShortener:
                             CustomURLShortener urlShortener = new CustomURLShortener(item);
                             result = urlShortener.ShortenURL(Links.URL_WEBSITE);
                             result.Errors = urlShortener.Errors;
+                            break;
+                        case CustomUploaderDestinationType.URLSharingService:
+                            CustomURLSharer urlSharer = new CustomURLSharer(item);
+                            result = urlSharer.ShareURL(Links.URL_WEBSITE);
+                            result.Errors = urlSharer.Errors;
                             break;
                     }
                 }
@@ -1972,7 +1991,10 @@ namespace ShareX.UploadersLib
                 {
                     if (result != null)
                     {
-                        if ((type != CustomUploaderType.URL && !string.IsNullOrEmpty(result.URL)) || (type == CustomUploaderType.URL && !string.IsNullOrEmpty(result.ShortenedURL)))
+                        if (((type == CustomUploaderDestinationType.ImageUploader || type == CustomUploaderDestinationType.TextUploader ||
+                            type == CustomUploaderDestinationType.FileUploader) && !string.IsNullOrEmpty(result.URL)) ||
+                            (type == CustomUploaderDestinationType.URLShortener && !string.IsNullOrEmpty(result.ShortenedURL)) ||
+                            (type == CustomUploaderDestinationType.URLSharingService && !result.IsError && !string.IsNullOrEmpty(result.URL)))
                         {
                             txtCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
 
@@ -2001,8 +2023,8 @@ namespace ShareX.UploadersLib
                         btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
                     }
 
-                    btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                        btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = true;
+                    btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
+                        btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = true;
                 }
             });
         }

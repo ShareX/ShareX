@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override UploadResult ShareURL(string url)
         {
-            UploadResult result = new UploadResult { URL = url };
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             new Pushbullet(Settings).PushLink(url, "ShareX: URL share");
 

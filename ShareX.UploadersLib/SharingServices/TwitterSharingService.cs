@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override UploadResult ShareURL(string url)
         {
-            UploadResult result = new UploadResult { URL = url };
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             OAuthInfo twitterOAuth = config.TwitterOAuthInfoList[config.TwitterSelectedAccount];
 

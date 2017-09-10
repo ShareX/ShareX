@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.SharingServices
             if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$")))
                 throw new Exception("Atleast one '$input$' required for argument value.");
 
-            UploadResult result = new UploadResult { URL = url };
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
             Dictionary<string, string> args = customUploader.GetArguments(url);
 
