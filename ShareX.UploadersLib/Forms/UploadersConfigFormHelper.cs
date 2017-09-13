@@ -1788,9 +1788,16 @@ namespace ShareX.UploadersLib
 
             CustomUploaderClearFields();
 
-            if (selectLastItem && lbCustomUploaderList.Items.Count > 0)
+            if (lbCustomUploaderList.Items.Count > 0)
             {
-                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+                if (selectLastItem)
+                {
+                    lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+                }
+                else if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
+                {
+                    lbCustomUploaderList.SelectedIndex = Config.CustomImageUploaderSelected;
+                }
             }
 
             CustomUploaderUpdateStates();
@@ -1928,30 +1935,11 @@ namespace ShareX.UploadersLib
                     cbCustomUploaderURLSharingService.Items.Add(item);
                 }
 
-                if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
-                {
-                    cbCustomUploaderImageUploader.SelectedIndex = Config.CustomImageUploaderSelected;
-                }
-
-                if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
-                {
-                    cbCustomUploaderTextUploader.SelectedIndex = Config.CustomTextUploaderSelected;
-                }
-
-                if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
-                {
-                    cbCustomUploaderFileUploader.SelectedIndex = Config.CustomFileUploaderSelected;
-                }
-
-                if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
-                {
-                    cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected;
-                }
-
-                if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
-                {
-                    cbCustomUploaderURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected;
-                }
+                cbCustomUploaderImageUploader.SelectedIndex = Config.CustomImageUploaderSelected.Between(0, Config.CustomUploadersList.Count - 1);
+                cbCustomUploaderTextUploader.SelectedIndex = Config.CustomTextUploaderSelected.Between(0, Config.CustomUploadersList.Count - 1);
+                cbCustomUploaderFileUploader.SelectedIndex = Config.CustomFileUploaderSelected.Between(0, Config.CustomUploadersList.Count - 1);
+                cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected.Between(0, Config.CustomUploadersList.Count - 1);
+                cbCustomUploaderURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected.Between(0, Config.CustomUploadersList.Count - 1);
             }
         }
 
