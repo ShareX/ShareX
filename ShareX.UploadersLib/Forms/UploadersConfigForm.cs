@@ -324,14 +324,19 @@ namespace ShareX.UploadersLib
 
             // FTP
 
-            if (Config.FTPAccountList == null || Config.FTPAccountList.Count == 0)
+            if (Config.FTPAccountList == null)
             {
-                FTPUpdateControls(new List<FTPAccount>());
+                Config.FTPAccountList = new List<FTPAccount>();
+            }
+
+            FTPUpdateControls();
+
+            if (Config.FTPAccountList.Count == 0)
+            {
                 FTPClearFields();
             }
             else
             {
-                FTPUpdateControls();
                 cbFTPAccounts.SelectedIndex = cbFTPImage.SelectedIndex;
                 FTPUpdateEnabledStates();
             }
@@ -1305,7 +1310,6 @@ namespace ShareX.UploadersLib
                 else
                 {
                     FTPClearFields();
-
                     btnFTPAdd.Focus();
                 }
 
@@ -3247,6 +3251,7 @@ namespace ShareX.UploadersLib
                     btnCustomUploaderAdd.Focus();
                 }
 
+                CustomUploaderFixSelectedUploader(selected);
                 CustomUploaderUpdateList();
             }
         }

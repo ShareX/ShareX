@@ -975,41 +975,30 @@ namespace ShareX.UploadersLib
 
         private void FTPUpdateControls()
         {
-            FTPUpdateControls(Config.FTPAccountList);
-        }
+            int selected = cbFTPAccounts.SelectedIndex;
 
-        private void FTPUpdateControls(List<FTPAccount> accounts)
-        {
-            if (accounts != null)
+            cbFTPAccounts.Items.Clear();
+            cbFTPImage.Items.Clear();
+            cbFTPText.Items.Clear();
+            cbFTPFile.Items.Clear();
+
+            if (Config.FTPAccountList.Count > 0)
             {
-                int selected = cbFTPAccounts.SelectedIndex;
-
-                cbFTPAccounts.Items.Clear();
-                cbFTPImage.Items.Clear();
-                cbFTPText.Items.Clear();
-                cbFTPFile.Items.Clear();
-
-                Config.FTPAccountList = new List<FTPAccount>();
-                Config.FTPAccountList.AddRange(accounts);
-
-                if (Config.FTPAccountList.Count > 0)
+                foreach (FTPAccount account in Config.FTPAccountList)
                 {
-                    foreach (FTPAccount account in Config.FTPAccountList)
-                    {
-                        cbFTPAccounts.Items.Add(account);
-                        cbFTPImage.Items.Add(account);
-                        cbFTPText.Items.Add(account);
-                        cbFTPFile.Items.Add(account);
-                    }
-
-                    cbFTPAccounts.SelectedIndex = selected.Between(0, Config.FTPAccountList.Count - 1);
-                    cbFTPImage.SelectedIndex = Config.FTPSelectedImage.Between(0, Config.FTPAccountList.Count - 1);
-                    cbFTPText.SelectedIndex = Config.FTPSelectedText.Between(0, Config.FTPAccountList.Count - 1);
-                    cbFTPFile.SelectedIndex = Config.FTPSelectedFile.Between(0, Config.FTPAccountList.Count - 1);
+                    cbFTPAccounts.Items.Add(account);
+                    cbFTPImage.Items.Add(account);
+                    cbFTPText.Items.Add(account);
+                    cbFTPFile.Items.Add(account);
                 }
 
-                FTPUpdateEnabledStates();
+                cbFTPAccounts.SelectedIndex = selected.Between(0, Config.FTPAccountList.Count - 1);
+                cbFTPImage.SelectedIndex = Config.FTPSelectedImage.Between(0, Config.FTPAccountList.Count - 1);
+                cbFTPText.SelectedIndex = Config.FTPSelectedText.Between(0, Config.FTPAccountList.Count - 1);
+                cbFTPFile.SelectedIndex = Config.FTPSelectedFile.Between(0, Config.FTPAccountList.Count - 1);
             }
+
+            FTPUpdateEnabledStates();
         }
 
         private void FTPUpdateEnabledStates()
@@ -1872,20 +1861,52 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderFixSelectedUploader(int removedIndex)
         {
-            if (Config.CustomImageUploaderSelected == removedIndex) Config.CustomImageUploaderSelected = 0;
-            else if (Config.CustomImageUploaderSelected > removedIndex) Config.CustomImageUploaderSelected--;
+            int resetIndex = Config.CustomUploadersList.Count - 1;
 
-            if (Config.CustomTextUploaderSelected == removedIndex) Config.CustomTextUploaderSelected = 0;
-            else if (Config.CustomTextUploaderSelected > removedIndex) Config.CustomTextUploaderSelected--;
+            if (Config.CustomImageUploaderSelected == removedIndex)
+            {
+                Config.CustomImageUploaderSelected = resetIndex;
+            }
+            else if (Config.CustomImageUploaderSelected > removedIndex)
+            {
+                Config.CustomImageUploaderSelected--;
+            }
 
-            if (Config.CustomFileUploaderSelected == removedIndex) Config.CustomFileUploaderSelected = 0;
-            else if (Config.CustomFileUploaderSelected > removedIndex) Config.CustomFileUploaderSelected--;
+            if (Config.CustomTextUploaderSelected == removedIndex)
+            {
+                Config.CustomTextUploaderSelected = resetIndex;
+            }
+            else if (Config.CustomTextUploaderSelected > removedIndex)
+            {
+                Config.CustomTextUploaderSelected--;
+            }
 
-            if (Config.CustomURLShortenerSelected == removedIndex) Config.CustomURLShortenerSelected = 0;
-            else if (Config.CustomURLShortenerSelected > removedIndex) Config.CustomURLShortenerSelected--;
+            if (Config.CustomFileUploaderSelected == removedIndex)
+            {
+                Config.CustomFileUploaderSelected = resetIndex;
+            }
+            else if (Config.CustomFileUploaderSelected > removedIndex)
+            {
+                Config.CustomFileUploaderSelected--;
+            }
 
-            if (Config.CustomURLSharingServiceSelected == removedIndex) Config.CustomURLSharingServiceSelected = 0;
-            else if (Config.CustomURLSharingServiceSelected > removedIndex) Config.CustomURLSharingServiceSelected--;
+            if (Config.CustomURLShortenerSelected == removedIndex)
+            {
+                Config.CustomURLShortenerSelected = resetIndex;
+            }
+            else if (Config.CustomURLShortenerSelected > removedIndex)
+            {
+                Config.CustomURLShortenerSelected--;
+            }
+
+            if (Config.CustomURLSharingServiceSelected == removedIndex)
+            {
+                Config.CustomURLSharingServiceSelected = resetIndex;
+            }
+            else if (Config.CustomURLSharingServiceSelected > removedIndex)
+            {
+                Config.CustomURLSharingServiceSelected--;
+            }
         }
 
         private void CustomUploaderUpdateList()
@@ -1896,38 +1917,41 @@ namespace ShareX.UploadersLib
             cbCustomUploaderURLShortener.Items.Clear();
             cbCustomUploaderURLSharingService.Items.Clear();
 
-            foreach (CustomUploaderItem item in Config.CustomUploadersList)
+            if (Config.CustomUploadersList.Count > 0)
             {
-                cbCustomUploaderImageUploader.Items.Add(item);
-                cbCustomUploaderTextUploader.Items.Add(item);
-                cbCustomUploaderFileUploader.Items.Add(item);
-                cbCustomUploaderURLShortener.Items.Add(item);
-                cbCustomUploaderURLSharingService.Items.Add(item);
-            }
+                foreach (CustomUploaderItem item in Config.CustomUploadersList)
+                {
+                    cbCustomUploaderImageUploader.Items.Add(item);
+                    cbCustomUploaderTextUploader.Items.Add(item);
+                    cbCustomUploaderFileUploader.Items.Add(item);
+                    cbCustomUploaderURLShortener.Items.Add(item);
+                    cbCustomUploaderURLSharingService.Items.Add(item);
+                }
 
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
-            {
-                cbCustomUploaderImageUploader.SelectedIndex = Config.CustomImageUploaderSelected;
-            }
+                if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
+                {
+                    cbCustomUploaderImageUploader.SelectedIndex = Config.CustomImageUploaderSelected;
+                }
 
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
-            {
-                cbCustomUploaderTextUploader.SelectedIndex = Config.CustomTextUploaderSelected;
-            }
+                if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
+                {
+                    cbCustomUploaderTextUploader.SelectedIndex = Config.CustomTextUploaderSelected;
+                }
 
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
-            {
-                cbCustomUploaderFileUploader.SelectedIndex = Config.CustomFileUploaderSelected;
-            }
+                if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
+                {
+                    cbCustomUploaderFileUploader.SelectedIndex = Config.CustomFileUploaderSelected;
+                }
 
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
-            {
-                cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected;
-            }
+                if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
+                {
+                    cbCustomUploaderURLShortener.SelectedIndex = Config.CustomURLShortenerSelected;
+                }
 
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
-            {
-                cbCustomUploaderURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected;
+                if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
+                {
+                    cbCustomUploaderURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected;
+                }
             }
         }
 
