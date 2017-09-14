@@ -1809,6 +1809,7 @@ namespace ShareX.UploadersLib
             {
                 UploadersConfigForm form = GetFormInstance(null);
                 form.CustomUploaderLoadTab(true);
+                form.ForceActivate();
             }
         }
 
