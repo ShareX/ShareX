@@ -100,7 +100,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (!URLHelpers.HasPrefix(url) && !string.IsNullOrEmpty(Uploader.ResultURL))
                     {
-                        url = URLHelpers.CombineURL(Uploader.ResultURL, url);
+                        string resultURL = URLHelpers.FixPrefix(Uploader.ResultURL);
+                        url = URLHelpers.CombineURL(resultURL, url);
                     }
 
                     result.URL = url;
