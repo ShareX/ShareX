@@ -3289,6 +3289,7 @@ namespace ShareX.UploadersLib
         private void eiCustomUploaders_ImportRequested(object obj)
         {
             CustomUploaderAdd(obj as CustomUploaderItem);
+            CustomUploaderUpdateStates();
         }
 
         private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
