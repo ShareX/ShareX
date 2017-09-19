@@ -40,6 +40,8 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string Name { get; set; }
 
+        public bool ShouldSerializeName() => !string.IsNullOrEmpty(Name) && Name != GetAutomaticName();
+
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
@@ -95,25 +97,37 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(Name))
             {
-                if (!string.IsNullOrEmpty(RequestURL) && Uri.TryCreate(RequestURL, UriKind.Absolute, out Uri uri))
+                string name = GetAutomaticName();
+
+                if (!string.IsNullOrEmpty(name))
                 {
-                    string host = uri.Host;
-
-                    if (!string.IsNullOrEmpty(host))
-                    {
-                        if (host.StartsWith("www."))
-                        {
-                            host = host.Substring(4);
-                        }
-
-                        return host;
-                    }
+                    return name;
                 }
 
                 return "Name";
             }
 
             return Name;
+        }
+
+        private string GetAutomaticName()
+        {
+            if (!string.IsNullOrEmpty(RequestURL) && Uri.TryCreate(RequestURL, UriKind.Absolute, out Uri uri))
+            {
+                string host = uri.Host;
+
+                if (!string.IsNullOrEmpty(host))
+                {
+                    if (host.StartsWith("www."))
+                    {
+                        host = host.Substring(4);
+                    }
+
+                    return host;
+                }
+            }
+
+            return null;
         }
 
         public HttpMethod GetHttpMethod()

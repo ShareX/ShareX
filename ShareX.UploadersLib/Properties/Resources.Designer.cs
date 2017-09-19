@@ -706,15 +706,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        internal static string UploadersConfigForm_CustomUploader_Name {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_CustomUploader_Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string UploadersConfigForm_Error {
