@@ -672,4 +672,22 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Пожертвовать…</value>
   </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Загрузить текст...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Загрузить текст...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Сократить ссылку...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Сократить ссылку...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры изображений...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры изображений...</value>
+  </data>
 </root>
