@@ -232,7 +232,13 @@
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Вставьте код подтверждения сюда</value>
   </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Аргумент с таким именем уже существует.</value>
+  </data>
   <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
     <value>Имя</value>
+  </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Заголовок с таким именем уже существует.</value>
   </data>
 </root>

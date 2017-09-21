@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
@@ -69,7 +70,7 @@ namespace ShareX
         {
             isReady = true;
 
-            txtQRCode.SetWatermark("Input text to encode");
+            txtQRCode.SetWatermark(Resources.QRCodeForm_InputTextToEncode);
 
             EncodeText(txtQRCode.Text);
         }

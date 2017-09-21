@@ -389,6 +389,12 @@ Created folders:</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Paste verification code here</value>
   </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>An argument with the same name already exists.</value>
+  </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>A header with the same name already exists.</value>
+  </data>
   <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\googlephotos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

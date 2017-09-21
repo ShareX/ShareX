@@ -44,7 +44,7 @@ namespace ShareX.HelpersLib
             rbBlackWhite.Checked = true;
             tbBlackWhite.Value = 128;
             tbRed.Value = 255;
-            cbGradient.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
+            cbGradient.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradient.SelectedIndex = 1;
             btnGradientColor1.Color = Color.DarkGray;
             btnGradientColor2.Color = Color.Black;

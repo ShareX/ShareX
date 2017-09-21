@@ -1807,6 +1807,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backward diagonal.
+        /// </summary>
+        internal static string LinearGradientMode_BackwardDiagonal {
+            get {
+                return ResourceManager.GetString("LinearGradientMode_BackwardDiagonal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forward diagonal.
+        /// </summary>
+        internal static string LinearGradientMode_ForwardDiagonal {
+            get {
+                return ResourceManager.GetString("LinearGradientMode_ForwardDiagonal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horizontal.
+        /// </summary>
+        internal static string LinearGradientMode_Horizontal {
+            get {
+                return ResourceManager.GetString("LinearGradientMode_Horizontal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical.
+        /// </summary>
+        internal static string LinearGradientMode_Vertical {
+            get {
+                return ResourceManager.GetString("LinearGradientMode_Vertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Loading {
