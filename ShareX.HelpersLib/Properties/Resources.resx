@@ -1049,4 +1049,16 @@ Would you like to download it?</value>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Custom URL sharing service</value>
   </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Backward diagonal</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Forward diagonal</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
 </root>

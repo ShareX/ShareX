@@ -3344,8 +3344,7 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Arguments.ContainsKey(name))
                     {
-                        // TODO: Translate
-                        MessageBox.Show("An argument with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_An_argument_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -3431,8 +3430,7 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Headers.ContainsKey(name))
                     {
-                        // TODO: Translate
-                        MessageBox.Show("A header with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_A_header_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {

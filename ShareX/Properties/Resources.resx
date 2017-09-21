@@ -957,4 +957,7 @@ Middle click to close</value>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italian</value>
   </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Input text to encode</value>
+  </data>
 </root>

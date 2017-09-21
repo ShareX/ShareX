@@ -1853,6 +1853,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input text to encode.
+        /// </summary>
+        public static string QRCodeForm_InputTextToEncode {
+            get {
+                return ResourceManager.GetString("QRCodeForm_InputTextToEncode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string QuickTaskMenu_ShowMenu_Cancel {

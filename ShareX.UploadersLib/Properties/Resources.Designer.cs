@@ -697,6 +697,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A header with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_A_header_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_A_header_with_the_same_name_already_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An argument with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_An_argument_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_An_argument_with_the_same_name_already_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Box refresh folders list failed.
         /// </summary>
         internal static string UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed {
