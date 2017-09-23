@@ -184,7 +184,7 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects();
+                    OpenImageEffects(safeTaskSettings);
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
@@ -505,19 +505,21 @@ namespace ShareX
         {
             if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffects))
+                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets))
                 {
-                    if (imageEffectsForm.ShowDialog() == DialogResult.OK)
-                    {
-                        taskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
-                    }
+                    imageEffectsForm.ShowDialog();
                 }
             }
 
-            using (img)
+            if (taskSettings.ImageSettings.ImageEffectPresets.IsValidIndex(taskSettings.ImageSettings.SelectedImageEffectPreset))
             {
-                return ImageEffectManager.ApplyEffects(img, taskSettings.ImageSettings.ImageEffects);
+                using (img)
+                {
+                    return taskSettings.ImageSettings.ImageEffectPresets[taskSettings.ImageSettings.SelectedImageEffectPreset].ApplyEffects(img);
+                }
             }
+
+            return img;
         }
 
         public static void AddDefaultExternalPrograms(TaskSettings taskSettings)
@@ -965,15 +967,17 @@ namespace ShareX
             return img;
         }
 
-        public static void OpenImageEffects()
+        public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             string filePath = ImageHelpers.OpenImageFileDialog();
             Image img = null;
             if (!string.IsNullOrEmpty(filePath))
             {
                 img = ImageHelpers.LoadImage(filePath);
             }
-            ImageEffectsForm form = new ImageEffectsForm(img);
+            ImageEffectsForm form = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets);
             form.EditorMode();
             form.Show();
         }

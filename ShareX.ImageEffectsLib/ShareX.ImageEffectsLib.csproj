@@ -115,7 +115,6 @@
     <Compile Include="Filters\Pixelate.cs" />
     <Compile Include="Filters\Sharpen.cs" />
     <Compile Include="Filters\Smooth.cs" />
-    <Compile Include="ImageEffectManager.cs" />
     <Compile Include="Adjustments\Brightness.cs" />
     <Compile Include="Adjustments\Colorize.cs" />
     <Compile Include="Adjustments\Contrast.cs" />
@@ -124,6 +123,7 @@
     <Compile Include="Adjustments\Hue.cs" />
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
+    <Compile Include="ImageEffectPreset.cs" />
     <Compile Include="Manipulations\Crop.cs" />
     <Compile Include="Manipulations\RoundedCorners.cs" />
     <Compile Include="Manipulations\Skew.cs" />

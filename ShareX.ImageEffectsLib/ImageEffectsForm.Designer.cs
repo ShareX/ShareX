@@ -48,12 +48,18 @@
             this.cmsLoadImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiLoadImageFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLoadImageFromClipboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddPreset = new System.Windows.Forms.Button();
+            this.btnRemovePreset = new System.Windows.Forms.Button();
+            this.cbPresets = new System.Windows.Forms.ComboBox();
+            this.lblPresetName = new System.Windows.Forms.Label();
+            this.txtPresetName = new System.Windows.Forms.TextBox();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // pgSettings
             // 
             resources.ApplyResources(this.pgSettings, "pgSettings");
+            this.pgSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgSettings.ToolbarVisible = false;
@@ -151,6 +157,7 @@
             // pbResult
             // 
             resources.ApplyResources(this.pbResult, "pbResult");
+            this.pbResult.BackColor = System.Drawing.SystemColors.Window;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
@@ -194,11 +201,49 @@
             resources.ApplyResources(this.tsmiLoadImageFromClipboard, "tsmiLoadImageFromClipboard");
             this.tsmiLoadImageFromClipboard.Click += new System.EventHandler(this.tsmiLoadImageFromClipboard_Click);
             // 
+            // btnAddPreset
+            // 
+            resources.ApplyResources(this.btnAddPreset, "btnAddPreset");
+            this.btnAddPreset.Name = "btnAddPreset";
+            this.btnAddPreset.UseVisualStyleBackColor = true;
+            this.btnAddPreset.Click += new System.EventHandler(this.btnAddPreset_Click);
+            // 
+            // btnRemovePreset
+            // 
+            resources.ApplyResources(this.btnRemovePreset, "btnRemovePreset");
+            this.btnRemovePreset.Name = "btnRemovePreset";
+            this.btnRemovePreset.UseVisualStyleBackColor = true;
+            this.btnRemovePreset.Click += new System.EventHandler(this.btnRemovePreset_Click);
+            // 
+            // cbPresets
+            // 
+            this.cbPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPresets.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPresets, "cbPresets");
+            this.cbPresets.Name = "cbPresets";
+            this.cbPresets.SelectedIndexChanged += new System.EventHandler(this.cbPresets_SelectedIndexChanged);
+            // 
+            // lblPresetName
+            // 
+            resources.ApplyResources(this.lblPresetName, "lblPresetName");
+            this.lblPresetName.Name = "lblPresetName";
+            // 
+            // txtPresetName
+            // 
+            resources.ApplyResources(this.txtPresetName, "txtPresetName");
+            this.txtPresetName.Name = "txtPresetName";
+            this.txtPresetName.TextChanged += new System.EventHandler(this.txtPresetName_TextChanged);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.txtPresetName);
+            this.Controls.Add(this.lblPresetName);
+            this.Controls.Add(this.cbPresets);
+            this.Controls.Add(this.btnRemovePreset);
+            this.Controls.Add(this.btnAddPreset);
             this.Controls.Add(this.mbLoadImage);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
@@ -240,6 +285,11 @@
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromClipboard;
+        private System.Windows.Forms.Button btnAddPreset;
+        private System.Windows.Forms.Button btnRemovePreset;
+        private System.Windows.Forms.ComboBox cbPresets;
+        private System.Windows.Forms.Label lblPresetName;
+        private System.Windows.Forms.TextBox txtPresetName;
     }
 }
 
