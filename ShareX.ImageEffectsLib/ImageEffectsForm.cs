@@ -42,6 +42,7 @@ namespace ShareX.ImageEffectsLib
         public int SelectedPresetIndex { get; private set; }
 
         private bool ignorePresetsSelectedIndexChanged = false;
+        private bool pauseUpdate = false;
 
         public ImageEffectsForm(Image img, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
@@ -165,31 +166,33 @@ namespace ShareX.ImageEffectsLib
                 cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
                 LoadPreset(preset);
                 txtPresetName.Focus();
-                UpdatePreview();
             }
         }
 
         private void UpdatePreview()
         {
-            ImageEffectPreset preset = GetSelectedPreset();
-
-            if (preset != null && DefaultImage != null)
+            if (!pauseUpdate)
             {
-                Stopwatch timer = Stopwatch.StartNew();
+                ImageEffectPreset preset = GetSelectedPreset();
 
-                using (Image preview = ApplyEffects())
+                if (preset != null && DefaultImage != null)
                 {
-                    if (preview != null)
+                    Stopwatch timer = Stopwatch.StartNew();
+
+                    using (Image preview = ApplyEffects())
                     {
-                        pbResult.LoadImage(preview);
-                        Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
-                            preview.Width, preview.Height, timer.ElapsedMilliseconds);
-                    }
-                    else
-                    {
-                        pbResult.Reset();
-                        Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
-                            0, 0, timer.ElapsedMilliseconds);
+                        if (preview != null)
+                        {
+                            pbResult.LoadImage(preview);
+                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                        }
+                        else
+                        {
+                            pbResult.Reset();
+                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                0, 0, timer.ElapsedMilliseconds);
+                        }
                     }
                 }
             }
@@ -224,6 +227,7 @@ namespace ShareX.ImageEffectsLib
                 {
                     Type type = (Type)tsmi.Tag;
                     ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
+                    // TODO: Order
                     preset.Effects.Add(imageEffect);
                     AddEffect(imageEffect);
                     UpdatePreview();
@@ -233,15 +237,19 @@ namespace ShareX.ImageEffectsLib
 
         private void RemoveSelectedEffects()
         {
-            if (lvEffects.SelectedItems.Count > 0)
-            {
-                // TODO
-                foreach (ListViewItem lvi in lvEffects.SelectedItems)
-                {
-                    lvi.Remove();
-                }
+            ImageEffectPreset preset = GetSelectedPreset();
 
-                UpdatePreview();
+            if (preset != null)
+            {
+                int index = lvEffects.SelectedIndex;
+
+                if (index > -1)
+                {
+                    preset.Effects.RemoveAt(index);
+                    lvEffects.Items.RemoveAt(index);
+
+                    UpdatePreview();
+                }
             }
         }
 
@@ -273,16 +281,25 @@ namespace ShareX.ImageEffectsLib
 
         private void LoadPreset(ImageEffectPreset preset)
         {
-            txtPresetName.Text = preset.Name;
-
-            lvEffects.Items.Clear();
-
-            pgSettings.SelectedObject = null;
-
-            foreach (ImageEffect imageEffect in preset.Effects)
+            try
             {
-                AddEffect(imageEffect);
+                pauseUpdate = true;
+
+                txtPresetName.Text = preset.Name;
+                lvEffects.Items.Clear();
+                pgSettings.SelectedObject = null;
+
+                foreach (ImageEffect imageEffect in preset.Effects)
+                {
+                    AddEffect(imageEffect);
+                }
             }
+            finally
+            {
+                pauseUpdate = false;
+            }
+
+            UpdatePreview();
         }
 
         #region Form events
@@ -385,6 +402,7 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
+            // TODO: Order
             UpdatePreview();
         }
 
