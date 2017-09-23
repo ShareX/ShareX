@@ -39,21 +39,28 @@ namespace ShareX.ImageEffectsLib
         public Image DefaultImage { get; private set; }
 
         public List<ImageEffectPreset> Presets { get; private set; }
+        public int SelectedPresetIndex { get; private set; }
 
         private bool ignorePresetsSelectedIndexChanged = false;
 
-        public ImageEffectsForm(Image img, List<ImageEffectPreset> presets)
+        public ImageEffectsForm(Image img, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             DefaultImage = img;
             Presets = presets;
-            eiImageEffects.ObjectType = typeof(List<ImageEffect>);
+            SelectedPresetIndex = selectedPresetIndex;
+            eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             AddAllEffectsToContextMenu();
 
             foreach (ImageEffectPreset preset in presets)
             {
                 cbPresets.Items.Add(preset);
+            }
+
+            if (selectedPresetIndex > -1 && selectedPresetIndex < cbPresets.Items.Count)
+            {
+                cbPresets.SelectedIndex = selectedPresetIndex;
             }
 
             UpdatePreview();
@@ -155,6 +162,10 @@ namespace ShareX.ImageEffectsLib
             {
                 Presets.Add(preset);
                 cbPresets.Items.Add(preset);
+                cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
+                LoadPreset(preset);
+                txtPresetName.Focus();
+                UpdatePreview();
             }
         }
 
@@ -266,6 +277,8 @@ namespace ShareX.ImageEffectsLib
 
             lvEffects.Items.Clear();
 
+            pgSettings.SelectedObject = null;
+
             foreach (ImageEffect imageEffect in preset.Effects)
             {
                 AddEffect(imageEffect);
@@ -277,8 +290,6 @@ namespace ShareX.ImageEffectsLib
         private void btnAddPreset_Click(object sender, EventArgs e)
         {
             AddPreset();
-            cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
-            txtPresetName.Focus();
         }
 
         private void btnRemovePreset_Click(object sender, EventArgs e)
@@ -306,6 +317,8 @@ namespace ShareX.ImageEffectsLib
         {
             if (!ignorePresetsSelectedIndexChanged)
             {
+                SelectedPresetIndex = cbPresets.SelectedIndex;
+
                 ImageEffectPreset preset = GetSelectedPreset();
                 if (preset != null)
                 {
@@ -436,9 +449,7 @@ namespace ShareX.ImageEffectsLib
 
             if (preset != null && preset.Effects.Count > 0)
             {
-                ClearFields();
                 AddPreset(preset);
-                UpdatePreview();
             }
         }
 

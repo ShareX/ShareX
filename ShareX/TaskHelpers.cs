@@ -505,9 +505,11 @@ namespace ShareX
         {
             if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets))
+                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                    taskSettings.ImageSettings.SelectedImageEffectPreset))
                 {
                     imageEffectsForm.ShowDialog();
+                    taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                 }
             }
 
@@ -977,7 +979,8 @@ namespace ShareX
             {
                 img = ImageHelpers.LoadImage(filePath);
             }
-            ImageEffectsForm form = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets);
+            ImageEffectsForm form = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                taskSettings.ImageSettings.SelectedImageEffectPreset);
             form.EditorMode();
             form.Show();
         }

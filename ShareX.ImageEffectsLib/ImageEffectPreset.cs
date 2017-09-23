@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -36,6 +37,7 @@ namespace ShareX.ImageEffectsLib
     {
         public string Name { get; set; } = "";
 
+        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
 
         public Image ApplyEffects(Image img)

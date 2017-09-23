@@ -764,9 +764,11 @@ namespace ShareX
 
         private void btnImageEffects_Click(object sender, EventArgs e)
         {
-            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(ShareXResources.LogoBlack, TaskSettings.ImageSettings.ImageEffectPresets))
+            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(ShareXResources.LogoBlack, TaskSettings.ImageSettings.ImageEffectPresets,
+                TaskSettings.ImageSettings.SelectedImageEffectPreset))
             {
                 imageEffectsForm.ShowDialog();
+                TaskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
             }
         }
 

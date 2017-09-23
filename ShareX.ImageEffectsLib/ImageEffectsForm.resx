@@ -171,6 +171,9 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 72</value>
   </data>
@@ -191,9 +194,6 @@
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>19</value>
-  </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 40</value>
@@ -447,6 +447,18 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>From file...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>From clipboard</value>
+  </data>
   <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 48</value>
   </data>
@@ -476,18 +488,6 @@
   </data>
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>From file...</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>From clipboard</value>
   </data>
   <data name="btnAddPreset.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -535,7 +535,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemovePreset.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbPresets.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 8</value>
@@ -556,7 +556,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbPresets.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblPresetName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -583,13 +583,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPresetName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="txtPresetName.Location" type="System.Drawing.Point, System.Drawing">
     <value>648, 8</value>
   </data>
   <data name="txtPresetName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 20</value>
+    <value>312, 20</value>
   </data>
   <data name="txtPresetName.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -604,7 +604,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPresetName.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -614,9 +614,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>969, 535</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
