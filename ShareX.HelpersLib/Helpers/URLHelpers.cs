@@ -368,9 +368,9 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetShortURL(string url)
+        public static string GetHostName(string url)
         {
-            if (Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
+            if (!string.IsNullOrEmpty(url) && Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
             {
                 string host = uri.Host;
 

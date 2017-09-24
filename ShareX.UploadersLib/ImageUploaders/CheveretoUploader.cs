@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib
 
         public override string ToString()
         {
-            return URLHelpers.GetShortURL(UploadURL);
+            return URLHelpers.GetHostName(UploadURL);
         }
     }
 }
