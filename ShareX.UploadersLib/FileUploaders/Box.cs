@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -82,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return CreateQuery("https://www.box.com/api/oauth2/authorize", args);
+            return URLHelpers.CreateQuery("https://www.box.com/api/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

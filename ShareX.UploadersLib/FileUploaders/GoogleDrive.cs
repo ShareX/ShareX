@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
             args.Add("scope", "https://www.googleapis.com/auth/drive");
 
-            return CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
+            return URLHelpers.CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
         }
 
         public bool GetAccessToken(string code)

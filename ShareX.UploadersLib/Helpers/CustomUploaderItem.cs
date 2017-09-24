@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(host))
                 {
-                    if (host.StartsWith("www."))
+                    if (host.StartsWith("www.", StringComparison.InvariantCultureIgnoreCase))
                     {
                         host = host.Substring(4);
                     }

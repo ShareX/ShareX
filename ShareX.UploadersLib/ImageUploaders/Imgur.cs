@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("response_type", "pin");
 
-            return CreateQuery("https://api.imgur.com/oauth2/authorize", args);
+            return URLHelpers.CreateQuery("https://api.imgur.com/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
@@ -83,7 +84,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("accesstoken", accessToken);
 
-            string url = CreateQuery("https://api.ge.tt/1/shares/create", args);
+            string url = URLHelpers.CreateQuery("https://api.ge.tt/1/shares/create", args);
             string response = SendRequest(HttpMethod.POST, url);
 
             return JsonConvert.DeserializeObject<Ge_ttShare>(response);

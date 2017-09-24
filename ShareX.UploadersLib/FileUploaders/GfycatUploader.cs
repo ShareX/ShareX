@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery(URL_AUTHORIZE, args);
+            return URLHelpers.CreateQuery(URL_AUTHORIZE, args);
         }
 
         public bool GetAccessToken(string code)

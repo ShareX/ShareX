@@ -131,7 +131,7 @@ namespace ShareX.UploadersLib.FileUploaders
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
-            string canonicalQueryString = URLHelpers.CreateQuery(args);
+            string canonicalQueryString = URLHelpers.CreateQuery(args, true);
             string canonicalHeaders = CreateCanonicalHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
@@ -158,7 +158,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("host");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.CreateQuery(url, args);
+            url = URLHelpers.CreateQuery(url, args, true);
             url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);

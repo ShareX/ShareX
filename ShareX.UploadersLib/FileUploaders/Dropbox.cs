@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return CreateQuery(URLOAuth2Authorize, args);
+            return URLHelpers.CreateQuery(URLOAuth2Authorize, args);
         }
 
         public bool GetAccessToken(string code)

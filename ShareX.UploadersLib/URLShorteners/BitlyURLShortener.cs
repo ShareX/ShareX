@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery("https://bitly.com/oauth/authorize", args);
+            return URLHelpers.CreateQuery("https://bitly.com/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)
