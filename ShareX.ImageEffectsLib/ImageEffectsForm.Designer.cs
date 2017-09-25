@@ -259,6 +259,7 @@
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
             this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

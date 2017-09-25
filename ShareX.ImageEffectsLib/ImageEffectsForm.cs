@@ -53,18 +53,6 @@ namespace ShareX.ImageEffectsLib
             SelectedPresetIndex = selectedPresetIndex;
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             AddAllEffectsToContextMenu();
-
-            foreach (ImageEffectPreset preset in presets)
-            {
-                cbPresets.Items.Add(preset);
-            }
-
-            if (selectedPresetIndex > -1 && selectedPresetIndex < cbPresets.Items.Count)
-            {
-                cbPresets.SelectedIndex = selectedPresetIndex;
-            }
-
-            UpdatePreview();
         }
 
         public void EditorMode()
@@ -138,6 +126,23 @@ namespace ShareX.ImageEffectsLib
                 tsmiChild.Tag = imageEffect;
                 tsmiChild.Click += tsmiEffectClick;
             }
+        }
+
+        private void LoadSettings()
+        {
+            pauseUpdate = true;
+
+            foreach (ImageEffectPreset preset in Presets)
+            {
+                cbPresets.Items.Add(preset);
+            }
+
+            if (SelectedPresetIndex > -1 && SelectedPresetIndex < cbPresets.Items.Count)
+            {
+                cbPresets.SelectedIndex = SelectedPresetIndex;
+            }
+
+            pauseUpdate = false;
         }
 
         private ImageEffectPreset GetSelectedPreset()
@@ -260,6 +265,8 @@ namespace ShareX.ImageEffectsLib
 
         private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
         {
+            pauseUpdate = true;
+
             ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
             lvi.Checked = imageEffect.Enabled;
             lvi.Tag = imageEffect;
@@ -286,32 +293,35 @@ namespace ShareX.ImageEffectsLib
 
             lvi.EnsureVisible();
             lvi.Selected = true;
+
+            pauseUpdate = false;
         }
 
         private void LoadPreset(ImageEffectPreset preset)
         {
-            try
-            {
-                pauseUpdate = true;
+            pauseUpdate = true;
 
-                txtPresetName.Text = preset.Name;
-                lvEffects.Items.Clear();
-                pgSettings.SelectedObject = null;
+            txtPresetName.Text = preset.Name;
+            lvEffects.Items.Clear();
+            pgSettings.SelectedObject = null;
 
-                foreach (ImageEffect imageEffect in preset.Effects)
-                {
-                    AddEffect(imageEffect);
-                }
-            }
-            finally
+            foreach (ImageEffect imageEffect in preset.Effects)
             {
-                pauseUpdate = false;
+                AddEffect(imageEffect);
             }
+
+            pauseUpdate = false;
 
             UpdatePreview();
         }
 
         #region Form events
+
+        private void ImageEffectsForm_Shown(object sender, EventArgs e)
+        {
+            LoadSettings();
+            this.ForceActivate();
+        }
 
         private void btnAddPreset_Click(object sender, EventArgs e)
         {
