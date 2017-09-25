@@ -227,9 +227,7 @@ namespace ShareX.ImageEffectsLib
                 {
                     Type type = (Type)tsmi.Tag;
                     ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
-                    // TODO: Order
-                    preset.Effects.Add(imageEffect);
-                    AddEffect(imageEffect);
+                    AddEffect(imageEffect, preset);
                     UpdatePreview();
                 }
             }
@@ -260,7 +258,7 @@ namespace ShareX.ImageEffectsLib
             UpdatePreview();
         }
 
-        private void AddEffect(ImageEffect imageEffect)
+        private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
         {
             ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
             lvi.Checked = imageEffect.Enabled;
@@ -268,11 +266,22 @@ namespace ShareX.ImageEffectsLib
 
             if (lvEffects.SelectedIndices.Count > 0)
             {
-                lvEffects.Items.Insert(lvEffects.SelectedIndices[lvEffects.SelectedIndices.Count - 1] + 1, lvi);
+                int index = lvEffects.SelectedIndices[lvEffects.SelectedIndices.Count - 1] + 1;
+                lvEffects.Items.Insert(index, lvi);
+
+                if (preset != null)
+                {
+                    preset.Effects.Insert(index, imageEffect);
+                }
             }
             else
             {
                 lvEffects.Items.Add(lvi);
+
+                if (preset != null)
+                {
+                    preset.Effects.Add(imageEffect);
+                }
             }
 
             lvi.EnsureVisible();
@@ -392,8 +401,7 @@ namespace ShareX.ImageEffectsLib
                     {
                         ImageEffect imageEffect = (ImageEffect)lvi.Tag;
                         ImageEffect imageEffectClone = imageEffect.Copy();
-                        preset.Effects.Add(imageEffectClone);
-                        AddEffect(imageEffectClone);
+                        AddEffect(imageEffectClone, preset);
                         UpdatePreview();
                     }
                 }
@@ -402,8 +410,13 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
-            // TODO: Order
-            UpdatePreview();
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                preset.Effects.Move(oldIndex, newIndex);
+                UpdatePreview();
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
