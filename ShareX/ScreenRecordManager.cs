@@ -150,6 +150,8 @@ namespace ShareX
                     break;
             }
 
+            Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
+            captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
             captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
