@@ -55,6 +55,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFlickr;
     }
 
+    // TODO: Implement oauth
     public class FlickrUploader : ImageUploader
     {
         private string API_Key, API_Secret;
