@@ -189,8 +189,10 @@
             this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadClipboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadText = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayShortenURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWorkflows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayColorPicker = new System.Windows.Forms.ToolStripMenuItem();
@@ -246,8 +248,10 @@
             this.ucNews = new ShareX.NewsListControl();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.tsmiTrayUploadText = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayShortenURL = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyMarkdownLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyMarkdownImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyMarkdownLinkedImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssCopy6 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1044,11 +1048,15 @@
             this.tsmiCopyForumImage,
             this.tsmiCopyForumLinkedImage,
             this.tssCopy4,
+            this.tsmiCopyMarkdownLink,
+            this.tsmiCopyMarkdownImage,
+            this.tsmiCopyMarkdownLinkedImage,
+            this.tssCopy5,
             this.tsmiCopyFilePath,
             this.tsmiCopyFileName,
             this.tsmiCopyFileNameWithExtension,
             this.tsmiCopyFolder,
-            this.tssCopy5});
+            this.tssCopy6});
             this.tsmiCopy.Image = global::ShareX.Properties.Resources.document_copy;
             this.tsmiCopy.Name = "tsmiCopy";
             resources.ApplyResources(this.tsmiCopy, "tsmiCopy");
@@ -1515,6 +1523,13 @@
             resources.ApplyResources(this.tsmiTrayUploadClipboard, "tsmiTrayUploadClipboard");
             this.tsmiTrayUploadClipboard.Click += new System.EventHandler(this.tsbClipboardUpload_Click);
             // 
+            // tsmiTrayUploadText
+            // 
+            this.tsmiTrayUploadText.Image = global::ShareX.Properties.Resources.notebook;
+            this.tsmiTrayUploadText.Name = "tsmiTrayUploadText";
+            resources.ApplyResources(this.tsmiTrayUploadText, "tsmiTrayUploadText");
+            this.tsmiTrayUploadText.Click += new System.EventHandler(this.tsmiUploadText_Click);
+            // 
             // tsmiTrayUploadURL
             // 
             this.tsmiTrayUploadURL.Image = global::ShareX.Properties.Resources.drive;
@@ -1528,6 +1543,13 @@
             this.tsmiTrayUploadDragDrop.Name = "tsmiTrayUploadDragDrop";
             resources.ApplyResources(this.tsmiTrayUploadDragDrop, "tsmiTrayUploadDragDrop");
             this.tsmiTrayUploadDragDrop.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
+            // 
+            // tsmiTrayShortenURL
+            // 
+            this.tsmiTrayShortenURL.Image = global::ShareX.Properties.Resources.edit_scale;
+            this.tsmiTrayShortenURL.Name = "tsmiTrayShortenURL";
+            resources.ApplyResources(this.tsmiTrayShortenURL, "tsmiTrayShortenURL");
+            this.tsmiTrayShortenURL.Click += new System.EventHandler(this.tsmiShortenURL_Click);
             // 
             // tsmiTrayWorkflows
             // 
@@ -1921,19 +1943,28 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
-            // tsmiTrayUploadText
+            // tsmiCopyMarkdownLink
             // 
-            this.tsmiTrayUploadText.Image = global::ShareX.Properties.Resources.notebook;
-            this.tsmiTrayUploadText.Name = "tsmiTrayUploadText";
-            resources.ApplyResources(this.tsmiTrayUploadText, "tsmiTrayUploadText");
-            this.tsmiTrayUploadText.Click += new System.EventHandler(this.tsmiUploadText_Click);
+            this.tsmiCopyMarkdownLink.Name = "tsmiCopyMarkdownLink";
+            resources.ApplyResources(this.tsmiCopyMarkdownLink, "tsmiCopyMarkdownLink");
+            this.tsmiCopyMarkdownLink.Click += new System.EventHandler(this.tsmiCopyMarkdownLink_Click);
             // 
-            // tsmiTrayShortenURL
+            // tsmiCopyMarkdownImage
             // 
-            this.tsmiTrayShortenURL.Image = global::ShareX.Properties.Resources.edit_scale;
-            this.tsmiTrayShortenURL.Name = "tsmiTrayShortenURL";
-            resources.ApplyResources(this.tsmiTrayShortenURL, "tsmiTrayShortenURL");
-            this.tsmiTrayShortenURL.Click += new System.EventHandler(this.tsmiShortenURL_Click);
+            this.tsmiCopyMarkdownImage.Name = "tsmiCopyMarkdownImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownImage, "tsmiCopyMarkdownImage");
+            this.tsmiCopyMarkdownImage.Click += new System.EventHandler(this.tsmiCopyMarkdownImage_Click);
+            // 
+            // tsmiCopyMarkdownLinkedImage
+            // 
+            this.tsmiCopyMarkdownLinkedImage.Name = "tsmiCopyMarkdownLinkedImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownLinkedImage, "tsmiCopyMarkdownLinkedImage");
+            this.tsmiCopyMarkdownLinkedImage.Click += new System.EventHandler(this.tsmiCopyMarkdownLinkedImage_Click);
+            // 
+            // tssCopy6
+            // 
+            this.tssCopy6.Name = "tssCopy6";
+            resources.ApplyResources(this.tssCopy6, "tssCopy6");
             // 
             // MainForm
             // 
@@ -2194,5 +2225,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiShortenURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadText;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShortenURL;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLink;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
+        private System.Windows.Forms.ToolStripSeparator tssCopy6;
     }
 }

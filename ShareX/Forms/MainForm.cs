@@ -600,6 +600,10 @@ namespace ShareX
                     tsmiCopyForumImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsURLExist);
                     tsmiCopyForumLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
 
+                    tsmiCopyMarkdownLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
+                    tsmiCopyMarkdownImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL);
+                    tsmiCopyMarkdownLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
+
                     tsmiCopyFilePath.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
                     tsmiCopyFileName.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
                     tsmiCopyFileNameWithExtension.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
@@ -609,7 +613,7 @@ namespace ShareX
 
                     if (Program.Settings.ClipboardContentFormats != null && Program.Settings.ClipboardContentFormats.Count > 0)
                     {
-                        tssCopy5.Visible = true;
+                        tssCopy6.Visible = true;
 
                         foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
                         {
@@ -655,11 +659,11 @@ namespace ShareX
 
         private void CleanCustomClipboardFormats()
         {
-            tssCopy5.Visible = false;
+            tssCopy6.Visible = false;
 
-            int tssCopy5Index = tsmiCopy.DropDownItems.IndexOf(tssCopy5);
+            int tssCopy6Index = tsmiCopy.DropDownItems.IndexOf(tssCopy6);
 
-            while (tssCopy5Index < tsmiCopy.DropDownItems.Count - 1)
+            while (tssCopy6Index < tsmiCopy.DropDownItems.Count - 1)
             {
                 using (ToolStripItem tsi = tsmiCopy.DropDownItems[tsmiCopy.DropDownItems.Count - 1])
                 {
@@ -1881,6 +1885,21 @@ namespace ShareX
         private void tsmiCopyForumLinkedImage_Click(object sender, EventArgs e)
         {
             uim.CopyForumLinkedImage();
+        }
+
+        private void tsmiCopyMarkdownLink_Click(object sender, EventArgs e)
+        {
+            uim.CopyMarkdownLink();
+        }
+
+        private void tsmiCopyMarkdownImage_Click(object sender, EventArgs e)
+        {
+            uim.CopyMarkdownImage();
+        }
+
+        private void tsmiCopyMarkdownLinkedImage_Click(object sender, EventArgs e)
+        {
+            uim.CopyMarkdownLinkedImage();
         }
 
         private void tsmiCopyFilePath_Click(object sender, EventArgs e)
