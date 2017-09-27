@@ -60,7 +60,6 @@ namespace ShareX.ImageEffectsLib
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
-            btnOK.Visible = false;
         }
 
         private void AddAllEffectsToContextMenu()
@@ -200,7 +199,16 @@ namespace ShareX.ImageEffectsLib
                         }
                     }
                 }
+
+                UpdateControlStates();
             }
+        }
+
+        private void UpdateControlStates()
+        {
+            btnRemovePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
+            btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
+            btnClear.Enabled = btnRefresh.Enabled = lvEffects.Items.Count > 0;
         }
 
         private List<ImageEffect> GetImageEffects()
@@ -447,6 +455,8 @@ namespace ShareX.ImageEffectsLib
                     pgSettings.SelectedObject = lvi.Tag;
                 }
             }
+
+            UpdateControlStates();
         }
 
         private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -573,15 +583,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
             Close();
         }
 

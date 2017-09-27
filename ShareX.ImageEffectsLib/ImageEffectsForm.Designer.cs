@@ -35,8 +35,6 @@
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -53,6 +51,7 @@
             this.cbPresets = new System.Windows.Forms.ComboBox();
             this.lblPresetName = new System.Windows.Forms.Label();
             this.txtPresetName = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,20 +102,6 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnCancel
-            // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClear
             // 
@@ -234,11 +219,19 @@
             this.txtPresetName.Name = "txtPresetName";
             this.txtPresetName.TextChanged += new System.EventHandler(this.txtPresetName_TextChanged);
             // 
+            // btnClose
+            // 
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPresetName);
             this.Controls.Add(this.lblPresetName);
             this.Controls.Add(this.cbPresets);
@@ -251,8 +244,6 @@
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbResult);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pgSettings);
@@ -274,8 +265,6 @@
         private System.Windows.Forms.ColumnHeader chEffect;
         private System.Windows.Forms.Button btnRemove;
         private ShareX.HelpersLib.MyPictureBox pbResult;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Button btnRefresh;
@@ -291,6 +280,7 @@
         private System.Windows.Forms.ComboBox cbPresets;
         private System.Windows.Forms.Label lblPresetName;
         private System.Windows.Forms.TextBox txtPresetName;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
