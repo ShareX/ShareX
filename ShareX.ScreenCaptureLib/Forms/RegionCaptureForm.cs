@@ -63,11 +63,14 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (bmpBackgroundImage != null && !CurrentPosition.IsEmpty)
+                if (bmpBackgroundImage != null)
                 {
                     Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
 
-                    return bmpBackgroundImage.GetPixel(position.X, position.Y);
+                    if (position.X.IsBetween(0, bmpBackgroundImage.Width - 1) && position.Y.IsBetween(0, bmpBackgroundImage.Height - 1))
+                    {
+                        return bmpBackgroundImage.GetPixel(position.X, position.Y);
+                    }
                 }
 
                 return Color.Empty;
