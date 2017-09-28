@@ -36,6 +36,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public string ObjectPrefix { get; set; }
         public bool UseCustomCNAME { get; set; }
         public string CustomDomain { get; set; }
-        public bool UseReducedRedundancyStorage { get; set; }
+        public AmazonS3StorageClass StorageClass { get; set; }
     }
 }

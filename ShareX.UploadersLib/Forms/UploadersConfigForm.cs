@@ -530,7 +530,8 @@ namespace ShareX.UploadersLib
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
-            cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
+            cbAmazonS3StorageClass.Items.AddRange(Helpers.GetEnumDescriptions<AmazonS3StorageClass>());
+            cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
             UpdateAmazonS3Status();
 
             // ownCloud
@@ -2259,10 +2260,14 @@ namespace ShareX.UploadersLib
             UpdateAmazonS3Status();
         }
 
-        private void cbAmazonS3UseRRS_CheckedChanged(object sender, EventArgs e)
+        private void cbAmazonS3StorageClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.AmazonS3Settings.UseReducedRedundancyStorage = cbAmazonS3UseRRS.Checked;
-            UpdateAmazonS3Status();
+            Config.AmazonS3Settings.StorageClass = (AmazonS3StorageClass)cbAmazonS3StorageClass.SelectedIndex;
+        }
+
+        private void btnAmazonS3StorageClassHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://aws.amazon.com/s3/storage-classes/");
         }
 
         #endregion Amazon S3

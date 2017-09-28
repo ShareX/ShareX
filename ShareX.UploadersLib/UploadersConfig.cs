@@ -231,8 +231,7 @@ namespace ShareX.UploadersLib
 
         public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings()
         {
-            ObjectPrefix = "ShareX/%y/%mo",
-            UseReducedRedundancyStorage = true
+            ObjectPrefix = "ShareX/%y/%mo"
         };
 
         // ownCloud

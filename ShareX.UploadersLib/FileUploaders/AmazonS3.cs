@@ -28,6 +28,7 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -36,6 +37,14 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public enum AmazonS3StorageClass
+    {
+        [Description("Standard storage")]
+        STANDARD,
+        [Description("Standard infrequent access storage")]
+        STANDARD_IA
+    }
+
     public class AmazonS3NewFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
@@ -113,7 +122,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers["content-type"] = contentType;
             headers["host"] = host;
             headers["x-amz-acl"] = "public-read";
-            headers["x-amz-storage-class"] = Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
+            headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
 
             string signedHeaders = GetSignedHeaders(headers);
 
