@@ -248,6 +248,7 @@
     <None Include="Resources\camera.png" />
     <None Include="Resources\control.png" />
     <None Include="Resources\cross.png" />
+    <None Include="Resources\CircleNode.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

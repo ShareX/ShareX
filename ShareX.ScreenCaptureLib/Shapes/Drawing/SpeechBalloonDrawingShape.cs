@@ -68,7 +68,6 @@ namespace ShareX.ScreenCaptureLib
             base.OnNodeVisible();
 
             TailNode.Position = TailPosition;
-            TailNode.Shape = NodeShape.Circle;
             TailNode.Visible = true;
         }
 

@@ -124,7 +124,6 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeVisible()
         {
-            Manager.ResizeNodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
             Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible = true;
         }
 
