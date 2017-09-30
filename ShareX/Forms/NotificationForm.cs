@@ -48,6 +48,15 @@ namespace ShareX
         private int urlPadding = 3;
         private Size textRenderSize;
 
+        protected override CreateParams CreateParams {
+          get {
+            // Turn on WS_EX_TOOLWINDOW style bit
+            CreateParams cp = base.CreateParams;
+            cp.ExStyle |= 0x80;
+            return cp;
+          }
+        }
+
         public NotificationForm(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
             InitializeComponent();
