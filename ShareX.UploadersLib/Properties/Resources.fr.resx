@@ -235,4 +235,7 @@ Dossiers créés :</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Collez le code de vérification ici</value>
   </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Le fichier de clé n'existe pas!</value>
+  </data>
 </root>
