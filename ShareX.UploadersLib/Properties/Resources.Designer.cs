@@ -733,6 +733,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Key file does not exist..
+        /// </summary>
+        internal static string UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string UploadersConfigForm_Error {

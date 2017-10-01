@@ -401,4 +401,7 @@ Created folders:</value>
   <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
     <value>https://aws.amazon.com/s3/storage-classes/</value>
   </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Key file does not exist.</value>
+  </data>
 </root>
