@@ -586,7 +586,7 @@
     <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures vidéo...</value>
+    <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Combineur d'images...</value>
@@ -707,5 +707,32 @@
   </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>Nouveautés</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Image Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Lien Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Image liée Markdown</value>
   </data>
 </root>

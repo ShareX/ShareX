@@ -1151,4 +1151,25 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="lblAzureStorageContainer.Text" xml:space="preserve">
     <value>Conteneur :</value>
   </data>
+  <data name="sulKeyLink.Text" xml:space="preserve">
+    <value>Cliquez ici pour obtenir votre clé API !</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="lblCustomUploaderName.Text" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
+    <value>Service de partage d'URL :</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>Domaine personnalisé :</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Emplacement de la clé :</value>
+  </data>
 </root>
