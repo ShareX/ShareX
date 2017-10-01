@@ -1039,4 +1039,67 @@
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Загрузка текста</value>
   </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Стандартное хранилище</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Стандартное хранилище нечастого доступа</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Большой квадрат</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Огромная миниатюра</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Большая миниатюра</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Средняя миниатюра</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Маленький квадрат</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Маленькая миниатюра</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Публичная</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Личная (только участники)</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Не публиковать</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>Никогда</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 Минут</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 Час</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 День</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 Неделю</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 Недели</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 Месяц</value>
+  </data>
+  <data name="MinusLinkType_Direct" xml:space="preserve">
+    <value>Прямая</value>
+  </data>
+  <data name="MinusLinkType_Page" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="MinusLinkType_Raw" xml:space="preserve">
+    <value>Сырая</value>
+  </data>
 </root>

@@ -37,11 +37,9 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public enum AmazonS3StorageClass
+    public enum AmazonS3StorageClass // Localized
     {
-        [Description("Standard storage")]
         STANDARD,
-        [Description("Standard infrequent access storage")]
         STANDARD_IA
     }
 

@@ -706,6 +706,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://aws.amazon.com/s3/storage-classes/.
+        /// </summary>
+        internal static string UploadersConfigForm_AmazonS3StorageClassHelpURL {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_AmazonS3StorageClassHelpURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An argument with the same name already exists..
         /// </summary>
         internal static string UploadersConfigForm_An_argument_with_the_same_name_already_exists {

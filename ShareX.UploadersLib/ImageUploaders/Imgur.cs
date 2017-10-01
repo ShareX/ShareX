@@ -37,19 +37,13 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
-    public enum ImgurThumbnailType
+    public enum ImgurThumbnailType // Localized
     {
-        [Description("Small square")]
         Small_Square,
-        [Description("Big square")]
         Big_Square,
-        [Description("Small thumbnail")]
         Small_Thumbnail,
-        [Description("Medium thumbnail")]
         Medium_Thumbnail,
-        [Description("Large thumbnail")]
         Large_Thumbnail,
-        [Description("Huge thumbnail")]
         Huge_Thumbnail
     }
 
