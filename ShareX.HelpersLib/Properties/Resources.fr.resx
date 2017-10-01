@@ -985,4 +985,43 @@ Voulez-vous la télécharger ?</value>
   <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
     <value>Proxy possiblement détecté. Merci d'ouvrir les Paramètres de l'application depuis le menu principal et choisissez Proxy pour entrer les paramètres du serveur proxy.</value>
   </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Mettre en ligne un texte</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Détecter automatiquement</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Mettre en ligne</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Mettre en ligne</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Par défaut</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Dessin : Curseur</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Raccourcir l'URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Service de partage d'URL</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Service de partage d'URL personnalisé</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Diagonale en arrière</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Diagonale en avant</value>
+  </data>
 </root>

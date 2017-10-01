@@ -235,6 +235,12 @@ Dossiers créés :</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Collez le code de vérification ici</value>
   </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Un entête avec le même nom existe déjà.</value>
+  </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Un argument avec le même nom existe déjà.</value>
+  </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Le fichier de clé n'existe pas!</value>
   </data>

@@ -544,4 +544,10 @@ Voulez-vous redémarrer ShareX ?</value>
 Clique droit pour ouvrir le menu
 Clique de la molette pour fermer</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Italien</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Entrez le texte à encoder</value>
+  </data>
 </root>

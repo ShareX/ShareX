@@ -398,6 +398,9 @@ Created folders:</value>
   <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\googlephotos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
+    <value>https://aws.amazon.com/s3/storage-classes/</value>
+  </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Key file does not exist.</value>
   </data>

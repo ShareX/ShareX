@@ -811,7 +811,7 @@ store.book[0].title</value>
     <value>Войти</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Тип миниатюр:</value>
+    <value>Тип миниатюры:</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
     <value>Обновить список альбомов</value>
@@ -1171,5 +1171,8 @@ store.book[0].title</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Класс хранилища:</value>
   </data>
 </root>

@@ -278,7 +278,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public enum MinusLinkType
+    public enum MinusLinkType // Localized
     {
         Direct,
         Page,
