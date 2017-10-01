@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copier dans le presse-papier</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ajouter...</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Enregistrer en tant que fichier image...</value>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Largeur :</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>Générateur des miniatures</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR code</value>
+    <value>ShareX - Générateur de miniatures d'image</value>
   </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Décoder</value>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Hauteur :</value>
   </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Encoder</value>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Dossier de sortie :</value>
   </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Résultat :</value>
+  <data name="lblOutputFilename.Text" xml:space="preserve">
+    <value>Nom du fichier de sortie :</value>
   </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Décoder à partir d'un fichier image...</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Décoder à partir de l'écran...</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
 </root>
