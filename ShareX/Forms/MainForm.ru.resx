@@ -690,4 +690,13 @@
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры изображений...</value>
   </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown ссылку</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown изображение</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown изображение-ссылку</value>
+  </data>
 </root>
