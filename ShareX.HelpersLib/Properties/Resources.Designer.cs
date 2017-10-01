@@ -287,6 +287,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Standard storage.
+        /// </summary>
+        internal static string AmazonS3StorageClass_STANDARD {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_STANDARD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard infrequent access storage.
+        /// </summary>
+        internal static string AmazonS3StorageClass_STANDARD_IA {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_STANDARD_IA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clipboard content: File (Count: {0}).
         /// </summary>
         internal static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__ {
@@ -1807,6 +1825,60 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Big square.
+        /// </summary>
+        internal static string ImgurThumbnailType_Big_Square {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Big_Square", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Huge thumbnail.
+        /// </summary>
+        internal static string ImgurThumbnailType_Huge_Thumbnail {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Huge_Thumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large thumbnail.
+        /// </summary>
+        internal static string ImgurThumbnailType_Large_Thumbnail {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Large_Thumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium thumbnail.
+        /// </summary>
+        internal static string ImgurThumbnailType_Medium_Thumbnail {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Medium_Thumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small square.
+        /// </summary>
+        internal static string ImgurThumbnailType_Small_Square {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Small_Square", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small thumbnail.
+        /// </summary>
+        internal static string ImgurThumbnailType_Small_Thumbnail {
+            get {
+                return ResourceManager.GetString("ImgurThumbnailType_Small_Thumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backward diagonal.
         /// </summary>
         internal static string LinearGradientMode_BackwardDiagonal {
@@ -1849,6 +1921,33 @@ namespace ShareX.HelpersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Direct.
+        /// </summary>
+        internal static string MinusLinkType_Direct {
+            get {
+                return ResourceManager.GetString("MinusLinkType_Direct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page.
+        /// </summary>
+        internal static string MinusLinkType_Page {
+            get {
+                return ResourceManager.GetString("MinusLinkType_Page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raw.
+        /// </summary>
+        internal static string MinusLinkType_Raw {
+            get {
+                return ResourceManager.GetString("MinusLinkType_Raw", resourceCulture);
             }
         }
         
@@ -1903,6 +2002,96 @@ namespace ShareX.HelpersLib.Properties {
         internal static string MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__ {
             get {
                 return ResourceManager.GetString("MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 Day.
+        /// </summary>
+        internal static string PastebinExpiration_D1 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_D1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 Hour.
+        /// </summary>
+        internal static string PastebinExpiration_H1 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_H1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 Month.
+        /// </summary>
+        internal static string PastebinExpiration_M1 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_M1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10 Minutes.
+        /// </summary>
+        internal static string PastebinExpiration_M10 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_M10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Never.
+        /// </summary>
+        internal static string PastebinExpiration_N {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 Week.
+        /// </summary>
+        internal static string PastebinExpiration_W1 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_W1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 Weeks.
+        /// </summary>
+        internal static string PastebinExpiration_W2 {
+            get {
+                return ResourceManager.GetString("PastebinExpiration_W2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private (members only).
+        /// </summary>
+        internal static string PastebinPrivacy_Private {
+            get {
+                return ResourceManager.GetString("PastebinPrivacy_Private", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Public.
+        /// </summary>
+        internal static string PastebinPrivacy_Public {
+            get {
+                return ResourceManager.GetString("PastebinPrivacy_Public", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlisted.
+        /// </summary>
+        internal static string PastebinPrivacy_Unlisted {
+            get {
+                return ResourceManager.GetString("PastebinPrivacy_Unlisted", resourceCulture);
             }
         }
         

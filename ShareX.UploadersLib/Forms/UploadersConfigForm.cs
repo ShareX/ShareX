@@ -185,7 +185,7 @@ namespace ShareX.UploadersLib
             atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
             cbImgurDirectLink.Checked = Config.ImgurDirectLink;
             cbImgurThumbnailType.Items.Clear();
-            cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
+            cbImgurThumbnailType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
             cbImgurUseHTTPS.Checked = Config.ImgurUseHTTPS;
             cbImgurUseGIFV.Checked = Config.ImgurUseGIFV;
@@ -262,9 +262,9 @@ namespace ShareX.UploadersLib
             txtPastebinUsername.Text = Config.PastebinSettings.Username;
             txtPastebinPassword.Text = Config.PastebinSettings.Password;
             UpdatePastebinStatus();
-            cbPastebinPrivacy.Items.AddRange(Helpers.GetEnumDescriptions<PastebinPrivacy>());
+            cbPastebinPrivacy.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PastebinPrivacy>());
             cbPastebinPrivacy.SelectedIndex = (int)Config.PastebinSettings.Exposure;
-            cbPastebinExpiration.Items.AddRange(Helpers.GetEnumDescriptions<PastebinExpiration>());
+            cbPastebinExpiration.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PastebinExpiration>());
             cbPastebinExpiration.SelectedIndex = (int)Config.PastebinSettings.Expiration;
             cbPastebinSyntax.Items.AddRange(Pastebin.GetSyntaxList().ToArray());
             cbPastebinSyntax.SelectedIndex = 0;
@@ -389,7 +389,7 @@ namespace ShareX.UploadersLib
             // Minus
 
             cbMinusURLType.Items.Clear();
-            cbMinusURLType.Items.AddRange(Enum.GetNames(typeof(MinusLinkType)));
+            cbMinusURLType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<MinusLinkType>());
             MinusUpdateControls();
 
             // Box
@@ -530,7 +530,7 @@ namespace ShareX.UploadersLib
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
-            cbAmazonS3StorageClass.Items.AddRange(Helpers.GetEnumDescriptions<AmazonS3StorageClass>());
+            cbAmazonS3StorageClass.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<AmazonS3StorageClass>());
             cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
             UpdateAmazonS3Status();
 
@@ -2267,7 +2267,7 @@ namespace ShareX.UploadersLib
 
         private void btnAmazonS3StorageClassHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://aws.amazon.com/s3/storage-classes/");
+            URLHelpers.OpenURL(Resources.UploadersConfigForm_AmazonS3StorageClassHelpURL);
         }
 
         #endregion Amazon S3
