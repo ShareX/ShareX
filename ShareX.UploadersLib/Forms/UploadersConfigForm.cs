@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib
 
             // Paste.ee
 
-            txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
+            txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserKey;
 
             // Gist
 
@@ -1156,9 +1156,14 @@ namespace ShareX.UploadersLib
 
         #region Paste.ee
 
+        private void btnPaste_eeGetUserKey_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL($"https://paste.ee/account/api/authorize/{APIKeys.Paste_eeApplicationKey}");
+        }
+
         private void txtPaste_eeUserAPIKey_TextChanged(object sender, EventArgs e)
         {
-            Config.Paste_eeUserAPIKey = txtPaste_eeUserAPIKey.Text;
+            Config.Paste_eeUserKey = txtPaste_eeUserAPIKey.Text;
         }
 
         #endregion Paste.ee

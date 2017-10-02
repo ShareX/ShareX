@@ -270,6 +270,9 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
+            this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
+            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
             this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
             this.txtAmazonS3Endpoint = new System.Windows.Forms.TextBox();
@@ -650,9 +653,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
-            this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
-            this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
+            this.btnPaste_eeGetUserKey = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2594,6 +2595,26 @@
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
             // 
+            // btnAmazonS3StorageClassHelp
+            // 
+            resources.ApplyResources(this.btnAmazonS3StorageClassHelp, "btnAmazonS3StorageClassHelp");
+            this.btnAmazonS3StorageClassHelp.Name = "btnAmazonS3StorageClassHelp";
+            this.btnAmazonS3StorageClassHelp.UseVisualStyleBackColor = true;
+            this.btnAmazonS3StorageClassHelp.Click += new System.EventHandler(this.btnAmazonS3StorageClassHelp_Click);
+            // 
+            // lblAmazonS3StorageClass
+            // 
+            resources.ApplyResources(this.lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
+            this.lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
+            // 
+            // cbAmazonS3StorageClass
+            // 
+            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmazonS3StorageClass.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
+            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
+            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
+            // 
             // cbAmazonS3UsePathStyle
             // 
             resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
@@ -4478,6 +4499,7 @@
             // 
             // tpPaste_ee
             // 
+            this.tpPaste_ee.Controls.Add(this.btnPaste_eeGetUserKey);
             this.tpPaste_ee.Controls.Add(this.lblPaste_eeUserAPIKey);
             this.tpPaste_ee.Controls.Add(this.txtPaste_eeUserAPIKey);
             resources.ApplyResources(this.tpPaste_ee, "tpPaste_ee");
@@ -5310,25 +5332,12 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbAmazonS3StorageClass
+            // btnPaste_eeGetUserKey
             // 
-            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmazonS3StorageClass.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
-            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
-            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
-            // 
-            // lblAmazonS3StorageClass
-            // 
-            resources.ApplyResources(this.lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
-            this.lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
-            // 
-            // btnAmazonS3StorageClassHelp
-            // 
-            resources.ApplyResources(this.btnAmazonS3StorageClassHelp, "btnAmazonS3StorageClassHelp");
-            this.btnAmazonS3StorageClassHelp.Name = "btnAmazonS3StorageClassHelp";
-            this.btnAmazonS3StorageClassHelp.UseVisualStyleBackColor = true;
-            this.btnAmazonS3StorageClassHelp.Click += new System.EventHandler(this.btnAmazonS3StorageClassHelp_Click);
+            resources.ApplyResources(this.btnPaste_eeGetUserKey, "btnPaste_eeGetUserKey");
+            this.btnPaste_eeGetUserKey.Name = "btnPaste_eeGetUserKey";
+            this.btnPaste_eeGetUserKey.UseVisualStyleBackColor = true;
+            this.btnPaste_eeGetUserKey.Click += new System.EventHandler(this.btnPaste_eeGetUserKey_Click);
             // 
             // UploadersConfigForm
             // 
@@ -6136,5 +6145,6 @@
         private System.Windows.Forms.Label lblAmazonS3StorageClass;
         private System.Windows.Forms.ComboBox cbAmazonS3StorageClass;
         private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
+        private System.Windows.Forms.Button btnPaste_eeGetUserKey;
     }
 }

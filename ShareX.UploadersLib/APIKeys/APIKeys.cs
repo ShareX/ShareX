@@ -69,6 +69,7 @@ namespace ShareX.UploadersLib
         public static string PastebinCaKey = "";
         public static string GitHubID = "";
         public static string GitHubSecret = "";
+        public static string Paste_eeApplicationKey = "";
 
         // URL Shorteners
         public static string BitlyClientID = "";

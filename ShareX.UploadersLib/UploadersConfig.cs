@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib
 
         // Paste.ee
 
-        public string Paste_eeUserAPIKey = "public";
+        public string Paste_eeUserKey = "";
 
         // Gist
 
