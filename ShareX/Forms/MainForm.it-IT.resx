@@ -729,4 +729,13 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Accorcia URL...</value>
   </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown Immagine</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown Collegamento</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown Immagine Collegata</value>
+  </data>
 </root>

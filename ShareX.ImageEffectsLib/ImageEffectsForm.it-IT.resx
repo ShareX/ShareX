@@ -153,4 +153,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Effetti Immagine</value>
   </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>Nuovo Preset</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Rimuovi Preset</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
 </root>

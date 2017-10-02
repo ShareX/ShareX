@@ -551,4 +551,7 @@ Riavviare ShareX?</value>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italiano</value>
   </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Inserisci il testo da codificare</value>
+  </data>
 </root>

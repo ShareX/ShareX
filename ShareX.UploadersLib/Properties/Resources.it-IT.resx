@@ -236,4 +236,13 @@ Cartelle create:</value>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Aggiornamento lista cartelle fallito</value>
   </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Il file chiave non esiste.</value>
+  </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Esiste già un'intestazione con lo stesso nome.</value>
+  </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>Esiste già un parametro con lo stesso nome.</value>
+  </data>
 </root>
