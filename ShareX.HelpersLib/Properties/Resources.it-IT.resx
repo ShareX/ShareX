@@ -1009,4 +1009,91 @@ Vuoi scaricarla ora?</value>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Disegna: Cursore</value>
   </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Carica</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Carica Testo</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Carica</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Accorcia URL</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Orizzontale</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Servizio Condivisione URL</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Anteprima Media</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Anteprima Piccola</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Quadrato Piccolo</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Anteprima Grande</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Anteprima Enorme</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Quadrato Grande</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Pubblico</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Non in Elenco</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privato (solo membri)</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 Giorno</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 Ora</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 Mese</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 Minuti</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 Settimana</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 Settimane</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Diagonale Avanti</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Diagonale Indietro</value>
+  </data>
+  <data name="MinusLinkType_Direct" xml:space="preserve">
+    <value>Diretto</value>
+  </data>
+  <data name="MinusLinkType_Page" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="MinusLinkType_Raw" xml:space="preserve">
+    <value>Grezzo</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Servizio Condivisione URL Personalizzato</value>
+  </data>
 </root>

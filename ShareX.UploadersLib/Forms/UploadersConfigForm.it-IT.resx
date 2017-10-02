@@ -1244,4 +1244,13 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>Duplica</value>
   </data>
+  <data name="lblCustomUploaderName.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
+    <value>Servizio Condivisione URL</value>
+  </data>
 </root>
