@@ -9,7 +9,6 @@ insert_final_newline = false
 # C# files
 [*.cs]
 indent_size = 4
-charset = utf-8
 
 # Xml project files
 [*.{csproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]

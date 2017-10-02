@@ -368,11 +368,9 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetShortURL(string url)
+        public static string GetHostName(string url)
         {
-            Uri uri;
-
-            if (Uri.TryCreate(url, UriKind.Absolute, out uri))
+            if (!string.IsNullOrEmpty(url) && Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
             {
                 string host = uri.Host;
 
@@ -390,9 +388,19 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string CreateQuery(string url, Dictionary<string, string> args)
+        public static string CreateQuery(Dictionary<string, string> args, bool customEncoding = false)
         {
-            string query = CreateQuery(args);
+            if (args != null && args.Count > 0)
+            {
+                return string.Join("&", args.Select(x => x.Key + "=" + (customEncoding ? URLEncode(x.Value) : HttpUtility.UrlEncode(x.Value))).ToArray());
+            }
+
+            return "";
+        }
+
+        public static string CreateQuery(string url, Dictionary<string, string> args, bool customEncoding = false)
+        {
+            string query = CreateQuery(args, customEncoding);
 
             if (!string.IsNullOrEmpty(query))
             {
@@ -400,16 +408,6 @@ namespace ShareX.HelpersLib
             }
 
             return url;
-        }
-
-        public static string CreateQuery(Dictionary<string, string> args)
-        {
-            if (args != null && args.Count > 0)
-            {
-                return string.Join("&", args.Select(x => x.Key + "=" + URLEncode(x.Value)).ToArray());
-            }
-
-            return "";
         }
 
         public static string RemoveQuery(string url)

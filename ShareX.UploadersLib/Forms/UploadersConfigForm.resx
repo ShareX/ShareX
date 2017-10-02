@@ -137,45 +137,10 @@
   <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="cbAmazonS3UseRRS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbAmazonS3UseRRS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 384</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Use reduced redundancy storage</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Use a lower-redundancy storage class for stored objects.
-With this option, objects are cheaper to store, but have 99.99% durability, instead of 99.999999999%.
-This means that they may be lost from Amazon S3 at some point.</value>
-  </data>
-  <data name="&gt;&gt;cbAmazonS3UseRRS.Name" xml:space="preserve">
-    <value>cbAmazonS3UseRRS</value>
-  </data>
-  <data name="&gt;&gt;cbAmazonS3UseRRS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAmazonS3UseRRS.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
-  </data>
-  <data name="&gt;&gt;cbAmazonS3UseRRS.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbAmazonS3CustomCNAME.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -206,13 +171,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="mbCustomUploaderDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="mbCustomUploaderDestinationType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>0, 40</value>
   </data>
   <metadata name="cmsCustomUploaderDestinationType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>119, 17</value>
@@ -227,13 +192,16 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mbCustomUploaderDestinationType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 23</value>
+    <value>248, 23</value>
   </data>
   <data name="mbCustomUploaderDestinationType.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
     <value>Destination type</value>
+  </data>
+  <data name="mbCustomUploaderDestinationType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
     <value>Currently destination type is used when users import custom uploader by double clicking the .sxcu file.</value>
@@ -245,10 +213,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbCustomUploaderDestinationType.Parent" xml:space="preserve">
-    <value>gbCustomUploaders</value>
+    <value>pCustomUploader</value>
   </data>
   <data name="&gt;&gt;mbCustomUploaderDestinationType.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -521,14 +489,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 22</value>
   </data>
   <data name="tpTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTwitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -541,8 +509,134 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="btnCustomUploaderURLSharingServiceTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 534</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderURLSharingServiceTest.Name" xml:space="preserve">
+    <value>btnCustomUploaderURLSharingServiceTest</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderURLSharingServiceTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderURLSharingServiceTest.Parent" xml:space="preserve">
+    <value>tpCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderURLSharingServiceTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbCustomUploaderURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 536</value>
+  </data>
+  <data name="cbCustomUploaderURLSharingService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbCustomUploaderURLSharingService.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderURLSharingService.Name" xml:space="preserve">
+    <value>cbCustomUploaderURLSharingService</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderURLSharingService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderURLSharingService.Parent" xml:space="preserve">
+    <value>tpCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderURLSharingService.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 520</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
+    <value>URL sharing service:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURLSharingService.Name" xml:space="preserve">
+    <value>lblCustomUploaderURLSharingService</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURLSharingService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURLSharingService.Parent" xml:space="preserve">
+    <value>tpCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURLSharingService.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblCustomUploaderName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 0</value>
+  </data>
+  <data name="lblCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblCustomUploaderName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Name" xml:space="preserve">
+    <value>lblCustomUploaderName</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 82</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 21</value>
+  </data>
+  <data name="cbCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Name" xml:space="preserve">
+    <value>cbCustomUploaderRequestType</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderRequestType.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnCustomUploaderJsonAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -708,9 +802,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="btnCustomUploaderXmlSyntaxAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -904,9 +995,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;btnCustomUploaderRegexHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnCustomUploaderRegexAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1088,7 +1176,7 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="tcCustomUploaderResponseParse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 88</value>
+    <value>264, 48</value>
   </data>
   <data name="tcCustomUploaderResponseParse.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 184</value>
@@ -1103,10 +1191,40 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcCustomUploaderResponseParse.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
+    <value>pCustomUploader</value>
   </data>
   <data name="&gt;&gt;tcCustomUploaderResponseParse.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
+  </data>
+  <data name="lblCustomUploaderURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 240</value>
+  </data>
+  <data name="lblCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderURL.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btnCustomUploaderArgUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1475,7 +1593,7 @@ store.book[0].title</value>
     <value>1</value>
   </data>
   <data name="tcCustomUploaderArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 160</value>
+    <value>0, 186</value>
   </data>
   <data name="tcCustomUploaderArguments.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 240</value>
@@ -1490,16 +1608,364 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcCustomUploaderArguments.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
+    <value>pCustomUploader</value>
   </data>
   <data name="&gt;&gt;tcCustomUploaderArguments.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 162</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Name" xml:space="preserve">
+    <value>txtCustomUploaderFileForm</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderFileForm.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 66</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Request type:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Name" xml:space="preserve">
+    <value>lblCustomUploaderRequestType</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestType.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 146</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>File form name:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Name" xml:space="preserve">
+    <value>lblCustomUploaderFileForm</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderFileForm.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="txtCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Name" xml:space="preserve">
+    <value>txtCustomUploaderName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 280</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 122</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderRequestURL.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="txtCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 256</value>
+  </data>
+  <data name="txtCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderURL.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 16</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 21</value>
+  </data>
+  <data name="cbCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Name" xml:space="preserve">
+    <value>cbCustomUploaderResponseType</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbCustomUploaderResponseType.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 296</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 336</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="txtCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Name" xml:space="preserve">
+    <value>txtCustomUploaderDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;txtCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 106</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>Request URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRequestURL.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 0</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Response type:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Name" xml:space="preserve">
+    <value>lblCustomUploaderResponseType</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderResponseType.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 320</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Deletion URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Name" xml:space="preserve">
+    <value>lblCustomUploaderDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Parent" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="pCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 8</value>
+  </data>
+  <data name="pCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>528, 432</value>
+  </data>
+  <data name="pCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploader.Name" xml:space="preserve">
+    <value>pCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploader.Parent" xml:space="preserve">
+    <value>tpCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploader.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnCustomUploaderExamples.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderExamples.Location" type="System.Drawing.Point, System.Drawing">
-    <value>504, 8</value>
+    <value>504, 536</value>
   </data>
   <data name="btnCustomUploaderExamples.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 24</value>
@@ -1520,13 +1986,13 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderExamples.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnCustomUploaderHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 8</value>
+    <value>688, 536</value>
   </data>
   <data name="btnCustomUploaderHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
@@ -1547,34 +2013,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderHelp.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnCustomUploaderClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 8</value>
-  </data>
-  <data name="btnCustomUploaderClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 24</value>
-  </data>
-  <data name="btnCustomUploaderClear.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Clear fields below</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderClear.Name" xml:space="preserve">
-    <value>btnCustomUploaderClear</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderClear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderClear.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderClear.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblCustomUploaderImageUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1604,7 +2043,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderImageUploader.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnCustomUploaderFileUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1631,7 +2070,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderFileUploaderTest.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblCustomUploaderFileUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1661,7 +2100,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderFileUploader.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1688,7 +2127,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderImageUploaderTest.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblCustomUploaderTestResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1697,7 +2136,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderTestResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 416</value>
+    <value>269, 440</value>
   </data>
   <data name="lblCustomUploaderTestResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -1718,27 +2157,6 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderTestResult.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="txtCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 376</value>
-  </data>
-  <data name="txtCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Name" xml:space="preserve">
-    <value>txtCustomUploaderDeletionURL</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderDeletionURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="cbCustomUploaderFileUploader.Location" type="System.Drawing.Point, System.Drawing">
@@ -1762,36 +2180,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbCustomUploaderFileUploader.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="lblCustomUploaderDeletionURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 360</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Deletion URL:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Name" xml:space="preserve">
-    <value>lblCustomUploaderDeletionURL</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderDeletionURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderDeletionURL.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="btnCustomUploaderShowLastResponse.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1799,10 +2187,10 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 408</value>
+    <value>272, 536</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 23</value>
+    <value>224, 23</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1820,37 +2208,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderShowLastResponse.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 40</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Response type:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderResponseType.Name" xml:space="preserve">
-    <value>lblCustomUploaderResponseType</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderResponseType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderResponseType.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderResponseType.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="cbCustomUploaderURLShortener.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 496</value>
@@ -1871,7 +2229,34 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaderURLShortener.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 16</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Name" xml:space="preserve">
+    <value>btnCustomUploaderDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDuplicate.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnCustomUploadersExportAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1916,7 +2301,7 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Clear uploaders</value>
+    <value>Clear uploaders...</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderClearUploaders.Name" xml:space="preserve">
     <value>btnCustomUploaderClearUploaders</value>
@@ -1955,10 +2340,10 @@ store.book[0].title</value>
     <value>False</value>
   </data>
   <data name="lbCustomUploaderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
+    <value>8, 48</value>
   </data>
   <data name="lbCustomUploaderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 168</value>
+    <value>232, 224</value>
   </data>
   <data name="lbCustomUploaderList.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1979,7 +2364,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 72</value>
+    <value>88, 16</value>
   </data>
   <data name="btnCustomUploaderRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -2002,59 +2387,11 @@ store.book[0].title</value>
   <data name="&gt;&gt;btnCustomUploaderRemove.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btnCustomUploaderUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 72</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Name" xml:space="preserve">
-    <value>btnCustomUploaderUpdate</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.Parent" xml:space="preserve">
-    <value>gbCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderUpdate.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtCustomUploaderName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="txtCustomUploaderName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtCustomUploaderName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderName.Name" xml:space="preserve">
-    <value>txtCustomUploaderName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderName.Parent" xml:space="preserve">
-    <value>gbCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="btnCustomUploaderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>8, 16</value>
   </data>
   <data name="btnCustomUploaderAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -2075,7 +2412,7 @@ store.book[0].title</value>
     <value>gbCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderAdd.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="gbCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -2099,7 +2436,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;gbCustomUploaders.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="lblCustomUploaderTextUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2129,37 +2466,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderTextUploader.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 80</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>Request URL:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestURL.Name" xml:space="preserve">
-    <value>lblCustomUploaderRequestURL</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestURL.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>15</value>
   </data>
   <data name="btnCustomUploaderURLShortenerTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2186,7 +2493,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderURLShortenerTest.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>16</value>
   </data>
   <data name="cbCustomUploaderTextUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 416</value>
@@ -2207,28 +2514,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaderTextUploader.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 336</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Name" xml:space="preserve">
-    <value>txtCustomUploaderThumbnailURL</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>17</value>
   </data>
   <data name="lblCustomUploaderURLShortener.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2258,28 +2544,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;lblCustomUploaderURLShortener.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="cbCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 56</value>
-  </data>
-  <data name="cbCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
-  </data>
-  <data name="cbCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderResponseType.Name" xml:space="preserve">
-    <value>cbCustomUploaderResponseType</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderResponseType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderResponseType.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderResponseType.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>18</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2306,28 +2571,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderTextUploaderTest.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="txtCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 296</value>
-  </data>
-  <data name="txtCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderURL.Name" xml:space="preserve">
-    <value>txtCustomUploaderURL</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderURL.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>19</value>
   </data>
   <data name="cbCustomUploaderImageUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 376</value>
@@ -2348,31 +2592,10 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaderImageUploader.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="txtCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 96</value>
-  </data>
-  <data name="txtCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="txtCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderRequestURL.Name" xml:space="preserve">
-    <value>txtCustomUploaderRequestURL</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderRequestURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderRequestURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderRequestURL.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>20</value>
   </data>
   <data name="txtCustomUploaderLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 440</value>
+    <value>272, 456</value>
   </data>
   <data name="txtCustomUploaderLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>520, 72</value>
@@ -2393,169 +2616,7 @@ store.book[0].title</value>
     <value>tpCustomUploaders</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderLog.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 320</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Thumbnail URL:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Name" xml:space="preserve">
-    <value>lblCustomUploaderThumbnailURL</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderThumbnailURL.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 120</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>File form name:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderFileForm.Name" xml:space="preserve">
-    <value>lblCustomUploaderFileForm</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderFileForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderFileForm.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderFileForm.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 40</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Request type:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestType.Name" xml:space="preserve">
-    <value>lblCustomUploaderRequestType</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestType.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderRequestType.ZOrder" xml:space="preserve">
-    <value>31</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 56</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 21</value>
-  </data>
-  <data name="cbCustomUploaderRequestType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderRequestType.Name" xml:space="preserve">
-    <value>cbCustomUploaderRequestType</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderRequestType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderRequestType.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;cbCustomUploaderRequestType.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 136</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="txtCustomUploaderFileForm.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderFileForm.Name" xml:space="preserve">
-    <value>txtCustomUploaderFileForm</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderFileForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderFileForm.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;txtCustomUploaderFileForm.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
-  <data name="lblCustomUploaderURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCustomUploaderURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 280</value>
-  </data>
-  <data name="lblCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
-    <value>lblCustomUploaderURL</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderURL.Parent" xml:space="preserve">
-    <value>tpCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;lblCustomUploaderURL.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>21</value>
   </data>
   <data name="tpCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2564,7 +2625,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpCustomUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2591,7 +2652,7 @@ store.book[0].title</value>
     <value>3, 3</value>
   </data>
   <data name="tcOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcOtherUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2615,7 +2676,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpOtherUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2714,14 +2775,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpBitly.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -2783,14 +2844,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -3044,14 +3105,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3203,14 +3264,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -3278,14 +3339,14 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
     <value>tpCoinURL</value>
   </data>
@@ -3464,14 +3525,14 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
   </data>
@@ -3491,7 +3552,7 @@ store.book[0].title</value>
     <value>3, 3</value>
   </data>
   <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3515,7 +3576,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3556,6 +3617,9 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtSFTPKeyPassphrase.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnSFTPKeyLocationBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnSFTPKeyLocationBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>584, 19</value>
   </data>
@@ -3582,6 +3646,9 @@ store.book[0].title</value>
   </data>
   <data name="lblSFTPKeyPassphrase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblSFTPKeyPassphrase.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
@@ -3630,6 +3697,9 @@ store.book[0].title</value>
   </data>
   <data name="lblSFTPKeyLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblSFTPKeyLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblSFTPKeyLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 24</value>
@@ -3682,6 +3752,9 @@ store.book[0].title</value>
   <data name="cbFTPAppendRemoteDirectory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbFTPAppendRemoteDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbFTPAppendRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 216</value>
   </data>
@@ -3705,6 +3778,9 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;cbFTPAppendRemoteDirectory.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnFTPTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 376</value>
@@ -3733,6 +3809,9 @@ store.book[0].title</value>
   <data name="lblFTPProtocol.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPProtocol.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPProtocol.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
@@ -3760,6 +3839,9 @@ store.book[0].title</value>
   <data name="lblFTPName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPName.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 24</value>
   </data>
@@ -3786,6 +3868,9 @@ store.book[0].title</value>
   </data>
   <data name="cbFTPRemoveFileExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 240</value>
@@ -3834,6 +3919,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 72</value>
@@ -3886,6 +3974,9 @@ store.book[0].title</value>
   <data name="rbFTPTransferModeActive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="rbFTPTransferModeActive.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="rbFTPTransferModeActive.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 0</value>
   </data>
@@ -3912,6 +4003,9 @@ store.book[0].title</value>
   </data>
   <data name="rbFTPTransferModePassive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbFTPTransferModePassive.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbFTPTransferModePassive.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -4011,6 +4105,9 @@ store.book[0].title</value>
   </data>
   <data name="rbFTPProtocolFTP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbFTPProtocolFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbFTPProtocolFTP.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -4120,6 +4217,9 @@ store.book[0].title</value>
   <data name="lblFTPPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>456, 72</value>
   </data>
@@ -4146,6 +4246,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPTransferMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPTransferMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPTransferMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 144</value>
@@ -4198,6 +4301,9 @@ store.book[0].title</value>
   <data name="lblFTPURLPreviewValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPURLPreviewValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPURLPreviewValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 264</value>
   </data>
@@ -4221,6 +4327,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 96</value>
@@ -4248,6 +4357,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPURLPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPURLPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPURLPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 264</value>
@@ -4318,6 +4430,9 @@ store.book[0].title</value>
   <data name="lblFTPPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 120</value>
   </data>
@@ -4387,6 +4502,9 @@ store.book[0].title</value>
   <data name="lblFTPURLPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPURLPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPURLPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 192</value>
   </data>
@@ -4413,6 +4531,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPRemoteDirectory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 168</value>
@@ -4458,6 +4579,9 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;txtFTPRemoteDirectory.ZOrder" xml:space="preserve">
     <value>26</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnFTPSCertificateLocationBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>608, 43</value>
@@ -4507,6 +4631,9 @@ store.book[0].title</value>
   <data name="lblFTPSCertificateLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFTPSCertificateLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFTPSCertificateLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
@@ -4554,6 +4681,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPSEncryption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPSEncryption.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPSEncryption.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 24</value>
@@ -4654,6 +4784,9 @@ store.book[0].title</value>
   <data name="&gt;&gt;btnFTPDuplicate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnFTPRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFTPRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>592, 11</value>
   </data>
@@ -4677,6 +4810,9 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;btnFTPRemove.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnFTPAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnFTPAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>488, 11</value>
@@ -4725,6 +4861,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFTPAccounts.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFTPAccounts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 16</value>
@@ -4910,14 +5049,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -4932,6 +5071,9 @@ store.book[0].title</value>
   </data>
   <data name="cbDropboxUseDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbDropboxUseDirectLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 368</value>
@@ -4956,27 +5098,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;cbDropboxUseDirectLink.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 200</value>
-  </data>
-  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
-    <value>oauth2Dropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
-    <value>tpDropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5006,7 +5127,7 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;cbDropboxAutoCreateShareableLink.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="pbDropboxLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5146,7 +5267,7 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;pbDropboxLogo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblDropboxPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5176,7 +5297,7 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;lblDropboxPath.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txtDropboxPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 312</value>
@@ -5197,6 +5318,27 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;txtDropboxPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 200</value>
+  </data>
+  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
+    <value>oauth2Dropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
+    <value>tpDropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
@@ -5206,14 +5348,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -5338,14 +5480,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -5590,14 +5732,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -5854,14 +5996,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPuush.Name" xml:space="preserve">
     <value>tpPuush</value>
   </data>
@@ -6049,14 +6191,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -6069,8 +6211,83 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnAmazonS3StorageClassHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 398</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Name" xml:space="preserve">
+    <value>btnAmazonS3StorageClassHelp</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Parent" xml:space="preserve">
+    <value>tpAmazonS3</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 384</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Storage class:</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Name" xml:space="preserve">
+    <value>lblAmazonS3StorageClass</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Parent" xml:space="preserve">
+    <value>tpAmazonS3</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbAmazonS3StorageClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 400</value>
+  </data>
+  <data name="cbAmazonS3StorageClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 21</value>
+  </data>
+  <data name="cbAmazonS3StorageClass.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StorageClass.Name" xml:space="preserve">
+    <value>cbAmazonS3StorageClass</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StorageClass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StorageClass.Parent" xml:space="preserve">
+    <value>tpAmazonS3</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StorageClass.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="cbAmazonS3UsePathStyle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbAmazonS3UsePathStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 208</value>
@@ -6094,10 +6311,13 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3UsePathStyle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="lblAmazonS3Endpoint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 160</value>
@@ -6121,7 +6341,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoint.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="txtAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -6142,10 +6362,13 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3Endpoint.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lblAmazonS3Region.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblAmazonS3Region.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblAmazonS3Region.Location" type="System.Drawing.Point, System.Drawing">
     <value>373, 160</value>
@@ -6169,7 +6392,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Region.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="txtAmazonS3Region.Location" type="System.Drawing.Point, System.Drawing">
     <value>376, 176</value>
@@ -6190,7 +6413,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3Region.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 352</value>
@@ -6211,7 +6434,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3CustomDomain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6220,7 +6443,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 416</value>
+    <value>13, 432</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -6241,7 +6464,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3PathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="lblAmazonS3PathPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6250,7 +6473,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3PathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 437</value>
+    <value>13, 453</value>
   </data>
   <data name="lblAmazonS3PathPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -6271,7 +6494,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3PathPreview.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6298,7 +6521,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6325,7 +6548,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="cbAmazonS3Endpoints.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -6346,7 +6569,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3Endpoints.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="lblAmazonS3BucketName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6376,7 +6599,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3BucketName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="txtAmazonS3BucketName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 248</value>
@@ -6397,7 +6620,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3BucketName.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="lblAmazonS3Endpoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6427,7 +6650,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoints.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="txtAmazonS3ObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 296</value>
@@ -6448,7 +6671,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3ObjectPrefix.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6478,7 +6701,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3ObjectPrefix.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="txtAmazonS3SecretKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -6499,7 +6722,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3SecretKey.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="lblAmazonS3SecretKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6529,7 +6752,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3SecretKey.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="lblAmazonS3AccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6559,7 +6782,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3AccessKey.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="txtAmazonS3AccessKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -6580,7 +6803,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3AccessKey.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -6589,14 +6812,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -6879,6 +7102,9 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtAzureStorageCustomDomain.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="lblAzureStorageCustomDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAzureStorageCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 206</value>
   </data>
@@ -6910,14 +7136,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
   <data name="tpAzureStorage.Text" xml:space="preserve">
     <value>Azure Storage</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
     <value>tpAzureStorage</value>
   </data>
@@ -7009,14 +7235,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
     <value>tpGfycat</value>
   </data>
@@ -7327,14 +7553,14 @@ store.book[0].title</value>
     <value>4, 40</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -7678,14 +7904,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -7888,14 +8114,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -8050,14 +8276,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -8227,14 +8453,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -8413,14 +8639,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -8572,14 +8798,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -9022,14 +9248,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -9229,14 +9455,14 @@ store.book[0].title</value>
     <value>4, 40</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -9388,14 +9614,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -9598,14 +9824,14 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPomf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPomf.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
   </data>
@@ -10559,14 +10785,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
@@ -10760,14 +10986,14 @@ Using an encrypted library disables sharing.</value>
     <value>4, 40</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
   </data>
@@ -10782,6 +11008,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="sulKeyLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="sulKeyLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="sulKeyLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 59</value>
@@ -10865,14 +11094,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
   </data>
@@ -10970,14 +11199,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>Lithiio</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
   </data>
@@ -11345,14 +11574,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUplea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpUplea.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="tpUplea.Text" xml:space="preserve">
     <value>Uplea</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpUplea.Name" xml:space="preserve">
     <value>tpUplea</value>
   </data>
@@ -11852,14 +12081,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPlik.Name" xml:space="preserve">
     <value>tpPlik</value>
   </data>
@@ -12035,7 +12264,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 424</value>
+    <value>792, 468</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -12059,7 +12288,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -12479,7 +12708,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 519</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -12506,7 +12735,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -12530,7 +12759,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -12995,14 +13224,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPastebin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -13073,14 +13302,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaste_ee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -13095,6 +13324,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblGistCustomURLExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblGistCustomURLExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblGistCustomURLExample.Location" type="System.Drawing.Point, System.Drawing">
     <value>224, 364</value>
@@ -13122,6 +13354,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblGistOAuthInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblGistOAuthInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblGistOAuthInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
@@ -13307,14 +13542,14 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -13415,14 +13650,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -13574,14 +13809,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -13703,14 +13938,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneTimeSecret.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -13760,14 +13995,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPastie.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="tpPastie.Text" xml:space="preserve">
     <value>Pastie</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPastie.Name" xml:space="preserve">
     <value>tpPastie</value>
   </data>
@@ -13787,7 +14022,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13811,7 +14046,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -14117,14 +14352,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -14357,14 +14592,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageShack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImageShack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -14561,14 +14796,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTinyPic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -14741,14 +14976,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFlickr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -15233,14 +15468,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPhotobucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -15269,7 +15504,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
+    <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -15299,7 +15534,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
+    <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -15338,7 +15573,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
+    <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -15368,7 +15603,7 @@ Using an encrypted library disables sharing.</value>
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
+    <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -15389,36 +15624,36 @@ Using an encrypted library disables sharing.</value>
     <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
+    <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tpPicasa.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tpGooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tpPicasa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tpGooglePhotos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tpPicasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+  <data name="tpGooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 537</value>
   </data>
-  <data name="tpPicasa.TabIndex" type="System.Int32, mscorlib">
+  <data name="tpGooglePhotos.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="tpPicasa.Text" xml:space="preserve">
-    <value>Google Photos (Picasa)</value>
+  <data name="tpGooglePhotos.Text" xml:space="preserve">
+    <value>Google Photos</value>
+  <comment>@Invariant</comment></data>
+  <data name="&gt;&gt;tpGooglePhotos.Name" xml:space="preserve">
+    <value>tpGooglePhotos</value>
   </data>
-  <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Type" xml:space="preserve">
+  <data name="&gt;&gt;tpGooglePhotos.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpPicasa.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tpGooglePhotos.Parent" xml:space="preserve">
     <value>tcImageUploaders</value>
   </data>
-  <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tpGooglePhotos.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="btnCheveretoTestAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -15671,14 +15906,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpChevereto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -15779,14 +16014,14 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpVgyme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 537</value>
   </data>
   <data name="tpVgyme.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>
   </data>
@@ -15799,150 +16034,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpVgyme.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="llSomeImageAPIKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="llSomeImageAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="llSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 36</value>
-  </data>
-  <data name="llSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 13</value>
-  </data>
-  <data name="llSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>To get API key visit https://someimage.com/api</value>
-  </data>
-  <data name="&gt;&gt;llSomeImageAPIKey.Name" xml:space="preserve">
-    <value>llSomeImageAPIKey</value>
-  </data>
-  <data name="&gt;&gt;llSomeImageAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llSomeImageAPIKey.Parent" xml:space="preserve">
-    <value>tpSomeImage</value>
-  </data>
-  <data name="&gt;&gt;llSomeImageAPIKey.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 20</value>
-  </data>
-  <data name="txtSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtSomeImageAPIKey.Name" xml:space="preserve">
-    <value>txtSomeImageAPIKey</value>
-  </data>
-  <data name="&gt;&gt;txtSomeImageAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSomeImageAPIKey.Parent" xml:space="preserve">
-    <value>tpSomeImage</value>
-  </data>
-  <data name="&gt;&gt;txtSomeImageAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblSomeImageAPIKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSomeImageAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="lblSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="&gt;&gt;lblSomeImageAPIKey.Name" xml:space="preserve">
-    <value>lblSomeImageAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblSomeImageAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSomeImageAPIKey.Parent" xml:space="preserve">
-    <value>tpSomeImage</value>
-  </data>
-  <data name="&gt;&gt;lblSomeImageAPIKey.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbSomeImageDirectURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSomeImageDirectURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
-  </data>
-  <data name="cbSomeImageDirectURL.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>Direct URL</value>
-  </data>
-  <data name="&gt;&gt;cbSomeImageDirectURL.Name" xml:space="preserve">
-    <value>cbSomeImageDirectURL</value>
-  </data>
-  <data name="&gt;&gt;cbSomeImageDirectURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSomeImageDirectURL.Parent" xml:space="preserve">
-    <value>tpSomeImage</value>
-  </data>
-  <data name="&gt;&gt;cbSomeImageDirectURL.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpSomeImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpSomeImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tpSomeImage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tpSomeImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpSomeImage.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="tpSomeImage.Text" xml:space="preserve">
-    <value>SomeImage</value>
-  </data>
-  <data name="&gt;&gt;tpSomeImage.Name" xml:space="preserve">
-    <value>tpSomeImage</value>
-  </data>
-  <data name="&gt;&gt;tpSomeImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpSomeImage.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpSomeImage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="tcImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -15953,7 +16044,7 @@ Using an encrypted library disables sharing.</value>
     <value>780, 480</value>
   </data>
   <data name="tcImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
+    <value>980, 563</value>
   </data>
   <data name="tcImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -15977,7 +16068,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
+    <value>986, 569</value>
   </data>
   <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -16004,7 +16095,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 551</value>
+    <value>994, 595</value>
   </data>
   <data name="tcUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -16061,7 +16152,7 @@ Using an encrypted library disables sharing.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ttlvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 551</value>
+    <value>994, 595</value>
   </data>
   <data name="ttlvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -16103,7 +16194,7 @@ Using an encrypted library disables sharing.</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 557</value>
+    <value>1000, 601</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

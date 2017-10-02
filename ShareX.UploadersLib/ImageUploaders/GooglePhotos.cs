@@ -35,11 +35,11 @@ using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
-    public class PicasaImageUploaderService : ImageUploaderService
+    public class GooglePhotosImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Picasa;
 
-        public override Icon ServiceIcon => Resources.Picasa;
+        public override Icon ServiceIcon => Resources.GooglePhotos;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -48,16 +48,16 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Picasa(config.PicasaOAuth2Info)
+            return new GooglePhotos(config.PicasaOAuth2Info)
             {
                 AlbumID = config.PicasaAlbumID
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPicasa;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGooglePhotos;
     }
 
-    public class Picasa : ImageUploader, IOAuth2
+    public class GooglePhotos : ImageUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
         public string AlbumID { get; set; }
@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         private static readonly XNamespace MediaNS = "http://search.yahoo.com/mrss/";
         private static readonly XNamespace GPhotoNS = "http://schemas.google.com/photos/2007";
 
-        public Picasa(OAuth2Info oauth)
+        public GooglePhotos(OAuth2Info oauth)
         {
             AuthInfo = oauth;
         }
@@ -160,11 +160,11 @@ namespace ShareX.UploadersLib.ImageUploaders
             return true;
         }
 
-        public List<PicasaAlbumInfo> GetAlbumList()
+        public List<GooglePhotosAlbumInfo> GetAlbumList()
         {
             if (!CheckAuthorization()) return null;
 
-            List<PicasaAlbumInfo> albumList = new List<PicasaAlbumInfo>();
+            List<GooglePhotosAlbumInfo> albumList = new List<GooglePhotosAlbumInfo>();
 
             string response = SendRequest(HttpMethod.GET, "https://picasaweb.google.com/data/feed/api/user/default", headers: GetAuthHeaders());
 
@@ -176,7 +176,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 {
                     foreach (XElement entry in xd.Descendants(AtomNS + "entry"))
                     {
-                        PicasaAlbumInfo album = new PicasaAlbumInfo();
+                        GooglePhotosAlbumInfo album = new GooglePhotosAlbumInfo();
                         album.ID = entry.GetElementValue(GPhotoNS + "id");
                         album.Name = entry.GetElementValue(AtomNS + "title");
                         album.Summary = entry.GetElementValue(AtomNS + "summary");
@@ -237,7 +237,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         }
     }
 
-    public class PicasaAlbumInfo
+    public class GooglePhotosAlbumInfo
     {
         public string ID { get; set; }
         public string Name { get; set; }

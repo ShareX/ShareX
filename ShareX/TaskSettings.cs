@@ -283,8 +283,8 @@ namespace ShareX
 
         #region Image / Effects
 
-        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
-        public List<ImageEffect> ImageEffects = ImageEffectManager.GetDefaultImageEffects();
+        public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>() { ImageEffectPreset.GetDefaultPreset() };
+        public int SelectedImageEffectPreset = 0;
 
         public bool ShowImageEffectsWindowAfterCapture = false;
         public bool ImageEffectOnlyRegionCapture = false;

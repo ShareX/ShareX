@@ -25,10 +25,10 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class RedditSharingService : SimpleSharingService
+    public class RedditSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.Reddit;
 
-        protected override string UrlFormatString { get; } = "http://www.reddit.com/submit?url={0}";
+        protected override string URLFormatString { get; } = "http://www.reddit.com/submit?url={0}";
     }
 }

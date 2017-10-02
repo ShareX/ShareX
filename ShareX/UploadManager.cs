@@ -245,6 +245,24 @@ namespace ShareX
             }
         }
 
+        public static void ShowTextUploadDialog(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            using (TextUploadForm form = new TextUploadForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    string text = form.Content;
+
+                    if (!string.IsNullOrEmpty(text))
+                    {
+                        UploadText(text, taskSettings);
+                    }
+                }
+            }
+        }
+
         public static void DragDropUpload(IDataObject data, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -287,6 +305,30 @@ namespace ShareX
             if (!string.IsNullOrEmpty(url))
             {
                 DownloadAndUploadFile(url, taskSettings);
+            }
+        }
+
+        public static void ShowShortenURLDialog(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            string inputText = null;
+
+            if (Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (URLHelpers.IsValidURL(text))
+                {
+                    inputText = text;
+                }
+            }
+
+            string url = InputBox.GetInputText("ShareX - " + "Shorten URL", inputText, "Shorten");
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                ShortenURL(url, taskSettings);
             }
         }
 

@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib
 
         public AccountType ImgurAccountType = AccountType.Anonymous;
         public bool ImgurDirectLink = true;
-        public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
+        public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Medium_Thumbnail;
         public bool ImgurUseHTTPS = false;
         public bool ImgurUseGIFV = true;
         public OAuth2Info ImgurOAuth2Info = null;
@@ -79,11 +79,6 @@ namespace ShareX.UploadersLib
 
         public CheveretoUploader CheveretoUploader = new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397");
         public bool CheveretoDirectURL = true;
-
-        // SomeImage
-
-        public string SomeImageAPIKey = "";
-        public bool SomeImageDirectURL = true;
 
         // vgy.me
 
@@ -236,8 +231,7 @@ namespace ShareX.UploadersLib
 
         public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings()
         {
-            ObjectPrefix = "ShareX/%y/%mo",
-            UseReducedRedundancyStorage = true
+            ObjectPrefix = "ShareX/%y/%mo"
         };
 
         // ownCloud
@@ -372,6 +366,7 @@ namespace ShareX.UploadersLib
         public int CustomTextUploaderSelected = 0;
         public int CustomFileUploaderSelected = 0;
         public int CustomURLShortenerSelected = 0;
+        public int CustomURLSharingServiceSelected = 0;
 
         #endregion Custom Uploaders
     }

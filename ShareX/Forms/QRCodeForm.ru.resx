@@ -126,4 +126,19 @@
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Сохранить как файл изображения…</value>
   </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>Кодировать</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Декодировать с файла картинки...</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>Декодировать с экрана...</value>
+  </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
 </root>

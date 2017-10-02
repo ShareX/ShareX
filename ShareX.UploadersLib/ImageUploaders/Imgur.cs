@@ -37,19 +37,13 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
-    public enum ImgurThumbnailType
+    public enum ImgurThumbnailType // Localized
     {
-        [Description("Small square")]
         Small_Square,
-        [Description("Big square")]
         Big_Square,
-        [Description("Small thumbnail")]
         Small_Thumbnail,
-        [Description("Medium thumbnail")]
         Medium_Thumbnail,
-        [Description("Large thumbnail")]
         Large_Thumbnail,
-        [Description("Huge thumbnail")]
         Huge_Thumbnail
     }
 
@@ -113,7 +107,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("response_type", "pin");
 
-            return CreateQuery("https://api.imgur.com/oauth2/authorize", args);
+            return URLHelpers.CreateQuery("https://api.imgur.com/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

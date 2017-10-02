@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 Bitmap whiteBackground = null, blackBackground = null, whiteBackground2 = null;
-                CursorData cursor = null;
+                CursorData cursorData = null;
                 bool isTransparent = false, isTaskbarHide = false;
 
                 try
@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         try
                         {
-                            cursor = new CursorData();
+                            cursorData = new CursorData();
                         }
                         catch (Exception e)
                         {
@@ -119,10 +119,10 @@ namespace ShareX.ScreenCaptureLib
                         transparentImage = whiteBackground2;
                     }
 
-                    if (cursor != null && cursor.IsVisible)
+                    if (cursorData != null && cursorData.IsValid)
                     {
                         Point cursorOffset = CaptureHelpers.ScreenToClient(rect.Location);
-                        cursor.DrawCursorToImage(transparentImage, cursorOffset);
+                        cursorData.DrawCursor(transparentImage, cursorOffset);
                     }
 
                     if (isTransparent)
@@ -147,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
                     if (whiteBackground != null) whiteBackground.Dispose();
                     if (blackBackground != null) blackBackground.Dispose();
                     if (isTransparent && whiteBackground2 != null) whiteBackground2.Dispose();
-                    if (cursor != null) cursor.Dispose();
+                    if (cursorData != null) cursorData.Dispose();
                 }
             }
 

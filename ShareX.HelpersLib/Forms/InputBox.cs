@@ -30,19 +30,19 @@ namespace ShareX.HelpersLib
 {
     public class InputBox : Form
     {
-        public string Title { get; set; }
-        public string InputText { get; set; }
+        public string InputText { get; private set; }
 
-        public InputBox(string title = null, string inputText = null)
+        public InputBox(string title = null, string inputText = null, string okText = null, string cancelText = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            Title = title;
             InputText = inputText;
 
-            if (!string.IsNullOrEmpty(Title)) Text = Title;
+            if (!string.IsNullOrEmpty(title)) Text = title;
             if (!string.IsNullOrEmpty(InputText)) txtInputText.Text = InputText;
+            if (!string.IsNullOrEmpty(okText)) btnOK.Text = okText;
+            if (!string.IsNullOrEmpty(cancelText)) btnCancel.Text = cancelText;
         }
 
         private void InputBox_Shown(object sender, EventArgs e)
@@ -66,9 +66,9 @@ namespace ShareX.HelpersLib
             Close();
         }
 
-        public static string GetInputText(string title = null, string inputText = null)
+        public static string GetInputText(string title = null, string inputText = null, string okText = null, string cancelText = null)
         {
-            using (InputBox form = new InputBox(title, inputText))
+            using (InputBox form = new InputBox(title, inputText, okText, cancelText))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -132,6 +132,7 @@ namespace ShareX.HelpersLib
             this.MinimizeBox = false;
             this.Name = "InputBox";
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.InputBox_Shown);
             this.ResumeLayout(false);

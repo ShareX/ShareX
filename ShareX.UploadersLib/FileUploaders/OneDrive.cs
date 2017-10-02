@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
+            return URLHelpers.CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
         }
 
         public bool GetAccessToken(string code)
@@ -181,7 +181,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 folderPath = "me/skydrive/files";
             }
 
-            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
+            string url = URLHelpers.CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
 
             UploadResult result = SendRequestFile(url, stream, fileName);
 

@@ -35,6 +35,8 @@ namespace ShareX.HelpersLib
         public bool IsVisible { get; private set; }
         public Point Position { get; private set; }
 
+        public bool IsValid => Handle != IntPtr.Zero && IsVisible;
+
         public CursorData()
         {
             UpdateCursorData();
@@ -73,14 +75,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void DrawCursorToImage(Image img)
+        public void DrawCursor(Image img)
         {
-            DrawCursorToImage(img, Point.Empty);
+            DrawCursor(img, Point.Empty);
         }
 
-        public void DrawCursorToImage(Image img, Point cursorOffset)
+        public void DrawCursor(Image img, Point cursorOffset)
         {
-            if (Handle != IntPtr.Zero)
+            if (IsValid)
             {
                 Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
 
@@ -92,16 +94,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void DrawCursorToHandle(IntPtr hdcDest)
+        public void DrawCursor(IntPtr hdcDest)
         {
-            DrawCursorToHandle(hdcDest, Point.Empty);
+            DrawCursor(hdcDest, Point.Empty);
         }
 
-        public void DrawCursorToHandle(IntPtr hdcDest, Point cursorOffset)
+        public void DrawCursor(IntPtr hdcDest, Point cursorOffset)
         {
-            if (Handle != IntPtr.Zero)
+            if (IsValid)
             {
                 Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
+
                 NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }

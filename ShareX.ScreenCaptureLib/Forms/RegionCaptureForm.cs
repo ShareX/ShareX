@@ -55,7 +55,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
-        public bool IsAnnotated => ShapeManager != null && ShapeManager.IsEdited;
+        public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
 
@@ -63,11 +63,14 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (bmpBackgroundImage != null && !CurrentPosition.IsEmpty)
+                if (bmpBackgroundImage != null)
                 {
                     Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
 
-                    return bmpBackgroundImage.GetPixel(position.X, position.Y);
+                    if (position.X.IsBetween(0, bmpBackgroundImage.Width - 1) && position.Y.IsBetween(0, bmpBackgroundImage.Height - 1))
+                    {
+                        return bmpBackgroundImage.GetPixel(position.X, position.Y);
+                    }
                 }
 
                 return Color.Empty;
@@ -537,10 +540,13 @@ namespace ShareX.ScreenCaptureLib
             // Draw animated rectangle on selection area
             if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentShapeValid)
             {
-                DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
-
                 if (Mode == RegionCaptureMode.Ruler)
                 {
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, 255, 255, 255)))
+                    {
+                        g.FillRectangle(brush, ShapeManager.CurrentRectangle);
+                    }
+
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
 
@@ -549,6 +555,8 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
                     g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
                 }
+
+                DrawRegionArea(g, ShapeManager.CurrentRectangle, true);
             }
 
             // Draw all regions rectangle info

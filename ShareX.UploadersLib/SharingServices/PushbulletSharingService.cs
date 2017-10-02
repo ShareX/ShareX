@@ -41,11 +41,30 @@ namespace ShareX.UploadersLib.SharingServices
                 pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
         }
 
-        public override void ShareURL(string url, UploadersConfig config)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            new Pushbullet(config.PushbulletSettings).PushLink(url, "ShareX: URL share");
+            return new PushbulletSharer(config.PushbulletSettings);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
+    }
+
+    public sealed class PushbulletSharer : URLSharer
+    {
+        public PushbulletSettings Settings { get; private set; }
+
+        public PushbulletSharer(PushbulletSettings settings)
+        {
+            Settings = settings;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+
+            new Pushbullet(Settings).PushLink(url, "ShareX: URL share");
+
+            return result;
+        }
     }
 }

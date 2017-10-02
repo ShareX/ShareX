@@ -150,9 +150,9 @@ namespace ShareX.ScreenCaptureLib
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
 
-        private bool isEdited;
+        private bool isAnnotated;
 
-        public bool IsEdited => isEdited || DrawingShapes.Length > 0 || EffectShapes.Length > 0;
+        public bool IsAnnotated => isAnnotated || DrawingShapes.Where(x => x.ShapeType != ShapeType.DrawingCursor).Count() > 0 || EffectShapes.Length > 0;
 
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
@@ -411,7 +411,8 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.F1:
                     Config.ShowHotkeys = !Config.ShowHotkeys;
-                    tsmiTips.Checked = Config.ShowHotkeys;
+                    if(form.IsAnnotationMode)
+                        tsmiTips.Checked = Config.ShowHotkeys;
                     break;
             }
 
@@ -1263,7 +1264,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.InitBackground(img);
 
-                isEdited = true;
+                isAnnotated = true;
             }
         }
 

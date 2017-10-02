@@ -102,7 +102,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2014.4.6-beta2\lib\net40\Renci.SshNet.dll</HintPath>
@@ -132,6 +132,7 @@
     <Compile Include="BaseServices\IGenericUploaderService.cs" />
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
+    <Compile Include="BaseUploaders\URLSharer.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
@@ -244,6 +245,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharingServices\CustomURLSharingService.cs" />
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
@@ -253,7 +255,7 @@
     <Compile Include="SharingServices\PinterestSharingService.cs" />
     <Compile Include="SharingServices\PushbulletSharingService.cs" />
     <Compile Include="SharingServices\RedditSharingService.cs" />
-    <Compile Include="SharingServices\SimpleSharingService.cs" />
+    <Compile Include="SharingServices\SimpleURLSharingService.cs" />
     <Compile Include="SharingServices\StumbleUponSharingService.cs" />
     <Compile Include="SharingServices\TumblrSharingService.cs" />
     <Compile Include="SharingServices\TwitterSharingService.cs" />
@@ -264,8 +266,6 @@
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
-    <Compile Include="ImageUploaders\ImglandUploader.cs" />
-    <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
     <Compile Include="BaseServices\ImageUploaderService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
@@ -308,7 +308,7 @@
     <Compile Include="Helpers\OAuth\OAuthInfo.cs" />
     <Compile Include="ImageUploaders\CustomImageUploader.cs" />
     <Compile Include="ImageUploaders\Imgur.cs" />
-    <Compile Include="ImageUploaders\Picasa.cs" />
+    <Compile Include="ImageUploaders\GooglePhotos.cs" />
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\GitHubGist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
@@ -327,7 +327,6 @@
     <Compile Include="ImageUploaders\Photobucket.cs" />
     <Compile Include="ImageUploaders\Twitter.cs" />
     <Compile Include="Helpers\ProgressManager.cs" />
-    <Compile Include="Helpers\TCPClient.cs" />
     <Compile Include="BaseUploaders\ImageUploader.cs" />
     <Compile Include="FileUploaders\CustomFileUploader.cs" />
     <Compile Include="ImageUploaders\FlickrUploader.cs" />
@@ -911,7 +910,6 @@
     <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
-    <None Include="Favicons\Picasa.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="Favicons\Polr.ico" />
     <None Include="packages.config" />
@@ -963,6 +961,7 @@
     <Content Include="Favicons\AzureStorage.png" />
     <None Include="Favicons\Plik.ico" />
     <Content Include="Favicons\Gfycat.png" />
+    <Content Include="Favicons\GooglePhotos.ico" />
     <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

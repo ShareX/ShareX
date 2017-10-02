@@ -135,7 +135,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (CursorData cursorData = new CursorData())
                     {
-                        cursorData.DrawCursorToHandle(hdcDest, cursorOffset);
+                        cursorData.DrawCursor(hdcDest, cursorOffset);
                     }
                 }
                 catch (Exception e)

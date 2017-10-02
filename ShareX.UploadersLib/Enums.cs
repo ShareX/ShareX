@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         Flickr,
         [Description("Photobucket")]
         Photobucket,
-        [Description("Google Photos (Picasa)")]
+        [Description("Google Photos")]
         Picasa,
         [Description("Twitter")]
         Twitter,
@@ -49,10 +49,6 @@ namespace ShareX.UploadersLib
         Chevereto,
         [Description("vgy.me")]
         Vgyme,
-        [Description("SomeImage")]
-        SomeImage,
-        [Description("Imgland")]
-        Imgland,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
@@ -210,7 +206,8 @@ namespace ShareX.UploadersLib
         VK,
         [Description("Pushbullet")]
         Pushbullet,
-        GoogleImageSearch // Localized
+        GoogleImageSearch, // Localized
+        CustomURLSharingService // Localized
     }
 
     public enum HttpMethod
@@ -294,14 +291,6 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderType
-    {
-        Image,
-        Text,
-        File,
-        URL
-    }
-
     public enum CustomUploaderRequestType
     {
         POST,
@@ -327,7 +316,8 @@ namespace ShareX.UploadersLib
         ImageUploader = 1, // Localized
         TextUploader = 1 << 1, // Localized
         FileUploader = 1 << 2, // Localized
-        URLShortener = 1 << 3 // Localized
+        URLShortener = 1 << 3, // Localized
+        URLSharingService = 1 << 4 // Localized
     }
 
     public enum FTPSEncryption

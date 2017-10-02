@@ -84,7 +84,7 @@ namespace ShareX.ScreenCaptureLib
 
     internal enum NodeShape
     {
-        Square, Circle, Diamond
+        Square, Circle, Diamond, CustomNode
     }
 
     public enum FFmpegVideoCodec

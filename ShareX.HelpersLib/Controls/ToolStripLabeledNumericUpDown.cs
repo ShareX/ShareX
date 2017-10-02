@@ -31,13 +31,7 @@ namespace ShareX.HelpersLib
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
     public class ToolStripLabeledNumericUpDown : ToolStripControlHost
     {
-        public LabeledNumericUpDown Content
-        {
-            get
-            {
-                return Control as LabeledNumericUpDown;
-            }
-        }
+        public LabeledNumericUpDown Content => Control as LabeledNumericUpDown;
 
         public ToolStripLabeledNumericUpDown(string text) : base(new LabeledNumericUpDown())
         {

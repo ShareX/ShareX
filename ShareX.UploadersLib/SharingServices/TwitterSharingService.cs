@@ -40,8 +40,27 @@ namespace ShareX.UploadersLib.SharingServices
                 OAuthInfo.CheckOAuth(config.TwitterOAuthInfoList[config.TwitterSelectedAccount]);
         }
 
-        public override void ShareURL(string url, UploadersConfig config)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
+            return new TwitterSharer(config);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
+    }
+
+    public sealed class TwitterSharer : URLSharer
+    {
+        private UploadersConfig config;
+
+        public TwitterSharer(UploadersConfig config)
+        {
+            this.config = config;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+
             OAuthInfo twitterOAuth = config.TwitterOAuthInfoList[config.TwitterSelectedAccount];
 
             if (config.TwitterSkipMessageBox)
@@ -64,8 +83,8 @@ namespace ShareX.UploadersLib.SharingServices
             }
 
             //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
-        }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
+            return result;
+        }
     }
 }

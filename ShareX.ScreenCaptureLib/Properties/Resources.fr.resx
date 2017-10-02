@@ -422,4 +422,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
     <value>Remarque: Cacher ces conseils augmentera considérablement les IPS.</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Ombre portée</value>
+  </data>
 </root>

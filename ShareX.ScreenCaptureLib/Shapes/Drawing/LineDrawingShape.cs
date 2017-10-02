@@ -174,7 +174,6 @@ namespace ShareX.ScreenCaptureLib
             for (int i = 0; i < 8; i++)
             {
                 ResizeNode node = Manager.ResizeNodes[i];
-                node.Shape = NodeShape.Circle;
                 node.Visible = false;
             }
 

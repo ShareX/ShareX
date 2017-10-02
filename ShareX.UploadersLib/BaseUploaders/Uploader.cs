@@ -28,11 +28,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Cache;
 using System.Text;
-using System.Web;
 
 namespace ShareX.UploadersLib
 {
@@ -154,7 +152,7 @@ namespace ShareX.UploadersLib
         protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
-            string query = CreateQuery(args);
+            string query = URLHelpers.CreateQuery(args);
 
             return SendRequest(method, url, query, ContentTypeURLEncoded, args, headers, cookies, responseType);
         }
@@ -288,7 +286,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                url = CreateQuery(url, args);
+                url = URLHelpers.CreateQuery(url, args);
 
                 long length = 0;
 
@@ -508,28 +506,6 @@ namespace ShareX.UploadersLib
             }
 
             return null;
-        }
-
-        protected string CreateQuery(Dictionary<string, string> args)
-        {
-            if (args != null && args.Count > 0)
-            {
-                return string.Join("&", args.Select(x => x.Key + "=" + HttpUtility.UrlEncode(x.Value)).ToArray());
-            }
-
-            return "";
-        }
-
-        protected string CreateQuery(string url, Dictionary<string, string> args)
-        {
-            string query = CreateQuery(args);
-
-            if (!string.IsNullOrEmpty(query))
-            {
-                return url + "?" + query;
-            }
-
-            return url;
         }
 
         protected NameValueCollection CreateAuthenticationHeader(string username, string password)

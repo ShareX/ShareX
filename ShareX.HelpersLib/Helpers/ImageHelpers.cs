@@ -441,12 +441,12 @@ namespace ShareX.HelpersLib
             using (Graphics g = Graphics.FromImage(bmp))
             using (img)
             {
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.PixelOffsetMode = PixelOffsetMode.Half;
 
                 using (GraphicsPath gp = new GraphicsPath())
                 {
-                    gp.AddRoundedRectangleProper(new RectangleF(0, 0, img.Width, img.Height), cornerRadius);
+                    gp.AddRoundedRectangleProper(new RectangleF(0, 0, img.Width, img.Height), cornerRadius, 0);
 
                     using (TextureBrush brush = new TextureBrush(img))
                     {

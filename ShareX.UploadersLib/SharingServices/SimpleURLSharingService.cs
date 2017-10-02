@@ -27,16 +27,36 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public abstract class SimpleSharingService : URLSharingService
+    public abstract class SimpleURLSharingService : URLSharingService
     {
-        protected abstract string UrlFormatString { get; }
+        protected abstract string URLFormatString { get; }
 
-        public override void ShareURL(string url, UploadersConfig config)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            string encodedUrl = URLHelpers.URLEncode(url);
-            URLHelpers.OpenURL(string.Format(UrlFormatString, encodedUrl));
+            return new SimpleURLSharer(URLFormatString);
         }
 
         public override bool CheckConfig(UploadersConfig config) => true;
+    }
+
+    public sealed class SimpleURLSharer : URLSharer
+    {
+        public string URLFormatString { get; private set; }
+
+        public SimpleURLSharer(string urlFormatString)
+        {
+            URLFormatString = urlFormatString;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+
+            string encodedURL = URLHelpers.URLEncode(url);
+            string resultURL = string.Format(URLFormatString, encodedURL);
+            URLHelpers.OpenURL(resultURL);
+
+            return result;
+        }
     }
 }

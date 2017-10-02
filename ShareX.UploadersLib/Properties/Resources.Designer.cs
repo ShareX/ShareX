@@ -19,7 +19,7 @@ namespace ShareX.UploadersLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -276,6 +276,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon GooglePhotos {
+            get {
+                object obj = ResourceManager.GetObject("GooglePhotos", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Hastebin {
@@ -520,16 +530,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Picasa {
-            get {
-                object obj = ResourceManager.GetObject("Picasa", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon Plik {
             get {
                 object obj = ResourceManager.GetObject("Plik", resourceCulture);
@@ -697,6 +697,33 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A header with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_A_header_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_A_header_with_the_same_name_already_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://aws.amazon.com/s3/storage-classes/.
+        /// </summary>
+        internal static string UploadersConfigForm_AmazonS3StorageClassHelpURL {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_AmazonS3StorageClassHelpURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An argument with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_An_argument_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_An_argument_with_the_same_name_already_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Box refresh folders list failed.
         /// </summary>
         internal static string UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed {
@@ -706,11 +733,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Key file does not exist..
         /// </summary>
-        internal static string UploadersConfigForm_CustomUploader_Name {
+        internal static string UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found {
             get {
-                return ResourceManager.GetString("UploadersConfigForm_CustomUploader_Name", resourceCulture);
+                return ResourceManager.GetString("UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found", resourceCulture);
             }
         }
         

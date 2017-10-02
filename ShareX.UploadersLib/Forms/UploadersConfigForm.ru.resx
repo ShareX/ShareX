@@ -159,7 +159,7 @@
     <value>Имя</value>
   </data>
   <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Убрать</value>
+    <value>Удалить</value>
   </data>
   <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -811,7 +811,7 @@ store.book[0].title</value>
     <value>Войти</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Тип миниатюр:</value>
+    <value>Тип миниатюры:</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
     <value>Обновить список альбомов</value>
@@ -1156,5 +1156,23 @@ store.book[0].title</value>
   </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>никогда</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Копия</value>
+  </data>
+  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
+    <value>Сервис отправки ссылок:</value>
+  </data>
+  <data name="lblCustomUploaderName.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>Пользовательский домен:</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Класс хранилища:</value>
   </data>
 </root>

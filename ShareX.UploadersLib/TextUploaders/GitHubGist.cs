@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.TextUploaders
             args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("scope", "gist");
 
-            return CreateQuery("https://github.com/login/oauth/authorize", args);
+            return URLHelpers.CreateQuery("https://github.com/login/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)

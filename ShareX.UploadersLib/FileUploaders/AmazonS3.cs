@@ -28,6 +28,7 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -36,6 +37,12 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public enum AmazonS3StorageClass // Localized
+    {
+        STANDARD,
+        STANDARD_IA
+    }
+
     public class AmazonS3NewFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
@@ -113,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers["content-type"] = contentType;
             headers["host"] = host;
             headers["x-amz-acl"] = "public-read";
-            headers["x-amz-storage-class"] = Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
+            headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
 
             string signedHeaders = GetSignedHeaders(headers);
 
@@ -131,7 +138,7 @@ namespace ShareX.UploadersLib.FileUploaders
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
 
-            string canonicalQueryString = URLHelpers.CreateQuery(args);
+            string canonicalQueryString = URLHelpers.CreateQuery(args, true);
             string canonicalHeaders = CreateCanonicalHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
@@ -158,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("host");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.CreateQuery(url, args);
+            url = URLHelpers.CreateQuery(url, args, true);
             url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);

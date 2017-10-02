@@ -108,10 +108,10 @@ Zeranoe FFmpeg: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
 SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: http://ocr.space
+ZXing.Net: https://github.com/micjahn/ZXing.Net
 
 Copyright (c) 2007-2017 ShareX Team";
         }

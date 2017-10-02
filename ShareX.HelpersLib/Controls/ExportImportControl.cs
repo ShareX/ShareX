@@ -50,6 +50,9 @@ namespace ShareX.HelpersLib
         public Type ObjectType { get; set; }
 
         [DefaultValue(false)]
+        public bool ExportIgnoreDefaultValue { get; set; }
+
+        [DefaultValue(false)]
         public bool ExportIgnoreNull { get; set; }
 
         [DefaultValue("")]
@@ -76,6 +79,7 @@ namespace ShareX.HelpersLib
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                         serializer.Converters.Add(new StringEnumConverter());
+                        serializer.DefaultValueHandling = ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include;
                         serializer.NullValueHandling = ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include;
                         serializer.TypeNameHandling = TypeNameHandling.Auto;
                         serializer.Serialize(textWriter, obj, ObjectType);

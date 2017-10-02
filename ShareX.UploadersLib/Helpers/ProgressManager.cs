@@ -35,23 +35,11 @@ namespace ShareX.UploadersLib
         public long Position { get; private set; }
         public long Length { get; private set; }
 
-        public double Percentage
-        {
-            get
-            {
-                return (double)Position / Length * 100;
-            }
-        }
+        public double Percentage => (double)Position / Length * 100;
 
         public double Speed { get; private set; }
 
-        public TimeSpan Elapsed
-        {
-            get
-            {
-                return startTimer.Elapsed;
-            }
-        }
+        public TimeSpan Elapsed => startTimer.Elapsed;
 
         public TimeSpan Remaining
         {

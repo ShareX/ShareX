@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -30,18 +31,23 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public static class ImageEffectManager
+    public class ImageEffectPreset
     {
-        public static Image ApplyEffects(Image img, List<ImageEffect> imageEffects)
+        public string Name { get; set; } = "";
+
+        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
+        public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
+
+        public Image ApplyEffects(Image img)
         {
             Image result = (Image)img.Clone();
             ((Bitmap)result).SetResolution(96f, 96f);
 
-            if (imageEffects != null && imageEffects.Count > 0)
+            if (Effects != null && Effects.Count > 0)
             {
-                foreach (ImageEffect imageEffect in imageEffects.Where(x => x.Enabled))
+                foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
                 {
-                    result = imageEffect.Apply(result);
+                    result = effect.Apply(result);
 
                     if (result == null)
                     {
@@ -53,20 +59,30 @@ namespace ShareX.ImageEffectsLib
             return result;
         }
 
-        public static List<ImageEffect> GetDefaultImageEffects()
+        public override string ToString()
         {
-            List<ImageEffect> imageEffects = new List<ImageEffect>();
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return Name;
+            }
+
+            return "Name";
+        }
+
+        public static ImageEffectPreset GetDefaultPreset()
+        {
+            ImageEffectPreset preset = new ImageEffectPreset();
 
             Canvas canvas = new Canvas();
             canvas.Margin = new Padding(0, 0, 0, 30);
-            imageEffects.Add(canvas);
+            preset.Effects.Add(canvas);
 
             DrawText text = new DrawText();
             text.Offset = new Point(0, 0);
             text.UseCustomGradient = true;
-            imageEffects.Add(text);
+            preset.Effects.Add(text);
 
-            return imageEffects;
+            return preset;
         }
     }
 }

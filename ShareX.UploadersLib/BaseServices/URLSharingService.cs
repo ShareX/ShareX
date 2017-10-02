@@ -27,6 +27,6 @@ namespace ShareX.UploadersLib
 {
     public abstract class URLSharingService : UploaderService<URLSharingServices>
     {
-        public abstract void ShareURL(string url, UploadersConfig config);
+        public abstract URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo);
     }
 }

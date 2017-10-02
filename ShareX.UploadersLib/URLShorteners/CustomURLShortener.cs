@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.URLShorteners
             if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
                 throw new Exception("'File form name' cannot be used with custom URL shortener.");
 
-            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input")))
+            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$")))
                 throw new Exception("Atleast one '$input$' required for argument value.");
 
             UploadResult result = new UploadResult { URL = url };

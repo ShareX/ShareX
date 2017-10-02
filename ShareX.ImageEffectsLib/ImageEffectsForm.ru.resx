@@ -153,4 +153,16 @@
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Загрузить...</value>
   </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>Новая заготовка</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Удалить заготовку</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
 </root>

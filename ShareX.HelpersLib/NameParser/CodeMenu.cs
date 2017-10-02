@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -34,6 +35,11 @@ namespace ShareX.HelpersLib
     {
         public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
         {
+            return Create(tb, ignoreList, (CodeMenuItem[])null);
+        }
+
+        public static ContextMenuStrip Create<TEntry>(TextBox tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
+        {
             ContextMenuStrip cms = new ContextMenuStrip
             {
                 Font = new Font("Lucida Console", 8),
@@ -42,34 +48,38 @@ namespace ShareX.HelpersLib
                 ShowImageMargin = false
             };
 
-            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
-                Select(x => new
-                {
-                    Name = x.ToPrefixString(),
-                    Description = x.Description,
-                    Category = x.Category
-                });
+            List<CodeMenuItem> items = new List<CodeMenuItem>();
 
-            foreach (var variable in variables)
+            if (extraItems != null)
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
+                items.AddRange(extraItems);
+            }
+
+            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
+                Select(x => new CodeMenuItem(x.ToPrefixString(), x.Description, x.Category));
+
+            items.AddRange(variables);
+
+            foreach (var item in items)
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
                 tsmi.Click += (sender, e) =>
                 {
                     string text = ((ToolStripMenuItem)sender).Tag.ToString();
                     tb.AppendTextToSelection(text);
                 };
 
-                if (string.IsNullOrWhiteSpace(variable.Category))
+                if (string.IsNullOrWhiteSpace(item.Category))
                 {
                     cms.Items.Add(tsmi);
                 }
                 else
                 {
                     ToolStripMenuItem tsmiParent;
-                    int index = cms.Items.IndexOfKey(variable.Category);
+                    int index = cms.Items.IndexOfKey(item.Category);
                     if (0 > index)
                     {
-                        tsmiParent = new ToolStripMenuItem { Text = variable.Category, Tag = variable.Category, Name = variable.Category };
+                        tsmiParent = new ToolStripMenuItem { Text = item.Category, Tag = item.Category, Name = item.Category };
                         tsmiParent.HideImageMargin();
                         cms.Items.Add(tsmiParent);
                     }

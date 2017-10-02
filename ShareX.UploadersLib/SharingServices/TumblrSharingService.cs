@@ -25,10 +25,10 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class TumblrSharingService : SimpleSharingService
+    public class TumblrSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.Tumblr;
 
-        protected override string UrlFormatString { get; } = "https://www.tumblr.com/share?v=3&u={0}";
+        protected override string URLFormatString { get; } = "https://www.tumblr.com/share?v=3&u={0}";
     }
 }

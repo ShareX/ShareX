@@ -83,11 +83,17 @@ namespace ShareX
                 case HotkeyType.ClipboardUploadWithContentViewer:
                     UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
+                case HotkeyType.UploadText:
+                    UploadManager.ShowTextUploadDialog(safeTaskSettings);
+                    break;
                 case HotkeyType.UploadURL:
                     UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     OpenDropWindow(safeTaskSettings);
+                    break;
+                case HotkeyType.ShortenURL:
+                    UploadManager.ShowShortenURLDialog(safeTaskSettings);
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
@@ -178,7 +184,7 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects();
+                    OpenImageEffects(safeTaskSettings);
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
@@ -499,19 +505,23 @@ namespace ShareX
         {
             if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffects))
+                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                    taskSettings.ImageSettings.SelectedImageEffectPreset))
                 {
-                    if (imageEffectsForm.ShowDialog() == DialogResult.OK)
-                    {
-                        taskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
-                    }
+                    imageEffectsForm.ShowDialog();
+                    taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                 }
             }
 
-            using (img)
+            if (taskSettings.ImageSettings.ImageEffectPresets.IsValidIndex(taskSettings.ImageSettings.SelectedImageEffectPreset))
             {
-                return ImageEffectManager.ApplyEffects(img, taskSettings.ImageSettings.ImageEffects);
+                using (img)
+                {
+                    return taskSettings.ImageSettings.ImageEffectPresets[taskSettings.ImageSettings.SelectedImageEffectPreset].ApplyEffects(img);
+                }
             }
+
+            return img;
         }
 
         public static void AddDefaultExternalPrograms(TaskSettings taskSettings)
@@ -959,15 +969,18 @@ namespace ShareX
             return img;
         }
 
-        public static void OpenImageEffects()
+        public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             string filePath = ImageHelpers.OpenImageFileDialog();
             Image img = null;
             if (!string.IsNullOrEmpty(filePath))
             {
                 img = ImageHelpers.LoadImage(filePath);
             }
-            ImageEffectsForm form = new ImageEffectsForm(img);
+            ImageEffectsForm form = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                taskSettings.ImageSettings.SelectedImageEffectPreset);
             form.EditorMode();
             form.Show();
         }
@@ -1043,7 +1056,7 @@ namespace ShareX
 
         public static void SearchImage(string url)
         {
-            new GoogleImageSearchSharingService().ShareURL(url, null);
+            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
         public static void OCRImage(string filePath)
@@ -1379,8 +1392,10 @@ namespace ShareX
                 case HotkeyType.FolderUpload: return Resources.folder;
                 case HotkeyType.ClipboardUpload: return Resources.clipboard;
                 case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
+                case HotkeyType.UploadText: return Resources.notebook;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
+                case HotkeyType.ShortenURL: return Resources.edit_scale;
                 case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
@@ -1477,7 +1492,8 @@ namespace ShareX
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
                             if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener)) destinations.Add("urls");
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener) ||
+                                (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
 
                             string destinationsText = string.Join("/", destinations);
 
@@ -1524,12 +1540,18 @@ namespace ShareX
                                 Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
                             }
 
+                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))
+                            {
+                                Program.UploadersConfig.CustomURLSharingServiceSelected = index;
+                                Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
+                            }
+
                             Program.MainForm.UpdateCheckStates();
                             Program.MainForm.UpdateUploaderMenuNames();
 
                             if (UploadersConfigForm.IsInstanceActive)
                             {
-                                UploadersConfigForm.UpdateCustomUploaderTab();
+                                UploadersConfigForm.CustomUploaderUpdateTab();
                             }
                         }
                     }
