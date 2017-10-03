@@ -1159,7 +1159,7 @@ namespace Greenshot.Drawing
             _mouseDown = true;
             _isSurfaceMoveMadeUndoable = false;
 
-            if (_cropContainer != null && ((_undrawnElement == null) || (_undrawnElement != null && DrawingMode != DrawingModes.Crop)))
+            if (_cropContainer != null && (_undrawnElement == null || DrawingMode != DrawingModes.Crop))
             {
                 RemoveElement(_cropContainer, false);
                 _cropContainer = null;
