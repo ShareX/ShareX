@@ -154,7 +154,7 @@ namespace ShareX
             {
                 foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
                 {
-                    if (!temporary || (temporary && hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys))
+                    if (!temporary || hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys)
                     {
                         UnregisterHotkey(hotkeySetting, removeFromList);
                     }
