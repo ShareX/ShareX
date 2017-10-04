@@ -30,15 +30,19 @@ namespace ShareX.StartupManagers
 {
     public abstract class GenericStartupManager : IStartupManager
     {
-        abstract public string StartupTargetPath();
+        public abstract string StartupTargetPath { get; }
+
         public StartupTaskState State
         {
-            get => ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath()) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+            get
+            {
+                return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+            }
             set
             {
                 if (value == StartupTaskState.Enabled || value == StartupTaskState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupTaskState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath(), "-silent");
+                    ShortcutHelpers.SetShortcut(value == StartupTaskState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
                 }
                 else
                 {

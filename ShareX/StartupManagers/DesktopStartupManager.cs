@@ -29,6 +29,6 @@ namespace ShareX.StartupManagers
 {
     public class DesktopStartupManager : GenericStartupManager
     {
-        public override string StartupTargetPath() => Application.ExecutablePath;
+        public override string StartupTargetPath => Application.ExecutablePath;
     }
 }

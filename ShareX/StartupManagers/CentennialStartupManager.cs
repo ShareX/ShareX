@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 #if WindowsStore
+
 using System;
 using Windows.ApplicationModel;
 
@@ -31,10 +32,14 @@ namespace ShareX.StartupManagers
 {
     public class CentennialStartupManager : IStartupManager
     {
-        public int StartupTargetIndex;
+        public int StartupTargetIndex { get; set; }
+
         public StartupTaskState State
         {
-            get => (StartupTaskState)StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].State;
+            get
+            {
+                return (StartupTaskState)StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].State;
+            }
             set
             {
                 if (value == StartupTaskState.Enabled)
@@ -53,4 +58,5 @@ namespace ShareX.StartupManagers
         }
     }
 }
+
 #endif
