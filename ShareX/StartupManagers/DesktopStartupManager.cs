@@ -4,7 +4,7 @@ using System;
 
 namespace ShareX.StartupManagers
 {
-    class DesktopStartupManager : IStartupManager
+    public class DesktopStartupManager : IStartupManager
     {
         public string StartupTargetPath;
         public StartupTaskState State

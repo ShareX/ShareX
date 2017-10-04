@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ShareX.StartupManagers
 {
-    class StartupManagerFactory
+    public class StartupManagerFactory
     {
-        static public IStartupManager GetStartupManager()
+        public static IStartupManager GetStartupManager()
         {
 #if WindowsStore
             return new CentennialStartupManager()

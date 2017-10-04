@@ -4,7 +4,7 @@ using Windows.ApplicationModel;
 
 namespace ShareX.StartupManagers
 {
-    class CentennialStartupManager : IStartupManager
+    public class CentennialStartupManager : IStartupManager
     {
         public int StartupTargetIndex;
         public StartupTaskState State

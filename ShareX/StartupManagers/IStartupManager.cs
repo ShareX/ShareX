@@ -1,11 +1,7 @@
 ﻿namespace ShareX.StartupManagers
 {
-    interface IStartupManager
+    public interface IStartupManager
     {
-        StartupTaskState State
-        {
-            get;
-            set;
-        }
+        StartupTaskState State { get; set; }
     }
 }
