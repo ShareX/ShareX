@@ -10,7 +10,17 @@ namespace ShareX.StartupManagers
         public StartupTaskState State
         {
             get => ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
-            set => ShortcutHelpers.SetShortcut(value == StartupTaskState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+            set
+            {
+                if (value == StartupTaskState.Enabled || value == StartupTaskState.Disabled)
+                {
+                    ShortcutHelpers.SetShortcut(value == StartupTaskState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+                }
+                else
+                {
+                    throw new NotSupportedException();
+                }
+            }
         }
     }
 }
