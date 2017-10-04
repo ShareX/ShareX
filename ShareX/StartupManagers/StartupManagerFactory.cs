@@ -1,4 +1,4 @@
-﻿using ShareX.HelpersLib;
+﻿using ShareX.HelpersLib; // Don't remove this, it's required for the Steam build
 using System.Windows.Forms;
 
 namespace ShareX.StartupManagers
