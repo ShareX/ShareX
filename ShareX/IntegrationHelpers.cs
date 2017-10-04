@@ -350,7 +350,7 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            StartupManagerFactory.GetStartupManager().State = StartupTaskState.Disabled;
+            StartupManagerFactory.StartupManager.State = StartupTaskState.Disabled;
             CreateShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);

@@ -25,9 +25,24 @@
 
 namespace ShareX.StartupManagers
 {
-    public class StartupManagerFactory
+    public static class StartupManagerFactory
     {
-        public static IStartupManager GetStartupManager()
+        private static IStartupManager startupManager;
+
+        public static IStartupManager StartupManager
+        {
+            get
+            {
+                if (startupManager == null)
+                {
+                    startupManager = CreateStartupManager();
+                }
+
+                return startupManager;
+            }
+        }
+
+        public static IStartupManager CreateStartupManager()
         {
 #if WindowsStore
             return new CentennialStartupManager();

@@ -41,8 +41,6 @@ namespace ShareX
         private bool ready;
         private string lastPersonalPath;
 
-        private IStartupManager startupManager = StartupManagerFactory.GetStartupManager();
-
         public ApplicationSettingsForm()
         {
             InitializeControls();
@@ -252,7 +250,7 @@ namespace ShareX
 
         private void UpdateStartWithWindows()
         {
-            StartupTaskState state = startupManager.State;
+            StartupTaskState state = StartupManagerFactory.StartupManager.State;
             cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
             if (state == StartupTaskState.DisabledByUser)
             {
@@ -388,7 +386,7 @@ namespace ShareX
         {
             if (ready)
             {
-                startupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
             }
         }
 

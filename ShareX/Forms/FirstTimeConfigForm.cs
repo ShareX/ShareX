@@ -33,13 +33,12 @@ namespace ShareX
     public partial class FirstTimeConfigForm : BlackStyleForm
     {
         private bool loaded;
-        private IStartupManager startupManager = StartupManagerFactory.GetStartupManager();
 
         public FirstTimeConfigForm()
         {
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
-            StartupTaskState state = startupManager.State;
+            StartupTaskState state = StartupManagerFactory.StartupManager.State;
 
             cbRunStartup.Checked = state == StartupTaskState.Enabled;
             cbRunStartup.Enabled = state != StartupTaskState.DisabledByUser;
@@ -65,7 +64,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                startupManager.State = cbRunStartup.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                StartupManagerFactory.StartupManager.State = cbRunStartup.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
             }
         }
 
