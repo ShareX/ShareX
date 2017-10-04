@@ -8,23 +8,11 @@ namespace ShareX.StartupManagers
 {
     class CentennialStartupManager : IStartupManager
     {
+        public int StartupTargetIndex;
         public StartupTaskState State
         {
             get => IntegrationHelpers.CheckStartupWindowsStore();
-            set
-            {
-                bool enable;
-                if (value == StartupTaskState.Enabled)
-                {
-                    enable = true;
-                }
-                else
-                {
-                    enable = false;
-                }
-
-                IntegrationHelpers.ConfigureStartupWindowsStore(enable);
-            }
+            set => IntegrationHelpers.ConfigureStartupWindowsStore(value == StartupTaskState.Enabled);
         }
     }
 }
