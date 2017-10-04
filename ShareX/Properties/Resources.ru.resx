@@ -557,4 +557,7 @@
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Запускать ShareX при старте системы</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Автозапуск отключен через Диспетчер задач</value>
+  </data>
 </root>

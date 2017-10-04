@@ -244,4 +244,7 @@
   <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
     <value>https://aws.amazon.com/ru/s3/storage-classes/</value>
   </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Файл ключа не существует.</value>
+  </data>
 </root>
