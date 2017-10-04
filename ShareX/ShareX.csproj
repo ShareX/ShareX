@@ -309,6 +309,10 @@
     </Compile>
     <Compile Include="LanguageHelper.cs" />
     <Compile Include="RecentTaskManager.cs" />
+    <Compile Include="StartupManagers\CentennialStartupManager.cs" />
+    <Compile Include="StartupManagers\DesktopStartupManager.cs" />
+    <Compile Include="StartupManagers\IStartupManager.cs" />
+    <Compile Include="StartupManagers\StartupManagerFactory.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
