@@ -27,6 +27,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.StartupManagers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -400,7 +401,7 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            CreateStartupShortcut(false);
+            StartupManagerFactory.GetStartupManager().State = StartupTaskState.Disabled;
             CreateShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);
