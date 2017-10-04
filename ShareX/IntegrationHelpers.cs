@@ -66,57 +66,6 @@ namespace ShareX
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
         private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
 
-        private static StartupTaskState RunStartupWindowsStore(string argument, string info)
-        {
-            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
-
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-            {
-                try
-                {
-                    DebugHelper.WriteLine($"Start: {filepath} {argument}");
-
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
-                    {
-                        FileName = filepath,
-                        Arguments = argument,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    Process process = Process.Start(startInfo);
-
-                    if (process.WaitForExit(5000))
-                    {
-                        int code = process.ExitCode;
-
-                        DebugHelper.WriteLine($"{info} result: {code}");
-
-                        if (code > -1)
-                        {
-                            return (StartupTaskState)code;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, $"{info} failed");
-                }
-            }
-
-            return StartupTaskState.Error;
-        }
-
-        public static StartupTaskState CheckStartupWindowsStore()
-        {
-            return RunStartupWindowsStore("-StartupState", "Startup state check");
-        }
-
-        public static StartupTaskState ConfigureStartupWindowsStore(bool enable)
-        {
-            return RunStartupWindowsStore(enable ? "-StartupEnable" : "-StartupDisable", "Startup configuration");
-        }
-
         public static bool CheckShellContextMenuButton()
         {
             try

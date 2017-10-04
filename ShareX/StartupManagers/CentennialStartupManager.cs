@@ -1,4 +1,7 @@
 ﻿#if WindowsStore
+using System;
+using Windows.ApplicationModel;
+
 namespace ShareX.StartupManagers
 {
     class CentennialStartupManager : IStartupManager
@@ -6,8 +9,22 @@ namespace ShareX.StartupManagers
         public int StartupTargetIndex;
         public StartupTaskState State
         {
-            get => IntegrationHelpers.CheckStartupWindowsStore();
-            set => IntegrationHelpers.ConfigureStartupWindowsStore(value == StartupTaskState.Enabled);
+            get => (StartupTaskState)StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].State;
+            set
+            {
+                if (value == StartupTaskState.Enabled)
+                {
+                    StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].RequestEnableAsync().GetResults();
+                }
+                else if (value == StartupTaskState.Disabled)
+                {
+                    StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].Disable();
+                }
+                else
+                {
+                    throw new NotSupportedException();
+                }
+            }
         }
     }
 }
