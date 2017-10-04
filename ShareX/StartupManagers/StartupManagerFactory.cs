@@ -1,27 +1,15 @@
-﻿using ShareX.HelpersLib; // Don't remove this, it's required for the Steam build
-using System.Windows.Forms;
-
-namespace ShareX.StartupManagers
+﻿namespace ShareX.StartupManagers
 {
     public class StartupManagerFactory
     {
         public static IStartupManager GetStartupManager()
         {
 #if WindowsStore
-            return new CentennialStartupManager()
-            {
-                StartupTargetIndex = 0
-            };
+            return new CentennialStartupManager();
 #elif STEAM
-            return new DesktopStartupManager()
-            {
-                StartupTargetPath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe")
-            };
+            return new SteamStartupManager();
 #else
-            return new DesktopStartupManager()
-            {
-                StartupTargetPath = Application.ExecutablePath
-            };
+            return new DesktopStartupManager();
 #endif
         }
     }
