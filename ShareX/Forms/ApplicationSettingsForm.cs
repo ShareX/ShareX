@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.StartupManagers;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
@@ -39,6 +40,8 @@ namespace ShareX
 
         private bool ready;
         private string lastPersonalPath;
+
+        private IStartupManager startupManager = StartupManagerFactory.GetStartupManager();
 
         public ApplicationSettingsForm()
         {
@@ -70,12 +73,10 @@ namespace ShareX
 
         private void tttvMain_TabChanged(TabPage tabPage)
         {
-#if WindowsStore
             if (tabPage == tpIntegration)
             {
-                CheckWindowsStoreStartup();
+                UpdateStartWithWindows();
             }
-#endif
         }
 
         private void InitializeControls()
@@ -131,13 +132,11 @@ namespace ShareX
 
             // Integration
 #if WindowsStore
-            cbStartWithWindows.Enabled = false;
             cbShellContextMenu.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
             gbFirefox.Visible = false;
 #else
-            cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
@@ -251,6 +250,17 @@ namespace ShareX
             }
         }
 
+        private void UpdateStartWithWindows()
+        {
+            StartupTaskState state = startupManager.State;
+            cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+            if (state == StartupTaskState.DisabledByUser)
+            {
+                cbStartWithWindows.Enabled = false;
+                lblWindowsStoreStartupStatus.Text = Resources.ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser;
+            }
+        }
+
         private void UpdateProxyControls()
         {
             switch (Program.Settings.ProxySettings.ProxyMethod)
@@ -299,78 +309,6 @@ namespace ShareX
         private void UpdateExportButton()
         {
             btnExport.Enabled = Program.Settings.ExportSettings || Program.Settings.ExportHistory || Program.Settings.ExportLogs;
-        }
-
-        private void CheckWindowsStoreStartup()
-        {
-            if (cbStartWithWindows.Enabled) return;
-
-            lblWindowsStoreStartupStatus.Text = "Checking startup state...";
-            lblWindowsStoreStartupStatus.Visible = true;
-
-            StartupTaskState state = StartupTaskState.Error;
-
-            TaskEx.Run(() =>
-            {
-                state = IntegrationHelpers.CheckStartupWindowsStore();
-            },
-            () =>
-            {
-                if (!IsDisposed)
-                {
-                    if (state == StartupTaskState.Error)
-                    {
-                        lblWindowsStoreStartupStatus.Text = "Startup state check failed. Check debug log for more info.";
-                    }
-                    else if (state == StartupTaskState.DisabledByUser)
-                    {
-                        lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
-                    }
-                    else
-                    {
-                        lblWindowsStoreStartupStatus.Visible = false;
-                        cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
-                        cbStartWithWindows.Enabled = true;
-                    }
-                }
-            });
-        }
-
-        private void ConfigureWindowsStoreStartup()
-        {
-            if (cbStartWithWindows.Enabled)
-            {
-                cbStartWithWindows.Enabled = false;
-                lblWindowsStoreStartupStatus.Text = "Configuring startup...";
-                lblWindowsStoreStartupStatus.Visible = true;
-
-                bool enable = cbStartWithWindows.Checked;
-                StartupTaskState state = StartupTaskState.Error;
-
-                TaskEx.Run(() =>
-                {
-                    state = IntegrationHelpers.ConfigureStartupWindowsStore(enable);
-                },
-                () =>
-                {
-                    if (!IsDisposed)
-                    {
-                        if (state == StartupTaskState.Error)
-                        {
-                            lblWindowsStoreStartupStatus.Text = "Startup configuration failed. Check debug log for more info.";
-                        }
-                        else if (state == StartupTaskState.DisabledByUser)
-                        {
-                            lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
-                        }
-                        else
-                        {
-                            lblWindowsStoreStartupStatus.Visible = false;
-                            cbStartWithWindows.Enabled = true;
-                        }
-                    }
-                });
-            }
         }
 
         #region General
@@ -450,11 +388,7 @@ namespace ShareX
         {
             if (ready)
             {
-#if WindowsStore
-                ConfigureWindowsStoreStartup();
-#else
-                IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
-#endif
+                startupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
             }
         }
 

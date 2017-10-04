@@ -475,6 +475,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Startup has been disabled in Task Manager..
+        /// </summary>
+        public static string ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap arrow_090 {

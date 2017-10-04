@@ -26,74 +26,16 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
-using Windows.ApplicationModel;
 
 namespace DesktopBridgeHelper
 {
     internal class Program
     {
-        private const string TaskID = "ShareX";
-
         private static int Main(string[] args)
         {
-            return MainAsync(args).GetAwaiter().GetResult();
-        }
-
-        private async static Task<int> MainAsync(string[] args)
-        {
-            try
-            {
-                if (args.Length > 0)
-                {
-                    string argument = args[0];
-
-                    if (argument.Equals("-StartupState", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return (int)await GetStartupState();
-                    }
-                    else if (argument.Equals("-StartupEnable", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return (int)await SetStartupState(true);
-                    }
-                    else if (argument.Equals("-StartupDisable", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return (int)await SetStartupState(false);
-                    }
-                }
-                else
-                {
-                    string path = GetAbsolutePath("ShareX.exe");
-                    Process.Start(path, "-silent");
-                    return 0;
-                }
-            }
-            catch
-            {
-            }
-
-            return -1;
-        }
-
-        private async static Task<StartupTaskState> GetStartupState()
-        {
-            StartupTask startupTask = await StartupTask.GetAsync(TaskID);
-            return startupTask.State;
-        }
-
-        private async static Task<StartupTaskState> SetStartupState(bool enable)
-        {
-            StartupTask startupTask = await StartupTask.GetAsync(TaskID);
-
-            if (enable)
-            {
-                return await startupTask.RequestEnableAsync();
-            }
-            else
-            {
-                startupTask.Disable();
-                return StartupTaskState.Disabled;
-            }
+            string path = GetAbsolutePath("ShareX.exe");
+            Process.Start(path, "-silent");
+            return 0;
         }
 
         private static string GetAbsolutePath(string path)
