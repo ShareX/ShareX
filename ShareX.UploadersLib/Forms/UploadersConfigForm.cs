@@ -206,7 +206,11 @@ namespace ShareX.UploadersLib
 
             // Flickr
 
-            pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
+            if (OAuthInfo.CheckOAuth(Config.FlickrOAuthInfo))
+            {
+                oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
             pgFlickrSettings.SelectedObject = Config.FlickrSettings;
 
             // Photobucket
@@ -914,24 +918,19 @@ namespace ShareX.UploadersLib
 
         #region Flickr
 
-        private void btnFlickrOpenAuthorize_Click(object sender, EventArgs e)
+        private void oauthFlickr_OpenButtonClicked()
         {
             FlickrAuthOpen();
         }
 
-        private void btnFlickrCompleteAuth_Click(object sender, EventArgs e)
+        private void oauthFlickr_CompleteButtonClicked(string code)
         {
-            FlickrAuthComplete();
+            FlickrAuthComplete(code);
         }
 
-        private void btnFlickrCheckToken_Click(object sender, EventArgs e)
+        private void oauthFlickr_ClearButtonClicked()
         {
-            FlickrCheckToken();
-        }
-
-        private void btnFlickrOpenImages_Click(object sender, EventArgs e)
-        {
-            FlickrOpenImages();
+            Config.FlickrOAuthInfo = null;
         }
 
         #endregion Flickr

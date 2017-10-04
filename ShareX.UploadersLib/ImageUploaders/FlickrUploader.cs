@@ -44,19 +44,18 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.FlickrAuthInfo.Token);
+            return OAuthInfo.CheckOAuth(config.FlickrOAuthInfo);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, config.FlickrAuthInfo, config.FlickrSettings);
+            return new FlickrUploader(config.FlickrOAuthInfo);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFlickr;
     }
 
-    // TODO: Implement oauth
-    public class FlickrUploader : ImageUploader
+    public class FlickrUploader : ImageUploader, IOAuth
     {
         private string API_Key, API_Secret;
 
@@ -66,6 +65,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         public FlickrAuthInfo Auth = new FlickrAuthInfo();
         public FlickrSettings Settings = new FlickrSettings();
         public string Frob;
+
+        public OAuthInfo AuthInfo { get; set; }
 
         public FlickrUploader(string key, string secret)
         {
@@ -77,6 +78,27 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             Auth = auth;
             Settings = settings;
+        }
+
+        public FlickrUploader(OAuthInfo oauth)
+        {
+            AuthInfo = oauth;
+        }
+
+        public string GetAuthorizationURL()
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("oauth_callback", Links.URL_CALLBACK);
+
+            string url = GetAuthorizationURL("https://www.flickr.com/services/oauth/request_token", "https://www.flickr.com/services/oauth/authorize", AuthInfo, args);
+
+            return url + "&perms=write";
+        }
+
+        public bool GetAccessToken(string verificationCode = null)
+        {
+            AuthInfo.AuthVerifier = verificationCode;
+            return GetAccessToken("https://www.flickr.com/services/oauth/access_token", AuthInfo);
         }
 
         #region Auth

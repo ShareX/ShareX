@@ -165,17 +165,23 @@ namespace ShareX.UploadersLib
 
         #region Flickr
 
-        public void FlickrAuthOpen()
+        private void FlickrAuthOpen()
         {
             try
             {
-                FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                btnFlickrOpenAuthorize.Tag = flickr.GetFrob();
-                string url = flickr.GetAuthLink(FlickrPermission.Write);
+                OAuthInfo oauth = new OAuthInfo(APIKeys.FlickrKey, APIKeys.FlickrSecret);
+
+                string url = new FlickrUploader(oauth).GetAuthorizationURL();
+
                 if (!string.IsNullOrEmpty(url))
                 {
+                    Config.FlickrOAuthInfo = oauth;
                     URLHelpers.OpenURL(url);
-                    btnFlickrCompleteAuth.Enabled = true;
+                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is empty.");
                 }
             }
             catch (Exception ex)
@@ -184,62 +190,29 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void FlickrAuthComplete()
+        private void FlickrAuthComplete(string code)
         {
             try
             {
-                string token = btnFlickrOpenAuthorize.Tag as string;
-                if (!string.IsNullOrEmpty(token))
+                if (!string.IsNullOrEmpty(code) && Config.FlickrOAuthInfo != null)
                 {
-                    FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                    Config.FlickrAuthInfo = flickr.GetToken(token);
-                    pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
-                    // btnFlickrOpenImages.Text = string.Format("{0}'s photostream", Config.FlickrAuthInfo.Username);
-                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
+                    bool result = new FlickrUploader(Config.FlickrOAuthInfo).GetAccessToken(code);
 
-        public void FlickrCheckToken()
-        {
-            try
-            {
-                if (Config.FlickrAuthInfo != null)
-                {
-                    string token = Config.FlickrAuthInfo.Token;
-                    if (!string.IsNullOrEmpty(token))
+                    if (result)
                     {
-                        FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                        Config.FlickrAuthInfo = flickr.CheckToken(token);
-                        pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
+                        oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    else
+                    {
+                        oauthFlickr.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 ex.ShowError();
-            }
-        }
-
-        public void FlickrOpenImages()
-        {
-            if (Config.FlickrAuthInfo != null)
-            {
-                string userID = Config.FlickrAuthInfo.UserID;
-                if (!string.IsNullOrEmpty(userID))
-                {
-                    FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                    string url = flickr.GetPhotosLink(userID);
-                    if (!string.IsNullOrEmpty(url))
-                    {
-                        URLHelpers.OpenURL(url);
-                    }
-                }
             }
         }
 

@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib
 
         // Flickr
 
-        public FlickrAuthInfo FlickrAuthInfo = new FlickrAuthInfo();
+        public OAuthInfo FlickrOAuthInfo = null;
         public FlickrSettings FlickrSettings = new FlickrSettings();
 
         // Photobucket
