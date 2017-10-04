@@ -250,6 +250,8 @@ namespace ShareX
 
         private void UpdateStartWithWindows()
         {
+            ready = false;
+
             StartupTaskState state = StartupManagerFactory.StartupManager.State;
             cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
             if (state == StartupTaskState.DisabledByUser)
@@ -257,6 +259,8 @@ namespace ShareX
                 cbStartWithWindows.Enabled = false;
                 lblWindowsStoreStartupStatus.Text = Resources.ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser;
             }
+
+            ready = true;
         }
 
         private void UpdateProxyControls()
