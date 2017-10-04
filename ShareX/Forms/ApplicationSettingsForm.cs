@@ -145,8 +145,6 @@ namespace ShareX
             btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
 #endif
 
-            UpdateStartWithWindows();
-
 #if STEAM
             cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
 #else

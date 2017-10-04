@@ -262,7 +262,6 @@ namespace ShareX
 
     public enum StartupTaskState
     {
-        Error = -1,
         Disabled = 0,
         DisabledByUser = 1,
         Enabled = 2
