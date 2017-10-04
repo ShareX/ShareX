@@ -1,9 +1,4 @@
-﻿using ShareX.HelpersLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿#if WindowsStore
 namespace ShareX.StartupManagers
 {
     class CentennialStartupManager : IStartupManager
@@ -16,3 +11,4 @@ namespace ShareX.StartupManagers
         }
     }
 }
+#endif

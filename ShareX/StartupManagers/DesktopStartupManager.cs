@@ -1,4 +1,5 @@
-﻿using ShareX.HelpersLib;
+﻿#if !WindowsStore
+using ShareX.HelpersLib;
 using System;
 
 namespace ShareX.StartupManagers
@@ -13,3 +14,4 @@ namespace ShareX.StartupManagers
         }
     }
 }
+#endif
