@@ -411,7 +411,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.F1:
                     Config.ShowHotkeys = !Config.ShowHotkeys;
-                    if(form.IsAnnotationMode)
+                    if(tsmiTips != null)
                         tsmiTips.Checked = Config.ShowHotkeys;
                     break;
             }
