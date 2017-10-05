@@ -115,6 +115,7 @@
     <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Speech" />
     <Reference Include="System.Web" />
@@ -123,12 +124,15 @@
     <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL" Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Facade\Windows.WinMD</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Windows.ApplicationModel.StartupTaskContract" Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
       <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.ApplicationModel.StartupTaskContract\1.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Windows.Foundation.FoundationContract" Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
       <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="zxing, Version=0.16.0.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.0\lib\net40\zxing.dll</HintPath>
