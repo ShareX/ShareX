@@ -252,6 +252,9 @@ namespace ShareX
         {
             ready = false;
 
+            lblWindowsStoreStartupStatus.Text = "";
+            cbStartWithWindows.Enabled = true;
+
             StartupTaskState state = StartupManagerFactory.StartupManager.State;
             cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
             if (state == StartupTaskState.DisabledByUser)
