@@ -330,7 +330,7 @@
     <Compile Include="StartupManagers\GenericStartupManager.cs" />
     <Compile Include="StartupManagers\IStartupManager.cs" />
     <Compile Include="StartupManagers\StartupManagerFactory.cs" />
-    <Compile Include="StartupManagers\SteamDesktopManager.cs" />
+    <Compile Include="StartupManagers\SteamStartupManager.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
