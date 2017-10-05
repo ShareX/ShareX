@@ -290,9 +290,9 @@ namespace ShareX.UploadersLib
 
         #endregion Photobucket
 
-        #region Picasa
+        #region Google Photos
 
-        public void PicasaAuthOpen()
+        public void GooglePhotosAuthOpen()
         {
             try
             {
@@ -304,11 +304,11 @@ namespace ShareX.UploadersLib
                 {
                     Config.PicasaOAuth2Info = oauth;
                     URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is opened: " + url);
+                    DebugHelper.WriteLine("GooglePhotosAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
                 {
-                    DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is empty.");
+                    DebugHelper.WriteLine("GooglePhotosAuthOpen - Authorization URL is empty.");
                 }
             }
             catch (Exception ex)
@@ -317,7 +317,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaAuthComplete(string code)
+        public void GooglePhotosAuthComplete(string code)
         {
             try
             {
@@ -345,7 +345,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaAuthRefresh()
+        public void GooglePhotosAuthRefresh()
         {
             try
             {
@@ -373,7 +373,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaRefreshAlbumList()
+        public void GooglePhotosRefreshAlbumList()
         {
             try
             {
@@ -402,7 +402,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        #endregion Picasa
+        #endregion Google Photos
 
         #region Dropbox
 

@@ -411,7 +411,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.F1:
                     Config.ShowHotkeys = !Config.ShowHotkeys;
-                    if(tsmiTips != null)
+                    if (tsmiTips != null)
                         tsmiTips.Checked = Config.ShowHotkeys;
                     break;
             }
@@ -643,7 +643,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            InputManager.Update(); //If it's a touch event we don't have the correct point yet, so refresh it now.
+            InputManager.Update(); // If it's a touch event we don't have the correct point yet, so refresh it now
 
             BaseShape shape = GetIntersectShape();
 
