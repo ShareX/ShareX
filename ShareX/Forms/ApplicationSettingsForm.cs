@@ -130,6 +130,7 @@ namespace ShareX
 
             // Integration
 #if WindowsStore
+            gbWindows.Height = 56;
             cbShellContextMenu.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
