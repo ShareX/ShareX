@@ -165,9 +165,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Mutassa a "Feltöltés ShareX használatával" gombot a kontextus menüben</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>A ShareX futtatása a Windows indításakor</value>
-  </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Emlékezzen a főablak pozíciójára</value>
   </data>

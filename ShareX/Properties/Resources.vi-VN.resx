@@ -452,4 +452,7 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Không thể tìm thấy tài khoản FTP hợp lệ.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Chạy ShareX cùng Windows</value>
+  </data>
 </root>

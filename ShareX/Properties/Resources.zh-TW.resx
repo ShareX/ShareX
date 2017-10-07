@@ -485,4 +485,7 @@
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>繼續</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Windows啟動時運行ShareX</value>
+  </data>
 </root>

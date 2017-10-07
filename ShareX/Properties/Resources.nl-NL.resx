@@ -458,4 +458,7 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
     <value>Je probeert een groot bestand te uploaden.
 Ben je zeker dat je door wilt gaan?</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Start ShareX als Windows start</value>
+  </data>
 </root>

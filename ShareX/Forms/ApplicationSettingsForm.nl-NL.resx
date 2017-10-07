@@ -165,9 +165,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Toon ShareX in het "Verzenden naar" menu</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Start ShareX als Windows start</value>
-  </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Onthoud de positie van het algemene venster</value>
   </data>

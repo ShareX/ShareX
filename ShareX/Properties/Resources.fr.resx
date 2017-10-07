@@ -550,4 +550,10 @@ Clique de la molette pour fermer</value>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Entrez le texte à encoder</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Le démarrage automatique a été désactivé dans le Gestionnaire des tâches.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Lancer ShareX au démarrage de Windows</value>
+  </data>
 </root>

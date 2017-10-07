@@ -153,9 +153,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показывать ShareX в меню "Отправить"</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Запускать ShareX при старте системы</value>
-  </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Пока ShareX открыт, показывать в Steam статус "В приложении"</value>
   </data>

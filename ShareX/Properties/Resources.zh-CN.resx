@@ -547,4 +547,7 @@
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>繁体中文</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Windows 启动时运行 ShareX</value>
+  </data>
 </root>
