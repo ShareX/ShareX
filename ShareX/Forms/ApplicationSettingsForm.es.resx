@@ -240,9 +240,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Ejecutar ShareX al iniciar Windows</value>
-  </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Formatos del portapapeles</value>
   </data>

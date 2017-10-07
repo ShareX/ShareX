@@ -399,4 +399,7 @@ ShareX를 재시작할까요?</value>
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>선택된 올바른 CLI 비디오 인코더가 없습니다.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>윈도우 시작 시 ShareX 실행하기</value>
+  </data>
 </root>

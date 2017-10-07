@@ -252,15 +252,18 @@ namespace ShareX
         {
             ready = false;
 
-            lblWindowsStoreStartupStatus.Text = "";
-            cbStartWithWindows.Enabled = true;
+            cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_Text;
+            cbStartWithWindows.Enabled = false;
 
             StartupTaskState state = StartupManagerFactory.StartupManager.State;
             cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
             if (state == StartupTaskState.DisabledByUser)
             {
-                cbStartWithWindows.Enabled = false;
-                lblWindowsStoreStartupStatus.Text = Resources.ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser;
+                cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+            }
+            else
+            {
+                cbStartWithWindows.Enabled = true;
             }
 
             ready = true;
@@ -394,6 +397,7 @@ namespace ShareX
             if (ready)
             {
                 StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                UpdateStartWithWindows();
             }
         }
 

@@ -471,4 +471,7 @@ Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische 
     <value>Du versuchst eine große Datei hochzuladen.
 Sind Sie sich sicher?</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>ShareX beim Starten von Windows ausführen</value>
+  </data>
 </root>

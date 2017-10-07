@@ -960,7 +960,10 @@ Middle click to close</value>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Input text to encode</value>
   </data>
-  <data name="ApplicationSettingsForm_lblWindowsStoreStartupStatus_DisabledByUser" xml:space="preserve">
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Startup has been disabled in Task Manager.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Run ShareX when Windows starts</value>
   </data>
 </root>

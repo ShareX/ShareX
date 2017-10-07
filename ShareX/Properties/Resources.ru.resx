@@ -554,4 +554,7 @@
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Введите текст для кодирования</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Запускать ShareX при старте системы</value>
+  </data>
 </root>

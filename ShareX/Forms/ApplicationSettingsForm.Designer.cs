@@ -144,7 +144,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblWindowsStoreStartupStatus = new System.Windows.Forms.Label();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -395,7 +394,6 @@ namespace ShareX
             // 
             // gbWindows
             // 
-            this.gbWindows.Controls.Add(this.lblWindowsStoreStartupStatus);
             this.gbWindows.Controls.Add(this.cbStartWithWindows);
             this.gbWindows.Controls.Add(this.cbSendToMenu);
             this.gbWindows.Controls.Add(this.cbShellContextMenu);
@@ -1047,11 +1045,6 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblWindowsStoreStartupStatus
-            // 
-            resources.ApplyResources(this.lblWindowsStoreStartupStatus, "lblWindowsStoreStartupStatus");
-            this.lblWindowsStoreStartupStatus.Name = "lblWindowsStoreStartupStatus";
-            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1227,6 +1220,5 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbChromeExtensionSupport;
         private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
         private System.Windows.Forms.Button btnResetSettings;
-        private System.Windows.Forms.Label lblWindowsStoreStartupStatus;
     }
 }

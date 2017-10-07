@@ -396,4 +396,7 @@ Kattints a 'Nem'-re a jelenlegi feltöltés megszakításhoz és a képernyőmen
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>Nincs érvényes CLI videó enkóder kiválasztva.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>A ShareX futtatása a Windows indításakor</value>
+  </data>
 </root>

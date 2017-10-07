@@ -397,4 +397,7 @@ Pulse "No" para cancelar la subida y desactivar la función de captura de pantal
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>No hay codificador de vídeo CLI válido seleccionado.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Ejecutar ShareX al iniciar Windows</value>
+  </data>
 </root>

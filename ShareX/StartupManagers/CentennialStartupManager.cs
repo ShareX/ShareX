@@ -38,17 +38,17 @@ namespace ShareX.StartupManagers
         {
             get
             {
-                return (StartupTaskState)StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].State;
+                return (StartupTaskState)StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].State;
             }
             set
             {
                 if (value == StartupTaskState.Enabled)
                 {
-                    StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].RequestEnableAsync().GetResults();
+                    StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].RequestEnableAsync().AsTask().GetAwaiter().GetResult();
                 }
                 else if (value == StartupTaskState.Disabled)
                 {
-                    StartupTask.GetForCurrentPackageAsync().GetResults()[StartupTargetIndex].Disable();
+                    StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].Disable();
                 }
                 else
                 {
