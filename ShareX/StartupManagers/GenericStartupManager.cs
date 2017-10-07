@@ -40,7 +40,7 @@ namespace ShareX.StartupManagers
         {
             get
             {
-                var status = (byte[])Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder", "ShareX.lnk", startupEnabled);
+                var status = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder", "ShareX.lnk", startupEnabled) as byte[];
                 if (status != null && !status.SequenceEqual(startupEnabled))
                 {
                     return StartupTaskState.DisabledByUser;
