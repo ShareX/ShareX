@@ -23,20 +23,32 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
+using System.Linq;
 
 namespace ShareX.StartupManagers
 {
     public abstract class GenericStartupManager : IStartupManager
     {
+        private byte[] startupEnabled = { 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
         public abstract string StartupTargetPath { get; }
 
         public StartupTaskState State
         {
             get
             {
-                return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                var status = (byte[])Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder", "ShareX.lnk", startupEnabled);
+                if (!status.SequenceEqual(startupEnabled))
+                {
+                    return StartupTaskState.DisabledByUser;
+                }
+                else
+                {
+                    return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                }
             }
             set
             {
