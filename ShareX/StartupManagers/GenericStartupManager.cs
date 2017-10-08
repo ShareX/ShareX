@@ -26,29 +26,26 @@
 using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
-using System.Linq;
 
 namespace ShareX.StartupManagers
 {
     public abstract class GenericStartupManager : IStartupManager
     {
-        private byte[] startupEnabled = { 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
         public abstract string StartupTargetPath { get; }
 
         public StartupTaskState State
         {
             get
             {
-                var status = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder", "ShareX.lnk", startupEnabled) as byte[];
-                if (status != null && !status.SequenceEqual(startupEnabled))
+                byte[] status = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
+                    "ShareX.lnk", null) as byte[];
+
+                if (status != null && status.Length > 0 && status[0] == 3)
                 {
                     return StartupTaskState.DisabledByUser;
                 }
-                else
-                {
-                    return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
-                }
+
+                return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath) ? StartupTaskState.Enabled : StartupTaskState.Disabled;
             }
             set
             {

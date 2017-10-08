@@ -19,7 +19,7 @@ namespace ShareX.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -465,17 +465,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For settings to take effect ShareX needs to be reopened from Steam..
-        /// </summary>
-        public static string ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_ {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effe" +
-                        "ct_ShareX_needs_to_be_reopened_from_Steam_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup has been disabled in Task Manager..
+        ///   Looks up a localized string similar to Startup has been disabled in Task Manager.
         /// </summary>
         public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text {
             get {
@@ -489,6 +479,16 @@ namespace ShareX.Properties {
         public static string ApplicationSettingsForm_cbStartWithWindows_Text {
             get {
                 return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For settings to take effect ShareX needs to be reopened from Steam..
+        /// </summary>
+        public static string ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_ {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effe" +
+                        "ct_ShareX_needs_to_be_reopened_from_Steam_", resourceCulture);
             }
         }
         
@@ -1410,7 +1410,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap image_resize_actual {
             get {
-                object obj = ResourceManager.GetObject("image-resize-actual", resourceCulture);
+                object obj = ResourceManager.GetObject("image_resize_actual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

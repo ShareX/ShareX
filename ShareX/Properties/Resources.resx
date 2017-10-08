@@ -948,7 +948,7 @@ Middle click to close</value>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
     <value>Start screen color picker</value>
   </data>
-  <data name="image-resize-actual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="image_resize_actual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-resize-actual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="it" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -961,7 +961,7 @@ Middle click to close</value>
     <value>Input text to encode</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
-    <value>Startup has been disabled in Task Manager.</value>
+    <value>Startup has been disabled in Task Manager</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Run ShareX when Windows starts</value>
