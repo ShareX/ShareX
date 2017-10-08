@@ -828,6 +828,19 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        public static long GetFileSize(string path)
+        {
+            try
+            {
+                return new FileInfo(path).Length;
+            }
+            catch
+            {
+            }
+
+            return -1;
+        }
+
         public static void CreateDirectoryFromDirectoryPath(string path)
         {
             if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
