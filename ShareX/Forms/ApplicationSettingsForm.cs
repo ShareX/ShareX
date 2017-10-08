@@ -256,15 +256,23 @@ namespace ShareX
             cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_Text;
             cbStartWithWindows.Enabled = false;
 
-            StartupTaskState state = StartupManagerFactory.StartupManager.State;
-            cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
-            if (state == StartupTaskState.DisabledByUser)
+            try
             {
-                cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                StartupTaskState state = StartupManagerFactory.StartupManager.State;
+                cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+
+                if (state == StartupTaskState.DisabledByUser)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
+                else
+                {
+                    cbStartWithWindows.Enabled = true;
+                }
             }
-            else
+            catch (Exception e)
             {
-                cbStartWithWindows.Enabled = true;
+                e.ShowError();
             }
 
             ready = true;
@@ -397,8 +405,15 @@ namespace ShareX
         {
             if (ready)
             {
-                StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
-                UpdateStartWithWindows();
+                try
+                {
+                    StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                    UpdateStartWithWindows();
+                }
+                catch (Exception ex)
+                {
+                    ex.ShowError();
+                }
             }
         }
 
