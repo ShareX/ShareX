@@ -217,8 +217,6 @@ namespace ShareX.UploadersLib
                 oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
-            pgFlickrSettings.SelectedObject = Config.FlickrSettings;
-
             #endregion
 
             #region Photobucket

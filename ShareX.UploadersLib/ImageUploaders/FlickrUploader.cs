@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new FlickrUploader(config.FlickrOAuthInfo);
+            return new FlickrUploader(config.FlickrOAuthInfo, config.FlickrSettings);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFlickr;
@@ -85,6 +86,21 @@ namespace ShareX.UploadersLib.ImageUploaders
             return GetAccessToken("https://www.flickr.com/services/oauth/access_token", AuthInfo);
         }
 
+        public FlickrPhotosGetSizesResponse PhotosGetSizes(string photoid)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("nojsoncallback", "1");
+            args.Add("format", "json");
+            args.Add("method", "flickr.photos.getSizes");
+            args.Add("photo_id", photoid);
+
+            string query = OAuthManager.GenerateQuery("https://api.flickr.com/services/rest", args, HttpMethod.POST, AuthInfo);
+
+            string response = SendRequest(HttpMethod.GET, query);
+
+            return JsonConvert.DeserializeObject<FlickrPhotosGetSizesResponse>(response);
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             string url = "https://up.flickr.com/services/upload/";
@@ -109,11 +125,11 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 XElement xele = ParseResponse(result.Response, "photoid");
 
-                if (null != xele)
+                if (xele != null)
                 {
                     string photoid = xele.Value;
-                    //string url = URLHelpers.CombineURL(GetPhotosLink(), photoid);
-                    //result.URL = URLHelpers.CombineURL(url, "sizes/o");
+                    FlickrPhotosGetSizesResponse photos = PhotosGetSizes(photoid);
+                    result.URL = photos?.sizes?.size[photos.sizes.size.Length - 1].source;
                 }
             }
 
@@ -144,38 +160,6 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             return null;
-        }
-    }
-
-    public class FlickrAuthInfo
-    {
-        [Description("Token string"), ReadOnly(true), PasswordPropertyText(true)]
-        public string Token { get; set; }
-
-        [Description("Permission"), ReadOnly(true)]
-        public string Permission { get; set; }
-
-        [Description("User ID that can be used in a URL")]
-        public string UserID { get; set; }
-
-        [Description("Your Flickr username"), ReadOnly(true)]
-        public string Username { get; set; }
-
-        [Description("Full name"), ReadOnly(true)]
-        public string Fullname { get; set; }
-
-        public FlickrAuthInfo()
-        {
-        }
-
-        public FlickrAuthInfo(XElement element)
-        {
-            Token = element.GetElementValue("token");
-            Permission = element.GetElementValue("perms");
-            XElement user = element.Element("user");
-            UserID = user.GetAttributeValue("nsid");
-            Username = user.GetAttributeValue("username");
-            Fullname = user.GetAttributeValue("fullname");
         }
     }
 
@@ -236,20 +220,27 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string Hidden { get; set; }
     }
 
-    public enum FlickrPermission
+    public class FlickrPhotosGetSizesResponse
     {
-        None,
-        /// <summary>
-        /// Permission to read private information
-        /// </summary>
-        Read,
-        /// <summary>
-        /// Permission to add, edit and delete photo metadata (includes 'read')
-        /// </summary>
-        Write,
-        /// <summary>
-        /// Permission to delete photos (includes 'write' and 'read')
-        /// </summary>
-        Delete
+        public FlickrPhotosGetSizesSizes sizes { get; set; }
+        public string stat { get; set; }
+    }
+
+    public class FlickrPhotosGetSizesSizes
+    {
+        public int canblog { get; set; }
+        public int canprint { get; set; }
+        public int candownload { get; set; }
+        public FlickrPhotosGetSizesSize[] size { get; set; }
+    }
+
+    public class FlickrPhotosGetSizesSize
+    {
+        public string label { get; set; }
+        public int width { get; set; }
+        public int height { get; set; }
+        public string source { get; set; }
+        public string url { get; set; }
+        public string media { get; set; }
     }
 }
