@@ -129,7 +129,18 @@ namespace ShareX.UploadersLib.ImageUploaders
                 {
                     string photoid = xele.Value;
                     FlickrPhotosGetSizesResponse photos = PhotosGetSizes(photoid);
-                    result.URL = photos?.sizes?.size[photos.sizes.size.Length - 1].source;
+                    FlickrPhotosGetSizesSize photo = photos?.sizes?.size?[photos.sizes.size.Length - 1];
+                    if (photo != null)
+                    {
+                        if (Settings.DirectLink)
+                        {
+                            result.URL = photo.source;
+                        }
+                        else
+                        {
+                            result.URL = photo.url;
+                        }
+                    }
                 }
             }
 
@@ -165,57 +176,32 @@ namespace ShareX.UploadersLib.ImageUploaders
 
     public class FlickrSettings
     {
-        /// <summary>
-        /// The title of the photo.
-        /// </summary>
+        public bool DirectLink { get; set; } = true;
+
         [Description("The title of the photo.")]
         public string Title { get; set; }
 
-        /// <summary>
-        /// A description of the photo. May contain some limited HTML.
-        /// </summary>
         [Description("A description of the photo. May contain some limited HTML.")]
         public string Description { get; set; }
 
-        /// <summary>
-        /// A space-seperated list of tags to apply to the photo.
-        /// </summary>
         [Description("A space-seperated list of tags to apply to the photo.")]
         public string Tags { get; set; }
 
-        /// <summary>
-        /// Set to 0 for no, 1 for yes. Specifies who can view the photo.
-        /// </summary>
         [Description("Set to 0 for no, 1 for yes. Specifies who can view the photo.")]
         public string IsPublic { get; set; }
 
-        /// <summary>
-        /// Set to 0 for no, 1 for yes. Specifies who can view the photo.
-        /// </summary>
         [Description("Set to 0 for no, 1 for yes. Specifies who can view the photo.")]
         public string IsFriend { get; set; }
 
-        /// <summary>
-        /// Set to 0 for no, 1 for yes. Specifies who can view the photo.
-        /// </summary>
         [Description("Set to 0 for no, 1 for yes. Specifies who can view the photo.")]
         public string IsFamily { get; set; }
 
-        /// <summary>
-        /// Set to 1 for Safe, 2 for Moderate, or 3 for Restricted.
-        /// </summary>
         [Description("Set to 1 for Safe, 2 for Moderate, or 3 for Restricted.")]
         public string SafetyLevel { get; set; }
 
-        /// <summary>
-        /// Set to 1 for Photo, 2 for Screenshot, or 3 for Other.
-        /// </summary>
         [Description("Set to 1 for Photo, 2 for Screenshot, or 3 for Other.")]
         public string ContentType { get; set; }
 
-        /// <summary>
-        /// Set to 1 to keep the photo in global search results, 2 to hide from public searches.
-        /// </summary>
         [Description("Set to 1 to keep the photo in global search results, 2 to hide from public searches.")]
         public string Hidden { get; set; }
     }

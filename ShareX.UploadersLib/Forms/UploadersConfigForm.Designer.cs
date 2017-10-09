@@ -602,6 +602,7 @@
             this.lblTinyPicUsername = new System.Windows.Forms.Label();
             this.btnTinyPicOpenMyImages = new System.Windows.Forms.Button();
             this.tpFlickr = new System.Windows.Forms.TabPage();
+            this.cbFlickrDirectLink = new System.Windows.Forms.CheckBox();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
             this.tpPhotobucket = new System.Windows.Forms.TabPage();
             this.gbPhotobucketAlbumPath = new System.Windows.Forms.GroupBox();
@@ -4953,10 +4954,18 @@
             // 
             // tpFlickr
             // 
+            this.tpFlickr.Controls.Add(this.cbFlickrDirectLink);
             this.tpFlickr.Controls.Add(this.oauthFlickr);
             resources.ApplyResources(this.tpFlickr, "tpFlickr");
             this.tpFlickr.Name = "tpFlickr";
             this.tpFlickr.UseVisualStyleBackColor = true;
+            // 
+            // cbFlickrDirectLink
+            // 
+            resources.ApplyResources(this.cbFlickrDirectLink, "cbFlickrDirectLink");
+            this.cbFlickrDirectLink.Name = "cbFlickrDirectLink";
+            this.cbFlickrDirectLink.UseVisualStyleBackColor = true;
+            this.cbFlickrDirectLink.CheckedChanged += new System.EventHandler(this.cbFlickrDirectLink_CheckedChanged);
             // 
             // oauthFlickr
             // 
@@ -5453,6 +5462,7 @@
             this.tpTinyPic.ResumeLayout(false);
             this.tpTinyPic.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
+            this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.PerformLayout();
@@ -6092,5 +6102,6 @@
         private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
         private System.Windows.Forms.Button btnPaste_eeGetUserKey;
         private OAuthControl oauthFlickr;
+        private System.Windows.Forms.CheckBox cbFlickrDirectLink;
     }
 }

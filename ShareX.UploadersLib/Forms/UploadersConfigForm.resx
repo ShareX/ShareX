@@ -14849,6 +14849,33 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbFlickrDirectLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFlickrDirectLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 224</value>
+  </data>
+  <data name="cbFlickrDirectLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="cbFlickrDirectLink.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Use direct link</value>
+  </data>
+  <data name="&gt;&gt;cbFlickrDirectLink.Name" xml:space="preserve">
+    <value>cbFlickrDirectLink</value>
+  </data>
+  <data name="&gt;&gt;cbFlickrDirectLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFlickrDirectLink.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;cbFlickrDirectLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="oauthFlickr.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -14868,7 +14895,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tpFlickr.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

@@ -217,6 +217,8 @@ namespace ShareX.UploadersLib
                 oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
+            cbFlickrDirectLink.Checked = Config.FlickrSettings.DirectLink;
+
             #endregion
 
             #region Photobucket
@@ -1031,6 +1033,11 @@ namespace ShareX.UploadersLib
         private void oauthFlickr_ClearButtonClicked()
         {
             Config.FlickrOAuthInfo = null;
+        }
+
+        private void cbFlickrDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.FlickrSettings.DirectLink = cbFlickrDirectLink.Checked;
         }
 
         #endregion Flickr
