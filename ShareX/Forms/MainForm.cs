@@ -203,9 +203,7 @@ namespace ShareX
 
             niTray.Visible = Program.Settings.ShowTray;
 
-            flpPatreon.Visible = Program.Settings.ShowPatreonButton;
-            flpDiscord.Visible = Program.Settings.ShowDiscordButton;
-
+            TaskManager.UpdateMainFormTip();
             TaskManager.RecentManager.InitItems();
 
             bool isPositionChanged = false;

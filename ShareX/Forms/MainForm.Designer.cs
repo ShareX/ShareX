@@ -2254,7 +2254,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
-        private System.Windows.Forms.FlowLayoutPanel flpPatreon;
         private System.Windows.Forms.PictureBox pbPatreonOpen;
         private System.Windows.Forms.PictureBox pbPatreonHide;
         private System.Windows.Forms.ToolTip ttMain;
@@ -2278,9 +2277,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
         private System.Windows.Forms.ToolStripSeparator tssCopy6;
-        private System.Windows.Forms.FlowLayoutPanel flpCommunity;
-        private System.Windows.Forms.FlowLayoutPanel flpDiscord;
         private System.Windows.Forms.PictureBox pbDiscordOpen;
         private System.Windows.Forms.PictureBox pbDiscordHide;
+        public System.Windows.Forms.FlowLayoutPanel flpCommunity;
+        public System.Windows.Forms.FlowLayoutPanel flpPatreon;
+        public System.Windows.Forms.FlowLayoutPanel flpDiscord;
     }
 }
