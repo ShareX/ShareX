@@ -1498,6 +1498,8 @@
     <None Include="Resources\Exclamation-16.png" />
     <None Include="Resources\image-resize-actual.png" />
     <None Include="Resources\it.png" />
+    <None Include="Resources\Discord_Button_01.png" />
+    <None Include="Resources\Discord_Button_02.png" />
     <Content Include="Resources\tw.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
