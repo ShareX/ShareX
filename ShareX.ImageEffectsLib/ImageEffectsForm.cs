@@ -141,6 +141,8 @@ namespace ShareX.ImageEffectsLib
                 cbPresets.SelectedIndex = SelectedPresetIndex;
             }
 
+            UpdateControlStates();
+
             pauseUpdate = false;
         }
 
