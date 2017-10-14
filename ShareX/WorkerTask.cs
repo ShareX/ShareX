@@ -566,7 +566,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
-                tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);
+                tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings.ImageSettingsReference);
 
                 if (tempImage == null)
                 {
