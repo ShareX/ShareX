@@ -361,7 +361,12 @@ namespace ShareX.UploadersLib
             if (contentLength > 0)
             {
                 request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
-                request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+
+                if (method == HttpMethod.GET)
+                {
+                    request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                }
+
                 request.ContentLength = contentLength;
                 request.Pipelined = false;
                 request.Timeout = -1;
