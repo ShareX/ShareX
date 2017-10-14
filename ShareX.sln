@@ -39,8 +39,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.NativeMessagingHost"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.DesktopBridgeHelper", "ShareX.DesktopBridgeHelper\ShareX.DesktopBridgeHelper.csproj", "{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ShareX.WindowsStore", "ShareX.WindowsStore\ShareX.WindowsStore.wapproj", "{7549CD7F-C276-45E7-BEDC-95C7680FAED1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,9 +161,7 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.ActiveCfg = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Steam|Any CPU.ActiveCfg = Release|Any CPU
@@ -173,21 +169,11 @@ Global
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.Steam|Any CPU.ActiveCfg = Release|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStore|Any CPU.Deploy.0 = Release|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
-		{7549CD7F-C276-45E7-BEDC-95C7680FAED1}.WindowsStoreDebug|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEACF1C2-28EE-44DF-B55E-2234F6137272}
-		RESX_AutoCreateNewLanguageFiles = False
 	EndGlobalSection
 EndGlobal
