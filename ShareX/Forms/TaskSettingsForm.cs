@@ -366,7 +366,7 @@ namespace ShareX
             {
                 foreach (WatchFolderSettings watchFolder in TaskSettings.WatchFolderList)
                 {
-                    AddWatchFolder(watchFolder);
+                    WatchFolderAdd(watchFolder);
                 }
             }
 
@@ -1424,6 +1424,41 @@ namespace ShareX
 
         #region Watch folders
 
+        private void WatchFolderAdd(WatchFolderSettings watchFolderSetting)
+        {
+            if (watchFolderSetting != null)
+            {
+                Program.WatchFolderManager.AddWatchFolder(watchFolderSetting, TaskSettings);
+
+                ListViewItem lvi = new ListViewItem(watchFolderSetting.FolderPath ?? "");
+                lvi.Tag = watchFolderSetting;
+                lvi.SubItems.Add(watchFolderSetting.Filter ?? "");
+                lvi.SubItems.Add(watchFolderSetting.IncludeSubdirectories.ToString());
+                lvWatchFolderList.Items.Add(lvi);
+            }
+        }
+
+        private void WatchFolderEditSelected()
+        {
+            if (lvWatchFolderList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvWatchFolderList.SelectedItems[0];
+                WatchFolderSettings watchFolder = lvi.Tag as WatchFolderSettings;
+
+                using (WatchFolderForm form = new WatchFolderForm(watchFolder))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        lvi.Text = watchFolder.FolderPath ?? "";
+                        lvi.SubItems[1].Text = watchFolder.Filter ?? "";
+                        lvi.SubItems[2].Text = watchFolder.IncludeSubdirectories.ToString();
+
+                        Program.WatchFolderManager.UpdateWatchFolderState(watchFolder);
+                    }
+                }
+            }
+        }
+
         private void cbWatchFolderEnabled_CheckedChanged(object sender, EventArgs e)
         {
             if (loaded)
@@ -1443,42 +1478,14 @@ namespace ShareX
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    AddWatchFolder(form.WatchFolder);
+                    WatchFolderAdd(form.WatchFolder);
                 }
             }
         }
 
-        private void lvWatchFolderList_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btnWatchFolderEdit_Click(object sender, EventArgs e)
         {
-            if (lvWatchFolderList.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvWatchFolderList.SelectedItems[0];
-                WatchFolderSettings watchFolder = lvi.Tag as WatchFolderSettings;
-
-                using (WatchFolderForm form = new WatchFolderForm(watchFolder))
-                {
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        lvi.Text = watchFolder.FolderPath ?? "";
-                        lvi.SubItems[1].Text = watchFolder.Filter ?? "";
-                        lvi.SubItems[2].Text = watchFolder.IncludeSubdirectories.ToString();
-                    }
-                }
-            }
-        }
-
-        private void AddWatchFolder(WatchFolderSettings watchFolderSetting)
-        {
-            if (watchFolderSetting != null)
-            {
-                Program.WatchFolderManager.AddWatchFolder(watchFolderSetting, TaskSettings);
-
-                ListViewItem lvi = new ListViewItem(watchFolderSetting.FolderPath ?? "");
-                lvi.Tag = watchFolderSetting;
-                lvi.SubItems.Add(watchFolderSetting.Filter ?? "");
-                lvi.SubItems.Add(watchFolderSetting.IncludeSubdirectories.ToString());
-                lvWatchFolderList.Items.Add(lvi);
-            }
+            WatchFolderEditSelected();
         }
 
         private void btnWatchFolderRemove_Click(object sender, EventArgs e)
@@ -1490,6 +1497,11 @@ namespace ShareX
                 Program.WatchFolderManager.RemoveWatchFolder(watchFolderSetting);
                 lvWatchFolderList.Items.Remove(lvi);
             }
+        }
+
+        private void lvWatchFolderList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            WatchFolderEditSelected();
         }
 
         #endregion Watch folders
