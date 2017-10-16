@@ -292,7 +292,7 @@ namespace ShareX
             SettingManager.SaveAllSettings();
             SettingManager.BackupSettings();
 
-            DebugHelper.Logger.Async = false;
+            DebugHelper.Logger.AsyncWrite = false;
             DebugHelper.WriteLine("ShareX closing.");
         }
 
