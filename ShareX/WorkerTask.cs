@@ -837,6 +837,13 @@ namespace ShareX
             if (uploader != null)
             {
                 uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
+
+                if (Program.Settings.VerboseRequestLogs)
+                {
+                    uploader.VerboseLogs = true;
+                    uploader.VerboseLogsPath = Program.RequestLogsFilePath;
+                }
+
                 uploader.ProgressChanged += uploader_ProgressChanged;
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)

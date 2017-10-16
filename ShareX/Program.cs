@@ -166,6 +166,8 @@ namespace ShareX
             }
         }
 
+        public static string RequestLogsFilePath => Path.Combine(LogsFolder, "ShareX-Request-Logs.txt");
+
         public static string ScreenshotsParentFolder
         {
             get
