@@ -40,13 +40,13 @@ namespace ShareX.HelpersLib
         public string MessageFormat { get; set; } = "{0:yyyy-MM-dd HH:mm:ss.fff} - {1}";
         public bool AsyncWrite { get; set; } = true;
         public bool DebugWrite { get; set; } = true;
-        public bool StoreInMemory { get; set; } = true;
+        public bool StringWrite { get; set; } = true;
         public bool FileWrite { get; set; } = false;
         public string LogFilePath { get; private set; }
 
         private readonly object loggerLock = new object();
-        private StringBuilder sbMessages = new StringBuilder();
         private ConcurrentQueue<string> messageQueue = new ConcurrentQueue<string>();
+        private StringBuilder sbMessages = new StringBuilder();
 
         public Logger()
         {
@@ -71,23 +71,23 @@ namespace ShareX.HelpersLib
         {
             lock (loggerLock)
             {
-                if (messageQueue.TryDequeue(out string message))
+                while (messageQueue.TryDequeue(out string message))
                 {
                     if (DebugWrite)
                     {
-                        Debug.WriteLine(message);
+                        Debug.Write(message);
                     }
 
-                    if (StoreInMemory && sbMessages != null)
+                    if (StringWrite && sbMessages != null)
                     {
-                        sbMessages.AppendLine(message);
+                        sbMessages.Append(message);
                     }
 
                     if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
                     {
                         try
                         {
-                            File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
+                            File.AppendAllText(LogFilePath, message, Encoding.UTF8);
                         }
                         catch (Exception e)
                         {
@@ -100,12 +100,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void WriteLine(string message)
+        public void Write(string message)
         {
             if (message != null)
             {
                 message = string.Format(MessageFormat, DateTime.Now, message);
-
                 messageQueue.Enqueue(message);
 
                 if (AsyncWrite)
@@ -119,6 +118,16 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void Write(string format, params object[] args)
+        {
+            Write(string.Format(format, args));
+        }
+
+        public void WriteLine(string message)
+        {
+            Write(message + Environment.NewLine);
+        }
+
         public void WriteLine(string format, params object[] args)
         {
             WriteLine(string.Format(format, args));
@@ -126,7 +135,7 @@ namespace ShareX.HelpersLib
 
         public void WriteException(string exception, string message = "Exception")
         {
-            WriteLine("{0}:{1}{2}", message, Environment.NewLine, exception);
+            WriteLine($"{message}:{Environment.NewLine}{exception}");
         }
 
         public void WriteException(Exception exception, string message = "Exception")

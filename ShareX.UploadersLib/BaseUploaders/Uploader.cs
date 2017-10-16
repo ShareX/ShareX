@@ -599,7 +599,7 @@ namespace ShareX.UploadersLib
                 verboseLogger = new Logger(VerboseLogsPath)
                 {
                     MessageFormat = "Date: {0:yyyy-MM-dd HH:mm:ss.fff}\r\n{1}",
-                    StoreInMemory = false
+                    StringWrite = false
                 };
             }
 
@@ -628,7 +628,13 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            sb.AppendLine("Response:\r\n" + (response ?? ""));
+            sb.AppendLine("Response:");
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                sb.AppendLine(response);
+            }
+
             sb.Append(new string('-', 30));
 
             verboseLogger.WriteLine(sb.ToString());
