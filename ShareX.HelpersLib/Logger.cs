@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -45,6 +46,7 @@ namespace ShareX.HelpersLib
 
         private readonly object loggerLock = new object();
         private StringBuilder sbMessages = new StringBuilder();
+        private ConcurrentQueue<string> messageQueue = new ConcurrentQueue<string>();
 
         public Logger()
         {
@@ -65,35 +67,36 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void WriteLineInternal(string message)
+        private void ProcessMessageQueue()
         {
             lock (loggerLock)
             {
-                message = string.Format(MessageFormat, DateTime.Now, message);
-
-                if (DebugWrite)
+                if (messageQueue.TryDequeue(out string message))
                 {
-                    Debug.WriteLine(message);
-                }
-
-                if (StoreInMemory && sbMessages != null)
-                {
-                    sbMessages.AppendLine(message);
-                }
-
-                if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
-                {
-                    try
+                    if (DebugWrite)
                     {
-                        File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
+                        Debug.WriteLine(message);
                     }
-                    catch (Exception e)
-                    {
-                        Debug.WriteLine(e);
-                    }
-                }
 
-                OnMessageAdded(message);
+                    if (StoreInMemory && sbMessages != null)
+                    {
+                        sbMessages.AppendLine(message);
+                    }
+
+                    if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
+                    {
+                        try
+                        {
+                            File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine(e);
+                        }
+                    }
+
+                    OnMessageAdded(message);
+                }
             }
         }
 
@@ -101,13 +104,17 @@ namespace ShareX.HelpersLib
         {
             if (message != null)
             {
+                message = string.Format(MessageFormat, DateTime.Now, message);
+
+                messageQueue.Enqueue(message);
+
                 if (AsyncWrite)
                 {
-                    TaskEx.Run(() => WriteLineInternal(message));
+                    TaskEx.Run(() => ProcessMessageQueue());
                 }
                 else
                 {
-                    WriteLineInternal(message);
+                    ProcessMessageQueue();
                 }
             }
         }
