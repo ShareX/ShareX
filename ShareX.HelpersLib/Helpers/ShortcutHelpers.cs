@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using IWshRuntimeLibrary;
+using ShareX.HelpersLib.Properties;
 using Shell32;
 using System;
 using System.IO;
+using System.Windows.Forms;
 using File = System.IO.File;
 using Folder = Shell32.Folder;
 
@@ -42,12 +44,22 @@ namespace ShareX.HelpersLib
 
         public static bool SetShortcut(bool create, string shortcutPath, string targetPath = "", string arguments = "")
         {
-            if (create)
+            try
+            { 
+                if (create)
+                {
+                    return Create(shortcutPath, targetPath, arguments);
+                }
+
+                return Delete(shortcutPath);
+            }
+            catch (Exception e)
             {
-                return Create(shortcutPath, targetPath, arguments);
+                DebugHelper.WriteException(e);
+                e.ShowError();
             }
 
-            return Delete(shortcutPath);
+            return false;
         }
 
         public static bool CheckShortcut(Environment.SpecialFolder specialFolder, string checkPath)
@@ -73,21 +85,14 @@ namespace ShareX.HelpersLib
             {
                 Delete(shortcutPath);
 
-                try
-                {
-                    IWshShell wsh = new WshShellClass();
-                    IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(shortcutPath);
-                    shortcut.TargetPath = targetPath;
-                    shortcut.Arguments = arguments;
-                    shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
-                    shortcut.Save();
+                IWshShell wsh = new WshShellClass();
+                IWshShortcut shortcut = (IWshShortcut)wsh.CreateShortcut(shortcutPath);
+                shortcut.TargetPath = targetPath;
+                shortcut.Arguments = arguments;
+                shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
+                shortcut.Save();
 
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
+                return true;
             }
 
             return false;
@@ -151,7 +156,7 @@ namespace ShareX.HelpersLib
                 for (int i = 0; i < verbs.Count; i++)
                 {
                     FolderItemVerb verb = verbs.Item(i);
-                    string verbName = verb.Name.Replace(@"&", string.Empty);
+                    string verbName = verb.Name.Replace(@"&", "");
 
                     if ((pin && verbName.Equals("pin to taskbar", StringComparison.InvariantCultureIgnoreCase)) ||
                         (!pin && verbName.Equals("unpin from taskbar", StringComparison.InvariantCultureIgnoreCase)))

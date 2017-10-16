@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  * 
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -316,7 +316,7 @@ namespace Greenshot.Forms {
             this.top.Location = new System.Drawing.Point(312, 48);
             this.top.Name = "top";
             this.top.Size = new System.Drawing.Size(52, 31);
-            this.top.TabIndex = 9;
+            this.top.TabIndex = 10;
             this.top.Text = "Top side";
             this.top.UseVisualStyleBackColor = true;
             this.top.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
@@ -328,7 +328,7 @@ namespace Greenshot.Forms {
             this.right.Location = new System.Drawing.Point(360, 96);
             this.right.Name = "right";
             this.right.Size = new System.Drawing.Size(73, 17);
-            this.right.TabIndex = 10;
+            this.right.TabIndex = 11;
             this.right.Text = "Right side";
             this.right.UseVisualStyleBackColor = true;
             this.right.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
@@ -341,7 +341,7 @@ namespace Greenshot.Forms {
             this.bottom.Location = new System.Drawing.Point(304, 128);
             this.bottom.Name = "bottom";
             this.bottom.Size = new System.Drawing.Size(66, 31);
-            this.bottom.TabIndex = 11;
+            this.bottom.TabIndex = 12;
             this.bottom.Text = "Bottom side";
             this.bottom.UseVisualStyleBackColor = true;
             this.bottom.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
@@ -354,7 +354,7 @@ namespace Greenshot.Forms {
             this.left.Location = new System.Drawing.Point(248, 96);
             this.left.Name = "left";
             this.left.Size = new System.Drawing.Size(66, 17);
-            this.left.TabIndex = 12;
+            this.left.TabIndex = 13;
             this.left.Text = "Left side";
             this.left.UseVisualStyleBackColor = true;
             this.left.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
@@ -378,7 +378,7 @@ namespace Greenshot.Forms {
             this.all.Location = new System.Drawing.Point(248, 12);
             this.all.Name = "all";
             this.all.Size = new System.Drawing.Size(88, 17);
-            this.all.TabIndex = 22;
+            this.all.TabIndex = 9;
             this.all.Text = "Tear all sides";
             this.all.UseVisualStyleBackColor = true;
             this.all.CheckedChanged += new System.EventHandler(this.all_CheckedChanged);
@@ -388,6 +388,7 @@ namespace Greenshot.Forms {
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(454, 224);
             this.ControlBox = false;

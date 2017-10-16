@@ -150,20 +150,8 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Pencereler ve kontroller)</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Bölge (Dipnot)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Çokgen</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Serbest seçim</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
@@ -203,9 +191,6 @@
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Resim düzenleyici...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
@@ -299,12 +284,6 @@
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>URL paylaşım testi</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Bağış...</value>
-  </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>Hakkında...</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Hataları göster</value>
@@ -444,20 +423,8 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Pencereler ve kontroller)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Bölge (Dipnot)</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Çokgen</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Serbest seçim</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
@@ -497,9 +464,6 @@
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Resim düzenleyici...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
@@ -603,12 +567,6 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Son adresler</value>
   </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Otomatikleştirmek...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Otomatikleştirmek...</value>
-  </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Bölge (Saydam)</value>
   </data>
@@ -629,12 +587,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC istemcisi...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC istemcisi...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>
@@ -668,5 +620,14 @@
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
     <value>URL kısaltma testi</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Kolonları gizle</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
   </data>
 </root>

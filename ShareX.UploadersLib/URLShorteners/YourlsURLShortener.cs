@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,40 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class YourlsURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
+
+        public override Icon ServiceIcon => Resources.Yourls;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.YourlsAPIURL) && (!string.IsNullOrEmpty(config.YourlsSignature) ||
+                (!string.IsNullOrEmpty(config.YourlsUsername) && !string.IsNullOrEmpty(config.YourlsPassword)));
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new YourlsURLShortener
+            {
+                APIURL = config.YourlsAPIURL,
+                Signature = config.YourlsSignature,
+                Username = config.YourlsUsername,
+                Password = config.YourlsPassword
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYourls;
+    }
+
     public sealed class YourlsURLShortener : URLShortener
     {
         public string APIURL { get; set; }
@@ -63,7 +92,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 //arguments.Add("title", "");
                 arguments.Add("format", "simple");
 
-                result.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
+                result.Response = SendRequestMultiPart(APIURL, arguments);
                 result.ShortenedURL = result.Response;
             }
 

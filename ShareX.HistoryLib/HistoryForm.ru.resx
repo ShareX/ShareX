@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>История</value>
+    <value>ShareX - История</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Фильтры</value>
@@ -150,15 +150,6 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>По типу файла:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Картинка</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Текст</value>
-  </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>По хосту:</value>
   </data>
@@ -168,31 +159,10 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Снять фильтры</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Регистр</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Текущий язык</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Постоянный язык (English)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Порядковый (English)</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Дата и время</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Имя файла</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Хост</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Тип</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
   </data>
 </root>

@@ -153,4 +153,16 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Depuis un fichier...</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Supprimer le préréglage</value>
+  </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>Nouveau préréglage</value>
+  </data>
 </root>

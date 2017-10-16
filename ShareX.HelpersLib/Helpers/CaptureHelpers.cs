@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
 
         public static Rectangle GetScreenWorkingArea()
         {
-            return SystemInformation.WorkingArea;
+            return Screen.AllScreens.Select(x => x.WorkingArea).Combine();
         }
 
         public static Rectangle GetScreenBounds2()
@@ -76,12 +76,17 @@ namespace ShareX.HelpersLib
 
         public static Rectangle GetScreenBounds4()
         {
-            return Screen.AllScreens.Aggregate(Rectangle.Empty, (current, screen) => Rectangle.Union(current, screen.Bounds));
+            return Screen.AllScreens.Select(x => x.Bounds).Combine();
         }
 
         public static Rectangle GetActiveScreenBounds()
         {
             return Screen.FromPoint(GetCursorPosition()).Bounds;
+        }
+
+        public static Rectangle GetActiveScreenWorkingArea()
+        {
+            return Screen.FromPoint(GetCursorPosition()).WorkingArea;
         }
 
         public static Rectangle GetPrimaryScreenBounds()
@@ -221,28 +226,6 @@ namespace ShareX.HelpersLib
             return CreateRectangle(pos.X, pos.Y, pos2.X, pos2.Y);
         }
 
-        public static Rectangle FixRectangle(int x, int y, int width, int height)
-        {
-            if (width < 0)
-            {
-                x += width;
-                width = -width;
-            }
-
-            if (height < 0)
-            {
-                y += height;
-                height = -height;
-            }
-
-            return new Rectangle(x, y, width, height);
-        }
-
-        public static Rectangle FixRectangle(Rectangle rect)
-        {
-            return FixRectangle(rect.X, rect.Y, rect.Width, rect.Height);
-        }
-
         public static Point ProportionalPosition(Point pos, Point pos2)
         {
             Point newPosition = Point.Empty;
@@ -280,6 +263,16 @@ namespace ShareX.HelpersLib
             }
 
             return newPosition;
+        }
+
+        public static Point SnapPositionToDegree(Point pos, Point pos2, float degree, float startDegree)
+        {
+            float angle = MathHelpers.LookAtRadian(pos, pos2);
+            float startAngle = MathHelpers.DegreeToRadian(startDegree);
+            float snapAngle = MathHelpers.DegreeToRadian(degree);
+            float newAngle = (float)Math.Round((angle + startAngle) / snapAngle) * snapAngle - startAngle;
+            float distance = MathHelpers.Distance(pos, pos2);
+            return (Point)(pos + MathHelpers.RadianToVector2(newAngle, distance));
         }
 
         public static Point CalculateNewPosition(Point posOnClick, Point posCurrent, Size size)

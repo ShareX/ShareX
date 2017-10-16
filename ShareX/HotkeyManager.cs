@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -46,17 +46,26 @@ namespace ShareX
 
         private HotkeyForm hotkeyForm;
 
-        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys, bool registerHotkeys)
+        public HotkeyManager(HotkeyForm form)
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
             hotkeyForm.FormClosed += (sender, e) => hotkeyForm.InvokeSafe(() => UnregisterAllHotkeys(false));
+        }
+
+        public void UpdateHotkeys(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
+        {
+            if (Hotkeys != null)
+            {
+                UnregisterAllHotkeys();
+            }
 
             Hotkeys = hotkeys;
 
-            if (registerHotkeys)
+            RegisterAllHotkeys();
+
+            if (showFailedHotkeys)
             {
-                RegisterAllHotkeys();
                 ShowFailedHotkeys();
             }
         }
@@ -141,11 +150,14 @@ namespace ShareX
 
         public void UnregisterAllHotkeys(bool removeFromList = true, bool temporary = false)
         {
-            foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
+            if (Hotkeys != null)
             {
-                if (!temporary || (temporary && hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys))
+                foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
                 {
-                    UnregisterHotkey(hotkeySetting, removeFromList);
+                    if (!temporary || hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys)
+                    {
+                        UnregisterHotkey(hotkeySetting, removeFromList);
+                    }
                 }
             }
         }
@@ -208,10 +220,11 @@ namespace ShareX
         {
             return new List<HotkeySettings>
             {
-                new HotkeySettings(HotkeyType.WindowRectangle, Keys.Control | Keys.PrintScreen),
+                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen)
+                new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen),
+                new HotkeySettings(HotkeyType.ScreenRecorderGIF, Keys.Control | Keys.Shift | Keys.PrintScreen)
             };
         }
     }

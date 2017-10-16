@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -35,7 +35,7 @@ namespace Greenshot.Drawing.Fields
     [Serializable]
     public abstract class AbstractFieldHolder : IFieldHolder
     {
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
 
         /// <summary>
         /// called when a field's value has changed
@@ -48,15 +48,11 @@ namespace Greenshot.Drawing.Fields
             remove { fieldChanged -= value; }
         }
 
-        // we keep to Coolections of our fields, dictionary for quick access, list for serialization
+        // we keep two Collections of our fields, dictionary for quick access, list for serialization
         // this allows us to use default serialization
         [NonSerialized]
         private Dictionary<FieldType, Field> fieldsByType = new Dictionary<FieldType, Field>();
-        private List<Field> fields = new List<Field>();
-
-        public AbstractFieldHolder()
-        {
-        }
+        private readonly List<Field> fields = new List<Field>();
 
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)

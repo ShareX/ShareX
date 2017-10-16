@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -23,15 +23,17 @@ using Greenshot.IniFile;
 using Greenshot.Plugin;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace GreenshotPlugin.Core
 {
     public enum ClipboardFormat
     {
-        PNG, DIB, HTML, HTMLDATAURL, BITMAP
+        PNG, DIB, HTML, HTMLDATAURL, BITMAP, DIBV5
     }
     public enum OutputFormat
     {
@@ -62,8 +64,10 @@ namespace GreenshotPlugin.Core
     /// Description of CoreConfiguration.
     /// </summary>
     [IniSection("Core", Description = "Greenshot core configuration")]
-    public class CoreConfiguration : IniSection
+    public class CoreConfiguration : IniSection, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         [IniProperty("Language", Description = "The language in IETF format (e.g. en-US)")]
         public string Language;
 
@@ -118,8 +122,10 @@ namespace GreenshotPlugin.Core
         public OutputFormat OutputFileFormat = OutputFormat.png;
         [IniProperty("OutputFileReduceColors", Description = "If set to true, than the colors of the output file are reduced to 256 (8-bit) colors", DefaultValue = "false")]
         public bool OutputFileReduceColors;
-        [IniProperty("OutputFileAutoReduceColors", Description = "If set to true the amount of colors is counted and if smaller than 256 the color reduction is automatically used.", DefaultValue = "true")]
+        [IniProperty("OutputFileAutoReduceColors", Description = "If set to true the amount of colors is counted and if smaller than 256 the color reduction is automatically used.", DefaultValue = "false")]
         public bool OutputFileAutoReduceColors;
+        [IniProperty("OutputFileReduceColorsTo", Description = "Amount of colors to reduce to, when reducing", DefaultValue = "256")]
+        public int OutputFileReduceColorsTo;
 
         [IniProperty("OutputFileCopyPathToClipboard", Description = "When saving a screenshot, copy the path to the clipboard?", DefaultValue = "true")]
         public bool OutputFileCopyPathToClipboard;
@@ -172,7 +178,7 @@ namespace GreenshotPlugin.Core
         public List<string> IncludePlugins;
         [IniProperty("ExcludePlugins", Description = "Comma separated list of Plugins which are NOT allowed.")]
         public List<string> ExcludePlugins;
-        [IniProperty("ExcludeDestinations", Description = "Comma separated list of destinations which should be disabled.", DefaultValue = "OneNote")]
+        [IniProperty("ExcludeDestinations", Description = "Comma separated list of destinations which should be disabled.")]
         public List<string> ExcludeDestinations;
 
         [IniProperty("UpdateCheckInterval", Description = "How many days between every update check? (0=no checks)", DefaultValue = "1")]
@@ -192,13 +198,16 @@ namespace GreenshotPlugin.Core
         [IniProperty("ThumnailPreview", Description = "Enable/disable thumbnail previews", DefaultValue = "True")]
         public bool ThumnailPreview;
 
-        [IniProperty("NoGDICaptureForProduct", Description = "List of products for which GDI capturing doesn't work.", DefaultValue = "IntelliJ,IDEA")]
+        [IniProperty("NoGDICaptureForProduct", Description = "List of productnames for which GDI capturing is skipped (using fallback).", DefaultValue = "IntelliJ IDEA")]
         public List<string> NoGDICaptureForProduct;
-        [IniProperty("NoDWMCaptureForProduct", Description = "List of products for which DWM capturing doesn't work.", DefaultValue = "Citrix,ICA,Client")]
+        [IniProperty("NoDWMCaptureForProduct", Description = "List of productnames for which DWM capturing is skipped (using fallback).", DefaultValue = "Citrix ICA Client")]
         public List<string> NoDWMCaptureForProduct;
 
         [IniProperty("OptimizeForRDP", Description = "Make some optimizations for usage with remote desktop", DefaultValue = "False")]
         public bool OptimizeForRDP;
+        [IniProperty("DisableRDPOptimizing", Description = "Disable all optimizations for usage with remote desktop", DefaultValue = "False")]
+        public bool DisableRDPOptimizing;
+
         [IniProperty("MinimizeWorkingSetSize", Description = "Optimize memory footprint, but with a performance penalty!", DefaultValue = "False")]
         public bool MinimizeWorkingSetSize;
 
@@ -234,6 +243,8 @@ namespace GreenshotPlugin.Core
 
         [IniProperty("ZoomerEnabled", Description = "Sets if the zoomer is enabled", DefaultValue = "True")]
         public bool ZoomerEnabled;
+        [IniProperty("ZoomerOpacity", Description = "Specify the transparency for the zoomer, from 0-1 (where 1 is no transparency and 0 is complete transparent. An usefull setting would be 0.7)", DefaultValue = "1")]
+        public float ZoomerOpacity;
 
         [IniProperty("MaxMenuItemLength", Description = "Maximum length of submenu items in the context menu, making this longer might cause context menu issues on dual screen systems.", DefaultValue = "25")]
         public int MaxMenuItemLength;
@@ -245,8 +256,98 @@ namespace GreenshotPlugin.Core
         [IniProperty("MailApiBCC", Description = "The 'BCC' field for the email destination (settings for Outlook can be found under the Office section)", DefaultValue = "")]
         public string MailApiBCC;
 
-        // Specifies what THIS build is
-        public BuildStates BuildState = BuildStates.UNSTABLE;
+        [IniProperty("OptimizePNGCommand", Description = "Optional command to execute on a temporary PNG file, the command should overwrite the file and Greenshot will read it back. Note: this command is also executed when uploading PNG's!", DefaultValue = "")]
+        public string OptimizePNGCommand;
+        [IniProperty("OptimizePNGCommandArguments", Description = "Arguments for the optional command to execute on a PNG, {0} is replaced by the temp-filename from Greenshot. Note: Temp-file is deleted afterwards by Greenshot.", DefaultValue = "\"{0}\"")]
+        public string OptimizePNGCommandArguments;
+
+        [IniProperty("LastSaveWithVersion", Description = "Version of Greenshot which created this .ini")]
+        public string LastSaveWithVersion;
+
+        [IniProperty("ProcessEXIFOrientation", Description = "When reading images from files or clipboard, use the EXIF information to correct the orientation", DefaultValue = "True")]
+        public bool ProcessEXIFOrientation;
+
+        [IniProperty("LastCapturedRegion", Description = "The last used region, for reuse in the capture last region")]
+        public Rectangle LastCapturedRegion;
+
+        private Size _iconSize;
+        [IniProperty("IconSize", Description = "Defines the size of the icons (e.g. for the buttons in the editor), default value 16,16 anything bigger will cause scaling", DefaultValue = "16,16")]
+        public Size IconSize
+        {
+            get
+            {
+                return _iconSize;
+            }
+            set
+            {
+                Size newSize = value;
+                if (newSize != Size.Empty)
+                {
+                    if (newSize.Width < 16)
+                    {
+                        newSize.Width = 16;
+                    }
+                    else if (newSize.Width > 256)
+                    {
+                        newSize.Width = 256;
+                    }
+                    newSize.Width = (newSize.Width / 8) * 8;
+                    if (newSize.Height < 16)
+                    {
+                        newSize.Height = 16;
+                    }
+                    else if (IconSize.Height > 256)
+                    {
+                        newSize.Height = 256;
+                    }
+                    newSize.Height = (newSize.Height / 8) * 8;
+                }
+                if (_iconSize != newSize)
+                {
+                    _iconSize = value;
+                    if (PropertyChanged != null)
+                    {
+                        PropertyChanged(this, new PropertyChangedEventArgs("IconSize"));
+                    }
+                }
+            }
+        }
+
+        [IniProperty("WebRequestTimeout", Description = "The connect timeout value for webrequets, these are seconds", DefaultValue = "100")]
+        public int WebRequestTimeout;
+        [IniProperty("WebRequestReadWriteTimeout", Description = "The read/write timeout value for webrequets, these are seconds", DefaultValue = "100")]
+        public int WebRequestReadWriteTimeout;
+
+        /// <summary>
+        /// Specifies what THIS build is
+        /// </summary>
+        public BuildStates BuildState
+        {
+            get
+            {
+                string informationalVersion = Application.ProductVersion;
+                if (informationalVersion != null)
+                {
+                    if (informationalVersion.ToLowerInvariant().Contains("-rc"))
+                    {
+                        return BuildStates.RELEASE_CANDIDATE;
+                    }
+                    if (informationalVersion.ToLowerInvariant().Contains("-unstable"))
+                    {
+                        return BuildStates.UNSTABLE;
+                    }
+                }
+                return BuildStates.RELEASE;
+            }
+        }
+
+        public bool UseLargeIcons
+        {
+            get
+            {
+                return IconSize.Width >= 32 || IconSize.Height >= 32;
+            }
+        }
 
         /// <summary>
         /// A helper method which returns true if the supplied experimental feature is enabled
@@ -354,12 +455,55 @@ namespace GreenshotPlugin.Core
         }
 
         /// <summary>
+        /// This method will be called before writing the configuration
+        /// </summary>
+        public override void BeforeSave()
+        {
+            try
+            {
+                // Store version, this can be used later to fix settings after an update
+                LastSaveWithVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            }
+            catch
+            {
+            }
+        }
+
+        /// <summary>
         /// This method will be called after reading the configuration, so eventually some corrections can be made
         /// </summary>
         public override void AfterLoad()
         {
             // Comment with releases
             // CheckForUnstable = true;
+
+            if (string.IsNullOrEmpty(LastSaveWithVersion))
+            {
+                try
+                {
+                    // Store version, this can be used later to fix settings after an update
+                    LastSaveWithVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+                }
+                catch
+                {
+                }
+                // Disable the AutoReduceColors as it causes issues with Mozzila applications and some others
+                OutputFileAutoReduceColors = false;
+            }
+
+            // Enable OneNote if upgrading from 1.1
+            if (ExcludeDestinations != null && ExcludeDestinations.Contains("OneNote"))
+            {
+                if (LastSaveWithVersion != null && LastSaveWithVersion.StartsWith("1.1"))
+                {
+                    ExcludeDestinations.Remove("OneNote");
+                }
+                else
+                {
+                    // Remove with the release
+                    ExcludeDestinations.Remove("OneNote");
+                }
+            }
 
             if (OutputDestinations == null)
             {
@@ -391,11 +535,12 @@ namespace GreenshotPlugin.Core
             if (NoGDICaptureForProduct != null)
             {
                 // Fix error in configuration
-                if (NoGDICaptureForProduct.Count == 1)
+                if (NoGDICaptureForProduct.Count >= 2)
                 {
-                    if ("intellij idea".Equals(NoGDICaptureForProduct[0]))
+                    if ("intellij".Equals(NoGDICaptureForProduct[0]) && "idea".Equals(NoGDICaptureForProduct[1]))
                     {
-                        NoGDICaptureForProduct[0] = "intellij,idea";
+                        NoGDICaptureForProduct.RemoveRange(0, 2);
+                        NoGDICaptureForProduct.Add("Intellij Idea");
                         IsDirty = true;
                     }
                 }
@@ -407,11 +552,12 @@ namespace GreenshotPlugin.Core
             if (NoDWMCaptureForProduct != null)
             {
                 // Fix error in configuration
-                if (NoDWMCaptureForProduct.Count == 1)
+                if (NoDWMCaptureForProduct.Count >= 3)
                 {
-                    if ("citrix ica client".Equals(NoDWMCaptureForProduct[0]))
+                    if ("citrix".Equals(NoDWMCaptureForProduct[0]) && "ica".Equals(NoDWMCaptureForProduct[1]) && "client".Equals(NoDWMCaptureForProduct[2]))
                     {
-                        NoDWMCaptureForProduct[0] = "citrix,ica,client";
+                        NoDWMCaptureForProduct.RemoveRange(0, 3);
+                        NoDWMCaptureForProduct.Add("Citrix ICA Client");
                         IsDirty = true;
                     }
                 }
@@ -428,6 +574,23 @@ namespace GreenshotPlugin.Core
             if (AutoCropDifference > 255)
             {
                 AutoCropDifference = 255;
+            }
+            if (OutputFileReduceColorsTo < 2)
+            {
+                OutputFileReduceColorsTo = 2;
+            }
+            if (OutputFileReduceColorsTo > 256)
+            {
+                OutputFileReduceColorsTo = 256;
+            }
+
+            if (WebRequestTimeout <= 10)
+            {
+                WebRequestTimeout = 100;
+            }
+            if (WebRequestReadWriteTimeout < 1)
+            {
+                WebRequestReadWriteTimeout = 100;
             }
         }
     }

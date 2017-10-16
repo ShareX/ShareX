@@ -124,7 +124,7 @@
     <value>Выйти</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;ОК</value>
+    <value>Продолжить</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Открыть журнал</value>
@@ -135,5 +135,8 @@
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Ошибка
 Ошибка 2</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
   </data>
 </root>

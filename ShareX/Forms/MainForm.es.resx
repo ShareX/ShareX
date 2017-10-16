@@ -147,23 +147,11 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rectángulo</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rectángulo (Objetos)</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectángulo (Anotar)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Rectángulo (Ligero)</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Rectángulo (Transparente)</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Polígono</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Dibujo a mano alzada</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Ultima región</value>
@@ -207,9 +195,6 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Pantalla de selector de color...</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Editor de imágenes...</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
@@ -224,9 +209,6 @@
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Regla...</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automatizar...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
@@ -305,12 +287,6 @@
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Prueba de compartir URL</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Donar...</value>
-  </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Mostrar errores</value>
@@ -447,23 +423,11 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Rectángulo</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rectángulo (Objetos)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectángulo (Anotar)</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Rectángulo (Ligero)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Rectángulo (Transparente)</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Polígono</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Dibujo a mano alzada</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Ultima región</value>
@@ -507,9 +471,6 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Pantalla de selector de color...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Editor de imágenes...</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efectos de imágenes...</value>
   </data>
@@ -524,9 +485,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Regla...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automatizar...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>

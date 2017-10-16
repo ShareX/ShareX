@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,13 +25,34 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MinusFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Minus;
+
+        public override Icon ServiceIcon => Resources.Minus;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.MinusConfig != null && config.MinusConfig.MinusUser != null;
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Minus(config.MinusConfig, config.MinusOAuth2Info);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMinus;
+    }
+
     public class Minus : FileUploader
     {
         private const string URL_HOST = "https://minus.com";
@@ -57,7 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("username", Config.Username);
             args.Add("password", Config.Password);
 
-            string response = SendRequest(HttpMethod.POST, URL_OAUTH_TOKEN, args);
+            string response = SendRequestMultiPart(URL_OAUTH_TOKEN, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -85,7 +106,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("scope", AuthInfo.Token.scope);
                 args.Add("refresh_token", AuthInfo.Token.refresh_token);
 
-                string response = SendRequest(HttpMethod.POST, URL_OAUTH_TOKEN, args);
+                string response = SendRequestMultiPart(URL_OAUTH_TOKEN, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -175,7 +196,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             MinusFolder dir;
 
-            string response = SendRequest(HttpMethod.POST, GetActiveUserFolderURL(), args);
+            string response = SendRequestMultiPart(GetActiveUserFolderURL(), args);
             if (!string.IsNullOrEmpty(response))
             {
                 dir = JsonConvert.DeserializeObject<MinusFolder>(response);
@@ -225,7 +246,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("caption", fileName);
             args.Add("filename", fileName);
 
-            UploadResult result = UploadData(stream, url, fileName, "file", args);
+            UploadResult result = SendRequestFile(url, stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
@@ -257,7 +278,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public enum MinusLinkType
+    public enum MinusLinkType // Localized
     {
         Direct,
         Page,

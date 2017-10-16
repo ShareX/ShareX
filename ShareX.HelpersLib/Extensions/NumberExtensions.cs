@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -69,6 +69,13 @@ namespace ShareX.HelpersLib
             return num;
         }
 
+        public static decimal Between(this decimal num, decimal min, decimal max)
+        {
+            if (num <= min) return min;
+            if (num >= max) return max;
+            return num;
+        }
+
         public static bool IsBetween(this int num, int min, int max)
         {
             return num >= min && num <= max;
@@ -127,7 +134,7 @@ namespace ShareX.HelpersLib
                 throw new ArgumentOutOfRangeException("radix", radix, string.Format("Radix has to be > 2 and < {0}", digits.Length));
             }
 
-            string result = string.Empty;
+            string result = "";
             int quotient = Math.Abs(value);
             while (0 < quotient)
             {
@@ -136,6 +143,11 @@ namespace ShareX.HelpersLib
                 quotient /= radix;
             }
             return result;
+        }
+
+        public static bool IsEvenNumber(this int num)
+        {
+            return num % 2 == 0;
         }
     }
 }

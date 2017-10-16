@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -50,10 +50,8 @@ namespace Greenshot.Drawing
 
         protected static readonly Color DefaultLineColor = Color.FromArgb(0, 150, 255);
 
-        private bool isMadeUndoable;
+        private bool _isMadeUndoable;
         private const int M11 = 0;
-        private const int M12 = 1;
-        private const int M21 = 2;
         private const int M22 = 3;
 
         protected EditStatus _defaultEditMode = EditStatus.DRAWING;
@@ -282,7 +280,7 @@ namespace Greenshot.Drawing
         protected Rectangle _boundsBeforeResize = Rectangle.Empty;
 
         [NonSerialized]
-        // "workbench" rectangle - used for calculatoing bounds during resizing (to be applied to this DrawableContainer afterwards)
+        // "workbench" rectangle - used for calculating bounds during resizing (to be applied to this DrawableContainer afterwards)
         protected RectangleF _boundsAfterResize = RectangleF.Empty;
 
         public Rectangle Bounds
@@ -383,7 +381,7 @@ namespace Greenshot.Drawing
             }
             if (horizontalAlignment == HorizontalAlignment.Center)
             {
-                Left = (_parent.Width / 2) - (Width / 2) - lineThickness / 2;
+                Left = _parent.Width / 2 - Width / 2 - lineThickness / 2;
             }
 
             if (verticalAlignment == VerticalAlignment.TOP)
@@ -396,7 +394,7 @@ namespace Greenshot.Drawing
             }
             if (verticalAlignment == VerticalAlignment.CENTER)
             {
-                Top = (_parent.Height / 2) - (Height / 2) - lineThickness / 2;
+                Top = _parent.Height / 2 - Height / 2 - lineThickness / 2;
             }
         }
 
@@ -569,7 +567,7 @@ namespace Greenshot.Drawing
             {
                 Status = EditStatus.MOVING;
             }
-            isMadeUndoable = false;
+            _isMadeUndoable = false;
         }
 
         private void GripperMouseUp(object sender, MouseEventArgs e)
@@ -579,7 +577,7 @@ namespace Greenshot.Drawing
             {
                 _boundsBeforeResize = Rectangle.Empty;
                 _boundsAfterResize = RectangleF.Empty;
-                isMadeUndoable = false;
+                _isMadeUndoable = false;
             }
             Status = EditStatus.IDLE;
             Invalidate();
@@ -598,10 +596,10 @@ namespace Greenshot.Drawing
             else if (Status.Equals(EditStatus.RESIZING))
             {
                 // check if we already made this undoable
-                if (!isMadeUndoable)
+                if (!_isMadeUndoable)
                 {
                     // don't allow another undo until we are finished with this move
-                    isMadeUndoable = true;
+                    _isMadeUndoable = true;
                     // Make undo-able
                     MakeBoundsChangeUndoable(false);
                 }
@@ -871,6 +869,8 @@ namespace Greenshot.Drawing
 
         public override int GetHashCode()
         {
+            // This actually doesn't make sense...
+            // Place the container in a list, and you can't find it :)
             return left.GetHashCode() ^ top.GetHashCode() ^ width.GetHashCode() ^ height.GetHashCode() ^ GetFields().GetHashCode();
         }
 

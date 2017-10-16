@@ -121,51 +121,57 @@
     <value>Alpha:</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
-    <value>Bleu:</value>
+    <value>Bleu :</value>
   </data>
   <data name="rbBrightness.Text" xml:space="preserve">
-    <value>Luminosité:</value>
+    <value>Luminosité :</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
   <data name="lblCyan.Text" xml:space="preserve">
-    <value>Cyan:</value>
+    <value>Cyan :</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>Décimal:</value>
+    <value>Code décimal :</value>
   </data>
   <data name="rbGreen.Text" xml:space="preserve">
-    <value>Vert:</value>
+    <value>Vert :</value>
   </data>
   <data name="rbHue.Text" xml:space="preserve">
-    <value>Teinte:</value>
+    <value>Teinte :</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
-    <value>Noir:</value>
+    <value>Noir :</value>
   </data>
   <data name="lblMagenta.Text" xml:space="preserve">
-    <value>Magenta:</value>
+    <value>Magenta :</value>
   </data>
   <data name="lblNew.Text" xml:space="preserve">
-    <value>Nouveau:</value>
+    <value>Nouvelle :</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="lblOld.Text" xml:space="preserve">
-    <value>Ancien:</value>
+    <value>Ancienne :</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
-    <value>Rouge:</value>
+    <value>Rouge :</value>
   </data>
   <data name="lblYellow.Text" xml:space="preserve">
-    <value>Jaune:</value>
+    <value>Jaune :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Sélecteur de couleur</value>
+    <value>ShareX - Sélecteur de couleurs</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
-    <value>Saturation:</value>
+    <value>Saturation :</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Code hexadécimal :</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparent</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,6 +51,9 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(false)]
+        public bool ManualButtonClick { get; set; }
+
         protected void OnColorChanged(Color color)
         {
             if (ColorChanged != null)
@@ -63,17 +66,17 @@ namespace ShareX.HelpersLib
         {
             base.OnMouseClick(mevent);
 
-            ShowColorDialog();
+            if (!ManualButtonClick)
+            {
+                ShowColorDialog();
+            }
         }
 
         public void ShowColorDialog()
         {
-            using (ColorPickerForm dialogColor = new ColorPickerForm(Color))
+            if (ColorPickerForm.PickColor(Color, out Color newColor))
             {
-                if (dialogColor.ShowDialog() == DialogResult.OK)
-                {
-                    Color = dialogColor.NewColor;
-                }
+                Color = newColor;
             }
         }
 
@@ -89,15 +92,18 @@ namespace ShareX.HelpersLib
 
             if (Color.A < 255)
             {
-                using (Image checker = ImageHelpers.CreateCheckers(boxSize, boxSize, Color.LightGray, Color.White))
+                using (Image checker = ImageHelpers.CreateCheckerPattern(boxSize, boxSize))
                 {
                     g.DrawImage(checker, boxRectangle);
                 }
             }
 
-            using (Brush brush = new SolidBrush(Color))
+            if (Color.A > 0)
             {
-                g.FillRectangle(brush, boxRectangle);
+                using (Brush brush = new SolidBrush(Color))
+                {
+                    g.FillRectangle(brush, boxRectangle);
+                }
             }
 
             g.DrawRectangleProper(Pens.DarkGray, boxRectangle);

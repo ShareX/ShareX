@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -19,8 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.IniFile;
+using Greenshot.Plugin;
 using GreenshotPlugin.UnmanagedHelpers;
 using System;
 using System.Collections.Generic;
@@ -37,11 +39,20 @@ namespace Greenshot.Configuration
         [IniProperty("RecentColors", Separator = "|", Description = "Last used colors")]
         public List<Color> RecentColors;
 
+        [IniProperty("DefaultDrawingMode", Separator = "|", Description = "Default drawing mode:None,Rect,Ellipse,Line,Arrow,Path,Text,SpeechBubble,StepLabel,Highlight,Obfuscate,Crop", DefaultValue = "Rect", FixedValue = true)]
+        public DrawingModes DefaultDrawingMode;
+        [IniProperty("RememberLastDrawingMode", Description = "Remember last drawing mode used and select it next time", DefaultValue = "False")]
+        public bool RememberLastDrawingMode;
+        [IniProperty("LastDrawingMode", Separator = "|", Description = "Last drawing mode used", DefaultValue = "Rect")]
+        public DrawingModes LastDrawingMode;
+
         [IniProperty("LastFieldValue", Separator = "|", Description = "Field values, make sure the last used settings are re-used")]
         public Dictionary<string, object> LastUsedFieldValues;
 
         [IniProperty("MatchSizeToCapture", Description = "Match the editor window size to the capture", DefaultValue = "True")]
         public bool MatchSizeToCapture;
+        [IniProperty("MaximizeWhenLargeImage", Description = "Maximize the editor window when image is larger than the working area", DefaultValue = "False")]
+        public bool MaximizeWhenLargeImage;
         [IniProperty("WindowPlacementFlags", Description = "Placement flags", DefaultValue = "0")]
         public WindowPlacementFlags WindowPlacementFlags;
         [IniProperty("WindowShowCommand", Description = "Show command", DefaultValue = "Normal")]
@@ -50,19 +61,33 @@ namespace Greenshot.Configuration
         public Point WindowMinPosition;
         [IniProperty("WindowMaxPosition", Description = "Position of maximized window", DefaultValue = "-1,-1")]
         public Point WindowMaxPosition;
-        [IniProperty("WindowNormalPosition", Description = "Position of normal window", DefaultValue = "100,100,600,500")]
+        [IniProperty("WindowNormalPosition", Description = "Position of normal window", DefaultValue = "100,100,400,400")]
         public Rectangle WindowNormalPosition;
         [IniProperty("ReuseEditor", Description = "Reuse already open editor", DefaultValue = "false")]
         public bool ReuseEditor;
         [IniProperty("FreehandSensitivity", Description = "The smaller this number, the less smoothing is used. Decrease for detailed drawing, e.g. when using a pen. Increase for smoother lines. e.g. when you want to draw a smooth line.", DefaultValue = "3")]
         public int FreehandSensitivity;
-
         [IniProperty("SuppressSaveDialogAtClose", Description = "Suppressed the 'do you want to save' dialog when closing the editor.", DefaultValue = "False")]
         public bool SuppressSaveDialogAtClose;
 
+        [IniProperty("DropShadowEffectSettings", Description = "Settings for the drop shadow effect.")]
+        public DropShadowEffect DropShadowEffectSettings;
+
+        [IniProperty("TornEdgeEffectSettings", Description = "Settings for the torn edge effect.")]
+        public TornEdgeEffect TornEdgeEffectSettings;
+
+        public override void AfterLoad()
+        {
+            base.AfterLoad();
+            if (RecentColors == null)
+            {
+                RecentColors = new List<Color>();
+            }
+        }
+
         /// <param name="requestingType">Type of the class for which to create the field</param>
         /// <param name="fieldType">FieldType of the field to construct</param>
-        /// <param name="scope">FieldType of the field to construct</param>
+        /// <param name="preferredDefaultValue">FieldType of the field to construct</param>
         /// <returns>a new Field of the given fieldType, with the scope of it's value being restricted to the Type scope</returns>
         public Field CreateField(Type requestingType, FieldType fieldType, object preferredDefaultValue)
         {

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -28,23 +28,22 @@ namespace GreenshotPlugin.UnmanagedHelpers
     [StructLayout(LayoutKind.Sequential), Serializable()]
     public struct SIZE
     {
-        public int width;
-        public int height;
+        public int Width;
+        public int Height;
 
-        public SIZE(Size size)
-            : this(size.Width, size.Height)
+        public SIZE(Size size) : this(size.Width, size.Height)
         {
         }
 
         public SIZE(int width, int height)
         {
-            this.width = width;
-            this.height = height;
+            Width = width;
+            Height = height;
         }
 
         public Size ToSize()
         {
-            return new Size(width, height);
+            return new Size(Width, Height);
         }
     }
 
@@ -405,8 +404,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public ushort wCreatorVersion;
 
         // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
-        public WindowInfo(Boolean? filler)
-            : this()
+        public WindowInfo(Boolean? filler) : this()
         {
             cbSize = (UInt32)(Marshal.SizeOf(typeof(WindowInfo)));
         }

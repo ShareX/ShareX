@@ -168,14 +168,8 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Bắt lỗi</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>Giới thiệu...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Tự động chụp...</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Tự động hóa...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Xóa danh sách</value>
@@ -264,17 +258,11 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Trình đổi DNS</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Quyên góp...</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Chỉnh sửa ảnh...</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên tệp tin</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Rảnh tay</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>Trình FTP...</value>
@@ -290,9 +278,6 @@
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Trình gộp ảnh...</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Trình chỉnh sửa ảnh...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Hiệu ứng ảnh...</value>
@@ -311,9 +296,6 @@
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Trình IRC</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Vùng chọn lần trước</value>
@@ -345,9 +327,6 @@
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Đa giác</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>Mã QR...</value>
   </data>
@@ -362,9 +341,6 @@
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>URL để xóa</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Vùng (Đánh dấu)</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Vùng (Bản nhẹ hơn)</value>
@@ -438,9 +414,6 @@
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Tự động chụp...</value>
   </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Tự động hóa...</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Chụp</value>
   </data>
@@ -462,9 +435,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải ảnh lên</value>
   </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Tự tạo bằng tay</value>
-  </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>Trình FTP...</value>
   </data>
@@ -483,9 +453,6 @@
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Trình gộp ảnh...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Trình sửa ảnh...</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Hiệu ứng ảnh...</value>
   </data>
@@ -494,9 +461,6 @@
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải ảnh lên</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Trình IRC</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>VỊ trí </value>
@@ -513,9 +477,6 @@
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Kiểm tra màn hình</value>
   </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Đa giác</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Mã QR</value>
   </data>
@@ -524,9 +485,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Vùng</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Vùng (Đánh dấu)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Vùng (Phiên bản nhẹ)</value>
@@ -606,9 +564,6 @@
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Vùng (Các cửa sổ &amp;&amp; phần điều khiển)</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tin nhắn tweet</value>
   </data>
@@ -623,9 +578,6 @@
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Vùng (Các cửa sổ &amp;&amp; phần điều khiển)</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Công cụ</value>

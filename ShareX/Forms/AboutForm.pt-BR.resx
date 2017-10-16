@@ -120,7 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Sobre</value>
   </data>
-  <data name="lblSteamBuild.Text" xml:space="preserve">
-    <value>Versão Steam</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="btnShareXLicense.Text" xml:space="preserve">
+    <value>Licença do ShareX</value>
+  </data>
+  <data name="btnLicenses.Text" xml:space="preserve">
+    <value>Licenças...</value>
   </data>
 </root>

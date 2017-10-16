@@ -127,6 +127,6 @@
     <value>Não perguntar de novo até a próxima inicialização do programa</value>
   </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>Ver log de mudanças</value>
+    <value>Ver registro de alterações</value>
   </data>
 </root>

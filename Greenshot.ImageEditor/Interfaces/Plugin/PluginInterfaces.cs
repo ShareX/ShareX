@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -87,10 +87,10 @@ namespace Greenshot.Plugin
 
     public class SurfaceOutputSettings
     {
-        private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+        private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         private bool reduceColors;
         private bool disableReduceColors;
-        private List<IEffect> effects = new List<IEffect>();
+        private readonly List<IEffect> effects = new List<IEffect>();
 
         public SurfaceOutputSettings()
         {
@@ -116,6 +116,15 @@ namespace Greenshot.Plugin
             : this(format, quality)
         {
             ReduceColors = reduceColors;
+        }
+
+        public SurfaceOutputSettings PreventGreenshotFormat()
+        {
+            if (Format == OutputFormat.greenshot)
+            {
+                Format = OutputFormat.png;
+            }
+            return this;
         }
 
         public OutputFormat Format

@@ -124,12 +124,12 @@
     <value>OK</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir mettre en ligne?</value>
+    <value>ShareX - Contenu du presse-papier</value>
   </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
-    <value>Ne plus montrer cette fenêtre</value>
+    <value>Ne plus afficher cette fenêtre</value>
   </data>
   <data name="lblQuestion.Text" xml:space="preserve">
-    <value>Votre presse-papier contient les éléments suivants:</value>
+    <value>Votre presse-papier contient les éléments suivants :</value>
   </data>
 </root>

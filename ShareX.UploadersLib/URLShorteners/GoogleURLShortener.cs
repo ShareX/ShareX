@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,11 +25,32 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class GoogleURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Google;
+
+        public override Icon ServiceIcon => Resources.Google;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(config.GoogleURLShortenerOAuth2Info);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new GoogleURLShortener(config.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, config.GoogleURLShortenerOAuth2Info);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleURLShortener;
+    }
+
     public class GoogleURLShortener : URLShortener, IOAuth2
     {
         public AccountType UploadMethod { get; set; }
@@ -70,7 +91,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
             args.Add("grant_type", "authorization_code");
 
-            string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
+            string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -97,7 +118,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
+                string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -162,7 +183,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 string json = JsonConvert.SerializeObject(new { longUrl = url });
 
-                result.Response = SendRequestJSON(query, json);
+                result.Response = SendRequest(HttpMethod.POST, query, json, ContentTypeJSON);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

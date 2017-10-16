@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
             OutputDataReceived += FFmpegHelper_DataReceived;
             ErrorDataReceived += FFmpegHelper_DataReceived;
             Options = options;
-            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
         }
 
         private void FFmpegHelper_DataReceived(object sender, DataReceivedEventArgs e)
@@ -105,8 +105,15 @@ namespace ShareX.ScreenCaptureLib
 
                 if (result)
                 {
-                    // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                    result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    if (File.Exists(palettePath))
+                    {
+                        // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+                        result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    }
+                    else
+                    {
+                        result = false;
+                    }
                 }
             }
             finally

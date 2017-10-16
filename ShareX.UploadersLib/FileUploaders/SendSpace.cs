@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,22 +24,54 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SendSpaceFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.SendSpace;
+
+        public override Icon ServiceIcon => Resources.SendSpace;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.SendSpaceAccountType == AccountType.Anonymous ||
+                (!string.IsNullOrEmpty(config.SendSpaceUsername) && !string.IsNullOrEmpty(config.SendSpacePassword));
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new SendSpace(APIKeys.SendSpaceKey)
+            {
+                AccountType = config.SendSpaceAccountType,
+                Username = config.SendSpaceUsername,
+                Password = config.SendSpacePassword
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSendSpace;
+    }
+
     public sealed class SendSpace : FileUploader
     {
         private string APIKey;
 
         private const string APIURL = "http://api.sendspace.com/rest/";
         private const string APIVersion = "1.0";
+
+        public AccountType AccountType { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Upload speed limit in kilobytes, 0 for unlimited
@@ -51,6 +83,20 @@ namespace ShareX.UploadersLib.FileUploaders
         public SendSpace(string apiKey)
         {
             APIKey = apiKey;
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            if (AccountType == AccountType.User)
+            {
+                SendSpaceManager.PrepareUploadInfo(APIKey, Username, Password);
+            }
+            else
+            {
+                SendSpaceManager.PrepareUploadInfo(APIKey);
+            }
+
+            return Upload(stream, fileName, SendSpaceManager.UploadInfo);
         }
 
         #region Helpers
@@ -226,7 +272,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequest(HttpMethod.POST, APIURL, args);
+            string response = SendRequestMultiPart(APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -250,7 +296,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("app_version", AppVersion); // Application specific, formatting / style is up to you
             args.Add("response_format", "xml"); // Value must be: XML
 
-            string response = SendRequest(HttpMethod.POST, APIURL, args);
+            string response = SendRequestMultiPart(APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -283,7 +329,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string passwordHash = TranslatorHelper.TextToHash(password, HashType.MD5);
             args.Add("tokened_password", TranslatorHelper.TextToHash(token + passwordHash, HashType.MD5));
 
-            string response = SendRequest(HttpMethod.POST, APIURL, args);
+            string response = SendRequestMultiPart(APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -311,7 +357,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("method", "auth.checkSession");
             args.Add("session_key", sessionKey);
 
-            string response = SendRequest(HttpMethod.POST, APIURL, args);
+            string response = SendRequestMultiPart(APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -343,7 +389,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("method", "auth.logout");
             args.Add("session_key", sessionKey);
 
-            string response = SendRequest(HttpMethod.POST, APIURL, args);
+            string response = SendRequestMultiPart(APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -461,7 +507,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Dictionary<string, string> args = PrepareArguments(uploadInfo.MaxFileSize, uploadInfo.UploadIdentifier, uploadInfo.ExtraInfo);
 
-                result = UploadData(stream, uploadInfo.URL, fileName, "userfile", args);
+                result = SendRequestFile(uploadInfo.URL, stream, fileName, "userfile", args);
 
                 if (result.IsSuccess)
                 {
@@ -480,11 +526,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            return Upload(stream, fileName, SendSpaceManager.UploadInfo);
         }
 
         public class CheckProgress : IDisposable
@@ -514,7 +555,10 @@ namespace ShareX.UploadersLib.FileUploaders
                     time = DateTime.Now;
                     try
                     {
-                        progressInfo.ParseResponse(sendSpace.SendRequest(HttpMethod.POST, url));
+                        string response = sendSpace.SendRequest(HttpMethod.POST, url);
+
+                        progressInfo.ParseResponse(response);
+
                         if (progressInfo.Status != "fail" && !string.IsNullOrEmpty(progressInfo.Meter))
                         {
                             if (int.TryParse(progressInfo.Meter, out progress))

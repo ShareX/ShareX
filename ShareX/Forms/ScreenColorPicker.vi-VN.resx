@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Bắt đầu chọn màu</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Sao chép tất cả</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Vị trí con trỏ:</value>
   </data>

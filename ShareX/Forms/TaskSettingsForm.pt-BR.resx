@@ -117,38 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Descrição:</value>
   </data>
-  <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>Duplicar</value>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Tarefa</value>
   </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Editar</value>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Geral</value>
   </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
-    <value>Remover</value>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Imagem</value>
   </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>Após captura...</value>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Largura</value>
   </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>Após upload...</value>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Altura</value>
   </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Destinos...</value>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Mostrar cursor nas capturas de tela</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Perfis...</value>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Deslocamento da sombra:</value>
   </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Configuração de efeitos de imagem...</value>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Capturar janela com transparência</value>
   </data>
-  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>Opções de gravações de tela...</value>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>Ao capturar janelas, se a janela colidir com a barra de tarefas, esconder a barra de tarefas</value>
   </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Tarefa...</value>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Capturar janela com sombra (requer transparência)</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Capturar área do cliente quando estiver capturando janelas ou janelas ativas</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Atraso de captura de tela:</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Captura de região</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Gravações de tela</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Capturar</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Envio</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Monitorar pastas</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Avançado</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Configurações de tarefas</value>
   </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
@@ -156,173 +192,116 @@
   <data name="btnWatchFolderRemove.Text" xml:space="preserve">
     <value>Remover...</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Salvar informações da tarefa no histórico</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Substituir conta FTP padrão:</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>Nome</value>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Incluir subdiretórios</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filtrar</value>
   </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Incluir subdiretórios</value>
-  </data>
-  <data name="tpImage.Text" xml:space="preserve">
-    <value>Imagem</value>
-  </data>
-  <data name="tpEffects.Text" xml:space="preserve">
-    <value>Efeitos</value>
-  </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>Capturar</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avançado</value>
-  </data>
-  <data name="tpActions.Text" xml:space="preserve">
-    <value>Ações</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
-  <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Upload da área de transferência</value>
-  </data>
-  <data name="tpTask.Text" xml:space="preserve">
-    <value>Tarefa</value>
-  </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Captura de região</value>
-  </data>
-  <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>Encurtadores de URL</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>Pré-visualização:</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Pré-visualização:</value>
-  </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>Qualidade do GIF:</value>
-  </data>
-  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>Qualidade do JPEG:</value>
-  </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>Se o arquivo existir:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configurações de tarefas</value>
-  </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>QPS do GIF:</value>
-  </data>
-  <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>Formato de imagem:</value>
-  </data>
-  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>segundos</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
-    <value>segundos</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
-    <value>segundos</value>
-  </data>
-  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
-    <value>Pré-visualização</value>
-  </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>0 - 5000  kB (0 desativa)</value>
-  </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>Mostrar cursor nas capturas de tela</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Após captura"</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Após upload"</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Destino"</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Após a conclusão da tarefa:</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Selecione um monitor para uma região customizada:</value>
-  </data>
-  <data name="lblDescription.Text" xml:space="preserve">
-    <value>Descrição:</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>Tocar som após captura</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>Tocar som após concluir tarefa</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Ao capturar janelas, se a janela colidir com a barra de tarefas, esconder a barra de tarefas</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Capturar área do cliente quando estiver capturando janelas ou janelas ativas</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>Capturar janela com sombra (requer transparência)</value>
-  </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>Capturar janela com transparência</value>
-  </data>
-  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Usar fuso-horário diferente:</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>Duração fixa:</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Atraso de captura de tela:</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Mostrar janela de "Tarefas pós-captura" após a realização da captura</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Criar miniatura somente se o tamanho da imagem for maior que o tamanho da miniatura</value>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Local da pasta</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Monitorar pastas e se um arquivo for adicionado, enviá-lo</value>
   </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>Parâmetros</value>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Editar</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Extensões</value>
   </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Parâmetros</value>
+  </data>
   <data name="chActionsPath.Text" xml:space="preserve">
     <value>Local</value>
   </data>
-  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
-    <value>Altura</value>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Nome</value>
   </data>
-  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
-    <value>Largura</value>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
   </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>Codificação do GIF:</value>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Duplicar</value>
   </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Formato de imagem 2:</value>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Se a área de transferência conter um URL: usar Encurtador de URL</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Se a área de transferência conter o local de uma pasta: arquivar a pasta e enviar o índice</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Se a área de transferência conter um URL: baixar o arquivo e enviá-lo</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Se a área de transferência conter um URL: compartilhar usando serviço de compartilhamento de URL</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Envio da área de transferência</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Padrão de nome para captura ou envio de arquivos da área de transferência:</value>
   </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Utilizar padrão para envio de arquivos ao invés do nome do arquivo</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Redefinir número de incrementação automática</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Pré-visualização:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Padrão de nome para captura de janela ativa:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Pré-visualização:</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Utilizar fuso-horário diferente:</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Utilizar nome da janela para captura de região (ShareX tentará detectar a janela atrás da seleção)</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Nomeação de arquivos</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>QPS do GIF:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Duração fixa:</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Perfis...</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>Executar CLI depois de:</value>
+  </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>QPS da gravação de tela:</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Começar a gravar depois de:</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>Opções de gravações de tela...</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Mostrar cursor na gravação</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>Altura:</value>
@@ -330,119 +309,143 @@
   <data name="lblThumbnailName.Text" xml:space="preserve">
     <value>Nome da miniatura:</value>
   </data>
-  <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>Largura:</value>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Pré-visualização</value>
   </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Limite de tamanho de imagem para "Formato de imagem 2":</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Geral</value>
-  </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Região de anotações</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>Gravações de tela</value>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Criar miniatura somente se o tamanho da imagem for maior que o tamanho da miniatura</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniatura</value>
   </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Monitorar pastas</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
-    <value>Local da pasta</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: baixar o arquivo e enviá-lo</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Substituir serviço customizado padrão:</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Executar CLI depois de:</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Começar a gravar depois de:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Mostrar janela "Pós-upload" após a conclusão da tarefa</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostrar janela de efeitos de imagem após a captura</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Usar ações nas opções de tarefa da janela principal</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Usar opções avançadas nas opções de tarefas da janela principal</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Redefinir número de incrementação automática</value>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Configuração de efeitos de imagem...</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Aplicar efeitos somente em capturas de região</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Usar padrão para envios de arquivo também ao invés de usar o nome do arquivo</value>
-  </data>
-  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: usar Encurtador de URL</value>
-  </data>
-  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: compartilhar usando serviço de compartilhamento de URL</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Mostrar janela "Pré-upload" para alterar o destino antes do envio</value>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Mostrar janela de efeitos de imagem após a captura</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Você pode habilitar/desabilitar efeitos de imagem em "Tarefas pós-captura -&gt; Adicionar efeitos de imagem".</value>
   </data>
-  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Padrão de nome para captura de janela ativa:</value>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Efeitos</value>
   </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Arquivador</value>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>Qualidade do JPEG:</value>
   </data>
-  <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Envio de arquivos</value>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>Qualidade do GIF:</value>
   </data>
-  <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Envio de imagens</value>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
   </data>
-  <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Envio de texto</value>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Se o arquivo existir:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Formato de imagem:</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Tocar som após captura</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Tocar som após concluir tarefa</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Após a conclusão da tarefa:</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Tarefa...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Serviços de compartilhamento de URL</value>
   </data>
-  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Deslocamento da sombra:</value>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Encurtadores de URL</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Usar opções de captura nas opções de tarefas da janela principal</value>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Envio de arquivos</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Usar opções gerais nas opções de tarefas da janela principal</value>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Envio de texto</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Usar opções de imagem nas opções de tarefas da janela principal</value>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Envio de imagens</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Usar opções de upload nas opções de tarefas da janela principal</value>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Destinos...</value>
   </data>
-  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Se a área de transferência contém o local de uma pasta: arquivar a pasta e enviar o índice</value>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>Após envio...</value>
   </data>
-  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>Mostrar cursor na gravação</value>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>Após captura...</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC</value>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Substituir conta FTP padrão:</value>
   </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 a 100</value>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Substituir serviço de envio customizado:</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Mostrar QPS no canto superior esquerdo</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Modo de região de tamanho fixo:</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Mostrar mira do tamanho da tela:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Tamanho do pixel da lente de aumento:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Quantidade de pixels da lente de aumento</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Usar forma quadrada da lente de aumento</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Mostrar lente próxima ao cursor</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Mostrar informações de posição e tamanho</value>
+  </data>
+  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
+    <value>Mostrar atalhos e dicas no canto superior direito</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Usar texto personalizado no canto superior direito</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Detectar regiões de controle dentro das janelas</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Botão de scroll:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Botão direito:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Mouse 4:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Mouse 5:</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Selecionar região...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Região personalizada:</value>
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
@@ -450,19 +453,43 @@
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Usar opções de ferramentas nas opções de tarefas da janela principal</value>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
   </data>
-  <data name="tpTools.Text" xml:space="preserve">
-    <value>Ferramentas</value>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Altura:</value>
   </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Miniaturizador de vídeo</value>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Captura rolante</value>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Altura:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>Ao segurar Alt, as dimensões da região serão proporcionais</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Detectar janelas e permitir captura do cursor</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Formato do seletor de cores da tela:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Usar modo multirregião que também permitirá redimensionar e reposicionar regiões</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Escurecer plano de fundo para que a seleção seja diferenciada facilmente (afeta velocidade de inicialização)</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Se o tamanho da imagem for maior que o especificado, utilizar JPEG como formato de imagem:</value>
   </data>
 </root>

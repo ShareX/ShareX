@@ -19,7 +19,7 @@ namespace ShareX.UploadersLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -81,6 +81,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AzureStorage {
+            get {
+                object obj = ResourceManager.GetObject("AzureStorage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Bitly {
@@ -130,12 +140,21 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to Response parse failed..
         /// </summary>
-        internal static System.Drawing.Icon Copy {
+        internal static string CustomFileUploader_Upload_Response_parse_failed_ {
             get {
-                object obj = ResourceManager.GetObject("Copy", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("CustomFileUploader_Upload_Response_parse_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document {
+            get {
+                object obj = ResourceManager.GetObject("document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -146,43 +165,6 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Dropbox", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path not exist:.
-        /// </summary>
-        internal static string DropboxFilesForm_OpenDirectory_Path_not_exist_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_OpenDirectory_Path_not_exist_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Directory name to create.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete &quot;{0}&quot; from your Dropbox?.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your" +
-                        "_Dropbox_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delete file?.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiDelete_Click_Delete_file_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Delete_file_", resourceCulture);
             }
         }
         
@@ -199,69 +181,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder {
-            get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_gray {
-            get {
-                object obj = ResourceManager.GetObject("folder_gray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap folder_network {
             get {
                 object obj = ResourceManager.GetObject("folder_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_photos {
-            get {
-                object obj = ResourceManager.GetObject("folder_photos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_public {
-            get {
-                object obj = ResourceManager.GetObject("folder_public", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_star {
-            get {
-                object obj = ResourceManager.GetObject("folder_star", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_user {
-            get {
-                object obj = ResourceManager.GetObject("folder_user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -304,6 +226,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gfycat {
+            get {
+                object obj = ResourceManager.GetObject("Gfycat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon GitHub {
@@ -339,6 +271,16 @@ namespace ShareX.UploadersLib.Properties {
         internal static System.Drawing.Icon GoogleDrive {
             get {
                 object obj = ResourceManager.GetObject("GoogleDrive", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon GooglePhotos {
+            get {
+                object obj = ResourceManager.GetObject("GooglePhotos", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -422,6 +364,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Lithiio {
+            get {
+                object obj = ResourceManager.GetObject("Lithiio", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mail {
@@ -458,6 +410,15 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Minus", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste verification code here.
+        /// </summary>
+        internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {
+            get {
+                return ResourceManager.GetString("OAuthControl_OAuthControl_PasteVerificationCodeHere", resourceCulture);
             }
         }
         
@@ -537,272 +498,22 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap package {
-            get {
-                object obj = ResourceManager.GetObject("package", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white {
-            get {
-                object obj = ResourceManager.GetObject("page_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_acrobat {
-            get {
-                object obj = ResourceManager.GetObject("page_white_acrobat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_actionscript {
-            get {
-                object obj = ResourceManager.GetObject("page_white_actionscript", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_c {
-            get {
-                object obj = ResourceManager.GetObject("page_white_c", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_code {
-            get {
-                object obj = ResourceManager.GetObject("page_white_code", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_compressed {
-            get {
-                object obj = ResourceManager.GetObject("page_white_compressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_cplusplus {
-            get {
-                object obj = ResourceManager.GetObject("page_white_cplusplus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_csharp {
-            get {
-                object obj = ResourceManager.GetObject("page_white_csharp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_cup {
-            get {
-                object obj = ResourceManager.GetObject("page_white_cup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_dvd {
-            get {
-                object obj = ResourceManager.GetObject("page_white_dvd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_excel {
-            get {
-                object obj = ResourceManager.GetObject("page_white_excel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_film {
-            get {
-                object obj = ResourceManager.GetObject("page_white_film", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_flash {
-            get {
-                object obj = ResourceManager.GetObject("page_white_flash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_gear {
-            get {
-                object obj = ResourceManager.GetObject("page_white_gear", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_paint {
-            get {
-                object obj = ResourceManager.GetObject("page_white_paint", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_php {
-            get {
-                object obj = ResourceManager.GetObject("page_white_php", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_picture {
-            get {
-                object obj = ResourceManager.GetObject("page_white_picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_powerpoint {
-            get {
-                object obj = ResourceManager.GetObject("page_white_powerpoint", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_ruby {
-            get {
-                object obj = ResourceManager.GetObject("page_white_ruby", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_sound {
-            get {
-                object obj = ResourceManager.GetObject("page_white_sound", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_text {
-            get {
-                object obj = ResourceManager.GetObject("page_white_text", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_tux {
-            get {
-                object obj = ResourceManager.GetObject("page_white_tux", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_vector {
-            get {
-                object obj = ResourceManager.GetObject("page_white_vector", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_visualstudio {
-            get {
-                object obj = ResourceManager.GetObject("page_white_visualstudio", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_white_word {
-            get {
-                object obj = ResourceManager.GetObject("page_white_word", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Pastebin {
             get {
                 object obj = ResourceManager.GetObject("Pastebin", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pastie {
+            get {
+                object obj = ResourceManager.GetObject("Pastie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -819,9 +530,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Picasa {
+        internal static System.Drawing.Icon Plik {
             get {
-                object obj = ResourceManager.GetObject("Picasa", resourceCulture);
+                object obj = ResourceManager.GetObject("Plik", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -847,22 +558,32 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select one of the Pomf uploaders from &quot;Destination settings window -&gt; Pomf tab&quot;..
-        /// </summary>
-        internal static string Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__ {
-            get {
-                return ResourceManager.GetString("Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_wi" +
-                        "ndow____Pomf_tab__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Pushbullet {
             get {
                 object obj = ResourceManager.GetObject("Pushbullet", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon puush {
+            get {
+                object obj = ResourceManager.GetObject("puush", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap puush_256 {
+            get {
+                object obj = ResourceManager.GetObject("puush_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -899,6 +620,36 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon SomeImage {
+            get {
+                object obj = ResourceManager.GetObject("SomeImage", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Streamable {
+            get {
+                object obj = ResourceManager.GetObject("Streamable", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sul {
+            get {
+                object obj = ResourceManager.GetObject("Sul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon TinyPic {
             get {
                 object obj = ResourceManager.GetObject("TinyPic", resourceCulture);
@@ -928,9 +679,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Up1 {
+        internal static System.Drawing.Icon Upaste {
             get {
-                object obj = ResourceManager.GetObject("Up1", resourceCulture);
+                object obj = ResourceManager.GetObject("Upaste", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -938,10 +689,37 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Upaste {
+        internal static System.Drawing.Icon Uplea {
             get {
-                object obj = ResourceManager.GetObject("Upaste", resourceCulture);
+                object obj = ResourceManager.GetObject("Uplea", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A header with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_A_header_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_A_header_with_the_same_name_already_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://aws.amazon.com/s3/storage-classes/.
+        /// </summary>
+        internal static string UploadersConfigForm_AmazonS3StorageClassHelpURL {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_AmazonS3StorageClassHelpURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An argument with the same name already exists..
+        /// </summary>
+        internal static string UploadersConfigForm_An_argument_with_the_same_name_already_exists {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_An_argument_with_the_same_name_already_exists", resourceCulture);
             }
         }
         
@@ -955,12 +733,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login successful but getting account info failed..
+        ///   Looks up a localized string similar to Key file does not exist..
         /// </summary>
-        internal static string UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_ {
+        internal static string UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found {
             get {
-                return ResourceManager.GetString("UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info" +
-                        "_failed_", resourceCulture);
+                return ResourceManager.GetString("UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found", resourceCulture);
             }
         }
         
@@ -988,15 +765,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_ {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hubic refresh folders list failed.
-        /// </summary>
-        internal static string UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed", resourceCulture);
             }
         }
         
@@ -1137,6 +905,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove all custom uploaders?.
+        /// </summary>
+        internal static string UploadersConfigForm_Remove_all_custom_uploaders_Confirmation {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_Remove_all_custom_uploaders_Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SendSpace registration.
         /// </summary>
         internal static string UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___ {
@@ -1174,47 +951,12 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download path:.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Download_path_ {
+        internal static System.Drawing.Icon Vgyme {
             get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Download_path_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Email_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Email_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Name_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Name_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload path:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_Upload_path_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Upload_path_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User ID:.
-        /// </summary>
-        internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
+                object obj = ResourceManager.GetObject("Vgyme", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

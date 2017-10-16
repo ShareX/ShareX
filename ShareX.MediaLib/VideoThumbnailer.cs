@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -158,11 +158,11 @@ namespace ShareX.MediaLib
                     directory = Path.GetDirectoryName(MediaPath);
                     break;
                 case ThumbnailLocationType.CustomFolder:
-                    directory = Options.CustomOutputDirectory;
+                    directory = Helpers.ExpandFolderVariables(Options.CustomOutputDirectory);
                     break;
             }
 
-            Helpers.CreateDirectoryIfNotExist(directory, false);
+            Helpers.CreateDirectoryFromDirectoryPath(directory);
 
             return directory;
         }
@@ -281,8 +281,7 @@ namespace ShareX.MediaLib
 
                                 using (Font font = new Font("Arial", 10, FontStyle.Bold))
                                 {
-                                    ImageHelpers.DrawTextWithShadow(g, thumbnails[i].Timestamp.ToString(),
-                                        new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Color.White, Color.Black);
+                                    g.DrawTextWithShadow(thumbnails[i].Timestamp.ToString(), new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Brushes.White, Brushes.Black);
                                 }
                             }
 

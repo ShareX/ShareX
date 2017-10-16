@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,9 +32,9 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public static partial class Screenshot
+    public partial class Screenshot
     {
-        public static Image CaptureWindowTransparent(IntPtr handle)
+        public Image CaptureWindowTransparent(IntPtr handle)
         {
             if (handle.ToInt32() > 0)
             {
@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 Bitmap whiteBackground = null, blackBackground = null, whiteBackground2 = null;
-                CursorData cursor = null;
+                CursorData cursorData = null;
                 bool isTransparent = false, isTaskbarHide = false;
 
                 try
@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         try
                         {
-                            cursor = new CursorData();
+                            cursorData = new CursorData();
                         }
                         catch (Exception e)
                         {
@@ -119,15 +119,15 @@ namespace ShareX.ScreenCaptureLib
                         transparentImage = whiteBackground2;
                     }
 
-                    if (cursor != null && cursor.IsVisible)
+                    if (cursorData != null && cursorData.IsValid)
                     {
                         Point cursorOffset = CaptureHelpers.ScreenToClient(rect.Location);
-                        cursor.DrawCursorToImage(transparentImage, cursorOffset);
+                        cursorData.DrawCursor(transparentImage, cursorOffset);
                     }
 
                     if (isTransparent)
                     {
-                        transparentImage = TrimTransparent(transparentImage);
+                        transparentImage = ImageHelpers.AutoCropImage(transparentImage);
 
                         if (!CaptureShadow)
                         {
@@ -147,21 +147,21 @@ namespace ShareX.ScreenCaptureLib
                     if (whiteBackground != null) whiteBackground.Dispose();
                     if (blackBackground != null) blackBackground.Dispose();
                     if (isTransparent && whiteBackground2 != null) whiteBackground2.Dispose();
-                    if (cursor != null) cursor.Dispose();
+                    if (cursorData != null) cursorData.Dispose();
                 }
             }
 
             return null;
         }
 
-        public static Image CaptureActiveWindowTransparent()
+        public Image CaptureActiveWindowTransparent()
         {
             IntPtr handle = NativeMethods.GetForegroundWindow();
 
             return CaptureWindowTransparent(handle);
         }
 
-        private static Bitmap CreateTransparentImage(Bitmap whiteBackground, Bitmap blackBackground)
+        private Bitmap CreateTransparentImage(Bitmap whiteBackground, Bitmap blackBackground)
         {
             if (whiteBackground != null && blackBackground != null && whiteBackground.Size == blackBackground.Size)
             {
@@ -202,161 +202,7 @@ namespace ShareX.ScreenCaptureLib
             return whiteBackground;
         }
 
-        private static Bitmap TrimTransparent(Bitmap bitmap)
-        {
-            Rectangle source = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            Rectangle rect = source;
-
-            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bitmap, true, ImageLockMode.ReadOnly))
-            {
-                rect = TrimTransparentFindX(unsafeBitmap, rect);
-                rect = TrimTransparentFindY(unsafeBitmap, rect);
-                rect = TrimTransparentFindWidth(unsafeBitmap, rect);
-                rect = TrimTransparentFindHeight(unsafeBitmap, rect);
-            }
-
-            if (source != rect)
-            {
-                Bitmap croppedBitmap = ImageHelpers.CropBitmap(bitmap, rect);
-
-                if (croppedBitmap != null)
-                {
-                    bitmap.Dispose();
-                    return croppedBitmap;
-                }
-            }
-
-            return bitmap;
-        }
-
-        private static Rectangle TrimTransparentFindX(UnsafeBitmap unsafeBitmap, Rectangle rect)
-        {
-            for (int x = rect.X; x < rect.Width; x++)
-            {
-                for (int y = rect.Y; y < rect.Height; y++)
-                {
-                    if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
-                    {
-                        rect.X = x;
-                        return rect;
-                    }
-                }
-            }
-
-            return rect;
-        }
-
-        private static Rectangle TrimTransparentFindY(UnsafeBitmap unsafeBitmap, Rectangle rect)
-        {
-            for (int y = rect.Y; y < rect.Height; y++)
-            {
-                for (int x = rect.X; x < rect.Width; x++)
-                {
-                    if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
-                    {
-                        rect.Y = y;
-                        return rect;
-                    }
-                }
-            }
-
-            return rect;
-        }
-
-        private static Rectangle TrimTransparentFindWidth(UnsafeBitmap unsafeBitmap, Rectangle rect)
-        {
-            for (int x = rect.Width - 1; x >= rect.X; x--)
-            {
-                for (int y = rect.Y; y < rect.Height; y++)
-                {
-                    if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
-                    {
-                        rect.Width = x - rect.X + 1;
-                        return rect;
-                    }
-                }
-            }
-
-            return rect;
-        }
-
-        private static Rectangle TrimTransparentFindHeight(UnsafeBitmap unsafeBitmap, Rectangle rect)
-        {
-            for (int y = rect.Height - 1; y >= rect.Y; y--)
-            {
-                for (int x = rect.X; x < rect.Width; x++)
-                {
-                    if (unsafeBitmap.GetPixel(x, y).Alpha > 0)
-                    {
-                        rect.Height = y - rect.Y + 1;
-                        return rect;
-                    }
-                }
-            }
-
-            return rect;
-        }
-
-        private static Bitmap QuickTrimTransparent(Bitmap bitmap)
-        {
-            Rectangle source = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            Rectangle rect = source;
-
-            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bitmap, true, ImageLockMode.ReadOnly))
-            {
-                int middleX = rect.Width / 2;
-                int middleY = rect.Height / 2;
-
-                // Find X
-                for (int x = rect.X; x < rect.Width; x++)
-                {
-                    if (unsafeBitmap.GetPixel(x, middleY).Alpha > 0)
-                    {
-                        rect.X = x;
-                        break;
-                    }
-                }
-
-                // Find Y
-                for (int y = rect.Y; y < rect.Height; y++)
-                {
-                    if (unsafeBitmap.GetPixel(middleX, y).Alpha > 0)
-                    {
-                        rect.Y = y;
-                        break;
-                    }
-                }
-
-                // Find Width
-                for (int x = rect.Width - 1; x >= rect.X; x--)
-                {
-                    if (unsafeBitmap.GetPixel(x, middleY).Alpha > 0)
-                    {
-                        rect.Width = x - rect.X + 1;
-                        break;
-                    }
-                }
-
-                // Find Height
-                for (int y = rect.Height - 1; y >= rect.Y; y--)
-                {
-                    if (unsafeBitmap.GetPixel(middleX, y).Alpha > 0)
-                    {
-                        rect.Height = y - rect.Y + 1;
-                        break;
-                    }
-                }
-            }
-
-            if (source != rect)
-            {
-                return ImageHelpers.CropBitmap(bitmap, rect);
-            }
-
-            return bitmap;
-        }
-
-        private static void TrimShadow(Bitmap bitmap)
+        private void TrimShadow(Bitmap bitmap)
         {
             int sizeLimit = 10;
             int alphaLimit = 200;
@@ -427,7 +273,7 @@ namespace ShareX.ScreenCaptureLib
 
         #region Not in use
 
-        private static byte[,] windows7Corner = new byte[,]
+        private byte[,] windows7Corner = new byte[,]
         {
             { 0, 0 }, { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 },
             { 0, 1 }, { 1, 1 }, { 2, 1 },
@@ -436,7 +282,7 @@ namespace ShareX.ScreenCaptureLib
             { 0, 4 }
         };
 
-        private static byte[,] windowsVistaCorner = new byte[,]
+        private byte[,] windowsVistaCorner = new byte[,]
         {
             { 0, 0 }, { 1, 0 }, { 2, 0 }, { 3, 0 },
             { 0, 1 }, { 1, 1 },
@@ -444,7 +290,7 @@ namespace ShareX.ScreenCaptureLib
             { 0, 3 }
         };
 
-        private static Bitmap RemoveCorners(Image img)
+        private Bitmap RemoveCorners(Image img)
         {
             byte[,] corner;
 
@@ -464,7 +310,7 @@ namespace ShareX.ScreenCaptureLib
             return RemoveCorners(img, corner);
         }
 
-        private static Bitmap RemoveCorners(Image img, byte[,] cornerData)
+        private Bitmap RemoveCorners(Image img, byte[,] cornerData)
         {
             Bitmap bmp = new Bitmap(img);
 

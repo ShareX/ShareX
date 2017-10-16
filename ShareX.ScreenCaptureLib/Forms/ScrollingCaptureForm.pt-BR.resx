@@ -213,9 +213,6 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Fechar esta janela após processamento</value>
-  </data>
   <data name="chkAutoUpload.Text" xml:space="preserve">
     <value>Enviar/salvar dependendo das configurações pós-captura</value>
   </data>

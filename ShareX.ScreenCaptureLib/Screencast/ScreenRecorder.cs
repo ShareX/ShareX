@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -96,12 +96,13 @@ namespace ShareX.ScreenCaptureLib
 
         private int fps, delay, frameCount, previousProgress;
         private float durationSeconds;
+        private Screenshot screenshot;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
         private FFmpegHelper ffmpegCli;
         private bool stopRequest;
 
-        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Rectangle captureRectangle)
+        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Screenshot screenshot, Rectangle captureRectangle)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
@@ -127,6 +128,8 @@ namespace ShareX.ScreenCaptureLib
                     imgCache = new HardDiskCache(Options);
                     break;
             }
+
+            this.screenshot = screenshot;
         }
 
         private void UpdateInfo()
@@ -164,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Stopwatch timer = Stopwatch.StartNew();
 
-                    Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                    Image img = screenshot.CaptureRectangle(CaptureRectangle);
                     //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
 
                     imgCache.AddImageAsync(img);
@@ -204,7 +207,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
             {
-                Helpers.CreateDirectoryIfNotExist(path);
+                Helpers.CreateDirectoryFromFilePath(path);
 
                 HardDiskCache hdCache = imgCache as HardDiskCache;
 
@@ -227,10 +230,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool FFmpegEncodeAsGIF(string path)
+        public bool FFmpegEncodeAsGIF(string sourceFilePath, string targetFilePath)
         {
-            Helpers.CreateDirectoryIfNotExist(path);
-            return ffmpegCli.EncodeGIF(Options.OutputPath, path);
+            Helpers.CreateDirectoryFromFilePath(targetFilePath);
+            return ffmpegCli.EncodeGIF(sourceFilePath, targetFilePath);
         }
 
         public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)

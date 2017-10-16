@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -50,7 +50,7 @@ namespace ShareX.HelpersLib
                 using (WebClient wc = new WebClient())
                 {
                     wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                    wc.Headers.Add("user-agent", "ShareX");
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                     wc.Proxy = Proxy;
 
                     using (MemoryStream ms = new MemoryStream(wc.DownloadData(URL)))

@@ -124,7 +124,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Éditer...</value>
+    <value>Modifier...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -32,10 +32,10 @@ namespace GreenshotPlugin.Core
     /// <typeparam name="TV">Type of value</typeparam>
     public class Cache<TK, TV>
     {
-        private IDictionary<TK, TV> internalCache = new Dictionary<TK, TV>();
-        private object lockObject = new object();
-        private int secondsToExpire = 10;
-        private CacheObjectExpired expiredCallback = null;
+        private readonly IDictionary<TK, TV> internalCache = new Dictionary<TK, TV>();
+        private readonly object lockObject = new object();
+        private readonly int secondsToExpire = 10;
+        private readonly CacheObjectExpired expiredCallback = null;
         public delegate void CacheObjectExpired(TK key, TV cacheValue);
 
         /// <summary>
@@ -49,8 +49,7 @@ namespace GreenshotPlugin.Core
         /// Initialize the cache
         /// </summary>
         /// <param name="expiredCallback"></param>
-        public Cache(CacheObjectExpired expiredCallback)
-            : this()
+        public Cache(CacheObjectExpired expiredCallback) : this()
         {
             this.expiredCallback = expiredCallback;
         }
@@ -59,8 +58,7 @@ namespace GreenshotPlugin.Core
         /// Initialize the cache with a expire setting
         /// </summary>
         /// <param name="secondsToExpire"></param>
-        public Cache(int secondsToExpire)
-            : this()
+        public Cache(int secondsToExpire) : this()
         {
             this.secondsToExpire = secondsToExpire;
         }
@@ -70,8 +68,7 @@ namespace GreenshotPlugin.Core
         /// </summary>
         /// <param name="secondsToExpire"></param>
         /// <param name="expiredCallback"></param>
-        public Cache(int secondsToExpire, CacheObjectExpired expiredCallback)
-            : this(expiredCallback)
+        public Cache(int secondsToExpire, CacheObjectExpired expiredCallback) : this(expiredCallback)
         {
             this.secondsToExpire = secondsToExpire;
         }
@@ -85,9 +82,12 @@ namespace GreenshotPlugin.Core
             {
                 List<TV> elements = new List<TV>();
 
-                foreach (TV element in internalCache.Values)
+                lock (lockObject)
                 {
-                    elements.Add(element);
+                    foreach (TV element in internalCache.Values)
+                    {
+                        elements.Add(element);
+                    }
                 }
                 foreach (TV element in elements)
                 {
@@ -124,7 +124,10 @@ namespace GreenshotPlugin.Core
         /// <returns>true if the cache contains the key</returns>
         public bool Contains(TK key)
         {
-            return internalCache.ContainsKey(key);
+            lock (lockObject)
+            {
+                return internalCache.ContainsKey(key);
+            }
         }
 
         /// <summary>
@@ -201,7 +204,7 @@ namespace GreenshotPlugin.Core
         private class CachedItem
         {
             public event CacheObjectExpired Expired;
-            private int secondsToExpire;
+            private readonly int secondsToExpire;
             private readonly Timer _timerEvent;
 
             public CachedItem(TK key, TV item, int secondsToExpire)

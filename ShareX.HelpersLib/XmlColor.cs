@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,13 +36,11 @@ namespace ShareX.HelpersLib
         public byte G { get; set; }
         public byte B { get; set; }
 
-        public XmlColor()
-            : this(0, 0, 0)
+        public XmlColor() : this(0, 0, 0)
         {
         }
 
-        public XmlColor(byte r, byte g, byte b)
-            : this(255, r, g, b)
+        public XmlColor(byte r, byte g, byte b) : this(255, r, g, b)
         {
         }
 
@@ -54,8 +52,7 @@ namespace ShareX.HelpersLib
             B = b;
         }
 
-        public XmlColor(Color color)
-            : this(color.A, color.R, color.G, color.B)
+        public XmlColor(Color color) : this(color.A, color.R, color.G, color.B)
         {
         }
 

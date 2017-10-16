@@ -139,7 +139,7 @@
     <value>Local do arquivo:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extensão do arquivo de saída (vazio = usar a mesma do nome do arquivo)</value>
+    <value>Extensão do arquivo produzido (vazio = usar mesmo nome do arquivo)</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Janela oculta</value>

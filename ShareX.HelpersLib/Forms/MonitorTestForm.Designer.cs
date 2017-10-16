@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorTestForm));
             this.pSettings = new System.Windows.Forms.Panel();
+            this.btnScreenTearingTest = new System.Windows.Forms.Button();
             this.btnGradientColor2 = new ShareX.HelpersLib.ColorButton();
             this.btnGradientColor1 = new ShareX.HelpersLib.ColorButton();
             this.lblTip = new System.Windows.Forms.Label();
@@ -65,8 +66,9 @@
             // 
             // pSettings
             // 
-            this.pSettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pSettings.BackColor = System.Drawing.SystemColors.Window;
             this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pSettings.Controls.Add(this.btnScreenTearingTest);
             this.pSettings.Controls.Add(this.btnGradientColor2);
             this.pSettings.Controls.Add(this.btnGradientColor1);
             this.pSettings.Controls.Add(this.lblTip);
@@ -94,6 +96,13 @@
             this.pSettings.Controls.Add(this.rbBlackWhite);
             resources.ApplyResources(this.pSettings, "pSettings");
             this.pSettings.Name = "pSettings";
+            // 
+            // btnScreenTearingTest
+            // 
+            resources.ApplyResources(this.btnScreenTearingTest, "btnScreenTearingTest");
+            this.btnScreenTearingTest.Name = "btnScreenTearingTest";
+            this.btnScreenTearingTest.UseVisualStyleBackColor = true;
+            this.btnScreenTearingTest.Click += new System.EventHandler(this.btnScreenTearingTest_Click);
             // 
             // btnGradientColor2
             // 
@@ -269,7 +278,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pSettings);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -318,6 +327,6 @@
         private System.Windows.Forms.Label lblTip;
         private ColorButton btnGradientColor2;
         private ColorButton btnGradientColor1;
-
+        private System.Windows.Forms.Button btnScreenTearingTest;
     }
 }

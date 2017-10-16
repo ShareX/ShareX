@@ -147,9 +147,6 @@
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Автозахват</value>
   </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Автоматизировать...</value>
-  </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Палитра</value>
   </data>
@@ -201,12 +198,6 @@
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Показать окно ShareX</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Область (Окна и элементы)</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Область (Окна и элементы)</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Весь экран</value>
   </data>
@@ -225,14 +216,8 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Область</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>О программе…</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Автозахват</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Автоматизировать...</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Палитра</value>
@@ -417,12 +402,6 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Редактировать изображение…</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Редактор изображений…</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Редактор изображений…</value>
-  </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Скрыть меню</value>
   </data>
@@ -465,9 +444,6 @@
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Журнал отладки…</value>
   </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Пожертвовать…</value>
-  </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Пожертвовать…</value>
   </data>
@@ -486,14 +462,8 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Индексация папки…</value>
   </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Клиент IRC…</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR код…</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Многоугольник</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Линейка…</value>
@@ -534,12 +504,6 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Индексация папки…</value>
   </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Клиент IRC…</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Многоугольник</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR код…</value>
   </data>
@@ -569,18 +533,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Область (Примечания)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Область (Примечания)</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Область произвольной формы</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Область произвольной формы</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Область (Облегченный)</value>
@@ -668,5 +620,89 @@
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
     <value>Проверить отправку ссылки</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Скрыть столбцы</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Открыть веб-страницу Patreon-кампании ShareX</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Навсегда спрятать кнопку Patreon</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Захват текста (OCR)...</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Захват текста (OCR)...</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Переключить панель действий</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Убрать задачу из списка</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Искать по картинке в Google...</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Распознать текст (OCR)</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Объединить изображения...</value>
+  </data>
+  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
+    <value>Редактировать изображение…</value>
+  </data>
+  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
+    <value>Редактировать изображение…</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Новости</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>О программе…</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Пожертвовать…</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Загрузить текст...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Загрузить текст...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Сократить ссылку...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Сократить ссылку...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры изображений...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры изображений...</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown ссылку</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown изображение</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown изображение-ссылку</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Навсегда спрятать кнопку Discord</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Открыть приглашение на Discord сервер ShareX</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,11 +28,11 @@ namespace ShareX.UploadersLib
     public static partial class APIKeys
     {
         // Image Uploaders
+        public static string ImgurClientID = "";
+        public static string ImgurClientSecret = "";
         public static string ImageShackKey = "";
         public static string TinyPicID = "";
         public static string TinyPicKey = "";
-        public static string ImgurClientID = "";
-        public static string ImgurClientSecret = "";
         public static string FlickrKey = "";
         public static string FlickrSecret = "";
         public static string PhotobucketConsumerKey = "";
@@ -40,6 +40,8 @@ namespace ShareX.UploadersLib
         public static string TwitsnapsKey = "";
         public static string TwitPicKey = "";
         public static string SomeImageKey = "";
+        public static string SlimgClientID = "";
+        public static string SlimgClientSecret = "";
 
         // File Uploaders
         public static string DropboxConsumerKey = "";
@@ -59,12 +61,15 @@ namespace ShareX.UploadersLib
         public static string MediaFireApiKey = "";
         public static string OneDriveClientID = "";
         public static string OneDriveClientSecret = "";
+        public static string GfycatClientID = "";
+        public static string GfycatClientSecret = "";
 
         // Text Uploaders
         public static string PastebinKey = "";
         public static string PastebinCaKey = "";
         public static string GitHubID = "";
         public static string GitHubSecret = "";
+        public static string Paste_eeApplicationKey = "";
 
         // URL Shorteners
         public static string BitlyClientID = "";
@@ -76,5 +81,6 @@ namespace ShareX.UploadersLib
         public static string GoogleClientSecret = "";
         public static string TwitterConsumerKey = "";
         public static string TwitterConsumerSecret = "";
+        public static string OCRSpaceAPIKey = "";
     }
 }

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -30,7 +30,7 @@ namespace Greenshot.IniFile
         private const string SECTION_START = "[";
         private const string SECTION_END = "]";
         private const string COMMENT = ";";
-        private static char[] ASSIGNMENT = new char[] { '=' };
+        private static readonly char[] ASSIGNMENT = new[] { '=' };
 
         /**
          * Read an ini file to a Dictionary, each key is a section and the value is a Dictionary with name and values.
@@ -39,7 +39,7 @@ namespace Greenshot.IniFile
         public static Dictionary<string, Dictionary<string, string>> read(string path, Encoding encoding)
         {
             Dictionary<string, Dictionary<string, string>> ini = new Dictionary<string, Dictionary<string, string>>();
-            using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 1024))
+            using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 1024))
             {
                 using (StreamReader reader = new StreamReader(fileStream, encoding))
                 {

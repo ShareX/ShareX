@@ -200,7 +200,7 @@ namespace Greenshot.Drawing
         {
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
 
-            int tailLength = GeometryHelper.Distance2D(rect.Left + (rect.Width / 2), rect.Top + (rect.Height / 2), TargetGripper.Left, TargetGripper.Top);
+            int tailLength = GeometryHelper.Distance2D(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2, TargetGripper.Left, TargetGripper.Top);
             int tailWidth = (Math.Abs(rect.Width) + Math.Abs(rect.Height)) / 20;
 
             // This should fix a problem with the tail being to wide
@@ -212,11 +212,11 @@ namespace Greenshot.Drawing
             tail.AddLine(tailWidth, 0, 0, -tailLength);
             tail.CloseFigure();
 
-            int tailAngle = 90 + (int)GeometryHelper.Angle2D(rect.Left + (rect.Width / 2), rect.Top + (rect.Height / 2), TargetGripper.Left, TargetGripper.Top);
+            int tailAngle = 90 + (int)GeometryHelper.Angle2D(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2, TargetGripper.Left, TargetGripper.Top);
 
             using (Matrix tailMatrix = new Matrix())
             {
-                tailMatrix.Translate(rect.Left + (rect.Width / 2), rect.Top + (rect.Height / 2));
+                tailMatrix.Translate(rect.Left + rect.Width / 2, rect.Top + rect.Height / 2);
                 tailMatrix.Rotate(tailAngle);
                 tail.Transform(tailMatrix);
             }
@@ -246,7 +246,7 @@ namespace Greenshot.Drawing
             bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
             int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
 
-            bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
+            bool lineVisible = lineThickness > 0 && Colors.IsVisible(lineColor);
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
 
             if (Selected && renderMode == RenderMode.EDIT)
@@ -281,7 +281,7 @@ namespace Greenshot.Drawing
                             graphics.DrawPath(shadowPen, bubbleClone);
                         }
                         currentStep++;
-                        alpha = alpha - (basealpha / steps);
+                        alpha = alpha - basealpha / steps;
                     }
                 }
             }
@@ -342,7 +342,6 @@ namespace Greenshot.Drawing
             tail.Dispose();
 
             // Draw the text
-            UpdateFormat();
             DrawText(graphics, rect, lineThickness, lineColor, shadow, StringFormat, Text, Font);
         }
 

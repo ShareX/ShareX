@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -100,9 +100,9 @@ namespace Greenshot.Forms
         /// </summary>
         /// <param name="screenCoordinates">Point with the coordinates</param>
         /// <returns>Color at the specified screenCoordinates</returns>
-        static private Color GetPixelColor(Point screenCoordinates)
+        private static Color GetPixelColor(Point screenCoordinates)
         {
-            using (SafeWindowDCHandle screenDC = SafeWindowDCHandle.fromDesktop())
+            using (SafeWindowDCHandle screenDC = SafeWindowDCHandle.FromDesktop())
             {
                 try
                 {

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -73,21 +73,7 @@ namespace ShareX.HelpersLib
         {
             Graphics g = e.Graphics;
             Color color = (Color)e.Value;
-
-            if (color.A < 255)
-            {
-                using (Image checker = ImageHelpers.CreateCheckers(e.Bounds.Width / 2, e.Bounds.Height / 2, Color.LightGray, Color.White))
-                {
-                    g.DrawImage(checker, e.Bounds);
-                }
-            }
-
-            using (SolidBrush brush = new SolidBrush(color))
-            {
-                g.FillRectangle(brush, e.Bounds);
-            }
-
-            g.DrawRectangleProper(Pens.Black, e.Bounds);
+            ImageHelpers.DrawColorPickerIcon(g, color, e.Bounds);
         }
     }
 }

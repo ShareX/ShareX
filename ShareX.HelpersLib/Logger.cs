@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,8 @@ namespace ShareX.HelpersLib
 
         public event MessageAddedEventHandler MessageAdded;
 
-        public bool Async { get; set; } = true;
+        public string MessageFormat { get; set; } = "{0:yyyy-MM-dd HH:mm:ss.fff} - {1}";
+        public bool AsyncWrite { get; set; } = true;
         public bool DebugWrite { get; set; } = true;
         public bool StoreInMemory { get; set; } = true;
         public bool FileWrite { get; set; } = false;
@@ -53,7 +54,7 @@ namespace ShareX.HelpersLib
         {
             FileWrite = true;
             LogFilePath = logFilePath;
-            Helpers.CreateDirectoryIfNotExist(LogFilePath);
+            Helpers.CreateDirectoryFromFilePath(LogFilePath);
         }
 
         protected void OnMessageAdded(string message)
@@ -64,26 +65,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void WriteLine(string message)
-        {
-            if (!string.IsNullOrEmpty(message))
-            {
-                if (Async)
-                {
-                    TaskEx.Run(() => WriteLineInternal(message));
-                }
-                else
-                {
-                    WriteLineInternal(message);
-                }
-            }
-        }
-
         private void WriteLineInternal(string message)
         {
             lock (loggerLock)
             {
-                message = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} - {message}";
+                message = string.Format(MessageFormat, DateTime.Now, message);
 
                 if (DebugWrite)
                 {
@@ -108,6 +94,21 @@ namespace ShareX.HelpersLib
                 }
 
                 OnMessageAdded(message);
+            }
+        }
+
+        public void WriteLine(string message)
+        {
+            if (message != null)
+            {
+                if (AsyncWrite)
+                {
+                    TaskEx.Run(() => WriteLineInternal(message));
+                }
+                else
+                {
+                    WriteLineInternal(message);
+                }
             }
         }
 

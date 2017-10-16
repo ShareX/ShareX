@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -42,14 +42,13 @@ namespace Greenshot.Drawing
         private GraphicsPath freehandPath = new GraphicsPath();
         private Rectangle myBounds = Rectangle.Empty;
         private Point lastMouse = Point.Empty;
-        private List<Point> capturePoints = new List<Point>();
-        private bool isRecalculated = false;
+        private readonly List<Point> capturePoints = new List<Point>();
+        private bool isRecalculated;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public FreehandContainer(Surface parent)
-            : base(parent)
+        public FreehandContainer(Surface parent) : base(parent)
         {
             Init();
             Width = parent.Width;
@@ -131,7 +130,7 @@ namespace Greenshot.Drawing
         {
             Point previousPoint = capturePoints[capturePoints.Count - 1];
 
-            if (GeometryHelper.Distance2D(previousPoint.X, previousPoint.Y, mouseX, mouseY) >= (2 * EditorConfig.FreehandSensitivity))
+            if (GeometryHelper.Distance2D(previousPoint.X, previousPoint.Y, mouseX, mouseY) >= 2 * EditorConfig.FreehandSensitivity)
             {
                 capturePoints.Add(new Point(mouseX, mouseY));
             }
@@ -264,7 +263,7 @@ namespace Greenshot.Drawing
                 {
                     int lineThickness = Math.Max(10, GetFieldValueAsInt(FieldType.LINE_THICKNESS));
                     int safetymargin = 10;
-                    return new Rectangle((myBounds.Left + Left) - (safetymargin + lineThickness), (myBounds.Top + Top) - (safetymargin + lineThickness), myBounds.Width + (2 * (lineThickness + safetymargin)), myBounds.Height + (2 * (lineThickness + safetymargin)));
+                    return new Rectangle(myBounds.Left + Left - (safetymargin + lineThickness), myBounds.Top + Top - (safetymargin + lineThickness), myBounds.Width + 2 * (lineThickness + safetymargin), myBounds.Height + 2 * (lineThickness + safetymargin));
                 }
                 return new Rectangle(0, 0, _parent.Width, _parent.Height);
             }

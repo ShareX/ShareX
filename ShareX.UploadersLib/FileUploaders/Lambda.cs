@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,11 +26,33 @@
 // Credits: https://github.com/mstojcevich
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class LambdaFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Lambda;
+
+        public override Icon ServiceIcon => Resources.Lambda;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.LambdaSettings != null && !string.IsNullOrEmpty(config.LambdaSettings.UserAPIKey);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Lambda(config.LambdaSettings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLambda;
+    }
+
     public sealed class Lambda : FileUploader
     {
         public LambdaSettings Config { get; private set; }
@@ -46,15 +68,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(Config.UserAPIKey))
-            {
-                Errors.Add("Missing API key. Set one in destination settings.");
-                return null;
-            }
-
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", Config.UserAPIKey);
-            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.PUT);
+            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
 
             if (result.Response == null)
             {
@@ -92,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class LambdaSettings
     {
-        public string UserAPIKey = string.Empty;
+        public string UserAPIKey = "";
         public string UploadURL = "https://λ.pw/";
     }
 }

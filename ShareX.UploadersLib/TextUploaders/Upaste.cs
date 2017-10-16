@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,11 +24,33 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class UpasteTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Upaste;
+
+        public override Icon ServiceIcon => Resources.Upaste;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Upaste(config.UpasteUserKey)
+            {
+                IsPublic = config.UpasteIsPublic
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUpaste;
+    }
+
     public sealed class Upaste : TextUploader
     {
         private const string APIURL = "http://upaste.me/api";
@@ -59,7 +81,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("expire", "0");
                 arguments.Add("json", "true");
 
-                ur.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
+                ur.Response = SendRequestMultiPart(APIURL, arguments);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

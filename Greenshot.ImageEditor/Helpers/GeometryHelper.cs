@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -41,9 +41,9 @@ namespace Greenshot.Helpers
             //Our end result
             int result = 0;
             //Take x2-x1, then square it
-            double part1 = Math.Pow((x2 - x1), 2);
+            double part1 = Math.Pow(x2 - x1, 2);
             //Take y2-y1, then square it
-            double part2 = Math.Pow((y2 - y1), 2);
+            double part2 = Math.Pow(y2 - y1, 2);
             //Add both of the parts together
             double underRadical = part1 + part2;
             //Get the square root of the parts

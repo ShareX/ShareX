@@ -45,7 +45,7 @@
             // lblHotkeyDescription
             // 
             resources.ApplyResources(this.lblHotkeyDescription, "lblHotkeyDescription");
-            this.lblHotkeyDescription.BackColor = System.Drawing.Color.White;
+            this.lblHotkeyDescription.BackColor = System.Drawing.SystemColors.Window;
             this.lblHotkeyDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHotkeyDescription.Name = "lblHotkeyDescription";
             this.lblHotkeyDescription.UseMnemonic = false;

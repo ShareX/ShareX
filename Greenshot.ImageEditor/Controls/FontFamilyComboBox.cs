@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -49,14 +49,16 @@ namespace Greenshot.Controls
             }
         }
 
-        public FontFamilyComboBox()
-            : base()
+        public FontFamilyComboBox() : base()
         {
-            ComboBox.DataSource = FontFamily.Families;
-            ComboBox.DisplayMember = "Name";
-            SelectedIndexChanged += BindableToolStripComboBox_SelectedIndexChanged;
-            ComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            ComboBox.DrawItem += ComboBox_DrawItem;
+            if (ComboBox != null)
+            {
+                ComboBox.DataSource = FontFamily.Families;
+                ComboBox.DisplayMember = "Name";
+                SelectedIndexChanged += BindableToolStripComboBox_SelectedIndexChanged;
+                ComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+                ComboBox.DrawItem += ComboBox_DrawItem;
+            }
         }
 
         private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
@@ -69,38 +71,65 @@ namespace Greenshot.Controls
             if (e.Index > -1)
             {
                 FontFamily fontFamily = Items[e.Index] as FontFamily;
-                FontStyle fs = FontStyle.Regular;
-                if (!fontFamily.IsStyleAvailable(FontStyle.Regular))
+                FontStyle fontStyle = FontStyle.Regular;
+                if (fontFamily != null && !fontFamily.IsStyleAvailable(FontStyle.Regular))
                 {
                     if (fontFamily.IsStyleAvailable(FontStyle.Bold))
                     {
-                        fs = FontStyle.Bold;
+                        fontStyle = FontStyle.Bold;
                     }
                     else if (fontFamily.IsStyleAvailable(FontStyle.Italic))
                     {
-                        fs = FontStyle.Italic;
+                        fontStyle = FontStyle.Italic;
                     }
                     else if (fontFamily.IsStyleAvailable(FontStyle.Strikeout))
                     {
-                        fs = FontStyle.Strikeout;
+                        fontStyle = FontStyle.Strikeout;
                     }
                     else if (fontFamily.IsStyleAvailable(FontStyle.Underline))
                     {
-                        fs = FontStyle.Underline;
+                        fontStyle = FontStyle.Underline;
                     }
                 }
-                using (Font font = new Font(fontFamily, this.Font.Size + 5, fs, GraphicsUnit.Pixel))
+                try
                 {
-                    // Make sure the text is visible by centering it in the line
-                    using (StringFormat stringFormat = new StringFormat())
+                    if (fontFamily != null)
                     {
-                        stringFormat.LineAlignment = StringAlignment.Center;
-                        e.Graphics.DrawString(fontFamily.Name, font, Brushes.Black, e.Bounds, stringFormat);
+                        DrawText(e.Graphics, fontFamily, fontStyle, e.Bounds, fontFamily.Name);
+                    }
+                }
+                catch
+                {
+                    if (fontFamily != null)
+                    {
+                        // If the drawing failed, BUG-1770 seems to have a weird case that causes: Font 'Lucida Sans Typewriter' does not support style 'Regular'
+                        DrawText(e.Graphics, FontFamily.GenericSansSerif, FontStyle.Regular, e.Bounds, fontFamily.Name);
                     }
                 }
             }
             // Uncomment this if you actually like the way the focus rectangle looks
             //e.DrawFocusRectangle ();
+        }
+
+        /// <summary>
+        /// Helper method to draw the string
+        /// </summary>
+        /// <param name="graphics"></param>
+        /// <param name="fontFamily"></param>
+        /// <param name="fontStyle"></param>
+        /// <param name="bounds"></param>
+        /// <param name="text"></param>
+        private void DrawText(Graphics graphics, FontFamily fontFamily, FontStyle fontStyle, Rectangle bounds, string text)
+        {
+            using (Font font = new Font(fontFamily, Font.Size + 5, fontStyle, GraphicsUnit.Pixel))
+            {
+                // Make sure the text is visible by centering it in the line
+                using (StringFormat stringFormat = new StringFormat())
+                {
+                    stringFormat.LineAlignment = StringAlignment.Center;
+                    graphics.DrawString(text, font, Brushes.Black, bounds, stringFormat);
+                }
+            }
         }
 
         private void BindableToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,0 +1,163 @@
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2017 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+
+namespace ShareX.UploadersLib.OtherServices
+{
+    public enum OCRSpaceLanguages
+    {
+        [Description("Arabic")]
+        ara,
+        [Description("Bulgarian")]
+        bul,
+        [Description("Chinese (Simplified)")]
+        chs,
+        [Description("Chinese (Traditional)")]
+        cht,
+        [Description("Croatian")]
+        hrv,
+        [Description("Czech")]
+        cze,
+        [Description("Danish")]
+        dan,
+        [Description("Dutch")]
+        dut,
+        [Description("English")]
+        eng,
+        [Description("Finnish")]
+        fin,
+        [Description("French")]
+        fre,
+        [Description("German")]
+        ger,
+        [Description("Greek")]
+        gre,
+        [Description("Hungarian")]
+        hun,
+        [Description("Korean")]
+        kor,
+        [Description("Italian")]
+        ita,
+        [Description("Japanese")]
+        jpn,
+        [Description("Norwegian")]
+        nor,
+        [Description("Polish")]
+        pol,
+        [Description("Portuguese")]
+        por,
+        [Description("Russian")]
+        rus,
+        [Description("Slovenian")]
+        slv,
+        [Description("Spanish")]
+        spa,
+        [Description("Swedish")]
+        swe,
+        [Description("Turkish")]
+        tur
+    }
+
+    public class OCRSpace : Uploader
+    {
+        private const string APIURLUSA = "https://apipro1.ocr.space/parse/image";
+        private const string APIURLEurope = "https://apipro2.ocr.space/parse/image";
+        private const string APIURLAsia = "https://apipro3.ocr.space/parse/image";
+        private const string APIURLFree = "https://api.ocr.space/parse/image";
+
+        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public bool Overlay { get; set; }
+
+        public OCRSpace(OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        {
+            Language = language;
+            Overlay = overlay;
+        }
+
+        public OCRSpaceResponse DoOCR(Stream stream, string fileName)
+        {
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
+            //arguments.Add("url", "");
+            arguments.Add("language", Language.ToString());
+            arguments.Add("isOverlayRequired", Overlay.ToString());
+
+            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
+
+            if (ur.IsSuccess)
+            {
+                return JsonConvert.DeserializeObject<OCRSpaceResponse>(ur.Response);
+            }
+
+            return null;
+        }
+    }
+
+    public class OCRSpaceResponse
+    {
+        public List<OCRSpaceParsedResult> ParsedResults { get; set; }
+        public int OCRExitCode { get; set; }
+        public bool IsErroredOnProcessing { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorDetails { get; set; }
+        public string ProcessingTimeInMilliseconds { get; set; }
+    }
+
+    public class OCRSpaceParsedResult
+    {
+        public OCRSpaceTextOverlay TextOverlay { get; set; }
+        public int FileParseExitCode { get; set; }
+        public string ParsedText { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorDetails { get; set; }
+    }
+
+    public class OCRSpaceTextOverlay
+    {
+        public List<OCRSpaceLine> Lines { get; set; }
+        public bool HasOverlay { get; set; }
+        public string Message { get; set; }
+    }
+
+    public class OCRSpaceLine
+    {
+        public List<OCRSpaceWord> Words { get; set; }
+        public int MaxHeight { get; set; }
+        public int MinTop { get; set; }
+    }
+
+    public class OCRSpaceWord
+    {
+        public string WordText { get; set; }
+        public int Left { get; set; }
+        public int Top { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+    }
+}

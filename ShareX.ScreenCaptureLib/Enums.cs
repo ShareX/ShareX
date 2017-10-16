@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,22 +37,36 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ScreenRecordGIFEncoding // Localized
     {
-        [Description("FFmpeg")]
         FFmpeg,
-        [Description(".NET")]
         NET,
-        [Description("Octree quantizer")]
         OctreeQuantizer
     }
 
-    public enum SurfaceResult
+    public enum RegionResult
     {
-        None,
         Close,
         Region,
+        LastRegion,
         Fullscreen,
         Monitor,
-        ActiveMonitor
+        ActiveMonitor,
+        AnnotateRunAfterCaptureTasks,
+        AnnotateContinueTask,
+        AnnotateCancelTask,
+        AnnotateSaveImage,
+        AnnotateSaveImageAs,
+        AnnotateCopyImage,
+        AnnotateUploadImage,
+        AnnotatePrintImage
+    }
+
+    public enum NodeType
+    {
+        None,
+        Rectangle,
+        Line,
+        Point,
+        Freehand
     }
 
     internal enum NodePosition
@@ -64,26 +78,31 @@ namespace ShareX.ScreenCaptureLib
         BottomRight,
         Bottom,
         BottomLeft,
-        Left
+        Left,
+        Extra
     }
 
     internal enum NodeShape
     {
-        Square, Circle, Diamond
+        Square, Circle, Diamond, CustomNode
     }
 
     public enum FFmpegVideoCodec
     {
-        [Description("x264")]
+        [Description("x264 (mp4)")]
         libx264,
-        [Description("VP8 (WebM)")]
+        [Description("VP8 (webm)")]
         libvpx,
-        [Description("Xvid")]
+        [Description("Xvid (avi)")]
         libxvid,
-        [Description("Animated GIF")]
+        [Description("Animated GIF (gif)")]
         gif,
-        [Description("x265")]
-        libx265
+        [Description("x265 (mp4)")]
+        libx265,
+        [Description("H.264 NVENC (mp4)")]
+        h264_nvenc,
+        [Description("HEVC NVENC (mp4)")]
+        hevc_nvenc
     }
 
     public enum FFmpegPreset
@@ -106,6 +125,34 @@ namespace ShareX.ScreenCaptureLib
         slower,
         [Description("Very slow")]
         veryslow
+    }
+
+    public enum FFmpegNVENCPreset
+    {
+        [Description("Default")]
+        @default,
+        [Description("High quality 2 passes")]
+        slow,
+        [Description("High quality 1 pass")]
+        medium,
+        [Description("High performance 1 pass")]
+        fast,
+        [Description("High performance")]
+        hp,
+        [Description("High quality")]
+        hq,
+        [Description("Bluray disk")]
+        bd,
+        [Description("Low latency")]
+        ll,
+        [Description("Low latency high quality")]
+        llhq,
+        [Description("Low latency high performance")]
+        llhp,
+        [Description("Lossless")]
+        lossless,
+        [Description("Lossless high performance")]
+        losslesshp
     }
 
     public enum FFmpegTune
@@ -138,13 +185,56 @@ namespace ShareX.ScreenCaptureLib
         sierra2_4a
     }
 
-    public enum RegionShape
+    public enum RegionCaptureMode
     {
-        Rectangle,
-        RoundedRectangle,
-        Ellipse,
-        Triangle,
-        Diamond
+        Default,
+        Annotation,
+        ScreenColorPicker,
+        Ruler,
+        OneClick,
+        Editor,
+        TaskEditor
+    }
+
+    public enum RegionCaptureAction // Localized
+    {
+        None,
+        CancelCapture,
+        RemoveShapeCancelCapture,
+        RemoveShape,
+        SwapToolType,
+        CaptureFullscreen,
+        CaptureActiveMonitor
+    }
+
+    public enum ShapeCategory
+    {
+        Region,
+        Drawing,
+        Effect
+    }
+
+    public enum ShapeType // Localized
+    {
+        RegionRectangle,
+        RegionEllipse,
+        RegionFreehand,
+        DrawingRectangle,
+        DrawingEllipse,
+        DrawingFreehand,
+        DrawingLine,
+        DrawingArrow,
+        DrawingTextOutline,
+        DrawingTextBackground,
+        DrawingSpeechBalloon,
+        DrawingStep,
+        DrawingImage,
+        DrawingImageScreen,
+        DrawingCursor,
+        EffectBlur,
+        EffectPixelate,
+        EffectHighlight,
+        DrawingCrop
     }
 
     public enum RegionAnnotateMode
@@ -154,27 +244,19 @@ namespace ShareX.ScreenCaptureLib
         Pen
     }
 
-    public enum ScrollingCaptureScrollMethod
+    public enum ScrollingCaptureScrollMethod // Localized
     {
-        [Description("Automatically try all methods until one works")]
         Automatic,
-        [Description("Send scroll message to window or control")]
         SendMessageScroll,
-        [Description("Simulate pressing \"Page down\" key")]
         KeyPressPageDown,
-        [Description("Simulate mouse wheel scrolling")]
         MouseWheel
     }
 
-    public enum ScrollingCaptureScrollTopMethod
+    public enum ScrollingCaptureScrollTopMethod // Localized
     {
-        [Description("First simulate pressing \"Home\" key then send scroll top message")]
         All,
-        [Description("Send scroll top message")]
         SendMessageTop,
-        [Description("Simulate pressing \"Home\" key")]
         KeyPressHome,
-        [Description("Disable scrolling to top")]
         None
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class GradientPickerForm : BaseForm
+    public partial class GradientPickerForm : Form
     {
         public GradientInfo Gradient { get; set; }
 
@@ -40,6 +40,7 @@ namespace ShareX.HelpersLib
         {
             Gradient = gradient;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             foreach (GradientStop gradientStop in Gradient.Colors)
@@ -81,7 +82,7 @@ namespace ShareX.HelpersLib
             ListViewItem lvi = new ListViewItem();
             lvi.Text = string.Format(" {0:0.##}%", gradientStop.Location);
             lvi.BackColor = gradientStop.Color;
-            lvi.ForeColor = ColorHelpers.VisibleTextColor(gradientStop.Color);
+            lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
             lvi.Tag = gradientStop;
             lvGradientPoints.Items.Add(lvi);
         }
@@ -116,7 +117,7 @@ namespace ShareX.HelpersLib
                 GradientStop gradientStop = (GradientStop)lvi.Tag;
                 gradientStop.Color = color;
                 lvi.BackColor = gradientStop.Color;
-                lvi.ForeColor = ColorHelpers.VisibleTextColor(gradientStop.Color);
+                lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
                 UpdatePreview();
             }
         }
@@ -140,7 +141,7 @@ namespace ShareX.HelpersLib
                 ListViewItem lvi = lvGradientPoints.SelectedItems[0];
                 GradientStop gradientStop = (GradientStop)lvi.Tag;
                 cbtnCurrentColor.Color = gradientStop.Color;
-                nudLocation.Value = (decimal)gradientStop.Location;
+                nudLocation.SetValue((decimal)gradientStop.Location);
             }
         }
 
@@ -155,11 +156,13 @@ namespace ShareX.HelpersLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

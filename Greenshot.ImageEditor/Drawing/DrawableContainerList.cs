@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -383,7 +383,7 @@ namespace Greenshot.Drawing
                 {
                     continue;
                 }
-                if (Count > (i + 1) && !elements.Contains(this[i + 1]))
+                if (Count > i + 1 && !elements.Contains(this[i + 1]))
                 {
                     SwapElements(i, i + 1);
                 }
@@ -554,7 +554,7 @@ namespace Greenshot.Drawing
 
             // Copy
             item = new ToolStripMenuItem("Copy");
-            item.Image = ((Image)(editorFormResources.GetObject("copyToolStripMenuItem.Image")));
+            item.Image = (Image)editorFormResources.GetObject("copyToolStripMenuItem.Image");
             item.Click += delegate
             {
                 ClipboardHelper.SetClipboardData(typeof(DrawableContainerList), this);
@@ -563,7 +563,7 @@ namespace Greenshot.Drawing
 
             // Cut
             item = new ToolStripMenuItem("Cut");
-            item.Image = ((Image)(editorFormResources.GetObject("btnCut.Image")));
+            item.Image = (Image)editorFormResources.GetObject("btnCut.Image");
             item.Click += delegate
             {
                 ClipboardHelper.SetClipboardData(typeof(DrawableContainerList), this);
@@ -582,7 +582,7 @@ namespace Greenshot.Drawing
 
             // Delete
             item = new ToolStripMenuItem("Delete");
-            item.Image = ((Image)(editorFormResources.GetObject("removeObjectToolStripMenuItem.Image")));
+            item.Image = (Image)editorFormResources.GetObject("removeObjectToolStripMenuItem.Image");
             item.Click += delegate
             {
                 List<DrawableContainer> containersToDelete = new List<DrawableContainer>();

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -115,6 +115,13 @@ namespace ShareX.HelpersLib
         public static float Lerp(float value1, float value2, float amount)
         {
             return value1 + (value2 - value1) * amount;
+        }
+
+        public static Vector2 Lerp(Vector2 pos1, Vector2 pos2, float amount)
+        {
+            float x = Lerp(pos1.X, pos2.X, amount);
+            float y = Lerp(pos1.Y, pos2.Y, amount);
+            return new Vector2(x, y);
         }
     }
 }

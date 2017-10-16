@@ -228,7 +228,4 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>После захвата</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Закрыть это окно после обработки</value>
-  </data>
 </root>

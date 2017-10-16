@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
-using ShareX.IRCLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -46,7 +45,7 @@ namespace ShareX
         [JsonIgnore]
         public TaskSettings TaskSettingsReference { get; private set; }
 
-        public string Description = string.Empty;
+        public string Description = "";
 
         public HotkeyType Job = HotkeyType.None;
 
@@ -76,6 +75,20 @@ namespace ShareX
 
         public bool UseDefaultImageSettings = true;
         public TaskSettingsImage ImageSettings = new TaskSettingsImage();
+
+        [JsonIgnore]
+        public TaskSettingsImage ImageSettingsReference
+        {
+            get
+            {
+                if (UseDefaultImageSettings)
+                {
+                    return Program.DefaultTaskSettings.ImageSettings;
+                }
+
+                return TaskSettingsReference.ImageSettings;
+            }
+        }
 
         public bool UseDefaultCaptureSettings = true;
         public TaskSettingsCapture CaptureSettings = new TaskSettingsCapture();
@@ -135,6 +148,19 @@ namespace ShareX
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader && UseDefaultGeneralSettings &&
                     UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultToolsSettings &&
                     UseDefaultAdvancedSettings && !WatchFolderEnabled;
+            }
+        }
+
+        public string CaptureFolder
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
+                {
+                    return Helpers.ExpandFolderVariables(AdvancedSettings.CapturePath);
+                }
+
+                return Program.ScreenshotsFolder;
             }
         }
 
@@ -230,16 +256,17 @@ namespace ShareX
             }
         }
 
-        public string CaptureFolder
+        public FileDestination GetFileDestinationByDataType(EDataType dataType)
         {
-            get
+            switch (dataType)
             {
-                if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
-                {
-                    return AdvancedSettings.CapturePath;
-                }
-
-                return Program.ScreenshotsFolder;
+                case EDataType.Image:
+                    return ImageFileDestination;
+                case EDataType.Text:
+                    return TextFileDestination;
+                default:
+                case EDataType.File:
+                    return FileDestination;
             }
         }
     }
@@ -252,7 +279,6 @@ namespace ShareX
         public bool PlaySoundAfterUpload = true;
         public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
         public bool ShowAfterUploadForm = false;
-        public bool SaveHistory = true;
     }
 
     public class TaskSettingsImage
@@ -260,18 +286,19 @@ namespace ShareX
         #region Image / General
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
+        public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
-        public int ImageSizeLimit = 1024;
-        public EImageFormat ImageFormat2 = EImageFormat.JPEG;
+        public bool ImageAutoUseJPEG = true;
+        public int ImageAutoUseJPEGSize = 2048;
         public FileExistAction FileExistAction = FileExistAction.Ask;
 
         #endregion Image / General
 
         #region Image / Effects
 
-        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
-        public List<ImageEffect> ImageEffects = ImageEffectManager.GetDefaultImageEffects();
+        public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>() { ImageEffectPreset.GetDefaultPreset() };
+        public int SelectedImageEffectPreset = 0;
 
         public bool ShowImageEffectsWindowAfterCapture = false;
         public bool ImageEffectOnlyRegionCapture = false;
@@ -306,21 +333,20 @@ namespace ShareX
 
         #region Capture / Region capture
 
-        public SurfaceOptions SurfaceOptions = new SurfaceOptions();
+        public RegionCaptureOptions SurfaceOptions = new RegionCaptureOptions();
 
         #endregion Capture / Region capture
 
         #region Capture / Screen recorder
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions(Program.DefaultFFmpegFilePath);
-        public int ScreenRecordFPS = 20;
-        public int GIFFPS = 5;
-        public ScreenRecordGIFEncoding GIFEncoding = ScreenRecordGIFEncoding.FFmpeg;
+        public int ScreenRecordFPS = 30;
+        public int GIFFPS = 15;
+        public bool ScreenRecordShowCursor = true;
+        public bool ScreenRecordAutoStart = true;
+        public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
-        public bool ScreenRecordAutoStart = true;
-        public float ScreenRecordStartDelay = 1f;
-        public bool ScreenRecordShowCursor = true;
         public bool RunScreencastCLI = false;
         public int VideoEncoderSelected = 0;
 
@@ -331,12 +357,6 @@ namespace ShareX
         public ScrollingCaptureOptions ScrollingCaptureOptions = new ScrollingCaptureOptions();
 
         #endregion Capture / Scrolling capture
-
-        #region Capture / Rectangle annotate
-
-        public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
-
-        #endregion Capture / Rectangle annotate
     }
 
     public class TaskSettingsUpload
@@ -345,8 +365,9 @@ namespace ShareX
 
         public bool UseCustomTimeZone = false;
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
-        public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s"; // Test: %y %mo %mon %mon2 %d %h %mi %s %ms %w %w2 %pm %rn %ra %width %height %app %ver
-        public string NameFormatPatternActiveWindow = "%t_%y-%mo-%d_%h-%mi-%s";
+        public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s";
+        public string NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
+        public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
 
         #endregion Upload
@@ -359,14 +380,16 @@ namespace ShareX
         public bool ClipboardUploadAutoIndexFolder = false;
 
         #endregion Upload / Clipboard upload
+
+        public List<UploaderFilter> UploaderFilters = new List<UploaderFilter>();
     }
 
     public class TaskSettingsTools
     {
+        public string ScreenColorPickerFormat = "$r, $g, $b";
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
-        public IRCInfo IRCSettings = new IRCInfo();
     }
 
     public class TaskSettingsAdvanced
@@ -386,12 +409,18 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
 
+        [Category("General"), DefaultValue(true), Description("Use built-in region capture annotation to annotate images instead of Greenshot image editor.")]
+        public bool UseShareXForAnnotation { get; set; }
+
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
         public bool UseCustomCaptureSound { get; set; }
 
         [Category("Sound"), DefaultValue(""), Description("Capture sound file path."),
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomCaptureSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("If this text is not empty then when the screen is captured text to speech engine will say the phrase entered instead of playing the default sound.")]
+        public string SpeechCapture { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
         public bool UseCustomTaskCompletedSound { get; set; }
@@ -400,6 +429,9 @@ namespace ShareX
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomTaskCompletedSoundPath { get; set; }
 
+        [Category("Sound"), DefaultValue(""), Description("If this text is not empty then when a task is completed text to speech engine will say the phrase entered instead of playing the default sound.")]
+        public string SpeechTaskCompleted { get; set; }
+
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
         public bool UseCustomErrorSound { get; set; }
 
@@ -407,19 +439,19 @@ namespace ShareX
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomErrorSoundPath { get; set; }
 
-        [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height.")]
-        public int ThumbnailPreferredWidth { get; set; }
-
-        [Category("Image"), DefaultValue(0), Description("Preferred thumbnail height. 0 means aspect ratio will be used to adjust height according to width.")]
-        public int ThumbnailPreferredHeight { get; set; }
-
         [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
         Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
+        [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
+        public bool RegionCaptureDisableAnnotation { get; set; }
+
         [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
+
+        [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP and Dropbox public URLs.")]
+        public bool EarlyCopyURL { get; set; }
 
         [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -452,7 +484,22 @@ namespace ShareX
             }
             set
             {
-                toastWindowDuration = Math.Max(value, 0f);
+                toastWindowDuration = value.Between(0, 30);
+            }
+        }
+
+        private float toastWindowFadeDuration;
+
+        [Category("After upload / Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
+        public float ToastWindowFadeDuration
+        {
+            get
+            {
+                return toastWindowFadeDuration;
+            }
+            set
+            {
+                toastWindowFadeDuration = value.Between(0, 30);
             }
         }
 
@@ -480,7 +527,7 @@ namespace ShareX
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
 
-        [Category("Interaction"), DefaultValue(false), Description("Disable notifications")]
+        [Category("Interaction"), DefaultValue(false), Description("Disable notifications.")]
         public bool DisableNotifications { get; set; }
 
         [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
@@ -502,17 +549,11 @@ namespace ShareX
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
 
-        [Category("History"), DefaultValue(false), Description("Only save to history if URL or shortened URL is not empty.")]
-        public bool HistorySaveOnlyURL { get; set; }
-
-        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("Copy this color format to clipboard after using screen color picker. Formats: $r, $g, $b, $hex, $x, $y")]
-        public string ScreenColorPickerFormat { get; set; }
-
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
-            ImageExtensions = Enum.GetNames(typeof(ImageFileExtensions)).ToList();
-            TextExtensions = Enum.GetNames(typeof(TextFileExtensions)).ToList();
+            ImageExtensions = Helpers.ImageFileExtensions.ToList();
+            TextExtensions = Helpers.TextFileExtensions.ToList();
         }
     }
 }

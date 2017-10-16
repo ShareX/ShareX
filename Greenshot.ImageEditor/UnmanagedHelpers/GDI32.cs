@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -55,9 +55,9 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// </summary>
         /// <param name="graphics"></param>
         /// <returns>SafeDeviceContextHandle</returns>
-        public static SafeDeviceContextHandle getSafeDeviceContext(this Graphics graphics)
+        public static SafeDeviceContextHandle GetSafeDeviceContext(this Graphics graphics)
         {
-            return SafeDeviceContextHandle.fromGraphics(graphics);
+            return SafeDeviceContextHandle.FromGraphics(graphics);
         }
     }
 
@@ -67,10 +67,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
     public abstract class SafeObjectHandle : SafeHandleZeroOrMinusOneIsInvalid
     {
         [DllImport("gdi32", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteObject(IntPtr hObject);
 
-        protected SafeObjectHandle(bool ownsHandle)
-            : base(ownsHandle)
+        protected SafeObjectHandle(bool ownsHandle) : base(ownsHandle)
         {
         }
 
@@ -85,15 +85,16 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeHBitmapHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeHBitmapHandle()
-            : base(true)
+        public SafeHBitmapHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeHBitmapHandle(IntPtr preexistingHandle)
-            : base(true)
+        public SafeHBitmapHandle(IntPtr preexistingHandle) : base(true)
         {
             SetHandle(preexistingHandle);
         }
@@ -104,15 +105,16 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeRegionHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeRegionHandle()
-            : base(true)
+        public SafeRegionHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeRegionHandle(IntPtr preexistingHandle)
-            : base(true)
+        public SafeRegionHandle(IntPtr preexistingHandle) : base(true)
         {
             SetHandle(preexistingHandle);
         }
@@ -123,15 +125,16 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeDibSectionHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeDibSectionHandle()
-            : base(true)
+        public SafeDibSectionHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeDibSectionHandle(IntPtr preexistingHandle)
-            : base(true)
+        public SafeDibSectionHandle(IntPtr preexistingHandle) : base(true)
         {
             SetHandle(preexistingHandle);
         }
@@ -146,33 +149,33 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("gdi32", SetLastError = true)]
         private static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
 
-        private SafeHandle hdc;
+        private readonly SafeHandle _hdc;
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeSelectObjectHandle()
-            : base(true)
+        public SafeSelectObjectHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeSelectObjectHandle(SafeDCHandle hdc, SafeHandle newHandle)
-            : base(true)
+        public SafeSelectObjectHandle(SafeDCHandle hdc, SafeHandle newHandle) : base(true)
         {
-            this.hdc = hdc;
+            _hdc = hdc;
             SetHandle(SelectObject(hdc.DangerousGetHandle(), newHandle.DangerousGetHandle()));
         }
 
         protected override bool ReleaseHandle()
         {
-            SelectObject(hdc.DangerousGetHandle(), handle);
+            SelectObject(_hdc.DangerousGetHandle(), handle);
             return true;
         }
     }
 
     public abstract class SafeDCHandle : SafeHandleZeroOrMinusOneIsInvalid
     {
-        protected SafeDCHandle(bool ownsHandle)
-            : base(ownsHandle)
+        protected SafeDCHandle(bool ownsHandle) : base(ownsHandle)
         {
         }
     }
@@ -183,17 +186,19 @@ namespace GreenshotPlugin.UnmanagedHelpers
     public class SafeCompatibleDCHandle : SafeDCHandle
     {
         [DllImport("gdi32", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteDC(IntPtr hDC);
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeCompatibleDCHandle()
-            : base(true)
+        public SafeCompatibleDCHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeCompatibleDCHandle(IntPtr preexistingHandle)
-            : base(true)
+        public SafeCompatibleDCHandle(IntPtr preexistingHandle) : base(true)
         {
             SetHandle(preexistingHandle);
         }
@@ -214,25 +219,26 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeDeviceContextHandle : SafeDCHandle
     {
-        private Graphics graphics = null;
+        private readonly Graphics _graphics;
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeDeviceContextHandle()
-            : base(true)
+        public SafeDeviceContextHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeDeviceContextHandle(Graphics graphics, IntPtr preexistingHandle)
-            : base(true)
+        public SafeDeviceContextHandle(Graphics graphics, IntPtr preexistingHandle) : base(true)
         {
-            this.graphics = graphics;
+            _graphics = graphics;
             SetHandle(preexistingHandle);
         }
 
         protected override bool ReleaseHandle()
         {
-            graphics.ReleaseHdc(handle);
+            _graphics.ReleaseHdc(handle);
             return true;
         }
 
@@ -241,7 +247,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             return new SafeSelectObjectHandle(this, newHandle);
         }
 
-        public static SafeDeviceContextHandle fromGraphics(Graphics graphics)
+        public static SafeDeviceContextHandle FromGraphics(Graphics graphics)
         {
             return new SafeDeviceContextHandle(graphics, graphics.GetHdc());
         }
@@ -265,7 +271,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern IntPtr SelectObject(SafeHandle hDC, SafeHandle hObject);
 
         [DllImport("gdi32", SetLastError = true)]
-        public static extern SafeDibSectionHandle CreateDIBSection(SafeHandle hdc, ref BitmapInfoHeader bmi, uint Usage, out IntPtr bits, IntPtr hSection, uint dwOffset);
+        public static extern SafeDibSectionHandle CreateDIBSection(SafeHandle hdc, ref BITMAPINFOHEADER bmi, uint Usage, out IntPtr bits, IntPtr hSection, uint dwOffset);
 
         [DllImport("gdi32", SetLastError = true)]
         public static extern SafeRegionHandle CreateRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect);
@@ -275,55 +281,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
 
         [DllImport("gdi32", SetLastError = true)]
         public static extern int GetDeviceCaps(SafeHandle hdc, DeviceCaps nIndex);
-
-        /// <summary>
-        /// StretchBlt extension for the graphics object
-        /// Doesn't work?
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="source"></param>
-        public static void StretchBlt(this Graphics target, Bitmap sourceBitmap, Rectangle source, Rectangle destination)
-        {
-            using (SafeDeviceContextHandle targetDC = target.getSafeDeviceContext())
-            {
-                using (SafeCompatibleDCHandle safeCompatibleDCHandle = CreateCompatibleDC(targetDC))
-                {
-                    using (SafeHBitmapHandle hBitmapHandle = new SafeHBitmapHandle(sourceBitmap.GetHbitmap()))
-                    {
-                        using (SafeSelectObjectHandle selectObject = safeCompatibleDCHandle.SelectObject(hBitmapHandle))
-                        {
-                            StretchBlt(targetDC, destination.X, destination.Y, destination.Width, destination.Height, safeCompatibleDCHandle, source.Left, source.Top, source.Width, source.Height, CopyPixelOperation.SourceCopy);
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Bitblt extension for the graphics object
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="source"></param>
-        public static void BitBlt(this Graphics target, Bitmap sourceBitmap, Rectangle source, Point destination, CopyPixelOperation rop)
-        {
-            using (SafeDeviceContextHandle targetDC = target.getSafeDeviceContext())
-            {
-                using (SafeCompatibleDCHandle safeCompatibleDCHandle = CreateCompatibleDC(targetDC))
-                {
-                    using (SafeHBitmapHandle hBitmapHandle = new SafeHBitmapHandle(sourceBitmap.GetHbitmap()))
-                    {
-                        using (SafeSelectObjectHandle selectObject = safeCompatibleDCHandle.SelectObject(hBitmapHandle))
-                        {
-                            BitBlt(targetDC, destination.X, destination.Y, source.Width, source.Height, safeCompatibleDCHandle, source.Left, source.Top, rop);
-                        }
-                    }
-                }
-            }
-        }
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public struct BitmapFileHeader
+    public struct BITMAPFILEHEADER
     {
         public static readonly short BM = 0x4d42; // BM
         public short bfType;
@@ -334,39 +295,185 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct BitmapInfoHeader
+    public struct BitfieldColorMask
     {
-        public uint biSize;
-        public int biWidth;
-        public int biHeight;
-        public short biPlanes;
-        public short biBitCount;
-        public uint biCompression;
-        public uint biSizeImage;
-        public int biXPelsPerMeter;
-        public int biYPelsPerMeter;
-        public uint biClrUsed;
-        public int biClrImportant;
+        public uint blue;
+        public uint green;
+        public uint red;
 
-        private const int BI_RGB = 0;	//Das Bitmap ist nicht komprimiert
-        private const int BI_RLE8 = 1; //Das Bitmap ist komprimiert (Für 8-Bit Bitmaps)
-        private const int BI_RLE4 = 2; //Das Bitmap ist komprimiert (Für 4-Bit Bitmaps)
-        private const int BI_BITFIELDS = 3; //Das Bitmap ist nicht komprimiert. Die Farbtabelle enthält
+        public void InitValues()
+        {
+            red = (uint)255 << 8;
+            green = (uint)255 << 16;
+            blue = (uint)255 << 24;
+        }
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CIEXYZ
+    {
+        public uint ciexyzX; //FXPT2DOT30
+        public uint ciexyzY; //FXPT2DOT30
+        public uint ciexyzZ; //FXPT2DOT30
+
+        public CIEXYZ(uint FXPT2DOT30)
+        {
+            ciexyzX = FXPT2DOT30;
+            ciexyzY = FXPT2DOT30;
+            ciexyzZ = FXPT2DOT30;
+        }
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CIEXYZTRIPLE
+    {
+        public CIEXYZ ciexyzRed;
+        public CIEXYZ ciexyzGreen;
+        public CIEXYZ ciexyzBlue;
+    }
+
+    public enum BI_COMPRESSION : uint
+    {
+        BI_RGB = 0,         // Uncompressed
+        BI_RLE8 = 1,        // RLE 8BPP
+        BI_RLE4 = 2,        // RLE 4BPP
+        BI_BITFIELDS = 3,   // Specifies that the bitmap is not compressed and that the color table consists of three DWORD color masks that specify the red, green, and blue components, respectively, of each pixel. This is valid when used with 16- and 32-bpp bitmaps.
+        BI_JPEG = 4,        // Indicates that the image is a JPEG image.
+        BI_PNG = 5          // Indicates that the image is a PNG image.
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public struct BITMAPINFOHEADER
+    {
+        [FieldOffset(0)]
+        public uint biSize;
+        [FieldOffset(4)]
+        public int biWidth;
+        [FieldOffset(8)]
+        public int biHeight;
+        [FieldOffset(12)]
+        public ushort biPlanes;
+        [FieldOffset(14)]
+        public ushort biBitCount;
+        [FieldOffset(16)]
+        public BI_COMPRESSION biCompression;
+        [FieldOffset(20)]
+        public uint biSizeImage;
+        [FieldOffset(24)]
+        public int biXPelsPerMeter;
+        [FieldOffset(28)]
+        public int biYPelsPerMeter;
+        [FieldOffset(32)]
+        public uint biClrUsed;
+        [FieldOffset(36)]
+        public uint biClrImportant;
+        [FieldOffset(40)]
+        public uint bV5RedMask;
+        [FieldOffset(44)]
+        public uint bV5GreenMask;
+        [FieldOffset(48)]
+        public uint bV5BlueMask;
+        [FieldOffset(52)]
+        public uint bV5AlphaMask;
+        [FieldOffset(56)]
+        public uint bV5CSType;
+        [FieldOffset(60)]
+        public CIEXYZTRIPLE bV5Endpoints;
+        [FieldOffset(96)]
+        public uint bV5GammaRed;
+        [FieldOffset(100)]
+        public uint bV5GammaGreen;
+        [FieldOffset(104)]
+        public uint bV5GammaBlue;
+        [FieldOffset(108)]
+        public uint bV5Intent;      // Rendering intent for bitmap
+        [FieldOffset(112)]
+        public uint bV5ProfileData;
+        [FieldOffset(116)]
+        public uint bV5ProfileSize;
+        [FieldOffset(120)]
+        public uint bV5Reserved;
+
         public const int DIB_RGB_COLORS = 0;
 
-        public BitmapInfoHeader(int width, int height, short bpp)
+        public BITMAPINFOHEADER(int width, int height, ushort bpp)
         {
-            biSize = (uint)Marshal.SizeOf(typeof(BitmapInfoHeader));	// BITMAPINFOHEADER is 40 bytes
-            biPlanes = 1;	// Should allways be 1
-            biCompression = BI_RGB;
+            biSize = (uint)Marshal.SizeOf(typeof(BITMAPINFOHEADER));    // BITMAPINFOHEADER < DIBV5 is 40 bytes
+            biPlanes = 1;   // Should allways be 1
+            biCompression = BI_COMPRESSION.BI_RGB;
             biWidth = width;
             biHeight = height;
             biBitCount = bpp;
-            biSizeImage = 0;
+            biSizeImage = (uint)(width * height * (bpp >> 3));
             biXPelsPerMeter = 0;
             biYPelsPerMeter = 0;
             biClrUsed = 0;
             biClrImportant = 0;
+
+            // V5
+            bV5RedMask = (uint)255 << 16;
+            bV5GreenMask = (uint)255 << 8;
+            bV5BlueMask = (uint)255;
+            bV5AlphaMask = (uint)255 << 24;
+            bV5CSType = 1934772034; // sRGB
+            bV5Endpoints = new CIEXYZTRIPLE
+            {
+                ciexyzBlue = new CIEXYZ(0),
+                ciexyzGreen = new CIEXYZ(0),
+                ciexyzRed = new CIEXYZ(0)
+            };
+            bV5GammaRed = 0;
+            bV5GammaGreen = 0;
+            bV5GammaBlue = 0;
+            bV5Intent = 4;
+            bV5ProfileData = 0;
+            bV5ProfileSize = 0;
+            bV5Reserved = 0;
         }
+
+        public bool IsDibV5
+        {
+            get
+            {
+                uint sizeOfBMI = (uint)Marshal.SizeOf(typeof(BITMAPINFOHEADER));
+                return biSize >= sizeOfBMI;
+            }
+        }
+        public uint OffsetToPixels
+        {
+            get
+            {
+                if (biCompression == BI_COMPRESSION.BI_BITFIELDS)
+                {
+                    // Add 3x4 bytes for the bitfield color mask
+                    return biSize + 3 * 4;
+                }
+                return biSize;
+            }
+        }
+    }
+
+    [StructLayoutAttribute(LayoutKind.Sequential)]
+    public struct BITMAPINFO
+    {
+        /// <summary>
+        /// A BITMAPINFOHEADER structure that contains information about the dimensions of color format.
+        /// </summary>
+        public BITMAPINFOHEADER bmiHeader;
+
+        /// <summary>
+        /// An array of RGBQUAD. The elements of the array that make up the color table.
+        /// </summary>
+        [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.Struct)]
+        public RGBQUAD[] bmiColors;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct RGBQUAD
+    {
+        public byte rgbBlue;
+        public byte rgbGreen;
+        public byte rgbRed;
+        public byte rgbReserved;
     }
 }

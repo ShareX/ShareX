@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -46,25 +46,33 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void AddRoundedRectangle(this GraphicsPath graphicsPath, RectangleF rect, float radius, float penWidth = 1)
+        public static void AddRoundedRectangleProper(this GraphicsPath graphicsPath, RectangleF rect, float radius, float penWidth = 1)
+        {
+            if (penWidth == 1)
+            {
+                rect = new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1);
+            }
+
+            if (rect.Width > 0 && rect.Height > 0)
+            {
+                graphicsPath.AddRoundedRectangle(rect, radius);
+            }
+        }
+
+        public static void AddRoundedRectangle(this GraphicsPath gp, RectangleF rect, float radius)
         {
             if (radius <= 0f)
             {
-                graphicsPath.AddRectangleProper(rect, penWidth);
+                gp.AddRectangle(rect);
             }
             else
             {
-                if (penWidth == 1)
-                {
-                    rect = new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1);
-                }
-
                 // If the corner radius is greater than or equal to
                 // half the width, or height (whichever is shorter)
                 // then return a capsule instead of a lozenge
                 if (radius >= (Math.Min(rect.Width, rect.Height) / 2.0f))
                 {
-                    graphicsPath.AddCapsule(rect);
+                    gp.AddCapsule(rect);
                 }
                 else
                 {
@@ -75,26 +83,26 @@ namespace ShareX.HelpersLib
                     RectangleF arc = new RectangleF(rect.Location, size);
 
                     // Top left arc
-                    graphicsPath.AddArc(arc, 180, 90);
+                    gp.AddArc(arc, 180, 90);
 
                     // Top right arc
                     arc.X = rect.Right - diameter;
-                    graphicsPath.AddArc(arc, 270, 90);
+                    gp.AddArc(arc, 270, 90);
 
                     // Bottom right arc
                     arc.Y = rect.Bottom - diameter;
-                    graphicsPath.AddArc(arc, 0, 90);
+                    gp.AddArc(arc, 0, 90);
 
                     // Bottom left arc
                     arc.X = rect.Left;
-                    graphicsPath.AddArc(arc, 90, 90);
+                    gp.AddArc(arc, 90, 90);
 
-                    graphicsPath.CloseFigure();
+                    gp.CloseFigure();
                 }
             }
         }
 
-        public static void AddCapsule(this GraphicsPath graphicsPath, RectangleF rect)
+        public static void AddCapsule(this GraphicsPath gp, RectangleF rect)
         {
             float diameter;
             RectangleF arc;
@@ -107,9 +115,9 @@ namespace ShareX.HelpersLib
                     diameter = rect.Height;
                     SizeF sizeF = new SizeF(diameter, diameter);
                     arc = new RectangleF(rect.Location, sizeF);
-                    graphicsPath.AddArc(arc, 90, 180);
+                    gp.AddArc(arc, 90, 180);
                     arc.X = rect.Right - diameter;
-                    graphicsPath.AddArc(arc, 270, 180);
+                    gp.AddArc(arc, 270, 180);
                 }
                 else if (rect.Width < rect.Height)
                 {
@@ -117,54 +125,22 @@ namespace ShareX.HelpersLib
                     diameter = rect.Width;
                     SizeF sizeF = new SizeF(diameter, diameter);
                     arc = new RectangleF(rect.Location, sizeF);
-                    graphicsPath.AddArc(arc, 180, 180);
+                    gp.AddArc(arc, 180, 180);
                     arc.Y = rect.Bottom - diameter;
-                    graphicsPath.AddArc(arc, 0, 180);
+                    gp.AddArc(arc, 0, 180);
                 }
                 else
                 {
                     // Circle
-                    graphicsPath.AddEllipse(rect);
+                    gp.AddEllipse(rect);
                 }
             }
             catch
             {
-                graphicsPath.AddEllipse(rect);
+                gp.AddEllipse(rect);
             }
 
-            graphicsPath.CloseFigure();
-        }
-
-        public static void AddTriangle(this GraphicsPath graphicsPath, RectangleF rect, TriangleAngle angle = TriangleAngle.Top)
-        {
-            PointF p1, p2, p3;
-
-            switch (angle)
-            {
-                default:
-                case TriangleAngle.Top:
-                    p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y);
-                    p2 = new PointF(rect.X, rect.Y + rect.Height);
-                    p3 = new PointF(rect.X + rect.Width, rect.Y + rect.Height);
-                    break;
-                case TriangleAngle.Right:
-                    p1 = new PointF(rect.X + rect.Width, rect.Y + rect.Height / 2.0f);
-                    p2 = new PointF(rect.X, rect.Y);
-                    p3 = new PointF(rect.X, rect.Y + rect.Height);
-                    break;
-                case TriangleAngle.Bottom:
-                    p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y + rect.Height);
-                    p2 = new PointF(rect.X + rect.Width, rect.Y);
-                    p3 = new PointF(rect.X, rect.Y);
-                    break;
-                case TriangleAngle.Left:
-                    p1 = new PointF(rect.X, rect.Y + rect.Height / 2.0f);
-                    p2 = new PointF(rect.X + rect.Width, rect.Y + rect.Height);
-                    p3 = new PointF(rect.X + rect.Width, rect.Y);
-                    break;
-            }
-
-            graphicsPath.AddPolygon(new PointF[] { p1, p2, p3 });
+            gp.CloseFigure();
         }
 
         public static void AddDiamond(this GraphicsPath graphicsPath, RectangleF rect)

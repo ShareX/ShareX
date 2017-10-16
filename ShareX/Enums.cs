@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
@@ -33,6 +34,7 @@ namespace ShareX
         Debug,
         Release,
         Steam,
+        WindowsStore,
         Unknown
     }
 
@@ -49,6 +51,8 @@ namespace ShareX
         German,
         [Description("Magyar (Hungarian)")]
         Hungarian,
+        [Description("Italiano (Italian)")]
+        Italian,
         [Description("한국어 (Korean)")]
         Korean,
         [Description("Português-Brasil (Portuguese-Brazil)")]
@@ -59,6 +63,8 @@ namespace ShareX
         SimplifiedChinese,
         [Description("Español (Spanish)")]
         Spanish,
+        [Description("繁體中文 (Traditional Chinese)")]
+        TraditionalChinese,
         [Description("Türkçe (Turkish)")]
         Turkish,
         [Description("Tiếng Việt (Vietnamese)")]
@@ -73,6 +79,7 @@ namespace ShareX
         TextUpload,
         ShortenURL,
         ShareURL,
+        Download,
         DownloadUpload
     }
 
@@ -82,49 +89,53 @@ namespace ShareX
         Preparing,
         Working,
         Stopping,
-        Completed
+        Completed,
+        History
     }
 
     [Flags]
     public enum AfterCaptureTasks // Localized
     {
         None = 0,
-        AddImageEffects = 1,
-        AnnotateImage = 1 << 1,
-        CopyImageToClipboard = 1 << 2,
-        SendImageToPrinter = 1 << 3,
-        SaveImageToFile = 1 << 4,
-        SaveImageToFileWithDialog = 1 << 5,
-        SaveThumbnailImageToFile = 1 << 6,
-        PerformActions = 1 << 7,
-        CopyFileToClipboard = 1 << 8,
-        CopyFilePathToClipboard = 1 << 9,
-        UploadImageToHost = 1 << 10,
-        DeleteFile = 1 << 11
+        ShowQuickTaskMenu = 1,
+        ShowAfterCaptureWindow = 1 << 1,
+        AddImageEffects = 1 << 2,
+        AnnotateImage = 1 << 3,
+        CopyImageToClipboard = 1 << 4,
+        SendImageToPrinter = 1 << 5,
+        SaveImageToFile = 1 << 6,
+        SaveImageToFileWithDialog = 1 << 7,
+        SaveThumbnailImageToFile = 1 << 8,
+        PerformActions = 1 << 9,
+        CopyFileToClipboard = 1 << 10,
+        CopyFilePathToClipboard = 1 << 11,
+        ShowInExplorer = 1 << 12,
+        DoOCR = 1 << 13,
+        ShowBeforeUploadWindow = 1 << 14,
+        UploadImageToHost = 1 << 15,
+        DeleteFile = 1 << 16
     }
 
     [Flags]
     public enum AfterUploadTasks // Localized
     {
         None = 0,
-        UseURLShortener = 1,
-        ShareURL = 1 << 1,
-        CopyURLToClipboard = 1 << 2,
-        OpenURL = 1 << 3,
-        ShowQRCode = 1 << 4
+        ShowAfterUploadWindow = 1,
+        UseURLShortener = 1 << 1,
+        ShareURL = 1 << 2,
+        CopyURLToClipboard = 1 << 3,
+        OpenURL = 1 << 4,
+        ShowQRCode = 1 << 5
     }
 
     public enum CaptureType
     {
-        Screen,
+        Fullscreen,
         Monitor,
         ActiveMonitor,
         Window,
         ActiveWindow,
-        RectangleWindow,
-        Rectangle,
-        Polygon,
-        Freehand,
+        Region,
         CustomRegion,
         LastRegion
     }
@@ -133,9 +144,11 @@ namespace ShareX
     {
         Region,
         ActiveWindow,
+        CustomRegion,
         LastRegion
     }
 
+    [JsonConverter(typeof(HotkeyTypeEnumConverter))]
     public enum HotkeyType // Localized + Category
     {
         None,
@@ -144,44 +157,44 @@ namespace ShareX
         FolderUpload,
         ClipboardUpload,
         ClipboardUploadWithContentViewer,
+        UploadText,
         UploadURL,
         DragDropUpload,
+        ShortenURL,
         StopUploads,
         // Screen capture
         PrintScreen,
         ActiveWindow,
         ActiveMonitor,
         RectangleRegion,
-        WindowRectangle,
-        RectangleAnnotate,
         RectangleLight,
         RectangleTransparent,
-        PolygonRegion,
-        FreeHandRegion,
         CustomRegion,
         LastRegion,
         ScrollingCapture,
         CaptureWebpage,
+        TextCapture,
         AutoCapture,
         StartAutoCapture,
         // Screen record
         ScreenRecorder,
         ScreenRecorderActiveWindow,
+        ScreenRecorderCustomRegion,
         StartScreenRecorder,
         ScreenRecorderGIF,
         ScreenRecorderGIFActiveWindow,
+        ScreenRecorderGIFCustomRegion,
         StartScreenRecorderGIF,
+        AbortScreenRecording,
         // Tools
         ColorPicker,
         ScreenColorPicker,
         ImageEditor,
         ImageEffects,
         HashCheck,
-        IRCClient,
         DNSChanger,
         QRCode,
         Ruler,
-        Automate,
         IndexFolder,
         ImageCombiner,
         VideoThumbnailer,
@@ -190,14 +203,12 @@ namespace ShareX
         MonitorTest,
         // Other
         DisableHotkeys,
-        OpenScreenshotsFolder
-    }
-
-    public enum HotkeyStatus
-    {
-        Registered,
-        Failed,
-        NotConfigured
+        OpenMainWindow,
+        OpenScreenshotsFolder,
+        OpenHistory,
+        OpenImageHistory,
+        ToggleActionsToolbar,
+        ExitShareX
     }
 
     public enum PopUpNotificationType // Localized
@@ -242,5 +253,17 @@ namespace ShareX
     public enum ScreenRecordState
     {
         Waiting, BeforeStart, AfterStart, AfterRecordingStart, AfterStop
+    }
+
+    public enum RegionCaptureType
+    {
+        Default, Light, Transparent
+    }
+
+    public enum StartupTaskState
+    {
+        Disabled = 0,
+        DisabledByUser = 1,
+        Enabled = 2
     }
 }

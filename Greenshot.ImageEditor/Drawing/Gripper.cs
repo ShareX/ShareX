@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -43,9 +43,14 @@ namespace Greenshot.Drawing
         public const int POSITION_BOTTOM_CENTER = 5;
         public const int POSITION_BOTTOM_LEFT = 6;
         public const int POSITION_MIDDLE_LEFT = 7;
+
         public const int GripperSize = 7;
 
-        public int Position { get; set; }
+        public int Position
+        {
+            get;
+            set;
+        }
 
         public Gripper()
         {

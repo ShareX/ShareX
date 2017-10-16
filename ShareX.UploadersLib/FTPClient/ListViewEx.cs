@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -462,7 +462,7 @@ namespace ShareX.UploadersLib
     /// </summary>
     public class SubItemEndEditingEventArgs : SubItemEventArgs
     {
-        private string _text = string.Empty;
+        private string _text = "";
         private bool _cancel = true;
 
         public SubItemEndEditingEventArgs(ListViewItem item, int subItem, string display, bool cancel) :

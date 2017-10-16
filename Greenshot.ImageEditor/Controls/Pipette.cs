@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,7 +37,7 @@ namespace Greenshot.Controls
         private MovableShowColorForm movableShowColorForm;
         private bool dragging;
         private Cursor _cursor;
-        private Bitmap _image;
+        private readonly Bitmap _image;
         private const int VK_ESC = 27;
 
         public event EventHandler<PipetteUsedArgs> PipetteUsed;
@@ -129,7 +129,10 @@ namespace Greenshot.Controls
             {
                 //Release Capture should consume MouseUp when canceled with the escape key
                 User32.ReleaseCapture();
-                PipetteUsed(this, new PipetteUsedArgs(movableShowColorForm.color));
+                if (PipetteUsed != null)
+                {
+                    PipetteUsed(this, new PipetteUsedArgs(movableShowColorForm.color));
+                }
             }
             base.OnMouseUp(e);
         }

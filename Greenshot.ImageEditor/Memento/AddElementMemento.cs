@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -30,13 +30,13 @@ namespace Greenshot.Memento
     /// </summary>
     public class AddElementMemento : IMemento
     {
-        private IDrawableContainer drawableContainer;
-        private Surface surface;
+        private IDrawableContainer _drawableContainer;
+        private Surface _surface;
 
         public AddElementMemento(Surface surface, IDrawableContainer drawableContainer)
         {
-            this.surface = surface;
-            this.drawableContainer = drawableContainer;
+            _surface = surface;
+            _drawableContainer = drawableContainer;
         }
 
         public void Dispose()
@@ -48,8 +48,8 @@ namespace Greenshot.Memento
         protected virtual void Dispose(bool disposing)
         {
             //if (disposing) { }
-            drawableContainer = null;
-            surface = null;
+            _drawableContainer = null;
+            _surface = null;
         }
 
         public bool Merge(IMemento otherMemento)
@@ -60,16 +60,15 @@ namespace Greenshot.Memento
         public IMemento Restore()
         {
             // Before
-            drawableContainer.Invalidate();
+            _drawableContainer.Invalidate();
             // Store the selected state, as it's overwritten by the RemoveElement
-            bool selected = drawableContainer.Selected;
 
-            DeleteElementMemento oldState = new DeleteElementMemento(surface, drawableContainer);
-            surface.RemoveElement(drawableContainer, false);
-            drawableContainer.Selected = true;
+            DeleteElementMemento oldState = new DeleteElementMemento(_surface, _drawableContainer);
+            _surface.RemoveElement(_drawableContainer, false);
+            _drawableContainer.Selected = true;
 
             // After
-            drawableContainer.Invalidate();
+            _drawableContainer.Invalidate();
             return oldState;
         }
     }

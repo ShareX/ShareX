@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
-    public partial class VideoThumbnailerForm : BaseForm
+    public partial class VideoThumbnailerForm : Form
     {
         public event Action<List<VideoThumbnailInfo>> ThumbnailsTaken;
 
@@ -45,7 +45,8 @@ namespace ShareX.MediaLib
             FFmpegPath = ffmpegPath;
             Options = options;
             InitializeComponent();
-            txtMediaPath.Text = Options.LastVideoPath ?? string.Empty;
+            Icon = ShareXResources.Icon;
+            txtMediaPath.Text = Options.LastVideoPath ?? "";
             pgOptions.SelectedObject = Options;
         }
 
@@ -74,7 +75,7 @@ namespace ShareX.MediaLib
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ShowError();
                     }
                     finally
                     {

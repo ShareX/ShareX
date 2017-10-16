@@ -131,7 +131,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtHex.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -146,7 +146,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtHex.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -161,7 +161,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -176,7 +176,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPipette.Location" type="System.Drawing.Point, System.Drawing">
@@ -198,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPipette.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblScreenColorPickerTip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
@@ -215,6 +215,9 @@
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Press "Ctrl" button when this window active to stop screen color picker.</value>
   </data>
+  <data name="lblScreenColorPickerTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="lblScreenColorPickerTip.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -228,7 +231,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblScreenColorPickerTip.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnColorPicker.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -256,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnColorPicker.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -283,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -310,34 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="btnCopyAll.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 232</value>
-  </data>
-  <data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 32</value>
-  </data>
-  <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Copy all</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Name" xml:space="preserve">
-    <value>btnCopyAll</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>13</value>
   </data>
   <data name="txtX.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 276</value>
@@ -349,7 +325,7 @@
     <value>42</value>
   </data>
   <data name="txtX.Text" xml:space="preserve">
-    <value>1680</value>
+    <value>1920</value>
   <comment>@Invariant</comment></data>
   <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -364,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtX.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtY.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 276</value>
@@ -376,7 +352,7 @@
     <value>44</value>
   </data>
   <data name="txtY.Text" xml:space="preserve">
-    <value>1050</value>
+    <value>1080</value>
   <comment>@Invariant</comment></data>
   <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -391,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblCursorPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -421,7 +397,85 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCursorPosition.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 232</value>
+  </data>
+  <metadata name="cmsCopy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="cmsCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 158</value>
+  </data>
+  <data name="&gt;&gt;cmsCopy.Name" xml:space="preserve">
+    <value>cmsCopy</value>
+  </data>
+  <data name="&gt;&gt;cmsCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 32</value>
+  </data>
+  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
+    <value>btnCopy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tsmiCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Copy all</value>
+  </data>
+  <data name="tsmiCopyRGB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Copy RGB</value>
+  </data>
+  <data name="tsmiCopyHex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>Copy hexadecimal</value>
+  </data>
+  <data name="tsmiCopyCMYK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Copy CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Copy HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Copy decimal</value>
+  </data>
+  <data name="tsmiCopyPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Copy position</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -431,6 +485,48 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>642, 334</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyAll.Name" xml:space="preserve">
+    <value>tsmiCopyAll</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyRGB.Name" xml:space="preserve">
+    <value>tsmiCopyRGB</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyRGB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyHex.Name" xml:space="preserve">
+    <value>tsmiCopyHex</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyHex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyCMYK.Name" xml:space="preserve">
+    <value>tsmiCopyCMYK</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyCMYK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyHSB.Name" xml:space="preserve">
+    <value>tsmiCopyHSB</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyHSB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyDecimal.Name" xml:space="preserve">
+    <value>tsmiCopyDecimal</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyDecimal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyPosition.Name" xml:space="preserve">
+    <value>tsmiCopyPosition</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ScreenColorPicker</value>

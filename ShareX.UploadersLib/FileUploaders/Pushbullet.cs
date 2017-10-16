@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,18 +24,40 @@
 #endregion License Information (GPL v3)
 
 // Credits: https://github.com/BallisticLingonberries
-// API Information: https://docs.pushbullet.com/http/
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class PushbulletFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Pushbullet;
+
+        public override Icon ServiceIcon => Resources.Pushbullet;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.PushbulletSettings != null && !string.IsNullOrEmpty(config.PushbulletSettings.UserAPIKey) &&
+                config.PushbulletSettings.DeviceList != null && config.PushbulletSettings.DeviceList.IsValidIndex(config.PushbulletSettings.SelectedDevice);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Pushbullet(config.PushbulletSettings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
+    }
+
     public sealed class Pushbullet : FileUploader
     {
         public PushbulletSettings Config { get; private set; }
@@ -60,7 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             upArgs.Add("file_name", fileName);
 
-            string uploadRequest = SendRequest(HttpMethod.POST, apiRequestFileUploadURL, upArgs, headers);
+            string uploadRequest = SendRequestMultiPart(apiRequestFileUploadURL, upArgs, headers);
 
             if (uploadRequest == null) return null;
 
@@ -79,7 +101,7 @@ namespace ShareX.UploadersLib.FileUploaders
             upArgs.Add("policy", fileInfo.data.policy);
             upArgs.Add("content-type", fileInfo.data.content_type);
 
-            UploadResult uploadResult = UploadData(stream, fileInfo.upload_url, fileName, "file", upArgs);
+            UploadResult uploadResult = SendRequestFile(fileInfo.upload_url, stream, fileName, "file", upArgs);
 
             if (uploadResult == null) return null;
 
@@ -88,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("file_url", fileInfo.file_url);
             pushArgs.Add("body", "Sent via ShareX");
 
-            string pushResult = SendRequest(HttpMethod.POST, apiSendPushURL, pushArgs, headers);
+            string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
 
             if (pushResult == null) return null;
 
@@ -118,7 +140,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     args.Add("body", "Sent via ShareX");
             }
 
-            string response = SendRequest(HttpMethod.POST, apiSendPushURL, args, headers);
+            string response = SendRequestMultiPart(apiSendPushURL, args, headers);
 
             if (response == null) return null;
 
@@ -218,7 +240,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class PushbulletSettings
     {
-        public string UserAPIKey = string.Empty;
+        public string UserAPIKey = "";
         public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
         public int SelectedDevice = 0;
 

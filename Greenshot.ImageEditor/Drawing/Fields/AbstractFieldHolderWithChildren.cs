@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -33,7 +33,7 @@ namespace Greenshot.Drawing.Fields
     [Serializable()]
     public abstract class AbstractFieldHolderWithChildren : AbstractFieldHolder
     {
-        private FieldChangedEventHandler fieldChangedEventHandler;
+        private readonly FieldChangedEventHandler fieldChangedEventHandler;
 
         [NonSerialized]
         private EventHandler childrenChanged;

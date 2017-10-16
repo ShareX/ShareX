@@ -35,6 +35,7 @@
             this.btnOpenLogFile = new System.Windows.Forms.Button();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.flpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +43,6 @@
             // txtException
             // 
             resources.ApplyResources(this.txtException, "txtException");
-            this.txtException.BackColor = System.Drawing.Color.White;
             this.txtException.Name = "txtException";
             this.txtException.ReadOnly = true;
             // 
@@ -77,6 +77,7 @@
             this.flpMenu.Controls.Add(this.btnOpenLogFile);
             this.flpMenu.Controls.Add(this.btnContinue);
             this.flpMenu.Controls.Add(this.btnClose);
+            this.flpMenu.Controls.Add(this.btnOK);
             this.flpMenu.Name = "flpMenu";
             // 
             // btnContinue
@@ -87,6 +88,14 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.BackColor = System.Drawing.Color.Transparent;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
             // lblErrorMessage
             // 
             resources.ApplyResources(this.lblErrorMessage, "lblErrorMessage");
@@ -96,6 +105,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.txtException);
@@ -117,5 +127,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpMenu;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.Button btnOK;
     }
 }

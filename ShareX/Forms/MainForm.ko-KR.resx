@@ -183,14 +183,8 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>워크플로우</value>
   </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>ShareX에 대해...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>자동화...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>목록 전부 제거</value>
@@ -257,9 +251,6 @@
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>섬네일 URL</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>기부...</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>이미지 편집...</value>
@@ -375,9 +366,6 @@
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영...</value>
   </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>자동화...</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>촬영</value>
   </data>
@@ -408,12 +396,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>자유선</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>자유선</value>
-  </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP 클라이언트...</value>
   </data>
@@ -438,12 +420,6 @@
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>단축키 설정...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>이미지 편집기...</value>
-  </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>이미지 편집기...</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>이미지 효과...</value>
   </data>
@@ -464,12 +440,6 @@
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>모니터 테스트...</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>다각형</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>다각형</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>마지막 영역</value>
@@ -590,18 +560,6 @@
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>직사각형 (어둡지 않게)</value>
-  </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>직사각형 (창 자동 식별)</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>직사각형 (창 자동 식별)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>직사각형 (주석 달기)</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>직사각형 (주석 달기)</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>폴더 색인 생성...</value>

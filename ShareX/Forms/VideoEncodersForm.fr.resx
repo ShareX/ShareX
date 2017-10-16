@@ -121,7 +121,7 @@
     <value>Ajouter</value>
   </data>
   <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Arguments</value>
+    <value>Args</value>
   </data>
   <data name="chEncoderDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -130,7 +130,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Éditer</value>
+    <value>Modifier</value>
   </data>
   <data name="chEncoderOutputExtension.Text" xml:space="preserve">
     <value>Extension de sortie</value>

@@ -48,21 +48,20 @@
             // btnOK
             // 
             resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtClipboard
             // 
             resources.ApplyResources(this.txtClipboard, "txtClipboard");
-            this.txtClipboard.BackColor = System.Drawing.Color.White;
             this.txtClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClipboard.Name = "txtClipboard";
             this.txtClipboard.ReadOnly = true;
@@ -83,17 +82,18 @@
             // pbClipboard
             // 
             resources.ApplyResources(this.pbClipboard, "pbClipboard");
-            this.pbClipboard.BackColor = System.Drawing.Color.White;
             this.pbClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbClipboard.DrawCheckeredBackground = true;
             this.pbClipboard.FullscreenOnClick = true;
             this.pbClipboard.Name = "pbClipboard";
+            this.pbClipboard.ShowImageSizeLabel = true;
             // 
             // ClipboardContentViewer
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pbClipboard);
             this.Controls.Add(this.cbDontShowThisWindow);
             this.Controls.Add(this.btnCancel);

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -46,8 +46,8 @@ namespace Greenshot.Drawing
     /// </summary>
     public class Surface : Control, ISurface
     {
-        public static int Count = 0;
-        private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+        public static int Count;
+        private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
 
         // Property to identify the Surface ID
         private Guid _uniqueId = Guid.NewGuid();
@@ -183,7 +183,7 @@ namespace Greenshot.Drawing
         /// all selected elements, do not serialize
         /// </summary>
         [NonSerialized]
-        private DrawableContainerList selectedElements;
+        private readonly DrawableContainerList selectedElements;
 
         /// <summary>
         /// the element we are drawing with, do not serialize
@@ -222,7 +222,7 @@ namespace Greenshot.Drawing
         /// <summary>
         /// all stepLabels for the surface, needed with serialization
         /// </summary>
-        private List<StepLabelContainer> _stepLabels = new List<StepLabelContainer>();
+        private readonly List<StepLabelContainer> _stepLabels = new List<StepLabelContainer>();
 
         public void AddStepLabel(StepLabelContainer stepLabel)
         {
@@ -244,7 +244,7 @@ namespace Greenshot.Drawing
             int number = 1;
             foreach (var possibleThis in _stepLabels)
             {
-                if (possibleThis == stopAtContainer)
+                if (possibleThis.Equals(stopAtContainer))
                 {
                     break;
                 }
@@ -458,8 +458,7 @@ namespace Greenshot.Drawing
         /// <summary>
         /// Base Surface constructor
         /// </summary>
-        public Surface()
-            : base()
+        public Surface() : base()
         {
             Count++;
             _elements = new DrawableContainerList(_uniqueId);
@@ -508,8 +507,7 @@ namespace Greenshot.Drawing
         /// Surface constructor with an image
         /// </summary>
         /// <param name="newImage"></param>
-        public Surface(Image newImage)
-            : this()
+        public Surface(Image newImage) : this()
         {
             LOG.DebugFormat("Got image with dimensions {0} and format {1}", newImage.Size, newImage.PixelFormat);
             SetImage(newImage, true);
@@ -519,8 +517,7 @@ namespace Greenshot.Drawing
         /// Surface contructor with a capture
         /// </summary>
         /// <param name="capture"></param>
-        public Surface(ICapture capture)
-            : this(capture.Image)
+        public Surface(ICapture capture) : this(capture.Image)
         {
             // check if cursor is captured, and visible
             if (capture.Cursor != null && capture.CursorVisible)
@@ -898,6 +895,22 @@ namespace Greenshot.Drawing
         private void OnDragDrop(object sender, DragEventArgs e)
         {
             Point mouse = PointToClient(new Point(e.X, e.Y));
+            if (e.Data.GetDataPresent("Text"))
+            {
+                string possibleUrl = ClipboardHelper.GetText(e.Data);
+                // Test if it's an url and try to download the image so we have it in the original form
+                if (possibleUrl != null && possibleUrl.StartsWith("http"))
+                {
+                    using (Image image = NetworkHelper.DownloadImage(possibleUrl))
+                    {
+                        if (image != null)
+                        {
+                            AddImageContainer(image, mouse.X, mouse.Y);
+                            return;
+                        }
+                    }
+                }
+            }
 
             foreach (Image image in ClipboardHelper.GetImages(e.Data))
             {
@@ -1146,7 +1159,7 @@ namespace Greenshot.Drawing
             _mouseDown = true;
             _isSurfaceMoveMadeUndoable = false;
 
-            if (_cropContainer != null && ((_undrawnElement == null) || (_undrawnElement != null && DrawingMode != DrawingModes.Crop)))
+            if (_cropContainer != null && (_undrawnElement == null || DrawingMode != DrawingModes.Crop))
             {
                 RemoveElement(_cropContainer, false);
                 _cropContainer = null;
@@ -1167,7 +1180,10 @@ namespace Greenshot.Drawing
                 // if a new element has been drawn, set location and register it
                 if (_drawingElement != null)
                 {
-                    _drawingElement.Status = _undrawnElement.DefaultEditMode;
+                    if (_undrawnElement != null)
+                    {
+                        _drawingElement.Status = _undrawnElement.DefaultEditMode;
+                    }
                     _drawingElement.PropertyChanged += ElementPropertyChanged;
                     if (!_drawingElement.HandleMouseDown(_mouseStart.X, _mouseStart.Y))
                     {
@@ -1527,7 +1543,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return (selectedElements != null && selectedElements.Count > 0);
+                return selectedElements != null && selectedElements.Count > 0;
             }
         }
 
@@ -1593,6 +1609,10 @@ namespace Greenshot.Drawing
         {
             // create new collection so that we can iterate safely (selectedElements might change due with confirm/cancel)
             List<IDrawableContainer> selectedDCs = new List<IDrawableContainer>(selectedElements);
+            if (_cropContainer == null)
+            {
+                return;
+            }
             foreach (IDrawableContainer dc in selectedDCs)
             {
                 if (dc.Equals(_cropContainer))
@@ -1606,6 +1626,7 @@ namespace Greenshot.Drawing
                     }
                     _cropContainer.Dispose();
                     _cropContainer = null;
+                    break;
                 }
             }
         }
@@ -1622,6 +1643,7 @@ namespace Greenshot.Drawing
             {
                 return;
             }
+
             if (LOG.IsDebugEnabled)
             {
                 LOG.Debug("List of clipboard formats available for pasting:");
@@ -1638,7 +1660,7 @@ namespace Greenshot.Drawing
                 {
                     // Make element(s) only move 10,10 if the surface is the same
                     Point moveOffset;
-                    bool isSameSurface = (dcs.ParentID == _uniqueId);
+                    bool isSameSurface = dcs.ParentID == _uniqueId;
                     dcs.Parent = this;
                     if (isSameSurface)
                     {
@@ -1906,8 +1928,8 @@ namespace Greenshot.Drawing
                         ConfirmSelectedConfirmableElements(false);
                         break;
                     /*case Keys.Delete:
-                        RemoveSelectedElements();
-                        break;*/
+						RemoveSelectedElements();
+						break;*/
                     default:
                         return false;
                 }

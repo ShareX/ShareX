@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,23 +29,29 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ErrorForm : BaseForm
+    public partial class ErrorForm : Form
     {
+        public bool IsUnhandledException { get; private set; }
         public string LogPath { get; private set; }
         public string BugReportPath { get; private set; }
 
-        public ErrorForm(Exception error, string logPath, string bugReportPath)
-            : this(error.Message, error.ToString(), logPath, bugReportPath)
+        public ErrorForm(Exception error, string logPath, string bugReportPath) : this(error.Message, error.ToString(), logPath, bugReportPath)
         {
         }
 
-        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath)
+        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath, bool unhandledException = true)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
+            IsUnhandledException = unhandledException;
             LogPath = logPath;
             BugReportPath = bugReportPath;
 
-            DebugHelper.WriteException(errorMessage, "Unhandled exception");
+            if (IsUnhandledException)
+            {
+                DebugHelper.WriteException(errorMessage, "Unhandled exception");
+            }
 
             lblErrorMessage.Text = errorTitle;
             txtException.Text = errorMessage;
@@ -53,11 +59,14 @@ namespace ShareX.HelpersLib
 
             btnSendBugReport.Visible = !string.IsNullOrEmpty(BugReportPath);
             btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
+            btnContinue.Visible = IsUnhandledException;
+            btnClose.Visible = IsUnhandledException;
+            btnOK.Visible = !IsUnhandledException;
         }
 
         private void ErrorForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void btnSendBugReport_Click(object sender, EventArgs e)
@@ -78,8 +87,13 @@ namespace ShareX.HelpersLib
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception");
+            DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception.");
             Application.Exit();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

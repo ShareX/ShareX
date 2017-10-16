@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,26 +26,52 @@
 // Credits: https://github.com/gpailler
 
 using CG.Web.MegaApiClient;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MegaFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Mega;
+
+        public override Icon ServiceIcon => Resources.Mega;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.MegaAuthInfos != null && config.MegaAuthInfos.Email != null && config.MegaAuthInfos.Hash != null &&
+                config.MegaAuthInfos.PasswordAesKey != null;
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Mega(config.MegaAuthInfos, config.MegaParentNodeId);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;
+    }
+
     public sealed class Mega : FileUploader, IWebClient
     {
+        // Pack all chunks in a single upload fragment
+        // (by default, MegaApiClient splits files in 1MB fragments and do multiple uploads)
+        // It allows to have a consistent upload progression in Sharex
+        private const int UploadChunksPackSize = -1;
+
         private readonly MegaApiClient _megaClient;
         private readonly MegaApiClient.AuthInfos _authInfos;
         private readonly string _parentNodeId;
 
-        public Mega()
-            : this(null, null)
+        public Mega() : this(null, null)
         {
         }
 
-        public Mega(MegaApiClient.AuthInfos authInfos)
-            : this(authInfos, null)
+        public Mega(MegaApiClient.AuthInfos authInfos) : this(authInfos, null)
         {
         }
 
@@ -53,6 +79,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             AllowReportProgress = false;
             _megaClient = new MegaApiClient(this);
+            _megaClient.ChunksPackSize = UploadChunksPackSize;
             _authInfos = authInfos;
             _parentNodeId = parentNodeId;
         }
@@ -125,7 +152,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendRequestJSON(url.ToString(), jsonData);
+            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, ContentTypeJSON);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)
@@ -133,7 +160,7 @@ namespace ShareX.UploadersLib.FileUploaders
             try
             {
                 AllowReportProgress = true;
-                return SendRequestStream(url.ToString(), dataStream, "application/octet-stream");
+                return SendRequest(HttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
             }
             finally
             {

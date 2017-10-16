@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblFilename.Text" xml:space="preserve">
-    <value>Nom du fichier:</value>
+    <value>Nom du fichier :</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
-    <value>Statut:</value>
+    <value>Statut :</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
-    <value>Progression:</value>
+    <value>Progression :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX téléchargement de fichiers</value>
+    <value>ShareX - Téléchargement de fichiers</value>
   </data>
   <data name="cbShowChangelog.Text" xml:space="preserve">
     <value>Afficher les notes de mise à jour</value>

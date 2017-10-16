@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             DropName = "ShareX_" + Helpers.GetRandomAlphanumeric(10);
-            DropDescription = string.Empty;
+            DropDescription = "";
             Drop drop = CreateDrop(DropName, DropDescription, false, false, false);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", drop.AdminToken);
             args.Add("drop_name", drop.Name);
 
-            UploadResult result = UploadData(stream, "http://assets.drop.io/upload", fileName, "file", args);
+            UploadResult result = SendRequestFile("http://assets.drop.io/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
             // determines whether guests can delete assets
             args.Add("guests_can_delete", guests_can_delete.ToString());
 
-            string response = SendRequest(HttpMethod.POST, "http://api.drop.io/drops", args);
+            string response = SendRequestMultiPart("http://api.drop.io/drops", args);
 
             XDocument doc = XDocument.Parse(response);
             XElement root = doc.Element("drop");

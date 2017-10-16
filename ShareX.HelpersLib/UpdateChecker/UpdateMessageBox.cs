@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+using System;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -43,7 +44,7 @@ namespace ShareX.HelpersLib
             if (!ActivateWindow)
             {
                 WindowState = FormWindowState.Minimized;
-                NativeMethods.FlashWindowEx(this);
+                NativeMethods.FlashWindowEx(this, 10);
             }
 
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
@@ -58,16 +59,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void Start(UpdateChecker updateChecker, bool activateWindow = true)
+        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
         {
+            DialogResult result = DialogResult.None;
+
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
                 IsOpen = true;
 
                 try
                 {
-                    DialogResult result;
-
                     using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker.IsPortable))
                     {
                         result = messageBox.ShowDialog();
@@ -83,24 +84,26 @@ namespace ShareX.HelpersLib
                     IsOpen = false;
                 }
             }
+
+            return result;
         }
 
         protected override bool ShowWithoutActivation => !ActivateWindow;
 
-        private void UpdateMessageBox_Shown(object sender, System.EventArgs e)
+        private void UpdateMessageBox_Shown(object sender, EventArgs e)
         {
             if (ActivateWindow)
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
-        private void cbDontShow_CheckedChanged(object sender, System.EventArgs e)
+        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
         {
             DontShow = cbDontShow.Checked;
         }
 
-        private void lblViewChangelog_Click(object sender, System.EventArgs e)
+        private void lblViewChangelog_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CHANGELOG);
         }
@@ -108,11 +111,13 @@ namespace ShareX.HelpersLib
         private void btnYes_MouseClick(object sender, MouseEventArgs e)
         {
             DialogResult = DialogResult.Yes;
+            Close();
         }
 
         private void btnNo_MouseClick(object sender, MouseEventArgs e)
         {
             DialogResult = DialogResult.No;
+            Close();
         }
     }
 }

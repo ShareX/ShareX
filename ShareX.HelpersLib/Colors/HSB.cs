@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
-using System;
 using System.Drawing;
 
 namespace ShareX.HelpersLib
@@ -120,8 +119,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public HSB(double hue, double saturation, double brightness, int alpha = 255)
-            : this()
+        public HSB(double hue, double saturation, double brightness, int alpha = 255) : this()
         {
             Hue = hue;
             Saturation = saturation;
@@ -129,8 +127,7 @@ namespace ShareX.HelpersLib
             Alpha = alpha;
         }
 
-        public HSB(int hue, int saturation, int brightness, int alpha = 255)
-            : this()
+        public HSB(int hue, int saturation, int brightness, int alpha = 255) : this()
         {
             Hue360 = hue;
             Saturation100 = saturation;
@@ -175,7 +172,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return String.Format(Resources.HSB_ToString_, Hue360, Saturation100, Brightness100);
+            return string.Format(Resources.HSB_ToString_, Hue360, Saturation100, Brightness100);
         }
 
         public Color ToColor()

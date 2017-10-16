@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 如何保存?</value>
+    <value>ShareX - 如何保存？</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>不要保存</value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>使用新的名字:</value>
+    <value>使用新的名字：</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>覆盖:</value>
+    <value>覆盖：</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>使用唯一的名称:</value>
+    <value>使用唯一的名称：</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>目前已经在该位置的同名文件.
-选择新的文件名或行动:</value>
+    <value>在该位置已经存在具有相同名称的文件。
+请选择新的文件名或以下动作：</value>
   </data>
 </root>

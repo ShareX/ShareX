@@ -118,9 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>屏幕区域窗口</value>
+    <value>ShareX - 屏幕区域窗口</value>
   </data>
   <data name="btnAbort.Text" xml:space="preserve">
     <value>退出</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="tsmiStart.Text" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="tsmiAbort.Text" xml:space="preserve">
+    <value>停止</value>
   </data>
 </root>

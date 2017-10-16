@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,13 +31,16 @@ namespace ShareX
     public class UploadInfoParser : NameParser
     {
         public const string HTMLLink = "<a href=\"$url\">$url</a>";
-        public const string HTMLImage = "<img src=\"$url\"/>";
-        public const string HTMLLinkedImage = "<a href=\"$url\"><img src=\"$thumbnailurl\"/></a>";
+        public const string HTMLImage = "<img src=\"$url\">";
+        public const string HTMLLinkedImage = "<a href=\"$url\"><img src=\"$thumbnailurl\"></a>";
         public const string ForumLink = "[url]$url[/url]";
         public const string ForumImage = "[img]$url[/img]";
         public const string ForumLinkedImage = "[url=$url][img]$thumbnailurl[/img][/url]";
         public const string WikiImage = "[$url]";
         public const string WikiLinkedImage = "[$url $thumbnailurl]";
+        public const string MarkdownLink = "[$url]($url)";
+        public const string MarkdownImage = "![]($url)";
+        public const string MarkdownLinkedImage = "[![]($thumbnailurl)]($url)";
 
         public string Parse(TaskInfo info, string pattern)
         {
@@ -69,7 +72,10 @@ namespace ShareX
                 pattern = pattern.Replace("$thumbnailfilenamenoext", !string.IsNullOrEmpty(info.ThumbnailFilePath) ? Path.GetFileNameWithoutExtension(info.ThumbnailFilePath) : "");
                 pattern = pattern.Replace("$thumbnailfilename", !string.IsNullOrEmpty(info.ThumbnailFilePath) ? Path.GetFileName(info.ThumbnailFilePath) : "");
 
-                pattern = pattern.Replace("$uploadtime", ((int)info.UploadDuration.TotalMilliseconds).ToString());
+                if (info.UploadDuration != null)
+                {
+                    pattern = pattern.Replace("$uploadtime", info.UploadDuration.ElapsedMilliseconds.ToString());
+                }
             }
 
             return pattern;

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public partial class WatermarkForm : BaseForm
+    public partial class WatermarkForm : Form
     {
         private WatermarkConfig config;
         private bool IsGuiReady;
@@ -40,8 +40,9 @@ namespace ShareX.ImageEffectsLib
         public WatermarkForm(WatermarkConfig watermarkConfig)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             config = watermarkConfig;
-            CodeMenu.Create<ReplCodeMenuEntry>(txtWatermarkText, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtWatermarkText, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         }
 
         private void WatermarkUI_Load(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace ShareX.ImageEffectsLib
             }
 
             chkWatermarkPosition.SelectedIndex = config.Placement.GetIndex();
-            nudWatermarkOffset.Value = config.Offset;
+            nudWatermarkOffset.SetValue(config.Offset);
             cbWatermarkAutoHide.Checked = config.Text.AutoHide;
 
             txtWatermarkText.Text = config.Text.Text;
@@ -68,7 +69,7 @@ namespace ShareX.ImageEffectsLib
 
             cbWatermarkDrawBackground.Checked = config.Text.DrawBackground;
             btnBorderColor.Color = config.Text.BorderColor;
-            nudWatermarkCornerRadius.Value = config.Text.CornerRadius;
+            nudWatermarkCornerRadius.SetValue(config.Text.CornerRadius);
             btnBackgroundColor.Color = config.Text.BackgroundColor;
             cbWatermarkUseGradient.Checked = config.Text.UseGradient;
             btnBackgroundColor2.Color = config.Text.BackgroundColor2;

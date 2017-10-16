@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -343,7 +343,7 @@ namespace GreenshotPlugin.Core
 
         protected BitmapData bmData;
         protected int stride; /* bytes per pixel row */
-        protected bool bitsLocked = false;
+        protected bool bitsLocked;
         protected byte* pointer;
 
         public static IFastBitmap Create(Bitmap source)
@@ -825,11 +825,10 @@ namespace GreenshotPlugin.Core
     public unsafe class FastChunkyBitmap : FastBitmap
     {
         // Used for indexed images
-        private Color[] colorEntries;
-        private Dictionary<Color, byte> colorCache = new Dictionary<Color, byte>();
+        private readonly Color[] colorEntries;
+        private readonly Dictionary<Color, byte> colorCache = new Dictionary<Color, byte>();
 
-        public FastChunkyBitmap(Bitmap source, Rectangle area)
-            : base(source, area)
+        public FastChunkyBitmap(Bitmap source, Rectangle area) : base(source, area)
         {
             colorEntries = bitmap.Palette.Entries;
         }
@@ -930,8 +929,7 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public unsafe class Fast24RGBBitmap : FastBitmap
     {
-        public Fast24RGBBitmap(Bitmap source, Rectangle area)
-            : base(source, area)
+        public Fast24RGBBitmap(Bitmap source, Rectangle area) : base(source, area)
         {
         }
 
@@ -997,8 +995,7 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public unsafe class Fast32RGBBitmap : FastBitmap
     {
-        public Fast32RGBBitmap(Bitmap source, Rectangle area)
-            : base(source, area)
+        public Fast32RGBBitmap(Bitmap source, Rectangle area) : base(source, area)
         {
         }
 
@@ -1053,7 +1050,7 @@ namespace GreenshotPlugin.Core
         public override void SetColorAt(int x, int y, byte[] color)
         {
             int offset = (x * 4) + (y * stride);
-            pointer[PIXELFORMAT_INDEX_R + offset] = color[COLOR_INDEX_R];	// R
+            pointer[PIXELFORMAT_INDEX_R + offset] = color[COLOR_INDEX_R];   // R
             pointer[PIXELFORMAT_INDEX_G + offset] = color[COLOR_INDEX_G];
             pointer[PIXELFORMAT_INDEX_B + offset] = color[COLOR_INDEX_B];
         }
@@ -1078,8 +1075,7 @@ namespace GreenshotPlugin.Core
             set;
         }
 
-        public Fast32ARGBBitmap(Bitmap source, Rectangle area)
-            : base(source, area)
+        public Fast32ARGBBitmap(Bitmap source, Rectangle area) : base(source, area)
         {
             BackgroundBlendColor = Color.White;
         }
@@ -1136,7 +1132,7 @@ namespace GreenshotPlugin.Core
         public override void SetColorAt(int x, int y, byte[] color)
         {
             int offset = (x * 4) + (y * stride);
-            pointer[PIXELFORMAT_INDEX_R + offset] = color[COLOR_INDEX_R];	// R
+            pointer[PIXELFORMAT_INDEX_R + offset] = color[COLOR_INDEX_R];   // R
             pointer[PIXELFORMAT_INDEX_G + offset] = color[COLOR_INDEX_G];
             pointer[PIXELFORMAT_INDEX_B + offset] = color[COLOR_INDEX_B];
             pointer[PIXELFORMAT_INDEX_A + offset] = color[COLOR_INDEX_A];

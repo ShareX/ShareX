@@ -122,13 +122,208 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 328</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 17</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Check for pre-release updates</value>
+  </data>
+  <data name="&gt;&gt;cbCheckPreReleaseUpdates.Name" xml:space="preserve">
+    <value>cbCheckPreReleaseUpdates</value>
+  </data>
+  <data name="&gt;&gt;cbCheckPreReleaseUpdates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCheckPreReleaseUpdates.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbCheckPreReleaseUpdates.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 260</value>
+  </data>
+  <data name="cbTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 21</value>
+  </data>
+  <data name="cbTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;cbTrayMiddleClickAction.Name" xml:space="preserve">
+    <value>cbTrayMiddleClickAction</value>
+  </data>
+  <data name="&gt;&gt;cbTrayMiddleClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTrayMiddleClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbTrayMiddleClickAction.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 264</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>On tray icon middle click:</value>
+  </data>
+  <data name="&gt;&gt;lblTrayMiddleClickAction.Name" xml:space="preserve">
+    <value>lblTrayMiddleClickAction</value>
+  </data>
+  <data name="&gt;&gt;lblTrayMiddleClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTrayMiddleClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;lblTrayMiddleClickAction.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 236</value>
+  </data>
+  <data name="cbTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 21</value>
+  </data>
+  <data name="cbTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Name" xml:space="preserve">
+    <value>cbTrayLeftDoubleClickAction</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 240</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>On tray icon double left click:</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Name" xml:space="preserve">
+    <value>lblTrayLeftDoubleClickAction</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 212</value>
+  </data>
+  <data name="cbTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 21</value>
+  </data>
+  <data name="cbTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftClickAction.Name" xml:space="preserve">
+    <value>cbTrayLeftClickAction</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbTrayLeftClickAction.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblTrayLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 216</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
+  </data>
+  <data name="lblTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>On tray icon left click:</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftClickAction.Name" xml:space="preserve">
+    <value>lblTrayLeftClickAction</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftClickAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftClickAction.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;lblTrayLeftClickAction.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 296</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 23</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Edit quick task menu...</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Name" xml:space="preserve">
+    <value>btnEditQuickTaskMenu</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbShowTray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
   </data>
@@ -151,7 +346,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>8</value>
   </data>
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +376,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -226,7 +421,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,37 +451,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="llTranslators.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 37</value>
-  </data>
-  <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 13</value>
-  </data>
-  <data name="llTranslators.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Help us translate ShareX to your language!</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Name" xml:space="preserve">
-    <value>llTranslators</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +481,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>12</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +511,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>13</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +541,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -406,7 +571,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>15</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -433,6 +598,84 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Enable Firefox addon support</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Name" xml:space="preserve">
+    <value>cbFirefoxAddonSupport</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.Parent" xml:space="preserve">
+    <value>gbFirefox</value>
+  </data>
+  <data name="&gt;&gt;cbFirefoxAddonSupport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 23</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Install ShareX Firefox addon...</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Name" xml:space="preserve">
+    <value>btnFirefoxOpenAddonPage</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.Parent" xml:space="preserve">
+    <value>gbFirefox</value>
+  </data>
+  <data name="&gt;&gt;btnFirefoxOpenAddonPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 216</value>
+  </data>
+  <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 88</value>
+  </data>
+  <data name="gbFirefox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Firefox addon</value>
+  </data>
+  <data name="&gt;&gt;gbFirefox.Name" xml:space="preserve">
+    <value>gbFirefox</value>
+  </data>
+  <data name="&gt;&gt;gbFirefox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFirefox.Parent" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;gbFirefox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
@@ -463,7 +706,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 192</value>
+    <value>8, 312</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -484,44 +727,71 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbSteam.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="btnChromeSupport.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbChromeExtensionSupport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
-  <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
+  <data name="cbChromeExtensionSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
   </data>
-  <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cbChromeExtensionSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome extension support...</value>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Enable Chrome extension support</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
-    <value>btnChromeSupport</value>
+  <data name="&gt;&gt;cbChromeExtensionSupport.Name" xml:space="preserve">
+    <value>cbChromeExtensionSupport</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbChromeExtensionSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbChromeExtensionSupport.Parent" xml:space="preserve">
     <value>gbChrome</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbChromeExtensionSupport.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 23</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Install ShareX Chrome extension...</value>
+  </data>
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Name" xml:space="preserve">
+    <value>btnChromeOpenExtensionPage</value>
+  </data>
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.Parent" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;btnChromeOpenExtensionPage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 120</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 64</value>
+    <value>536, 88</value>
   </data>
   <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
-    <value>Chrome</value>
-  <comment>@Invariant</comment></data>
+    <value>Chrome extension</value>
+  </data>
   <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
     <value>gbChrome</value>
   </data>
@@ -532,7 +802,7 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,13 +814,10 @@
     <value>16, 24</value>
   </data>
   <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
+    <value>15, 14</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Run ShareX when Windows starts</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
     <value>cbStartWithWindows</value>
@@ -646,7 +913,7 @@
     <value>tpIntegration</value>
   </data>
   <data name="&gt;&gt;gbWindows.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tpIntegration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1053,289 +1320,217 @@
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+  <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
   </data>
-  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 21</value>
+  <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 24</value>
   </data>
-  <data name="cbProxyMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Name" xml:space="preserve">
-    <value>cbProxyMethod</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyMethod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="lblProxyMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Proxy configuration:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.Name" xml:space="preserve">
-    <value>lblProxyMethod</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblProxyHost.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Name" xml:space="preserve">
-    <value>lblProxyHost</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Name" xml:space="preserve">
-    <value>txtProxyHost</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 80</value>
-  </data>
-  <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudProxyPort.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="nudProxyPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Name" xml:space="preserve">
-    <value>nudProxyPort</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 64</value>
-  </data>
-  <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.Name" xml:space="preserve">
-    <value>lblProxyPort</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 160</value>
-  </data>
-  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblProxyPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Name" xml:space="preserve">
-    <value>lblProxyPassword</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.ZOrder" xml:space="preserve">
+  <data name="btnResetSettings.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 176</value>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Reset settings...</value>
   </data>
-  <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+  <data name="&gt;&gt;btnResetSettings.Name" xml:space="preserve">
+    <value>btnResetSettings</value>
   </data>
-  <data name="txtProxyPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;btnResetSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtProxyPassword.Name" xml:space="preserve">
-    <value>txtProxyPassword</value>
+  <data name="&gt;&gt;btnResetSettings.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
   </data>
-  <data name="&gt;&gt;txtProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;txtProxyPassword.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;txtProxyPassword.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblProxyUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbExportLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
+  <data name="cbExportLogs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
   </data>
-  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+  <data name="cbExportLogs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
   </data>
-  <data name="lblProxyUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="cbExportLogs.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Username:</value>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Export logs</value>
   </data>
-  <data name="&gt;&gt;lblProxyUsername.Name" xml:space="preserve">
-    <value>lblProxyUsername</value>
+  <data name="&gt;&gt;cbExportLogs.Name" xml:space="preserve">
+    <value>cbExportLogs</value>
   </data>
-  <data name="&gt;&gt;lblProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbExportLogs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblProxyUsername.Parent" xml:space="preserve">
-    <value>tpProxy</value>
+  <data name="&gt;&gt;cbExportLogs.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
   </data>
-  <data name="&gt;&gt;lblProxyUsername.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Export history</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
+    <value>cbExportHistory</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Export settings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
+    <value>cbExportSettings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 96</value>
+  </data>
+  <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
+  </data>
+  <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pbExportImport.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbExportImport.Name" xml:space="preserve">
+    <value>pbExportImport</value>
+  </data>
+  <data name="&gt;&gt;pbExportImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbExportImport.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
+  </data>
+  <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
+    <value>btnExport</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
   </data>
-  <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+  <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
   </data>
-  <data name="txtProxyUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;txtProxyUsername.Name" xml:space="preserve">
-    <value>txtProxyUsername</value>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Import...</value>
   </data>
-  <data name="&gt;&gt;txtProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
+    <value>btnImport</value>
   </data>
-  <data name="&gt;&gt;txtProxyUsername.Parent" xml:space="preserve">
-    <value>tpProxy</value>
+  <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtProxyUsername.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
   </data>
-  <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tpProxy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+  <data name="tpExportImport.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tpExportImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>550, 370</value>
   </data>
-  <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tpExportImport.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Export / Import</value>
   </data>
-  <data name="&gt;&gt;tpProxy.Name" xml:space="preserve">
-    <value>tpProxy</value>
+  <data name="&gt;&gt;tpExportImport.Name" xml:space="preserve">
+    <value>tpExportImport</value>
   </data>
-  <data name="&gt;&gt;tpProxy.Type" xml:space="preserve">
+  <data name="&gt;&gt;tpExportImport.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpProxy.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tpExportImport.Parent" xml:space="preserve">
     <value>tcSettings</value>
   </data>
-  <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tpExportImport.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
@@ -2028,6 +2223,297 @@
   <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cbHistoryCheckURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbHistoryCheckURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="cbHistoryCheckURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 17</value>
+  </data>
+  <data name="cbHistoryCheckURL.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Only save if URL is not empty</value>
+  </data>
+  <data name="&gt;&gt;cbHistoryCheckURL.Name" xml:space="preserve">
+    <value>cbHistoryCheckURL</value>
+  </data>
+  <data name="&gt;&gt;cbHistoryCheckURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHistoryCheckURL.Parent" xml:space="preserve">
+    <value>gbHistory</value>
+  </data>
+  <data name="&gt;&gt;cbHistoryCheckURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbHistorySaveTasks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbHistorySaveTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbHistorySaveTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="cbHistorySaveTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Save tasks to history</value>
+  </data>
+  <data name="&gt;&gt;cbHistorySaveTasks.Name" xml:space="preserve">
+    <value>cbHistorySaveTasks</value>
+  </data>
+  <data name="&gt;&gt;cbHistorySaveTasks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHistorySaveTasks.Parent" xml:space="preserve">
+    <value>gbHistory</value>
+  </data>
+  <data name="&gt;&gt;cbHistorySaveTasks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 80</value>
+  </data>
+  <data name="gbHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="&gt;&gt;gbHistory.Name" xml:space="preserve">
+    <value>gbHistory</value>
+  </data>
+  <data name="&gt;&gt;gbHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbHistory.Parent" xml:space="preserve">
+    <value>tpHistory</value>
+  </data>
+  <data name="&gt;&gt;gbHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 144</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 17</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>In tray menu show most recent tasks first</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Name" xml:space="preserve">
+    <value>cbRecentTasksTrayMenuMostRecentFirst</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 13</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Maximum number of tasks to save:</value>
+  </data>
+  <data name="&gt;&gt;lblRecentTasksMaxCount.Name" xml:space="preserve">
+    <value>lblRecentTasksMaxCount</value>
+  </data>
+  <data name="&gt;&gt;lblRecentTasksMaxCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRecentTasksMaxCount.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;lblRecentTasksMaxCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="nudRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudRecentTasksMaxCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudRecentTasksMaxCount.Name" xml:space="preserve">
+    <value>nudRecentTasksMaxCount</value>
+  </data>
+  <data name="&gt;&gt;nudRecentTasksMaxCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRecentTasksMaxCount.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;nudRecentTasksMaxCount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 120</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 17</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Show recent tasks in tray menu</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Name" xml:space="preserve">
+    <value>cbRecentTasksShowInTrayMenu</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 17</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Show recent tasks in main window on startup</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Name" xml:space="preserve">
+    <value>cbRecentTasksShowInMainWindow</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbRecentTasksSave.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRecentTasksSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbRecentTasksSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="cbRecentTasksSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Save recent tasks</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksSave.Name" xml:space="preserve">
+    <value>cbRecentTasksSave</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksSave.Parent" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;cbRecentTasksSave.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gbRecentLinks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 96</value>
+  </data>
+  <data name="gbRecentLinks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 176</value>
+  </data>
+  <data name="gbRecentLinks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Recent tasks</value>
+  </data>
+  <data name="&gt;&gt;gbRecentLinks.Name" xml:space="preserve">
+    <value>gbRecentLinks</value>
+  </data>
+  <data name="&gt;&gt;gbRecentLinks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbRecentLinks.Parent" xml:space="preserve">
+    <value>tpHistory</value>
+  </data>
+  <data name="&gt;&gt;gbRecentLinks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpHistory.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="&gt;&gt;tpHistory.Name" xml:space="preserve">
+    <value>tpHistory</value>
+  </data>
+  <data name="&gt;&gt;tpHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpHistory.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;tpHistory.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2140,7 +2626,292 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 21</value>
+  </data>
+  <data name="cbProxyMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Name" xml:space="preserve">
+    <value>cbProxyMethod</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyMethod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="lblProxyMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Proxy configuration:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Name" xml:space="preserve">
+    <value>lblProxyMethod</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblProxyHost.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Name" xml:space="preserve">
+    <value>lblProxyHost</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Name" xml:space="preserve">
+    <value>txtProxyHost</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 80</value>
+  </data>
+  <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="nudProxyPort.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="nudProxyPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Name" xml:space="preserve">
+    <value>nudProxyPort</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>253, 64</value>
+  </data>
+  <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Name" xml:space="preserve">
+    <value>lblProxyPort</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 160</value>
+  </data>
+  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblProxyPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Name" xml:space="preserve">
+    <value>lblProxyPassword</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 176</value>
+  </data>
+  <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="txtProxyPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Name" xml:space="preserve">
+    <value>txtProxyPassword</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblProxyUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Name" xml:space="preserve">
+    <value>lblProxyUsername</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="txtProxyUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Name" xml:space="preserve">
+    <value>txtProxyUsername</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpProxy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Name" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2191,7 +2962,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 3</value>
@@ -2299,6 +3070,6 @@
     <value>ApplicationSettingsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

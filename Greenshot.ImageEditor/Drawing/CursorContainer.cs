@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,13 +37,11 @@ namespace Greenshot.Drawing
     {
         protected Cursor cursor;
 
-        public CursorContainer(Surface parent)
-            : base(parent)
+        public CursorContainer(Surface parent) : base(parent)
         {
         }
 
-        public CursorContainer(Surface parent, string filename)
-            : base(parent)
+        public CursorContainer(Surface parent, string filename) : base(parent)
         {
             Load(filename);
         }

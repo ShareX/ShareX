@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,18 +27,6 @@ using System.ComponentModel;
 
 namespace ShareX.HelpersLib
 {
-    // http://en.wikipedia.org/wiki/List_of_file_formats
-
-    public enum ImageFileExtensions
-    {
-        jpg, jpeg, png, gif, bmp, ico, tif, tiff
-    }
-
-    public enum TextFileExtensions
-    {
-        txt, log, nfo, c, cpp, cc, cxx, h, hpp, hxx, cs, vb, html, htm, xhtml, xht, xml, css, js, php, bat, java, lua, py, pl, cfg, ini
-    }
-
     public enum EDataType
     {
         Default,
@@ -46,6 +34,14 @@ namespace ShareX.HelpersLib
         Image,
         Text,
         URL
+    }
+
+    public enum PNGBitDepth // Localized
+    {
+        Default,
+        Automatic,
+        Bit32,
+        Bit24
     }
 
     public enum GIFQuality // Localized
@@ -70,14 +66,6 @@ namespace ShareX.HelpersLib
         TIFF
     }
 
-    public enum TriangleAngle
-    {
-        Top,
-        Right,
-        Bottom,
-        Left
-    }
-
     public enum HashType
     {
         [Description("CRC-32")]
@@ -94,17 +82,6 @@ namespace ShareX.HelpersLib
         SHA512,
         [Description("RIPEMD-160")]
         RIPEMD160
-    }
-
-    public enum TokenType
-    {
-        Unknown,
-        Whitespace,
-        Symbol,
-        Literal,
-        Identifier,
-        Numeric,
-        Keyword
     }
 
     public enum BorderType
@@ -184,5 +161,18 @@ namespace ShareX.HelpersLib
     {
         Prefix,
         Suffix
+    }
+
+    public enum ScreenTearingTestMode
+    {
+        VerticalLines,
+        HorizontalLines
+    }
+
+    public enum HotkeyStatus
+    {
+        Registered,
+        Failed,
+        NotConfigured
     }
 }

@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -77,7 +77,7 @@ namespace Greenshot.Drawing
 
         internal void ChangeText(string newText, bool allowUndoable)
         {
-            if ((text == null && newText != null) || (text != null && !text.Equals(newText)))
+            if ((text == null && newText != null) || (text != null && !string.Equals(text, newText)))
             {
                 if (makeUndoable && allowUndoable)
                 {
@@ -89,8 +89,7 @@ namespace Greenshot.Drawing
             }
         }
 
-        public TextContainer(Surface parent)
-            : base(parent)
+        public TextContainer(Surface parent) : base(parent)
         {
             Init();
         }
@@ -140,8 +139,10 @@ namespace Greenshot.Drawing
 
         private void Init()
         {
-            _stringFormat = new StringFormat();
-            _stringFormat.Trimming = StringTrimming.EllipsisWord;
+            _stringFormat = new StringFormat
+            {
+                Trimming = StringTrimming.EllipsisWord
+            };
 
             CreateTextBox();
 
@@ -209,13 +210,20 @@ namespace Greenshot.Drawing
             // Only dispose the font, and re-create it, when a font field has changed.
             if (e.Field.FieldType.Name.StartsWith("FONT"))
             {
-                _font.Dispose();
-                _font = null;
+                if (_font != null)
+                {
+                    _font.Dispose();
+                    _font = null;
+                }
                 UpdateFormat();
+            }
+            else
+            {
+                UpdateAlignment();
             }
             UpdateTextBoxFormat();
 
-            if (_textBox.Visible)
+            if (_textBox != null && _textBox.Visible)
             {
                 _textBox.Invalidate();
             }
@@ -228,17 +236,19 @@ namespace Greenshot.Drawing
 
         private void CreateTextBox()
         {
-            _textBox = new TextBox();
+            _textBox = new TextBox
+            {
+                ImeMode = ImeMode.On,
+                Multiline = true,
+                AcceptsTab = true,
+                AcceptsReturn = true,
+                BorderStyle = BorderStyle.None,
+                Visible = false
+            };
 
-            _textBox.ImeMode = ImeMode.On;
-            _textBox.Multiline = true;
-            _textBox.AcceptsTab = true;
-            _textBox.AcceptsReturn = true;
             _textBox.DataBindings.Add("Text", this, "Text", false, DataSourceUpdateMode.OnPropertyChanged);
             _textBox.LostFocus += textBox_LostFocus;
             _textBox.KeyDown += textBox_KeyDown;
-            _textBox.BorderStyle = BorderStyle.None;
-            _textBox.Visible = false;
         }
 
         private void ShowTextBox()
@@ -345,6 +355,7 @@ namespace Greenshot.Drawing
                             }
                         }
                     }
+                    _font?.Dispose();
                     _font = new Font(fam, fontSize, fs, GraphicsUnit.Pixel);
                     _textBox.Font = _font;
                 }
@@ -358,6 +369,11 @@ namespace Greenshot.Drawing
                 throw;
             }
 
+            UpdateAlignment();
+        }
+
+        private void UpdateAlignment()
+        {
             _stringFormat.Alignment = (StringAlignment)GetFieldValue(FieldType.TEXT_HORIZONTAL_ALIGNMENT);
             _stringFormat.LineAlignment = (StringAlignment)GetFieldValue(FieldType.TEXT_VERTICAL_ALIGNMENT);
         }
@@ -384,8 +400,8 @@ namespace Greenshot.Drawing
             {
                 lineWidth = 0;
             }
-            _textBox.Width = absRectangle.Width - (2 * lineWidth) + correction;
-            _textBox.Height = absRectangle.Height - (2 * lineWidth) + correction;
+            _textBox.Width = absRectangle.Width - 2 * lineWidth + correction;
+            _textBox.Height = absRectangle.Height - 2 * lineWidth + correction;
         }
 
         public override void ApplyBounds(RectangleF newBounds)
@@ -438,6 +454,7 @@ namespace Greenshot.Drawing
         public override void Draw(Graphics graphics, RenderMode rm)
         {
             base.Draw(graphics, rm);
+
             graphics.SmoothingMode = SmoothingMode.HighQuality;
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
@@ -450,7 +467,7 @@ namespace Greenshot.Drawing
                 DrawSelectionBorder(graphics, rect);
             }
 
-            if (text == null || text.Length == 0)
+            if (string.IsNullOrEmpty(text))
             {
                 return;
             }
@@ -472,12 +489,13 @@ namespace Greenshot.Drawing
         /// <param name="drawingRectange"></param>
         /// <param name="lineThickness"></param>
         /// <param name="fontColor"></param>
+        /// <param name="drawShadow"></param>
         /// <param name="stringFormat"></param>
         /// <param name="text"></param>
         /// <param name="font"></param>
         public static void DrawText(Graphics graphics, Rectangle drawingRectange, int lineThickness, Color fontColor, bool drawShadow, StringFormat stringFormat, string text, Font font)
         {
-            int textOffset = (lineThickness > 0) ? (int)Math.Ceiling(lineThickness / 2d) : 0;
+            int textOffset = lineThickness > 0 ? (int)Math.Ceiling(lineThickness / 2d) : 0;
             // draw shadow before anything else
             if (drawShadow)
             {

@@ -129,13 +129,16 @@
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Tarefas</value>
-  </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>Pós-captura</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Pré-upload</value>
+    <value>Pré-envio</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Pós-envio</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Nome do arquivo:</value>
   </data>
 </root>

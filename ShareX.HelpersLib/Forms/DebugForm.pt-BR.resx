@@ -126,4 +126,10 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Assemblies carregadas</value>
   </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Abrir arquivo de registro...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Local de início:</value>
+  </data>
 </root>

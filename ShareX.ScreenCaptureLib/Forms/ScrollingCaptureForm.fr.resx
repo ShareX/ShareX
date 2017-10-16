@@ -118,91 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+    <value>Capturer</value>
   </data>
   <data name="gbImages.Text" xml:space="preserve">
     <value>Images</value>
   </data>
   <data name="lblTrimLeft.Text" xml:space="preserve">
-    <value>Gauche:</value>
+    <value>Gauche :</value>
   </data>
   <data name="lblTrimRight.Text" xml:space="preserve">
-    <value>Droite:</value>
+    <value>Droite :</value>
   </data>
   <data name="lblTrimBottom.Text" xml:space="preserve">
-    <value>Bas:</value>
+    <value>Bas :</value>
   </data>
   <data name="lblTrimTop.Text" xml:space="preserve">
-    <value>Haut:</value>
+    <value>Haut :</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
-    <value>Démarrer la capture</value>
+    <value>Démarrer la capture avec défilements</value>
   </data>
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Supprimer les images en double</value>
   </data>
   <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>Supprimer les dernières:</value>
+    <value>Supprimer les dernières :</value>
   </data>
   <data name="lblProcessing.Text" xml:space="preserve">
-    <value>Traitement en cours ...</value>
+    <value>Traitement en cours...</value>
   </data>
   <data name="gbCombineAdjustments.Text" xml:space="preserve">
     <value>Ajuster les combinaisons</value>
   </data>
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
-    <value>Détecter automatiquement la fin du défilement</value>
+    <value>Détecter la fin du défilement</value>
   </data>
   <data name="tpOutput.Text" xml:space="preserve">
     <value>Résultat</value>
   </data>
   <data name="lblImageCount.Text" xml:space="preserve">
-    <value>Nombre d'images:</value>
+    <value>Nombre d'images :</value>
   </data>
   <data name="gbTrimEdges.Text" xml:space="preserve">
-    <value>Ajuster les contours:</value>
+    <value>Ajuster les contours :</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Vertical:</value>
+    <value>Vertical :</value>
   </data>
   <data name="btnResetCombine.Text" xml:space="preserve">
-    <value>Réinitialiser les options</value>
+    <value>Réinitialiser les options de résultat</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
-    <value>Mettre en ligne/enregistrer en fonction des paramètres "Après la capture"</value>
+    <value>Mettre en ligne/enregistrer en fonction des paramètres « Après la capture »</value>
   </data>
   <data name="lblMaximumScrollCount.Text" xml:space="preserve">
-    <value>Nombre maximal de défilement:</value>
+    <value>Nombre maximum de défilements :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Capture avec défilement </value>
+    <value>ShareX - Capture avec défilements</value>
   </data>
   <data name="lblScrollMethod.Text" xml:space="preserve">
-    <value>Méthode de défilement:</value>
+    <value>Méthode de défilement :</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Commencer la capture avec défilement immédiatement après la sélection de la région à capturer</value>
+    <value>Commencer la capture avec défilements immédiatement après la sélection de la région à capturer</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Démarrer automatiquement la sélection de la région à capture avant d'ouvrir cette fenêtre</value>
+    <value>Démarrer la sélection de la région à capture avant d'ouvrir cette fenêtre</value>
   </data>
   <data name="btnSelectHandle.Text" xml:space="preserve">
     <value>Sélectionner la fenêtre à faire défiler...</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>(Optionnel) Sélectionner une région personnalisée dans la fenêtre...</value>
+    <value>(Facultatif) Sélectionner une région personnalisée dans la fenêtre...</value>
   </data>
   <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>Départ différé:</value>
+    <value>Départ différé :</value>
   </data>
   <data name="lblScrollDelay.Text" xml:space="preserve">
-    <value>Délai entre défilement:</value>
+    <value>Délai des défilements :</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Merci de noter que même si ShareX fait de son mieux pour rendre la capture de défilement précise, il n'est pas possible de capturer correctement tous les contenus avec défilement. Les principales raisons qui peuvent causer des problèmes pendant la combinaison sont des mouvements sur l'écran lors de la capture. Ex: si une page web a des GIF animés ou des objets statiques sur l'écran pendant le défilement (par exemple un menu statique ou des boutons qui ne changent pas leur position alors que le reste de la page Web défile).</value>
+    <value>Veuillez noter que même si ShareX fait de son mieux pour rendre la capture avec défilements précise, il n'est pas possible de capturer correctement tous les contenus avec défilement. Les principales raisons qui peuvent causer des problèmes pendant la combinaison sont des mouvements sur l'écran lors de la capture. Par exemple, le fait qu'il y ait des GIFs animés ou des objets statiques sur l'écran pendant le défilement (par exemple un menu statique ou des boutons qui ne changent pas leur position alors que le reste de la page Web défile).</value>
   </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>Deviner automatiquement les décalages et combiner après la capture</value>
+    <value>Deviner automatiquement les décalages et combiner les images</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
     <value>Deviner les ajustement des combinaisons et combiner</value>
@@ -211,10 +211,10 @@
     <value>Deviner les valeurs des contours à ajuster</value>
   </data>
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
-    <value>Dernière image:</value>
+    <value>Dernière image :</value>
   </data>
   <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Mettre en ligne/enregistrer en fonction des paramètres 'Après la capture'</value>
+    <value>Mettre en ligne/enregistrer en fonction des paramètres « Après la capture »</value>
   </data>
   <data name="gbBeforeCapture.Text" xml:space="preserve">
     <value>Avant la capture</value>
@@ -225,10 +225,7 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Après la capture</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Fermer cette fenêtre après le traitement</value>
-  </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
-    <value>Méthode de défilement vers le haut avant la capture:</value>
+    <value>Méthode de défilement vers le haut avant la capture :</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,14 +23,52 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class CustomTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.CustomTextUploader;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomTextUploaderSelected);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            int index;
+
+            if (taskInfo.OverrideCustomUploader)
+            {
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
+            }
+            else
+            {
+                index = config.CustomTextUploaderSelected;
+            }
+
+            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
+
+            if (customUploader != null)
+            {
+                return new CustomTextUploader(customUploader);
+            }
+
+            return null;
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCustomUploaders;
+    }
+
     public sealed class CustomTextUploader : TextUploader
     {
         private CustomUploaderItem customUploader;
@@ -47,7 +85,7 @@ namespace ShareX.UploadersLib.TextUploaders
             string requestURL = customUploader.GetRequestURL();
 
             if ((customUploader.RequestType != CustomUploaderRequestType.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
-                (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input"))))
+                (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))))
                 throw new Exception("Atleast one '$input$' required for argument value.");
 
             Dictionary<string, string> args = customUploader.GetArguments(text);
@@ -56,14 +94,14 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
-                    result.Response = SendRequest(HttpMethod.POST, requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                    result.Response = SendRequestMultiPart(requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
                 }
                 else
                 {
                     byte[] byteArray = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(byteArray))
                     {
-                        result = UploadData(stream, requestURL, fileName, customUploader.GetFileFormName(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                        result = SendRequestFile(requestURL, stream, fileName, customUploader.GetFileFormName(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
                     }
                 }
             }
@@ -72,7 +110,14 @@ namespace ShareX.UploadersLib.TextUploaders
                 result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
             }
 
-            customUploader.ParseResponse(result);
+            try
+            {
+                customUploader.ParseResponse(result);
+            }
+            catch (Exception e)
+            {
+                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
+            }
 
             return result;
         }

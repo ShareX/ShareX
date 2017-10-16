@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -29,7 +29,7 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public static class GreenshotResources
     {
-        private static ComponentResourceManager greenshotResources = new ComponentResourceManager(typeof(GreenshotResources));
+        private static readonly ComponentResourceManager greenshotResources = new ComponentResourceManager(typeof(GreenshotResources));
 
         public static Image getImage(string imageName)
         {

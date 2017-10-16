@@ -168,4 +168,7 @@
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Saturação:</value>
   </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparente</value>
+  </data>
 </root>

@@ -129,9 +129,6 @@
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Kopiëren</value>
   </data>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Taken</value>
-  </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>Na vastleggen</value>
   </data>

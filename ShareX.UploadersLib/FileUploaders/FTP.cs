@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -33,9 +34,66 @@ using System.Net.FtpClient;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class FTPFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.FTP;
+
+        public override Image ServiceImage => Resources.folder_network;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.FTPAccountList != null && config.FTPAccountList.IsValidIndex(config.FTPSelectedFile);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            int index;
+
+            if (taskInfo.OverrideFTP)
+            {
+                index = taskInfo.FTPIndex.BetweenOrDefault(0, config.FTPAccountList.Count - 1);
+            }
+            else
+            {
+                switch (taskInfo.DataType)
+                {
+                    case EDataType.Image:
+                        index = config.FTPSelectedImage;
+                        break;
+                    case EDataType.Text:
+                        index = config.FTPSelectedText;
+                        break;
+                    default:
+                    case EDataType.File:
+                        index = config.FTPSelectedFile;
+                        break;
+                }
+            }
+
+            FTPAccount account = config.FTPAccountList.ReturnIfValidIndex(index);
+
+            if (account != null)
+            {
+                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                {
+                    return new FTP(account);
+                }
+                else if (account.Protocol == FTPProtocol.SFTP)
+                {
+                    return new SFTP(account);
+                }
+            }
+
+            return null;
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFTP;
+    }
+
     public sealed class FTP : FileUploader, IDisposable
     {
         public FTPAccount Account { get; private set; }
@@ -103,30 +161,30 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        #region FileUploader methods
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             UploadResult result = new UploadResult();
 
             string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FolderPath);
-            string path = subFolderPath.CombineURL(fileName);
-            bool uploadResult;
+            string path = URLHelpers.CombineURL(subFolderPath, fileName);
+            string url = Account.GetUriPath(fileName, subFolderPath);
+
+            OnEarlyURLCopyRequested(url);
 
             try
             {
                 IsUploading = true;
-                uploadResult = UploadData(stream, path);
+                bool uploadResult = UploadData(stream, path);
+
+                if (uploadResult && !StopUploadRequested && !IsError)
+                {
+                    result.URL = url;
+                }
             }
             finally
             {
                 Dispose();
                 IsUploading = false;
-            }
-
-            if (uploadResult && !StopUploadRequested && !IsError)
-            {
-                result.URL = Account.GetUriPath(fileName, subFolderPath);
             }
 
             return result;
@@ -148,8 +206,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             }
         }
-
-        #endregion FileUploader methods
 
         public bool Connect()
         {
@@ -345,7 +401,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (CreateDirectory(path))
                 {
-                    DebugHelper.WriteLine("FTP directory created: " + path);
+                    DebugHelper.WriteLine($"FTP directory created: {path}");
                 }
             }
 

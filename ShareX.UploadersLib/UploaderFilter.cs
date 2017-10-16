@@ -1,0 +1,84 @@
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2017 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using ShareX.HelpersLib;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace ShareX.UploadersLib
+{
+    public class UploaderFilter
+    {
+        public string Uploader { get; set; }
+        public List<string> Extensions { get; set; } = new List<string>();
+        //public long Size { get; set; }
+
+        public UploaderFilter()
+        {
+        }
+
+        public UploaderFilter(string uploader, params string[] extensions)
+        {
+            Uploader = uploader;
+            Extensions = extensions.ToList();
+        }
+
+        public bool IsValidFilter(string filename, Stream stream)
+        {
+            string extension = Helpers.GetFilenameExtension(filename);
+
+            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public IGenericUploaderService GetUploaderService()
+        {
+            return UploaderFactory.AllGenericUploaderServices.Where(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+        }
+
+        public void SetExtensions(string extensions)
+        {
+            if (!string.IsNullOrEmpty(extensions))
+            {
+                Extensions = extensions.Split(',').Select(x => x.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToList();
+            }
+            else
+            {
+                Extensions = new List<string>();
+            }
+        }
+
+        public string GetExtensions()
+        {
+            return string.Join(", ", Extensions);
+        }
+
+        public override string ToString()
+        {
+            return Uploader;
+        }
+    }
+}

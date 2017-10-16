@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Проверка монитора</value>
+    <value>ShareX - Проверка монитора</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Закрыть</value>
@@ -133,13 +133,10 @@
     <value>Цвет 2</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Шахматная доска</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Горизонтальные полосы</value>
   </data>
   <data name="cbShapes.Items2" xml:space="preserve">
-    <value>Вертикальные полосы</value>
+    <value>Шахматная доска</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>С:</value>
@@ -167,5 +164,11 @@
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
     <value>Фигура:</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>Вертикальные полосы</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Тест на разрывы</value>
   </data>
 </root>

@@ -124,12 +124,12 @@
     <value>Не показывать это окно</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;ОК</value>
+    <value>ОК</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Отмена</value>
+    <value>Отмена</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Приступить к загрузке?</value>
+    <value>ShareX - Содержимое буфера</value>
   </data>
 </root>

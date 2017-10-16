@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -121,5 +122,11 @@
   </data>
   <data name="btnYes.Text" xml:space="preserve">
     <value>是</value>
+  </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>查看更新日志</value>
+  </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>ShareX 下一次启动后再提示</value>
   </data>
 </root>

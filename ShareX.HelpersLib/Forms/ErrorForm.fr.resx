@@ -128,12 +128,15 @@ Erreur 2</value>
     <value>Quitter</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Ouvrir le fichier journal</value>
+    <value>Ouvrir le fichier des logs...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Envoyer le rapport d'erreur</value>
+    <value>Envoyer le rapport d'erreur...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Erreur</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

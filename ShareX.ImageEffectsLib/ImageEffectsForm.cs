@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,25 +34,25 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public partial class ImageEffectsForm : BaseForm
+    public partial class ImageEffectsForm : Form
     {
         public Image DefaultImage { get; private set; }
 
-        public List<ImageEffect> Effects { get; private set; }
+        public List<ImageEffectPreset> Presets { get; private set; }
+        public int SelectedPresetIndex { get; private set; }
 
-        public ImageEffectsForm(Image img, List<ImageEffect> effects = null)
+        private bool ignorePresetsSelectedIndexChanged = false;
+        private bool pauseUpdate = false;
+
+        public ImageEffectsForm(Image img, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             DefaultImage = img;
-            eiImageEffects.ObjectType = typeof(List<ImageEffect>);
+            Presets = presets;
+            SelectedPresetIndex = selectedPresetIndex;
+            eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             AddAllEffectsToContextMenu();
-
-            if (effects != null)
-            {
-                AddEffects(effects.Copy());
-            }
-
-            UpdatePreview();
         }
 
         public void EditorMode()
@@ -127,19 +127,90 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void LoadSettings()
+        {
+            pauseUpdate = true;
+
+            foreach (ImageEffectPreset preset in Presets)
+            {
+                cbPresets.Items.Add(preset);
+            }
+
+            if (SelectedPresetIndex > -1 && SelectedPresetIndex < cbPresets.Items.Count)
+            {
+                cbPresets.SelectedIndex = SelectedPresetIndex;
+            }
+
+            UpdateControlStates();
+
+            pauseUpdate = false;
+        }
+
+        private ImageEffectPreset GetSelectedPreset()
+        {
+            int index = cbPresets.SelectedIndex;
+
+            if (Presets.IsValidIndex(index))
+            {
+                return Presets[index];
+            }
+
+            return null;
+        }
+
+        private void AddPreset()
+        {
+            AddPreset(new ImageEffectPreset());
+        }
+
+        private void AddPreset(ImageEffectPreset preset)
+        {
+            if (preset != null)
+            {
+                Presets.Add(preset);
+                cbPresets.Items.Add(preset);
+                cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
+                LoadPreset(preset);
+                txtPresetName.Focus();
+            }
+        }
+
         private void UpdatePreview()
         {
-            if (DefaultImage != null)
+            if (!pauseUpdate)
             {
-                Stopwatch timer = Stopwatch.StartNew();
+                ImageEffectPreset preset = GetSelectedPreset();
 
-                using (Image preview = ApplyEffects())
+                if (preset != null && DefaultImage != null)
                 {
-                    pbResult.LoadImage(preview);
-                    Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
-                        preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                    Stopwatch timer = Stopwatch.StartNew();
+
+                    using (Image preview = ApplyEffects())
+                    {
+                        if (preview != null)
+                        {
+                            pbResult.LoadImage(preview);
+                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                        }
+                        else
+                        {
+                            pbResult.Reset();
+                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                0, 0, timer.ElapsedMilliseconds);
+                        }
+                    }
                 }
+
+                UpdateControlStates();
             }
+        }
+
+        private void UpdateControlStates()
+        {
+            btnRemovePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
+            btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
+            btnClear.Enabled = btnRefresh.Enabled = lvEffects.Items.Count > 0;
         }
 
         private List<ImageEffect> GetImageEffects()
@@ -149,75 +220,170 @@ namespace ShareX.ImageEffectsLib
 
         private Image ApplyEffects()
         {
-            List<ImageEffect> imageEffects = GetImageEffects();
-            return ImageEffectManager.ApplyEffects(DefaultImage, imageEffects);
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                return preset.ApplyEffects(DefaultImage);
+            }
+
+            return null;
         }
 
         private void tsmiEffectClick(object sender, EventArgs e)
         {
-            ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
+            ImageEffectPreset preset = GetSelectedPreset();
 
-            if (tsmi != null && tsmi.Tag is Type)
+            if (preset != null)
             {
-                Type type = (Type)tsmi.Tag;
-                ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
-                AddEffect(imageEffect);
-                UpdatePreview();
+                ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
+
+                if (tsmi != null && tsmi.Tag is Type)
+                {
+                    Type type = (Type)tsmi.Tag;
+                    ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
+                    AddEffect(imageEffect, preset);
+                    UpdatePreview();
+                }
             }
         }
 
         private void RemoveSelectedEffects()
         {
-            if (lvEffects.SelectedItems.Count > 0)
-            {
-                foreach (ListViewItem lvi in lvEffects.SelectedItems)
-                {
-                    lvi.Remove();
-                }
+            ImageEffectPreset preset = GetSelectedPreset();
 
-                UpdatePreview();
+            if (preset != null)
+            {
+                int index = lvEffects.SelectedIndex;
+
+                if (index > -1)
+                {
+                    preset.Effects.RemoveAt(index);
+                    lvEffects.Items.RemoveAt(index);
+
+                    UpdatePreview();
+                }
             }
         }
 
-        private void ClearEffects()
+        private void ClearFields()
         {
-            foreach (ListViewItem lvi in lvEffects.Items)
-            {
-                lvi.Remove();
-            }
-
+            txtPresetName.Text = "";
+            lvEffects.Items.Clear();
             UpdatePreview();
         }
 
-        private void AddEffect(ImageEffect imageEffect)
+        private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
         {
+            pauseUpdate = true;
+
             ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
             lvi.Checked = imageEffect.Enabled;
             lvi.Tag = imageEffect;
 
             if (lvEffects.SelectedIndices.Count > 0)
             {
-                lvEffects.Items.Insert(lvEffects.SelectedIndices[lvEffects.SelectedIndices.Count - 1] + 1, lvi);
+                int index = lvEffects.SelectedIndices[lvEffects.SelectedIndices.Count - 1] + 1;
+                lvEffects.Items.Insert(index, lvi);
+
+                if (preset != null)
+                {
+                    preset.Effects.Insert(index, imageEffect);
+                }
             }
             else
             {
                 lvEffects.Items.Add(lvi);
+
+                if (preset != null)
+                {
+                    preset.Effects.Add(imageEffect);
+                }
             }
 
-            lvEffects.Focus();
             lvi.EnsureVisible();
             lvi.Selected = true;
+
+            pauseUpdate = false;
         }
 
-        private void AddEffects(List<ImageEffect> imageEffects)
+        private void LoadPreset(ImageEffectPreset preset)
         {
-            foreach (ImageEffect imageEffect in imageEffects)
+            pauseUpdate = true;
+
+            txtPresetName.Text = preset.Name;
+            lvEffects.Items.Clear();
+            pgSettings.SelectedObject = null;
+
+            foreach (ImageEffect imageEffect in preset.Effects)
             {
                 AddEffect(imageEffect);
             }
+
+            pauseUpdate = false;
+
+            UpdatePreview();
         }
 
         #region Form events
+
+        private void ImageEffectsForm_Shown(object sender, EventArgs e)
+        {
+            LoadSettings();
+            this.ForceActivate();
+        }
+
+        private void btnAddPreset_Click(object sender, EventArgs e)
+        {
+            AddPreset();
+        }
+
+        private void btnRemovePreset_Click(object sender, EventArgs e)
+        {
+            int selected = cbPresets.SelectedIndex;
+
+            if (selected > -1)
+            {
+                cbPresets.Items.RemoveAt(selected);
+                Presets.RemoveAt(selected);
+
+                if (cbPresets.Items.Count > 0)
+                {
+                    cbPresets.SelectedIndex = selected == cbPresets.Items.Count ? cbPresets.Items.Count - 1 : selected;
+                }
+                else
+                {
+                    ClearFields();
+                    btnAddPreset.Focus();
+                }
+            }
+        }
+
+        private void cbPresets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!ignorePresetsSelectedIndexChanged)
+            {
+                SelectedPresetIndex = cbPresets.SelectedIndex;
+
+                ImageEffectPreset preset = GetSelectedPreset();
+                if (preset != null)
+                {
+                    LoadPreset(preset);
+                }
+            }
+        }
+
+        private void txtPresetName_TextChanged(object sender, EventArgs e)
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+            if (preset != null)
+            {
+                preset.Name = txtPresetName.Text;
+                ignorePresetsSelectedIndexChanged = true;
+                cbPresets.RefreshItems();
+                ignorePresetsSelectedIndexChanged = false;
+            }
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -231,28 +397,46 @@ namespace ShareX.ImageEffectsLib
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearEffects();
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                lvEffects.Items.Clear();
+                preset.Effects.Clear();
+                UpdatePreview();
+            }
         }
 
         private void btnDuplicate_Click(object sender, EventArgs e)
         {
-            if (lvEffects.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvEffects.SelectedItems[0];
+            ImageEffectPreset preset = GetSelectedPreset();
 
-                if (lvi.Tag is ImageEffect)
+            if (preset != null)
+            {
+                if (lvEffects.SelectedItems.Count > 0)
                 {
-                    ImageEffect imageEffect = (ImageEffect)lvi.Tag;
-                    ImageEffect imageEffectClone = imageEffect.Copy();
-                    AddEffect(imageEffectClone);
-                    UpdatePreview();
+                    ListViewItem lvi = lvEffects.SelectedItems[0];
+
+                    if (lvi.Tag is ImageEffect)
+                    {
+                        ImageEffect imageEffect = (ImageEffect)lvi.Tag;
+                        ImageEffect imageEffectClone = imageEffect.Copy();
+                        AddEffect(imageEffectClone, preset);
+                        UpdatePreview();
+                    }
                 }
             }
         }
 
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
-            UpdatePreview();
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                preset.Effects.Move(oldIndex, newIndex);
+                UpdatePreview();
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -273,6 +457,8 @@ namespace ShareX.ImageEffectsLib
                     pgSettings.SelectedObject = lvi.Tag;
                 }
             }
+
+            UpdateControlStates();
         }
 
         private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -312,13 +498,11 @@ namespace ShareX.ImageEffectsLib
 
         private void eiImageEffects_ImportRequested(object obj)
         {
-            List<ImageEffect> imageEffects = obj as List<ImageEffect>;
+            ImageEffectPreset preset = obj as ImageEffectPreset;
 
-            if (imageEffects != null && imageEffects.Count > 0)
+            if (preset != null && preset.Effects.Count > 0)
             {
-                ClearEffects();
-                AddEffects(imageEffects);
-                UpdatePreview();
+                AddPreset(preset);
             }
         }
 
@@ -336,7 +520,7 @@ namespace ShareX.ImageEffectsLib
 
         private void tsmiLoadImageFromClipboard_Click(object sender, EventArgs e)
         {
-            Image img = Clipboard.GetImage();
+            Image img = ClipboardHelpers.GetImage();
 
             if (img != null)
             {
@@ -352,7 +536,10 @@ namespace ShareX.ImageEffectsLib
             {
                 using (Image img = ApplyEffects())
                 {
-                    ImageHelpers.SaveImageFileDialog(img);
+                    if (img != null)
+                    {
+                        ImageHelpers.SaveImageFileDialog(img);
+                    }
                 }
             }
         }
@@ -398,16 +585,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            Effects = GetImageEffects();
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
             Close();
         }
 

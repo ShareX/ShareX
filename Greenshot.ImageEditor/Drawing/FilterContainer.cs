@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -42,8 +42,7 @@ namespace Greenshot.Drawing
             get { return (PreparedFilter)GetFieldValue(FieldType.PREPARED_FILTER_HIGHLIGHT); }
         }
 
-        public FilterContainer(Surface parent)
-            : base(parent)
+        public FilterContainer(Surface parent) : base(parent)
         {
         }
 
@@ -59,7 +58,7 @@ namespace Greenshot.Drawing
             int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
-            bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
+            bool lineVisible = lineThickness > 0 && Colors.IsVisible(lineColor);
             if (lineVisible)
             {
                 graphics.SmoothingMode = SmoothingMode.HighSpeed;
@@ -80,7 +79,7 @@ namespace Greenshot.Drawing
                             Rectangle shadowRect = GuiRectangle.GetGuiRectangle(Left + currentStep, Top + currentStep, Width, Height);
                             graphics.DrawRectangle(shadowPen, shadowRect);
                             currentStep++;
-                            alpha = alpha - (basealpha / steps);
+                            alpha = alpha - basealpha / steps;
                         }
                     }
                 }

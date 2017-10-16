@@ -132,9 +132,6 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>Filtro de nome de arquivo:</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Filtro diferencia letras maiúsculas de minúsculas</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Contém</value>
   </data>
@@ -153,26 +150,11 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Filtro de tipo de arquivo:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Imagem</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Arquivo</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Texto</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Data e hora</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nome do arquivo</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Hospedagem</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Tipo</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filtros</value>
@@ -182,17 +164,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Cultura atual</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Cultura invariante (Inglês)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Ordinal (Inglês)</value>
   </data>
 </root>

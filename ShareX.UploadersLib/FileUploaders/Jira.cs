@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,12 +26,11 @@
 // Credits: https://github.com/gpailler
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
-using ShareX.UploadersLib.GUI;
-using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -41,6 +40,25 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class JiraFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Jira;
+
+        public override Image ServiceImage => Resources.jira;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuthInfo.CheckOAuth(config.JiraOAuthInfo);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Jira(config.JiraHost, config.JiraOAuthInfo, config.JiraIssuePrefix);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpJira;
+    }
+
     public class Jira : FileUploader, IOAuth
     {
         private const string PathRequestToken = "/plugins/servlet/oauth/request-token";
@@ -73,7 +91,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 byte[] pfx = new byte[stream.Length];
                 stream.Read(pfx, 0, pfx.Length);
-                _jiraCertificate = new X509Certificate2(pfx, string.Empty, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
+                _jiraCertificate = new X509Certificate2(pfx, "", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
             }
         }
 
@@ -215,10 +233,10 @@ namespace ShareX.UploadersLib.FileUploaders
                     NameValueCollection headers = new NameValueCollection();
                     headers.Set("X-Atlassian-Token", "nocheck");
 
-                    UploadResult res = UploadData(stream, query, fileName, headers: headers);
+                    UploadResult res = SendRequestFile(query, stream, fileName, headers: headers);
                     if (res.Response.Contains("errorMessages"))
                     {
-                        res.Errors.Add(res.Response);
+                        Errors.Add(res.Response);
                     }
                     else
                     {

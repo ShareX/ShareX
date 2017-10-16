@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -39,14 +39,13 @@ namespace Greenshot.Drawing.Filters
             set { previewQuality = value; OnPropertyChanged("PreviewQuality"); }
         }
 
-        public BlurFilter(DrawableContainer parent)
-            : base(parent)
+        public BlurFilter(DrawableContainer parent) : base(parent)
         {
-            AddField(GetType(), FieldType.BLUR_RADIUS, 3);
+            AddField(GetType(), FieldType.BLUR_RADIUS, 15);
             AddField(GetType(), FieldType.PREVIEW_QUALITY, 1.0d);
         }
 
-        public unsafe override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
+        public override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
         {
             int blurRadius = GetFieldValueAsInt(FieldType.BLUR_RADIUS);
             Rectangle applyRect = ImageHelper.CreateIntersectRectangle(applyBitmap.Size, rect, Invert);
@@ -73,7 +72,6 @@ namespace Greenshot.Drawing.Filters
                 }
             }
             graphics.Restore(state);
-            return;
         }
     }
 }

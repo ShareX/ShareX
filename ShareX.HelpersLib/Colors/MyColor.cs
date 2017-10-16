@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
 using System.Drawing;
 
 namespace ShareX.HelpersLib
@@ -89,7 +88,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return String.Format(
+            return string.Format(
 @"RGBA (Red, Green, Blue, Alpha) = {0}, {1}, {2}, {3}
 HSB (Hue, Saturation, Brightness) = {4:0.0}°, {5:0.0}%, {6:0.0}%
 CMYK (Cyan, Magenta, Yellow, Key) = {7:0.0}%, {8:0.0}%, {9:0.0}%, {10:0.0}%

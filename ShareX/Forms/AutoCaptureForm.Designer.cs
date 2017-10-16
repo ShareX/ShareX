@@ -116,14 +116,9 @@
             // nudRepeatTime
             // 
             this.nudRepeatTime.DecimalPlaces = 1;
-            this.nudRepeatTime.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
             resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.Maximum = new decimal(new int[] {
-            3600,
+            86400,
             0,
             0,
             0});
@@ -185,6 +180,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.gbRegion);
             this.Controls.Add(this.lblDurationSeconds);
             this.Controls.Add(this.nudRepeatTime);

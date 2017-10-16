@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
@@ -155,6 +155,10 @@ namespace ShareX.HelpersLib
             if (hex[0] == '#')
             {
                 hex = hex.Remove(0, 1);
+            }
+            else if (hex.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
+            {
+                hex = hex.Remove(0, 2);
             }
 
             if (((format == ColorFormat.RGBA || format == ColorFormat.ARGB) && hex.Length != 8) ||
@@ -298,77 +302,56 @@ namespace ShareX.HelpersLib
             return Color.FromArgb(MathHelpers.Random(255), MathHelpers.Random(255), MathHelpers.Random(255));
         }
 
-        public static Color ParseColor(string color)
+        public static bool ParseColor(string text, out Color color)
         {
-            if (color.StartsWith("#"))
+            if (!string.IsNullOrEmpty(text))
             {
-                return HexToColor(color);
-            }
+                text = text.Trim();
 
-            if (color.Contains(','))
-            {
-                int[] colors = color.Split(',').Select(x => int.Parse(x.Trim())).ToArray();
-
-                if (colors.Length == 3)
+                if (text.Length <= 20)
                 {
-                    return Color.FromArgb(colors[0], colors[1], colors[2]);
-                }
+                    Match matchHex = Regex.Match(text, @"^(?:#|0x)?((?:[0-9A-F]{2}){3})$", RegexOptions.IgnoreCase);
 
-                if (colors.Length == 4)
-                {
-                    return Color.FromArgb(colors[0], colors[1], colors[2], colors[3]);
-                }
-            }
+                    if (matchHex.Success)
+                    {
+                        color = HexToColor(matchHex.Groups[1].Value);
+                        return true;
+                    }
+                    else
+                    {
+                        Match matchRGB = Regex.Match(text, @"^(?:rgb\()?([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])(?:\s|,)+([1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\)?$");
 
-            return Color.FromName(color);
-        }
-
-        public static Color Mix(List<Color> colors)
-        {
-            int a = 0;
-            int r = 0;
-            int g = 0;
-            int b = 0;
-            int count = 0;
-
-            foreach (Color color in colors)
-            {
-                if (!color.Equals(Color.Empty))
-                {
-                    a += color.A;
-                    r += color.R;
-                    g += color.G;
-                    b += color.B;
-                    count++;
+                        if (matchRGB.Success)
+                        {
+                            color = Color.FromArgb(int.Parse(matchRGB.Groups[1].Value), int.Parse(matchRGB.Groups[2].Value), int.Parse(matchRGB.Groups[3].Value));
+                            return true;
+                        }
+                    }
                 }
             }
 
-            if (count == 0)
-            {
-                return Color.Empty;
-            }
-
-            return Color.FromArgb(a / count, r / count, g / count, b / count);
+            color = Color.Empty;
+            return false;
         }
 
-        public static int PerceivedBrightness(Color c)
+        public static int PerceivedBrightness(Color color)
         {
-            return (int)Math.Sqrt(
-                c.R * c.R * .299 +
-                c.G * c.G * .587 +
-                c.B * c.B * .114);
+            return (int)Math.Sqrt(color.R * color.R * .299 + color.G * color.G * .587 + color.B * color.B * .114);
         }
 
-        public static Color VisibleTextColor(Color c)
+        public static Color VisibleColor(Color color)
         {
-            return PerceivedBrightness(c) > 130 ? Color.Black : Color.White;
+            return VisibleColor(color, Color.White, Color.Black);
+        }
+
+        public static Color VisibleColor(Color color, Color lightColor, Color darkColor)
+        {
+            return PerceivedBrightness(color) > 130 ? darkColor : lightColor;
         }
 
         public static Color Lerp(Color from, Color to, float amount)
         {
-            return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount),
-                (int)MathHelpers.Lerp(from.G, to.G, amount),
-                (int)MathHelpers.Lerp(from.B, to.B, amount));
+            return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount), (int)MathHelpers.Lerp(from.G, to.G, amount), (int)MathHelpers.Lerp(from.B, to.B, amount));
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,35 +28,44 @@ using ShareX.IndexerLib.Properties;
 using System;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.IndexerLib
 {
     public class IndexerHtml : Indexer
     {
-        public IndexerHtml(IndexerSettings indexerSettings)
-            : base(indexerSettings)
+        protected StringBuilder sbContent = new StringBuilder();
+
+        public IndexerHtml(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
 
         public override string Index(string folderPath)
         {
             StringBuilder sbHtmlIndex = new StringBuilder();
-            sbHtmlIndex.AppendLine(Resources.doctype_xhtml);
+            sbHtmlIndex.AppendLine("<!DOCTYPE html>");
+            sbHtmlIndex.AppendLine(HtmlHelper.StartTag("html"));
+            sbHtmlIndex.AppendLine(HtmlHelper.StartTag("head"));
+            sbHtmlIndex.AppendLine("<meta charset=\"UTF-8\">");
+            sbHtmlIndex.AppendLine("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
             sbHtmlIndex.AppendLine(HtmlHelper.Tag("title", "Index for " + Path.GetFileName(folderPath)));
             sbHtmlIndex.AppendLine(GetCssStyle());
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("head"));
             sbHtmlIndex.AppendLine(HtmlHelper.StartTag("body"));
-            string index = base.Index(folderPath).Trim();
+
+            FolderInfo folderInfo = GetFolderInfo(folderPath);
+            folderInfo.Update();
+
+            IndexFolder(folderInfo);
+            string index = sbContent.ToString().Trim();
+
             sbHtmlIndex.AppendLine(index);
-            if (config.AddFooter) sbHtmlIndex.AppendLine(HtmlHelper.StartTag("div") + GetFooter() + HtmlHelper.EndTag("div"));
-            if (config.AddValidationIcons) sbHtmlIndex.AppendLine(Resources.valid_xhtml);
+            if (settings.AddFooter) sbHtmlIndex.AppendLine(HtmlHelper.StartTag("div") + GetFooter() + HtmlHelper.EndTag("div"));
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("body"));
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("html"));
             return sbHtmlIndex.ToString().Trim();
         }
 
-        protected override void IndexFolder(FolderInfo dir, int level)
+        protected override void IndexFolder(FolderInfo dir, int level = 0)
         {
             sbContent.AppendLine(GetFolderNameRow(dir, level));
 
@@ -83,58 +92,69 @@ namespace ShareX.IndexerLib
             sbContent.AppendLine(HtmlHelper.EndTag("div"));
         }
 
-        protected override string GetFolderNameRow(FolderInfo dir, int level)
+        private string GetFolderNameRow(FolderInfo dir, int level)
         {
-            int heading = (level + 1).Between(1, 6);
-
-            string folderInfoText = string.Empty;
+            string folderNameRow = "";
 
             if (!dir.IsEmpty)
             {
-                folderInfoText = dir.Size.ToSizeString(config.BinaryUnits) + " (";
+                if (settings.ShowSizeInfo)
+                {
+                    folderNameRow += dir.Size.ToSizeString(settings.BinaryUnits) + " ";
+                }
+
+                folderNameRow += "(";
 
                 if (dir.TotalFileCount > 0)
                 {
-                    folderInfoText += dir.TotalFileCount + " file" + (dir.TotalFileCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFileCount + " file" + (dir.TotalFileCount > 1 ? "s" : "");
                 }
 
                 if (dir.TotalFolderCount > 0)
                 {
                     if (dir.TotalFileCount > 0)
                     {
-                        folderInfoText += ", ";
+                        folderNameRow += ", ";
                     }
 
-                    folderInfoText += dir.TotalFolderCount + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFolderCount + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
                 }
 
-                folderInfoText += ")";
-                folderInfoText = "  " + HtmlHelper.Tag("span", folderInfoText, "", "class=\"folderinfo\"");
+                folderNameRow += ")";
+                folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
-            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderInfoText + HtmlHelper.EndTag("h" + heading);
+            int heading = (level + 1).Between(1, 6);
+
+            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderNameRow + HtmlHelper.EndTag("h" + heading);
         }
 
-        protected override string GetFileNameRow(FileInfo fi, int level)
+        private string GetFileNameRow(FileInfo fi, int level)
         {
-            string size = " " + HtmlHelper.Tag("span", fi.Length.ToSizeString(config.BinaryUnits), "", "class=\"filesize\"");
+            string fileNameRow = HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name);
 
-            return HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name) + size + HtmlHelper.EndTag("li");
+            if (settings.ShowSizeInfo)
+            {
+                fileNameRow += " " + HtmlHelper.Tag("span", fi.Length.ToSizeString(settings.BinaryUnits), "", "class=\"FileSize\"");
+            }
+
+            fileNameRow += HtmlHelper.EndTag("li");
+
+            return fileNameRow;
         }
 
-        protected override string GetFooter()
+        private string GetFooter()
         {
-            return string.Format("Generated by {0} on {1}.", string.Format("<a href=\"{0}\">{1}</a>", Links.URL_WEBSITE, "ShareX " + Application.ProductVersion),
-                DateTime.UtcNow.ToString("yyyy-MM-dd 'at' HH:mm:ss 'UTC'"));
+            return $"Generated by <a href=\"{Links.URL_WEBSITE}\">ShareX Directory Indexer</a> on {DateTime.UtcNow.ToString("yyyy-MM-dd 'at' HH:mm:ss 'UTC'")}";
         }
 
         private string GetCssStyle()
         {
             string css;
 
-            if (config.UseCustomCSSFile && !string.IsNullOrEmpty(config.CustomCSSFilePath) && File.Exists(config.CustomCSSFilePath))
+            if (settings.UseCustomCSSFile && !string.IsNullOrEmpty(settings.CustomCSSFilePath) && File.Exists(settings.CustomCSSFilePath))
             {
-                css = File.ReadAllText(config.CustomCSSFilePath, Encoding.UTF8);
+                css = File.ReadAllText(settings.CustomCSSFilePath, Encoding.UTF8);
             }
             else
             {

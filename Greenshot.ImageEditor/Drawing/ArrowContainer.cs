@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,8 +37,7 @@ namespace Greenshot.Drawing
 
         private static readonly AdjustableArrowCap ARROW_CAP = new AdjustableArrowCap(4, 6);
 
-        public ArrowContainer(Surface parent)
-            : base(parent)
+        public ArrowContainer(Surface parent) : base(parent)
         {
         }
 
@@ -48,6 +47,7 @@ namespace Greenshot.Drawing
         protected override void InitializeFields()
         {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
+            AddField(GetType(), FieldType.ARROWHEADS, 2);
             AddField(GetType(), FieldType.LINE_COLOR, DefaultLineColor);
             AddField(GetType(), FieldType.FILL_COLOR, Color.Transparent);
             AddField(GetType(), FieldType.SHADOW, true);
@@ -67,37 +67,34 @@ namespace Greenshot.Drawing
                 graphics.PixelOffsetMode = PixelOffsetMode.None;
                 Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
                 ArrowHeadCombination heads = (ArrowHeadCombination)GetFieldValue(FieldType.ARROWHEADS);
-                if (lineThickness > 0)
+                if (shadow)
                 {
-                    if (shadow)
+                    //draw shadow first
+                    int basealpha = 100;
+                    int alpha = basealpha;
+                    int steps = 5;
+                    int currentStep = 1;
+                    while (currentStep <= steps)
                     {
-                        //draw shadow first
-                        int basealpha = 100;
-                        int alpha = basealpha;
-                        int steps = 5;
-                        int currentStep = 1;
-                        while (currentStep <= steps)
+                        using (Pen shadowCapPen = new Pen(Color.FromArgb(alpha, 100, 100, 100), lineThickness))
                         {
-                            using (Pen shadowCapPen = new Pen(Color.FromArgb(alpha, 100, 100, 100), lineThickness))
-                            {
-                                SetArrowHeads(heads, shadowCapPen);
+                            SetArrowHeads(heads, shadowCapPen);
 
-                                graphics.DrawLine(shadowCapPen,
-                                    Left + currentStep,
-                                    Top + currentStep,
-                                    Left + currentStep + Width,
-                                    Top + currentStep + Height);
+                            graphics.DrawLine(shadowCapPen,
+                                Left + currentStep,
+                                Top + currentStep,
+                                Left + currentStep + Width,
+                                Top + currentStep + Height);
 
-                                currentStep++;
-                                alpha = alpha - (basealpha / steps);
-                            }
+                            currentStep++;
+                            alpha = alpha - basealpha / steps;
                         }
                     }
-                    using (Pen pen = new Pen(lineColor, lineThickness))
-                    {
-                        SetArrowHeads(heads, pen);
-                        graphics.DrawLine(pen, Left, Top, Left + Width, Top + Height);
-                    }
+                }
+                using (Pen pen = new Pen(lineColor, lineThickness))
+                {
+                    SetArrowHeads(heads, pen);
+                    graphics.DrawLine(pen, Left, Top, Left + Width, Top + Height);
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,18 @@ namespace ShareX.ScreenCaptureLib
 {
     public static class InputManager
     {
+        public static Point MousePosition => mouseState.Position;
+
+        public static Point PreviousMousePosition => oldMouseState.Position;
+
+        public static Point MousePosition0Based => mouseState.ZeroBasedPosition;
+
+        public static Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition;
+
+        public static Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
+
+        public static bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
+
         private static MouseState mouseState = new MouseState();
         private static MouseState oldMouseState;
 
@@ -57,54 +69,6 @@ namespace ShareX.ScreenCaptureLib
         public static bool IsMouseReleased(MouseButtons button)
         {
             return !IsMouseDown(button) && IsBeforeMouseDown(button);
-        }
-
-        public static Point MousePosition
-        {
-            get
-            {
-                return mouseState.Position;
-            }
-        }
-
-        public static Point PreviousMousePosition
-        {
-            get
-            {
-                return oldMouseState.Position;
-            }
-        }
-
-        public static Point MousePosition0Based
-        {
-            get
-            {
-                return mouseState.ZeroBasedPosition;
-            }
-        }
-
-        public static Point PreviousMousePosition0Based
-        {
-            get
-            {
-                return oldMouseState.ZeroBasedPosition;
-            }
-        }
-
-        public static Point MouseVelocity
-        {
-            get
-            {
-                return new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
-            }
-        }
-
-        public static bool IsMouseMoved
-        {
-            get
-            {
-                return MouseVelocity.X != 0 || MouseVelocity.Y != 0;
-            }
         }
     }
 }

@@ -225,9 +225,6 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Na opname</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>Sluit dit venster na verwerken</value>
-  </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Scroll naar begin methode voor opname:</value>
   </data>

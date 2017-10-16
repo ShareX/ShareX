@@ -50,6 +50,25 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
+    <OutputPath>bin\WindowsStore\</OutputPath>
+    <DefineConstants>TRACE;WindowsStore</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WindowsStore</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -59,11 +78,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\BaseAnimation.cs" />
+    <Compile Include="Animations\PointAnimation.cs" />
+    <Compile Include="Animations\RectangleAnimation.cs" />
+    <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\RectangleAnnotate.cs">
+    <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RectangleTransparent.cs">
+    <Compile Include="Forms\RegionCaptureTransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ScrollingCaptureForm.cs">
@@ -72,78 +95,174 @@
     <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonitorRegion.cs" />
-    <Compile Include="MonitorRegionDefaultCreator.cs" />
-    <Compile Include="RectangleAnnotateOptions.cs" />
-    <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
-    <Compile Include="RegionHelpers\RegionInfo.cs" />
-    <Compile Include="Screencast\FFmpegOptions.cs" />
-    <Compile Include="Screencast\FFmpegHelper.cs" />
-    <Compile Include="Screencast\FFmpegOptionsForm.cs">
+    <Compile Include="Forms\TextDrawingInputBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
+    <Compile Include="Forms\TextDrawingInputBox.Designer.cs">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebpageCaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebpageCaptureForm.Designer.cs">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RectangleAnnotateOptions.cs" />
+    <Compile Include="Animations\ColorBlinkAnimation.cs" />
+    <Compile Include="RegionHelpers\PointInfo.cs" />
+    <Compile Include="Animations\OpacityAnimation.cs" />
+    <Compile Include="Shapes\BaseShape.cs" />
+    <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\CropDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\CursorDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageScreenDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\FreehandDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\StepDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\TextOutlineDrawingShape.cs" />
+    <Compile Include="Shapes\Region\FreehandRegionShape.cs" />
+    <Compile Include="Shapes\ShapeManagerMenu.cs" />
+    <Compile Include="Shapes\TextDrawingOptions.cs" />
+    <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
+    <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\HighlightEffectShape.cs" />
+    <Compile Include="Shapes\Drawing\LineDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\PixelateEffectShape.cs" />
+    <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\BaseEffectShape.cs" />
+    <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
+    <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
+    <Compile Include="Shapes\Region\BaseRegionShape.cs" />
+    <Compile Include="Screencast\FFmpegOptions.cs" />
+    <Compile Include="Screencast\FFmpegHelper.cs" />
+    <Compile Include="Forms\FFmpegOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FFmpegOptionsForm.Designer.cs">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
-    <Compile Include="Forms\RectangleLight.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Surface.cs">
+    <Compile Include="Forms\RegionCaptureLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
-    <Compile Include="LocationInfo.cs" />
+    <Compile Include="RegionHelpers\LocationInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegionHelpers\AreaManager.cs" />
-    <Compile Include="RegionHelpers\DrawObject.cs" />
-    <Compile Include="Forms\FreeHandRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PolygonRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RectangleRegion.cs">
+    <Compile Include="Shapes\ShapeManager.cs" />
+    <Compile Include="RegionHelpers\DrawableObject.cs" />
+    <Compile Include="Forms\RegionCaptureForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegionHelpers\InputManager.cs" />
     <Compile Include="RegionHelpers\MouseState.cs" />
-    <Compile Include="RegionHelpers\NodeObject.cs" />
-    <Compile Include="RegionHelpers\ResizeManager.cs" />
-    <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="RegionHelpers\ResizeNode.cs" />
+    <Compile Include="RegionCaptureTasks.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
-    <Compile Include="SimpleWindowInfo.cs" />
-    <Compile Include="SnapSize.cs" />
-    <Compile Include="SurfaceOptions.cs" />
+    <Compile Include="RegionHelpers\SimpleWindowInfo.cs" />
+    <Compile Include="RegionHelpers\SnapSize.cs" />
+    <Compile Include="RegionCaptureOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
     <Compile Include="Screencast\HardDiskCache.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />
+    <Compile Include="Animations\TextAnimation.cs" />
     <Compile Include="WebpageCapture.cs" />
-    <Compile Include="WindowInfo.cs" />
-    <Compile Include="WindowsList.cs" />
-    <Compile Include="WindowsRectangleList.cs" />
+    <Compile Include="WebpageCaptureOptions.cs" />
+    <Compile Include="RegionHelpers\WindowsList.cs" />
+    <Compile Include="RegionHelpers\WindowsRectangleList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
       <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
       <Name>ShareX.HelpersLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj">
+      <Project>{1a190e53-1419-4cc2-b0e5-3bc7ea861c8b}</Project>
+      <Name>ShareX.MediaLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cursor.png" />
+    <None Include="Resources\monitor-image.png" />
+    <None Include="Resources\folder-open-image.png" />
+    <None Include="Resources\image-crop.png" />
+    <None Include="Resources\edit-shade.png" />
+    <None Include="Resources\edit-outline.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\wrench-screwdriver.png" />
+    <None Include="Resources\layers-stack-arrange.png" />
+    <None Include="Resources\layers-stack-arrange-back.png" />
+    <None Include="Resources\layers-arrange-back.png" />
+    <None Include="Resources\layers-arrange.png" />
+    <None Include="Resources\layer--minus.png" />
+    <None Include="Resources\layer.png" />
+    <None Include="Resources\test_32.png" />
+    <None Include="Resources\layers.png" />
+    <None Include="Resources\eraser.png" />
+    <None Include="Resources\ui-radio-button-uncheck.png" />
+    <None Include="Resources\layer--pencil.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\drive-globe.png" />
+    <None Include="Resources\disks-black.png" />
+    <None Include="Resources\disk-black.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\layer-shape-polygon.png" />
+    <None Include="Resources\layer-shape-curve.png" />
+    <None Include="Resources\edit-vertical-alignment.png" />
+    <None Include="Resources\edit-vertical-alignment-top.png" />
+    <None Include="Resources\edit-alignment-right.png" />
+    <None Include="Resources\edit-alignment.png" />
+    <None Include="Resources\edit-vertical-alignment-middle.png" />
+    <None Include="Resources\edit-alignment-center.png" />
+    <None Include="Resources\edit-underline.png" />
+    <None Include="Resources\edit-italic.png" />
+    <None Include="Resources\edit-bold.png" />
+    <None Include="Resources\layer-shape-text.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\layer_fullscreen.png" />
+    <None Include="Resources\layer-shade.png" />
+    <None Include="Resources\layer-shape-ellipse-region.png" />
+    <None Include="Resources\layer-shape-round-region.png" />
+    <None Include="Resources\layer-shape-region.png" />
+    <None Include="Resources\layer-shape-arrow.png" />
+    <None Include="Resources\grid.png" />
+    <None Include="Resources\highlighter-text.png" />
+    <None Include="Resources\monitor-window.png" />
+    <None Include="Resources\monitor.png" />
+    <None Include="Resources\layer-shape-line.png" />
+    <None Include="Resources\layer-shape-ellipse.png" />
+    <None Include="Resources\layer-shape-round.png" />
+    <None Include="Resources\layer-shape.png" />
+    <None Include="Resources\counter-reset.png" />
+    <None Include="Resources\balloon-box-left.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\arrow-circle-225-left.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\control.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\CircleNode.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.de.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.fr.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.nl-NL.resx">
@@ -164,6 +283,66 @@
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.vi-VN.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-TW.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.fr.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.it-IT.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.pt-BR.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.ru.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.zh-CN.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.zh-TW.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.de.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.fr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.it-IT.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.nl-NL.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.pt-BR.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.ru.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.tr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.vi-VN.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.zh-CN.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.zh-TW.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -176,6 +355,7 @@
     <EmbeddedResource Include="Properties\Resources.hu.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -190,43 +370,48 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.de.resx">
+    <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.de.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.es.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.es.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.fr.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.fr.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.hu.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.hu.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.ko-KR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.nl-NL.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.pt-BR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ru.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.ru.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.tr.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.tr.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.vi-VN.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.zh-CN.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.zh-TW.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

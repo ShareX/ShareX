@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -32,9 +32,9 @@ namespace Greenshot
     /// </summary>
     public partial class ResizeSettingsForm : BaseForm
     {
-        private ResizeEffect effect;
-        private string value_pixel;
-        private string value_percent;
+        private readonly ResizeEffect effect;
+        private readonly string value_pixel;
+        private readonly string value_percent;
         private double newWidth, newHeight;
 
         public ResizeSettingsForm(ResizeEffect effect)
@@ -55,8 +55,8 @@ namespace Greenshot
             textbox_height.Text = effect.Height.ToString();
             newWidth = effect.Width;
             newHeight = effect.Height;
-            combobox_width.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
-            combobox_height.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
+            combobox_width.SelectedIndexChanged += new EventHandler(combobox_SelectedIndexChanged);
+            combobox_height.SelectedIndexChanged += new EventHandler(combobox_SelectedIndexChanged);
 
             checkbox_aspectratio.Checked = effect.MaintainAspectRatio;
         }
@@ -96,7 +96,7 @@ namespace Greenshot
             double displayValue;
             if (value_percent.Equals(combobox_width.SelectedItem))
             {
-                displayValue = ((double)newWidth / (double)effect.Width) * 100d;
+                displayValue = (double)newWidth / (double)effect.Width * 100d;
             }
             else
             {
@@ -110,7 +110,7 @@ namespace Greenshot
             double displayValue;
             if (value_percent.Equals(combobox_height.SelectedItem))
             {
-                displayValue = ((double)newHeight / (double)effect.Height) * 100d;
+                displayValue = (double)newHeight / (double)effect.Height * 100d;
             }
             else
             {
@@ -158,16 +158,16 @@ namespace Greenshot
                 if (isPercent)
                 {
                     percent = double.Parse(textbox_width.Text);
-                    newWidth = ((double)effect.Width / 100d) * percent;
+                    newWidth = (double)effect.Width / 100d * percent;
                 }
                 else
                 {
                     newWidth = double.Parse(textbox_width.Text);
-                    percent = ((double)double.Parse(textbox_width.Text) / (double)effect.Width) * 100d;
+                    percent = (double)double.Parse(textbox_width.Text) / (double)effect.Width * 100d;
                 }
                 if (checkbox_aspectratio.Checked)
                 {
-                    newHeight = ((double)effect.Height / 100d) * percent;
+                    newHeight = (double)effect.Height / 100d * percent;
                     displayHeight();
                 }
             }
@@ -176,16 +176,16 @@ namespace Greenshot
                 if (isPercent)
                 {
                     percent = double.Parse(textbox_height.Text);
-                    newHeight = ((double)effect.Height / 100d) * percent;
+                    newHeight = (double)effect.Height / 100d * percent;
                 }
                 else
                 {
                     newHeight = double.Parse(textbox_height.Text);
-                    percent = ((double)double.Parse(textbox_height.Text) / (double)effect.Height) * 100d;
+                    percent = (double)double.Parse(textbox_height.Text) / (double)effect.Height * 100d;
                 }
                 if (checkbox_aspectratio.Checked)
                 {
-                    newWidth = ((double)effect.Width / 100d) * percent;
+                    newWidth = (double)effect.Width / 100d * percent;
                     displayWidth();
                 }
             }

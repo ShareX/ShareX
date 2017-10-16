@@ -1,0 +1,11 @@
+"InstallScript"
+{
+	"Run Process On Uninstall"
+	{
+		"Uninstaller"
+		{
+			"Process 1" "%INSTALLDIR%\\ShareX_Launcher.exe"
+			"Command 1" "-uninstall"
+		}
+	}
+}

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,14 +25,38 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class OneDriveFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.OneDrive;
+
+        public override Icon ServiceIcon => Resources.OneDrive;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.OneDriveOAuth2Info);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new OneDrive(config.OneDriveOAuth2Info)
+            {
+                FolderID = config.OneDriveSelectedFolder.id,
+                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneDrive;
+    }
+
     public sealed class OneDrive : FileUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
@@ -58,7 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
+            return URLHelpers.CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
         }
 
         public bool GetAccessToken(string code)
@@ -70,7 +94,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("code", code);
             args.Add("grant_type", "authorization_code");
 
-            string response = SendRequestURLEncoded("https://login.live.com/oauth20_token.srf", args);
+            string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -98,7 +122,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("refresh_token", AuthInfo.Token.refresh_token);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequestURLEncoded("https://login.live.com/oauth20_token.srf", args);
+                string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -157,9 +181,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 folderPath = "me/skydrive/files";
             }
 
-            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
+            string url = URLHelpers.CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
 
-            UploadResult result = UploadData(stream, url, fileName);
+            UploadResult result = SendRequestFile(url, stream, fileName);
 
             if (result.IsSuccess)
             {
@@ -199,9 +223,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
             }
 
-            string url = CreateQuery(string.Format("https://apis.live.net/v5.0/{0}/{1}", id, linkTypeValue), args);
-
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(HttpMethod.GET, $"https://apis.live.net/v5.0/{id}/{linkTypeValue}", args);
 
             OneDriveShareableLinkInfo shareableLinkInfo = JsonConvert.DeserializeObject<OneDriveShareableLinkInfo>(response);
 
@@ -222,9 +244,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!path.EndsWith("files")) path += "/files";
 
-            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
-
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
 
             if (response != null)
             {

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,72 +32,75 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AboutForm : BaseForm
+    public partial class AboutForm : Form
     {
         public AboutForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
 
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();
 
-#if STEAM
+#if STEAM || WindowsStore
             uclUpdate.Visible = false;
+            lblBuild.Visible = true;
+
+            if (Program.Build == ShareXBuild.Steam)
+            {
+                lblBuild.Text = "Steam build";
+            }
+            else if (Program.Build == ShareXBuild.WindowsStore)
+            {
+                lblBuild.Text = "Windows Store build";
+            }
 #else
-            pbSteam.Visible = false;
-            lblSteamBuild.Visible = false;
-            uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
+            if (!Program.PortableApps)
+            {
+                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
+                uclUpdate.CheckUpdate(updateChecker);
+            }
+            else
+            {
+                uclUpdate.Visible = false;
+            }
 #endif
 
             lblTeam.Text = "ShareX Team:";
             lblBerk.Text = "Jaex (Berk)";
-            lblMike.Text = "mcored (Michael Delpach)";
+            lblMike.Text = "McoreD (Michael Delpach)";
 
-            rtbShareXInfo.Text = string.Format(@"{0}: {1}
-{2}: {3}
-{4}: {5}
-{6}: {7}",
-Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES,
-Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
+            rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}
+{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
 
-            rtbCredits.Text = string.Format(@"{0}:
+            rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
 
-Mega, Gist and Jira support: https://github.com/gpailler
-Web site: https://github.com/dmxt
-MediaCrush (Imgrush) support: https://github.com/SirCmpwn
-Amazon S3 and DreamObjects support: https://github.com/alanedwardes
-Gfycat support: https://github.com/Dinnerbone
-Copy support: https://github.com/KamilKZ
-AdFly support: https://github.com/LRNAB
-MediaFire support: https://github.com/michalx2
-Pushbullet support: https://github.com/BallisticLingonberries
-Lambda support: https://github.com/mstojcevich
-VideoBin support: https://github.com/corey-/
-Up1 support: https://github.com/Upload
-CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
-Seafile support: https://github.com/zikeji
+https://github.com/ShareX/ShareX/graphs/contributors
 
-{1}:
+{Resources.AboutForm_AboutForm_Translators}:
 
-Turkish: https://github.com/Jaex & https://github.com/muratmoon
-German: https://github.com/Starbug2 & https://github.com/Kaeltis
-French: https://github.com/nwies & https://github.com/Shadorc
-Simplified Chinese: https://github.com/jiajiechan
-Hungarian: https://github.com/devBluestar
-Korean: https://github.com/123jimin
-Spanish: https://github.com/ovnisoftware
-Dutch: https://github.com/canihavesomecoffee
-Portuguese (Brazil): https://github.com/RockyTV & https://github.com/athosbr99
-Vietnamese: https://github.com/thanhpd
-Russian: https://github.com/L1Q
+{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex & https://github.com/muratmoon
+{Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
+{Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
+{Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
+{Resources.AboutForm_AboutForm_Language_hu}: https://github.com/devBluestar
+{Resources.AboutForm_AboutForm_Language_ko_KR}: https://github.com/123jimin
+{Resources.AboutForm_AboutForm_Language_es}: https://github.com/ovnisoftware
+{Resources.AboutForm_AboutForm_Language_nl_NL}: https://github.com/canihavesomecoffee
+{Resources.AboutForm_AboutForm_Language_pt_BR}: https://github.com/RockyTV & https://github.com/athosbr99
+{Resources.AboutForm_AboutForm_Language_vi_VN}: https://github.com/thanhpd
+{Resources.AboutForm_AboutForm_Language_ru}: https://github.com/L1Q
+{Resources.AboutForm_AboutForm_Language_zh_TW}: https://github.com/alantsai
+{Resources.AboutForm_AboutForm_Language_it_IT}: https://github.com/pjammo
 
-{2}:
+{Resources.AboutForm_AboutForm_External_libraries}:
 
-Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
+Greenshot Image Editor: https://github.com/greenshot/greenshot
 Json.NET: https://github.com/JamesNK/Newtonsoft.Json
-SSH.NET: https://sshnet.codeplex.com
+SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
@@ -105,23 +108,17 @@ Zeranoe FFmpeg: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
 SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
-AWS SDK: http://aws.amazon.com/sdk-for-net/
-CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
+OCR Space: http://ocr.space
+ZXing.Net: https://github.com/micjahn/ZXing.Net
 
-Trailer music credits: Track Name: Au5 - Inside (feat. Danyka Nadeau), Video Link: https://youtu.be/WrkyT-6ivjc, Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau, Label Channel: http://www.YouTube.com/Monstercat
-
-Running from:
-{3}
-
-Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries, Application.ExecutablePath);
+Copyright (c) 2007-2017 ShareX Team";
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void pbLogo_MouseDown(object sender, MouseEventArgs e)
@@ -150,9 +147,19 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
             URLHelpers.OpenURL(e.LinkText);
         }
 
-        private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnShareXLicense_Click(object sender, EventArgs e)
         {
-            CompanionCubeManager.Stop();
+            Helpers.OpenFile(Helpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
+        }
+
+        private void btnLicenses_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFolder(Helpers.GetAbsolutePath("Licenses"));
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         #region Animation
@@ -237,20 +244,6 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-#if STEAM
-            if (e.Button == MouseButtons.Middle)
-            {
-                cLogo.Stop();
-                CompanionCubeManager.Toggle();
-                return;
-            }
-
-            if (CompanionCubeManager.IsActive)
-            {
-                CompanionCubeManager.Stop();
-            }
-#endif
-
             if (!isEasterEggStarted)
             {
                 isPaused = !isPaused;

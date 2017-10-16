@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -126,7 +127,7 @@
     <value>OK</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblFullName.Text" xml:space="preserve">
     <value>Voller Name:</value>

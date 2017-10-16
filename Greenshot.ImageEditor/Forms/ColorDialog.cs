@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,7 +37,7 @@ namespace Greenshot
     public partial class ColorDialog : BaseForm
     {
         private static ColorDialog uniqueInstance;
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
 
         private ColorDialog()
         {
@@ -62,7 +62,7 @@ namespace Greenshot
         private readonly List<Button> _colorButtons = new List<Button>();
         private readonly List<Button> _recentColorButtons = new List<Button>();
         private readonly ToolTip _toolTip = new ToolTip();
-        private bool _updateInProgress = false;
+        private bool _updateInProgress;
 
         public Color Color
         {

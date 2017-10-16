@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -27,7 +27,7 @@ namespace Greenshot.Controls
 {
     /// <summary>
     /// A simple ToolStripDropDownButton implementing INotifyPropertyChanged for data binding.
-    /// Also, when a DropDownItem is selected, the DropDownButton adops its Tag and Image.
+    /// Also, when a DropDownItem is selected, the DropDownButton adopts its Tag and Image.
     /// The selected tag can be accessed via SelectedTag property.
     /// </summary>
     internal class BindableToolStripDropDownButton : ToolStripDropDownButton, INotifyPropertyChanged, IGreenshotLanguageBindable
@@ -39,10 +39,6 @@ namespace Greenshot.Controls
         {
             get;
             set;
-        }
-
-        public BindableToolStripDropDownButton()
-        {
         }
 
         public object SelectedTag

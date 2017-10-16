@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -32,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class HotkeySettingsForm : BaseForm
+    public partial class HotkeySettingsForm : Form
     {
         public HotkeySelectionControl Selected { get; private set; }
 
@@ -41,6 +42,7 @@ namespace ShareX
         public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             PrepareHotkeys(hotkeyManager);
         }
 
@@ -77,6 +79,7 @@ namespace ShareX
         private void UpdateButtons()
         {
             btnEdit.Enabled = btnRemove.Enabled = btnDuplicate.Enabled = Selected != null;
+            btnMoveUp.Enabled = btnMoveDown.Enabled = Selected != null && flpHotkeys.Controls.Count > 1;
         }
 
         private HotkeySelectionControl FindSelectionControl(HotkeySettings hotkeySetting)
@@ -208,10 +211,59 @@ namespace ShareX
             }
         }
 
+        private void btnMoveUp_Click(object sender, EventArgs e)
+        {
+            if (Selected != null && flpHotkeys.Controls.Count > 1)
+            {
+                int index = flpHotkeys.Controls.GetChildIndex(Selected);
+
+                int newIndex;
+
+                if (index == 0)
+                {
+                    newIndex = flpHotkeys.Controls.Count - 1;
+                }
+                else
+                {
+                    newIndex = index - 1;
+                }
+
+                flpHotkeys.Controls.SetChildIndex(Selected, newIndex);
+                manager.Hotkeys.Move(index, newIndex);
+            }
+        }
+
+        private void btnMoveDown_Click(object sender, EventArgs e)
+        {
+            if (Selected != null && flpHotkeys.Controls.Count > 1)
+            {
+                int index = flpHotkeys.Controls.GetChildIndex(Selected);
+
+                int newIndex;
+
+                if (index == flpHotkeys.Controls.Count - 1)
+                {
+                    newIndex = 0;
+                }
+                else
+                {
+                    newIndex = index + 1;
+                }
+
+                flpHotkeys.Controls.SetChildIndex(Selected, newIndex);
+                manager.Hotkeys.Move(index, newIndex);
+            }
+        }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
-            manager.ResetHotkeys();
-            AddControls();
+            if (MessageBox.Show(Resources.HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                manager.ResetHotkeys();
+                AddControls();
+                Selected = null;
+                UpdateButtons();
+            }
         }
     }
 }

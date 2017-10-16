@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -93,6 +93,9 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool EnableRightClickMenu { get; set; }
 
+        [DefaultValue(false)]
+        public bool ShowImageSizeLabel { get; set; }
+
         public new event MouseEventHandler MouseDown
         {
             add
@@ -139,7 +142,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return !isImageLoading && Image != null && Image != pbMain.InitialImage && Image != pbMain.ErrorImage;
+                return !isImageLoading && pbMain.IsValidImage();
             }
         }
 
@@ -150,14 +153,30 @@ namespace ShareX.HelpersLib
         public MyPictureBox()
         {
             InitializeComponent();
-            Text = string.Empty;
+            Text = "";
+            pbMain.BackColor = SystemColors.Control;
             pbMain.InitialImage = Resources.Loading;
             pbMain.ErrorImage = Resources.cross;
             pbMain.LoadProgressChanged += pbMain_LoadProgressChanged;
             pbMain.LoadCompleted += pbMain_LoadCompleted;
             pbMain.Resize += pbMain_Resize;
             pbMain.MouseUp += MyPictureBox_MouseUp;
+            pbMain.MouseEnter += PbMain_MouseEnter;
+            pbMain.MouseLeave += PbMain_MouseLeave;
             MouseDown += MyPictureBox_MouseDown;
+        }
+
+        private void PbMain_MouseEnter(object sender, EventArgs e)
+        {
+            if (ShowImageSizeLabel && IsValidImage)
+            {
+                lblImageSize.Visible = true;
+            }
+        }
+
+        private void PbMain_MouseLeave(object sender, EventArgs e)
+        {
+            lblImageSize.Visible = false;
         }
 
         private void pbMain_Resize(object sender, EventArgs e)
@@ -173,7 +192,7 @@ namespace ShareX.HelpersLib
                 if (pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckers(8, Color.LightGray, Color.White);
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern();
                 }
             }
             else
@@ -290,6 +309,8 @@ namespace ShareX.HelpersLib
         {
             if (IsValidImage)
             {
+                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
+
                 if (Image.Width > pbMain.ClientSize.Width || Image.Height > pbMain.ClientSize.Height)
                 {
                     pbMain.SizeMode = PictureBoxSizeMode.Zoom;

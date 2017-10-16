@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -88,14 +88,15 @@ namespace ShareX.HelpersLib
         {
             binary = Regex.Replace(binary, @"[^01]", "");
 
-            MemoryStream stream = new MemoryStream();
-
-            for (int i = 0; i + 8 <= binary.Length; i += 8)
+            using (MemoryStream stream = new MemoryStream())
             {
-                stream.WriteByte(BinaryToByte(binary.Substring(i, 8)));
-            }
+                for (int i = 0; i + 8 <= binary.Length; i += 8)
+                {
+                    stream.WriteByte(BinaryToByte(binary.Substring(i, 8)));
+                }
 
-            return Encoding.UTF8.GetString(stream.ToArray());
+                return Encoding.UTF8.GetString(stream.ToArray());
+            }
         }
 
         #endregion Binary to ...
@@ -149,14 +150,15 @@ namespace ShareX.HelpersLib
         {
             hex = Regex.Replace(hex, @"[^0-9a-fA-F]", "");
 
-            MemoryStream stream = new MemoryStream();
-
-            for (int i = 0; i + 2 <= hex.Length; i += 2)
+            using (MemoryStream stream = new MemoryStream())
             {
-                stream.WriteByte(HexadecimalToByte(hex.Substring(i, 2)));
-            }
+                for (int i = 0; i + 2 <= hex.Length; i += 2)
+                {
+                    stream.WriteByte(HexadecimalToByte(hex.Substring(i, 2)));
+                }
 
-            return Encoding.UTF8.GetString(stream.ToArray());
+                return Encoding.UTF8.GetString(stream.ToArray());
+            }
         }
 
         #endregion Hexadecimal to ...
@@ -177,18 +179,19 @@ namespace ShareX.HelpersLib
         {
             string[] numbers = Regex.Split(ascii, @"\D+");
 
-            MemoryStream stream = new MemoryStream();
-
-            foreach (string number in numbers)
+            using (MemoryStream stream = new MemoryStream())
             {
-                byte b;
-                if (byte.TryParse(number, out b))
+                foreach (string number in numbers)
                 {
-                    stream.WriteByte(b);
+                    byte b;
+                    if (byte.TryParse(number, out b))
+                    {
+                        stream.WriteByte(b);
+                    }
                 }
-            }
 
-            return Encoding.ASCII.GetString(stream.ToArray());
+                return Encoding.ASCII.GetString(stream.ToArray());
+            }
         }
 
         #endregion ASCII to ...

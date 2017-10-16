@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -1195,12 +1195,12 @@ namespace GreenshotPlugin.Core
         {
             float adjustedBrightness = brightness - 1.0f;
             ColorMatrix applyColorMatrix = new ColorMatrix(
-                    new float[][] {
-                        new float[] {contrast, 0, 0, 0, 0}, // scale red
-						new float[] {0, contrast, 0, 0, 0}, // scale green
-						new float[] {0, 0, contrast, 0, 0}, // scale blue
-						new float[] {0, 0, 0, 1.0f, 0}, // don't scale alpha
-						new float[] {adjustedBrightness, adjustedBrightness, adjustedBrightness, 0, 1}
+                    new[] {
+                        new[] {contrast, 0, 0, 0, 0}, // scale red
+						new[] {0, contrast, 0, 0, 0}, // scale green
+						new[] {0, 0, contrast, 0, 0}, // scale blue
+						new[] {0, 0, 0, 1.0f, 0}, // don't scale alpha
+						new[] {adjustedBrightness, adjustedBrightness, adjustedBrightness, 0, 1}
                     });
 
             //create some image attributes
@@ -1240,10 +1240,10 @@ namespace GreenshotPlugin.Core
         public static Image CreateGrayscale(Image sourceImage)
         {
             Bitmap clone = (Bitmap)Clone(sourceImage);
-            ColorMatrix grayscaleMatrix = new ColorMatrix(new float[][] {
-                new float[] {.3f, .3f, .3f, 0, 0},
-                new float[] {.59f, .59f, .59f, 0, 0},
-                new float[] {.11f, .11f, .11f, 0, 0},
+            ColorMatrix grayscaleMatrix = new ColorMatrix(new[] {
+                new[] {.3f, .3f, .3f, 0, 0},
+                new[] {.59f, .59f, .59f, 0, 0},
+                new[] {.11f, .11f, .11f, 0, 0},
                 new float[] {0, 0, 0, 1, 0},
                 new float[] {0, 0, 0, 0, 1}
             });
@@ -1643,12 +1643,18 @@ namespace GreenshotPlugin.Core
             if (maintainAspectRatio && canvasUseNewSize)
             {
                 newImage = CreateEmpty(newWidth, newHeight, sourceImage.PixelFormat, backgroundColor, sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
-                matrix.Scale((float)newWidth / sourceImage.Width, (float)newHeight / sourceImage.Height, MatrixOrder.Append);
+                if (matrix != null)
+                {
+                    matrix.Scale((float)newWidth / sourceImage.Width, (float)newHeight / sourceImage.Height, MatrixOrder.Append);
+                }
             }
             else
             {
                 newImage = CreateEmpty(destWidth, destHeight, sourceImage.PixelFormat, backgroundColor, sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
-                matrix.Scale((float)destWidth / sourceImage.Width, (float)destHeight / sourceImage.Height, MatrixOrder.Append);
+                if (matrix != null)
+                {
+                    matrix.Scale((float)destWidth / sourceImage.Width, (float)destHeight / sourceImage.Height, MatrixOrder.Append);
+                }
             }
 
             using (Graphics graphics = Graphics.FromImage(newImage))

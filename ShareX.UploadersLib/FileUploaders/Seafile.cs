@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,13 +27,44 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SeafileFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Seafile;
+
+        public override Image ServiceImage => Resources.Seafile;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.SeafileAPIURL) && !string.IsNullOrEmpty(config.SeafileAuthToken) && !string.IsNullOrEmpty(config.SeafileRepoID);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Seafile(config.SeafileAPIURL, config.SeafileAuthToken, config.SeafileRepoID)
+            {
+                Path = config.SeafilePath,
+                IsLibraryEncrypted = config.SeafileIsLibraryEncrypted,
+                EncryptedLibraryPassword = config.SeafileEncryptedLibraryPassword,
+                ShareDaysToExpire = config.SeafileShareDaysToExpire,
+                SharePassword = config.SeafileSharePassword,
+                CreateShareableURL = config.SeafileCreateShareableURL,
+                IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSeafile;
+    }
+
     public sealed class Seafile : FileUploader
     {
         public string APIURL { get; set; }
@@ -67,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 { "password", password }
             };
 
-            string response = SendRequest(HttpMethod.POST, url, args);
+            string response = SendRequestMultiPart(url, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -76,12 +107,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return AuthResult.token;
             }
 
-            return string.Empty;
-        }
-
-        public class SeafileAuthResponse
-        {
-            public string token { get; set; }
+            return "";
         }
 
         #endregion SeafileAuth
@@ -202,13 +228,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public class SeafileCheckAccInfoResponse
-        {
-            public long usage { get; set; }
-            public long total { get; set; }
-            public string email { get; set; }
-        }
-
         #endregion SeafileAccountInformation
 
         #region SeafileLibraries
@@ -248,12 +267,6 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper.Dispose();
                 }
             }
-        }
-
-        public class SeafileDefaultLibraryObj
-        {
-            public string repo_id { get; set; }
-            public bool exists { get; set; }
         }
 
         public List<SeafileLibraryObj> GetLibraries()
@@ -328,22 +341,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public class SeafileLibraryObj
-        {
-            public string permission { get; set; }
-            public bool encrypted { get; set; }
-            public long mtime { get; set; }
-            public string owner { get; set; }
-            public string id { get; set; }
-            public long size { get; set; }
-            public string name { get; set; }
-            public string type { get; set; }
-            [JsonProperty("virtual")]
-            public string _virtual { get; set; }
-            public string desc { get; set; }
-            public string root { get; set; }
-        }
-
         #endregion SeafileLibraries
 
         #region SeafileEncryptedLibrary
@@ -368,7 +365,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                string response = SendRequest(HttpMethod.POST, url, args, headers);
+                string response = SendRequestMultiPart(url, args, headers);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -445,7 +442,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("filename", fileName);
                 args.Add("parent_dir", Path);
 
-                UploadResult result = UploadData(stream, responseURL, fileName, "file", args, headers);
+                UploadResult result = SendRequestFile(responseURL, stream, fileName, "file", args, headers);
 
                 if (!IsError)
                 {
@@ -494,7 +491,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                return SendRequestURLEncoded(url, args, headers, method: HttpMethod.PUT, responseType: ResponseType.LocationHeader);
+                return SendRequestURLEncoded(HttpMethod.PUT, url, args, headers, null, ResponseType.LocationHeader);
             }
             finally
             {
@@ -506,5 +503,39 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         #endregion SeafileUpload
+    }
+
+    public class SeafileAuthResponse
+    {
+        public string token { get; set; }
+    }
+
+    public class SeafileCheckAccInfoResponse
+    {
+        public long usage { get; set; }
+        public long total { get; set; }
+        public string email { get; set; }
+    }
+
+    public class SeafileLibraryObj
+    {
+        public string permission { get; set; }
+        public bool encrypted { get; set; }
+        public long mtime { get; set; }
+        public string owner { get; set; }
+        public string id { get; set; }
+        public long size { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        [JsonProperty("virtual")]
+        public string _virtual { get; set; }
+        public string desc { get; set; }
+        public string root { get; set; }
+    }
+
+    public class SeafileDefaultLibraryObj
+    {
+        public string repo_id { get; set; }
+        public bool exists { get; set; }
     }
 }

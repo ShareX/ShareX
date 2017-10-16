@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Copiar tudo</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Posição do cursor:</value>
   </data>
@@ -128,5 +125,29 @@
   </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Iniciar seleção de cor da tela</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Copiar tudo</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Copiar RGB</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>Copiar hexadecimal</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Copiar CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Copiar HSV</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Copiar decimal</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Copiar posição</value>
   </data>
 </root>

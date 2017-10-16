@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnFFmpegHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Refrescar</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Prueba con CMD</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>ffmpeg.exe</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Fuentes</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Codecs</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Codec de audio:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Opciones FFmpeg</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Utilizar comandos personalizados</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Fuente de audio:</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Códec de vídeo:</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Fuente de vídeo:</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Línea de comandos vista previa</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Argumentos adicionales de línea de comandos</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="tpAAC.Text" xml:space="preserve">
+    <value>AAC</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  </data>
+  <data name="tpVpx.Text" xml:space="preserve">
+    <value>VP8</value>
+  </data>
+  <data name="tpX264.Text" xml:space="preserve">
+    <value>x264</value>
+  </data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>El valor predeterminado es de 128k.</value>
+  </data>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>El rango es de 0 a 9, donde un valor inferior es de mayor calidad.  0-3 normalmente producir resultados transparentes, 
+4 (Predeterminado) debe estar cerca de la transparencia perceptual, y 6 produce una calidad "aceptable".</value>
+  </data>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>El rango es de 0 a 10, donde 10 es la más alta calidad. 3-6 es un buen rango para probar. El valor predeterminado es 3.</value>
+  </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Factor Constante de Velocidad (CRF): El rango de la escala del cuantificador es 0-51: donde 0 es sin pérdidas, 23 es predeterminado, y 51 es el peor posible.
+Un valor más bajo es una mayor calidad y un rango subjetivamente cuerdo es 18-28.
+Considere 18 para ser visualmente sin pérdidas o casi: debe mirar el mismo o casi el mismo que el de entrada, pero no es técnicamente sin pérdidas.
+El rango es exponencial, por lo que el aumento del valor CRF 6 es más o menos la mitad de la tasa de bits, mientras que -6 es aproximadamente el doble de la tasa de bits.
+Uso general es elegir el valor más alto de CRF que todavía proporciona una calidad aceptable.
+Si la salida se ve bien, pruebe con un valor más alto y si se ve mal elija un valor inferior.</value>
+  </data>
+</root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,12 +24,38 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class PastebinTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
+
+        public override Icon ServiceIcon => Resources.Pastebin;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            PastebinSettings settings = config.PastebinSettings;
+
+            if (string.IsNullOrEmpty(settings.TextFormat))
+            {
+                settings.TextFormat = taskInfo.TextFormat;
+            }
+
+            return new Pastebin(APIKeys.PastebinKey, settings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastebin;
+    }
+
     public sealed class Pastebin : TextUploader
     {
         private string APIKey;
@@ -58,7 +84,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 loginArgs.Add("api_user_name", Settings.Username);
                 loginArgs.Add("api_user_password", Settings.Password);
 
-                string loginResponse = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_login.php", loginArgs);
+                string loginResponse = SendRequestMultiPart("https://pastebin.com/api/api_login.php", loginArgs);
 
                 if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
                 {
@@ -95,11 +121,19 @@ namespace ShareX.UploadersLib.TextUploaders
                     args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
                 }
 
-                ur.Response = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_post.php", args);
+                ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
 
-                if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
+                if (URLHelpers.IsValidURL(ur.Response))
                 {
-                    ur.URL = ur.Response;
+                    if (Settings.RawURL)
+                    {
+                        string id = URLHelpers.GetFileName(ur.Response);
+                        ur.URL = "https://pastebin.com/raw/" + id;
+                    }
+                    else
+                    {
+                        ur.URL = ur.Response;
+                    }
                 }
                 else
                 {
@@ -156,6 +190,7 @@ abap = ABAP
 actionscript = ActionScript
 actionscript3 = ActionScript 3
 ada = Ada
+aimms = AIMMS
 algol68 = ALGOL 68
 apache = Apache Log
 applescript = AppleScript
@@ -172,22 +207,29 @@ awk = Awk
 bascomavr = BASCOM AVR
 bash = Bash
 basic4gl = Basic4GL
+dos = Batch
 bibtex = BibTeX
 blitzbasic = Blitz Basic
+b3d = Blitz3D
+bmx = BlitzMax
 bnf = BNF
 boo = BOO
 bf = BrainFuck
 c = C
+c_winapi = C (WinAPI)
 c_mac = C for Macs
 cil = C Intermediate Language
 csharp = C#
 cpp = C++
-cpp-qt = C++ (with QT extensions)
+cpp-winapi = C++ (WinAPI)
+cpp-qt = C++ (with Qt extensions)
 c_loadrunner = C: Loadrunner
 caddcl = CAD DCL
 cadlisp = CAD Lisp
+ceylon = Ceylon
 cfdg = CFDG
 chaiscript = ChaiScript
+chapel = Chapel
 clojure = Clojure
 klonec = Clone C
 klonecpp = Clone C++
@@ -198,6 +240,7 @@ cfm = ColdFusion
 css = CSS
 cuesheet = Cuesheet
 d = D
+dart = Dart
 dcl = DCL
 dcpu16 = DCPU-16
 dcs = DCS
@@ -205,16 +248,18 @@ delphi = Delphi
 oxygene = Delphi Prism (Oxygene)
 diff = Diff
 div = DIV
-dos = DOS
 dot = DOT
 e = E
+ezt = Easytrieve
 ecmascript = ECMAScript
 eiffel = Eiffel
 email = Email
 epc = EPC
 erlang = Erlang
+euphoria = Euphoria
 fsharp = F#
 falcon = Falcon
+filemaker = Filemaker
 fo = FO Language
 f1 = Formula One
 fortran = Fortran
@@ -241,12 +286,17 @@ ini = INI file
 inno = Inno Script
 intercal = INTERCAL
 io = IO
+ispfpanel = ISPF Panel Definition
 j = J
 java = Java
 java5 = Java 5
 javascript = JavaScript
+jcl = JCL
 jquery = jQuery
+json = JSON
+julia = Julia
 kixtart = KiXtart
+kotlin = Kotlin
 latex = Latex
 ldif = LDIF
 lb = Liberty BASIC
@@ -264,6 +314,7 @@ m68k = M68000 Assembler
 magiksf = MagikSF
 make = Make
 mapbasic = MapBasic
+markdown = Markdown
 matlab = MatLab
 mirc = mIRC
 mmix = MIX Assembler
@@ -274,7 +325,10 @@ mpasm = MPASM
 mxml = MXML
 mysql = MySQL
 nagios = Nagios
+netrexx = NetRexx
 newlisp = newLISP
+nginx = Nginx
+nimrod = Nimrod
 nsis = NullSoft Installer
 oberon2 = Oberon 2
 objeck = Objeck Programming Langua
@@ -282,6 +336,7 @@ objc = Objective C
 ocaml-brief = OCalm Brief
 ocaml = OCaml
 octave = Octave
+oorexx = Open Object Rexx
 pf = OpenBSD PACKET FILTER
 glsl = OpenGL Shading
 oobas = Openoffice BASIC
@@ -291,7 +346,7 @@ oz = Oz
 parasail = ParaSail
 parigp = PARI/GP
 pascal = Pascal
-pawn = PAWN
+pawn = Pawn
 pcre = PCRE
 per = Per
 perl = Perl
@@ -301,8 +356,10 @@ php-brief = PHP Brief
 pic16 = Pic 16
 pike = Pike
 pixelbender = Pixel Bender
+pli = PL/I
 plsql = PL/SQL
 postgresql = PostgreSQL
+postscript = PostScript
 povray = POV-Ray
 powershell = Power Shell
 powerbuilder = PowerBuilder
@@ -311,14 +368,18 @@ progress = Progress
 prolog = Prolog
 properties = Properties
 providex = ProvideX
+puppet = Puppet
 purebasic = PureBasic
 pycon = PyCon
 python = Python
 pys60 = Python for S60
 q = q/kdb+
 qbasic = QBasic
+qml = QML
 rsplus = R
+racket = Racket
 rails = Rails
+rbs = RBScript
 rebol = REBOL
 reg = REG
 rexx = Rexx
@@ -326,17 +387,23 @@ robots = Robots
 rpmspec = RPM Spec
 ruby = Ruby
 gnuplot = Ruby Gnuplot
+rust = Rust
 sas = SAS
 scala = Scala
 scheme = Scheme
 scilab = Scilab
+scl = SCL
 sdlbasic = SdlBasic
 smalltalk = Smalltalk
 smarty = Smarty
 spark = SPARK
 sparql = SPARQL
+sqf = SQF
 sql = SQL
+standardml = StandardML
 stonescript = StoneScript
+sclang = SuperCollider
+swift = Swift
 systemverilog = SystemVerilog
 tsql = T-SQL
 tcl = TCL
@@ -345,10 +412,11 @@ thinbasic = thinBasic
 typoscript = TypoScript
 unicon = Unicon
 uscript = UnrealScript
-ups = UPC
+upc = UPC
 urbi = Urbi
 vala = Vala
 vbnet = VB.NET
+vbscript = VBScript
 vedit = Vedit
 verilog = VeriLog
 vhdl = VHDL
@@ -373,6 +441,7 @@ zxbasic = ZXBasic";
             foreach (string line in syntaxList.Lines().Select(x => x.Trim()))
             {
                 int index = line.IndexOf('=');
+
                 if (index > 0)
                 {
                     PastebinSyntaxInfo syntaxInfo = new PastebinSyntaxInfo();
@@ -386,31 +455,21 @@ zxbasic = ZXBasic";
         }
     }
 
-    public enum PastebinPrivacy
+    public enum PastebinPrivacy // Localized
     {
-        [Description("Public")]
         Public,
-        [Description("Unlisted")]
         Unlisted,
-        [Description("Private (members only)")]
         Private
     }
 
-    public enum PastebinExpiration
+    public enum PastebinExpiration // Localized
     {
-        [Description("Never")]
         N,
-        [Description("10 Minutes")]
         M10,
-        [Description("1 Hour")]
         H1,
-        [Description("1 Day")]
         D1,
-        [Description("1 Week")]
         W1,
-        [Description("2 Weeks")]
         W2,
-        [Description("1 Month")]
         M1
     }
 
@@ -439,17 +498,11 @@ zxbasic = ZXBasic";
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public PastebinPrivacy Exposure { get; set; }
-        public PastebinExpiration Expiration { get; set; }
+        public PastebinPrivacy Exposure { get; set; } = PastebinPrivacy.Unlisted;
+        public PastebinExpiration Expiration { get; set; } = PastebinExpiration.N;
         public string Title { get; set; }
-        public string TextFormat { get; set; }
+        public string TextFormat { get; set; } = "text";
         public string UserKey { get; set; }
-
-        public PastebinSettings()
-        {
-            Exposure = PastebinPrivacy.Unlisted;
-            Expiration = PastebinExpiration.N;
-            TextFormat = "text";
-        }
+        public bool RawURL { get; set; }
     }
 }

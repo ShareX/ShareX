@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -111,7 +111,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipDeleteEffect(IntPtr effect);
 
-        private static Guid BlurEffectGuid = new Guid("{633C80A4-1843-482B-9EF2-BE2834C5FDD4}");
+        private static readonly Guid BlurEffectGuid = new Guid("{633C80A4-1843-482B-9EF2-BE2834C5FDD4}");
 
         // Constant "FieldInfo" for getting the nativeImage from the Bitmap
         private static readonly FieldInfo FIELD_INFO_NATIVE_IMAGE = typeof(Bitmap).GetField("nativeImage", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
@@ -122,7 +122,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         // Constant "FieldInfo" for getting the nativeImageAttributes from the ImageAttributes
         private static readonly FieldInfo FIELD_INFO_NATIVE_IMAGEATTRIBUTES = typeof(ImageAttributes).GetField("nativeImageAttributes", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
 
-        private static bool isBlurEnabled = Environment.OSVersion.Version.Major >= 6;
+        private static bool _isBlurEnabled = Environment.OSVersion.Version.Major >= 6;
 
         /// <summary>
         /// Get the nativeImage field from the bitmap
@@ -188,7 +188,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns></returns>
         public static bool IsBlurPossible(int radius)
         {
-            if (!isBlurEnabled)
+            if (!_isBlurEnabled)
             {
                 return false;
             }
@@ -248,7 +248,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
-                isBlurEnabled = false;
+                _isBlurEnabled = false;
                 LOG.Error("Problem using GdipBitmapApplyEffect: ", ex);
                 return false;
             }
@@ -269,7 +269,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
                 }
                 catch (Exception ex)
                 {
-                    isBlurEnabled = false;
+                    _isBlurEnabled = false;
                     LOG.Error("Problem cleaning up ApplyBlur: ", ex);
                 }
             }
@@ -325,7 +325,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
-                isBlurEnabled = false;
+                _isBlurEnabled = false;
                 LOG.Error("Problem using GdipDrawImageFX: ", ex);
                 return false;
             }
@@ -346,7 +346,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
                 }
                 catch (Exception ex)
                 {
-                    isBlurEnabled = false;
+                    _isBlurEnabled = false;
                     LOG.Error("Problem cleaning up DrawWithBlur: ", ex);
                 }
             }

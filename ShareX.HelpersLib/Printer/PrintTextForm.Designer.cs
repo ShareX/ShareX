@@ -60,6 +60,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblFont);
             this.Controls.Add(this.btnChangeFont);
             this.Controls.Add(this.btnCancel);

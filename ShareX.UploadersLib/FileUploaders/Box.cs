@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,13 +24,39 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.HelperClasses;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class BoxFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Box;
+
+        public override Icon ServiceIcon => Resources.Box;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.BoxOAuth2Info);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Box(config.BoxOAuth2Info)
+            {
+                FolderID = config.BoxSelectedFolder.id,
+                Share = config.BoxShare
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBox;
+    }
+
     public sealed class Box : FileUploader, IOAuth2
     {
         public static BoxFileEntry RootFolder = new BoxFileEntry
@@ -57,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return CreateQuery("https://www.box.com/api/oauth2/authorize", args);
+            return URLHelpers.CreateQuery("https://www.box.com/api/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)
@@ -68,7 +94,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
+            string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -95,7 +121,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("client_id", AuthInfo.Client_ID);
                 args.Add("client_secret", AuthInfo.Client_Secret);
 
-                string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
+                string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -195,7 +221,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("parent_id", FolderID);
 
-            UploadResult result = UploadData(stream, "https://upload.box.com/api/2.0/files/content", fileName, "filename", args, GetAuthHeaders());
+            UploadResult result = SendRequestFile("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args, GetAuthHeaders());
 
             if (result.IsSuccess)
             {

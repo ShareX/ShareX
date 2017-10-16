@@ -120,13 +120,34 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Включить режим пипетки</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Все в буфер</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Позиция курсора:</value>
   </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Нажмите "Ctrl" когда это окно активно, чтобы выключить режим пипетки.</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Копировать все</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Копировать RGB</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>Копировать Hex</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Копировать CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Копировать HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Копировать десятичный</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Копировать позицию</value>
   </data>
 </root>

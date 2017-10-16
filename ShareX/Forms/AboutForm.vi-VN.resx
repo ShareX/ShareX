@@ -120,7 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Giới thiệu về ShareX</value>
   </data>
-  <data name="lblSteamBuild.Text" xml:space="preserve">
-    <value>Phiên bản Build</value>
-  </data>
 </root>

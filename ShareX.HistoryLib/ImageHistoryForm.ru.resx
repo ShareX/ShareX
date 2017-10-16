@@ -118,16 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>История изображений</value>
-  </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Только последние 100</value>
-  </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Размер миниатюры</value>
-  </data>
-  <data name="tsddbViewMode.Text" xml:space="preserve">
-    <value>Режим просмотра</value>
+    <value>ShareX - История изображений</value>
   </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Галерея</value>
@@ -135,7 +126,28 @@
   <data name="tsmiViewModePane.Text" xml:space="preserve">
     <value>Панель</value>
   </data>
+  <data name="tsddbViewMode.Text" xml:space="preserve">
+    <value>Режим просмотра</value>
+  </data>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Размер миниатюры</value>
+  </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Миниатюры</value>
+  </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>Ограничение на количество  изображений</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>Без ограничений</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>Последние 1000</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>Последние 250</value>
+  </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>Последние 100</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -28,14 +28,14 @@ namespace Greenshot.Plugin
 {
     public class ExportInformation
     {
-        private string uri = null;
-        private string filepath = null;
+        private string uri;
+        private string filepath;
 
-        private bool exportMade = false;
-        private string destinationDesignation = null;
-        private string destinationDescription = null;
+        private bool exportMade;
+        private readonly string destinationDesignation;
+        private string destinationDescription;
 
-        private string errorMessage = null;
+        private string errorMessage;
 
         public ExportInformation(string destinationDesignation, string destinationDescription)
         {
@@ -68,6 +68,9 @@ namespace Greenshot.Plugin
             }
         }
 
+        /// <summary>
+        /// Set to true to specify if the export worked.
+        /// </summary>
         public bool ExportMade
         {
             get

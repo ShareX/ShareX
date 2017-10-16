@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,18 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class VideoBinFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.VideoBin;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new VideoBin();
+        }
+    }
+
     public sealed class VideoBin : FileUploader
     {
         private const string URLUpload = "https://videobin.org/add";
@@ -39,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api", "1");
 
-            UploadResult result = UploadData(stream, URLUpload, fileName, "videoFile", arguments);
+            UploadResult result = SendRequestFile(URLUpload, stream, fileName, "videoFile", arguments);
 
             result.URL = result.Response;
 

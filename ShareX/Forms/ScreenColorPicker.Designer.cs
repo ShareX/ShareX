@@ -29,16 +29,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenColorPicker));
             this.btnPipette = new System.Windows.Forms.Button();
             this.lblScreenColorPickerTip = new System.Windows.Forms.Label();
             this.btnColorPicker = new System.Windows.Forms.Button();
             this.lblY = new System.Windows.Forms.Label();
             this.lblX = new System.Windows.Forms.Label();
-            this.btnCopyAll = new System.Windows.Forms.Button();
             this.txtX = new System.Windows.Forms.TextBox();
             this.txtY = new System.Windows.Forms.TextBox();
             this.lblCursorPosition = new System.Windows.Forms.Label();
+            this.btnCopy = new ShareX.HelpersLib.MenuButton();
+            this.cmsCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiCopyAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyRGB = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyHex = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyCMYK = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyHSB = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyDecimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyPosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsCopy.SuspendLayout();
             this.SuspendLayout();
             // 
             // colorPicker
@@ -87,13 +97,6 @@
             resources.ApplyResources(this.lblX, "lblX");
             this.lblX.Name = "lblX";
             // 
-            // btnCopyAll
-            // 
-            resources.ApplyResources(this.btnCopyAll, "btnCopyAll");
-            this.btnCopyAll.Name = "btnCopyAll";
-            this.btnCopyAll.UseVisualStyleBackColor = true;
-            this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
-            // 
             // txtX
             // 
             resources.ApplyResources(this.txtX, "txtX");
@@ -111,11 +114,74 @@
             resources.ApplyResources(this.lblCursorPosition, "lblCursorPosition");
             this.lblCursorPosition.Name = "lblCursorPosition";
             // 
+            // btnCopy
+            // 
+            resources.ApplyResources(this.btnCopy, "btnCopy");
+            this.btnCopy.Menu = this.cmsCopy;
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            // 
+            // cmsCopy
+            // 
+            this.cmsCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCopyAll,
+            this.tsmiCopyRGB,
+            this.tsmiCopyHex,
+            this.tsmiCopyCMYK,
+            this.tsmiCopyHSB,
+            this.tsmiCopyDecimal,
+            this.tsmiCopyPosition});
+            this.cmsCopy.Name = "cmsCopy";
+            this.cmsCopy.ShowImageMargin = false;
+            resources.ApplyResources(this.cmsCopy, "cmsCopy");
+            // 
+            // tsmiCopyAll
+            // 
+            this.tsmiCopyAll.Name = "tsmiCopyAll";
+            resources.ApplyResources(this.tsmiCopyAll, "tsmiCopyAll");
+            this.tsmiCopyAll.Click += new System.EventHandler(this.tsmiCopyAll_Click);
+            // 
+            // tsmiCopyRGB
+            // 
+            this.tsmiCopyRGB.Name = "tsmiCopyRGB";
+            resources.ApplyResources(this.tsmiCopyRGB, "tsmiCopyRGB");
+            this.tsmiCopyRGB.Click += new System.EventHandler(this.tsmiCopyRGB_Click);
+            // 
+            // tsmiCopyHex
+            // 
+            this.tsmiCopyHex.Name = "tsmiCopyHex";
+            resources.ApplyResources(this.tsmiCopyHex, "tsmiCopyHex");
+            this.tsmiCopyHex.Click += new System.EventHandler(this.tsmiCopyHex_Click);
+            // 
+            // tsmiCopyCMYK
+            // 
+            this.tsmiCopyCMYK.Name = "tsmiCopyCMYK";
+            resources.ApplyResources(this.tsmiCopyCMYK, "tsmiCopyCMYK");
+            this.tsmiCopyCMYK.Click += new System.EventHandler(this.tsmiCopyCMYK_Click);
+            // 
+            // tsmiCopyHSB
+            // 
+            this.tsmiCopyHSB.Name = "tsmiCopyHSB";
+            resources.ApplyResources(this.tsmiCopyHSB, "tsmiCopyHSB");
+            this.tsmiCopyHSB.Click += new System.EventHandler(this.tsmiCopyHSB_Click);
+            // 
+            // tsmiCopyDecimal
+            // 
+            this.tsmiCopyDecimal.Name = "tsmiCopyDecimal";
+            resources.ApplyResources(this.tsmiCopyDecimal, "tsmiCopyDecimal");
+            this.tsmiCopyDecimal.Click += new System.EventHandler(this.tsmiCopyDecimal_Click);
+            // 
+            // tsmiCopyPosition
+            // 
+            this.tsmiCopyPosition.Name = "tsmiCopyPosition";
+            resources.ApplyResources(this.tsmiCopyPosition, "tsmiCopyPosition");
+            this.tsmiCopyPosition.Click += new System.EventHandler(this.tsmiCopyPosition_Click);
+            // 
             // ScreenColorPicker
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCopyAll);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.lblCursorPosition);
             this.Controls.Add(this.txtY);
             this.Controls.Add(this.txtX);
@@ -140,7 +206,8 @@
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.txtHex, 0);
             this.Controls.SetChildIndex(this.colorPicker, 0);
-            this.Controls.SetChildIndex(this.btnCopyAll, 0);
+            this.Controls.SetChildIndex(this.btnCopy, 0);
+            this.cmsCopy.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +220,17 @@
         private System.Windows.Forms.Button btnColorPicker;
         private System.Windows.Forms.Label lblY;
         private System.Windows.Forms.Label lblX;
-        private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Label lblCursorPosition;
+        private HelpersLib.MenuButton btnCopy;
+        private System.Windows.Forms.ContextMenuStrip cmsCopy;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyAll;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyRGB;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyHex;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyCMYK;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyPosition;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyHSB;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyDecimal;
     }
 }

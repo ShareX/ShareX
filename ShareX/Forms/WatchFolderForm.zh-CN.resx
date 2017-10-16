@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>监视文件夹</value>
+    <value>ShareX - 监视文件夹</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -129,12 +130,12 @@
     <value>包括子目录</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
-    <value>过滤器:</value>
+    <value>过滤器：</value>
   </data>
   <data name="lblFilterExample.Text" xml:space="preserve">
     <value>例如: *.PNG</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>文件夹路径:</value>
+    <value>文件夹路径：</value>
   </data>
 </root>

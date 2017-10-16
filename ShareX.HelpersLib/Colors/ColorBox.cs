@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,13 +62,13 @@ namespace ShareX.HelpersLib
                 HSB start = new HSB(SelectedColor.HSB.Hue, 0.0, 0.0, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(SelectedColor.HSB.Hue, 1.0, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    start.Brightness = end.Brightness = 1.0 - (double)y / (ClientHeight - 1);
+                    start.Brightness = end.Brightness = 1.0 - (double)y / (clientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, clientWidth, 1));
                     }
                 }
             }
@@ -83,13 +83,13 @@ namespace ShareX.HelpersLib
                 HSB start = new HSB(0.0, SelectedColor.HSB.Saturation, 1.0, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(0.0, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int x = 0; x < ClientWidth; x++)
+                for (int x = 0; x < clientWidth; x++)
                 {
-                    start.Hue = end.Hue = (double)x / (ClientHeight - 1);
+                    start.Hue = end.Hue = (double)x / (clientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, ClientHeight), start, end, LinearGradientMode.Vertical))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, clientHeight), start, end, LinearGradientMode.Vertical))
                     {
-                        g.FillRectangle(brush, new Rectangle(x, 0, 1, ClientHeight));
+                        g.FillRectangle(brush, new Rectangle(x, 0, 1, clientHeight));
                     }
                 }
             }
@@ -104,13 +104,13 @@ namespace ShareX.HelpersLib
                 HSB start = new HSB(0.0, 1.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(0.0, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
 
-                for (int x = 0; x < ClientWidth; x++)
+                for (int x = 0; x < clientWidth; x++)
                 {
-                    start.Hue = end.Hue = (double)x / (ClientHeight - 1);
+                    start.Hue = end.Hue = (double)x / (clientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, ClientHeight), start, end, LinearGradientMode.Vertical))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, clientHeight), start, end, LinearGradientMode.Vertical))
                     {
-                        g.FillRectangle(brush, new Rectangle(x, 0, 1, ClientHeight));
+                        g.FillRectangle(brush, new Rectangle(x, 0, 1, clientHeight));
                     }
                 }
             }
@@ -125,13 +125,13 @@ namespace ShareX.HelpersLib
                 RGBA start = new RGBA(SelectedColor.RGBA.Red, 0, 0, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(SelectedColor.RGBA.Red, 0, 255, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    start.Green = end.Green = Round(255 - (255 * (double)y / (ClientHeight - 1)));
+                    start.Green = end.Green = Round(255 - (255 * (double)y / (clientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, clientWidth, 1));
                     }
                 }
             }
@@ -146,13 +146,13 @@ namespace ShareX.HelpersLib
                 RGBA start = new RGBA(0, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(0, SelectedColor.RGBA.Green, 255, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    start.Red = end.Red = Round(255 - (255 * (double)y / (ClientHeight - 1)));
+                    start.Red = end.Red = Round(255 - (255 * (double)y / (clientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, clientWidth, 1));
                     }
                 }
             }
@@ -167,13 +167,13 @@ namespace ShareX.HelpersLib
                 RGBA start = new RGBA(0, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(255, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < ClientHeight; y++)
+                for (int y = 0; y < clientHeight; y++)
                 {
-                    start.Green = end.Green = Round(255 - (255 * (double)y / (ClientHeight - 1)));
+                    start.Green = end.Green = Round(255 - (255 * (double)y / (clientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, clientWidth, 1));
                     }
                 }
             }

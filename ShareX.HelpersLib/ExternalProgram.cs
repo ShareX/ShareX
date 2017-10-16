@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -45,15 +45,13 @@ namespace ShareX.HelpersLib
             Args = "%input";
         }
 
-        public ExternalProgram(string name, string path)
-            : this()
+        public ExternalProgram(string name, string path) : this()
         {
             Name = name;
             Path = path;
         }
 
-        public ExternalProgram(string name, string path, string args)
-            : this(name, path)
+        public ExternalProgram(string name, string path, string args) : this(name, path)
         {
             if (!string.IsNullOrEmpty(args))
             {
@@ -69,7 +67,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    string newFilePath = "";
+                    string outputPath = "";
 
                     using (Process process = new Process())
                     {
@@ -81,22 +79,23 @@ namespace ShareX.HelpersLib
                         }
                         else
                         {
-                            string args = Args.Replace("%filepath%", '"' + filePath + '"').Replace("%input", '"' + filePath + '"');
-
                             if (!string.IsNullOrEmpty(OutputExtension))
                             {
-                                newFilePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+                                outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
 
                                 if (!OutputExtension.Contains("."))
                                 {
                                     OutputExtension = "." + OutputExtension;
                                 }
 
-                                newFilePath += OutputExtension;
-                                args = args.Replace("%output", '"' + newFilePath + '"');
+                                outputPath += OutputExtension;
+                            }
+                            else
+                            {
+                                outputPath = filePath;
                             }
 
-                            psi.Arguments = args;
+                            psi.Arguments = CodeMenuEntryActions.Parse(Args, filePath, outputPath);
                         }
 
                         if (HiddenWindow)
@@ -113,9 +112,9 @@ namespace ShareX.HelpersLib
                         process.WaitForExit();
                     }
 
-                    if (!string.IsNullOrEmpty(newFilePath) && File.Exists(newFilePath))
+                    if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
                     {
-                        return newFilePath;
+                        return outputPath;
                     }
 
                     return filePath;

@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnLoadedAssemblies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 511</value>
+    <value>328, 512</value>
   </data>
   <data name="btnLoadedAssemblies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>152, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnLoadedAssemblies.TabIndex" type="System.Int32, mscorlib">
@@ -145,16 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLoadedAssemblies.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnCopyAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 511</value>
+    <value>8, 512</value>
   </data>
   <data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 23</value>
+    <value>152, 23</value>
   </data>
   <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="rtbDebug.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -181,11 +181,14 @@
     <value>8, 8</value>
   </data>
   <data name="rtbDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 496</value>
+    <value>744, 472</value>
   </data>
   <data name="rtbDebug.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="rtbDebug.Text" xml:space="preserve">
+    <value />
+  <comment>@Invariant</comment></data>
   <data name="rtbDebug.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -199,6 +202,132 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbDebug.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnOpenLogFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnOpenLogFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOpenLogFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 512</value>
+  </data>
+  <data name="btnOpenLogFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="btnOpenLogFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Open log file...</value>
+  </data>
+  <data name="&gt;&gt;btnOpenLogFile.Name" xml:space="preserve">
+    <value>btnOpenLogFile</value>
+  </data>
+  <data name="&gt;&gt;btnOpenLogFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenLogFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOpenLogFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="llRunningFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llRunningFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 0</value>
+  </data>
+  <data name="llRunningFrom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="llRunningFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="llRunningFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;llRunningFrom.Name" xml:space="preserve">
+    <value>llRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;llRunningFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llRunningFrom.Parent" xml:space="preserve">
+    <value>flpRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;llRunningFrom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpRunningFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Name" xml:space="preserve">
+    <value>lblRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Parent" xml:space="preserve">
+    <value>flpRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flpRunningFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 488</value>
+  </data>
+  <data name="flpRunningFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 16</value>
+  </data>
+  <data name="flpRunningFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="flpRunningFrom.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpRunningFrom.Name" xml:space="preserve">
+    <value>flpRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;flpRunningFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpRunningFrom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpRunningFrom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRunningFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRunningFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblRunningFrom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblRunningFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblRunningFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Startup path:</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Name" xml:space="preserve">
+    <value>lblRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Parent" xml:space="preserve">
+    <value>flpRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -211,7 +340,7 @@
     <value>760, 541</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 400</value>
+    <value>500, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -223,6 +352,6 @@
     <value>DebugForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

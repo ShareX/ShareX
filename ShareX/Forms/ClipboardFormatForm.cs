@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,22 +30,23 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ClipboardFormatForm : BaseForm
+    public partial class ClipboardFormatForm : Form
     {
         public ClipboardFormat ClipboardFormat { get; private set; }
 
-        public ClipboardFormatForm()
-            : this(new ClipboardFormat())
+        public ClipboardFormatForm() : this(new ClipboardFormat())
         {
         }
 
         public ClipboardFormatForm(ClipboardFormat cbf)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";
             txtFormat.Text = cbf.Format ?? "";
-            CodeMenu.Create<ReplCodeMenuEntry>(txtFormat);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtFormat);
             lblExample.Text = string.Format(Resources.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
                 "$result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime",
                 "%y, %mo, %d");
@@ -55,12 +56,15 @@ namespace ShareX
         {
             ClipboardFormat.Description = txtDescription.Text;
             ClipboardFormat.Format = txtFormat.Text;
+
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

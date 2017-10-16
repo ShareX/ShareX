@@ -117,54 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Tasks</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="chAfterCapture.Width" type="System.Int32, mscorlib">
-    <value>252</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lvAfterCaptureTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lvAfterCaptureTasks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lvAfterCaptureTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 272</value>
-  </data>
-  <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Name" xml:space="preserve">
-    <value>lvAfterCaptureTasks</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Parent" xml:space="preserve">
-    <value>tpAfterCapture</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnContinue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="btnContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 366</value>
+    <value>8, 401</value>
   </data>
   <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnContinue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -190,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 366</value>
+    <value>216, 401</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -213,38 +180,17 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="pbImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 8</value>
-  </data>
-  <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 390</value>
-  </data>
-  <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
-    <value>pbImage</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="btnCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
+  </data>
+  <data name="btnCopy.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 366</value>
+    <value>112, 401</value>
   </data>
   <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -270,14 +216,41 @@
   <data name="tcTasks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="lvAfterCaptureTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvAfterCaptureTasks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lvAfterCaptureTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 305</value>
+  </data>
+  <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Name" xml:space="preserve">
+    <value>lvAfterCaptureTasks</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Parent" xml:space="preserve">
+    <value>tpAfterCapture</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tpAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
   <data name="tpAfterCapture.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>3, 5, 3, 3</value>
   </data>
   <data name="tpAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 278</value>
+    <value>296, 313</value>
   </data>
   <data name="tpAfterCapture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -304,7 +277,7 @@
     <value>3, 3</value>
   </data>
   <data name="ucBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 272</value>
+    <value>290, 307</value>
   </data>
   <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -313,7 +286,7 @@
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>tpBeforeUpload</value>
@@ -328,13 +301,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 278</value>
+    <value>296, 313</value>
   </data>
   <data name="tpBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Before upload</value>
+    <value>Destinations</value>
   </data>
   <data name="&gt;&gt;tpBeforeUpload.Name" xml:space="preserve">
     <value>tpBeforeUpload</value>
@@ -348,11 +321,65 @@
   <data name="&gt;&gt;tpBeforeUpload.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lvAfterUploadTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvAfterUploadTasks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lvAfterUploadTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="lvAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 305</value>
+  </data>
+  <data name="lvAfterUploadTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Name" xml:space="preserve">
+    <value>lvAfterUploadTasks</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Parent" xml:space="preserve">
+    <value>tpAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpAfterUpload.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="tpAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 313</value>
+  </data>
+  <data name="tpAfterUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>After upload</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Name" xml:space="preserve">
+    <value>tpAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Parent" xml:space="preserve">
+    <value>tcTasks</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="tcTasks.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="tcTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 304</value>
+    <value>304, 339</value>
   </data>
   <data name="tcTasks.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -379,7 +406,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 317</value>
+    <value>6, 352</value>
   </data>
   <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -406,7 +433,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 336</value>
+    <value>8, 371</value>
   </data>
   <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 20</value>
@@ -426,6 +453,30 @@
   <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pbImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>320, 8</value>
+  </data>
+  <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 425</value>
+  </data>
+  <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
+    <value>pbImage</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -433,7 +484,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 406</value>
+    <value>784, 441</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 445</value>
@@ -442,7 +496,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Post capture tasks</value>
+    <value>ShareX - After capture</value>
   </data>
   <data name="&gt;&gt;chAfterCapture.Name" xml:space="preserve">
     <value>chAfterCapture</value>
@@ -450,10 +504,16 @@
   <data name="&gt;&gt;chAfterCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;chAfterUpload.Name" xml:space="preserve">
+    <value>chAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;chAfterUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AfterCaptureForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

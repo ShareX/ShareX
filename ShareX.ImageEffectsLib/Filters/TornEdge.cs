@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,17 +33,17 @@ namespace ShareX.ImageEffectsLib
     [Description("Torn edge")]
     internal class TornEdge : ImageEffect
     {
-        [DefaultValue(12)]
-        public int ToothHeight { get; set; }
+        [DefaultValue(15)]
+        public int Depth { get; set; }
 
         [DefaultValue(20)]
-        public int HorizontalToothRange { get; set; }
-
-        [DefaultValue(20)]
-        public int VerticalToothRange { get; set; }
+        public int Range { get; set; }
 
         [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
         public AnchorStyles Sides { get; set; }
+
+        [DefaultValue(true)]
+        public bool CurvedEdges { get; set; }
 
         public TornEdge()
         {
@@ -52,15 +52,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Sides != AnchorStyles.None)
-            {
-                using (img)
-                {
-                    return ImageHelpers.CreateTornEdge(img, ToothHeight, HorizontalToothRange, VerticalToothRange, Sides);
-                }
-            }
-
-            return img;
+            return ImageHelpers.TornEdges(img, Depth, Range, Sides, CurvedEdges);
         }
     }
 }

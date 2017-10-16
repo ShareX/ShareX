@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class UserPassBox : BaseForm
+    public partial class UserPassBox : Form
     {
         public string FullName { get; private set; }
         public string UserName { get; private set; }
@@ -40,20 +40,19 @@ namespace ShareX.UploadersLib
         public UserPassBox(string title, string userName, string password)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Text = title;
             txtUserName.Text = userName;
             txtPassword.Text = password;
         }
 
-        public UserPassBox(string q, string fullName, string userName, string password)
-            : this(q, userName, password)
+        public UserPassBox(string q, string fullName, string userName, string password) : this(q, userName, password)
         {
             txtFullName.Text = fullName;
             txtFullName.Enabled = true;
         }
 
-        public UserPassBox(string q, string fullName, string email, string userName, string password)
-            : this(q, fullName, userName, password)
+        public UserPassBox(string q, string fullName, string email, string userName, string password) : this(q, fullName, userName, password)
         {
             txtEmail.Text = email;
             txtEmail.Enabled = true;

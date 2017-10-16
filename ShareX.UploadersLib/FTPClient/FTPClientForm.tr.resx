@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX FTP istemci</value>
+    <value>ShareX - FTP istemcisi</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
@@ -132,35 +132,8 @@
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Son güncelleme</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bağlan</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Linkleri panoya kopyala</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dizin yarat</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sil</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bağlantıyı kes</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>İndir</value>
-  </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>FTP sunucusuna bağlanılıyor...</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>URL aç</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Yenile</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Yeniden adlandır</value>
   </data>
   <data name="tpAccount.Text" xml:space="preserve">
     <value>Hesap</value>
@@ -173,5 +146,32 @@
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>durum</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>Bağlan</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>Bağlantıyı kes</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL aç</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Yeniden adlandır</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Linkleri panoya kopyala</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Dizin yarat</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Yenile</value>
   </data>
 </root>

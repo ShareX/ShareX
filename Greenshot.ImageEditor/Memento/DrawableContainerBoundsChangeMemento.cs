@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -32,8 +32,8 @@ namespace Greenshot.Memento
     /// </summary>
     public class DrawableContainerBoundsChangeMemento : IMemento
     {
-        private List<Point> points = new List<Point>();
-        private List<Size> sizes = new List<Size>();
+        private readonly List<Point> points = new List<Point>();
+        private readonly List<Size> sizes = new List<Size>();
         private List<IDrawableContainer> listOfdrawableContainer;
 
         private void StoreBounds()

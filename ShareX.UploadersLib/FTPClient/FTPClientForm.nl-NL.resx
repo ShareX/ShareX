@@ -132,38 +132,11 @@
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Laatst bewerkt</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verbinden</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kopieer link(s) naar klembord</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Maak map aan</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verbreek verbinding</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>Verbinden met FTP server...</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>status</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open link</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ververs</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hernoemen</value>
   </data>
   <data name="tpAccount.Text" xml:space="preserve">
     <value>Account</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -73,8 +73,7 @@ namespace ShareX.HelpersLib
             RunInstallerInBackground = true;
         }
 
-        public DownloaderForm(UpdateChecker updateChecker)
-            : this(updateChecker.DownloadURL, updateChecker.Filename)
+        public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.Filename)
         {
             Proxy = updateChecker.Proxy;
 
@@ -84,8 +83,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public DownloaderForm(string url, string filename)
-            : this()
+        public DownloaderForm(string url, string filename) : this()
         {
             URL = url;
             Filename = filename;
@@ -198,6 +196,42 @@ namespace ShareX.HelpersLib
             lblStatus.Text = string.Format(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
         }
 
+        private void HandleDownloadException(Exception ex)
+        {
+            if (ex is WebException)
+            {
+                WebException webEx = (WebException)ex;
+
+                if (webEx.Status == WebExceptionStatus.ProtocolError)
+                {
+                    HttpWebResponse response = webEx.Response as HttpWebResponse;
+
+                    if (response != null)
+                    {
+                        int responseCode = (int)response.StatusCode;
+
+                        if (responseCode == 401)
+                        {
+                            ChangeFormForPossibleProxyDetected();
+                            return;
+                        }
+                    }
+                }
+            }
+
+            ChangeStatus(ex.Message);
+        }
+
+        private void ChangeFormForPossibleProxyDetected()
+        {
+            txtChangelog.WordWrap = true;
+            txtChangelog.Text = Resources.DownloaderForm_ProxyDetected;
+            cbShowChangelog.Checked = true;
+            ChangeStatus(Resources.Error);
+            ChangeProgressForCanceledDownload();
+            UpdateFormSize();
+        }
+
         private void ChangeProgress()
         {
             if (fileDownloader != null)
@@ -208,6 +242,12 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void ChangeProgressForCanceledDownload()
+        {
+            lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress___0_,
+                Resources.DownloaderForm_Download_Canceled);
+        }
+
         private void StartDownload()
         {
             if (!string.IsNullOrEmpty(URL) && Status == DownloaderFormStatus.Waiting)
@@ -215,14 +255,17 @@ namespace ShareX.HelpersLib
                 Status = DownloaderFormStatus.DownloadStarted;
                 btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
 
-                SavePath = Path.Combine(Path.GetTempPath(), Filename);
+                string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
+                Helpers.CreateDirectoryFromDirectoryPath(folderPath);
+                SavePath = Path.Combine(folderPath, Filename);
+
                 fileStream = new FileStream(SavePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 fileDownloader = new FileDownloader(URL, fileStream, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
-                fileDownloader.ExceptionThrowed += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
+                fileDownloader.ExceptionThrowed += (v1, v2) => HandleDownloadException(fileDownloader.LastException);
                 fileDownloader.StartDownload();
 
                 ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);

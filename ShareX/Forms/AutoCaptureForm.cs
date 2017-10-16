@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AutoCaptureForm : BaseForm
+    public partial class AutoCaptureForm : Form
     {
         private static AutoCaptureForm instance;
 
@@ -63,6 +63,7 @@ namespace ShareX
         private AutoCaptureForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             niTray.Icon = Resources.clock.ToIcon();
 
             screenshotTimer = new System.Timers.Timer();
@@ -74,7 +75,7 @@ namespace ShareX
 
             customRegion = Program.Settings.AutoCaptureRegion;
             UpdateRegion();
-            nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
+            nudRepeatTime.SetValue(Program.Settings.AutoCaptureRepeatTime);
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
 
@@ -106,17 +107,18 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                Image img = Screenshot.CaptureRectangle(rect);
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
 
                 if (img != null)
                 {
-                    TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                     taskSettings.UseDefaultAfterCaptureJob = false;
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     taskSettings.UseDefaultAdvancedSettings = false;
                     taskSettings.AdvancedSettings.DisableNotifications = true;
 
-                    UploadManager.RunImageTask(img, taskSettings);
+                    UploadManager.RunImageTask(img, taskSettings, true, true);
                 }
             }
         }
@@ -125,7 +127,7 @@ namespace ShareX
         {
             Rectangle rect;
 
-            if (TaskHelpers.SelectRegion(out rect, taskSettings))
+            if (RegionCaptureTasks.GetRectangleRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();
@@ -249,7 +251,7 @@ namespace ShareX
         private void niTray_MouseClick(object sender, MouseEventArgs e)
         {
             niTray.Visible = false;
-            this.ShowActivate();
+            this.ForceActivate();
         }
     }
 }

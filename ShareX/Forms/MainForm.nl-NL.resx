@@ -147,20 +147,11 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rechthoek (Objecten)</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechthoek (Annotatie)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Rechthoek (snel)</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Rechthoek (transparant)</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Vrije hand</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Laatste regio</value>
@@ -201,9 +192,6 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Kleurenkiezer op scherm...</value>
   </data>
-  <data name="tsmiImageEditor.Text" xml:space="preserve">
-    <value>Afbeeldingsbewerker...</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Afbeeldingseffecten...</value>
   </data>
@@ -215,9 +203,6 @@
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Meetlat...</value>
-  </data>
-  <data name="tsmiAutomate.Text" xml:space="preserve">
-    <value>Automatiseren...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
@@ -293,12 +278,6 @@
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test delen van link</value>
-  </data>
-  <data name="tsmiDonate.Text" xml:space="preserve">
-    <value>Doneer...</value>
-  </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>Over...</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Toon fouten</value>
@@ -426,20 +405,11 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rechthoek (Objecten)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechthoek (Annotatie)</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Rechthoek (Snel)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Rechthoek (Transparant)</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Vrije hand</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Laatste regio</value>
@@ -474,9 +444,6 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Kleurenkiezer op scherm...</value>
   </data>
-  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
-    <value>Afbeeldingsbewerker...</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Afbeeldingseffecten...</value>
   </data>
@@ -488,9 +455,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Liniaal...</value>
-  </data>
-  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
-    <value>Automatiseren...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
@@ -588,17 +552,11 @@
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Polygon</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Polygon</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
@@ -620,12 +578,6 @@
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Webpagina vastleggen...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC programma...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC programma...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Schakel sneltoetsen uit</value>

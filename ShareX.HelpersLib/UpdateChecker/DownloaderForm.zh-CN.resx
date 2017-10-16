@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX文件下载</value>
+    <value>ShareX - 文件下载</value>
   </data>
   <data name="btnAction.Text" xml:space="preserve">
     <value>下载</value>
   </data>
   <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>显示更新注意事项</value>
+    <value>显示更新说明</value>
   </data>
   <data name="lblFilename.Text" xml:space="preserve">
-    <value>文件名:</value>
+    <value>文件名：</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
-    <value>进展情况:</value>
+    <value>进度情况：</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
-    <value>状态:</value>
+    <value>状态：</value>
   </data>
 </root>

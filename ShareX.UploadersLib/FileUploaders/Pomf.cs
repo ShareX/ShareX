@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,36 +33,53 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class PomfFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Pomf;
+
+        public override Icon ServiceIcon => Resources.Pomf;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.PomfUploader != null && !string.IsNullOrEmpty(config.PomfUploader.UploadURL);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Pomf(config.PomfUploader);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPomf;
+    }
+
     public class Pomf : FileUploader
     {
+        // Pomf clones: https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
+        // More clones: https://github.com/tsudoko/long-live-pomf/blob/master/long-live-pomf.md
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
-            new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            //new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
-            new PomfUploader("http://catgirlsare.sexy/upload.php"),
-            new PomfUploader("http://comfy.moe/upload.php"),
-            new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
-            //new PomfUploader("https://fuwa.se/api/upload"),
-            new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
-            new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
-            //new PomfUploader("https://madokami.com/upload"),
-            //new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
-            new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
+            //new PomfUploader("https://pomf.se/upload.php"),           
+            new PomfUploader("https://comfy.moe/upload.php"),
+            new PomfUploader("https://doko.moe/upload.php"),
+            new PomfUploader("https://edfile.pro/upload/archive"),
+            //new PomfUploader("https://filebox.moe/upload.php"),
+            new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
+            new PomfUploader("https://maro.xyz/upload.php", "https://a.maro.xyz/"),
             new PomfUploader("https://mixtape.moe/upload.php"),
-            new PomfUploader("http://nigger.cat/upload.php"),
-            new PomfUploader("http://nyanimg.com/upload.php"),
-            new PomfUploader("http://openhost.xyz/upload.php"),
-            new PomfUploader("https://pantsu.cat/upload.php"),
-            new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
-            new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
-            new PomfUploader("https://pomf.io/upload.php"),
-            new PomfUploader("http://pomf.pl/upload.php"),
-            //new PomfUploader("https://pomf.se/upload.php"),
-            //new PomfUploader("https://sheesh.in/upload.php"),
-            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
+            new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
+            new PomfUploader("https://pomf.space/upload.php"),
+            new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
+            new PomfUploader("https://pomfe.co/upload.php", "https://a.pomfe.co"),
+            new PomfUploader("http://reich.io/upload.php"),
+            new PomfUploader("https://safe.moe/api/upload"),
+            //new PomfUploader("https://sugoi.vidyagam.es/upload.php"), - dangerous site
+            new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
+            new PomfUploader("https://void.cat/upload.php"),
+            new PomfUploader("https://vidga.me/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
@@ -74,13 +91,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (Uploader == null || string.IsNullOrEmpty(Uploader.UploadURL))
-            {
-                Errors.Add(Resources.Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__);
-                return null;
-            }
-
-            UploadResult result = UploadData(stream, Uploader.UploadURL, fileName, "files[]");
+            UploadResult result = SendRequestFile(Uploader.UploadURL, stream, fileName, "files[]");
 
             if (result.IsSuccess)
             {
@@ -90,9 +101,10 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     string url = response.files[0].url;
 
-                    if (!string.IsNullOrEmpty(Uploader.ResultURL))
+                    if (!URLHelpers.HasPrefix(url) && !string.IsNullOrEmpty(Uploader.ResultURL))
                     {
-                        url = URLHelpers.CombineURL(Uploader.ResultURL, url);
+                        string resultURL = URLHelpers.FixPrefix(Uploader.ResultURL);
+                        url = URLHelpers.CombineURL(resultURL, url);
                     }
 
                     result.URL = url;
@@ -102,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public static string TestClones()
+        public static string TestUploaders()
         {
             List<PomfTest> successful = new List<PomfTest>();
             List<PomfTest> failed = new List<PomfTest>();
@@ -127,7 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
                         {
-                            successful.Add(new PomfTest { Name = uploader.ToString(), UploadTime = uploadTime });
+                            successful.Add(new PomfTest { Name = uploader.ToString(), URL = result.URL, UploadTime = uploadTime });
                         }
                         else
                         {
@@ -164,13 +176,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private class PomfTest
         {
             public string Name { get; set; }
+            public string URL { get; set; }
             public long UploadTime { get; set; } = -1;
 
             public override string ToString()
             {
-                if (UploadTime >= 0)
+                if (!string.IsNullOrEmpty(URL))
                 {
-                    return $"{Name} ({UploadTime}ms)";
+                    return $"{Name} ({UploadTime}ms): {URL}";
                 }
 
                 return Name;

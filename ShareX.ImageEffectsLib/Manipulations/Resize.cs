@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,12 +37,18 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(0), Description("Use height as 0 to automatically adjust height to maintain aspect ratio.")]
         public int Height { get; set; }
 
-        [DefaultValue(false), Description("Only resize image if it is bigger than specified size.")]
-        public bool ResizeIfBigger { get; set; }
+        [DefaultValue(ResizeMode.ResizeAll)]
+        public ResizeMode Mode { get; set; }
 
         public Resize()
         {
             this.ApplyDefaultPropertyValues();
+        }
+
+        public Resize(int width, int height)
+        {
+            Width = width;
+            Height = height;
         }
 
         public override Image Apply(Image img)
@@ -52,7 +58,8 @@ namespace ShareX.ImageEffectsLib
             int width = Width <= 0 ? (int)((float)Height / img.Height * img.Width) : Width;
             int height = Height <= 0 ? (int)((float)Width / img.Width * img.Height) : Height;
 
-            if (ResizeIfBigger && img.Width <= width && img.Height <= height)
+            if ((Mode == ResizeMode.ResizeIfBigger && img.Width <= width && img.Height <= height) ||
+                (Mode == ResizeMode.ResizeIfSmaller && img.Width >= width && img.Height >= height))
             {
                 return img;
             }

@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -125,19 +126,55 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Hedef:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>İlerleme:</value>
-  </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Gözat...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Hash kontrol</value>
+    <value>ShareX - Hash kontrol</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hash türü:</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
     <value>Dosya yolu:</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Hepsini kopyala</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Çöz</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Çöz</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Çöz</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Çöz</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Kodla</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>İkili:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Heksadesimal:</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Yazı:</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Yazı dönüşümleri</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Dosya denetleme</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
   </data>
 </root>

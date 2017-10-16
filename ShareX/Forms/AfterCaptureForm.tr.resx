@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Görevler</value>
-  </data>
   <data name="btnContinue.Text" xml:space="preserve">
     <value>Devam</value>
   </data>
@@ -140,5 +137,8 @@
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Dosya ismi:</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Yükleme sonrası</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -34,8 +34,7 @@ namespace Greenshot.Drawing
     [Serializable]
     public class RectangleContainer : DrawableContainer
     {
-        public RectangleContainer(Surface parent)
-            : base(parent)
+        public RectangleContainer(Surface parent) : base(parent)
         {
         }
 
@@ -75,7 +74,7 @@ namespace Greenshot.Drawing
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
 
-            bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
+            bool lineVisible = lineThickness > 0 && Colors.IsVisible(lineColor);
             if (shadow && (lineVisible || Colors.IsVisible(fillColor)))
             {
                 //draw shadow first
@@ -95,7 +94,7 @@ namespace Greenshot.Drawing
                             rect.Height);
                         graphics.DrawRectangle(shadowPen, shadowRect);
                         currentStep++;
-                        alpha = alpha - (basealpha / steps);
+                        alpha = alpha - basealpha / steps;
                     }
                 }
             }

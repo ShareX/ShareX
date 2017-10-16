@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>打印选项</value>
+    <value>ShareX - 打印选项</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -129,7 +130,7 @@
     <value>预览...</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>让图像放大</value>
+    <value>运行图像被放大</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
     <value>自动旋转图像</value>
@@ -141,6 +142,6 @@
     <value>中心图像位置</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>保证金:</value>
+    <value>边距：</value>
   </data>
 </root>

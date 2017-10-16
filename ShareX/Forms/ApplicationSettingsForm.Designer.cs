@@ -33,21 +33,32 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbCheckPreReleaseUpdates = new System.Windows.Forms.CheckBox();
+            this.cbTrayMiddleClickAction = new System.Windows.Forms.ComboBox();
+            this.lblTrayMiddleClickAction = new System.Windows.Forms.Label();
+            this.cbTrayLeftDoubleClickAction = new System.Windows.Forms.ComboBox();
+            this.lblTrayLeftDoubleClickAction = new System.Windows.Forms.Label();
+            this.cbTrayLeftClickAction = new System.Windows.Forms.ComboBox();
+            this.lblTrayLeftClickAction = new System.Windows.Forms.Label();
+            this.btnEditQuickTaskMenu = new System.Windows.Forms.Button();
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
             this.btnLanguages = new ShareX.HelpersLib.MenuButton();
             this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
-            this.llTranslators = new System.Windows.Forms.LinkLabel();
             this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.tpIntegration = new System.Windows.Forms.TabPage();
+            this.gbFirefox = new System.Windows.Forms.GroupBox();
+            this.cbFirefoxAddonSupport = new System.Windows.Forms.CheckBox();
+            this.btnFirefoxOpenAddonPage = new System.Windows.Forms.Button();
             this.gbSteam = new System.Windows.Forms.GroupBox();
             this.cbSteamShowInApp = new System.Windows.Forms.CheckBox();
             this.gbChrome = new System.Windows.Forms.GroupBox();
-            this.btnChromeSupport = new System.Windows.Forms.Button();
+            this.cbChromeExtensionSupport = new System.Windows.Forms.CheckBox();
+            this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
@@ -66,17 +77,14 @@ namespace ShareX
             this.lblSaveImageSubFolderPattern = new System.Windows.Forms.Label();
             this.lblSaveImageSubFolderPatternPreview = new System.Windows.Forms.Label();
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
-            this.tpProxy = new System.Windows.Forms.TabPage();
-            this.cbProxyMethod = new System.Windows.Forms.ComboBox();
-            this.lblProxyMethod = new System.Windows.Forms.Label();
-            this.lblProxyHost = new System.Windows.Forms.Label();
-            this.txtProxyHost = new System.Windows.Forms.TextBox();
-            this.nudProxyPort = new System.Windows.Forms.NumericUpDown();
-            this.lblProxyPort = new System.Windows.Forms.Label();
-            this.lblProxyPassword = new System.Windows.Forms.Label();
-            this.txtProxyPassword = new System.Windows.Forms.TextBox();
-            this.lblProxyUsername = new System.Windows.Forms.Label();
-            this.txtProxyUsername = new System.Windows.Forms.TextBox();
+            this.tpExportImport = new System.Windows.Forms.TabPage();
+            this.btnResetSettings = new System.Windows.Forms.Button();
+            this.cbExportLogs = new System.Windows.Forms.CheckBox();
+            this.cbExportHistory = new System.Windows.Forms.CheckBox();
+            this.cbExportSettings = new System.Windows.Forms.CheckBox();
+            this.pbExportImport = new System.Windows.Forms.ProgressBar();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpPerformance = new System.Windows.Forms.TabPage();
@@ -107,22 +115,44 @@ namespace ShareX
             this.chSecondaryTextUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
+            this.tpHistory = new System.Windows.Forms.TabPage();
+            this.gbHistory = new System.Windows.Forms.GroupBox();
+            this.cbHistoryCheckURL = new System.Windows.Forms.CheckBox();
+            this.cbHistorySaveTasks = new System.Windows.Forms.CheckBox();
+            this.gbRecentLinks = new System.Windows.Forms.GroupBox();
+            this.cbRecentTasksTrayMenuMostRecentFirst = new System.Windows.Forms.CheckBox();
+            this.lblRecentTasksMaxCount = new System.Windows.Forms.Label();
+            this.nudRecentTasksMaxCount = new System.Windows.Forms.NumericUpDown();
+            this.cbRecentTasksShowInTrayMenu = new System.Windows.Forms.CheckBox();
+            this.cbRecentTasksShowInMainWindow = new System.Windows.Forms.CheckBox();
+            this.cbRecentTasksSave = new System.Windows.Forms.CheckBox();
             this.tpPrint = new System.Windows.Forms.TabPage();
             this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
+            this.tpProxy = new System.Windows.Forms.TabPage();
+            this.cbProxyMethod = new System.Windows.Forms.ComboBox();
+            this.lblProxyMethod = new System.Windows.Forms.Label();
+            this.lblProxyHost = new System.Windows.Forms.Label();
+            this.txtProxyHost = new System.Windows.Forms.TextBox();
+            this.nudProxyPort = new System.Windows.Forms.NumericUpDown();
+            this.lblProxyPort = new System.Windows.Forms.Label();
+            this.lblProxyPassword = new System.Windows.Forms.Label();
+            this.txtProxyPassword = new System.Windows.Forms.TextBox();
+            this.lblProxyUsername = new System.Windows.Forms.Label();
+            this.txtProxyUsername = new System.Windows.Forms.TextBox();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
+            this.gbFirefox.SuspendLayout();
             this.gbSteam.SuspendLayout();
             this.gbChrome.SuspendLayout();
             this.gbWindows.SuspendLayout();
             this.tpPaths.SuspendLayout();
-            this.tpProxy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).BeginInit();
+            this.tpExportImport.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpPerformance.SuspendLayout();
@@ -135,7 +165,13 @@ namespace ShareX
             this.gbSecondaryFileUploaders.SuspendLayout();
             this.gbSecondaryTextUploaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
+            this.tpHistory.SuspendLayout();
+            this.gbHistory.SuspendLayout();
+            this.gbRecentLinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRecentTasksMaxCount)).BeginInit();
             this.tpPrint.SuspendLayout();
+            this.tpProxy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).BeginInit();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,20 +181,29 @@ namespace ShareX
             this.tcSettings.Controls.Add(this.tpGeneral);
             this.tcSettings.Controls.Add(this.tpIntegration);
             this.tcSettings.Controls.Add(this.tpPaths);
-            this.tcSettings.Controls.Add(this.tpProxy);
+            this.tcSettings.Controls.Add(this.tpExportImport);
             this.tcSettings.Controls.Add(this.tpUpload);
+            this.tcSettings.Controls.Add(this.tpHistory);
             this.tcSettings.Controls.Add(this.tpPrint);
+            this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpAdvanced);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbCheckPreReleaseUpdates);
+            this.tpGeneral.Controls.Add(this.cbTrayMiddleClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayMiddleClickAction);
+            this.tpGeneral.Controls.Add(this.cbTrayLeftDoubleClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayLeftDoubleClickAction);
+            this.tpGeneral.Controls.Add(this.cbTrayLeftClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayLeftClickAction);
+            this.tpGeneral.Controls.Add(this.btnEditQuickTaskMenu);
             this.tpGeneral.Controls.Add(this.cbShowTray);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
             this.tpGeneral.Controls.Add(this.btnLanguages);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
-            this.tpGeneral.Controls.Add(this.llTranslators);
             this.tpGeneral.Controls.Add(this.cbSilentRun);
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
@@ -166,6 +211,59 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbCheckPreReleaseUpdates
+            // 
+            resources.ApplyResources(this.cbCheckPreReleaseUpdates, "cbCheckPreReleaseUpdates");
+            this.cbCheckPreReleaseUpdates.Name = "cbCheckPreReleaseUpdates";
+            this.cbCheckPreReleaseUpdates.UseVisualStyleBackColor = true;
+            this.cbCheckPreReleaseUpdates.CheckedChanged += new System.EventHandler(this.cbCheckPreReleaseUpdates_CheckedChanged);
+            // 
+            // cbTrayMiddleClickAction
+            // 
+            this.cbTrayMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayMiddleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayMiddleClickAction, "cbTrayMiddleClickAction");
+            this.cbTrayMiddleClickAction.Name = "cbTrayMiddleClickAction";
+            this.cbTrayMiddleClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayMiddleClickAction_SelectedIndexChanged);
+            // 
+            // lblTrayMiddleClickAction
+            // 
+            resources.ApplyResources(this.lblTrayMiddleClickAction, "lblTrayMiddleClickAction");
+            this.lblTrayMiddleClickAction.Name = "lblTrayMiddleClickAction";
+            // 
+            // cbTrayLeftDoubleClickAction
+            // 
+            this.cbTrayLeftDoubleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayLeftDoubleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayLeftDoubleClickAction, "cbTrayLeftDoubleClickAction");
+            this.cbTrayLeftDoubleClickAction.Name = "cbTrayLeftDoubleClickAction";
+            this.cbTrayLeftDoubleClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayLeftDoubleClickAction_SelectedIndexChanged);
+            // 
+            // lblTrayLeftDoubleClickAction
+            // 
+            resources.ApplyResources(this.lblTrayLeftDoubleClickAction, "lblTrayLeftDoubleClickAction");
+            this.lblTrayLeftDoubleClickAction.Name = "lblTrayLeftDoubleClickAction";
+            // 
+            // cbTrayLeftClickAction
+            // 
+            this.cbTrayLeftClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayLeftClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayLeftClickAction, "cbTrayLeftClickAction");
+            this.cbTrayLeftClickAction.Name = "cbTrayLeftClickAction";
+            this.cbTrayLeftClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayLeftClickAction_SelectedIndexChanged);
+            // 
+            // lblTrayLeftClickAction
+            // 
+            resources.ApplyResources(this.lblTrayLeftClickAction, "lblTrayLeftClickAction");
+            this.lblTrayLeftClickAction.Name = "lblTrayLeftClickAction";
+            // 
+            // btnEditQuickTaskMenu
+            // 
+            resources.ApplyResources(this.btnEditQuickTaskMenu, "btnEditQuickTaskMenu");
+            this.btnEditQuickTaskMenu.Name = "btnEditQuickTaskMenu";
+            this.btnEditQuickTaskMenu.UseVisualStyleBackColor = true;
+            this.btnEditQuickTaskMenu.Click += new System.EventHandler(this.btnEditQuickTaskMenu_Click);
             // 
             // cbShowTray
             // 
@@ -200,13 +298,6 @@ namespace ShareX
             this.cbRememberMainFormPosition.UseVisualStyleBackColor = true;
             this.cbRememberMainFormPosition.CheckedChanged += new System.EventHandler(this.cbRememberMainFormPosition_CheckedChanged);
             // 
-            // llTranslators
-            // 
-            resources.ApplyResources(this.llTranslators, "llTranslators");
-            this.llTranslators.Name = "llTranslators";
-            this.llTranslators.TabStop = true;
-            this.llTranslators.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llTranslators_LinkClicked);
-            // 
             // cbSilentRun
             // 
             resources.ApplyResources(this.cbSilentRun, "cbSilentRun");
@@ -235,12 +326,35 @@ namespace ShareX
             // 
             // tpIntegration
             // 
+            this.tpIntegration.Controls.Add(this.gbFirefox);
             this.tpIntegration.Controls.Add(this.gbSteam);
             this.tpIntegration.Controls.Add(this.gbChrome);
             this.tpIntegration.Controls.Add(this.gbWindows);
             resources.ApplyResources(this.tpIntegration, "tpIntegration");
             this.tpIntegration.Name = "tpIntegration";
             this.tpIntegration.UseVisualStyleBackColor = true;
+            // 
+            // gbFirefox
+            // 
+            this.gbFirefox.Controls.Add(this.cbFirefoxAddonSupport);
+            this.gbFirefox.Controls.Add(this.btnFirefoxOpenAddonPage);
+            resources.ApplyResources(this.gbFirefox, "gbFirefox");
+            this.gbFirefox.Name = "gbFirefox";
+            this.gbFirefox.TabStop = false;
+            // 
+            // cbFirefoxAddonSupport
+            // 
+            resources.ApplyResources(this.cbFirefoxAddonSupport, "cbFirefoxAddonSupport");
+            this.cbFirefoxAddonSupport.Name = "cbFirefoxAddonSupport";
+            this.cbFirefoxAddonSupport.UseVisualStyleBackColor = true;
+            this.cbFirefoxAddonSupport.CheckedChanged += new System.EventHandler(this.cbFirefoxAddonSupport_CheckedChanged);
+            // 
+            // btnFirefoxOpenAddonPage
+            // 
+            resources.ApplyResources(this.btnFirefoxOpenAddonPage, "btnFirefoxOpenAddonPage");
+            this.btnFirefoxOpenAddonPage.Name = "btnFirefoxOpenAddonPage";
+            this.btnFirefoxOpenAddonPage.UseVisualStyleBackColor = true;
+            this.btnFirefoxOpenAddonPage.Click += new System.EventHandler(this.btnFirefoxOpenAddonPage_Click);
             // 
             // gbSteam
             // 
@@ -258,17 +372,25 @@ namespace ShareX
             // 
             // gbChrome
             // 
-            this.gbChrome.Controls.Add(this.btnChromeSupport);
+            this.gbChrome.Controls.Add(this.cbChromeExtensionSupport);
+            this.gbChrome.Controls.Add(this.btnChromeOpenExtensionPage);
             resources.ApplyResources(this.gbChrome, "gbChrome");
             this.gbChrome.Name = "gbChrome";
             this.gbChrome.TabStop = false;
             // 
-            // btnChromeSupport
+            // cbChromeExtensionSupport
             // 
-            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
-            this.btnChromeSupport.Name = "btnChromeSupport";
-            this.btnChromeSupport.UseVisualStyleBackColor = true;
-            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
+            resources.ApplyResources(this.cbChromeExtensionSupport, "cbChromeExtensionSupport");
+            this.cbChromeExtensionSupport.Name = "cbChromeExtensionSupport";
+            this.cbChromeExtensionSupport.UseVisualStyleBackColor = true;
+            this.cbChromeExtensionSupport.CheckedChanged += new System.EventHandler(this.cbChromeExtensionSupport_CheckedChanged);
+            // 
+            // btnChromeOpenExtensionPage
+            // 
+            resources.ApplyResources(this.btnChromeOpenExtensionPage, "btnChromeOpenExtensionPage");
+            this.btnChromeOpenExtensionPage.Name = "btnChromeOpenExtensionPage";
+            this.btnChromeOpenExtensionPage.UseVisualStyleBackColor = true;
+            this.btnChromeOpenExtensionPage.Click += new System.EventHandler(this.btnChromeOpenExtensionPage_Click);
             // 
             // gbWindows
             // 
@@ -397,84 +519,67 @@ namespace ShareX
             this.txtSaveImageSubFolderPattern.Name = "txtSaveImageSubFolderPattern";
             this.txtSaveImageSubFolderPattern.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPattern_TextChanged);
             // 
-            // tpProxy
+            // tpExportImport
             // 
-            this.tpProxy.Controls.Add(this.cbProxyMethod);
-            this.tpProxy.Controls.Add(this.lblProxyMethod);
-            this.tpProxy.Controls.Add(this.lblProxyHost);
-            this.tpProxy.Controls.Add(this.txtProxyHost);
-            this.tpProxy.Controls.Add(this.nudProxyPort);
-            this.tpProxy.Controls.Add(this.lblProxyPort);
-            this.tpProxy.Controls.Add(this.lblProxyPassword);
-            this.tpProxy.Controls.Add(this.txtProxyPassword);
-            this.tpProxy.Controls.Add(this.lblProxyUsername);
-            this.tpProxy.Controls.Add(this.txtProxyUsername);
-            resources.ApplyResources(this.tpProxy, "tpProxy");
-            this.tpProxy.Name = "tpProxy";
-            this.tpProxy.UseVisualStyleBackColor = true;
+            this.tpExportImport.Controls.Add(this.btnResetSettings);
+            this.tpExportImport.Controls.Add(this.cbExportLogs);
+            this.tpExportImport.Controls.Add(this.cbExportHistory);
+            this.tpExportImport.Controls.Add(this.cbExportSettings);
+            this.tpExportImport.Controls.Add(this.pbExportImport);
+            this.tpExportImport.Controls.Add(this.btnExport);
+            this.tpExportImport.Controls.Add(this.btnImport);
+            resources.ApplyResources(this.tpExportImport, "tpExportImport");
+            this.tpExportImport.Name = "tpExportImport";
+            this.tpExportImport.UseVisualStyleBackColor = true;
             // 
-            // cbProxyMethod
+            // btnResetSettings
             // 
-            this.cbProxyMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProxyMethod.FormattingEnabled = true;
-            resources.ApplyResources(this.cbProxyMethod, "cbProxyMethod");
-            this.cbProxyMethod.Name = "cbProxyMethod";
-            this.cbProxyMethod.SelectedIndexChanged += new System.EventHandler(this.cbProxyMethod_SelectedIndexChanged);
+            resources.ApplyResources(this.btnResetSettings, "btnResetSettings");
+            this.btnResetSettings.Name = "btnResetSettings";
+            this.btnResetSettings.UseVisualStyleBackColor = true;
+            this.btnResetSettings.Click += new System.EventHandler(this.btnResetSettings_Click);
             // 
-            // lblProxyMethod
+            // cbExportLogs
             // 
-            resources.ApplyResources(this.lblProxyMethod, "lblProxyMethod");
-            this.lblProxyMethod.Name = "lblProxyMethod";
+            resources.ApplyResources(this.cbExportLogs, "cbExportLogs");
+            this.cbExportLogs.Name = "cbExportLogs";
+            this.cbExportLogs.UseVisualStyleBackColor = true;
+            this.cbExportLogs.CheckedChanged += new System.EventHandler(this.cbExportLogs_CheckedChanged);
             // 
-            // lblProxyHost
+            // cbExportHistory
             // 
-            resources.ApplyResources(this.lblProxyHost, "lblProxyHost");
-            this.lblProxyHost.Name = "lblProxyHost";
+            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
+            this.cbExportHistory.Name = "cbExportHistory";
+            this.cbExportHistory.UseVisualStyleBackColor = true;
+            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
             // 
-            // txtProxyHost
+            // cbExportSettings
             // 
-            resources.ApplyResources(this.txtProxyHost, "txtProxyHost");
-            this.txtProxyHost.Name = "txtProxyHost";
-            this.txtProxyHost.TextChanged += new System.EventHandler(this.txtProxyHost_TextChanged);
+            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
+            this.cbExportSettings.Name = "cbExportSettings";
+            this.cbExportSettings.UseVisualStyleBackColor = true;
+            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
             // 
-            // nudProxyPort
+            // pbExportImport
             // 
-            resources.ApplyResources(this.nudProxyPort, "nudProxyPort");
-            this.nudProxyPort.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudProxyPort.Name = "nudProxyPort";
-            this.nudProxyPort.ValueChanged += new System.EventHandler(this.nudProxyPort_ValueChanged);
+            resources.ApplyResources(this.pbExportImport, "pbExportImport");
+            this.pbExportImport.MarqueeAnimationSpeed = 50;
+            this.pbExportImport.Name = "pbExportImport";
+            this.pbExportImport.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
-            // lblProxyPort
+            // btnExport
             // 
-            resources.ApplyResources(this.lblProxyPort, "lblProxyPort");
-            this.lblProxyPort.Name = "lblProxyPort";
+            resources.ApplyResources(this.btnExport, "btnExport");
+            this.btnExport.Name = "btnExport";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // lblProxyPassword
+            // btnImport
             // 
-            resources.ApplyResources(this.lblProxyPassword, "lblProxyPassword");
-            this.lblProxyPassword.Name = "lblProxyPassword";
-            // 
-            // txtProxyPassword
-            // 
-            resources.ApplyResources(this.txtProxyPassword, "txtProxyPassword");
-            this.txtProxyPassword.Name = "txtProxyPassword";
-            this.txtProxyPassword.UseSystemPasswordChar = true;
-            this.txtProxyPassword.TextChanged += new System.EventHandler(this.txtProxyPassword_TextChanged);
-            // 
-            // lblProxyUsername
-            // 
-            resources.ApplyResources(this.lblProxyUsername, "lblProxyUsername");
-            this.lblProxyUsername.Name = "lblProxyUsername";
-            // 
-            // txtProxyUsername
-            // 
-            resources.ApplyResources(this.txtProxyUsername, "txtProxyUsername");
-            this.txtProxyUsername.Name = "txtProxyUsername";
-            this.txtProxyUsername.TextChanged += new System.EventHandler(this.txtProxyUsername_TextChanged);
+            resources.ApplyResources(this.btnImport, "btnImport");
+            this.btnImport.Name = "btnImport";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // tpUpload
             // 
@@ -715,6 +820,97 @@ namespace ShareX
             this.nudRetryUpload.Name = "nudRetryUpload";
             this.nudRetryUpload.ValueChanged += new System.EventHandler(this.nudRetryUpload_ValueChanged);
             // 
+            // tpHistory
+            // 
+            this.tpHistory.Controls.Add(this.gbHistory);
+            this.tpHistory.Controls.Add(this.gbRecentLinks);
+            resources.ApplyResources(this.tpHistory, "tpHistory");
+            this.tpHistory.Name = "tpHistory";
+            this.tpHistory.UseVisualStyleBackColor = true;
+            // 
+            // gbHistory
+            // 
+            this.gbHistory.Controls.Add(this.cbHistoryCheckURL);
+            this.gbHistory.Controls.Add(this.cbHistorySaveTasks);
+            resources.ApplyResources(this.gbHistory, "gbHistory");
+            this.gbHistory.Name = "gbHistory";
+            this.gbHistory.TabStop = false;
+            // 
+            // cbHistoryCheckURL
+            // 
+            resources.ApplyResources(this.cbHistoryCheckURL, "cbHistoryCheckURL");
+            this.cbHistoryCheckURL.Name = "cbHistoryCheckURL";
+            this.cbHistoryCheckURL.UseVisualStyleBackColor = true;
+            this.cbHistoryCheckURL.CheckedChanged += new System.EventHandler(this.cbHistoryCheckURL_CheckedChanged);
+            // 
+            // cbHistorySaveTasks
+            // 
+            resources.ApplyResources(this.cbHistorySaveTasks, "cbHistorySaveTasks");
+            this.cbHistorySaveTasks.Name = "cbHistorySaveTasks";
+            this.cbHistorySaveTasks.UseVisualStyleBackColor = true;
+            this.cbHistorySaveTasks.CheckedChanged += new System.EventHandler(this.cbHistorySaveTasks_CheckedChanged);
+            // 
+            // gbRecentLinks
+            // 
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksTrayMenuMostRecentFirst);
+            this.gbRecentLinks.Controls.Add(this.lblRecentTasksMaxCount);
+            this.gbRecentLinks.Controls.Add(this.nudRecentTasksMaxCount);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksShowInTrayMenu);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksShowInMainWindow);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksSave);
+            resources.ApplyResources(this.gbRecentLinks, "gbRecentLinks");
+            this.gbRecentLinks.Name = "gbRecentLinks";
+            this.gbRecentLinks.TabStop = false;
+            // 
+            // cbRecentTasksTrayMenuMostRecentFirst
+            // 
+            resources.ApplyResources(this.cbRecentTasksTrayMenuMostRecentFirst, "cbRecentTasksTrayMenuMostRecentFirst");
+            this.cbRecentTasksTrayMenuMostRecentFirst.Name = "cbRecentTasksTrayMenuMostRecentFirst";
+            this.cbRecentTasksTrayMenuMostRecentFirst.UseVisualStyleBackColor = true;
+            this.cbRecentTasksTrayMenuMostRecentFirst.CheckedChanged += new System.EventHandler(this.cbRecentTasksTrayMenuMostRecentFirst_CheckedChanged);
+            // 
+            // lblRecentTasksMaxCount
+            // 
+            resources.ApplyResources(this.lblRecentTasksMaxCount, "lblRecentTasksMaxCount");
+            this.lblRecentTasksMaxCount.Name = "lblRecentTasksMaxCount";
+            // 
+            // nudRecentTasksMaxCount
+            // 
+            resources.ApplyResources(this.nudRecentTasksMaxCount, "nudRecentTasksMaxCount");
+            this.nudRecentTasksMaxCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRecentTasksMaxCount.Name = "nudRecentTasksMaxCount";
+            this.nudRecentTasksMaxCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRecentTasksMaxCount.ValueChanged += new System.EventHandler(this.nudRecentTasksMaxCount_ValueChanged);
+            // 
+            // cbRecentTasksShowInTrayMenu
+            // 
+            resources.ApplyResources(this.cbRecentTasksShowInTrayMenu, "cbRecentTasksShowInTrayMenu");
+            this.cbRecentTasksShowInTrayMenu.Name = "cbRecentTasksShowInTrayMenu";
+            this.cbRecentTasksShowInTrayMenu.UseVisualStyleBackColor = true;
+            this.cbRecentTasksShowInTrayMenu.CheckedChanged += new System.EventHandler(this.cbRecentTasksShowInTrayMenu_CheckedChanged);
+            // 
+            // cbRecentTasksShowInMainWindow
+            // 
+            resources.ApplyResources(this.cbRecentTasksShowInMainWindow, "cbRecentTasksShowInMainWindow");
+            this.cbRecentTasksShowInMainWindow.Name = "cbRecentTasksShowInMainWindow";
+            this.cbRecentTasksShowInMainWindow.UseVisualStyleBackColor = true;
+            this.cbRecentTasksShowInMainWindow.CheckedChanged += new System.EventHandler(this.cbRecentTasksShowInMainWindow_CheckedChanged);
+            // 
+            // cbRecentTasksSave
+            // 
+            resources.ApplyResources(this.cbRecentTasksSave, "cbRecentTasksSave");
+            this.cbRecentTasksSave.Name = "cbRecentTasksSave";
+            this.cbRecentTasksSave.UseVisualStyleBackColor = true;
+            this.cbRecentTasksSave.CheckedChanged += new System.EventHandler(this.cbRecentTasksSave_CheckedChanged);
+            // 
             // tpPrint
             // 
             this.tpPrint.Controls.Add(this.cbPrintDontShowWindowsDialog);
@@ -745,6 +941,85 @@ namespace ShareX
             this.btnShowImagePrintSettings.UseVisualStyleBackColor = true;
             this.btnShowImagePrintSettings.Click += new System.EventHandler(this.btnShowImagePrintSettings_Click);
             // 
+            // tpProxy
+            // 
+            this.tpProxy.Controls.Add(this.cbProxyMethod);
+            this.tpProxy.Controls.Add(this.lblProxyMethod);
+            this.tpProxy.Controls.Add(this.lblProxyHost);
+            this.tpProxy.Controls.Add(this.txtProxyHost);
+            this.tpProxy.Controls.Add(this.nudProxyPort);
+            this.tpProxy.Controls.Add(this.lblProxyPort);
+            this.tpProxy.Controls.Add(this.lblProxyPassword);
+            this.tpProxy.Controls.Add(this.txtProxyPassword);
+            this.tpProxy.Controls.Add(this.lblProxyUsername);
+            this.tpProxy.Controls.Add(this.txtProxyUsername);
+            resources.ApplyResources(this.tpProxy, "tpProxy");
+            this.tpProxy.Name = "tpProxy";
+            this.tpProxy.UseVisualStyleBackColor = true;
+            // 
+            // cbProxyMethod
+            // 
+            this.cbProxyMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProxyMethod.FormattingEnabled = true;
+            resources.ApplyResources(this.cbProxyMethod, "cbProxyMethod");
+            this.cbProxyMethod.Name = "cbProxyMethod";
+            this.cbProxyMethod.SelectedIndexChanged += new System.EventHandler(this.cbProxyMethod_SelectedIndexChanged);
+            // 
+            // lblProxyMethod
+            // 
+            resources.ApplyResources(this.lblProxyMethod, "lblProxyMethod");
+            this.lblProxyMethod.Name = "lblProxyMethod";
+            // 
+            // lblProxyHost
+            // 
+            resources.ApplyResources(this.lblProxyHost, "lblProxyHost");
+            this.lblProxyHost.Name = "lblProxyHost";
+            // 
+            // txtProxyHost
+            // 
+            resources.ApplyResources(this.txtProxyHost, "txtProxyHost");
+            this.txtProxyHost.Name = "txtProxyHost";
+            this.txtProxyHost.TextChanged += new System.EventHandler(this.txtProxyHost_TextChanged);
+            // 
+            // nudProxyPort
+            // 
+            resources.ApplyResources(this.nudProxyPort, "nudProxyPort");
+            this.nudProxyPort.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudProxyPort.Name = "nudProxyPort";
+            this.nudProxyPort.ValueChanged += new System.EventHandler(this.nudProxyPort_ValueChanged);
+            // 
+            // lblProxyPort
+            // 
+            resources.ApplyResources(this.lblProxyPort, "lblProxyPort");
+            this.lblProxyPort.Name = "lblProxyPort";
+            // 
+            // lblProxyPassword
+            // 
+            resources.ApplyResources(this.lblProxyPassword, "lblProxyPassword");
+            this.lblProxyPassword.Name = "lblProxyPassword";
+            // 
+            // txtProxyPassword
+            // 
+            resources.ApplyResources(this.txtProxyPassword, "txtProxyPassword");
+            this.txtProxyPassword.Name = "txtProxyPassword";
+            this.txtProxyPassword.UseSystemPasswordChar = true;
+            this.txtProxyPassword.TextChanged += new System.EventHandler(this.txtProxyPassword_TextChanged);
+            // 
+            // lblProxyUsername
+            // 
+            resources.ApplyResources(this.lblProxyUsername, "lblProxyUsername");
+            this.lblProxyUsername.Name = "lblProxyUsername";
+            // 
+            // txtProxyUsername
+            // 
+            resources.ApplyResources(this.txtProxyUsername, "txtProxyUsername");
+            this.txtProxyUsername.Name = "txtProxyUsername";
+            this.txtProxyUsername.TextChanged += new System.EventHandler(this.txtProxyUsername_TextChanged);
+            // 
             // tpAdvanced
             // 
             this.tpAdvanced.Controls.Add(this.pgSettings);
@@ -766,14 +1041,15 @@ namespace ShareX
             this.tttvMain.ImageList = null;
             this.tttvMain.MainTabControl = null;
             this.tttvMain.Name = "tttvMain";
-            this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
+            this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcSettings);
             this.Controls.Add(this.tttvMain);
             this.Name = "ApplicationSettingsForm";
@@ -785,16 +1061,18 @@ namespace ShareX
             this.tpGeneral.ResumeLayout(false);
             this.tpGeneral.PerformLayout();
             this.tpIntegration.ResumeLayout(false);
+            this.gbFirefox.ResumeLayout(false);
+            this.gbFirefox.PerformLayout();
             this.gbSteam.ResumeLayout(false);
             this.gbSteam.PerformLayout();
             this.gbChrome.ResumeLayout(false);
+            this.gbChrome.PerformLayout();
             this.gbWindows.ResumeLayout(false);
             this.gbWindows.PerformLayout();
             this.tpPaths.ResumeLayout(false);
             this.tpPaths.PerformLayout();
-            this.tpProxy.ResumeLayout(false);
-            this.tpProxy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
+            this.tpExportImport.ResumeLayout(false);
+            this.tpExportImport.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpPerformance.ResumeLayout(false);
@@ -809,8 +1087,17 @@ namespace ShareX
             this.gbSecondaryFileUploaders.ResumeLayout(false);
             this.gbSecondaryTextUploaders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
+            this.tpHistory.ResumeLayout(false);
+            this.gbHistory.ResumeLayout(false);
+            this.gbHistory.PerformLayout();
+            this.gbRecentLinks.ResumeLayout(false);
+            this.gbRecentLinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRecentTasksMaxCount)).EndInit();
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
+            this.tpProxy.ResumeLayout(false);
+            this.tpProxy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
             this.tpAdvanced.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -893,15 +1180,45 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbPrintDontShowWindowsDialog;
         private System.Windows.Forms.CheckBox cbRememberMainFormPosition;
         private System.Windows.Forms.Label lblLanguage;
-        private System.Windows.Forms.LinkLabel llTranslators;
         private TabToTreeView tttvMain;
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;
-        private System.Windows.Forms.Button btnChromeSupport;
         private System.Windows.Forms.GroupBox gbWindows;
         private System.Windows.Forms.GroupBox gbChrome;
         private System.Windows.Forms.CheckBox cbSteamShowInApp;
         private System.Windows.Forms.TabPage tpIntegration;
         private System.Windows.Forms.GroupBox gbSteam;
+        private System.Windows.Forms.TabPage tpExportImport;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.CheckBox cbExportLogs;
+        private System.Windows.Forms.CheckBox cbExportHistory;
+        private System.Windows.Forms.CheckBox cbExportSettings;
+        private System.Windows.Forms.ProgressBar pbExportImport;
+        private System.Windows.Forms.Button btnEditQuickTaskMenu;
+        private System.Windows.Forms.TabPage tpHistory;
+        private System.Windows.Forms.GroupBox gbRecentLinks;
+        private System.Windows.Forms.CheckBox cbRecentTasksSave;
+        private System.Windows.Forms.CheckBox cbRecentTasksShowInTrayMenu;
+        private System.Windows.Forms.CheckBox cbRecentTasksShowInMainWindow;
+        private System.Windows.Forms.Label lblRecentTasksMaxCount;
+        private System.Windows.Forms.NumericUpDown nudRecentTasksMaxCount;
+        private System.Windows.Forms.CheckBox cbRecentTasksTrayMenuMostRecentFirst;
+        private System.Windows.Forms.GroupBox gbHistory;
+        private System.Windows.Forms.CheckBox cbHistorySaveTasks;
+        private System.Windows.Forms.CheckBox cbHistoryCheckURL;
+        private System.Windows.Forms.Label lblTrayMiddleClickAction;
+        private System.Windows.Forms.Label lblTrayLeftDoubleClickAction;
+        private System.Windows.Forms.Label lblTrayLeftClickAction;
+        private System.Windows.Forms.ComboBox cbTrayMiddleClickAction;
+        private System.Windows.Forms.ComboBox cbTrayLeftDoubleClickAction;
+        private System.Windows.Forms.ComboBox cbTrayLeftClickAction;
+        private System.Windows.Forms.CheckBox cbCheckPreReleaseUpdates;
+        private System.Windows.Forms.Button btnChromeOpenExtensionPage;
+        private System.Windows.Forms.GroupBox gbFirefox;
+        private System.Windows.Forms.Button btnFirefoxOpenAddonPage;
+        private System.Windows.Forms.CheckBox cbChromeExtensionSupport;
+        private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
+        private System.Windows.Forms.Button btnResetSettings;
     }
 }

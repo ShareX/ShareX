@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using ShareX.HelpersLib.Properties;
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -48,12 +49,21 @@ namespace ShareX.HelpersLib
         // Can't use generic class because not works in form designer
         public Type ObjectType { get; set; }
 
+        [DefaultValue(false)]
+        public bool ExportIgnoreDefaultValue { get; set; }
+
+        [DefaultValue(false)]
+        public bool ExportIgnoreNull { get; set; }
+
+        [DefaultValue("")]
+        public string CustomFilter { get; set; } = "";
+
         public ExportImportControl()
         {
             InitializeComponent();
         }
 
-        private string Serialize(object obj)
+        public string Serialize(object obj)
         {
             if (obj != null)
             {
@@ -69,6 +79,8 @@ namespace ShareX.HelpersLib
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                         serializer.Converters.Add(new StringEnumConverter());
+                        serializer.DefaultValueHandling = ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include;
+                        serializer.NullValueHandling = ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include;
                         serializer.TypeNameHandling = TypeNameHandling.Auto;
                         serializer.Serialize(textWriter, obj, ObjectType);
                     }
@@ -111,7 +123,14 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Settings (*.json)|*.json" })
+                    string filter = "Settings (*.json)|*.json";
+
+                    if (!string.IsNullOrEmpty(CustomFilter))
+                    {
+                        filter = CustomFilter + "|" + filter;
+                    }
+
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = filter })
                     {
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
@@ -137,7 +156,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private object Deserialize(string json)
+        public object Deserialize(string json)
         {
             try
             {
@@ -190,7 +209,14 @@ namespace ShareX.HelpersLib
         {
             if (ImportRequested != null)
             {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Settings (*.json)|*.json|All files (*.*)|*.*", Multiselect = true })
+                string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+
+                if (!string.IsNullOrEmpty(CustomFilter))
+                {
+                    filter = CustomFilter + "|" + filter;
+                }
+
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {

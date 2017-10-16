@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -28,28 +28,21 @@ namespace Greenshot.Drawing.Fields.Binding
     /// </summary>
     public abstract class AbstractBindingConverter<T1, T2> : IBindingConverter
     {
-        public AbstractBindingConverter()
-        {
-        }
-
         public object convert(object o)
         {
             if (o == null)
             {
                 return null;
             }
-            else if (o is T1)
+            if (o is T1)
             {
                 return convert((T1)o);
             }
-            else if (o is T2)
+            if (o is T2)
             {
                 return convert((T2)o);
             }
-            else
-            {
-                throw new ArgumentException("Cannot handle argument of type " + o.GetType());
-            }
+            throw new ArgumentException("Cannot handle argument of type " + o.GetType());
         }
 
         protected abstract T2 convert(T1 o);

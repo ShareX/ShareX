@@ -117,41 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Beschrijving:</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Taak</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Hoogte</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Toon cursor in schermafdrukken</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Schaduw compensatie:</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Vastleggen van scherm met transparantie</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>Verberg de taakbalk als deze overlapt met een venster tijdens het vastleggen van een venster</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Opnemen van venster met schaduw (vereist transparantie)</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Leg gebied vast bij het opnemen van een (actief) venster</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Vertraging schermafdruk:</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Regio vastleggen</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Scherm opname</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Vastleggen</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Acties</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Monitor mappen</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Hulpmiddelen</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Geavanceerd</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Taak instellingen</value>
-  </data>
-  <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>Dupliceren</value>
-  </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Bewerk</value>
-  </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>Na vastleggen...</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>Na uploaden...</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Bestemmingen...</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profielen...</value>
-  </data>
-  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>FFmpeg opties...</value>
-  </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Afbeeldingseffecten instellingen...</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Taak...</value>
   </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Toevoegen...</value>
@@ -159,132 +198,8 @@
   <data name="btnWatchFolderRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Automatisch ophogen herinstellen</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Verberg de taakbalk als deze overlapt met een venster tijdens het vastleggen van een venster</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Leg gebied vast bij het opnemen van een (actief) venster</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>Opnemen van venster met schaduw (vereist transparantie)</value>
-  </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>Vastleggen van scherm met transparantie</value>
-  </data>
-  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Als het klembord een pad naar een map bevat, indexeer de map en upload het indexbestand</value>
-  </data>
-  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Als het klembord een link bevat, deel de link via een service</value>
-  </data>
-  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Als het klembord een link bevat, gebruik dan een linkverkorter</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Gebruik een patroon voor geüploade bestanden in plaats van de originele bestandsnaam</value>
-  </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Sla taak info op in geschiedenis</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>Effecten alleen toepassen op vastgelegde regio</value>
-  </data>
-  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Gebruik aangepaste tijdzone:</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>Speel geluid af na vastleggen</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>Speel geluid af na voltooien taak</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>Vaste duur:</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Vertraging schermafdruk:</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Toon venster "Taken na vastleggen" nadat het vastleggen is gebeurd</value>
-  </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>Toon cursor in schermafdrukken</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Maak enkel een miniatuurversie als de afmetingen van de afbeelding 
-groter zijn dan de afmetingen van een miniatuurversie</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Na vastleggen" instellingen</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Na upload" instellingen</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Gebruik de standaard "Bestemming" instellingen</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Hou mappen in het oog en upload nieuw toegevoegde bestanden</value>
-  </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>Argumenten</value>
-  </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>Extensies</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
-    <value>Pad</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Als het klembord een link naar een bestand bevat, download dit bestand en upload het opnieuw</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Vervang de standaard aangepaste uploader:</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Vervang standaard FTP account:</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>voer erna CLI uit:</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Start opname na:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Toon venster "Na uploaden" als de taak afgewerkt is</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Toon venster "Voor uploaden" om de bestemming voor het uploaden aan te passen</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Toon effectenvenster na vastleggen</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Gebruik acties in het algemene instellingen venster</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Gebruik geavanceerde instellingen in het algemene taakvenster</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Gebruik opname instellingen in het algemene taakvenster</value>
-  </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Gebruik de algemene instellingen in het hoofdvenster van de taakinstellingen</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Gebruik de instellingen voor afbeeldingen in het algemene venster voor taakinstellingen</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Gebruik de upload instellingen in het algemene venster voor taakinstellingen</value>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Inclusief deelmappen</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filter</value>
@@ -292,38 +207,59 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Pad van map</value>
   </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Inclusief deelmappen</value>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Hou mappen in het oog en upload nieuw toegevoegde bestanden</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Na vervolledigen van taak:</value>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
   </data>
-  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Schaduw compensatie:</value>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Bewerk</value>
   </data>
-  <data name="lblDescription.Text" xml:space="preserve">
-    <value>Beschrijving:</value>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Extensies</value>
   </data>
-  <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>De afbeeldingseffecten kunnen in-/uitgeschakeld worden via "Taken na vastleggen -&gt; Voeg afbeeldingseffecten toe"</value>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Argumenten</value>
   </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>Als het bestand bestaat:</value>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Pad</value>
   </data>
-  <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>Afbeeldingsformaat:</value>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Naam</value>
   </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Afbeeldingsformaat 2:</value>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
   </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF kwaliteit:</value>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Dupliceren</value>
   </data>
-  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>JPEG kwaliteit:</value>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Als het klembord een link bevat, gebruik dan een linkverkorter</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Als het klembord een pad naar een map bevat, indexeer de map en upload het indexbestand</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Als het klembord een link naar een bestand bevat, download dit bestand en upload het opnieuw</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Als het klembord een link bevat, deel de link via een service</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Klembord uploaden</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Gebruik het volgende patroon voor de bestandsnamen of klembord uploads:</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Gebruik een patroon voor geüploade bestanden in plaats van de originele bestandsnaam</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Automatisch ophogen herinstellen</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Voorbeeld:</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Gebruik het volgende patroon voor het vastleggen van het actieve venster:</value>
@@ -331,20 +267,41 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Voorbeeld:</value>
   </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Voorbeeld:</value>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Gebruik aangepaste tijdzone:</value>
   </data>
-  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>seconden</value>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
   </data>
-  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
-    <value>seconden</value>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Vaste duur:</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Profielen...</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>voer erna CLI uit:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>FFmpeg FPS:</value>
   </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>seconden</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Start opname na:</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>FFmpeg opties...</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Toon de muis op de opname</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Breedte:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>Hoogte:</value>
@@ -355,68 +312,51 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Voorbeeld</value>
   </data>
-  <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>Breedte:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Maximale afbeeldingsgrootte voor "Afbeeldingsformaat 2":</value>
-  </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>0 - 5000 kB (0 = geen limiet)</value>
-  </data>
-  <data name="tpActions.Text" xml:space="preserve">
-    <value>Acties</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Geavanceerd</value>
-  </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>Vastleggen</value>
-  </data>
-  <data name="tpEffects.Text" xml:space="preserve">
-    <value>Effecten</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Algemeen</value>
-  </data>
-  <data name="tpImage.Text" xml:space="preserve">
-    <value>Afbeelding</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Indexatie</value>
-  </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechthoek met annotatie</value>
-  </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Regio vastleggen</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>Scherm opname</value>
-  </data>
-  <data name="tpTask.Text" xml:space="preserve">
-    <value>Taak</value>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Maak enkel een miniatuurversie als de afmetingen van de afbeelding 
+groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniatuur</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Uploaden</value>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Afbeeldingseffecten instellingen...</value>
   </data>
-  <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Klembord uploaden</value>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>Effecten alleen toepassen op vastgelegde regio</value>
   </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Monitor mappen</value>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Toon effectenvenster na vastleggen</value>
   </data>
-  <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Bestandsuploaders</value>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>De afbeeldingseffecten kunnen in-/uitgeschakeld worden via "Taken na vastleggen -&gt; Voeg afbeeldingseffecten toe"</value>
   </data>
-  <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Afbeeldingsuploaders</value>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Effecten</value>
   </data>
-  <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Tekstuploaders</value>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG kwaliteit:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF kwaliteit:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Als het bestand bestaat:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Afbeeldingsformaat:</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Speel geluid af na vastleggen</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Speel geluid af na voltooien taak</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Na vervolledigen van taak:</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Taak...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Diensten om een link te delen</value>
@@ -424,43 +364,28 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Linkverkorters</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Bestandsuploaders</value>
   </data>
-  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
-    <value>Hoogte</value>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Tekstuploaders</value>
   </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Selecteer een monitor voor een aangepaste regio:</value>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Afbeeldingsuploaders</value>
   </data>
-  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
-    <value>Breedte</value>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Bestemmingen...</value>
   </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>Na uploaden...</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>Na vastleggen...</value>
   </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encoder:</value>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Vervang standaard FTP account:</value>
   </data>
-  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>Toon de muis op de opname</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Gebruik de instellingen van de hulpmiddelen in het algemene taakscherm</value>
-  </data>
-  <data name="tpTools.Text" xml:space="preserve">
-    <value>Hulpmiddelen</value>
-  </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>IRC programma</value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Videominiatuur</value>
-  </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Scrollopname</value>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Vervang de standaard aangepaste uploader:</value>
   </data>
 </root>

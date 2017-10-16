@@ -371,7 +371,6 @@
             // 
             // pbPreview
             // 
-            this.pbPreview.BackColor = System.Drawing.Color.White;
             this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.Location = new System.Drawing.Point(8, 160);
@@ -392,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(761, 409);
             this.Controls.Add(this.lblPreview);
             this.Controls.Add(this.lblWatermarkOffsetPixel);

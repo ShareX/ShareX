@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -31,7 +31,7 @@ namespace GreenshotPlugin.Controls
     /// </summary>
     internal partial class QualityDialog : GreenshotForm
     {
-        private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+        private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         public SurfaceOutputSettings Settings
         {
             get;
@@ -45,13 +45,13 @@ namespace GreenshotPlugin.Controls
             // The InitializeComponent() call is required for Windows Forms designer support.
             //
             InitializeComponent();
-            Icon = GreenshotResources.getGreenshotIcon();
 
             checkBox_reduceColors.Checked = Settings.ReduceColors;
             trackBarJpegQuality.Enabled = OutputFormat.jpg.Equals(outputSettings.Format);
             trackBarJpegQuality.Value = Settings.JPGQuality;
             textBoxJpegQuality.Enabled = OutputFormat.jpg.Equals(outputSettings.Format);
             textBoxJpegQuality.Text = Settings.JPGQuality.ToString();
+            ToFront = true;
         }
 
         private void Button_okClick(object sender, EventArgs e)

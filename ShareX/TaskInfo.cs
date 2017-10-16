@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,8 +26,8 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace ShareX
@@ -43,7 +43,20 @@ namespace ShareX
         {
             get
             {
-                return Job != TaskJob.Job || TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                switch (Job)
+                {
+                    case TaskJob.Job:
+                        return TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                    case TaskJob.DataUpload:
+                    case TaskJob.FileUpload:
+                    case TaskJob.TextUpload:
+                    case TaskJob.ShortenURL:
+                    case TaskJob.ShareURL:
+                    case TaskJob.DownloadUpload:
+                        return true;
+                }
+
+                return false;
             }
         }
 
@@ -63,7 +76,7 @@ namespace ShareX
 
                 if (string.IsNullOrEmpty(filePath))
                 {
-                    FileName = string.Empty;
+                    FileName = "";
                 }
                 else
                 {
@@ -123,20 +136,16 @@ namespace ShareX
                     }
                 }
 
-                return string.Empty;
+                return "";
             }
         }
 
-        public DateTime StartTime { get; set; }
-        public DateTime UploadTime { get; set; }
+        public DateTime TaskStartTime { get; set; }
+        public DateTime TaskEndTime { get; set; }
 
-        public TimeSpan UploadDuration
-        {
-            get
-            {
-                return UploadTime - StartTime;
-            }
-        }
+        public TimeSpan TaskDuration => TaskEndTime - TaskStartTime;
+
+        public Stopwatch UploadDuration { get; set; }
 
         public UploadResult Result { get; set; }
 
@@ -151,13 +160,25 @@ namespace ShareX
             Result = new UploadResult();
         }
 
+        public override string ToString()
+        {
+            string text = Result.ToString();
+
+            if (string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(FilePath))
+            {
+                text = FilePath;
+            }
+
+            return text;
+        }
+
         public HistoryItem GetHistoryItem()
         {
             return new HistoryItem
             {
                 Filename = FileName,
                 Filepath = FilePath,
-                DateTime = UploadTime,
+                DateTime = TaskEndTime,
                 Type = DataType.ToString(),
                 Host = UploaderHost,
                 URL = Result.URL,

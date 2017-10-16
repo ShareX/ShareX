@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://file1.share.cx/cgi-bin/upload.cgi", fileName, "file_0");
+            UploadResult result = SendRequestFile("http://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0");
 
             if (result.IsSuccess)
             {

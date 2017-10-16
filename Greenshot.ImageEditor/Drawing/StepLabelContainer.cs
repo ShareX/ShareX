@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2012  Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -44,8 +44,7 @@ namespace Greenshot.Drawing
 
         private float fontSize = 16;
 
-        public StepLabelContainer(Surface parent)
-            : base(parent)
+        public StepLabelContainer(Surface parent) : base(parent)
         {
             parent.AddStepLabel(this);
             InitContent();
@@ -137,7 +136,7 @@ namespace Greenshot.Drawing
         /// </summary>
         public override bool HandleMouseDown(int mouseX, int mouseY)
         {
-            return base.HandleMouseDown(mouseX - (Width / 2), mouseY - (Height / 2));
+            return base.HandleMouseDown(mouseX - Width / 2, mouseY - Height / 2);
         }
 
         /// <summary>
@@ -170,8 +169,8 @@ namespace Greenshot.Drawing
         public override bool HandleMouseMove(int x, int y)
         {
             Invalidate();
-            Left = x - (Width / 2);
-            Top = y - (Height / 2);
+            Left = x - Width / 2;
+            Top = y - Height / 2;
             Invalidate();
             return true;
         }
@@ -192,7 +191,7 @@ namespace Greenshot.Drawing
 
             int widthAfter = rect.Width;
             int heightAfter = rect.Height;
-            float factor = (((float)widthAfter / widthBefore) + ((float)heightAfter / heightBefore)) / 2;
+            float factor = ((float)widthAfter / widthBefore + (float)heightAfter / heightBefore) / 2;
 
             fontSize *= factor;
         }
@@ -208,8 +207,7 @@ namespace Greenshot.Drawing
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
-            graphics.TextRenderingHint = TextRenderingHint.SystemDefault;
-
+            graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             string text = ((Surface)Parent).CountStepLabels(this).ToString();
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);

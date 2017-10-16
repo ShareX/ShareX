@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -83,23 +83,23 @@ namespace GreenshotPlugin.Core
         private const Int32 MAXVOLUME = SIDESIZE * SIDESIZE * SIDESIZE;
 
         // To count the colors
-        private int colorCount = 0;
+        private readonly int colorCount;
 
         private Int32[] reds;
         private Int32[] greens;
         private Int32[] blues;
         private Int32[] sums;
 
-        private Int64[,,] weights;
-        private Int64[,,] momentsRed;
-        private Int64[,,] momentsGreen;
-        private Int64[,,] momentsBlue;
-        private Single[,,] moments;
+        private readonly Int64[,,] weights;
+        private readonly Int64[,,] momentsRed;
+        private readonly Int64[,,] momentsGreen;
+        private readonly Int64[,,] momentsBlue;
+        private readonly Single[,,] moments;
 
         private byte[] tag;
 
-        private WuColorCube[] cubes;
-        private Bitmap sourceBitmap;
+        private readonly WuColorCube[] cubes;
+        private readonly Bitmap sourceBitmap;
         private Bitmap resultBitmap;
 
         public void Dispose()
@@ -652,7 +652,7 @@ namespace GreenshotPlugin.Core
                 // the cube cannot be cut at bottom (this would lead to empty cube)
                 if (halfWeight != 0)
                 {
-                    Single halfDistance = halfRed * halfRed + halfGreen * halfGreen + halfBlue * halfBlue;
+                    Single halfDistance = (Single)halfRed * halfRed + (Single)halfGreen * halfGreen + (Single)halfBlue * halfBlue;
                     Single temp = halfDistance / halfWeight;
 
                     halfRed = wholeRed - halfRed;
@@ -662,7 +662,7 @@ namespace GreenshotPlugin.Core
 
                     if (halfWeight != 0)
                     {
-                        halfDistance = halfRed * halfRed + halfGreen * halfGreen + halfBlue * halfBlue;
+                        halfDistance = (Single)halfRed * halfRed + (Single)halfGreen * halfGreen + (Single)halfBlue * halfBlue;
                         temp += halfDistance / halfWeight;
 
                         if (temp > result)

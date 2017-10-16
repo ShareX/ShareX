@@ -29,8 +29,10 @@ using Greenshot.Helpers;
 using Greenshot.IniFile;
 using Greenshot.Plugin;
 using Greenshot.Properties;
+using GreenshotPlugin;
 using GreenshotPlugin.Controls;
 using GreenshotPlugin.Core;
+using GreenshotPlugin.UnmanagedHelpers;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -51,20 +53,20 @@ namespace Greenshot
         public event Action<Image> ImageUploadRequested;
         public event Action<Image> PrintImageRequested;
 
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
-        private static List<string> ignoreDestinations = new List<string> { };
-        private static List<IImageEditor> editorList = new List<IImageEditor>();
+        private static readonly EditorConfiguration EditorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly List<string> IgnoreDestinations = new List<string> { };
+        private static readonly List<IImageEditor> EditorList = new List<IImageEditor>();
 
-        private Surface surface;
-        private GreenshotToolStripButton[] toolbarButtons;
+        private Surface _surface;
+        private GreenshotToolStripButton[] _toolbarButtons;
 
-        private static string[] SUPPORTED_CLIPBOARD_FORMATS = { typeof(string).FullName, "Text", typeof(DrawableContainerList).FullName };
+        private static readonly string[] SupportedClipboardFormats = { typeof(string).FullName, "Text", typeof(DrawableContainerList).FullName };
 
-        private bool originalBoldCheckState = false;
-        private bool originalItalicCheckState = false;
+        private bool _originalBoldCheckState;
+        private bool _originalItalicCheckState;
 
         // whether part of the editor controls are disabled depending on selected item(s)
-        private bool controlsDisabledDueToConfirmable = false;
+        private bool _controlsDisabledDueToConfirmable;
 
         private bool forceClose = false;
         private string titlePath = null;
@@ -81,7 +83,18 @@ namespace Greenshot
         {
             get
             {
-                return editorList;
+                try
+                {
+                    EditorList.Sort(delegate (IImageEditor e1, IImageEditor e2)
+                    {
+                        return String.Compare(e1.Surface.CaptureDetails.Title, e2.Surface.CaptureDetails.Title, StringComparison.Ordinal);
+                    });
+                }
+                catch (Exception ex)
+                {
+                    LOG.Warn("Sorting of editors failed.", ex);
+                }
+                return EditorList;
             }
         }
 
@@ -101,26 +114,83 @@ namespace Greenshot
 
         public ImageEditorForm(ISurface iSurface, bool outputMade)
         {
-            editorList.Add(this);
+            EditorList.Add(this);
 
             InitializeComponent();
 
-            Shown += delegate
+            if (EditorConfiguration.MatchSizeToCapture)
             {
-                // Make sure the editor is placed on the same location as the last editor was on close
-                WindowDetails thisForm = new WindowDetails(Handle);
-                thisForm.WindowPlacement = editorConfiguration.GetEditorPlacement();
-            };
+                RECT lastPosition = EditorConfiguration.GetEditorPlacement().NormalPosition;
+
+                WindowPlacement wp = new WindowDetails(Handle).WindowPlacement;
+                wp.NormalPosition.Top = lastPosition.Top;
+                wp.NormalPosition.Left = lastPosition.Left;
+                // don't actually show window now (it is done later)
+                wp.ShowCmd = ShowWindowCommand.Hide;
+
+                this.StartPosition = FormStartPosition.Manual;
+
+                WindowDetails thisForm = new WindowDetails(Handle)
+                {
+                    WindowPlacement = wp
+                };
+
+                // Once image is loaded into window, size and position window
+                Load += delegate
+                {
+                    Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+                    WindowPlacement windowPlacement = new WindowDetails(Handle).WindowPlacement;
+
+                    if (EditorConfiguration.MaximizeWhenLargeImage)
+                    {
+                        if ((windowPlacement.NormalPosition.Width > workingArea.Width) || (windowPlacement.NormalPosition.Height > workingArea.Height))
+                        {
+                            windowPlacement.ShowCmd = ShowWindowCommand.Maximize;
+                        }
+                    }
+
+                    if (windowPlacement.NormalPosition.Right > workingArea.Right)
+                    {
+                        int toMoveLeft = windowPlacement.NormalPosition.Right - workingArea.Right;
+                        if (windowPlacement.NormalPosition.Left - toMoveLeft < 0)
+                            toMoveLeft = windowPlacement.NormalPosition.Left;
+
+                        windowPlacement.NormalPosition.Left -= toMoveLeft;
+                        windowPlacement.NormalPosition.Right -= toMoveLeft;
+                    }
+                    if (windowPlacement.NormalPosition.Bottom > workingArea.Bottom)
+                    {
+                        int toMoveUp = windowPlacement.NormalPosition.Bottom - workingArea.Bottom;
+                        if (windowPlacement.NormalPosition.Top - toMoveUp < 0)
+                            toMoveUp = windowPlacement.NormalPosition.Top;
+
+                        windowPlacement.NormalPosition.Top -= toMoveUp;
+                        windowPlacement.NormalPosition.Bottom -= toMoveUp;
+                    }
+                    WindowDetails thisForm1 = new WindowDetails(Handle) { WindowPlacement = windowPlacement };
+                };
+            }
+            else
+            {
+                Load += delegate
+                {
+                    //Make sure the editor is placed on the same location as the last editor was on close
+                    WindowDetails thisForm = new WindowDetails(Handle)
+                    {
+                        WindowPlacement = EditorConfiguration.GetEditorPlacement()
+                    };
+                };
+            }
 
             // init surface
             Surface = iSurface;
             // Intial "saved" flag for asking if the image needs to be save
-            surface.Modified = !outputMade;
+            _surface.Modified = !outputMade;
 
-            updateUI();
+            UpdateUi();
 
             // Workaround: As the cursor is (mostly) selected on the surface a funny artifact is visible, this fixes it.
-            //hideToolstripItems();
+            //HideToolstripItems();
         }
 
         /// <summary>
@@ -128,11 +198,11 @@ namespace Greenshot
         /// </summary>
         private void RemoveSurface()
         {
-            if (surface != null)
+            if (_surface != null)
             {
-                panel1.Controls.Remove(surface as Control);
-                surface.Dispose();
-                surface = null;
+                panel1.Controls.Remove(_surface);
+                _surface.Dispose();
+                _surface = null;
             }
         }
 
@@ -151,33 +221,36 @@ namespace Greenshot
 
             panel1.Height = 10;
             panel1.Width = 10;
-            surface = newSurface as Surface;
-            panel1.Controls.Add(surface as Surface);
+            _surface = newSurface as Surface;
+            panel1.Controls.Add(_surface);
             Image backgroundForTransparency = GreenshotResources.getImage("Checkerboard.Image");
-            surface.TransparencyBackgroundBrush = new TextureBrush(backgroundForTransparency, WrapMode.Tile);
-
-            surface.MovingElementChanged += delegate
+            if (_surface != null)
             {
-                refreshEditorControls();
-            };
-            surface.DrawingModeChanged += surface_DrawingModeChanged;
-            surface.SurfaceSizeChanged += SurfaceSizeChanged;
-            surface.SurfaceMessage += SurfaceMessageReceived;
-            surface.FieldAggregator.FieldChanged += FieldAggregatorFieldChanged;
-            SurfaceSizeChanged(Surface, null);
+                _surface.TransparencyBackgroundBrush = new TextureBrush(backgroundForTransparency, WrapMode.Tile);
 
-            bindFieldControls();
-            surface.DrawingMode = DrawingModes.Rect;
-            refreshEditorControls();
-            // Fix title
-            if (surface != null && surface.CaptureDetails != null && surface.CaptureDetails.Title != null)
-            {
-                SetTitle(surface.CaptureDetails.Title);
+                _surface.MovingElementChanged += delegate
+                {
+                    RefreshEditorControls();
+                };
+                _surface.DrawingModeChanged += surface_DrawingModeChanged;
+                _surface.SurfaceSizeChanged += SurfaceSizeChanged;
+                _surface.SurfaceMessage += SurfaceMessageReceived;
+                _surface.FieldAggregator.FieldChanged += FieldAggregatorFieldChanged;
+                SurfaceSizeChanged(Surface, null);
+
+                BindFieldControls();
+                _surface.DrawingMode = EditorConfiguration.RememberLastDrawingMode ? EditorConfiguration.LastDrawingMode : EditorConfiguration.DefaultDrawingMode;
+                RefreshEditorControls();
+                // Fix title
+                if (_surface != null && _surface.CaptureDetails != null && _surface.CaptureDetails.Title != null)
+                {
+                    Text = _surface.CaptureDetails.Title;
+                }
             }
             WindowDetails.ToForeground(Handle);
         }
 
-        private void updateUI()
+        private void UpdateUi()
         {
             Icon = GreenshotResources.getGreenshotIcon();
 
@@ -194,12 +267,43 @@ namespace Greenshot
             obfuscateModeButton.DropDownItemClicked += FilterPresetDropDownItemClicked;
             highlightModeButton.DropDownItemClicked += FilterPresetDropDownItemClicked;
 
-            toolbarButtons = new GreenshotToolStripButton[] { btnCursor, btnRect, btnEllipse, btnText, btnSpeechBubble, btnStepLabel, btnLine,
-                btnArrow, btnFreehand, btnHighlight, btnObfuscate, btnCrop };
+            _toolbarButtons = new[] { btnCursor, btnRect, btnEllipse, btnText, btnLine, btnArrow, btnFreehand,
+                    btnHighlight, btnObfuscate, btnCrop, btnStepLabel, btnSpeechBubble };
             //toolbarDropDownButtons = new ToolStripDropDownButton[]{btnBlur, btnPixeliate, btnTextHighlighter, btnAreaHighlighter, btnMagnifier};
 
             // Workaround: for the MouseWheel event which doesn't get to the panel
             MouseWheel += PanelMouseWheel;
+        }
+
+        /// <summary>
+        /// Workaround for having a border around the dropdown
+        /// See: http://stackoverflow.com/questions/9560812/change-border-of-toolstripcombobox-with-flat-style
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PropertiesToolStrip_Paint(object sender, PaintEventArgs e)
+        {
+            using (Pen cbBorderPen = new Pen(SystemColors.ActiveBorder))
+            {
+                // Loop over all items in the propertiesToolStrip
+                foreach (ToolStripItem item in propertiesToolStrip.Items)
+                {
+                    ToolStripComboBox cb = item as ToolStripComboBox;
+                    // Only ToolStripComboBox that are visible
+                    if (cb == null || !cb.Visible)
+                    {
+                        continue;
+                    }
+                    // Calculate the rectangle
+                    if (cb.ComboBox != null)
+                    {
+                        Rectangle r = new Rectangle(cb.ComboBox.Location.X - 1, cb.ComboBox.Location.Y - 1, cb.ComboBox.Size.Width + 1, cb.ComboBox.Size.Height + 1);
+
+                        // Draw the rectangle
+                        e.Graphics.DrawRectangle(cbBorderPen, r);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -220,6 +324,8 @@ namespace Greenshot
             items.Clear();
         }
 
+        private delegate void SurfaceMessageReceivedThreadSafeDelegate(object sender, SurfaceMessageEventArgs eventArgs);
+
         /// <summary>
         /// This is the SufraceMessageEvent receiver which display a message in the status bar if the
         /// surface is exported. It also updates the title to represent the filename, if there is one.
@@ -228,42 +334,51 @@ namespace Greenshot
         /// <param name="eventArgs"></param>
         private void SurfaceMessageReceived(object sender, SurfaceMessageEventArgs eventArgs)
         {
-            string dateTime = DateTime.Now.ToLongTimeString();
-
-            switch (eventArgs.MessageType)
+            if (InvokeRequired)
             {
-                case SurfaceMessageTyp.FileSaved:
-                    // Put the event message on the status label and attach the context menu
-                    //updateStatusLabel(dateTime + " - " + eventArgs.Message, fileSavedStatusContextMenu);
-                    // Change title
-                    SetTitle(eventArgs.Surface.LastSaveFullPath);
-                    break;
-                case SurfaceMessageTyp.Error:
-                case SurfaceMessageTyp.Info:
-                case SurfaceMessageTyp.UploadedUri:
-                default:
-                    // Put the event message on the status label
-                    //updateStatusLabel(dateTime + " - " + eventArgs.Message);
-                    break;
+                Invoke(new SurfaceMessageReceivedThreadSafeDelegate(SurfaceMessageReceived), new object[] { sender, eventArgs });
+            }
+            else
+            {
+                string dateTime = DateTime.Now.ToLongTimeString();
+                // Fix that we only open files, like in the tooltip
+                switch (eventArgs.MessageType)
+                {
+                    case SurfaceMessageTyp.FileSaved:
+                        // Put the event message on the status label and attach the context menu
+                        //updateStatusLabel(dateTime + " - " + eventArgs.Message, fileSavedStatusContextMenu);
+                        // Change title
+                        SetTitle(eventArgs.Surface.LastSaveFullPath);
+                        break;
+                    case SurfaceMessageTyp.Error:
+                    case SurfaceMessageTyp.Info:
+                    case SurfaceMessageTyp.UploadedUri:
+                    default:
+                        // Put the event message on the status label
+                        //updateStatusLabel(dateTime + " - " + eventArgs.Message);
+                        break;
+                }
             }
         }
 
         /// <summary>
         /// This is called when the size of the surface chances, used for resizing and displaying the size information
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SurfaceSizeChanged(object sender, EventArgs e)
         {
-            if (editorConfiguration.MatchSizeToCapture)
+            if (EditorConfiguration.MatchSizeToCapture)
             {
                 // Set editor's initial size to the size of the surface plus the size of the chrome
                 Size imageSize = Surface.Image.Size;
                 Size currentFormSize = Size;
                 Size currentImageClientSize = panel1.ClientSize;
-                int minimumFormWidth = 650;
-                int minimumFormHeight = 530;
-                int newWidth = Math.Max(minimumFormWidth, (currentFormSize.Width - currentImageClientSize.Width) + imageSize.Width);
-                int newHeight = Math.Max(minimumFormHeight, (currentFormSize.Height - currentImageClientSize.Height) + imageSize.Height);
+                // Scale minimum size based on icons over default 16 pixels
+                int minimumFormWidth = 650 + 24 * Math.Max(coreConfiguration.IconSize.Width - 16, 0);
+                int minimumFormHeight = 530 + 17 * Math.Max(coreConfiguration.IconSize.Height - 16, 0);
+                int newWidth = Math.Max(minimumFormWidth, currentFormSize.Width - currentImageClientSize.Width + imageSize.Width);
+                int newHeight = Math.Max(minimumFormHeight, currentFormSize.Height - currentImageClientSize.Height + imageSize.Height);
                 Size = new Size(newWidth, newHeight);
             }
             UpdateTitle();
@@ -275,9 +390,9 @@ namespace Greenshot
             Invoke((MethodInvoker)delegate
             {
                 // Fix title
-                if (surface != null && surface.CaptureDetails != null && surface.CaptureDetails.Title != null)
+                if (_surface != null && _surface.CaptureDetails != null && _surface.CaptureDetails.Title != null)
                 {
-                    SetTitle(surface.CaptureDetails.Title);
+                    SetTitle(_surface.CaptureDetails.Title);
                 }
             });
         }
@@ -303,7 +418,7 @@ namespace Greenshot
         {
             get
             {
-                return surface;
+                return _surface;
             }
             set
             {
@@ -318,7 +433,7 @@ namespace Greenshot
             {
                 fullpath = null;
             }
-            surface.LastSaveFullPath = fullpath;
+            _surface.LastSaveFullPath = fullpath;
 
             if (fullpath == null)
             {
@@ -327,7 +442,7 @@ namespace Greenshot
             //updateStatusLabel(string.Format("Image saved to {0}.", fullpath), fileSavedStatusContextMenu);
             SetTitle(Path.GetFileName(fullpath));
 
-            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = File.Exists(_surface.LastSaveFullPath);
         }
 
         private void surface_DrawingModeChanged(object source, SurfaceDrawingModeEventArgs eventArgs)
@@ -381,12 +496,12 @@ namespace Greenshot
 
         public Image GetImageForExport()
         {
-            return surface.GetImageForExport();
+            return _surface.GetImageForExport();
         }
 
         public ICaptureDetails CaptureDetails
         {
-            get { return surface.CaptureDetails; }
+            get { return _surface.CaptureDetails; }
         }
 
         public ToolStripMenuItem GetPluginMenuItem()
@@ -405,74 +520,74 @@ namespace Greenshot
 
         private void BtnEllipseClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Ellipse;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Ellipse;
+            RefreshFieldControls();
         }
 
         private void BtnCursorClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.None;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.None;
+            RefreshFieldControls();
         }
 
         private void BtnRectClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Rect;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Rect;
+            RefreshFieldControls();
         }
 
         private void BtnTextClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Text;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Text;
+            RefreshFieldControls();
         }
 
-        private void btnSpeechBubble_Click(object sender, EventArgs e)
+        private void BtnSpeechBubbleClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.SpeechBubble;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.SpeechBubble;
+            RefreshFieldControls();
         }
 
-        private void btnStepLabel_Click(object sender, EventArgs e)
+        private void BtnStepLabelClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.StepLabel;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.StepLabel;
+            RefreshFieldControls();
         }
 
         private void BtnLineClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Line;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Line;
+            RefreshFieldControls();
         }
 
         private void BtnArrowClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Arrow;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Arrow;
+            RefreshFieldControls();
         }
 
         private void BtnCropClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Crop;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Crop;
+            RefreshFieldControls();
         }
 
         private void BtnHighlightClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Highlight;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Highlight;
+            RefreshFieldControls();
         }
 
         private void BtnObfuscateClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Obfuscate;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Obfuscate;
+            RefreshFieldControls();
         }
 
         private void BtnFreehandClick(object sender, EventArgs e)
         {
-            surface.DrawingMode = DrawingModes.Path;
-            refreshFieldControls();
+            _surface.DrawingMode = DrawingModes.Path;
+            RefreshFieldControls();
         }
 
         private void SetButtonChecked(ToolStripButton btn)
@@ -483,9 +598,9 @@ namespace Greenshot
 
         private void UncheckAllToolButtons()
         {
-            if (toolbarButtons != null)
+            if (_toolbarButtons != null)
             {
-                foreach (ToolStripButton butt in toolbarButtons)
+                foreach (GreenshotToolStripButton butt in _toolbarButtons)
                 {
                     butt.Checked = false;
                 }
@@ -494,13 +609,13 @@ namespace Greenshot
 
         private void RemoveObjectToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.RemoveSelectedElements();
+            _surface.RemoveSelectedElements();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            surface.SelectAllElements();
-            surface.RemoveSelectedElements();
+            _surface.SelectAllElements();
+            _surface.RemoveSelectedElements();
         }
 
         #endregion drawing options
@@ -509,38 +624,38 @@ namespace Greenshot
 
         private void CutToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.CutSelectedElements();
-            updateClipboardSurfaceDependencies();
+            _surface.CutSelectedElements();
+            UpdateClipboardSurfaceDependencies();
         }
 
         private void CopyToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.CopySelectedElements();
-            updateClipboardSurfaceDependencies();
+            _surface.CopySelectedElements();
+            UpdateClipboardSurfaceDependencies();
         }
 
         private void PasteToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.PasteElementFromClipboard();
-            updateClipboardSurfaceDependencies();
+            _surface.PasteElementFromClipboard();
+            UpdateClipboardSurfaceDependencies();
         }
 
         private void UndoToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.Undo();
-            updateUndoRedoSurfaceDependencies();
+            _surface.Undo();
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void RedoToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.Redo();
-            updateUndoRedoSurfaceDependencies();
+            _surface.Redo();
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void DuplicateToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.DuplicateSelectedElements();
-            updateClipboardSurfaceDependencies();
+            _surface.DuplicateSelectedElements();
+            UpdateClipboardSurfaceDependencies();
         }
 
         #endregion copy&paste options
@@ -549,22 +664,22 @@ namespace Greenshot
 
         private void UpOneLevelToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.PullElementsUp();
+            _surface.PullElementsUp();
         }
 
         private void DownOneLevelToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.PushElementsDown();
+            _surface.PushElementsDown();
         }
 
         private void UpToTopToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.PullElementsToTop();
+            _surface.PullElementsToTop();
         }
 
         private void DownToBottomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.PushElementsToBottom();
+            _surface.PushElementsToBottom();
         }
 
         #endregion element properties
@@ -573,17 +688,17 @@ namespace Greenshot
 
         private void ImageEditorFormActivated(object sender, EventArgs e)
         {
-            updateClipboardSurfaceDependencies();
-            updateUndoRedoSurfaceDependencies();
+            UpdateClipboardSurfaceDependencies();
+            UpdateUndoRedoSurfaceDependencies();
 
-            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = _surface != null ? File.Exists(_surface.LastSaveFullPath) : false;
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!forceClose && surface.Modified)
+            if (!forceClose && _surface.Modified)
             {
-                if (!editorConfiguration.SuppressSaveDialogAtClose)
+                if (!EditorConfiguration.SuppressSaveDialogAtClose)
                 {
                     // Make sure the editor is visible
                     WindowDetails.ToForeground(Handle);
@@ -597,13 +712,13 @@ namespace Greenshot
 
                     DialogResult result = MessageBox.Show("Do you want to save the screenshot?", "Save confirmation", buttons, MessageBoxIcon.Question);
 
-                    if (result == DialogResult.Cancel)
+                    if (result.Equals(DialogResult.Cancel))
                     {
                         e.Cancel = true;
                         return;
                     }
 
-                    if (result == DialogResult.Yes)
+                    if (result.Equals(DialogResult.Yes))
                     {
                         DialogResult = DialogResult.OK;
                         OnImageSaveRequested();
@@ -616,11 +731,13 @@ namespace Greenshot
             }
 
             // persist our geometry string.
-            editorConfiguration.SetEditorPlacement(new WindowDetails(Handle).WindowPlacement);
+            EditorConfiguration.SetEditorPlacement(new WindowDetails(Handle).WindowPlacement);
+            // save last used drawing mode
+            EditorConfiguration.LastDrawingMode = _surface.DrawingMode;
             IniConfig.Save();
 
             // remove from the editor list
-            editorList.Remove(this);
+            EditorList.Remove(this);
         }
 
         private void ImageEditorFormKeyDown(object sender, KeyEventArgs e)
@@ -628,7 +745,7 @@ namespace Greenshot
             // LOG.Debug("Got key event "+e.KeyCode + ", " + e.Modifiers);
             // avoid conflict with other shortcuts and
             // make sure there's no selected element claiming input focus
-            if (e.Modifiers.Equals(Keys.None) && !surface.KeysLocked)
+            if (e.Modifiers.Equals(Keys.None) && !_surface.KeysLocked)
             {
                 switch (e.KeyCode)
                 {
@@ -654,10 +771,10 @@ namespace Greenshot
                         BtnTextClick(sender, e);
                         break;
                     case Keys.S:
-                        btnSpeechBubble_Click(sender, e);
+                        BtnSpeechBubbleClick(sender, e);
                         break;
                     case Keys.I:
-                        btnStepLabel_Click(sender, e);
+                        BtnStepLabelClick(sender, e);
                         break;
                     case Keys.H:
                         BtnHighlightClick(sender, e);
@@ -706,6 +823,30 @@ namespace Greenshot
                         break;
                 }
             }
+            else if (e.Modifiers.Equals(Keys.Alt))
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.S:
+                        if (IsTaskWork)
+                        {
+                            btnSaveClose_Click(sender, e);
+                        }
+                        break;
+                    case Keys.W:
+                        if (IsTaskWork)
+                        {
+                            btnClose_Click(sender, e);
+                        }
+                        break;
+                    case Keys.C:
+                        if (IsTaskWork)
+                        {
+                            btnCancelTasks_Click(sender, e);
+                        }
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -725,7 +866,7 @@ namespace Greenshot
         protected override bool ProcessKeyPreview(ref Message msg)
         {
             // disable default key handling if surface has requested a lock
-            if (!surface.KeysLocked)
+            if (!_surface.KeysLocked)
             {
                 return base.ProcessKeyPreview(ref msg);
             }
@@ -735,9 +876,9 @@ namespace Greenshot
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
         {
             // disable default key handling if surface has requested a lock
-            if (!surface.KeysLocked)
+            if (!_surface.KeysLocked)
             {
-                if (!surface.ProcessCmdKey(keys))
+                if (!_surface.ProcessCmdKey(keys))
                 {
                     return base.ProcessCmdKey(ref msg, keys);
                 }
@@ -749,41 +890,41 @@ namespace Greenshot
 
         #region helpers
 
-        private void updateUndoRedoSurfaceDependencies()
+        private void UpdateUndoRedoSurfaceDependencies()
         {
-            if (surface == null)
+            if (_surface == null)
             {
                 return;
             }
-            bool canUndo = surface.CanUndo;
-            tsbUndo.Enabled = canUndo;
+            bool canUndo = _surface.CanUndo;
+            btnUndo.Enabled = canUndo;
             undoToolStripMenuItem.Enabled = canUndo;
             string undoText = "Undo";
-            tsbUndo.Text = undoText;
+            btnUndo.Text = undoText;
             undoToolStripMenuItem.Text = undoText;
 
-            bool canRedo = surface.CanRedo;
-            tsbRedo.Enabled = canRedo;
+            bool canRedo = _surface.CanRedo;
+            btnRedo.Enabled = canRedo;
             redoToolStripMenuItem.Enabled = canRedo;
             string redoText = "Redo";
-            tsbRedo.Text = redoText;
+            btnRedo.Text = redoText;
             redoToolStripMenuItem.Text = redoText;
         }
 
-        private void updateClipboardSurfaceDependencies()
+        private void UpdateClipboardSurfaceDependencies()
         {
-            if (surface == null)
+            if (_surface == null)
             {
                 return;
             }
             // check dependencies for the Surface
-            bool hasItems = surface.HasSelectedElements;
-            bool actionAllowedForSelection = hasItems && !controlsDisabledDueToConfirmable;
+            bool hasItems = _surface.HasSelectedElements;
+            bool actionAllowedForSelection = hasItems && !_controlsDisabledDueToConfirmable;
 
             // buttons
-            tsbCut.Enabled = actionAllowedForSelection;
-            tsbCopy.Enabled = actionAllowedForSelection;
-            tsbDelete.Enabled = actionAllowedForSelection;
+            btnCut.Enabled = actionAllowedForSelection;
+            btnCopy.Enabled = actionAllowedForSelection;
+            btnDelete.Enabled = actionAllowedForSelection;
 
             // menus
             removeObjectToolStripMenuItem.Enabled = actionAllowedForSelection;
@@ -792,9 +933,9 @@ namespace Greenshot
             duplicateToolStripMenuItem.Enabled = actionAllowedForSelection;
 
             // check dependencies for the Clipboard
-            bool hasClipboard = ClipboardHelper.ContainsFormat(SUPPORTED_CLIPBOARD_FORMATS) || ClipboardHelper.ContainsImage();
-            tsbPaste.Enabled = hasClipboard && !controlsDisabledDueToConfirmable;
-            pasteToolStripMenuItem.Enabled = hasClipboard && !controlsDisabledDueToConfirmable;
+            bool hasClipboard = ClipboardHelper.ContainsFormat(SupportedClipboardFormats) || ClipboardHelper.ContainsImage();
+            btnPaste.Enabled = hasClipboard && !_controlsDisabledDueToConfirmable;
+            pasteToolStripMenuItem.Enabled = hasClipboard && !_controlsDisabledDueToConfirmable;
         }
 
         #endregion helpers
@@ -812,7 +953,7 @@ namespace Greenshot
             updateStatusLabel(text, null);
         }
 
-        private void clearStatusLabel()
+        private void ClearStatusLabel()
         {
             updateStatusLabel(null, null);
         }
@@ -828,38 +969,38 @@ namespace Greenshot
 
         #endregion status label handling
 
-        private void bindFieldControls()
+        private void BindFieldControls()
         {
-            new BidirectionalBinding(btnFillColor, "SelectedColor", surface.FieldAggregator.GetField(FieldType.FILL_COLOR), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(btnLineColor, "SelectedColor", surface.FieldAggregator.GetField(FieldType.LINE_COLOR), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(lineThicknessUpDown, "Value", surface.FieldAggregator.GetField(FieldType.LINE_THICKNESS), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(blurRadiusUpDown, "Value", surface.FieldAggregator.GetField(FieldType.BLUR_RADIUS), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(magnificationFactorUpDown, "Value", surface.FieldAggregator.GetField(FieldType.MAGNIFICATION_FACTOR), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(pixelSizeUpDown, "Value", surface.FieldAggregator.GetField(FieldType.PIXEL_SIZE), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(brightnessUpDown, "Value", surface.FieldAggregator.GetField(FieldType.BRIGHTNESS), "Value", DecimalDoublePercentageConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(fontFamilyComboBox, "Text", surface.FieldAggregator.GetField(FieldType.FONT_FAMILY), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(fontSizeUpDown, "Value", surface.FieldAggregator.GetField(FieldType.FONT_SIZE), "Value", DecimalFloatConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(fontBoldButton, "Checked", surface.FieldAggregator.GetField(FieldType.FONT_BOLD), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(fontItalicButton, "Checked", surface.FieldAggregator.GetField(FieldType.FONT_ITALIC), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(textHorizontalAlignmentButton, "SelectedTag", surface.FieldAggregator.GetField(FieldType.TEXT_HORIZONTAL_ALIGNMENT), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(textVerticalAlignmentButton, "SelectedTag", surface.FieldAggregator.GetField(FieldType.TEXT_VERTICAL_ALIGNMENT), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(shadowButton, "Checked", surface.FieldAggregator.GetField(FieldType.SHADOW), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(previewQualityUpDown, "Value", surface.FieldAggregator.GetField(FieldType.PREVIEW_QUALITY), "Value", DecimalDoublePercentageConverter.GetInstance(), NotNullValidator.GetInstance());
-            new BidirectionalBinding(obfuscateModeButton, "SelectedTag", surface.FieldAggregator.GetField(FieldType.PREPARED_FILTER_OBFUSCATE), "Value");
-            new BidirectionalBinding(highlightModeButton, "SelectedTag", surface.FieldAggregator.GetField(FieldType.PREPARED_FILTER_HIGHLIGHT), "Value");
+            new BidirectionalBinding(btnFillColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.FILL_COLOR), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(btnLineColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.LINE_COLOR), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(lineThicknessUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.LINE_THICKNESS), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(blurRadiusUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.BLUR_RADIUS), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(magnificationFactorUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.MAGNIFICATION_FACTOR), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(pixelSizeUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.PIXEL_SIZE), "Value", DecimalIntConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(brightnessUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.BRIGHTNESS), "Value", DecimalDoublePercentageConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(fontFamilyComboBox, "Text", _surface.FieldAggregator.GetField(FieldType.FONT_FAMILY), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(fontSizeUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.FONT_SIZE), "Value", DecimalFloatConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(fontBoldButton, "Checked", _surface.FieldAggregator.GetField(FieldType.FONT_BOLD), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(fontItalicButton, "Checked", _surface.FieldAggregator.GetField(FieldType.FONT_ITALIC), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(textHorizontalAlignmentButton, "SelectedTag", _surface.FieldAggregator.GetField(FieldType.TEXT_HORIZONTAL_ALIGNMENT), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(textVerticalAlignmentButton, "SelectedTag", _surface.FieldAggregator.GetField(FieldType.TEXT_VERTICAL_ALIGNMENT), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(shadowButton, "Checked", _surface.FieldAggregator.GetField(FieldType.SHADOW), "Value", NotNullValidator.GetInstance());
+            new BidirectionalBinding(previewQualityUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.PREVIEW_QUALITY), "Value", DecimalDoublePercentageConverter.GetInstance(), NotNullValidator.GetInstance());
+            new BidirectionalBinding(obfuscateModeButton, "SelectedTag", _surface.FieldAggregator.GetField(FieldType.PREPARED_FILTER_OBFUSCATE), "Value");
+            new BidirectionalBinding(highlightModeButton, "SelectedTag", _surface.FieldAggregator.GetField(FieldType.PREPARED_FILTER_HIGHLIGHT), "Value");
         }
 
         /// <summary>
         /// shows/hides field controls (2nd toolbar on top) depending on fields of selected elements
         /// </summary>
-        private void refreshFieldControls()
+        private void RefreshFieldControls()
         {
-            tsProperties.SuspendLayout();
+            propertiesToolStrip.SuspendLayout();
 
-            if (surface.HasSelectedElements || surface.DrawingMode != DrawingModes.None)
+            if (_surface.HasSelectedElements || _surface.DrawingMode != DrawingModes.None)
             {
                 toolStripSeparator5.Visible = true;
-                FieldAggregator props = surface.FieldAggregator;
+                FieldAggregator props = _surface.FieldAggregator;
                 btnFillColor.Visible = props.HasFieldValue(FieldType.FILL_COLOR);
                 btnLineColor.Visible = props.HasFieldValue(FieldType.LINE_COLOR);
                 lineThicknessLabel.Visible = lineThicknessUpDown.Visible = props.HasFieldValue(FieldType.LINE_THICKNESS);
@@ -883,13 +1024,13 @@ namespace Greenshot
             }
             else
             {
-                hideToolstripItems();
+                HideToolstripItems();
             }
 
-            tsProperties.ResumeLayout();
+            propertiesToolStrip.ResumeLayout();
         }
 
-        private void hideToolstripItems()
+        private void HideToolstripItems()
         {
             btnFillColor.Visible = btnLineColor.Visible = lineThicknessLabel.Visible = lineThicknessUpDown.Visible = blurRadiusLabel.Visible =
                 blurRadiusUpDown.Visible = previewQualityLabel.Visible = previewQualityUpDown.Visible = magnificationFactorLabel.Visible =
@@ -903,45 +1044,54 @@ namespace Greenshot
         /// <summary>
         /// refreshes all editor controls depending on selected elements and their fields
         /// </summary>
-        private void refreshEditorControls()
+        private void RefreshEditorControls()
         {
-            int stepLabels = surface.CountStepLabels(null);
-            string imageName = stepLabels <= 20 ? string.Format("notification_counter_{0:00}", stepLabels) : "notification_counter_20_plus";
-            btnStepLabel.Image = (Image)Resources.ResourceManager.GetObject(imageName);
+            int stepLabels = _surface.CountStepLabels(null);
+            Image icon;
+            if (stepLabels <= 20)
+            {
+                icon = (Image)Resources.ResourceManager.GetObject(string.Format("notification_counter_{0:00}", stepLabels));
+            }
+            else
+            {
+                icon = (Image)Resources.ResourceManager.GetObject("notification_counter_20_plus");
+            }
+            btnStepLabel.Image = icon;
 
-            FieldAggregator props = surface.FieldAggregator;
+            FieldAggregator props = _surface.FieldAggregator;
             // if a confirmable element is selected, we must disable most of the controls
             // since we demand confirmation or cancel for confirmable element
-            if (props.HasFieldValue(FieldType.FLAGS) && ((FieldType.Flag)props.GetFieldValue(FieldType.FLAGS) & FieldType.Flag.CONFIRMABLE) == FieldType.Flag.CONFIRMABLE)
+            if (props.HasFieldValue(FieldType.FLAGS) && ((FieldType.Flag)props.GetFieldValue(FieldType.FLAGS) & FieldType.Flag.CONFIRMABLE) == FieldType.Flag.CONFIRMABLE
+                && _surface.HasSelectedElements) // if nothing is selected, there is nothing to cancel, so don't disable controls
             {
                 // disable most controls
-                if (!controlsDisabledDueToConfirmable)
+                if (!_controlsDisabledDueToConfirmable)
                 {
-                    ToolStripItemEndisabler.Disable(tsddbMenu);
+                    ToolStripItemEndisabler.Disable(menuStrip1);
                     //ToolStripItemEndisabler.Disable(propertiesToolStrip);
-                    ToolStripItemEndisabler.Disable(tsTools);
+                    ToolStripItemEndisabler.Disable(toolsToolStrip);
                     ToolStripItemEndisabler.Enable(closeToolStripMenuItem);
-                    controlsDisabledDueToConfirmable = true;
+                    _controlsDisabledDueToConfirmable = true;
                 }
             }
-            else if (controlsDisabledDueToConfirmable)
+            else if (_controlsDisabledDueToConfirmable)
             {
                 // re-enable disabled controls, confirmable element has either been confirmed or cancelled
-                ToolStripItemEndisabler.Enable(tsddbMenu);
+                ToolStripItemEndisabler.Enable(menuStrip1);
                 //ToolStripItemEndisabler.Enable(propertiesToolStrip);
-                ToolStripItemEndisabler.Enable(tsTools);
-                controlsDisabledDueToConfirmable = false;
+                ToolStripItemEndisabler.Enable(toolsToolStrip);
+                _controlsDisabledDueToConfirmable = false;
             }
 
             // en/disable controls depending on whether an element is selected at all
-            updateClipboardSurfaceDependencies();
-            updateUndoRedoSurfaceDependencies();
+            UpdateClipboardSurfaceDependencies();
+            UpdateUndoRedoSurfaceDependencies();
 
             // en/disablearrage controls depending on hierarchy of selected elements
-            bool actionAllowedForSelection = surface.HasSelectedElements && !controlsDisabledDueToConfirmable;
-            bool push = actionAllowedForSelection && surface.CanPushSelectionDown();
-            bool pull = actionAllowedForSelection && surface.CanPullSelectionUp();
-            arrangeToolStripMenuItem.Enabled = (push || pull);
+            bool actionAllowedForSelection = _surface.HasSelectedElements && !_controlsDisabledDueToConfirmable;
+            bool push = actionAllowedForSelection && _surface.CanPushSelectionDown();
+            bool pull = actionAllowedForSelection && _surface.CanPullSelectionUp();
+            arrangeToolStripMenuItem.Enabled = push || pull;
             if (arrangeToolStripMenuItem.Enabled)
             {
                 upToTopToolStripMenuItem.Enabled = pull;
@@ -951,26 +1101,32 @@ namespace Greenshot
             }
 
             // finally show/hide field controls depending on the fields of selected elements
-            refreshFieldControls();
+            RefreshFieldControls();
         }
 
         private void ArrowHeadsToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.FieldAggregator.GetField(FieldType.ARROWHEADS).Value = (ArrowContainer.ArrowHeadCombination)((ToolStripMenuItem)sender).Tag;
+            _surface.FieldAggregator.GetField(FieldType.ARROWHEADS).Value = (ArrowContainer.ArrowHeadCombination)((ToolStripMenuItem)sender).Tag;
         }
 
         private void FontPropertyChanged(object sender, EventArgs e)
         {
             // in case we forced another FontStyle before, reset it first.
-            if (originalBoldCheckState != fontBoldButton.Checked) fontBoldButton.Checked = originalBoldCheckState;
-            if (originalItalicCheckState != fontItalicButton.Checked) fontItalicButton.Checked = originalItalicCheckState;
+            if (fontBoldButton != null && _originalBoldCheckState != fontBoldButton.Checked)
+            {
+                fontBoldButton.Checked = _originalBoldCheckState;
+            }
+            if (fontItalicButton != null && _originalItalicCheckState != fontItalicButton.Checked)
+            {
+                fontItalicButton.Checked = _originalItalicCheckState;
+            }
 
             FontFamily fam = fontFamilyComboBox.FontFamily;
 
             bool boldAvailable = fam.IsStyleAvailable(FontStyle.Bold);
             if (!boldAvailable)
             {
-                originalBoldCheckState = fontBoldButton.Checked;
+                _originalBoldCheckState = fontBoldButton.Checked;
                 fontBoldButton.Checked = false;
             }
             fontBoldButton.Enabled = boldAvailable;
@@ -999,93 +1155,94 @@ namespace Greenshot
             // refresh toolbar if prepared filter mode is changed
             if (e.Field.FieldType == FieldType.PREPARED_FILTER_HIGHLIGHT)
             {
-                refreshFieldControls();
+                RefreshFieldControls();
             }
         }
 
         private void FontBoldButtonClick(object sender, EventArgs e)
         {
-            originalBoldCheckState = fontBoldButton.Checked;
+            _originalBoldCheckState = fontBoldButton.Checked;
         }
 
         private void FontItalicButtonClick(object sender, EventArgs e)
         {
-            originalItalicCheckState = fontItalicButton.Checked;
+            _originalItalicCheckState = fontItalicButton.Checked;
         }
 
         private void ToolBarFocusableElementGotFocus(object sender, EventArgs e)
         {
-            surface.KeysLocked = true;
+            _surface.KeysLocked = true;
         }
 
         private void ToolBarFocusableElementLostFocus(object sender, EventArgs e)
         {
-            surface.KeysLocked = false;
+            _surface.KeysLocked = false;
         }
 
-        private void DestinationToolStripMenuItemClick(object sender, EventArgs e)
+        private void SaveElementsToolStripMenuItemClick(object sender, EventArgs e)
         {
-            IDestination clickedDestination = null;
-            if (sender is Control)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Greenshot templates (*.gst)|*.gst";
+            saveFileDialog.FileName = FilenameHelper.GetFilenameWithoutExtensionFromPattern(coreConfiguration.OutputFileFilenamePattern, _surface.CaptureDetails);
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if (dialogResult.Equals(DialogResult.OK))
             {
-                Control clickedControl = sender as Control;
-                if (clickedControl.ContextMenuStrip != null)
+                using (Stream streamWrite = File.OpenWrite(saveFileDialog.FileName))
                 {
-                    clickedControl.ContextMenuStrip.Show(Cursor.Position);
-                    return;
+                    _surface.SaveElementsToStream(streamWrite);
                 }
-                clickedDestination = (IDestination)clickedControl.Tag;
             }
-            else if (sender is ToolStripMenuItem)
+        }
+
+        private void LoadElementsToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Greenshot templates (*.gst)|*.gst";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                ToolStripMenuItem clickedMenuItem = sender as ToolStripMenuItem;
-                clickedDestination = (IDestination)clickedMenuItem.Tag;
-            }
-            if (clickedDestination != null)
-            {
-                ExportInformation exportInformation = clickedDestination.ExportCapture(true, surface, surface.CaptureDetails);
-                if (exportInformation != null && exportInformation.ExportMade)
+                using (Stream streamRead = File.OpenRead(openFileDialog.FileName))
                 {
-                    surface.Modified = false;
+                    _surface.LoadElementsFromStream(streamRead);
                 }
+                _surface.Refresh();
             }
         }
 
         protected void FilterPresetDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            refreshFieldControls();
+            RefreshFieldControls();
             Invalidate(true);
         }
 
         private void SelectAllToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.SelectAllElements();
+            _surface.SelectAllElements();
         }
 
         private void BtnConfirmClick(object sender, EventArgs e)
         {
-            surface.ConfirmSelectedConfirmableElements(true);
-            refreshFieldControls();
+            _surface.ConfirmSelectedConfirmableElements(true);
+            RefreshFieldControls();
         }
 
         private void BtnCancelClick(object sender, EventArgs e)
         {
-            surface.ConfirmSelectedConfirmableElements(false);
-            refreshFieldControls();
+            _surface.ConfirmSelectedConfirmableElements(false);
+            RefreshFieldControls();
         }
 
         private void AutoCropToolStripMenuItemClick(object sender, EventArgs e)
         {
-            if (surface.AutoCrop())
+            if (_surface.AutoCrop())
             {
-                refreshFieldControls();
+                RefreshFieldControls();
             }
         }
 
         private void AddBorderToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.ApplyBitmapEffect(new BorderEffect());
-            updateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(new BorderEffect());
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         /// <summary>
@@ -1095,13 +1252,30 @@ namespace Greenshot
         /// <param name="e"></param>
         private void AddDropshadowToolStripMenuItemClick(object sender, EventArgs e)
         {
-            DropShadowEffect dropShadowEffect = new DropShadowEffect();
+            DropShadowEffect dropShadowEffect = EditorConfiguration.DropShadowEffectSettings;
             // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new DropShadowSettingsForm(dropShadowEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                surface.ApplyBitmapEffect(dropShadowEffect);
-                updateUndoRedoSurfaceDependencies();
+                _surface.ApplyBitmapEffect(dropShadowEffect);
+                UpdateUndoRedoSurfaceDependencies();
+            }
+        }
+
+        /// <summary>
+        /// Open the resize settings from, and resize if ok was pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnResizeClick(object sender, EventArgs e)
+        {
+            ResizeEffect resizeEffect = new ResizeEffect(_surface.Image.Width, _surface.Image.Height, true);
+            // Use the Resize SettingsForm to make it possible to change the default values
+            DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                _surface.ApplyBitmapEffect(resizeEffect);
+                UpdateUndoRedoSurfaceDependencies();
             }
         }
 
@@ -1112,11 +1286,11 @@ namespace Greenshot
         /// <param name="e"></param>
         private void ResizeToolStripMenuItemClick(object sender, EventArgs e)
         {
-            ResizeEffect resizeEffect = new ResizeEffect(surface.Image.Width, surface.Image.Height, true);
+            ResizeEffect resizeEffect = new ResizeEffect(_surface.Image.Width, _surface.Image.Height, true);
             // DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
             // if (result == DialogResult.OK) {
-            surface.ApplyBitmapEffect(resizeEffect);
-            updateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(resizeEffect);
+            UpdateUndoRedoSurfaceDependencies();
             //}
         }
 
@@ -1127,107 +1301,92 @@ namespace Greenshot
         /// <param name="e"></param>
         private void TornEdgesToolStripMenuItemClick(object sender, EventArgs e)
         {
-            TornEdgeEffect tornEdgeEffect = new TornEdgeEffect();
+            TornEdgeEffect tornEdgeEffect = EditorConfiguration.TornEdgeEffectSettings;
             // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new TornEdgeSettingsForm(tornEdgeEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                surface.ApplyBitmapEffect(tornEdgeEffect);
-                updateUndoRedoSurfaceDependencies();
+                _surface.ApplyBitmapEffect(tornEdgeEffect);
+                UpdateUndoRedoSurfaceDependencies();
             }
         }
 
         private void GrayscaleToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.ApplyBitmapEffect(new GrayscaleEffect());
-            updateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(new GrayscaleEffect());
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void ClearToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.Clear(Color.Transparent);
-            updateUndoRedoSurfaceDependencies();
+            _surface.Clear(Color.Transparent);
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void RotateCwToolstripButtonClick(object sender, EventArgs e)
         {
-            surface.ApplyBitmapEffect(new RotateEffect(90));
-            updateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(new RotateEffect(90));
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void RotateCcwToolstripButtonClick(object sender, EventArgs e)
         {
-            surface.ApplyBitmapEffect(new RotateEffect(270));
-            updateUndoRedoSurfaceDependencies();
-        }
-
-        /// <summary>
-        /// Open the resize settings from, and resize if ok was pressed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnResize_Click(object sender, EventArgs e)
-        {
-            ResizeEffect resizeEffect = new ResizeEffect(surface.Image.Width, surface.Image.Height, true);
-            // Use the Resize SettingsForm to make it possible to change the default values
-            DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
-            if (result == DialogResult.OK)
-            {
-                surface.ApplyBitmapEffect(resizeEffect);
-                updateUndoRedoSurfaceDependencies();
-            }
+            _surface.ApplyBitmapEffect(new RotateEffect(270));
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void InvertToolStripMenuItemClick(object sender, EventArgs e)
         {
-            surface.ApplyBitmapEffect(new InvertEffect());
-            updateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(new InvertEffect());
+            UpdateUndoRedoSurfaceDependencies();
         }
 
         private void ImageEditorFormResize(object sender, EventArgs e)
         {
-            if (Surface == null)
+            if (Surface == null || Surface.Image == null || panel1 == null)
             {
                 return;
             }
             Size imageSize = Surface.Image.Size;
             Size currentClientSize = panel1.ClientSize;
             var canvas = Surface as Control;
+            if (canvas == null)
+            {
+                return;
+            }
             Panel panel = (Panel)canvas.Parent;
+            if (panel == null)
+            {
+                return;
+            }
             int offsetX = -panel.HorizontalScroll.Value;
             int offsetY = -panel.VerticalScroll.Value;
-            if (canvas != null)
+            if (currentClientSize.Width > imageSize.Width)
             {
-                if (currentClientSize.Width > imageSize.Width)
-                {
-                    canvas.Left = offsetX + ((currentClientSize.Width - imageSize.Width) / 2);
-                }
-                else
-                {
-                    canvas.Left = offsetX + 0;
-                }
+                canvas.Left = offsetX + ((currentClientSize.Width - imageSize.Width) / 2);
             }
-            if (canvas != null)
+            else
             {
-                if (currentClientSize.Height > imageSize.Height)
-                {
-                    canvas.Top = offsetY + ((currentClientSize.Height - imageSize.Height) / 2);
-                }
-                else
-                {
-                    canvas.Top = offsetY + 0;
-                }
+                canvas.Left = offsetX + 0;
+            }
+            if (currentClientSize.Height > imageSize.Height)
+            {
+                canvas.Top = offsetY + ((currentClientSize.Height - imageSize.Height) / 2);
+            }
+            else
+            {
+                canvas.Top = offsetY + 0;
             }
         }
 
         public void OnImageSaveRequested()
         {
-            if (ImageSaveRequested != null && File.Exists(surface.LastSaveFullPath))
+            if (ImageSaveRequested != null && File.Exists(_surface.LastSaveFullPath))
             {
-                using (Image img = surface.GetImageForExport())
+                using (Image img = _surface.GetImageForExport())
                 {
-                    ImageSaveRequested(img, surface.LastSaveFullPath);
-                    surface.Modified = false;
+                    ImageSaveRequested(img, _surface.LastSaveFullPath);
+                    _surface.Modified = false;
                 }
             }
         }
@@ -1236,10 +1395,10 @@ namespace Greenshot
         {
             if (ImageSaveAsRequested != null)
             {
-                using (Image img = surface.GetImageForExport())
+                using (Image img = _surface.GetImageForExport())
                 {
-                    string newFilePath = ImageSaveAsRequested(img, surface.LastSaveFullPath);
-                    surface.Modified = false;
+                    string newFilePath = ImageSaveAsRequested(img, _surface.LastSaveFullPath);
+                    _surface.Modified = false;
                     if (!string.IsNullOrEmpty(newFilePath))
                     {
                         SetImagePath(newFilePath);
@@ -1252,7 +1411,7 @@ namespace Greenshot
         {
             if (ClipboardCopyRequested != null)
             {
-                using (Image img = surface.GetImageForExport())
+                using (Image img = _surface.GetImageForExport())
                 {
                     ClipboardCopyRequested(img);
                 }
@@ -1264,7 +1423,7 @@ namespace Greenshot
             if (ImageUploadRequested != null)
             {
                 // Image will be disposed in upload task
-                Image img = surface.GetImageForExport();
+                Image img = _surface.GetImageForExport();
                 ImageUploadRequested(img);
             }
         }
@@ -1273,7 +1432,7 @@ namespace Greenshot
         {
             if (PrintImageRequested != null)
             {
-                using (Image img = surface.GetImageForExport())
+                using (Image img = _surface.GetImageForExport())
                 {
                     PrintImageRequested(img);
                 }
@@ -1327,10 +1486,18 @@ namespace Greenshot
             OnPrintImageRequested();
         }
 
-        private void tsddbMenu_Click(object sender, EventArgs e)
+        private void menuStrip1_Click(object sender, EventArgs e)
         {
-            updateClipboardSurfaceDependencies();
-            updateUndoRedoSurfaceDependencies();
+            UpdateClipboardSurfaceDependencies();
+            UpdateUndoRedoSurfaceDependencies();
+        }
+
+        private void tsmiSettings_Click(object sender, EventArgs e)
+        {
+            using (EditorSettingsForm settingsForm = new EditorSettingsForm())
+            {
+                settingsForm.ShowDialog();
+            }
         }
 
         private void tsmiAbout_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,23 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class Paste2TextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Paste2;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            Paste2Settings settings = new Paste2Settings()
+            {
+                TextFormat = taskInfo.TextFormat
+            };
+
+            return new Paste2(settings);
+        }
+    }
+
     public sealed class Paste2 : TextUploader
     {
         private const string APIURL = "http://paste2.org/new-paste";
@@ -55,7 +72,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("lang", settings.TextFormat);
                 arguments.Add("parent", "0");
 
-                ur.URL = SendRequest(HttpMethod.POST, APIURL, arguments, responseType: ResponseType.RedirectionURL);
+                ur.URL = SendRequestMultiPart(APIURL, arguments, responseType: ResponseType.RedirectionURL);
             }
 
             return ur;
@@ -71,7 +88,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public Paste2Settings()
         {
             TextFormat = "text";
-            Description = string.Empty;
+            Description = "";
         }
     }
 }

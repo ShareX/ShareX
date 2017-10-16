@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,11 +25,33 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class ImageShackImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.ImageShack;
+
+        public override Icon ServiceIcon => Resources.ImageShack;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.ImageShackSettings != null && !string.IsNullOrEmpty(config.ImageShackSettings.Auth_token);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new ImageShackUploader(APIKeys.ImageShackKey, config.ImageShackSettings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImageShack;
+    }
+
     public sealed class ImageShackUploader : ImageUploader
     {
         private const string URLAPI = "https://api.imageshack.com/v2/";
@@ -54,7 +76,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 args.Add("user", Config.Username);
                 args.Add("password", Config.Password);
 
-                string response = SendRequest(HttpMethod.POST, URLAccessToken, args);
+                string response = SendRequestMultiPart(URLAccessToken, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -78,7 +100,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("auth_token", Config.Auth_token);
             arguments.Add("public", Config.IsPublic ? "y" : "n");
 
-            UploadResult result = UploadData(stream, URLUpload, fileName, "file", arguments);
+            UploadResult result = SendRequestFile(URLUpload, stream, fileName, "file", arguments);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -217,7 +239,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string Password { get; set; }
         public bool IsPublic { get; set; }
         public string Auth_token { get; set; }
-        public int ThumbnailWidth { get; set; }
+        public int ThumbnailWidth { get; set; } = 256;
         public int ThumbnailHeight { get; set; }
     }
 }

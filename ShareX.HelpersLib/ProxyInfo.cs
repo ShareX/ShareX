@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -66,11 +66,18 @@ namespace ShareX.HelpersLib
 
         public IWebProxy GetWebProxy()
         {
-            if (IsValidProxy())
+            try
             {
-                NetworkCredential credentials = new NetworkCredential(Username, Password);
-                string address = string.Format("{0}:{1}", Host, Port);
-                return new WebProxy(address, true, null, credentials);
+                if (IsValidProxy())
+                {
+                    NetworkCredential credentials = new NetworkCredential(Username, Password);
+                    string address = string.Format("{0}:{1}", Host, Port);
+                    return new WebProxy(address, true, null, credentials);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "GetWebProxy failed");
             }
 
             return null;

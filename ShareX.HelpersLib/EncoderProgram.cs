@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,13 +37,13 @@ namespace ShareX.HelpersLib
 
         public VideoEncoder()
         {
-            Name = "x264 encoder to MP4";
-            Path = "x264.exe";
-            Args = "--output %output %input";
+            Name = "FFmpeg x264";
+            Path = "ffmpeg.exe";
+            Args = "-i %input -c:v libx264 -preset slow -crf 20 %output";
             OutputExtension = "mp4";
         }
 
-        /// <param name="sourceFilePath">AVI file path</param>
+        /// <param name="sourceFilePath">Source file path</param>
         /// <param name="targetFilePath">Target file path without extension</param>
         public void Encode(string sourceFilePath, string targetFilePath)
         {
@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
                     targetFilePath += "." + OutputExtension.TrimStart('.');
                 }
 
-                Helpers.CreateDirectoryIfNotExist(targetFilePath);
+                Helpers.CreateDirectoryFromFilePath(targetFilePath);
 
                 using (Process process = new Process())
                 {

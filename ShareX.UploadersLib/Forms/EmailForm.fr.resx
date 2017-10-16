@@ -121,18 +121,18 @@
     <value>Annuler</value>
   </data>
   <data name="lblMessage.Text" xml:space="preserve">
-    <value>Message:</value>
+    <value>Message :</value>
   </data>
   <data name="btnSend.Text" xml:space="preserve">
     <value>Envoyer</value>
   </data>
   <data name="lblSubject.Text" xml:space="preserve">
-    <value>Sujet:</value>
+    <value>Sujet :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Envoyer un Email</value>
+    <value>ShareX - Envoyer un e-mail</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>Email du destinataire:</value>
+    <value>Adresse e-mail du destinataire :</value>
   </data>
 </root>

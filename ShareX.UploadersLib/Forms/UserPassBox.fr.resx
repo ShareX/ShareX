@@ -121,21 +121,21 @@
     <value>Annuler</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblFullName.Text" xml:space="preserve">
-    <value>Nom complet:</value>
+    <value>Nom complet :</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="lblPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Saisie nom d'utilisateur/mot de passe</value>
+    <value>ShareX - Informations sur le compte</value>
   </data>
 </root>

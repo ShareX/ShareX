@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ImageViewer : BaseForm
+    public class ImageViewer : Form
     {
         private Image screenshot;
 
@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
         {
             screenshot = image;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
         public static void ShowImage(Image img)
@@ -66,7 +67,7 @@ namespace ShareX.HelpersLib
 
         private void ShowScreenshot_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void ShowScreenshot_Deactivate(object sender, EventArgs e)
@@ -122,7 +123,14 @@ namespace ShareX.HelpersLib
             this.pbPreview = new MyPictureBox();
             this.SuspendLayout();
 
-            this.pbPreview.BackColor = System.Drawing.Color.White;
+            this.BackColor = SystemColors.Window;
+            this.Bounds = CaptureHelpers.GetScreenBounds();
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Text = "ShareX - Image viewer";
+            this.TopMost = true;
+            this.WindowState = FormWindowState.Maximized;
+
             this.pbPreview.Cursor = Cursors.Hand;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPreview.DrawCheckeredBackground = true;
@@ -132,14 +140,6 @@ namespace ShareX.HelpersLib
             this.pbPreview.Size = new System.Drawing.Size(96, 100);
             this.pbPreview.TabIndex = 0;
             this.pbPreview.LoadImage(screenshot);
-
-            this.BackColor = Color.White;
-            this.Bounds = CaptureHelpers.GetScreenBounds();
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Text = "ShareX - Image viewer";
-            this.TopMost = true;
-            this.WindowState = FormWindowState.Maximized;
             this.Controls.Add(this.pbPreview);
 
             this.Shown += new System.EventHandler(this.ShowScreenshot_Shown);

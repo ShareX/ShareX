@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace GreenshotPlugin.UnmanagedHelpers
 {
@@ -27,6 +28,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// Window Style Flags
     /// </summary>
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum WindowStyleFlags : long
     {
         //WS_OVERLAPPED       = 0x00000000,
@@ -79,6 +81,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum ExtendedWindowStyleFlags : uint
     {
         WS_EX_DLGMODALFRAME = 0x00000001,
@@ -116,6 +119,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum WindowPlacementFlags : uint
     {
         // The coordinates of the minimized window may be specified.
@@ -128,6 +132,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         WPF_RESTORETOMAXIMIZED = 0x0002
     }
 
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum ShowWindowCommand : uint
     {
         /// <summary>
@@ -149,13 +154,13 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Maximizes the specified window.
         /// </summary>
         Maximize = 3, // is this the right value?
-        /// <summary>
-        /// Activates the window and displays it as a maximized window.
-        /// </summary>
+                      /// <summary>
+                      /// Activates the window and displays it as a maximized window.
+                      /// </summary>
         ShowMaximized = 3,
         /// <summary>
         /// Displays a window in its most recent size and position. This value
-        /// is similar to <see cref="Win32.ShowWindowCommand.Normal"/>, except
+        /// is similar to <see cref="ShowWindowCommand.Normal"/>, except
         /// the window is not actived.
         /// </summary>
         ShowNoActivate = 4,
@@ -170,13 +175,13 @@ namespace GreenshotPlugin.UnmanagedHelpers
         Minimize = 6,
         /// <summary>
         /// Displays the window as a minimized window. This value is similar to
-        /// <see cref="Win32.ShowWindowCommand.ShowMinimized"/>, except the
+        /// <see cref="ShowWindowCommand.ShowMinimized"/>, except the
         /// window is not activated.
         /// </summary>
         ShowMinNoActive = 7,
         /// <summary>
         /// Displays the window in its current size and position. This value is
-        /// similar to <see cref="Win32.ShowWindowCommand.Show"/>, except the
+        /// similar to <see cref="ShowWindowCommand.Show"/>, except the
         /// window is not activated.
         /// </summary>
         ShowNA = 8,
@@ -200,7 +205,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
         ForceMinimize = 11
     }
 
-    public enum SYSCOLOR : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum SYSCOLOR
     {
         SCROLLBAR = 0,
         BACKGROUND = 1,
@@ -241,7 +247,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// ai_productions@verizon.net or osirisgothra@hotmail.com
     /// Obtained on pinvoke.net, please contribute your code to support the wiki!
     /// </summary>
-    public enum SystemMetric : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum SystemMetric
     {
         /// <summary>
         ///  Width of the screen of the primary display monitor, in pixels. This is the same values obtained by calling GetDeviceCaps as follows: GetDeviceCaps( hdcPrimaryMonitor, HORZRES).
@@ -621,6 +628,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         SM_REMOTECONTROL = 0x2001
     }
 
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum RegionResult
     {
         REGION_ERROR = 0,
@@ -630,6 +638,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     // See http://msdn.microsoft.com/en-us/library/aa969530(v=vs.85).aspx
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum DWMWINDOWATTRIBUTE
     {
         DWMWA_NCRENDERING_ENABLED = 1,
@@ -650,6 +659,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         DWMWA_LAST
     }
 
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum GetWindowCommand : uint
     {
         GW_HWNDFIRST = 0,
@@ -662,6 +672,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum DWM_BB
     {
         Enable = 1,
@@ -669,7 +680,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
         TransitionMaximized = 4
     }
 
-    public enum ClassLongIndex : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum ClassLongIndex
     {
         GCL_CBCLSEXTRA = -20, // the size, in bytes, of the extra memory associated with the class. Setting this value does not change the number of extra bytes already allocated.
         GCL_CBWNDEXTRA = -18, // the size, in bytes, of the extra window memory associated with each window in the class. Setting this value does not change the number of extra bytes already allocated. For information on how to access this memory, see SetWindowLong.
@@ -683,7 +695,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
         GCL_WNDPROC = -24, // the address of the window procedure, or a handle representing the address of the window procedure. You must use the CallWindowProc function to call the window procedure.
     }
 
-    public enum WindowsMessages : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum WindowsMessages
     {
         WM_NULL = 0x0000,
         WM_CREATE = 0x0001,
@@ -891,45 +904,50 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     // Get/Set WindowLong Enum See: http://msdn.microsoft.com/en-us/library/ms633591.aspx
-    public enum WindowLongIndex : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum WindowLongIndex
     {
-        GWL_EXSTYLE = -20,	// Sets a new extended window style.
-        GWL_HINSTANCE = -6,	// Sets a new application instance handle.
-        GWL_ID = -12,	// Sets a new identifier of the child window. The window cannot be a top-level window.
-        GWL_STYLE = -16,	// Sets a new window style.
-        GWL_USERDATA = -21,	// Sets the user data associated with the window. This data is intended for use by the application that created the window. Its value is initially zero.
+        GWL_EXSTYLE = -20,  // Sets a new extended window style.
+        GWL_HINSTANCE = -6, // Sets a new application instance handle.
+        GWL_ID = -12,   // Sets a new identifier of the child window. The window cannot be a top-level window.
+        GWL_STYLE = -16,    // Sets a new window style.
+        GWL_USERDATA = -21, // Sets the user data associated with the window. This data is intended for use by the application that created the window. Its value is initially zero.
         GWL_WNDPROC = -4 // Sets a new address for the window procedure. You cannot change this attribute if the window does not belong to the same process as the calling thread.
     }
 
     // See: http://msdn.microsoft.com/en-us/library/ms633545.aspx
     [Flags]
-    public enum WindowPos : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum WindowPos
     {
-        SWP_ASYNCWINDOWPOS = 0x4000,	// If the calling thread and the thread that owns the window are attached to different input queues, the system posts the request to the thread that owns the window. This prevents the calling thread from blocking its execution while other threads process the request.
-        SWP_DEFERERASE = 0x2000,	// Prevents generation of the WM_SYNCPAINT message.
-        SWP_DRAWFRAME = 0x0020,	 // Draws a frame (defined in the window's class description) around the window.
+        SWP_ASYNCWINDOWPOS = 0x4000,    // If the calling thread and the thread that owns the window are attached to different input queues, the system posts the request to the thread that owns the window. This prevents the calling thread from blocking its execution while other threads process the request.
+        SWP_DEFERERASE = 0x2000,    // Prevents generation of the WM_SYNCPAINT message.
+        SWP_DRAWFRAME = 0x0020,  // Draws a frame (defined in the window's class description) around the window.
         SWP_FRAMECHANGED = 0x0020, //Applies new frame styles set using the SetWindowLong function. Sends a WM_NCCALCSIZE message to the window, even if the window's size is not being changed. If this flag is not specified, WM_NCCALCSIZE is sent only when the window's size is being changed.
-        SWP_HIDEWINDOW = 0x0080,	// Hides the window.
-        SWP_NOACTIVATE = 0x0010,	// Does not activate the window. If this flag is not set, the window is activated and moved to the top of either the topmost or non-topmost group (depending on the setting of the hWndInsertAfter parameter).
-        SWP_NOCOPYBITS = 0x0100,	// Discards the entire contents of the client area. If this flag is not specified, the valid contents of the client area are saved and copied back into the client area after the window is sized or repositioned.
-        SWP_NOMOVE = 0x0002,	//Retains the current position (ignores X and Y parameters).
-        SWP_NOOWNERZORDER = 0x0200,	//Does not change the owner window's position in the Z order.
-        SWP_NOREDRAW = 0x0008,	//Does not redraw changes. If this flag is set, no repainting of any kind occurs. This applies to the client area, the nonclient area (including the title bar and scroll bars), and any part of the parent window uncovered as a result of the window being moved. When this flag is set, the application must explicitly invalidate or redraw any parts of the window and parent window that need redrawing.
-        SWP_NOREPOSITION = 0x0200,	// Same as the SWP_NOOWNERZORDER flag.
-        SWP_NOSENDCHANGING = 0x0400,	//Prevents the window from receiving the WM_WINDOWPOSCHANGING message.
-        SWP_NOSIZE = 0x0001,	// Retains the current size (ignores the cx and cy parameters).
-        SWP_NOZORDER = 0x0004,	// Retains the current Z order (ignores the hWndInsertAfter parameter).
-        SWP_SHOWWINDOW = 0x0040	//Displays the window.
+        SWP_HIDEWINDOW = 0x0080,    // Hides the window.
+        SWP_NOACTIVATE = 0x0010,    // Does not activate the window. If this flag is not set, the window is activated and moved to the top of either the topmost or non-topmost group (depending on the setting of the hWndInsertAfter parameter).
+        SWP_NOCOPYBITS = 0x0100,    // Discards the entire contents of the client area. If this flag is not specified, the valid contents of the client area are saved and copied back into the client area after the window is sized or repositioned.
+        SWP_NOMOVE = 0x0002,    //Retains the current position (ignores X and Y parameters).
+        SWP_NOOWNERZORDER = 0x0200, //Does not change the owner window's position in the Z order.
+        SWP_NOREDRAW = 0x0008,  //Does not redraw changes. If this flag is set, no repainting of any kind occurs. This applies to the client area, the nonclient area (including the title bar and scroll bars), and any part of the parent window uncovered as a result of the window being moved. When this flag is set, the application must explicitly invalidate or redraw any parts of the window and parent window that need redrawing.
+        SWP_NOREPOSITION = 0x0200,  // Same as the SWP_NOOWNERZORDER flag.
+        SWP_NOSENDCHANGING = 0x0400,    //Prevents the window from receiving the WM_WINDOWPOSCHANGING message.
+        SWP_NOSIZE = 0x0001,    // Retains the current size (ignores the cx and cy parameters).
+        SWP_NOZORDER = 0x0004,  // Retains the current Z order (ignores the hWndInsertAfter parameter).
+        SWP_SHOWWINDOW = 0x0040 //Displays the window.
     }
 
-    public enum ScrollBarDirection : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum ScrollBarDirection
     {
         SB_HORZ = 0,
         SB_VERT = 1,
         SB_CTL = 2,
         SB_BOTH = 3
     }
-    public enum ScrollbarCommand : int
+
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum ScrollbarCommand
     {
         SB_LINEUP = 0, // Scrolls one line up.
         SB_LINEDOWN = 1, // Scrolls one line down.
@@ -942,6 +960,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         SB_ENDSCROLL = 8 // Ends scroll.
     }
 
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum ScrollInfoMask
     {
         SIF_RANGE = 0x1,
@@ -956,6 +975,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// See: http://www.pinvoke.net/default.aspx/Enums/SendMessageTimeoutFlags.html
     /// </summary>
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum SendMessageTimeoutFlags : uint
     {
         SMTO_NORMAL = 0x0,
@@ -965,6 +985,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     }
 
     [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum ProcessAccessFlags : uint
     {
         All = 0x001F0FFF,
@@ -983,7 +1004,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// See: http://msdn.microsoft.com/en-us/library/aa909766.aspx
     /// </summary>
     [Flags]
-    public enum SoundFlags : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum SoundFlags
     {
         SND_SYNC = 0x0000,			// play synchronously (default)
         SND_ASYNC = 0x0001,			// play asynchronously
@@ -1001,6 +1023,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// Used by GDI32.GetDeviceCaps
     /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd144877%28v=vs.85%29.aspx
     /// </summary>
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum DeviceCaps
     {
         /// <summary>
@@ -1170,7 +1193,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// Used for User32.SetWinEventHook
     /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd373640%28v=vs.85%29.aspx
     /// </summary>
-    public enum WinEventHookFlags : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum WinEventHookFlags
     {
         WINEVENT_SKIPOWNTHREAD = 1,
         WINEVENT_SKIPOWNPROCESS = 2,
@@ -1182,6 +1206,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// Used for User32.SetWinEventHook
     /// See MSDN: http://msdn.microsoft.com/en-us/library/windows/desktop/dd318066%28v=vs.85%29.aspx
     /// </summary>
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum WinEvent : uint
     {
         EVENT_OBJECT_ACCELERATORCHANGE = 32786,
@@ -1232,7 +1257,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// Used for User32.SetWinEventHook
     /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd373606%28v=vs.85%29.aspx#OBJID_WINDOW
     /// </summary>
-    public enum EventObjects : int
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum EventObjects
     {
         OBJID_ALERT = -10,
         OBJID_CARET = -8,
@@ -1247,4 +1273,23 @@ namespace GreenshotPlugin.UnmanagedHelpers
         OBJID_VSCROLL = -5,
         OBJID_WINDOW = 0
     }
+
+    [Flags]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public enum DesktopAccessRight : uint
+    {
+        DESKTOP_READOBJECTS = 0x00000001,
+        DESKTOP_CREATEWINDOW = 0x00000002,
+        DESKTOP_CREATEMENU = 0x00000004,
+        DESKTOP_HOOKCONTROL = 0x00000008,
+        DESKTOP_JOURNALRECORD = 0x00000010,
+        DESKTOP_JOURNALPLAYBACK = 0x00000020,
+        DESKTOP_ENUMERATE = 0x00000040,
+        DESKTOP_WRITEOBJECTS = 0x00000080,
+        DESKTOP_SWITCHDESKTOP = 0x00000100,
+
+        GENERIC_ALL = (DESKTOP_READOBJECTS | DESKTOP_CREATEWINDOW | DESKTOP_CREATEMENU |
+            DESKTOP_HOOKCONTROL | DESKTOP_JOURNALRECORD | DESKTOP_JOURNALPLAYBACK |
+            DESKTOP_ENUMERATE | DESKTOP_WRITEOBJECTS | DESKTOP_SWITCHDESKTOP)
+    };
 }

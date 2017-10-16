@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-// https://github.com/Burtsev-Alexey/net-object-deep-copy
+// Credits: https://github.com/Burtsev-Alexey/net-object-deep-copy
 
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsPrimitive(this Type type)
         {
-            if (type == typeof(String)) return true;
+            if (type == typeof(string)) return true;
             return type.IsValueType & type.IsPrimitive;
         }
 

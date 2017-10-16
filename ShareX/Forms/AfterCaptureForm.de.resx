@@ -126,19 +126,19 @@
   <data name="btnContinue.Text" xml:space="preserve">
     <value>Weiter</value>
   </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>Kopieren</value>
-  </data>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Aufgaben</value>
-  </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>Nach der Aufnahme</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Vor dem Hochladen</value>
+    <value>Ziel</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Dateiname:</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Nach dem Hochladen</value>
   </data>
 </root>

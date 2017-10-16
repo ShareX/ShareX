@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -35,9 +35,9 @@ namespace Greenshot.IniFile
     public abstract class IniSection
     {
         [NonSerialized]
-        private IDictionary<string, IniValue> values = new Dictionary<string, IniValue>();
+        private readonly IDictionary<string, IniValue> values = new Dictionary<string, IniValue>();
         [NonSerialized]
-        private IniSectionAttribute iniSectionAttribute = null;
+        private IniSectionAttribute iniSectionAttribute;
         public IniSectionAttribute IniSectionAttribute
         {
             get

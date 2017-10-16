@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,7 +28,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -37,16 +36,7 @@ namespace ShareX.HelpersLib
     {
         public event ColorEventHandler ColorChanged;
 
-        public bool drawCrosshair;
-
-        protected Bitmap bmp;
-        protected int ClientWidth;
-        protected int ClientHeight;
-        protected DrawStyle drawStyle;
-        protected MyColor selectedColor;
-        protected bool mouseDown;
-        protected Point lastPos;
-        protected Timer mouseMoveTimer;
+        public bool CrosshairVisible { get; set; } = true;
 
         public MyColor SelectedColor
         {
@@ -94,6 +84,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        protected Bitmap bmp;
+        protected int clientWidth, clientHeight;
+        protected DrawStyle drawStyle;
+        protected MyColor selectedColor;
+        protected bool mouseDown;
+        protected Point lastPos;
+        protected Timer mouseMoveTimer;
+
         #region Component Designer generated code
 
         private IContainer components = null;
@@ -103,9 +101,9 @@ namespace ShareX.HelpersLib
             SuspendLayout();
 
             DoubleBuffered = true;
-            ClientWidth = this.ClientRectangle.Width;
-            ClientHeight = this.ClientRectangle.Height;
-            bmp = new Bitmap(ClientWidth, ClientHeight, PixelFormat.Format32bppArgb);
+            clientWidth = ClientRectangle.Width;
+            clientHeight = ClientRectangle.Height;
+            bmp = new Bitmap(clientWidth, clientHeight, PixelFormat.Format32bppArgb);
             SelectedColor = Color.Red;
             DrawStyle = DrawStyle.Hue;
 
@@ -138,16 +136,16 @@ namespace ShareX.HelpersLib
 
         private void EventClientSizeChanged(object sender, EventArgs e)
         {
-            ClientWidth = ClientRectangle.Width;
-            ClientHeight = ClientRectangle.Height;
+            clientWidth = ClientRectangle.Width;
+            clientHeight = ClientRectangle.Height;
             if (bmp != null) bmp.Dispose();
-            bmp = new Bitmap(ClientWidth, ClientHeight, PixelFormat.Format32bppArgb);
+            bmp = new Bitmap(clientWidth, clientHeight, PixelFormat.Format32bppArgb);
             DrawColors();
         }
 
         private void EventMouseDown(object sender, MouseEventArgs e)
         {
-            drawCrosshair = true;
+            CrosshairVisible = true;
             mouseDown = true;
             mouseMoveTimer.Start();
         }
@@ -156,10 +154,7 @@ namespace ShareX.HelpersLib
         {
             if (this is ColorBox)
             {
-                using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
-                {
-                    Cursor = new Cursor(cursorStream);
-                }
+                Cursor = Helpers.CreateCursor(Resources.Crosshair);
             }
         }
 
@@ -178,7 +173,7 @@ namespace ShareX.HelpersLib
                 if (SelectedColor.IsTransparent)
                 {
                     if (bmp != null) bmp.Dispose();
-                    bmp = (Bitmap)ImageHelpers.DrawCheckers(ClientWidth, ClientHeight);
+                    bmp = (Bitmap)ImageHelpers.DrawCheckers(clientWidth, clientHeight);
                 }
 
                 DrawColors();
@@ -186,7 +181,7 @@ namespace ShareX.HelpersLib
 
             g.DrawImage(bmp, ClientRectangle);
 
-            if (drawCrosshair)
+            if (CrosshairVisible)
             {
                 DrawCrosshair(g);
             }
@@ -246,28 +241,28 @@ namespace ShareX.HelpersLib
             switch (DrawStyle)
             {
                 case DrawStyle.Hue:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Saturation);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
+                    lastPos.X = Round((clientWidth - 1) * SelectedColor.HSB.Saturation);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
                     break;
                 case DrawStyle.Saturation:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Hue);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
+                    lastPos.X = Round((clientWidth - 1) * SelectedColor.HSB.Hue);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
                     break;
                 case DrawStyle.Brightness:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Hue);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Saturation));
+                    lastPos.X = Round((clientWidth - 1) * SelectedColor.HSB.Hue);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - SelectedColor.HSB.Saturation));
                     break;
                 case DrawStyle.Red:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
+                    lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
                     break;
                 case DrawStyle.Green:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Red / 255));
+                    lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Red / 255));
                     break;
                 case DrawStyle.Blue:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Red / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
+                    lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Red / 255);
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
                     break;
             }
 
@@ -279,33 +274,33 @@ namespace ShareX.HelpersLib
             switch (DrawStyle)
             {
                 case DrawStyle.Hue:
-                    selectedColor.HSB.Saturation = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Saturation = (double)lastPos.X / (clientWidth - 1);
+                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Saturation:
-                    selectedColor.HSB.Hue = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Hue = (double)lastPos.X / (clientWidth - 1);
+                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Brightness:
-                    selectedColor.HSB.Hue = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Hue = (double)lastPos.X / (clientWidth - 1);
+                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Red:
-                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
+                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (clientWidth - 1));
+                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Green:
-                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Red = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
+                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (clientWidth - 1));
+                    selectedColor.RGBA.Red = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Blue:
-                    selectedColor.RGBA.Red = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
+                    selectedColor.RGBA.Red = Round(255 * (double)lastPos.X / (clientWidth - 1));
+                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
                     selectedColor.RGBAUpdate();
                     break;
             }
@@ -316,22 +311,22 @@ namespace ShareX.HelpersLib
             switch (DrawStyle)
             {
                 case DrawStyle.Hue:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Hue);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * SelectedColor.HSB.Hue);
                     break;
                 case DrawStyle.Saturation:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Saturation);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * SelectedColor.HSB.Saturation);
                     break;
                 case DrawStyle.Brightness:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Brightness);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * SelectedColor.HSB.Brightness);
                     break;
                 case DrawStyle.Red:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Red / 255);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * (double)SelectedColor.RGBA.Red / 255);
                     break;
                 case DrawStyle.Green:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Green / 255);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * (double)SelectedColor.RGBA.Green / 255);
                     break;
                 case DrawStyle.Blue:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Blue / 255);
+                    lastPos.Y = (clientHeight - 1) - Round((clientHeight - 1) * (double)SelectedColor.RGBA.Blue / 255);
                     break;
             }
             lastPos = GetPoint(lastPos);
@@ -342,27 +337,27 @@ namespace ShareX.HelpersLib
             switch (DrawStyle)
             {
                 case DrawStyle.Hue:
-                    selectedColor.HSB.Hue = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Hue = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Saturation:
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Brightness:
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
+                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Red:
-                    selectedColor.RGBA.Red = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
+                    selectedColor.RGBA.Red = 255 - Round(255 * (double)lastPos.Y / (clientHeight - 1));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Green:
-                    selectedColor.RGBA.Green = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
+                    selectedColor.RGBA.Green = 255 - Round(255 * (double)lastPos.Y / (clientHeight - 1));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Blue:
-                    selectedColor.RGBA.Blue = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
+                    selectedColor.RGBA.Blue = 255 - Round(255 * (double)lastPos.Y / (clientHeight - 1));
                     selectedColor.RGBAUpdate();
                     break;
             }
@@ -401,7 +396,7 @@ namespace ShareX.HelpersLib
 
         protected Point GetPoint(Point point)
         {
-            return new Point(point.X.Between(0, ClientWidth - 1), point.Y.Between(0, ClientHeight - 1));
+            return new Point(point.X.Between(0, clientWidth - 1), point.Y.Between(0, clientHeight - 1));
         }
 
         protected int Round(double val)

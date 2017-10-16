@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,17 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnGradientColor2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnScreenTearingTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnScreenTearingTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 368</value>
+  </data>
+  <data name="btnScreenTearingTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnScreenTearingTest.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Screen tearing test</value>
+  </data>
+  <data name="&gt;&gt;btnScreenTearingTest.Name" xml:space="preserve">
+    <value>btnScreenTearingTest</value>
+  </data>
+  <data name="&gt;&gt;btnScreenTearingTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnScreenTearingTest.Parent" xml:space="preserve">
+    <value>pSettings</value>
+  </data>
+  <data name="&gt;&gt;btnScreenTearingTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnGradientColor2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnGradientColor2.Location" type="System.Drawing.Point, System.Drawing">
     <value>224, 257</value>
   </data>
   <data name="btnGradientColor2.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnGradientColor2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
@@ -147,7 +175,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;btnGradientColor2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnGradientColor1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -177,7 +205,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblTip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -186,7 +214,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
+    <value>16, 400</value>
   </data>
   <data name="lblTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 40</value>
@@ -210,7 +238,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblTip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGradient.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 223</value>
@@ -231,7 +259,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;cbGradient.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="rbGradient.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -261,7 +289,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;rbGradient.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -288,7 +316,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblShapeSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -318,7 +346,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblShapeSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblShapeSizeValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -351,7 +379,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblShapeSizeValue.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tbShapeSize.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -378,7 +406,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;tbShapeSize.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnColorDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -405,16 +433,16 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;btnColorDialog.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Checker</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Horizontal lines</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Vertical lines</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Checker</value>
   </data>
   <data name="cbShapes.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 295</value>
@@ -435,7 +463,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;cbShapes.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="rbShapes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -465,7 +493,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;rbShapes.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -495,7 +523,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblBlue.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblBlueValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -528,7 +556,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblBlueValue.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="tbBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -555,7 +583,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;tbBlue.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblGreen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -585,7 +613,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblGreen.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="lblGreenValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,7 +646,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblGreenValue.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="tbGreen.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -645,7 +673,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;tbGreen.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblRed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -675,7 +703,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblRed.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lblRedValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -708,7 +736,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblRedValue.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="tbRed.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -735,7 +763,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;tbRed.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="rbRedGreenBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -765,7 +793,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;rbRedGreenBlue.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="lblBlackWhiteValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -798,7 +826,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;lblBlackWhiteValue.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="tbBlackWhite.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -825,7 +853,7 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;tbBlackWhite.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="rbBlackWhite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -855,13 +883,13 @@
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;rbBlackWhite.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="pSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 100</value>
   </data>
   <data name="pSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 420</value>
+    <value>353, 452</value>
   </data>
   <data name="pSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -891,12 +919,12 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Monitor test</value>
+    <value>ShareX - Monitor test</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MonitorTestForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System.ComponentModel;
+using System.Drawing;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
@@ -43,49 +45,7 @@ namespace ShareX
             }
             else
             {
-                string cultureName;
-
-                switch (language)
-                {
-                    case SupportedLanguage.Dutch:
-                        cultureName = "nl-NL";
-                        break;
-                    default:
-                    case SupportedLanguage.English:
-                        cultureName = "en-US";
-                        break;
-                    case SupportedLanguage.French:
-                        cultureName = "fr-FR";
-                        break;
-                    case SupportedLanguage.German:
-                        cultureName = "de-DE";
-                        break;
-                    case SupportedLanguage.Hungarian:
-                        cultureName = "hu-HU";
-                        break;
-                    case SupportedLanguage.Korean:
-                        cultureName = "ko-KR";
-                        break;
-                    case SupportedLanguage.PortugueseBrazil:
-                        cultureName = "pt-BR";
-                        break;
-                    case SupportedLanguage.Russian:
-                        cultureName = "ru-RU";
-                        break;
-                    case SupportedLanguage.SimplifiedChinese:
-                        cultureName = "zh-CN";
-                        break;
-                    case SupportedLanguage.Spanish:
-                        cultureName = "es-ES";
-                        break;
-                    case SupportedLanguage.Turkish:
-                        cultureName = "tr-TR";
-                        break;
-                    case SupportedLanguage.Vietnamese:
-                        cultureName = "vi-VN";
-                        break;
-                }
-
+                string cultureName = GetCultureName(language);
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);
             }
 
@@ -105,6 +65,117 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        public static Image GetLanguageIcon(SupportedLanguage language)
+        {
+            Image icon;
+
+            switch (language)
+            {
+                default:
+                case SupportedLanguage.Automatic:
+                    icon = Resources.globe;
+                    break;
+                case SupportedLanguage.Dutch:
+                    icon = Resources.nl;
+                    break;
+                case SupportedLanguage.English:
+                    icon = Resources.us;
+                    break;
+                case SupportedLanguage.French:
+                    icon = Resources.fr;
+                    break;
+                case SupportedLanguage.German:
+                    icon = Resources.de;
+                    break;
+                case SupportedLanguage.Hungarian:
+                    icon = Resources.hu;
+                    break;
+                case SupportedLanguage.Italian:
+                    icon = Resources.it;
+                    break;
+                case SupportedLanguage.Korean:
+                    icon = Resources.kr;
+                    break;
+                case SupportedLanguage.PortugueseBrazil:
+                    icon = Resources.br;
+                    break;
+                case SupportedLanguage.Russian:
+                    icon = Resources.ru;
+                    break;
+                case SupportedLanguage.SimplifiedChinese:
+                    icon = Resources.cn;
+                    break;
+                case SupportedLanguage.Spanish:
+                    icon = Resources.es;
+                    break;
+                case SupportedLanguage.TraditionalChinese:
+                    icon = Resources.tw;
+                    break;
+                case SupportedLanguage.Turkish:
+                    icon = Resources.tr;
+                    break;
+                case SupportedLanguage.Vietnamese:
+                    icon = Resources.vn;
+                    break;
+            }
+
+            return icon;
+        }
+
+        public static string GetCultureName(SupportedLanguage language)
+        {
+            string cultureName;
+
+            switch (language)
+            {
+                case SupportedLanguage.Dutch:
+                    cultureName = "nl-NL";
+                    break;
+                default:
+                case SupportedLanguage.English:
+                    cultureName = "en-US";
+                    break;
+                case SupportedLanguage.French:
+                    cultureName = "fr-FR";
+                    break;
+                case SupportedLanguage.German:
+                    cultureName = "de-DE";
+                    break;
+                case SupportedLanguage.Hungarian:
+                    cultureName = "hu-HU";
+                    break;
+                case SupportedLanguage.Italian:
+                    cultureName = "it-IT";
+                    break;
+                case SupportedLanguage.Korean:
+                    cultureName = "ko-KR";
+                    break;
+                case SupportedLanguage.PortugueseBrazil:
+                    cultureName = "pt-BR";
+                    break;
+                case SupportedLanguage.Russian:
+                    cultureName = "ru-RU";
+                    break;
+                case SupportedLanguage.SimplifiedChinese:
+                    cultureName = "zh-CN";
+                    break;
+                case SupportedLanguage.Spanish:
+                    cultureName = "es-ES";
+                    break;
+                case SupportedLanguage.TraditionalChinese:
+                    cultureName = "zh-TW";
+                    break;
+                case SupportedLanguage.Turkish:
+                    cultureName = "tr-TR";
+                    break;
+                case SupportedLanguage.Vietnamese:
+                    cultureName = "vi-VN";
+                    break;
+            }
+
+            return cultureName;
         }
 
         private static void ApplyResourceToControl(Control control, ComponentResourceManager resource, CultureInfo culture)

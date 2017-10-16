@@ -35,8 +35,6 @@
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -48,12 +46,19 @@
             this.cmsLoadImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiLoadImageFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLoadImageFromClipboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddPreset = new System.Windows.Forms.Button();
+            this.btnRemovePreset = new System.Windows.Forms.Button();
+            this.cbPresets = new System.Windows.Forms.ComboBox();
+            this.lblPresetName = new System.Windows.Forms.Label();
+            this.txtPresetName = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // pgSettings
             // 
             resources.ApplyResources(this.pgSettings, "pgSettings");
+            this.pgSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgSettings.ToolbarVisible = false;
@@ -98,20 +103,6 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnCancel
-            // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnClear
             // 
             resources.ApplyResources(this.btnClear, "btnClear");
@@ -151,12 +142,13 @@
             // pbResult
             // 
             resources.ApplyResources(this.pbResult, "pbResult");
-            this.pbResult.BackColor = System.Drawing.Color.White;
+            this.pbResult.BackColor = System.Drawing.SystemColors.Window;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
             this.pbResult.Name = "pbResult";
+            this.pbResult.ShowImageSizeLabel = true;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
@@ -194,10 +186,57 @@
             resources.ApplyResources(this.tsmiLoadImageFromClipboard, "tsmiLoadImageFromClipboard");
             this.tsmiLoadImageFromClipboard.Click += new System.EventHandler(this.tsmiLoadImageFromClipboard_Click);
             // 
+            // btnAddPreset
+            // 
+            resources.ApplyResources(this.btnAddPreset, "btnAddPreset");
+            this.btnAddPreset.Name = "btnAddPreset";
+            this.btnAddPreset.UseVisualStyleBackColor = true;
+            this.btnAddPreset.Click += new System.EventHandler(this.btnAddPreset_Click);
+            // 
+            // btnRemovePreset
+            // 
+            resources.ApplyResources(this.btnRemovePreset, "btnRemovePreset");
+            this.btnRemovePreset.Name = "btnRemovePreset";
+            this.btnRemovePreset.UseVisualStyleBackColor = true;
+            this.btnRemovePreset.Click += new System.EventHandler(this.btnRemovePreset_Click);
+            // 
+            // cbPresets
+            // 
+            this.cbPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPresets.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPresets, "cbPresets");
+            this.cbPresets.Name = "cbPresets";
+            this.cbPresets.SelectedIndexChanged += new System.EventHandler(this.cbPresets_SelectedIndexChanged);
+            // 
+            // lblPresetName
+            // 
+            resources.ApplyResources(this.lblPresetName, "lblPresetName");
+            this.lblPresetName.Name = "lblPresetName";
+            // 
+            // txtPresetName
+            // 
+            resources.ApplyResources(this.txtPresetName, "txtPresetName");
+            this.txtPresetName.Name = "txtPresetName";
+            this.txtPresetName.TextChanged += new System.EventHandler(this.txtPresetName_TextChanged);
+            // 
+            // btnClose
+            // 
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.txtPresetName);
+            this.Controls.Add(this.lblPresetName);
+            this.Controls.Add(this.cbPresets);
+            this.Controls.Add(this.btnRemovePreset);
+            this.Controls.Add(this.btnAddPreset);
             this.Controls.Add(this.mbLoadImage);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
@@ -205,14 +244,13 @@
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbResult);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
             this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,8 +265,6 @@
         private System.Windows.Forms.ColumnHeader chEffect;
         private System.Windows.Forms.Button btnRemove;
         private ShareX.HelpersLib.MyPictureBox pbResult;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Button btnRefresh;
@@ -239,6 +275,12 @@
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromClipboard;
+        private System.Windows.Forms.Button btnAddPreset;
+        private System.Windows.Forms.Button btnRemovePreset;
+        private System.Windows.Forms.ComboBox cbPresets;
+        private System.Windows.Forms.Label lblPresetName;
+        private System.Windows.Forms.TextBox txtPresetName;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

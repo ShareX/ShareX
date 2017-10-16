@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,13 +24,35 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Web;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class TinyPicImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.TinyPic;
+
+        public override Icon ServiceIcon => Resources.TinyPic;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(config.TinyPicRegistrationCode);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, config.TinyPicAccountType, config.TinyPicRegistrationCode);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTinyPic;
+    }
+
     public sealed class TinyPicUploader : ImageUploader
     {
         public AccountType AccountType { get; private set; }
@@ -75,9 +97,9 @@ namespace ShareX.UploadersLib.ImageUploaders
                 arguments.Add("responsetype", "XML");
                 arguments.Add("upk", upk);
                 arguments.Add("type", "image");
-                arguments.Add("tags", string.Empty);
+                arguments.Add("tags", "");
 
-                result = UploadData(stream, URLAPI, fileName, "uploadfile", arguments);
+                result = SendRequestFile(URLAPI, stream, fileName, "uploadfile", arguments);
 
                 if (result.IsSuccess && CheckResponse(result.Response))
                 {
@@ -102,7 +124,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 { "pass", password }
             };
 
-            string response = SendRequest(HttpMethod.POST, URLAPI, args);
+            string response = SendRequestMultiPart(URLAPI, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -111,7 +133,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 return HttpUtility.HtmlEncode(result);
             }
 
-            return string.Empty;
+            return "";
         }
 
         private string GetUploadKey(string action, string tpid, string tpk)

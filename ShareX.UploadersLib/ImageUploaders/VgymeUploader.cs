@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2017 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,15 +24,43 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class VgymeImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Vgyme;
+
+        public override Icon ServiceIcon => Resources.Vgyme;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new VgymeUploader()
+            {
+                UserKey = config.VgymeUserKey
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpVgyme;
+    }
+
     public sealed class VgymeUploader : ImageUploader
     {
+        public string UserKey { get; set; }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://vgy.me/upload", fileName);
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(UserKey)) args.Add("userkey", UserKey);
+
+            UploadResult result = SendRequestFile("https://vgy.me/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>剪贴板内容格式</value>
+    <value>ShareX - 剪贴板内容格式</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -129,6 +130,6 @@
     <value>格式:</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>说明:</value>
+    <value>说明：</value>
   </data>
 </root>
