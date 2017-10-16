@@ -985,7 +985,7 @@ namespace ShareX
             {
                 imageEffectsForm.EditorMode();
                 imageEffectsForm.ShowDialog();
-                taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
             }
         }
 
