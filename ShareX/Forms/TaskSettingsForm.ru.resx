@@ -537,4 +537,7 @@
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Битность PNG:</value>
   </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Изменить...</value>
+  </data>
 </root>
