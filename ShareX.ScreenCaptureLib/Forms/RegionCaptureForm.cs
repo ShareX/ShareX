@@ -185,24 +185,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void UpdateBackground()
-        {
-            using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
-            using (Graphics g = Graphics.FromImage(background))
-            {
-                g.Clear(Color.FromArgb(14, 14, 14));
-
-                using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
-                {
-                    g.DrawImage(checkers, ImageRectangle);
-                }
-
-                g.DrawImage(Image, ImageRectangle);
-
-                backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
-            }
-        }
-
         internal void InitBackground(Image img)
         {
             if (Image != null) Image.Dispose();
@@ -221,8 +203,19 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
+                
+                using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
+                using (Graphics g = Graphics.FromImage(background))
+                {
+                    using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
+                    {
+                        g.DrawImage(checkers, ImageRectangle);
+                    }
 
-                UpdateBackground();
+                    g.DrawImage(Image, ImageRectangle);
+                    
+                    backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
+                }
             }
             else if (Config.UseDimming)
             {
@@ -430,13 +423,9 @@ namespace ShareX.ScreenCaptureLib
             if(ShapeManager.IsPanning)
             {
                 ImageRectangle = ImageRectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                backgroundBrush.TranslateTransform(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
 
-                foreach(BaseShape shape in ShapeManager.Shapes)
-                {
-                    shape.Move(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                }
-
-                UpdateBackground();
+                ShapeManager.MoveAll(InputManager.MouseVelocity);
             }
 
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
@@ -455,9 +444,10 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
+            if (!ImageRectangle.Contains(ScreenRectangle0Based))
+                g.Clear(Color.FromArgb(14, 14, 14));
+            g.FillRectangle(backgroundBrush, ImageRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
-
             Draw(g);
 
             if (Config.ShowFPS)

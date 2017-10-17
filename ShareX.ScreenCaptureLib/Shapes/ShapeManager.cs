@@ -729,7 +729,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void StartPanning()
         {
-            DeselectCurrentShape();
+            // DeselectCurrentShape();
             IsPanning = true;
         }
 
@@ -1194,6 +1194,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return false;
+        }
+
+        public void MoveAll(Point offset)
+        {
+            foreach (BaseShape shape in Shapes)
+            {
+                shape.Move(offset.X, offset.Y);
+            }
         }
 
         private void UpdateNodes()
