@@ -729,16 +729,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void StartPanning()
         {
-            // DeselectCurrentShape();
             IsPanning = true;
         }
-
 
         private void EndPanning()
         {
             IsPanning = false;
         }
-            
+
         private BaseShape AddShape()
         {
             BaseShape shape = CreateShape();
@@ -1183,6 +1181,19 @@ namespace ShareX.ScreenCaptureLib
             MoveShapeUp(CurrentShape);
         }
 
+        public void MoveAll(int x, int y)
+        {
+            foreach (BaseShape shape in Shapes)
+            {
+                shape.Move(x, y);
+            }
+        }
+
+        public void MoveAll(Point offset)
+        {
+            MoveAll(offset.X, offset.Y);
+        }
+
         private bool IsShapeTypeRegion(ShapeType shapeType)
         {
             switch (shapeType)
@@ -1194,14 +1205,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return false;
-        }
-
-        public void MoveAll(Point offset)
-        {
-            foreach (BaseShape shape in Shapes)
-            {
-                shape.Move(offset.X, offset.Y);
-            }
         }
 
         private void UpdateNodes()
@@ -1299,16 +1302,9 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
-                Point oldpos = new Point(rect.X, rect.Y);
-
                 form.InitBackground(img);
 
-                Point newpos = new Point(form.ImageRectangle.X, form.ImageRectangle.Y);
-
-                foreach (BaseShape shape in Shapes)
-                {
-                    shape.Move(newpos.X - oldpos.X, newpos.Y - oldpos.Y);
-                }
+                MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
 
                 isAnnotated = true;
             }

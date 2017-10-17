@@ -448,9 +448,12 @@ namespace ShareX.ScreenCaptureLib
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
             if (!ImageRectangle.Contains(ScreenRectangle0Based))
+            {
                 g.Clear(Color.FromArgb(14, 14, 14));
+            }
             g.FillRectangle(backgroundBrush, ImageRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
+
             Draw(g);
 
             if (Config.ShowFPS)
