@@ -139,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
 
             using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
             {
-                size = Helpers.MeasureText(Text, font).Offset(10, 15);
+                size = Helpers.MeasureText(Text, font).Offset(15, 20);
             }
 
             Point location;
