@@ -665,6 +665,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
                 IsMoving = true;
+                form.Cursor = Cursors.SizeAll;
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
@@ -683,6 +684,7 @@ namespace ShareX.ScreenCaptureLib
 
             IsCreating = false;
             IsMoving = false;
+            form.SetDefaultCursor();
 
             BaseShape shape = CurrentShape;
 

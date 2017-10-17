@@ -250,7 +250,10 @@ namespace ShareX.ScreenCaptureLib
 
         public void SetDefaultCursor()
         {
-            Cursor = defaultCursor;
+            if (Cursor != defaultCursor)
+            {
+                Cursor = defaultCursor;
+            }
         }
 
         private void RegionCaptureForm_Shown(object sender, EventArgs e)
