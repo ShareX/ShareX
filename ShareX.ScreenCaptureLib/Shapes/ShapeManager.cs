@@ -1196,6 +1196,17 @@ namespace ShareX.ScreenCaptureLib
             MoveAll(offset.X, offset.Y);
         }
 
+        public void RemoveOutsideShapes()
+        {
+            foreach (BaseShape shape in Shapes.ToArray())
+            {
+                if (!form.ImageRectangle.IntersectsWith(shape.Rectangle))
+                {
+                    shape.Remove();
+                }
+            }
+        }
+
         private bool IsShapeTypeRegion(ShapeType shapeType)
         {
             switch (shapeType)
@@ -1307,6 +1318,7 @@ namespace ShareX.ScreenCaptureLib
                 form.InitBackground(img);
 
                 MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
+                RemoveOutsideShapes();
 
                 isAnnotated = true;
             }
