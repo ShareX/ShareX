@@ -144,6 +144,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsCreating { get; set; }
         public bool IsMoving { get; set; }
+        public bool IsPanning { get; set; }
         public bool IsResizing { get; set; }
         public bool IsCornerMoving { get; private set; }
         public bool IsProportionalResizing { get; private set; }
@@ -268,6 +269,13 @@ namespace ShareX.ScreenCaptureLib
                     StartRegionSelection();
                 }
             }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                if (form.IsEditorMode)
+                {
+                    StartPanning();
+                }
+            }
         }
 
         private void form_MouseUp(object sender, MouseEventArgs e)
@@ -301,7 +309,14 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                RunAction(Config.RegionCaptureActionMiddleClick);
+                if (form.IsEditorMode)
+                {
+                    EndPanning();
+                }
+                else
+                {
+                    RunAction(Config.RegionCaptureActionMiddleClick);
+                }
             }
             else if (e.Button == MouseButtons.XButton1)
             {
@@ -712,6 +727,18 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void StartPanning()
+        {
+            // DeselectCurrentShape();
+            IsPanning = true;
+        }
+
+
+        private void EndPanning()
+        {
+            IsPanning = false;
+        }
+            
         private BaseShape AddShape()
         {
             BaseShape shape = CreateShape();
@@ -1169,6 +1196,14 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
+        public void MoveAll(Point offset)
+        {
+            foreach (BaseShape shape in Shapes)
+            {
+                shape.Move(offset.X, offset.Y);
+            }
+        }
+
         private void UpdateNodes()
         {
             BaseShape shape = CurrentShape;
@@ -1264,7 +1299,16 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
+                Point oldpos = new Point(rect.X, rect.Y);
+
                 form.InitBackground(img);
+
+                Point newpos = new Point(form.ImageRectangle.X, form.ImageRectangle.Y);
+
+                foreach (BaseShape shape in Shapes)
+                {
+                    shape.Move(newpos.X - oldpos.X, newpos.Y - oldpos.Y);
+                }
 
                 isAnnotated = true;
             }

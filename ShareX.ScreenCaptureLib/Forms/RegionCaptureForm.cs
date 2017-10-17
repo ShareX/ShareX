@@ -207,16 +207,17 @@ namespace ShareX.ScreenCaptureLib
                 using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
-                    g.Clear(Color.FromArgb(14, 14, 14));
+                    Rectangle sourceRect = new Rectangle(0, 0, ImageRectangle.Width, ImageRectangle.Height);
 
                     using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
                     {
-                        g.DrawImage(checkers, ImageRectangle);
+                        g.DrawImage(checkers, sourceRect);
                     }
 
-                    g.DrawImage(Image, ImageRectangle);
+                    g.DrawImage(Image, sourceRect);
 
-                    backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
                 }
             }
             else if (Config.UseDimming)
@@ -422,6 +423,14 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            if (ShapeManager.IsPanning)
+            {
+                ImageRectangle = ImageRectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                backgroundBrush.TranslateTransform(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+
+                ShapeManager.MoveAll(InputManager.MouseVelocity);
+            }
+
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
@@ -438,9 +447,10 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
+            if (!ImageRectangle.Contains(ScreenRectangle0Based))
+                g.Clear(Color.FromArgb(14, 14, 14));
+            g.FillRectangle(backgroundBrush, ImageRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
-
             Draw(g);
 
             if (Config.ShowFPS)
