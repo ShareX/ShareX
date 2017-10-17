@@ -203,18 +203,21 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
-                
+
                 using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
+                    Rectangle sourceRect = new Rectangle(0, 0, ImageRectangle.Width, ImageRectangle.Height);
+
                     using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
                     {
-                        g.DrawImage(checkers, ImageRectangle);
+                        g.DrawImage(checkers, sourceRect);
                     }
 
-                    g.DrawImage(Image, ImageRectangle);
-                    
-                    backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
+                    g.DrawImage(Image, sourceRect);
+
+                    backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
                 }
             }
             else if (Config.UseDimming)
@@ -420,7 +423,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if(ShapeManager.IsPanning)
+            if (ShapeManager.IsPanning)
             {
                 ImageRectangle = ImageRectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
                 backgroundBrush.TranslateTransform(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
