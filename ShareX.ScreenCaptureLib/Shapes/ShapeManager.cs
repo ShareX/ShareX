@@ -730,11 +730,13 @@ namespace ShareX.ScreenCaptureLib
         private void StartPanning()
         {
             IsPanning = true;
+            form.Cursor = Cursors.SizeAll;
         }
 
         private void EndPanning()
         {
             IsPanning = false;
+            form.SetDefaultCursor();
         }
 
         private BaseShape AddShape()

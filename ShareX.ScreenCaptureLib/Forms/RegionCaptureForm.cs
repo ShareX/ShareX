@@ -96,6 +96,7 @@ namespace ShareX.ScreenCaptureLib
         private bool pause, isKeyAllowed;
         private RectangleAnimation regionAnimation;
         private Bitmap bmpBackgroundImage;
+        private Cursor defaultCursor;
 
         public RegionCaptureForm(RegionCaptureMode mode)
         {
@@ -104,6 +105,8 @@ namespace ShareX.ScreenCaptureLib
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
             ImageRectangle = ScreenRectangle0Based;
+
+            defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
 
             InitializeComponent();
 
@@ -137,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            Cursor = Helpers.CreateCursor(Resources.Crosshair);
+            SetDefaultCursor();
             Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.Manual;
             FormBorderStyle = FormBorderStyle.None;
@@ -243,6 +246,11 @@ namespace ShareX.ScreenCaptureLib
                 if (bmpBackgroundImage != null) bmpBackgroundImage.Dispose();
                 bmpBackgroundImage = new Bitmap(Image);
             }
+        }
+
+        public void SetDefaultCursor()
+        {
+            Cursor = defaultCursor;
         }
 
         private void RegionCaptureForm_Shown(object sender, EventArgs e)
@@ -1244,6 +1252,7 @@ namespace ShareX.ScreenCaptureLib
             if (textOuterBorderPen != null) textOuterBorderPen.Dispose();
             if (textInnerBorderPen != null) textInnerBorderPen.Dispose();
             if (markerPen != null) markerPen.Dispose();
+            if (defaultCursor != null) defaultCursor.Dispose();
 
             if (regionFillPath != null)
             {
