@@ -3398,7 +3398,28 @@ namespace ShareX.UploadersLib
 
         private object eiCustomUploaders_ExportRequested()
         {
-            return CustomUploaderGetSelected();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+
+            if (uploader != null)
+            {
+                if (string.IsNullOrEmpty(uploader.RequestURL))
+                {
+                    // TODO: Translate
+                    MessageBox.Show("\"Request URL\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+
+                if (uploader.DestinationType == CustomUploaderDestinationType.None)
+                {
+                    // TODO: Translate
+                    MessageBox.Show("\"Destination type\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+
+            return uploader;
         }
 
         private void eiCustomUploaders_ImportRequested(object obj)
