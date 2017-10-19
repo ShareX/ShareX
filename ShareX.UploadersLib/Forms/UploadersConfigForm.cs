@@ -430,14 +430,6 @@ namespace ShareX.UploadersLib
 
             #endregion
 
-            #region Minus
-
-            cbMinusURLType.Items.Clear();
-            cbMinusURLType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<MinusLinkType>());
-            MinusUpdateControls();
-
-            #endregion
-
             #region Box
 
             if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
@@ -1975,99 +1967,6 @@ namespace ShareX.UploadersLib
 
         #endregion Box
 
-        #region Minus
-
-        private void btnMinusAuth_Click(object sender, EventArgs e)
-        {
-            MinusAuth();
-        }
-
-        private void btnAuthRefresh_Click(object sender, EventArgs e)
-        {
-            MinusAuthRefresh();
-        }
-
-        private void cboMinusFolders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                Config.MinusConfig.FolderID = cboMinusFolders.SelectedIndex;
-                MinusFolder tempMf = Config.MinusConfig.GetActiveFolder();
-                cbMinusPublic.Checked = tempMf.is_public;
-            }
-        }
-
-        private void btnMinusFolderAdd_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && !MinusHasFolder(cboMinusFolders.Text))
-            {
-                btnMinusFolderAdd.Enabled = false;
-
-                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, cbMinusPublic.Checked);
-                if (dir != null)
-                {
-                    cboMinusFolders.Items.Add(dir);
-                    cboMinusFolders.SelectedIndex = cboMinusFolders.Items.Count - 1;
-                }
-
-                btnMinusFolderAdd.Enabled = true;
-            }
-        }
-
-        private void btnMinusFolderRemove_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && MinusHasFolder(cboMinusFolders.Text))
-            {
-                btnMinusFolderRemove.Enabled = false;
-
-                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-
-                int index = cboMinusFolders.SelectedIndex;
-
-                if (minus.DeleteFolder(index))
-                {
-                    cboMinusFolders.Items.RemoveAt(index);
-
-                    if (cboMinusFolders.Items.Count > 0)
-                    {
-                        cboMinusFolders.SelectedIndex = 0;
-                    }
-                }
-
-                btnMinusFolderRemove.Enabled = true;
-            }
-        }
-
-        private void btnMinusReadFolderList_Click(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                btnMinusReadFolderList.Enabled = false;
-
-                List<MinusFolder> tempListMf = new Minus(Config.MinusConfig, Config.MinusOAuth2Info).ReadFolderList();
-
-                if (tempListMf.Count > 0)
-                {
-                    cboMinusFolders.Items.Clear();
-                    cboMinusFolders.Items.AddRange(tempListMf.ToArray());
-                    cboMinusFolders.SelectedIndex = Config.MinusConfig.FolderID;
-                }
-
-                btnMinusReadFolderList.Enabled = true;
-            }
-        }
-
-        private void cbMinusURLType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                Config.MinusConfig.LinkType = (MinusLinkType)cbMinusURLType.SelectedIndex;
-            }
-        }
-
-        #endregion Minus
-
         #region Email
 
         private void txtSmtpServer_TextChanged(object sender, EventArgs e)
@@ -3481,7 +3380,8 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Arguments.ContainsKey(name))
                     {
-                        MessageBox.Show(Resources.UploadersConfigForm_An_argument_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_An_argument_with_the_same_name_already_exists, "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -3567,7 +3467,8 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Headers.ContainsKey(name))
                     {
-                        MessageBox.Show(Resources.UploadersConfigForm_A_header_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_A_header_with_the_same_name_already_exists, "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {

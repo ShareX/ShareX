@@ -368,23 +368,6 @@
             this.lblLocalhostrEmail = new System.Windows.Forms.Label();
             this.txtLocalhostrPassword = new System.Windows.Forms.TextBox();
             this.txtLocalhostrEmail = new System.Windows.Forms.TextBox();
-            this.tpMinus = new System.Windows.Forms.TabPage();
-            this.lblMinusURLType = new System.Windows.Forms.Label();
-            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
-            this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
-            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
-            this.btnMinusRefreshAuth = new System.Windows.Forms.Button();
-            this.lblMinusPassword = new System.Windows.Forms.Label();
-            this.lblMinusUsername = new System.Windows.Forms.Label();
-            this.txtMinusPassword = new System.Windows.Forms.TextBox();
-            this.txtMinusUsername = new System.Windows.Forms.TextBox();
-            this.btnMinusAuth = new System.Windows.Forms.Button();
-            this.gbMinusUpload = new System.Windows.Forms.GroupBox();
-            this.btnMinusReadFolderList = new System.Windows.Forms.Button();
-            this.cbMinusPublic = new System.Windows.Forms.CheckBox();
-            this.btnMinusFolderAdd = new System.Windows.Forms.Button();
-            this.btnMinusFolderRemove = new System.Windows.Forms.Button();
-            this.cboMinusFolders = new System.Windows.Forms.ComboBox();
             this.tpJira = new System.Windows.Forms.TabPage();
             this.txtJiraIssuePrefix = new System.Windows.Forms.TextBox();
             this.lblJiraIssuePrefix = new System.Windows.Forms.Label();
@@ -697,9 +680,6 @@
             this.tpSendSpace.SuspendLayout();
             this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
-            this.tpMinus.SuspendLayout();
-            this.gbMinusUserPass.SuspendLayout();
-            this.gbMinusUpload.SuspendLayout();
             this.tpJira.SuspendLayout();
             this.gbJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
@@ -1816,7 +1796,6 @@
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
             this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
-            this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
@@ -3251,127 +3230,6 @@
             resources.ApplyResources(this.txtLocalhostrEmail, "txtLocalhostrEmail");
             this.txtLocalhostrEmail.Name = "txtLocalhostrEmail";
             this.txtLocalhostrEmail.TextChanged += new System.EventHandler(this.txtLocalhostrEmail_TextChanged);
-            // 
-            // tpMinus
-            // 
-            this.tpMinus.Controls.Add(this.lblMinusURLType);
-            this.tpMinus.Controls.Add(this.cbMinusURLType);
-            this.tpMinus.Controls.Add(this.gbMinusUserPass);
-            this.tpMinus.Controls.Add(this.gbMinusUpload);
-            resources.ApplyResources(this.tpMinus, "tpMinus");
-            this.tpMinus.Name = "tpMinus";
-            this.tpMinus.UseVisualStyleBackColor = true;
-            // 
-            // lblMinusURLType
-            // 
-            resources.ApplyResources(this.lblMinusURLType, "lblMinusURLType");
-            this.lblMinusURLType.Name = "lblMinusURLType";
-            // 
-            // cbMinusURLType
-            // 
-            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinusURLType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbMinusURLType, "cbMinusURLType");
-            this.cbMinusURLType.Name = "cbMinusURLType";
-            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
-            // 
-            // gbMinusUserPass
-            // 
-            this.gbMinusUserPass.Controls.Add(this.lblMinusAuthStatus);
-            this.gbMinusUserPass.Controls.Add(this.btnMinusRefreshAuth);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
-            resources.ApplyResources(this.gbMinusUserPass, "gbMinusUserPass");
-            this.gbMinusUserPass.Name = "gbMinusUserPass";
-            this.gbMinusUserPass.TabStop = false;
-            // 
-            // lblMinusAuthStatus
-            // 
-            resources.ApplyResources(this.lblMinusAuthStatus, "lblMinusAuthStatus");
-            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
-            // 
-            // btnMinusRefreshAuth
-            // 
-            resources.ApplyResources(this.btnMinusRefreshAuth, "btnMinusRefreshAuth");
-            this.btnMinusRefreshAuth.Name = "btnMinusRefreshAuth";
-            this.btnMinusRefreshAuth.UseVisualStyleBackColor = true;
-            this.btnMinusRefreshAuth.Click += new System.EventHandler(this.btnAuthRefresh_Click);
-            // 
-            // lblMinusPassword
-            // 
-            resources.ApplyResources(this.lblMinusPassword, "lblMinusPassword");
-            this.lblMinusPassword.Name = "lblMinusPassword";
-            // 
-            // lblMinusUsername
-            // 
-            resources.ApplyResources(this.lblMinusUsername, "lblMinusUsername");
-            this.lblMinusUsername.Name = "lblMinusUsername";
-            // 
-            // txtMinusPassword
-            // 
-            resources.ApplyResources(this.txtMinusPassword, "txtMinusPassword");
-            this.txtMinusPassword.Name = "txtMinusPassword";
-            this.txtMinusPassword.UseSystemPasswordChar = true;
-            // 
-            // txtMinusUsername
-            // 
-            resources.ApplyResources(this.txtMinusUsername, "txtMinusUsername");
-            this.txtMinusUsername.Name = "txtMinusUsername";
-            // 
-            // btnMinusAuth
-            // 
-            resources.ApplyResources(this.btnMinusAuth, "btnMinusAuth");
-            this.btnMinusAuth.Name = "btnMinusAuth";
-            this.btnMinusAuth.UseVisualStyleBackColor = true;
-            this.btnMinusAuth.Click += new System.EventHandler(this.btnMinusAuth_Click);
-            // 
-            // gbMinusUpload
-            // 
-            this.gbMinusUpload.Controls.Add(this.btnMinusReadFolderList);
-            this.gbMinusUpload.Controls.Add(this.cbMinusPublic);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
-            this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
-            resources.ApplyResources(this.gbMinusUpload, "gbMinusUpload");
-            this.gbMinusUpload.Name = "gbMinusUpload";
-            this.gbMinusUpload.TabStop = false;
-            // 
-            // btnMinusReadFolderList
-            // 
-            resources.ApplyResources(this.btnMinusReadFolderList, "btnMinusReadFolderList");
-            this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
-            this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
-            this.btnMinusReadFolderList.Click += new System.EventHandler(this.btnMinusReadFolderList_Click);
-            // 
-            // cbMinusPublic
-            // 
-            resources.ApplyResources(this.cbMinusPublic, "cbMinusPublic");
-            this.cbMinusPublic.Name = "cbMinusPublic";
-            this.cbMinusPublic.UseVisualStyleBackColor = true;
-            // 
-            // btnMinusFolderAdd
-            // 
-            resources.ApplyResources(this.btnMinusFolderAdd, "btnMinusFolderAdd");
-            this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
-            this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
-            this.btnMinusFolderAdd.Click += new System.EventHandler(this.btnMinusFolderAdd_Click);
-            // 
-            // btnMinusFolderRemove
-            // 
-            resources.ApplyResources(this.btnMinusFolderRemove, "btnMinusFolderRemove");
-            this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
-            this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
-            this.btnMinusFolderRemove.Click += new System.EventHandler(this.btnMinusFolderRemove_Click);
-            // 
-            // cboMinusFolders
-            // 
-            this.cboMinusFolders.FormattingEnabled = true;
-            resources.ApplyResources(this.cboMinusFolders, "cboMinusFolders");
-            this.cboMinusFolders.Name = "cboMinusFolders";
-            this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
             // 
             // tpJira
             // 
@@ -5392,12 +5250,6 @@
             this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
             this.tpHostr.PerformLayout();
-            this.tpMinus.ResumeLayout(false);
-            this.tpMinus.PerformLayout();
-            this.gbMinusUserPass.ResumeLayout(false);
-            this.gbMinusUserPass.PerformLayout();
-            this.gbMinusUpload.ResumeLayout(false);
-            this.gbMinusUpload.PerformLayout();
             this.tpJira.ResumeLayout(false);
             this.tpJira.PerformLayout();
             this.gbJiraServer.ResumeLayout(false);
@@ -5625,22 +5477,6 @@
         private System.Windows.Forms.Label lblLocalhostrEmail;
         private System.Windows.Forms.TextBox txtLocalhostrPassword;
         private System.Windows.Forms.TextBox txtLocalhostrEmail;
-        private System.Windows.Forms.Label lblMinusURLType;
-        private System.Windows.Forms.ComboBox cbMinusURLType;
-        private System.Windows.Forms.GroupBox gbMinusUserPass;
-        private System.Windows.Forms.Label lblMinusAuthStatus;
-        private System.Windows.Forms.Button btnMinusRefreshAuth;
-        private System.Windows.Forms.Label lblMinusPassword;
-        private System.Windows.Forms.Label lblMinusUsername;
-        private System.Windows.Forms.TextBox txtMinusPassword;
-        private System.Windows.Forms.TextBox txtMinusUsername;
-        private System.Windows.Forms.Button btnMinusAuth;
-        private System.Windows.Forms.GroupBox gbMinusUpload;
-        private System.Windows.Forms.Button btnMinusReadFolderList;
-        private System.Windows.Forms.CheckBox cbMinusPublic;
-        private System.Windows.Forms.Button btnMinusFolderAdd;
-        private System.Windows.Forms.Button btnMinusFolderRemove;
-        private System.Windows.Forms.ComboBox cboMinusFolders;
         private System.Windows.Forms.TextBox txtJiraIssuePrefix;
         private System.Windows.Forms.Label lblJiraIssuePrefix;
         private System.Windows.Forms.GroupBox gbJiraServer;
@@ -5943,7 +5779,6 @@
         internal System.Windows.Forms.TabPage tpSendSpace;
         internal System.Windows.Forms.TabPage tpGe_tt;
         internal System.Windows.Forms.TabPage tpHostr;
-        internal System.Windows.Forms.TabPage tpMinus;
         internal System.Windows.Forms.TabPage tpJira;
         internal System.Windows.Forms.TabPage tpLambda;
         internal System.Windows.Forms.TabPage tpLithiio;

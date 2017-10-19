@@ -50,8 +50,6 @@ namespace ShareX.UploadersLib
         public static string CopyConsumerSecret = "";
         public static string HubicClientID = "";
         public static string HubicClientSecret = "";
-        public static string MinusConsumerKey = "";
-        public static string MinusConsumerSecret = "";
         public static string BoxClientID = "";
         public static string BoxClientSecret = "";
         public static string SendSpaceKey = "";

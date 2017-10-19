@@ -859,24 +859,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logged in as {0}..
-        /// </summary>
-        internal static string UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Not logged in..
-        /// </summary>
-        internal static string UploadersConfigForm_MinusUpdateControls_Not_logged_in_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Not_logged_in_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Refresh authorization is not supported..
         /// </summary>
         internal static string UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_ {

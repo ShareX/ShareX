@@ -160,7 +160,6 @@
     <Compile Include="FileUploaders\Pomf.cs" />
     <Compile Include="FileUploaders\PomfUploader.cs" />
     <Compile Include="FileUploaders\SFTP.cs" />
-    <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />

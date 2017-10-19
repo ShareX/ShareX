@@ -219,13 +219,6 @@ namespace ShareX.UploadersLib
 
         #endregion
 
-        #region Minus
-
-        public OAuth2Info MinusOAuth2Info = null;
-        public MinusOptions MinusConfig = new MinusOptions();
-
-        #endregion
-
         #region Box
 
         public OAuth2Info BoxOAuth2Info = null;

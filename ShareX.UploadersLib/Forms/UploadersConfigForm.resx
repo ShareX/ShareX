@@ -8824,456 +8824,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpHostr.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="lblMinusURLType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMinusURLType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblMinusURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 328</value>
-  </data>
-  <data name="lblMinusURLType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="lblMinusURLType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL type:</value>
-  </data>
-  <data name="&gt;&gt;lblMinusURLType.Name" xml:space="preserve">
-    <value>lblMinusURLType</value>
-  </data>
-  <data name="&gt;&gt;lblMinusURLType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMinusURLType.Parent" xml:space="preserve">
-    <value>tpMinus</value>
-  </data>
-  <data name="&gt;&gt;lblMinusURLType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbMinusURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 344</value>
-  </data>
-  <data name="cbMinusURLType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
-  </data>
-  <data name="cbMinusURLType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbMinusURLType.Name" xml:space="preserve">
-    <value>cbMinusURLType</value>
-  </data>
-  <data name="&gt;&gt;cbMinusURLType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbMinusURLType.Parent" xml:space="preserve">
-    <value>tpMinus</value>
-  </data>
-  <data name="&gt;&gt;cbMinusURLType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblMinusAuthStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMinusAuthStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblMinusAuthStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 126</value>
-  </data>
-  <data name="lblMinusAuthStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="lblMinusAuthStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Login status:</value>
-  </data>
-  <data name="&gt;&gt;lblMinusAuthStatus.Name" xml:space="preserve">
-    <value>lblMinusAuthStatus</value>
-  </data>
-  <data name="&gt;&gt;lblMinusAuthStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMinusAuthStatus.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;lblMinusAuthStatus.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnMinusRefreshAuth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 152</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
-  </data>
-  <data name="btnMinusRefreshAuth.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Refresh authorization</value>
-  </data>
-  <data name="&gt;&gt;btnMinusRefreshAuth.Name" xml:space="preserve">
-    <value>btnMinusRefreshAuth</value>
-  </data>
-  <data name="&gt;&gt;btnMinusRefreshAuth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMinusRefreshAuth.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;btnMinusRefreshAuth.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblMinusPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMinusPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblMinusPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblMinusPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblMinusPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;lblMinusPassword.Name" xml:space="preserve">
-    <value>lblMinusPassword</value>
-  </data>
-  <data name="&gt;&gt;lblMinusPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMinusPassword.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;lblMinusPassword.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblMinusUsername.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMinusUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblMinusUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 24</value>
-  </data>
-  <data name="lblMinusUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblMinusUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="&gt;&gt;lblMinusUsername.Name" xml:space="preserve">
-    <value>lblMinusUsername</value>
-  </data>
-  <data name="&gt;&gt;lblMinusUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMinusUsername.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;lblMinusUsername.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtMinusPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="txtMinusPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtMinusPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtMinusPassword.Name" xml:space="preserve">
-    <value>txtMinusPassword</value>
-  </data>
-  <data name="&gt;&gt;txtMinusPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtMinusPassword.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;txtMinusPassword.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtMinusUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="txtMinusUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtMinusUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtMinusUsername.Name" xml:space="preserve">
-    <value>txtMinusUsername</value>
-  </data>
-  <data name="&gt;&gt;txtMinusUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtMinusUsername.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;txtMinusUsername.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnMinusAuth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnMinusAuth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
-  </data>
-  <data name="btnMinusAuth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
-  </data>
-  <data name="btnMinusAuth.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Authorize</value>
-  </data>
-  <data name="&gt;&gt;btnMinusAuth.Name" xml:space="preserve">
-    <value>btnMinusAuth</value>
-  </data>
-  <data name="&gt;&gt;btnMinusAuth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMinusAuth.Parent" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;btnMinusAuth.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gbMinusUserPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="gbMinusUserPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 200</value>
-  </data>
-  <data name="gbMinusUserPass.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authentication</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUserPass.Name" xml:space="preserve">
-    <value>gbMinusUserPass</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUserPass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUserPass.Parent" xml:space="preserve">
-    <value>tpMinus</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUserPass.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnMinusReadFolderList.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnMinusReadFolderList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnMinusReadFolderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="btnMinusReadFolderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 23</value>
-  </data>
-  <data name="btnMinusReadFolderList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Reload folder list</value>
-  </data>
-  <data name="&gt;&gt;btnMinusReadFolderList.Name" xml:space="preserve">
-    <value>btnMinusReadFolderList</value>
-  </data>
-  <data name="&gt;&gt;btnMinusReadFolderList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMinusReadFolderList.Parent" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;btnMinusReadFolderList.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbMinusPublic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbMinusPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbMinusPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 58</value>
-  </data>
-  <data name="cbMinusPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
-  </data>
-  <data name="cbMinusPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="&gt;&gt;cbMinusPublic.Name" xml:space="preserve">
-    <value>cbMinusPublic</value>
-  </data>
-  <data name="&gt;&gt;cbMinusPublic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbMinusPublic.Parent" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;cbMinusPublic.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnMinusFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnMinusFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 24</value>
-  </data>
-  <data name="btnMinusFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 23</value>
-  </data>
-  <data name="btnMinusFolderAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Add folder</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderAdd.Name" xml:space="preserve">
-    <value>btnMinusFolderAdd</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderAdd.Parent" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnMinusFolderRemove.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnMinusFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnMinusFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 24</value>
-  </data>
-  <data name="btnMinusFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 23</value>
-  </data>
-  <data name="btnMinusFolderRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Remove folder</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderRemove.Name" xml:space="preserve">
-    <value>btnMinusFolderRemove</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderRemove.Parent" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;btnMinusFolderRemove.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cboMinusFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 56</value>
-  </data>
-  <data name="cboMinusFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 21</value>
-  </data>
-  <data name="cboMinusFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cboMinusFolders.Name" xml:space="preserve">
-    <value>cboMinusFolders</value>
-  </data>
-  <data name="&gt;&gt;cboMinusFolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboMinusFolders.Parent" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;cboMinusFolders.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbMinusUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 224</value>
-  </data>
-  <data name="gbMinusUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 88</value>
-  </data>
-  <data name="gbMinusUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Upload images to</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUpload.Name" xml:space="preserve">
-    <value>gbMinusUpload</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUpload.Parent" xml:space="preserve">
-    <value>tpMinus</value>
-  </data>
-  <data name="&gt;&gt;gbMinusUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
-  </data>
-  <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpMinus.Text" xml:space="preserve">
-    <value>Minus</value>
-  </data>
-  <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
-    <value>tpMinus</value>
-  </data>
-  <data name="&gt;&gt;tpMinus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpMinus.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpMinus.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 277</value>
   </data>
@@ -9479,7 +9029,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpJira.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9638,7 +9188,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="btnPomfTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9848,7 +9398,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -10809,7 +10359,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11010,7 +10560,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="sulKeyLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11118,7 +10668,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="btnLithiioGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -11223,7 +10773,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="btnUpleaLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -11598,7 +11148,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpUplea.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12105,7 +11655,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12312,7 +11862,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>25</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -12732,7 +12282,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>26</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

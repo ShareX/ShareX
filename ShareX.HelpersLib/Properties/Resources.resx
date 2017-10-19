@@ -1115,13 +1115,4 @@ Would you like to download it?</value>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Month</value>
   </data>
-  <data name="MinusLinkType_Direct" xml:space="preserve">
-    <value>Direct</value>
-  </data>
-  <data name="MinusLinkType_Page" xml:space="preserve">
-    <value>Page</value>
-  </data>
-  <data name="MinusLinkType_Raw" xml:space="preserve">
-    <value>Raw</value>
-  </data>
 </root>

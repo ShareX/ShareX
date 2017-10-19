@@ -1925,33 +1925,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Direct.
-        /// </summary>
-        internal static string MinusLinkType_Direct {
-            get {
-                return ResourceManager.GetString("MinusLinkType_Direct", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Page.
-        /// </summary>
-        internal static string MinusLinkType_Page {
-            get {
-                return ResourceManager.GetString("MinusLinkType_Page", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Raw.
-        /// </summary>
-        internal static string MinusLinkType_Raw {
-            get {
-                return ResourceManager.GetString("MinusLinkType_Raw", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string MyMessageBox_MyMessageBox_Cancel {
