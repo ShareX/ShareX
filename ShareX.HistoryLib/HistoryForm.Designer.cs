@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.btnApplyFilters = new System.Windows.Forms.Button();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.lvHistory = new ShareX.HelpersLib.MyListView();
+            this.lvHistory = new ShareX.HistoryLib.HistoryListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -84,7 +84,8 @@
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
             // lvHistory
-            // 
+            //
+            this.lvHistory.AllowItemDrag = true;
             this.lvHistory.AllowColumnSort = true;
             this.lvHistory.AutoFillColumn = true;
             this.lvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -255,7 +256,7 @@
 
         #endregion Windows Form Designer generated code
 
-        private ShareX.HelpersLib.MyListView lvHistory;
+        private ShareX.HistoryLib.HistoryListView lvHistory;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chDateTime;
         private System.Windows.Forms.ColumnHeader chURL;
