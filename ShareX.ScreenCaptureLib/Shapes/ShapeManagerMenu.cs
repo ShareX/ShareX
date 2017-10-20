@@ -592,6 +592,13 @@ namespace ShareX.ScreenCaptureLib
             tsmiMoveBottom.MouseDown += (sender, e) => MoveCurrentShapeBottom();
             tsddbEdit.DropDownItems.Add(tsmiMoveBottom);
 
+            tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
+            tsmiCanvasSize.Image = Resources.layers_stack_arrange_back;
+            tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
+            tsddbEdit.DropDownItems.Add(tsmiCanvasSize);
+
             #endregion Edit
 
             if (!form.IsEditorMode)
