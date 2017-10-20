@@ -86,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
+    <Compile Include="HistoryListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ImageHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
