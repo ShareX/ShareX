@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanvasSizeForm));
             this.nudLeft = new System.Windows.Forms.NumericUpDown();
             this.lblLeft = new System.Windows.Forms.Label();
             this.lblRight = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             // 
             // nudLeft
             // 
-            this.nudLeft.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.nudLeft, "nudLeft");
             this.nudLeft.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -58,31 +59,20 @@
             0,
             -2147483648});
             this.nudLeft.Name = "nudLeft";
-            this.nudLeft.Size = new System.Drawing.Size(64, 20);
-            this.nudLeft.TabIndex = 0;
-            this.nudLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblLeft
             // 
-            this.lblLeft.AutoSize = true;
-            this.lblLeft.Location = new System.Drawing.Point(13, 64);
+            resources.ApplyResources(this.lblLeft, "lblLeft");
             this.lblLeft.Name = "lblLeft";
-            this.lblLeft.Size = new System.Drawing.Size(28, 13);
-            this.lblLeft.TabIndex = 1;
-            this.lblLeft.Text = "Left:";
             // 
             // lblRight
             // 
-            this.lblRight.AutoSize = true;
-            this.lblRight.Location = new System.Drawing.Point(157, 64);
+            resources.ApplyResources(this.lblRight, "lblRight");
             this.lblRight.Name = "lblRight";
-            this.lblRight.Size = new System.Drawing.Size(35, 13);
-            this.lblRight.TabIndex = 3;
-            this.lblRight.Text = "Right:";
             // 
             // nudRight
             // 
-            this.nudRight.Location = new System.Drawing.Point(160, 80);
+            resources.ApplyResources(this.nudRight, "nudRight");
             this.nudRight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -94,22 +84,15 @@
             0,
             -2147483648});
             this.nudRight.Name = "nudRight";
-            this.nudRight.Size = new System.Drawing.Size(64, 20);
-            this.nudRight.TabIndex = 2;
-            this.nudRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTop
             // 
-            this.lblTop.AutoSize = true;
-            this.lblTop.Location = new System.Drawing.Point(85, 8);
+            resources.ApplyResources(this.lblTop, "lblTop");
             this.lblTop.Name = "lblTop";
-            this.lblTop.Size = new System.Drawing.Size(29, 13);
-            this.lblTop.TabIndex = 5;
-            this.lblTop.Text = "Top:";
             // 
             // nudTop
             // 
-            this.nudTop.Location = new System.Drawing.Point(88, 24);
+            resources.ApplyResources(this.nudTop, "nudTop");
             this.nudTop.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -121,22 +104,15 @@
             0,
             -2147483648});
             this.nudTop.Name = "nudTop";
-            this.nudTop.Size = new System.Drawing.Size(64, 20);
-            this.nudTop.TabIndex = 4;
-            this.nudTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblBottom
             // 
-            this.lblBottom.AutoSize = true;
-            this.lblBottom.Location = new System.Drawing.Point(85, 120);
+            resources.ApplyResources(this.lblBottom, "lblBottom");
             this.lblBottom.Name = "lblBottom";
-            this.lblBottom.Size = new System.Drawing.Size(43, 13);
-            this.lblBottom.TabIndex = 7;
-            this.lblBottom.Text = "Bottom:";
             // 
             // nudBottom
             // 
-            this.nudBottom.Location = new System.Drawing.Point(88, 136);
+            resources.ApplyResources(this.nudBottom, "nudBottom");
             this.nudBottom.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -148,35 +124,26 @@
             0,
             -2147483648});
             this.nudBottom.Name = "nudBottom";
-            this.nudBottom.Size = new System.Drawing.Size(64, 20);
-            this.nudBottom.TabIndex = 6;
-            this.nudBottom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(8, 176);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(108, 23);
-            this.btnOK.TabIndex = 8;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(124, 176);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 23);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // CanvasSizeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 208);
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblBottom);
@@ -191,8 +158,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CanvasSizeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Canvas size";
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.CanvasSizeForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).EndInit();

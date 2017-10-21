@@ -1344,18 +1344,26 @@ namespace ShareX.ScreenCaptureLib
 
         private void ChangeImageSize()
         {
-            Size size = new Size(250, 200);
             Size oldSize = form.Image.Size;
-            if (size != oldSize)
-            {
-                Image img = ImageHelpers.ResizeImage(form.Image, size);
 
-                if (img != null)
+            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize))
+            {
+                if (imageSizeForm.ShowDialog() == DialogResult.OK)
                 {
-                    Rectangle oldRect = form.ImageRectangle;
-                    form.InitBackground(img);
-                    //MoveAll(form.ImageRectangle.X - oldRect.X, form.ImageRectangle.Y - oldRect.Y);
-                    isAnnotated = true;
+                    Size size = imageSizeForm.Result;
+
+                    if (size != oldSize)
+                    {
+                        Image img = ImageHelpers.ResizeImage(form.Image, size);
+
+                        if (img != null)
+                        {
+                            Rectangle oldRect = form.ImageRectangle;
+                            form.InitBackground(img);
+                            //MoveAll(form.ImageRectangle.X - oldRect.X, form.ImageRectangle.Y - oldRect.Y);
+                            isAnnotated = true;
+                        }
+                    }
                 }
             }
         }

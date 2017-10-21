@@ -35,34 +35,47 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class CanvasSizeForm : Form
+    public partial class ImageSizeForm : Form
     {
-        public Padding Canvas { get; private set; }
+        public Size Result { get; private set; }
 
-        public CanvasSizeForm()
+        public ImageSizeForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
         }
 
-        public CanvasSizeForm(Padding canvas) : this()
+        public ImageSizeForm(Size size) : this()
         {
-            Canvas = canvas;
-            nudLeft.SetValue(canvas.Left);
-            nudTop.SetValue(canvas.Top);
-            nudRight.SetValue(canvas.Right);
-            nudBottom.SetValue(canvas.Bottom);
+            Result = size;
+            nudWidth.SetValue(size.Width);
+            nudHeight.SetValue(size.Height);
         }
 
-        private void CanvasSizeForm_Shown(object sender, EventArgs e)
+        private void VerifySize()
+        {
+            btnOK.Enabled = nudWidth.Value > 0 && nudHeight.Value > 0;
+        }
+
+        private void ResizeSizeForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+        }
+
+        private void nudWidth_ValueChanged(object sender, EventArgs e)
+        {
+            VerifySize();
+        }
+
+        private void nudHeight_ValueChanged(object sender, EventArgs e)
+        {
+            VerifySize();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
+            Result = new Size((int)nudWidth.Value, (int)nudHeight.Value);
             Close();
         }
 
