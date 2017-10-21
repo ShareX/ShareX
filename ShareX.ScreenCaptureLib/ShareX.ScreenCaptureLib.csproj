@@ -196,6 +196,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-resize-actual.png" />
     <None Include="Resources\cursor.png" />
     <None Include="Resources\monitor-image.png" />
     <None Include="Resources\folder-open-image.png" />
