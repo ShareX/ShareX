@@ -592,14 +592,24 @@ namespace ShareX.ScreenCaptureLib
             tsmiMoveBottom.MouseDown += (sender, e) => MoveCurrentShapeBottom();
             tsddbEdit.DropDownItems.Add(tsmiMoveBottom);
 
-            tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
-            tsmiCanvasSize.Image = Resources.image_resize_actual;
-            tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
-            tsddbEdit.DropDownItems.Add(tsmiCanvasSize);
-
             #endregion Edit
+
+            if (form.IsEditorMode)
+            {
+                #region Image
+
+                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton("Image");
+                tsddbImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsddbImage.Image = Resources.image__pencil;
+                tsMain.Items.Add(tsddbImage);
+
+                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
+                tsmiCanvasSize.Image = Resources.image_resize_actual;
+                tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiCanvasSize);
+
+                #endregion
+            }
 
             if (!form.IsEditorMode)
             {
