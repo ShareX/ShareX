@@ -211,7 +211,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 ImageRectangle = new Rectangle(Bounds.Width / 2 - Image.Width / 2, Bounds.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
 
-                using (Bitmap background = new Bitmap(Bounds.Width, Bounds.Height))
+                using (Bitmap background = new Bitmap(ImageRectangle.Width, ImageRectangle.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
                     Rectangle sourceRect = new Rectangle(0, 0, ImageRectangle.Width, ImageRectangle.Height);
@@ -223,7 +223,7 @@ namespace ShareX.ScreenCaptureLib
 
                     g.DrawImage(Image, sourceRect);
 
-                    backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
                     backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
                 }
             }
