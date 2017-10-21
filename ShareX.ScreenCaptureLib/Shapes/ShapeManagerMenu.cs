@@ -603,14 +603,14 @@ namespace ShareX.ScreenCaptureLib
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
-                ToolStripMenuItem tsmiResize = new ToolStripMenuItem("Resize...");
-                tsmiResize.Image = Resources.image_resize;
-                tsmiResize.MouseDown += (sender, e) => CanvasSize();
-                tsddbImage.DropDownItems.Add(tsmiResize);
+                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem("Image size...");
+                tsmiImageSize.Image = Resources.image_resize;
+                tsmiImageSize.MouseDown += (sender, e) => ChangeImageSize();
+                tsddbImage.DropDownItems.Add(tsmiImageSize);
 
                 ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
                 tsmiCanvasSize.Image = Resources.image_resize_actual;
-                tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
+                tsmiCanvasSize.MouseDown += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
