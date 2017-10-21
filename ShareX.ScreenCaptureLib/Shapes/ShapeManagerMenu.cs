@@ -603,10 +603,44 @@ namespace ShareX.ScreenCaptureLib
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
+                ToolStripMenuItem tsmiResize = new ToolStripMenuItem("Resize...");
+                tsmiResize.Image = Resources.image_resize;
+                tsmiResize.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiResize);
+
                 ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
                 tsmiCanvasSize.Image = Resources.image_resize_actual;
                 tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
+
+                tsddbImage.DropDownItems.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem("Rotate 90° clockwise");
+                tsmiRotate90Clockwise.Image = Resources.arrow_circle;
+                tsmiRotate90Clockwise.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiRotate90Clockwise);
+
+                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem("Rotate 90° counter clockwise");
+                tsmiRotate90CounterClockwise.Image = Resources.arrow_circle_135_left;
+                tsmiRotate90CounterClockwise.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiRotate90CounterClockwise);
+
+                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem("Rotate 180°");
+                tsmiRotate180.Image = Resources.arrow_circle_double;
+                tsmiRotate180.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiRotate180);
+
+                tsddbImage.DropDownItems.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem("Flip horizontal");
+                tsmiFlipHorizontal.Image = Resources.layer_flip;
+                tsmiFlipHorizontal.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiFlipHorizontal);
+
+                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem("Flip vertical");
+                tsmiFlipVertical.Image = Resources.layer_flip_vertical;
+                tsmiFlipVertical.MouseDown += (sender, e) => CanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiFlipVertical);
 
                 #endregion
             }

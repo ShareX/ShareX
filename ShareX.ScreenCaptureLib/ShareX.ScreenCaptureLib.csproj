@@ -196,6 +196,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-resize.png" />
+    <None Include="Resources\layer-flip.png" />
+    <None Include="Resources\layer-flip-vertical.png" />
     <None Include="Resources\image--pencil.png" />
     <None Include="Resources\image-resize-actual.png" />
     <None Include="Resources\cursor.png" />
@@ -257,6 +260,9 @@
     <None Include="Resources\control.png" />
     <None Include="Resources\cross.png" />
     <None Include="Resources\CircleNode.png" />
+    <None Include="Resources\arrow-circle-135-left.png" />
+    <None Include="Resources\arrow-circle.png" />
+    <None Include="Resources\arrow-circle-double.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
