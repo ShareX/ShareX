@@ -203,7 +203,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
         public event Action<BaseShape> ShapeCreated;
 
-        private RegionCaptureForm form;
+        public RegionCaptureForm form;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
         public ShapeManager(RegionCaptureForm form)
@@ -874,7 +874,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
 
-                if (form.ScreenRectangle0Based.Contains(newRect))
+                if (form.Bounds.Contains(newRect))
                 {
                     return posNew;
                 }
@@ -917,7 +917,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
-                        Point location = InputManager.MousePosition0Based;
+                        Point location = form.CursorPosLocal;
 
                         return new RectangleRegionShape()
                         {
@@ -934,7 +934,7 @@ namespace ShareX.ScreenCaptureLib
 
                             return new RectangleRegionShape()
                             {
-                                Rectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea)
+                                Rectangle = Rectangle.Intersect(form.Bounds, hoverArea)
                             };
                         }
                     }
@@ -948,7 +948,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Windows != null)
             {
-                return Windows.FirstOrDefault(x => x.Rectangle.Contains(InputManager.MousePosition));
+                return Windows.FirstOrDefault(x => x.Rectangle.Contains(form.CursorPosLocal));
             }
 
             return null;
@@ -1074,7 +1074,7 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape GetIntersectShape()
         {
-            return GetIntersectShape(InputManager.MousePosition0Based);
+            return GetIntersectShape(form.CursorPosLocal);
         }
 
         public BaseShape GetIntersectShape(Point position)
@@ -1271,7 +1271,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
+                    shape.StartPosition = shape.EndPosition = form.CursorPosLocal;
                     shape.SetImage(img, true);
                     AddShape(shape);
                     SelectCurrentShape();
@@ -1285,7 +1285,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
-                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
+                    shape.StartPosition = shape.EndPosition = form.CursorPosLocal;
                     shape.Text = text.Trim();
                     shape.AutoSize(true);
                     AddShape(shape);

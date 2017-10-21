@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            Point pos = InputManager.MousePosition0Based;
+            Point pos = Manager.form.CursorPosLocal;
             Rectangle = new Rectangle(new Point(pos.X - Rectangle.Width / 2, pos.Y - Rectangle.Height / 2), Rectangle.Size);
         }
 

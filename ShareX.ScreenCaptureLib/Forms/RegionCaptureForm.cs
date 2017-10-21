@@ -43,7 +43,6 @@ namespace ShareX.ScreenCaptureLib
 
         public RegionCaptureOptions Config { get; set; }
         public Rectangle ScreenRectangle { get; private set; }
-        public Rectangle ScreenRectangle0Based { get; private set; }
         public Image Image { get; private set; }
         public Rectangle ImageRectangle { get; private set; }
         public RegionResult Result { get; private set; }
@@ -56,6 +55,9 @@ namespace ShareX.ScreenCaptureLib
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
+
+        // TODO: make this cached and update only every frame
+        public Point CursorPosLocal => PointToClient(InputManager.MousePosition);
 
         public Point CurrentPosition { get; private set; }
 
@@ -102,9 +104,11 @@ namespace ShareX.ScreenCaptureLib
         {
             Mode = mode;
 
-            ScreenRectangle = CaptureHelpers.GetScreenBounds();
-            ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
-            ImageRectangle = ScreenRectangle0Based;
+            // TODO: add this to config?
+            ScreenRectangle = IsEditorMode // && Config.RunSharexAnnotationWindowed
+                ? CaptureHelpers.GetActiveScreenBounds()
+                : CaptureHelpers.GetScreenBounds();
+            ImageRectangle = Bounds;
 
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
 
@@ -143,11 +147,17 @@ namespace ShareX.ScreenCaptureLib
             SetDefaultCursor();
             Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.Manual;
-            FormBorderStyle = FormBorderStyle.None;
-            Bounds = ScreenRectangle;
+            FormBorderStyle = IsEditorMode // && Config.SharexAnnotationSizable
+                ? FormBorderStyle.Sizable
+                : FormBorderStyle.None;
+            Bounds = ScreenRectangle; // TODO: reduce by taskbar on the screen
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
-            ShowInTaskbar = false;
+            Text = IsEditorMode // && Config.RunSharexAnnotationFullscreen
+                ? "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_Annotate
+                : "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+            ShowInTaskbar = IsEditorMode // && Config.RunSharexAnnotationWindowed
+                ? false
+                : true;
 #if !DEBUG
             TopMost = true;
 #endif
@@ -198,16 +208,9 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
+                ImageRectangle = new Rectangle(Bounds.Width / 2 - Image.Width / 2, Bounds.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
 
-                if (Image.Width > rect.Width || Image.Height > rect.Height)
-                {
-                    rect = ScreenRectangle0Based;
-                }
-
-                ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
-
-                using (Bitmap background = new Bitmap(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
+                using (Bitmap background = new Bitmap(Bounds.Width, Bounds.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
                     Rectangle sourceRect = new Rectangle(0, 0, ImageRectangle.Width, ImageRectangle.Height);
@@ -310,7 +313,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if ((Mode == RegionCaptureMode.OneClick || Mode == RegionCaptureMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
             {
-                CurrentPosition = InputManager.MousePosition;
+                CurrentPosition = CursorPosLocal;
 
                 if (Mode == RegionCaptureMode.OneClick)
                 {
@@ -364,7 +367,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                CurrentPosition = InputManager.MousePosition;
+                CurrentPosition = CursorPosLocal;
                 clipboardText = GetInfoText();
             }
 
@@ -404,7 +407,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (obj.Visible)
                     {
-                        obj.IsCursorHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
+                        obj.IsCursorHover = obj.Rectangle.Contains(CursorPosLocal);
 
                         if (obj.IsCursorHover)
                         {
@@ -458,7 +461,7 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            if (!ImageRectangle.Contains(ScreenRectangle0Based))
+            if (!ImageRectangle.Contains(Bounds))
             {
                 g.Clear(Color.FromArgb(14, 14, 14));
             }
@@ -509,7 +512,7 @@ namespace ShareX.ScreenCaptureLib
                     using (Region region = new Region(regionDrawPath))
                     {
                         g.Clip = region;
-                        g.FillRectangle(backgroundHighlightBrush, ScreenRectangle0Based);
+                        g.FillRectangle(backgroundHighlightBrush, Bounds);
                         g.ResetClip();
                     }
                 }
@@ -681,7 +684,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawFPS(Graphics g, int offset)
         {
-            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle screenBounds = Bounds;
 
             g.DrawTextWithShadow(FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
@@ -708,7 +711,7 @@ namespace ShareX.ScreenCaptureLib
             Size textSize = g.MeasureString(text, infoFont).ToSize();
             Point textPos;
 
-            if (area.Y - offset - textSize.Height - backgroundPadding * 2 < ScreenRectangle0Based.Y)
+            if (area.Y - offset - textSize.Height - backgroundPadding * 2 < Bounds.Y)
             {
                 textPos = new Point(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
             }
@@ -717,9 +720,9 @@ namespace ShareX.ScreenCaptureLib
                 textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
             }
 
-            if (textPos.X + textSize.Width + backgroundPadding >= ScreenRectangle0Based.Width)
+            if (textPos.X + textSize.Width + backgroundPadding >= Bounds.Width)
             {
-                textPos.X = ScreenRectangle0Based.Width - textSize.Width - backgroundPadding;
+                textPos.X = Bounds.Width - textSize.Width - backgroundPadding;
             }
 
             Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + backgroundPadding * 2, textSize.Height + backgroundPadding * 2);
@@ -738,10 +741,10 @@ namespace ShareX.ScreenCaptureLib
             int padding = 10;
             int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
-            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle screenBounds = Bounds;
             Rectangle textRectangle = new Rectangle(screenBounds.X + screenBounds.Width - rectWidth - offset, screenBounds.Y + offset, rectWidth, rectHeight);
 
-            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
+            if (textRectangle.Offset(10).Contains(CursorPosLocal))
             {
                 textRectangle.Y = screenBounds.Height - rectHeight - offset;
             }
@@ -931,11 +934,10 @@ namespace ShareX.ScreenCaptureLib
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
-            Point mousePos = InputManager.MousePosition0Based;
-            Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
-            Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ScreenRectangle0Based.Width - 1, mousePos.Y);
-            Point top = new Point(mousePos.X, mousePos.Y - offset), top2 = new Point(mousePos.X, 0);
-            Point bottom = new Point(mousePos.X, mousePos.Y + offset), bottom2 = new Point(mousePos.X, ScreenRectangle0Based.Height - 1);
+            Point left = new Point(CursorPosLocal.X - offset, CursorPosLocal.Y), left2 = new Point(0, CursorPosLocal.Y);
+            Point right = new Point(CursorPosLocal.X + offset, CursorPosLocal.Y), right2 = new Point(Bounds.Width - 1, CursorPosLocal.Y);
+            Point top = new Point(CursorPosLocal.X, CursorPosLocal.Y - offset), top2 = new Point(CursorPosLocal.X, 0);
+            Point bottom = new Point(CursorPosLocal.X, CursorPosLocal.Y + offset), bottom2 = new Point(CursorPosLocal.X, Bounds.Height - 1);
 
             if (left.X - left2.X > 10)
             {
@@ -964,7 +966,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawCursorGraphics(Graphics g)
         {
-            Point mousePos = InputManager.MousePosition0Based;
             Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
             int cursorOffsetX = 10, cursorOffsetY = 10, itemGap = 10, itemCount = 0;
             Size totalSize = Size.Empty;
@@ -977,7 +978,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 magnifierPosition = totalSize.Height;
 
-                magnifier = Magnifier(Image, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
+                magnifier = Magnifier(Image, CursorPosLocal, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
                 totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
 
                 totalSize.Height += magnifier.Height;
@@ -994,7 +995,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 infoTextPosition = totalSize.Height;
 
-                CurrentPosition = InputManager.MousePosition;
+                CurrentPosition = CursorPosLocal;
                 infoText = GetInfoText();
                 Size textSize = g.MeasureString(infoText, infoFont).ToSize();
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
@@ -1004,18 +1005,18 @@ namespace ShareX.ScreenCaptureLib
                 itemCount++;
             }
 
-            int x = mousePos.X + cursorOffsetX;
+            int x = CursorPosLocal.X + cursorOffsetX;
 
             if (x + totalSize.Width > currentScreenRect0Based.Right)
             {
-                x = mousePos.X - cursorOffsetX - totalSize.Width;
+                x = CursorPosLocal.X - cursorOffsetX - totalSize.Width;
             }
 
-            int y = mousePos.Y + cursorOffsetY;
+            int y = CursorPosLocal.Y + cursorOffsetY;
 
             if (y + totalSize.Height > currentScreenRect0Based.Bottom)
             {
-                y = mousePos.Y - cursorOffsetY - totalSize.Height;
+                y = CursorPosLocal.Y - cursorOffsetY - totalSize.Height;
             }
 
             if (Config.ShowMagnifier)
@@ -1053,7 +1054,7 @@ namespace ShareX.ScreenCaptureLib
             verticalPixelCount = (verticalPixelCount | 1).Between(1, 101);
             pixelSize = pixelSize.Between(1, 1000);
 
-            if (horizontalPixelCount * pixelSize > ScreenRectangle0Based.Width || verticalPixelCount * pixelSize > ScreenRectangle0Based.Height)
+            if (horizontalPixelCount * pixelSize > Bounds.Width || verticalPixelCount * pixelSize > Bounds.Height)
             {
                 horizontalPixelCount = verticalPixelCount = 15;
                 pixelSize = 10;

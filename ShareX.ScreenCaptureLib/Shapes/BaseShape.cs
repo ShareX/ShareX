@@ -134,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnCreating()
         {
-            Point pos = InputManager.MousePosition0Based;
+            Point pos = Manager.form.CursorPosLocal;
 
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
@@ -156,7 +156,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.MousePosition0Based;
+                Point pos = Manager.form.CursorPosLocal;
 
                 if (Manager.IsCornerMoving)
                 {
@@ -235,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                     }
 
-                    Point pos = InputManager.MousePosition0Based;
+                    Point pos = Manager.form.CursorPosLocal;
                     Point startPos = tempStartPos;
                     Point endPos = tempEndPos;
 

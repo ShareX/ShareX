@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.MousePosition0Based;
+            StartPosition = EndPosition = Manager.form.CursorPosLocal;
 
             ShowTextInputBox();
 

@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = true;
 
-            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.MousePosition0Based);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.form.CursorPosLocal);
         }
 
         public override void OnDraw(Graphics g)

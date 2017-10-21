@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (TailNode.IsDragging)
             {
-                TailPosition = InputManager.MousePosition0Based;
+                TailPosition = Manager.form.CursorPosLocal;
             }
         }
 

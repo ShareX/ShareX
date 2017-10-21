@@ -34,11 +34,11 @@ namespace ShareX.ScreenCaptureLib
 
         public static Point PreviousMousePosition => oldMouseState.Position;
 
-        public static Point MousePosition0Based => mouseState.ZeroBasedPosition;
+        public static Point MousePosition0Based => mouseState.ZeroBasedPosition; // TODO: remove?
 
-        public static Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition;
+        public static Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition; // TODO: remove?
 
-        public static Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
+        public static Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y); // TODO: rework to use just mouse position?
 
         public static bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
 
