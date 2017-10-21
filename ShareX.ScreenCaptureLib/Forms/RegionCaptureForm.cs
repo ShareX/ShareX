@@ -108,11 +108,12 @@ namespace ShareX.ScreenCaptureLib
             ScreenRectangle = IsEditorMode // && Config.RunSharexAnnotationWindowed
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
+
+            InitializeComponent();
+
             ImageRectangle = Bounds;
 
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
-
-            InitializeComponent();
 
             Config = new RegionCaptureOptions();
             DrawableObjects = new List<DrawableObject>();
@@ -156,8 +157,8 @@ namespace ShareX.ScreenCaptureLib
                 ? "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_Annotate
                 : "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
             ShowInTaskbar = IsEditorMode // && Config.RunSharexAnnotationWindowed
-                ? false
-                : true;
+                ? true
+                : false;
 #if !DEBUG
             TopMost = true;
 #endif
