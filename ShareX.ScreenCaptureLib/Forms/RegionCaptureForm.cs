@@ -106,7 +106,7 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: add this to config?
             ScreenRectangle = IsEditorMode // && Config.RunSharexAnnotationWindowed
-                ? CaptureHelpers.GetActiveScreenBounds()
+                ? CaptureHelpers.GetActiveScreenWorkingArea()
                 : CaptureHelpers.GetScreenBounds();
 
             InitializeComponent();
@@ -151,7 +151,7 @@ namespace ShareX.ScreenCaptureLib
             FormBorderStyle = IsEditorMode // && Config.SharexAnnotationSizable
                 ? FormBorderStyle.Sizable
                 : FormBorderStyle.None;
-            Bounds = ScreenRectangle; // TODO: reduce by taskbar on the screen
+            Bounds = ScreenRectangle;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = IsEditorMode // && Config.RunSharexAnnotationFullscreen
                 ? "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_Annotate
@@ -160,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
                 ? true
                 : false;
 #if !DEBUG
-            TopMost = true;
+            TopMost = !IsEditorMode;
 #endif
 
             Shown += RegionCaptureForm_Shown;
