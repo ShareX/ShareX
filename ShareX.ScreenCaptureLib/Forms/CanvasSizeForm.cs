@@ -24,33 +24,52 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ScreenCaptureLib
 {
-    internal class Canvas : ImageEffect
+    public partial class CanvasSizeForm : Form
     {
-        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin { get; set; }
+        public Padding Canvas { get; private set; }
 
-        public Canvas()
+        public CanvasSizeForm()
         {
-            this.ApplyDefaultPropertyValues();
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
-        public override Image Apply(Image img)
+        public CanvasSizeForm(Padding canvas) : this()
         {
-            Image result = ImageHelpers.AddCanvas(img, Margin);
+            Canvas = canvas;
+            nudLeft.Value = canvas.Left;
+            nudTop.Value = canvas.Top;
+            nudRight.Value = canvas.Right;
+            nudBottom.Value = canvas.Bottom;
+        }
 
-            if (result == null)
-            {
-                return img;
-            }
+        private void CanvasSizeForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
 
-            img.Dispose();
-            return result;
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

@@ -1347,19 +1347,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void CanvasSize()
         {
-            Padding padding = new Padding(100, 25, 50, 75);
-            Image img = ImageHelpers.AddCanvas(form.Image, padding);
-
-            if (img != null)
+            using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm())
             {
-                Rectangle oldRect = form.ImageRectangle;
+                if (canvasSizeForm.ShowDialog() == DialogResult.OK)
+                {
+                    Padding canvas = canvasSizeForm.Canvas;
+                    Image img = ImageHelpers.AddCanvas(form.Image, canvas);
 
-                form.InitBackground(img);
+                    if (img != null)
+                    {
+                        Rectangle oldRect = form.ImageRectangle;
 
-                MoveAll(form.ImageRectangle.X - oldRect.X + padding.Left, form.ImageRectangle.Y - oldRect.Y + padding.Top);
-                RemoveOutsideShapes();
+                        form.InitBackground(img);
 
-                isAnnotated = true;
+                        MoveAll(form.ImageRectangle.X - oldRect.X + canvas.Left, form.ImageRectangle.Y - oldRect.Y + canvas.Top);
+                        RemoveOutsideShapes();
+
+                        isAnnotated = true;
+                    }
+                }
             }
         }
 
