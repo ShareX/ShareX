@@ -1318,10 +1318,7 @@ namespace ShareX.ScreenCaptureLib
             if (img != null)
             {
                 form.InitBackground(img);
-
                 MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
-                RemoveOutsideShapes();
-
                 isAnnotated = true;
             }
         }
@@ -1357,16 +1354,20 @@ namespace ShareX.ScreenCaptureLib
                     if (img != null)
                     {
                         Rectangle oldRect = form.ImageRectangle;
-
                         form.InitBackground(img);
-
                         MoveAll(form.ImageRectangle.X - oldRect.X + canvas.Left, form.ImageRectangle.Y - oldRect.Y + canvas.Top);
-                        RemoveOutsideShapes();
-
                         isAnnotated = true;
                     }
                 }
             }
+        }
+
+        private void RotateImage(RotateFlipType type)
+        {
+            Image clone = (Image)form.Image.Clone();
+            clone.RotateFlip(type);
+            form.InitBackground(clone);
+            isAnnotated = true;
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)
