@@ -51,7 +51,6 @@
             0,
             0});
             this.nudWidth.Name = "nudWidth";
-            this.nudWidth.ValueChanged += new System.EventHandler(this.nudWidth_ValueChanged);
             // 
             // nudHeight
             // 
@@ -62,7 +61,6 @@
             0,
             0});
             this.nudHeight.Name = "nudHeight";
-            this.nudHeight.ValueChanged += new System.EventHandler(this.nudHeight_ValueChanged);
             // 
             // lblWidth
             // 
@@ -77,8 +75,11 @@
             // cbAspectRatio
             // 
             resources.ApplyResources(this.cbAspectRatio, "cbAspectRatio");
+            this.cbAspectRatio.Checked = true;
+            this.cbAspectRatio.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbAspectRatio.Name = "cbAspectRatio";
             this.cbAspectRatio.UseVisualStyleBackColor = true;
+            this.cbAspectRatio.CheckedChanged += new System.EventHandler(this.cbAspectRatio_CheckedChanged);
             // 
             // btnOK
             // 
