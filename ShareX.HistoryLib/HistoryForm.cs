@@ -56,6 +56,9 @@ namespace ShareX.HistoryLib
             defaultTitle = Text;
             UpdateTitle();
 
+            // Mark the Date column as having a date; used for sorting
+            chDateTime.Tag = new DateTime();
+
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
             il.Images.Add(Resources.image);
@@ -211,7 +214,7 @@ namespace ShareX.HistoryLib
                     lvi.ImageIndex = 3;
                 }
 
-                lvi.SubItems.Add(hi.DateTime.ToString());
+                lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
                 lvi.SubItems.Add(hi.Filename);
                 lvi.SubItems.Add(hi.URL);
                 lvi.Tag = hi;
