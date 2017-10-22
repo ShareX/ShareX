@@ -592,14 +592,58 @@ namespace ShareX.ScreenCaptureLib
             tsmiMoveBottom.MouseDown += (sender, e) => MoveCurrentShapeBottom();
             tsddbEdit.DropDownItems.Add(tsmiMoveBottom);
 
-            tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
-            tsmiCanvasSize.Image = Resources.layers_stack_arrange_back;
-            tsmiCanvasSize.MouseDown += (sender, e) => CanvasSize();
-            tsddbEdit.DropDownItems.Add(tsmiCanvasSize);
-
             #endregion Edit
+
+            if (form.IsEditorMode)
+            {
+                #region Image
+
+                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton("Image");
+                tsddbImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsddbImage.Image = Resources.image__pencil;
+                tsMain.Items.Add(tsddbImage);
+
+                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem("Image size...");
+                tsmiImageSize.Image = Resources.image_resize;
+                tsmiImageSize.MouseDown += (sender, e) => ChangeImageSize();
+                tsddbImage.DropDownItems.Add(tsmiImageSize);
+
+                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
+                tsmiCanvasSize.Image = Resources.image_resize_actual;
+                tsmiCanvasSize.MouseDown += (sender, e) => ChangeCanvasSize();
+                tsddbImage.DropDownItems.Add(tsmiCanvasSize);
+
+                tsddbImage.DropDownItems.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem("Rotate 90° clockwise");
+                tsmiRotate90Clockwise.Image = Resources.arrow_circle;
+                tsmiRotate90Clockwise.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate90FlipNone);
+                tsddbImage.DropDownItems.Add(tsmiRotate90Clockwise);
+
+                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem("Rotate 90° counter clockwise");
+                tsmiRotate90CounterClockwise.Image = Resources.arrow_circle_135_left;
+                tsmiRotate90CounterClockwise.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate270FlipNone);
+                tsddbImage.DropDownItems.Add(tsmiRotate90CounterClockwise);
+
+                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem("Rotate 180°");
+                tsmiRotate180.Image = Resources.arrow_circle_double;
+                tsmiRotate180.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate180FlipNone);
+                tsddbImage.DropDownItems.Add(tsmiRotate180);
+
+                tsddbImage.DropDownItems.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem("Flip horizontal");
+                tsmiFlipHorizontal.Image = Resources.layer_flip;
+                tsmiFlipHorizontal.MouseDown += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipX);
+                tsddbImage.DropDownItems.Add(tsmiFlipHorizontal);
+
+                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem("Flip vertical");
+                tsmiFlipVertical.Image = Resources.layer_flip_vertical;
+                tsmiFlipVertical.MouseDown += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipY);
+                tsddbImage.DropDownItems.Add(tsmiFlipVertical);
+
+                #endregion
+            }
 
             if (!form.IsEditorMode)
             {

@@ -1318,10 +1318,7 @@ namespace ShareX.ScreenCaptureLib
             if (img != null)
             {
                 form.InitBackground(img);
-
                 MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
-                RemoveOutsideShapes();
-
                 isAnnotated = true;
             }
         }
@@ -1345,22 +1342,58 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        private void CanvasSize()
+        private void ChangeImageSize()
         {
-            Padding padding = new Padding(100, 25, 50, 75);
-            Image img = ImageHelpers.AddCanvas(form.Image, padding);
+            Size oldSize = form.Image.Size;
 
-            if (img != null)
+            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize))
             {
-                Rectangle oldRect = form.ImageRectangle;
+                if (imageSizeForm.ShowDialog() == DialogResult.OK)
+                {
+                    Size size = imageSizeForm.Result;
 
-                form.InitBackground(img);
+                    if (size != oldSize)
+                    {
+                        Image img = ImageHelpers.ResizeImage(form.Image, size);
 
-                MoveAll(form.ImageRectangle.X - oldRect.X + padding.Left, form.ImageRectangle.Y - oldRect.Y + padding.Top);
-                RemoveOutsideShapes();
-
-                isAnnotated = true;
+                        if (img != null)
+                        {
+                            Rectangle oldRect = form.ImageRectangle;
+                            form.InitBackground(img);
+                            //MoveAll(form.ImageRectangle.X - oldRect.X, form.ImageRectangle.Y - oldRect.Y);
+                            isAnnotated = true;
+                        }
+                    }
+                }
             }
+        }
+
+        private void ChangeCanvasSize()
+        {
+            using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm())
+            {
+                if (canvasSizeForm.ShowDialog() == DialogResult.OK)
+                {
+                    Padding canvas = canvasSizeForm.Canvas;
+                    Image img = ImageHelpers.AddCanvas(form.Image, canvas);
+
+                    if (img != null)
+                    {
+                        Rectangle oldRect = form.ImageRectangle;
+                        form.InitBackground(img);
+                        MoveAll(form.ImageRectangle.X - oldRect.X + canvas.Left, form.ImageRectangle.Y - oldRect.Y + canvas.Top);
+                        isAnnotated = true;
+                    }
+                }
+            }
+        }
+
+        private void RotateImage(RotateFlipType type)
+        {
+            Image clone = (Image)form.Image.Clone();
+            clone.RotateFlip(type);
+            form.InitBackground(clone);
+            isAnnotated = true;
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

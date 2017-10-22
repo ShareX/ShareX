@@ -63,9 +63,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_135_left {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle_135_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_circle_225_left {
             get {
                 object obj = ResourceManager.GetObject("arrow_circle_225_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_double {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle_double", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -427,9 +457,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image__pencil {
+            get {
+                object obj = ResourceManager.GetObject("image__pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_crop {
             get {
                 object obj = ResourceManager.GetObject("image_crop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_resize {
+            get {
+                object obj = ResourceManager.GetObject("image_resize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_resize_actual {
+            get {
+                object obj = ResourceManager.GetObject("image_resize_actual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -460,6 +520,26 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap layer__pencil {
             get {
                 object obj = ResourceManager.GetObject("layer__pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_flip {
+            get {
+                object obj = ResourceManager.GetObject("layer_flip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_flip_vertical {
+            get {
+                object obj = ResourceManager.GetObject("layer_flip_vertical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

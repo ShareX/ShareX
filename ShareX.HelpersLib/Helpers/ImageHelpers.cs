@@ -419,13 +419,16 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        /// <summary>Adds empty space around image.</summary>
         public static Image AddCanvas(Image img, Padding margin)
         {
+            if (margin.All == 0 || img.Width + margin.Horizontal < 1 || img.Height + margin.Vertical < 1)
+            {
+                return null;
+            }
+
             Bitmap bmp = img.CreateEmptyBitmap(margin.Horizontal, margin.Vertical);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (img)
             {
                 g.SetHighQuality();
                 g.DrawImage(img, margin.Left, margin.Top, img.Width, img.Height);
