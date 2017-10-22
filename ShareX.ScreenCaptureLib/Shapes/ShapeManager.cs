@@ -203,7 +203,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
         public event Action<BaseShape> ShapeCreated;
 
-        public RegionCaptureForm form;
+        private RegionCaptureForm form;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
         public ShapeManager(RegionCaptureForm form)
@@ -658,7 +658,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            InputManager.Update(); // If it's a touch event we don't have the correct point yet, so refresh it now
+            InputManager.Update(form); // If it's a touch event we don't have the correct point yet, so refresh it now
 
             BaseShape shape = GetIntersectShape();
 
@@ -917,7 +917,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
-                        Point location = form.CursorPosLocal;
+                        Point location = InputManager.MousePosition0Based;
 
                         return new RectangleRegionShape()
                         {
@@ -948,7 +948,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Windows != null)
             {
-                return Windows.FirstOrDefault(x => x.Rectangle.Contains(form.CursorPosLocal));
+                return Windows.FirstOrDefault(x => x.Rectangle.Contains(InputManager.MousePosition0Based));
             }
 
             return null;
@@ -1074,7 +1074,7 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape GetIntersectShape()
         {
-            return GetIntersectShape(form.CursorPosLocal);
+            return GetIntersectShape(InputManager.MousePosition0Based);
         }
 
         public BaseShape GetIntersectShape(Point position)
@@ -1271,7 +1271,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    shape.StartPosition = shape.EndPosition = form.CursorPosLocal;
+                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
                     shape.SetImage(img, true);
                     AddShape(shape);
                     SelectCurrentShape();
@@ -1285,7 +1285,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
-                    shape.StartPosition = shape.EndPosition = form.CursorPosLocal;
+                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
                     shape.Text = text.Trim();
                     shape.AutoSize(true);
                     AddShape(shape);

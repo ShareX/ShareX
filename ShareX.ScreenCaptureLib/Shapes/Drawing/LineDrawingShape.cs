@@ -189,13 +189,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 Manager.IsResizing = true;
 
-                StartPosition = Manager.form.CursorPosLocal;
+                StartPosition = InputManager.MousePosition0Based;
             }
             else if (Manager.ResizeNodes[1].IsDragging)
             {
                 Manager.IsResizing = true;
 
-                EndPosition = Manager.form.CursorPosLocal;
+                EndPosition = InputManager.MousePosition0Based;
             }
             else
             {
@@ -207,7 +207,7 @@ namespace ShareX.ScreenCaptureLib
 
                         Manager.IsResizing = true;
 
-                        CenterPoints[i - 2] = Manager.form.CursorPosLocal;
+                        CenterPoints[i - 2] = InputManager.MousePosition0Based;
                     }
                 }
             }

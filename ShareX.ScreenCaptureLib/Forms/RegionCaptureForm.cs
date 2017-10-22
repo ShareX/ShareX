@@ -56,9 +56,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
-        // TODO: make this cached and update only every frame
-        public Point CursorPosLocal => PointToClient(InputManager.MousePosition);
-
         public Point CurrentPosition { get; private set; }
 
         public Color CurrentColor
@@ -314,7 +311,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if ((Mode == RegionCaptureMode.OneClick || Mode == RegionCaptureMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
             {
-                CurrentPosition = CursorPosLocal;
+                CurrentPosition = InputManager.MousePosition0Based;
 
                 if (Mode == RegionCaptureMode.OneClick)
                 {
@@ -368,7 +365,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                CurrentPosition = CursorPosLocal;
+                CurrentPosition = InputManager.MousePosition0Based;
                 clipboardText = GetInfoText();
             }
 
@@ -396,7 +393,7 @@ namespace ShareX.ScreenCaptureLib
                 timerFPS.Start();
             }
 
-            InputManager.Update();
+            InputManager.Update(this);
 
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
@@ -408,7 +405,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (obj.Visible)
                     {
-                        obj.IsCursorHover = obj.Rectangle.Contains(CursorPosLocal);
+                        obj.IsCursorHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
 
                         if (obj.IsCursorHover)
                         {
@@ -745,7 +742,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle screenBounds = Bounds;
             Rectangle textRectangle = new Rectangle(screenBounds.X + screenBounds.Width - rectWidth - offset, screenBounds.Y + offset, rectWidth, rectHeight);
 
-            if (textRectangle.Offset(10).Contains(CursorPosLocal))
+            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
             {
                 textRectangle.Y = screenBounds.Height - rectHeight - offset;
             }
@@ -935,10 +932,10 @@ namespace ShareX.ScreenCaptureLib
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
-            Point left = new Point(CursorPosLocal.X - offset, CursorPosLocal.Y), left2 = new Point(0, CursorPosLocal.Y);
-            Point right = new Point(CursorPosLocal.X + offset, CursorPosLocal.Y), right2 = new Point(Bounds.Width - 1, CursorPosLocal.Y);
-            Point top = new Point(CursorPosLocal.X, CursorPosLocal.Y - offset), top2 = new Point(CursorPosLocal.X, 0);
-            Point bottom = new Point(CursorPosLocal.X, CursorPosLocal.Y + offset), bottom2 = new Point(CursorPosLocal.X, Bounds.Height - 1);
+            Point left = new Point(InputManager.MousePosition0Based.X - offset, InputManager.MousePosition0Based.Y), left2 = new Point(0, InputManager.MousePosition0Based.Y);
+            Point right = new Point(InputManager.MousePosition0Based.X + offset, InputManager.MousePosition0Based.Y), right2 = new Point(ClientRectangle.Width - 1, InputManager.MousePosition0Based.Y);
+            Point top = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y - offset), top2 = new Point(InputManager.MousePosition0Based.X, 0);
+            Point bottom = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y + offset), bottom2 = new Point(InputManager.MousePosition0Based.X, ClientRectangle.Height - 1);
 
             if (left.X - left2.X > 10)
             {
@@ -979,7 +976,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 magnifierPosition = totalSize.Height;
 
-                magnifier = Magnifier(Image, CursorPosLocal, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
+                magnifier = Magnifier(Image, InputManager.MousePosition0Based, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
                 totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
 
                 totalSize.Height += magnifier.Height;
@@ -996,7 +993,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 infoTextPosition = totalSize.Height;
 
-                CurrentPosition = CursorPosLocal;
+                CurrentPosition = InputManager.MousePosition0Based;
                 infoText = GetInfoText();
                 Size textSize = g.MeasureString(infoText, infoFont).ToSize();
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
@@ -1006,18 +1003,18 @@ namespace ShareX.ScreenCaptureLib
                 itemCount++;
             }
 
-            int x = CursorPosLocal.X + cursorOffsetX;
+            int x = InputManager.MousePosition0Based.X + cursorOffsetX;
 
             if (x + totalSize.Width > currentScreenRect0Based.Right)
             {
-                x = CursorPosLocal.X - cursorOffsetX - totalSize.Width;
+                x = InputManager.MousePosition0Based.X - cursorOffsetX - totalSize.Width;
             }
 
-            int y = CursorPosLocal.Y + cursorOffsetY;
+            int y = InputManager.MousePosition0Based.Y + cursorOffsetY;
 
             if (y + totalSize.Height > currentScreenRect0Based.Bottom)
             {
-                y = CursorPosLocal.Y - cursorOffsetY - totalSize.Height;
+                y = InputManager.MousePosition0Based.Y - cursorOffsetY - totalSize.Height;
             }
 
             if (Config.ShowMagnifier)

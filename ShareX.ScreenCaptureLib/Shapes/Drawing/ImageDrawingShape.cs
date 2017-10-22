@@ -106,7 +106,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = Manager.form.CursorPosLocal;
+            StartPosition = EndPosition = InputManager.MousePosition0Based;
 
             if (!OpenImageDialog(true))
             {
