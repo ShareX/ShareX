@@ -108,7 +108,7 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
 
-            ImageRectangle = Bounds;
+            ImageRectangle = ClientRectangle;
 
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
 
@@ -206,7 +206,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                ImageRectangle = new Rectangle(Bounds.Width / 2 - Image.Width / 2, Bounds.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
+                ImageRectangle = new Rectangle(ClientRectangle.Width / 2 - Image.Width / 2, ClientRectangle.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
 
                 using (Bitmap background = new Bitmap(ImageRectangle.Width, ImageRectangle.Height))
                 using (Graphics g = Graphics.FromImage(background))
@@ -459,7 +459,7 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            if (!ImageRectangle.Contains(Bounds))
+            if (!ImageRectangle.Contains(ClientRectangle))
             {
                 g.Clear(Color.FromArgb(14, 14, 14));
             }
@@ -510,7 +510,7 @@ namespace ShareX.ScreenCaptureLib
                     using (Region region = new Region(regionDrawPath))
                     {
                         g.Clip = region;
-                        g.FillRectangle(backgroundHighlightBrush, Bounds);
+                        g.FillRectangle(backgroundHighlightBrush, ClientRectangle);
                         g.ResetClip();
                     }
                 }
@@ -682,9 +682,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawFPS(Graphics g, int offset)
         {
-            Rectangle screenBounds = Bounds;
-
-            g.DrawTextWithShadow(FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+            g.DrawTextWithShadow(FPS.ToString(), ClientRectangle.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
@@ -709,7 +707,7 @@ namespace ShareX.ScreenCaptureLib
             Size textSize = g.MeasureString(text, infoFont).ToSize();
             Point textPos;
 
-            if (area.Y - offset - textSize.Height - backgroundPadding * 2 < Bounds.Y)
+            if (area.Y - offset - textSize.Height - backgroundPadding * 2 < ClientRectangle.Y)
             {
                 textPos = new Point(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
             }
@@ -718,9 +716,9 @@ namespace ShareX.ScreenCaptureLib
                 textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
             }
 
-            if (textPos.X + textSize.Width + backgroundPadding >= Bounds.Width)
+            if (textPos.X + textSize.Width + backgroundPadding >= ClientRectangle.Width)
             {
-                textPos.X = Bounds.Width - textSize.Width - backgroundPadding;
+                textPos.X = ClientRectangle.Width - textSize.Width - backgroundPadding;
             }
 
             Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + backgroundPadding * 2, textSize.Height + backgroundPadding * 2);
@@ -739,12 +737,11 @@ namespace ShareX.ScreenCaptureLib
             int padding = 10;
             int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
-            Rectangle screenBounds = Bounds;
-            Rectangle textRectangle = new Rectangle(screenBounds.X + screenBounds.Width - rectWidth - offset, screenBounds.Y + offset, rectWidth, rectHeight);
+            Rectangle textRectangle = new Rectangle(ClientRectangle.X + ClientRectangle.Width - rectWidth - offset, ClientRectangle.Y + offset, rectWidth, rectHeight);
 
             if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
             {
-                textRectangle.Y = screenBounds.Height - rectHeight - offset;
+                textRectangle.Y = ClientRectangle.Height - rectHeight - offset;
             }
 
             DrawInfoText(g, tipText, textRectangle, infoFont, padding);
@@ -1052,7 +1049,7 @@ namespace ShareX.ScreenCaptureLib
             verticalPixelCount = (verticalPixelCount | 1).Between(1, 101);
             pixelSize = pixelSize.Between(1, 1000);
 
-            if (horizontalPixelCount * pixelSize > Bounds.Width || verticalPixelCount * pixelSize > Bounds.Height)
+            if (horizontalPixelCount * pixelSize > ClientRectangle.Width || verticalPixelCount * pixelSize > ClientRectangle.Height)
             {
                 horizontalPixelCount = verticalPixelCount = 15;
                 pixelSize = 10;
