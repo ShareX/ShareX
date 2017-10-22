@@ -145,6 +145,9 @@ namespace ShareX.ScreenCaptureLib
             SetDefaultCursor();
             Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.Manual;
+            WindowState = IsEditorMode // && Config.RunSharexAnnotationWindowed
+                ? FormWindowState.Maximized
+                : FormWindowState.Normal;
             FormBorderStyle = IsEditorMode // && Config.SharexAnnotationSizable
                 ? FormBorderStyle.Sizable
                 : FormBorderStyle.None;
