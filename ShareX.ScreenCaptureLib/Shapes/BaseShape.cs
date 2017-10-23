@@ -77,8 +77,8 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager Manager { get; set; }
 
+        protected InputManager InputManager => Manager.InputManager;
         protected RegionCaptureOptions Options => Manager.Config;
-
         protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;

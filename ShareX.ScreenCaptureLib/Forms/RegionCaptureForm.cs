@@ -85,6 +85,8 @@ namespace ShareX.ScreenCaptureLib
         internal OpacityAnimation toolbarAnimation;
         internal Rectangle toolbarAnimationRectangle;
 
+        private InputManager InputManager => ShapeManager.InputManager;
+
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen;
@@ -178,11 +180,11 @@ namespace ShareX.ScreenCaptureLib
         // Must be called before show form
         public void Prepare(Image img)
         {
-            InitBackground(img);
-
             ShapeManager = new ShapeManager(this);
             ShapeManager.WindowCaptureMode = Config.DetectWindows;
             ShapeManager.IncludeControls = Config.DetectControls;
+
+            InitBackground(img);
 
             if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
             {

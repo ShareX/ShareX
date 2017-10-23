@@ -28,45 +28,45 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public static class InputManager
+    public class InputManager
     {
-        public static Point MousePosition => mouseState.Position;
+        public Point MousePosition => mouseState.Position;
 
-        public static Point PreviousMousePosition => oldMouseState.Position;
+        public Point PreviousMousePosition => oldMouseState.Position;
 
-        public static Point MousePosition0Based => mouseState.ZeroBasedPosition;
+        public Point MousePosition0Based => mouseState.ZeroBasedPosition;
 
-        public static Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition;
+        public Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition;
 
-        public static Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
+        public Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
 
-        public static bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
+        public bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
 
-        private static MouseState mouseState = new MouseState();
-        private static MouseState oldMouseState;
+        private MouseState mouseState = new MouseState();
+        private MouseState oldMouseState;
 
-        public static void Update(Control control)
+        public void Update(Control control)
         {
             oldMouseState = mouseState;
             mouseState.Update(control);
         }
 
-        public static bool IsMouseDown(MouseButtons button)
+        public bool IsMouseDown(MouseButtons button)
         {
             return mouseState.Buttons.HasFlag(button);
         }
 
-        public static bool IsBeforeMouseDown(MouseButtons button)
+        public bool IsBeforeMouseDown(MouseButtons button)
         {
             return oldMouseState.Buttons.HasFlag(button);
         }
 
-        public static bool IsMousePressed(MouseButtons button)
+        public bool IsMousePressed(MouseButtons button)
         {
             return IsMouseDown(button) && !IsBeforeMouseDown(button);
         }
 
-        public static bool IsMouseReleased(MouseButtons button)
+        public bool IsMouseReleased(MouseButtons button)
         {
             return !IsMouseDown(button) && IsBeforeMouseDown(button);
         }
