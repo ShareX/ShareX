@@ -170,6 +170,7 @@ namespace ShareX.ScreenCaptureLib
             KeyUp += RegionCaptureForm_KeyUp;
             MouseDown += RegionCaptureForm_MouseDown;
             Resize += RegionCaptureForm_Resize;
+            LocationChanged += RegionCaptureForm_LocationChanged;
 
             ResumeLayout(false);
         }
@@ -277,6 +278,29 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void OnMoved()
+        {
+            if (ShapeManager != null)
+            {
+                UpdateCoordinates();
+
+                if (IsEditorMode && WindowState != lastWindowState)
+                {
+                    lastWindowState = WindowState;
+
+                    if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
+                    {
+                        CenterCanvas(false);
+                    }
+                }
+
+                if (IsAnnotationMode && ShapeManager.ToolbarCreated)
+                {
+                    ShapeManager.UpdateMenuPosition();
+                }
+            }
+        }
+
         public void SetDefaultCursor()
         {
             if (Cursor != defaultCursor)
@@ -294,22 +318,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
         {
-            UpdateCoordinates();
+            OnMoved();
+        }
 
-            if (WindowState != lastWindowState)
-            {
-                lastWindowState = WindowState;
-
-                if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
-                {
-                    CenterCanvas(false);
-                }
-            }
-
-            if (IsAnnotationMode && ShapeManager != null && ShapeManager.ToolbarCreated)
-            {
-                ShapeManager.UpdateMenuPosition();
-            }
+        private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
+        {
+            OnMoved();
         }
 
         internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
