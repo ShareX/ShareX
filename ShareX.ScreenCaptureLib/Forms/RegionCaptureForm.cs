@@ -42,7 +42,6 @@ namespace ShareX.ScreenCaptureLib
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
         public RegionCaptureOptions Config { get; set; }
-        public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
         public Image Image { get; private set; }
         public Rectangle ImageRectangle { get; private set; }
@@ -102,8 +101,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Mode = mode;
 
-            ScreenRectangle = CaptureHelpers.GetScreenBounds();
-            ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
+            ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
@@ -148,7 +146,7 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
                 StartPosition = FormStartPosition.Manual;
                 FormBorderStyle = FormBorderStyle.None;
-                Bounds = ScreenRectangle;
+                Bounds = CaptureHelpers.GetScreenBounds();
                 ShowInTaskbar = false;
 #if !DEBUG
             TopMost = true;
@@ -210,7 +208,9 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
+                UpdateCoordinates();
+
+                Rectangle rect = ScreenRectangle0Based;
 
                 if (Image.Width > rect.Width || Image.Height > rect.Height)
                 {
@@ -396,6 +396,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void UpdateCoordinates()
+        {
+            ScreenRectangle0Based = ClientRectangle;
+
+            InputManager.Update(this);
+        }
+
         private new void Update()
         {
             if (!timerStart.IsRunning)
@@ -404,10 +411,7 @@ namespace ShareX.ScreenCaptureLib
                 timerFPS.Start();
             }
 
-            ScreenRectangle = ClientRectangle;
-            ScreenRectangle0Based = RectangleToClient(ScreenRectangle);
-
-            InputManager.Update(this);
+            UpdateCoordinates();
 
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
