@@ -87,6 +87,7 @@ namespace ShareX.ScreenCaptureLib
 
         private InputManager InputManager => ShapeManager.InputManager;
 
+        private FormWindowState lastWindowState = FormWindowState.Minimized;
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen;
@@ -168,6 +169,7 @@ namespace ShareX.ScreenCaptureLib
             KeyDown += RegionCaptureForm_KeyDown;
             KeyUp += RegionCaptureForm_KeyUp;
             MouseDown += RegionCaptureForm_MouseDown;
+            Resize += RegionCaptureForm_Resize;
 
             ResumeLayout(false);
         }
@@ -285,6 +287,19 @@ namespace ShareX.ScreenCaptureLib
             this.ForceActivate();
 
             CenterCanvas();
+        }
+
+        private void RegionCaptureForm_Resize(object sender, EventArgs e)
+        {
+            if (WindowState != lastWindowState)
+            {
+                lastWindowState = WindowState;
+
+                if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
+                {
+                    CenterCanvas();
+                }
+            }
         }
 
         internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
