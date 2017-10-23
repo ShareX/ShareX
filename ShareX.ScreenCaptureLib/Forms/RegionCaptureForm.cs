@@ -160,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
                 StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
                 Size = new Size(900, 700);
-                //WindowState = FormWindowState.Maximized;
+                WindowState = FormWindowState.Maximized;
                 ShowInTaskbar = true;
             }
 
@@ -210,23 +210,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                UpdateCoordinates();
-
-                Rectangle rect = ScreenRectangle0Based;
-
-                if (Image.Width > rect.Width || Image.Height > rect.Height)
-                {
-                    rect = ScreenRectangle0Based;
-                }
-
-                ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
-
-                using (Bitmap background = new Bitmap(ImageRectangle.Width, ImageRectangle.Height))
+                using (Bitmap background = new Bitmap(Image.Width, Image.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
-                    Rectangle sourceRect = new Rectangle(0, 0, ImageRectangle.Width, ImageRectangle.Height);
+                    Rectangle sourceRect = new Rectangle(0, 0, Image.Width, Image.Height);
 
-                    using (Image checkers = ImageHelpers.DrawCheckers(ImageRectangle.Width, ImageRectangle.Height))
+                    using (Image checkers = ImageHelpers.DrawCheckers(Image.Width, Image.Height))
                     {
                         g.DrawImage(checkers, sourceRect);
                     }
@@ -234,8 +223,9 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawImage(Image, sourceRect);
 
                     backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
-                    backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
                 }
+
+                CenterCanvas();
             }
             else if (Config.UseDimming)
             {
@@ -262,6 +252,26 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void CenterCanvas()
+        {
+            UpdateCoordinates();
+
+            Rectangle rect = ScreenRectangle0Based;
+
+            /*if (Image.Width > rect.Width || Image.Height > rect.Height)
+            {
+                rect = ScreenRectangle0Based;
+            }*/
+
+            ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
+
+            if (backgroundBrush != null)
+            {
+                backgroundBrush.ResetTransform();
+                backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
+            }
+        }
+
         public void SetDefaultCursor()
         {
             if (Cursor != defaultCursor)
@@ -273,6 +283,8 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+
+            CenterCanvas();
         }
 
         internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
