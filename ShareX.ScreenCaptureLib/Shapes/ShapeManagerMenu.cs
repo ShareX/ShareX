@@ -861,7 +861,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
-            form.toolbarAnimationRectangle = CaptureHelpers.ScreenToClient(menuForm.Bounds);
+            form.toolbarAnimationRectangle = new Rectangle(form.PointToClient(menuForm.Location), menuForm.Size);
 
             form.toolbarAnimation = new OpacityAnimation()
             {

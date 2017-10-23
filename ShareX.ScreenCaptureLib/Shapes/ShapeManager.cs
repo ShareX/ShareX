@@ -658,7 +658,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            InputManager.Update(); // If it's a touch event we don't have the correct point yet, so refresh it now
+            InputManager.Update(form); // If it's a touch event we don't have the correct point yet, so refresh it now
 
             BaseShape shape = GetIntersectShape();
 
@@ -874,7 +874,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
 
-                if (form.ScreenRectangle0Based.Contains(newRect))
+                if (form.Bounds.Contains(newRect))
                 {
                     return posNew;
                 }
@@ -934,7 +934,7 @@ namespace ShareX.ScreenCaptureLib
 
                             return new RectangleRegionShape()
                             {
-                                Rectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea)
+                                Rectangle = Rectangle.Intersect(form.Bounds, hoverArea)
                             };
                         }
                     }
@@ -948,7 +948,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Windows != null)
             {
-                return Windows.FirstOrDefault(x => x.Rectangle.Contains(InputManager.MousePosition));
+                return Windows.FirstOrDefault(x => x.Rectangle.Contains(InputManager.MousePosition0Based));
             }
 
             return null;

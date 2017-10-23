@@ -1122,6 +1122,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annotate.
+        /// </summary>
+        internal static string RegionCaptureForm_InitializeComponent_Annotate {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_InitializeComponent_Annotate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Arrow keys] Resize region from bottom right corner.
         /// </summary>
         internal static string RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner {

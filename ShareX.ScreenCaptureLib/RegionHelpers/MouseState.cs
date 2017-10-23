@@ -39,7 +39,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Buttons = Control.MouseButtons;
             Position = Control.MousePosition;
-            ZeroBasedPosition = CaptureHelpers.ScreenToClient(Position);
         }
     }
 }
