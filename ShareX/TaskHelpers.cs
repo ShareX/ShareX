@@ -901,11 +901,11 @@ namespace ShareX
                 using (img)
                 {
                     return RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
-                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
-                        x => ClipboardHelpers.CopyImage(x),
-                        x => UploadManager.UploadImage(x),
-                        x => PrintImage(x),
+                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, newFilePath)),
+                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, newFilePath)),
+                        x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
+                        x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
+                        x => Program.MainForm.InvokeSafe(() => PrintImage(x)),
                         taskMode);
                 }
             }
