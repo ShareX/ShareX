@@ -160,7 +160,8 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ShareX - " + "Annotate"; // TODO: Translate
                 StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
-                Size = new Size(900, 700);
+                Size = new Size(800, 600);
+                MinimumSize = new Size(800, 600);
                 WindowState = FormWindowState.Maximized;
                 ShowInTaskbar = true;
             }
