@@ -85,9 +85,13 @@ namespace ShareX.HelpersLib
 
             // Compare the two items
             if (SortByDate)
+            {
                 compareResult = DateTime.Compare((DateTime)listviewX.SubItems[ColumnToSort].Tag, (DateTime)listviewY.SubItems[ColumnToSort].Tag);
+            }
             else
+            {
                 compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
+            }
 
             // Calculate correct return value based on object comparison
             if (OrderOfSort == SortOrder.Ascending)

@@ -407,14 +407,16 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = (HistoryItem)item.Tag;
                 if (File.Exists(hi.Filepath))
+                {
                     selection.Add(hi.Filepath);
+                }
             }
 
-            if (selection.Count == 0)
-                return;
-
-            DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
-            DoDragDrop(data, DragDropEffects.Copy);
+            if (selection.Count > 0)
+            {
+                DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
+                DoDragDrop(data, DragDropEffects.Copy);
+            }
         }
 
         private void txtFilenameFilter_TextChanged(object sender, EventArgs e)

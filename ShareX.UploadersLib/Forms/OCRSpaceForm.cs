@@ -131,7 +131,10 @@ namespace ShareX.UploadersLib
             if (e.Control && e.KeyCode == Keys.A)
             {
                 if (sender != null)
+                {
                     ((TextBox)sender).SelectAll();
+                }
+
                 e.SuppressKeyPress = true; // TextBox will beep if it gets the CTRL+A
                 e.Handled = true;
             }

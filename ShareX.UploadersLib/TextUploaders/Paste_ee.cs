@@ -83,12 +83,13 @@ namespace ShareX.UploadersLib.TextUploaders
                 {
                     encrypted = false,
                     description = "",
+                    expiration = "never",
                     sections = new Paste_eeSubmitRequestBodySection[]
                     {
                         new Paste_eeSubmitRequestBodySection()
                         {
                             name = "",
-                            //syntax = "autodetect",
+                            syntax = "autodetect",
                             contents = text
                         }
                     }
@@ -117,13 +118,14 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public bool encrypted { get; set; }
         public string description { get; set; }
+        public string expiration { get; set; }
         public Paste_eeSubmitRequestBodySection[] sections { get; set; }
     }
 
     public class Paste_eeSubmitRequestBodySection
     {
         public string name { get; set; }
-        //public string syntax { get; set; }
+        public string syntax { get; set; }
         public string contents { get; set; }
     }
 
