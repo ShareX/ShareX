@@ -45,10 +45,10 @@ namespace ShareX.ScreenCaptureLib
         private static MouseState mouseState = new MouseState();
         private static MouseState oldMouseState;
 
-        public static void Update()
+        public static void Update(Control control)
         {
             oldMouseState = mouseState;
-            mouseState.Update();
+            mouseState.Update(control);
         }
 
         public static bool IsMouseDown(MouseButtons button)

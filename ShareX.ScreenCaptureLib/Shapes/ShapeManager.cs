@@ -658,7 +658,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            InputManager.Update(); // If it's a touch event we don't have the correct point yet, so refresh it now
+            InputManager.Update(form); // If it's a touch event we don't have the correct point yet, so refresh it now
 
             BaseShape shape = GetIntersectShape();
 

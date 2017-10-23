@@ -106,8 +106,6 @@ namespace ShareX.ScreenCaptureLib
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
             ImageRectangle = ScreenRectangle0Based;
 
-            defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
-
             InitializeComponent();
 
             Config = new RegionCaptureOptions();
@@ -140,17 +138,31 @@ namespace ShareX.ScreenCaptureLib
 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
+            defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
             SetDefaultCursor();
             Icon = ShareXResources.Icon;
-            StartPosition = FormStartPosition.Manual;
-            FormBorderStyle = FormBorderStyle.None;
-            Bounds = ScreenRectangle;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
-            ShowInTaskbar = false;
+
+            if (!IsEditorMode)
+            {
+                Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+                StartPosition = FormStartPosition.Manual;
+                FormBorderStyle = FormBorderStyle.None;
+                Bounds = ScreenRectangle;
+                ShowInTaskbar = false;
 #if !DEBUG
             TopMost = true;
 #endif
+            }
+            else
+            {
+                Text = "ShareX - " + "Annotate"; // TODO: Translate
+                StartPosition = FormStartPosition.CenterScreen;
+                FormBorderStyle = FormBorderStyle.Sizable;
+                Size = new Size(900, 700);
+                //WindowState = FormWindowState.Maximized;
+                ShowInTaskbar = true;
+            }
 
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
@@ -392,7 +404,10 @@ namespace ShareX.ScreenCaptureLib
                 timerFPS.Start();
             }
 
-            InputManager.Update();
+            ScreenRectangle = ClientRectangle;
+            ScreenRectangle0Based = RectangleToClient(ScreenRectangle);
+
+            InputManager.Update(this);
 
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
