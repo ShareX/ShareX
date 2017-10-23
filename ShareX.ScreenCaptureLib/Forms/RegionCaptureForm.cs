@@ -254,9 +254,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void CenterCanvas()
+        private void CenterCanvas(bool updateCoordinates = true)
         {
-            UpdateCoordinates();
+            if (updateCoordinates)
+            {
+                UpdateCoordinates();
+            }
 
             Rectangle rect = ScreenRectangle0Based;
 
@@ -291,14 +294,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
         {
+            UpdateCoordinates();
+
             if (WindowState != lastWindowState)
             {
                 lastWindowState = WindowState;
 
                 if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
                 {
-                    CenterCanvas();
+                    CenterCanvas(false);
                 }
+            }
+
+            if (IsAnnotationMode && ShapeManager != null && ShapeManager.ToolbarCreated)
+            {
+                ShapeManager.UpdateMenuPosition();
             }
         }
 

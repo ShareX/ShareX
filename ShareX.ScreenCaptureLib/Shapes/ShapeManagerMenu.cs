@@ -35,6 +35,7 @@ namespace ShareX.ScreenCaptureLib
 {
     internal partial class ShapeManager
     {
+        public bool ToolbarCreated { get; private set; }
         public bool IsMenuCollapsed { get; private set; }
 
         internal TextAnimation MenuTextAnimation = new TextAnimation()
@@ -53,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripLabel tslDragLeft;
         private ToolStripLabeledComboBox tscbCursorTypes;
 
-        private void CreateToolbar()
+        internal void CreateToolbar()
         {
             menuForm = new Form()
             {
@@ -66,8 +67,7 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(200, 200),
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
-                Text = "ShareX - Region capture menu",
-                TopMost = true
+                Text = "ShareX - Region capture menu"
             };
 
             menuForm.Shown += MenuForm_Shown;
@@ -857,6 +857,8 @@ namespace ShareX.ScreenCaptureLib
             ConfigureMenuState();
 
             form.Activate();
+
+            ToolbarCreated = true;
         }
 
         private void MenuForm_Shown(object sender, EventArgs e)
@@ -930,7 +932,12 @@ namespace ShareX.ScreenCaptureLib
                 SetMenuCollapsed(Config.MenuCollapsed);
             }
 
-            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+            UpdateMenuPosition();
+        }
+
+        internal void UpdateMenuPosition()
+        {
+            Rectangle rectScreen = form.RectangleToScreen(form.ScreenRectangle0Based);
 
             if (Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
             {
@@ -938,15 +945,15 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
+                //Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
 
-                if (tsMain.Width < rectActiveScreen.Width)
+                if (tsMain.Width < rectScreen.Width)
                 {
-                    menuForm.Location = new Point(rectActiveScreen.X + rectActiveScreen.Width / 2 - tsMain.Width / 2, rectActiveScreen.Y + 20);
+                    menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
                 }
                 else
                 {
-                    menuForm.Location = rectActiveScreen.Location;
+                    menuForm.Location = rectScreen.Location;
                 }
             }
         }
