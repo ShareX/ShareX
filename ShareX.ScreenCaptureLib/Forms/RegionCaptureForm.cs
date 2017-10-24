@@ -281,8 +281,16 @@ namespace ShareX.ScreenCaptureLib
         private void Pan(int deltaX, int deltaY, bool updateCenterPoint = false)
         {
             ImageRectangle = ImageRectangle.LocationOffset(deltaX, deltaY);
-            backgroundBrush.TranslateTransform(deltaX, deltaY);
-            ShapeManager.MoveAll(deltaX, deltaY);
+
+            if (backgroundBrush != null)
+            {
+                backgroundBrush.TranslateTransform(deltaX, deltaY);
+            }
+
+            if (ShapeManager != null)
+            {
+                ShapeManager.MoveAll(deltaX, deltaY);
+            }
 
             if (updateCenterPoint)
             {
@@ -295,7 +303,7 @@ namespace ShareX.ScreenCaptureLib
             Pan(delta.X, delta.Y, updateCenterPoint);
         }
 
-        private void UpdatePan(Vector2 center)
+        private void AutomaticPan(Vector2 center)
         {
             int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
             int y = (int)Math.Round(ScreenRectangle0Based.Height * center.Y);
@@ -306,9 +314,9 @@ namespace ShareX.ScreenCaptureLib
             Pan(deltaX, deltaY);
         }
 
-        private void UpdatePan()
+        private void AutomaticPan()
         {
-            UpdatePan(CanvasCenterPoint);
+            AutomaticPan(CanvasCenterPoint);
         }
 
         private void UpdateCenterPoint()
@@ -320,7 +328,7 @@ namespace ShareX.ScreenCaptureLib
         private void CenterCanvas()
         {
             CanvasCenterPoint = new Vector2(0.5f, 0.5f);
-            UpdatePan();
+            AutomaticPan();
         }
 
         public void SetDefaultCursor()
@@ -341,7 +349,7 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
         {
             OnMoved();
-            UpdatePan();
+            AutomaticPan();
         }
 
         private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
