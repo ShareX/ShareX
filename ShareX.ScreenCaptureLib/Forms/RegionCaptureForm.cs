@@ -57,8 +57,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
-        private Size oldSize;
-        private Vector2 panError = new Vector2(0f, 0f);
 
         public Color CurrentColor
         {
@@ -79,6 +77,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
+
+        public Vector2 CanvasCenterPoint { get; set; } = new Vector2(0.5f, 0.5f);
 
         internal ShapeManager ShapeManager { get; private set; }
         internal List<DrawableObject> DrawableObjects { get; private set; }
@@ -107,7 +107,6 @@ namespace ShareX.ScreenCaptureLib
             Mode = mode;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
-            oldSize = ScreenRectangle0Based.Size;
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
@@ -217,6 +216,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
+                ImageRectangle = new Rectangle(ImageRectangle.X, ImageRectangle.Y, Image.Width, Image.Height);
+
                 using (Bitmap background = new Bitmap(Image.Width, Image.Height))
                 using (Graphics g = Graphics.FromImage(background))
                 {
@@ -259,29 +260,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void CenterCanvas(bool updateCoordinates = true)
-        {
-            if (updateCoordinates)
-            {
-                UpdateCoordinates();
-            }
-
-            Rectangle rect = ScreenRectangle0Based;
-
-            /*if (Image.Width > rect.Width || Image.Height > rect.Height)
-            {
-                rect = ScreenRectangle0Based;
-            }*/
-
-            ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
-
-            if (backgroundBrush != null)
-            {
-                backgroundBrush.ResetTransform();
-                backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
-            }
-        }
-
         private void OnMoved()
         {
             if (ShapeManager != null)
@@ -300,23 +278,49 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void Pan(int deltaX, int deltaY, bool updateCenterPoint = false)
+        {
+            ImageRectangle = ImageRectangle.LocationOffset(deltaX, deltaY);
+            backgroundBrush.TranslateTransform(deltaX, deltaY);
+            ShapeManager.MoveAll(deltaX, deltaY);
+
+            if (updateCenterPoint)
+            {
+                UpdateCenterPoint();
+            }
+        }
+
+        private void Pan(Point delta, bool updateCenterPoint = false)
+        {
+            Pan(delta.X, delta.Y, updateCenterPoint);
+        }
+
+        private void UpdatePan(Vector2 center)
+        {
+            int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
+            int y = (int)Math.Round(ScreenRectangle0Based.Height * center.Y);
+            int newX = x - ImageRectangle.Width / 2;
+            int newY = y - ImageRectangle.Height / 2;
+            int deltaX = newX - ImageRectangle.X;
+            int deltaY = newY - ImageRectangle.Y;
+            Pan(deltaX, deltaY);
+        }
+
         private void UpdatePan()
         {
-            Size NewSize = ScreenRectangle0Based.Size;
-            if (oldSize == NewSize)
-            {
-                return;
-            }
+            UpdatePan(CanvasCenterPoint);
+        }
 
-            panError += new Vector2((float)(NewSize.Width - oldSize.Width) / 2, (float)(NewSize.Height - oldSize.Height) / 2);
-            Point ResizeDelta = new Point((int)panError.X, (int)panError.Y);
+        private void UpdateCenterPoint()
+        {
+            CanvasCenterPoint = new Vector2((ImageRectangle.X + ImageRectangle.Width / 2f) / ScreenRectangle0Based.Width,
+                (ImageRectangle.Y + ImageRectangle.Height / 2f) / ScreenRectangle0Based.Height);
+        }
 
-            panError.X %= 1;
-            panError.Y %= 1;
-
-            Pan(ResizeDelta);
-
-            oldSize = ScreenRectangle0Based.Size;
+        private void CenterCanvas()
+        {
+            CanvasCenterPoint = new Vector2(0.5f, 0.5f);
+            UpdatePan();
         }
 
         public void SetDefaultCursor()
@@ -527,20 +531,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                Pan(InputManager.MouseVelocity);
+                Pan(InputManager.MouseVelocity, true);
             }
 
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
-        }
-
-        private void Pan(Point delta)
-        {
-            ImageRectangle = ImageRectangle.LocationOffset(delta.X, delta.Y);
-            backgroundBrush.TranslateTransform(delta.X, delta.Y);
-
-            ShapeManager.MoveAll(delta);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
