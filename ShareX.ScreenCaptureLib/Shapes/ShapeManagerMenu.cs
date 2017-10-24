@@ -67,7 +67,8 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(200, 200),
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
-                Text = "ShareX - Region capture menu"
+                Text = "ShareX - Annotate menu",
+                TopMost = !form.IsEditorMode
             };
 
             menuForm.Shown += MenuForm_Shown;
