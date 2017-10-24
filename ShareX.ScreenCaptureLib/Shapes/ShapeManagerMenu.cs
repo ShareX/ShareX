@@ -831,7 +831,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     tsi.MouseEnter += (sender, e) =>
                     {
-                        Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
+                        Point pos = form.PointToClient(menuForm.PointToScreen(tsi.Bounds.Location));
                         pos.Y += tsi.Height + 8;
 
                         MenuTextAnimation.Text = tsi.Text;
@@ -864,7 +864,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
-            form.toolbarAnimationRectangle = CaptureHelpers.ScreenToClient(menuForm.Bounds);
+            form.toolbarAnimationRectangle = form.RectangleToClient(menuForm.Bounds);
 
             form.toolbarAnimation = new OpacityAnimation()
             {
