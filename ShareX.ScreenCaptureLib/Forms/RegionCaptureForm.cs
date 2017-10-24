@@ -57,6 +57,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
+        public Size OldSize;
 
         public Color CurrentColor
         {
@@ -105,6 +106,7 @@ namespace ShareX.ScreenCaptureLib
             Mode = mode;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
+            OldSize = ScreenRectangle0Based.Size;
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
@@ -288,11 +290,6 @@ namespace ShareX.ScreenCaptureLib
                 if (IsEditorMode && WindowState != lastWindowState)
                 {
                     lastWindowState = WindowState;
-
-                    if (WindowState == FormWindowState.Normal || WindowState == FormWindowState.Maximized)
-                    {
-                        CenterCanvas(false);
-                    }
                 }
 
                 if (IsAnnotationMode && ShapeManager.ToolbarCreated)
@@ -300,6 +297,21 @@ namespace ShareX.ScreenCaptureLib
                     ShapeManager.UpdateMenuPosition();
                 }
             }
+        }
+
+        private void UpdatePan()
+        {
+            Size NewSize = ScreenRectangle0Based.Size;
+            if (OldSize == NewSize)
+            {
+                return;
+            }
+
+            Point ResizeDelta = new Point((NewSize.Width - OldSize.Width) / 2, (NewSize.Height - OldSize.Height) / 2);
+
+            Pan(ResizeDelta);
+
+            OldSize = ScreenRectangle0Based.Size;
         }
 
         public void SetDefaultCursor()
@@ -320,6 +332,7 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
         {
             OnMoved();
+            UpdatePan();
         }
 
         private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
@@ -509,15 +522,20 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                ImageRectangle = ImageRectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                backgroundBrush.TranslateTransform(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-
-                ShapeManager.MoveAll(InputManager.MouseVelocity);
+                Pan(InputManager.MouseVelocity);
             }
 
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
+        }
+
+        private void Pan(Point delta)
+        {
+            ImageRectangle = ImageRectangle.LocationOffset(delta.X, delta.Y);
+            backgroundBrush.TranslateTransform(delta.X, delta.Y);
+
+            ShapeManager.MoveAll(delta);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
