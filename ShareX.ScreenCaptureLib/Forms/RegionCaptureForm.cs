@@ -57,7 +57,8 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
-        public Size OldSize;
+        private Size oldSize;
+        private Vector2 panError = new Vector2(0f, 0f);
 
         public Color CurrentColor
         {
@@ -106,7 +107,7 @@ namespace ShareX.ScreenCaptureLib
             Mode = mode;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
-            OldSize = ScreenRectangle0Based.Size;
+            oldSize = ScreenRectangle0Based.Size;
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
@@ -302,16 +303,20 @@ namespace ShareX.ScreenCaptureLib
         private void UpdatePan()
         {
             Size NewSize = ScreenRectangle0Based.Size;
-            if (OldSize == NewSize)
+            if (oldSize == NewSize)
             {
                 return;
             }
 
-            Point ResizeDelta = new Point((NewSize.Width - OldSize.Width) / 2, (NewSize.Height - OldSize.Height) / 2);
+            panError += new Vector2((float)(NewSize.Width - oldSize.Width) / 2, (float)(NewSize.Height - oldSize.Height) / 2);
+            Point ResizeDelta = new Point((int)panError.X, (int)panError.Y);
+
+            panError.X %= 1;
+            panError.Y %= 1;
 
             Pan(ResizeDelta);
 
-            OldSize = ScreenRectangle0Based.Size;
+            oldSize = ScreenRectangle0Based.Size;
         }
 
         public void SetDefaultCursor()
