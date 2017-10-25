@@ -1318,8 +1318,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
+                MoveAll(-rect.X, -rect.Y);
                 form.InitBackground(img);
-                MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
                 isAnnotated = true;
             }
         }
