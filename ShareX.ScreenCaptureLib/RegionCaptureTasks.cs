@@ -162,12 +162,8 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(mode))
             {
+                form.Config = options;
                 form.ImageFilePath = filePath;
-
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.DetectWindows = false;
-                form.Config.ShowHotkeys = false;
-                form.Config.UseDimming = false;
 
                 form.Prepare(img);
                 form.ShowDialog();
