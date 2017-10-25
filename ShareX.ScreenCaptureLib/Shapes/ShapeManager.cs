@@ -1359,9 +1359,8 @@ namespace ShareX.ScreenCaptureLib
 
                         if (img != null)
                         {
-                            Rectangle oldRect = form.ImageRectangle;
+                            MoveAll(-form.ImageRectangle.X, -form.ImageRectangle.Y);
                             form.InitBackground(img);
-                            //MoveAll(form.ImageRectangle.X - oldRect.X, form.ImageRectangle.Y - oldRect.Y);
                             isAnnotated = true;
                         }
                     }
