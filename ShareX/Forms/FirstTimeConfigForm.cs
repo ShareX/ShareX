@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.StartupManagers;
 using System;
 using System.Windows.Forms;
 
@@ -37,8 +38,11 @@ namespace ShareX
         {
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
+            StartupTaskState state = StartupManagerFactory.StartupManager.State;
 
-            cbRunStartup.Checked = IntegrationHelpers.CheckStartupShortcut();
+            cbRunStartup.Checked = state == StartupTaskState.Enabled;
+            cbRunStartup.Enabled = state != StartupTaskState.DisabledByUser;
+
             cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
 
@@ -60,7 +64,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                IntegrationHelpers.CreateStartupShortcut(cbRunStartup.Checked);
+                StartupManagerFactory.StartupManager.State = cbRunStartup.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
             }
         }
 

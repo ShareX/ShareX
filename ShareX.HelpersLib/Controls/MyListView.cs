@@ -308,7 +308,12 @@ namespace ShareX.HelpersLib
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
 
+                // if the column is tagged as a DateTime, then sort by date
+                lvwColumnSorter.SortByDate = Columns[e.Column].Tag is DateTime;
+
+                Cursor.Current = Cursors.WaitCursor;
                 Sort();
+                Cursor.Current = Cursors.Default;
             }
         }
 

@@ -144,11 +144,15 @@
             this.tsmiCopyForumImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyForumLinkedImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiCopyMarkdownLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyMarkdownImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyMarkdownLinkedImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCopyFilePath = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyFileName = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyFileNameWithExtension = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssCopy6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -245,13 +249,13 @@
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.pbDiscordOpen = new System.Windows.Forms.PictureBox();
+            this.pbDiscordHide = new System.Windows.Forms.PictureBox();
             this.ucNews = new ShareX.NewsListControl();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.tsmiCopyMarkdownLink = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCopyMarkdownImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCopyMarkdownLinkedImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssCopy6 = new System.Windows.Forms.ToolStripSeparator();
+            this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -262,7 +266,11 @@
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordHide)).BeginInit();
             this.pNews.SuspendLayout();
+            this.flpCommunity.SuspendLayout();
+            this.flpDiscord.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -1171,6 +1179,29 @@
             this.tssCopy4.Name = "tssCopy4";
             resources.ApplyResources(this.tssCopy4, "tssCopy4");
             // 
+            // tsmiCopyMarkdownLink
+            // 
+            this.tsmiCopyMarkdownLink.Name = "tsmiCopyMarkdownLink";
+            resources.ApplyResources(this.tsmiCopyMarkdownLink, "tsmiCopyMarkdownLink");
+            this.tsmiCopyMarkdownLink.Click += new System.EventHandler(this.tsmiCopyMarkdownLink_Click);
+            // 
+            // tsmiCopyMarkdownImage
+            // 
+            this.tsmiCopyMarkdownImage.Name = "tsmiCopyMarkdownImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownImage, "tsmiCopyMarkdownImage");
+            this.tsmiCopyMarkdownImage.Click += new System.EventHandler(this.tsmiCopyMarkdownImage_Click);
+            // 
+            // tsmiCopyMarkdownLinkedImage
+            // 
+            this.tsmiCopyMarkdownLinkedImage.Name = "tsmiCopyMarkdownLinkedImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownLinkedImage, "tsmiCopyMarkdownLinkedImage");
+            this.tsmiCopyMarkdownLinkedImage.Click += new System.EventHandler(this.tsmiCopyMarkdownLinkedImage_Click);
+            // 
+            // tssCopy5
+            // 
+            this.tssCopy5.Name = "tssCopy5";
+            resources.ApplyResources(this.tssCopy5, "tssCopy5");
+            // 
             // tsmiCopyFilePath
             // 
             this.tsmiCopyFilePath.Name = "tsmiCopyFilePath";
@@ -1195,10 +1226,10 @@
             resources.ApplyResources(this.tsmiCopyFolder, "tsmiCopyFolder");
             this.tsmiCopyFolder.Click += new System.EventHandler(this.tsmiCopyFolder_Click);
             // 
-            // tssCopy5
+            // tssCopy6
             // 
-            this.tssCopy5.Name = "tssCopy5";
-            resources.ApplyResources(this.tssCopy5, "tssCopy5");
+            this.tssCopy6.Name = "tssCopy6";
+            resources.ApplyResources(this.tssCopy6, "tssCopy6");
             // 
             // tsmiUploadSelectedFile
             // 
@@ -1924,6 +1955,26 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
+            // pbDiscordOpen
+            // 
+            this.pbDiscordOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbDiscordOpen.Image = global::ShareX.Properties.Resources.Discord_Button_01;
+            resources.ApplyResources(this.pbDiscordOpen, "pbDiscordOpen");
+            this.pbDiscordOpen.Name = "pbDiscordOpen";
+            this.pbDiscordOpen.TabStop = false;
+            this.ttMain.SetToolTip(this.pbDiscordOpen, resources.GetString("pbDiscordOpen.ToolTip"));
+            this.pbDiscordOpen.Click += new System.EventHandler(this.pbDiscordOpen_Click);
+            // 
+            // pbDiscordHide
+            // 
+            this.pbDiscordHide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbDiscordHide.Image = global::ShareX.Properties.Resources.Discord_Button_02;
+            resources.ApplyResources(this.pbDiscordHide, "pbDiscordHide");
+            this.pbDiscordHide.Name = "pbDiscordHide";
+            this.pbDiscordHide.TabStop = false;
+            this.ttMain.SetToolTip(this.pbDiscordHide, resources.GetString("pbDiscordHide.ToolTip"));
+            this.pbDiscordHide.Click += new System.EventHandler(this.pbDiscordHide_Click);
+            // 
             // ucNews
             // 
             resources.ApplyResources(this.ucNews, "ucNews");
@@ -1943,28 +1994,20 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
-            // tsmiCopyMarkdownLink
+            // flpCommunity
             // 
-            this.tsmiCopyMarkdownLink.Name = "tsmiCopyMarkdownLink";
-            resources.ApplyResources(this.tsmiCopyMarkdownLink, "tsmiCopyMarkdownLink");
-            this.tsmiCopyMarkdownLink.Click += new System.EventHandler(this.tsmiCopyMarkdownLink_Click);
+            resources.ApplyResources(this.flpCommunity, "flpCommunity");
+            this.flpCommunity.Controls.Add(this.flpPatreon);
+            this.flpCommunity.Controls.Add(this.flpDiscord);
+            this.flpCommunity.Name = "flpCommunity";
             // 
-            // tsmiCopyMarkdownImage
+            // flpDiscord
             // 
-            this.tsmiCopyMarkdownImage.Name = "tsmiCopyMarkdownImage";
-            resources.ApplyResources(this.tsmiCopyMarkdownImage, "tsmiCopyMarkdownImage");
-            this.tsmiCopyMarkdownImage.Click += new System.EventHandler(this.tsmiCopyMarkdownImage_Click);
-            // 
-            // tsmiCopyMarkdownLinkedImage
-            // 
-            this.tsmiCopyMarkdownLinkedImage.Name = "tsmiCopyMarkdownLinkedImage";
-            resources.ApplyResources(this.tsmiCopyMarkdownLinkedImage, "tsmiCopyMarkdownLinkedImage");
-            this.tsmiCopyMarkdownLinkedImage.Click += new System.EventHandler(this.tsmiCopyMarkdownLinkedImage_Click);
-            // 
-            // tssCopy6
-            // 
-            this.tssCopy6.Name = "tssCopy6";
-            resources.ApplyResources(this.tssCopy6, "tssCopy6");
+            resources.ApplyResources(this.flpDiscord, "flpDiscord");
+            this.flpDiscord.BackColor = System.Drawing.Color.Transparent;
+            this.flpDiscord.Controls.Add(this.pbDiscordOpen);
+            this.flpDiscord.Controls.Add(this.pbDiscordHide);
+            this.flpDiscord.Name = "flpDiscord";
             // 
             // MainForm
             // 
@@ -1972,10 +2015,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pNews);
-            this.Controls.Add(this.flpPatreon);
+            this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pNews);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -1999,7 +2042,13 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordHide)).EndInit();
             this.pNews.ResumeLayout(false);
+            this.flpCommunity.ResumeLayout(false);
+            this.flpCommunity.PerformLayout();
+            this.flpDiscord.ResumeLayout(false);
+            this.flpDiscord.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2205,7 +2254,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
-        private System.Windows.Forms.FlowLayoutPanel flpPatreon;
         private System.Windows.Forms.PictureBox pbPatreonOpen;
         private System.Windows.Forms.PictureBox pbPatreonHide;
         private System.Windows.Forms.ToolTip ttMain;
@@ -2229,5 +2277,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
         private System.Windows.Forms.ToolStripSeparator tssCopy6;
+        private System.Windows.Forms.PictureBox pbDiscordOpen;
+        private System.Windows.Forms.PictureBox pbDiscordHide;
+        public System.Windows.Forms.FlowLayoutPanel flpCommunity;
+        public System.Windows.Forms.FlowLayoutPanel flpPatreon;
+        public System.Windows.Forms.FlowLayoutPanel flpDiscord;
     }
 }

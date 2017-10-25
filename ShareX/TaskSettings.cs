@@ -76,6 +76,20 @@ namespace ShareX
         public bool UseDefaultImageSettings = true;
         public TaskSettingsImage ImageSettings = new TaskSettingsImage();
 
+        [JsonIgnore]
+        public TaskSettingsImage ImageSettingsReference
+        {
+            get
+            {
+                if (UseDefaultImageSettings)
+                {
+                    return Program.DefaultTaskSettings.ImageSettings;
+                }
+
+                return TaskSettingsReference.ImageSettings;
+            }
+        }
+
         public bool UseDefaultCaptureSettings = true;
         public TaskSettingsCapture CaptureSettings = new TaskSettingsCapture();
 

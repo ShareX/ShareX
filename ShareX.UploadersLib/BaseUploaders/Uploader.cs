@@ -50,12 +50,15 @@ namespace ShareX.UploadersLib
         public List<string> Errors { get; private set; } = new List<string>();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
         public int BufferSize { get; set; } = 8192;
+        public bool VerboseLogs { get; set; }
+        public string VerboseLogsPath { get; set; }
 
         protected bool StopUploadRequested { get; set; }
         protected bool AllowReportProgress { get; set; } = true;
         protected bool ReturnResponseOnError { get; set; }
 
         private HttpWebRequest currentRequest;
+        private Logger verboseLogger;
 
         public static void UpdateServicePointManager()
         {
@@ -130,9 +133,16 @@ namespace ShareX.UploadersLib
         protected string SendRequest(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
             CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
-            using (HttpWebResponse response = GetResponse(method, url, data, contentType, args, headers, cookies))
+            using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
-                return ResponseToString(response, responseType);
+                string response = ResponseToString(webResponse, responseType);
+
+                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
+                {
+                    WriteVerboseLog(url, args, headers, response);
+                }
+
+                return response;
             }
         }
 
@@ -201,9 +211,16 @@ namespace ShareX.UploadersLib
             {
                 stream.Write(data, 0, data.Length);
 
-                using (HttpWebResponse response = GetResponse(HttpMethod.POST, url, stream, contentType, null, headers, cookies))
+                using (HttpWebResponse webResponse = GetResponse(HttpMethod.POST, url, stream, contentType, null, headers, cookies))
                 {
-                    return ResponseToString(response, responseType);
+                    string response = ResponseToString(webResponse, responseType);
+
+                    if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
+                    {
+                        WriteVerboseLog(url, args, headers, response);
+                    }
+
+                    return response;
                 }
             }
         }
@@ -239,6 +256,7 @@ namespace ShareX.UploadersLib
                 byte[] bytesDataClose = MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
+
                 HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
@@ -273,6 +291,11 @@ namespace ShareX.UploadersLib
             {
                 currentRequest = null;
                 IsUploading = false;
+
+                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
+                {
+                    WriteVerboseLog(url, args, headers, result.Response);
+                }
             }
 
             return result;
@@ -361,7 +384,12 @@ namespace ShareX.UploadersLib
             if (contentLength > 0)
             {
                 request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
-                request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+
+                if (method == HttpMethod.GET)
+                {
+                    request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                }
+
                 request.ContentLength = contentLength;
                 request.Pipelined = false;
                 request.Timeout = -1;
@@ -562,6 +590,54 @@ namespace ShareX.UploadersLib
             }
 
             return response;
+        }
+
+        private void WriteVerboseLog(string url, Dictionary<string, string> args, NameValueCollection headers, string response)
+        {
+            if (verboseLogger == null)
+            {
+                verboseLogger = new Logger(VerboseLogsPath)
+                {
+                    MessageFormat = "Date: {0:yyyy-MM-dd HH:mm:ss.fff}\r\n{1}",
+                    StringWrite = false
+                };
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("URL: " + (url ?? ""));
+
+            if (args != null && args.Count > 0)
+            {
+                sb.AppendLine("Arguments:");
+
+                foreach (KeyValuePair<string, string> arg in args)
+                {
+                    sb.AppendLine($"    Name: {arg.Key}, Value: {arg.Value}");
+                }
+            }
+
+            if (headers != null && headers.Count > 0)
+            {
+                sb.AppendLine("Headers:");
+
+                foreach (string key in headers)
+                {
+                    string value = headers[key];
+                    sb.AppendLine($"    Name: {key}, Value: {value}");
+                }
+            }
+
+            sb.AppendLine("Response:");
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                sb.AppendLine(response);
+            }
+
+            sb.Append(new string('-', 30));
+
+            verboseLogger.WriteLine(sb.ToString());
         }
 
         #endregion Helper methods

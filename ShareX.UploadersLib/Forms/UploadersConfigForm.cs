@@ -172,7 +172,7 @@ namespace ShareX.UploadersLib
         {
             #region Image uploaders
 
-            // Imgur
+            #region Imgur
 
             oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
 
@@ -192,24 +192,36 @@ namespace ShareX.UploadersLib
             cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
             ImgurFillAlbumList();
 
-            // ImageShack
+            #endregion
+
+            #region ImageShack
 
             txtImageShackUsername.Text = Config.ImageShackSettings.Username;
             txtImageShackPassword.Text = Config.ImageShackSettings.Password;
             cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
 
-            // TinyPic
+            #endregion
+
+            #region TinyPic
 
             atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
             txtTinyPicUsername.Text = Config.TinyPicUsername;
             txtTinyPicPassword.Text = Config.TinyPicPassword;
 
-            // Flickr
+            #endregion
 
-            pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
-            pgFlickrSettings.SelectedObject = Config.FlickrSettings;
+            #region Flickr
 
-            // Photobucket
+            if (OAuthInfo.CheckOAuth(Config.FlickrOAuthInfo))
+            {
+                oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            cbFlickrDirectLink.Checked = Config.FlickrSettings.DirectLink;
+
+            #endregion
+
+            #region Photobucket
 
             if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
             {
@@ -231,7 +243,9 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            // Picasa
+            #endregion
+
+            #region Google Photos
 
             if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
             {
@@ -241,7 +255,9 @@ namespace ShareX.UploadersLib
 
             txtPicasaAlbumID.Text = Config.PicasaAlbumID;
 
-            // Chevereto
+            #endregion
+
+            #region Chevereto
 
             if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
             cbCheveretoUploaders.Items.AddRange(Chevereto.Uploaders.ToArray());
@@ -249,15 +265,19 @@ namespace ShareX.UploadersLib
             txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
-            // vgy.me
+            #endregion
+
+            #region vgy.me
 
             txtVgymeUserKey.Text = Config.VgymeUserKey;
+
+            #endregion
 
             #endregion Image uploaders
 
             #region Text uploaders
 
-            // Pastebin
+            #region Pastebin
 
             txtPastebinUsername.Text = Config.PastebinSettings.Username;
             txtPastebinPassword.Text = Config.PastebinSettings.Password;
@@ -280,11 +300,15 @@ namespace ShareX.UploadersLib
             txtPastebinTitle.Text = Config.PastebinSettings.Title;
             cbPastebinRaw.Checked = Config.PastebinSettings.RawURL;
 
-            // Paste.ee
+            #endregion
 
-            txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
+            #region Paste.ee
 
-            // Gist
+            txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserKey;
+
+            #endregion
+
+            #region Gist
 
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
 
@@ -297,31 +321,41 @@ namespace ShareX.UploadersLib
             cbGistUseRawURL.Checked = Config.GistRawURL;
             txtGistCustomURL.Text = Config.GistCustomURL;
 
-            // Upaste
+            #endregion
+
+            #region Upaste
 
             txtUpasteUserKey.Text = Config.UpasteUserKey;
             cbUpasteIsPublic.Checked = Config.UpasteIsPublic;
 
-            // Hastebin
+            #endregion
+
+            #region Hastebin
 
             txtHastebinCustomDomain.Text = Config.HastebinCustomDomain;
             txtHastebinSyntaxHighlighting.Text = Config.HastebinSyntaxHighlighting;
             cbHastebinUseFileExtension.Checked = Config.HastebinUseFileExtension;
 
-            // OneTimeSecret
+            #endregion
+
+            #region OneTimeSecret
 
             txtOneTimeSecretEmail.Text = Config.OneTimeSecretAPIUsername;
             txtOneTimeSecretAPIKey.Text = Config.OneTimeSecretAPIKey;
 
-            // Pastie
+            #endregion
+
+            #region Pastie
 
             cbPastieIsPublic.Checked = Config.PastieIsPublic;
+
+            #endregion
 
             #endregion Text uploaders
 
             #region File uploaders
 
-            // FTP
+            #region FTP
 
             if (Config.FTPAccountList == null)
             {
@@ -340,7 +374,9 @@ namespace ShareX.UploadersLib
                 FTPUpdateEnabledStates();
             }
 
-            // Dropbox
+            #endregion
+
+            #region Dropbox
 
             if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info))
             {
@@ -352,7 +388,9 @@ namespace ShareX.UploadersLib
             cbDropboxUseDirectLink.Enabled = Config.DropboxAutoCreateShareableLink;
             cbDropboxUseDirectLink.Checked = Config.DropboxUseDirectLink;
 
-            // OneDrive
+            #endregion
+
+            #region OneDrive
 
             tvOneDrive.Nodes.Clear();
             OneDriveAddFolder(OneDrive.RootFolder, null);
@@ -366,7 +404,9 @@ namespace ShareX.UploadersLib
             lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveSelectedFolder.name;
             tvOneDrive.CollapseAll();
 
-            // Google Drive
+            #endregion
+
+            #region Google Drive
 
             if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
             {
@@ -382,17 +422,15 @@ namespace ShareX.UploadersLib
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
 
-            // puush
+            #endregion
+
+            #region puush
 
             txtPuushAPIKey.Text = Config.PuushAPIKey;
 
-            // Minus
+            #endregion
 
-            cbMinusURLType.Items.Clear();
-            cbMinusURLType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<MinusLinkType>());
-            MinusUpdateControls();
-
-            // Box
+            #region Box
 
             if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
@@ -403,20 +441,26 @@ namespace ShareX.UploadersLib
             cbBoxShare.Checked = Config.BoxShare;
             lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.BoxSelectedFolder.name;
 
-            // Ge.tt
+            #endregion
+
+            #region Ge.tt
 
             if (Config.Ge_ttLogin != null && !string.IsNullOrEmpty(Config.Ge_ttLogin.AccessToken))
             {
                 lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_successful;
             }
 
-            // Localhostr
+            #endregion
+
+            #region Localhostr
 
             txtLocalhostrEmail.Text = Config.LocalhostrEmail;
             txtLocalhostrPassword.Text = Config.LocalhostrPassword;
             cbLocalhostrDirectURL.Checked = Config.LocalhostrDirectURL;
 
-            // Email
+            #endregion
+
+            #region Email
 
             txtEmailSmtpServer.Text = Config.EmailSmtpServer;
             nudEmailSmtpPort.SetValue(Config.EmailSmtpPort);
@@ -429,13 +473,17 @@ namespace ShareX.UploadersLib
             txtEmailAutomaticSendTo.Enabled = Config.EmailAutomaticSend;
             txtEmailAutomaticSendTo.Text = Config.EmailAutomaticSendTo;
 
-            // SendSpace
+            #endregion
+
+            #region SendSpace
 
             atcSendSpaceAccountType.SelectedAccountType = Config.SendSpaceAccountType;
             txtSendSpacePassword.Text = Config.SendSpacePassword;
             txtSendSpaceUserName.Text = Config.SendSpaceUsername;
 
-            // Localhost
+            #endregion
+
+            #region Localhost
 
             if (Config.LocalhostAccountList == null || Config.LocalhostAccountList.Count == 0)
             {
@@ -453,7 +501,9 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            // Jira
+            #endregion
+
+            #region Jira
 
             txtJiraHost.Text = Config.JiraHost;
             txtJiraIssuePrefix.Text = Config.JiraIssuePrefix;
@@ -487,11 +537,15 @@ namespace ShareX.UploadersLib
                 oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
-            // Mega
+            #endregion
+
+            #region Mega
 
             MegaConfigureTab(false);
 
-            //Pushbullet
+            #endregion
+
+            #region Pushbullet
 
             txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
 
@@ -509,7 +563,9 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            // Amazon S3
+            #endregion
+
+            #region Amazon S3
 
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
@@ -534,7 +590,9 @@ namespace ShareX.UploadersLib
             cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
             UpdateAmazonS3Status();
 
-            // ownCloud
+            #endregion
+
+            #region ownCloud
 
             txtOwnCloudHost.Text = Config.OwnCloudHost;
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
@@ -544,31 +602,41 @@ namespace ShareX.UploadersLib
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
 
-            // MediaFire
+            #endregion
+
+            #region MediaFire
 
             txtMediaFireEmail.Text = Config.MediaFireUsername;
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
             cbMediaFireUseLongLink.Checked = Config.MediaFireUseLongLink;
 
-            // Lambda
+            #endregion
+
+            #region Lambda
 
             txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
             cbLambdaUploadURL.Items.AddRange(Lambda.UploadURLs);
             cbLambdaUploadURL.SelectedItem = Config.LambdaSettings.UploadURL;
 
-            // Lithiio
+            #endregion
+
+            #region Lithiio
 
             txtLithiioApiKey.Text = Config.LithiioSettings.UserAPIKey;
 
-            // Pomf
+            #endregion
+
+            #region Pomf
 
             if (Config.PomfUploader == null) Config.PomfUploader = new PomfUploader();
             cbPomfUploaders.Items.AddRange(Pomf.Uploaders.ToArray());
             txtPomfUploadURL.Text = Config.PomfUploader.UploadURL;
             txtPomfResultURL.Text = Config.PomfUploader.ResultURL;
 
-            // Seafile
+            #endregion
+
+            #region Seafile
 
             cbSeafileAPIURL.Text = Config.SeafileAPIURL;
             txtSeafileAuthToken.Text = Config.SeafileAuthToken;
@@ -583,7 +651,9 @@ namespace ShareX.UploadersLib
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
 
-            // Streamable
+            #endregion
+
+            #region Streamable
 
             cbStreamableAnonymous.Checked = Config.StreamableAnonymous;
             txtStreamablePassword.Text = Config.StreamablePassword;
@@ -591,18 +661,24 @@ namespace ShareX.UploadersLib
             txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
             cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
-            // s-ul
+            #endregion
+
+            #region s-ul
 
             txtSulAPIKey.Text = Config.SulAPIKey;
 
-            // Uplea
+            #endregion
+
+            #region Uplea
 
             txtUpleaApiKey.Text = Config.UpleaApiKey;
             txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
             cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
             cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
 
-            // Azure Storage
+            #endregion
+
+            #region Azure Storage
 
             txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
             txtAzureStorageAccessKey.Text = Config.AzureStorageAccountAccessKey;
@@ -610,7 +686,9 @@ namespace ShareX.UploadersLib
             cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
             txtAzureStorageCustomDomain.Text = Config.AzureStorageCustomDomain;
 
-            // Plik
+            #endregion
+
+            #region Plik
 
             txtPlikAPIKey.Text = Config.PlikSettings.APIKey;
             txtPlikURL.Text = Config.PlikSettings.URL;
@@ -627,7 +705,9 @@ namespace ShareX.UploadersLib
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
 
-            // Gfycat
+            #endregion
+
+            #region Gfycat
 
             atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
 
@@ -640,11 +720,13 @@ namespace ShareX.UploadersLib
 
             cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
 
+            #endregion
+
             #endregion File uploaders
 
             #region URL shorteners
 
-            // Google URL Shortener
+            #region Google URL Shortener
 
             atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
 
@@ -653,7 +735,9 @@ namespace ShareX.UploadersLib
                 oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
-            // bit.ly
+            #endregion
+
+            #region bit.ly
 
             if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
             {
@@ -662,7 +746,9 @@ namespace ShareX.UploadersLib
 
             txtBitlyDomain.Text = Config.BitlyDomain;
 
-            // yourls.org
+            #endregion
+
+            #region yourls.org
 
             txtYourlsAPIURL.Text = Config.YourlsAPIURL;
             txtYourlsSignature.Text = Config.YourlsSignature;
@@ -670,27 +756,35 @@ namespace ShareX.UploadersLib
             txtYourlsUsername.Text = Config.YourlsUsername;
             txtYourlsPassword.Text = Config.YourlsPassword;
 
-            // adf.ly
+            #endregion
+
+            #region adf.ly
 
             txtAdflyAPIKEY.Text = Config.AdFlyAPIKEY;
             txtAdflyAPIUID.Text = Config.AdFlyAPIUID;
 
-            // coinurl.com
+            #endregion
+
+            #region coinurl.com
 
             txtCoinURLUUID.Text = Config.CoinURLUUID;
 
-            // Polr
+            #endregion
+
+            #region Polr
 
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
             txtPolrAPIKey.Text = Config.PolrAPIKey;
             cbPolrIsSecret.Checked = Config.PolrIsSecret;
             cbPolrUseAPIv1.Checked = Config.PolrUseAPIv1;
 
+            #endregion
+
             #endregion URL shorteners
 
             #region Other uploaders
 
-            // Twitter
+            #region Twitter
 
             lbTwitterAccounts.Items.Clear();
 
@@ -709,14 +803,18 @@ namespace ShareX.UploadersLib
             cbTwitterSkipMessageBox.Checked = Config.TwitterSkipMessageBox;
             txtTwitterDefaultMessage.Text = Config.TwitterDefaultMessage;
 
-            // Custom uploaders
+            #endregion
+
+            #region Custom uploaders
 
             CustomUploaderLoadTab();
+
+            #endregion
 
             #endregion Other uploaders
         }
 
-        #region Image Uploaders
+        #region Image uploaders
 
         #region Imgur
 
@@ -914,24 +1012,24 @@ namespace ShareX.UploadersLib
 
         #region Flickr
 
-        private void btnFlickrOpenAuthorize_Click(object sender, EventArgs e)
+        private void oauthFlickr_OpenButtonClicked()
         {
             FlickrAuthOpen();
         }
 
-        private void btnFlickrCompleteAuth_Click(object sender, EventArgs e)
+        private void oauthFlickr_CompleteButtonClicked(string code)
         {
-            FlickrAuthComplete();
+            FlickrAuthComplete(code);
         }
 
-        private void btnFlickrCheckToken_Click(object sender, EventArgs e)
+        private void oauthFlickr_ClearButtonClicked()
         {
-            FlickrCheckToken();
+            Config.FlickrOAuthInfo = null;
         }
 
-        private void btnFlickrOpenImages_Click(object sender, EventArgs e)
+        private void cbFlickrDirectLink_CheckedChanged(object sender, EventArgs e)
         {
-            FlickrOpenImages();
+            Config.FlickrSettings.DirectLink = cbFlickrDirectLink.Checked;
         }
 
         #endregion Flickr
@@ -982,16 +1080,16 @@ namespace ShareX.UploadersLib
 
         #endregion Photobucket
 
-        #region Picasa
+        #region Google Photos
 
         private void oauth2Picasa_OpenButtonClicked()
         {
-            PicasaAuthOpen();
+            GooglePhotosAuthOpen();
         }
 
         private void oauth2Picasa_CompleteButtonClicked(string code)
         {
-            PicasaAuthComplete(code);
+            GooglePhotosAuthComplete(code);
         }
 
         private void oauth2Picasa_ClearButtonClicked()
@@ -1001,7 +1099,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2Picasa_RefreshButtonClicked()
         {
-            PicasaAuthRefresh();
+            GooglePhotosAuthRefresh();
         }
 
         private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
@@ -1011,7 +1109,7 @@ namespace ShareX.UploadersLib
 
         private void btnPicasaRefreshAlbumList_Click(object sender, EventArgs e)
         {
-            PicasaRefreshAlbumList();
+            GooglePhotosRefreshAlbumList();
         }
 
         private void lvPicasaAlbumList_SelectedIndexChanged(object sender, EventArgs e)
@@ -1027,7 +1125,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        #endregion Picasa
+        #endregion Google Photos
 
         #region Chevereto
 
@@ -1101,9 +1199,9 @@ namespace ShareX.UploadersLib
 
         #endregion vgy.me
 
-        #endregion Image Uploaders
+        #endregion Image uploaders
 
-        #region Text Uploaders
+        #region Text uploaders
 
         #region Pastebin
 
@@ -1156,9 +1254,14 @@ namespace ShareX.UploadersLib
 
         #region Paste.ee
 
+        private void btnPaste_eeGetUserKey_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL($"https://paste.ee/account/api/authorize/{APIKeys.Paste_eeApplicationKey}");
+        }
+
         private void txtPaste_eeUserAPIKey_TextChanged(object sender, EventArgs e)
         {
-            Config.Paste_eeUserAPIKey = txtPaste_eeUserAPIKey.Text;
+            Config.Paste_eeUserKey = txtPaste_eeUserAPIKey.Text;
         }
 
         #endregion Paste.ee
@@ -1259,9 +1362,9 @@ namespace ShareX.UploadersLib
 
         #endregion Pastie
 
-        #endregion Text Uploaders
+        #endregion Text uploaders
 
-        #region File Uploaders
+        #region File uploaders
 
         #region FTP
 
@@ -1863,99 +1966,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Box
-
-        #region Minus
-
-        private void btnMinusAuth_Click(object sender, EventArgs e)
-        {
-            MinusAuth();
-        }
-
-        private void btnAuthRefresh_Click(object sender, EventArgs e)
-        {
-            MinusAuthRefresh();
-        }
-
-        private void cboMinusFolders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                Config.MinusConfig.FolderID = cboMinusFolders.SelectedIndex;
-                MinusFolder tempMf = Config.MinusConfig.GetActiveFolder();
-                cbMinusPublic.Checked = tempMf.is_public;
-            }
-        }
-
-        private void btnMinusFolderAdd_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && !MinusHasFolder(cboMinusFolders.Text))
-            {
-                btnMinusFolderAdd.Enabled = false;
-
-                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, cbMinusPublic.Checked);
-                if (dir != null)
-                {
-                    cboMinusFolders.Items.Add(dir);
-                    cboMinusFolders.SelectedIndex = cboMinusFolders.Items.Count - 1;
-                }
-
-                btnMinusFolderAdd.Enabled = true;
-            }
-        }
-
-        private void btnMinusFolderRemove_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && MinusHasFolder(cboMinusFolders.Text))
-            {
-                btnMinusFolderRemove.Enabled = false;
-
-                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-
-                int index = cboMinusFolders.SelectedIndex;
-
-                if (minus.DeleteFolder(index))
-                {
-                    cboMinusFolders.Items.RemoveAt(index);
-
-                    if (cboMinusFolders.Items.Count > 0)
-                    {
-                        cboMinusFolders.SelectedIndex = 0;
-                    }
-                }
-
-                btnMinusFolderRemove.Enabled = true;
-            }
-        }
-
-        private void btnMinusReadFolderList_Click(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                btnMinusReadFolderList.Enabled = false;
-
-                List<MinusFolder> tempListMf = new Minus(Config.MinusConfig, Config.MinusOAuth2Info).ReadFolderList();
-
-                if (tempListMf.Count > 0)
-                {
-                    cboMinusFolders.Items.Clear();
-                    cboMinusFolders.Items.AddRange(tempListMf.ToArray());
-                    cboMinusFolders.SelectedIndex = Config.MinusConfig.FolderID;
-                }
-
-                btnMinusReadFolderList.Enabled = true;
-            }
-        }
-
-        private void cbMinusURLType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Config.MinusConfig != null)
-            {
-                Config.MinusConfig.LinkType = (MinusLinkType)cbMinusURLType.SelectedIndex;
-            }
-        }
-
-        #endregion Minus
 
         #region Email
 
@@ -3016,9 +3026,9 @@ namespace ShareX.UploadersLib
 
         #endregion Gfycat
 
-        #endregion File Uploaders
+        #endregion File uploaders
 
-        #region URL Shorteners
+        #region URL shorteners
 
         #region bit.ly
 
@@ -3150,9 +3160,9 @@ namespace ShareX.UploadersLib
 
         #endregion Polr
 
-        #endregion URL Shorteners
+        #endregion URL shorteners
 
-        #region Other Uploaders
+        #region Other uploaders
 
         #region Twitter
 
@@ -3227,7 +3237,7 @@ namespace ShareX.UploadersLib
 
         #endregion Twitter
 
-        #region Custom Uploaders
+        #region Custom uploaders
 
         private void btnCustomUploaderAdd_Click(object sender, EventArgs e)
         {
@@ -3287,7 +3297,28 @@ namespace ShareX.UploadersLib
 
         private object eiCustomUploaders_ExportRequested()
         {
-            return CustomUploaderGetSelected();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+
+            if (uploader != null)
+            {
+                if (string.IsNullOrEmpty(uploader.RequestURL))
+                {
+                    // TODO: Translate
+                    MessageBox.Show("\"Request URL\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+
+                if (uploader.DestinationType == CustomUploaderDestinationType.None)
+                {
+                    // TODO: Translate
+                    MessageBox.Show("\"Destination type\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+
+            return uploader;
         }
 
         private void eiCustomUploaders_ImportRequested(object obj)
@@ -3349,7 +3380,8 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Arguments.ContainsKey(name))
                     {
-                        MessageBox.Show(Resources.UploadersConfigForm_An_argument_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_An_argument_with_the_same_name_already_exists, "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -3435,7 +3467,8 @@ namespace ShareX.UploadersLib
 
                     if (uploader.Headers.ContainsKey(name))
                     {
-                        MessageBox.Show(Resources.UploadersConfigForm_A_header_with_the_same_name_already_exists, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.UploadersConfigForm_A_header_with_the_same_name_already_exists, "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -3805,8 +3838,8 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
         }
 
-        #endregion Custom Uploaders
+        #endregion Custom uploaders
 
-        #endregion Other Uploaders
+        #endregion Other uploaders
     }
 }

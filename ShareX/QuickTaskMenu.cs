@@ -43,6 +43,14 @@ namespace ShareX
                 AutoClose = false
             };
 
+            cms.KeyUp += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    cms.Close();
+                }
+            };
+
             ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Continue);
             tsmiContinue.Image = Resources.control;
             tsmiContinue.Click += (sender, e) =>
@@ -100,6 +108,7 @@ namespace ShareX
             Point cursorPosition = CaptureHelpers.GetCursorPosition();
             cursorPosition.Offset(-10, -10);
             cms.Show(cursorPosition);
+            cms.Focus();
         }
 
         protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)

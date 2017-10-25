@@ -144,6 +144,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsCreating { get; set; }
         public bool IsMoving { get; set; }
+        public bool IsPanning { get; set; }
         public bool IsResizing { get; set; }
         public bool IsCornerMoving { get; private set; }
         public bool IsProportionalResizing { get; private set; }
@@ -154,6 +155,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsAnnotated => isAnnotated || DrawingShapes.Where(x => x.ShapeType != ShapeType.DrawingCursor).Count() > 0 || EffectShapes.Length > 0;
 
+        public InputManager InputManager { get; private set; } = new InputManager();
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
@@ -268,6 +270,13 @@ namespace ShareX.ScreenCaptureLib
                     StartRegionSelection();
                 }
             }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                if (form.IsEditorMode)
+                {
+                    StartPanning();
+                }
+            }
         }
 
         private void form_MouseUp(object sender, MouseEventArgs e)
@@ -301,7 +310,14 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                RunAction(Config.RegionCaptureActionMiddleClick);
+                if (form.IsEditorMode)
+                {
+                    EndPanning();
+                }
+                else
+                {
+                    RunAction(Config.RegionCaptureActionMiddleClick);
+                }
             }
             else if (e.Button == MouseButtons.XButton1)
             {
@@ -411,7 +427,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.F1:
                     Config.ShowHotkeys = !Config.ShowHotkeys;
-                    if(form.IsAnnotationMode)
+                    if (tsmiTips != null)
                         tsmiTips.Checked = Config.ShowHotkeys;
                     break;
             }
@@ -643,11 +659,14 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
+            InputManager.Update(form); // If it's a touch event we don't have the correct point yet, so refresh it now
+
             BaseShape shape = GetIntersectShape();
 
             if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
                 IsMoving = true;
+                form.Cursor = Cursors.SizeAll;
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
@@ -666,6 +685,7 @@ namespace ShareX.ScreenCaptureLib
 
             IsCreating = false;
             IsMoving = false;
+            form.SetDefaultCursor();
 
             BaseShape shape = CurrentShape;
 
@@ -708,6 +728,18 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+        }
+
+        private void StartPanning()
+        {
+            IsPanning = true;
+            form.Cursor = Cursors.SizeAll;
+        }
+
+        private void EndPanning()
+        {
+            IsPanning = false;
+            form.SetDefaultCursor();
         }
 
         private BaseShape AddShape()
@@ -1154,6 +1186,30 @@ namespace ShareX.ScreenCaptureLib
             MoveShapeUp(CurrentShape);
         }
 
+        public void MoveAll(int x, int y)
+        {
+            foreach (BaseShape shape in Shapes)
+            {
+                shape.Move(x, y);
+            }
+        }
+
+        public void MoveAll(Point offset)
+        {
+            MoveAll(offset.X, offset.Y);
+        }
+
+        public void RemoveOutsideShapes()
+        {
+            foreach (BaseShape shape in Shapes.ToArray())
+            {
+                if (!form.ImageRectangle.IntersectsWith(shape.Rectangle))
+                {
+                    shape.Remove();
+                }
+            }
+        }
+
         private bool IsShapeTypeRegion(ShapeType shapeType)
         {
             switch (shapeType)
@@ -1262,8 +1318,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
+                MoveAll(-rect.X, -rect.Y);
                 form.InitBackground(img);
-
                 isAnnotated = true;
             }
         }
@@ -1285,6 +1341,58 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        private void ChangeImageSize()
+        {
+            Size oldSize = form.Image.Size;
+
+            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize))
+            {
+                if (imageSizeForm.ShowDialog() == DialogResult.OK)
+                {
+                    Size size = imageSizeForm.Result;
+
+                    if (size != oldSize)
+                    {
+                        Image img = ImageHelpers.ResizeImage(form.Image, size);
+
+                        if (img != null)
+                        {
+                            MoveAll(-form.ImageRectangle.X, -form.ImageRectangle.Y);
+                            form.InitBackground(img);
+                            isAnnotated = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ChangeCanvasSize()
+        {
+            using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm())
+            {
+                if (canvasSizeForm.ShowDialog() == DialogResult.OK)
+                {
+                    Padding canvas = canvasSizeForm.Canvas;
+                    Image img = ImageHelpers.AddCanvas(form.Image, canvas);
+
+                    if (img != null)
+                    {
+                        MoveAll(canvas.Left - form.ImageRectangle.X, canvas.Top - form.ImageRectangle.Y);
+                        form.InitBackground(img);
+                        isAnnotated = true;
+                    }
+                }
+            }
+        }
+
+        private void RotateImage(RotateFlipType type)
+        {
+            Image clone = (Image)form.Image.Clone();
+            clone.RotateFlip(type);
+            form.InitBackground(clone);
+            isAnnotated = true;
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

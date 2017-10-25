@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -149,15 +149,11 @@ Global
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
-		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -165,24 +161,19 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.ActiveCfg = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
-		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
+		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Steam|Any CPU.ActiveCfg = Release|Any CPU
-		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
-		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.ActiveCfg = Release|Any CPU
-		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.Build.0 = Release|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF9AEBB-B104-4B72-8298-04CA6D23B0E0}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_AutoCreateNewLanguageFiles = False
+		SolutionGuid = {DEACF1C2-28EE-44DF-B55E-2234F6137272}
 	EndGlobalSection
 EndGlobal

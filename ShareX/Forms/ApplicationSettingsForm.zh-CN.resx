@@ -165,9 +165,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>在 "发送到" 菜单显示 ShareX</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Windows 启动时运行 ShareX </value>
-  </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>记住主窗口的位置</value>
   </data>

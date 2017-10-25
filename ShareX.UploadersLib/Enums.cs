@@ -111,8 +111,6 @@ namespace ShareX.UploadersLib
         Pushbullet,
         [Description("SendSpace")]
         SendSpace,
-        [Description("Minus")]
-        Minus,
         [Description("Ge.tt")]
         Ge_tt,
         [Description("Hostr")]

@@ -132,7 +132,8 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(RequestURL))
             {
-                throw new Exception("'Request URL' must be not empty.");
+                // TODO: Translate
+                throw new Exception("\"Request URL\" must be configured.");
             }
 
             string url = ParseURL(RequestURL, false);
@@ -144,7 +145,8 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(FileFormName))
             {
-                throw new Exception("'File form name' must be not empty.");
+                // TODO: Translate
+                throw new Exception("\"File form name\" must be configured.");
             }
 
             return FileFormName;

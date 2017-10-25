@@ -27,6 +27,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.StartupManagers;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -39,16 +40,6 @@ namespace ShareX
     {
         private static readonly string ApplicationName = "ShareX";
         private static readonly string ApplicationPath = string.Format("\"{0}\"", Application.ExecutablePath);
-
-        private static readonly string StartupTargetPath =
-#if STEAM
-            Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-            Application.ExecutablePath;
-#endif
-
-        private static readonly string StartupRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
-        private static readonly string StartupRegistryValue = $"\"{StartupTargetPath}\" -silent";
 
         private static readonly string ShellExtMenuFiles = @"Software\Classes\*\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFilesCmd = ShellExtMenuFiles + @"\command";
@@ -74,106 +65,6 @@ namespace ShareX
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
         private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
-
-        public static bool CheckStartupShortcut()
-        {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath);
-        }
-
-        public static bool CreateStartupShortcut(bool create)
-        {
-            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
-        }
-
-        public static bool CheckStartWithWindows()
-        {
-            try
-            {
-                return RegistryHelpers.CheckRegistry(StartupRegistryPath, ApplicationName, StartupRegistryValue);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static void CreateStartWithWindows(bool create)
-        {
-            try
-            {
-                using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(StartupRegistryPath, true))
-                {
-                    if (rk != null)
-                    {
-                        if (create)
-                        {
-                            rk.SetValue(ApplicationName, StartupRegistryValue, RegistryValueKind.String);
-                        }
-                        else
-                        {
-                            rk.DeleteValue(ApplicationName, false);
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-        }
-
-        private static StartupTaskState RunStartupWindowsStore(string argument, string info)
-        {
-            string filepath = Helpers.GetAbsolutePath("ShareX_DesktopBridgeHelper.exe");
-
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-            {
-                try
-                {
-                    DebugHelper.WriteLine($"Start: {filepath} {argument}");
-
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
-                    {
-                        FileName = filepath,
-                        Arguments = argument,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    Process process = Process.Start(startInfo);
-
-                    if (process.WaitForExit(5000))
-                    {
-                        int code = process.ExitCode;
-
-                        DebugHelper.WriteLine($"{info} result: {code}");
-
-                        if (code > -1)
-                        {
-                            return (StartupTaskState)code;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, $"{info} failed");
-                }
-            }
-
-            return StartupTaskState.Error;
-        }
-
-        public static StartupTaskState CheckStartupWindowsStore()
-        {
-            return RunStartupWindowsStore("-StartupState", "Startup state check");
-        }
-
-        public static StartupTaskState ConfigureStartupWindowsStore(bool enable)
-        {
-            return RunStartupWindowsStore(enable ? "-StartupEnable" : "-StartupDisable", "Startup configuration");
-        }
 
         public static bool CheckShellContextMenuButton()
         {
@@ -459,7 +350,7 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            CreateStartupShortcut(false);
+            StartupManagerFactory.StartupManager.State = StartupTaskState.Disabled;
             CreateShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);

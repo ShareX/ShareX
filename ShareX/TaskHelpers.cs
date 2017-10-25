@@ -184,7 +184,7 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects(safeTaskSettings);
+                    OpenImageEffects(taskSettings);
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
@@ -501,23 +501,23 @@ namespace ShareX
             }
         }
 
-        public static Image AddImageEffects(Image img, TaskSettings taskSettings)
+        public static Image AddImageEffects(Image img, TaskSettingsImage taskSettingsImage)
         {
-            if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
+            if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
-                    taskSettings.ImageSettings.SelectedImageEffectPreset))
+                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettingsImage.ImageEffectPresets,
+                    taskSettingsImage.SelectedImageEffectPreset))
                 {
                     imageEffectsForm.ShowDialog();
-                    taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    taskSettingsImage.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                 }
             }
 
-            if (taskSettings.ImageSettings.ImageEffectPresets.IsValidIndex(taskSettings.ImageSettings.SelectedImageEffectPreset))
+            if (taskSettingsImage.ImageEffectPresets.IsValidIndex(taskSettingsImage.SelectedImageEffectPreset))
             {
                 using (img)
                 {
-                    return taskSettings.ImageSettings.ImageEffectPresets[taskSettings.ImageSettings.SelectedImageEffectPreset].ApplyEffects(img);
+                    return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(img);
                 }
             }
 
@@ -901,11 +901,11 @@ namespace ShareX
                 using (img)
                 {
                     return RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
-                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
-                        x => ClipboardHelpers.CopyImage(x),
-                        x => UploadManager.UploadImage(x),
-                        x => PrintImage(x),
+                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, newFilePath)),
+                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, newFilePath)),
+                        x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
+                        x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
+                        x => Program.MainForm.InvokeSafe(() => PrintImage(x)),
                         taskMode);
                 }
             }
@@ -971,7 +971,7 @@ namespace ShareX
 
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
             string filePath = ImageHelpers.OpenImageFileDialog();
             Image img = null;
@@ -979,10 +979,14 @@ namespace ShareX
             {
                 img = ImageHelpers.LoadImage(filePath);
             }
-            ImageEffectsForm form = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
-                taskSettings.ImageSettings.SelectedImageEffectPreset);
-            form.EditorMode();
-            form.Show();
+
+            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                taskSettings.ImageSettings.SelectedImageEffectPreset))
+            {
+                imageEffectsForm.EditorMode();
+                imageEffectsForm.ShowDialog();
+                //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+            }
         }
 
         public static void OpenMonitorTest()

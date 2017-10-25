@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -54,6 +55,9 @@ namespace ShareX.HistoryLib
             Icon = ShareXResources.Icon;
             defaultTitle = Text;
             UpdateTitle();
+
+            // Mark the Date column as having a date; used for sorting
+            chDateTime.Tag = new DateTime();
 
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
@@ -210,7 +214,7 @@ namespace ShareX.HistoryLib
                     lvi.ImageIndex = 3;
                 }
 
-                lvi.SubItems.Add(hi.DateTime.ToString());
+                lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
                 lvi.SubItems.Add(hi.Filename);
                 lvi.SubItems.Add(hi.URL);
                 lvi.Tag = hi;
@@ -393,6 +397,26 @@ namespace ShareX.HistoryLib
             }
 
             e.Handled = true;
+        }
+
+        private void lvHistory_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            List<string> selection = new List<string>();
+
+            foreach (ListViewItem item in lvHistory.SelectedItems)
+            {
+                HistoryItem hi = (HistoryItem)item.Tag;
+                if (File.Exists(hi.Filepath))
+                {
+                    selection.Add(hi.Filepath);
+                }
+            }
+
+            if (selection.Count > 0)
+            {
+                DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
+                DoDragDrop(data, DragDropEffects.Copy);
+            }
         }
 
         private void txtFilenameFilter_TextChanged(object sender, EventArgs e)

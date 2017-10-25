@@ -699,4 +699,10 @@
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Markdown изображение-ссылку</value>
   </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Навсегда спрятать кнопку Discord</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Открыть приглашение на Discord сервер ShareX</value>
+  </data>
 </root>

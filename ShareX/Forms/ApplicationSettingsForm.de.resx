@@ -171,9 +171,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Zeige ShareX im Menü "Senden an"</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>ShareX beim Starten von Windows ausführen</value>
-  </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Behalte Hauptfensterposition</value>
   </data>

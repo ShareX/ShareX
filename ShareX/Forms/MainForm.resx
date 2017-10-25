@@ -253,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -294,62 +294,8 @@
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>145</value>
   </data>
-  <data name="flpPatreon.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <data name="flpPatreon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonOpen.Name" xml:space="preserve">
-    <value>pbPatreonOpen</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonOpen.Parent" xml:space="preserve">
-    <value>flpPatreon</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonOpen.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonHide.Name" xml:space="preserve">
-    <value>pbPatreonHide</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonHide.Parent" xml:space="preserve">
-    <value>flpPatreon</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonHide.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flpPatreon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>613, 378</value>
-  </data>
-  <data name="flpPatreon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 45</value>
-  </data>
-  <data name="flpPatreon.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="flpPatreon.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="flpPatreon.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;flpPatreon.Name" xml:space="preserve">
-    <value>flpPatreon</value>
-  </data>
-  <data name="&gt;&gt;flpPatreon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpPatreon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpPatreon.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
@@ -414,6 +360,33 @@
   <data name="&gt;&gt;pbPatreonHide.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="flpPatreon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
+  <data name="flpPatreon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 45</value>
+  </data>
+  <data name="flpPatreon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="flpPatreon.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="flpPatreon.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpPatreon.Name" xml:space="preserve">
+    <value>flpPatreon</value>
+  </data>
+  <data name="&gt;&gt;flpPatreon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpPatreon.Parent" xml:space="preserve">
+    <value>flpCommunity</value>
+  </data>
+  <data name="&gt;&gt;flpPatreon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -445,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -945,6 +918,15 @@
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
   </metadata>
+  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 450</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
+    <value>cmsTaskInfo</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -962,6 +944,66 @@
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Open</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>Shortened URL</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail URL</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
+    <value>Deletion URL</value>
+  </data>
+  <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 6</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenFile.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenFolder.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>Thumbnail file</value>
+  </data>
+  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copy</value>
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
@@ -1128,12 +1170,6 @@
   <data name="tssCopy6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
   <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+U</value>
   </data>
@@ -1247,69 +1283,6 @@
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Image preview</value>
-  </data>
-  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 472</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
-    <value>cmsTaskInfo</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Enter</value>
-  </data>
-  <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiOpenShortenedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>Shortened URL</value>
-  </data>
-  <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>Thumbnail URL</value>
-  </data>
-  <data name="tsmiOpenDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Deletion URL</value>
-  </data>
-  <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 6</value>
-  </data>
-  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Enter</value>
-  </data>
-  <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenFile.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Enter</value>
-  </data>
-  <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenFolder.Text" xml:space="preserve">
-    <value>Folder</value>
-  </data>
-  <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
-    <value>Thumbnail file</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
@@ -1776,6 +1749,72 @@
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
   </metadata>
+  <data name="pbDiscordOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbDiscordOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pbDiscordOpen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pbDiscordOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 45</value>
+  </data>
+  <data name="pbDiscordOpen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbDiscordOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Open ShareX Discord server invite link</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordOpen.Name" xml:space="preserve">
+    <value>pbDiscordOpen</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordOpen.Parent" xml:space="preserve">
+    <value>flpDiscord</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordOpen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbDiscordHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbDiscordHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 0</value>
+  </data>
+  <data name="pbDiscordHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pbDiscordHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 45</value>
+  </data>
+  <data name="pbDiscordHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbDiscordHide.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Hide Discord button permanently</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordHide.Name" xml:space="preserve">
+    <value>pbDiscordHide</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordHide.Parent" xml:space="preserve">
+    <value>flpDiscord</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="ucNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1786,7 +1825,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>834, 429</value>
   </data>
   <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1819,10 +1858,10 @@
     <value>Fill</value>
   </data>
   <data name="pNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 0</value>
+    <value>0, 0</value>
   </data>
   <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>834, 429</value>
   </data>
   <data name="pNews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1840,13 +1879,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="btnCloseNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 400</value>
+    <value>720, 400</value>
   </data>
   <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
@@ -1868,6 +1907,69 @@
   </data>
   <data name="&gt;&gt;btnCloseNews.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="flpCommunity.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="flpCommunity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpCommunity.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="flpDiscord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpDiscord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="flpDiscord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 45</value>
+  </data>
+  <data name="flpDiscord.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="flpDiscord.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="flpDiscord.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Name" xml:space="preserve">
+    <value>flpDiscord</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Parent" xml:space="preserve">
+    <value>flpCommunity</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpCommunity.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>BottomUp</value>
+  </data>
+  <data name="flpCommunity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 322</value>
+  </data>
+  <data name="flpCommunity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 102</value>
+  </data>
+  <data name="flpCommunity.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;flpCommunity.Name" xml:space="preserve">
+    <value>flpCommunity</value>
+  </data>
+  <data name="&gt;&gt;flpCommunity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpCommunity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpCommunity.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2517,6 +2619,30 @@
   <data name="&gt;&gt;tssCopy4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownLink.Name" xml:space="preserve">
+    <value>tsmiCopyMarkdownLink</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownImage.Name" xml:space="preserve">
+    <value>tsmiCopyMarkdownImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Name" xml:space="preserve">
+    <value>tsmiCopyMarkdownLinkedImage</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssCopy5.Name" xml:space="preserve">
+    <value>tssCopy5</value>
+  </data>
+  <data name="&gt;&gt;tssCopy5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiCopyFilePath.Name" xml:space="preserve">
     <value>tsmiCopyFilePath</value>
   </data>
@@ -2541,10 +2667,10 @@
   <data name="&gt;&gt;tsmiCopyFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssCopy5.Name" xml:space="preserve">
-    <value>tssCopy5</value>
+  <data name="&gt;&gt;tssCopy6.Name" xml:space="preserve">
+    <value>tssCopy6</value>
   </data>
-  <data name="&gt;&gt;tssCopy5.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssCopy6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadSelectedFile.Name" xml:space="preserve">
@@ -3116,30 +3242,6 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownLink.Name" xml:space="preserve">
-    <value>tsmiCopyMarkdownLink</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownImage.Name" xml:space="preserve">
-    <value>tsmiCopyMarkdownImage</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Name" xml:space="preserve">
-    <value>tsmiCopyMarkdownLinkedImage</value>
-  </data>
-  <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssCopy6.Name" xml:space="preserve">
-    <value>tssCopy6</value>
-  </data>
-  <data name="&gt;&gt;tssCopy6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

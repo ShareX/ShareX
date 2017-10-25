@@ -165,17 +165,23 @@ namespace ShareX.UploadersLib
 
         #region Flickr
 
-        public void FlickrAuthOpen()
+        private void FlickrAuthOpen()
         {
             try
             {
-                FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                btnFlickrOpenAuthorize.Tag = flickr.GetFrob();
-                string url = flickr.GetAuthLink(FlickrPermission.Write);
+                OAuthInfo oauth = new OAuthInfo(APIKeys.FlickrKey, APIKeys.FlickrSecret);
+
+                string url = new FlickrUploader(oauth).GetAuthorizationURL();
+
                 if (!string.IsNullOrEmpty(url))
                 {
+                    Config.FlickrOAuthInfo = oauth;
                     URLHelpers.OpenURL(url);
-                    btnFlickrCompleteAuth.Enabled = true;
+                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("FlickrAuthOpen - Authorization URL is empty.");
                 }
             }
             catch (Exception ex)
@@ -184,62 +190,29 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void FlickrAuthComplete()
+        private void FlickrAuthComplete(string code)
         {
             try
             {
-                string token = btnFlickrOpenAuthorize.Tag as string;
-                if (!string.IsNullOrEmpty(token))
+                if (!string.IsNullOrEmpty(code) && Config.FlickrOAuthInfo != null)
                 {
-                    FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                    Config.FlickrAuthInfo = flickr.GetToken(token);
-                    pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
-                    // btnFlickrOpenImages.Text = string.Format("{0}'s photostream", Config.FlickrAuthInfo.Username);
-                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
+                    bool result = new FlickrUploader(Config.FlickrOAuthInfo).GetAccessToken(code);
 
-        public void FlickrCheckToken()
-        {
-            try
-            {
-                if (Config.FlickrAuthInfo != null)
-                {
-                    string token = Config.FlickrAuthInfo.Token;
-                    if (!string.IsNullOrEmpty(token))
+                    if (result)
                     {
-                        FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                        Config.FlickrAuthInfo = flickr.CheckToken(token);
-                        pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
+                        oauthFlickr.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    else
+                    {
+                        oauthFlickr.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 ex.ShowError();
-            }
-        }
-
-        public void FlickrOpenImages()
-        {
-            if (Config.FlickrAuthInfo != null)
-            {
-                string userID = Config.FlickrAuthInfo.UserID;
-                if (!string.IsNullOrEmpty(userID))
-                {
-                    FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
-                    string url = flickr.GetPhotosLink(userID);
-                    if (!string.IsNullOrEmpty(url))
-                    {
-                        URLHelpers.OpenURL(url);
-                    }
-                }
             }
         }
 
@@ -317,9 +290,9 @@ namespace ShareX.UploadersLib
 
         #endregion Photobucket
 
-        #region Picasa
+        #region Google Photos
 
-        public void PicasaAuthOpen()
+        public void GooglePhotosAuthOpen()
         {
             try
             {
@@ -331,11 +304,11 @@ namespace ShareX.UploadersLib
                 {
                     Config.PicasaOAuth2Info = oauth;
                     URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is opened: " + url);
+                    DebugHelper.WriteLine("GooglePhotosAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
                 {
-                    DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is empty.");
+                    DebugHelper.WriteLine("GooglePhotosAuthOpen - Authorization URL is empty.");
                 }
             }
             catch (Exception ex)
@@ -344,7 +317,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaAuthComplete(string code)
+        public void GooglePhotosAuthComplete(string code)
         {
             try
             {
@@ -372,7 +345,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaAuthRefresh()
+        public void GooglePhotosAuthRefresh()
         {
             try
             {
@@ -400,7 +373,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void PicasaRefreshAlbumList()
+        public void GooglePhotosRefreshAlbumList()
         {
             try
             {
@@ -429,7 +402,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        #endregion Picasa
+        #endregion Google Photos
 
         #region Dropbox
 
@@ -843,106 +816,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion OneDrive
-
-        #region Minus
-
-        public void MinusAuth()
-        {
-            if (!string.IsNullOrEmpty(txtMinusUsername.Text) && !string.IsNullOrEmpty(txtMinusPassword.Text))
-            {
-                btnMinusAuth.Enabled = false;
-                btnMinusRefreshAuth.Enabled = false;
-
-                try
-                {
-                    Config.MinusConfig.Username = txtMinusUsername.Text;
-                    Config.MinusConfig.Password = txtMinusPassword.Text;
-                    Config.MinusOAuth2Info = new OAuth2Info(APIKeys.MinusConsumerKey, APIKeys.MinusConsumerSecret);
-                    Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-
-                    if (minus.GetAccessToken())
-                    {
-                        minus.ReadFolderList();
-                        MinusUpdateControls();
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ex.ShowError();
-                }
-                finally
-                {
-                    btnMinusAuth.Enabled = true;
-                    btnMinusRefreshAuth.Enabled = true;
-                }
-            }
-        }
-
-        public void MinusAuthRefresh()
-        {
-            btnMinusAuth.Enabled = false;
-            btnMinusRefreshAuth.Enabled = false;
-
-            try
-            {
-                if (OAuth2Info.CheckOAuth(Config.MinusOAuth2Info))
-                {
-                    bool result = new Minus(Config.MinusConfig, Config.MinusOAuth2Info).RefreshAccessToken();
-
-                    if (result)
-                    {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-            finally
-            {
-                btnMinusAuth.Enabled = true;
-                btnMinusRefreshAuth.Enabled = true;
-            }
-        }
-
-        public void MinusUpdateControls()
-        {
-            if (Config.MinusConfig != null && Config.MinusConfig.MinusUser != null && OAuth2Info.CheckOAuth(Config.MinusOAuth2Info))
-            {
-                lblMinusAuthStatus.Text = string.Format(Resources.UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__, Config.MinusConfig.MinusUser.display_name);
-                txtMinusUsername.Text = Config.MinusConfig.Username;
-                txtMinusPassword.Text = Config.MinusConfig.Password;
-                cboMinusFolders.Items.Clear();
-                if (Config.MinusConfig.FolderList.Count > 0)
-                {
-                    cboMinusFolders.Items.AddRange(Config.MinusConfig.FolderList.ToArray());
-                    cboMinusFolders.SelectedIndex = Config.MinusConfig.FolderID.BetweenOrDefault(0, cboMinusFolders.Items.Count - 1);
-                }
-                cbMinusURLType.SelectedIndex = (int)Config.MinusConfig.LinkType;
-            }
-            else
-            {
-                lblMinusAuthStatus.Text = Resources.UploadersConfigForm_MinusUpdateControls_Not_logged_in_;
-                btnMinusRefreshAuth.Enabled = false;
-            }
-        }
-
-        private bool MinusHasFolder(string name)
-        {
-            return cboMinusFolders.Items.Cast<MinusFolder>().Any(mf => mf.name == name);
-        }
-
-        #endregion Minus
 
         #region FTP
 

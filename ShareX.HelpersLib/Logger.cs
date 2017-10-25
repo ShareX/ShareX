@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -36,13 +37,15 @@ namespace ShareX.HelpersLib
 
         public event MessageAddedEventHandler MessageAdded;
 
-        public bool Async { get; set; } = true;
+        public string MessageFormat { get; set; } = "{0:yyyy-MM-dd HH:mm:ss.fff} - {1}";
+        public bool AsyncWrite { get; set; } = true;
         public bool DebugWrite { get; set; } = true;
-        public bool StoreInMemory { get; set; } = true;
+        public bool StringWrite { get; set; } = true;
         public bool FileWrite { get; set; } = false;
         public string LogFilePath { get; private set; }
 
         private readonly object loggerLock = new object();
+        private ConcurrentQueue<string> messageQueue = new ConcurrentQueue<string>();
         private StringBuilder sbMessages = new StringBuilder();
 
         public Logger()
@@ -64,51 +67,65 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void WriteLine(string message)
+        private void ProcessMessageQueue()
         {
-            if (!string.IsNullOrEmpty(message))
+            lock (loggerLock)
             {
-                if (Async)
+                while (messageQueue.TryDequeue(out string message))
                 {
-                    TaskEx.Run(() => WriteLineInternal(message));
-                }
-                else
-                {
-                    WriteLineInternal(message);
+                    if (DebugWrite)
+                    {
+                        Debug.Write(message);
+                    }
+
+                    if (StringWrite && sbMessages != null)
+                    {
+                        sbMessages.Append(message);
+                    }
+
+                    if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
+                    {
+                        try
+                        {
+                            File.AppendAllText(LogFilePath, message, Encoding.UTF8);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine(e);
+                        }
+                    }
+
+                    OnMessageAdded(message);
                 }
             }
         }
 
-        private void WriteLineInternal(string message)
+        public void Write(string message)
         {
-            lock (loggerLock)
+            if (message != null)
             {
-                message = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} - {message}";
+                message = string.Format(MessageFormat, DateTime.Now, message);
+                messageQueue.Enqueue(message);
 
-                if (DebugWrite)
+                if (AsyncWrite)
                 {
-                    Debug.WriteLine(message);
+                    TaskEx.Run(() => ProcessMessageQueue());
                 }
-
-                if (StoreInMemory && sbMessages != null)
+                else
                 {
-                    sbMessages.AppendLine(message);
+                    ProcessMessageQueue();
                 }
-
-                if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
-                {
-                    try
-                    {
-                        File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.WriteLine(e);
-                    }
-                }
-
-                OnMessageAdded(message);
             }
+        }
+
+        public void Write(string format, params object[] args)
+        {
+            Write(string.Format(format, args));
+        }
+
+        public void WriteLine(string message)
+        {
+            Write(message + Environment.NewLine);
         }
 
         public void WriteLine(string format, params object[] args)
@@ -118,7 +135,7 @@ namespace ShareX.HelpersLib
 
         public void WriteException(string exception, string message = "Exception")
         {
-            WriteLine("{0}:{1}{2}", message, Environment.NewLine, exception);
+            WriteLine($"{message}:{Environment.NewLine}{exception}");
         }
 
         public void WriteException(Exception exception, string message = "Exception")

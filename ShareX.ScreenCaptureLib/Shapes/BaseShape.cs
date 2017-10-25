@@ -77,8 +77,8 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager Manager { get; set; }
 
+        protected InputManager InputManager => Manager.InputManager;
         protected RegionCaptureOptions Options => Manager.Config;
-
         protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
@@ -115,9 +115,9 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = Rectangle.LocationOffset(x, y);
         }
 
-        public void Move(Point point)
+        public void Move(Point offset)
         {
-            Move(point.X, point.Y);
+            Move(offset.X, offset.Y);
         }
 
         public virtual void Resize(int x, int y, bool fromBottomRight)

@@ -81,6 +81,18 @@
     <Compile Include="Animations\BaseAnimation.cs" />
     <Compile Include="Animations\PointAnimation.cs" />
     <Compile Include="Animations\RectangleAnimation.cs" />
+    <Compile Include="Forms\CanvasSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CanvasSizeForm.Designer.cs">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageSizeForm.Designer.cs">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
@@ -190,6 +202,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-resize.png" />
+    <None Include="Resources\layer-flip.png" />
+    <None Include="Resources\layer-flip-vertical.png" />
+    <None Include="Resources\image--pencil.png" />
+    <None Include="Resources\image-resize-actual.png" />
     <None Include="Resources\cursor.png" />
     <None Include="Resources\monitor-image.png" />
     <None Include="Resources\folder-open-image.png" />
@@ -249,12 +266,21 @@
     <None Include="Resources\control.png" />
     <None Include="Resources\cross.png" />
     <None Include="Resources\CircleNode.png" />
+    <None Include="Resources\arrow-circle-135-left.png" />
+    <None Include="Resources\arrow-circle.png" />
+    <None Include="Resources\arrow-circle-double.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\CanvasSizeForm.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.de.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>

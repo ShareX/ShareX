@@ -485,4 +485,7 @@ Tem certeza de que quer continuar?</value>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>Configuração de {0} está inválida ou faltando. Por favor reconfigure o destino novamente.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Executar ShareX quando o Windows iniciar</value>
+  </data>
 </root>

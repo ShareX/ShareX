@@ -32,23 +32,8 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Canvas : ImageEffect
     {
-        private Padding margin;
-
         [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin
-        {
-            get
-            {
-                return margin;
-            }
-            set
-            {
-                if (value.Top >= 0 && value.Right >= 0 && value.Bottom >= 0 && value.Left >= 0)
-                {
-                    margin = value;
-                }
-            }
-        }
+        public Padding Margin { get; set; }
 
         public Canvas()
         {
@@ -57,9 +42,15 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Margin.All == 0) return img;
+            Image result = ImageHelpers.AddCanvas(img, Margin);
 
-            return ImageHelpers.AddCanvas(img, Margin);
+            if (result == null)
+            {
+                return img;
+            }
+
+            img.Dispose();
+            return result;
         }
     }
 }

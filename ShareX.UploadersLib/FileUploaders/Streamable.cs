@@ -146,7 +146,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         OnProgressChanged(progress);
                     }
 
-                    Thread.Sleep(100);
+                    Thread.Sleep(1000);
                 }
             }
             else

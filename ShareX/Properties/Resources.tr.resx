@@ -476,4 +476,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Büyük bir dosya yüklüyorsunuz.
 Devam etmek istediğinizden emin misiniz?</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Windows başladığında ShareX'i çalıştır</value>
+  </data>
 </root>

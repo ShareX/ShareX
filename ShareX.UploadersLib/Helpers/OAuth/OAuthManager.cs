@@ -54,6 +54,11 @@ namespace ShareX.UploadersLib
 
         public static string GenerateQuery(string url, Dictionary<string, string> args, HttpMethod httpMethod, OAuthInfo oauth)
         {
+            return GenerateQuery(url, args, httpMethod, oauth, out _);
+        }
+
+        public static string GenerateQuery(string url, Dictionary<string, string> args, HttpMethod httpMethod, OAuthInfo oauth, out Dictionary<string, string> parameters)
+        {
             if (string.IsNullOrEmpty(oauth.ConsumerKey)
                 || (string.IsNullOrEmpty(oauth.ConsumerSecret) && oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1)
                 || (oauth.ConsumerPrivateKey == null && oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1))
@@ -61,7 +66,7 @@ namespace ShareX.UploadersLib
                 throw new Exception("ConsumerKey or ConsumerSecret or ConsumerPrivateKey empty.");
             }
 
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters = new Dictionary<string, string>();
             parameters.Add(ParameterVersion, oauth.OAuthVersion);
             parameters.Add(ParameterNonce, GenerateNonce());
             parameters.Add(ParameterTimestamp, GenerateTimestamp());
@@ -122,8 +127,10 @@ namespace ShareX.UploadersLib
                     throw new NotImplementedException("Unsupported signature method");
             }
 
-            string signature = URLHelpers.URLEncode(Convert.ToBase64String(signatureData));
-            return string.Format("{0}?{1}&{2}={3}", normalizedUrl, normalizedParameters, ParameterSignature, signature);
+            string signature = Convert.ToBase64String(signatureData);
+            parameters[ParameterSignature] = signature;
+
+            return string.Format("{0}?{1}&{2}={3}", normalizedUrl, normalizedParameters, ParameterSignature, URLHelpers.URLEncode(signature));
         }
 
         public static string GetAuthorizationURL(string requestTokenResponse, OAuthInfo oauth, string authorizeURL, string callback = null)

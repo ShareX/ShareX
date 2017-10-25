@@ -206,7 +206,6 @@ namespace ShareX
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = upload ? TaskJob.DownloadUpload : TaskJob.Download;
-            task.Info.DataType = TaskHelpers.FindDataType(url, taskSettings);
 
             string filename = URLHelpers.URLDecode(url, 10);
             filename = URLHelpers.GetFileName(filename);
@@ -224,6 +223,7 @@ namespace ShareX
             }
 
             task.Info.FileName = filename;
+            task.Info.DataType = TaskHelpers.FindDataType(task.Info.FileName, taskSettings);
             task.Info.Result.URL = url;
             return task;
         }
@@ -566,7 +566,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
-                tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);
+                tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings.ImageSettingsReference);
 
                 if (tempImage == null)
                 {
@@ -837,6 +837,13 @@ namespace ShareX
             if (uploader != null)
             {
                 uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
+
+                if (Program.Settings.VerboseRequestLogs)
+                {
+                    uploader.VerboseLogs = true;
+                    uploader.VerboseLogsPath = Program.RequestLogsFilePath;
+                }
+
                 uploader.ProgressChanged += uploader_ProgressChanged;
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)

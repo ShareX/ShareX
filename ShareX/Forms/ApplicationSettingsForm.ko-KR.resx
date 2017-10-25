@@ -231,9 +231,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>윈도우 시작 시 ShareX 실행하기</value>
-  </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>제거</value>
   </data>

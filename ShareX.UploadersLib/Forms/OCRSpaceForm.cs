@@ -105,6 +105,7 @@ namespace ShareX.UploadersLib
                         UpdateControls();
                         cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
                         pbProgress.Visible = false;
+                        txtResult.Focus();
                     }
                 });
             }
@@ -123,6 +124,20 @@ namespace ShareX.UploadersLib
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL("https://ocr.space");
+        }
+
+        private void txtResult_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                if (sender != null)
+                {
+                    ((TextBox)sender).SelectAll();
+                }
+
+                e.SuppressKeyPress = true; // TextBox will beep if it gets the CTRL+A
+                e.Handled = true;
+            }
         }
     }
 }

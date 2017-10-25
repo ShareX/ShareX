@@ -240,6 +240,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1933,6 +1934,7 @@
             // 
             // tpWatchFolders
             // 
+            this.tpWatchFolders.Controls.Add(this.btnWatchFolderEdit);
             this.tpWatchFolders.Controls.Add(this.cbWatchFolderEnabled);
             this.tpWatchFolders.Controls.Add(this.lvWatchFolderList);
             this.tpWatchFolders.Controls.Add(this.btnWatchFolderRemove);
@@ -2034,6 +2036,7 @@
             // 
             this.pgTaskSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgTaskSettings, "pgTaskSettings");
+            this.pgTaskSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgTaskSettings.Name = "pgTaskSettings";
             this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgTaskSettings.ToolbarVisible = false;
@@ -2056,6 +2059,13 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
+            // 
+            // btnWatchFolderEdit
+            // 
+            resources.ApplyResources(this.btnWatchFolderEdit, "btnWatchFolderEdit");
+            this.btnWatchFolderEdit.Name = "btnWatchFolderEdit";
+            this.btnWatchFolderEdit.UseVisualStyleBackColor = true;
+            this.btnWatchFolderEdit.Click += new System.EventHandler(this.btnWatchFolderEdit_Click);
             // 
             // TaskSettingsForm
             // 
@@ -2356,5 +2366,6 @@
         private System.Windows.Forms.TextBox txtUploaderFiltersExtensions;
         private System.Windows.Forms.ComboBox cbImagePNGBitDepth;
         private System.Windows.Forms.Label lblImagePNGBitDepth;
+        private System.Windows.Forms.Button btnWatchFolderEdit;
     }
 }

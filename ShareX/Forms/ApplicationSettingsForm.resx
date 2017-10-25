@@ -804,36 +804,6 @@
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblWindowsStoreStartupStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
-  </data>
-  <data name="lblWindowsStoreStartupStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lblWindowsStoreStartupStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblWindowsStoreStartupStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblWindowsStoreStartupStatus.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Name" xml:space="preserve">
-    <value>lblWindowsStoreStartupStatus</value>
-  </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Parent" xml:space="preserve">
-    <value>gbWindows</value>
-  </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -844,13 +814,10 @@
     <value>16, 24</value>
   </data>
   <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
+    <value>15, 14</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Run ShareX when Windows starts</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
     <value>cbStartWithWindows</value>
@@ -862,7 +829,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -892,7 +859,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -922,7 +889,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>

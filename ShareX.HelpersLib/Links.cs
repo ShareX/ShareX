@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
         public const string URL_MIKE = "https://github.com/McoreD";
         public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
         public const string URL_PATREON = "https://www.patreon.com/ShareX";
+        public const string URL_DISCORD = "https://discord.gg/E4R3Qa9";
         private const string URL_DOCS = URL_WEBSITE + "/docs";
         public const string URL_CUSTOM_UPLOADER = URL_DOCS + "/custom-uploader";
         public const string URL_CUSTOM_UPLOADERS = "https://github.com/ShareX/CustomUploaders";

@@ -50,8 +50,6 @@ namespace ShareX.UploadersLib
         public static string CopyConsumerSecret = "";
         public static string HubicClientID = "";
         public static string HubicClientSecret = "";
-        public static string MinusConsumerKey = "";
-        public static string MinusConsumerSecret = "";
         public static string BoxClientID = "";
         public static string BoxClientSecret = "";
         public static string SendSpaceKey = "";
@@ -69,6 +67,7 @@ namespace ShareX.UploadersLib
         public static string PastebinCaKey = "";
         public static string GitHubID = "";
         public static string GitHubSecret = "";
+        public static string Paste_eeApplicationKey = "";
 
         // URL Shorteners
         public static string BitlyClientID = "";

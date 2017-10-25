@@ -203,8 +203,7 @@ namespace ShareX
 
             niTray.Visible = Program.Settings.ShowTray;
 
-            flpPatreon.Visible = Program.Settings.ShowPatreonButton;
-
+            TaskManager.UpdateMainFormTip();
             TaskManager.RecentManager.InitItems();
 
             bool isPositionChanged = false;
@@ -1267,6 +1266,17 @@ namespace ShareX
             {
                 AllowDrop = true;
             }
+        }
+
+        private void pbDiscordOpen_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
+        private void pbDiscordHide_Click(object sender, EventArgs e)
+        {
+            flpDiscord.Visible = false;
+            Program.Settings.ShowDiscordButton = false;
         }
 
         private void pbPatreonOpen_Click(object sender, EventArgs e)

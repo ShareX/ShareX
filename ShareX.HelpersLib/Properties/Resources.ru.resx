@@ -1028,7 +1028,7 @@
     <value>Сокращение ссылки</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Рисование: курсор</value>
+    <value>Рисование: Курсор</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Загрузка</value>

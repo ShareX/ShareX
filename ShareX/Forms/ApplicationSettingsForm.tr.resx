@@ -135,9 +135,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX göster</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Windows başladığında ShareX'i çalıştır</value>
-  </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
   </data>

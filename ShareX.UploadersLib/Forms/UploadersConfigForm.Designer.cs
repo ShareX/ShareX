@@ -270,6 +270,9 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
+            this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
+            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
             this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
             this.txtAmazonS3Endpoint = new System.Windows.Forms.TextBox();
@@ -365,23 +368,6 @@
             this.lblLocalhostrEmail = new System.Windows.Forms.Label();
             this.txtLocalhostrPassword = new System.Windows.Forms.TextBox();
             this.txtLocalhostrEmail = new System.Windows.Forms.TextBox();
-            this.tpMinus = new System.Windows.Forms.TabPage();
-            this.lblMinusURLType = new System.Windows.Forms.Label();
-            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
-            this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
-            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
-            this.btnMinusRefreshAuth = new System.Windows.Forms.Button();
-            this.lblMinusPassword = new System.Windows.Forms.Label();
-            this.lblMinusUsername = new System.Windows.Forms.Label();
-            this.txtMinusPassword = new System.Windows.Forms.TextBox();
-            this.txtMinusUsername = new System.Windows.Forms.TextBox();
-            this.btnMinusAuth = new System.Windows.Forms.Button();
-            this.gbMinusUpload = new System.Windows.Forms.GroupBox();
-            this.btnMinusReadFolderList = new System.Windows.Forms.Button();
-            this.cbMinusPublic = new System.Windows.Forms.CheckBox();
-            this.btnMinusFolderAdd = new System.Windows.Forms.Button();
-            this.btnMinusFolderRemove = new System.Windows.Forms.Button();
-            this.cboMinusFolders = new System.Windows.Forms.ComboBox();
             this.tpJira = new System.Windows.Forms.TabPage();
             this.txtJiraIssuePrefix = new System.Windows.Forms.TextBox();
             this.lblJiraIssuePrefix = new System.Windows.Forms.Label();
@@ -536,6 +522,7 @@
             this.lblPastebinLoginStatus = new System.Windows.Forms.Label();
             this.btnPastebinLogin = new System.Windows.Forms.Button();
             this.tpPaste_ee = new System.Windows.Forms.TabPage();
+            this.btnPaste_eeGetUserKey = new System.Windows.Forms.Button();
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
@@ -598,12 +585,8 @@
             this.lblTinyPicUsername = new System.Windows.Forms.Label();
             this.btnTinyPicOpenMyImages = new System.Windows.Forms.Button();
             this.tpFlickr = new System.Windows.Forms.TabPage();
-            this.btnFlickrOpenImages = new System.Windows.Forms.Button();
-            this.pgFlickrAuthInfo = new System.Windows.Forms.PropertyGrid();
-            this.pgFlickrSettings = new System.Windows.Forms.PropertyGrid();
-            this.btnFlickrCheckToken = new System.Windows.Forms.Button();
-            this.btnFlickrCompleteAuth = new System.Windows.Forms.Button();
-            this.btnFlickrOpenAuthorize = new System.Windows.Forms.Button();
+            this.cbFlickrDirectLink = new System.Windows.Forms.CheckBox();
+            this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
             this.tpPhotobucket = new System.Windows.Forms.TabPage();
             this.gbPhotobucketAlbumPath = new System.Windows.Forms.GroupBox();
             this.btnPhotobucketAddAlbum = new System.Windows.Forms.Button();
@@ -650,9 +633,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
-            this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
-            this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -700,9 +680,6 @@
             this.tpSendSpace.SuspendLayout();
             this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
-            this.tpMinus.SuspendLayout();
-            this.gbMinusUserPass.SuspendLayout();
-            this.gbMinusUpload.SuspendLayout();
             this.tpJira.SuspendLayout();
             this.gbJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
@@ -1819,7 +1796,6 @@
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
             this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
-            this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
@@ -2594,6 +2570,26 @@
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
             // 
+            // btnAmazonS3StorageClassHelp
+            // 
+            resources.ApplyResources(this.btnAmazonS3StorageClassHelp, "btnAmazonS3StorageClassHelp");
+            this.btnAmazonS3StorageClassHelp.Name = "btnAmazonS3StorageClassHelp";
+            this.btnAmazonS3StorageClassHelp.UseVisualStyleBackColor = true;
+            this.btnAmazonS3StorageClassHelp.Click += new System.EventHandler(this.btnAmazonS3StorageClassHelp_Click);
+            // 
+            // lblAmazonS3StorageClass
+            // 
+            resources.ApplyResources(this.lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
+            this.lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
+            // 
+            // cbAmazonS3StorageClass
+            // 
+            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmazonS3StorageClass.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
+            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
+            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
+            // 
             // cbAmazonS3UsePathStyle
             // 
             resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
@@ -3234,127 +3230,6 @@
             resources.ApplyResources(this.txtLocalhostrEmail, "txtLocalhostrEmail");
             this.txtLocalhostrEmail.Name = "txtLocalhostrEmail";
             this.txtLocalhostrEmail.TextChanged += new System.EventHandler(this.txtLocalhostrEmail_TextChanged);
-            // 
-            // tpMinus
-            // 
-            this.tpMinus.Controls.Add(this.lblMinusURLType);
-            this.tpMinus.Controls.Add(this.cbMinusURLType);
-            this.tpMinus.Controls.Add(this.gbMinusUserPass);
-            this.tpMinus.Controls.Add(this.gbMinusUpload);
-            resources.ApplyResources(this.tpMinus, "tpMinus");
-            this.tpMinus.Name = "tpMinus";
-            this.tpMinus.UseVisualStyleBackColor = true;
-            // 
-            // lblMinusURLType
-            // 
-            resources.ApplyResources(this.lblMinusURLType, "lblMinusURLType");
-            this.lblMinusURLType.Name = "lblMinusURLType";
-            // 
-            // cbMinusURLType
-            // 
-            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinusURLType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbMinusURLType, "cbMinusURLType");
-            this.cbMinusURLType.Name = "cbMinusURLType";
-            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
-            // 
-            // gbMinusUserPass
-            // 
-            this.gbMinusUserPass.Controls.Add(this.lblMinusAuthStatus);
-            this.gbMinusUserPass.Controls.Add(this.btnMinusRefreshAuth);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
-            resources.ApplyResources(this.gbMinusUserPass, "gbMinusUserPass");
-            this.gbMinusUserPass.Name = "gbMinusUserPass";
-            this.gbMinusUserPass.TabStop = false;
-            // 
-            // lblMinusAuthStatus
-            // 
-            resources.ApplyResources(this.lblMinusAuthStatus, "lblMinusAuthStatus");
-            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
-            // 
-            // btnMinusRefreshAuth
-            // 
-            resources.ApplyResources(this.btnMinusRefreshAuth, "btnMinusRefreshAuth");
-            this.btnMinusRefreshAuth.Name = "btnMinusRefreshAuth";
-            this.btnMinusRefreshAuth.UseVisualStyleBackColor = true;
-            this.btnMinusRefreshAuth.Click += new System.EventHandler(this.btnAuthRefresh_Click);
-            // 
-            // lblMinusPassword
-            // 
-            resources.ApplyResources(this.lblMinusPassword, "lblMinusPassword");
-            this.lblMinusPassword.Name = "lblMinusPassword";
-            // 
-            // lblMinusUsername
-            // 
-            resources.ApplyResources(this.lblMinusUsername, "lblMinusUsername");
-            this.lblMinusUsername.Name = "lblMinusUsername";
-            // 
-            // txtMinusPassword
-            // 
-            resources.ApplyResources(this.txtMinusPassword, "txtMinusPassword");
-            this.txtMinusPassword.Name = "txtMinusPassword";
-            this.txtMinusPassword.UseSystemPasswordChar = true;
-            // 
-            // txtMinusUsername
-            // 
-            resources.ApplyResources(this.txtMinusUsername, "txtMinusUsername");
-            this.txtMinusUsername.Name = "txtMinusUsername";
-            // 
-            // btnMinusAuth
-            // 
-            resources.ApplyResources(this.btnMinusAuth, "btnMinusAuth");
-            this.btnMinusAuth.Name = "btnMinusAuth";
-            this.btnMinusAuth.UseVisualStyleBackColor = true;
-            this.btnMinusAuth.Click += new System.EventHandler(this.btnMinusAuth_Click);
-            // 
-            // gbMinusUpload
-            // 
-            this.gbMinusUpload.Controls.Add(this.btnMinusReadFolderList);
-            this.gbMinusUpload.Controls.Add(this.cbMinusPublic);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
-            this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
-            resources.ApplyResources(this.gbMinusUpload, "gbMinusUpload");
-            this.gbMinusUpload.Name = "gbMinusUpload";
-            this.gbMinusUpload.TabStop = false;
-            // 
-            // btnMinusReadFolderList
-            // 
-            resources.ApplyResources(this.btnMinusReadFolderList, "btnMinusReadFolderList");
-            this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
-            this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
-            this.btnMinusReadFolderList.Click += new System.EventHandler(this.btnMinusReadFolderList_Click);
-            // 
-            // cbMinusPublic
-            // 
-            resources.ApplyResources(this.cbMinusPublic, "cbMinusPublic");
-            this.cbMinusPublic.Name = "cbMinusPublic";
-            this.cbMinusPublic.UseVisualStyleBackColor = true;
-            // 
-            // btnMinusFolderAdd
-            // 
-            resources.ApplyResources(this.btnMinusFolderAdd, "btnMinusFolderAdd");
-            this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
-            this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
-            this.btnMinusFolderAdd.Click += new System.EventHandler(this.btnMinusFolderAdd_Click);
-            // 
-            // btnMinusFolderRemove
-            // 
-            resources.ApplyResources(this.btnMinusFolderRemove, "btnMinusFolderRemove");
-            this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
-            this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
-            this.btnMinusFolderRemove.Click += new System.EventHandler(this.btnMinusFolderRemove_Click);
-            // 
-            // cboMinusFolders
-            // 
-            this.cboMinusFolders.FormattingEnabled = true;
-            resources.ApplyResources(this.cboMinusFolders, "cboMinusFolders");
-            this.cboMinusFolders.Name = "cboMinusFolders";
-            this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
             // 
             // tpJira
             // 
@@ -4478,11 +4353,19 @@
             // 
             // tpPaste_ee
             // 
+            this.tpPaste_ee.Controls.Add(this.btnPaste_eeGetUserKey);
             this.tpPaste_ee.Controls.Add(this.lblPaste_eeUserAPIKey);
             this.tpPaste_ee.Controls.Add(this.txtPaste_eeUserAPIKey);
             resources.ApplyResources(this.tpPaste_ee, "tpPaste_ee");
             this.tpPaste_ee.Name = "tpPaste_ee";
             this.tpPaste_ee.UseVisualStyleBackColor = true;
+            // 
+            // btnPaste_eeGetUserKey
+            // 
+            resources.ApplyResources(this.btnPaste_eeGetUserKey, "btnPaste_eeGetUserKey");
+            this.btnPaste_eeGetUserKey.Name = "btnPaste_eeGetUserKey";
+            this.btnPaste_eeGetUserKey.UseVisualStyleBackColor = true;
+            this.btnPaste_eeGetUserKey.Click += new System.EventHandler(this.btnPaste_eeGetUserKey_Click);
             // 
             // lblPaste_eeUserAPIKey
             // 
@@ -4929,63 +4812,27 @@
             // 
             // tpFlickr
             // 
-            this.tpFlickr.Controls.Add(this.btnFlickrOpenImages);
-            this.tpFlickr.Controls.Add(this.pgFlickrAuthInfo);
-            this.tpFlickr.Controls.Add(this.pgFlickrSettings);
-            this.tpFlickr.Controls.Add(this.btnFlickrCheckToken);
-            this.tpFlickr.Controls.Add(this.btnFlickrCompleteAuth);
-            this.tpFlickr.Controls.Add(this.btnFlickrOpenAuthorize);
+            this.tpFlickr.Controls.Add(this.cbFlickrDirectLink);
+            this.tpFlickr.Controls.Add(this.oauthFlickr);
             resources.ApplyResources(this.tpFlickr, "tpFlickr");
             this.tpFlickr.Name = "tpFlickr";
             this.tpFlickr.UseVisualStyleBackColor = true;
             // 
-            // btnFlickrOpenImages
+            // cbFlickrDirectLink
             // 
-            resources.ApplyResources(this.btnFlickrOpenImages, "btnFlickrOpenImages");
-            this.btnFlickrOpenImages.Name = "btnFlickrOpenImages";
-            this.btnFlickrOpenImages.UseVisualStyleBackColor = true;
-            this.btnFlickrOpenImages.Click += new System.EventHandler(this.btnFlickrOpenImages_Click);
+            resources.ApplyResources(this.cbFlickrDirectLink, "cbFlickrDirectLink");
+            this.cbFlickrDirectLink.Name = "cbFlickrDirectLink";
+            this.cbFlickrDirectLink.UseVisualStyleBackColor = true;
+            this.cbFlickrDirectLink.CheckedChanged += new System.EventHandler(this.cbFlickrDirectLink_CheckedChanged);
             // 
-            // pgFlickrAuthInfo
+            // oauthFlickr
             // 
-            this.pgFlickrAuthInfo.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.pgFlickrAuthInfo.CommandsVisibleIfAvailable = false;
-            this.pgFlickrAuthInfo.LineColor = System.Drawing.SystemColors.ControlDark;
-            resources.ApplyResources(this.pgFlickrAuthInfo, "pgFlickrAuthInfo");
-            this.pgFlickrAuthInfo.Name = "pgFlickrAuthInfo";
-            this.pgFlickrAuthInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgFlickrAuthInfo.ToolbarVisible = false;
-            // 
-            // pgFlickrSettings
-            // 
-            this.pgFlickrSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.pgFlickrSettings.CommandsVisibleIfAvailable = false;
-            this.pgFlickrSettings.LineColor = System.Drawing.SystemColors.ControlDark;
-            resources.ApplyResources(this.pgFlickrSettings, "pgFlickrSettings");
-            this.pgFlickrSettings.Name = "pgFlickrSettings";
-            this.pgFlickrSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgFlickrSettings.ToolbarVisible = false;
-            // 
-            // btnFlickrCheckToken
-            // 
-            resources.ApplyResources(this.btnFlickrCheckToken, "btnFlickrCheckToken");
-            this.btnFlickrCheckToken.Name = "btnFlickrCheckToken";
-            this.btnFlickrCheckToken.UseVisualStyleBackColor = true;
-            this.btnFlickrCheckToken.Click += new System.EventHandler(this.btnFlickrCheckToken_Click);
-            // 
-            // btnFlickrCompleteAuth
-            // 
-            resources.ApplyResources(this.btnFlickrCompleteAuth, "btnFlickrCompleteAuth");
-            this.btnFlickrCompleteAuth.Name = "btnFlickrCompleteAuth";
-            this.btnFlickrCompleteAuth.UseVisualStyleBackColor = true;
-            this.btnFlickrCompleteAuth.Click += new System.EventHandler(this.btnFlickrCompleteAuth_Click);
-            // 
-            // btnFlickrOpenAuthorize
-            // 
-            resources.ApplyResources(this.btnFlickrOpenAuthorize, "btnFlickrOpenAuthorize");
-            this.btnFlickrOpenAuthorize.Name = "btnFlickrOpenAuthorize";
-            this.btnFlickrOpenAuthorize.UseVisualStyleBackColor = true;
-            this.btnFlickrOpenAuthorize.Click += new System.EventHandler(this.btnFlickrOpenAuthorize_Click);
+            this.oauthFlickr.IsRefreshable = false;
+            resources.ApplyResources(this.oauthFlickr, "oauthFlickr");
+            this.oauthFlickr.Name = "oauthFlickr";
+            this.oauthFlickr.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthFlickr_OpenButtonClicked);
+            this.oauthFlickr.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthFlickr_CompleteButtonClicked);
+            this.oauthFlickr.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthFlickr_ClearButtonClicked);
             // 
             // tpPhotobucket
             // 
@@ -5310,26 +5157,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbAmazonS3StorageClass
-            // 
-            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmazonS3StorageClass.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
-            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
-            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
-            // 
-            // lblAmazonS3StorageClass
-            // 
-            resources.ApplyResources(this.lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
-            this.lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
-            // 
-            // btnAmazonS3StorageClassHelp
-            // 
-            resources.ApplyResources(this.btnAmazonS3StorageClassHelp, "btnAmazonS3StorageClassHelp");
-            this.btnAmazonS3StorageClassHelp.Name = "btnAmazonS3StorageClassHelp";
-            this.btnAmazonS3StorageClassHelp.UseVisualStyleBackColor = true;
-            this.btnAmazonS3StorageClassHelp.Click += new System.EventHandler(this.btnAmazonS3StorageClassHelp_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5423,12 +5250,6 @@
             this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
             this.tpHostr.PerformLayout();
-            this.tpMinus.ResumeLayout(false);
-            this.tpMinus.PerformLayout();
-            this.gbMinusUserPass.ResumeLayout(false);
-            this.gbMinusUserPass.PerformLayout();
-            this.gbMinusUpload.ResumeLayout(false);
-            this.gbMinusUpload.PerformLayout();
             this.tpJira.ResumeLayout(false);
             this.tpJira.PerformLayout();
             this.gbJiraServer.ResumeLayout(false);
@@ -5493,6 +5314,7 @@
             this.tpTinyPic.ResumeLayout(false);
             this.tpTinyPic.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
+            this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.PerformLayout();
@@ -5655,22 +5477,6 @@
         private System.Windows.Forms.Label lblLocalhostrEmail;
         private System.Windows.Forms.TextBox txtLocalhostrPassword;
         private System.Windows.Forms.TextBox txtLocalhostrEmail;
-        private System.Windows.Forms.Label lblMinusURLType;
-        private System.Windows.Forms.ComboBox cbMinusURLType;
-        private System.Windows.Forms.GroupBox gbMinusUserPass;
-        private System.Windows.Forms.Label lblMinusAuthStatus;
-        private System.Windows.Forms.Button btnMinusRefreshAuth;
-        private System.Windows.Forms.Label lblMinusPassword;
-        private System.Windows.Forms.Label lblMinusUsername;
-        private System.Windows.Forms.TextBox txtMinusPassword;
-        private System.Windows.Forms.TextBox txtMinusUsername;
-        private System.Windows.Forms.Button btnMinusAuth;
-        private System.Windows.Forms.GroupBox gbMinusUpload;
-        private System.Windows.Forms.Button btnMinusReadFolderList;
-        private System.Windows.Forms.CheckBox cbMinusPublic;
-        private System.Windows.Forms.Button btnMinusFolderAdd;
-        private System.Windows.Forms.Button btnMinusFolderRemove;
-        private System.Windows.Forms.ComboBox cboMinusFolders;
         private System.Windows.Forms.TextBox txtJiraIssuePrefix;
         private System.Windows.Forms.Label lblJiraIssuePrefix;
         private System.Windows.Forms.GroupBox gbJiraServer;
@@ -5735,12 +5541,6 @@
         private System.Windows.Forms.TextBox txtTinyPicUsername;
         private System.Windows.Forms.Label lblTinyPicUsername;
         private System.Windows.Forms.Button btnTinyPicOpenMyImages;
-        private System.Windows.Forms.Button btnFlickrOpenImages;
-        private System.Windows.Forms.PropertyGrid pgFlickrAuthInfo;
-        private System.Windows.Forms.PropertyGrid pgFlickrSettings;
-        private System.Windows.Forms.Button btnFlickrCheckToken;
-        private System.Windows.Forms.Button btnFlickrCompleteAuth;
-        private System.Windows.Forms.Button btnFlickrOpenAuthorize;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
@@ -5979,7 +5779,6 @@
         internal System.Windows.Forms.TabPage tpSendSpace;
         internal System.Windows.Forms.TabPage tpGe_tt;
         internal System.Windows.Forms.TabPage tpHostr;
-        internal System.Windows.Forms.TabPage tpMinus;
         internal System.Windows.Forms.TabPage tpJira;
         internal System.Windows.Forms.TabPage tpLambda;
         internal System.Windows.Forms.TabPage tpLithiio;
@@ -6136,5 +5935,8 @@
         private System.Windows.Forms.Label lblAmazonS3StorageClass;
         private System.Windows.Forms.ComboBox cbAmazonS3StorageClass;
         private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
+        private System.Windows.Forms.Button btnPaste_eeGetUserKey;
+        private OAuthControl oauthFlickr;
+        private System.Windows.Forms.CheckBox cbFlickrDirectLink;
     }
 }

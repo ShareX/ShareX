@@ -166,6 +166,8 @@ namespace ShareX
             }
         }
 
+        public static string RequestLogsFilePath => Path.Combine(LogsFolder, "ShareX-Request-Logs.txt");
+
         public static string ScreenshotsParentFolder
         {
             get
@@ -292,7 +294,7 @@ namespace ShareX
             SettingManager.SaveAllSettings();
             SettingManager.BackupSettings();
 
-            DebugHelper.Logger.Async = false;
+            DebugHelper.Logger.AsyncWrite = false;
             DebugHelper.WriteLine("ShareX closing.");
         }
 

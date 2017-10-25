@@ -305,9 +305,6 @@ Created folders:</value>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP client only supports FTP or FTPS.</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Not logged in.</value>
-  </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configured</value>
   </data>
@@ -325,9 +322,6 @@ Created folders:</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Invalid device name</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Logged in as {0}.</value>
   </data>
   <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
     <value>Response parse failed.</value>
