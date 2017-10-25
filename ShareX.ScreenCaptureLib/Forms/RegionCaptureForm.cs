@@ -187,7 +187,7 @@ namespace ShareX.ScreenCaptureLib
         public void Prepare(Image img)
         {
             ShapeManager = new ShapeManager(this);
-            ShapeManager.WindowCaptureMode = Config.DetectWindows;
+            ShapeManager.WindowCaptureMode = !IsEditorMode && Config.DetectWindows;
             ShapeManager.IncludeControls = Config.DetectControls;
 
             InitBackground(img);
@@ -235,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
 
                 CenterCanvas();
             }
-            else if (Config.UseDimming)
+            else if (!IsEditorMode && Config.UseDimming)
             {
                 using (Bitmap darkBackground = (Bitmap)Image.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
@@ -604,7 +604,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateRegionPath();
 
                 // If background is dimmed then draw non dimmed background to region selections
-                if (Config.UseDimming)
+                if (!IsEditorMode && Config.UseDimming)
                 {
                     using (Region region = new Region(regionDrawPath))
                     {
@@ -706,7 +706,7 @@ namespace ShareX.ScreenCaptureLib
             DrawObjects(g);
 
             // Draw F1 tips
-            if (Config.ShowHotkeys)
+            if (!IsEditorMode && Config.ShowHotkeys)
             {
                 DrawTips(g);
             }
