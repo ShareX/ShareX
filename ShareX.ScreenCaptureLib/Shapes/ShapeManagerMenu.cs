@@ -715,6 +715,17 @@ namespace ShareX.ScreenCaptureLib
             tsddbOptions.Image = Resources.gear;
             tsMain.Items.Add(tsddbOptions);
 
+            if (form.IsEditorMode)
+            {
+                ToolStripMenuItem tsmiEditorModeStartMaximized = new ToolStripMenuItem("Start editor maximized");
+                tsmiEditorModeStartMaximized.Checked = Config.EditorModeStartMaximized;
+                tsmiEditorModeStartMaximized.CheckOnClick = true;
+                tsmiEditorModeStartMaximized.Click += (sender, e) => Config.EditorModeStartMaximized = tsmiEditorModeStartMaximized.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiEditorModeStartMaximized);
+
+                tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
+            }
+
             if (!form.IsEditorMode)
             {
                 tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);

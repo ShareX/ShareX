@@ -102,16 +102,16 @@ namespace ShareX.ScreenCaptureLib
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
 
-        public RegionCaptureForm(RegionCaptureMode mode)
+        public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options)
         {
             Mode = mode;
+            Config = options;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
 
-            Config = new RegionCaptureOptions();
             DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
@@ -162,9 +162,18 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ShareX - " + "Annotate"; // TODO: Translate
                 StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
-                Size = new Size(800, 600);
-                MinimumSize = new Size(800, 600);
-                WindowState = FormWindowState.Maximized;
+                Size = new Size(900, 700);
+                MinimumSize = new Size(900, 600);
+
+                if (Config.EditorModeStartMaximized)
+                {
+                    WindowState = FormWindowState.Maximized;
+                }
+                else
+                {
+                    WindowState = FormWindowState.Normal;
+                }
+
                 ShowInTaskbar = true;
             }
 
