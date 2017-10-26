@@ -723,6 +723,12 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeStartMaximized.Click += (sender, e) => Config.EditorModeStartMaximized = tsmiEditorModeStartMaximized.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeStartMaximized);
 
+                ToolStripMenuItem tsmiEditorModeRememberWindowState = new ToolStripMenuItem("Remember editor window state");
+                tsmiEditorModeRememberWindowState.Checked = Config.EditorModeRememberWindowState;
+                tsmiEditorModeRememberWindowState.CheckOnClick = true;
+                tsmiEditorModeRememberWindowState.Click += (sender, e) => Config.EditorModeRememberWindowState = tsmiEditorModeRememberWindowState.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiEditorModeRememberWindowState);
+
                 tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
             }
 

@@ -165,7 +165,11 @@ namespace ShareX.ScreenCaptureLib
                 Size = new Size(900, 700);
                 MinimumSize = new Size(900, 600);
 
-                if (Config.EditorModeStartMaximized)
+                if (Config.EditorModeRememberWindowState)
+                {
+                    Config.EditorModeWindowState.ApplyFormState(this);
+                }
+                else if (Config.EditorModeStartMaximized)
                 {
                     WindowState = FormWindowState.Maximized;
                 }
@@ -183,6 +187,7 @@ namespace ShareX.ScreenCaptureLib
             MouseDown += RegionCaptureForm_MouseDown;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
+            FormClosing += RegionCaptureForm_FormClosing;
 
             ResumeLayout(false);
         }
@@ -364,6 +369,14 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
         {
             OnMoved();
+        }
+
+        private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsEditorMode && Config.EditorModeRememberWindowState)
+            {
+                Config.EditorModeWindowState.UpdateFormState(this);
+            }
         }
 
         internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
