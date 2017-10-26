@@ -74,11 +74,10 @@ namespace ShareX
                 mode = RegionCaptureMode.Annotation;
             }
 
-            RegionCaptureForm form = new RegionCaptureForm(mode);
+            RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions);
 
             try
             {
-                form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
                 Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
                 screenshot.CaptureCursor = false;
                 Image img = screenshot.CaptureFullscreen();
