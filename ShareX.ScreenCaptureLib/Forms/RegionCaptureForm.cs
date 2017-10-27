@@ -352,6 +352,7 @@ namespace ShareX.ScreenCaptureLib
         {
             this.ForceActivate();
 
+            OnMoved();
             CenterCanvas();
         }
 
