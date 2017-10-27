@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
                 StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
                 Size = new Size(900, 700);
-                MinimumSize = new Size(900, 600);
+                MinimumSize = new Size(800, 600);
 
                 if (Config.EditorModeRememberWindowState)
                 {
