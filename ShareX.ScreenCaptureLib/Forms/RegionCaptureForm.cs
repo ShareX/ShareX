@@ -54,8 +54,8 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
-        public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
         public bool IsFullscreen => !IsEditorMode || Config.EditorModeFullscreen;
+        public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
 
@@ -83,7 +83,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager ShapeManager { get; private set; }
         internal List<DrawableObject> DrawableObjects { get; private set; }
-        internal bool Closing { get; private set; }
+        internal bool IsClosing { get; private set; }
 
         internal IContainer components = null;
         internal OpacityAnimation toolbarAnimation;
@@ -370,7 +370,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Closing = true;
+            IsClosing = true;
 
             if (IsEditorMode && Config.EditorModeRememberWindowState)
             {
