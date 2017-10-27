@@ -68,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
                 Text = "ShareX - Annotate menu",
-                TopMost = !form.IsEditorMode
+                TopMost = form.IsFullscreen
             };
 
             menuForm.Shown += MenuForm_Shown;

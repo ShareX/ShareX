@@ -55,6 +55,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
+        public bool IsFullscreen => !IsEditorMode || Config.EditorModeFullscreen;
 
         public Point CurrentPosition { get; private set; }
 
@@ -146,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
-            if (!IsEditorMode || Config.EditorModeFullscreen)
+            if (IsFullscreen)
             {
                 Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
                 StartPosition = FormStartPosition.Manual;
@@ -154,7 +155,7 @@ namespace ShareX.ScreenCaptureLib
                 Bounds = CaptureHelpers.GetScreenBounds();
                 ShowInTaskbar = false;
 #if !DEBUG
-            TopMost = true;
+                TopMost = true;
 #endif
             }
             else
