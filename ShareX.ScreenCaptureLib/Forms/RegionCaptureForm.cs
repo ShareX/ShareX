@@ -82,6 +82,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager ShapeManager { get; private set; }
         internal List<DrawableObject> DrawableObjects { get; private set; }
+        internal bool Closing { get; private set; }
 
         internal IContainer components = null;
         internal OpacityAnimation toolbarAnimation;
@@ -89,7 +90,6 @@ namespace ShareX.ScreenCaptureLib
 
         private InputManager InputManager => ShapeManager.InputManager;
 
-        private FormWindowState lastWindowState = FormWindowState.Minimized;
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen;
@@ -146,7 +146,7 @@ namespace ShareX.ScreenCaptureLib
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
-            if (!IsEditorMode)
+            if (!IsEditorMode || Config.EditorModeFullscreen)
             {
                 Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
                 StartPosition = FormStartPosition.Manual;
@@ -280,11 +280,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 UpdateCoordinates();
 
-                if (IsEditorMode && WindowState != lastWindowState)
-                {
-                    lastWindowState = WindowState;
-                }
-
                 if (IsAnnotationMode && ShapeManager.ToolbarCreated)
                 {
                     ShapeManager.UpdateMenuPosition();
@@ -373,6 +368,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Closing = true;
+
             if (IsEditorMode && Config.EditorModeRememberWindowState)
             {
                 Config.EditorModeWindowState.UpdateFormState(this);
