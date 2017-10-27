@@ -973,24 +973,29 @@ namespace ShareX.ScreenCaptureLib
 
         internal void UpdateMenuPosition()
         {
-            Rectangle rectScreen = form.RectangleToScreen(form.ScreenRectangle0Based);
+            Rectangle rectScreen;
 
-            if (Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
+            if (form.IsFullscreen)
             {
-                menuForm.Location = Config.MenuPosition;
+                rectScreen = CaptureHelpers.GetActiveScreenBounds();
+                rectScreen.Y += 20;
             }
             else
             {
-                //Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
+                rectScreen = form.RectangleToScreen(form.ScreenRectangle0Based);
+            }
 
-                if (tsMain.Width < rectScreen.Width)
-                {
-                    menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
-                }
-                else
-                {
-                    menuForm.Location = rectScreen.Location;
-                }
+            if (!form.IsEditorMode && Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
+            {
+                menuForm.Location = Config.MenuPosition;
+            }
+            else if (tsMain.Width < rectScreen.Width)
+            {
+                menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
+            }
+            else
+            {
+                menuForm.Location = rectScreen.Location;
             }
         }
 
