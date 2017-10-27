@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -74,5 +75,11 @@ namespace ShareX.ScreenCaptureLib
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
+
+        // Editor mode
+        public bool EditorModeStartMaximized = true;
+        public bool EditorModeRememberWindowState = false;
+        public WindowState EditorModeWindowState = new WindowState();
+        public bool EditorModeFullscreen = false;
     }
 }

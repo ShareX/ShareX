@@ -35,11 +35,11 @@ namespace ShareX.ScreenCaptureLib
     {
         public static Image GetRegionImage(RegionCaptureOptions options)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
-            {
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.ShowHotkeys = false;
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+            newOptions.ShowHotkeys = false;
 
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
+            {
                 form.Prepare();
                 form.ShowDialog();
 
@@ -49,11 +49,11 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
-            {
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.ShowHotkeys = false;
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+            newOptions.ShowHotkeys = false;
 
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
+            {
                 form.Prepare();
                 form.ShowDialog();
 
@@ -94,13 +94,13 @@ namespace ShareX.ScreenCaptureLib
 
         public static PointInfo GetPointInfo(RegionCaptureOptions options)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker))
-            {
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.DetectWindows = false;
-                form.Config.ShowHotkeys = false;
-                form.Config.UseDimming = false;
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+            newOptions.DetectWindows = false;
+            newOptions.ShowHotkeys = false;
+            newOptions.UseDimming = false;
 
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions))
+            {
                 form.Prepare();
                 form.ShowDialog();
 
@@ -118,13 +118,13 @@ namespace ShareX.ScreenCaptureLib
 
         public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick))
-            {
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.UseDimming = false;
-                form.Config.ShowMagnifier = false;
-                form.Config.ShowHotkeys = false;
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+            newOptions.UseDimming = false;
+            newOptions.ShowMagnifier = false;
+            newOptions.ShowHotkeys = false;
 
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))
+            {
                 form.Prepare();
                 form.ShowDialog();
 
@@ -139,12 +139,12 @@ namespace ShareX.ScreenCaptureLib
 
         public static void ShowScreenRuler(RegionCaptureOptions options)
         {
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler))
-            {
-                form.Config = GetRegionCaptureOptions(options);
-                form.Config.QuickCrop = false;
-                form.Config.ShowHotkeys = false;
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+            newOptions.QuickCrop = false;
+            newOptions.ShowHotkeys = false;
 
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
+            {
                 form.Prepare();
                 form.ShowDialog();
             }
@@ -160,11 +160,9 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
 
-            using (RegionCaptureForm form = new RegionCaptureForm(mode))
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, options))
             {
-                form.Config = options;
                 form.ImageFilePath = filePath;
-
                 form.Prepare(img);
                 form.ShowDialog();
 

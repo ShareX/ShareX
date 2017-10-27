@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("ShareX")]
-[assembly: AssemblyDescription("A program that allows you to take screenshots and share any file type")]
+[assembly: AssemblyDescription("Screen capture, file sharing and productivity tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Team")]
 [assembly: AssemblyProduct("ShareX")]
@@ -11,5 +11,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC")]
-[assembly: AssemblyVersion("11.9.1")]
-[assembly: AssemblyFileVersion("11.9.1")]
+[assembly: AssemblyVersion("12.0.0")]
+[assembly: AssemblyFileVersion("12.0.0")]

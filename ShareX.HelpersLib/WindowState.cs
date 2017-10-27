@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
         public Size Size { get; set; }
         public bool IsMaximized { get; set; }
 
-        public void SetFormState(Form form)
+        public void ApplyFormState(Form form)
         {
             if (!Location.IsEmpty && CaptureHelpers.GetScreenBounds().IntersectsWith(new Rectangle(Location, Size)))
             {
@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void GetFormState(Form form)
+        public void UpdateFormState(Form form)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
             wp.length = Marshal.SizeOf(wp);
@@ -69,8 +69,8 @@ namespace ShareX.HelpersLib
 
         public void AutoHandleFormState(Form form)
         {
-            SetFormState(form);
-            form.FormClosing += (sender, e) => GetFormState(form);
+            ApplyFormState(form);
+            form.FormClosing += (sender, e) => UpdateFormState(form);
         }
     }
 }
