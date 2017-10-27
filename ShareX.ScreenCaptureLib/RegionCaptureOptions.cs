@@ -80,5 +80,6 @@ namespace ShareX.ScreenCaptureLib
         public bool EditorModeStartMaximized = true;
         public bool EditorModeRememberWindowState = false;
         public WindowState EditorModeWindowState = new WindowState();
+        public bool EditorModeFullscreen = false;
     }
 }

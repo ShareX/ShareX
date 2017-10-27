@@ -729,6 +729,12 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeRememberWindowState.Click += (sender, e) => Config.EditorModeRememberWindowState = tsmiEditorModeRememberWindowState.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeRememberWindowState);
 
+                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem("Fullscreen editor mode");
+                tsmiEditorModeFullscreen.Checked = Config.EditorModeFullscreen;
+                tsmiEditorModeFullscreen.CheckOnClick = true;
+                tsmiEditorModeFullscreen.Click += (sender, e) => Config.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiEditorModeFullscreen);
+
                 tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
             }
 
@@ -1059,7 +1065,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateMenu()
         {
-            if (menuForm == null) return;
+            if (form.Closing || menuForm == null || menuForm.IsDisposed) return;
 
             ShapeType shapeType = CurrentShapeType;
 
