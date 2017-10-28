@@ -466,11 +466,11 @@ namespace ShareX.HelpersLib
         {
             if (tsmi != null)
             {
-                foreach (ToolStripMenuItem item in tsmi.GetCurrentParent().Items)
+                foreach (var item in tsmi.GetCurrentParent().Items)
                 {
-                    if (item != null)
+                    if (item != null && item is ToolStripMenuItem tsmiItem && tsmiItem.Tag.Equals(tsmi.Tag))
                     {
-                        item.Checked = item == tsmi;
+                        tsmiItem.Checked = tsmiItem == tsmi;
                     }
                 }
             }

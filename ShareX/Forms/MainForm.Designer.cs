@@ -173,6 +173,9 @@
             this.tsmiImagePreviewShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewHide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewAutomatic = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssImagePreview = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiImagePreviewSide = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImagePreviewBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiTrayCapture = new System.Windows.Forms.ToolStripMenuItem();
@@ -1344,7 +1347,10 @@
             this.tsmiImagePreview.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiImagePreviewShow,
             this.tsmiImagePreviewHide,
-            this.tsmiImagePreviewAutomatic});
+            this.tsmiImagePreviewAutomatic,
+            this.tssImagePreview,
+            this.tsmiImagePreviewSide,
+            this.tsmiImagePreviewBottom});
             this.tsmiImagePreview.Image = global::ShareX.Properties.Resources.layout_select_content;
             this.tsmiImagePreview.Name = "tsmiImagePreview";
             resources.ApplyResources(this.tsmiImagePreview, "tsmiImagePreview");
@@ -1355,19 +1361,43 @@
             this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
             resources.ApplyResources(this.tsmiImagePreviewShow, "tsmiImagePreviewShow");
+            this.tsmiImagePreviewShow.Tag = "Visibility";
             this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
             // 
             // tsmiImagePreviewHide
             // 
             this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
             resources.ApplyResources(this.tsmiImagePreviewHide, "tsmiImagePreviewHide");
+            this.tsmiImagePreviewHide.Tag = "Visibility";
             this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
             // 
             // tsmiImagePreviewAutomatic
             // 
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
             resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
+            this.tsmiImagePreviewAutomatic.Tag = "Visibility";
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
+            // 
+            // tssImagePreview
+            // 
+            this.tssImagePreview.Name = "tssImagePreview";
+            resources.ApplyResources(this.tssImagePreview, "tssImagePreview");
+            // 
+            // tsmiImagePreviewSide
+            // 
+            this.tsmiImagePreviewSide.Checked = true;
+            this.tsmiImagePreviewSide.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiImagePreviewSide.Name = "tsmiImagePreviewSide";
+            resources.ApplyResources(this.tsmiImagePreviewSide, "tsmiImagePreviewSide");
+            this.tsmiImagePreviewSide.Tag = "Location";
+            this.tsmiImagePreviewSide.Click += new System.EventHandler(this.tsmiImagePreviewSide_Click);
+            // 
+            // tsmiImagePreviewBottom
+            // 
+            this.tsmiImagePreviewBottom.Name = "tsmiImagePreviewBottom";
+            resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
+            this.tsmiImagePreviewBottom.Tag = "Location";
+            this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
             // 
             // niTray
             // 
@@ -2282,5 +2312,8 @@
         public System.Windows.Forms.FlowLayoutPanel flpCommunity;
         public System.Windows.Forms.FlowLayoutPanel flpPatreon;
         public System.Windows.Forms.FlowLayoutPanel flpDiscord;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewSide;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewBottom;
+        private System.Windows.Forms.ToolStripSeparator tssImagePreview;
     }
 }

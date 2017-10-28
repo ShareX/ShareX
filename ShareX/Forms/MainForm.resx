@@ -1287,6 +1287,18 @@
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
+  <data name="tsmiImagePreviewSide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Side</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
   <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -2776,6 +2788,24 @@
     <value>tsmiImagePreviewAutomatic</value>
   </data>
   <data name="&gt;&gt;tsmiImagePreviewAutomatic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssImagePreview.Name" xml:space="preserve">
+    <value>tssImagePreview</value>
+  </data>
+  <data name="&gt;&gt;tssImagePreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiImagePreviewSide.Name" xml:space="preserve">
+    <value>tsmiImagePreviewSide</value>
+  </data>
+  <data name="&gt;&gt;tsmiImagePreviewSide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiImagePreviewBottom.Name" xml:space="preserve">
+    <value>tsmiImagePreviewBottom</value>
+  </data>
+  <data name="&gt;&gt;tsmiImagePreviewBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;niTray.Name" xml:space="preserve">
