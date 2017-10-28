@@ -803,9 +803,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawFPS(Graphics g, int offset)
         {
-            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+            Point textPosition = new Point(offset, offset);
 
-            g.DrawTextWithShadow(FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+            if (IsFullscreen)
+            {
+                Rectangle rectScreen = CaptureHelpers.GetActiveScreenBounds0Based();
+                textPosition = textPosition.Add(rectScreen.Location);
+            }
+
+            g.DrawTextWithShadow(FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
