@@ -1035,7 +1035,12 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetInfoText()
         {
-            if (Mode == RegionCaptureMode.ScreenColorPicker || Config.UseCustomInfoText)
+            if (IsEditorMode)
+            {
+                Point canvasRelativePosition = new Point(InputManager.MousePosition0Based.X - ImageRectangle.X, InputManager.MousePosition0Based.Y - ImageRectangle.Y);
+                return $"X: {canvasRelativePosition.X} Y: {canvasRelativePosition.Y}";
+            }
+            else if (Mode == RegionCaptureMode.ScreenColorPicker || Config.UseCustomInfoText)
             {
                 Color color = CurrentColor;
 
@@ -1047,7 +1052,7 @@ namespace ShareX.ScreenCaptureLib
                 return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
             }
 
-            return string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
+            return $"X: {CurrentPosition.X} Y: {CurrentPosition.Y}";
         }
 
         private void DrawCrosshair(Graphics g)
