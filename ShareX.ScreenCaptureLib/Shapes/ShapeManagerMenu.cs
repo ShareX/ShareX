@@ -52,6 +52,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
+        private ToolStripLabel tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
 
         internal void CreateToolbar()
@@ -112,7 +113,7 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Controls.Add(tsMain);
 
-            if (!form.IsEditorMode)
+            if (form.IsFullscreen)
             {
                 tslDragLeft = new ToolStripLabel()
                 {
@@ -839,9 +840,9 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Options
 
-            if (!form.IsEditorMode)
+            if (form.IsFullscreen)
             {
-                ToolStripLabel tslDragRight = new ToolStripLabel()
+                tslDragRight = new ToolStripLabel()
                 {
                     Alignment = ToolStripItemAlignment.Right,
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
