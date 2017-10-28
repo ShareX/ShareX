@@ -231,7 +231,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                ImageRectangle = new Rectangle(0, 0, Image.Width, Image.Height);
+                ImageRectangle = new Rectangle(ImageRectangle.X, ImageRectangle.Y, Image.Width, Image.Height);
 
                 using (Bitmap background = new Bitmap(Image.Width, Image.Height))
                 using (Graphics g = Graphics.FromImage(background))
@@ -246,6 +246,7 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawImage(Image, sourceRect);
 
                     backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
                 }
 
                 CenterCanvas();

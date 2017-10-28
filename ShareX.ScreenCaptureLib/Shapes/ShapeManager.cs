@@ -1318,7 +1318,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
-                MoveAll(-rect.X, -rect.Y);
+                MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
                 form.InitBackground(img);
                 isAnnotated = true;
             }
@@ -1359,7 +1359,6 @@ namespace ShareX.ScreenCaptureLib
 
                         if (img != null)
                         {
-                            MoveAll(-form.ImageRectangle.X, -form.ImageRectangle.Y);
                             form.InitBackground(img);
                             isAnnotated = true;
                         }
@@ -1379,7 +1378,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (img != null)
                     {
-                        MoveAll(canvas.Left - form.ImageRectangle.X, canvas.Top - form.ImageRectangle.Y);
+                        MoveAll(canvas.Left, canvas.Top);
                         form.InitBackground(img);
                         isAnnotated = true;
                     }
