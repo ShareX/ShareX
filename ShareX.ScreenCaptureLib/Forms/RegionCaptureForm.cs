@@ -49,12 +49,12 @@ namespace ShareX.ScreenCaptureLib
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
         public string ImageFilePath { get; set; }
+        public bool IsFullscreen { get; private set; }
 
         public RegionCaptureMode Mode { get; private set; }
 
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
-        public bool IsFullscreen => !IsEditorMode || Config.EditorModeFullscreen;
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
@@ -107,6 +107,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Mode = mode;
             Config = options;
+            IsFullscreen = !IsEditorMode || Config.EditorModeFullscreen;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
             ImageRectangle = ScreenRectangle0Based;

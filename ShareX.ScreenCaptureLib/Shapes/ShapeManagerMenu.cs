@@ -735,7 +735,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeRememberWindowState.Click += (sender, e) => Config.EditorModeRememberWindowState = tsmiEditorModeRememberWindowState.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeRememberWindowState);
 
-                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem("Fullscreen editor mode");
+                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem("Start editor fullscreen");
                 tsmiEditorModeFullscreen.Checked = Config.EditorModeFullscreen;
                 tsmiEditorModeFullscreen.CheckOnClick = true;
                 tsmiEditorModeFullscreen.Click += (sender, e) => Config.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
