@@ -89,7 +89,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annotate image.
+        ///   Looks up a localized string similar to Open in image editor.
         /// </summary>
         internal static string AfterCaptureTasks_AnnotateImage {
             get {

@@ -71,7 +71,7 @@
             this.tsddbTools = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAnnotateImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -201,7 +201,7 @@
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAnnotateImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -606,7 +606,7 @@
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
-            this.tsmiAnnotateImage,
+            this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiHashCheck,
             this.tsmiDNSChanger,
@@ -637,12 +637,12 @@
             resources.ApplyResources(this.tsmiScreenColorPicker, "tsmiScreenColorPicker");
             this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
-            // tsmiAnnotateImage
+            // tsmiImageEditor
             // 
-            this.tsmiAnnotateImage.Image = global::ShareX.Properties.Resources.image_pencil;
-            this.tsmiAnnotateImage.Name = "tsmiAnnotateImage";
-            resources.ApplyResources(this.tsmiAnnotateImage, "tsmiAnnotateImage");
-            this.tsmiAnnotateImage.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
+            this.tsmiImageEditor.Name = "tsmiImageEditor";
+            resources.ApplyResources(this.tsmiImageEditor, "tsmiImageEditor");
+            this.tsmiImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiImageEffects
             // 
@@ -1593,7 +1593,7 @@
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
-            this.tsmiTrayAnnotateImage,
+            this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayHashCheck,
             this.tsmiTrayDNSChanger,
@@ -1624,12 +1624,12 @@
             resources.ApplyResources(this.tsmiTrayScreenColorPicker, "tsmiTrayScreenColorPicker");
             this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
-            // tsmiTrayAnnotateImage
+            // tsmiTrayImageEditor
             // 
-            this.tsmiTrayAnnotateImage.Image = global::ShareX.Properties.Resources.image_pencil;
-            this.tsmiTrayAnnotateImage.Name = "tsmiTrayAnnotateImage";
-            resources.ApplyResources(this.tsmiTrayAnnotateImage, "tsmiTrayAnnotateImage");
-            this.tsmiTrayAnnotateImage.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
+            this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
+            resources.ApplyResources(this.tsmiTrayImageEditor, "tsmiTrayImageEditor");
+            this.tsmiTrayImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiTrayImageEffects
             // 
@@ -2190,8 +2190,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyThumbnailImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAnnotateImage;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAnnotateImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowQRCode;

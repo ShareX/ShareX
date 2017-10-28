@@ -148,9 +148,17 @@ namespace ShareX.ScreenCaptureLib
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
-            if (IsFullscreen)
+            if (IsEditorMode)
+            {
+                Text = "ShareX - " + "Image editor"; // TODO: Translate
+            }
+            else
             {
                 Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+            }
+
+            if (IsFullscreen)
+            {
                 StartPosition = FormStartPosition.Manual;
                 FormBorderStyle = FormBorderStyle.None;
                 Bounds = CaptureHelpers.GetScreenBounds();
@@ -161,7 +169,6 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                Text = "ShareX - " + "Annotate"; // TODO: Translate
                 StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
                 Size = new Size(900, 700);
