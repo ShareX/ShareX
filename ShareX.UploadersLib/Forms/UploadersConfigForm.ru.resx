@@ -291,7 +291,7 @@ store.book[0].title</value>
     <value>URL миниатюры:</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Файл из имени:</value>
+    <value>Имя формы с файлом:</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Тип запроса:</value>
@@ -1174,5 +1174,11 @@ store.book[0].title</value>
   </data>
   <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
     <value>Класс хранилища:</value>
+  </data>
+  <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
+    <value>Получить пользовательский ключ...</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Использовать прямую ссылку</value>
   </data>
 </root>

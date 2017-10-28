@@ -425,4 +425,52 @@
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>Захват</value>
   </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Редактор изображений</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Меню примечаний</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>Тип курсора:</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Центральных точек:</value>
+  </data>
+  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
+    <value>Стрелки на обоих концах</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Размер изображения...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Размер полотна...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Повернуть на 90° по часовой стрелке</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Повернуть на 90° против часовой стрелки</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Повернуть на 180°</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Отразить по горизонтали</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Отразить по вертикали</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartEditorMaximized" xml:space="preserve">
+    <value>Разворачивать редактор на весь экран</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RememberEditorWindowState" xml:space="preserve">
+    <value>Помнить состояние окна редактора</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
+    <value>Запускать редактор в полноэкранном режиме</value>
+  </data>
 </root>
