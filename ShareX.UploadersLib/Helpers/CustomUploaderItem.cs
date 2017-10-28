@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -132,8 +133,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(RequestURL))
             {
-                // TODO: Translate
-                throw new Exception("\"Request URL\" must be configured.");
+                throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
             string url = ParseURL(RequestURL, false);
@@ -145,8 +145,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(FileFormName))
             {
-                // TODO: Translate
-                throw new Exception("\"File form name\" must be configured.");
+                throw new Exception(Resources.CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured);
             }
 
             return FileFormName;
