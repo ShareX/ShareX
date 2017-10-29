@@ -181,9 +181,6 @@
   <data name="Google" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Google.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SomeImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\someimage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Bitly" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Bitly.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,9 +244,6 @@ Created folders:</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentication required.</value>
-  </data>
-  <data name="Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Minus.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Browse for a key file...</value>
@@ -364,9 +358,6 @@ Created folders:</value>
   </data>
   <data name="server_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\server-network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Uplea" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Uplea.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pastie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pastie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

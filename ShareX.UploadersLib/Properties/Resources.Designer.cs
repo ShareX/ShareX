@@ -422,16 +422,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Minus {
-            get {
-                object obj = ResourceManager.GetObject("Minus", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Paste verification code here.
         /// </summary>
         internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {
@@ -638,16 +628,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon SomeImage {
-            get {
-                object obj = ResourceManager.GetObject("SomeImage", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon Streamable {
             get {
                 object obj = ResourceManager.GetObject("Streamable", resourceCulture);
@@ -700,16 +680,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static System.Drawing.Icon Upaste {
             get {
                 object obj = ResourceManager.GetObject("Upaste", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Uplea {
-            get {
-                object obj = ResourceManager.GetObject("Uplea", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

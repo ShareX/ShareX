@@ -669,15 +669,6 @@ namespace ShareX.UploadersLib
 
             #endregion
 
-            #region Uplea
-
-            txtUpleaApiKey.Text = Config.UpleaApiKey;
-            txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
-            cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
-            cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
-
-            #endregion
-
             #region Azure Storage
 
             txtAzureStorageAccountName.Text = Config.AzureStorageAccountName;
@@ -2828,71 +2819,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Streamable
-
-        #region Uplea
-
-        private void btnUpleaLogin_Click(object sender, EventArgs e)
-        {
-            btnUpleaLogin.Enabled = false;
-
-            Uplea uplea = new Uplea();
-
-            txtUpleaApiKey.Text = "";
-            cbUpleaIsPremium.Checked = false;
-            cbUpleaInstantDownloadEnabled.Checked = false;
-
-            try
-            {
-                string apiKey = uplea.GetApiKey(txtUpleaUsername.Text, txtUpleaPassword.Text);
-
-                txtUpleaApiKey.Text = apiKey;
-
-                if (!string.IsNullOrEmpty(apiKey))
-                {
-                    UpleaGetUserInformationResponse upleaUserInformation = uplea.GetUserInformation(apiKey);
-                    txtUpleaEmailAddress.Text = upleaUserInformation.Result.EmailAddress;
-                    cbUpleaIsPremium.Checked = upleaUserInformation.Result.IsPremiumMember;
-                    cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.Result.InstantDownloadEnabled;
-                }
-                else
-                {
-                    MessageBox.Show("Unable to retrieve API key and user details from Uplea. Please check your user credentials and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            finally
-            {
-                btnUpleaLogin.Enabled = true;
-            }
-        }
-
-        private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.UpleaApiKey = txtUpleaApiKey.Text;
-
-            if (string.IsNullOrEmpty(Config.UpleaApiKey))
-            {
-                txtUpleaEmailAddress.Text = "";
-                cbUpleaIsPremium.Checked = false;
-                cbUpleaInstantDownloadEnabled.Checked = false;
-            }
-        }
-
-        private void txtUpleaEmailAddress_TextChanged(object sender, EventArgs e)
-        {
-            Config.UpleaEmailAddress = txtUpleaEmailAddress.Text;
-        }
-
-        private void cbUpleaIsPremium_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.UpleaIsPremiumMember = cbUpleaIsPremium.Checked;
-        }
-
-        private void cbUpleaInstantDownloadEnabled_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.UpleaInstantDownloadEnabled = cbUpleaInstantDownloadEnabled.Checked;
-        }
-
-        #endregion Uplea
 
         #region Azure Storage
 

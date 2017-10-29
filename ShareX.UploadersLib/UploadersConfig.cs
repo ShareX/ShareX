@@ -366,15 +366,6 @@ namespace ShareX.UploadersLib
 
         #endregion
 
-        #region Uplea
-
-        public string UpleaApiKey = "";
-        public string UpleaEmailAddress = "";
-        public bool UpleaIsPremiumMember = false;
-        public bool UpleaInstantDownloadEnabled = false;
-
-        #endregion
-
         #region Azure Storage
 
         public string AzureStorageAccountName = "";

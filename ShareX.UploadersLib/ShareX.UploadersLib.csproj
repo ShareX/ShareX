@@ -162,7 +162,6 @@
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
-    <Compile Include="FileUploaders\Uplea.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
@@ -886,7 +885,6 @@
     <None Include="Favicons\GoogleDrive.ico" />
     <None Include="Favicons\ImageShack.ico" />
     <None Include="Favicons\Imgur.ico" />
-    <None Include="Favicons\Minus.ico" />
     <None Include="Favicons\jira.png" />
     <None Include="Favicons\Pastebin.ico" />
     <None Include="Favicons\Photobucket.ico" />
@@ -904,7 +902,6 @@
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />
     <None Include="Favicons\Hastebin.png" />
-    <None Include="Favicons\Up1.ico" />
     <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
@@ -925,7 +922,6 @@
     <None Include="Favicons\Seafile.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Favicons\SomeImage.ico" />
     <None Include="Favicons\Streamable.ico" />
     <None Include="Favicons\Sul.png" />
     <None Include="Favicons\Vgyme.ico" />
@@ -960,7 +956,6 @@
     <None Include="Favicons\Plik.ico" />
     <Content Include="Favicons\Gfycat.png" />
     <Content Include="Favicons\GooglePhotos.ico" />
-    <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
