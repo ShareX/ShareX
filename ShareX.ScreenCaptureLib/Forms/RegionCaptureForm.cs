@@ -88,6 +88,7 @@ namespace ShareX.ScreenCaptureLib
         internal IContainer components = null;
         internal OpacityAnimation toolbarAnimation;
         internal Rectangle toolbarAnimationRectangle;
+        internal int toolbarHeight;
 
         private InputManager InputManager => ShapeManager.InputManager;
 
@@ -171,7 +172,7 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
-                MinimumSize = new Size(800, 600);
+                MinimumSize = new Size(800, 400);
 
                 if (Config.EditorModeRememberWindowState)
                 {
@@ -304,7 +305,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Pan(int deltaX, int deltaY, bool updateCenterPoint = false)
+        private void Pan(int deltaX, int deltaY)
         {
             ImageRectangle = ImageRectangle.LocationOffset(deltaX, deltaY);
 
@@ -317,27 +318,25 @@ namespace ShareX.ScreenCaptureLib
             {
                 ShapeManager.MoveAll(deltaX, deltaY);
             }
-
-            if (updateCenterPoint)
-            {
-                UpdateCenterPoint();
-            }
         }
 
-        private void Pan(Point delta, bool updateCenterPoint = false)
+        private void Pan(Point delta)
         {
-            Pan(delta.X, delta.Y, updateCenterPoint);
+            Pan(delta.X, delta.Y);
         }
 
         private void AutomaticPan(Vector2 center)
         {
-            int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
-            int y = (int)Math.Round(ScreenRectangle0Based.Height * center.Y);
-            int newX = x - ImageRectangle.Width / 2;
-            int newY = y - ImageRectangle.Height / 2;
-            int deltaX = newX - ImageRectangle.X;
-            int deltaY = newY - ImageRectangle.Y;
-            Pan(deltaX, deltaY);
+            if (IsEditorMode)
+            {
+                int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
+                int y = (int)Math.Round(toolbarHeight + (ScreenRectangle0Based.Height - toolbarHeight) * center.Y);
+                int newX = x - ImageRectangle.Width / 2;
+                int newY = y - ImageRectangle.Height / 2;
+                int deltaX = newX - ImageRectangle.X;
+                int deltaY = newY - ImageRectangle.Y;
+                Pan(deltaX, deltaY);
+            }
         }
 
         private void AutomaticPan()
@@ -351,7 +350,7 @@ namespace ShareX.ScreenCaptureLib
                 (ImageRectangle.Y + ImageRectangle.Height / 2f) / ScreenRectangle0Based.Height);
         }
 
-        private void CenterCanvas()
+        public void CenterCanvas()
         {
             CanvasCenterPoint = new Vector2(0.5f, 0.5f);
             AutomaticPan();
@@ -576,7 +575,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                Pan(InputManager.MouseVelocity, true);
+                Pan(InputManager.MouseVelocity);
+                UpdateCenterPoint();
             }
 
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;

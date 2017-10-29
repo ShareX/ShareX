@@ -903,6 +903,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
+            form.toolbarHeight = menuForm.Height;
             form.toolbarAnimationRectangle = form.RectangleToClient(menuForm.Bounds);
 
             form.toolbarAnimation = new OpacityAnimation()
@@ -913,6 +914,8 @@ namespace ShareX.ScreenCaptureLib
             };
 
             form.toolbarAnimation.Start();
+
+            form.CenterCanvas();
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)
