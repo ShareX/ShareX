@@ -157,9 +157,10 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
             }
 
+            StartPosition = FormStartPosition.Manual;
+
             if (IsFullscreen)
             {
-                StartPosition = FormStartPosition.Manual;
                 FormBorderStyle = FormBorderStyle.None;
                 Bounds = CaptureHelpers.GetScreenBounds();
                 ShowInTaskbar = false;
@@ -169,22 +170,28 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                StartPosition = FormStartPosition.CenterScreen;
                 FormBorderStyle = FormBorderStyle.Sizable;
-                Size = new Size(900, 700);
                 MinimumSize = new Size(800, 600);
 
                 if (Config.EditorModeRememberWindowState)
                 {
                     Config.EditorModeWindowState.ApplyFormState(this);
                 }
-                else if (Config.EditorModeStartMaximized)
-                {
-                    WindowState = FormWindowState.Maximized;
-                }
                 else
                 {
-                    WindowState = FormWindowState.Normal;
+                    Size size = new Size(900, 700);
+                    Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+                    Bounds = new Rectangle(activeScreen.X + (activeScreen.Width / 2) - (size.Width / 2),
+                        activeScreen.Y + (activeScreen.Height / 2) - (size.Height / 2), size.Width, size.Height);
+
+                    if (Config.EditorModeStartMaximized)
+                    {
+                        WindowState = FormWindowState.Maximized;
+                    }
+                    else
+                    {
+                        WindowState = FormWindowState.Normal;
+                    }
                 }
 
                 ShowInTaskbar = true;
