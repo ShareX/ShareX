@@ -832,11 +832,14 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
-            ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
-            tsmiRememberMenuState.Checked = Config.RememberMenuState;
-            tsmiRememberMenuState.CheckOnClick = true;
-            tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
-            tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
+            if (!form.IsEditorMode)
+            {
+                ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
+                tsmiRememberMenuState.Checked = Config.RememberMenuState;
+                tsmiRememberMenuState.CheckOnClick = true;
+                tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
+            }
 
             #endregion Options
 
@@ -964,7 +967,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfigureMenuState()
         {
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
                 SetMenuCollapsed(Config.MenuCollapsed);
             }
@@ -1035,7 +1038,7 @@ namespace ShareX.ScreenCaptureLib
                 menuForm.Location = pos;
             }
 
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
                 Config.MenuPosition = pos;
             }
@@ -1072,7 +1075,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateMenu();
             }
 
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
                 Config.MenuCollapsed = IsMenuCollapsed;
             }
