@@ -86,8 +86,6 @@ namespace ShareX.ScreenCaptureLib
         internal bool IsClosing { get; private set; }
 
         internal IContainer components = null;
-        internal OpacityAnimation toolbarAnimation;
-        internal Rectangle toolbarAnimationRectangle;
         internal int toolbarHeight;
 
         private InputManager InputManager => ShapeManager.InputManager;
@@ -764,17 +762,6 @@ namespace ShareX.ScreenCaptureLib
             if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
             {
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
-            }
-
-            // Draw animation under toolbar on startup
-            if (Config.EnableAnimations && toolbarAnimation != null && toolbarAnimation.IsActive)
-            {
-                toolbarAnimation.Update();
-
-                using (Pen toolbarAnimationPen = new Pen(Color.FromArgb((int)(toolbarAnimation.Opacity * 255), 5, 100, 255), 3) { Alignment = PenAlignment.Inset })
-                {
-                    g.DrawRectangleProper(toolbarAnimationPen, toolbarAnimationRectangle.Offset(3));
-                }
             }
         }
 

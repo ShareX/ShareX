@@ -904,17 +904,6 @@ namespace ShareX.ScreenCaptureLib
         private void MenuForm_Shown(object sender, EventArgs e)
         {
             form.toolbarHeight = menuForm.Height;
-            form.toolbarAnimationRectangle = form.RectangleToClient(menuForm.Bounds);
-
-            form.toolbarAnimation = new OpacityAnimation()
-            {
-                FadeInDuration = TimeSpan.FromMilliseconds(500),
-                Duration = TimeSpan.FromMilliseconds(500),
-                FadeOutDuration = TimeSpan.FromMilliseconds(500)
-            };
-
-            form.toolbarAnimation.Start();
-
             form.CenterCanvas();
         }
 
