@@ -3303,16 +3303,14 @@ namespace ShareX.UploadersLib
             {
                 if (string.IsNullOrEmpty(uploader.RequestURL))
                 {
-                    // TODO: Translate
-                    MessageBox.Show("\"Request URL\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                    MessageBox.Show(Resources.UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured, "ShareX - " + Resources.UploadersConfigForm_Error,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
 
                 if (uploader.DestinationType == CustomUploaderDestinationType.None)
                 {
-                    // TODO: Translate
-                    MessageBox.Show("\"Destination type\" must be configured.", "ShareX - " + Resources.UploadersConfigForm_Error,
+                    MessageBox.Show(Resources.UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured, "ShareX - " + Resources.UploadersConfigForm_Error,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }

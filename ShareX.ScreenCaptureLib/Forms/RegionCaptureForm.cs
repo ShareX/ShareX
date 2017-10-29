@@ -150,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                Text = "ShareX - " + "Image editor"; // TODO: Translate
+                Text = "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_ImageEditor;
             }
             else
             {

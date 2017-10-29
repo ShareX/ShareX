@@ -149,6 +149,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
+        /// </summary>
+        internal static string CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured {
+            get {
+                return ResourceManager.GetString("CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Request URL&quot; must be configured..
+        /// </summary>
+        internal static string CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured {
+            get {
+                return ResourceManager.GetString("CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap document {
@@ -738,6 +756,25 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Destination type&quot; must be configured..
+        /// </summary>
+        internal static string UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfig" +
+                        "ured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Request URL&quot; must be configured..
+        /// </summary>
+        internal static string UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured", resourceCulture);
             }
         }
         

@@ -705,4 +705,10 @@
   <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
     <value>Открыть приглашение на Discord сервер ShareX</value>
   </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Редактор изображений...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Редактор изображений...</value>
+  </data>
 </root>
