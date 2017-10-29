@@ -25,28 +25,12 @@
 
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
     public static class ColorHelpers
     {
-        public static double ValidColor(double number)
-        {
-            return number.Between(0, 1);
-        }
-
-        public static int ValidColor(int number)
-        {
-            return number.Between(0, 255);
-        }
-
-        public static byte ValidColor(byte number)
-        {
-            return number.Between(0, 255);
-        }
-
         #region Convert Color to ...
 
         public static string ColorToHex(Color color, ColorFormat format = ColorFormat.RGB)
@@ -297,6 +281,21 @@ namespace ShareX.HelpersLib
 
         #endregion Convert CMYK to ...
 
+        public static double ValidColor(double number)
+        {
+            return number.Between(0, 1);
+        }
+
+        public static int ValidColor(int number)
+        {
+            return number.Between(0, 255);
+        }
+
+        public static byte ValidColor(byte number)
+        {
+            return number.Between(0, 255);
+        }
+
         public static Color RandomColor()
         {
             return Color.FromArgb(MathHelpers.Random(255), MathHelpers.Random(255), MathHelpers.Random(255));
@@ -352,6 +351,28 @@ namespace ShareX.HelpersLib
         public static Color Lerp(Color from, Color to, float amount)
         {
             return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount), (int)MathHelpers.Lerp(from.G, to.G, amount), (int)MathHelpers.Lerp(from.B, to.B, amount));
+        }
+
+        public static Color DeterministicStringToColor(string text)
+        {
+            int hash = text.GetHashCode();
+            int r = (hash & 0xFF0000) >> 16;
+            int g = (hash & 0x00FF00) >> 8;
+            int b = hash & 0x0000FF;
+            return Color.FromArgb(r, g, b);
+        }
+
+        public static int ColorDifference(Color color1, Color color2)
+        {
+            int rDiff = Math.Abs(color1.R - color2.R);
+            int gDiff = Math.Abs(color1.G - color2.G);
+            int bDiff = Math.Abs(color1.B - color2.B);
+            return rDiff + gDiff + bDiff;
+        }
+
+        public static bool ColorsAreClose(Color color1, Color color2, int threshold)
+        {
+            return ColorDifference(color1, color2) <= threshold;
         }
     }
 }
