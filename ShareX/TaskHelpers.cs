@@ -44,6 +44,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Speech.Synthesis;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -864,12 +865,24 @@ namespace ShareX
 
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
-            Image result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+            ThreadWorker worker = new ThreadWorker();
 
-            if (result != null)
+            Image result = null;
+
+            worker.DoWork += () =>
             {
-                UploadManager.RunImageTask(result, taskSettings);
-            }
+                result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+            };
+
+            worker.Completed += () =>
+            {
+                if (result != null)
+                {
+                    UploadManager.RunImageTask(result, taskSettings);
+                }
+            };
+
+            worker.Start(ApartmentState.STA);
         }
 
         public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
