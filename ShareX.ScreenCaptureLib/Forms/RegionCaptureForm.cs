@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -381,8 +380,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            IsClosing = true;
-
             if (IsEditorMode && Config.EditorModeRememberWindowState)
             {
                 Config.EditorModeWindowState.UpdateFormState(this);
@@ -1360,6 +1357,8 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Dispose(bool disposing)
         {
+            IsClosing = true;
+
             ShapeManager?.Dispose();
             bmpBackgroundImage?.Dispose();
             backgroundBrush?.Dispose();

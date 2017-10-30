@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
     internal partial class ShapeManager
     {
         public bool ToolbarCreated { get; private set; }
-        public bool IsMenuCollapsed { get; private set; }
+        public bool ToolbarCollapsed { get; private set; }
 
         internal TextAnimation MenuTextAnimation = new TextAnimation()
         {
@@ -952,7 +952,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Right)
             {
-                SetMenuCollapsed(!IsMenuCollapsed);
+                SetMenuCollapsed(!ToolbarCollapsed);
                 CheckMenuPosition();
             }
         }
@@ -1038,14 +1038,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void SetMenuCollapsed(bool isCollapsed)
         {
-            if (IsMenuCollapsed == isCollapsed)
+            if (ToolbarCollapsed == isCollapsed)
             {
                 return;
             }
 
-            IsMenuCollapsed = isCollapsed;
+            ToolbarCollapsed = isCollapsed;
 
-            if (IsMenuCollapsed)
+            if (ToolbarCollapsed)
             {
                 foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
                 {
@@ -1069,7 +1069,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!form.IsEditorMode && Config.RememberMenuState)
             {
-                Config.MenuCollapsed = IsMenuCollapsed;
+                Config.MenuCollapsed = ToolbarCollapsed;
             }
         }
 
