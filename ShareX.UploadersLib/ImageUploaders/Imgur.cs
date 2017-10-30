@@ -30,7 +30,6 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -326,21 +325,21 @@ namespace ShareX.UploadersLib.ImageUploaders
                     }
                     else
                     {
-                        ImgurErrorData errorData = ((JObject)imgurResponse.data).ToObject<ImgurErrorData>();
+                        ImgurErrorData errorData = ParseError(imgurResponse);
 
                         if (errorData != null)
                         {
                             if (UploadMethod == AccountType.User && refreshTokenOnError &&
-                                errorData.error.Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) && RefreshAccessToken())
+                                ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) &&
+                                RefreshAccessToken())
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
 
                                 return InternalUpload(stream, fileName, false);
                             }
 
-                            string errorMessage = string.Format("Imgur upload failed: ({0}) {1}", imgurResponse.status, errorData.error);
-                            Errors.Clear();
-                            Errors.Add(errorMessage);
+                            string errorMessage = $"Imgur upload failed: ({imgurResponse.status}) {errorData.error}";
+                            Errors.Insert(0, errorMessage);
                         }
                     }
                 }
@@ -351,28 +350,47 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         private void HandleErrors(ImgurResponse response)
         {
-            ImgurErrorData errorData = ((JObject)response.data).ToObject<ImgurErrorData>();
+            ImgurErrorData errorData = ParseError(response);
 
             if (errorData != null)
             {
-                string errorMessage = string.Format("Status: {0}, Request: {1}, Error: {2}", response.status, errorData.request, errorData.error);
-                Errors.Add(errorMessage);
+                Errors.Add($"Status: {response.status}, Request: {errorData.request}, Error: {errorData.error}");
             }
+        }
+
+        private ImgurErrorData ParseError(ImgurResponse response)
+        {
+            ImgurErrorData errorData = ((JObject)response.data).ToObject<ImgurErrorData>();
+
+            if (errorData != null && !(errorData.error is string))
+            {
+                errorData.error = ((JObject)errorData.error).ToObject<ImgurError>().message;
+            }
+
+            return errorData;
         }
     }
 
-    public class ImgurResponse
+    internal class ImgurResponse
     {
         public object data { get; set; }
         public bool success { get; set; }
         public int status { get; set; }
     }
 
-    public class ImgurErrorData
+    internal class ImgurErrorData
     {
-        public string error { get; set; }
+        public object error { get; set; }
         public string request { get; set; }
         public string method { get; set; }
+    }
+
+    internal class ImgurError
+    {
+        public int code { get; set; }
+        public string message { get; set; }
+        public string type { get; set; }
+        //public string[] exception { get; set; }
     }
 
     public class ImgurImageData
