@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -96,15 +97,13 @@ namespace ShareX.ScreenCaptureLib
         {
             StartPosition = EndPosition = InputManager.MousePosition0Based;
 
-            ShowTextInputBox();
-
-            if (string.IsNullOrEmpty(Text))
+            if (ShowTextInputBox())
             {
-                Remove();
+                OnCreated();
             }
             else
             {
-                OnCreated();
+                Remove();
             }
         }
 
@@ -119,27 +118,38 @@ namespace ShareX.ScreenCaptureLib
             ShowTextInputBox();
         }
 
-        private void ShowTextInputBox()
+        private bool ShowTextInputBox()
         {
+            bool result;
+
             Manager.PauseForm();
 
             using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions))
             {
-                inputBox.ShowDialog();
+                result = inputBox.ShowDialog() == DialogResult.OK;
                 Text = inputBox.InputText;
                 OnConfigSave();
             }
 
             Manager.ResumeForm();
+
+            return result;
         }
 
         public void AutoSize(bool center)
         {
             Size size;
 
-            using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+            if (!string.IsNullOrEmpty(Text))
             {
-                size = Helpers.MeasureText(Text, font).Offset(15, 20);
+                using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+                {
+                    size = Helpers.MeasureText(Text, font).Offset(15, 20);
+                }
+            }
+            else
+            {
+                size = new Size(100, 60);
             }
 
             Point location;
