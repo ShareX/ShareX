@@ -143,16 +143,7 @@ namespace ShareX.ScreenCaptureLib
             SetDefaultCursor();
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-
-            if (IsEditorMode)
-            {
-                Text = "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_ImageEditor;
-            }
-            else
-            {
-                Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
-            }
-
+            UpdateTitle();
             StartPosition = FormStartPosition.Manual;
 
             if (IsFullscreen)
@@ -204,6 +195,34 @@ namespace ShareX.ScreenCaptureLib
             ResumeLayout(false);
         }
 
+        private void UpdateTitle()
+        {
+            string text;
+
+            if (IsEditorMode)
+            {
+                text = "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_ImageEditor;
+
+                if (Image != null)
+                {
+                    text += $" - {Image.Width}x{Image.Height}";
+                }
+
+                string filename = Helpers.GetFilenameSafe(ImageFilePath);
+
+                if (!string.IsNullOrEmpty(filename))
+                {
+                    text += " - " + filename;
+                }
+            }
+            else
+            {
+                text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+            }
+
+            Text = text;
+        }
+
         public void Prepare()
         {
             Prepare(new Screenshot().CaptureFullscreen());
@@ -242,6 +261,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
+                UpdateTitle();
+
                 CanvasRectangle = new Rectangle(CanvasRectangle.X, CanvasRectangle.Y, Image.Width, Image.Height);
 
                 using (Bitmap background = new Bitmap(Image.Width, Image.Height))
