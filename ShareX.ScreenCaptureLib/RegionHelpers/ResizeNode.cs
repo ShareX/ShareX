@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -53,13 +52,20 @@ namespace ShareX.ScreenCaptureLib
 
         public NodeShape Shape { get; set; }
 
-        private static Image customNodeImage = Resources.CircleNode;
+        public Image CustomNodeImage { get; private set; }
 
         public ResizeNode(int x = 0, int y = 0)
         {
-            Shape = NodeShape.CustomNode;
+            Shape = NodeShape.Square;
             Position = new Point(x, y);
-            Size = customNodeImage.Width;
+            Size = DefaultSize;
+        }
+
+        public void SetCustomNode(Image customNodeImage)
+        {
+            Shape = NodeShape.CustomNode;
+            CustomNodeImage = customNodeImage;
+            Size = CustomNodeImage.Width;
         }
 
         public override void Draw(Graphics g)
@@ -80,8 +86,8 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawDiamond(Pens.White, rect.Offset(-1));
                     g.DrawDiamond(Pens.Black, rect);
                     break;
-                case NodeShape.CustomNode:
-                    g.DrawImage(customNodeImage, Rectangle);
+                case NodeShape.CustomNode when CustomNodeImage != null:
+                    g.DrawImage(CustomNodeImage, Rectangle);
                     break;
             }
         }

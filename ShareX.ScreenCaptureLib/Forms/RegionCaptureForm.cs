@@ -85,8 +85,8 @@ namespace ShareX.ScreenCaptureLib
         internal List<DrawableObject> DrawableObjects { get; private set; }
         internal bool IsClosing { get; private set; }
 
-        internal IContainer components = null;
-        internal int toolbarHeight;
+        internal Image CustomNodeImage = Resources.CircleNode;
+        internal int ToolbarHeight;
 
         private InputManager InputManager => ShapeManager.InputManager;
 
@@ -136,8 +136,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void InitializeComponent()
         {
-            components = new Container();
-
             SuspendLayout();
 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -328,7 +326,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode)
             {
                 int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
-                int y = (int)Math.Round(toolbarHeight + (ScreenRectangle0Based.Height - toolbarHeight) * center.Y);
+                int y = (int)Math.Round(ToolbarHeight + (ScreenRectangle0Based.Height - ToolbarHeight) * center.Y);
                 int newX = x - CanvasRectangle.Width / 2;
                 int newY = y - CanvasRectangle.Height / 2;
                 int deltaX = newX - CanvasRectangle.X;
@@ -1362,42 +1360,29 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Dispose(bool disposing)
         {
-            if (ShapeManager != null)
-            {
-                ShapeManager.Dispose();
-            }
-
-            if (bmpBackgroundImage != null)
-            {
-                bmpBackgroundImage.Dispose();
-            }
-
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
-            if (backgroundBrush != null) backgroundBrush.Dispose();
-            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
-            if (borderPen != null) borderPen.Dispose();
-            if (borderDotPen != null) borderDotPen.Dispose();
-            if (borderDotStaticPen != null) borderDotStaticPen.Dispose();
-            if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
-            if (infoFont != null) infoFont.Dispose();
-            if (infoFontMedium != null) infoFontMedium.Dispose();
-            if (infoFontBig != null) infoFontBig.Dispose();
-            if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
-            if (textOuterBorderPen != null) textOuterBorderPen.Dispose();
-            if (textInnerBorderPen != null) textInnerBorderPen.Dispose();
-            if (markerPen != null) markerPen.Dispose();
-            if (defaultCursor != null) defaultCursor.Dispose();
+            ShapeManager?.Dispose();
+            bmpBackgroundImage?.Dispose();
+            backgroundBrush?.Dispose();
+            backgroundHighlightBrush?.Dispose();
+            borderPen?.Dispose();
+            borderDotPen?.Dispose();
+            borderDotStaticPen?.Dispose();
+            nodeBackgroundBrush?.Dispose();
+            infoFont?.Dispose();
+            infoFontMedium?.Dispose();
+            infoFontBig?.Dispose();
+            textBackgroundBrush?.Dispose();
+            textOuterBorderPen?.Dispose();
+            textInnerBorderPen?.Dispose();
+            markerPen?.Dispose();
+            defaultCursor?.Dispose();
+            CustomNodeImage?.Dispose();
 
             if (regionFillPath != null)
             {
                 if (Result == RegionResult.Region)
                 {
-                    if (LastRegionFillPath != null) LastRegionFillPath.Dispose();
-
+                    LastRegionFillPath?.Dispose();
                     LastRegionFillPath = regionFillPath;
                 }
                 else
@@ -1406,8 +1391,8 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (regionDrawPath != null) regionDrawPath.Dispose();
-            if (Image != null) Image.Dispose();
+            regionDrawPath?.Dispose();
+            Image?.Dispose();
 
             base.Dispose(disposing);
         }

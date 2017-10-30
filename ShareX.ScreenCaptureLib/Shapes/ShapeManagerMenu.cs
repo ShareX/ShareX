@@ -903,7 +903,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
-            form.toolbarHeight = menuForm.Height;
+            form.ToolbarHeight = menuForm.Height;
             form.CenterCanvas();
         }
 

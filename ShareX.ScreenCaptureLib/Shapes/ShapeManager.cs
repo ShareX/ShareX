@@ -217,6 +217,7 @@ namespace ShareX.ScreenCaptureLib
             for (int i = 0; i < 9; i++)
             {
                 ResizeNode node = new ResizeNode();
+                node.SetCustomNode(form.CustomNodeImage);
                 form.DrawableObjects.Add(node);
                 ResizeNodes.Add(node);
             }
