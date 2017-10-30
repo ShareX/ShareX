@@ -130,6 +130,6 @@
     <value>格式:</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>说明：</value>
+    <value>描述：</value>
   </data>
 </root>
