@@ -13274,36 +13274,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpTextUploaders.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbImgurUseHTTPS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbImgurUseHTTPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 376</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="cbImgurUseHTTPS.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>Use "https://" links</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUseHTTPS.Name" xml:space="preserve">
-    <value>cbImgurUseHTTPS</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUseHTTPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUseHTTPS.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUseHTTPS.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cbImgurUseGIFV.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -13311,7 +13281,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbImgurUseGIFV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 400</value>
+    <value>16, 376</value>
   </data>
   <data name="cbImgurUseGIFV.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -13332,7 +13302,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurUseGIFV.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13362,7 +13332,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurUploadSelectedAlbum.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cbImgurDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13392,7 +13362,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurDirectLink.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -13413,7 +13383,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
@@ -13434,7 +13404,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
@@ -13470,7 +13440,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -13500,7 +13470,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;btnImgurRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbImgurThumbnailType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 344</value>
@@ -13521,7 +13491,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="lblImgurThumbnailType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13551,7 +13521,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;lblImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="tpImgur.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

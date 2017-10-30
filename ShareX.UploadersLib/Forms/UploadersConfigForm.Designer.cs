@@ -540,7 +540,6 @@
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
-            this.cbImgurUseHTTPS = new System.Windows.Forms.CheckBox();
             this.cbImgurUseGIFV = new System.Windows.Forms.CheckBox();
             this.cbImgurUploadSelectedAlbum = new System.Windows.Forms.CheckBox();
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
@@ -4468,7 +4467,6 @@
             // 
             // tpImgur
             // 
-            this.tpImgur.Controls.Add(this.cbImgurUseHTTPS);
             this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
             this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
             this.tpImgur.Controls.Add(this.cbImgurDirectLink);
@@ -4481,13 +4479,6 @@
             resources.ApplyResources(this.tpImgur, "tpImgur");
             this.tpImgur.Name = "tpImgur";
             this.tpImgur.UseVisualStyleBackColor = true;
-            // 
-            // cbImgurUseHTTPS
-            // 
-            resources.ApplyResources(this.cbImgurUseHTTPS, "cbImgurUseHTTPS");
-            this.cbImgurUseHTTPS.Name = "cbImgurUseHTTPS";
-            this.cbImgurUseHTTPS.UseVisualStyleBackColor = true;
-            this.cbImgurUseHTTPS.CheckedChanged += new System.EventHandler(this.cbImgurUseHTTPS_CheckedChanged);
             // 
             // cbImgurUseGIFV
             // 
@@ -5693,7 +5684,6 @@
         private System.Windows.Forms.PictureBox pbPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
         private System.Windows.Forms.Label lblOwnCloudHostExample;
-        private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
         internal System.Windows.Forms.TabPage tpPastie;
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
         private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
