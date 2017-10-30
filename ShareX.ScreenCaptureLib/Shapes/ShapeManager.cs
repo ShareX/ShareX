@@ -1203,7 +1203,7 @@ namespace ShareX.ScreenCaptureLib
         {
             foreach (BaseShape shape in Shapes.ToArray())
             {
-                if (!form.ImageRectangle.IntersectsWith(shape.Rectangle))
+                if (!form.CanvasRectangle.IntersectsWith(shape.Rectangle))
                 {
                     shape.Remove();
                 }
@@ -1304,7 +1304,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle LimitRectangleToImage(Rectangle rect)
         {
-            return Rectangle.Intersect(rect, form.ImageRectangle);
+            return Rectangle.Intersect(rect, form.CanvasRectangle);
         }
 
         public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
@@ -1318,7 +1318,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
-                MoveAll(form.ImageRectangle.X - rect.X, form.ImageRectangle.Y - rect.Y);
+                MoveAll(form.CanvasRectangle.X - rect.X, form.CanvasRectangle.Y - rect.Y);
                 form.InitBackground(img);
                 isAnnotated = true;
             }
@@ -1328,7 +1328,7 @@ namespace ShareX.ScreenCaptureLib
         {
             rect = CaptureHelpers.ScreenToClient(rect);
 
-            Point offset = CaptureHelpers.ScreenToClient(form.ImageRectangle.Location);
+            Point offset = CaptureHelpers.ScreenToClient(form.CanvasRectangle.Location);
 
             rect.X -= offset.X;
             rect.Y -= offset.Y;

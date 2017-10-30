@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureOptions Config { get; set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
         public Image Image { get; private set; }
-        public Rectangle ImageRectangle { get; private set; }
+        public Rectangle CanvasRectangle { get; private set; }
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
             IsFullscreen = !IsEditorMode || Config.EditorModeFullscreen;
 
             ScreenRectangle0Based = CaptureHelpers.GetScreenBounds0Based();
-            ImageRectangle = ScreenRectangle0Based;
+            CanvasRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
 
@@ -245,7 +245,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode)
             {
-                ImageRectangle = new Rectangle(ImageRectangle.X, ImageRectangle.Y, Image.Width, Image.Height);
+                CanvasRectangle = new Rectangle(CanvasRectangle.X, CanvasRectangle.Y, Image.Width, Image.Height);
 
                 using (Bitmap background = new Bitmap(Image.Width, Image.Height))
                 using (Graphics g = Graphics.FromImage(background))
@@ -260,7 +260,7 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawImage(Image, sourceRect);
 
                     backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
-                    backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
+                    backgroundBrush.TranslateTransform(CanvasRectangle.X, CanvasRectangle.Y);
                 }
 
                 CenterCanvas();
@@ -305,7 +305,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void Pan(int deltaX, int deltaY)
         {
-            ImageRectangle = ImageRectangle.LocationOffset(deltaX, deltaY);
+            CanvasRectangle = CanvasRectangle.LocationOffset(deltaX, deltaY);
 
             if (backgroundBrush != null)
             {
@@ -329,10 +329,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 int x = (int)Math.Round(ScreenRectangle0Based.Width * center.X);
                 int y = (int)Math.Round(toolbarHeight + (ScreenRectangle0Based.Height - toolbarHeight) * center.Y);
-                int newX = x - ImageRectangle.Width / 2;
-                int newY = y - ImageRectangle.Height / 2;
-                int deltaX = newX - ImageRectangle.X;
-                int deltaY = newY - ImageRectangle.Y;
+                int newX = x - CanvasRectangle.Width / 2;
+                int newY = y - CanvasRectangle.Height / 2;
+                int deltaX = newX - CanvasRectangle.X;
+                int deltaY = newY - CanvasRectangle.Y;
                 Pan(deltaX, deltaY);
             }
         }
@@ -344,8 +344,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCenterPoint()
         {
-            CanvasCenterPoint = new Vector2((ImageRectangle.X + ImageRectangle.Width / 2f) / ScreenRectangle0Based.Width,
-                (ImageRectangle.Y + ImageRectangle.Height / 2f) / ScreenRectangle0Based.Height);
+            CanvasCenterPoint = new Vector2((CanvasRectangle.X + CanvasRectangle.Width / 2f) / ScreenRectangle0Based.Width,
+                (CanvasRectangle.Y + CanvasRectangle.Height / 2f) / ScreenRectangle0Based.Height);
         }
 
         public void CenterCanvas()
@@ -593,11 +593,11 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            if (!ImageRectangle.Contains(ScreenRectangle0Based))
+            if (!CanvasRectangle.Contains(ScreenRectangle0Based))
             {
                 g.Clear(Color.FromArgb(14, 14, 14));
             }
-            g.FillRectangle(backgroundBrush, ImageRectangle);
+            g.FillRectangle(backgroundBrush, CanvasRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
 
             Draw(g);
@@ -1045,7 +1045,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                Point canvasRelativePosition = new Point(InputManager.MousePosition0Based.X - ImageRectangle.X, InputManager.MousePosition0Based.Y - ImageRectangle.Y);
+                Point canvasRelativePosition = new Point(InputManager.MousePosition0Based.X - CanvasRectangle.X, InputManager.MousePosition0Based.Y - CanvasRectangle.Y);
                 return $"X: {canvasRelativePosition.X} Y: {canvasRelativePosition.Y}";
             }
             else if (Mode == RegionCaptureMode.ScreenColorPicker || Config.UseCustomInfoText)
@@ -1203,8 +1203,8 @@ namespace ShareX.ScreenCaptureLib
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - horizontalPixelCount / 2 - ImageRectangle.X,
-                    position.Y - verticalPixelCount / 2 - ImageRectangle.Y, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
+                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - horizontalPixelCount / 2 - CanvasRectangle.X,
+                    position.Y - verticalPixelCount / 2 - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
 
                 g.PixelOffsetMode = PixelOffsetMode.None;
 
@@ -1293,14 +1293,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 foreach (BaseShape shape in ShapeManager.Shapes)
                 {
-                    shape.Move(-ImageRectangle.X, -ImageRectangle.Y);
+                    shape.Move(-CanvasRectangle.X, -CanvasRectangle.Y);
                 }
 
                 Image img = GetOutputImage();
 
                 foreach (BaseShape shape in ShapeManager.Shapes)
                 {
-                    shape.Move(ImageRectangle.X, ImageRectangle.Y);
+                    shape.Move(CanvasRectangle.X, CanvasRectangle.Y);
                 }
 
                 return img;
