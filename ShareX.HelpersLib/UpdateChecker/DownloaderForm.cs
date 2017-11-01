@@ -87,7 +87,7 @@ namespace ShareX.HelpersLib
         {
             URL = url;
             Filename = filename;
-            lblFilename.Text = string.Format(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
+            lblFilename.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
         }
 
         private void DownloaderForm_Shown(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace ShareX.HelpersLib
 
         private void ChangeStatus(string status)
         {
-            lblStatus.Text = string.Format(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
+            lblStatus.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
         }
 
         private void HandleDownloadException(Exception ex)
@@ -237,14 +237,14 @@ namespace ShareX.HelpersLib
             if (fileDownloader != null)
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
+                lblProgress.Text = Helpers.SafeStringFormat(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
                     fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
             }
         }
 
         private void ChangeProgressForCanceledDownload()
         {
-            lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress___0_,
+            lblProgress.Text = Helpers.SafeStringFormat(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress___0_,
                 Resources.DownloaderForm_Download_Canceled);
         }
 

@@ -1233,5 +1233,29 @@ namespace ShareX.HelpersLib
         {
             File.Create(path).Dispose();
         }
+
+        public static string SafeStringFormat(string format, params object[] args)
+        {
+            return SafeStringFormat(null, format, args);
+        }
+
+        public static string SafeStringFormat(IFormatProvider provider, string format, params object[] args)
+        {
+            try
+            {
+                if (provider != null)
+                {
+                    return string.Format(provider, format, args);
+                }
+
+                return string.Format(format, args);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return format;
+        }
     }
 }

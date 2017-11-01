@@ -36,6 +36,8 @@ namespace ShareX.HelpersLib
 
         public bool ActivateWindow { get; private set; }
 
+        protected override bool ShowWithoutActivation => !ActivateWindow;
+
         public UpdateMessageBox(bool activateWindow, bool isPortable = false)
         {
             ActivateWindow = activateWindow;
@@ -51,11 +53,11 @@ namespace ShareX.HelpersLib
 
             if (isPortable)
             {
-                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName);
+                lblText.Text = Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName);
             }
             else
             {
-                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
+                lblText.Text = Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
             }
         }
 
@@ -88,8 +90,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        protected override bool ShowWithoutActivation => !ActivateWindow;
-
         private void UpdateMessageBox_Shown(object sender, EventArgs e)
         {
             if (ActivateWindow)
@@ -98,14 +98,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
-        {
-            DontShow = cbDontShow.Checked;
-        }
-
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CHANGELOG);
+        }
+
+        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
+        {
+            DontShow = cbDontShow.Checked;
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)
