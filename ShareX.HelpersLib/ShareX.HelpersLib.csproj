@@ -633,9 +633,6 @@
     <EmbeddedResource Include="Controls\MyPictureBox.zh-TW.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ToolStripButtonColorAnimation.resx">
-      <DependentUpon>ToolStripButtonColorAnimation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.de.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
