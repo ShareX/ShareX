@@ -204,7 +204,7 @@ namespace ShareX
                             recordForm.RecordResetEvent.WaitOne();
                         }
 
-                        if (recordForm.AbortRequested)
+                        if (recordForm.IsAbortRequested)
                         {
                             abortRequested = true;
                         }
@@ -230,7 +230,7 @@ namespace ShareX
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
                             screenRecorder.StartRecording();
 
-                            if (recordForm.AbortRequested)
+                            if (recordForm.IsAbortRequested)
                             {
                                 abortRequested = true;
                             }

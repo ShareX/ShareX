@@ -43,7 +43,8 @@ namespace ShareX
         public TimeSpan Countdown { get; set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
-        public bool AbortRequested { get; private set; }
+        public bool IsStopRequested { get; private set; }
+        public bool IsAbortRequested { get; private set; }
 
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
@@ -130,6 +131,14 @@ namespace ShareX
             if (activateWindow)
             {
                 this.ForceActivate();
+            }
+        }
+
+        private void ScreenRecordForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!IsStopRequested)
+            {
+                AbortRecording();
             }
         }
 
@@ -225,9 +234,11 @@ namespace ShareX
         {
             if (IsWorking)
             {
+                IsStopRequested = true;
+
                 if (!IsRecording)
                 {
-                    AbortRequested = true;
+                    IsAbortRequested = true;
                 }
 
                 OnStopRequested();
@@ -240,7 +251,7 @@ namespace ShareX
 
         public void AbortRecording()
         {
-            AbortRequested = true;
+            IsAbortRequested = true;
             StartStopRecording();
         }
 
