@@ -147,7 +147,7 @@
     <value>全部...</value>
   </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上传</value>
+    <value>上传至：</value>
   </data>
   <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
     <value>值</value>
@@ -481,7 +481,7 @@
     <value>Seafile共享设置</value>
   </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>上传者:</value>
+    <value>上传至：</value>
   </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>上传URL:</value>
@@ -879,7 +879,7 @@ store.book[0].title</value>
     <value>使用格式高亮显示文件扩展名（除了.TXT）</value>
   </data>
   <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
-    <value>目标类型</value>
+    <value>目的类型</value>
   </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>添加远程目录到URL路径</value>
@@ -1126,5 +1126,20 @@ store.book[0].title</value>
   </data>
   <data name="sulKeyLink.Text" xml:space="preserve">
     <value>点击这里获得你的API密钥！</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>用户密钥：</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>上传至：</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>上传URL:</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>注意：账户登录不支持GitHub Enterprise</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>是否私密URL</value>
   </data>
 </root>

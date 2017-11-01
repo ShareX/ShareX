@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblDescription.Text" xml:space="preserve">
-    <value>说明：</value>
+    <value>描述：</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>任务</value>
@@ -373,7 +373,7 @@
     <value>图片上传</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
-    <value>上传至...</value>
+    <value>目的地...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>上传后...</value>
@@ -484,7 +484,7 @@
     <value>覆盖图片设置</value>
   </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>上传</value>
+    <value>上传到：</value>
   </data>
   <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
     <value>扩展</value>
@@ -499,7 +499,7 @@
     <value>增加</value>
   </data>
   <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
-    <value>上传到：</value>
+    <value>上传至：</value>
   </data>
   <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
     <value>例子：png, jpg, jpeg</value>

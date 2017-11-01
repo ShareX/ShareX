@@ -393,7 +393,7 @@
     <value>项目页面</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>推特发送成功。</value>
+    <value>Tweet发送成功。</value>
   </data>
   <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
     <value>选择编码器路径</value>
@@ -446,7 +446,7 @@
 按"否",   取消当前文件的上传和禁用自动截图上传。</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>上传</value>
+    <value>上传中</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>没有选定有效的CLI视频编码器。</value>

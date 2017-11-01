@@ -169,7 +169,7 @@
     <value>调试</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>上传至...</value>
+    <value>目的地...</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -250,7 +250,7 @@
     <value>删除本地文件</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>上传至...设置</value>
+    <value>目的地设置..</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>修改 DNS...</value>
@@ -409,10 +409,10 @@
     <value>截图</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>上传至...</value>
+    <value>目的地...</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>上传至...设置</value>
+    <value>目的地设置...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>修改 DNS...</value>
@@ -475,7 +475,7 @@
     <value>尺子...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>屏幕颜色选择器...</value>
+    <value>屏幕拾色器...</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>屏幕录制（FFmpeg）</value>
@@ -496,7 +496,7 @@
     <value>工具</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>推特消息...</value>
+    <value>Tweet消息...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>上传</value>
@@ -529,7 +529,7 @@
     <value>快捷动作</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>推特消息...</value>
+    <value>Tweet消息...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>从剪贴板上传...</value>
@@ -643,7 +643,7 @@
     <value>ShareX</value>
   </data>
   <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>注释图片...</value>
+    <value>编辑图片...</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>从列表中删除任务</value>
@@ -658,10 +658,10 @@
     <value>图片拼接...</value>
   </data>
   <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>注释图片...</value>
+    <value>编辑图片...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
-    <value>显示条形工作栏</value>
+    <value>显示工作栏</value>
   </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>新闻</value>
