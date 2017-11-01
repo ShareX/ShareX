@@ -69,8 +69,10 @@
             // 
             // TextUploadForm
             // 
+            this.AcceptButton = this.btnUpload;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(632, 520);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpload);
