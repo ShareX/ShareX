@@ -3001,6 +3001,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current version.
+        /// </summary>
+        internal static string UpdateMessageBox_UpdateMessageBox_CurrentVersion {
+            get {
+                return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_CurrentVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest version.
+        /// </summary>
+        internal static string UpdateMessageBox_UpdateMessageBox_LatestVersion {
+            get {
+                return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_LatestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A newer version of {0} is available.
         ///Would you like to download it?.
         /// </summary>

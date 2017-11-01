@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
         public string Owner { get; private set; }
         public string Repo { get; private set; }
         public bool IncludePreRelease { get; set; }
+        public bool IsPreRelease { get; private set; }
 
         private const string APIURL = "https://api.github.com";
 
@@ -160,6 +161,8 @@ namespace ShareX.HelpersLib
                             {
                                 DownloadURL = asset.url;
                             }
+
+                            IsPreRelease = release.prerelease;
 
                             return true;
                         }
