@@ -62,7 +62,7 @@ namespace ShareX.Setup
         private static SetupJobs Job = SetupJobs.AppVeyorWindowsStore;
         private static bool AppVeyor = false;
 
-        private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
+        private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
