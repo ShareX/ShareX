@@ -166,7 +166,7 @@
     <value>新账户</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Tweet 错误</value>
+    <value>Tweet错误</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>要求认证。</value>
@@ -231,5 +231,8 @@
   </data>
   <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
     <value>名称</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>这里粘贴验证码</value>
   </data>
 </root>
