@@ -71,7 +71,7 @@ namespace ShareX.Setup
         private static string WindowsStoreDir => Path.Combine(BinDir, "WindowsStore");
         private static string WindowsStoreDebugDir => Path.Combine(BinDir, "WindowsStoreDebug");
 
-        private static string OutputDir => Path.Combine(ParentDir, "Output");
+        private static string OutputDir => AppVeyor ? ParentDir : Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
         private static string WindowsStoreOutputDir => Path.Combine(OutputDir, "ShareX-WindowsStore");

@@ -21,13 +21,13 @@ build:
 after_build:
 - ps: AppVeyor\after_build.ps1
 artifacts:
-- path: Output\ShareX-*-setup.exe
+- path: ShareX-*-setup.exe
   name: Setup
-- path: Output\ShareX-portable.zip
+- path: ShareX-portable.zip
   name: Portable
-- path: Output\ShareX-Steam
+- path: ShareX-Steam
   name: Steam
-- path: Output\ShareX.appx
+- path: ShareX.appx
   name: WindowsStore
 deploy:
   provider: GitHub
