@@ -350,6 +350,8 @@
     <Compile Include="UITypeEditors\StringCollectionToStringTypeConverter.cs" />
     <Compile Include="UITypeEditors\WavFileNameEditor.cs" />
     <Compile Include="UnsafeBitmap.cs" />
+    <Compile Include="UpdateChecker\AppVeyor.cs" />
+    <Compile Include="UpdateChecker\AppVeyorUpdateChecker.cs" />
     <Compile Include="UpdateChecker\GitHubUpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdateChecker.cs" />
     <Compile Include="UpdateChecker\DownloaderForm.cs">

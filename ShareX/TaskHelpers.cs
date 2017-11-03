@@ -1596,5 +1596,17 @@ namespace ShareX
                 ActionsToolbarForm.Instance.ForceActivate();
             }
         }
+
+        public static void DownloadAppVeyorBuild()
+        {
+            AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
+            {
+                IsBeta = Program.Beta,
+                IsPortable = Program.Portable,
+                Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+            };
+            updateChecker.CheckUpdate();
+            UpdateMessageBox.Start(updateChecker);
+        }
     }
 }
