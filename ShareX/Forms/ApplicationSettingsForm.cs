@@ -401,7 +401,9 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Middle)
             {
+                Cursor = Cursors.WaitCursor;
                 TaskHelpers.DownloadAppVeyorBuild();
+                Cursor = Cursors.Default;
             }
         }
 
