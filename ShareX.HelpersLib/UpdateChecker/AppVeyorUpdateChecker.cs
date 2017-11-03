@@ -45,7 +45,8 @@ namespace ShareX.HelpersLib
 
                 AppVeyorProject project = appveyor.GetProjectByBranch("master");
 
-                if (!project.build.status.Equals("success", StringComparison.InvariantCultureIgnoreCase))
+                if (!project.build.status.Equals("success", StringComparison.InvariantCultureIgnoreCase) &&
+                    !project.build.status.Equals("running", StringComparison.InvariantCultureIgnoreCase))
                 {
                     throw new Exception("Latest project build is not successful.");
                 }
