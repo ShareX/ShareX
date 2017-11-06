@@ -165,6 +165,7 @@ namespace ShareX.ScreenCaptureLib
                         args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                         args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                        args.AppendFormat("-movflags {0} ", "+faststart"); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                         break;
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");

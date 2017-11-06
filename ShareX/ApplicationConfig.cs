@@ -58,6 +58,7 @@ namespace ShareX
         public bool ShowMenu = true;
         public bool ShowColumns = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
         public DateTime NewsLastReadDate;
 

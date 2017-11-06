@@ -135,6 +135,7 @@
             // 
             // ImageCombinerForm
             // 
+            this.AcceptButton = this.btnCombine;
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

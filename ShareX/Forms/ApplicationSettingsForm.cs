@@ -397,6 +397,16 @@ namespace ShareX
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
         }
 
+        private void cbCheckPreReleaseUpdates_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)
+            {
+                Cursor = Cursors.WaitCursor;
+                TaskHelpers.DownloadAppVeyorBuild();
+                Cursor = Cursors.Default;
+            }
+        }
+
         #endregion General
 
         #region Integration

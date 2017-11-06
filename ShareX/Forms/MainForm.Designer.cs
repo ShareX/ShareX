@@ -71,7 +71,7 @@
             this.tsddbTools = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAnnotateImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,6 +173,9 @@
             this.tsmiImagePreviewShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewHide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewAutomatic = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssImagePreview = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiImagePreviewSide = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImagePreviewBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiTrayCapture = new System.Windows.Forms.ToolStripMenuItem();
@@ -201,7 +204,7 @@
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAnnotateImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -606,7 +609,7 @@
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
-            this.tsmiAnnotateImage,
+            this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiHashCheck,
             this.tsmiDNSChanger,
@@ -637,12 +640,12 @@
             resources.ApplyResources(this.tsmiScreenColorPicker, "tsmiScreenColorPicker");
             this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
-            // tsmiAnnotateImage
+            // tsmiImageEditor
             // 
-            this.tsmiAnnotateImage.Image = global::ShareX.Properties.Resources.image_pencil;
-            this.tsmiAnnotateImage.Name = "tsmiAnnotateImage";
-            resources.ApplyResources(this.tsmiAnnotateImage, "tsmiAnnotateImage");
-            this.tsmiAnnotateImage.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
+            this.tsmiImageEditor.Name = "tsmiImageEditor";
+            resources.ApplyResources(this.tsmiImageEditor, "tsmiImageEditor");
+            this.tsmiImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiImageEffects
             // 
@@ -1344,7 +1347,10 @@
             this.tsmiImagePreview.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiImagePreviewShow,
             this.tsmiImagePreviewHide,
-            this.tsmiImagePreviewAutomatic});
+            this.tsmiImagePreviewAutomatic,
+            this.tssImagePreview,
+            this.tsmiImagePreviewSide,
+            this.tsmiImagePreviewBottom});
             this.tsmiImagePreview.Image = global::ShareX.Properties.Resources.layout_select_content;
             this.tsmiImagePreview.Name = "tsmiImagePreview";
             resources.ApplyResources(this.tsmiImagePreview, "tsmiImagePreview");
@@ -1355,19 +1361,43 @@
             this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
             resources.ApplyResources(this.tsmiImagePreviewShow, "tsmiImagePreviewShow");
+            this.tsmiImagePreviewShow.Tag = "Visibility";
             this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
             // 
             // tsmiImagePreviewHide
             // 
             this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
             resources.ApplyResources(this.tsmiImagePreviewHide, "tsmiImagePreviewHide");
+            this.tsmiImagePreviewHide.Tag = "Visibility";
             this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
             // 
             // tsmiImagePreviewAutomatic
             // 
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
             resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
+            this.tsmiImagePreviewAutomatic.Tag = "Visibility";
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
+            // 
+            // tssImagePreview
+            // 
+            this.tssImagePreview.Name = "tssImagePreview";
+            resources.ApplyResources(this.tssImagePreview, "tssImagePreview");
+            // 
+            // tsmiImagePreviewSide
+            // 
+            this.tsmiImagePreviewSide.Checked = true;
+            this.tsmiImagePreviewSide.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiImagePreviewSide.Name = "tsmiImagePreviewSide";
+            resources.ApplyResources(this.tsmiImagePreviewSide, "tsmiImagePreviewSide");
+            this.tsmiImagePreviewSide.Tag = "Location";
+            this.tsmiImagePreviewSide.Click += new System.EventHandler(this.tsmiImagePreviewSide_Click);
+            // 
+            // tsmiImagePreviewBottom
+            // 
+            this.tsmiImagePreviewBottom.Name = "tsmiImagePreviewBottom";
+            resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
+            this.tsmiImagePreviewBottom.Tag = "Location";
+            this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
             // 
             // niTray
             // 
@@ -1593,7 +1623,7 @@
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
-            this.tsmiTrayAnnotateImage,
+            this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayHashCheck,
             this.tsmiTrayDNSChanger,
@@ -1624,12 +1654,12 @@
             resources.ApplyResources(this.tsmiTrayScreenColorPicker, "tsmiTrayScreenColorPicker");
             this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
-            // tsmiTrayAnnotateImage
+            // tsmiTrayImageEditor
             // 
-            this.tsmiTrayAnnotateImage.Image = global::ShareX.Properties.Resources.image_pencil;
-            this.tsmiTrayAnnotateImage.Name = "tsmiTrayAnnotateImage";
-            resources.ApplyResources(this.tsmiTrayAnnotateImage, "tsmiTrayAnnotateImage");
-            this.tsmiTrayAnnotateImage.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
+            this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
+            resources.ApplyResources(this.tsmiTrayImageEditor, "tsmiTrayImageEditor");
+            this.tsmiTrayImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiTrayImageEffects
             // 
@@ -2015,10 +2045,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.pNews);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
-            this.Controls.Add(this.pNews);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -2190,8 +2220,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyThumbnailImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAnnotateImage;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAnnotateImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowQRCode;
@@ -2282,5 +2312,8 @@
         public System.Windows.Forms.FlowLayoutPanel flpCommunity;
         public System.Windows.Forms.FlowLayoutPanel flpPatreon;
         public System.Windows.Forms.FlowLayoutPanel flpDiscord;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewSide;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewBottom;
+        private System.Windows.Forms.ToolStripSeparator tssImagePreview;
     }
 }

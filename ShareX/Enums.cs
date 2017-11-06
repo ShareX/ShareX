@@ -250,6 +250,11 @@ namespace ShareX
         Show, Hide, Automatic
     }
 
+    public enum ImagePreviewLocation
+    {
+        Side, Bottom
+    }
+
     public enum ScreenRecordState
     {
         Waiting, BeforeStart, AfterStart, AfterRecordingStart, AfterStop

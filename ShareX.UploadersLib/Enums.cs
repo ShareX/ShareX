@@ -137,8 +137,6 @@ namespace ShareX.UploadersLib
         Lithiio,
         [Description("transfer.sh")]
         Transfersh,
-        [Description("Uplea")]
-        Uplea,
         [Description("Plik")]
         Plik,
         SharedFolder, // Localized

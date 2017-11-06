@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Размер полотна</value>
+  </data>
+  <data name="lblLeft.Text" xml:space="preserve">
+    <value>Слева:</value>
+  </data>
+  <data name="lblRight.Text" xml:space="preserve">
+    <value>Справа:</value>
+  </data>
+  <data name="lblBottom.Text" xml:space="preserve">
+    <value>Снизу:</value>
+  </data>
+  <data name="lblTop.Text" xml:space="preserve">
+    <value>Сверху:</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
 </root>

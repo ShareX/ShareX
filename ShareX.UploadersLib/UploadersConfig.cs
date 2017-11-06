@@ -41,7 +41,6 @@ namespace ShareX.UploadersLib
         public AccountType ImgurAccountType = AccountType.Anonymous;
         public bool ImgurDirectLink = true;
         public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Medium_Thumbnail;
-        public bool ImgurUseHTTPS = false;
         public bool ImgurUseGIFV = true;
         public OAuth2Info ImgurOAuth2Info = null;
         public bool ImgurUploadSelectedAlbum = false;
@@ -363,15 +362,6 @@ namespace ShareX.UploadersLib
         public string StreamableUsername = "";
         public string StreamablePassword = "";
         public bool StreamableUseDirectURL = false;
-
-        #endregion
-
-        #region Uplea
-
-        public string UpleaApiKey = "";
-        public string UpleaEmailAddress = "";
-        public bool UpleaIsPremiumMember = false;
-        public bool UpleaInstantDownloadEnabled = false;
 
         #endregion
 

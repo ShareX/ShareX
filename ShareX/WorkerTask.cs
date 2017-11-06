@@ -259,8 +259,6 @@ namespace ShareX
                     break;
             }
 
-            TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Indeterminate);
-
             OnStatusChanged();
         }
 

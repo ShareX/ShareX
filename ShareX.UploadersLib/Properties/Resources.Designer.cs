@@ -149,6 +149,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
+        /// </summary>
+        internal static string CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured {
+            get {
+                return ResourceManager.GetString("CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Request URL&quot; must be configured..
+        /// </summary>
+        internal static string CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured {
+            get {
+                return ResourceManager.GetString("CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap document {
@@ -404,16 +422,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Minus {
-            get {
-                object obj = ResourceManager.GetObject("Minus", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Paste verification code here.
         /// </summary>
         internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {
@@ -620,16 +628,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon SomeImage {
-            get {
-                object obj = ResourceManager.GetObject("SomeImage", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon Streamable {
             get {
                 object obj = ResourceManager.GetObject("Streamable", resourceCulture);
@@ -687,16 +685,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Uplea {
-            get {
-                object obj = ResourceManager.GetObject("Uplea", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to A header with the same name already exists..
         /// </summary>
         internal static string UploadersConfigForm_A_header_with_the_same_name_already_exists {
@@ -738,6 +726,25 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Destination type&quot; must be configured..
+        /// </summary>
+        internal static string UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfig" +
+                        "ured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Request URL&quot; must be configured..
+        /// </summary>
+        internal static string UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured", resourceCulture);
             }
         }
         

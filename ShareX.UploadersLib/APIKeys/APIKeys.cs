@@ -39,7 +39,6 @@ namespace ShareX.UploadersLib
         public static string PhotobucketConsumerSecret = "";
         public static string TwitsnapsKey = "";
         public static string TwitPicKey = "";
-        public static string SomeImageKey = "";
         public static string SlimgClientID = "";
         public static string SlimgClientSecret = "";
 

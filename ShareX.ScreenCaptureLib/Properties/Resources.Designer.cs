@@ -1122,6 +1122,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image editor.
+        /// </summary>
+        internal static string RegionCaptureForm_InitializeComponent_ImageEditor {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_InitializeComponent_ImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Arrow keys] Resize region from bottom right corner.
         /// </summary>
         internal static string RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner {
@@ -1190,6 +1199,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ScrollingCaptureForm_StopCapture_Start_capture {
             get {
                 return ResourceManager.GetString("ScrollingCaptureForm_StopCapture_Start_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arrows on both ends.
+        /// </summary>
+        internal static string ShapeManager_ArrowsOnBothEnds {
+            get {
+                return ResourceManager.GetString("ShapeManager_ArrowsOnBothEnds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center points:.
+        /// </summary>
+        internal static string ShapeManager_CenterPoints {
+            get {
+                return ResourceManager.GetString("ShapeManager_CenterPoints", resourceCulture);
             }
         }
         
@@ -1428,6 +1455,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annotate menu.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AnnotateMenu {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AnnotateMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply changes &amp; continue task (Enter).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter {
@@ -1460,6 +1496,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_CancelTaskEsc {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_CancelTaskEsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canvas size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CanvasSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CanvasSize", resourceCulture);
             }
         }
         
@@ -1527,6 +1572,42 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flip horizontal.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipHorizontal {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipHorizontal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flip vertical.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipVertical {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipVertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Image {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ImageSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ImageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture last region.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_LastRegion {
@@ -1541,6 +1622,42 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_PrintImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_PrintImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember editor window state.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_RememberEditorWindowState {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_RememberEditorWindowState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 180°.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate180 {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate180", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90Clockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90Clockwise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° counter clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90CounterClockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90CounterClockwise", resourceCulture);
             }
         }
         
@@ -1599,6 +1716,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start editor fullscreen.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartEditorFullscreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorFullscreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start editor maximized.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartEditorMaximized {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorMaximized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
@@ -1613,6 +1748,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cursor type:.
+        /// </summary>
+        internal static string ShapeManager_CursorType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CursorType", resourceCulture);
             }
         }
         

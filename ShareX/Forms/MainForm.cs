@@ -249,6 +249,16 @@ namespace ShareX
                     break;
             }
 
+            switch (Program.Settings.ImagePreviewLocation)
+            {
+                case ImagePreviewLocation.Side:
+                    tsmiImagePreviewSide.Check();
+                    break;
+                case ImagePreviewLocation.Bottom:
+                    tsmiImagePreviewBottom.Check();
+                    break;
+            }
+
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
@@ -552,6 +562,16 @@ namespace ShareX
                     break;
                 case ImagePreviewVisibility.Automatic:
                     scMain.Panel2Collapsed = !uim.IsItemSelected || (!uim.SelectedItem.IsImageFile && !uim.SelectedItem.IsImageURL);
+                    break;
+            }
+
+            switch (Program.Settings.ImagePreviewLocation)
+            {
+                case ImagePreviewLocation.Side:
+                    scMain.Orientation = Orientation.Vertical;
+                    break;
+                case ImagePreviewLocation.Bottom:
+                    scMain.Orientation = Orientation.Horizontal;
                     break;
             }
 
@@ -2031,6 +2051,20 @@ namespace ShareX
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
             tsmiImagePreviewAutomatic.Check();
+            UpdateContextMenu();
+        }
+
+        private void tsmiImagePreviewSide_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Side;
+            tsmiImagePreviewSide.Check();
+            UpdateContextMenu();
+        }
+
+        private void tsmiImagePreviewBottom_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Bottom;
+            tsmiImagePreviewBottom.Check();
             UpdateContextMenu();
         }
 

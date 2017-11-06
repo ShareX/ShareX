@@ -531,6 +531,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // ScrollingCaptureForm
             // 
+            this.AcceptButton = this.btnCapture;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;

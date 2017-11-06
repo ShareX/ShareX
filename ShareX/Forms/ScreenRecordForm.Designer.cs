@@ -102,6 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScreenRecordForm";
             this.ShowInTaskbar = false;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ScreenRecordForm_FormClosed);
             this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
             this.pInfo.ResumeLayout(false);
             this.cmsMain.ResumeLayout(false);

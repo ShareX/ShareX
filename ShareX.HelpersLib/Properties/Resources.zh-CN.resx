@@ -339,10 +339,10 @@
     <value>捕捉矩形区域</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>标尺</value>
+    <value>尺子</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>屏幕颜色选择器</value>
+    <value>屏幕拾色器</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>屏幕录制</value>
@@ -351,7 +351,7 @@
     <value>停止所有活动上传</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>推特消息</value>
+    <value>Tweet消息</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>从URL上传</value>
@@ -360,7 +360,7 @@
     <value>自定义文件上传</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
-    <value>电子邮件</value>
+    <value>邮箱</value>
   </data>
   <data name="FileDestination_SharedFolder" xml:space="preserve">
     <value>共享文件夹</value>
@@ -387,7 +387,7 @@
     <value>文件上传</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>电子邮件</value>
+    <value>邮箱</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>自定义URL短链</value>
@@ -640,7 +640,7 @@
     <value>网页捕捉</value>
   </data>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>屏幕捕捉获</value>
+    <value>屏幕捕捉</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>禁用/启用快捷键</value>
@@ -953,7 +953,7 @@
     <value>取消下载</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>切换动作工作栏</value>
+    <value>切换工作栏</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>其他</value>

@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 捕捉后</value>
+    <value>ShareX - Размер изображения</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="cbAspectRatio.Text" xml:space="preserve">
+    <value>Сохранять пропорции</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
+    <value>Отменить</value>
   </data>
-  <data name="btnContinue.Text" xml:space="preserve">
-    <value>继续</value>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>пикселей</value>
   </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
-  <data name="tpAfterCapture.Text" xml:space="preserve">
-    <value>截图后</value>
-  </data>
-  <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>目的地...</value>
-  </data>
-  <data name="tpAfterUpload.Text" xml:space="preserve">
-    <value>上传后</value>
-  </data>
-  <data name="lblFileName.Text" xml:space="preserve">
-    <value>文件名：</value>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>пикселей</value>
   </data>
 </root>

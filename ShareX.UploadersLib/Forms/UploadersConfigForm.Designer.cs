@@ -444,20 +444,6 @@
             this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
             this.lblLithiioApiKey = new System.Windows.Forms.Label();
             this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
-            this.tpUplea = new System.Windows.Forms.TabPage();
-            this.gbUpleaLoginCredentials = new System.Windows.Forms.GroupBox();
-            this.btnUpleaLogin = new System.Windows.Forms.Button();
-            this.lblUpleaApiKey = new System.Windows.Forms.Label();
-            this.txtUpleaApiKey = new System.Windows.Forms.TextBox();
-            this.lblUpleaPassword = new System.Windows.Forms.Label();
-            this.lblUpleaUsername = new System.Windows.Forms.Label();
-            this.txtUpleaPassword = new System.Windows.Forms.TextBox();
-            this.txtUpleaUsername = new System.Windows.Forms.TextBox();
-            this.gbUpleaUserInformation = new System.Windows.Forms.GroupBox();
-            this.lblUpleaEmailAddress = new System.Windows.Forms.Label();
-            this.cbUpleaInstantDownloadEnabled = new System.Windows.Forms.CheckBox();
-            this.cbUpleaIsPremium = new System.Windows.Forms.CheckBox();
-            this.txtUpleaEmailAddress = new System.Windows.Forms.TextBox();
             this.tpPlik = new System.Windows.Forms.TabPage();
             this.gbPlikSettings = new System.Windows.Forms.GroupBox();
             this.cbPlikOneShot = new System.Windows.Forms.CheckBox();
@@ -554,7 +540,6 @@
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
-            this.cbImgurUseHTTPS = new System.Windows.Forms.CheckBox();
             this.cbImgurUseGIFV = new System.Windows.Forms.CheckBox();
             this.cbImgurUploadSelectedAlbum = new System.Windows.Forms.CheckBox();
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
@@ -692,9 +677,6 @@
             this.tpStreamable.SuspendLayout();
             this.tpSul.SuspendLayout();
             this.tpLithiio.SuspendLayout();
-            this.tpUplea.SuspendLayout();
-            this.gbUpleaLoginCredentials.SuspendLayout();
-            this.gbUpleaUserInformation.SuspendLayout();
             this.tpPlik.SuspendLayout();
             this.gbPlikSettings.SuspendLayout();
             this.gbPlikLoginCredentials.SuspendLayout();
@@ -1803,7 +1785,6 @@
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpLithiio);
-            this.tcFileUploaders.Controls.Add(this.tpUplea);
             this.tcFileUploaders.Controls.Add(this.tpPlik);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
@@ -3777,102 +3758,6 @@
             this.txtLithiioApiKey.UseSystemPasswordChar = true;
             this.txtLithiioApiKey.TextChanged += new System.EventHandler(this.txtLithiioApiKey_TextChanged);
             // 
-            // tpUplea
-            // 
-            this.tpUplea.Controls.Add(this.gbUpleaLoginCredentials);
-            this.tpUplea.Controls.Add(this.gbUpleaUserInformation);
-            resources.ApplyResources(this.tpUplea, "tpUplea");
-            this.tpUplea.Name = "tpUplea";
-            this.tpUplea.UseVisualStyleBackColor = true;
-            // 
-            // gbUpleaLoginCredentials
-            // 
-            this.gbUpleaLoginCredentials.Controls.Add(this.btnUpleaLogin);
-            this.gbUpleaLoginCredentials.Controls.Add(this.lblUpleaApiKey);
-            this.gbUpleaLoginCredentials.Controls.Add(this.txtUpleaApiKey);
-            this.gbUpleaLoginCredentials.Controls.Add(this.lblUpleaPassword);
-            this.gbUpleaLoginCredentials.Controls.Add(this.lblUpleaUsername);
-            this.gbUpleaLoginCredentials.Controls.Add(this.txtUpleaPassword);
-            this.gbUpleaLoginCredentials.Controls.Add(this.txtUpleaUsername);
-            resources.ApplyResources(this.gbUpleaLoginCredentials, "gbUpleaLoginCredentials");
-            this.gbUpleaLoginCredentials.Name = "gbUpleaLoginCredentials";
-            this.gbUpleaLoginCredentials.TabStop = false;
-            // 
-            // btnUpleaLogin
-            // 
-            resources.ApplyResources(this.btnUpleaLogin, "btnUpleaLogin");
-            this.btnUpleaLogin.Name = "btnUpleaLogin";
-            this.btnUpleaLogin.UseVisualStyleBackColor = true;
-            this.btnUpleaLogin.Click += new System.EventHandler(this.btnUpleaLogin_Click);
-            // 
-            // lblUpleaApiKey
-            // 
-            resources.ApplyResources(this.lblUpleaApiKey, "lblUpleaApiKey");
-            this.lblUpleaApiKey.Name = "lblUpleaApiKey";
-            // 
-            // txtUpleaApiKey
-            // 
-            resources.ApplyResources(this.txtUpleaApiKey, "txtUpleaApiKey");
-            this.txtUpleaApiKey.Name = "txtUpleaApiKey";
-            this.txtUpleaApiKey.UseSystemPasswordChar = true;
-            this.txtUpleaApiKey.TextChanged += new System.EventHandler(this.txtUpleaApiKey_TextChanged);
-            // 
-            // lblUpleaPassword
-            // 
-            resources.ApplyResources(this.lblUpleaPassword, "lblUpleaPassword");
-            this.lblUpleaPassword.Name = "lblUpleaPassword";
-            // 
-            // lblUpleaUsername
-            // 
-            resources.ApplyResources(this.lblUpleaUsername, "lblUpleaUsername");
-            this.lblUpleaUsername.Name = "lblUpleaUsername";
-            // 
-            // txtUpleaPassword
-            // 
-            resources.ApplyResources(this.txtUpleaPassword, "txtUpleaPassword");
-            this.txtUpleaPassword.Name = "txtUpleaPassword";
-            this.txtUpleaPassword.UseSystemPasswordChar = true;
-            // 
-            // txtUpleaUsername
-            // 
-            resources.ApplyResources(this.txtUpleaUsername, "txtUpleaUsername");
-            this.txtUpleaUsername.Name = "txtUpleaUsername";
-            // 
-            // gbUpleaUserInformation
-            // 
-            this.gbUpleaUserInformation.Controls.Add(this.lblUpleaEmailAddress);
-            this.gbUpleaUserInformation.Controls.Add(this.cbUpleaInstantDownloadEnabled);
-            this.gbUpleaUserInformation.Controls.Add(this.cbUpleaIsPremium);
-            this.gbUpleaUserInformation.Controls.Add(this.txtUpleaEmailAddress);
-            resources.ApplyResources(this.gbUpleaUserInformation, "gbUpleaUserInformation");
-            this.gbUpleaUserInformation.Name = "gbUpleaUserInformation";
-            this.gbUpleaUserInformation.TabStop = false;
-            // 
-            // lblUpleaEmailAddress
-            // 
-            resources.ApplyResources(this.lblUpleaEmailAddress, "lblUpleaEmailAddress");
-            this.lblUpleaEmailAddress.Name = "lblUpleaEmailAddress";
-            // 
-            // cbUpleaInstantDownloadEnabled
-            // 
-            resources.ApplyResources(this.cbUpleaInstantDownloadEnabled, "cbUpleaInstantDownloadEnabled");
-            this.cbUpleaInstantDownloadEnabled.Name = "cbUpleaInstantDownloadEnabled";
-            this.cbUpleaInstantDownloadEnabled.UseVisualStyleBackColor = true;
-            this.cbUpleaInstantDownloadEnabled.CheckedChanged += new System.EventHandler(this.cbUpleaInstantDownloadEnabled_CheckedChanged);
-            // 
-            // cbUpleaIsPremium
-            // 
-            resources.ApplyResources(this.cbUpleaIsPremium, "cbUpleaIsPremium");
-            this.cbUpleaIsPremium.Name = "cbUpleaIsPremium";
-            this.cbUpleaIsPremium.UseVisualStyleBackColor = true;
-            this.cbUpleaIsPremium.CheckedChanged += new System.EventHandler(this.cbUpleaIsPremium_CheckedChanged);
-            // 
-            // txtUpleaEmailAddress
-            // 
-            resources.ApplyResources(this.txtUpleaEmailAddress, "txtUpleaEmailAddress");
-            this.txtUpleaEmailAddress.Name = "txtUpleaEmailAddress";
-            this.txtUpleaEmailAddress.TextChanged += new System.EventHandler(this.txtUpleaEmailAddress_TextChanged);
-            // 
             // tpPlik
             // 
             this.tpPlik.Controls.Add(this.gbPlikSettings);
@@ -4582,7 +4467,6 @@
             // 
             // tpImgur
             // 
-            this.tpImgur.Controls.Add(this.cbImgurUseHTTPS);
             this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
             this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
             this.tpImgur.Controls.Add(this.cbImgurDirectLink);
@@ -4595,13 +4479,6 @@
             resources.ApplyResources(this.tpImgur, "tpImgur");
             this.tpImgur.Name = "tpImgur";
             this.tpImgur.UseVisualStyleBackColor = true;
-            // 
-            // cbImgurUseHTTPS
-            // 
-            resources.ApplyResources(this.cbImgurUseHTTPS, "cbImgurUseHTTPS");
-            this.cbImgurUseHTTPS.Name = "cbImgurUseHTTPS";
-            this.cbImgurUseHTTPS.UseVisualStyleBackColor = true;
-            this.cbImgurUseHTTPS.CheckedChanged += new System.EventHandler(this.cbImgurUseHTTPS_CheckedChanged);
             // 
             // cbImgurUseGIFV
             // 
@@ -5273,11 +5150,6 @@
             this.tpSul.PerformLayout();
             this.tpLithiio.ResumeLayout(false);
             this.tpLithiio.PerformLayout();
-            this.tpUplea.ResumeLayout(false);
-            this.gbUpleaLoginCredentials.ResumeLayout(false);
-            this.gbUpleaLoginCredentials.PerformLayout();
-            this.gbUpleaUserInformation.ResumeLayout(false);
-            this.gbUpleaUserInformation.PerformLayout();
             this.tpPlik.ResumeLayout(false);
             this.gbPlikSettings.ResumeLayout(false);
             this.gbPlikSettings.PerformLayout();
@@ -5812,21 +5684,6 @@
         private System.Windows.Forms.PictureBox pbPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
         private System.Windows.Forms.Label lblOwnCloudHostExample;
-        private System.Windows.Forms.GroupBox gbUpleaLoginCredentials;
-        private System.Windows.Forms.Button btnUpleaLogin;
-        private System.Windows.Forms.Label lblUpleaApiKey;
-        private System.Windows.Forms.TextBox txtUpleaApiKey;
-        private System.Windows.Forms.Label lblUpleaPassword;
-        private System.Windows.Forms.Label lblUpleaUsername;
-        private System.Windows.Forms.TextBox txtUpleaPassword;
-        private System.Windows.Forms.TextBox txtUpleaUsername;
-        private System.Windows.Forms.GroupBox gbUpleaUserInformation;
-        private System.Windows.Forms.Label lblUpleaEmailAddress;
-        private System.Windows.Forms.CheckBox cbUpleaInstantDownloadEnabled;
-        private System.Windows.Forms.CheckBox cbUpleaIsPremium;
-        private System.Windows.Forms.TextBox txtUpleaEmailAddress;
-        internal System.Windows.Forms.TabPage tpUplea;
-        private System.Windows.Forms.CheckBox cbImgurUseHTTPS;
         internal System.Windows.Forms.TabPage tpPastie;
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
         private System.Windows.Forms.CheckBox cbPolrUseAPIv1;

@@ -217,6 +217,7 @@ namespace ShareX.ScreenCaptureLib
             for (int i = 0; i < 9; i++)
             {
                 ResizeNode node = new ResizeNode();
+                node.SetCustomNode(form.CustomNodeImage);
                 form.DrawableObjects.Add(node);
                 ResizeNodes.Add(node);
             }
@@ -1203,7 +1204,7 @@ namespace ShareX.ScreenCaptureLib
         {
             foreach (BaseShape shape in Shapes.ToArray())
             {
-                if (!form.ImageRectangle.IntersectsWith(shape.Rectangle))
+                if (!form.CanvasRectangle.IntersectsWith(shape.Rectangle))
                 {
                     shape.Remove();
                 }
@@ -1304,7 +1305,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle LimitRectangleToImage(Rectangle rect)
         {
-            return Rectangle.Intersect(rect, form.ImageRectangle);
+            return Rectangle.Intersect(rect, form.CanvasRectangle);
         }
 
         public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
@@ -1318,7 +1319,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (img != null)
             {
-                MoveAll(-rect.X, -rect.Y);
+                MoveAll(form.CanvasRectangle.X - rect.X, form.CanvasRectangle.Y - rect.Y);
                 form.InitBackground(img);
                 isAnnotated = true;
             }
@@ -1328,7 +1329,7 @@ namespace ShareX.ScreenCaptureLib
         {
             rect = CaptureHelpers.ScreenToClient(rect);
 
-            Point offset = CaptureHelpers.ScreenToClient(form.ImageRectangle.Location);
+            Point offset = CaptureHelpers.ScreenToClient(form.CanvasRectangle.Location);
 
             rect.X -= offset.X;
             rect.Y -= offset.Y;
@@ -1359,7 +1360,6 @@ namespace ShareX.ScreenCaptureLib
 
                         if (img != null)
                         {
-                            MoveAll(-form.ImageRectangle.X, -form.ImageRectangle.Y);
                             form.InitBackground(img);
                             isAnnotated = true;
                         }
@@ -1379,7 +1379,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (img != null)
                     {
-                        MoveAll(canvas.Left - form.ImageRectangle.X, canvas.Top - form.ImageRectangle.Y);
+                        MoveAll(canvas.Left, canvas.Top);
                         form.InitBackground(img);
                         isAnnotated = true;
                     }

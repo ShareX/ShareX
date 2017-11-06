@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
     internal partial class ShapeManager
     {
         public bool ToolbarCreated { get; private set; }
-        public bool IsMenuCollapsed { get; private set; }
+        public bool ToolbarCollapsed { get; private set; }
 
         internal TextAnimation MenuTextAnimation = new TextAnimation()
         {
@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
-        private ToolStripLabel tslDragLeft;
+        private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
 
         internal void CreateToolbar()
@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(200, 200),
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
-                Text = "ShareX - Annotate menu",
+                Text = "ShareX - " + Resources.ShapeManager_CreateToolbar_AnnotateMenu,
                 TopMost = form.IsFullscreen
             };
 
@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
                 GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
-                Padding = form.IsEditorMode ? new Padding(5, 1, 5, 0) : new Padding(0, 1, 0, 0),
+                Padding = form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(0, 1, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Controls.Add(tsMain);
 
-            if (!form.IsEditorMode)
+            if (form.IsFullscreen)
             {
                 tslDragLeft = new ToolStripLabel()
                 {
@@ -478,7 +478,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
-            tscbCursorTypes = new ToolStripLabeledComboBox("Cursor type:");
+            tscbCursorTypes = new ToolStripLabeledComboBox(Resources.ShapeManager_CursorType);
             CursorConverter cursorConverter = new CursorConverter();
             foreach (Cursor cursor in Helpers.CursorList)
             {
@@ -509,7 +509,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
 
-            tslnudCenterPoints = new ToolStripLabeledNumericUpDown("Center points:");
+            tslnudCenterPoints = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CenterPoints);
             tslnudCenterPoints.Content.Minimum = 0;
             tslnudCenterPoints.Content.Maximum = LineDrawingShape.MaximumCenterPointCount;
             tslnudCenterPoints.Content.ValueChanged = (sender, e) =>
@@ -519,7 +519,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
 
-            tsmiArrowHeadsBothSide = new ToolStripMenuItem("Arrows on both ends");
+            tsmiArrowHeadsBothSide = new ToolStripMenuItem(Resources.ShapeManager_ArrowsOnBothEnds);
             tsmiArrowHeadsBothSide.CheckOnClick = true;
             tsmiArrowHeadsBothSide.Click += (sender, e) =>
             {
@@ -602,46 +602,46 @@ namespace ShareX.ScreenCaptureLib
             {
                 #region Image
 
-                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton("Image");
+                ToolStripDropDownButton tsddbImage = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_Image);
                 tsddbImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
-                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem("Image size...");
+                ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_ImageSize);
                 tsmiImageSize.Image = Resources.image_resize;
                 tsmiImageSize.MouseDown += (sender, e) => ChangeImageSize();
                 tsddbImage.DropDownItems.Add(tsmiImageSize);
 
-                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem("Canvas size...");
+                ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CanvasSize);
                 tsmiCanvasSize.Image = Resources.image_resize_actual;
                 tsmiCanvasSize.MouseDown += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem("Rotate 90° clockwise");
+                ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate90Clockwise);
                 tsmiRotate90Clockwise.Image = Resources.arrow_circle;
                 tsmiRotate90Clockwise.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate90FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate90Clockwise);
 
-                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem("Rotate 90° counter clockwise");
+                ToolStripMenuItem tsmiRotate90CounterClockwise = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate90CounterClockwise);
                 tsmiRotate90CounterClockwise.Image = Resources.arrow_circle_135_left;
                 tsmiRotate90CounterClockwise.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate270FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate90CounterClockwise);
 
-                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem("Rotate 180°");
+                ToolStripMenuItem tsmiRotate180 = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate180);
                 tsmiRotate180.Image = Resources.arrow_circle_double;
                 tsmiRotate180.MouseDown += (sender, e) => RotateImage(RotateFlipType.Rotate180FlipNone);
                 tsddbImage.DropDownItems.Add(tsmiRotate180);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem("Flip horizontal");
+                ToolStripMenuItem tsmiFlipHorizontal = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_FlipHorizontal);
                 tsmiFlipHorizontal.Image = Resources.layer_flip;
                 tsmiFlipHorizontal.MouseDown += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipX);
                 tsddbImage.DropDownItems.Add(tsmiFlipHorizontal);
 
-                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem("Flip vertical");
+                ToolStripMenuItem tsmiFlipVertical = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_FlipVertical);
                 tsmiFlipVertical.Image = Resources.layer_flip_vertical;
                 tsmiFlipVertical.MouseDown += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipY);
                 tsddbImage.DropDownItems.Add(tsmiFlipVertical);
@@ -723,19 +723,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (form.IsEditorMode)
             {
-                ToolStripMenuItem tsmiEditorModeStartMaximized = new ToolStripMenuItem("Start editor maximized");
+                ToolStripMenuItem tsmiEditorModeStartMaximized = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_StartEditorMaximized);
                 tsmiEditorModeStartMaximized.Checked = Config.EditorModeStartMaximized;
                 tsmiEditorModeStartMaximized.CheckOnClick = true;
                 tsmiEditorModeStartMaximized.Click += (sender, e) => Config.EditorModeStartMaximized = tsmiEditorModeStartMaximized.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeStartMaximized);
 
-                ToolStripMenuItem tsmiEditorModeRememberWindowState = new ToolStripMenuItem("Remember editor window state");
+                ToolStripMenuItem tsmiEditorModeRememberWindowState = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_RememberEditorWindowState);
                 tsmiEditorModeRememberWindowState.Checked = Config.EditorModeRememberWindowState;
                 tsmiEditorModeRememberWindowState.CheckOnClick = true;
                 tsmiEditorModeRememberWindowState.Click += (sender, e) => Config.EditorModeRememberWindowState = tsmiEditorModeRememberWindowState.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeRememberWindowState);
 
-                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem("Fullscreen editor mode");
+                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_StartEditorFullscreen);
                 tsmiEditorModeFullscreen.Checked = Config.EditorModeFullscreen;
                 tsmiEditorModeFullscreen.CheckOnClick = true;
                 tsmiEditorModeFullscreen.Click += (sender, e) => Config.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
@@ -831,17 +831,20 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
-            ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
-            tsmiRememberMenuState.Checked = Config.RememberMenuState;
-            tsmiRememberMenuState.CheckOnClick = true;
-            tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
-            tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
+            if (!form.IsEditorMode)
+            {
+                ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
+                tsmiRememberMenuState.Checked = Config.RememberMenuState;
+                tsmiRememberMenuState.CheckOnClick = true;
+                tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
+            }
 
             #endregion Options
 
-            if (!form.IsEditorMode)
+            if (form.IsFullscreen)
             {
-                ToolStripLabel tslDragRight = new ToolStripLabel()
+                tslDragRight = new ToolStripLabel()
                 {
                     Alignment = ToolStripItemAlignment.Right,
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
@@ -899,16 +902,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void MenuForm_Shown(object sender, EventArgs e)
         {
-            form.toolbarAnimationRectangle = form.RectangleToClient(menuForm.Bounds);
-
-            form.toolbarAnimation = new OpacityAnimation()
-            {
-                FadeInDuration = TimeSpan.FromMilliseconds(500),
-                Duration = TimeSpan.FromMilliseconds(500),
-                FadeOutDuration = TimeSpan.FromMilliseconds(500)
-            };
-
-            form.toolbarAnimation.Start();
+            form.ToolbarHeight = menuForm.Height;
+            form.CenterCanvas();
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)
@@ -956,14 +951,14 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Right)
             {
-                SetMenuCollapsed(!IsMenuCollapsed);
+                SetMenuCollapsed(!ToolbarCollapsed);
                 CheckMenuPosition();
             }
         }
 
         private void ConfigureMenuState()
         {
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
                 SetMenuCollapsed(Config.MenuCollapsed);
             }
@@ -973,24 +968,29 @@ namespace ShareX.ScreenCaptureLib
 
         internal void UpdateMenuPosition()
         {
-            Rectangle rectScreen = form.RectangleToScreen(form.ScreenRectangle0Based);
+            Rectangle rectScreen;
 
-            if (Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
+            if (form.IsFullscreen)
             {
-                menuForm.Location = Config.MenuPosition;
+                rectScreen = CaptureHelpers.GetActiveScreenBounds();
+                rectScreen.Y += 20;
             }
             else
             {
-                //Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
+                rectScreen = form.RectangleToScreen(form.ScreenRectangle0Based);
+            }
 
-                if (tsMain.Width < rectScreen.Width)
-                {
-                    menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
-                }
-                else
-                {
-                    menuForm.Location = rectScreen.Location;
-                }
+            if (!form.IsEditorMode && Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
+            {
+                menuForm.Location = Config.MenuPosition;
+            }
+            else if (tsMain.Width < rectScreen.Width)
+            {
+                menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
+            }
+            else
+            {
+                menuForm.Location = rectScreen.Location;
             }
         }
 
@@ -1029,7 +1029,7 @@ namespace ShareX.ScreenCaptureLib
                 menuForm.Location = pos;
             }
 
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
                 Config.MenuPosition = pos;
             }
@@ -1037,14 +1037,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void SetMenuCollapsed(bool isCollapsed)
         {
-            if (IsMenuCollapsed == isCollapsed)
+            if (ToolbarCollapsed == isCollapsed)
             {
                 return;
             }
 
-            IsMenuCollapsed = isCollapsed;
+            ToolbarCollapsed = isCollapsed;
 
-            if (IsMenuCollapsed)
+            if (ToolbarCollapsed)
             {
                 foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
                 {
@@ -1066,9 +1066,9 @@ namespace ShareX.ScreenCaptureLib
                 UpdateMenu();
             }
 
-            if (Config.RememberMenuState)
+            if (!form.IsEditorMode && Config.RememberMenuState)
             {
-                Config.MenuCollapsed = IsMenuCollapsed;
+                Config.MenuCollapsed = ToolbarCollapsed;
             }
         }
 

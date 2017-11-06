@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib.Properties;
 using System;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -36,7 +37,9 @@ namespace ShareX.HelpersLib
 
         public bool ActivateWindow { get; private set; }
 
-        public UpdateMessageBox(bool activateWindow, bool isPortable = false)
+        protected override bool ShowWithoutActivation => !ActivateWindow;
+
+        public UpdateMessageBox(bool activateWindow, UpdateChecker updateChecker)
         {
             ActivateWindow = activateWindow;
             InitializeComponent();
@@ -49,14 +52,29 @@ namespace ShareX.HelpersLib
 
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
 
-            if (isPortable)
+            StringBuilder sbText = new StringBuilder();
+
+            if (updateChecker.IsPortable)
             {
-                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName);
+                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName));
             }
             else
             {
-                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
+                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName));
             }
+
+            sbText.AppendLine();
+            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
+            sbText.Append(": ");
+            sbText.Append(updateChecker.CurrentVersion);
+            if (updateChecker.IsBeta) sbText.Append(" Beta");
+            sbText.AppendLine();
+            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
+            sbText.Append(": ");
+            sbText.Append(updateChecker.LatestVersion);
+            if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
+
+            lblText.Text = sbText.ToString();
         }
 
         public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
@@ -69,7 +87,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker.IsPortable))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker))
                     {
                         result = messageBox.ShowDialog();
                     }
@@ -88,8 +106,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        protected override bool ShowWithoutActivation => !ActivateWindow;
-
         private void UpdateMessageBox_Shown(object sender, EventArgs e)
         {
             if (ActivateWindow)
@@ -98,14 +114,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
-        {
-            DontShow = cbDontShow.Checked;
-        }
-
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CHANGELOG);
+        }
+
+        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
+        {
+            DontShow = cbDontShow.Checked;
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)
