@@ -78,8 +78,8 @@ namespace ShareX.ScreenCaptureLib
         internal ShapeManager Manager { get; set; }
 
         protected InputManager InputManager => Manager.InputManager;
-        protected RegionCaptureOptions Options => Manager.Config;
-        protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
+        protected RegionCaptureOptions Options => Manager.Options;
+        protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
 
@@ -134,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnCreating()
         {
-            Point pos = InputManager.MousePosition0Based;
+            Point pos = InputManager.ClientMousePosition;
 
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
@@ -156,7 +156,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.MousePosition0Based;
+                Point pos = InputManager.ClientMousePosition;
 
                 if (Manager.IsCornerMoving)
                 {
@@ -235,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                     }
 
-                    Point pos = InputManager.MousePosition0Based;
+                    Point pos = InputManager.ClientMousePosition;
                     Point startPos = tempStartPos;
                     Point endPos = tempEndPos;
 

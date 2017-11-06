@@ -176,7 +176,7 @@ namespace ShareX.ScreenCaptureLib
                         return form.GetResultImage();
                     case RegionResult.Fullscreen: // Space or right click
                     case RegionResult.AnnotateContinueTask:
-                        return (Image)form.Image.Clone();
+                        return (Image)form.Canvas.Clone();
                     case RegionResult.AnnotateSaveImage:
                         using (Image resultSaveImage = form.GetResultImage())
                         {

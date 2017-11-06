@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = true;
 
-            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.MousePosition0Based);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.ClientMousePosition);
         }
 
         public override void OnDraw(Graphics g)
@@ -70,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.DrawImage(cursorBitmap, Rectangle);
 
-                if (!Manager.IsRenderingOutput && Manager.CurrentShapeType == ShapeType.DrawingCursor)
+                if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
                 {
                     Manager.DrawRegionArea(g, Rectangle, false);
                 }
