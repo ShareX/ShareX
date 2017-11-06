@@ -75,6 +75,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Config.LastRegionTool = CurrentShapeType;
                     }
+                    else if (form.IsEditorMode)
+                    {
+                        Config.LastEditorTool = CurrentShapeType;
+                    }
                     else
                     {
                         Config.LastAnnotationTool = CurrentShapeType;
@@ -241,7 +245,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (form.IsEditorMode)
             {
-                CurrentShapeType = Config.LastAnnotationTool;
+                CurrentShapeType = Config.LastEditorTool;
             }
             else
             {

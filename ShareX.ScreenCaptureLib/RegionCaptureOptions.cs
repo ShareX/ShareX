@@ -75,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
+        public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
 
         // Editor mode
         public bool EditorModeStartMaximized = true;
