@@ -741,6 +741,20 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeFullscreen.Click += (sender, e) => Options.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeFullscreen);
 
+                ToolStripMenuItem tsmiEditorBackgroundColor = new ToolStripMenuItem("Editor background color...");
+                tsmiEditorBackgroundColor.Click += (sender, e) =>
+                {
+                    PauseForm();
+
+                    if (ColorPickerForm.PickColor(Options.EditorBackgroundColor, out Color newColor))
+                    {
+                        Options.EditorBackgroundColor = newColor;
+                    }
+
+                    ResumeForm();
+                };
+                tsddbOptions.DropDownItems.Add(tsmiEditorBackgroundColor);
+
                 tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
             }
 

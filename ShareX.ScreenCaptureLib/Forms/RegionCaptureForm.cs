@@ -610,7 +610,7 @@ namespace ShareX.ScreenCaptureLib
             g.CompositingMode = CompositingMode.SourceCopy;
             if (!CanvasRectangle.Contains(ClientArea))
             {
-                g.Clear(Color.FromArgb(14, 14, 14));
+                g.Clear(Options.EditorBackgroundColor);
             }
             g.FillRectangle(backgroundBrush, CanvasRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
