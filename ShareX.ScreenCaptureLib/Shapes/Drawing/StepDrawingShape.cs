@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public StepDrawingShape()
         {
             StartPosition = new Point(0, 0);
-            EndPosition = new Point(DefaultSize, DefaultSize);
+            EndPosition = new Point(DefaultSize - 1, DefaultSize - 1);
         }
 
         public override void ShowNodes()
@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
             Manager.IsMoving = true;
             Point pos = InputManager.ClientMousePosition;
             StartPosition = new Point(pos.X - DefaultSize / 2, pos.Y - DefaultSize / 2);
-            EndPosition = new Point(pos.X + DefaultSize / 2, pos.Y + DefaultSize / 2);
+            EndPosition = new Point(pos.X + DefaultSize / 2 - 1, pos.Y + DefaultSize / 2 - 1);
         }
 
         public override void OnConfigLoad()
