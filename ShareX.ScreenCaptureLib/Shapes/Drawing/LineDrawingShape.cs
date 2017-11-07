@@ -185,6 +185,10 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeUpdate()
         {
+            if (Manager.IsCornerMoving && !Manager.IsMoving && !Manager.IsPanning)
+            {
+                Move(InputManager.MouseVelocity);
+            }
             if (Manager.ResizeNodes[0].IsDragging)
             {
                 Manager.IsResizing = true;

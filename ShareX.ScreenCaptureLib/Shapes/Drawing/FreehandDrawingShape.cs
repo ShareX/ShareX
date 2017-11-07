@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                if (Manager.IsCornerMoving)
+                if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
                     Move(InputManager.MouseVelocity);
                 }
