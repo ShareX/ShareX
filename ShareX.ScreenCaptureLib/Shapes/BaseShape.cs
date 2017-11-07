@@ -112,7 +112,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void Move(int x, int y)
         {
-            Rectangle = Rectangle.LocationOffset(x, y);
+            StartPosition = StartPosition.Add(x, y);
+            EndPosition = EndPosition.Add(x, y);
         }
 
         public void Move(Point offset)
@@ -158,7 +159,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Point pos = InputManager.ClientMousePosition;
 
-                if (Manager.IsCornerMoving)
+                if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
                     StartPosition = StartPosition.Add(InputManager.MouseVelocity);
                 }
@@ -186,7 +187,7 @@ namespace ShareX.ScreenCaptureLib
 
                 EndPosition = pos;
             }
-            else if (Manager.IsMoving)
+            else if (Manager.IsMoving && !Manager.IsPanning)
             {
                 Move(InputManager.MouseVelocity);
             }
@@ -235,6 +236,13 @@ namespace ShareX.ScreenCaptureLib
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                     }
 
+                    if (Manager.IsCornerMoving || Manager.IsPanning)
+                    {
+                        tempStartPos.Offset(InputManager.MouseVelocity);
+                        tempEndPos.Offset(InputManager.MouseVelocity);
+                        tempNodePos.Offset(InputManager.MouseVelocity);
+                    }
+
                     Point pos = InputManager.ClientMousePosition;
                     Point startPos = tempStartPos;
                     Point endPos = tempEndPos;
@@ -273,7 +281,8 @@ namespace ShareX.ScreenCaptureLib
                             break;
                     }
 
-                    Rectangle = CaptureHelpers.CreateRectangle(startPos, endPos);
+                    StartPosition = startPos;
+                    EndPosition = endPos;
                 }
             }
         }
