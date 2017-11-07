@@ -55,7 +55,8 @@ namespace ShareX.ScreenCaptureLib
                     location = Rectangle.Location;
                 }
 
-                Rectangle = new Rectangle(location, size);
+                StartPosition = location;
+                EndPosition = new Point(location.X + size.Width - 1, location.Y + size.Height - 1);
             }
         }
 
