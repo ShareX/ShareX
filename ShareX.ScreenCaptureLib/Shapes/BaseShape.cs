@@ -125,11 +125,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                Rectangle = Rectangle.SizeOffset(x, y);
+                EndPosition = EndPosition.Add(x, y);
             }
             else
             {
-                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                StartPosition = StartPosition.Add(x, y);
             }
         }
 
