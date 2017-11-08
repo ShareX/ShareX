@@ -738,6 +738,7 @@ namespace ShareX.ScreenCaptureLib
         private void StartPanning()
         {
             IsPanning = true;
+            form.PanningStrech = new Point(0, 0);
             form.Cursor = Cursors.SizeAll;
         }
 
