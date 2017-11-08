@@ -49,7 +49,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom,
+            tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
@@ -741,7 +742,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeFullscreen.Click += (sender, e) => Options.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeFullscreen);
 
-                ToolStripMenuItem tsmiEditorBackgroundColor = new ToolStripMenuItem("Editor background color...");
+                tsmiEditorBackgroundColor = new ToolStripMenuItem("Editor background color...");
                 tsmiEditorBackgroundColor.Click += (sender, e) =>
                 {
                     PauseForm();
@@ -749,6 +750,7 @@ namespace ShareX.ScreenCaptureLib
                     if (ColorPickerForm.PickColor(Options.EditorBackgroundColor, out Color newColor))
                     {
                         Options.EditorBackgroundColor = newColor;
+                        UpdateMenu();
                     }
 
                     ResumeForm();
@@ -1275,6 +1277,12 @@ namespace ShareX.ScreenCaptureLib
             if (tsmiRegionCapture != null)
             {
                 tsmiRegionCapture.Visible = !Options.QuickCrop && ValidRegions.Length > 0;
+            }
+
+            if (tsmiEditorBackgroundColor != null)
+            {
+                if (tsmiEditorBackgroundColor.Image != null) tsmiEditorBackgroundColor.Image.Dispose();
+                tsmiEditorBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(Options.EditorBackgroundColor, new Rectangle(0, 0, 16, 16));
             }
         }
 
