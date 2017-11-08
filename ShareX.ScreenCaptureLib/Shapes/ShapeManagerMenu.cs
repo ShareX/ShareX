@@ -842,7 +842,11 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_FPS);
             tsmiShowFPS.Checked = Options.ShowFPS;
             tsmiShowFPS.CheckOnClick = true;
-            tsmiShowFPS.Click += (sender, e) => Options.ShowFPS = tsmiShowFPS.Checked;
+            tsmiShowFPS.Click += (sender, e) =>
+            {
+                Options.ShowFPS = tsmiShowFPS.Checked;
+                form.UpdateTitle();
+            };
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
             if (!form.IsEditorMode)

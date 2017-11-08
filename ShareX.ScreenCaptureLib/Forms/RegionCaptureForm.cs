@@ -194,7 +194,7 @@ namespace ShareX.ScreenCaptureLib
             ResumeLayout(false);
         }
 
-        private void UpdateTitle()
+        internal void UpdateTitle()
         {
             string text;
 
@@ -212,6 +212,11 @@ namespace ShareX.ScreenCaptureLib
                 if (!string.IsNullOrEmpty(filename))
                 {
                     text += " - " + filename;
+                }
+
+                if (!IsFullscreen && Options.ShowFPS)
+                {
+                    text += " - FPS: " + FPS.ToString();
                 }
             }
             else
@@ -620,7 +625,11 @@ namespace ShareX.ScreenCaptureLib
             if (Options.ShowFPS)
             {
                 CheckFPS();
-                DrawFPS(g, 10);
+
+                if (IsFullscreen)
+                {
+                    DrawFPS(g, 10);
+                }
             }
 
             if (!pause)
@@ -815,6 +824,11 @@ namespace ShareX.ScreenCaptureLib
                 frameCount = 0;
                 timerFPS.Reset();
                 timerFPS.Start();
+
+                if (!IsFullscreen)
+                {
+                    UpdateTitle();
+                }
             }
         }
 
