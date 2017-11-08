@@ -56,6 +56,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnnotated => ShapeManager != null && ShapeManager.IsAnnotated;
 
         public Point CurrentPosition { get; private set; }
+        public Point PanningStrech = new Point();
 
         public Color CurrentColor
         {
@@ -327,6 +328,32 @@ namespace ShareX.ScreenCaptureLib
 
         private void Pan(int deltaX, int deltaY)
         {
+            PanningStrech.X -= deltaX;
+            PanningStrech.Y -= deltaY;
+
+            int panLimit = 100;
+
+            Size panLimitSize = new Size(
+                Math.Min(panLimit, CanvasRectangle.Width),
+                Math.Min(panLimit, CanvasRectangle.Height));
+
+            Rectangle limitRectangle = new Rectangle(
+                ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
+                ClientArea.Width - panLimitSize.Width * 2, ClientArea.Height - panLimitSize.Height * 2);
+
+            deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
+            deltaX = Math.Min(deltaX, limitRectangle.Right - CanvasRectangle.Left);
+            deltaY = Math.Max(deltaY, limitRectangle.Top - CanvasRectangle.Bottom);
+            deltaY = Math.Min(deltaY, limitRectangle.Bottom - CanvasRectangle.Top);
+
+            deltaX -= Math.Min(Math.Max(deltaX, 0), Math.Max(0, PanningStrech.X));
+            deltaX -= Math.Max(Math.Min(deltaX, 0), Math.Min(0, PanningStrech.X));
+            deltaY -= Math.Min(Math.Max(deltaY, 0), Math.Max(0, PanningStrech.Y));
+            deltaY -= Math.Max(Math.Min(deltaY, 0), Math.Min(0, PanningStrech.Y));
+
+            PanningStrech.X += deltaX;
+            PanningStrech.Y += deltaY;
+
             CanvasRectangle = CanvasRectangle.LocationOffset(deltaX, deltaY);
 
             if (backgroundBrush != null)
