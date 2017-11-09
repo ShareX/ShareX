@@ -78,7 +78,7 @@ namespace ShareX.ScreenCaptureLib
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
-        public Vector2 CanvasCenterPoint { get; set; } = new Vector2(0.5f, 0.5f);
+        public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
         internal ShapeManager ShapeManager { get; private set; }
         internal List<DrawableObject> DrawableObjects { get; private set; }
@@ -372,12 +372,12 @@ namespace ShareX.ScreenCaptureLib
             Pan(delta.X, delta.Y);
         }
 
-        private void AutomaticPan(Vector2 center)
+        private void AutomaticPan(Vector2 centerOffset)
         {
             if (IsEditorMode)
             {
-                int x = (int)Math.Round(ClientArea.Width * center.X);
-                int y = (int)Math.Round(ToolbarHeight + (ClientArea.Height - ToolbarHeight) * center.Y);
+                int x = (int)Math.Round(ClientArea.Width * 0.5f + centerOffset.X);
+                int y = (int)Math.Round(ToolbarHeight + (ClientArea.Height - ToolbarHeight) * 0.5f + centerOffset.Y);
                 int newX = x - CanvasRectangle.Width / 2;
                 int newY = y - CanvasRectangle.Height / 2;
                 int deltaX = newX - CanvasRectangle.X;
@@ -388,18 +388,19 @@ namespace ShareX.ScreenCaptureLib
 
         private void AutomaticPan()
         {
-            AutomaticPan(CanvasCenterPoint);
+            AutomaticPan(CanvasCenterOffset);
         }
 
-        private void UpdateCenterPoint()
+        private void UpdateCenterOffset()
         {
-            CanvasCenterPoint = new Vector2((CanvasRectangle.X + CanvasRectangle.Width / 2f) / ClientArea.Width,
-                (CanvasRectangle.Y + CanvasRectangle.Height / 2f) / ClientArea.Height);
+            CanvasCenterOffset = new Vector2(
+                (CanvasRectangle.X + CanvasRectangle.Width / 2f) - ClientArea.Width / 2f,
+                (CanvasRectangle.Y + CanvasRectangle.Height / 2f) - ClientArea.Height / 2f);
         }
 
         public void CenterCanvas()
         {
-            CanvasCenterPoint = new Vector2(0.5f, 0.5f);
+            CanvasCenterOffset = new Vector2(0f, 0f);
             AutomaticPan();
         }
 
@@ -621,7 +622,7 @@ namespace ShareX.ScreenCaptureLib
             if (ShapeManager.IsPanning)
             {
                 Pan(InputManager.MouseVelocity);
-                UpdateCenterPoint();
+                UpdateCenterOffset();
             }
 
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
