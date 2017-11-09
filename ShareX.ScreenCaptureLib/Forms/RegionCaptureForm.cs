@@ -326,10 +326,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Pan(int deltaX, int deltaY)
+        private void Pan(int deltaX, int deltaY, bool usePanningStretch = true)
         {
-            PanningStrech.X -= deltaX;
-            PanningStrech.Y -= deltaY;
+            if (usePanningStretch)
+            {
+                PanningStrech.X -= deltaX;
+                PanningStrech.Y -= deltaY;
+            }
 
             int panLimit = 100;
 
@@ -346,13 +349,16 @@ namespace ShareX.ScreenCaptureLib
             deltaY = Math.Max(deltaY, limitRectangle.Top - CanvasRectangle.Bottom);
             deltaY = Math.Min(deltaY, limitRectangle.Bottom - CanvasRectangle.Top);
 
-            deltaX -= Math.Min(Math.Max(deltaX, 0), Math.Max(0, PanningStrech.X));
-            deltaX -= Math.Max(Math.Min(deltaX, 0), Math.Min(0, PanningStrech.X));
-            deltaY -= Math.Min(Math.Max(deltaY, 0), Math.Max(0, PanningStrech.Y));
-            deltaY -= Math.Max(Math.Min(deltaY, 0), Math.Min(0, PanningStrech.Y));
+            if (usePanningStretch)
+            {
+                deltaX -= Math.Min(Math.Max(deltaX, 0), Math.Max(0, PanningStrech.X));
+                deltaX -= Math.Max(Math.Min(deltaX, 0), Math.Min(0, PanningStrech.X));
+                deltaY -= Math.Min(Math.Max(deltaY, 0), Math.Max(0, PanningStrech.Y));
+                deltaY -= Math.Max(Math.Min(deltaY, 0), Math.Min(0, PanningStrech.Y));
 
-            PanningStrech.X += deltaX;
-            PanningStrech.Y += deltaY;
+                PanningStrech.X += deltaX;
+                PanningStrech.Y += deltaY;
+            }
 
             CanvasRectangle = CanvasRectangle.LocationOffset(deltaX, deltaY);
 
@@ -377,12 +383,12 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode)
             {
                 int x = (int)Math.Round(ClientArea.Width * 0.5f + centerOffset.X);
-                int y = (int)Math.Round(ToolbarHeight + (ClientArea.Height - ToolbarHeight) * 0.5f + centerOffset.Y);
+                int y = (int)Math.Round(ClientArea.Height * 0.5f + centerOffset.Y);
                 int newX = x - CanvasRectangle.Width / 2;
                 int newY = y - CanvasRectangle.Height / 2;
                 int deltaX = newX - CanvasRectangle.X;
                 int deltaY = newY - CanvasRectangle.Y;
-                Pan(deltaX, deltaY);
+                Pan(deltaX, deltaY, false);
             }
         }
 
@@ -400,7 +406,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void CenterCanvas()
         {
-            CanvasCenterOffset = new Vector2(0f, 0f);
+            CanvasCenterOffset = new Vector2(0f, ToolbarHeight + 0f);
             AutomaticPan();
         }
 
