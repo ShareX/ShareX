@@ -250,9 +250,6 @@ namespace ShareX.ImageEffectsLib
                         }
                     }
 
-                    float centerX = watermarkRectangle.Width / 2f - (Padding.Right - Padding.Left);
-                    float centerY = watermarkRectangle.Height / 2f - (Padding.Bottom - Padding.Top);
-
                     if (DrawTextShadow)
                     {
                         using (Brush textShadowBrush = new SolidBrush(TextShadowColor))

@@ -457,14 +457,14 @@ namespace ShareX
 
         public static void UpdateProgressUI()
         {
-            bool isWorkingTasks = false;
+            bool isTasksWorking = false;
             double averageProgress = 0;
 
             IEnumerable<WorkerTask> workingTasks = Tasks.Where(x => x != null && x.Status == TaskStatus.Working && x.Info != null);
 
             if (workingTasks.Count() > 0)
             {
-                isWorkingTasks = true;
+                isTasksWorking = true;
 
                 workingTasks = workingTasks.Where(x => x.Info.Progress != null);
 
@@ -474,25 +474,16 @@ namespace ShareX
                 }
             }
 
-            int progress = isWorkingTasks ? (int)averageProgress : -1;
-            UpdateTrayIcon(progress);
-
-            string title;
-
-            if (isWorkingTasks)
+            if (isTasksWorking)
             {
-                title = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
+                Program.MainForm.Text = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
+                UpdateTrayIcon((int)averageProgress);
                 TaskbarManager.SetProgressValue(Program.MainForm, (int)averageProgress);
             }
             else
             {
-                title = Program.Title;
-            }
-
-            Program.MainForm.Text = title;
-
-            if (!IsBusy)
-            {
+                Program.MainForm.Text = Program.Title;
+                UpdateTrayIcon(-1);
                 TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.NoProgress);
             }
         }
