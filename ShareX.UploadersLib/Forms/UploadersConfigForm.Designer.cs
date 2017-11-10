@@ -437,7 +437,6 @@
             this.lblStreamablePassword = new System.Windows.Forms.Label();
             this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpSul = new System.Windows.Forms.TabPage();
-            this.sulKeyLink = new System.Windows.Forms.LinkLabel();
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
@@ -618,6 +617,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.btnSulGetAPIKey = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3704,19 +3704,12 @@
             // 
             // tpSul
             // 
-            this.tpSul.Controls.Add(this.sulKeyLink);
+            this.tpSul.Controls.Add(this.btnSulGetAPIKey);
             this.tpSul.Controls.Add(this.txtSulAPIKey);
             this.tpSul.Controls.Add(this.lblSulAPIKey);
             resources.ApplyResources(this.tpSul, "tpSul");
             this.tpSul.Name = "tpSul";
             this.tpSul.UseVisualStyleBackColor = true;
-            // 
-            // sulKeyLink
-            // 
-            resources.ApplyResources(this.sulKeyLink, "sulKeyLink");
-            this.sulKeyLink.Name = "sulKeyLink";
-            this.sulKeyLink.TabStop = true;
-            this.sulKeyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.sulKeyLink_LinkClicked);
             // 
             // txtSulAPIKey
             // 
@@ -5034,6 +5027,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // btnSulGetAPIKey
+            // 
+            resources.ApplyResources(this.btnSulGetAPIKey, "btnSulGetAPIKey");
+            this.btnSulGetAPIKey.Name = "btnSulGetAPIKey";
+            this.btnSulGetAPIKey.UseVisualStyleBackColor = true;
+            this.btnSulGetAPIKey.Click += new System.EventHandler(this.btnSulGetAPIKey_Click);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5782,7 +5782,6 @@
         private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
         private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
-        private System.Windows.Forms.LinkLabel sulKeyLink;
         private System.Windows.Forms.Button btnCustomUploaderDuplicate;
         private System.Windows.Forms.Panel pCustomUploader;
         private System.Windows.Forms.Button btnCustomUploaderURLSharingServiceTest;
@@ -5795,5 +5794,6 @@
         private System.Windows.Forms.Button btnPaste_eeGetUserKey;
         private OAuthControl oauthFlickr;
         private System.Windows.Forms.CheckBox cbFlickrDirectLink;
+        private System.Windows.Forms.Button btnSulGetAPIKey;
     }
 }

@@ -62,13 +62,12 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        private const string uploadUrl = "http://api.lithi.io/v3/";
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("key", Config.UserAPIKey);
-            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments);
+
+            UploadResult result = SendRequestFile("https://upload.lithi.io/v1.php", stream, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {

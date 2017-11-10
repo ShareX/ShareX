@@ -2461,20 +2461,6 @@ namespace ShareX.UploadersLib
 
         #endregion Lambda
 
-        #region Lithiio
-
-        private void btnLithiioGetAPIKey_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://lithi.io/");
-        }
-
-        private void txtLithiioApiKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.LithiioSettings.UserAPIKey = txtLithiioApiKey.Text;
-        }
-
-        #endregion Lithiio
-
         #region Pomf
 
         private void cbPomfUploaders_SelectedIndexChanged(object sender, EventArgs e)
@@ -2527,20 +2513,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pomf
-
-        #region Sul
-
-        private void txtSulAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.SulAPIKey = txtSulAPIKey.Text;
-        }
-
-        private void sulKeyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://s-ul.eu/account/info");
-        }
-
-        #endregion Sul
 
         #region Seafile
 
@@ -2813,6 +2785,34 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Streamable
+
+        #region Sul
+
+        private void txtSulAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SulAPIKey = txtSulAPIKey.Text;
+        }
+
+        private void btnSulGetAPIKey_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://s-ul.eu/account/info");
+        }
+
+        #endregion Sul
+
+        #region Lithiio
+
+        private void txtLithiioApiKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.LithiioSettings.UserAPIKey = txtLithiioApiKey.Text;
+        }
+
+        private void btnLithiioGetAPIKey_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://lithi.io/my-account.php");
+        }
+
+        #endregion Lithiio
 
         #region Azure Storage
 

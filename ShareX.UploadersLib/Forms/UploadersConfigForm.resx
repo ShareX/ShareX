@@ -10562,41 +10562,35 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="sulKeyLink.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnSulGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 31</value>
   </data>
-  <data name="sulKeyLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnSulGetAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
   </data>
-  <data name="sulKeyLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 59</value>
-  </data>
-  <data name="sulKeyLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 13</value>
-  </data>
-  <data name="sulKeyLink.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnSulGetAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="sulKeyLink.Text" xml:space="preserve">
-    <value>Click here to get your API key!</value>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>Get API key...</value>
   </data>
-  <data name="&gt;&gt;sulKeyLink.Name" xml:space="preserve">
-    <value>sulKeyLink</value>
+  <data name="&gt;&gt;btnSulGetAPIKey.Name" xml:space="preserve">
+    <value>btnSulGetAPIKey</value>
   </data>
-  <data name="&gt;&gt;sulKeyLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnSulGetAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sulKeyLink.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnSulGetAPIKey.Parent" xml:space="preserve">
     <value>tpSul</value>
   </data>
-  <data name="&gt;&gt;sulKeyLink.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnSulGetAPIKey.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="txtSulAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
   <data name="txtSulAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 20</value>
+    <value>400, 20</value>
   </data>
   <data name="txtSulAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -10674,10 +10668,10 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="btnLithiioGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 31</value>
+    <value>424, 31</value>
   </data>
   <data name="btnLithiioGetAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 23</value>
+    <value>160, 23</value>
   </data>
   <data name="btnLithiioGetAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -10731,7 +10725,7 @@ Using an encrypted library disables sharing.</value>
     <value>16, 32</value>
   </data>
   <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 20</value>
+    <value>400, 20</value>
   </data>
   <data name="txtLithiioApiKey.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
