@@ -2807,6 +2807,26 @@ namespace ShareX.UploadersLib
             Config.LithiioSettings.UserAPIKey = txtLithiioApiKey.Text;
         }
 
+        private void btnLithiioLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                Lithiio lithiio = new Lithiio();
+                string apiKey = lithiio.FetchAPIKey(txtLithiioEmail.Text, txtLithiioPassword.Text);
+                txtLithiioApiKey.Text = apiKey ?? "";
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError(false);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
         private void btnLithiioGetAPIKey_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://lithi.io/my-account.php");

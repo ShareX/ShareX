@@ -437,9 +437,15 @@
             this.lblStreamablePassword = new System.Windows.Forms.Label();
             this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpSul = new System.Windows.Forms.TabPage();
+            this.btnSulGetAPIKey = new System.Windows.Forms.Button();
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
+            this.btnLithiioLogin = new System.Windows.Forms.Button();
+            this.txtLithiioPassword = new System.Windows.Forms.TextBox();
+            this.txtLithiioEmail = new System.Windows.Forms.TextBox();
+            this.lblLithiioPassword = new System.Windows.Forms.Label();
+            this.lblLithiioEmail = new System.Windows.Forms.Label();
             this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
             this.lblLithiioApiKey = new System.Windows.Forms.Label();
             this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
@@ -617,7 +623,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnSulGetAPIKey = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3711,6 +3716,13 @@
             this.tpSul.Name = "tpSul";
             this.tpSul.UseVisualStyleBackColor = true;
             // 
+            // btnSulGetAPIKey
+            // 
+            resources.ApplyResources(this.btnSulGetAPIKey, "btnSulGetAPIKey");
+            this.btnSulGetAPIKey.Name = "btnSulGetAPIKey";
+            this.btnSulGetAPIKey.UseVisualStyleBackColor = true;
+            this.btnSulGetAPIKey.Click += new System.EventHandler(this.btnSulGetAPIKey_Click);
+            // 
             // txtSulAPIKey
             // 
             resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
@@ -3725,12 +3737,45 @@
             // 
             // tpLithiio
             // 
+            this.tpLithiio.Controls.Add(this.btnLithiioLogin);
+            this.tpLithiio.Controls.Add(this.txtLithiioPassword);
+            this.tpLithiio.Controls.Add(this.txtLithiioEmail);
+            this.tpLithiio.Controls.Add(this.lblLithiioPassword);
+            this.tpLithiio.Controls.Add(this.lblLithiioEmail);
             this.tpLithiio.Controls.Add(this.btnLithiioGetAPIKey);
             this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
             this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
             resources.ApplyResources(this.tpLithiio, "tpLithiio");
             this.tpLithiio.Name = "tpLithiio";
             this.tpLithiio.UseVisualStyleBackColor = true;
+            // 
+            // btnLithiioLogin
+            // 
+            resources.ApplyResources(this.btnLithiioLogin, "btnLithiioLogin");
+            this.btnLithiioLogin.Name = "btnLithiioLogin";
+            this.btnLithiioLogin.UseVisualStyleBackColor = true;
+            this.btnLithiioLogin.Click += new System.EventHandler(this.btnLithiioLogin_Click);
+            // 
+            // txtLithiioPassword
+            // 
+            resources.ApplyResources(this.txtLithiioPassword, "txtLithiioPassword");
+            this.txtLithiioPassword.Name = "txtLithiioPassword";
+            this.txtLithiioPassword.UseSystemPasswordChar = true;
+            // 
+            // txtLithiioEmail
+            // 
+            resources.ApplyResources(this.txtLithiioEmail, "txtLithiioEmail");
+            this.txtLithiioEmail.Name = "txtLithiioEmail";
+            // 
+            // lblLithiioPassword
+            // 
+            resources.ApplyResources(this.lblLithiioPassword, "lblLithiioPassword");
+            this.lblLithiioPassword.Name = "lblLithiioPassword";
+            // 
+            // lblLithiioEmail
+            // 
+            resources.ApplyResources(this.lblLithiioEmail, "lblLithiioEmail");
+            this.lblLithiioEmail.Name = "lblLithiioEmail";
             // 
             // btnLithiioGetAPIKey
             // 
@@ -5027,13 +5072,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // btnSulGetAPIKey
-            // 
-            resources.ApplyResources(this.btnSulGetAPIKey, "btnSulGetAPIKey");
-            this.btnSulGetAPIKey.Name = "btnSulGetAPIKey";
-            this.btnSulGetAPIKey.UseVisualStyleBackColor = true;
-            this.btnSulGetAPIKey.Click += new System.EventHandler(this.btnSulGetAPIKey_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5795,5 +5833,10 @@
         private OAuthControl oauthFlickr;
         private System.Windows.Forms.CheckBox cbFlickrDirectLink;
         private System.Windows.Forms.Button btnSulGetAPIKey;
+        private System.Windows.Forms.Button btnLithiioLogin;
+        private System.Windows.Forms.TextBox txtLithiioPassword;
+        private System.Windows.Forms.TextBox txtLithiioEmail;
+        private System.Windows.Forms.Label lblLithiioPassword;
+        private System.Windows.Forms.Label lblLithiioEmail;
     }
 }
