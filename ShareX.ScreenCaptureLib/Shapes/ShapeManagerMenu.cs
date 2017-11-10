@@ -742,7 +742,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiEditorModeFullscreen.Click += (sender, e) => Options.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiEditorModeFullscreen);
 
-                tsmiEditorBackgroundColor = new ToolStripMenuItem("Editor background color...");
+                tsmiEditorBackgroundColor = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_EditorBackgroundColor);
                 tsmiEditorBackgroundColor.Click += (sender, e) =>
                 {
                     PauseForm();

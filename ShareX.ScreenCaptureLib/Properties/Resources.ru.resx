@@ -473,4 +473,7 @@
   <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
     <value>Запускать редактор в полноэкранном режиме</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
+    <value>Цвет фона редактора...</value>
+  </data>
 </root>
