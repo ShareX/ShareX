@@ -85,6 +85,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLUpload = URLContent + "/files/upload";
         private const string URLGetMetadata = URLAPI + "/files/get_metadata";
         private const string URLCreateSharedLink = URLAPI + "/sharing/create_shared_link_with_settings";
+        private const string URLListSharedLinks = URLAPI + "/sharing/list_shared_links";
         private const string URLCopy = URLAPI + "/files/copy";
         private const string URLCreateFolder = URLAPI + "/files/create_folder";
         private const string URLDelete = URLAPI + "/files/delete";
@@ -296,10 +297,24 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 string response = SendRequest(HttpMethod.POST, URLCreateSharedLink, json, ContentTypeJSON, null, GetAuthHeaders());
 
+                DropboxLinkMetadata linkMetadata = null;
+
                 if (!string.IsNullOrEmpty(response))
                 {
-                    DropboxLinkMetadata linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
+                    linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
+                }
+                else if (IsError && Errors[Errors.Count - 1].Contains("\"shared_link_already_exists\"")) // Ugly workaround
+                {
+                    DropboxListSharedLinksResult result = ListSharedLinks(path, true);
 
+                    if (result != null && result.links != null && result.links.Length > 0)
+                    {
+                        linkMetadata = result.links[0];
+                    }
+                }
+
+                if (linkMetadata != null)
+                {
                     if (directLink)
                     {
                         return GetDirectShareableURL(linkMetadata.url);
@@ -312,6 +327,29 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return null;
+        }
+
+        public DropboxListSharedLinksResult ListSharedLinks(string path, bool directOnly = false)
+        {
+            DropboxListSharedLinksResult result = null;
+
+            if (path != null && OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                string json = JsonConvert.SerializeObject(new
+                {
+                    path = VerifyPath(path),
+                    direct_only = directOnly
+                });
+
+                string response = SendRequest(HttpMethod.POST, URLListSharedLinks, json, ContentTypeJSON, null, GetAuthHeaders());
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    result = JsonConvert.DeserializeObject<DropboxListSharedLinksResult>(response);
+                }
+            }
+
+            return result;
         }
 
         public DropboxMetadata Copy(string fromPath, string toPath)
@@ -540,5 +578,12 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public string id { get; set; }
         public string name { get; set; }
+    }
+
+    public class DropboxListSharedLinksResult
+    {
+        public DropboxLinkMetadata[] links { get; set; }
+        public bool has_more { get; set; }
+        public string cursor { get; set; }
     }
 }

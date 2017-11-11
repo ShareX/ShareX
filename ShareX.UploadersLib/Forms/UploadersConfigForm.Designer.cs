@@ -441,7 +441,7 @@
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
-            this.btnLithiioLogin = new System.Windows.Forms.Button();
+            this.btnLithiioFetchAPIKey = new System.Windows.Forms.Button();
             this.txtLithiioPassword = new System.Windows.Forms.TextBox();
             this.txtLithiioEmail = new System.Windows.Forms.TextBox();
             this.lblLithiioPassword = new System.Windows.Forms.Label();
@@ -3737,7 +3737,7 @@
             // 
             // tpLithiio
             // 
-            this.tpLithiio.Controls.Add(this.btnLithiioLogin);
+            this.tpLithiio.Controls.Add(this.btnLithiioFetchAPIKey);
             this.tpLithiio.Controls.Add(this.txtLithiioPassword);
             this.tpLithiio.Controls.Add(this.txtLithiioEmail);
             this.tpLithiio.Controls.Add(this.lblLithiioPassword);
@@ -3749,12 +3749,12 @@
             this.tpLithiio.Name = "tpLithiio";
             this.tpLithiio.UseVisualStyleBackColor = true;
             // 
-            // btnLithiioLogin
+            // btnLithiioFetchAPIKey
             // 
-            resources.ApplyResources(this.btnLithiioLogin, "btnLithiioLogin");
-            this.btnLithiioLogin.Name = "btnLithiioLogin";
-            this.btnLithiioLogin.UseVisualStyleBackColor = true;
-            this.btnLithiioLogin.Click += new System.EventHandler(this.btnLithiioLogin_Click);
+            resources.ApplyResources(this.btnLithiioFetchAPIKey, "btnLithiioFetchAPIKey");
+            this.btnLithiioFetchAPIKey.Name = "btnLithiioFetchAPIKey";
+            this.btnLithiioFetchAPIKey.UseVisualStyleBackColor = true;
+            this.btnLithiioFetchAPIKey.Click += new System.EventHandler(this.btnLithiioLogin_Click);
             // 
             // txtLithiioPassword
             // 
@@ -5833,7 +5833,7 @@
         private OAuthControl oauthFlickr;
         private System.Windows.Forms.CheckBox cbFlickrDirectLink;
         private System.Windows.Forms.Button btnSulGetAPIKey;
-        private System.Windows.Forms.Button btnLithiioLogin;
+        private System.Windows.Forms.Button btnLithiioFetchAPIKey;
         private System.Windows.Forms.TextBox txtLithiioPassword;
         private System.Windows.Forms.TextBox txtLithiioEmail;
         private System.Windows.Forms.Label lblLithiioPassword;
