@@ -75,11 +75,13 @@ namespace ShareX.ScreenCaptureLib
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
+        public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
 
         // Editor mode
         public bool EditorModeStartMaximized = true;
         public bool EditorModeRememberWindowState = false;
         public WindowState EditorModeWindowState = new WindowState();
         public bool EditorModeFullscreen = false;
+        public Color EditorBackgroundColor = Color.FromArgb(14, 14, 14);
     }
 }

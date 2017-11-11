@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Point pos = InputManager.MousePosition0Based;
+                    Point pos = InputManager.ClientMousePosition;
 
                     if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {

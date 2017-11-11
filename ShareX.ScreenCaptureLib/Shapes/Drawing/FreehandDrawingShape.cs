@@ -73,13 +73,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                if (Manager.IsCornerMoving)
+                if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
                     Move(InputManager.MouseVelocity);
                 }
                 else
                 {
-                    Point pos = InputManager.MousePosition0Based;
+                    Point pos = InputManager.ClientMousePosition;
 
                     if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {

@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public MouseButtons Buttons { get; private set; }
         public Point Position { get; private set; }
-        public Point ZeroBasedPosition { get; private set; }
+        public Point ClientPosition { get; private set; }
 
         public void Update(Control control)
         {
@@ -42,11 +42,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (control != null)
             {
-                ZeroBasedPosition = control.PointToClient(Position);
+                ClientPosition = control.PointToClient(Position);
             }
             else
             {
-                ZeroBasedPosition = CaptureHelpers.ScreenToClient(Position);
+                ClientPosition = CaptureHelpers.ScreenToClient(Position);
             }
         }
     }

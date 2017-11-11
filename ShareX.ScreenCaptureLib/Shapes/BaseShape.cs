@@ -78,8 +78,8 @@ namespace ShareX.ScreenCaptureLib
         internal ShapeManager Manager { get; set; }
 
         protected InputManager InputManager => Manager.InputManager;
-        protected RegionCaptureOptions Options => Manager.Config;
-        protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
+        protected RegionCaptureOptions Options => Manager.Options;
+        protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
 
@@ -112,7 +112,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void Move(int x, int y)
         {
-            Rectangle = Rectangle.LocationOffset(x, y);
+            StartPosition = StartPosition.Add(x, y);
+            EndPosition = EndPosition.Add(x, y);
         }
 
         public void Move(Point offset)
@@ -124,17 +125,17 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                Rectangle = Rectangle.SizeOffset(x, y);
+                EndPosition = EndPosition.Add(x, y);
             }
             else
             {
-                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                StartPosition = StartPosition.Add(x, y);
             }
         }
 
         public virtual void OnCreating()
         {
-            Point pos = InputManager.MousePosition0Based;
+            Point pos = InputManager.ClientMousePosition;
 
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
@@ -156,9 +157,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.MousePosition0Based;
+                Point pos = InputManager.ClientMousePosition;
 
-                if (Manager.IsCornerMoving)
+                if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
                     StartPosition = StartPosition.Add(InputManager.MouseVelocity);
                 }
@@ -186,7 +187,7 @@ namespace ShareX.ScreenCaptureLib
 
                 EndPosition = pos;
             }
-            else if (Manager.IsMoving)
+            else if (Manager.IsMoving && !Manager.IsPanning)
             {
                 Move(InputManager.MouseVelocity);
             }
@@ -235,7 +236,14 @@ namespace ShareX.ScreenCaptureLib
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                     }
 
-                    Point pos = InputManager.MousePosition0Based;
+                    if (Manager.IsCornerMoving || Manager.IsPanning)
+                    {
+                        tempStartPos.Offset(InputManager.MouseVelocity);
+                        tempEndPos.Offset(InputManager.MouseVelocity);
+                        tempNodePos.Offset(InputManager.MouseVelocity);
+                    }
+
+                    Point pos = InputManager.ClientMousePosition;
                     Point startPos = tempStartPos;
                     Point endPos = tempEndPos;
 
@@ -273,7 +281,8 @@ namespace ShareX.ScreenCaptureLib
                             break;
                     }
 
-                    Rectangle = CaptureHelpers.CreateRectangle(startPos, endPos);
+                    StartPosition = startPos;
+                    EndPosition = endPos;
                 }
             }
         }

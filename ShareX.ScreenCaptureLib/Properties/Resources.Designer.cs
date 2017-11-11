@@ -1572,6 +1572,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editor background color....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_EditorBackgroundColor {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_EditorBackgroundColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flip horizontal.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_FlipHorizontal {

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -63,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
                 Pen pen = new Pen(borderColor, borderSize);
                 pen.CustomEndCap = lineCap;
 
-                if (ArrowHeadsBothSide)
+                if (ArrowHeadsBothSide && MathHelpers.Distance(StartPosition, EndPosition) > arrowHeight * borderSize * 2)
                 {
                     pen.CustomStartCap = lineCap;
                 }

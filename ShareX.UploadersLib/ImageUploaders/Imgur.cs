@@ -265,6 +265,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             ReturnResponseOnError = true;
+
             UploadResult result = SendRequestFile("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))

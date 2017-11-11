@@ -27,6 +27,7 @@
 
 using Newtonsoft.Json;
 using ShareX.UploadersLib.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -57,41 +58,78 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public LithiioSettings Config { get; private set; }
 
+        public Lithiio()
+        {
+        }
+
         public Lithiio(LithiioSettings config)
         {
             Config = config;
         }
 
-        private const string uploadUrl = "http://api.lithi.io/v3/";
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("key", Config.UserAPIKey);
-            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments);
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("key", Config.UserAPIKey);
+
+            UploadResult result = SendRequestFile("https://upload.lithi.io/v1.php", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
-                LithiioResponse response = JsonConvert.DeserializeObject<LithiioResponse>(result.Response);
+                LithiioUploadResponse uploadResponse = JsonConvert.DeserializeObject<LithiioUploadResponse>(result.Response);
 
-                if (response.Success)
+                if (uploadResponse.Success)
                 {
-                    result.URL = response.URL;
+                    result.URL = uploadResponse.URL;
                 }
                 else
                 {
-                    Errors.Add(response.Error);
+                    Errors.Add(uploadResponse.Error);
                 }
             }
 
             return result;
         }
 
-        public class LithiioResponse
+        public string FetchAPIKey(string email, string password)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("email", email);
+            args.Add("password", password);
+
+            string response = SendRequestMultiPart("https://lithi.io/api/v1/fetch-api-key.php", args);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                LithiioFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LithiioFetchAPIKeyResponse>(response);
+
+                if (apiKeyResponse.Success)
+                {
+                    return apiKeyResponse.APIKey;
+                }
+                else
+                {
+                    throw new Exception(apiKeyResponse.Error);
+                }
+            }
+
+            return null;
+        }
+
+        private class LithiioResponse
         {
             public bool Success { get; set; }
-            public string URL { get; set; }
             public string Error { get; set; }
+        }
+
+        private class LithiioUploadResponse : LithiioResponse
+        {
+            public string URL { get; set; }
+        }
+
+        private class LithiioFetchAPIKeyResponse : LithiioResponse
+        {
+            public string APIKey { get; set; }
         }
     }
 

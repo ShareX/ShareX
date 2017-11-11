@@ -592,9 +592,10 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ShowError(this Exception e)
+        public static void ShowError(this Exception e, bool fullError = true)
         {
-            MessageBox.Show(e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            string error = fullError ? e.ToString() : e.Message;
+            MessageBox.Show(error, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

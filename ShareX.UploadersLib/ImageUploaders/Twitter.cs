@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         private const string APIVersion = "1.1";
         private const int characters_reserved_per_media = 23;
 
-        public const int MessageLimit = 140;
+        public const int MessageLimit = 280;
         public const int MessageMediaLimit = MessageLimit - characters_reserved_per_media;
 
         public OAuthInfo AuthInfo { get; set; }
