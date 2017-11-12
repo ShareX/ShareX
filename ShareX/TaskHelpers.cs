@@ -865,13 +865,14 @@ namespace ShareX
 
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
-            ThreadWorker worker = new ThreadWorker();
-
+            Image source = (Image)img.Clone();
             Image result = null;
+
+            ThreadWorker worker = new ThreadWorker();
 
             worker.DoWork += () =>
             {
-                result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                result = AnnotateImageUsingShareX(source, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
             };
 
             worker.Completed += () =>
