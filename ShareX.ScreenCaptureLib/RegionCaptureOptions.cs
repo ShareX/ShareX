@@ -82,6 +82,6 @@ namespace ShareX.ScreenCaptureLib
         public bool EditorModeRememberWindowState = false;
         public WindowState EditorModeWindowState = new WindowState();
         public bool EditorModeFullscreen = false;
-        public Color EditorBackgroundColor = Color.FromArgb(14, 14, 14);
+        public Color EditorBackgroundColor = Color.FromArgb(200, 200, 200);
     }
 }

@@ -91,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
-        private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen;
+        private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
         private Brush nodeBackgroundBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
@@ -131,6 +131,7 @@ namespace ShareX.ScreenCaptureLib
             textOuterBorderPen = new Pen(Color.FromArgb(150, Color.White));
             textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
+            canvasBorderPen = new Pen(Color.FromArgb(30, Color.Black));
         }
 
         private void InitializeComponent()
@@ -646,11 +647,14 @@ namespace ShareX.ScreenCaptureLib
             Update();
 
             Graphics g = e.Graphics;
-            g.CompositingMode = CompositingMode.SourceCopy;
-            if (!CanvasRectangle.Contains(ClientArea))
+
+            if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
                 g.Clear(Options.EditorBackgroundColor);
+                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
             }
+
+            g.CompositingMode = CompositingMode.SourceCopy;
             g.FillRectangle(backgroundBrush, CanvasRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
 
@@ -1442,6 +1446,7 @@ namespace ShareX.ScreenCaptureLib
             textOuterBorderPen?.Dispose();
             textInnerBorderPen?.Dispose();
             markerPen?.Dispose();
+            canvasBorderPen?.Dispose();
             defaultCursor?.Dispose();
             CustomNodeImage?.Dispose();
 
