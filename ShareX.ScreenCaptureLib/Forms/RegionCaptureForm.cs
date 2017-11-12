@@ -407,7 +407,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void CenterCanvas()
         {
-            CanvasCenterOffset = new Vector2(0f, ToolbarHeight + 0f);
+            CanvasCenterOffset = new Vector2(0f, ToolbarHeight / 2f);
             AutomaticPan();
         }
 
