@@ -76,28 +76,40 @@ namespace ShareX.IndexerLib
 
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
+                btnIndexFolder.Enabled = false;
                 btnUpload.Enabled = false;
-                Source = Indexer.Index(folderPath, Settings);
 
-                if (!string.IsNullOrEmpty(Source))
+                TaskEx.Run(() =>
                 {
-                    tcMain.SelectedTab = tpPreview;
-
-                    if (Settings.Output == IndexerOutput.Html)
+                    Source = Indexer.Index(folderPath, Settings);
+                },
+                () =>
+                {
+                    if (!IsDisposed)
                     {
-                        txtPreview.Visible = false;
-                        wbPreview.Visible = true;
-                        wbPreview.DocumentText = Source;
-                    }
-                    else
-                    {
-                        wbPreview.Visible = false;
-                        txtPreview.Visible = true;
-                        txtPreview.Text = Source;
-                    }
+                        if (!string.IsNullOrEmpty(Source))
+                        {
+                            tcMain.SelectedTab = tpPreview;
 
-                    btnUpload.Enabled = true;
-                }
+                            if (Settings.Output == IndexerOutput.Html)
+                            {
+                                txtPreview.Visible = false;
+                                wbPreview.Visible = true;
+                                wbPreview.DocumentText = Source;
+                            }
+                            else
+                            {
+                                wbPreview.Visible = false;
+                                txtPreview.Visible = true;
+                                txtPreview.Text = Source;
+                            }
+
+                            btnUpload.Enabled = true;
+                        }
+
+                        btnIndexFolder.Enabled = true;
+                    }
+                });
             }
         }
 

@@ -532,10 +532,22 @@ namespace ShareX
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
-                string source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
-                WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
-                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
-                TaskManager.Start(task);
+
+                string source = null;
+
+                TaskEx.Run(() =>
+                {
+                    source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
+                },
+                () =>
+                {
+                    if (!string.IsNullOrEmpty(source))
+                    {
+                        WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
+                        task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                        TaskManager.Start(task);
+                    }
+                });
             }
         }
     }
