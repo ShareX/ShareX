@@ -158,7 +158,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CanvasSizeForm";
-            this.TopMost = true;
             this.Shown += new System.EventHandler(this.CanvasSizeForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRight)).EndInit();

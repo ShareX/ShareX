@@ -865,8 +865,13 @@ namespace ShareX
 
         private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
         {
-            Image source = (Image)img.Clone();
+            Image source = null;
             Image result = null;
+
+            if (img != null)
+            {
+                source = (Image)img.Clone();
+            }
 
             ThreadWorker worker = new ThreadWorker();
 

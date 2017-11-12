@@ -180,138 +180,6 @@
   <data name="flpProperties.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;lblFont.Name" xml:space="preserve">
-    <value>lblFont</value>
-  </data>
-  <data name="&gt;&gt;lblFont.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFont.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;lblFont.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Name" xml:space="preserve">
-    <value>cbFonts</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Name" xml:space="preserve">
-    <value>lblTextSize</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Name" xml:space="preserve">
-    <value>nudTextSize</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Name" xml:space="preserve">
-    <value>cbBold</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbBold.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Name" xml:space="preserve">
-    <value>cbItalic</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Name" xml:space="preserve">
-    <value>cbUnderline</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Name" xml:space="preserve">
-    <value>btnAlignmentHorizontal</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Name" xml:space="preserve">
-    <value>btnAlignmentVertical</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="flpProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 5</value>
-  </data>
-  <data name="flpProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 32</value>
-  </data>
-  <data name="flpProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="flpProperties.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Name" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="lblFont.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -558,6 +426,30 @@
   <data name="&gt;&gt;btnAlignmentVertical.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="flpProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 5</value>
+  </data>
+  <data name="flpProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 32</value>
+  </data>
+  <data name="flpProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="flpProperties.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Name" xml:space="preserve">
+    <value>flpProperties</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -588,15 +480,6 @@
   <metadata name="cmsAlignmentHorizontal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="cmsAlignmentHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 70</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentHorizontal.Name" xml:space="preserve">
-    <value>cmsAlignmentHorizontal</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentHorizontal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiAlignmentLeft.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
@@ -615,18 +498,18 @@
   <data name="tsmiAlignmentRight.Text" xml:space="preserve">
     <value>Right</value>
   </data>
+  <data name="cmsAlignmentHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentHorizontal.Name" xml:space="preserve">
+    <value>cmsAlignmentHorizontal</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentHorizontal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="cmsAlignmentVertical.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 17</value>
   </metadata>
-  <data name="cmsAlignmentVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 70</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentVertical.Name" xml:space="preserve">
-    <value>cmsAlignmentVertical</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiAlignmentTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
@@ -644,6 +527,15 @@
   </data>
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Bottom</value>
+  </data>
+  <data name="cmsAlignmentVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentVertical.Name" xml:space="preserve">
+    <value>cmsAlignmentVertical</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -670,7 +562,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -697,7 +589,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

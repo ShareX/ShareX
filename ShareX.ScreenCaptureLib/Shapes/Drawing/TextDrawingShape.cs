@@ -122,16 +122,16 @@ namespace ShareX.ScreenCaptureLib
         {
             bool result;
 
-            Manager.PauseForm();
+            Manager.Form.Pause();
 
             using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions))
             {
-                result = inputBox.ShowDialog() == DialogResult.OK;
+                result = inputBox.ShowDialog(Manager.Form) == DialogResult.OK;
                 Text = inputBox.InputText;
                 OnConfigSave();
             }
 
-            Manager.ResumeForm();
+            Manager.Form.Resume();
 
             return result;
         }
