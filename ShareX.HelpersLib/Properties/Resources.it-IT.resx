@@ -1096,4 +1096,16 @@ Vuoi scaricarla ora?</value>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Servizio Condivisione URL Personalizzato</value>
   </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Standard - Infrequent Access (Accessi Sporadici)</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>Versione Attuale</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>Ultima Versione</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Standard</value>
+  </data>
 </root>

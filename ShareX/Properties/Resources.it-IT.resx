@@ -557,4 +557,7 @@ Riavviare ShareX?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Esegui ShareX all'Avvio di Windows</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>L'avvio automatico è stato disattivato in Gestione Attività</value>
+  </data>
 </root>
