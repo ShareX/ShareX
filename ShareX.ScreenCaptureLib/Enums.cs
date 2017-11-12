@@ -259,4 +259,12 @@ namespace ShareX.ScreenCaptureLib
         KeyPressHome,
         None
     }
+
+    public enum ImageEditorStartMode
+    {
+        Default,
+        Maximized,
+        PreviousState,
+        Fullscreen
+    }
 }

@@ -1635,15 +1635,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remember editor window state.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_RememberEditorWindowState {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_RememberEditorWindowState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Rotate 180°.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Rotate180 {
@@ -1721,24 +1712,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_ShapeOptions {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ShapeOptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start editor fullscreen.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_StartEditorFullscreen {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorFullscreen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start editor maximized.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_StartEditorMaximized {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorMaximized", resourceCulture);
             }
         }
         

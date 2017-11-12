@@ -54,6 +54,12 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public event EventHandler SelectedIndexChanged
+        {
+            add { cbList.SelectedIndexChanged += value; }
+            remove { cbList.SelectedIndexChanged -= value; }
+        }
+
         public LabeledComboBox()
         {
             InitializeComponent();
@@ -62,6 +68,11 @@ namespace ShareX.HelpersLib
         public void Add(object item)
         {
             cbList.Items.Add(item);
+        }
+
+        public void AddRange(object[] items)
+        {
+            cbList.Items.AddRange(items);
         }
     }
 }

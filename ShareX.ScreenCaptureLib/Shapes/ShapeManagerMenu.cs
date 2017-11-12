@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom,
-            tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiEditorBackgroundColor;
+            tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
@@ -724,38 +724,27 @@ namespace ShareX.ScreenCaptureLib
 
             if (Form.IsEditorMode)
             {
-                ToolStripMenuItem tsmiEditorModeStartMaximized = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_StartEditorMaximized);
-                tsmiEditorModeStartMaximized.Checked = Options.EditorModeStartMaximized;
-                tsmiEditorModeStartMaximized.CheckOnClick = true;
-                tsmiEditorModeStartMaximized.Click += (sender, e) => Options.EditorModeStartMaximized = tsmiEditorModeStartMaximized.Checked;
-                tsddbOptions.DropDownItems.Add(tsmiEditorModeStartMaximized);
+                ToolStripLabeledComboBox tscbImageEditorStartMode = new ToolStripLabeledComboBox("Editor start mode:");
+                tscbImageEditorStartMode.Content.AddRange(Helpers.GetEnumNamesProper<ImageEditorStartMode>());
+                tscbImageEditorStartMode.Content.SelectedIndex = (int)Options.ImageEditorStartMode;
+                tscbImageEditorStartMode.Content.SelectedIndexChanged +=
+                    (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
+                tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
 
-                ToolStripMenuItem tsmiEditorModeRememberWindowState = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_RememberEditorWindowState);
-                tsmiEditorModeRememberWindowState.Checked = Options.EditorModeRememberWindowState;
-                tsmiEditorModeRememberWindowState.CheckOnClick = true;
-                tsmiEditorModeRememberWindowState.Click += (sender, e) => Options.EditorModeRememberWindowState = tsmiEditorModeRememberWindowState.Checked;
-                tsddbOptions.DropDownItems.Add(tsmiEditorModeRememberWindowState);
-
-                ToolStripMenuItem tsmiEditorModeFullscreen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_StartEditorFullscreen);
-                tsmiEditorModeFullscreen.Checked = Options.EditorModeFullscreen;
-                tsmiEditorModeFullscreen.CheckOnClick = true;
-                tsmiEditorModeFullscreen.Click += (sender, e) => Options.EditorModeFullscreen = tsmiEditorModeFullscreen.Checked;
-                tsddbOptions.DropDownItems.Add(tsmiEditorModeFullscreen);
-
-                tsmiEditorBackgroundColor = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_EditorBackgroundColor);
-                tsmiEditorBackgroundColor.Click += (sender, e) =>
+                tsmiImageEditorBackgroundColor = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_EditorBackgroundColor);
+                tsmiImageEditorBackgroundColor.Click += (sender, e) =>
                 {
                     Form.Pause();
 
-                    if (ColorPickerForm.PickColor(Options.EditorBackgroundColor, out Color newColor))
+                    if (ColorPickerForm.PickColor(Options.ImageEditorBackgroundColor, out Color newColor))
                     {
-                        Options.EditorBackgroundColor = newColor;
+                        Options.ImageEditorBackgroundColor = newColor;
                         UpdateMenu();
                     }
 
                     Form.Resume();
                 };
-                tsddbOptions.DropDownItems.Add(tsmiEditorBackgroundColor);
+                tsddbOptions.DropDownItems.Add(tsmiImageEditorBackgroundColor);
 
                 tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
             }
@@ -1279,10 +1268,10 @@ namespace ShareX.ScreenCaptureLib
                 tsmiRegionCapture.Visible = !Options.QuickCrop && ValidRegions.Length > 0;
             }
 
-            if (tsmiEditorBackgroundColor != null)
+            if (tsmiImageEditorBackgroundColor != null)
             {
-                if (tsmiEditorBackgroundColor.Image != null) tsmiEditorBackgroundColor.Image.Dispose();
-                tsmiEditorBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(Options.EditorBackgroundColor, new Rectangle(0, 0, 16, 16));
+                if (tsmiImageEditorBackgroundColor.Image != null) tsmiImageEditorBackgroundColor.Image.Dispose();
+                tsmiImageEditorBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(Options.ImageEditorBackgroundColor, new Rectangle(0, 0, 16, 16));
             }
         }
 

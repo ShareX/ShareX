@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Mode = mode;
             Options = options;
-            IsFullscreen = !IsEditorMode || Options.EditorModeFullscreen;
+            IsFullscreen = !IsEditorMode || Options.ImageEditorStartMode == ImageEditorStartMode.Fullscreen;
 
             ClientArea = CaptureHelpers.GetScreenBounds0Based();
             CanvasRectangle = ClientArea;
@@ -161,9 +161,9 @@ namespace ShareX.ScreenCaptureLib
                 FormBorderStyle = FormBorderStyle.Sizable;
                 MinimumSize = new Size(800, 400);
 
-                if (Options.EditorModeRememberWindowState)
+                if (Options.ImageEditorStartMode == ImageEditorStartMode.PreviousState)
                 {
-                    Options.EditorModeWindowState.ApplyFormState(this);
+                    Options.ImageEditorWindowState.ApplyFormState(this);
                 }
                 else
                 {
@@ -172,7 +172,7 @@ namespace ShareX.ScreenCaptureLib
                     Bounds = new Rectangle(activeScreen.X + (activeScreen.Width / 2) - (size.Width / 2),
                         activeScreen.Y + (activeScreen.Height / 2) - (size.Height / 2), size.Width, size.Height);
 
-                    if (Options.EditorModeStartMaximized)
+                    if (Options.ImageEditorStartMode == ImageEditorStartMode.Maximized)
                     {
                         WindowState = FormWindowState.Maximized;
                     }
@@ -440,9 +440,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (IsEditorMode && Options.EditorModeRememberWindowState)
+            if (IsEditorMode && Options.ImageEditorStartMode == ImageEditorStartMode.PreviousState)
             {
-                Options.EditorModeWindowState.UpdateFormState(this);
+                Options.ImageEditorWindowState.UpdateFormState(this);
             }
         }
 
@@ -650,7 +650,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
-                g.Clear(Options.EditorBackgroundColor);
+                g.Clear(Options.ImageEditorBackgroundColor);
                 g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
             }
 

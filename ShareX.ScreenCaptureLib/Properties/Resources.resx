@@ -675,15 +675,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Flip vertical</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorMaximized" xml:space="preserve">
-    <value>Start editor maximized</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RememberEditorWindowState" xml:space="preserve">
-    <value>Remember editor window state</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
-    <value>Start editor fullscreen</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
     <value>Editor background color...</value>
   </data>
