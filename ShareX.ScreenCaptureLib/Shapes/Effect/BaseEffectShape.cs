@@ -72,6 +72,16 @@ namespace ShareX.ScreenCaptureLib
             CacheEffect();
         }
 
+        public override void OnResizing()
+        {
+            Dispose();
+        }
+
+        public override void OnResized()
+        {
+            CacheEffect();
+        }
+
         private void CacheEffect()
         {
             Dispose();

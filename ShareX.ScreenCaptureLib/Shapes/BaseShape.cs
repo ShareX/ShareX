@@ -155,6 +155,10 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnMoved() { }
 
+        public virtual void OnResizing() { }
+
+        public virtual void OnResized() { }
+
         public virtual void OnUpdate()
         {
             if (Manager.IsCreating)
