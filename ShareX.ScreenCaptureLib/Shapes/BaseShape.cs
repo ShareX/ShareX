@@ -240,6 +240,8 @@ namespace ShareX.ScreenCaptureLib
                         tempNodePos = node.Position;
                         tempStartPos = Rectangle.Location;
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+
+                        OnResizing();
                     }
 
                     if (Manager.IsCornerMoving || Manager.IsPanning)

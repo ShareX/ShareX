@@ -1246,11 +1246,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (InputManager.IsMouseDown(MouseButtons.Left))
                 {
-                    if (!IsResizing)
-                    {
-                        shape.OnResizing();
-                    }
-
                     shape.OnNodeUpdate();
                 }
                 else if (IsResizing)
