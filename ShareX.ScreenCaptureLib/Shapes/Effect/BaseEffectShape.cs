@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
             if (cachedEffect != null)
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                g.DrawImage(cachedEffect, Rectangle);
+                g.DrawImage(cachedEffect, RectangleInsideCanvas);
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
             else
@@ -85,8 +85,12 @@ namespace ShareX.ScreenCaptureLib
         private void CacheEffect()
         {
             Dispose();
-            cachedEffect = Manager.CropImage(Rectangle);
-            ApplyEffect((Bitmap)cachedEffect);
+
+            if (IsInsideCanvas)
+            {
+                cachedEffect = Manager.CropImage(RectangleInsideCanvas);
+                ApplyEffect((Bitmap)cachedEffect);
+            }
         }
 
         public override void Dispose()
