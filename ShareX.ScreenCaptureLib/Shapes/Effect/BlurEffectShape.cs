@@ -77,14 +77,16 @@ namespace ShareX.ScreenCaptureLib
         {
             if (BlurRadius > 1)
             {
-                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
-                rect.Intersect(Rectangle);
+                Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
 
-                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
+                if (!rect.IsEmpty)
                 {
-                    ApplyEffect(croppedImage);
+                    using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
+                    {
+                        ApplyEffect(croppedImage);
 
-                    g.DrawImage(croppedImage, rect);
+                        g.DrawImage(croppedImage, rect);
+                    }
                 }
             }
         }
