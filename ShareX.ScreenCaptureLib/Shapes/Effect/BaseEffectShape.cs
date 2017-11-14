@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -31,11 +32,60 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Effect;
 
-        public abstract void OnDraw(Graphics g);
+        private Image cachedEffect;
+
+        public abstract void ApplyEffect(Bitmap bmp);
+
+        public virtual void OnDraw(Graphics g)
+        {
+            if (cachedEffect != null)
+            {
+                g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                g.DrawImage(cachedEffect, Rectangle);
+                g.InterpolationMode = InterpolationMode.Bilinear;
+            }
+            else
+            {
+                OnDrawOverlay(g);
+            }
+        }
+
+        public abstract void OnDrawOverlay(Graphics g);
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             OnDraw(g);
+        }
+
+        public override void OnCreated()
+        {
+            CacheEffect();
+        }
+
+        public override void OnMoving()
+        {
+            Dispose();
+        }
+
+        public override void OnMoved()
+        {
+            CacheEffect();
+        }
+
+        private void CacheEffect()
+        {
+            Dispose();
+            cachedEffect = Manager.CropImage(Rectangle);
+            ApplyEffect((Bitmap)cachedEffect);
+        }
+
+        public override void Dispose()
+        {
+            if (cachedEffect != null)
+            {
+                cachedEffect.Dispose();
+                cachedEffect = null;
+            }
         }
     }
 }

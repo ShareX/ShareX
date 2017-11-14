@@ -44,28 +44,30 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.BlurRadius = BlurRadius;
         }
 
-        public override void OnDraw(Graphics g)
+        public override void ApplyEffect(Bitmap bmp)
         {
-            if (BlurRadius > 1)
+            ImageHelpers.BoxBlur(bmp, BlurRadius);
+        }
+
+        public override void OnDrawOverlay(Graphics g)
+        {
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
             {
-                using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
+                g.FillRectangle(brush, Rectangle);
+            }
+
+            g.DrawCornerLines(Rectangle.Offset(1), Pens.White, 20);
+
+            using (Font font = new Font("Verdana", 12))
+            {
+                string text = $"Blur ({BlurRadius})";
+                Size textSize = g.MeasureString(text, font).ToSize();
+
+                if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
                 {
-                    g.FillRectangle(brush, Rectangle);
-                }
-
-                g.DrawCornerLines(Rectangle.Offset(1), Pens.White, 20);
-
-                using (Font font = new Font("Verdana", 12))
-                {
-                    string text = $"Blur ({BlurRadius})";
-                    Size textSize = g.MeasureString(text, font).ToSize();
-
-                    if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                        {
-                            g.DrawString(text, font, Brushes.White, Rectangle, sf);
-                        }
+                        g.DrawString(text, font, Brushes.White, Rectangle, sf);
                     }
                 }
             }
@@ -80,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
                 {
-                    ImageHelpers.BoxBlur(croppedImage, BlurRadius);
+                    ApplyEffect(croppedImage);
 
                     g.DrawImage(croppedImage, rect);
                 }

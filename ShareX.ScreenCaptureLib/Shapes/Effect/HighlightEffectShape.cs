@@ -44,7 +44,12 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.HighlightColor = HighlightColor;
         }
 
-        public override void OnDraw(Graphics g)
+        public override void ApplyEffect(Bitmap bmp)
+        {
+            ImageHelpers.HighlightImage(bmp, HighlightColor);
+        }
+
+        public override void OnDrawOverlay(Graphics g)
         {
             using (Brush brush = new SolidBrush(Color.FromArgb(100, HighlightColor)))
             {
@@ -75,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
             {
-                ImageHelpers.HighlightImage(croppedImage, HighlightColor);
+                ApplyEffect(croppedImage);
 
                 g.DrawImage(croppedImage, rect);
             }

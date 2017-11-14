@@ -149,9 +149,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual void OnCreated()
-        {
-        }
+        public virtual void OnCreated() { }
+
+        public virtual void OnMoving() { }
+
+        public virtual void OnMoved() { }
 
         public virtual void OnUpdate()
         {

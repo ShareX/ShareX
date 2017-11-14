@@ -434,7 +434,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.F1:
                     Options.ShowHotkeys = !Options.ShowHotkeys;
                     if (tsmiTips != null)
+                    {
                         tsmiTips.Checked = Options.ShowHotkeys;
+                    }
                     break;
             }
 
@@ -672,6 +674,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.ShapeType == CurrentTool) // Select shape
             {
                 IsMoving = true;
+                shape.OnMoving();
                 Form.Cursor = Cursors.SizeAll;
                 CurrentShape = shape;
                 SelectCurrentShape();
@@ -688,6 +691,7 @@ namespace ShareX.ScreenCaptureLib
         private void EndRegionSelection()
         {
             bool wasCreating = IsCreating;
+            bool wasMoving = IsMoving;
 
             IsCreating = false;
             IsMoving = false;
@@ -728,6 +732,10 @@ namespace ShareX.ScreenCaptureLib
                             shape.OnCreated();
 
                             OnShapeCreated(shape);
+                        }
+                        else if (wasMoving)
+                        {
+                            shape.OnMoved();
                         }
 
                         SelectCurrentShape();
