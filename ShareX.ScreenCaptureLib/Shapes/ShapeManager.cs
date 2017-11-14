@@ -855,6 +855,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.OnConfigLoad();
+                shape.OnMoved();
             }
         }
 
