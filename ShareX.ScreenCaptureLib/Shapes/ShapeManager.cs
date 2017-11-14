@@ -1309,7 +1309,7 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public Rectangle LimitRectangleToImage(Rectangle rect)
+        public Rectangle LimitRectangleToCanvas(Rectangle rect)
         {
             return Rectangle.Intersect(rect, Form.CanvasRectangle);
         }

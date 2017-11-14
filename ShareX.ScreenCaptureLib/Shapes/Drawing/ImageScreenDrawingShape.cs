@@ -40,8 +40,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsValidShape)
                 {
-                    Rectangle rect = Manager.LimitRectangleToImage(Rectangle);
-                    Manager.DrawRegionArea(g, rect, true);
+                    Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
                 }
             }
             else
@@ -73,7 +72,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsValidShape)
             {
-                Rectangle = Manager.LimitRectangleToImage(Rectangle);
+                Rectangle = RectangleInsideCanvas;
                 Image = Manager.CropImage(Rectangle);
             }
 

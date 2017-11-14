@@ -41,6 +41,10 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
+        public Rectangle RectangleInsideCanvas => Manager.LimitRectangleToCanvas(Rectangle);
+
+        public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
+
         private Point startPosition;
 
         public Point StartPosition
