@@ -39,9 +39,23 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract ShapeType ShapeType { get; }
 
-        public Rectangle Rectangle { get; set; }
+        private Rectangle rectangle;
 
-        public Rectangle RectangleInsideCanvas => Manager.LimitRectangleToCanvas(Rectangle);
+        public Rectangle Rectangle
+        {
+            get
+            {
+                return rectangle;
+            }
+            set
+            {
+                rectangle = value;
+                startPosition = rectangle.Location;
+                endPosition = new Point(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
+            }
+        }
+
+        public Rectangle RectangleInsideCanvas => Rectangle.Intersect(Rectangle, Manager.Form.CanvasRectangle);
 
         public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
 
@@ -56,8 +70,7 @@ namespace ShareX.ScreenCaptureLib
             set
             {
                 startPosition = value;
-
-                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
             }
         }
 
@@ -72,8 +85,7 @@ namespace ShareX.ScreenCaptureLib
             set
             {
                 endPosition = value;
-
-                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
             }
         }
 

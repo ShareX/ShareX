@@ -1312,11 +1312,6 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public Rectangle LimitRectangleToCanvas(Rectangle rect)
-        {
-            return Rectangle.Intersect(rect, Form.CanvasRectangle);
-        }
-
         public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
         {
             Form.DrawRegionArea(g, rect, isAnimated);
