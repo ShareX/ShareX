@@ -559,10 +559,12 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (e.Control)
                     {
+                        shape.OnMoving();
                         shape.Move(x, y);
                     }
                     else
                     {
+                        shape.OnResizing();
                         shape.Resize(x, y, !e.Alt);
                     }
                 }
