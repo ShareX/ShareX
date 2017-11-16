@@ -32,6 +32,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
 
+        public override string OverlayText => $"Pixelate [{PixelSize}]";
+
         public int PixelSize { get; set; }
 
         public override void OnConfigLoad()
@@ -49,45 +51,11 @@ namespace ShareX.ScreenCaptureLib
             ImageHelpers.Pixelate(bmp, PixelSize);
         }
 
-        public override void OnDrawOverlay(Graphics g)
-        {
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
-            {
-                g.FillRectangle(brush, Rectangle);
-            }
-
-            g.DrawCornerLines(Rectangle.Offset(1), Pens.White, 20);
-
-            using (Font font = new Font("Verdana", 12))
-            {
-                string text = $"Pixelate ({PixelSize})";
-                Size textSize = g.MeasureString(text, font).ToSize();
-
-                if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
-                {
-                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                    {
-                        g.DrawString(text, font, Brushes.White, Rectangle, sf);
-                    }
-                }
-            }
-        }
-
         public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             if (PixelSize > 1)
             {
-                Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
-
-                if (!rect.IsEmpty)
-                {
-                    using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
-                    {
-                        ApplyEffect(croppedImage);
-
-                        g.DrawImage(croppedImage, rect);
-                    }
-                }
+                base.OnDrawFinal(g, bmp);
             }
         }
     }

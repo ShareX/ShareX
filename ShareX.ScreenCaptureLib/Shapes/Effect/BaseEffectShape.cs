@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -31,6 +32,8 @@ namespace ShareX.ScreenCaptureLib
     public abstract class BaseEffectShape : BaseShape
     {
         public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Effect;
+
+        public abstract string OverlayText { get; }
 
         private Image cachedEffect;
 
@@ -50,11 +53,43 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public abstract void OnDrawOverlay(Graphics g);
+        public virtual void OnDrawOverlay(Graphics g)
+        {
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
+            {
+                g.FillRectangle(brush, Rectangle);
+            }
+
+            g.DrawCornerLines(Rectangle.Offset(1), Pens.White, 25);
+
+            using (Font font = new Font("Verdana", 12))
+            {
+                string text = OverlayText;
+                Size textSize = g.MeasureString(text, font).ToSize();
+
+                if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
+                {
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString(text, font, Brushes.White, Rectangle, sf);
+                    }
+                }
+            }
+        }
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            OnDraw(g);
+            Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
+
+            if (!rect.IsEmpty)
+            {
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
+                {
+                    ApplyEffect(croppedImage);
+
+                    g.DrawImage(croppedImage, rect);
+                }
+            }
         }
 
         public override void OnCreated()
