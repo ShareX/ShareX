@@ -50,8 +50,7 @@ namespace ShareX.ScreenCaptureLib
             Icon icon = Icon.FromHandle(cursorHandle);
             cursorBitmap = icon.ToBitmap();
 
-            StartPosition = position;
-            EndPosition = new Point(position.X + cursorBitmap.Size.Width - 1, position.Y + cursorBitmap.Size.Height - 1);
+            Rectangle = new Rectangle(position, cursorBitmap.Size);
         }
 
         public override void ShowNodes()
