@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -36,16 +37,44 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
 
+        public Point[] Points { get; set; }
         public bool CenterNodeActive { get; set; }
-        public Point[] CenterPoints { get; set; } = new Point[MaximumCenterPointCount];
         public int CenterPointCount { get; set; }
 
-        public override bool IsValidShape => StartPosition != EndPosition;
+        public override bool IsValidShape => Rectangle.Width > 1 || Rectangle.Height > 1;
+
+        private void AdjustPoints(int centerPointCount)
+        {
+            Point[] newPoints = new Point[2 + centerPointCount];
+
+            if (Points != null)
+            {
+                newPoints[0] = Points[0];
+                newPoints[newPoints.Length - 1] = Points[Points.Length - 1];
+            }
+
+            for (int i = 0; i < newPoints.Length; i++)
+            {
+                if (newPoints[i] == null) newPoints[i] = new Point();
+            }
+
+            Points = newPoints;
+        }
 
         public override void OnConfigLoad()
         {
             base.OnConfigLoad();
-            CenterPointCount = AnnotationOptions.LineCenterPointCount;
+
+            int previousCenterPointCount = CenterPointCount;
+            CenterPointCount = AnnotationOptions.LineCenterPointCount.Between(0, MaximumCenterPointCount);
+
+            AdjustPoints(CenterPointCount);
+
+            if (CenterPointCount != previousCenterPointCount)
+            {
+                CenterNodeActive = false;
+                AutoPositionCenterPoints();
+            }
 
             if (Manager.NodesVisible)
             {
@@ -63,9 +92,16 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnUpdate();
 
-            if (CenterNodeActive)
+            if (Manager.IsCreating)
             {
-                Rectangle = CreatePoints().CreateRectangle();
+                Points[0] = StartPosition;
+                Points[Points.Length - 1] = EndPosition;
+            }
+            else
+            {
+                AutoPositionCenterPoints();
+
+                Rectangle = Points.CreateRectangle();
             }
         }
 
@@ -76,24 +112,22 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawLine(Graphics g)
         {
-            List<Point> points = CreatePoints();
-
             if (Shadow)
             {
-                List<Point> shadowPoints = new List<Point>();
+                Point[] shadowPoints = new Point[Points.Length];
 
-                foreach (Point point in points)
+                for (int i = 0; i < shadowPoints.Length; i++)
                 {
-                    shadowPoints.Add(point.Add(ShadowOffset));
+                    shadowPoints[i] = Points[i].Add(ShadowOffset);
                 }
 
                 DrawLine(g, ShadowColor, BorderSize, shadowPoints);
             }
 
-            DrawLine(g, BorderColor, BorderSize, points);
+            DrawLine(g, BorderColor, BorderSize, Points);
         }
 
-        protected void DrawLine(Graphics g, Color borderColor, int borderSize, List<Point> points)
+        protected void DrawLine(Graphics g, Color borderColor, int borderSize, Point[] points)
         {
             if (borderSize > 0 && borderColor.A > 0)
             {
@@ -106,34 +140,19 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Pen pen = CreatePen(borderColor, borderSize))
                 {
-                    if (points.Count > 2)
+                    if (CenterNodeActive && points.Length > 2)
                     {
-                        g.DrawCurve(pen, points.ToArray());
+                        g.DrawCurve(pen, points);
                     }
                     else
                     {
-                        g.DrawLine(pen, points[0], points[1]);
+                        g.DrawLine(pen, points[0], points[points.Length - 1]);
                     }
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
                 g.PixelOffsetMode = PixelOffsetMode.Default;
             }
-        }
-
-        private List<Point> CreatePoints()
-        {
-            List<Point> points = new List<Point>();
-            points.Add(StartPosition);
-            if (CenterNodeActive)
-            {
-                for (int i = 0; i < CenterPointCount; i++)
-                {
-                    points.Add(CenterPoints[i]);
-                }
-            }
-            points.Add(EndPosition);
-            return points;
         }
 
         protected virtual Pen CreatePen(Color borderColor, int borderSize)
@@ -148,12 +167,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Move(int x, int y)
         {
-            StartPosition = StartPosition.Add(x, y);
-            EndPosition = EndPosition.Add(x, y);
-
-            for (int i = 0; i < CenterPointCount; i++)
+            for (int i = 0; i < Points.Length; i++)
             {
-                CenterPoints[i] = CenterPoints[i].Add(x, y);
+                Points[i] = Points[i].Add(x, y);
             }
         }
 
@@ -161,11 +177,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                EndPosition = EndPosition.Add(x, y);
+                Points[Points.Length - 1] = Points[Points.Length - 1].Add(x, y);
             }
             else
             {
-                StartPosition = StartPosition.Add(x, y);
+                Points[0] = Points[0].Add(x, y);
             }
         }
 
@@ -177,7 +193,7 @@ namespace ShareX.ScreenCaptureLib
                 node.Visible = false;
             }
 
-            for (int i = 0; i < 2 + CenterPointCount; i++)
+            for (int i = 0; i < Points.Length; i++)
             {
                 Manager.ResizeNodes[i].Visible = true;
             }
@@ -185,58 +201,46 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeUpdate()
         {
-            if (Manager.ResizeNodes[0].IsDragging)
+            for (int i = 0; i < Points.Length; i++)
             {
-                Manager.IsResizing = true;
-
-                StartPosition = InputManager.ClientMousePosition;
-            }
-            else if (Manager.ResizeNodes[1].IsDragging)
-            {
-                Manager.IsResizing = true;
-
-                EndPosition = InputManager.ClientMousePosition;
-            }
-            else
-            {
-                for (int i = 2; i < 2 + CenterPointCount; i++)
+                if (Manager.ResizeNodes[i].IsDragging)
                 {
-                    if (Manager.ResizeNodes[i].IsDragging)
+                    Manager.IsResizing = true;
+
+                    if (i > 0 && i < Points.Length - 1)
                     {
                         CenterNodeActive = true;
-
-                        Manager.IsResizing = true;
-
-                        CenterPoints[i - 2] = InputManager.ClientMousePosition;
                     }
+
+                    Points[i] = InputManager.ClientMousePosition;
+                }
+            }
+        }
+
+        private void AutoPositionCenterPoints()
+        {
+            if (!CenterNodeActive)
+            {
+                for (int i = 1; i < Points.Length - 1; i++)
+                {
+                    Points[i] = new Point((int)MathHelpers.Lerp(Points[0].X, Points[Points.Length - 1].X, i / (CenterPointCount + 1f)),
+                        (int)MathHelpers.Lerp(Points[0].Y, Points[Points.Length - 1].Y, i / (CenterPointCount + 1f)));
                 }
             }
         }
 
         public override void OnNodePositionUpdate()
         {
-            Manager.ResizeNodes[0].Position = StartPosition;
-            Manager.ResizeNodes[1].Position = EndPosition;
-
-            if (!CenterNodeActive)
+            for (int i = 0; i < Points.Length; i++)
             {
-                for (int i = 0; i < CenterPointCount; i++)
-                {
-                    CenterPoints[i] = new Point((int)MathHelpers.Lerp(StartPosition.X, EndPosition.X, (i + 1f) / (CenterPointCount + 1f)),
-                        (int)MathHelpers.Lerp(StartPosition.Y, EndPosition.Y, (i + 1f) / (CenterPointCount + 1f)));
-                }
+                Manager.ResizeNodes[i].Position = Points[i];
             }
 
-            for (int i = 2; i < 2 + CenterPointCount; i++)
-            {
-                Manager.ResizeNodes[i].Position = CenterPoints[i - 2];
-            }
+            Manager.ResizeNodes[0].Visible = !Manager.ResizeNodes[0].Rectangle.IntersectsWith(Manager.ResizeNodes[Manager.ResizeNodes.Count - 1].Rectangle);
 
-            Manager.ResizeNodes[0].Visible = !Manager.ResizeNodes[0].Rectangle.IntersectsWith(Manager.ResizeNodes[1].Rectangle);
-
-            for (int i = 2; i < 2 + CenterPointCount; i++)
+            for (int i = 1; i < Points.Length - 1; i++)
             {
-                Manager.ResizeNodes[i].Visible = !Manager.ResizeNodes[i].Rectangle.IntersectsWith(Manager.ResizeNodes[1].Rectangle);
+                Manager.ResizeNodes[i].Visible = !Manager.ResizeNodes[i].Rectangle.IntersectsWith(Manager.ResizeNodes[Manager.ResizeNodes.Count - 1].Rectangle);
             }
         }
     }
