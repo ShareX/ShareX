@@ -128,7 +128,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void Move(int x, int y)
         {
-            Rectangle = Rectangle.LocationOffset(x, y);
+            StartPosition = StartPosition.Add(x, y);
+            EndPosition = EndPosition.Add(x, y);
         }
 
         public void Move(Point offset)

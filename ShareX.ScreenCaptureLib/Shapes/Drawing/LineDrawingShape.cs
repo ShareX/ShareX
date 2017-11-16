@@ -176,6 +176,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Move(int x, int y)
         {
+            base.Move(x, y);
+
             for (int i = 0; i < Points.Length; i++)
             {
                 Points[i] = Points[i].Add(x, y);
