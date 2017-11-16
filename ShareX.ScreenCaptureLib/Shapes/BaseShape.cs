@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 return startPosition;
             }
-            set
+            private set
             {
                 startPosition = value;
                 rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 return endPosition;
             }
-            set
+            private set
             {
                 endPosition = value;
                 rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);

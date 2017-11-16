@@ -35,9 +35,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
 
-        public Point[] Points { get; set; }
-        public bool CenterNodeActive { get; set; }
-        public int CenterPointCount { get; set; }
+        public Point[] Points { get; private set; }
+        public bool CenterNodeActive { get; private set; }
+        public int CenterPointCount { get; private set; }
 
         public override bool IsValidShape => Rectangle.Width > 1 || Rectangle.Height > 1;
 

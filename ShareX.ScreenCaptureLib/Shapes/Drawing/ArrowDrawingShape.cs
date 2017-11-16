@@ -64,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
                 Pen pen = new Pen(borderColor, borderSize);
                 pen.CustomEndCap = lineCap;
 
-                if (ArrowHeadsBothSide && MathHelpers.Distance(StartPosition, EndPosition) > arrowHeight * borderSize * 2)
+                if (ArrowHeadsBothSide && MathHelpers.Distance(Points[0], Points[Points.Length - 1]) > arrowHeight * borderSize * 2)
                 {
                     pen.CustomStartCap = lineCap;
                 }
