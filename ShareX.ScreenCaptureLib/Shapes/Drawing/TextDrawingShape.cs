@@ -95,7 +95,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.ClientMousePosition;
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
             if (ShowTextInputBox())
             {

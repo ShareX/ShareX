@@ -140,11 +140,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                EndPosition = EndPosition.Add(x, y);
+                Rectangle = Rectangle.SizeOffset(x, y);
             }
             else
             {
-                StartPosition = StartPosition.Add(x, y);
+                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
             }
         }
 
@@ -160,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 Manager.IsCreating = true;
-                StartPosition = EndPosition = pos;
+                Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
             }
         }
 

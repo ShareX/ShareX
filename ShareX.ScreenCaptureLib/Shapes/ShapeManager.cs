@@ -1282,7 +1282,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentTool = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    shape.StartPosition = shape.EndPosition = InputManager.ClientMousePosition;
+                    Point pos = InputManager.ClientMousePosition;
+                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.SetImage(img, true);
                     AddShape(shape);
                     SelectCurrentShape();
@@ -1296,7 +1297,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentTool = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
-                    shape.StartPosition = shape.EndPosition = InputManager.ClientMousePosition;
+                    Point pos = InputManager.ClientMousePosition;
+                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.Text = text.Trim();
                     shape.AutoSize(true);
                     AddShape(shape);

@@ -55,8 +55,7 @@ namespace ShareX.ScreenCaptureLib
                     location = Rectangle.Location;
                 }
 
-                StartPosition = location;
-                EndPosition = new Point(location.X + size.Width - 1, location.Y + size.Height - 1);
+                Rectangle = new Rectangle(location, size);
             }
         }
 
@@ -107,7 +106,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.ClientMousePosition;
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
             if (!OpenImageDialog(true))
             {
