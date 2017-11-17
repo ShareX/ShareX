@@ -62,7 +62,7 @@ namespace ShareX.HelpersLib
 
         public void WriteElapsedMilliseconds(string text = null)
         {
-            Write(text, timer.ElapsedMilliseconds + " milliseconds.");
+            Write(text, timer.Elapsed.TotalMilliseconds + " milliseconds.");
         }
 
         public void Dispose()

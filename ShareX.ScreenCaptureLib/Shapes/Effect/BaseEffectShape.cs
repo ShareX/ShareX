@@ -35,7 +35,6 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract string OverlayText { get; }
 
-        private Image canvasCopy;
         private bool isEffectCaching;
         private Image cachedEffect;
 
@@ -131,32 +130,27 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!isEffectCaching)
             {
-                isEffectCaching = true;
+                ClearCache(true);
 
-                if (canvasCopy == null)
+                if (IsInsideCanvas)
                 {
-                    canvasCopy = (Image)Manager.Form.Canvas.Clone();
-                }
+                    isEffectCaching = true;
 
-                TaskEx.Run(() =>
-                {
-                    ClearCache();
+                    cachedEffect = Manager.CropImage(RectangleInsideCanvas);
 
-                    if (IsInsideCanvas)
+                    TaskEx.Run(() =>
                     {
-                        cachedEffect = Manager.CropImage(canvasCopy, RectangleInsideCanvas);
-
                         ApplyEffect((Bitmap)cachedEffect);
-                    }
 
-                    isEffectCaching = false;
-                });
+                        isEffectCaching = false;
+                    });
+                }
             }
         }
 
-        private void ClearCache()
+        private void ClearCache(bool forceClear = false)
         {
-            if (cachedEffect != null)
+            if ((forceClear || !isEffectCaching) && cachedEffect != null)
             {
                 cachedEffect.Dispose();
                 cachedEffect = null;
@@ -166,11 +160,6 @@ namespace ShareX.ScreenCaptureLib
         public override void Dispose()
         {
             ClearCache();
-
-            if (canvasCopy != null)
-            {
-                canvasCopy.Dispose();
-            }
         }
     }
 }
