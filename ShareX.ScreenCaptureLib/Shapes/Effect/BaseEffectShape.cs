@@ -57,11 +57,11 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDraw(Graphics g)
         {
-            if (isEffectCaching)
+            if (!cacheClearingPending && isEffectCaching)
             {
                 OnDrawOverlay(g, "Processing...");
             }
-            else if (cachedEffect != null)
+            else if (!cacheClearingPending && cachedEffect != null)
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
