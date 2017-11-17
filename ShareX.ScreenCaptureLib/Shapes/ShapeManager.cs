@@ -1333,6 +1333,11 @@ namespace ShareX.ScreenCaptureLib
 
         public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
         {
+            return CropImage(Form.Canvas, rect, onlyIfSizeDifferent);
+        }
+
+        public Image CropImage(Image img, Rectangle rect, bool onlyIfSizeDifferent = false)
+        {
             rect = CaptureHelpers.ScreenToClient(rect);
 
             Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
@@ -1340,11 +1345,11 @@ namespace ShareX.ScreenCaptureLib
             rect.X -= offset.X;
             rect.Y -= offset.Y;
 
-            rect.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height));
+            rect.Intersect(new Rectangle(0, 0, img.Width, img.Height));
 
-            if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != Form.Canvas.Size))
+            if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != img.Size))
             {
-                return ImageHelpers.CropImage(Form.Canvas, rect);
+                return ImageHelpers.CropImage(img, rect);
             }
 
             return null;

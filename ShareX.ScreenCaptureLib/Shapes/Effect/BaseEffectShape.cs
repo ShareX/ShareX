@@ -35,13 +35,19 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract string OverlayText { get; }
 
+        private Image canvasCopy;
+        private bool isEffectCaching;
         private Image cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
 
         public virtual void OnDraw(Graphics g)
         {
-            if (cachedEffect != null)
+            if (isEffectCaching)
+            {
+                OnDrawOverlay(g, "Processing...");
+            }
+            else if (cachedEffect != null)
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
@@ -55,6 +61,11 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDrawOverlay(Graphics g)
         {
+            OnDrawOverlay(g, OverlayText);
+        }
+
+        public void OnDrawOverlay(Graphics g, string overlayText)
+        {
             using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
             {
                 g.FillRectangle(brush, Rectangle);
@@ -64,14 +75,13 @@ namespace ShareX.ScreenCaptureLib
 
             using (Font font = new Font("Verdana", 12))
             {
-                string text = OverlayText;
-                Size textSize = g.MeasureString(text, font).ToSize();
+                Size textSize = g.MeasureString(overlayText, font).ToSize();
 
                 if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
                 {
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        g.DrawString(text, font, Brushes.White, Rectangle, sf);
+                        g.DrawString(overlayText, font, Brushes.White, Rectangle, sf);
                     }
                 }
             }
@@ -99,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnMoving()
         {
-            Dispose();
+            ClearCache();
         }
 
         public override void OnMoved()
@@ -109,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnResizing()
         {
-            Dispose();
+            ClearCache();
         }
 
         public override void OnResized()
@@ -119,21 +129,47 @@ namespace ShareX.ScreenCaptureLib
 
         private void CacheEffect()
         {
-            Dispose();
-
-            if (IsInsideCanvas)
+            if (!isEffectCaching)
             {
-                cachedEffect = Manager.CropImage(RectangleInsideCanvas);
-                ApplyEffect((Bitmap)cachedEffect);
+                isEffectCaching = true;
+
+                if (canvasCopy == null)
+                {
+                    canvasCopy = (Image)Manager.Form.Canvas.Clone();
+                }
+
+                TaskEx.Run(() =>
+                {
+                    ClearCache();
+
+                    if (IsInsideCanvas)
+                    {
+                        cachedEffect = Manager.CropImage(canvasCopy, RectangleInsideCanvas);
+
+                        ApplyEffect((Bitmap)cachedEffect);
+                    }
+
+                    isEffectCaching = false;
+                });
             }
         }
 
-        public override void Dispose()
+        private void ClearCache()
         {
             if (cachedEffect != null)
             {
                 cachedEffect.Dispose();
                 cachedEffect = null;
+            }
+        }
+
+        public override void Dispose()
+        {
+            ClearCache();
+
+            if (canvasCopy != null)
+            {
+                canvasCopy.Dispose();
             }
         }
     }
