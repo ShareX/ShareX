@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract string OverlayText { get; }
 
-        private bool isEffectCaching, cachePending;
+        private bool isEffectCaching, cachePending, cacheClearingPending;
         private Image cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
@@ -43,6 +43,11 @@ namespace ShareX.ScreenCaptureLib
         public override void OnUpdate()
         {
             base.OnUpdate();
+
+            if (cacheClearingPending)
+            {
+                ClearCache();
+            }
 
             if (cachePending)
             {
@@ -166,10 +171,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void ClearCache()
         {
-            if (!isEffectCaching && cachedEffect != null)
+            if (isEffectCaching)
+            {
+                cacheClearingPending = true;
+            }
+            else if (cachedEffect != null)
             {
                 cachedEffect.Dispose();
                 cachedEffect = null;
+                cacheClearingPending = false;
             }
         }
 
