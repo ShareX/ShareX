@@ -559,13 +559,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (e.Control)
                     {
+                        shape.OnMoving();
                         shape.Move(x, y);
-                        shape.OnMoved();
                     }
                     else
                     {
+                        shape.OnResizing();
                         shape.Resize(x, y, !e.Alt);
-                        shape.OnResized();
                     }
                 }
             }
@@ -573,6 +573,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_KeyUp(object sender, KeyEventArgs e)
         {
+            //bool wasDirPresed = isLeftPressed || isRightPressed || isUpPressed || isDownPressed;
+
             switch (e.KeyCode)
             {
                 case Keys.ControlKey:
@@ -601,6 +603,25 @@ namespace ShareX.ScreenCaptureLib
                     isDownPressed = false;
                     break;
             }
+
+            //bool isDirPresed = isLeftPressed || isRightPressed || isUpPressed || isDownPressed;
+
+            //if (wasDirPresed && !isDirPresed)
+            //{
+            //    BaseShape shape = CurrentShape;
+
+            //    if (shape != null && !IsCreating)
+            //    {
+            //        if (e.Control)
+            //        {
+            //            shape.OnMoved();
+            //        }
+            //        else
+            //        {
+            //            shape.OnResized();
+            //        }
+            //    }
+            //}
         }
 
         private void RunAction(RegionCaptureAction action)

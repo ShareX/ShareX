@@ -38,6 +38,12 @@ namespace ShareX.ScreenCaptureLib
         private bool isEffectCaching, cachePending, cacheClearingPending;
         private Image cachedEffect;
 
+        private long stopMovingTimeOut = 0;
+        private long stopResizingTimeOut = 0;
+
+        private const long stopResizingDelay = 500 * 10000; // 500 ms = 1/2 of second
+        private const long stopMovingDelay = 500 * 10000; // 500 ms = 1/2 of second
+
         public abstract void ApplyEffect(Bitmap bmp);
 
         public override void OnUpdate()
@@ -53,15 +59,25 @@ namespace ShareX.ScreenCaptureLib
             {
                 CacheEffect();
             }
+
+            if (stopMovingTimeOut > 0 && System.DateTime.UtcNow.Ticks > stopMovingTimeOut)
+            {
+                OnMoved();
+            }
+
+            if (stopResizingTimeOut > 0 && System.DateTime.UtcNow.Ticks > stopResizingTimeOut)
+            {
+                OnResized();
+            }
         }
 
         public virtual void OnDraw(Graphics g)
         {
-            if (isEffectCaching)
+            if (!cacheClearingPending && isEffectCaching)
             {
                 OnDrawOverlay(g, "Processing...");
             }
-            else if (cachedEffect != null)
+            else if (!cacheClearingPending && cachedEffect != null)
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
@@ -124,21 +140,25 @@ namespace ShareX.ScreenCaptureLib
         public override void OnMoving()
         {
             ClearCache();
+            stopMovingTimeOut = System.DateTime.UtcNow.Ticks + stopMovingDelay;
         }
 
         public override void OnMoved()
         {
             CacheEffect();
+            stopMovingTimeOut = 0;
         }
 
         public override void OnResizing()
         {
             ClearCache();
+            stopResizingTimeOut = System.DateTime.UtcNow.Ticks + stopResizingDelay;
         }
 
         public override void OnResized()
         {
             CacheEffect();
+            stopResizingTimeOut = 0;
         }
 
         private void CacheEffect()
@@ -163,7 +183,7 @@ namespace ShareX.ScreenCaptureLib
                     });
                 }
             }
-            else
+            else if (!cacheClearingPending)
             {
                 cachePending = true;
             }
