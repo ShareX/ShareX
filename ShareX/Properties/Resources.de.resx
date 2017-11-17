@@ -145,7 +145,7 @@
     <value>Lade Dateien hoch</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Diese Anwendungen könnten die Benutzung stören:</value>
+    <value>Diese Anwendungen könnten die Benutzung vom ShareX stören:</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Fehler</value>
@@ -154,7 +154,7 @@
     <value>Unterstützte Variablen: {0} und andere Variablen wie {1} usw.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Hier platzieren</value>
+    <value>Hierher ziehen</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Hotkeys aktiviert.</value>
@@ -186,7 +186,7 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
     <value>CLI-Videocodec existiert nicht:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu geöffnet werden.</value>
+    <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu gestartet werden.</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>Name kann nicht leer sein</value>
@@ -198,10 +198,10 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
     <value>Aufgabe beendet</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Warten...</value>
+    <value>Bitte warten...</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Deine Zwischenablage enthält ein Bild, willst du es im Bildeditor öffnen?
+    <value>In deiner Zwischenablage befindet sich ein Bild, willst du es im Bildeditor öffnen?
 
 Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Dateiauswahl zu öffnen.</value>
   </data>
@@ -215,7 +215,7 @@ Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Da
     <value>Menü verstecken</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Kann kein gültiges Twitter Konto finden.</value>
+    <value>Kann keinen gültigen Twitter Account finden.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -264,7 +264,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Tastenkürzel</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Ein Tastenkürzel auswählen...</value>
+    <value>Wähle ein Tastenkürzel...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>Aufgabeneinstellungen</value>
