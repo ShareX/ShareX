@@ -559,13 +559,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (e.Control)
                     {
+                        shape.OnMoving();
                         shape.Move(x, y);
-                        shape.OnMoved();
                     }
                     else
                     {
+                        shape.OnResizing();
                         shape.Resize(x, y, !e.Alt);
-                        shape.OnResized();
                     }
                 }
             }
@@ -587,19 +587,36 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
+                    ShapeMoved();
                     break;
                 case Keys.Right:
                 case Keys.D:
                     isRightPressed = false;
+                    ShapeMoved();
                     break;
                 case Keys.Up:
                 case Keys.W:
                     isUpPressed = false;
+                    ShapeMoved();
                     break;
                 case Keys.Down:
                 case Keys.S:
                     isDownPressed = false;
+                    ShapeMoved();
                     break;
+            }
+        }
+
+        private void ShapeMoved()
+        {
+            if (!IsCreating)
+            {
+                BaseShape shape = CurrentShape;
+
+                if (shape != null)
+                {
+                    shape.OnMoved();
+                }
             }
         }
 
