@@ -573,6 +573,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_KeyUp(object sender, KeyEventArgs e)
         {
+            bool wasMoving = isLeftPressed || isRightPressed || isUpPressed || isDownPressed;
+
             switch (e.KeyCode)
             {
                 case Keys.ControlKey:
@@ -587,23 +589,29 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
-                    ShapeMoved();
                     break;
                 case Keys.Right:
                 case Keys.D:
                     isRightPressed = false;
-                    ShapeMoved();
                     break;
                 case Keys.Up:
                 case Keys.W:
                     isUpPressed = false;
-                    ShapeMoved();
                     break;
                 case Keys.Down:
                 case Keys.S:
                     isDownPressed = false;
-                    ShapeMoved();
                     break;
+            }
+
+            if (!IsCreating && !IsMoving && wasMoving)
+            {
+                bool isMoving = isLeftPressed || isRightPressed || isUpPressed || isDownPressed;
+
+                if (!isMoving)
+                {
+                    ShapeMoved();
+                }
             }
         }
 
