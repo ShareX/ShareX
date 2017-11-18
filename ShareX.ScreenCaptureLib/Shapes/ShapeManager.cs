@@ -1344,6 +1344,18 @@ namespace ShareX.ScreenCaptureLib
             Form.DrawRegionArea(g, rect, isAnimated);
         }
 
+        private void UpdateCanvas(Image img)
+        {
+            Form.InitBackground(img);
+
+            foreach (BaseEffectShape effect in EffectShapes)
+            {
+                effect.OnMoved();
+            }
+
+            isAnnotated = true;
+        }
+
         public void CropArea(Rectangle rect)
         {
             Image img = CropImage(rect, true);
@@ -1351,8 +1363,7 @@ namespace ShareX.ScreenCaptureLib
             if (img != null)
             {
                 MoveAll(Form.CanvasRectangle.X - rect.X, Form.CanvasRectangle.Y - rect.Y);
-                Form.InitBackground(img);
-                isAnnotated = true;
+                UpdateCanvas(img);
             }
         }
 
@@ -1391,8 +1402,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (img != null)
                         {
-                            Form.InitBackground(img);
-                            isAnnotated = true;
+                            UpdateCanvas(img);
                         }
                     }
                 }
@@ -1411,8 +1421,7 @@ namespace ShareX.ScreenCaptureLib
                     if (img != null)
                     {
                         MoveAll(canvas.Left, canvas.Top);
-                        Form.InitBackground(img);
-                        isAnnotated = true;
+                        UpdateCanvas(img);
                     }
                 }
             }
@@ -1420,10 +1429,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void RotateImage(RotateFlipType type)
         {
-            Image clone = (Image)Form.Canvas.Clone();
-            clone.RotateFlip(type);
-            Form.InitBackground(clone);
-            isAnnotated = true;
+            Image img = (Image)Form.Canvas.Clone();
+            img.RotateFlip(type);
+            UpdateCanvas(img);
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)
