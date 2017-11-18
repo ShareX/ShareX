@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract string OverlayText { get; }
 
-        private bool isEffectCaching, cachePending, cacheClearingPending;
+        private bool drawCache, isEffectCaching, cachePending;
         private Image cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
@@ -43,11 +43,6 @@ namespace ShareX.ScreenCaptureLib
         public override void OnUpdate()
         {
             base.OnUpdate();
-
-            if (cacheClearingPending)
-            {
-                ClearCache();
-            }
 
             if (cachePending)
             {
@@ -57,11 +52,11 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDraw(Graphics g)
         {
-            if (isEffectCaching)
+            if (drawCache && isEffectCaching)
             {
                 OnDrawOverlay(g, "Processing...");
             }
-            else if (cachedEffect != null)
+            else if (drawCache && cachedEffect != null)
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.DrawImage(cachedEffect, RectangleInsideCanvas);
@@ -123,7 +118,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnMoving()
         {
-            ClearCache();
+            StopDrawCache();
         }
 
         public override void OnMoved()
@@ -133,7 +128,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnResizing()
         {
-            ClearCache();
+            StopDrawCache();
         }
 
         public override void OnResized()
@@ -146,6 +141,7 @@ namespace ShareX.ScreenCaptureLib
             if (!isEffectCaching)
             {
                 cachePending = false;
+                drawCache = true;
 
                 ClearCache();
 
@@ -169,17 +165,18 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void StopDrawCache()
+        {
+            drawCache = false;
+            cachePending = false;
+        }
+
         private void ClearCache()
         {
-            if (isEffectCaching)
-            {
-                cacheClearingPending = true;
-            }
-            else if (cachedEffect != null)
+            if (!isEffectCaching && cachedEffect != null)
             {
                 cachedEffect.Dispose();
                 cachedEffect = null;
-                cacheClearingPending = false;
             }
         }
 
