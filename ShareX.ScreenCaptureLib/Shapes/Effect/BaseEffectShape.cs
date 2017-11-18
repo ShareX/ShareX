@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract string OverlayText { get; }
 
-        private bool drawCache, isEffectCaching, cachePending;
+        private bool drawCache, isEffectCaching, isCachePending, isDisposePending;
         private Image cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnUpdate();
 
-            if (cachePending)
+            if (isCachePending)
             {
                 CacheEffect();
             }
@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!isEffectCaching)
             {
-                cachePending = false;
+                isCachePending = false;
                 drawCache = true;
 
                 ClearCache();
@@ -156,19 +156,24 @@ namespace ShareX.ScreenCaptureLib
                         ApplyEffect((Bitmap)cachedEffect);
 
                         isEffectCaching = false;
+
+                        if (isDisposePending)
+                        {
+                            Dispose();
+                        }
                     });
                 }
             }
             else
             {
-                cachePending = true;
+                isCachePending = true;
             }
         }
 
         private void StopDrawCache()
         {
             drawCache = false;
-            cachePending = false;
+            isCachePending = false;
         }
 
         private void ClearCache()
@@ -182,7 +187,14 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Dispose()
         {
-            ClearCache();
+            if (isEffectCaching)
+            {
+                isDisposePending = true;
+            }
+            else
+            {
+                ClearCache();
+            }
         }
     }
 }
