@@ -299,9 +299,6 @@
     <Compile Include="HotkeysConfig.cs" />
     <Compile Include="HotkeyManager.cs" />
     <Compile Include="HotkeySettings.cs" />
-    <Compile Include="Forms\HotkeyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Controls\HotkeySelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

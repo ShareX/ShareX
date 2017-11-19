@@ -23,19 +23,18 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.HelpersLib
 {
     public class HotkeyForm : Form
     {
-        public int HotkeyRepeatLimit { get; set; }
-
         public delegate void HotkeyEventHandler(ushort id, Keys key, Modifiers modifier);
 
         public event HotkeyEventHandler HotkeyPress;
+
+        public int HotkeyRepeatLimit { get; set; }
 
         private Stopwatch repeatLimitTimer;
 
