@@ -183,6 +183,9 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
   </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Esegui ShareX all'Avvio di Windows</value>
+  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostra ShareX nel Menu "Invia a"</value>
   </data>
