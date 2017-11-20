@@ -113,6 +113,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
+            base.OnCreated();
             CacheEffect();
         }
 

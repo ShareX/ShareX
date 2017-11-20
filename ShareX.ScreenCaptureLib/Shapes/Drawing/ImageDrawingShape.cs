@@ -115,6 +115,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
+                OnCreated();
                 ShowNodes();
             }
         }

@@ -111,6 +111,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreated()
         {
             AutoSize(true);
+            base.OnCreated();
             ShowNodes();
         }
 

@@ -100,6 +100,7 @@ namespace ShareX.ScreenCaptureLib
         protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
+        private Rectangle tempRectangle;
 
         public virtual bool Intersects(Point position)
         {
@@ -167,7 +168,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual void OnCreated() { }
+        public virtual void OnCreated()
+        {
+            InitialSize = Rectangle.Size;
+        }
 
         public virtual void OnMoving() { }
 
@@ -256,8 +260,9 @@ namespace ShareX.ScreenCaptureLib
                     if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
                     {
                         tempNodePos = node.Position;
-                        tempStartPos = Rectangle.Location;
-                        tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+                        tempStartPos = StartPosition;
+                        tempEndPos = EndPosition;
+                        tempRectangle = Rectangle;
 
                         OnResizing();
                     }
@@ -267,6 +272,7 @@ namespace ShareX.ScreenCaptureLib
                         tempStartPos.Offset(InputManager.MouseVelocity);
                         tempEndPos.Offset(InputManager.MouseVelocity);
                         tempNodePos.Offset(InputManager.MouseVelocity);
+                        tempRectangle.LocationOffset(InputManager.MouseVelocity);
                     }
 
                     Point pos = InputManager.ClientMousePosition;
@@ -313,24 +319,54 @@ namespace ShareX.ScreenCaptureLib
                     if (Manager.IsProportionalResizing)
                     {
                         double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
-                        int width = (int)Math.Round(ratio * InitialSize.Width);
-                        int height = (int)Math.Round(ratio * InitialSize.Height);
+                        int newWidth = (int)Math.Round(InitialSize.Width * ratio);
+                        int newHeight = (int)Math.Round(InitialSize.Height * ratio);
+
+                        Point anchor = new Point();
+
+                        switch (nodePosition)
+                        {
+                            case NodePosition.TopLeft:
+                            case NodePosition.Left:
+                            case NodePosition.BottomLeft:
+                                anchor.X = tempRectangle.Right - 1;
+                                break;
+                            case NodePosition.TopRight:
+                            case NodePosition.Right:
+                            case NodePosition.BottomRight:
+                                anchor.X = tempRectangle.X;
+                                break;
+                        }
+
+                        switch (nodePosition)
+                        {
+                            case NodePosition.TopLeft:
+                            case NodePosition.Top:
+                            case NodePosition.TopRight:
+                                anchor.Y = tempRectangle.Bottom - 1;
+                                break;
+                            case NodePosition.BottomLeft:
+                            case NodePosition.Bottom:
+                            case NodePosition.BottomRight:
+                                anchor.Y = tempRectangle.Y;
+                                break;
+                        }
 
                         Rectangle newRect = Rectangle;
 
-                        if (pos.X < tempStartPos.X)
+                        if (pos.X < anchor.X)
                         {
-                            newRect.X = newRect.Right - width;
+                            newRect.X = newRect.Right - newWidth;
                         }
 
-                        newRect.Width = width;
+                        newRect.Width = newWidth;
 
-                        if (pos.Y < tempStartPos.Y)
+                        if (pos.Y < anchor.Y)
                         {
-                            newRect.Y = newRect.Bottom - height;
+                            newRect.Y = newRect.Bottom - newHeight;
                         }
 
-                        newRect.Height = height;
+                        newRect.Height = newHeight;
 
                         Rectangle = newRect;
                     }

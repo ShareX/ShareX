@@ -80,6 +80,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 Remove();
             }
+            else
+            {
+                base.OnCreated();
+            }
         }
 
         public override void Dispose()
