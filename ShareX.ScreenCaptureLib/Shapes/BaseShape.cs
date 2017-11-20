@@ -260,8 +260,8 @@ namespace ShareX.ScreenCaptureLib
                     if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
                     {
                         tempNodePos = node.Position;
-                        tempStartPos = StartPosition;
-                        tempEndPos = EndPosition;
+                        tempStartPos = Rectangle.Location;
+                        tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                         tempRectangle = Rectangle;
 
                         OnResizing();
