@@ -89,6 +89,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public Size InitialSize { get; set; }
+
         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
 
         internal ShapeManager Manager { get; set; }
@@ -307,6 +309,31 @@ namespace ShareX.ScreenCaptureLib
 
                     StartPosition = startPos;
                     EndPosition = endPos;
+
+                    if (Manager.IsProportionalResizing)
+                    {
+                        double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
+                        int width = (int)Math.Round(ratio * InitialSize.Width);
+                        int height = (int)Math.Round(ratio * InitialSize.Height);
+
+                        Rectangle newRect = Rectangle;
+
+                        if (pos.X < tempStartPos.X)
+                        {
+                            newRect.X = newRect.Right - width;
+                        }
+
+                        newRect.Width = width;
+
+                        if (pos.Y < tempStartPos.Y)
+                        {
+                            newRect.Y = newRect.Bottom - height;
+                        }
+
+                        newRect.Height = height;
+
+                        Rectangle = newRect;
+                    }
                 }
             }
         }

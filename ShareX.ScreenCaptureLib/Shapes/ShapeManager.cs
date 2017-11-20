@@ -757,6 +757,7 @@ namespace ShareX.ScreenCaptureLib
                         if (wasCreating)
                         {
                             shape.OnCreated();
+                            shape.InitialSize = shape.Rectangle.Size;
 
                             OnShapeCreated(shape);
                         }
