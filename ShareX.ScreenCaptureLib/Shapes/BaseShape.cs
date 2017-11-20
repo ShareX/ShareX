@@ -318,6 +318,15 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Manager.IsProportionalResizing)
                     {
+                        switch (nodePosition)
+                        {
+                            case NodePosition.Top:
+                            case NodePosition.Right:
+                            case NodePosition.Bottom:
+                            case NodePosition.Left:
+                                return;
+                        }
+
                         double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
                         int newWidth = (int)Math.Round(InitialSize.Width * ratio);
                         int newHeight = (int)Math.Round(InitialSize.Height * ratio);
