@@ -476,4 +476,7 @@
   <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
     <value>Цвет фона редактора...</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Режим запуска редактора:</value>
+  </data>
 </root>
