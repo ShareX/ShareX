@@ -262,7 +262,7 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ImageEditorStartMode
     {
-        Default,
+        Normal,
         Maximized,
         PreviousState,
         Fullscreen
