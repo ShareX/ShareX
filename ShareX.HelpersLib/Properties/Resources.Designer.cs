@@ -1825,6 +1825,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fullscreen.
+        /// </summary>
+        internal static string ImageEditorStartMode_Fullscreen {
+            get {
+                return ResourceManager.GetString("ImageEditorStartMode_Fullscreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximized.
+        /// </summary>
+        internal static string ImageEditorStartMode_Maximized {
+            get {
+                return ResourceManager.GetString("ImageEditorStartMode_Maximized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string ImageEditorStartMode_Normal {
+            get {
+                return ResourceManager.GetString("ImageEditorStartMode_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous state.
+        /// </summary>
+        internal static string ImageEditorStartMode_PreviousState {
+            get {
+                return ResourceManager.GetString("ImageEditorStartMode_PreviousState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Big square.
         /// </summary>
         internal static string ImgurThumbnailType_Big_Square {

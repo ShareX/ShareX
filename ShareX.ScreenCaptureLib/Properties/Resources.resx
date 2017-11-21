@@ -678,4 +678,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
     <value>Editor background color...</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Editor start mode:</value>
+  </data>
 </root>
