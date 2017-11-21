@@ -260,7 +260,7 @@ namespace ShareX.ScreenCaptureLib
         None
     }
 
-    public enum ImageEditorStartMode
+    public enum ImageEditorStartMode // Localized
     {
         Normal,
         Maximized,

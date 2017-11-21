@@ -1181,4 +1181,16 @@ store.book[0].title</value>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>Использовать прямую ссылку</value>
   </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblLithiioEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>Получить ключ API...</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>Получить ключ API...</value>
+  </data>
 </root>

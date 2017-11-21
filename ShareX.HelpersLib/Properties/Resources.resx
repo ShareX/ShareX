@@ -1118,4 +1118,16 @@ Would you like to download it?</value>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Latest version</value>
   </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Maximized</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Previous state</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
 </root>

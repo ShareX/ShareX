@@ -724,8 +724,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (Form.IsEditorMode)
             {
-                ToolStripLabeledComboBox tscbImageEditorStartMode = new ToolStripLabeledComboBox("Editor start mode:");
-                tscbImageEditorStartMode.Content.AddRange(Helpers.GetEnumNamesProper<ImageEditorStartMode>());
+                ToolStripLabeledComboBox tscbImageEditorStartMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_EditorStartMode);
+                tscbImageEditorStartMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorStartMode>());
                 tscbImageEditorStartMode.Content.SelectedIndex = (int)Options.ImageEditorStartMode;
                 tscbImageEditorStartMode.Content.SelectedIndexChanged +=
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;

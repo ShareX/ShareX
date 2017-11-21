@@ -711,4 +711,10 @@
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>Редактор изображений...</value>
   </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Сбоку</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
 </root>
