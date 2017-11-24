@@ -98,6 +98,7 @@ namespace ShareX.ScreenCaptureLib
         private int frameCount;
         private bool pause, isKeyAllowed;
         private RectangleAnimation regionAnimation;
+        private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
 
@@ -119,6 +120,15 @@ namespace ShareX.ScreenCaptureLib
             {
                 Duration = TimeSpan.FromMilliseconds(200)
             };
+            if (IsEditorMode && Options.ShowEditorPanTip)
+            {
+                editorPanTipAnimation = new TextAnimation()
+                {
+                    Duration = TimeSpan.FromMilliseconds(5000),
+                    FadeOutDuration = TimeSpan.FromMilliseconds(1000),
+                    Text = "Tip: You can pan image by holding mouse middle button and dragging."
+                };
+            }
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
@@ -425,6 +435,11 @@ namespace ShareX.ScreenCaptureLib
 
             OnMoved();
             CenterCanvas();
+
+            if (IsEditorMode && Options.ShowEditorPanTip && editorPanTipAnimation != null)
+            {
+                editorPanTipAnimation.Start();
+            }
         }
 
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
@@ -820,6 +835,12 @@ namespace ShareX.ScreenCaptureLib
                 DrawCrosshair(g);
             }
 
+            // Draw image editor bottom tip
+            if (IsEditorMode && Options.ShowEditorPanTip && editorPanTipAnimation != null && editorPanTipAnimation.Update())
+            {
+                DrawBottomTipAnimation(g, editorPanTipAnimation);
+            }
+
             // Draw menu tooltips
             if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
             {
@@ -950,8 +971,14 @@ namespace ShareX.ScreenCaptureLib
         {
             Size textSize = g.MeasureString(textAnimation.Text, infoFontMedium).ToSize();
             int padding = 3;
-            Rectangle textRectangle = new Rectangle(textAnimation.Position.X, textAnimation.Position.Y, textSize.Width + padding * 2, textSize.Height + padding * 2);
+            textSize.Width += padding * 2;
+            textSize.Height += padding * 2;
+            Rectangle textRectangle = new Rectangle(textAnimation.Position.X, textAnimation.Position.Y, textSize.Width, textSize.Height);
+            DrawTextAnimation(g, textAnimation, textRectangle, padding);
+        }
 
+        private void DrawTextAnimation(Graphics g, TextAnimation textAnimation, Rectangle textRectangle, int padding)
+        {
             using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(44, 135, 206))))
             using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.White)))
             using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(0, 81, 145))))
@@ -960,6 +987,17 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
             }
+        }
+
+        private void DrawBottomTipAnimation(Graphics g, TextAnimation textAnimation)
+        {
+            Size textSize = g.MeasureString(textAnimation.Text, infoFontMedium).ToSize();
+            int padding = 5;
+            textSize.Width += padding * 2;
+            textSize.Height += padding * 2;
+            int margin = 20;
+            Rectangle textRectangle = new Rectangle(ClientArea.Width / 2 - textSize.Width / 2, ClientArea.Height - textSize.Height - margin, textSize.Width, textSize.Height);
+            DrawTextAnimation(g, textAnimation, textRectangle, padding);
         }
 
         private void WriteTips(StringBuilder sb)

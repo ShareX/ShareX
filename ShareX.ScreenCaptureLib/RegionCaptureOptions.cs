@@ -82,5 +82,6 @@ namespace ShareX.ScreenCaptureLib
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.Maximized;
         public WindowState ImageEditorWindowState = new WindowState();
         public Color ImageEditorBackgroundColor = Color.FromArgb(200, 200, 200);
+        public bool ShowEditorPanTip = true;
     }
 }

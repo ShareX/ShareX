@@ -777,6 +777,8 @@ namespace ShareX.ScreenCaptureLib
             IsPanning = true;
             Form.PanningStrech = new Point(0, 0);
             Form.Cursor = Cursors.SizeAll;
+
+            Options.ShowEditorPanTip = false;
         }
 
         private void EndPanning()
