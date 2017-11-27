@@ -388,4 +388,10 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Vervang de standaard aangepaste uploader:</value>
   </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extensie</value>
+  </data>
 </root>
