@@ -479,4 +479,7 @@
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Режим запуска редактора:</value>
   </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Заметка: Изображение можно перемещать, удерживая среднюю кнопку мыши.</value>
+  </data>
 </root>
