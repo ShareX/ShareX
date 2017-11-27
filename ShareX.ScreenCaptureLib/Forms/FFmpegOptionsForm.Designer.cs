@@ -362,6 +362,7 @@
             // 
             // tpX264
             // 
+            this.tpX264.BackColor = System.Drawing.SystemColors.Window;
             this.tpX264.Controls.Add(this.pbx264PresetWarning);
             this.tpX264.Controls.Add(this.nudx264CRF);
             this.tpX264.Controls.Add(this.lblx264CRF);
@@ -369,16 +370,15 @@
             this.tpX264.Controls.Add(this.lblx264Preset);
             resources.ApplyResources(this.tpX264, "tpX264");
             this.tpX264.Name = "tpX264";
-            this.tpX264.UseVisualStyleBackColor = true;
             // 
             // tpVpx
             // 
+            this.tpVpx.BackColor = System.Drawing.SystemColors.Window;
             this.tpVpx.Controls.Add(this.lblVP8BitrateK);
             this.tpVpx.Controls.Add(this.nudVP8Bitrate);
             this.tpVpx.Controls.Add(this.lblVP8Bitrate);
             resources.ApplyResources(this.tpVpx, "tpVpx");
             this.tpVpx.Name = "tpVpx";
-            this.tpVpx.UseVisualStyleBackColor = true;
             // 
             // lblVP8BitrateK
             // 
@@ -418,21 +418,21 @@
             // 
             // tpXvid
             // 
+            this.tpXvid.BackColor = System.Drawing.SystemColors.Window;
             this.tpXvid.Controls.Add(this.nudXvidQscale);
             this.tpXvid.Controls.Add(this.lblXvidQscale);
             resources.ApplyResources(this.tpXvid, "tpXvid");
             this.tpXvid.Name = "tpXvid";
-            this.tpXvid.UseVisualStyleBackColor = true;
             // 
             // tpNVENC
             // 
+            this.tpNVENC.BackColor = System.Drawing.SystemColors.Window;
             this.tpNVENC.Controls.Add(this.cbNVENCPreset);
             this.tpNVENC.Controls.Add(this.lblNVENCPreset);
             this.tpNVENC.Controls.Add(this.nudNVENCBitrate);
             this.tpNVENC.Controls.Add(this.lblNVENCBitrate);
             resources.ApplyResources(this.tpNVENC, "tpNVENC");
             this.tpNVENC.Name = "tpNVENC";
-            this.tpNVENC.UseVisualStyleBackColor = true;
             // 
             // cbNVENCPreset
             // 
@@ -475,13 +475,13 @@
             // 
             // tpGIF
             // 
+            this.tpGIF.BackColor = System.Drawing.SystemColors.Window;
             this.tpGIF.Controls.Add(this.cbGIFDither);
             this.tpGIF.Controls.Add(this.lblGIFDither);
             this.tpGIF.Controls.Add(this.cbGIFStatsMode);
             this.tpGIF.Controls.Add(this.lblGIFStatsMode);
             resources.ApplyResources(this.tpGIF, "tpGIF");
             this.tpGIF.Name = "tpGIF";
-            this.tpGIF.UseVisualStyleBackColor = true;
             // 
             // lblGIFDither
             // 
@@ -518,11 +518,11 @@
             // 
             // tpAAC
             // 
+            this.tpAAC.BackColor = System.Drawing.SystemColors.Window;
             this.tpAAC.Controls.Add(this.tbAACBitrate);
             this.tpAAC.Controls.Add(this.lblAACQuality);
             resources.ApplyResources(this.tpAAC, "tpAAC");
             this.tpAAC.Name = "tpAAC";
-            this.tpAAC.UseVisualStyleBackColor = true;
             // 
             // lblAACQuality
             // 
@@ -531,11 +531,11 @@
             // 
             // tpVorbis
             // 
+            this.tpVorbis.BackColor = System.Drawing.SystemColors.Window;
             this.tpVorbis.Controls.Add(this.tbVorbis_qscale);
             this.tpVorbis.Controls.Add(this.lblVorbisQuality);
             resources.ApplyResources(this.tpVorbis, "tpVorbis");
             this.tpVorbis.Name = "tpVorbis";
-            this.tpVorbis.UseVisualStyleBackColor = true;
             // 
             // lblVorbisQuality
             // 
@@ -544,11 +544,11 @@
             // 
             // tpMP3
             // 
+            this.tpMP3.BackColor = System.Drawing.SystemColors.Window;
             this.tpMP3.Controls.Add(this.tbMP3_qscale);
             this.tpMP3.Controls.Add(this.lblMP3Quality);
             resources.ApplyResources(this.tpMP3, "tpMP3");
             this.tpMP3.Name = "tpMP3";
-            this.tpMP3.UseVisualStyleBackColor = true;
             // 
             // lblMP3Quality
             // 
