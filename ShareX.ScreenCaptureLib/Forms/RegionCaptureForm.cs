@@ -126,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Duration = TimeSpan.FromMilliseconds(5000),
                     FadeOutDuration = TimeSpan.FromMilliseconds(1000),
-                    Text = "Tip: You can pan image by holding mouse middle button and dragging."
+                    Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
                 };
             }
 
