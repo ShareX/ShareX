@@ -147,4 +147,13 @@
   <data name="tpMain.Text" xml:space="preserve">
     <value>Bestanden</value>
   </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Naam wijzigen</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Herladen</value>
+  </data>
 </root>

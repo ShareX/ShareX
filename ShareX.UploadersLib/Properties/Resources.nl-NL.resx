@@ -223,4 +223,7 @@ Aangemaakte mappen:</value>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kan geen geldig FTP account vinden.</value>
   </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Plak verificatie code hier</value>
+  </data>
 </root>
