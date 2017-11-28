@@ -478,7 +478,7 @@
     <value>Anteprima Immagine</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
-    <value>Schermo Inter</value>
+    <value>Schermo Intero</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Finestra</value>
