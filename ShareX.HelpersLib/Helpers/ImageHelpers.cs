@@ -1655,12 +1655,12 @@ namespace ShareX.HelpersLib
             {
                 bool leave = false;
 
-                ColorBgra checkColor = unsafeBitmap.GetPixel(crop.X, crop.Y);
+                ColorBgra checkColor = unsafeBitmap.GetPixel(0, 0);
 
                 // Find X (Left to right)
-                for (int x = crop.X; x < crop.Width && !leave; x++)
+                for (int x = 0; x < bmp.Width && !leave; x++)
                 {
-                    for (int y = crop.Y; y < crop.Height; y++)
+                    for (int y = 0; y < bmp.Height; y++)
                     {
                         if (unsafeBitmap.GetPixel(x, y) != checkColor)
                         {
@@ -1675,13 +1675,13 @@ namespace ShareX.HelpersLib
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(crop.X, crop.Y);
+                    checkColor = unsafeBitmap.GetPixel(0, 0);
                 }
 
                 // Find Y (Top to bottom)
-                for (int y = crop.Y; y < crop.Height && !leave; y++)
+                for (int y = 0; y < bmp.Height && !leave; y++)
                 {
-                    for (int x = crop.X; x < crop.Width; x++)
+                    for (int x = 0; x < bmp.Width; x++)
                     {
                         if (unsafeBitmap.GetPixel(x, y) != checkColor)
                         {
@@ -1696,13 +1696,13 @@ namespace ShareX.HelpersLib
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(crop.Width - 1, crop.Y);
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
                 }
 
                 // Find Width (Right to left)
-                for (int x = crop.Width - 1; x >= crop.X && !leave; x--)
+                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
                 {
-                    for (int y = crop.Y; y < crop.Height; y++)
+                    for (int y = 0; y < bmp.Height; y++)
                     {
                         if (unsafeBitmap.GetPixel(x, y) != checkColor)
                         {
@@ -1717,13 +1717,13 @@ namespace ShareX.HelpersLib
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(crop.X, crop.Height - 1);
+                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
                 }
 
                 // Find Height (Bottom to top)
-                for (int y = crop.Height - 1; y >= crop.Y && !leave; y--)
+                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
                 {
-                    for (int x = crop.X; x < crop.Width; x++)
+                    for (int x = 0; x < bmp.Width; x++)
                     {
                         if (unsafeBitmap.GetPixel(x, y) != checkColor)
                         {
