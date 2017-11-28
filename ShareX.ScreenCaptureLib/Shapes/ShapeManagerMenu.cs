@@ -618,6 +618,11 @@ namespace ShareX.ScreenCaptureLib
                 tsmiCanvasSize.MouseDown += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
+                ToolStripMenuItem tsmiAutoCropImage = new ToolStripMenuItem("Auto crop image");
+                tsmiAutoCropImage.Image = Resources.image_crop;
+                tsmiAutoCropImage.MouseDown += (sender, e) => AutoCropImage();
+                tsddbImage.DropDownItems.Add(tsmiAutoCropImage);
+
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
                 ToolStripMenuItem tsmiRotate90Clockwise = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Rotate90Clockwise);
