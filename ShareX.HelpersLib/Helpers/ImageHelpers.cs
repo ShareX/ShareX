@@ -1671,6 +1671,12 @@ namespace ShareX.HelpersLib
                     }
                 }
 
+                // If all pixels same color
+                if (!leave)
+                {
+                    return crop;
+                }
+
                 leave = false;
 
                 if (!sameColorCrop)
@@ -1739,7 +1745,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>
-        /// If auto crop rectangle and source image rectangle is same then null will be returned.
+        /// If crop rectangle and source image rectangle is same then null will be returned.
         /// After auto crop, source image will be disposed.
         /// </summary>
         public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
