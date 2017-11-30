@@ -1430,6 +1430,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void AutoCropImage()
+        {
+            Bitmap bmp = ImageHelpers.AutoCropImage((Bitmap)Form.Canvas);
+
+            if (bmp != null)
+            {
+                UpdateCanvas(bmp);
+            }
+        }
+
         private void RotateImage(RotateFlipType type)
         {
             Image img = (Image)Form.Canvas.Clone();

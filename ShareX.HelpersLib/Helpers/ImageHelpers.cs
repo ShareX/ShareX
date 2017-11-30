@@ -267,7 +267,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>Automatically crop image to remove transparent outside area.</summary>
-        public static Bitmap AutoCropImage(Bitmap bmp)
+        public static Bitmap AutoCropTransparent(Bitmap bmp)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = source;
@@ -354,7 +354,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>Automatically crop image to remove transparent outside area. Only checks center pixels.</summary>
-        public static Bitmap QuickAutoCropImage(Bitmap bmp)
+        public static Bitmap QuickAutoCropTransparent(Bitmap bmp)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = source;
@@ -1644,6 +1644,127 @@ namespace ShareX.HelpersLib
                 g.FillRectangle(Brushes.Transparent, holeRect);
                 g.DrawRectangleProper(Pens.Black, holeRect);
             }
+        }
+
+        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle crop = source;
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            {
+                bool leave = false;
+
+                ColorBgra checkColor = unsafeBitmap.GetPixel(0, 0);
+
+                // Find X (Left to right)
+                for (int x = 0; x < bmp.Width && !leave; x++)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.X = x;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                // If all pixels same color
+                if (!leave)
+                {
+                    return crop;
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(0, 0);
+                }
+
+                // Find Y (Top to bottom)
+                for (int y = 0; y < bmp.Height && !leave; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Y = y;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
+                }
+
+                // Find Width (Right to left)
+                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Width = x - crop.X + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
+                }
+
+                // Find Height (Bottom to top)
+                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Height = y - crop.Y + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return crop;
+        }
+
+        /// <summary>
+        /// If crop rectangle and source image rectangle is same then null will be returned.
+        /// After auto crop, source image will be disposed.
+        /// </summary>
+        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop);
+
+            if (source != rect)
+            {
+                Bitmap croppedBitmap = CropBitmap(bmp, rect);
+
+                if (croppedBitmap != null)
+                {
+                    bmp.Dispose();
+                    return croppedBitmap;
+                }
+            }
+
+            return null;
         }
     }
 }
