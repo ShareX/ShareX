@@ -117,31 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>컴퓨터를 켤 때 ShareX도 실행하기</value>
+  </data>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Windows 탐색기의 "보내기" 컨텍스트 메뉴에 ShareX 표시하기</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>ShareX 최초 설정</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>이 설정들은 "프로그램 설정 -&gt; 연계 기능"에서 찾을 수 있습니다.</value>
+  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>확인</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 동작</value>
-  </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>인자:</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>확장자 필터: (예: jpg png mp4)</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>이름:</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>출력 파일 이름 확장자: (빈 칸 = 같은 파일 이름 사용)</value>
-  </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>파일 경로:</value>
-  </data>
-  <data name="cbHiddenWindow.Text" xml:space="preserve">
-    <value>창 숨기기</value>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
   </data>
 </root>

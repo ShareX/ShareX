@@ -117,31 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>추가</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>기본값으로 초기화...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 동작</value>
+    <value>ShareX - 간편 작업 메뉴 편집기</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>인자:</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>확장자 필터: (예: jpg png mp4)</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>이름:</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>출력 파일 이름 확장자: (빈 칸 = 같은 파일 이름 사용)</value>
-  </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>파일 경로:</value>
-  </data>
-  <data name="cbHiddenWindow.Text" xml:space="preserve">
-    <value>창 숨기기</value>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>팁: 빈 작업을 추가하면 메뉴 상에서 구분자로 바뀝니다.</value>
   </data>
 </root>
