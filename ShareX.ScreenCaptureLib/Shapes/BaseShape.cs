@@ -316,7 +316,7 @@ namespace ShareX.ScreenCaptureLib
                     StartPosition = startPos;
                     EndPosition = endPos;
 
-                    if (Manager.IsProportionalResizing)
+                    if (Manager.IsProportionalResizing && !InitialSize.IsEmpty)
                     {
                         switch (nodePosition)
                         {

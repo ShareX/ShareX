@@ -757,7 +757,6 @@ namespace ShareX.ScreenCaptureLib
                         if (wasCreating)
                         {
                             shape.OnCreated();
-                            shape.InitialSize = shape.Rectangle.Size;
 
                             OnShapeCreated(shape);
                         }
@@ -1313,6 +1312,7 @@ namespace ShareX.ScreenCaptureLib
                     Point pos = InputManager.ClientMousePosition;
                     shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.SetImage(img, true);
+                    shape.OnCreated();
                     AddShape(shape);
                     SelectCurrentShape();
                 }
@@ -1329,6 +1329,7 @@ namespace ShareX.ScreenCaptureLib
                     shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.Text = text.Trim();
                     shape.AutoSize(true);
+                    shape.OnCreated();
                     AddShape(shape);
                     SelectCurrentShape();
                 }
