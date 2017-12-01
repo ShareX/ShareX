@@ -145,7 +145,7 @@
     <value>마젠타:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>십진수:</value>
+    <value>10진법:</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>파랑:</value>
@@ -167,5 +167,8 @@
   </data>
   <data name="lblKey.Text" xml:space="preserve">
     <value>검정:</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>투명</value>
   </data>
 </root>

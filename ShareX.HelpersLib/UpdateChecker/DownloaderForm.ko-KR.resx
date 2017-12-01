@@ -127,7 +127,7 @@
     <value>진행 상황:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX 파일 다운로더</value>
+    <value>ShareX - 파일 다운로더</value>
   </data>
   <data name="cbShowChangelog.Text" xml:space="preserve">
     <value>업데이트 노트 보기</value>
