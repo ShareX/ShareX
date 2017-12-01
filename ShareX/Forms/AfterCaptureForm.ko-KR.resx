@@ -124,7 +124,7 @@
     <value>계속</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 촬영 후 작업</value>
+    <value>ShareX - 촬영 뒤</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>복사</value>
@@ -133,6 +133,12 @@
     <value>촬영 뒤</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>업로드 전</value>
+    <value>목적지</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>업로드 뒤</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>파일 이름:</value>
   </data>
 </root>

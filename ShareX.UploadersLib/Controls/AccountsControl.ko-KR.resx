@@ -124,7 +124,7 @@
     <value>복제</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>제거</value>
+    <value>삭제</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>테스트</value>

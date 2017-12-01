@@ -126,4 +126,28 @@
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>이 창이 활성화 되었을 때 "Ctrl" 키를 누르면 화면 색상 선택기를 멈출 수 있습니다.</value>
   </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>전부 복사</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>CMYK 복사</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>10진법 복사</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>16진법 복사</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>HSB 복사</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>위치 복사</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>RGB 복사</value>
+  </data>
 </root>

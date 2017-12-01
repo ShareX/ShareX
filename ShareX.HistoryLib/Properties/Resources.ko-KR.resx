@@ -207,4 +207,10 @@
   <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
     <value>URL들 ({0})</value>
   </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>다음 XML 파일을 읽어 들일 때 오류가 발생했습니다: {0}</value>
+  </data>
 </root>

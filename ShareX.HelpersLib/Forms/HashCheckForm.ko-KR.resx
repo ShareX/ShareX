@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>해시 검사</value>
+    <value>ShareX - 해시 검사</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>탐색...</value>
@@ -137,5 +137,44 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>타겟:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>파일 해시 검사</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>텍스트 변환</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>인코드</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>디코드</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>디코드</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>디코드</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>디코드</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>모두 복사</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>해시:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>16진법:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>이진법:</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
   </data>
 </root>

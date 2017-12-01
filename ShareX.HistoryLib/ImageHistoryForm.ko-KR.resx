@@ -135,4 +135,19 @@
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>섬네일</value>
   </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>최근 100개</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>최근 1000개</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>최근 250개</value>
+  </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>최대 이미지 수</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>제한 없음</value>
+  </data>
 </root>

@@ -168,4 +168,7 @@
   <data name="lblKey.Text" xml:space="preserve">
     <value>검정:</value>
   </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>투명</value>
+  </data>
 </root>

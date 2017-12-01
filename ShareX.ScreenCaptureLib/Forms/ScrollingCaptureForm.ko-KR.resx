@@ -117,19 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>하단:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>우단:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>상단:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>좌단:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>가장자리 잘라내기</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>처리중...</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>결과물</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 클립보드 내용</value>
+    <value>ShareX - 스크롤 촬영</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>스크롤 딜레이:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>최대 스크롤 수:</value>
   </data>
-  <data name="lblQuestion.Text" xml:space="preserve">
-    <value>클립보드에 담긴 내용입니다:</value>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>스크롤 뒤</value>
   </data>
-  <data name="cbDontShowThisWindow.Text" xml:space="preserve">
-    <value>이 창 표시하지 않기</value>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>스크롤할 창이나 컨트롤 선택...</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>스크롤 촬영 시작</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>중복 이미지 제거</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>오프셋을 추측하고 이미지 취합</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>스크롤 방법:</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(선택사항) 창 내 사용자 정의 영역 지정...</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>시작 딜레이:</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전 최상단으로 스크롤하는 방법:</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>스크롤 끝 감지</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>촬영 중</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>이미지 갯수:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>마지막 제거:</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>출력 설정 초기화</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항을 추측하고 취합</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>가장자리 값을 추측하고 잘라내기</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>촬영</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>ShareX가 정확한 스크롤 촬영물을 만드는 최선의 노력을 하지만, 모든 스크롤에 대해 제대로 된 촬영을 할 수는 없다는 사실을 이해해 주세요. 이미지가 취합될 때 문제점을 일으킬 수 있는 요소로는, 촬영 중 화면 상의 움직임(예: 웹 페이지 상의 GIF 애니메이션)이나, 화면에 고정된 오브젝트(예: 웹 페이지를 스크롤해도 움직이지 않는 사이트 메뉴나 버튼) 등이 있습니다.</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>이 창을 열기 전 촬영 영역 선택을 시작하기</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>촬영 영역 선택 직후 스크롤 촬영을 시작하기</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>세로값:</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>이전 세로값:</value>
   </data>
 </root>

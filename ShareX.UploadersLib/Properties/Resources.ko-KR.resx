@@ -217,4 +217,43 @@
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} 성공적으로 생성됨.</value>
   </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>유효한 FTP 계정을 찾을 수 없습니다.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP 클라이언트는 FTP나 FTPS만을 지원합니다.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>응답 파싱에 실패했습니다.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>모든 커스텀 업로더를 삭제하겠습니까?</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>인증 코드를 여기에 붙여넣으세요</value>
+  </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>같은 이름의 인자가 이미 존재합니다.</value>
+  </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>같은 이름의 헤더가 이미 존재합니다.</value>
+  </data>
+  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
+    <value>https://aws.amazon.com/s3/storage-classes/</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>키 파일을 찾을 수 없습니다.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"요청 URL" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"목적지 타입" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"요청 URL" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"파일 폼 항목명" 항목을 설정해야 합니다.</value>
+  </data>
 </root>
