@@ -117,122 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg 설정</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>촬영</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
+  <data name="lblWebpageSize.Text" xml:space="preserve">
+    <value>브라우저 크기:</value>
+  </data>
+  <data name="lblCaptureDelay.Text" xml:space="preserve">
+    <value>딜레이:</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
     <value>복사</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>다운로드</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>업로드</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>기본값은 128k입니다.</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 10까지이며, 10이 최고 품질입니다. 3~6 사이에서 조절하면 괜찮습니다. 기본값은 3입니다.</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>새로고침</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>CMD로 테스트</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>명령 직접 입력</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>명령줄 미리보기</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>소스</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>비트레이트:</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>오디오 코덱:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>오디오 소스:</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>비디오 코덱:</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>품질:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>비디오 소스:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>품질:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>추가 명령줄 인자</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>코덱</value>
-  </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>항율 인자 (CRF): 겂의 범위는 0부터 51까지이며, 0은 무손실, 30이 기본값, 그리고 51이 가능한 최저 품질입니다.
-값이 높아질수록 품질은 낮아지지만, 파일 크기 또한 줄어듭니다.</value>
-  </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 9까지이며, 낮을수록 더 나은 품질을 제공합니다. 0부터 3까지는 보통 깨끗한 결과를, 기본값인 4는 겉보기에 깨끗한 결과를 내놓으며, 6은 "그럭저럭 볼 만한" 품질의 결과를 내놓습니다.</value>
-  </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1이 최고 품질/최대 파일 크기, 31이 최소 품질/최소 파일 크기입니다.</value>
-  </data>
-  <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>기본값은 sierra2_4a입니다.</value>
-  </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
-  </data>
-  <data name="lblNVENCPreset.Text" xml:space="preserve">
-    <value>프리셋:</value>
-  </data>
-  <data name="lblNVENCBitrate.Text" xml:space="preserve">
-    <value>비트레이트:</value>
-  </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>촬영 디바이스 설치하기</value>
-  </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>"screen-capture-recorder"와 "virtual-audio-capturer" 비디오/오디오 소스를 설치합니다.</value>
-  </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>팔레트 모드:</value>
-  </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>디더링 모드:</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 경로</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>경로 직접 입력</value>
-  </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>프리셋:</value>
-  </data>
-  <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
-  </data>
-  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>이 오디오 코덱은 선택된 비디오 컨테이너에 의해 지원되지 않습니다.</value>
-  </data>
-  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>기본값은 full입니다.</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>더 빠른 프리셋 = 인코딩이 더 빨라지지만 파일 크기가 커집니다.
-더 느린 프리셋 = 인코딩이 더 느려지지만 파일 크기가 작아집니다.
-화면 녹화와 같은 실시간 인코딩을 하려면 최대한 빠른 프리셋을 쓰는 것이 좋습니다.</value>
-  </data>
-  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
-    <value>화면 녹화와 같은 실시간 인코딩에는 최대한 빠른 프리셋을 쓰는 것을 권장합니다.
-최대한 빠른 프리셋을 쓰지 않으면 심한 프레임 드랍이 생길 수 있습니다.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 웹 페이지 촬영</value>
   </data>
 </root>

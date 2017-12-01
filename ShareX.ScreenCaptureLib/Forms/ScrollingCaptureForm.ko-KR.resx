@@ -117,122 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>하단:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>우단:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>상단:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>좌단:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>가장자리 잘라내기</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>처리중...</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>결과물</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg 설정</value>
+    <value>ShareX - 스크롤 촬영</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>복사</value>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>스크롤 딜레이:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>다운로드</value>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>최대 스크롤 수:</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>기본값은 128k입니다.</value>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>스크롤 뒤</value>
   </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 10까지이며, 10이 최고 품질입니다. 3~6 사이에서 조절하면 괜찮습니다. 기본값은 3입니다.</value>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>스크롤할 창이나 컨트롤 선택...</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>새로고침</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>스크롤 촬영 시작</value>
   </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>CMD로 테스트</value>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>중복 이미지 제거</value>
   </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>명령 직접 입력</value>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>오프셋을 추측하고 이미지 취합</value>
   </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>명령줄 미리보기</value>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>소스</value>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>스크롤 방법:</value>
   </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>비트레이트:</value>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(선택사항) 창 내 사용자 정의 영역 지정...</value>
   </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>오디오 코덱:</value>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전</value>
   </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>오디오 소스:</value>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>시작 딜레이:</value>
   </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>비디오 코덱:</value>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전 최상단으로 스크롤하는 방법:</value>
   </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>품질:</value>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>스크롤 끝 감지</value>
   </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>비디오 소스:</value>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>촬영 중</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>품질:</value>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>이미지 갯수:</value>
   </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>추가 명령줄 인자</value>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>마지막 제거:</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>코덱</value>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>이미지</value>
   </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>항율 인자 (CRF): 겂의 범위는 0부터 51까지이며, 0은 무손실, 30이 기본값, 그리고 51이 가능한 최저 품질입니다.
-값이 높아질수록 품질은 낮아지지만, 파일 크기 또한 줄어듭니다.</value>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>출력 설정 초기화</value>
   </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 9까지이며, 낮을수록 더 나은 품질을 제공합니다. 0부터 3까지는 보통 깨끗한 결과를, 기본값인 4는 겉보기에 깨끗한 결과를 내놓으며, 6은 "그럭저럭 볼 만한" 품질의 결과를 내놓습니다.</value>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항을 추측하고 취합</value>
   </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1이 최고 품질/최대 파일 크기, 31이 최소 품질/최소 파일 크기입니다.</value>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>가장자리 값을 추측하고 잘라내기</value>
   </data>
-  <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>기본값은 sierra2_4a입니다.</value>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항</value>
   </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
   </data>
-  <data name="lblNVENCPreset.Text" xml:space="preserve">
-    <value>프리셋:</value>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>촬영</value>
   </data>
-  <data name="lblNVENCBitrate.Text" xml:space="preserve">
-    <value>비트레이트:</value>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>ShareX가 정확한 스크롤 촬영물을 만드는 최선의 노력을 하지만, 모든 스크롤에 대해 제대로 된 촬영을 할 수는 없다는 사실을 이해해 주세요. 이미지가 취합될 때 문제점을 일으킬 수 있는 요소로는, 촬영 중 화면 상의 움직임(예: 웹 페이지 상의 GIF 애니메이션)이나, 화면에 고정된 오브젝트(예: 웹 페이지를 스크롤해도 움직이지 않는 사이트 메뉴나 버튼) 등이 있습니다.</value>
   </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>촬영 디바이스 설치하기</value>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>이 창을 열기 전 촬영 영역 선택을 시작하기</value>
   </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>"screen-capture-recorder"와 "virtual-audio-capturer" 비디오/오디오 소스를 설치합니다.</value>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>촬영 영역 선택 직후 스크롤 촬영을 시작하기</value>
   </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>팔레트 모드:</value>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>세로값:</value>
   </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>디더링 모드:</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 경로</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>경로 직접 입력</value>
-  </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>프리셋:</value>
-  </data>
-  <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
-  </data>
-  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>이 오디오 코덱은 선택된 비디오 컨테이너에 의해 지원되지 않습니다.</value>
-  </data>
-  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>기본값은 full입니다.</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>더 빠른 프리셋 = 인코딩이 더 빨라지지만 파일 크기가 커집니다.
-더 느린 프리셋 = 인코딩이 더 느려지지만 파일 크기가 작아집니다.
-화면 녹화와 같은 실시간 인코딩을 하려면 최대한 빠른 프리셋을 쓰는 것이 좋습니다.</value>
-  </data>
-  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
-    <value>화면 녹화와 같은 실시간 인코딩에는 최대한 빠른 프리셋을 쓰는 것을 권장합니다.
-최대한 빠른 프리셋을 쓰지 않으면 심한 프레임 드랍이 생길 수 있습니다.</value>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>이전 세로값:</value>
   </data>
 </root>
