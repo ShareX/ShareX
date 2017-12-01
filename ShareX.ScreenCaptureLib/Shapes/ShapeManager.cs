@@ -487,7 +487,7 @@ namespace ShareX.ScreenCaptureLib
                             CurrentTool = ShapeType.EffectPixelate;
                             break;
                         case Keys.Control | Keys.V:
-                            PasteFromClipboard();
+                            PasteFromClipboard(true);
                             break;
                         case Keys.Control | Keys.Z:
                             UndoShape();
@@ -1299,8 +1299,19 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void PasteFromClipboard()
+        private void PasteFromClipboard(bool insertMousePosition)
         {
+            Point pos;
+
+            if (insertMousePosition)
+            {
+                pos = InputManager.ClientMousePosition;
+            }
+            else
+            {
+                pos = Form.ClientArea.Center();
+            }
+
             if (Clipboard.ContainsImage())
             {
                 Image img = ClipboardHelpers.GetImage();
@@ -1309,7 +1320,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentTool = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    Point pos = InputManager.ClientMousePosition;
                     shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.SetImage(img, true);
                     shape.OnCreated();
@@ -1325,10 +1335,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentTool = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
-                    Point pos = InputManager.ClientMousePosition;
                     shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
                     shape.Text = text.Trim();
-                    shape.AutoSize(true);
                     shape.OnCreated();
                     AddShape(shape);
                     SelectCurrentShape();

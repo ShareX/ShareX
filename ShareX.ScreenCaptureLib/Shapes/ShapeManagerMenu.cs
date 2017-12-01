@@ -557,6 +557,12 @@ namespace ShareX.ScreenCaptureLib
             tsmiUndo.MouseDown += (sender, e) => UndoShape();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
 
+            ToolStripMenuItem tsmiPaste = new ToolStripMenuItem("Paste image/text");
+            tsmiPaste.Image = Resources.clipboard;
+            tsmiPaste.ShortcutKeyDisplayString = "Ctrl+V";
+            tsmiPaste.MouseDown += (sender, e) => PasteFromClipboard(false);
+            tsddbEdit.DropDownItems.Add(tsmiPaste);
+
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
             tsmiDelete = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Delete);
