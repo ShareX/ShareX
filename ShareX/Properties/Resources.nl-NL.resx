@@ -478,4 +478,7 @@ Ben je zeker dat je door wilt gaan?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Opstarten is uitgeschakeld in Taakbeheer</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Frans</value>
+  </data>
 </root>

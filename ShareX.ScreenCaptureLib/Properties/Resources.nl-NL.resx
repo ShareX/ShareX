@@ -263,4 +263,7 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Afbeelding grootte...</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Vastleggen</value>
+  </data>
 </root>
