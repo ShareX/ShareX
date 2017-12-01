@@ -427,4 +427,19 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Vooraf geconfigureerde regio:</value>
   </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Selecteer regio...</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Gebruik vierkante vergrootglas in plaats van cirkel</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Upload instellingen overschrijven</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Vergrootglas pixel grote:</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Afbeelding instellingen overschrijven</value>
+  </data>
 </root>
