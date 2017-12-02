@@ -89,8 +89,7 @@ namespace ShareX.ScreenCaptureLib
         private void InitializeComponent()
         {
             SuspendLayout();
-
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            
             AutoScaleMode = AutoScaleMode.Font;
             StartPosition = FormStartPosition.Manual;
             Bounds = ScreenRectangle;

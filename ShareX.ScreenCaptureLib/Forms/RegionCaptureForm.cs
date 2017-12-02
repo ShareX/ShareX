@@ -147,8 +147,7 @@ namespace ShareX.ScreenCaptureLib
         private void InitializeComponent()
         {
             SuspendLayout();
-
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            
             AutoScaleMode = AutoScaleMode.Font;
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
             SetDefaultCursor();
