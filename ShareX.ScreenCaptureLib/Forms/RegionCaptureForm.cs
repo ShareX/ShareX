@@ -111,8 +111,6 @@ namespace ShareX.ScreenCaptureLib
             ClientArea = CaptureHelpers.GetScreenBounds0Based();
             CanvasRectangle = ClientArea;
 
-            InitializeComponent();
-
             DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
@@ -144,6 +142,8 @@ namespace ShareX.ScreenCaptureLib
             canvasBorderPen = new Pen(Color.FromArgb(30, Color.Black));
 
             Prepare(canvas);
+
+            InitializeComponent();
         }
 
         private void InitializeComponent()
@@ -179,12 +179,30 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
+                    Rectangle activeScreenWorkingArea = CaptureHelpers.GetActiveScreenWorkingArea();
                     Size size = new Size(900, 700);
-                    Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
-                    Bounds = new Rectangle(activeScreen.X + (activeScreen.Width / 2) - (size.Width / 2),
-                        activeScreen.Y + (activeScreen.Height / 2) - (size.Height / 2), size.Width, size.Height);
+                    bool isMaximized = Options.ImageEditorStartMode == ImageEditorStartMode.Maximized;
 
-                    if (Options.ImageEditorStartMode == ImageEditorStartMode.Maximized)
+                    if (Options.ImageEditorStartMode == ImageEditorStartMode.AutoSize)
+                    {
+                        int margin = 100;
+                        Size canvasWindowSize = new Size(Canvas.Width + SystemInformation.BorderSize.Width * 2 + margin,
+                            Canvas.Height + SystemInformation.CaptionHeight + SystemInformation.BorderSize.Height * 2 + margin);
+
+                        if (canvasWindowSize.Width < activeScreenWorkingArea.Width && canvasWindowSize.Height < activeScreenWorkingArea.Height)
+                        {
+                            size = canvasWindowSize;
+                        }
+                        else
+                        {
+                            isMaximized = true;
+                        }
+                    }
+
+                    Bounds = new Rectangle(activeScreenWorkingArea.X + (activeScreenWorkingArea.Width / 2) - (size.Width / 2),
+                        activeScreenWorkingArea.Y + (activeScreenWorkingArea.Height / 2) - (size.Height / 2), size.Width, size.Height);
+
+                    if (isMaximized)
                     {
                         WindowState = FormWindowState.Maximized;
                     }

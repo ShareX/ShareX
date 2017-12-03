@@ -264,6 +264,7 @@ namespace ShareX.ScreenCaptureLib
     {
         Normal,
         Maximized,
+        AutoSize,
         PreviousState,
         Fullscreen
     }
