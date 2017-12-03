@@ -152,7 +152,11 @@ namespace ShareX
 
             Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
             captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
-            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (outputType != ScreenRecordOutput.GIF)
+            {
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+            }
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
