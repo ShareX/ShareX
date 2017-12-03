@@ -74,36 +74,23 @@ namespace ShareX
                 mode = RegionCaptureMode.Annotation;
             }
 
-            RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions);
+            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+            screenshot.CaptureCursor = false;
+            Image img = screenshot.CaptureFullscreen();
 
-            try
+            CursorData cursorData = null;
+
+            if (taskSettings.CaptureSettings.ShowCursor)
             {
-                Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-                screenshot.CaptureCursor = false;
-                Image img = screenshot.CaptureFullscreen();
+                cursorData = new CursorData();
+            }
 
-                CursorData cursorData = null;
-
-                try
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
+            {
+                if (cursorData != null && cursorData.IsValid)
                 {
-                    if (taskSettings.CaptureSettings.ShowCursor)
-                    {
-                        cursorData = new CursorData();
-                    }
-
-                    form.Prepare(img);
-
-                    if (cursorData != null && cursorData.IsValid)
-                    {
-                        form.AddCursor(cursorData.Handle, cursorData.Position);
-                    }
-                }
-                finally
-                {
-                    if (cursorData != null)
-                    {
-                        cursorData.Dispose();
-                    }
+                    form.AddCursor(cursorData.Handle, cursorData.Position);
+                    cursorData.Dispose();
                 }
 
                 form.ShowDialog();
@@ -124,13 +111,6 @@ namespace ShareX
                     }
 
                     lastRegionCaptureType = RegionCaptureType.Default;
-                }
-            }
-            finally
-            {
-                if (form != null)
-                {
-                    form.Dispose();
                 }
             }
 

@@ -102,7 +102,7 @@ namespace ShareX.ScreenCaptureLib
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
 
-        public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options)
+        public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
             Mode = mode;
             Options = options;
@@ -142,6 +142,8 @@ namespace ShareX.ScreenCaptureLib
             textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
             canvasBorderPen = new Pen(Color.FromArgb(30, Color.Black));
+
+            Prepare(canvas);
         }
 
         private void InitializeComponent()
@@ -239,19 +241,18 @@ namespace ShareX.ScreenCaptureLib
             Text = text;
         }
 
-        public void Prepare()
+        private void Prepare(Image canvas = null)
         {
-            Prepare(new Screenshot().CaptureFullscreen());
-        }
+            if (canvas == null)
+            {
+                canvas = new Screenshot().CaptureFullscreen();
+            }
 
-        // Must be called before show form
-        public void Prepare(Image img)
-        {
             ShapeManager = new ShapeManager(this);
             ShapeManager.WindowCaptureMode = !IsEditorMode && Options.DetectWindows;
             ShapeManager.IncludeControls = Options.DetectControls;
 
-            InitBackground(img);
+            InitBackground(canvas);
 
             if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
             {
@@ -267,13 +268,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void InitBackground(Image img)
+        internal void InitBackground(Image canvas)
         {
             if (Canvas != null) Canvas.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
             if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
 
-            Canvas = img;
+            Canvas = canvas;
 
             if (IsEditorMode)
             {

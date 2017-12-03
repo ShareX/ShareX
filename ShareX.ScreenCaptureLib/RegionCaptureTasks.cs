@@ -40,7 +40,6 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
             {
-                form.Prepare();
                 form.ShowDialog();
 
                 return form.GetResultImage();
@@ -54,7 +53,6 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
             {
-                form.Prepare();
                 form.ShowDialog();
 
                 if (form.Result == RegionResult.Region)
@@ -101,7 +99,6 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions))
             {
-                form.Prepare();
                 form.ShowDialog();
 
                 if (form.Result == RegionResult.Region)
@@ -125,7 +122,6 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))
             {
-                form.Prepare();
                 form.ShowDialog();
 
                 if (form.Result == RegionResult.Region)
@@ -145,7 +141,6 @@ namespace ShareX.ScreenCaptureLib
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
             {
-                form.Prepare();
                 form.ShowDialog();
             }
         }
@@ -160,10 +155,9 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
 
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, options))
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
             {
                 form.ImageFilePath = filePath;
-                form.Prepare(img);
                 form.ShowDialog();
 
                 switch (form.Result)
