@@ -148,7 +148,7 @@ namespace ShareX.ScreenCaptureLib
         {
             SuspendLayout();
             
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
             SetDefaultCursor();
             Icon = ShareXResources.Icon;

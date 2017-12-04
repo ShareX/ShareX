@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
 
             SuspendLayout();
             
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             StartPosition = FormStartPosition.Manual;
             Bounds = screenRectangle;
             Cursor = Cursors.Hand;
