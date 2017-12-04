@@ -262,9 +262,9 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ImageEditorStartMode // Localized
     {
+        AutoSize,
         Normal,
         Maximized,
-        AutoSize,
         PreviousState,
         Fullscreen
     }

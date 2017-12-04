@@ -1130,4 +1130,7 @@ Would you like to download it?</value>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Fullscreen</value>
   </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Auto size</value>
+  </data>
 </root>

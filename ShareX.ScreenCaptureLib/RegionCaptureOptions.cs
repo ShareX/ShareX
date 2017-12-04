@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
         public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
 
         // Image editor
-        public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.Maximized;
+        public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
         public WindowState ImageEditorWindowState = new WindowState();
         public Color ImageEditorBackgroundColor = Color.FromArgb(200, 200, 200);
         public bool ShowEditorPanTip = true;

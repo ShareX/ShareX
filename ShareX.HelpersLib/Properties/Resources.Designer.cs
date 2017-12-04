@@ -1825,6 +1825,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto size.
+        /// </summary>
+        internal static string ImageEditorStartMode_AutoSize {
+            get {
+                return ResourceManager.GetString("ImageEditorStartMode_AutoSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fullscreen.
         /// </summary>
         internal static string ImageEditorStartMode_Fullscreen {
