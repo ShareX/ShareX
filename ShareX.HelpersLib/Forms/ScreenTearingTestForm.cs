@@ -47,9 +47,8 @@ namespace ShareX.HelpersLib
             screenRectangle0Based = new Rectangle(0, 0, screenRectangle.Width, screenRectangle.Height);
 
             SuspendLayout();
-
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
+            
+            AutoScaleMode = AutoScaleMode.None;
             StartPosition = FormStartPosition.Manual;
             Bounds = screenRectangle;
             Cursor = Cursors.Hand;
