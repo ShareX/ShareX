@@ -27,7 +27,7 @@ using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
 
-namespace ShareX.StartupManagers
+namespace ShareX
 {
     public abstract class GenericStartupManager : IStartupManager
     {

@@ -25,7 +25,7 @@
 
 using System.Windows.Forms;
 
-namespace ShareX.StartupManagers
+namespace ShareX
 {
     public class DesktopStartupManager : GenericStartupManager
     {

@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.HelpersLib
 {
     public class WindowInfo
     {

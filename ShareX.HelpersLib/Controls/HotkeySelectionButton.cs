@@ -28,7 +28,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib.Controls
+namespace ShareX.HelpersLib
 {
     public class HotkeySelectionButton : Button
     {

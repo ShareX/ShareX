@@ -28,7 +28,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib.UITypeEditors
+namespace ShareX.HelpersLib
 {
     public class JsonFileNameEditor : FileNameEditor
     {

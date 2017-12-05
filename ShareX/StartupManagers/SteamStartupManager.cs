@@ -25,7 +25,7 @@
 
 using ShareX.HelpersLib;
 
-namespace ShareX.StartupManagers
+namespace ShareX
 {
     public class SteamStartupManager : GenericStartupManager
     {
