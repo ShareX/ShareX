@@ -1300,10 +1300,6 @@
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Greenshot.ImageEditor\Greenshot.ImageEditor.csproj">
-      <Project>{cd642bf4-d815-4d67-a0b5-c69f0b8231af}</Project>
-      <Name>Greenshot.ImageEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj">
       <Project>{E7DE6237-AEA2-498B-8F56-9B392472C490}</Project>
       <Name>ShareX.HistoryLib</Name>

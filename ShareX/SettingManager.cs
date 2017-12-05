@@ -92,8 +92,6 @@ namespace ShareX
 
         private static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
 
-        private static string GreenshotImageEditorConfigFilePath => Path.Combine(Program.PersonalFolder, "GreenshotImageEditor.ini");
-
         private static ApplicationConfig Settings { get => Program.Settings; set => Program.Settings = value; }
         private static TaskSettings DefaultTaskSettings { get => Program.DefaultTaskSettings; set => Program.DefaultTaskSettings = value; }
         private static UploadersConfig UploadersConfig { get => Program.UploadersConfig; set => Program.UploadersConfig = value; }
@@ -253,11 +251,6 @@ namespace ShareX
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             UploadersConfig = new UploadersConfig();
             HotkeysConfig = new HotkeysConfig();
-
-            if (File.Exists(GreenshotImageEditorConfigFilePath))
-            {
-                File.Delete(GreenshotImageEditorConfigFilePath);
-            }
         }
 
         public static bool Export(string exportPath)
@@ -280,7 +273,6 @@ namespace ShareX
                     AddFileToDictionary(files, ApplicationConfigFilePath);
                     AddFileToDictionary(files, HotkeysConfigFilePath);
                     AddFileToDictionary(files, UploadersConfigFilePath);
-                    AddFileToDictionary(files, GreenshotImageEditorConfigFilePath);
                 }
 
                 if (Settings.ExportHistory)

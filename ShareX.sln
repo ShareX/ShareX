@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -15,8 +15,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelpersLib", "ShareX.HelpersLib\ShareX.HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.UploadersLib", "ShareX.UploadersLib\ShareX.UploadersLib.csproj", "{E1C94415-3424-4517-A2A1-B2FDD1F59C67}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenshot.ImageEditor", "Greenshot.ImageEditor\Greenshot.ImageEditor.csproj", "{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.IndexerLib", "ShareX.IndexerLib\ShareX.IndexerLib.csproj", "{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}"
 EndProject
@@ -98,16 +96,6 @@ Global
 		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.WindowsStore|Any CPU.Build.0 = WindowsStore|Any CPU
 		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
 		{E1C94415-3424-4517-A2A1-B2FDD1F59C67}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.Steam|Any CPU.Build.0 = Steam|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.WindowsStore|Any CPU.ActiveCfg = WindowsStore|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.WindowsStore|Any CPU.Build.0 = WindowsStore|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
-		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
 		{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU

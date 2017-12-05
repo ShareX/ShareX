@@ -98,7 +98,6 @@ https://github.com/ShareX/ShareX/graphs/contributors
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 
-Greenshot Image Editor: https://github.com/greenshot/greenshot
 Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
