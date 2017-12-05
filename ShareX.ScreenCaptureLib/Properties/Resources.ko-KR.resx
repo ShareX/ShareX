@@ -456,7 +456,7 @@
     <value>편집기 배경색...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>편집기 시작 모드:</value>
+    <value>편집기 시작 상태:</value>
   </data>
   <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
     <value>양 끝에 화살표</value>
@@ -469,6 +469,12 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>주석 메뉴</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>이미지/텍스트 붙여넣기</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>이미지 알아서 자르기</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>팁: 가운데 마우스 버튼을 누르고 드래그하면 이미지를 이동시킬 수 있습니다.</value>

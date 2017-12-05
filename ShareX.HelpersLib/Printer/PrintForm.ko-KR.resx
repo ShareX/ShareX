@@ -133,10 +133,10 @@
     <value>이미지 확대 가능하게 하기</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>이미지 자동 회전하기</value>
+    <value>이미지 방향을 자동으로 조절하기</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>이미지 자동 크기 조정하기</value>
+    <value>이미지 크기를 자동으로 조절하기</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
     <value>이미지를 가운데에 두기</value>
