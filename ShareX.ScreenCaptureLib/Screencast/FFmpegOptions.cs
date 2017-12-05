@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-#if STEAM
+#if STEAM || WindowsStore
                 if (!OverrideCLIPath)
                 {
                     if (NativeMethods.Is64Bit())

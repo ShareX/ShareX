@@ -65,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
 
             // General
 
-#if STEAM
+#if STEAM || WindowsStore
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #else
@@ -224,7 +224,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
-#if STEAM
+#if STEAM || WindowsStore
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #endif
