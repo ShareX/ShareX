@@ -353,7 +353,7 @@ ShareX를 재시작할까요?</value>
     <value>성공적으로 트윗 날림.</value>
   </data>
   <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>인코더 경로 선턱</value>
+    <value>인코더 경로 선택</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" 파일에 접근할 수 없습니다.
@@ -439,9 +439,9 @@ ShareX를 재시작할까요?</value>
     <value>베트남어</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>클립보드에 이미지가 저장되어 있습니다. 이미지 편집기로 열까요?
+    <value>클립보드에 이미지가 저장되어 있습니다. 이 이미지 편집기로 열까요?
 
-클립보드의 이미지를 편집하려면 '네'를, 이미지 파일 대화상자를 열려면 '아니요'를 눌러주세요.</value>
+클립보드의 이미지를 편집하려면 '예'를, 이미지 파일 대화상자를 열어 편집할 이미지 파일을 고르려면 '아니요'를 눌러주세요.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>용량이 큰 파일을 업로드하려고 합니다.
@@ -499,7 +499,7 @@ ShareX를 재시작할까요?</value>
     <value>단축키 활성화</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>이미지 편집기 - 어떻게 이미지를 불러올까요?</value>
+    <value>이미지 편집기 - 어디에서 이미지를 불러올까요?</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>편집...</value>

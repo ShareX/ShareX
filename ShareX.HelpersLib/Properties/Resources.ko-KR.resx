@@ -324,7 +324,7 @@
     <value>설치</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>다음 폴더가 존재하지 않음:</value>
+    <value>다음 폴더가 존재하지 않습니다:</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>다운로드 실패:</value>
@@ -492,7 +492,7 @@
     <value>섬네일 이미지를 파일로 저장하기</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>이미지 출력하기</value>
+    <value>이미지 인쇄하기</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
     <value>이미지를 업로드하기</value>
@@ -1004,7 +1004,7 @@
     <value>비디오 섬네일 생성기</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
-    <value>파일이 존재하지 않습니다:</value>
+    <value>다음 파일이 존재하지 않습니다:</value>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>이미지 히스토리 창 열기</value>
@@ -1110,5 +1110,8 @@
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>간편 작업 메뉴 보이기</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>자동 조정</value>
   </data>
 </root>

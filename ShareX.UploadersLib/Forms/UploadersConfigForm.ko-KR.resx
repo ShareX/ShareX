@@ -876,7 +876,7 @@ store.book[0].title</value>
     <value>CoinURL</value>
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
-    <value>사용되지 않는 API v1 사용하기</value>
+    <value>오래되어 권장되지 않는 API v1 사용하기</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>API URL: (예시: http://demo.polr.me/api/v2/action/shorten)</value>
@@ -891,7 +891,7 @@ store.book[0].title</value>
     <value>API 키:</value>
   </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
-    <value>비밀 URL임</value>
+    <value>비밀 URL</value>
   </data>
   <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
     <value>키 암호:</value>
@@ -1077,7 +1077,7 @@ store.book[0].title</value>
     <value>커스텀 도메인:</value>
   </data>
   <data name="tpAzureStorage.Text" xml:space="preserve">
-    <value>Asure Storage</value>
+    <value>Azure Storage</value>
   </data>
   <data name="cbGfycatIsPublic.Text" xml:space="preserve">
     <value>공개 업로드?</value>
