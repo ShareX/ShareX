@@ -257,7 +257,7 @@ namespace ShareX
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path);
+                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path, Program.ToolsFolder);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)

@@ -92,11 +92,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool EncodeGIF(string input, string output)
+        public bool EncodeGIF(string input, string output, string tempFolder)
         {
             bool result;
 
-            string palettePath = Path.Combine(Path.GetDirectoryName(Options.FFmpeg.FFmpegPath), "palette.png");
+            string palettePath = Path.Combine(tempFolder, "FFmpeg-palette.png");
 
             try
             {
