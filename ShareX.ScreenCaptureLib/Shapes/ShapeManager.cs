@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -1402,15 +1403,17 @@ namespace ShareX.ScreenCaptureLib
         {
             Size oldSize = Form.Canvas.Size;
 
-            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize))
+            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize, Options.ImageEditorInterpolationMode))
             {
                 if (imageSizeForm.ShowDialog(Form) == DialogResult.OK)
                 {
-                    Size size = imageSizeForm.Result;
+                    Size size = imageSizeForm.ImageSize;
+                    Options.ImageEditorInterpolationMode = imageSizeForm.InterpolationMode;
 
                     if (size != oldSize)
                     {
-                        Image img = ImageHelpers.ResizeImage(Form.Canvas, size);
+                        InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorInterpolationMode);
+                        Image img = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
                         if (img != null)
                         {
@@ -1418,6 +1421,24 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                 }
+            }
+        }
+
+        private InterpolationMode GetInterpolationMode(ImageEditorInterpolationMode interpolationMode)
+        {
+            switch (interpolationMode)
+            {
+                default:
+                case ImageEditorInterpolationMode.HighQualityBicubic:
+                    return InterpolationMode.HighQualityBicubic;
+                case ImageEditorInterpolationMode.Bicubic:
+                    return InterpolationMode.Bicubic;
+                case ImageEditorInterpolationMode.HighQualityBilinear:
+                    return InterpolationMode.HighQualityBilinear;
+                case ImageEditorInterpolationMode.Bilinear:
+                    return InterpolationMode.Bilinear;
+                case ImageEditorInterpolationMode.NearestNeighbor:
+                    return InterpolationMode.NearestNeighbor;
             }
         }
 

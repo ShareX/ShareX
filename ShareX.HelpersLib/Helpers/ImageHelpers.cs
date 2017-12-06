@@ -39,12 +39,9 @@ namespace ShareX.HelpersLib
 {
     public static class ImageHelpers
     {
-        public static Image ResizeImage(Image img, Size size)
-        {
-            return ResizeImage(img, size.Width, size.Height);
-        }
+        private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
 
-        public static Image ResizeImage(Image img, int width, int height)
+        public static Image ResizeImage(Image img, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
             if (width < 1 || height < 1 || (img.Width == width && img.Height == height))
             {
@@ -57,7 +54,7 @@ namespace ShareX.HelpersLib
             using (img)
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.InterpolationMode = interpolationMode;
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 g.CompositingQuality = CompositingQuality.HighQuality;
@@ -73,16 +70,21 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentage)
+        public static Image ResizeImage(Image img, Size size, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            return ResizeImageByPercentage(img, percentage, percentage);
+            return ResizeImage(img, size.Width, size.Height, interpolationMode);
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentageWidth, float percentageHeight)
+        public static Image ResizeImageByPercentage(Image img, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            int width = (int)(percentageWidth / 100 * img.Width);
-            int height = (int)(percentageHeight / 100 * img.Height);
-            return ResizeImage(img, width, height);
+            int width = (int)Math.Round(percentageWidth / 100 * img.Width);
+            int height = (int)Math.Round(percentageHeight / 100 * img.Height);
+            return ResizeImage(img, width, height, interpolationMode);
+        }
+
+        public static Image ResizeImageByPercentage(Image img, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        {
+            return ResizeImageByPercentage(img, percentage, percentage, interpolationMode);
         }
 
         public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)

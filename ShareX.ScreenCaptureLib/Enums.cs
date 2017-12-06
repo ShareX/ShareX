@@ -268,4 +268,13 @@ namespace ShareX.ScreenCaptureLib
         PreviousState,
         Fullscreen
     }
+
+    public enum ImageEditorInterpolationMode
+    {
+        HighQualityBicubic,
+        Bicubic,
+        HighQualityBilinear,
+        Bilinear,
+        NearestNeighbor
+    }
 }

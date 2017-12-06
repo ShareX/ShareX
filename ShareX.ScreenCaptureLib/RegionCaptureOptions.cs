@@ -83,5 +83,6 @@ namespace ShareX.ScreenCaptureLib
         public WindowState ImageEditorWindowState = new WindowState();
         public Color ImageEditorBackgroundColor = Color.FromArgb(200, 200, 200);
         public bool ShowEditorPanTip = true;
+        public ImageEditorInterpolationMode ImageEditorInterpolationMode = ImageEditorInterpolationMode.Bicubic;
     }
 }
