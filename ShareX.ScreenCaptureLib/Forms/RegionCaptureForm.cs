@@ -865,6 +865,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
             }
+
+            //if (ShapeManager.IsPanning)
+            {
+                DrawPanningScrollbars(g);
+            }
         }
 
         internal void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
@@ -1017,6 +1022,61 @@ namespace ShareX.ScreenCaptureLib
             int margin = 20;
             Rectangle textRectangle = new Rectangle(ClientArea.Width / 2 - textSize.Width / 2, ClientArea.Height - textSize.Height - margin, textSize.Width, textSize.Height);
             DrawTextAnimation(g, textAnimation, textRectangle, padding);
+        }
+
+        private void DrawPanningScrollbars(Graphics g)
+        {
+            Color backgroundColor = Color.FromArgb(13, 243, 242, 249);
+            Brush backgroundBrush = new SolidBrush(backgroundColor);
+            Pen backgroundPen = new Pen(backgroundBrush);
+
+            Color foregroundColor = Color.FromArgb(21, 234, 234, 235);
+            Brush foregroundBrush = new SolidBrush(foregroundColor);
+            Pen foregroundPen = new Pen(foregroundBrush);
+
+            int paddingSize = 30;
+            int scrollbarThickness = 16;
+
+            Rectangle imageRectangleVisible = CanvasRectangle;
+            imageRectangleVisible.Intersect(ClientArea);
+
+            if (CanvasRectangle.Left < ClientArea.Left || CanvasRectangle.Right > ClientArea.Right)
+            {
+                int scrollbar_hor_background_length = ClientArea.Width - paddingSize * 2;
+                int scrollbar_hor_foreground_length = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Width / (float)CanvasRectangle.Width * (float)scrollbar_hor_background_length));
+
+                Rectangle scrollbar_hor_background_region = new Rectangle(new Point(paddingSize / 2, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(scrollbar_hor_background_length, scrollbarThickness));
+
+                double scrollbar_hor_limit = ((float)scrollbar_hor_background_length - (float)scrollbar_hor_foreground_length) / 2.0f;
+                double scrollbar_hor_foreground_pos = (float)scrollbar_hor_background_region.Center().X - ((float)scrollbar_hor_foreground_length / 2.0f)
+                        - Math.Min(scrollbar_hor_limit, Math.Max(-scrollbar_hor_limit,
+                            CanvasCenterOffset.X / (float)CanvasRectangle.Width * (float)scrollbar_hor_background_length
+                        ));
+
+                Rectangle scrollbar_hor_foreground_region = new Rectangle(new Point((int)scrollbar_hor_foreground_pos, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(scrollbar_hor_foreground_length, scrollbarThickness));
+
+                g.DrawRoundedRectangle(backgroundBrush, backgroundPen, scrollbar_hor_background_region, scrollbarThickness / 2);
+                g.DrawRoundedRectangle(foregroundBrush, foregroundPen, scrollbar_hor_foreground_region, scrollbarThickness / 2);
+            }
+
+            if (CanvasRectangle.Top < ClientArea.Top || CanvasRectangle.Bottom > ClientArea.Bottom)
+            {
+                int scrollbar_ver_background_length = ClientArea.Height - paddingSize * 2;
+                int scrollbar_ver_foreground_length = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Height / (float)CanvasRectangle.Height * (float)scrollbar_ver_background_length));
+
+                Rectangle scrollbar_ver_background_region = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), paddingSize / 2), new Size(scrollbarThickness, scrollbar_ver_background_length));
+
+                double scrollbar_ver_limit = ((float)scrollbar_ver_background_length - (float)scrollbar_ver_foreground_length) / 2.0f;
+                double scrollbar_ver_foreground_pos = (float)scrollbar_ver_background_region.Center().Y - ((float)scrollbar_ver_foreground_length / 2.0f)
+                        - Math.Min(scrollbar_ver_limit, Math.Max(-scrollbar_ver_limit,
+                            CanvasCenterOffset.Y / (float)CanvasRectangle.Height * (float)scrollbar_ver_background_length
+                        ));
+
+                Rectangle scrollbar_ver_foreground_region = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), (int)scrollbar_ver_foreground_pos), new Size(scrollbarThickness, scrollbar_ver_foreground_length));
+
+                g.DrawRoundedRectangle(backgroundBrush, backgroundPen, scrollbar_ver_background_region, scrollbarThickness / 2);
+                g.DrawRoundedRectangle(foregroundBrush, foregroundPen, scrollbar_ver_foreground_region, scrollbarThickness / 2);
+            }
         }
 
         private void WriteTips(StringBuilder sb)
