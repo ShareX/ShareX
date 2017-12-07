@@ -1026,56 +1026,53 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawPanningScrollbars(Graphics g)
         {
-            Color backgroundColor = Color.FromArgb(13, 243, 242, 249);
-            Brush backgroundBrush = new SolidBrush(backgroundColor);
-            Pen backgroundPen = new Pen(backgroundBrush);
-
-            Color foregroundColor = Color.FromArgb(21, 234, 234, 235);
-            Brush foregroundBrush = new SolidBrush(foregroundColor);
-            Pen foregroundPen = new Pen(foregroundBrush);
-
-            int paddingSize = 30;
+            int paddingSize = 15;
             int scrollbarThickness = 16;
 
             Rectangle imageRectangleVisible = CanvasRectangle;
             imageRectangleVisible.Intersect(ClientArea);
 
-            if (CanvasRectangle.Left < ClientArea.Left || CanvasRectangle.Right > ClientArea.Right)
+            Color trackColor = Color.FromArgb(13, 243, 242, 249);
+            Color thumbColor = Color.FromArgb(21, 234, 234, 235);
+
+            using (Brush trackBrush = new SolidBrush(trackColor))
+            using (Brush thumbBrush = new SolidBrush(thumbColor))
+            using (Pen trackPen = new Pen(trackBrush))
+            using (Pen thumbPen = new Pen(thumbBrush))
             {
-                int scrollbar_hor_background_length = ClientArea.Width - paddingSize * 2;
-                int scrollbar_hor_foreground_length = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Width / (float)CanvasRectangle.Width * (float)scrollbar_hor_background_length));
+                if (CanvasRectangle.Left < ClientArea.Left || CanvasRectangle.Right > ClientArea.Right)
+                {
+                    int trackHorizontalLength = ClientArea.Width - paddingSize * 2 - scrollbarThickness;
+                    int thumbHorizontalLength = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Width / (float)CanvasRectangle.Width * (float)trackHorizontalLength));
 
-                Rectangle scrollbar_hor_background_region = new Rectangle(new Point(paddingSize / 2, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(scrollbar_hor_background_length, scrollbarThickness));
+                    Rectangle trackHorizontalRegion = new Rectangle(new Point(paddingSize, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(trackHorizontalLength, scrollbarThickness));
 
-                double scrollbar_hor_limit = ((float)scrollbar_hor_background_length - (float)scrollbar_hor_foreground_length) / 2.0f;
-                double scrollbar_hor_foreground_pos = (float)scrollbar_hor_background_region.Center().X - ((float)scrollbar_hor_foreground_length / 2.0f)
-                        - Math.Min(scrollbar_hor_limit, Math.Max(-scrollbar_hor_limit,
-                            CanvasCenterOffset.X / (float)CanvasRectangle.Width * (float)scrollbar_hor_background_length
-                        ));
+                    double limitHorizontal = ((float)trackHorizontalLength - (float)thumbHorizontalLength) / 2.0f;
+                    double trackHorizontalPositionX = (float)trackHorizontalRegion.Center().X - ((float)thumbHorizontalLength / 2.0f)
+                        - Math.Min(limitHorizontal, Math.Max(-limitHorizontal, CanvasCenterOffset.X / (float)CanvasRectangle.Width * (float)trackHorizontalLength));
 
-                Rectangle scrollbar_hor_foreground_region = new Rectangle(new Point((int)scrollbar_hor_foreground_pos, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(scrollbar_hor_foreground_length, scrollbarThickness));
+                    Rectangle thumbHorizontalRegion = new Rectangle(new Point((int)trackHorizontalPositionX, ClientArea.Bottom - (scrollbarThickness + paddingSize)), new Size(thumbHorizontalLength, scrollbarThickness));
 
-                g.DrawRoundedRectangle(backgroundBrush, backgroundPen, scrollbar_hor_background_region, scrollbarThickness / 2);
-                g.DrawRoundedRectangle(foregroundBrush, foregroundPen, scrollbar_hor_foreground_region, scrollbarThickness / 2);
-            }
+                    g.DrawRoundedRectangle(trackBrush, trackPen, trackHorizontalRegion, scrollbarThickness / 2);
+                    g.DrawRoundedRectangle(thumbBrush, thumbPen, thumbHorizontalRegion, scrollbarThickness / 2);
+                }
 
-            if (CanvasRectangle.Top < ClientArea.Top || CanvasRectangle.Bottom > ClientArea.Bottom)
-            {
-                int scrollbar_ver_background_length = ClientArea.Height - paddingSize * 2;
-                int scrollbar_ver_foreground_length = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Height / (float)CanvasRectangle.Height * (float)scrollbar_ver_background_length));
+                if (CanvasRectangle.Top < ClientArea.Top || CanvasRectangle.Bottom > ClientArea.Bottom)
+                {
+                    int trackVecticalLength = ClientArea.Height - paddingSize * 2 - scrollbarThickness;
+                    int thumbVecticalLength = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Height / (float)CanvasRectangle.Height * (float)trackVecticalLength));
 
-                Rectangle scrollbar_ver_background_region = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), paddingSize / 2), new Size(scrollbarThickness, scrollbar_ver_background_length));
+                    Rectangle trackVecticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), paddingSize), new Size(scrollbarThickness, trackVecticalLength));
 
-                double scrollbar_ver_limit = ((float)scrollbar_ver_background_length - (float)scrollbar_ver_foreground_length) / 2.0f;
-                double scrollbar_ver_foreground_pos = (float)scrollbar_ver_background_region.Center().Y - ((float)scrollbar_ver_foreground_length / 2.0f)
-                        - Math.Min(scrollbar_ver_limit, Math.Max(-scrollbar_ver_limit,
-                            CanvasCenterOffset.Y / (float)CanvasRectangle.Height * (float)scrollbar_ver_background_length
-                        ));
+                    double limitVectical = ((float)trackVecticalLength - (float)thumbVecticalLength) / 2.0f;
+                    double trackVecticalPositionY = (float)trackVecticalRegion.Center().Y - ((float)thumbVecticalLength / 2.0f)
+                        - Math.Min(limitVectical, Math.Max(-limitVectical, CanvasCenterOffset.Y / (float)CanvasRectangle.Height * (float)trackVecticalLength));
 
-                Rectangle scrollbar_ver_foreground_region = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), (int)scrollbar_ver_foreground_pos), new Size(scrollbarThickness, scrollbar_ver_foreground_length));
+                    Rectangle thumbVecticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + paddingSize), (int)trackVecticalPositionY), new Size(scrollbarThickness, thumbVecticalLength));
 
-                g.DrawRoundedRectangle(backgroundBrush, backgroundPen, scrollbar_ver_background_region, scrollbarThickness / 2);
-                g.DrawRoundedRectangle(foregroundBrush, foregroundPen, scrollbar_ver_foreground_region, scrollbarThickness / 2);
+                    g.DrawRoundedRectangle(trackBrush, trackPen, trackVecticalRegion, scrollbarThickness / 2);
+                    g.DrawRoundedRectangle(thumbBrush, thumbPen, thumbVecticalRegion, scrollbarThickness / 2);
+                }
             }
         }
 
