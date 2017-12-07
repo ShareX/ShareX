@@ -1060,20 +1060,20 @@ namespace ShareX.ScreenCaptureLib
 
                 if (CanvasRectangle.Top < ClientArea.Top || CanvasRectangle.Bottom > ClientArea.Bottom)
                 {
-                    int trackVecticalLength = ClientArea.Height - trackMargin * 2 - scrollbarThickness;
-                    int thumbVecticalLength = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Height / CanvasRectangle.Height * trackVecticalLength));
+                    int trackVerticalLength = ClientArea.Height - trackMargin * 2 - scrollbarThickness;
+                    int thumbVerticalLength = Math.Max(scrollbarThickness, (int)((float)imageRectangleVisible.Height / CanvasRectangle.Height * trackVerticalLength));
 
-                    Rectangle trackVecticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin), trackMargin), new Size(scrollbarThickness, trackVecticalLength));
+                    Rectangle trackVerticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin), trackMargin), new Size(scrollbarThickness, trackVerticalLength));
 
-                    double limitVectical = (trackVecticalLength - thumbVecticalLength) / 2.0f;
-                    double trackVecticalPositionY = trackVecticalRegion.Center().Y - (thumbVecticalLength / 2.0f) -
-                        Math.Min(limitVectical, Math.Max(-limitVectical, CanvasCenterOffset.Y / CanvasRectangle.Height * trackVecticalLength));
+                    double limitVertical = (trackVerticalLength - thumbVerticalLength) / 2.0f;
+                    double trackVerticalPositionY = trackVerticalRegion.Center().Y - (thumbVerticalLength / 2.0f) -
+                        Math.Min(limitVertical, Math.Max(-limitVertical, CanvasCenterOffset.Y / CanvasRectangle.Height * trackVerticalLength));
 
-                    Rectangle thumbVecticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin), (int)trackVecticalPositionY), new Size(scrollbarThickness, thumbVecticalLength));
+                    Rectangle thumbVerticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin), (int)trackVerticalPositionY), new Size(scrollbarThickness, thumbVerticalLength));
 
                     g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.DrawCapsule(trackBrush, trackVecticalRegion.Offset(trackPadding));
-                    g.DrawCapsule(thumbBrush, thumbVecticalRegion);
+                    g.DrawCapsule(trackBrush, trackVerticalRegion.Offset(trackPadding));
+                    g.DrawCapsule(thumbBrush, thumbVerticalRegion);
                     g.SmoothingMode = SmoothingMode.None;
                 }
             }
