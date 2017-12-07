@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom,
             tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
-        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize;
+        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
 
@@ -528,6 +528,16 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiArrowHeadsBothSide);
+
+            tslnudStepFontSize = new ToolStripLabeledNumericUpDown("Font size:");
+            tslnudStepFontSize.Content.Minimum = 10;
+            tslnudStepFontSize.Content.Maximum = 100;
+            tslnudStepFontSize.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.StepFontSize = (int)tslnudStepFontSize.Content.Value;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1188,6 +1198,8 @@ namespace ShareX.ScreenCaptureLib
             if (tsbHighlightColor.Image != null) tsbHighlightColor.Image.Dispose();
             tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
+            tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
+
             tsmiShadow.Checked = AnnotationOptions.Shadow;
 
             tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
@@ -1269,6 +1281,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
+            tslnudStepFontSize.Visible = shapeType == ShapeType.DrawingStep;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
