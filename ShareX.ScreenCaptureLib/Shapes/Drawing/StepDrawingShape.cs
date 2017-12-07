@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawNumber(Graphics g)
         {
-            using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold, GraphicsUnit.Pixel))
+            using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {
                 Size textSize = g.MeasureString(Number.ToString(), font).ToSize();
                 int maxSize = Math.Max(textSize.Width, textSize.Height);
