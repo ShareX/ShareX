@@ -101,6 +101,7 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
+        private ScrollbarManager scrollbarManager;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
@@ -118,14 +119,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 Duration = TimeSpan.FromMilliseconds(200)
             };
-            if (IsEditorMode && Options.ShowEditorPanTip)
+
+            if (IsEditorMode)
             {
-                editorPanTipAnimation = new TextAnimation()
+                scrollbarManager = new ScrollbarManager(this);
+
+                if (Options.ShowEditorPanTip)
                 {
-                    Duration = TimeSpan.FromMilliseconds(5000),
-                    FadeOutDuration = TimeSpan.FromMilliseconds(1000),
-                    Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
-                };
+                    editorPanTipAnimation = new TextAnimation()
+                    {
+                        Duration = TimeSpan.FromMilliseconds(5000),
+                        FadeOutDuration = TimeSpan.FromMilliseconds(1000),
+                        Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
+                    };
+                }
             }
 
             borderPen = new Pen(Color.Black);
@@ -667,6 +674,11 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
+
+            if (scrollbarManager != null)
+            {
+                scrollbarManager.Update();
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -864,10 +876,10 @@ namespace ShareX.ScreenCaptureLib
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
             }
 
-            // Draw scroll bars while panning
-            if (ShapeManager.IsPanning)
+            // Draw scroll bars
+            if (scrollbarManager != null)
             {
-                DrawPanningScrollbars(g);
+                scrollbarManager.Draw(g);
             }
         }
 
@@ -1021,60 +1033,6 @@ namespace ShareX.ScreenCaptureLib
             int margin = 20;
             Rectangle textRectangle = new Rectangle(ClientArea.Width / 2 - textSize.Width / 2, ClientArea.Height - textSize.Height - margin, textSize.Width, textSize.Height);
             DrawTextAnimation(g, textAnimation, textRectangle, padding);
-        }
-
-        private void DrawPanningScrollbars(Graphics g)
-        {
-            if (ClientArea.Contains(CanvasRectangle)) return;
-
-            int scrollbarThickness = 10;
-            int trackMargin = 15;
-            int trackPadding = 2;
-
-            Rectangle imageRectangleVisible = CanvasRectangle;
-            imageRectangleVisible.Intersect(ClientArea);
-
-            using (Brush trackBrush = new SolidBrush(Color.FromArgb(255, 60, 60, 60)))
-            using (Brush thumbBrush = new SolidBrush(Color.FromArgb(255, 130, 130, 130)))
-            {
-                if (CanvasRectangle.Left < ClientArea.Left || CanvasRectangle.Right > ClientArea.Right)
-                {
-                    int trackHorizontalLength = ClientArea.Width - trackMargin * 2 - scrollbarThickness - trackPadding * 2;
-                    int thumbHorizontalLength = Math.Max(scrollbarThickness, (int)Math.Round((float)imageRectangleVisible.Width / CanvasRectangle.Width * trackHorizontalLength));
-
-                    Rectangle trackHorizontalRegion = new Rectangle(new Point(trackMargin - trackPadding, ClientArea.Bottom - (scrollbarThickness + trackMargin) - trackPadding), new Size(trackHorizontalLength + trackPadding * 2, scrollbarThickness + trackPadding * 2));
-
-                    double limitHorizontal = (trackHorizontalLength - thumbHorizontalLength) / 2.0f;
-                    double thumbHorizontalPositionX = Math.Round(trackHorizontalRegion.X + trackHorizontalRegion.Width / 2.0f - (thumbHorizontalLength / 2.0f) -
-                        Math.Min(limitHorizontal, Math.Max(-limitHorizontal, CanvasCenterOffset.X / CanvasRectangle.Width * trackHorizontalLength)));
-
-                    Rectangle thumbHorizontalRegion = new Rectangle(new Point((int)thumbHorizontalPositionX, ClientArea.Bottom - (scrollbarThickness + trackMargin)), new Size(thumbHorizontalLength, scrollbarThickness));
-
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.DrawCapsule(trackBrush, trackHorizontalRegion);
-                    g.DrawCapsule(thumbBrush, thumbHorizontalRegion);
-                    g.SmoothingMode = SmoothingMode.None;
-                }
-
-                if (CanvasRectangle.Top < ClientArea.Top || CanvasRectangle.Bottom > ClientArea.Bottom)
-                {
-                    int trackVerticalLength = ClientArea.Height - trackMargin * 2 - scrollbarThickness - trackPadding * 2;
-                    int thumbVerticalLength = Math.Max(scrollbarThickness, (int)Math.Round((float)imageRectangleVisible.Height / CanvasRectangle.Height * trackVerticalLength));
-
-                    Rectangle trackVerticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin) - trackPadding, trackMargin - trackPadding), new Size(scrollbarThickness + trackPadding * 2, trackVerticalLength + trackPadding * 2));
-
-                    double limitVertical = (trackVerticalLength - thumbVerticalLength) / 2.0f;
-                    double thumbVerticalPositionY = Math.Round(trackVerticalRegion.Y + trackVerticalRegion.Height / 2.0f - (thumbVerticalLength / 2.0f) -
-                        Math.Min(limitVertical, Math.Max(-limitVertical, CanvasCenterOffset.Y / CanvasRectangle.Height * trackVerticalLength)));
-
-                    Rectangle thumbVerticalRegion = new Rectangle(new Point(ClientArea.Right - (scrollbarThickness + trackMargin), (int)thumbVerticalPositionY), new Size(scrollbarThickness, thumbVerticalLength));
-
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.DrawCapsule(trackBrush, trackVerticalRegion);
-                    g.DrawCapsule(thumbBrush, thumbVerticalRegion);
-                    g.SmoothingMode = SmoothingMode.None;
-                }
-            }
         }
 
         private void WriteTips(StringBuilder sb)
