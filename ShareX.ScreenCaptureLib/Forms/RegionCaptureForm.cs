@@ -364,11 +364,9 @@ namespace ShareX.ScreenCaptureLib
                 PanningStrech.Y -= deltaY;
             }
 
-            int panLimit = 100;
-
             Size panLimitSize = new Size(
-                Math.Min(panLimit, CanvasRectangle.Width),
-                Math.Min(panLimit, CanvasRectangle.Height));
+                Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
+                Math.Min((int)Math.Round(ClientArea.Height * 0.25f), CanvasRectangle.Height));
 
             Rectangle limitRectangle = new Rectangle(
                 ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
