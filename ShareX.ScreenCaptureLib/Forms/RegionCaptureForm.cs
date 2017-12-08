@@ -1027,15 +1027,15 @@ namespace ShareX.ScreenCaptureLib
         {
             if (ClientArea.Contains(CanvasRectangle)) return;
 
-            int scrollbarThickness = 12;
+            int scrollbarThickness = 10;
             int trackMargin = 15;
             int trackPadding = 2;
 
             Rectangle imageRectangleVisible = CanvasRectangle;
             imageRectangleVisible.Intersect(ClientArea);
 
-            using (Brush trackBrush = new SolidBrush(Color.FromArgb(255, 36, 36, 36)))
-            using (Brush thumbBrush = new SolidBrush(Color.FromArgb(255, 110, 110, 110)))
+            using (Brush trackBrush = new SolidBrush(Color.FromArgb(255, 60, 60, 60)))
+            using (Brush thumbBrush = new SolidBrush(Color.FromArgb(255, 130, 130, 130)))
             {
                 if (CanvasRectangle.Left < ClientArea.Left || CanvasRectangle.Right > ClientArea.Right)
                 {
