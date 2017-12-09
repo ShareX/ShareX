@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override string ToString()
         {
-            return $"{Name} [{Endpoint}]";
+            return Name;
         }
     }
 }
