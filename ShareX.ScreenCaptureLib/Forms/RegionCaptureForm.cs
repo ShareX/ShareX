@@ -641,7 +641,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
-                                obj.IsDragging = true;
+                                obj.OnMousePressed();
                             }
 
                             for (int y = i + 1; y < objects.Count(); y++)
@@ -660,7 +660,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     foreach (DrawableObject obj in objects)
                     {
-                        obj.IsDragging = false;
+                        if (obj.IsDragging)
+                        {
+                            obj.OnMouseReleased();
+                        }
                     }
                 }
             }
@@ -903,7 +906,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (drawObject.Visible)
                 {
-                    drawObject.Draw(g);
+                    drawObject.OnDraw(g);
                 }
             }
         }

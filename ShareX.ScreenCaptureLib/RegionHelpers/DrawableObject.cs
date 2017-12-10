@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsDragging { get; set; }
         public int Order { get; set; }
 
-        public virtual void Draw(Graphics g)
+        public virtual void OnDraw(Graphics g)
         {
             if (IsCursorHover)
             {
@@ -45,6 +45,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.FillRectangle(Brushes.Red, Rectangle);
             }
+        }
+
+        public virtual void OnMousePressed()
+        {
+            IsDragging = true;
+        }
+
+        public virtual void OnMouseReleased()
+        {
+            IsDragging = false;
         }
     }
 }
