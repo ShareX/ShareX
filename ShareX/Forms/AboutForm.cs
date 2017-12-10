@@ -52,9 +52,9 @@ namespace ShareX
             {
                 lblBuild.Text = "Steam build";
             }
-            else if (Program.Build == ShareXBuild.WindowsStore)
+            else if (Program.Build == ShareXBuild.MicrosoftStore)
             {
-                lblBuild.Text = "Windows Store build";
+                lblBuild.Text = "Microsoft Store build";
             }
 #else
             if (!Program.PortableApps)

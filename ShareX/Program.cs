@@ -47,7 +47,7 @@ namespace ShareX
 #elif STEAM
                 return ShareXBuild.Steam;
 #elif WindowsStore
-                return ShareXBuild.WindowsStore;
+                return ShareXBuild.MicrosoftStore;
 #elif DEBUG
                 return ShareXBuild.Debug;
 #else
