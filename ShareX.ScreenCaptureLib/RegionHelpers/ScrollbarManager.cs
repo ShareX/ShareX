@@ -37,36 +37,34 @@ namespace ShareX.ScreenCaptureLib
         public bool IsHorizontalScrollbarVisible { get; private set; }
         public bool IsVerticalScrollbarVisible { get; private set; }
 
-        private bool shouldDrawHorizontalScrollbar = true;
-        private bool shouldDrawVerticalScrollbar = true;
-        private bool shouldDrawHorizontalScrollbarBefore = true;
-        private bool shouldDrawVerticalScrollbarBefore = true;
-
-        private Stopwatch horizontalScrollbarChangeTime;
-        private Stopwatch verticalScrollbarChangeTime;
-
         public int Thickness { get; set; } = 10;
         public int Margin { get; set; } = 15;
         public int Padding { get; set; } = 2;
 
-        // timings in milliseconds
+        // Timings in milliseconds
         public int FadeInTime { get; set; } = 150;
         public int FadeOutDelay { get; set; } = 500;
         public int FadeOutTime { get; set; } = 150;
 
+        private RegionCaptureForm form;
+        private Rectangle horizontalTrackRectangle, horizontalThumbRectangle, verticalTrackRectangle, verticalThumbRectangle;
+        private bool shouldDrawHorizontalScrollbar = true;
+        private bool shouldDrawVerticalScrollbar = true;
+        private bool shouldDrawHorizontalScrollbarBefore = true;
+        private bool shouldDrawVerticalScrollbarBefore = true;
+        private Stopwatch horizontalScrollbarChangeTime;
+        private Stopwatch verticalScrollbarChangeTime;
         private int HorizontalScrollbarOpacityLast = 255;
         private int HorizontalScrollbarOpacityCurrent = 255;
         private int VerticalScrollbarOpacityLast = 255;
         private int VerticalScrollbarOpacityCurrent = 255;
-
-        private RegionCaptureForm form;
-        private Rectangle horizontalTrackRectangle, horizontalThumbRectangle, verticalTrackRectangle, verticalThumbRectangle;
 
         public ScrollbarManager(RegionCaptureForm regionCaptureForm)
         {
             form = regionCaptureForm;
             horizontalScrollbarChangeTime = Stopwatch.StartNew();
             verticalScrollbarChangeTime = Stopwatch.StartNew();
+
             if (form.ClientArea.Contains(form.CanvasRectangle))
             {
                 HorizontalScrollbarOpacityLast = 0;
@@ -76,35 +74,30 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        int opacityGain(Stopwatch changeTime)
-        {
-            return (int)Math.Min(255.0f, 255.0f * (float)changeTime.ElapsedMilliseconds / Math.Max(0, (float)FadeInTime));
-        }
-
-        int opacityLoss(Stopwatch changeTime)
-        {
-            int deltaTime = Math.Max(0, (int)changeTime.ElapsedMilliseconds - FadeOutDelay);
-            return (int)Math.Min(255.0f, 255.0f * (float)deltaTime / Math.Max(0, (float)FadeOutTime));
-        }
-
         public void Update()
         {
             Rectangle imageRectangleVisible = form.CanvasRectangle;
             imageRectangleVisible.Intersect(form.ClientArea);
 
-            shouldDrawHorizontalScrollbar = form.ShapeManager.IsPanning && (form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right);
+            shouldDrawHorizontalScrollbar = form.ShapeManager.IsPanning &&
+                (form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right);
 
-            if (shouldDrawHorizontalScrollbar ^ shouldDrawHorizontalScrollbarBefore)
+            if (shouldDrawHorizontalScrollbar != shouldDrawHorizontalScrollbarBefore)
             {
                 horizontalScrollbarChangeTime = Stopwatch.StartNew();
                 HorizontalScrollbarOpacityLast = HorizontalScrollbarOpacityCurrent;
             }
             shouldDrawHorizontalScrollbarBefore = shouldDrawHorizontalScrollbar;
 
-            HorizontalScrollbarOpacityCurrent = shouldDrawHorizontalScrollbar
-                ? HorizontalScrollbarOpacityLast + opacityGain(horizontalScrollbarChangeTime)
-                : HorizontalScrollbarOpacityLast - opacityLoss(horizontalScrollbarChangeTime);
-            HorizontalScrollbarOpacityCurrent = Math.Min(255, Math.Max(0, HorizontalScrollbarOpacityCurrent));
+            if (shouldDrawHorizontalScrollbar)
+            {
+                HorizontalScrollbarOpacityCurrent = HorizontalScrollbarOpacityLast + OpacityGain(horizontalScrollbarChangeTime);
+            }
+            else
+            {
+                HorizontalScrollbarOpacityCurrent = HorizontalScrollbarOpacityLast - OpacityLoss(horizontalScrollbarChangeTime);
+            }
+            HorizontalScrollbarOpacityCurrent = HorizontalScrollbarOpacityCurrent.Between(0, 255);
 
             IsHorizontalScrollbarVisible = HorizontalScrollbarOpacityCurrent > 0;
 
@@ -124,19 +117,25 @@ namespace ShareX.ScreenCaptureLib
                     new Size(horizontalThumbLength, Thickness));
             }
 
-            shouldDrawVerticalScrollbar = form.ShapeManager.IsPanning && (form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom);
+            shouldDrawVerticalScrollbar = form.ShapeManager.IsPanning &&
+                (form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom);
 
-            if (shouldDrawVerticalScrollbar ^ shouldDrawVerticalScrollbarBefore)
+            if (shouldDrawVerticalScrollbar != shouldDrawVerticalScrollbarBefore)
             {
                 verticalScrollbarChangeTime = Stopwatch.StartNew();
                 VerticalScrollbarOpacityLast = VerticalScrollbarOpacityCurrent;
             }
             shouldDrawVerticalScrollbarBefore = shouldDrawVerticalScrollbar;
 
-            VerticalScrollbarOpacityCurrent = shouldDrawVerticalScrollbar
-                ? VerticalScrollbarOpacityLast + opacityGain(verticalScrollbarChangeTime)
-                : VerticalScrollbarOpacityLast - opacityLoss(verticalScrollbarChangeTime);
-            VerticalScrollbarOpacityCurrent = Math.Min(255, Math.Max(0, VerticalScrollbarOpacityCurrent));
+            if (shouldDrawVerticalScrollbar)
+            {
+                VerticalScrollbarOpacityCurrent = VerticalScrollbarOpacityLast + OpacityGain(verticalScrollbarChangeTime);
+            }
+            else
+            {
+                VerticalScrollbarOpacityCurrent = VerticalScrollbarOpacityLast - OpacityLoss(verticalScrollbarChangeTime);
+            }
+            VerticalScrollbarOpacityCurrent = VerticalScrollbarOpacityCurrent.Between(0, 255);
 
             IsVerticalScrollbarVisible = VerticalScrollbarOpacityCurrent > 0;
             if (IsVerticalScrollbarVisible)
@@ -184,6 +183,17 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+        }
+
+        private int OpacityGain(Stopwatch changeTime)
+        {
+            return (int)Math.Min(255.0f, 255.0f * changeTime.ElapsedMilliseconds / Math.Max(0, (float)FadeInTime));
+        }
+
+        private int OpacityLoss(Stopwatch changeTime)
+        {
+            int deltaTime = Math.Max(0, (int)changeTime.ElapsedMilliseconds - FadeOutDelay);
+            return (int)Math.Min(255.0f, 255.0f * deltaTime / Math.Max(0, (float)FadeOutTime));
         }
     }
 }
