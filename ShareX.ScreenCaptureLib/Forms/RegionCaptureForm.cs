@@ -625,7 +625,29 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateCoordinates();
 
+            UpdateDrawableObjects();
+
+            if (ShapeManager.IsPanning)
+            {
+                Pan(InputManager.MouseVelocity);
+                UpdateCenterOffset();
+            }
+
+            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
+
+            ShapeManager.Update();
+
+            if (scrollbarManager != null)
+            {
+                scrollbarManager.Update();
+            }
+        }
+
+        private void UpdateDrawableObjects()
+        {
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+
+            Point position = InputManager.ClientMousePosition;
 
             if (objects.All(x => !x.IsDragging))
             {
@@ -635,13 +657,13 @@ namespace ShareX.ScreenCaptureLib
 
                     if (obj.Visible)
                     {
-                        obj.IsCursorHover = obj.Rectangle.Contains(InputManager.ClientMousePosition);
+                        obj.IsCursorHover = obj.Rectangle.Contains(position);
 
                         if (obj.IsCursorHover)
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
-                                obj.OnMousePressed();
+                                obj.OnMousePressed(position);
                             }
 
                             for (int y = i + 1; y < objects.Count(); y++)
@@ -662,25 +684,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (obj.IsDragging)
                         {
-                            obj.OnMouseReleased();
+                            obj.OnMouseReleased(position);
                         }
                     }
                 }
-            }
-
-            if (ShapeManager.IsPanning)
-            {
-                Pan(InputManager.MouseVelocity);
-                UpdateCenterOffset();
-            }
-
-            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
-
-            ShapeManager.Update();
-
-            if (scrollbarManager != null)
-            {
-                scrollbarManager.Update();
             }
         }
 

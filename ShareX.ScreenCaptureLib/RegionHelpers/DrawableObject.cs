@@ -47,12 +47,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual void OnMousePressed()
+        public virtual void OnMousePressed(Point position)
         {
             IsDragging = true;
         }
 
-        public virtual void OnMouseReleased()
+        public virtual void OnMouseReleased(Point position)
         {
             IsDragging = false;
         }
