@@ -27,17 +27,21 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class DrawableObject
+    internal abstract class DrawableObject
     {
         public bool Visible { get; set; }
         public Rectangle Rectangle { get; set; }
         public bool IsCursorHover { get; set; }
-        public bool IsDragging { get; set; }
+        public bool IsDragging { get; protected set; }
         public int Order { get; set; }
 
         public virtual void OnDraw(Graphics g)
         {
-            if (IsCursorHover)
+            if (IsDragging)
+            {
+                g.FillRectangle(Brushes.Blue, Rectangle);
+            }
+            else if (IsCursorHover)
             {
                 g.FillRectangle(Brushes.Green, Rectangle);
             }

@@ -625,7 +625,7 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateCoordinates();
 
-            UpdateDrawableObjects();
+            UpdateObjects();
 
             if (ShapeManager.IsPanning)
             {
@@ -643,7 +643,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void UpdateDrawableObjects()
+        private void UpdateObjects()
         {
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
@@ -651,7 +651,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (objects.All(x => !x.IsDragging))
             {
-                for (int i = 0; i < objects.Count(); i++)
+                for (int i = 0; i < objects.Length; i++)
                 {
                     DrawableObject obj = objects[i];
 
@@ -666,9 +666,9 @@ namespace ShareX.ScreenCaptureLib
                                 obj.OnMousePressed(position);
                             }
 
-                            for (int y = i + 1; y < objects.Count(); y++)
+                            for (int j = i + 1; j < objects.Length; j++)
                             {
-                                objects[y].IsCursorHover = false;
+                                objects[j].IsCursorHover = false;
                             }
 
                             break;
@@ -687,6 +687,17 @@ namespace ShareX.ScreenCaptureLib
                             obj.OnMouseReleased(position);
                         }
                     }
+                }
+            }
+        }
+
+        private void DrawObjects(Graphics g)
+        {
+            foreach (DrawableObject obj in DrawableObjects)
+            {
+                if (obj.Visible)
+                {
+                    obj.OnDraw(g);
                 }
             }
         }
@@ -904,17 +915,6 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 g.DrawRectangleProper(borderDotStaticPen, rect);
-            }
-        }
-
-        private void DrawObjects(Graphics g)
-        {
-            foreach (DrawableObject drawObject in DrawableObjects)
-            {
-                if (drawObject.Visible)
-                {
-                    drawObject.OnDraw(g);
-                }
             }
         }
 
