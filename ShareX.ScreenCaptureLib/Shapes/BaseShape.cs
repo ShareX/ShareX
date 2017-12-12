@@ -59,6 +59,8 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
 
+        public virtual bool LimitRectangleToInsideCanvas { get; }
+
         private Point startPosition;
 
         public Point StartPosition
@@ -218,6 +220,16 @@ namespace ShareX.ScreenCaptureLib
             else if (Manager.IsMoving && !Manager.IsPanning)
             {
                 Move(InputManager.MouseVelocity);
+            }
+
+            CheckLimitRectangle();
+        }
+
+        private void CheckLimitRectangle()
+        {
+            if (LimitRectangleToInsideCanvas)
+            {
+                Rectangle = RectangleInsideCanvas;
             }
         }
 
@@ -379,6 +391,8 @@ namespace ShareX.ScreenCaptureLib
 
                         Rectangle = newRect;
                     }
+
+                    CheckLimitRectangle();
                 }
             }
         }

@@ -32,8 +32,10 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.ToolCrop;
 
+        public override bool LimitRectangleToInsideCanvas { get; } = true;
+
         private ButtonObject confirmButton, cancelButton;
-        private int buttonOffset = 12;
+        private int buttonOffset = 15;
 
         public override void OnUpdate()
         {
@@ -53,7 +55,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsValidShape)
             {
-                Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
+                Manager.DrawRegionArea(g, Rectangle, true);
             }
         }
 
@@ -82,7 +84,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
-            Manager.CropArea(RectangleInsideCanvas);
+            Manager.CropArea(Rectangle);
             Remove();
         }
 
