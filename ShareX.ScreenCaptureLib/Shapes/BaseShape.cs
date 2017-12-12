@@ -222,14 +222,10 @@ namespace ShareX.ScreenCaptureLib
                 Move(InputManager.MouseVelocity);
             }
 
-            CheckLimitRectangle();
-        }
-
-        private void CheckLimitRectangle()
-        {
             if (LimitRectangleToInsideCanvas)
             {
-                Rectangle = RectangleInsideCanvas;
+                StartPosition = StartPosition.Restrict(Manager.Form.CanvasRectangle);
+                EndPosition = EndPosition.Restrict(Manager.Form.CanvasRectangle);
             }
         }
 
@@ -392,7 +388,10 @@ namespace ShareX.ScreenCaptureLib
                         Rectangle = newRect;
                     }
 
-                    CheckLimitRectangle();
+                    if (LimitRectangleToInsideCanvas)
+                    {
+                        Rectangle = RectangleInsideCanvas;
+                    }
                 }
             }
         }
