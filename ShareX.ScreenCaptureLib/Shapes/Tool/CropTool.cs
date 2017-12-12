@@ -27,9 +27,25 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class CropDrawingShape : BaseTool
+    public class CropTool : BaseTool
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingCrop;
+        public override ShapeType ShapeType { get; } = ShapeType.ToolCrop;
+
+        private Size buttonSize = new Size(100, 35);
+        private int buttonOffset = 10;
+        private ConfirmButton confirmButton;
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+
+            if (confirmButton != null)
+            {
+                confirmButton.Visible = true;
+                confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width, Rectangle.Bottom + buttonOffset,
+                    buttonSize.Width, buttonSize.Height);
+            }
+        }
 
         public override void OnDraw(Graphics g)
         {
@@ -41,7 +57,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-
+            confirmButton = new ConfirmButton();
+            Manager.DrawableObjects.Add(confirmButton);
         }
 
         private void ConfirmCrop()
@@ -53,6 +70,16 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Remove();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (confirmButton != null)
+            {
+                Manager.DrawableObjects.Remove(confirmButton);
+            }
         }
     }
 }

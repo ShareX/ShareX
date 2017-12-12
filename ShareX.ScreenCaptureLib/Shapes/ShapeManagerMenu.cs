@@ -217,7 +217,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
-                else if (shapeType == ShapeType.DrawingCrop)
+                else if (shapeType == ShapeType.ToolCrop)
                 {
                     continue;
                 }
@@ -283,7 +283,7 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.EffectHighlight:
                         img = Resources.highlighter_text;
                         break;
-                    case ShapeType.DrawingCrop:
+                    case ShapeType.ToolCrop:
                         img = Resources.image_crop;
                         break;
                 }

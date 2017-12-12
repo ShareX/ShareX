@@ -81,7 +81,6 @@ namespace ShareX.ScreenCaptureLib
         public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
         internal ShapeManager ShapeManager { get; private set; }
-        internal List<DrawableObject> DrawableObjects { get; private set; }
         internal bool IsClosing { get; private set; }
 
         internal Image CustomNodeImage = Resources.CircleNode;
@@ -112,7 +111,6 @@ namespace ShareX.ScreenCaptureLib
             ClientArea = CaptureHelpers.GetScreenBounds0Based();
             CanvasRectangle = ClientArea;
 
-            DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
             regionAnimation = new RectangleAnimation()
@@ -625,7 +623,7 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateCoordinates();
 
-            UpdateObjects();
+            ShapeManager.UpdateObjects();
 
             if (ShapeManager.IsPanning)
             {
@@ -640,65 +638,6 @@ namespace ShareX.ScreenCaptureLib
             if (scrollbarManager != null)
             {
                 scrollbarManager.Update();
-            }
-        }
-
-        private void UpdateObjects()
-        {
-            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
-
-            Point position = InputManager.ClientMousePosition;
-
-            if (objects.All(x => !x.IsDragging))
-            {
-                for (int i = 0; i < objects.Length; i++)
-                {
-                    DrawableObject obj = objects[i];
-
-                    if (obj.Visible)
-                    {
-                        obj.IsCursorHover = obj.Rectangle.Contains(position);
-
-                        if (obj.IsCursorHover)
-                        {
-                            if (InputManager.IsMousePressed(MouseButtons.Left))
-                            {
-                                obj.OnMousePressed(position);
-                            }
-
-                            for (int j = i + 1; j < objects.Length; j++)
-                            {
-                                objects[j].IsCursorHover = false;
-                            }
-
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (InputManager.IsMouseReleased(MouseButtons.Left))
-                {
-                    foreach (DrawableObject obj in objects)
-                    {
-                        if (obj.IsDragging)
-                        {
-                            obj.OnMouseReleased(position);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void DrawObjects(Graphics g)
-        {
-            foreach (DrawableObject obj in DrawableObjects)
-            {
-                if (obj.Visible)
-                {
-                    obj.OnDraw(g);
-                }
             }
         }
 
@@ -871,7 +810,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw resize nodes
-            DrawObjects(g);
+            ShapeManager.DrawObjects(g);
 
             // Draw F1 tips
             if (!IsEditorMode && Options.ShowHotkeys)

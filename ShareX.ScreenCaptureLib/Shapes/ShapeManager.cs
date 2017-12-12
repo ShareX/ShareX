@@ -173,7 +173,8 @@ namespace ShareX.ScreenCaptureLib
 
         public AnnotationOptions AnnotationOptions => Options.AnnotationOptions;
 
-        public ResizeNode[] ResizeNodes { get; private set; }
+        internal List<DrawableObject> DrawableObjects { get; private set; }
+        internal ResizeNode[] ResizeNodes { get; private set; }
 
         private bool nodesVisible;
 
@@ -222,13 +223,14 @@ namespace ShareX.ScreenCaptureLib
             Form = form;
             Options = form.Options;
 
+            DrawableObjects = new List<DrawableObject>();
             ResizeNodes = new ResizeNode[9];
 
             for (int i = 0; i < ResizeNodes.Length; i++)
             {
                 ResizeNode node = new ResizeNode();
                 node.SetCustomNode(form.CustomNodeImage);
-                form.DrawableObjects.Add(node);
+                DrawableObjects.Add(node);
                 ResizeNodes[i] = node;
             }
 
@@ -792,6 +794,65 @@ namespace ShareX.ScreenCaptureLib
             Form.SetDefaultCursor();
         }
 
+        internal void UpdateObjects()
+        {
+            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+
+            Point position = InputManager.ClientMousePosition;
+
+            if (objects.All(x => !x.IsDragging))
+            {
+                for (int i = 0; i < objects.Length; i++)
+                {
+                    DrawableObject obj = objects[i];
+
+                    if (obj.Visible)
+                    {
+                        obj.IsCursorHover = obj.Rectangle.Contains(position);
+
+                        if (obj.IsCursorHover)
+                        {
+                            if (InputManager.IsMousePressed(MouseButtons.Left))
+                            {
+                                obj.OnMousePressed(position);
+                            }
+
+                            for (int j = i + 1; j < objects.Length; j++)
+                            {
+                                objects[j].IsCursorHover = false;
+                            }
+
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (InputManager.IsMouseReleased(MouseButtons.Left))
+                {
+                    foreach (DrawableObject obj in objects)
+                    {
+                        if (obj.IsDragging)
+                        {
+                            obj.OnMouseReleased(position);
+                        }
+                    }
+                }
+            }
+        }
+
+        internal void DrawObjects(Graphics g)
+        {
+            foreach (DrawableObject obj in DrawableObjects)
+            {
+                if (obj.Visible)
+                {
+                    obj.OnDraw(g);
+                }
+            }
+        }
+
         private BaseShape AddShape()
         {
             BaseShape shape = CreateShape();
@@ -871,8 +932,8 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
                     break;
-                case ShapeType.DrawingCrop:
-                    shape = new CropDrawingShape();
+                case ShapeType.ToolCrop:
+                    shape = new CropTool();
                     break;
             }
 
