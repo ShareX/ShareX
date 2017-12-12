@@ -38,14 +38,31 @@ namespace ShareX.ScreenCaptureLib
         public string Text { get; set; }
         public Color ButtonColor { get; set; }
 
+        private int depth = 2;
+
         public override void OnDraw(Graphics g)
         {
+            Rectangle rect = Rectangle;
+
+            if (IsCursorHover)
+            {
+                rect = rect.LocationOffset(0, depth);
+            }
+
             g.SmoothingMode = SmoothingMode.HighQuality;
 
             using (SolidBrush buttonBrush = new SolidBrush(ButtonColor))
             {
-                g.DrawRoundedRectangle(Brushes.Black, Rectangle.LocationOffset(0, 2), 5);
-                g.DrawRoundedRectangle(buttonBrush, Rectangle, 5);
+                g.PixelOffsetMode = PixelOffsetMode.Half;
+
+                if (!IsCursorHover)
+                {
+                    g.DrawRoundedRectangle(Brushes.Black, rect.LocationOffset(0, depth), 5);
+                }
+
+                g.DrawRoundedRectangle(buttonBrush, rect, 5);
+
+                g.PixelOffsetMode = PixelOffsetMode.Default;
             }
 
             g.SmoothingMode = SmoothingMode.None;
@@ -53,8 +70,8 @@ namespace ShareX.ScreenCaptureLib
             using (Font font = new Font("Times New Roman", 18))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
-                g.DrawString(Text, font, Brushes.Black, Rectangle.LocationOffset(0, 4), sf);
-                g.DrawString(Text, font, Brushes.White, Rectangle.LocationOffset(0, 2), sf);
+                g.DrawString(Text, font, Brushes.Black, rect.LocationOffset(0, 4), sf);
+                g.DrawString(Text, font, Brushes.White, rect.LocationOffset(0, 2), sf);
             }
         }
     }

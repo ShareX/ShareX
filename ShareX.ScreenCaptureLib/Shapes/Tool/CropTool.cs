@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.ToolCrop;
 
         private ButtonObject confirmButton, cancelButton;
-        private int buttonOffset = 10;
+        private int buttonOffset = 12;
 
         public override void OnUpdate()
         {
