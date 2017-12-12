@@ -24,12 +24,17 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
     internal abstract class DrawableObject
     {
+        public event MouseEventHandler MousePressed;
+        public event MouseEventHandler MouseReleased;
+
         public bool Visible { get; set; }
+        public bool HandleMouseInput { get; set; } = true;
         public Rectangle Rectangle { get; set; }
         public bool IsCursorHover { get; set; }
         public bool IsDragging { get; protected set; }
@@ -54,11 +59,21 @@ namespace ShareX.ScreenCaptureLib
         public virtual void OnMousePressed(Point position)
         {
             IsDragging = true;
+
+            if (MousePressed != null)
+            {
+                MousePressed(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+            }
         }
 
         public virtual void OnMouseReleased(Point position)
         {
             IsDragging = false;
+
+            if (MouseReleased != null)
+            {
+                MouseReleased(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+            }
         }
     }
 }

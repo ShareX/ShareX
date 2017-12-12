@@ -208,7 +208,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCursorOnNode => NodesVisible && ResizeNodes.Any(node => node.IsCursorHover);
+        public bool IsCursorOnObject => DrawableObjects.Any(x => x.HandleMouseInput && x.IsCursorHover);
 
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
@@ -696,7 +696,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void StartRegionSelection()
         {
-            if (IsCursorOnNode)
+            if (IsCursorOnObject)
             {
                 return;
             }
@@ -1003,7 +1003,7 @@ namespace ShareX.ScreenCaptureLib
 
         private BaseShape CheckHover()
         {
-            if (!IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
+            if (!IsCursorOnObject && !IsCreating && !IsMoving && !IsResizing)
             {
                 BaseShape shape = GetIntersectShape();
 

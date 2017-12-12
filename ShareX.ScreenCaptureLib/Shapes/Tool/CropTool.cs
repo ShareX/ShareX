@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -41,7 +42,6 @@ namespace ShareX.ScreenCaptureLib
 
             if (confirmButton != null)
             {
-                confirmButton.Visible = true;
                 confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width, Rectangle.Bottom + buttonOffset,
                     buttonSize.Width, buttonSize.Height);
             }
@@ -57,11 +57,15 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            confirmButton = new ConfirmButton();
+            confirmButton = new ConfirmButton()
+            {
+                Visible = true
+            };
+            confirmButton.MousePressed += ConfirmButton_MousePressed;
             Manager.DrawableObjects.Add(confirmButton);
         }
 
-        private void ConfirmCrop()
+        private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
             if (IsValidShape)
             {
