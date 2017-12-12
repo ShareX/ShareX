@@ -41,10 +41,10 @@ namespace ShareX.ScreenCaptureLib
 
             if (confirmButton != null)
             {
-                confirmButton.Rectangle = new Rectangle(Rectangle.Right - confirmButton.Rectangle.Width, Rectangle.Bottom + buttonOffset,
-                    confirmButton.Rectangle.Width, confirmButton.Rectangle.Height);
+                confirmButton.Rectangle = new Rectangle(Rectangle.Right - cancelButton.Rectangle.Width - buttonOffset - confirmButton.Rectangle.Width,
+                    Rectangle.Bottom + buttonOffset, confirmButton.Rectangle.Width, confirmButton.Rectangle.Height);
 
-                cancelButton.Rectangle = new Rectangle(Rectangle.Right - confirmButton.Rectangle.Width - buttonOffset - cancelButton.Rectangle.Width,
+                cancelButton.Rectangle = new Rectangle(Rectangle.Right - cancelButton.Rectangle.Width,
                     Rectangle.Bottom + buttonOffset, cancelButton.Rectangle.Width, cancelButton.Rectangle.Height);
             }
         }
@@ -63,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Text = "\u2714",
                 ButtonColor = Color.ForestGreen,
-                Rectangle = new Rectangle(0, 0, 40, 40),
+                Rectangle = new Rectangle(0, 0, 80, 40),
                 Visible = true
             };
             confirmButton.MousePressed += ConfirmButton_MousePressed;
@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Text = "\u2716",
                 ButtonColor = Color.FromArgb(227, 45, 45),
-                Rectangle = new Rectangle(0, 0, 40, 40),
+                Rectangle = new Rectangle(0, 0, 80, 40),
                 Visible = true
             };
             cancelButton.MousePressed += CancelButton_MousePressed;
