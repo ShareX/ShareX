@@ -2762,15 +2762,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crop image.
-        /// </summary>
-        internal static string ShapeType_DrawingCrop {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingCrop", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Drawing: Cursor.
         /// </summary>
         internal static string ShapeType_DrawingCursor {
@@ -2920,6 +2911,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShapeType_RegionRectangle {
             get {
                 return ResourceManager.GetString("ShapeType_RegionRectangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crop image.
+        /// </summary>
+        internal static string ShapeType_ToolCrop {
+            get {
+                return ResourceManager.GetString("ShapeType_ToolCrop", resourceCulture);
             }
         }
         
