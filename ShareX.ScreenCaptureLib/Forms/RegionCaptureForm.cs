@@ -792,6 +792,12 @@ namespace ShareX.ScreenCaptureLib
                 drawingShape.OnDraw(g);
             }
 
+            // Draw tools
+            foreach (BaseTool toolShape in ShapeManager.ToolShapes)
+            {
+                toolShape.OnDraw(g);
+            }
+
             // Draw animated rectangle on hover area
             if (ShapeManager.IsCurrentHoverShapeValid)
             {

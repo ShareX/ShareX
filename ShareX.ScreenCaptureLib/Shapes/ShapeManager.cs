@@ -84,6 +84,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Options.LastAnnotationTool = CurrentTool;
                     }
+
+                    ClearTools();
                 }
 
                 DeselectCurrentShape();
@@ -114,6 +116,8 @@ namespace ShareX.ScreenCaptureLib
         public BaseDrawingShape[] DrawingShapes => Shapes.OfType<BaseDrawingShape>().ToArray();
 
         public BaseEffectShape[] EffectShapes => Shapes.OfType<BaseEffectShape>().ToArray();
+
+        public BaseTool[] ToolShapes => Shapes.OfType<BaseTool>().ToArray();
 
         private BaseShape currentHoverShape;
 
@@ -709,6 +713,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (!IsCreating) // Create new shape
             {
+                ClearTools();
                 DeselectCurrentShape();
 
                 shape = AddShape();
@@ -1117,6 +1122,15 @@ namespace ShareX.ScreenCaptureLib
 
             Shapes.Clear();
             DeselectCurrentShape();
+        }
+
+        private void ClearTools()
+        {
+            foreach (BaseTool tool in ToolShapes)
+            {
+                tool.Dispose();
+                Shapes.Remove(tool);
+            }
         }
 
         public BaseShape GetIntersectShape()

@@ -211,7 +211,8 @@ namespace ShareX.ScreenCaptureLib
     {
         Region,
         Drawing,
-        Effect
+        Effect,
+        Tool
     }
 
     public enum ShapeType // Localized

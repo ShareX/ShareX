@@ -23,31 +23,18 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class CropDrawingShape : BaseDrawingShape
+    public abstract class BaseTool : BaseShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingCrop;
+        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Tool;
 
-        public override void OnDraw(Graphics g)
-        {
-            if (IsValidShape)
-            {
-                Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
-            }
-        }
-
-        public override void OnCreated()
-        {
-            if (IsValidShape)
-            {
-                Rectangle = RectangleInsideCanvas;
-                Manager.CropArea(Rectangle);
-            }
-
-            Remove();
-        }
+        public abstract void OnDraw(Graphics g);
     }
 }
