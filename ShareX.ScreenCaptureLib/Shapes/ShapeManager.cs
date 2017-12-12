@@ -1537,11 +1537,17 @@ namespace ShareX.ScreenCaptureLib
 
         private void AutoCropImage()
         {
-            Bitmap bmp = ImageHelpers.AutoCropImage((Bitmap)Form.Canvas);
+            Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
+            Rectangle rect = ImageHelpers.FindAutoCropRectangle((Bitmap)Form.Canvas);
 
-            if (bmp != null)
+            if (source != rect && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0)
             {
-                UpdateCanvas(bmp);
+                CurrentTool = ShapeType.ToolCrop;
+                CropTool tool = (CropTool)CreateShape(ShapeType.ToolCrop);
+                tool.Rectangle = rect.LocationOffset(Form.CanvasRectangle.Location);
+                tool.OnCreated();
+                AddShape(tool);
+                SelectCurrentShape();
             }
         }
 

@@ -82,12 +82,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
-            if (IsValidShape)
-            {
-                Rectangle = RectangleInsideCanvas;
-                Manager.CropArea(Rectangle);
-            }
-
+            Manager.CropArea(RectangleInsideCanvas);
             Remove();
         }
 
