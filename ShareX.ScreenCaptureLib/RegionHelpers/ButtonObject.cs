@@ -27,16 +27,35 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ConfirmButton : DrawableObject
+    internal class ButtonObject : DrawableObject
     {
+        public string Text { get; set; }
+        public Color ButtonColor { get; set; }
+
         public override void OnDraw(Graphics g)
         {
-            base.OnDraw(g);
+            g.SmoothingMode = SmoothingMode.HighQuality;
+
+            using (SolidBrush buttonBrush = new SolidBrush(ButtonColor))
+            {
+                g.DrawRoundedRectangle(Brushes.Black, Rectangle.LocationOffset(0, 2), 5);
+                g.DrawRoundedRectangle(buttonBrush, Rectangle, 5);
+            }
+
+            g.SmoothingMode = SmoothingMode.None;
+
+            using (Font font = new Font("Times New Roman", 18))
+            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            {
+                g.DrawString(Text, font, Brushes.Black, Rectangle.LocationOffset(0, 4), sf);
+                g.DrawString(Text, font, Brushes.White, Rectangle.LocationOffset(0, 2), sf);
+            }
         }
     }
 }

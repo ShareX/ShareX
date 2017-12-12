@@ -32,9 +32,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.ToolCrop;
 
-        private Size buttonSize = new Size(100, 35);
+        private ButtonObject confirmButton, cancelButton;
         private int buttonOffset = 10;
-        private ConfirmButton confirmButton;
 
         public override void OnUpdate()
         {
@@ -42,8 +41,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (confirmButton != null)
             {
-                confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width, Rectangle.Bottom + buttonOffset,
-                    buttonSize.Width, buttonSize.Height);
+                confirmButton.Rectangle = new Rectangle(Rectangle.Right - confirmButton.Rectangle.Width, Rectangle.Bottom + buttonOffset,
+                    confirmButton.Rectangle.Width, confirmButton.Rectangle.Height);
+
+                cancelButton.Rectangle = new Rectangle(Rectangle.Right - confirmButton.Rectangle.Width - buttonOffset - cancelButton.Rectangle.Width,
+                    Rectangle.Bottom + buttonOffset, cancelButton.Rectangle.Width, cancelButton.Rectangle.Height);
             }
         }
 
@@ -57,12 +59,25 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            confirmButton = new ConfirmButton()
+            confirmButton = new ButtonObject()
             {
+                Text = "\u2714",
+                ButtonColor = Color.ForestGreen,
+                Rectangle = new Rectangle(0, 0, 40, 40),
                 Visible = true
             };
             confirmButton.MousePressed += ConfirmButton_MousePressed;
             Manager.DrawableObjects.Add(confirmButton);
+
+            cancelButton = new ButtonObject()
+            {
+                Text = "\u2716",
+                ButtonColor = Color.FromArgb(227, 45, 45),
+                Rectangle = new Rectangle(0, 0, 40, 40),
+                Visible = true
+            };
+            cancelButton.MousePressed += CancelButton_MousePressed;
+            Manager.DrawableObjects.Add(cancelButton);
         }
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
@@ -76,6 +91,11 @@ namespace ShareX.ScreenCaptureLib
             Remove();
         }
 
+        private void CancelButton_MousePressed(object sender, MouseEventArgs e)
+        {
+            Remove();
+        }
+
         public override void Dispose()
         {
             base.Dispose();
@@ -83,6 +103,11 @@ namespace ShareX.ScreenCaptureLib
             if (confirmButton != null)
             {
                 Manager.DrawableObjects.Remove(confirmButton);
+            }
+
+            if (cancelButton != null)
+            {
+                Manager.DrawableObjects.Remove(cancelButton);
             }
         }
     }
