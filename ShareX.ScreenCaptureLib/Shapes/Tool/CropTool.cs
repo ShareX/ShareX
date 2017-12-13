@@ -35,27 +35,31 @@ namespace ShareX.ScreenCaptureLib
         public override bool LimitRectangleToInsideCanvas { get; } = true;
 
         private ButtonObject confirmButton, cancelButton;
+        private Size buttonSize = new Size(80, 40);
         private int buttonOffset = 15;
 
         public override void OnUpdate()
         {
             base.OnUpdate();
 
-            if (confirmButton != null)
+            if (confirmButton != null && cancelButton != null)
             {
-                confirmButton.Rectangle = new Rectangle(Rectangle.Right - cancelButton.Rectangle.Width - buttonOffset - confirmButton.Rectangle.Width,
-                    Rectangle.Bottom + buttonOffset, confirmButton.Rectangle.Width, confirmButton.Rectangle.Height);
-
-                cancelButton.Rectangle = new Rectangle(Rectangle.Right - cancelButton.Rectangle.Width,
-                    Rectangle.Bottom + buttonOffset, cancelButton.Rectangle.Width, cancelButton.Rectangle.Height);
-            }
-        }
-
-        public override void OnDraw(Graphics g)
-        {
-            if (IsValidShape)
-            {
-                Manager.DrawRegionArea(g, Rectangle, true);
+                if (Rectangle.Bottom + buttonOffset + buttonSize.Height > Manager.Form.ClientArea.Bottom &&
+                    Rectangle.Width > buttonSize.Width * 2 + buttonOffset * 3 &&
+                    Rectangle.Height > buttonSize.Height + buttonOffset * 2)
+                {
+                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset * 2 - buttonSize.Width * 2,
+                        Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
+                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset - buttonSize.Width,
+                        Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
+                }
+                else
+                {
+                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width * 2 - buttonOffset,
+                        Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
+                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width,
+                        Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
+                }
             }
         }
 
@@ -65,7 +69,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Text = "\u2714",
                 ButtonColor = Color.ForestGreen,
-                Rectangle = new Rectangle(0, 0, 80, 40),
+                Rectangle = new Rectangle(new Point(), buttonSize),
                 Visible = true
             };
             confirmButton.MousePressed += ConfirmButton_MousePressed;
@@ -75,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Text = "\u2716",
                 ButtonColor = Color.FromArgb(227, 45, 45),
-                Rectangle = new Rectangle(0, 0, 80, 40),
+                Rectangle = new Rectangle(new Point(), buttonSize),
                 Visible = true
             };
             cancelButton.MousePressed += CancelButton_MousePressed;

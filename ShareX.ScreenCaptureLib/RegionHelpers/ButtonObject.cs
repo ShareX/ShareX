@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
 
             g.SmoothingMode = SmoothingMode.None;
 
-            using (Font font = new Font("Times New Roman", 18))
+            using (Font font = new Font("Arial", 18))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
                 g.DrawString(Text, font, Brushes.Black, rect.LocationOffset(0, 4), sf);

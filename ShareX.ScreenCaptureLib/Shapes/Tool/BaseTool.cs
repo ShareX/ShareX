@@ -35,6 +35,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Tool;
 
-        public abstract void OnDraw(Graphics g);
+        public virtual void OnDraw(Graphics g)
+        {
+            if (IsValidShape)
+            {
+                Manager.DrawRegionArea(g, Rectangle, true);
+            }
+        }
     }
 }
