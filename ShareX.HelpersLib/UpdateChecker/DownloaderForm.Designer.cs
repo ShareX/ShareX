@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloaderForm));
-            this.pbImage = new System.Windows.Forms.PictureBox();
             this.txtChangelog = new System.Windows.Forms.TextBox();
             this.lblProgress = new ShareX.HelpersLib.BlackStyleLabel();
             this.cbShowChangelog = new ShareX.HelpersLib.BlackStyleCheckBox();
@@ -37,15 +36,7 @@
             this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
             this.btnAction = new ShareX.HelpersLib.BlackStyleButton();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbImage
-            // 
-            this.pbImage.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.pbImage, "pbImage");
-            this.pbImage.Name = "pbImage";
-            this.pbImage.TabStop = false;
             // 
             // txtChangelog
             // 
@@ -110,13 +101,12 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.Controls.Add(this.cbShowChangelog);
             this.Controls.Add(this.txtChangelog);
             this.Controls.Add(this.lblProgress);
-            this.Controls.Add(this.cbShowChangelog);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblFilename);
             this.Controls.Add(this.btnAction);
-            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.pbProgress);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -124,15 +114,12 @@
             this.Name = "DownloaderForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdaterForm_FormClosing);
             this.Shown += new System.EventHandler(this.DownloaderForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbImage;
         private BlackStyleProgressBar pbProgress;
         private BlackStyleButton btnAction;
         private BlackStyleLabel lblFilename;

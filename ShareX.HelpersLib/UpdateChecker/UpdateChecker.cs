@@ -95,7 +95,6 @@ namespace ShareX.HelpersLib
             {
                 using (DownloaderForm updaterForm = new DownloaderForm(this))
                 {
-                    updaterForm.SetImage(ShareXResources.Logo);
                     updaterForm.ShowDialog();
 
                     if (updaterForm.Status == DownloaderFormStatus.InstallStarted)

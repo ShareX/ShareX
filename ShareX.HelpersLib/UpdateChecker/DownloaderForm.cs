@@ -97,11 +97,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void SetImage(Image img)
-        {
-            pbImage.Image = img;
-        }
-
         private void btnAction_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

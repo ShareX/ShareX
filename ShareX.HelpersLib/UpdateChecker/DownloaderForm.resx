@@ -118,38 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pbImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 8</value>
-  </data>
-  <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 128</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Name" xml:space="preserve">
-    <value>pbImage</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="txtChangelog.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 208</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtChangelog.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtChangelog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
@@ -169,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtChangelog.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblProgress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -178,7 +154,7 @@
     <value>8, 72</value>
   </data>
   <data name="lblProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 78</value>
+    <value>336, 78</value>
   </data>
   <data name="lblProgress.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -196,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProgress.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbShowChangelog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
@@ -226,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbShowChangelog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -235,7 +211,7 @@
     <value>8, 40</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 24</value>
+    <value>472, 24</value>
   </data>
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -262,7 +238,7 @@
     <value>8, 8</value>
   </data>
   <data name="lblFilename.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 24</value>
+    <value>472, 24</value>
   </data>
   <data name="lblFilename.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -328,7 +304,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbProgress.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
