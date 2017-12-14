@@ -118,35 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtChangelog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 208</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtChangelog.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtChangelog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="txtChangelog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 201</value>
-  </data>
-  <data name="txtChangelog.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;txtChangelog.Name" xml:space="preserve">
-    <value>txtChangelog</value>
-  </data>
-  <data name="&gt;&gt;txtChangelog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtChangelog.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtChangelog.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblProgress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
@@ -154,8 +125,9 @@
     <value>8, 72</value>
   </data>
   <data name="lblProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 78</value>
+    <value>472, 78</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblProgress.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
@@ -172,36 +144,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProgress.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbShowChangelog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
-  </data>
-  <data name="cbShowChangelog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 142</value>
-  </data>
-  <data name="cbShowChangelog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 16</value>
-  </data>
-  <data name="cbShowChangelog.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Show update notes</value>
-  </data>
-  <data name="cbShowChangelog.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;cbShowChangelog.Name" xml:space="preserve">
-    <value>cbShowChangelog</value>
-  </data>
-  <data name="&gt;&gt;cbShowChangelog.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbShowChangelog.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbShowChangelog.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
@@ -229,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="lblFilename.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -256,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilename.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="btnAction.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -283,7 +225,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAction.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 163</value>
@@ -304,7 +246,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbProgress.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -313,8 +255,9 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>488, 417</value>
+    <value>488, 205</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
