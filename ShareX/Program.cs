@@ -413,8 +413,12 @@ namespace ShareX
             {
                 try
                 {
-                    Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
-                    File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
+                    if (!File.Exists(CurrentPersonalPathConfigFilePath))
+                    {
+                        Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
+                        File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
+                    }
+
                     File.Delete(PreviousPersonalPathConfigFilePath);
                     Directory.Delete(Path.GetDirectoryName(PreviousPersonalPathConfigFilePath));
                 }
