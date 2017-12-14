@@ -35,6 +35,7 @@ namespace ShareX.HelpersLib
     public class FileDownloader
     {
         public string URL { get; private set; }
+        public string DownloadLocation { get; private set; }
         public bool IsDownloading { get; private set; }
         public bool IsCanceled { get; private set; }
         public long FileSize { get; private set; }
@@ -62,13 +63,12 @@ namespace ShareX.HelpersLib
         public event EventHandler FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted, ExceptionThrowed;
 
         private BackgroundWorker worker;
-        private Stream stream;
         private const int bufferSize = 32768;
 
-        public FileDownloader(string url, Stream stream, IWebProxy proxy = null, string acceptHeader = null)
+        public FileDownloader(string url, string downloadLocation, IWebProxy proxy = null, string acceptHeader = null)
         {
             URL = url;
-            this.stream = stream;
+            DownloadLocation = downloadLocation;
             Proxy = proxy;
             AcceptHeader = acceptHeader;
 
@@ -147,7 +147,7 @@ namespace ShareX.HelpersLib
                         byte[] buffer = new byte[(int)Math.Min(bufferSize, FileSize)];
                         int bytesRead;
 
-                        using (stream)
+                        using (FileStream fs = new FileStream(DownloadLocation, FileMode.Create, FileAccess.Write, FileShare.Read))
                         using (Stream responseStream = response.GetResponseStream())
                         {
                             ThrowEvent(DownloadStarted);
@@ -176,7 +176,7 @@ namespace ShareX.HelpersLib
                                 }
 
                                 bytesRead = responseStream.Read(buffer, 0, buffer.Length);
-                                stream.Write(buffer, 0, bytesRead);
+                                fs.Write(buffer, 0, bytesRead);
                                 DownloadedSize += bytesRead;
                                 speedTest += bytesRead;
 
