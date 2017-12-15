@@ -814,7 +814,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
-                                obj.OnMousePressed(position);
+                                obj.OnMouseDown(position);
                             }
 
                             for (int j = i + 1; j < objects.Length; j++)
@@ -835,7 +835,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (obj.IsDragging)
                         {
-                            obj.OnMouseReleased(position);
+                            obj.OnMouseUp(position);
                         }
                     }
                 }

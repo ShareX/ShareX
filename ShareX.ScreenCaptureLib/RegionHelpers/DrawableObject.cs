@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -30,13 +31,39 @@ namespace ShareX.ScreenCaptureLib
 {
     internal abstract class DrawableObject
     {
-        public event MouseEventHandler MousePressed;
-        public event MouseEventHandler MouseReleased;
+        public event MouseEventHandler MouseDown, MouseUp;
+        public event Action MouseEnter, MouseLeave;
 
         public bool Visible { get; set; }
         public bool HandleMouseInput { get; set; } = true;
         public Rectangle Rectangle { get; set; }
-        public bool IsCursorHover { get; set; }
+
+        private bool isCursorHover;
+
+        public bool IsCursorHover
+        {
+            get
+            {
+                return isCursorHover;
+            }
+            set
+            {
+                if (isCursorHover != value)
+                {
+                    isCursorHover = value;
+
+                    if (isCursorHover)
+                    {
+                        OnMouseEnter();
+                    }
+                    else
+                    {
+                        OnMouseLeave();
+                    }
+                }
+            }
+        }
+
         public bool IsDragging { get; protected set; }
         public int Order { get; set; }
 
@@ -56,23 +83,39 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual void OnMousePressed(Point position)
+        public virtual void OnMouseEnter()
         {
-            IsDragging = true;
-
-            if (MousePressed != null)
+            if (MouseEnter != null)
             {
-                MousePressed(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+                MouseEnter();
             }
         }
 
-        public virtual void OnMouseReleased(Point position)
+        public virtual void OnMouseLeave()
+        {
+            if (MouseLeave != null)
+            {
+                MouseLeave();
+            }
+        }
+
+        public virtual void OnMouseDown(Point position)
+        {
+            IsDragging = true;
+
+            if (MouseDown != null)
+            {
+                MouseDown(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+            }
+        }
+
+        public virtual void OnMouseUp(Point position)
         {
             IsDragging = false;
 
-            if (MouseReleased != null)
+            if (MouseUp != null)
             {
-                MouseReleased(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+                MouseUp(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
             }
         }
     }

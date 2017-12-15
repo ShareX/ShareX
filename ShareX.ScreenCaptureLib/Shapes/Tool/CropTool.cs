@@ -72,7 +72,9 @@ namespace ShareX.ScreenCaptureLib
                 Rectangle = new Rectangle(new Point(), buttonSize),
                 Visible = true
             };
-            confirmButton.MousePressed += ConfirmButton_MousePressed;
+            confirmButton.MouseDown += ConfirmButton_MousePressed;
+            confirmButton.MouseEnter += () => Manager.Form.Cursor = Cursors.Hand;
+            confirmButton.MouseLeave += () => Manager.Form.SetDefaultCursor();
             Manager.DrawableObjects.Add(confirmButton);
 
             cancelButton = new ButtonObject()
@@ -82,7 +84,9 @@ namespace ShareX.ScreenCaptureLib
                 Rectangle = new Rectangle(new Point(), buttonSize),
                 Visible = true
             };
-            cancelButton.MousePressed += CancelButton_MousePressed;
+            cancelButton.MouseDown += CancelButton_MousePressed;
+            cancelButton.MouseEnter += () => Manager.Form.Cursor = Cursors.Hand;
+            cancelButton.MouseLeave += () => Manager.Form.SetDefaultCursor();
             Manager.DrawableObjects.Add(cancelButton);
         }
 
@@ -100,6 +104,11 @@ namespace ShareX.ScreenCaptureLib
         public override void Dispose()
         {
             base.Dispose();
+
+            if (confirmButton.IsCursorHover || cancelButton.IsCursorHover)
+            {
+                Manager.Form.SetDefaultCursor();
+            }
 
             if (confirmButton != null)
             {

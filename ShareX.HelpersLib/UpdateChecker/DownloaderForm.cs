@@ -232,7 +232,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void UpdaterForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Status == DownloaderFormStatus.DownloadStarted && fileDownloader != null)
             {
