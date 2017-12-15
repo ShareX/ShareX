@@ -213,11 +213,6 @@ namespace ShareX.ImageEffectsLib
             btnClear.Enabled = btnRefresh.Enabled = lvEffects.Items.Count > 0;
         }
 
-        private List<ImageEffect> GetImageEffects()
-        {
-            return lvEffects.Items.Cast<ListViewItem>().Where(x => x != null && x.Tag is ImageEffect).Select(x => (ImageEffect)x.Tag).ToList();
-        }
-
         private Image ApplyEffects()
         {
             ImageEffectPreset preset = GetSelectedPreset();
@@ -493,7 +488,7 @@ namespace ShareX.ImageEffectsLib
 
         private object eiImageEffects_ExportRequested()
         {
-            return GetImageEffects();
+            return GetSelectedPreset();
         }
 
         private void eiImageEffects_ImportRequested(object obj)
