@@ -390,4 +390,16 @@
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Überschreibe den vorgegebenen eigenen Hochlader:</value>
   </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Region wählen...</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Wenn Bild größer als angegeben, nutze das JPEG-Bildformat</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Vordefinierte Region</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG Farbtiefe</value>
+  </data>
 </root>

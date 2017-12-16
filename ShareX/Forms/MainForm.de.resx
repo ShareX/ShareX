@@ -523,7 +523,7 @@
     <value>Debug</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>Werkzeuge</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
     <value>HTML-Link</value>
@@ -623,5 +623,17 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Verstecke Spalten</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Über...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Spenden...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>URL kürzen...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Text hochladen...</value>
   </data>
 </root>
