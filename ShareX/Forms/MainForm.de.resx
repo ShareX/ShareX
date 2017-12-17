@@ -172,7 +172,7 @@
     <value>Hochladen von URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Per Drag &amp;&amp; Drop hochladen...</value>
+    <value>Per Drag &amp; Drop hochladen...</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Hochladen</value>
@@ -598,7 +598,7 @@
     <value>Video Thumbnailer...</value>
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Webpage Aufnahme...</value>
+    <value>Webseiten Aufnahme...</value>
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Debug</value>
@@ -635,5 +635,8 @@
   </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>Text hochladen...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Bild Thumbnailer...</value>
   </data>
 </root>

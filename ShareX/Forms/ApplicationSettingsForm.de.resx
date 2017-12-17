@@ -324,4 +324,22 @@
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
     <value>Tray Symbol Linksklick Aktion:</value>
   </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>ShareX Chrome-Erweiterung installieren...</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>ShareX Firefox-Erweiterung installieren...</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Einstellungen zurücksetzen...</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Nach Vorabversion-Updates suchen</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Aktiviere Chrome-Erweiterungsunterstützung</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Aktiviere Firefox-Erweiterungsunterstützung</value>
+  </data>
 </root>

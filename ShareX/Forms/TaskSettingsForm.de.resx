@@ -139,7 +139,7 @@
     <value>Zeige Maus in Screenshots</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Schattenverstezung</value>
+    <value>Schattenversetzung</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Nimm Fenster mit Transparenz auf</value>
@@ -193,7 +193,7 @@
     <value>Entfernen</value>
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Beziehe Unterdirektoren mit ein</value>
+    <value>Beziehe Unterordner mit ein</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filter</value>
@@ -301,7 +301,7 @@
     <value>Zeige Mauszeiger in der Aufnahme</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>Weite:</value>
+    <value>Breite:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>Höhe:</value>
@@ -401,5 +401,11 @@
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG Farbtiefe</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Bearbeiten...</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Bildschirmfarbenauswähler-Format</value>
   </data>
 </root>
