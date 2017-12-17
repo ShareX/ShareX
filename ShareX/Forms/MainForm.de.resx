@@ -172,7 +172,7 @@
     <value>Hochladen von URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Per Drag &amp;&amp; Drop hochladen...</value>
+    <value>Per Drag &amp; Drop hochladen...</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Hochladen</value>
@@ -523,7 +523,7 @@
     <value>Debug</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>Werkzeuge</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
     <value>HTML-Link</value>
@@ -598,7 +598,7 @@
     <value>Video Thumbnailer...</value>
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Webpage Aufnahme...</value>
+    <value>Webseiten Aufnahme...</value>
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Debug</value>
@@ -623,5 +623,20 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Verstecke Spalten</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Über...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Spenden...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>URL kürzen...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Text hochladen...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Bild Thumbnailer...</value>
   </data>
 </root>

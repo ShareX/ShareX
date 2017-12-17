@@ -130,6 +130,6 @@
     <value>Manipulationen</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>Bildefekte - Weite: {0}, Höhe {1}, Renderzeit {2} ms</value>
+    <value>Bildeffekte - Breite: {0}, Höhe: {1}, Renderzeit: {2} ms</value>
   </data>
 </root>

@@ -276,7 +276,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Automatisch</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>manuell</value>
+    <value>Manuell</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>Keine</value>
@@ -722,7 +722,7 @@ Möchtest du sie herunterladen?</value>
     <value>Nach Ordner durchsuchen...</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>manuell</value>
+    <value>Manuell</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
     <value>Nach .exe durchsuchen...</value>
@@ -831,5 +831,17 @@ Möchtest du sie herunterladen?</value>
   </data>
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Andere</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 Bit</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 Bit</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Standard</value>
   </data>
 </root>
