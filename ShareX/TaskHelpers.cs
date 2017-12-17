@@ -892,13 +892,67 @@ namespace ShareX
             {
                 using (img)
                 {
-                    return RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, newFilePath)),
-                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, newFilePath)),
-                        x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                        x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
-                        x => Program.MainForm.InvokeSafe(() => PrintImage(x)),
-                        taskMode);
+                    RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+
+                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
+                    {
+                        form.ImageFilePath = filePath;
+
+                        form.SaveImageRequested += (output, newFilePath) =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImage(output, newFilePath); }
+                            });
+                        };
+
+                        form.SaveImageAsRequested += (output, newFilePath) =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
+                            });
+                        };
+
+                        form.CopyImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ClipboardHelpers.CopyImage(output); }
+                            });
+                        };
+
+                        form.UploadImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                UploadManager.UploadImage(output);
+                            });
+                        };
+
+                        form.PrintImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { PrintImage(output); }
+                            });
+                        };
+
+                        form.ShowDialog();
+
+                        switch (form.Result)
+                        {
+                            case RegionResult.Close: // Esc
+                            case RegionResult.AnnotateCancelTask:
+                                return null;
+                            case RegionResult.Region: // Enter
+                            case RegionResult.AnnotateRunAfterCaptureTasks:
+                                return form.GetResultImage();
+                            case RegionResult.Fullscreen: // Space or right click
+                            case RegionResult.AnnotateContinueTask:
+                                return (Image)form.Canvas.Clone();
+                        }
+                    }
                 }
             }
 

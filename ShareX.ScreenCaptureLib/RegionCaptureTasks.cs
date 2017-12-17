@@ -145,66 +145,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image AnnotateImage(Image img, string filePath, RegionCaptureOptions options,
-            Action<Image, string> saveImageRequested,
-            Action<Image, string> saveImageAsRequested,
-            Action<Image> copyImageRequested,
-            Action<Image> uploadImageRequested,
-            Action<Image> printImageRequested,
-            bool taskMode = false)
-        {
-            RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
-
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
-            {
-                form.ImageFilePath = filePath;
-                form.ShowDialog();
-
-                switch (form.Result)
-                {
-                    case RegionResult.Close: // Esc
-                    case RegionResult.AnnotateCancelTask:
-                        return null;
-                    case RegionResult.Region: // Enter
-                    case RegionResult.AnnotateRunAfterCaptureTasks:
-                        return form.GetResultImage();
-                    case RegionResult.Fullscreen: // Space or right click
-                    case RegionResult.AnnotateContinueTask:
-                        return (Image)form.Canvas.Clone();
-                    case RegionResult.AnnotateSaveImage:
-                        using (Image resultSaveImage = form.GetResultImage())
-                        {
-                            saveImageRequested(resultSaveImage, form.ImageFilePath);
-                        }
-                        break;
-                    case RegionResult.AnnotateSaveImageAs:
-                        using (Image resultSaveImageAs = form.GetResultImage())
-                        {
-                            saveImageAsRequested(resultSaveImageAs, form.ImageFilePath);
-                        }
-                        break;
-                    case RegionResult.AnnotateCopyImage:
-                        using (Image resultCopyImage = form.GetResultImage())
-                        {
-                            copyImageRequested(resultCopyImage);
-                        }
-                        break;
-                    case RegionResult.AnnotateUploadImage:
-                        Image resultUploadImage = form.GetResultImage();
-                        uploadImageRequested(resultUploadImage);
-                        break;
-                    case RegionResult.AnnotatePrintImage:
-                        using (Image resultPrintImage = form.GetResultImage())
-                        {
-                            printImageRequested(resultPrintImage);
-                        }
-                        break;
-                }
-            }
-
-            return null;
-        }
-
         public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp)
         {
             if (img != null && gp != null)

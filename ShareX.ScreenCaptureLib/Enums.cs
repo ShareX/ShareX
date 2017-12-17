@@ -52,12 +52,7 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor,
         AnnotateRunAfterCaptureTasks,
         AnnotateContinueTask,
-        AnnotateCancelTask,
-        AnnotateSaveImage,
-        AnnotateSaveImageAs,
-        AnnotateCopyImage,
-        AnnotateUploadImage,
-        AnnotatePrintImage
+        AnnotateCancelTask
     }
 
     public enum NodeType

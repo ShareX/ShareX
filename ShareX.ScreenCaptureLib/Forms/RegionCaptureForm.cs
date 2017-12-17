@@ -40,6 +40,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
+        public event Action<Image, string> SaveImageRequested;
+        public event Action<Image, string> SaveImageAsRequested;
+        public event Action<Image> CopyImageRequested;
+        public event Action<Image> UploadImageRequested;
+        public event Action<Image> PrintImageRequested;
+
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
         public Image Canvas { get; private set; }
@@ -87,7 +93,6 @@ namespace ShareX.ScreenCaptureLib
         internal int ToolbarHeight;
 
         private InputManager InputManager => ShapeManager.InputManager;
-
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
@@ -1453,6 +1458,51 @@ namespace ShareX.ScreenCaptureLib
         private Image GetOutputImage()
         {
             return ShapeManager.RenderOutputImage(Canvas);
+        }
+
+        internal void OnSaveImageRequested()
+        {
+            if (SaveImageRequested != null)
+            {
+                Image img = GetResultImage();
+                SaveImageRequested(img, ImageFilePath);
+            }
+        }
+
+        internal void OnSaveImageAsRequested()
+        {
+            if (SaveImageAsRequested != null)
+            {
+                Image img = GetResultImage();
+                SaveImageAsRequested(img, ImageFilePath);
+            }
+        }
+
+        internal void OnCopyImageRequested()
+        {
+            if (CopyImageRequested != null)
+            {
+                Image img = GetResultImage();
+                CopyImageRequested(img);
+            }
+        }
+
+        internal void OnUploadImageRequested()
+        {
+            if (UploadImageRequested != null)
+            {
+                Image img = GetResultImage();
+                UploadImageRequested(img);
+            }
+        }
+
+        internal void OnPrintImageRequested()
+        {
+            if (PrintImageRequested != null)
+            {
+                Image img = GetResultImage();
+                PrintImageRequested(img);
+            }
         }
 
         protected override void Dispose(bool disposing)
