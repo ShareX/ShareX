@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib
         {
             base.Dispose();
 
-            if (confirmButton.IsCursorHover || cancelButton.IsCursorHover)
+            if ((confirmButton != null && confirmButton.IsCursorHover) || (cancelButton != null && cancelButton.IsCursorHover))
             {
                 Manager.Form.SetDefaultCursor();
             }

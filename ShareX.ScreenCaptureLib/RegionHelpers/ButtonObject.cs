@@ -37,8 +37,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public string Text { get; set; }
         public Color ButtonColor { get; set; }
-
-        private int depth = 2;
+        public int ButtonDepth { get; set; } = 3;
+        public Color ButtonDepthColor => ColorHelpers.DarkerColor(ButtonColor, 0.5f);
 
         public override void OnDraw(Graphics g)
         {
@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsCursorHover)
             {
-                rect = rect.LocationOffset(0, depth);
+                rect = rect.LocationOffset(0, ButtonDepth);
             }
 
             g.SmoothingMode = SmoothingMode.HighQuality;
@@ -57,7 +57,10 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!IsCursorHover)
                 {
-                    g.DrawRoundedRectangle(Brushes.Black, rect.LocationOffset(0, depth), 5);
+                    using (SolidBrush buttonDepthBrush = new SolidBrush(ButtonDepthColor))
+                    {
+                        g.DrawRoundedRectangle(buttonDepthBrush, rect.LocationOffset(0, ButtonDepth), 5);
+                    }
                 }
 
                 g.DrawRoundedRectangle(buttonBrush, rect, 5);
@@ -69,8 +72,9 @@ namespace ShareX.ScreenCaptureLib
 
             using (Font font = new Font("Arial", 18))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            using (SolidBrush textDepthBrush = new SolidBrush(ButtonDepthColor))
             {
-                g.DrawString(Text, font, Brushes.Black, rect.LocationOffset(0, 4), sf);
+                g.DrawString(Text, font, textDepthBrush, rect.LocationOffset(0, 4), sf);
                 g.DrawString(Text, font, Brushes.White, rect.LocationOffset(0, 2), sf);
             }
         }
