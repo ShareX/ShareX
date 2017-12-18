@@ -1206,7 +1206,7 @@ namespace ShareX
 
         private static void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.DefaultFFmpegFilePath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
 
             if (result)
             {

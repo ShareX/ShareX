@@ -105,7 +105,6 @@ ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
 Zeranoe FFmpeg: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
-SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 System.Net.FtpClient: https://netftp.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET

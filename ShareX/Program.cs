@@ -145,17 +145,21 @@ namespace ShareX
             }
         }
 
+        public const string HistoryFilename = "History.xml";
+
         public static string HistoryFilePath
         {
             get
             {
                 if (Sandbox) return null;
 
-                return Path.Combine(PersonalFolder, "History.xml");
+                return Path.Combine(PersonalFolder, HistoryFilename);
             }
         }
 
-        public static string LogsFolder => Path.Combine(PersonalFolder, "Logs");
+        public const string LogsFoldername = "Logs";
+
+        public static string LogsFolder => Path.Combine(PersonalFolder, LogsFoldername);
 
         public static string LogsFilePath
         {

@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using SevenZip;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -38,15 +37,19 @@ namespace ShareX
 {
     internal static class SettingManager
     {
+        private const string ApplicationConfigFilename = "ApplicationConfig.json";
+
         private static string ApplicationConfigFilePath
         {
             get
             {
                 if (Program.Sandbox) return null;
 
-                return Path.Combine(Program.PersonalFolder, "ApplicationConfig.json");
+                return Path.Combine(Program.PersonalFolder, ApplicationConfigFilename);
             }
         }
+
+        private const string UploadersConfigFilename = "UploadersConfig.json";
 
         private static string UploadersConfigFilePath
         {
@@ -65,9 +68,11 @@ namespace ShareX
                     uploadersConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(uploadersConfigFolder, "UploadersConfig.json");
+                return Path.Combine(uploadersConfigFolder, UploadersConfigFilename);
             }
         }
+
+        private const string HotkeysConfigFilename = "HotkeysConfig.json";
 
         private static string HotkeysConfigFilePath
         {
@@ -86,7 +91,7 @@ namespace ShareX
                     hotkeysConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(hotkeysConfigFolder, "HotkeysConfig.json");
+                return Path.Combine(hotkeysConfigFolder, HotkeysConfigFilename);
             }
         }
 
@@ -253,101 +258,55 @@ namespace ShareX
             HotkeysConfig = new HotkeysConfig();
         }
 
-        public static bool Export(string exportPath)
+        public static bool Export(string archivePath)
         {
             try
             {
-                Set7ZipLibraryPath();
-
-                SevenZipCompressor zip = new SevenZipCompressor()
-                {
-                    ArchiveFormat = OutArchiveFormat.SevenZip,
-                    CompressionLevel = CompressionLevel.Normal,
-                    CompressionMethod = CompressionMethod.Lzma2
-                };
-
-                Dictionary<string, string> files = new Dictionary<string, string>();
+                List<string> files = new List<string>();
 
                 if (Settings.ExportSettings)
                 {
-                    AddFileToDictionary(files, ApplicationConfigFilePath);
-                    AddFileToDictionary(files, HotkeysConfigFilePath);
-                    AddFileToDictionary(files, UploadersConfigFilePath);
+                    files.Add(ApplicationConfigFilename);
+                    files.Add(HotkeysConfigFilename);
+                    files.Add(UploadersConfigFilename);
                 }
 
                 if (Settings.ExportHistory)
                 {
-                    AddFileToDictionary(files, Program.HistoryFilePath);
+                    files.Add(Program.HistoryFilename);
                 }
 
                 if (Settings.ExportLogs)
                 {
-                    foreach (string file in Directory.GetFiles(Program.LogsFolder, "*.txt", SearchOption.TopDirectoryOnly))
-                    {
-                        AddFileToDictionary(files, file, Path.GetFileName(Program.LogsFolder));
-                    }
+                    files.Add($"{Program.LogsFoldername}\\*.txt");
                 }
 
-                zip.CompressFileDictionary(files, exportPath);
-
-                return true;
+                SevenZipManager sevenZipManager = new SevenZipManager();
+                return sevenZipManager.Compress(archivePath, files, Program.PersonalFolder);
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while exporting backup:\r\n\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error while exporting backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;
         }
 
-        public static bool Import(string importPath)
+        public static bool Import(string archivePath)
         {
             try
             {
-                Set7ZipLibraryPath();
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(importPath))
-                {
-                    zip.ExtractArchive(Program.PersonalFolder);
-
-                    return true;
-                }
+                SevenZipManager sevenZipManager = new SevenZipManager();
+                return sevenZipManager.Extract(archivePath, Program.PersonalFolder);
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while importing backup:\r\n\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error while importing backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;
-        }
-
-        private static void Set7ZipLibraryPath()
-        {
-            if (NativeMethods.Is64Bit())
-            {
-                SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z-x64.dll"));
-            }
-            else
-            {
-                SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z.dll"));
-            }
-        }
-
-        private static void AddFileToDictionary(Dictionary<string, string> files, string filePath, string subFolder = null)
-        {
-            if (File.Exists(filePath))
-            {
-                string destinationPath = Path.GetFileName(filePath);
-
-                if (!string.IsNullOrEmpty(subFolder))
-                {
-                    destinationPath = Path.Combine(subFolder, destinationPath);
-                }
-
-                files.Add(destinationPath, filePath);
-            }
         }
     }
 }

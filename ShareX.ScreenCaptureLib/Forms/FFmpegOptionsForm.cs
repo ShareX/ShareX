@@ -430,14 +430,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            string extractPath = DefaultToolsPath ?? "ffmpeg.exe";
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsPath);
 
             if (result)
             {
                 this.InvokeSafe(() =>
                 {
-                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(extractPath);
+                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(DefaultToolsPath);
                     RefreshSourcesAsync();
                     UpdateUI();
                 });
