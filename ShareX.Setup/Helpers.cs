@@ -121,7 +121,7 @@ namespace ShareX.Setup
         {
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = Program.SevenZipPath,
+                FileName = Path.GetFullPath(Program.SevenZipPath),
                 Arguments = $"a -tzip \"{target}\" \"{source}\" -r -mx=9",
                 UseShellExecute = false,
                 CreateNoWindow = true
@@ -136,7 +136,7 @@ namespace ShareX.Setup
 
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = Program.SevenZipPath,
+                FileName = Path.GetFullPath(Program.SevenZipPath),
                 Arguments = $"e \"{source}\" \"{extract}\" -r",
                 UseShellExecute = false,
                 CreateNoWindow = true
