@@ -89,7 +89,7 @@ namespace ShareX.Setup
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        public static string SevenZipPath = Path.Combine(ParentDir, "Lib", "7za.exe");
+        public static string SevenZipPath => Path.Combine(ParentDir, "Lib", "7za.exe");
         public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
