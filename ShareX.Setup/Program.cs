@@ -89,7 +89,7 @@ namespace ShareX.Setup
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
+        public static string SevenZipPath = Path.Combine(ParentDir, "Lib", "7za.exe");
         public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
@@ -236,6 +236,7 @@ namespace ShareX.Setup
 
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
+            Helpers.CopyFile(Path.Combine(source, "7za.exe"), destination);
 
             if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {

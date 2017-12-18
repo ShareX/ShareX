@@ -121,9 +121,10 @@ namespace ShareX.Setup
         {
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = Program.ZipPath,
+                FileName = Program.SevenZipPath,
                 Arguments = $"a -tzip \"{target}\" \"{source}\" -r -mx=9",
-                WindowStyle = ProcessWindowStyle.Hidden
+                UseShellExecute = false,
+                CreateNoWindow = true
             };
 
             Process.Start(startInfo).WaitForExit();
@@ -135,9 +136,10 @@ namespace ShareX.Setup
 
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = Program.ZipPath,
+                FileName = Program.SevenZipPath,
                 Arguments = $"e \"{source}\" \"{extract}\" -r",
-                WindowStyle = ProcessWindowStyle.Hidden
+                UseShellExecute = false,
+                CreateNoWindow = true
             };
 
             Process.Start(startInfo).WaitForExit();
