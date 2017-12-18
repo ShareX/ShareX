@@ -262,6 +262,11 @@ namespace ShareX
         {
             try
             {
+                if (File.Exists(archivePath))
+                {
+                    File.Delete(archivePath);
+                }
+
                 List<string> files = new List<string>();
 
                 if (Settings.ExportSettings)
