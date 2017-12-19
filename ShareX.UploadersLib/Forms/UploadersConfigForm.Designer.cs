@@ -5079,7 +5079,7 @@
             resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
             this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
             this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
-            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.cbAmazonS3PublicACL_CheckedChanged);
             // 
             // UploadersConfigForm
             // 

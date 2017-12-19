@@ -2266,7 +2266,7 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL(Resources.UploadersConfigForm_AmazonS3StorageClassHelpURL);
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void cbAmazonS3PublicACL_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.SetPublicACL = cbAmazonS3PublicACL.Checked;
         }
