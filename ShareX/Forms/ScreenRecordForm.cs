@@ -103,7 +103,7 @@ namespace ShareX
             get
             {
                 CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOPMOST;
+                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TOOLWINDOW);
                 return createParams;
             }
         }
