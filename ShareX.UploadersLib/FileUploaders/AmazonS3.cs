@@ -116,7 +116,10 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = new NameValueCollection();
             headers["content-type"] = contentType;
             headers["host"] = host;
-            headers["x-amz-acl"] = "public-read";
+            if (Settings.SetPublicACL)
+            {
+                headers["x-amz-acl"] = "public-read";
+            }
             headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
 
             string signedHeaders = GetSignedHeaders(headers);

@@ -623,6 +623,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbAmazonS3PublicACL = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2528,6 +2529,7 @@
             // 
             // tpAmazonS3
             // 
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3PublicACL);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3StorageClassHelp);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3StorageClass);
             this.tpAmazonS3.Controls.Add(this.cbAmazonS3StorageClass);
@@ -5072,6 +5074,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbAmazonS3PublicACL
+            // 
+            resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
+            this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
+            this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
+            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5838,5 +5847,6 @@
         private System.Windows.Forms.TextBox txtLithiioEmail;
         private System.Windows.Forms.Label lblLithiioPassword;
         private System.Windows.Forms.Label lblLithiioEmail;
+        private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
     }
 }
