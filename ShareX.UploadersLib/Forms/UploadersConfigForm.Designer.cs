@@ -270,6 +270,7 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.cbAmazonS3PublicACL = new System.Windows.Forms.CheckBox();
             this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
             this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
             this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
@@ -623,7 +624,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbAmazonS3PublicACL = new System.Windows.Forms.CheckBox();
+            this.gbAmazonS3Advanced = new System.Windows.Forms.GroupBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -713,6 +714,7 @@
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.gbAmazonS3Advanced.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -2529,11 +2531,7 @@
             // 
             // tpAmazonS3
             // 
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3PublicACL);
-            this.tpAmazonS3.Controls.Add(this.btnAmazonS3StorageClassHelp);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3StorageClass);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3StorageClass);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UsePathStyle);
+            this.tpAmazonS3.Controls.Add(this.gbAmazonS3Advanced);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Region);
@@ -2557,6 +2555,13 @@
             resources.ApplyResources(this.tpAmazonS3, "tpAmazonS3");
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // cbAmazonS3PublicACL
+            // 
+            resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
+            this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
+            this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
+            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.cbAmazonS3PublicACL_CheckedChanged);
             // 
             // btnAmazonS3StorageClassHelp
             // 
@@ -5074,12 +5079,16 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbAmazonS3PublicACL
+            // gbAmazonS3Advanced
             // 
-            resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
-            this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
-            this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
-            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.cbAmazonS3PublicACL_CheckedChanged);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StorageClass);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3PublicACL);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3UsePathStyle);
+            this.gbAmazonS3Advanced.Controls.Add(this.btnAmazonS3StorageClassHelp);
+            this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StorageClass);
+            resources.ApplyResources(this.gbAmazonS3Advanced, "gbAmazonS3Advanced");
+            this.gbAmazonS3Advanced.Name = "gbAmazonS3Advanced";
+            this.gbAmazonS3Advanced.TabStop = false;
             // 
             // UploadersConfigForm
             // 
@@ -5248,6 +5257,8 @@
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.gbAmazonS3Advanced.ResumeLayout(false);
+            this.gbAmazonS3Advanced.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5848,5 +5859,6 @@
         private System.Windows.Forms.Label lblLithiioPassword;
         private System.Windows.Forms.Label lblLithiioEmail;
         private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
+        private System.Windows.Forms.GroupBox gbAmazonS3Advanced;
     }
 }
