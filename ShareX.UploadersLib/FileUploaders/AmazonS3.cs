@@ -67,25 +67,26 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private const string DefaultRegion = "us-east-1";
 
+        // http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
         public static List<AmazonS3Endpoint> Endpoints { get; } = new List<AmazonS3Endpoint>()
         {
             new AmazonS3Endpoint("Asia Pacific (Mumbai)", "s3.ap-south-1.amazonaws.com", "ap-south-1"),
             new AmazonS3Endpoint("Asia Pacific (Seoul)", "s3.ap-northeast-2.amazonaws.com", "ap-northeast-2"),
-            new AmazonS3Endpoint("Asia Pacific (Singapore)", "s3-ap-southeast-1.amazonaws.com", "ap-southeast-1"),
-            new AmazonS3Endpoint("Asia Pacific (Sydney)", "s3-ap-southeast-2.amazonaws.com", "ap-southeast-2"),
-            new AmazonS3Endpoint("Asia Pacific (Tokyo)", "s3-ap-northeast-1.amazonaws.com", "ap-northeast-1"),
+            new AmazonS3Endpoint("Asia Pacific (Singapore)", "s3.ap-southeast-1.amazonaws.com", "ap-southeast-1"),
+            new AmazonS3Endpoint("Asia Pacific (Sydney)", "s3.ap-southeast-2.amazonaws.com", "ap-southeast-2"),
+            new AmazonS3Endpoint("Asia Pacific (Tokyo)", "s3.ap-northeast-1.amazonaws.com", "ap-northeast-1"),
             new AmazonS3Endpoint("Canada (Central)", "s3.ca-central-1.amazonaws.com", "ca-central-1"),
             new AmazonS3Endpoint("China (Beijing)", "s3.cn-north-1.amazonaws.com.cn", "cn-north-1"),
             new AmazonS3Endpoint("China (Ningxia)", "s3.cn-northwest-1.amazonaws.com.cn", "cn-northwest-1"),
             new AmazonS3Endpoint("EU (Frankfurt)", "s3.eu-central-1.amazonaws.com", "eu-central-1"),
-            new AmazonS3Endpoint("EU (Ireland)", "s3-eu-west-1.amazonaws.com", "eu-west-1"),
+            new AmazonS3Endpoint("EU (Ireland)", "s3.eu-west-1.amazonaws.com", "eu-west-1"),
             new AmazonS3Endpoint("EU (London)", "s3.eu-west-2.amazonaws.com", "eu-west-2"),
             new AmazonS3Endpoint("EU (Paris)", "s3.eu-west-3.amazonaws.com", "eu-west-3"),
-            new AmazonS3Endpoint("South America (São Paulo)", "s3-sa-east-1.amazonaws.com", "sa-east-1"),
+            new AmazonS3Endpoint("South America (São Paulo)", "s3.sa-east-1.amazonaws.com", "sa-east-1"),
             new AmazonS3Endpoint("US East (N. Virginia)", "s3.amazonaws.com", "us-east-1"),
             new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
-            new AmazonS3Endpoint("US West (N. California)", "s3-us-west-1.amazonaws.com", "us-west-1"),
-            new AmazonS3Endpoint("US West (Oregon)", "s3-us-west-2.amazonaws.com", "us-west-2"),
+            new AmazonS3Endpoint("US West (N. California)", "s3.us-west-1.amazonaws.com", "us-west-1"),
+            new AmazonS3Endpoint("US West (Oregon)", "s3.us-west-2.amazonaws.com", "us-west-2"),
             new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io")
         };
 
