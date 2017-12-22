@@ -207,7 +207,7 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Image img = Image.FromFile(thumbnail.Filepath);
+                    Image img = ImageHelpers.LoadImage(thumbnail.Filepath);
 
                     if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
                     {
