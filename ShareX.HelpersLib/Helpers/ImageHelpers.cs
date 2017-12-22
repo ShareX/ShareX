@@ -1551,7 +1551,9 @@ namespace ShareX.HelpersLib
             {
                 if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
-                    return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                    Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                    RotateImageByExifOrientationData(img);
+                    return img;
                 }
             }
             catch (Exception e)
@@ -1767,6 +1769,54 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        public static RotateFlipType RotateImageByExifOrientationData(Image img, bool removeExifOrientationData = true)
+        {
+            int orientationId = 0x0112;
+            RotateFlipType rotateType = RotateFlipType.RotateNoneFlipNone;
+
+            if (img.PropertyIdList.Contains(orientationId))
+            {
+                PropertyItem propertyItem = img.GetPropertyItem(orientationId);
+                rotateType = GetRotateFlipTypeByExifOrientationData(propertyItem.Value[0]);
+
+                if (rotateType != RotateFlipType.RotateNoneFlipNone)
+                {
+                    img.RotateFlip(rotateType);
+
+                    if (removeExifOrientationData)
+                    {
+                        img.RemovePropertyItem(orientationId);
+                    }
+                }
+            }
+
+            return rotateType;
+        }
+
+        private static RotateFlipType GetRotateFlipTypeByExifOrientationData(int orientation)
+        {
+            switch (orientation)
+            {
+                default:
+                case 1:
+                    return RotateFlipType.RotateNoneFlipNone;
+                case 2:
+                    return RotateFlipType.RotateNoneFlipX;
+                case 3:
+                    return RotateFlipType.Rotate180FlipNone;
+                case 4:
+                    return RotateFlipType.Rotate180FlipX;
+                case 5:
+                    return RotateFlipType.Rotate90FlipX;
+                case 6:
+                    return RotateFlipType.Rotate90FlipNone;
+                case 7:
+                    return RotateFlipType.Rotate270FlipX;
+                case 8:
+                    return RotateFlipType.Rotate270FlipNone;
+            }
         }
     }
 }
