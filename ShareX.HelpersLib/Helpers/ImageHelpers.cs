@@ -1552,7 +1552,12 @@ namespace ShareX.HelpersLib
                 if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
                     Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
-                    RotateImageByExifOrientationData(img);
+
+                    if (HelpersOptions.RotateImageByExifOrientationData)
+                    {
+                        RotateImageByExifOrientationData(img);
+                    }
+
                     return img;
                 }
             }

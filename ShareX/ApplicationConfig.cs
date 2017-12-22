@@ -45,8 +45,6 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
-        public bool ShowPatreonButton { get; set; } = true;
-        public bool ShowDiscordButton { get; set; } = true;
 
         public ApplicationConfig()
         {
@@ -167,15 +165,6 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
         public bool ShowMostRecentTaskFirst { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Default .NET method can't copy image with alpha channel to clipboard. Alternatively, when this setting is false, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
-        public bool UseDefaultClipboardCopyImage { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Default .NET method can't get image with alpha channel from clipboard. Alternatively, when this setting is false, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
-        public bool UseDefaultClipboardGetImage { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
-        public bool DefaultClipboardCopyImageFillBackground { get; set; }
-
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
@@ -188,10 +177,16 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
+        [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
-        [Category("Application"), DefaultValue(100), Description("Large file size defined in MiB or MB. ShareX will warn before uploading large files. 0 disables this feature.")]
+        [Category("Application"), DefaultValue(true), Description("Show Patreon button in main window when task list is empty.")]
+        public bool ShowPatreonButton { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Show Discord button in main window when task list is empty.")]
+        public bool ShowDiscordButton { get; set; }
+
+        [Category("Application"), DefaultValue(100), Description("Large file size defined in MB. ShareX will warn before uploading large files. 0 disables this feature.")]
         public int LargeFileSizeWarning { get; set; }
 
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
@@ -204,8 +199,20 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Writes verbose web request logs to \"{PersonalFolder}\\Logs\\ShareX-Request-Logs.txt\" file for debugging purposes.")]
-        public bool VerboseRequestLogs { get; set; }
+        [Category("Clipboard"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
+        public bool ShowClipboardContentViewer { get; set; }
+
+        [Category("Clipboard"), DefaultValue(true), Description("Default .NET method can't copy image with alpha channel to clipboard. Alternatively, when this setting is false, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
+        public bool UseDefaultClipboardCopyImage { get; set; }
+
+        [Category("Clipboard"), DefaultValue(true), Description("Default .NET method can't get image with alpha channel from clipboard. Alternatively, when this setting is false, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
+        public bool UseDefaultClipboardGetImage { get; set; }
+
+        [Category("Clipboard"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
+        public bool DefaultClipboardCopyImageFillBackground { get; set; }
+
+        [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]
+        public bool RotateImageByExifOrientationData { get; set; }
 
         [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }
@@ -213,8 +220,8 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
-        [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
-        public bool ShowClipboardContentViewer { get; set; }
+        [Category("Upload"), DefaultValue(false), Description("Writes verbose web request logs to \"{PersonalFolder}\\Logs\\ShareX-Request-Logs.txt\" file for debugging purposes.")]
+        public bool VerboseRequestLogs { get; set; }
 
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]

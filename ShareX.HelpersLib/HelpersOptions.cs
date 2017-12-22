@@ -32,6 +32,7 @@ namespace ShareX.HelpersLib
         public static bool DefaultCopyImageFillBackground = true;
         public static bool UseAlternativeCopyImage = true;
         public static bool UseAlternativeGetImage = true;
+        public static bool RotateImageByExifOrientationData = true;
         public static string BrowserPath = null;
     }
 }
