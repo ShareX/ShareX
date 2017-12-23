@@ -358,6 +358,7 @@
             // 
             // tpTask
             // 
+            this.tpTask.BackColor = System.Drawing.SystemColors.Window;
             this.tpTask.Controls.Add(this.cbOverrideCustomUploader);
             this.tpTask.Controls.Add(this.chkOverrideCustomUploader);
             this.tpTask.Controls.Add(this.chkOverrideFTP);
@@ -373,7 +374,6 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
-            this.tpTask.UseVisualStyleBackColor = true;
             // 
             // cbOverrideCustomUploader
             // 
@@ -480,11 +480,11 @@
             // 
             // tpGeneral
             // 
+            this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
             this.tpGeneral.Controls.Add(this.pGeneral);
             this.tpGeneral.Controls.Add(this.chkOverrideGeneralSettings);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
-            this.tpGeneral.UseVisualStyleBackColor = true;
             // 
             // pGeneral
             // 
@@ -533,10 +533,10 @@
             // 
             // tpImage
             // 
+            this.tpImage.BackColor = System.Drawing.SystemColors.Window;
             this.tpImage.Controls.Add(this.tcImage);
             resources.ApplyResources(this.tpImage, "tpImage");
             this.tpImage.Name = "tpImage";
-            this.tpImage.UseVisualStyleBackColor = true;
             // 
             // tcImage
             // 
@@ -549,11 +549,11 @@
             // 
             // tpQuality
             // 
+            this.tpQuality.BackColor = System.Drawing.SystemColors.Window;
             this.tpQuality.Controls.Add(this.pImage);
             this.tpQuality.Controls.Add(this.chkOverrideImageSettings);
             resources.ApplyResources(this.tpQuality, "tpQuality");
             this.tpQuality.Name = "tpQuality";
-            this.tpQuality.UseVisualStyleBackColor = true;
             // 
             // pImage
             // 
@@ -691,13 +691,13 @@
             // 
             // tpEffects
             // 
+            this.tpEffects.BackColor = System.Drawing.SystemColors.Window;
             this.tpEffects.Controls.Add(this.lblImageEffectsNote);
             this.tpEffects.Controls.Add(this.chkShowImageEffectsWindowAfterCapture);
             this.tpEffects.Controls.Add(this.cbImageEffectOnlyRegionCapture);
             this.tpEffects.Controls.Add(this.btnImageEffects);
             resources.ApplyResources(this.tpEffects, "tpEffects");
             this.tpEffects.Name = "tpEffects";
-            this.tpEffects.UseVisualStyleBackColor = true;
             // 
             // lblImageEffectsNote
             // 
@@ -727,6 +727,7 @@
             // 
             // tpThumbnail
             // 
+            this.tpThumbnail.BackColor = System.Drawing.SystemColors.Window;
             this.tpThumbnail.Controls.Add(this.cbThumbnailIfSmaller);
             this.tpThumbnail.Controls.Add(this.lblThumbnailNamePreview);
             this.tpThumbnail.Controls.Add(this.lblThumbnailName);
@@ -737,7 +738,6 @@
             this.tpThumbnail.Controls.Add(this.nudThumbnailWidth);
             resources.ApplyResources(this.tpThumbnail, "tpThumbnail");
             this.tpThumbnail.Name = "tpThumbnail";
-            this.tpThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbThumbnailIfSmaller
             // 
@@ -796,10 +796,10 @@
             // 
             // tpCapture
             // 
+            this.tpCapture.BackColor = System.Drawing.SystemColors.Window;
             this.tpCapture.Controls.Add(this.tcCapture);
             resources.ApplyResources(this.tpCapture, "tpCapture");
             this.tpCapture.Name = "tpCapture";
-            this.tpCapture.UseVisualStyleBackColor = true;
             // 
             // tcCapture
             // 
@@ -812,11 +812,11 @@
             // 
             // tpCaptureGeneral
             // 
+            this.tpCaptureGeneral.BackColor = System.Drawing.SystemColors.Window;
             this.tpCaptureGeneral.Controls.Add(this.pCapture);
             this.tpCaptureGeneral.Controls.Add(this.chkOverrideCaptureSettings);
             resources.ApplyResources(this.tpCaptureGeneral, "tpCaptureGeneral");
             this.tpCaptureGeneral.Name = "tpCaptureGeneral";
-            this.tpCaptureGeneral.UseVisualStyleBackColor = true;
             // 
             // pCapture
             // 
@@ -1035,6 +1035,7 @@
             // 
             // tpRegionCapture
             // 
+            this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
@@ -1068,7 +1069,6 @@
             this.tpRegionCapture.Controls.Add(this.txtRegionCaptureCustomInfoText);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
-            this.tpRegionCapture.UseVisualStyleBackColor = true;
             // 
             // cbRegionCaptureShowFPS
             // 
@@ -1414,6 +1414,7 @@
             // 
             // tpScreenRecorder
             // 
+            this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1431,7 +1432,6 @@
             this.tpScreenRecorder.Controls.Add(this.lblGIFFPS);
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
-            this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
             // cbScreenRecorderShowCursor
             // 
@@ -1596,10 +1596,10 @@
             // 
             // tpUpload
             // 
+            this.tpUpload.BackColor = System.Drawing.SystemColors.Window;
             this.tpUpload.Controls.Add(this.tcUpload);
             resources.ApplyResources(this.tpUpload, "tpUpload");
             this.tpUpload.Name = "tpUpload";
-            this.tpUpload.UseVisualStyleBackColor = true;
             // 
             // tcUpload
             // 
@@ -1613,10 +1613,10 @@
             // 
             // tpUploadMain
             // 
+            this.tpUploadMain.BackColor = System.Drawing.SystemColors.Window;
             this.tpUploadMain.Controls.Add(this.chkOverrideUploadSettings);
             resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
             this.tpUploadMain.Name = "tpUploadMain";
-            this.tpUploadMain.UseVisualStyleBackColor = true;
             // 
             // chkOverrideUploadSettings
             // 
@@ -1629,6 +1629,7 @@
             // 
             // tpFileNaming
             // 
+            this.tpFileNaming.BackColor = System.Drawing.SystemColors.Window;
             this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
             this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
@@ -1643,7 +1644,6 @@
             this.tpFileNaming.Controls.Add(this.txtNameFormatPattern);
             resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
             this.tpFileNaming.Name = "tpFileNaming";
-            this.tpFileNaming.UseVisualStyleBackColor = true;
             // 
             // lblAutoIncrementNumber
             // 
@@ -1720,13 +1720,13 @@
             // 
             // tpUploadClipboard
             // 
+            this.tpUploadClipboard.BackColor = System.Drawing.SystemColors.Window;
             this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShareURL);
             this.tpUploadClipboard.Controls.Add(this.chkClipboardUploadURLContents);
             this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoIndexFolder);
             this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShortenURL);
             resources.ApplyResources(this.tpUploadClipboard, "tpUploadClipboard");
             this.tpUploadClipboard.Name = "tpUploadClipboard";
-            this.tpUploadClipboard.UseVisualStyleBackColor = true;
             // 
             // cbClipboardUploadShareURL
             // 
@@ -1758,6 +1758,7 @@
             // 
             // tpUploaderFilters
             // 
+            this.tpUploaderFilters.BackColor = System.Drawing.SystemColors.Window;
             this.tpUploaderFilters.Controls.Add(this.lvUploaderFiltersList);
             this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersRemove);
             this.tpUploaderFilters.Controls.Add(this.btnUploaderFiltersUpdate);
@@ -1769,7 +1770,6 @@
             this.tpUploaderFilters.Controls.Add(this.txtUploaderFiltersExtensions);
             resources.ApplyResources(this.tpUploaderFilters, "tpUploaderFilters");
             this.tpUploaderFilters.Name = "tpUploaderFilters";
-            this.tpUploaderFilters.UseVisualStyleBackColor = true;
             // 
             // lvUploaderFiltersList
             // 
@@ -1843,11 +1843,11 @@
             // 
             // tpActions
             // 
+            this.tpActions.BackColor = System.Drawing.SystemColors.Window;
             this.tpActions.Controls.Add(this.pActions);
             this.tpActions.Controls.Add(this.chkOverrideActions);
             resources.ApplyResources(this.tpActions, "tpActions");
             this.tpActions.Name = "tpActions";
-            this.tpActions.UseVisualStyleBackColor = true;
             // 
             // pActions
             // 
@@ -1934,6 +1934,7 @@
             // 
             // tpWatchFolders
             // 
+            this.tpWatchFolders.BackColor = System.Drawing.SystemColors.Window;
             this.tpWatchFolders.Controls.Add(this.btnWatchFolderEdit);
             this.tpWatchFolders.Controls.Add(this.cbWatchFolderEnabled);
             this.tpWatchFolders.Controls.Add(this.lvWatchFolderList);
@@ -1941,7 +1942,6 @@
             this.tpWatchFolders.Controls.Add(this.btnWatchFolderAdd);
             resources.ApplyResources(this.tpWatchFolders, "tpWatchFolders");
             this.tpWatchFolders.Name = "tpWatchFolders";
-            this.tpWatchFolders.UseVisualStyleBackColor = true;
             // 
             // cbWatchFolderEnabled
             // 
@@ -1991,11 +1991,11 @@
             // 
             // tpTools
             // 
+            this.tpTools.BackColor = System.Drawing.SystemColors.Window;
             this.tpTools.Controls.Add(this.pTools);
             this.tpTools.Controls.Add(this.chkOverrideToolsSettings);
             resources.ApplyResources(this.tpTools, "tpTools");
             this.tpTools.Name = "tpTools";
-            this.tpTools.UseVisualStyleBackColor = true;
             // 
             // pTools
             // 
@@ -2026,11 +2026,11 @@
             // 
             // tpAdvanced
             // 
+            this.tpAdvanced.BackColor = System.Drawing.SystemColors.Window;
             this.tpAdvanced.Controls.Add(this.pgTaskSettings);
             this.tpAdvanced.Controls.Add(this.chkOverrideAdvancedSettings);
             resources.ApplyResources(this.tpAdvanced, "tpAdvanced");
             this.tpAdvanced.Name = "tpAdvanced";
-            this.tpAdvanced.UseVisualStyleBackColor = true;
             // 
             // pgTaskSettings
             // 

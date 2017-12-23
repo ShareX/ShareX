@@ -162,6 +162,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.BackColor = System.Drawing.SystemColors.Window;
             this.tpCapture.Controls.Add(this.gbAfterCapture);
             this.tpCapture.Controls.Add(this.gbWhileCapturing);
             this.tpCapture.Controls.Add(this.gbBeforeCapture);
@@ -171,7 +172,6 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.Controls.Add(this.btnCapture);
             resources.ApplyResources(this.tpCapture, "tpCapture");
             this.tpCapture.Name = "tpCapture";
-            this.tpCapture.UseVisualStyleBackColor = true;
             // 
             // gbAfterCapture
             // 
@@ -312,6 +312,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpOutput
             // 
+            this.tpOutput.BackColor = System.Drawing.SystemColors.Window;
             this.tpOutput.Controls.Add(this.gbImages);
             this.tpOutput.Controls.Add(this.btnResetCombine);
             this.tpOutput.Controls.Add(this.btnGuessCombineAdjustments);
@@ -322,7 +323,6 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput.Controls.Add(this.pOutput);
             resources.ApplyResources(this.tpOutput, "tpOutput");
             this.tpOutput.Name = "tpOutput";
-            this.tpOutput.UseVisualStyleBackColor = true;
             // 
             // gbImages
             // 
