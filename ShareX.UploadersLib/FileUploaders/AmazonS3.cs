@@ -99,61 +99,50 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            bool forcePathStyle = Settings.UsePathStyle;
+            bool isPathStyleRequest = Settings.UsePathStyle;
 
-            if (!forcePathStyle && Settings.Bucket.Contains("."))
+            if (!isPathStyleRequest && Settings.Bucket.Contains("."))
             {
-                forcePathStyle = true;
+                isPathStyleRequest = true;
             }
 
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
-            string host = forcePathStyle ? endpoint : $"{Settings.Bucket}.{endpoint}";
+            string host = isPathStyleRequest ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             string region = GetRegion();
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
-            string longDate = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
+            string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string contentType = Helpers.GetMimeType(fileName);
+            string uploadPath = GetUploadPath(fileName);
+            string hashedPayload = "UNSIGNED-PAYLOAD";
 
             NameValueCollection headers = new NameValueCollection();
-            headers["content-type"] = contentType;
             headers["host"] = host;
-            if (Settings.SetPublicACL)
-            {
-                headers["x-amz-acl"] = "public-read";
-            }
+            headers["content-type"] = contentType;
+            headers["x-amz-date"] = timeStamp;
+            headers["x-amz-content-sha256"] = hashedPayload;
             headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
-
-            string signedHeaders = GetSignedHeaders(headers);
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("X-Amz-Algorithm", algorithm);
-            args.Add("X-Amz-Credential", credential);
-            args.Add("X-Amz-Date", longDate);
-            args.Add("X-Amz-Expires", expiresTotalSeconds);
-            args.Add("X-Amz-SignedHeaders", signedHeaders);
-
-            string uploadPath = GetUploadPath(fileName);
+            if (Settings.SetPublicACL) headers["x-amz-acl"] = "public-read";
 
             string canonicalURI = uploadPath;
-            if (forcePathStyle) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
+            if (isPathStyleRequest) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
-
-            string canonicalQueryString = URLHelpers.CreateQuery(args, true);
+            string canonicalQueryString = "";
             string canonicalHeaders = CreateCanonicalHeaders(headers);
+            string signedHeaders = GetSignedHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
                 canonicalURI + "\n" +
                 canonicalQueryString + "\n" +
                 canonicalHeaders + "\n" +
                 signedHeaders + "\n" +
-                "UNSIGNED-PAYLOAD";
+                hashedPayload;
 
             string stringToSign = algorithm + "\n" +
-                longDate + "\n" +
+                timeStamp + "\n" +
                 scope + "\n" +
                 Helpers.BytesToHex(Helpers.ComputeSHA256(canonicalRequest));
 
@@ -161,15 +150,18 @@ namespace ShareX.UploadersLib.FileUploaders
             byte[] dateRegionKey = Helpers.ComputeHMACSHA256(region, dateKey);
             byte[] dateRegionServiceKey = Helpers.ComputeHMACSHA256("s3", dateRegionKey);
             byte[] signingKey = Helpers.ComputeHMACSHA256("aws4_request", dateRegionServiceKey);
+
             string signature = Helpers.BytesToHex(Helpers.ComputeHMACSHA256(stringToSign, signingKey));
 
-            args.Add("X-Amz-Signature", signature);
+            headers["Authorization"] = algorithm + " " +
+                "Credential=" + credential + "," +
+                "SignedHeaders=" + signedHeaders + "," +
+                "Signature=" + signature;
 
-            headers.Remove("content-type");
             headers.Remove("host");
+            headers.Remove("content-type");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.CreateQuery(url, args, true);
             url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
@@ -271,19 +263,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string CreateCanonicalHeaders(NameValueCollection headers)
         {
-            string result = "";
-
-            foreach (string key in headers)
-            {
-                result += key.ToLowerInvariant() + ":" + headers[key].Trim() + "\n";
-            }
-
-            return result;
+            return headers.AllKeys.OrderBy(key => key).Select(key => key.ToLowerInvariant() + ":" + headers[key].Trim() + "\n").
+                Aggregate((result, next) => result + next);
         }
 
         private string GetSignedHeaders(NameValueCollection headers)
         {
-            return string.Join(";", headers.AllKeys.Select(x => x.ToLowerInvariant()));
+            return string.Join(";", headers.AllKeys.OrderBy(key => key).Select(key => key.ToLowerInvariant()));
         }
     }
 }
