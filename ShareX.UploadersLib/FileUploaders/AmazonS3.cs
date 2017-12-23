@@ -87,7 +87,9 @@ namespace ShareX.UploadersLib.FileUploaders
             new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
             new AmazonS3Endpoint("US West (N. California)", "s3.us-west-1.amazonaws.com", "us-west-1"),
             new AmazonS3Endpoint("US West (Oregon)", "s3.us-west-2.amazonaws.com", "us-west-2"),
-            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io")
+            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io"),
+            new AmazonS3Endpoint("DigitalOcean (Amsterdam)", "ams3.digitaloceanspaces.com", "ams3"),
+            new AmazonS3Endpoint("DigitalOcean (New York)", "nyc3.digitaloceanspaces.com", "nyc3")
         };
 
         private AmazonS3Settings Settings { get; set; }
