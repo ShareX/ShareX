@@ -166,13 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
 
-            if (responseHeaders == null || responseHeaders.Count == 0)
-            {
-                Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");
-                return null;
-            }
-
-            if (responseHeaders["ETag"] == null)
+            if (responseHeaders == null || responseHeaders.Count == 0 || responseHeaders["ETag"] == null)
             {
                 Errors.Add("Upload to Amazon S3 failed.");
                 return null;
