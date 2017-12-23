@@ -168,9 +168,6 @@
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>메인 창 윈도우 크기 기억하기</value>
   </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>경로</value>
   </data>
@@ -226,7 +223,7 @@
     <value>프록시</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Windows 탐색기의 "보내기..." 컨텍스트 메뉴에 ShareX 표시하기</value>
+    <value>Windows 탐색기의 "보내기" 컨텍스트 메뉴에 ShareX 표시하기</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
@@ -252,9 +249,6 @@
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>이차 이미지 업로더</value>
   </data>
-  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>주의: 개인 폴더를 변경한 뒤에는 ShareX를 재시작해야 변경 사항이 적용됩니다.</value>
   </data>
@@ -266,5 +260,95 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>형식</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>시험판 버전 업데이트 확인하기</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>트레이 아이콘 가운데 클릭시:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>트레이 아이콘 더블 클릭시:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>트레이 아이콘 일반 클릭시:</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>파이어폭스 애드온 지원 활성화</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>ShareX 파이어폭스 애드온 설치하기...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>파이어폭스 애드온</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>크롬 확장 기능 지원 활성화</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>ShareX 크롬 확장 기능 설치하기...</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>크롬 확장 기능</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>연계 기능</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>설정 초기화...</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>로그 내보내기</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>히스토리 내보내기</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>설정 내보내기</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>내보내기...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>불러오기...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>내보내기 / 불러오기</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>URL이 비어있지 않을 때애만 저장하기</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>작업을 히스토리에 저장하기</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>히스토리</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>히스토리</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>최근 작업</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>최근 작업 저장하기</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>최근 작업을 트레이 메뉴에 보여주기</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>최근 작업을 프로그램을 시작할 때 메인 창에 보여주기</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>저장할 최대 작업 수:</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>트레이 메뉴에서 최근 작업을 먼저 보여주기</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>간편 작업 메뉴 편집...</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
   </data>
 </root>

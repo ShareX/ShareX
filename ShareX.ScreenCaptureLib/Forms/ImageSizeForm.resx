@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="nudWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>8, 24</value>
   </data>
   <data name="nudWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -142,10 +142,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="nudHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>8, 72</value>
   </data>
   <data name="nudHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -166,13 +166,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudHeight.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 8</value>
+    <value>5, 8</value>
   </data>
   <data name="lblWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -193,13 +193,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWidth.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>5, 56</value>
   </data>
   <data name="lblHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -220,13 +220,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHeight.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="cbAspectRatio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbAspectRatio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>8, 104</value>
   </data>
   <data name="cbAspectRatio.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -247,13 +247,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAspectRatio.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 144</value>
+    <value>7, 176</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 24</value>
@@ -274,10 +274,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 144</value>
+    <value>125, 176</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 24</value>
@@ -298,13 +298,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblWidthPixels.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblWidthPixels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 28</value>
+    <value>80, 28</value>
   </data>
   <data name="lblWidthPixels.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -325,13 +325,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWidthPixels.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblHeightPixels.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblHeightPixels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 76</value>
+    <value>80, 76</value>
   </data>
   <data name="lblHeightPixels.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -352,6 +352,54 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHeightPixels.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblResampling.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblResampling.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 128</value>
+  </data>
+  <data name="lblResampling.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="lblResampling.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblResampling.Text" xml:space="preserve">
+    <value>Resampling:</value>
+  </data>
+  <data name="&gt;&gt;lblResampling.Name" xml:space="preserve">
+    <value>lblResampling</value>
+  </data>
+  <data name="&gt;&gt;lblResampling.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblResampling.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblResampling.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbResampling.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 144</value>
+  </data>
+  <data name="cbResampling.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="cbResampling.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cbResampling.Name" xml:space="preserve">
+    <value>cbResampling</value>
+  </data>
+  <data name="&gt;&gt;cbResampling.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbResampling.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbResampling.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -361,7 +409,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>240, 176</value>
+    <value>240, 209</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

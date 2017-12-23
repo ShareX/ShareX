@@ -152,7 +152,11 @@ namespace ShareX
 
             Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
             captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
-            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (outputType != ScreenRecordOutput.GIF)
+            {
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+            }
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
@@ -253,7 +257,7 @@ namespace ShareX
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path);
+                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path, Program.ToolsFolder);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)

@@ -577,6 +577,15 @@ namespace ShareX.HelpersLib
             return new Point(rect.X + rect.Width / 2, rect.Y + rect.Height / 2);
         }
 
+        public static Point Restrict(this Point point, Rectangle rect)
+        {
+            point.X = Math.Max(point.X, rect.X);
+            point.Y = Math.Max(point.Y, rect.Y);
+            point.X = Math.Min(point.X, rect.X + rect.Width - 1);
+            point.Y = Math.Min(point.Y, rect.Y + rect.Height - 1);
+            return point;
+        }
+
         public static void RefreshItems(this ComboBox cb)
         {
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });

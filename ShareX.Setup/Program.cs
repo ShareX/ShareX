@@ -59,7 +59,7 @@ namespace ShareX.Setup
             AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
         }
 
-        private static SetupJobs Job = SetupJobs.AppVeyorWindowsStore;
+        private static SetupJobs Job = SetupJobs.WindowsStore;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
@@ -89,7 +89,7 @@ namespace ShareX.Setup
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
+        public static string SevenZipPath => Path.Combine(ParentDir, "Lib", "7za.exe");
         public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
@@ -236,6 +236,7 @@ namespace ShareX.Setup
 
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
             Helpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
+            Helpers.CopyFile(Path.Combine(source, "7za.exe"), destination);
 
             if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
@@ -274,7 +275,7 @@ namespace ShareX.Setup
 
             if (job == SetupJobs.CreateSteamFolder)
             {
-                CopyFFmpeg(destination);
+                CopyFFmpeg(destination, true, true);
             }
             else if (job == SetupJobs.CreatePortableAppsFolder)
             {
@@ -284,6 +285,7 @@ namespace ShareX.Setup
             {
                 Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
+                CopyFFmpeg(destination, false, true);
             }
             else if (job == SetupJobs.CreatePortable)
             {
@@ -306,25 +308,31 @@ namespace ShareX.Setup
             Console.WriteLine("Folder created.");
         }
 
-        private static void CopyFFmpeg(string destination)
+        private static void CopyFFmpeg(string destination, bool include32bit, bool include64bit)
         {
-            if (!File.Exists(FFmpeg32bit))
+            if (include32bit)
             {
-                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-3.2-win32-static.zip");
-                Helpers.Unzip(filename, "ffmpeg.exe");
-                File.Move("ffmpeg.exe", FFmpeg32bit);
+                if (!File.Exists(FFmpeg32bit))
+                {
+                    string filename = Helpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
+                    Helpers.Unzip(filename, "ffmpeg.exe");
+                    File.Move("ffmpeg.exe", FFmpeg32bit);
+                }
+
+                Helpers.CopyFile(FFmpeg32bit, destination);
             }
 
-            Helpers.CopyFile(FFmpeg32bit, destination);
-
-            if (!File.Exists(FFmpeg64bit))
+            if (include64bit)
             {
-                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-3.2-win64-static.zip");
-                Helpers.Unzip(filename, "ffmpeg.exe");
-                File.Move("ffmpeg.exe", FFmpeg64bit);
-            }
+                if (!File.Exists(FFmpeg64bit))
+                {
+                    string filename = Helpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
+                    Helpers.Unzip(filename, "ffmpeg.exe");
+                    File.Move("ffmpeg.exe", FFmpeg64bit);
+                }
 
-            Helpers.CopyFile(FFmpeg64bit, destination);
+                Helpers.CopyFile(FFmpeg64bit, destination);
+            }
         }
 
         private static void OpenOutputDirectory()

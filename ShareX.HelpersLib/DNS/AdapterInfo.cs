@@ -85,10 +85,14 @@ namespace ShareX.HelpersLib
         {
             using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
             {
-                if (primary == null || secondary == null)
+                if (string.IsNullOrEmpty(primary))
                 {
                     // Obtain DNS server address automatically
                     parameters["DNSServerSearchOrder"] = null;
+                }
+                else if (string.IsNullOrEmpty(secondary))
+                {
+                    parameters["DNSServerSearchOrder"] = new string[] { primary };
                 }
                 else
                 {

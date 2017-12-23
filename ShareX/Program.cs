@@ -47,7 +47,7 @@ namespace ShareX
 #elif STEAM
                 return ShareXBuild.Steam;
 #elif WindowsStore
-                return ShareXBuild.WindowsStore;
+                return ShareXBuild.MicrosoftStore;
 #elif DEBUG
                 return ShareXBuild.Debug;
 #else
@@ -145,17 +145,21 @@ namespace ShareX
             }
         }
 
+        public const string HistoryFilename = "History.xml";
+
         public static string HistoryFilePath
         {
             get
             {
                 if (Sandbox) return null;
 
-                return Path.Combine(PersonalFolder, "History.xml");
+                return Path.Combine(PersonalFolder, HistoryFilename);
             }
         }
 
-        public static string LogsFolder => Path.Combine(PersonalFolder, "Logs");
+        public const string LogsFoldername = "Logs";
+
+        public static string LogsFolder => Path.Combine(PersonalFolder, LogsFoldername);
 
         public static string LogsFilePath
         {
@@ -413,8 +417,12 @@ namespace ShareX
             {
                 try
                 {
-                    Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
-                    File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
+                    if (!File.Exists(CurrentPersonalPathConfigFilePath))
+                    {
+                        Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
+                        File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
+                    }
+
                     File.Delete(PreviousPersonalPathConfigFilePath);
                     Directory.Delete(Path.GetDirectoryName(PreviousPersonalPathConfigFilePath));
                 }

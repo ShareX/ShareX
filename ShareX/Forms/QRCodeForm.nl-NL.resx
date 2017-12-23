@@ -126,4 +126,7 @@
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Sla op als afbeelding...</value>
   </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Resultaat:</value>
+  </data>
 </root>

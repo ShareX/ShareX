@@ -976,7 +976,7 @@
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Рисование: Картинка с экрана</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>Кадрировать</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">

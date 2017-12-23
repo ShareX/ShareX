@@ -23,13 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
-using ShareX.StartupManagers;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;

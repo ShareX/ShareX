@@ -29,7 +29,7 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ShareX.HistoryLib.CustomControls
+namespace ShareX.HistoryLib
 {
     public class ObjectListView : MyListView
     {

@@ -58,7 +58,7 @@ namespace ShareX
                 {
                     text = Clipboard.GetText();
 
-                    if (URLHelpers.IsValidURL(text))
+                    if (text.Length <= 1000)
                     {
                         txtQRCode.Text = text;
                     }

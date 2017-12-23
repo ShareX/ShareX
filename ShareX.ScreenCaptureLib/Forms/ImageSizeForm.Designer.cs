@@ -38,6 +38,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblWidthPixels = new System.Windows.Forms.Label();
             this.lblHeightPixels = new System.Windows.Forms.Label();
+            this.lblResampling = new System.Windows.Forms.Label();
+            this.cbResampling = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +107,26 @@
             resources.ApplyResources(this.lblHeightPixels, "lblHeightPixels");
             this.lblHeightPixels.Name = "lblHeightPixels";
             // 
+            // lblResampling
+            // 
+            resources.ApplyResources(this.lblResampling, "lblResampling");
+            this.lblResampling.Name = "lblResampling";
+            // 
+            // cbResampling
+            // 
+            this.cbResampling.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbResampling.FormattingEnabled = true;
+            resources.ApplyResources(this.cbResampling, "cbResampling");
+            this.cbResampling.Name = "cbResampling";
+            this.cbResampling.SelectedIndexChanged += new System.EventHandler(this.cbResampling_SelectedIndexChanged);
+            // 
             // ImageSizeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbResampling);
+            this.Controls.Add(this.lblResampling);
             this.Controls.Add(this.lblHeightPixels);
             this.Controls.Add(this.lblWidthPixels);
             this.Controls.Add(this.btnCancel);
@@ -142,5 +159,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblWidthPixels;
         private System.Windows.Forms.Label lblHeightPixels;
+        private System.Windows.Forms.Label lblResampling;
+        private System.Windows.Forms.ComboBox cbResampling;
     }
 }

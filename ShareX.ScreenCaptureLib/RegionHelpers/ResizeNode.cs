@@ -68,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
             Size = CustomNodeImage.Width;
         }
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             Rectangle rect = Rectangle.SizeOffset(-1);
 

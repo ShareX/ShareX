@@ -39,12 +39,9 @@ namespace ShareX.HelpersLib
 {
     public static class ImageHelpers
     {
-        public static Image ResizeImage(Image img, Size size)
-        {
-            return ResizeImage(img, size.Width, size.Height);
-        }
+        private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
 
-        public static Image ResizeImage(Image img, int width, int height)
+        public static Image ResizeImage(Image img, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
             if (width < 1 || height < 1 || (img.Width == width && img.Height == height))
             {
@@ -57,7 +54,7 @@ namespace ShareX.HelpersLib
             using (img)
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.InterpolationMode = interpolationMode;
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 g.CompositingQuality = CompositingQuality.HighQuality;
@@ -73,16 +70,21 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentage)
+        public static Image ResizeImage(Image img, Size size, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            return ResizeImageByPercentage(img, percentage, percentage);
+            return ResizeImage(img, size.Width, size.Height, interpolationMode);
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentageWidth, float percentageHeight)
+        public static Image ResizeImageByPercentage(Image img, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            int width = (int)(percentageWidth / 100 * img.Width);
-            int height = (int)(percentageHeight / 100 * img.Height);
-            return ResizeImage(img, width, height);
+            int width = (int)Math.Round(percentageWidth / 100 * img.Width);
+            int height = (int)Math.Round(percentageHeight / 100 * img.Height);
+            return ResizeImage(img, width, height, interpolationMode);
+        }
+
+        public static Image ResizeImageByPercentage(Image img, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        {
+            return ResizeImageByPercentage(img, percentage, percentage, interpolationMode);
         }
 
         public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)
@@ -267,7 +269,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>Automatically crop image to remove transparent outside area.</summary>
-        public static Bitmap AutoCropImage(Bitmap bmp)
+        public static Bitmap AutoCropTransparent(Bitmap bmp)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = source;
@@ -354,7 +356,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>Automatically crop image to remove transparent outside area. Only checks center pixels.</summary>
-        public static Bitmap QuickAutoCropImage(Bitmap bmp)
+        public static Bitmap QuickAutoCropTransparent(Bitmap bmp)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = source;
@@ -1549,7 +1551,14 @@ namespace ShareX.HelpersLib
             {
                 if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
-                    return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                    Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+
+                    if (HelpersOptions.RotateImageByExifOrientationData)
+                    {
+                        RotateImageByExifOrientationData(img);
+                    }
+
+                    return img;
                 }
             }
             catch (Exception e)
@@ -1643,6 +1652,175 @@ namespace ShareX.HelpersLib
 
                 g.FillRectangle(Brushes.Transparent, holeRect);
                 g.DrawRectangleProper(Pens.Black, holeRect);
+            }
+        }
+
+        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle crop = source;
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            {
+                bool leave = false;
+
+                ColorBgra checkColor = unsafeBitmap.GetPixel(0, 0);
+
+                // Find X (Left to right)
+                for (int x = 0; x < bmp.Width && !leave; x++)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.X = x;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                // If all pixels same color
+                if (!leave)
+                {
+                    return crop;
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(0, 0);
+                }
+
+                // Find Y (Top to bottom)
+                for (int y = 0; y < bmp.Height && !leave; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Y = y;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
+                }
+
+                // Find Width (Right to left)
+                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Width = x - crop.X + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+
+                leave = false;
+
+                if (!sameColorCrop)
+                {
+                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
+                }
+
+                // Find Height (Bottom to top)
+                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        {
+                            crop.Height = y - crop.Y + 1;
+                            leave = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return crop;
+        }
+
+        /// <summary>
+        /// If crop rectangle and source image rectangle is same then null will be returned.
+        /// After auto crop, source image will be disposed.
+        /// </summary>
+        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
+        {
+            Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop);
+
+            if (source != rect)
+            {
+                Bitmap croppedBitmap = CropBitmap(bmp, rect);
+
+                if (croppedBitmap != null)
+                {
+                    bmp.Dispose();
+                    return croppedBitmap;
+                }
+            }
+
+            return null;
+        }
+
+        public static RotateFlipType RotateImageByExifOrientationData(Image img, bool removeExifOrientationData = true)
+        {
+            int orientationId = 0x0112;
+            RotateFlipType rotateType = RotateFlipType.RotateNoneFlipNone;
+
+            if (img.PropertyIdList.Contains(orientationId))
+            {
+                PropertyItem propertyItem = img.GetPropertyItem(orientationId);
+                rotateType = GetRotateFlipTypeByExifOrientationData(propertyItem.Value[0]);
+
+                if (rotateType != RotateFlipType.RotateNoneFlipNone)
+                {
+                    img.RotateFlip(rotateType);
+
+                    if (removeExifOrientationData)
+                    {
+                        img.RemovePropertyItem(orientationId);
+                    }
+                }
+            }
+
+            return rotateType;
+        }
+
+        private static RotateFlipType GetRotateFlipTypeByExifOrientationData(int orientation)
+        {
+            switch (orientation)
+            {
+                default:
+                case 1:
+                    return RotateFlipType.RotateNoneFlipNone;
+                case 2:
+                    return RotateFlipType.RotateNoneFlipX;
+                case 3:
+                    return RotateFlipType.Rotate180FlipNone;
+                case 4:
+                    return RotateFlipType.Rotate180FlipX;
+                case 5:
+                    return RotateFlipType.Rotate90FlipX;
+                case 6:
+                    return RotateFlipType.Rotate90FlipNone;
+                case 7:
+                    return RotateFlipType.Rotate270FlipX;
+                case 8:
+                    return RotateFlipType.Rotate270FlipNone;
             }
         }
     }

@@ -153,4 +153,7 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Van bestand...</value>
   </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
 </root>

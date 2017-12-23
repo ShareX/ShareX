@@ -361,15 +361,201 @@
     <value>목적지...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>업로드 후...</value>
+    <value>업로드 뒤...</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>촬영 후...</value>
+    <value>촬영 뒤...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>기본 FTP 계정 덮어쓰기:</value>
+    <value>기본 FTP 계정 덮어쓰기</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>기본 사용자 정의 업로더 덮어쓰기:</value>
+    <value>기본 사용자 정의 업로더 덮어쓰기</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>녹화 중 커서 보이기</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>좌측 상단 구석에 FPS 보이기</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>도구</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>갱신</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>너비</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>너비:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>너비:</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>영역 선택...</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>예: png, jpg, jpeg</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>확장자</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>확장자 필터:</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>높이</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>높이:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>높이:</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>업로더:</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>업로더</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>업로드 설정 덮어쓰기</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>창 내부 컨트롤 영역도 감지하기</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>고정 크기 영역 모드:</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>이미지 파일 용량이 지정된 값보다 크면 이미지 포맷으로 JPEG 사용하기:</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>편집...</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>돋보기 픽셀 수:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>돋보기 픽셀 크기:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>마우스 4번 버튼 클릭 시 동작:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>마우스 5번 버튼 클릭 시 동작:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>마우스 가운데 버튼 클릭 시 동작:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>마우스 우클릭 시 동작:</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>기본 설정 덮어쓰기</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>동작 덮어쓰기</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>"촬영 뒤" 설정 덮어쓰기</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>"업로드 뒤" 설정 덮어쓰기</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>"목적지" 설정 덮어쓰기</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>업로더 필터</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>창 이름 패턴을 사용해 영역 촬영하기 (ShareX가 선택 영역 뒤에 있는 창 감지를 시도합니다)</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>배경을 어둡게 해서 선택 영역을 두드러지게 하기 (시작 속도에 영향을 줌)</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>영역 크기 조절과 이동을 할 수 있는 멀티 영역 모드를 사용함</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG 비트 깊이:</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>이미지 설정 덮어쓰기</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>고급 설정 덮어쓰기</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>촬영 설정 덮어쓰기</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>도구 설정 덮어쓰기</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>미리 설정된 영역:</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>창 영역을 감지하고 커서로 지정해서 캡쳐 가능하게 하기</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>화면 색상 선택기 양식:</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>위치와 크기 정보 보이기</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>화면을 가로지르는 조준선 보이기</value>
+  </data>
+  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
+    <value>좌측 상단 구석에 단축키와 팁 보이기</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>커서 근처 돋보기 보이기</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>원형 대신 정사각형 모양의 돋보기 사용하기</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>커서 옆에 사용자 지정 텍스트 표시하기:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>"Alt" 키를 누르고 있으면 달라붙을 영역 크기:</value>
   </data>
 </root>

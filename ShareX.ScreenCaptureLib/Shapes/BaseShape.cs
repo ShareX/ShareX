@@ -59,6 +59,8 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
 
+        public virtual bool LimitRectangleToInsideCanvas { get; }
+
         private Point startPosition;
 
         public Point StartPosition
@@ -219,6 +221,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 Move(InputManager.MouseVelocity);
             }
+
+            if (LimitRectangleToInsideCanvas)
+            {
+                StartPosition = StartPosition.Restrict(Manager.Form.CanvasRectangle);
+                EndPosition = EndPosition.Restrict(Manager.Form.CanvasRectangle);
+            }
         }
 
         public virtual void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
@@ -316,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
                     StartPosition = startPos;
                     EndPosition = endPos;
 
-                    if (Manager.IsProportionalResizing)
+                    if (Manager.IsProportionalResizing && !InitialSize.IsEmpty)
                     {
                         switch (nodePosition)
                         {
@@ -378,6 +386,11 @@ namespace ShareX.ScreenCaptureLib
                         newRect.Height = newHeight;
 
                         Rectangle = newRect;
+                    }
+
+                    if (LimitRectangleToInsideCanvas)
+                    {
+                        Rectangle = RectangleInsideCanvas;
                     }
                 }
             }

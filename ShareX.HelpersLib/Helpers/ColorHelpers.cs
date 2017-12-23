@@ -374,5 +374,15 @@ namespace ShareX.HelpersLib
         {
             return ColorDifference(color1, color2) <= threshold;
         }
+
+        public static Color LighterColor(Color color, float amount)
+        {
+            return Lerp(color, Color.White, amount);
+        }
+
+        public static Color DarkerColor(Color color, float amount)
+        {
+            return Lerp(color, Color.Black, amount);
+        }
     }
 }

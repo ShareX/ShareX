@@ -23,11 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Greenshot;
-using Greenshot.Drawing;
-using Greenshot.IniFile;
-using Greenshot.Plugin;
-using GreenshotPlugin.Core;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEffectsLib;
@@ -820,15 +815,7 @@ namespace ShareX
                 {
                     if (img != null)
                     {
-                        if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                        {
-                            AnnotateImageUsingShareX(img, null, taskSettings);
-                        }
-                        else
-                        {
-                            AnnotateImageUsingGreenshot(img, null);
-                        }
-
+                        AnnotateImage(img, null, taskSettings);
                         return;
                     }
                 }
@@ -848,14 +835,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    AnnotateImageUsingShareX(null, filePath, taskSettings);
-                }
-                else
-                {
-                    AnnotateImageUsingGreenshot(null, filePath);
-                }
+                AnnotateImage(null, filePath, taskSettings);
             }
             else
             {
@@ -863,7 +843,7 @@ namespace ShareX
             }
         }
 
-        private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
+        private static void AnnotateImage(Image img, string filePath, TaskSettings taskSettings)
         {
             Image source = null;
             Image result = null;
@@ -877,7 +857,7 @@ namespace ShareX
 
             worker.DoWork += () =>
             {
-                result = AnnotateImageUsingShareX(source, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                result = AnnotateImage(source, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
             };
 
             worker.Completed += () =>
@@ -895,20 +875,13 @@ namespace ShareX
         {
             if (img != null)
             {
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
-                }
-                else
-                {
-                    return AnnotateImageUsingGreenshot(img, filePath);
-                }
+                return AnnotateImage(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
             }
 
             return null;
         }
 
-        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
+        private static Image AnnotateImage(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
         {
             if (img == null && File.Exists(filePath))
             {
@@ -919,73 +892,71 @@ namespace ShareX
             {
                 using (img)
                 {
-                    return RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, newFilePath)),
-                        (x, newFilePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, newFilePath)),
-                        x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                        x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
-                        x => Program.MainForm.InvokeSafe(() => PrintImage(x)),
-                        taskMode);
+                    RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+
+                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
+                    {
+                        form.ImageFilePath = filePath;
+
+                        form.SaveImageRequested += (output, newFilePath) =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImage(output, newFilePath); }
+                            });
+                        };
+
+                        form.SaveImageAsRequested += (output, newFilePath) =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
+                            });
+                        };
+
+                        form.CopyImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ClipboardHelpers.CopyImage(output); }
+                            });
+                        };
+
+                        form.UploadImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                UploadManager.UploadImage(output);
+                            });
+                        };
+
+                        form.PrintImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { PrintImage(output); }
+                            });
+                        };
+
+                        form.ShowDialog();
+
+                        switch (form.Result)
+                        {
+                            case RegionResult.Close: // Esc
+                            case RegionResult.AnnotateCancelTask:
+                                return null;
+                            case RegionResult.Region: // Enter
+                            case RegionResult.AnnotateRunAfterCaptureTasks:
+                                return form.GetResultImage();
+                            case RegionResult.Fullscreen: // Space or right click
+                            case RegionResult.AnnotateContinueTask:
+                                return (Image)form.Canvas.Clone();
+                        }
+                    }
                 }
             }
 
             return null;
-        }
-
-        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
-        {
-            return AnnotateImageUsingGreenshot(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
-                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
-                (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
-                (x, filePath) =>
-                {
-                    string newFilePath = null;
-                    Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
-                    return newFilePath;
-                },
-                x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
-        }
-
-        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath, bool allowSave, string configPath, Action<Image> clipboardCopyRequested,
-            Action<Image> imageUploadRequested, Action<Image, string> imageSaveRequested, Func<Image, string, string> imageSaveAsRequested, Action<Image> printImageRequested)
-        {
-            if (!IniConfig.isInitialized)
-            {
-                IniConfig.AllowSave = allowSave;
-                IniConfig.Init(configPath);
-            }
-
-            using (Image cloneImage = img != null ? (Image)img.Clone() : ImageHelpers.LoadImage(imgPath))
-            using (ICapture capture = new Capture { Image = cloneImage })
-            using (Surface surface = new Surface(capture))
-            using (ImageEditorForm editor = new ImageEditorForm(surface, true))
-            {
-                editor.IsTaskWork = img != null;
-                editor.SetImagePath(imgPath);
-                editor.ClipboardCopyRequested += clipboardCopyRequested;
-                editor.ImageUploadRequested += imageUploadRequested;
-                editor.ImageSaveRequested += imageSaveRequested;
-                editor.ImageSaveAsRequested += imageSaveAsRequested;
-                editor.PrintImageRequested += printImageRequested;
-
-                DialogResult result = editor.ShowDialog();
-
-                if (result == DialogResult.OK && editor.IsTaskWork)
-                {
-                    using (img)
-                    {
-                        return editor.GetImageForExport();
-                    }
-                }
-
-                if (result == DialogResult.Abort)
-                {
-                    return null;
-                }
-            }
-
-            return img;
         }
 
         public static void OpenImageEffects(TaskSettings taskSettings = null)
@@ -1019,7 +990,7 @@ namespace ShareX
         public static void OpenDNSChanger()
         {
 #if WindowsStore
-            MessageBox.Show("Not supported in Windows Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Not supported in Microsoft Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 #else
             if (Helpers.IsAdministrator())
             {
@@ -1214,7 +1185,7 @@ namespace ShareX
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                             taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
 
-#if STEAM
+#if STEAM || WindowsStore
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
                           taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
 #endif
@@ -1235,7 +1206,7 @@ namespace ShareX
 
         private static void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.DefaultFFmpegFilePath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
 
             if (result)
             {
@@ -1512,11 +1483,11 @@ namespace ShareX
                         else
                         {
                             List<string> destinations = new List<string>();
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener) ||
-                                (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener) ||
+                                (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
 
                             string destinationsText = string.Join("/", destinations);
 
@@ -1539,31 +1510,31 @@ namespace ShareX
                         {
                             int index = Program.UploadersConfig.CustomUploadersList.Count - 1;
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.ImageUploader))
                             {
                                 Program.UploadersConfig.CustomImageUploaderSelected = index;
                                 Program.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader))
                             {
                                 Program.UploadersConfig.CustomTextUploaderSelected = index;
                                 Program.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader))
                             {
                                 Program.UploadersConfig.CustomFileUploaderSelected = index;
                                 Program.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener))
                             {
                                 Program.UploadersConfig.CustomURLShortenerSelected = index;
                                 Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLSharingService))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))
                             {
                                 Program.UploadersConfig.CustomURLSharingServiceSelected = index;
                                 Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;

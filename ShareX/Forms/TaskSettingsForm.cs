@@ -1064,7 +1064,7 @@ namespace ShareX
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
             {
-                form.DefaultToolsPath = Program.DefaultFFmpegFilePath;
+                form.DefaultToolsPath = Program.ToolsFolder;
                 form.ShowDialog();
             }
         }

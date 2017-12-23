@@ -126,6 +126,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>
     </Compile>

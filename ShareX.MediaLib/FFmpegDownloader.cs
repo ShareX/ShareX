@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using SevenZip;
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -57,37 +57,13 @@ namespace ShareX.MediaLib
             }
         }
 
-        public static bool ExtractFFmpeg(string zipPath, string extractPath)
+        public static bool ExtractFFmpeg(string archivePath, string extractPath)
         {
             try
             {
-                if (NativeMethods.Is64Bit())
-                {
-                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z-x64.dll"));
-                }
-                else
-                {
-                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z.dll"));
-                }
-
-                Helpers.CreateDirectoryFromFilePath(extractPath);
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
-                {
-                    Regex regex = new Regex(@"^ffmpeg-.+\\bin\\ffmpeg\.exe$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-                    foreach (ArchiveFileInfo item in zip.ArchiveFileData)
-                    {
-                        if (regex.IsMatch(item.FileName))
-                        {
-                            using (FileStream fs = new FileStream(extractPath, FileMode.Create, FileAccess.Write, FileShare.None))
-                            {
-                                zip.ExtractFile(item.Index, fs);
-                                return true;
-                            }
-                        }
-                    }
-                }
+                SevenZipManager sevenZipManager = new SevenZipManager();
+                List<string> files = new List<string>() { "ffmpeg.exe" };
+                return sevenZipManager.Extract(archivePath, extractPath, files);
             }
             catch (Exception e)
             {

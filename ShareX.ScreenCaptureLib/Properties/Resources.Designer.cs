@@ -1480,7 +1480,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Auto crop image
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Bring forward.
         /// </summary>
@@ -1642,7 +1651,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_LastRegion", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Paste image/text
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_PasteImageText {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Print image....
         /// </summary>

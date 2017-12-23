@@ -93,6 +93,8 @@
     <Compile Include="Forms\ImageSizeForm.Designer.cs">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegionHelpers\ButtonObject.cs" />
+    <Compile Include="RegionHelpers\ScrollbarManager.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
@@ -125,7 +127,8 @@
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\CropDrawingShape.cs" />
+    <Compile Include="Shapes\Tool\BaseTool.cs" />
+    <Compile Include="Shapes\Tool\CropTool.cs" />
     <Compile Include="Shapes\Drawing\CursorDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\ImageScreenDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
@@ -273,6 +276,9 @@
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\CanvasSizeForm.ko-KR.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CanvasSizeForm.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.ko-KR.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
@@ -295,6 +304,9 @@
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ko-KR.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.nl-NL.resx">
@@ -327,6 +339,9 @@
     <EmbeddedResource Include="Forms\TextDrawingInputBox.it-IT.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.ko-KR.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.pt-BR.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +364,9 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.it-IT.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.ko-KR.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.nl-NL.resx">

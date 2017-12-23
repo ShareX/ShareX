@@ -267,4 +267,49 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Toon een "Upload met ShareX" knop in het context menu</value>
   </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>ShareX Firefox addon installeren...</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Firefox addon ondersteuning inschakelen</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome extensie</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>ShareX Chrome extensie installeren...</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Chrome extensie ondersteuning inschakelen</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Alleen opslaan als URL niet leeg is</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Recente taken</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Recente taken opslaan</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Exporteer geschiedenis</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Exporteer instellingen</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exporteer...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importeer...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Exporteer / Importeer</value>
+  </data>
 </root>

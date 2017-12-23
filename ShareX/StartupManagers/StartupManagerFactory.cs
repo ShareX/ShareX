@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.StartupManagers
+namespace ShareX
 {
     public static class StartupManagerFactory
     {

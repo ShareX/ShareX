@@ -52,12 +52,7 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor,
         AnnotateRunAfterCaptureTasks,
         AnnotateContinueTask,
-        AnnotateCancelTask,
-        AnnotateSaveImage,
-        AnnotateSaveImageAs,
-        AnnotateCopyImage,
-        AnnotateUploadImage,
-        AnnotatePrintImage
+        AnnotateCancelTask
     }
 
     public enum NodeType
@@ -211,7 +206,8 @@ namespace ShareX.ScreenCaptureLib
     {
         Region,
         Drawing,
-        Effect
+        Effect,
+        Tool
     }
 
     public enum ShapeType // Localized
@@ -234,7 +230,7 @@ namespace ShareX.ScreenCaptureLib
         EffectBlur,
         EffectPixelate,
         EffectHighlight,
-        DrawingCrop
+        ToolCrop
     }
 
     public enum RegionAnnotateMode
@@ -262,9 +258,19 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ImageEditorStartMode // Localized
     {
+        AutoSize,
         Normal,
         Maximized,
         PreviousState,
         Fullscreen
+    }
+
+    public enum ImageEditorInterpolationMode
+    {
+        HighQualityBicubic,
+        Bicubic,
+        HighQualityBilinear,
+        Bilinear,
+        NearestNeighbor
     }
 }

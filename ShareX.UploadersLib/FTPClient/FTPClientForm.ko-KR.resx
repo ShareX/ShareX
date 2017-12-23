@@ -130,7 +130,7 @@
     <value>최근 변경 시각</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX FTP 클라이언트</value>
+    <value>ShareX - FTP 클라이언트</value>
   </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>FTP 서버에 접속중...</value>
@@ -146,5 +146,32 @@
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>상태</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>접속</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>연결 끊기</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>다운로드</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL 열기</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>이름 변경</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>새로고침</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>클립보드에 URL 복사</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>폴더 생성</value>
   </data>
 </root>

@@ -28,7 +28,7 @@
 using System;
 using Windows.ApplicationModel;
 
-namespace ShareX.StartupManagers
+namespace ShareX
 {
     public class CentennialStartupManager : IStartupManager
     {
