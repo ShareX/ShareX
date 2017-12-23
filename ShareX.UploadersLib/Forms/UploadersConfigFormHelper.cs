@@ -1629,7 +1629,7 @@ namespace ShareX.UploadersLib
                         foreach (CustomUploaderItem uploader in Config.CustomUploadersList)
                         {
                             string json = eiCustomUploaders.Serialize(uploader);
-                            string filepath = Path.Combine(fsd.FileName, uploader.Name + ".sxcu");
+                            string filepath = Path.Combine(fsd.FileName, uploader.ToString() + ".sxcu");
                             File.WriteAllText(filepath, json, Encoding.UTF8);
                         }
                     }

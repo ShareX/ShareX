@@ -161,7 +161,7 @@
             // 
             resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
             this.ucBeforeUpload.Name = "ucBeforeUpload";
-            //
+            // 
             // AfterCaptureForm
             // 
             this.AcceptButton = this.btnContinue;
