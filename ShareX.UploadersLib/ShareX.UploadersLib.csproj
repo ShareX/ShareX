@@ -41,8 +41,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -855,21 +853,10 @@
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
+      <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
+      <Name>ShareX.HelpersLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
@@ -907,57 +894,26 @@
     <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="Favicons\Polr.ico" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
-      <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
-      <Name>ShareX.HelpersLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\Pomf.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\Seafile.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\Streamable.ico" />
     <None Include="Favicons\Sul.png" />
     <None Include="Favicons\Vgyme.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\Lithiio.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\puush.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\puush-256.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\folder-network.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\globe-network.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\server-network.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\document.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\Pastie.png" />
-    <Content Include="Favicons\AzureStorage.png" />
+    <None Include="Favicons\AzureStorage.png" />
     <None Include="Favicons\Plik.ico" />
-    <Content Include="Favicons\Gfycat.png" />
-    <Content Include="Favicons\GooglePhotos.ico" />
+    <None Include="Favicons\Gfycat.png" />
+    <None Include="Favicons\GooglePhotos.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)APIKeys\
 
