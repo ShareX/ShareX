@@ -159,10 +159,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbCloseCancel.Image = Resources.cross;
                     tsbCloseCancel.Click += (sender, e) => Form.Close(RegionResult.AnnotateCancelTask);
                     tsMain.Items.Add(tsbCloseCancel);
-                }
 
-                if (Form.Mode == RegionCaptureMode.TaskEditor)
-                {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
 
@@ -751,6 +748,12 @@ namespace ShareX.ScreenCaptureLib
                 tscbImageEditorStartMode.Content.SelectedIndexChanged +=
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
                 tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
+
+                ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem("Auto close editor on task");
+                tsmiAutoCloseEditorOnTask.Checked = Options.AutoCloseEditorOnTask;
+                tsmiAutoCloseEditorOnTask.CheckOnClick = true;
+                tsmiAutoCloseEditorOnTask.Click += (sender, e) => Options.AutoCloseEditorOnTask = tsmiAutoCloseEditorOnTask.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiAutoCloseEditorOnTask);
 
                 tsmiImageEditorBackgroundColor = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_EditorBackgroundColor);
                 tsmiImageEditorBackgroundColor.Click += (sender, e) =>

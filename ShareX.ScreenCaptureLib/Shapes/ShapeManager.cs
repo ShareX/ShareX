@@ -1478,16 +1478,16 @@ namespace ShareX.ScreenCaptureLib
         {
             Size oldSize = Form.Canvas.Size;
 
-            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize, Options.ImageEditorInterpolationMode))
+            using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize, Options.ImageEditorResizeInterpolationMode))
             {
                 if (imageSizeForm.ShowDialog(Form) == DialogResult.OK)
                 {
                     Size size = imageSizeForm.ImageSize;
-                    Options.ImageEditorInterpolationMode = imageSizeForm.InterpolationMode;
+                    Options.ImageEditorResizeInterpolationMode = imageSizeForm.InterpolationMode;
 
                     if (size != oldSize)
                     {
-                        InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorInterpolationMode);
+                        InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
                         Image img = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
                         if (img != null)

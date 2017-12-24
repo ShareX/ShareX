@@ -270,17 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\image.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\notebook.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-block.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\globe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
