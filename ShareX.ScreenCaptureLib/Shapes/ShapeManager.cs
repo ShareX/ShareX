@@ -1486,11 +1486,26 @@ namespace ShareX.ScreenCaptureLib
 
         private void NewImage()
         {
-            using (NewImageForm newImageForm = new NewImageForm())
+            using (NewImageForm newImageForm = new NewImageForm(Options.EditorNewImageSize, Options.EditorNewImageTransparent, Options.EditorNewImageBackgroundColor))
             {
                 if (newImageForm.ShowDialog(Form) == DialogResult.OK)
                 {
-                    Image img = ImageHelpers.CreateBitmap(newImageForm.ImageSize.Width, newImageForm.ImageSize.Height, newImageForm.BackgroundColor);
+                    Options.EditorNewImageSize = newImageForm.ImageSize;
+                    Options.EditorNewImageTransparent = newImageForm.Transparent;
+                    Options.EditorNewImageBackgroundColor = newImageForm.BackgroundColor;
+
+                    Color backgroundColor;
+
+                    if (Options.EditorNewImageTransparent)
+                    {
+                        backgroundColor = Color.Transparent;
+                    }
+                    else
+                    {
+                        backgroundColor = Options.ImageEditorBackgroundColor;
+                    }
+
+                    Image img = ImageHelpers.CreateBitmap(Options.EditorNewImageSize.Width, Options.EditorNewImageSize.Height, backgroundColor);
 
                     if (img != null)
                     {

@@ -38,7 +38,8 @@ namespace ShareX.ScreenCaptureLib
     public partial class NewImageForm : Form
     {
         public Size ImageSize { get; private set; }
-        public Color BackgroundColor { get; set; }
+        public bool Transparent { get; private set; }
+        public Color BackgroundColor { get; private set; }
 
         public NewImageForm()
         {
@@ -49,6 +50,18 @@ namespace ShareX.ScreenCaptureLib
 
             nudWidth.TextChanged += NudWidth_TextChanged;
             nudHeight.TextChanged += NudHeight_TextChanged;
+        }
+
+        public NewImageForm(Size imageSize, bool transparent, Color backgroundColor) : this()
+        {
+            ImageSize = imageSize;
+            Transparent = transparent;
+            BackgroundColor = backgroundColor;
+
+            nudWidth.Value = ImageSize.Width;
+            nudHeight.Value = ImageSize.Height;
+            cbTransparent.Checked = Transparent;
+            btnChangeColor.Color = BackgroundColor;
         }
 
         private void CheckSize()
@@ -74,15 +87,8 @@ namespace ShareX.ScreenCaptureLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             ImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
-
-            if (cbTransparent.Checked)
-            {
-                BackgroundColor = Color.Transparent;
-            }
-            else
-            {
-                BackgroundColor = btnChangeColor.Color;
-            }
+            Transparent = cbTransparent.Checked;
+            BackgroundColor = btnChangeColor.Color;
 
             DialogResult = DialogResult.OK;
             Close();
