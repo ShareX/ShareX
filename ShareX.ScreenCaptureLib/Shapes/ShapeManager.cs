@@ -365,10 +365,20 @@ namespace ShareX.ScreenCaptureLib
                 if (e.Delta > 0)
                 {
                     CurrentTool = CurrentTool.Previous<ShapeType>();
+
+                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
+                    {
+                        CurrentTool = CurrentTool.Previous<ShapeType>();
+                    }
                 }
                 else if (e.Delta < 0)
                 {
                     CurrentTool = CurrentTool.Next<ShapeType>();
+
+                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
+                    {
+                        CurrentTool = CurrentTool.Next<ShapeType>();
+                    }
                 }
             }
             else
