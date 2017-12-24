@@ -1484,6 +1484,23 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
+        private void NewImage()
+        {
+            using (NewImageForm newImageForm = new NewImageForm())
+            {
+                if (newImageForm.ShowDialog(Form) == DialogResult.OK)
+                {
+                    Image img = ImageHelpers.CreateBitmap(newImageForm.ImageSize.Width, newImageForm.ImageSize.Height, newImageForm.BackgroundColor);
+
+                    if (img != null)
+                    {
+                        DeleteAllShapes();
+                        UpdateCanvas(img);
+                    }
+                }
+            }
+        }
+
         private void ChangeImageSize()
         {
             Size oldSize = Form.Canvas.Size;

@@ -129,8 +129,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
             ImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
+
+            DialogResult = DialogResult.OK;
             Close();
         }
 

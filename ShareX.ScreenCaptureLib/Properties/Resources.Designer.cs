@@ -467,6 +467,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image__plus {
+            get {
+                object obj = ResourceManager.GetObject("image__plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_crop {
             get {
                 object obj = ResourceManager.GetObject("image_crop", resourceCulture);
@@ -1480,16 +1490,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Auto crop image
+        ///   Looks up a localized string similar to Auto crop image.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_AutoCropImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bring forward.
         /// </summary>
@@ -1651,16 +1661,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_LastRegion", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Paste image/text
+        ///   Looks up a localized string similar to Paste image/text.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_PasteImageText {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Print image....
         /// </summary>

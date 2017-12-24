@@ -85,6 +85,12 @@
     <Compile Include="Forms\CanvasSizeForm.Designer.cs">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewImageForm.Designer.cs">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ImageSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image--plus.png" />
     <None Include="Resources\image-resize.png" />
     <None Include="Resources\layer-flip.png" />
     <None Include="Resources\layer-flip-vertical.png" />
@@ -285,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.ko-KR.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>

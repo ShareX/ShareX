@@ -690,4 +690,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Tip: You can pan image by holding mouse middle button and dragging.</value>
   </data>
+  <data name="image__plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

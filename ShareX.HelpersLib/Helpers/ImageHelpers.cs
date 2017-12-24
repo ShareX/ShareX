@@ -630,6 +630,23 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static Bitmap CreateBitmap(int width, int height, Color color)
+        {
+            if (width > 0 && height > 0)
+            {
+                Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.Clear(color);
+                }
+
+                return bmp;
+            }
+
+            return null;
+        }
+
         public static Bitmap FillBackground(Image img, Color color)
         {
             using (Brush brush = new SolidBrush(color))
