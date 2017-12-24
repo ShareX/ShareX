@@ -1516,6 +1516,27 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void OpenImage()
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+            LoadImageFile(filePath);
+        }
+
+        private void LoadImageFile(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Image img = ImageHelpers.LoadImage(filePath);
+
+                if (img != null)
+                {
+                    Form.ImageFilePath = filePath;
+                    DeleteAllShapes();
+                    UpdateCanvas(img);
+                }
+            }
+        }
+
         private void ChangeImageSize()
         {
             Size oldSize = Form.Canvas.Size;

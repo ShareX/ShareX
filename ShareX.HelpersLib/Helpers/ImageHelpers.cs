@@ -1586,6 +1586,18 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        public static Image LoadImageWithFileDialog()
+        {
+            string filepath = OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filepath))
+            {
+                return LoadImage(filepath);
+            }
+
+            return null;
+        }
+
         public static Image CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical, int space = 0)
         {
             int width, height;

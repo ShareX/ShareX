@@ -621,7 +621,7 @@ namespace ShareX.ScreenCaptureLib
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
-                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem("New...");
+                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem("New image...");
                 tsmiNewImage.Image = Resources.image__plus;
                 tsmiNewImage.Click += (sender, e) =>
                 {
@@ -630,6 +630,11 @@ namespace ShareX.ScreenCaptureLib
                     Form.Resume();
                 };
                 tsddbImage.DropDownItems.Add(tsmiNewImage);
+
+                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem("Open image...");
+                tsmiOpenImage.Image = Resources.folder_open_image;
+                tsmiOpenImage.Click += (sender, e) => OpenImage();
+                tsddbImage.DropDownItems.Add(tsmiOpenImage);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
