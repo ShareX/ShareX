@@ -1225,7 +1225,10 @@ namespace ShareX.ScreenCaptureLib
 
             tsmiArrowHeadsBothSide.Checked = AnnotationOptions.ArrowHeadsBothSide;
 
-            tsbSaveImage.Enabled = !string.IsNullOrEmpty(Form.ImageFilePath) && File.Exists(Form.ImageFilePath);
+            if (tsbSaveImage != null)
+            {
+                tsbSaveImage.Enabled = !string.IsNullOrEmpty(Form.ImageFilePath) && File.Exists(Form.ImageFilePath);
+            }
 
             switch (shapeType)
             {
