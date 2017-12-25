@@ -113,6 +113,11 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
             IsFullscreen = !IsEditorMode || Options.ImageEditorStartMode == ImageEditorStartMode.Fullscreen;
 
+            if (canvas == null && !IsEditorMode)
+            {
+                canvas = new Screenshot().CaptureFullscreen();
+            }
+
             ClientArea = CaptureHelpers.GetScreenBounds0Based();
             CanvasRectangle = ClientArea;
 
@@ -271,16 +276,18 @@ namespace ShareX.ScreenCaptureLib
 
         private void Prepare(Image canvas = null)
         {
-            if (canvas == null)
-            {
-                canvas = new Screenshot().CaptureFullscreen();
-            }
-
             ShapeManager = new ShapeManager(this);
             ShapeManager.WindowCaptureMode = !IsEditorMode && Options.DetectWindows;
             ShapeManager.IncludeControls = Options.DetectControls;
 
-            InitBackground(canvas);
+            if (canvas == null && IsEditorMode)
+            {
+                ShapeManager.NewImage(true);
+            }
+            else
+            {
+                InitBackground(canvas);
+            }
 
             if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
             {

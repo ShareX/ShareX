@@ -1484,7 +1484,7 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        private void NewImage()
+        public void NewImage(bool forceCreate = false)
         {
             using (NewImageForm newImageForm = new NewImageForm(Options.EditorNewImageSize, Options.EditorNewImageTransparent, Options.EditorNewImageBackgroundColor))
             {
@@ -1505,20 +1505,29 @@ namespace ShareX.ScreenCaptureLib
                         backgroundColor = Options.EditorNewImageBackgroundColor;
                     }
 
-                    Image img = ImageHelpers.CreateBitmap(Options.EditorNewImageSize.Width, Options.EditorNewImageSize.Height, backgroundColor);
-
-                    if (img != null)
-                    {
-                        Form.ImageFilePath = "";
-                        DeleteAllShapes();
-                        UpdateMenu();
-                        UpdateCanvas(img);
-                    }
+                    LoadNewImage(Options.EditorNewImageSize.Width, Options.EditorNewImageSize.Height, backgroundColor);
+                }
+                else if (forceCreate)
+                {
+                    LoadNewImage(800, 600, Color.White);
                 }
             }
         }
 
-        private void OpenImage()
+        private void LoadNewImage(int width, int height, Color backgroundColor)
+        {
+            Image img = ImageHelpers.CreateBitmap(width, height, backgroundColor);
+
+            if (img != null)
+            {
+                Form.ImageFilePath = "";
+                DeleteAllShapes();
+                UpdateMenu();
+                UpdateCanvas(img);
+            }
+        }
+
+        private void OpenImageFile()
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
             LoadImageFile(filePath);
