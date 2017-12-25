@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
 
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor;
+        private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom,
             tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
@@ -163,9 +163,8 @@ namespace ShareX.ScreenCaptureLib
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
 
-                ToolStripButton tsbSaveImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImage);
+                tsbSaveImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImage);
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbSaveImage.Enabled = File.Exists(Form.ImageFilePath);
                 tsbSaveImage.Image = Resources.disk_black;
                 tsbSaveImage.Click += (sender, e) => Form.OnSaveImageRequested();
                 tsMain.Items.Add(tsbSaveImage);
@@ -1225,6 +1224,8 @@ namespace ShareX.ScreenCaptureLib
             tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
 
             tsmiArrowHeadsBothSide.Checked = AnnotationOptions.ArrowHeadsBothSide;
+
+            tsbSaveImage.Enabled = !string.IsNullOrEmpty(Form.ImageFilePath) && File.Exists(Form.ImageFilePath);
 
             switch (shapeType)
             {

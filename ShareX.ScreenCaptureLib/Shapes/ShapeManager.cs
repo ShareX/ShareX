@@ -1509,7 +1509,9 @@ namespace ShareX.ScreenCaptureLib
 
                     if (img != null)
                     {
+                        Form.ImageFilePath = "";
                         DeleteAllShapes();
+                        UpdateMenu();
                         UpdateCanvas(img);
                     }
                 }
@@ -1532,6 +1534,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Form.ImageFilePath = filePath;
                     DeleteAllShapes();
+                    UpdateMenu();
                     UpdateCanvas(img);
                 }
             }
