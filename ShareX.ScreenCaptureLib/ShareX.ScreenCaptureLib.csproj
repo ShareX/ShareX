@@ -209,6 +209,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-empty.png" />
     <None Include="Resources\image--plus.png" />
     <None Include="Resources\image-resize.png" />
     <None Include="Resources\layer-flip.png" />

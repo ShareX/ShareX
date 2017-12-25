@@ -621,7 +621,7 @@ namespace ShareX.ScreenCaptureLib
                 tsMain.Items.Add(tsddbImage);
 
                 ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem("New image...");
-                tsmiNewImage.Image = Resources.image__plus;
+                tsmiNewImage.Image = Resources.image_empty;
                 tsmiNewImage.Click += (sender, e) =>
                 {
                     Form.Pause();
@@ -634,6 +634,11 @@ namespace ShareX.ScreenCaptureLib
                 tsmiOpenImage.Image = Resources.folder_open_image;
                 tsmiOpenImage.Click += (sender, e) => OpenImage();
                 tsddbImage.DropDownItems.Add(tsmiOpenImage);
+
+                ToolStripMenuItem tsmiInsertImage = new ToolStripMenuItem("Insert image...");
+                tsmiInsertImage.Image = Resources.image__plus;
+                tsmiInsertImage.Click += (sender, e) => InsertImage();
+                tsddbImage.DropDownItems.Add(tsmiInsertImage);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 

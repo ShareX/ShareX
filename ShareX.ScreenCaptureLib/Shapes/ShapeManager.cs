@@ -1540,6 +1540,28 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void InsertImage()
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Image img = ImageHelpers.LoadImage(filePath);
+
+                if (img != null)
+                {
+                    CurrentTool = ShapeType.DrawingImage;
+                    ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
+                    Point pos = Form.ClientArea.Center();
+                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+                    shape.SetImage(img, true);
+                    shape.OnCreated();
+                    AddShape(shape);
+                    SelectCurrentShape();
+                }
+            }
+        }
+
         private void ChangeImageSize()
         {
             Size oldSize = Form.Canvas.Size;
