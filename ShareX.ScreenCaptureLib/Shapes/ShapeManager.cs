@@ -1502,7 +1502,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        backgroundColor = Options.ImageEditorBackgroundColor;
+                        backgroundColor = Options.EditorNewImageBackgroundColor;
                     }
 
                     Image img = ImageHelpers.CreateBitmap(Options.EditorNewImageSize.Width, Options.EditorNewImageSize.Height, backgroundColor);
