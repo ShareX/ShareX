@@ -1623,6 +1623,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void AddCropTool()
+        {
+            CurrentTool = ShapeType.ToolCrop;
+            CropTool tool = (CropTool)CreateShape(ShapeType.ToolCrop);
+            tool.Rectangle = Form.CanvasRectangle;
+            tool.OnCreated();
+            AddShape(tool);
+            SelectCurrentShape();
+        }
+
         private void AutoCropImage()
         {
             Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);

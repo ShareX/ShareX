@@ -517,6 +517,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_select {
+            get {
+                object obj = ResourceManager.GetObject("image_select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap layer {
             get {
                 object obj = ResourceManager.GetObject("layer", resourceCulture);
@@ -1502,7 +1512,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto crop image.
+        ///   Looks up a localized string similar to Auto crop image....
         /// </summary>
         internal static string ShapeManager_CreateToolbar_AutoCropImage {
             get {

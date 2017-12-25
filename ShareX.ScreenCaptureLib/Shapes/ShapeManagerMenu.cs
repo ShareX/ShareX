@@ -643,17 +643,22 @@ namespace ShareX.ScreenCaptureLib
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
                 ToolStripMenuItem tsmiImageSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_ImageSize);
-                tsmiImageSize.Image = Resources.image_resize;
+                tsmiImageSize.Image = Resources.image_select;
                 tsmiImageSize.Click += (sender, e) => ChangeImageSize();
                 tsddbImage.DropDownItems.Add(tsmiImageSize);
 
                 ToolStripMenuItem tsmiCanvasSize = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CanvasSize);
-                tsmiCanvasSize.Image = Resources.image_resize_actual;
+                tsmiCanvasSize.Image = Resources.image_resize;
                 tsmiCanvasSize.Click += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
+                ToolStripMenuItem tsmiCropImage = new ToolStripMenuItem("Crop image...");
+                tsmiCropImage.Image = Resources.image_crop;
+                tsmiCropImage.Click += (sender, e) => AddCropTool();
+                tsddbImage.DropDownItems.Add(tsmiCropImage);
+
                 ToolStripMenuItem tsmiAutoCropImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_AutoCropImage);
-                tsmiAutoCropImage.Image = Resources.image_crop;
+                tsmiAutoCropImage.Image = Resources.image_resize_actual;
                 tsmiAutoCropImage.Click += (sender, e) => AutoCropImage();
                 tsddbImage.DropDownItems.Add(tsmiAutoCropImage);
 
