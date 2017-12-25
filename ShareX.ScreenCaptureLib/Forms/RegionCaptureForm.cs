@@ -786,10 +786,7 @@ namespace ShareX.ScreenCaptureLib
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
 
-                    Point centerPos = new Point(ShapeManager.CurrentRectangle.X + ShapeManager.CurrentRectangle.Width / 2, ShapeManager.CurrentRectangle.Y + ShapeManager.CurrentRectangle.Height / 2);
-                    int markSize = 10;
-                    g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
-                    g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
+                    g.DrawCross(borderPen, ShapeManager.CurrentRectangle.Center(), 10);
                 }
 
                 DrawRegionArea(g, ShapeManager.CurrentRectangle, true);

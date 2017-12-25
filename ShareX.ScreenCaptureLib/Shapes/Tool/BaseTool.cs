@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,6 +41,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsValidShape)
             {
                 Manager.DrawRegionArea(g, Rectangle, true);
+                g.DrawCross(Pens.Black, Rectangle.Center(), 10);
             }
         }
     }

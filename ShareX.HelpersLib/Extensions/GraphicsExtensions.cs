@@ -111,6 +111,18 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void DrawCross(this Graphics g, Pen pen, Point center, int crossSize)
+        {
+            if (crossSize > 0)
+            {
+                // Horizontal
+                g.DrawLine(pen, center.X - crossSize, center.Y, center.X + crossSize, center.Y);
+
+                // Vertical
+                g.DrawLine(pen, center.X, center.Y - crossSize, center.X, center.Y + crossSize);
+            }
+        }
+
         public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)
         {
             rect = rect.SizeOffset(-1);
