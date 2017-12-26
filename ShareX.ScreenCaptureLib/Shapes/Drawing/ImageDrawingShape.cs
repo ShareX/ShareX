@@ -63,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = false;
 
-            string filepath = ImageHelpers.OpenImageFileDialog();
+            string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
 
             if (!string.IsNullOrEmpty(filepath))
             {

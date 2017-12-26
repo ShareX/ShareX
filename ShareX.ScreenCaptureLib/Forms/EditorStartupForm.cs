@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnOpenImageFile_Click(object sender, EventArgs e)
         {
-            string ImageFilePath = ImageHelpers.OpenImageFileDialog();
+            string ImageFilePath = ImageHelpers.OpenImageFileDialog(this);
 
             if (!string.IsNullOrEmpty(ImageFilePath) && File.Exists(ImageFilePath))
             {
@@ -88,7 +88,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnCreateNewImage_Click(object sender, EventArgs e)
         {
-            Image = NewImageForm.CreateNewImage(Options);
+            Image = NewImageForm.CreateNewImage(Options, this);
 
             if (Image != null)
             {

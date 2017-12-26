@@ -1486,7 +1486,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void NewImage()
         {
-            Image img = NewImageForm.CreateNewImage(Options);
+            Image img = NewImageForm.CreateNewImage(Options, Form);
 
             if (img != null)
             {
@@ -1499,7 +1499,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void OpenImageFile()
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
+            string filePath = ImageHelpers.OpenImageFileDialog(Form);
             LoadImageFile(filePath);
         }
 
@@ -1521,7 +1521,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void InsertImage()
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
+            string filePath = ImageHelpers.OpenImageFileDialog(Form);
 
             if (!string.IsNullOrEmpty(filePath))
             {

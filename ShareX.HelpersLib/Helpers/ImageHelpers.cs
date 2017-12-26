@@ -1462,9 +1462,9 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string OpenImageFileDialog()
+        public static string OpenImageFileDialog(Form form = null)
         {
-            string[] images = OpenImageFileDialog(false);
+            string[] images = OpenImageFileDialog(false, form);
 
             if (images != null && images.Length > 0)
             {
@@ -1474,7 +1474,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static string[] OpenImageFileDialog(bool multiselect)
+        public static string[] OpenImageFileDialog(bool multiselect, Form form = null)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -1483,7 +1483,7 @@ namespace ShareX.HelpersLib
 
                 ofd.Multiselect = multiselect;
 
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog(form) == DialogResult.OK)
                 {
                     return ofd.FileNames;
                 }
