@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                MessageBox.Show("Clipboard does not contains an image.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Clipboard does not contains an image.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
