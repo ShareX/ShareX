@@ -172,11 +172,11 @@ namespace ShareX
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
-                        AnnotateImage(command.Parameter, safeTaskSettings);
+                        AnnotateImageFromFile(command.Parameter, safeTaskSettings);
                     }
                     else
                     {
-                        AnnotateImage(safeTaskSettings);
+                        OpenImageEditor(safeTaskSettings);
                     }
                     break;
                 case HotkeyType.ImageEffects:
@@ -804,42 +804,28 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
-        public static void AnnotateImage(TaskSettings taskSettings = null)
+        public static void OpenImageEditor(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Clipboard.ContainsImage() && MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
-                Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            using (EditorStartupForm editorStartupForm = new EditorStartupForm())
             {
-                using (Image img = ClipboardHelpers.GetImage())
+                if (editorStartupForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (img != null)
-                    {
-                        AnnotateImage(img, null, taskSettings);
-                        return;
-                    }
+                    AnnotateImageAsync(editorStartupForm.Image, editorStartupForm.ImageFilePath, taskSettings);
                 }
-            }
-
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                AnnotateImage(filePath, taskSettings);
-            }
-            else
-            {
-                AnnotateImage(null, null, taskSettings);
             }
         }
 
-        public static void AnnotateImage(string filePath, TaskSettings taskSettings = null)
+        public static void AnnotateImageFromFile(string filePath, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                AnnotateImage(null, filePath, taskSettings);
+                Image img = ImageHelpers.LoadImage(filePath);
+
+                AnnotateImageAsync(img, filePath, taskSettings);
             }
             else
             {
@@ -847,54 +833,32 @@ namespace ShareX
             }
         }
 
-        private static void AnnotateImage(Image img, string filePath, TaskSettings taskSettings)
+        public static void AnnotateImageAsync(Image img, string filePath, TaskSettings taskSettings)
         {
-            Image source = null;
-            Image result = null;
-
-            if (img != null)
-            {
-                source = (Image)img.Clone();
-            }
-
             ThreadWorker worker = new ThreadWorker();
 
             worker.DoWork += () =>
             {
-                result = AnnotateImage(source, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                img = AnnotateImage(img, filePath, taskSettings);
             };
 
             worker.Completed += () =>
             {
-                if (result != null)
+                if (img != null)
                 {
-                    UploadManager.RunImageTask(result, taskSettings);
+                    UploadManager.RunImageTask(img, taskSettings);
                 }
             };
 
             worker.Start(ApartmentState.STA);
         }
 
-        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
+        public static Image AnnotateImage(Image img, string filePath, TaskSettings taskSettings, bool taskMode = false)
         {
-            if (img != null)
-            {
-                return AnnotateImage(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
-            }
-
-            return null;
-        }
-
-        private static Image AnnotateImage(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
-        {
-            if (img == null && File.Exists(filePath))
-            {
-                img = ImageHelpers.LoadImage(filePath);
-            }
-
             using (img)
             {
                 RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+                RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
 
                 using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
                 {

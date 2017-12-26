@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewImageForm));
             this.lblHeightPixels = new System.Windows.Forms.Label();
             this.lblWidthPixels = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
@@ -46,56 +47,33 @@
             // 
             // lblHeightPixels
             // 
-            this.lblHeightPixels.AutoSize = true;
-            this.lblHeightPixels.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeightPixels.Location = new System.Drawing.Point(168, 48);
+            resources.ApplyResources(this.lblHeightPixels, "lblHeightPixels");
             this.lblHeightPixels.Name = "lblHeightPixels";
-            this.lblHeightPixels.Size = new System.Drawing.Size(33, 13);
-            this.lblHeightPixels.TabIndex = 5;
-            this.lblHeightPixels.Text = "pixels";
             // 
             // lblWidthPixels
             // 
-            this.lblWidthPixels.AutoSize = true;
-            this.lblWidthPixels.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblWidthPixels.Location = new System.Drawing.Point(168, 16);
+            resources.ApplyResources(this.lblWidthPixels, "lblWidthPixels");
             this.lblWidthPixels.Name = "lblWidthPixels";
-            this.lblWidthPixels.Size = new System.Drawing.Size(33, 13);
-            this.lblWidthPixels.TabIndex = 2;
-            this.lblWidthPixels.Text = "pixels";
             // 
             // lblHeight
             // 
-            this.lblHeight.AutoSize = true;
-            this.lblHeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeight.Location = new System.Drawing.Point(13, 48);
+            resources.ApplyResources(this.lblHeight, "lblHeight");
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(41, 13);
-            this.lblHeight.TabIndex = 3;
-            this.lblHeight.Text = "Height:";
             // 
             // lblWidth
             // 
-            this.lblWidth.AutoSize = true;
-            this.lblWidth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblWidth.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(this.lblWidth, "lblWidth");
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(38, 13);
-            this.lblWidth.TabIndex = 0;
-            this.lblWidth.Text = "Width:";
             // 
             // nudHeight
             // 
-            this.nudHeight.Location = new System.Drawing.Point(96, 44);
+            resources.ApplyResources(this.nudHeight, "nudHeight");
             this.nudHeight.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudHeight.Name = "nudHeight";
-            this.nudHeight.Size = new System.Drawing.Size(64, 20);
-            this.nudHeight.TabIndex = 4;
-            this.nudHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudHeight.Value = new decimal(new int[] {
             512,
             0,
@@ -104,16 +82,13 @@
             // 
             // nudWidth
             // 
-            this.nudWidth.Location = new System.Drawing.Point(96, 12);
+            resources.ApplyResources(this.nudWidth, "nudWidth");
             this.nudWidth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudWidth.Name = "nudWidth";
-            this.nudWidth.Size = new System.Drawing.Size(64, 20);
-            this.nudWidth.TabIndex = 1;
-            this.nudWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudWidth.Value = new decimal(new int[] {
             512,
             0,
@@ -122,43 +97,29 @@
             // 
             // cbTransparent
             // 
-            this.cbTransparent.AutoSize = true;
-            this.cbTransparent.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.cbTransparent, "cbTransparent");
             this.cbTransparent.Name = "cbTransparent";
-            this.cbTransparent.Size = new System.Drawing.Size(83, 17);
-            this.cbTransparent.TabIndex = 0;
-            this.cbTransparent.Text = "Transparent";
             this.cbTransparent.UseVisualStyleBackColor = true;
             this.cbTransparent.CheckedChanged += new System.EventHandler(this.cbTransparent_CheckedChanged);
             // 
             // btnChangeColor
             // 
             this.btnChangeColor.Color = System.Drawing.Color.Empty;
-            this.btnChangeColor.Location = new System.Drawing.Point(16, 48);
+            resources.ApplyResources(this.btnChangeColor, "btnChangeColor");
             this.btnChangeColor.Name = "btnChangeColor";
-            this.btnChangeColor.Size = new System.Drawing.Size(200, 24);
-            this.btnChangeColor.TabIndex = 1;
-            this.btnChangeColor.Text = "Change color...";
-            this.btnChangeColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangeColor.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(16, 176);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(112, 23);
-            this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(136, 176);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 23);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -166,19 +127,15 @@
             // 
             this.gbBackgroundColor.Controls.Add(this.cbTransparent);
             this.gbBackgroundColor.Controls.Add(this.btnChangeColor);
-            this.gbBackgroundColor.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.gbBackgroundColor, "gbBackgroundColor");
             this.gbBackgroundColor.Name = "gbBackgroundColor";
-            this.gbBackgroundColor.Size = new System.Drawing.Size(232, 88);
-            this.gbBackgroundColor.TabIndex = 6;
             this.gbBackgroundColor.TabStop = false;
-            this.gbBackgroundColor.Text = "Background color";
             // 
-            // ImageEditorNew
+            // NewImageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(262, 209);
             this.Controls.Add(this.gbBackgroundColor);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -191,9 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ImageEditorNew";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - New";
+            this.Name = "NewImageForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             this.gbBackgroundColor.ResumeLayout(false);

@@ -1459,7 +1459,7 @@ namespace ShareX
 
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
-            TaskHelpers.AnnotateImage();
+            TaskHelpers.OpenImageEditor();
         }
 
         private void tsmiImageEffects_Click(object sender, EventArgs e)
