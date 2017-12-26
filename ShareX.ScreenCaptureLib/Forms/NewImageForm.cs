@@ -37,31 +37,46 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class NewImageForm : Form
     {
-        public Size ImageSize { get; private set; }
-        public bool Transparent { get; private set; }
-        public Color BackgroundColor { get; private set; }
+        public RegionCaptureOptions Options { get; private set; }
 
-        public NewImageForm()
+        public NewImageForm(RegionCaptureOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            btnChangeColor.Color = Color.White;
+            Options = options;
 
             nudWidth.TextChanged += NudWidth_TextChanged;
             nudHeight.TextChanged += NudHeight_TextChanged;
+
+            nudWidth.Value = Options.EditorNewImageSize.Width;
+            nudHeight.Value = Options.EditorNewImageSize.Height;
+            cbTransparent.Checked = Options.EditorNewImageTransparent;
+            btnChangeColor.Color = options.EditorNewImageBackgroundColor;
         }
 
-        public NewImageForm(Size imageSize, bool transparent, Color backgroundColor) : this()
+        public static Image CreateNewImage(RegionCaptureOptions options)
         {
-            ImageSize = imageSize;
-            Transparent = transparent;
-            BackgroundColor = backgroundColor;
+            using (NewImageForm newImageForm = new NewImageForm(options))
+            {
+                if (newImageForm.ShowDialog() == DialogResult.OK)
+                {
+                    Color backgroundColor;
 
-            nudWidth.Value = ImageSize.Width;
-            nudHeight.Value = ImageSize.Height;
-            cbTransparent.Checked = Transparent;
-            btnChangeColor.Color = BackgroundColor;
+                    if (options.EditorNewImageTransparent)
+                    {
+                        backgroundColor = Color.Transparent;
+                    }
+                    else
+                    {
+                        backgroundColor = options.EditorNewImageBackgroundColor;
+                    }
+
+                    return ImageHelpers.CreateBitmap(options.EditorNewImageSize.Width, options.EditorNewImageSize.Height, backgroundColor);
+                }
+            }
+
+            return null;
         }
 
         private void CheckSize()
@@ -86,9 +101,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            ImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
-            Transparent = cbTransparent.Checked;
-            BackgroundColor = btnChangeColor.Color;
+            Options.EditorNewImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
+            Options.EditorNewImageTransparent = cbTransparent.Checked;
+            Options.EditorNewImageBackgroundColor = btnChangeColor.Color;
 
             DialogResult = DialogResult.OK;
             Close();

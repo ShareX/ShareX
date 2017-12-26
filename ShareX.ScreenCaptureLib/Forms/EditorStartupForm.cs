@@ -38,13 +38,15 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class EditorStartupForm : Form
     {
+        public RegionCaptureOptions Options { get; private set; }
         public Image Image { get; private set; }
         public string ImageFilePath { get; private set; }
 
-        public EditorStartupForm()
+        public EditorStartupForm(RegionCaptureOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            Options = options;
         }
 
         private void btnOpenImageFile_Click(object sender, EventArgs e)
@@ -86,8 +88,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnCreateNewImage_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            Image = NewImageForm.CreateNewImage(Options);
+
+            if (Image != null)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
     }
 }

@@ -808,7 +808,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (EditorStartupForm editorStartupForm = new EditorStartupForm())
+            using (EditorStartupForm editorStartupForm = new EditorStartupForm(taskSettings.CaptureSettingsReference.SurfaceOptions))
             {
                 if (editorStartupForm.ShowDialog() == DialogResult.OK)
                 {
@@ -855,68 +855,71 @@ namespace ShareX
 
         public static Image AnnotateImage(Image img, string filePath, TaskSettings taskSettings, bool taskMode = false)
         {
-            using (img)
+            if (img != null)
             {
-                RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
-                RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
-
-                using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
+                using (img)
                 {
-                    form.ImageFilePath = filePath;
+                    RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+                    RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
 
-                    form.SaveImageRequested += (output, newFilePath) =>
+                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
                     {
-                        Program.MainForm.InvokeSafe(() =>
+                        form.ImageFilePath = filePath;
+
+                        form.SaveImageRequested += (output, newFilePath) =>
                         {
-                            using (output) { ImageHelpers.SaveImage(output, newFilePath); }
-                        });
-                    };
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImage(output, newFilePath); }
+                            });
+                        };
 
-                    form.SaveImageAsRequested += (output, newFilePath) =>
-                    {
-                        Program.MainForm.InvokeSafe(() =>
+                        form.SaveImageAsRequested += (output, newFilePath) =>
                         {
-                            using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
-                        });
-                    };
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
+                            });
+                        };
 
-                    form.CopyImageRequested += output =>
-                    {
-                        Program.MainForm.InvokeSafe(() =>
+                        form.CopyImageRequested += output =>
                         {
-                            using (output) { ClipboardHelpers.CopyImage(output); }
-                        });
-                    };
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ClipboardHelpers.CopyImage(output); }
+                            });
+                        };
 
-                    form.UploadImageRequested += output =>
-                    {
-                        Program.MainForm.InvokeSafe(() =>
+                        form.UploadImageRequested += output =>
                         {
-                            UploadManager.UploadImage(output);
-                        });
-                    };
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                UploadManager.UploadImage(output);
+                            });
+                        };
 
-                    form.PrintImageRequested += output =>
-                    {
-                        Program.MainForm.InvokeSafe(() =>
+                        form.PrintImageRequested += output =>
                         {
-                            using (output) { PrintImage(output); }
-                        });
-                    };
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { PrintImage(output); }
+                            });
+                        };
 
-                    form.ShowDialog();
+                        form.ShowDialog();
 
-                    switch (form.Result)
-                    {
-                        case RegionResult.Close: // Esc
-                        case RegionResult.AnnotateCancelTask:
-                            return null;
-                        case RegionResult.Region: // Enter
-                        case RegionResult.AnnotateRunAfterCaptureTasks:
-                            return form.GetResultImage();
-                        case RegionResult.Fullscreen: // Space or right click
-                        case RegionResult.AnnotateContinueTask:
-                            return (Image)form.Canvas.Clone();
+                        switch (form.Result)
+                        {
+                            case RegionResult.Close: // Esc
+                            case RegionResult.AnnotateCancelTask:
+                                return null;
+                            case RegionResult.Region: // Enter
+                            case RegionResult.AnnotateRunAfterCaptureTasks:
+                                return form.GetResultImage();
+                            case RegionResult.Fullscreen: // Space or right click
+                            case RegionResult.AnnotateContinueTask:
+                                return (Image)form.Canvas.Clone();
+                        }
                     }
                 }
             }

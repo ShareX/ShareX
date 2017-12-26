@@ -1484,39 +1484,9 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public void NewImage(bool forceCreate = false)
+        public void NewImage()
         {
-            using (NewImageForm newImageForm = new NewImageForm(Options.EditorNewImageSize, Options.EditorNewImageTransparent, Options.EditorNewImageBackgroundColor))
-            {
-                if (newImageForm.ShowDialog(Form) == DialogResult.OK)
-                {
-                    Options.EditorNewImageSize = newImageForm.ImageSize;
-                    Options.EditorNewImageTransparent = newImageForm.Transparent;
-                    Options.EditorNewImageBackgroundColor = newImageForm.BackgroundColor;
-
-                    Color backgroundColor;
-
-                    if (Options.EditorNewImageTransparent)
-                    {
-                        backgroundColor = Color.Transparent;
-                    }
-                    else
-                    {
-                        backgroundColor = Options.EditorNewImageBackgroundColor;
-                    }
-
-                    LoadNewImage(Options.EditorNewImageSize.Width, Options.EditorNewImageSize.Height, backgroundColor);
-                }
-                else if (forceCreate)
-                {
-                    LoadNewImage(800, 600, Color.White);
-                }
-            }
-        }
-
-        private void LoadNewImage(int width, int height, Color backgroundColor)
-        {
-            Image img = ImageHelpers.CreateBitmap(width, height, backgroundColor);
+            Image img = NewImageForm.CreateNewImage(Options);
 
             if (img != null)
             {
