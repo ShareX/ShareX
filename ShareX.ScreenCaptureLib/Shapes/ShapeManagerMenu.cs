@@ -49,8 +49,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom,
-            tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown,
+            tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbCursorTypes;
@@ -534,6 +534,16 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
+
+            tsmiStepUseLetters = new ToolStripMenuItem("Use letters");
+            tsmiStepUseLetters.Checked = false;
+            tsmiStepUseLetters.CheckOnClick = true;
+            tsmiStepUseLetters.Click += (sender, e) =>
+            {
+                AnnotationOptions.StepUseLetters = tsmiStepUseLetters.Checked;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiStepUseLetters);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1228,6 +1238,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
+            tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
 
             tsmiShadow.Checked = AnnotationOptions.Shadow;
 
@@ -1315,7 +1326,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
-            tslnudStepFontSize.Visible = shapeType == ShapeType.DrawingStep;
+            tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;

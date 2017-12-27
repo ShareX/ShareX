@@ -1257,5 +1257,16 @@ namespace ShareX.HelpersLib
 
             return format;
         }
+
+        public static string NumberToLetters(int num)
+        {
+            string result = "";
+            while (--num >= 0)
+            {
+                result = (char)('A' + num % 26) + result;
+                num /= 26;
+            }
+            return result;
+        }
     }
 }

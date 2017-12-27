@@ -75,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
         public int StepFontSize { get; set; } = 18;
+        public bool StepUseLetters { get; set; } = false;
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;

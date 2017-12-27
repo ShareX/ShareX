@@ -2888,7 +2888,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crop image.
+        ///   Looks up a localized string similar to Tool: Crop image.
         /// </summary>
         internal static string ShapeType_ToolCrop {
             get {

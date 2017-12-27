@@ -38,6 +38,7 @@ namespace ShareX.ScreenCaptureLib
 
         public int FontSize { get; set; }
         public int Number { get; set; }
+        public bool UseLetters { get; set; }
 
         public StepDrawingShape()
         {
@@ -62,6 +63,7 @@ namespace ShareX.ScreenCaptureLib
             FillColor = AnnotationOptions.StepFillColor;
             Shadow = AnnotationOptions.Shadow;
             FontSize = AnnotationOptions.StepFontSize;
+            UseLetters = AnnotationOptions.StepUseLetters;
         }
 
         public override void OnConfigSave()
@@ -71,6 +73,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.StepFillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
             AnnotationOptions.StepFontSize = FontSize;
+            AnnotationOptions.StepUseLetters = UseLetters;
         }
 
         public override void OnDraw(Graphics g)
@@ -80,9 +83,11 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawNumber(Graphics g)
         {
+            string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
+
             using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {
-                Size textSize = g.MeasureString(Number.ToString(), font).ToSize();
+                Size textSize = g.MeasureString(text, font).ToSize();
                 int maxSize = Math.Max(textSize.Width, textSize.Height);
                 int padding = 3;
 
@@ -93,21 +98,21 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Shadow)
                 {
-                    DrawNumber(g, Number, font, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                    DrawNumber(g, text, font, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
                 }
 
-                DrawNumber(g, Number, font, BorderColor, Rectangle);
+                DrawNumber(g, text, font, BorderColor, Rectangle);
             }
         }
 
-        protected void DrawNumber(Graphics g, int number, Font font, Color textColor, Rectangle rect)
+        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, Rectangle rect)
         {
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             using (Brush textBrush = new SolidBrush(textColor))
             {
                 g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                 rect = rect.LocationOffset(0, 1);
-                g.DrawString(number.ToString(), font, textBrush, rect, sf);
+                g.DrawString(text, font, textBrush, rect, sf);
                 g.TextRenderingHint = TextRenderingHint.SystemDefault;
             }
         }
