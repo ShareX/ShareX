@@ -835,6 +835,10 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         }
                     }
+                    else
+                    {
+                        obj.IsCursorHover = false;
+                    }
                 }
             }
             else
