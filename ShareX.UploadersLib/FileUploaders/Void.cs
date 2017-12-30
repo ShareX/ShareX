@@ -17,11 +17,11 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Void;
 
-        public override Icon ServiceIcon => Resources.Pomf;
+        public override Icon ServiceIcon => null;
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return config.PomfUploader != null && !string.IsNullOrEmpty(config.PomfUploader.UploadURL);
+            return false;
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -62,6 +62,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         if(rsO.status == 200)
                         {
                             res.URL = rsO.link;
+                            res.IsSuccess = true;
                         }
                         else
                         {
