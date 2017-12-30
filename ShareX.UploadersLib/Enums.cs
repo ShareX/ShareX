@@ -139,6 +139,8 @@ namespace ShareX.UploadersLib
         Transfersh,
         [Description("Plik")]
         Plik,
+        [Description("Void")]
+        Void,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
