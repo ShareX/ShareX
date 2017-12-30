@@ -912,7 +912,7 @@ namespace ShareX.ScreenCaptureLib
             g.DrawTextWithShadow(text, rect.Offset(-padding).Location, font, textBrush, textShadowBrush);
         }
 
-        private void DrawAreaText(Graphics g, string text, Rectangle area)
+        internal void DrawAreaText(Graphics g, string text, Rectangle area)
         {
             int offset = 6;
             int backgroundPadding = 3;
@@ -1127,9 +1127,13 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly);
         }
 
-        private string GetAreaText(Rectangle area)
+        internal string GetAreaText(Rectangle area)
         {
-            if (Mode == RegionCaptureMode.Ruler)
+            if (IsEditorMode)
+            {
+                area = new Rectangle(area.X - CanvasRectangle.X, area.Y - CanvasRectangle.Y, area.Width, area.Height);
+            }
+            else if (Mode == RegionCaptureMode.Ruler)
             {
                 Point endPos = new Point(area.Right - 1, area.Bottom - 1);
                 return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,

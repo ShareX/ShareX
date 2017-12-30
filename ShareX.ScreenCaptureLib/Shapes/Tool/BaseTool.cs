@@ -38,11 +38,6 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDraw(Graphics g)
         {
-            if (IsValidShape)
-            {
-                Manager.DrawRegionArea(g, Rectangle, true);
-                g.DrawCross(Pens.Black, Rectangle.Center(), 10);
-            }
         }
     }
 }

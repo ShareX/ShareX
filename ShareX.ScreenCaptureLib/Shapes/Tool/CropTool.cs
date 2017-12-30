@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -60,6 +61,15 @@ namespace ShareX.ScreenCaptureLib
                     cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width,
                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
                 }
+            }
+        }
+
+        public override void OnDraw(Graphics g)
+        {
+            if (IsValidShape)
+            {
+                Manager.DrawRegionArea(g, Rectangle, true, Manager.Options.ShowInfo);
+                g.DrawCross(Pens.Black, Rectangle.Center(), 10);
             }
         }
 

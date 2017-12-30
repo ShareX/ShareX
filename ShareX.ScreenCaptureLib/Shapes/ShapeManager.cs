@@ -1441,9 +1441,15 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
+        public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated, bool showAreaInfo = false)
         {
             Form.DrawRegionArea(g, rect, isAnimated);
+
+            if (showAreaInfo)
+            {
+                string areaText = Form.GetAreaText(rect);
+                Form.DrawAreaText(g, areaText, rect);
+            }
         }
 
         private void UpdateCanvas(Image img)
