@@ -472,13 +472,13 @@
     <value>Nascondi</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatico</value>
+    <value>Automatica</value>
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Anteprima Immagine</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
-    <value>Schermo Intero</value>
+    <value>Schermo Inter</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Finestra</value>
@@ -737,5 +737,23 @@
   </data>
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Markdown Immagine Collegata</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Editor Immagini...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Editor Immagini...</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Apri collegamento all'invito per il server Discord di ShareX</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Nascondi permanentemente pulsante Discord</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Laterale</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>Bassa</value>
   </data>
 </root>

@@ -1253,4 +1253,13 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
     <value>Servizio Condivisione URL</value>
   </data>
+  <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
+    <value>Ottieni chiave utente...</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Classe Storage:</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Usa Collegamento Diretto</value>
+  </data>
 </root>
