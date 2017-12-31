@@ -640,15 +640,20 @@ namespace ShareX.ScreenCaptureLib
                 };
                 tsddbImage.DropDownItems.Add(tsmiNewImage);
 
-                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem("Open image...");
+                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem("Open image file...");
                 tsmiOpenImage.Image = Resources.folder_open_image;
                 tsmiOpenImage.Click += (sender, e) => OpenImageFile();
                 tsddbImage.DropDownItems.Add(tsmiOpenImage);
 
-                ToolStripMenuItem tsmiInsertImage = new ToolStripMenuItem("Insert image...");
-                tsmiInsertImage.Image = Resources.image__plus;
-                tsmiInsertImage.Click += (sender, e) => InsertImage();
-                tsddbImage.DropDownItems.Add(tsmiInsertImage);
+                ToolStripMenuItem tsmiInsertImageFile = new ToolStripMenuItem("Insert image file...");
+                tsmiInsertImageFile.Image = Resources.image__plus;
+                tsmiInsertImageFile.Click += (sender, e) => InsertImageFile();
+                tsddbImage.DropDownItems.Add(tsmiInsertImageFile);
+
+                ToolStripMenuItem tsmiInsertImageFromScreen = new ToolStripMenuItem("Insert image from screen...");
+                tsmiInsertImageFromScreen.Image = Resources.camera;
+                tsmiInsertImageFromScreen.Click += (sender, e) => InsertImageFromScreen();
+                tsddbImage.DropDownItems.Add(tsmiInsertImageFromScreen);
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 

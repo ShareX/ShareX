@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -1406,16 +1407,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Image img = ClipboardHelpers.GetImage();
 
-                if (img != null)
-                {
-                    CurrentTool = ShapeType.DrawingImage;
-                    ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-                    shape.SetImage(img, true);
-                    shape.OnCreated();
-                    AddShape(shape);
-                    SelectCurrentShape();
-                }
+                InsertImage(img, pos);
             }
             else if (Clipboard.ContainsText())
             {
@@ -1529,7 +1521,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void InsertImage()
+        private void InsertImageFile()
         {
             string filePath = ImageHelpers.OpenImageFileDialog(Form);
 
@@ -1537,17 +1529,44 @@ namespace ShareX.ScreenCaptureLib
             {
                 Image img = ImageHelpers.LoadImage(filePath);
 
-                if (img != null)
-                {
-                    CurrentTool = ShapeType.DrawingImage;
-                    ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    Point pos = Form.ClientArea.Center();
-                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-                    shape.SetImage(img, true);
-                    shape.OnCreated();
-                    AddShape(shape);
-                    SelectCurrentShape();
-                }
+                InsertImage(img, Form.ClientArea.Center());
+            }
+        }
+
+        private void InsertImageFromScreen()
+        {
+            Image img;
+
+            try
+            {
+                Form.Pause();
+                Form.Hide();
+                menuForm.Hide();
+                Thread.Sleep(250);
+
+                img = RegionCaptureTasks.GetRegionImage(Options);
+            }
+            finally
+            {
+                Form.Show();
+                menuForm.Show();
+                Form.Resume();
+            }
+
+            InsertImage(img, Form.ClientArea.Center());
+        }
+
+        private void InsertImage(Image img, Point pos)
+        {
+            if (img != null)
+            {
+                CurrentTool = ShapeType.DrawingImage;
+                ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
+                shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+                shape.SetImage(img, true);
+                shape.OnCreated();
+                AddShape(shape);
+                SelectCurrentShape();
             }
         }
 
