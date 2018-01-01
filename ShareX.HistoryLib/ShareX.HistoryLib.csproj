@@ -83,6 +83,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="ImageHistoryForm.cs">
       <SubType>Form</SubType>
