@@ -645,4 +645,10 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Doneer...</value>
   </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Verberg Discord knop voor altijd</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
 </root>
