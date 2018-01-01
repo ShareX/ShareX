@@ -165,6 +165,9 @@
     </Compile>
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
