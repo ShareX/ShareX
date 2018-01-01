@@ -272,7 +272,7 @@ namespace ShareX.UploadersLib
                         }
                     }
                 }
-                else if(url[i] == '\\')
+                else if(url[i] == '\\' && !escape)
                 {
                     escape = true;
                 }
