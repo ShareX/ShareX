@@ -279,6 +279,7 @@ namespace ShareX.UploadersLib
                 else if (!syntaxStart)
                 {
                     result.Append(url[i]);
+                    escape = false;
                 }
             }
 
