@@ -271,6 +271,7 @@ namespace ShareX.UploadersLib
                             }
                         }
                     }
+                    escape = false;
                 }
                 else if(url[i] == '\\' && !escape)
                 {
