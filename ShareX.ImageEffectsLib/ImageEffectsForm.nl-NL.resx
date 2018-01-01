@@ -156,4 +156,7 @@
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Naam:</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
 </root>

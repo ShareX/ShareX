@@ -126,4 +126,28 @@
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Gebruik de "Ctrl" knop als dit venster actief is om de kleurenkiezer te stoppen.</value>
   </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopieer</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Kopieer alles</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Kopieer RGB</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>Kopieer hexadecimaal</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Kopieer CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Kopieer HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Kopieer decimale</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Kopieer positie</value>
+  </data>
 </root>
