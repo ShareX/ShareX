@@ -233,7 +233,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string ParseURL(string url, bool output)
+        public string ParseURL(string url, bool output)
         {
             if (string.IsNullOrEmpty(url))
             {
