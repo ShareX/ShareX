@@ -244,10 +244,11 @@ namespace ShareX.UploadersLib
 
             bool syntaxStart = false;
             int syntaxStartIndex = 0;
+            bool escape = false;
 
             for (int i = 0; i < url.Length; i++)
             {
-                if (url[i] == '$')
+                if (url[i] == '$' && !escape)
                 {
                     if (!syntaxStart)
                     {
@@ -270,6 +271,10 @@ namespace ShareX.UploadersLib
                             }
                         }
                     }
+                }
+                else if(url[i] == '\\')
+                {
+                    escape = true;
                 }
                 else if (!syntaxStart)
                 {
