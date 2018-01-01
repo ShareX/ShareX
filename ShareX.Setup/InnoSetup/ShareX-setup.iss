@@ -11,7 +11,7 @@
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AppCopyright=Copyright (c) 2007-2017 {#MyAppPublisher}
+AppCopyright=Copyright (c) 2007-2018 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
