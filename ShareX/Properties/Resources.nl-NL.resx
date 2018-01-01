@@ -481,4 +481,19 @@ Ben je zeker dat je door wilt gaan?</value>
   <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
     <value>Frans</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Turks</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Doorgaan</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
 </root>

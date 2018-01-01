@@ -442,4 +442,10 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="chkOverrideImageSettings.Text" xml:space="preserve">
     <value>Afbeelding instellingen overschrijven</value>
   </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Bestand benaming</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Bewerk...</value>
+  </data>
 </root>

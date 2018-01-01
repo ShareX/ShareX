@@ -266,4 +266,43 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Vastleggen</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Ongedaan maken</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Regios vastleggen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>Naar voren brengen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Naar achteren sturen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Vorm opties</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Naar voren brengen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Hoogte:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Grens kleur...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Grens grootte</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Vul kleur...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixel grootte:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>Toon sneltoetsen</value>
+  </data>
 </root>

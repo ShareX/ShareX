@@ -824,4 +824,55 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
 Met deze optie kosten objecten minder om op te slaan, maar is er een grotere kans op verlies (99.99% verliesgarantie in plaats van 99.99999999%).
 De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>Gebruik directe link</value>
+  </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>API key ophalen</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>nooit</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
+    <value>dagen</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
+    <value>minuten</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>Open account pagina...</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
+    <value>uren</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblAmazonS3Region.Text" xml:space="preserve">
+    <value>Regio:</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Wachtwoord vergeten?</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Gebruik directe link</value>
+  </data>
 </root>
