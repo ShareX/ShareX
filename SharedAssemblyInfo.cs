@@ -1,7 +1,6 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyDescription("Screen capture, file sharing and productivity tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Team")]
 [assembly: AssemblyProduct("ShareX")]
