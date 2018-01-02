@@ -1108,4 +1108,22 @@ Vuoi scaricarla ora?</value>
   <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
     <value>Standard</value>
   </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Stato Precedente</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Dimensione Automatica</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Schermo Intero</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Massimizzato</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Strumento: Ritaglia Immagine</value>
+  </data>
 </root>

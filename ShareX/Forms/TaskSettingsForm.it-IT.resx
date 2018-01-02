@@ -537,4 +537,7 @@
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Monitora Cartelle e Carica Nuovi File alla loro Creazione</value>
   </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Modifica...</value>
+  </data>
 </root>

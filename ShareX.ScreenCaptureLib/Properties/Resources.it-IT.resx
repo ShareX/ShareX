@@ -425,4 +425,58 @@ Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Cattura Rettangolare Trasparente</value>
   </data>
+  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
+    <value>Frecce su entrambe le estremità</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Suggerimento: È possibile trascinare l'immagine tenendo premuto il pulsante centrale del mouse.</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Editor Immagini</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>Ritaglia Immagine Automaticamente...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Dimensione Tela...</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Centra Punti:</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>Tipo Cursore:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
+    <value>Colore Sfondo Editor...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Modalità Avvio Editor...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Rifletti Orizzontalmente</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Rifletti Verticalmente</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Immagine</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Dimensione Immagine...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>Incolla Immagine/Testo</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Ruota 180°</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Ruota 90° Orario</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Ruota 90° Antiorario</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Menu Annota</value>
+  </data>
 </root>
