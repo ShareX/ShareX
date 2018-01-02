@@ -4,4 +4,23 @@ if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
 }
 
 nuget restore ShareX.sln
-Get-ChildItem -rec | Where {$_.Name -match "project.assets.json"} | Remove-Item # Remove when https://github.com/NuGet/Home/issues/4778 is fixed
+
+# Remove when https://github.com/NuGet/Home/issues/4778 is fixed
+if ($env:CONFIGURATION -eq "WindowsStore")
+{
+    $net40 =  @"
+          "originalTargetFrameworks": [
+            ".NETFramework,Version=v4.0"
+          ],
+    "@
+
+    $net46 = @"
+          "originalTargetFrameworks": [
+            ".NETFramework,Version=v4.6"
+          ],
+    "@
+
+    $fileContent = Get-Content "ShareX\obj\project.assets.json" -Raw
+    $newFileContent = $fileContent -replace $net40, $net46
+    Set-Content -Path "ShareX\obj\project.assets.json" -Value $newFileContent
+}
