@@ -1,4 +1,4 @@
-$content = Get-Content "ShareX\Properties\AssemblyInfo.cs"
+$content = Get-Content "ShareX\SharedAssemblyInfo.cs"
 $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
 if ($match.Success)
 {
