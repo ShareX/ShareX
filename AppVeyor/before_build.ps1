@@ -4,4 +4,4 @@ if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
 }
 
 nuget restore ShareX.sln
-Remove-Item "obj\project.assets.json" # Remove when https://github.com/NuGet/Home/issues/4778 is fixed
+Get-ChildItem -rec | Where {$_.Name -match "project.assets.json"} | Remove-Item # Remove when https://github.com/NuGet/Home/issues/4778 is fixed
