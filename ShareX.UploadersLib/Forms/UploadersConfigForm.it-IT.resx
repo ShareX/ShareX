@@ -1262,4 +1262,22 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>Usa Collegamento Diretto</value>
   </data>
+  <data name="lblLithiioEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>Recupera Chiave API</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>Ottieni Chiave API...</value>
+  </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Lettura pubblica ACL sul file</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>Avanzato</value>
+  </data>
 </root>
