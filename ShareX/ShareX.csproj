@@ -33,8 +33,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,10 +98,6 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
-      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -171,6 +165,9 @@
     </Compile>
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -299,9 +296,6 @@
     <Compile Include="HotkeysConfig.cs" />
     <Compile Include="HotkeyManager.cs" />
     <Compile Include="HotkeySettings.cs" />
-    <Compile Include="Forms\HotkeyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Controls\HotkeySelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -485,6 +479,9 @@
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.it-IT.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ko-KR.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ru.resx">
@@ -836,6 +833,9 @@
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.it-IT.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.ko-KR.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.nl-NL.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -987,6 +987,9 @@
     <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.it-IT.resx">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.ko-KR.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.pt-BR.resx">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1012,6 +1015,9 @@
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.it-IT.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.ko-KR.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.pt-BR.resx">
@@ -1291,10 +1297,6 @@
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Greenshot.ImageEditor\Greenshot.ImageEditor.csproj">
-      <Project>{cd642bf4-d815-4d67-a0b5-c69f0b8231af}</Project>
-      <Name>Greenshot.ImageEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj">
       <Project>{E7DE6237-AEA2-498B-8F56-9B392472C490}</Project>
       <Name>ShareX.HistoryLib</Name>
@@ -1343,25 +1345,6 @@
     <None Include="Resources\image.png" />
     <None Include="Resources\application-browser.png" />
     <None Include="Resources\gear.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-task.png" />
     <None Include="Resources\camcorder-image.png" />
     <None Include="Resources\toolbox.png" />
@@ -1369,40 +1352,20 @@
     <None Include="Resources\upload-cloud.png" />
     <None Include="Resources\image-export.png" />
     <None Include="Resources\folder-open-image.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer-shape-curve.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer-shape-polygon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer-shape.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\monitor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-blue.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\control-record.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\application-network.png" />
-    <None Include="..\Lib\7z-x64.dll">
-      <Link>7z-x64.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Lib\7z.dll">
-      <Link>7z.dll</Link>
+    <None Include="..\Lib\7za.exe">
+      <Link>7za.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\barcode-2d.png" />
@@ -1500,8 +1463,8 @@
     <None Include="Resources\it.png" />
     <None Include="Resources\Discord_Button_01.png" />
     <None Include="Resources\Discord_Button_02.png" />
-    <Content Include="Resources\tw.png" />
-    <Content Include="ShareX_Icon.ico" />
+    <None Include="Resources\tw.png" />
+    <None Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
     <None Include="Resources\control-record-yellow.png" />
@@ -1521,7 +1484,6 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

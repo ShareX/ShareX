@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -707,6 +707,7 @@ namespace ShareX
             HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;
             HelpersOptions.UseAlternativeGetImage = !Program.Settings.UseDefaultClipboardGetImage;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
+            HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
@@ -1458,7 +1459,7 @@ namespace ShareX
 
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
-            TaskHelpers.AnnotateImage();
+            TaskHelpers.OpenImageEditor();
         }
 
         private void tsmiImageEffects_Click(object sender, EventArgs e)

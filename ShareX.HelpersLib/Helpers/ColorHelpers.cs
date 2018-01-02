@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -373,6 +373,16 @@ namespace ShareX.HelpersLib
         public static bool ColorsAreClose(Color color1, Color color2, int threshold)
         {
             return ColorDifference(color1, color2) <= threshold;
+        }
+
+        public static Color LighterColor(Color color, float amount)
+        {
+            return Lerp(color, Color.White, amount);
+        }
+
+        public static Color DarkerColor(Color color, float amount)
+        {
+            return Lerp(color, Color.Black, amount);
         }
     }
 }

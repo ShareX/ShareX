@@ -467,9 +467,29 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image__plus {
+            get {
+                object obj = ResourceManager.GetObject("image__plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_crop {
             get {
                 object obj = ResourceManager.GetObject("image_crop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_empty {
+            get {
+                object obj = ResourceManager.GetObject("image_empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -490,6 +510,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap image_resize_actual {
             get {
                 object obj = ResourceManager.GetObject("image_resize_actual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_select {
+            get {
+                object obj = ResourceManager.GetObject("image_select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1131,6 +1161,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tip: You can pan image by holding mouse middle button and dragging..
+        /// </summary>
+        internal static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Arrow keys] Resize region from bottom right corner.
         /// </summary>
         internal static string RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner {
@@ -1473,6 +1512,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bring forward.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_BringForward {
@@ -1581,6 +1629,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editor start mode:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_EditorStartMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_EditorStartMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flip horizontal.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_FlipHorizontal {
@@ -1626,20 +1683,20 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paste image/text.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_PasteImageText {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print image....
         /// </summary>
         internal static string ShapeManager_CreateToolbar_PrintImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_PrintImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remember editor window state.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_RememberEditorWindowState {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_RememberEditorWindowState", resourceCulture);
             }
         }
         
@@ -1721,24 +1778,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_ShapeOptions {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ShapeOptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start editor fullscreen.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_StartEditorFullscreen {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorFullscreen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start editor maximized.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_StartEditorMaximized {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartEditorMaximized", resourceCulture);
             }
         }
         

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -73,6 +73,11 @@ namespace ShareX.HelpersLib
             g.DrawRoundedRectangle(null, pen, rect, radius);
         }
 
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Rectangle rect, float radius)
+        {
+            g.DrawRoundedRectangle(brush, null, rect, radius);
+        }
+
         public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)
         {
             using (GraphicsPath gp = new GraphicsPath())
@@ -80,6 +85,15 @@ namespace ShareX.HelpersLib
                 gp.AddRoundedRectangleProper(rect, radius);
                 if (brush != null) g.FillPath(brush, gp);
                 if (pen != null) g.DrawPath(pen, gp);
+            }
+        }
+
+        public static void DrawCapsule(this Graphics g, Brush brush, Rectangle rect)
+        {
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                gp.AddCapsule(rect);
+                g.FillPath(brush, gp);
             }
         }
 
@@ -94,6 +108,18 @@ namespace ShareX.HelpersLib
             {
                 gp.AddDiamond(rect);
                 g.DrawPath(pen, gp);
+            }
+        }
+
+        public static void DrawCross(this Graphics g, Pen pen, Point center, int crossSize)
+        {
+            if (crossSize > 0)
+            {
+                // Horizontal
+                g.DrawLine(pen, center.X - crossSize, center.Y, center.X + crossSize, center.Y);
+
+                // Vertical
+                g.DrawLine(pen, center.X, center.Y - crossSize, center.X, center.Y + crossSize);
             }
         }
 

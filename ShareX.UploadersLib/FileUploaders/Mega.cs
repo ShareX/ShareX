@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         // Pack all chunks in a single upload fragment
         // (by default, MegaApiClient splits files in 1MB fragments and do multiple uploads)
-        // It allows to have a consistent upload progression in Sharex
+        // It allows to have a consistent upload progression in ShareX
         private const int UploadChunksPackSize = -1;
 
         private readonly MegaApiClient _megaClient;
@@ -78,8 +78,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public Mega(MegaApiClient.AuthInfos authInfos, string parentNodeId)
         {
             AllowReportProgress = false;
-            _megaClient = new MegaApiClient(this);
-            _megaClient.ChunksPackSize = UploadChunksPackSize;
+            Options options = new Options(chunksPackSize: UploadChunksPackSize);
+            _megaClient = new MegaApiClient(options, this);
             _authInfos = authInfos;
             _parentNodeId = parentNodeId;
         }

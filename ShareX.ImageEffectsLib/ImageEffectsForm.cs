@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -211,11 +211,6 @@ namespace ShareX.ImageEffectsLib
             btnRemovePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
             btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
             btnClear.Enabled = btnRefresh.Enabled = lvEffects.Items.Count > 0;
-        }
-
-        private List<ImageEffect> GetImageEffects()
-        {
-            return lvEffects.Items.Cast<ListViewItem>().Where(x => x != null && x.Tag is ImageEffect).Select(x => (ImageEffect)x.Tag).ToList();
         }
 
         private Image ApplyEffects()
@@ -493,7 +488,7 @@ namespace ShareX.ImageEffectsLib
 
         private object eiImageEffects_ExportRequested()
         {
-            return GetImageEffects();
+            return GetSelectedPreset();
         }
 
         private void eiImageEffects_ImportRequested(object obj)

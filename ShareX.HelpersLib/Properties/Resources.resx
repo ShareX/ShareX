@@ -983,17 +983,8 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Drawing: Text (Background)</value>
   </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Possible proxy detected. Please open the Application Settings from the main menu and choose Proxy to enter your proxy server settings.</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Download canceled.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Progress: {0}</value>
-  </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>Crop image</value>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Tool: Crop image</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Drawing: Image (Screen)</value>
@@ -1117,5 +1108,20 @@ Would you like to download it?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Latest version</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Maximized</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Previous state</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Auto size</value>
   </data>
 </root>

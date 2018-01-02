@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -55,8 +55,7 @@ namespace ShareX.ScreenCaptureLib
                     location = Rectangle.Location;
                 }
 
-                StartPosition = location;
-                EndPosition = new Point(location.X + size.Width - 1, location.Y + size.Height - 1);
+                Rectangle = new Rectangle(location, size);
             }
         }
 
@@ -64,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = false;
 
-            string filepath = ImageHelpers.OpenImageFileDialog();
+            string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
 
             if (!string.IsNullOrEmpty(filepath))
             {
@@ -107,7 +106,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.ClientMousePosition;
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
             if (!OpenImageDialog(true))
             {
@@ -115,6 +115,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
+                OnCreated();
                 ShowNodes();
             }
         }

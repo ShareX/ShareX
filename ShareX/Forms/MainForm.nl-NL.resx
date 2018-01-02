@@ -621,4 +621,34 @@
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Foutopsporing</value>
   </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Nieuws</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>URL verkorten...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Verwijder taak van lijst</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>OCR afbeelding...</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Kolommen verbergen</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Open ShareX Discord server uitnodiging link</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Verkort URL...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Doneer...</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Verberg Discord knop voor altijd</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
 </root>

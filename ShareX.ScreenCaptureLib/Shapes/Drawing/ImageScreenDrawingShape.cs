@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,8 +40,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsValidShape)
                 {
-                    Rectangle rect = Manager.LimitRectangleToImage(Rectangle);
-                    Manager.DrawRegionArea(g, rect, true);
+                    Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
                 }
             }
             else
@@ -73,13 +72,17 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsValidShape)
             {
-                Rectangle = Manager.LimitRectangleToImage(Rectangle);
+                Rectangle = RectangleInsideCanvas;
                 Image = Manager.CropImage(Rectangle);
             }
 
             if (Image == null)
             {
                 Remove();
+            }
+            else
+            {
+                base.OnCreated();
             }
         }
 

@@ -14,8 +14,6 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,6 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Animations\BaseAnimation.cs" />
     <Compile Include="Animations\PointAnimation.cs" />
     <Compile Include="Animations\RectangleAnimation.cs" />
@@ -87,12 +88,26 @@
     <Compile Include="Forms\CanvasSizeForm.Designer.cs">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditorStartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorStartupForm.Designer.cs">
+      <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewImageForm.Designer.cs">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ImageSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ImageSizeForm.Designer.cs">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegionHelpers\ButtonObject.cs" />
+    <Compile Include="RegionHelpers\ScrollbarManager.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
@@ -125,7 +140,8 @@
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\CropDrawingShape.cs" />
+    <Compile Include="Shapes\Tool\BaseTool.cs" />
+    <Compile Include="Shapes\Tool\CropTool.cs" />
     <Compile Include="Shapes\Drawing\CursorDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\ImageScreenDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\SpeechBalloonDrawingShape.cs" />
@@ -202,6 +218,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-select.png" />
+    <None Include="Resources\image-empty.png" />
+    <None Include="Resources\image--plus.png" />
     <None Include="Resources\image-resize.png" />
     <None Include="Resources\layer-flip.png" />
     <None Include="Resources\layer-flip-vertical.png" />
@@ -273,14 +292,26 @@
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\CanvasSizeForm.ko-KR.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CanvasSizeForm.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CanvasSizeForm.ru.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditorStartupForm.resx">
+      <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.ko-KR.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
@@ -295,6 +326,9 @@
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ko-KR.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.nl-NL.resx">
@@ -327,6 +361,9 @@
     <EmbeddedResource Include="Forms\TextDrawingInputBox.it-IT.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.ko-KR.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.pt-BR.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +386,9 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.it-IT.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.ko-KR.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.nl-NL.resx">
@@ -445,7 +485,6 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

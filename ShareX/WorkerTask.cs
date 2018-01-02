@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -575,7 +575,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                tempImage = TaskHelpers.AnnotateImageForTask(tempImage, Info.FileName, Info.TaskSettings);
+                tempImage = TaskHelpers.AnnotateImage(tempImage, Info.FileName, Info.TaskSettings, true);
 
                 if (tempImage == null)
                 {

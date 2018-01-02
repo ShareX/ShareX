@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -95,7 +95,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.ClientMousePosition;
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
             if (ShowTextInputBox())
             {
@@ -110,6 +111,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreated()
         {
             AutoSize(true);
+            base.OnCreated();
             ShowNodes();
         }
 
@@ -163,8 +165,7 @@ namespace ShareX.ScreenCaptureLib
                 location = Rectangle.Location;
             }
 
-            StartPosition = location;
-            EndPosition = new Point(location.X + size.Width - 1, location.Y + size.Height - 1);
+            Rectangle = new Rectangle(location, size);
         }
     }
 }

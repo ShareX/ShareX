@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -152,7 +152,11 @@ namespace ShareX
 
             Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
             captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
-            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (outputType != ScreenRecordOutput.GIF)
+            {
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+            }
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
@@ -253,7 +257,7 @@ namespace ShareX
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path);
+                            screenRecorder.FFmpegEncodeAsGIF(sourceFilePath, path, Program.ToolsFolder);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -72,16 +72,21 @@ namespace ShareX.ScreenCaptureLib
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
 
+        // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
         public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
 
-        // Editor mode
-        public bool EditorModeStartMaximized = true;
-        public bool EditorModeRememberWindowState = false;
-        public WindowState EditorModeWindowState = new WindowState();
-        public bool EditorModeFullscreen = false;
-        public Color EditorBackgroundColor = Color.FromArgb(200, 200, 200);
+        // Image editor
+        public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
+        public WindowState ImageEditorWindowState = new WindowState();
+        public bool AutoCloseEditorOnTask = true;
+        public Color ImageEditorBackgroundColor = Color.FromArgb(200, 200, 200);
+        public bool ShowEditorPanTip = true;
+        public ImageEditorInterpolationMode ImageEditorResizeInterpolationMode = ImageEditorInterpolationMode.Bicubic;
+        public Size EditorNewImageSize = new Size(800, 600);
+        public bool EditorNewImageTransparent = false;
+        public Color EditorNewImageBackgroundColor = Color.White;
     }
 }

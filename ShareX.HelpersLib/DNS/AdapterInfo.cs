@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -85,10 +85,14 @@ namespace ShareX.HelpersLib
         {
             using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
             {
-                if (primary == null || secondary == null)
+                if (string.IsNullOrEmpty(primary))
                 {
                     // Obtain DNS server address automatically
                     parameters["DNSServerSearchOrder"] = null;
+                }
+                else if (string.IsNullOrEmpty(secondary))
+                {
+                    parameters["DNSServerSearchOrder"] = new string[] { primary };
                 }
                 else
                 {

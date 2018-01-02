@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -74,6 +74,8 @@ namespace ShareX.ScreenCaptureLib
         public Color StepBorderColor { get; set; } = SecondaryColor;
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
+        public int StepFontSize { get; set; } = 18;
+        public bool StepUseLetters { get; set; } = false;
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;

@@ -374,8 +374,7 @@ Klik op ja om de afbeelding van het klembord te openen. Klik nee om een afbeeldi
     <value>Ondersteunde variabelen: {0} en andere variabelen zoals {1} etc.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Sleep bestand
-naar hier</value>
+    <value>Sleep bestanden hier naartoe</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Sneltoetsen ingeschakeld.</value>
@@ -460,5 +459,41 @@ Ben je zeker dat je door wilt gaan?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Start ShareX als Windows start</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Upload met ShareX</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Kolommen verbergen</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Duits</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Spaans</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Opstarten is uitgeschakeld in Taakbeheer</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Frans</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Turks</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Doorgaan</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russisch</value>
   </data>
 </root>

@@ -136,6 +136,6 @@
     <value>취소</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>사용자 ID/비밀번호 상자</value>
+    <value>ShareX - 계정 정보</value>
   </data>
 </root>

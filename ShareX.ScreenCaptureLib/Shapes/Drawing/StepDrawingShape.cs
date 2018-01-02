@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,12 +36,13 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
 
+        public int FontSize { get; set; }
         public int Number { get; set; }
+        public bool UseLetters { get; set; }
 
         public StepDrawingShape()
         {
-            StartPosition = new Point(0, 0);
-            EndPosition = new Point(DefaultSize - 1, DefaultSize - 1);
+            Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
         }
 
         public override void ShowNodes()
@@ -52,8 +53,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = true;
             Point pos = InputManager.ClientMousePosition;
-            StartPosition = new Point(pos.X - DefaultSize / 2, pos.Y - DefaultSize / 2);
-            EndPosition = new Point(pos.X + DefaultSize / 2 - 1, pos.Y + DefaultSize / 2 - 1);
+            Rectangle = new Rectangle(new Point(pos.X - Rectangle.Width / 2, pos.Y - Rectangle.Height / 2), Rectangle.Size);
         }
 
         public override void OnConfigLoad()
@@ -62,6 +62,8 @@ namespace ShareX.ScreenCaptureLib
             BorderSize = AnnotationOptions.StepBorderSize;
             FillColor = AnnotationOptions.StepFillColor;
             Shadow = AnnotationOptions.Shadow;
+            FontSize = AnnotationOptions.StepFontSize;
+            UseLetters = AnnotationOptions.StepUseLetters;
         }
 
         public override void OnConfigSave()
@@ -70,53 +72,48 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.StepBorderSize = BorderSize;
             AnnotationOptions.StepFillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.StepFontSize = FontSize;
+            AnnotationOptions.StepUseLetters = UseLetters;
         }
 
         public override void OnDraw(Graphics g)
         {
-            DrawEllipse(g);
             DrawNumber(g);
         }
 
         protected void DrawNumber(Graphics g)
         {
-            if (Shadow)
-            {
-                DrawNumber(g, Number, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
-            }
+            string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
 
-            DrawNumber(g, Number, BorderColor, Rectangle);
+            using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
+            {
+                Size textSize = g.MeasureString(text, font).ToSize();
+                int maxSize = Math.Max(textSize.Width, textSize.Height);
+                int padding = 3;
+
+                Point center = Rectangle.Center();
+                Rectangle = new Rectangle(center.X - maxSize / 2 - padding, center.Y - maxSize / 2 - padding, maxSize + padding * 2, maxSize + padding * 2);
+
+                DrawEllipse(g);
+
+                if (Shadow)
+                {
+                    DrawNumber(g, text, font, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                }
+
+                DrawNumber(g, text, font, BorderColor, Rectangle);
+            }
         }
 
-        protected void DrawNumber(Graphics g, int number, Color textColor, Rectangle rect)
+        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, Rectangle rect)
         {
-            if (rect.Width > 20 && rect.Height > 20)
+            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            using (Brush textBrush = new SolidBrush(textColor))
             {
-                int offset;
-
-                if (number > 99)
-                {
-                    offset = 20;
-                }
-                else if (number > 9)
-                {
-                    offset = 15;
-                }
-                else
-                {
-                    offset = 10;
-                }
-
-                int fontSize = Math.Min(rect.Width, rect.Height) - offset;
-
-                using (Font font = new Font(FontFamily.GenericSansSerif, fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                using (Brush textBrush = new SolidBrush(textColor))
-                {
-                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    g.DrawString(number.ToString(), font, textBrush, rect, sf);
-                    g.TextRenderingHint = TextRenderingHint.SystemDefault;
-                }
+                g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                rect = rect.LocationOffset(0, 1);
+                g.DrawString(text, font, textBrush, rect, sf);
+                g.TextRenderingHint = TextRenderingHint.SystemDefault;
             }
         }
 

@@ -135,4 +135,7 @@
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Miniaturen</value>
   </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>Geen limiet</value>
+  </data>
 </root>

@@ -11,7 +11,7 @@
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AppCopyright=Copyright (c) 2007-2017 {#MyAppPublisher}
+AppCopyright=Copyright (c) 2007-2018 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
@@ -58,6 +58,7 @@ Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupD
 Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppFilepath}.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\7za.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\ShareX.NativeMessagingHost\bin\Release\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion

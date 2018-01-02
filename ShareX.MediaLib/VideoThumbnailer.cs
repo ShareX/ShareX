@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -207,7 +207,7 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Image img = Image.FromFile(thumbnail.Filepath);
+                    Image img = ImageHelpers.LoadImage(thumbnail.Filepath);
 
                     if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
                     {

@@ -145,7 +145,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 330</value>
+    <value>16, 306</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -171,7 +171,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="mbCustomUploaderDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6211,65 +6211,8 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btnAmazonS3StorageClassHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAmazonS3StorageClassHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 398</value>
-  </data>
-  <data name="btnAmazonS3StorageClassHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="btnAmazonS3StorageClassHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Name" xml:space="preserve">
-    <value>btnAmazonS3StorageClassHelp</value>
-  </data>
-  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
-  </data>
-  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 384</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
-    <value>Storage class:</value>
-  </data>
-  <data name="&gt;&gt;lblAmazonS3StorageClass.Name" xml:space="preserve">
-    <value>lblAmazonS3StorageClass</value>
-  </data>
-  <data name="&gt;&gt;lblAmazonS3StorageClass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAmazonS3StorageClass.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
-  </data>
-  <data name="&gt;&gt;lblAmazonS3StorageClass.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="cbAmazonS3StorageClass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 400</value>
+    <value>16, 40</value>
   </data>
   <data name="cbAmazonS3StorageClass.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 21</value>
@@ -6284,10 +6227,37 @@ store.book[0].title</value>
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3StorageClass.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
+    <value>gbAmazonS3Advanced</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3StorageClass.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 17</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Set public-read ACL on file</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3PublicACL.Name" xml:space="preserve">
+    <value>cbAmazonS3PublicACL</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3PublicACL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3PublicACL.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3PublicACL.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbAmazonS3UsePathStyle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6296,7 +6266,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbAmazonS3UsePathStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
+    <value>16, 96</value>
   </data>
   <data name="cbAmazonS3UsePathStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
@@ -6314,10 +6284,91 @@ store.book[0].title</value>
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3UsePathStyle.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
+    <value>gbAmazonS3Advanced</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3UsePathStyle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 38</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Name" xml:space="preserve">
+    <value>btnAmazonS3StorageClassHelp</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;btnAmazonS3StorageClassHelp.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Storage class:</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Name" xml:space="preserve">
+    <value>lblAmazonS3StorageClass</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StorageClass.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 408</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 128</value>
+  </data>
+  <data name="gbAmazonS3Advanced.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="&gt;&gt;gbAmazonS3Advanced.Name" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;gbAmazonS3Advanced.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbAmazonS3Advanced.Parent" xml:space="preserve">
+    <value>tpAmazonS3</value>
+  </data>
+  <data name="&gt;&gt;gbAmazonS3Advanced.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblAmazonS3Endpoint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6347,7 +6398,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoint.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="txtAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -6368,7 +6419,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3Endpoint.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="lblAmazonS3Region.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6398,7 +6449,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Region.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="txtAmazonS3Region.Location" type="System.Drawing.Point, System.Drawing">
     <value>376, 176</value>
@@ -6419,10 +6470,10 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3Region.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 352</value>
+    <value>16, 328</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -6440,7 +6491,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3CustomDomain.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6449,7 +6500,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 432</value>
+    <value>13, 360</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -6470,7 +6521,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3PathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="lblAmazonS3PathPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6479,7 +6530,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3PathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 453</value>
+    <value>13, 381</value>
   </data>
   <data name="lblAmazonS3PathPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -6500,13 +6551,13 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3PathPreview.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 246</value>
+    <value>376, 222</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -6527,7 +6578,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6554,7 +6605,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="cbAmazonS3Endpoints.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -6575,7 +6626,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3Endpoints.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="lblAmazonS3BucketName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6584,7 +6635,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3BucketName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 232</value>
+    <value>13, 208</value>
   </data>
   <data name="lblAmazonS3BucketName.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -6605,10 +6656,10 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3BucketName.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="txtAmazonS3BucketName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 248</value>
+    <value>16, 224</value>
   </data>
   <data name="txtAmazonS3BucketName.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -6626,7 +6677,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3BucketName.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="lblAmazonS3Endpoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6638,13 +6689,13 @@ store.book[0].title</value>
     <value>13, 112</value>
   </data>
   <data name="lblAmazonS3Endpoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>49, 13</value>
   </data>
   <data name="lblAmazonS3Endpoints.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
-    <value>Endpoints:</value>
+    <value>Regions:</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoints.Name" xml:space="preserve">
     <value>lblAmazonS3Endpoints</value>
@@ -6656,10 +6707,10 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoints.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>14</value>
   </data>
   <data name="txtAmazonS3ObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 272</value>
   </data>
   <data name="txtAmazonS3ObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -6677,7 +6728,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3ObjectPrefix.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>15</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6686,7 +6737,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 280</value>
+    <value>13, 256</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -6707,7 +6758,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3ObjectPrefix.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>16</value>
   </data>
   <data name="txtAmazonS3SecretKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -6728,7 +6779,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3SecretKey.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>17</value>
   </data>
   <data name="lblAmazonS3SecretKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6740,13 +6791,13 @@ store.book[0].title</value>
     <value>12, 64</value>
   </data>
   <data name="lblAmazonS3SecretKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>98, 13</value>
   </data>
   <data name="lblAmazonS3SecretKey.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Secret key:</value>
+    <value>Secret access key:</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3SecretKey.Name" xml:space="preserve">
     <value>lblAmazonS3SecretKey</value>
@@ -6758,7 +6809,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3SecretKey.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>18</value>
   </data>
   <data name="lblAmazonS3AccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6770,13 +6821,13 @@ store.book[0].title</value>
     <value>13, 16</value>
   </data>
   <data name="lblAmazonS3AccessKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>79, 13</value>
   </data>
   <data name="lblAmazonS3AccessKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Access key:</value>
+    <value>Access key ID:</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3AccessKey.Name" xml:space="preserve">
     <value>lblAmazonS3AccessKey</value>
@@ -6788,7 +6839,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3AccessKey.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>19</value>
   </data>
   <data name="txtAmazonS3AccessKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -6809,7 +6860,7 @@ store.book[0].title</value>
     <value>tpAmazonS3</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3AccessKey.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>

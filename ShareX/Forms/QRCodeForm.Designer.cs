@@ -94,21 +94,21 @@
             // 
             // tpEncode
             // 
+            this.tpEncode.BackColor = System.Drawing.SystemColors.Window;
             this.tpEncode.Controls.Add(this.txtQRCode);
             this.tpEncode.Controls.Add(this.pbQRCode);
             resources.ApplyResources(this.tpEncode, "tpEncode");
             this.tpEncode.Name = "tpEncode";
-            this.tpEncode.UseVisualStyleBackColor = true;
             // 
             // tpDecode
             // 
+            this.tpDecode.BackColor = System.Drawing.SystemColors.Window;
             this.tpDecode.Controls.Add(this.btnDecodeFromFile);
             this.tpDecode.Controls.Add(this.txtDecodeResult);
             this.tpDecode.Controls.Add(this.lblDecodeResult);
             this.tpDecode.Controls.Add(this.btnDecodeFromScreen);
             resources.ApplyResources(this.tpDecode, "tpDecode");
             this.tpDecode.Name = "tpDecode";
-            this.tpDecode.UseVisualStyleBackColor = true;
             // 
             // btnDecodeFromFile
             // 

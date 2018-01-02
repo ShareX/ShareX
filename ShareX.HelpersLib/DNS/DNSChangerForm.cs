@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -38,12 +38,13 @@ namespace ShareX.HelpersLib
 
             AddDNS(Resources.DNSChangerForm_DNSChangerForm_Manual);
             AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/
-            AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // http://www.opendns.com/
-            AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com/
-            AddDNS("Norton ConnectSafe", "199.85.126.10", "199.85.127.10"); // https://dns.norton.com/
-            AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // http://www.comodo.com/secure-dns/
-            AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // http://www.neustar.biz/services/dns-services/free-recursive-dns
-            AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // http://dns.yandex.com/
+            AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // https://www.opendns.com
+            AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com
+            AddDNS("Norton ConnectSafe", "199.85.126.10", "199.85.127.10"); // https://dns.norton.com
+            AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // https://www.comodo.com/secure-dns/
+            AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // https://www.security.neustar/dns-services/free-recursive-dns-service
+            AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // https://dns.yandex.com
+            AddDNS("Quad9", "9.9.9.9"); // https://quad9.net
 
             foreach (AdapterInfo adapter in AdapterInfo.GetEnabledAdapters())
             {
@@ -69,15 +70,25 @@ namespace ShareX.HelpersLib
             {
                 string[] dns = adapter.GetDNS();
 
-                if (dns != null && dns.Length == 2)
+                if (dns != null && dns.Length > 0)
                 {
                     cbAutomatic.Checked = false;
                     txtPreferredDNS.Text = dns[0];
-                    txtAlternateDNS.Text = dns[1];
+
+                    if (dns.Length > 1)
+                    {
+                        txtAlternateDNS.Text = dns[1];
+                    }
+                    else
+                    {
+                        txtAlternateDNS.Text = "";
+                    }
                 }
                 else
                 {
                     cbAutomatic.Checked = true;
+                    txtPreferredDNS.Text = "";
+                    txtAlternateDNS.Text = "";
                 }
 
                 cbDNSType.SelectedIndex = 0;
@@ -161,7 +172,7 @@ namespace ShareX.HelpersLib
                         string primaryDNS = txtPreferredDNS.Text.Trim();
                         string secondaryDNS = txtAlternateDNS.Text.Trim();
 
-                        if (Helpers.IsValidIPAddress(primaryDNS) && Helpers.IsValidIPAddress(secondaryDNS))
+                        if (Helpers.IsValidIPAddress(primaryDNS) && (string.IsNullOrEmpty(secondaryDNS) || Helpers.IsValidIPAddress(secondaryDNS)))
                         {
                             result = adapter.SetDNS(primaryDNS, secondaryDNS);
                         }

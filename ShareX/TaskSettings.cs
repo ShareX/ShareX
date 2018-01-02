@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -408,9 +408,6 @@ namespace ShareX
 
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
-
-        [Category("General"), DefaultValue(true), Description("Use built-in region capture annotation to annotate images instead of Greenshot image editor.")]
-        public bool UseShareXForAnnotation { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
         public bool UseCustomCaptureSound { get; set; }

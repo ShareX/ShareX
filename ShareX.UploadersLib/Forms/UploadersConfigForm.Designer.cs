@@ -270,10 +270,12 @@
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.gbAmazonS3Advanced = new System.Windows.Forms.GroupBox();
+            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
+            this.cbAmazonS3PublicACL = new System.Windows.Forms.CheckBox();
+            this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
             this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
-            this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
-            this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
             this.txtAmazonS3Endpoint = new System.Windows.Forms.TextBox();
             this.lblAmazonS3Region = new System.Windows.Forms.Label();
@@ -661,6 +663,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
+            this.gbAmazonS3Advanced.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
             this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
@@ -754,10 +757,10 @@
             // 
             // tpOtherUploaders
             // 
+            this.tpOtherUploaders.BackColor = System.Drawing.SystemColors.Window;
             this.tpOtherUploaders.Controls.Add(this.tcOtherUploaders);
             resources.ApplyResources(this.tpOtherUploaders, "tpOtherUploaders");
             this.tpOtherUploaders.Name = "tpOtherUploaders";
-            this.tpOtherUploaders.UseVisualStyleBackColor = true;
             // 
             // tcOtherUploaders
             // 
@@ -769,6 +772,7 @@
             // 
             // tpTwitter
             // 
+            this.tpTwitter.BackColor = System.Drawing.SystemColors.Window;
             this.tpTwitter.Controls.Add(this.btnTwitterNameUpdate);
             this.tpTwitter.Controls.Add(this.lbTwitterAccounts);
             this.tpTwitter.Controls.Add(this.lblTwitterDefaultMessage);
@@ -781,7 +785,6 @@
             this.tpTwitter.Controls.Add(this.btnTwitterAdd);
             resources.ApplyResources(this.tpTwitter, "tpTwitter");
             this.tpTwitter.Name = "tpTwitter";
-            this.tpTwitter.UseVisualStyleBackColor = true;
             // 
             // btnTwitterNameUpdate
             // 
@@ -850,6 +853,7 @@
             // 
             // tpCustomUploaders
             // 
+            this.tpCustomUploaders.BackColor = System.Drawing.SystemColors.Window;
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderURLSharingServiceTest);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderURLSharingService);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURLSharingService);
@@ -874,7 +878,6 @@
             this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderLog);
             resources.ApplyResources(this.tpCustomUploaders, "tpCustomUploaders");
             this.tpCustomUploaders.Name = "tpCustomUploaders";
-            this.tpCustomUploaders.UseVisualStyleBackColor = true;
             // 
             // btnCustomUploaderURLSharingServiceTest
             // 
@@ -1512,10 +1515,10 @@
             // 
             // tpURLShorteners
             // 
+            this.tpURLShorteners.BackColor = System.Drawing.SystemColors.Window;
             this.tpURLShorteners.Controls.Add(this.tcURLShorteners);
             resources.ApplyResources(this.tpURLShorteners, "tpURLShorteners");
             this.tpURLShorteners.Name = "tpURLShorteners";
-            this.tpURLShorteners.UseVisualStyleBackColor = true;
             // 
             // tcURLShorteners
             // 
@@ -1531,12 +1534,12 @@
             // 
             // tpBitly
             // 
+            this.tpBitly.BackColor = System.Drawing.SystemColors.Window;
             this.tpBitly.Controls.Add(this.txtBitlyDomain);
             this.tpBitly.Controls.Add(this.lblBitlyDomain);
             this.tpBitly.Controls.Add(this.oauth2Bitly);
             resources.ApplyResources(this.tpBitly, "tpBitly");
             this.tpBitly.Name = "tpBitly";
-            this.tpBitly.UseVisualStyleBackColor = true;
             // 
             // txtBitlyDomain
             // 
@@ -1560,11 +1563,11 @@
             // 
             // tpGoogleURLShortener
             // 
+            this.tpGoogleURLShortener.BackColor = System.Drawing.SystemColors.Window;
             this.tpGoogleURLShortener.Controls.Add(this.oauth2GoogleURLShortener);
             this.tpGoogleURLShortener.Controls.Add(this.atcGoogleURLShortenerAccountType);
             resources.ApplyResources(this.tpGoogleURLShortener, "tpGoogleURLShortener");
             this.tpGoogleURLShortener.Name = "tpGoogleURLShortener";
-            this.tpGoogleURLShortener.UseVisualStyleBackColor = true;
             // 
             // oauth2GoogleURLShortener
             // 
@@ -1584,6 +1587,7 @@
             // 
             // tpYourls
             // 
+            this.tpYourls.BackColor = System.Drawing.SystemColors.Window;
             this.tpYourls.Controls.Add(this.txtYourlsPassword);
             this.tpYourls.Controls.Add(this.txtYourlsUsername);
             this.tpYourls.Controls.Add(this.txtYourlsSignature);
@@ -1595,7 +1599,6 @@
             this.tpYourls.Controls.Add(this.lblYourlsAPIURL);
             resources.ApplyResources(this.tpYourls, "tpYourls");
             this.tpYourls.Name = "tpYourls";
-            this.tpYourls.UseVisualStyleBackColor = true;
             // 
             // txtYourlsPassword
             // 
@@ -1650,6 +1653,7 @@
             // 
             // tpAdFly
             // 
+            this.tpAdFly.BackColor = System.Drawing.SystemColors.Window;
             this.tpAdFly.Controls.Add(this.llAdflyLink);
             this.tpAdFly.Controls.Add(this.txtAdflyAPIUID);
             this.tpAdFly.Controls.Add(this.lblAdflyAPIUID);
@@ -1657,7 +1661,6 @@
             this.tpAdFly.Controls.Add(this.lblAdflyAPIKEY);
             resources.ApplyResources(this.tpAdFly, "tpAdFly");
             this.tpAdFly.Name = "tpAdFly";
-            this.tpAdFly.UseVisualStyleBackColor = true;
             // 
             // llAdflyLink
             // 
@@ -1691,11 +1694,11 @@
             // 
             // tpCoinURL
             // 
+            this.tpCoinURL.BackColor = System.Drawing.SystemColors.Window;
             this.tpCoinURL.Controls.Add(this.txtCoinURLUUID);
             this.tpCoinURL.Controls.Add(this.lblCoinURLUUID);
             resources.ApplyResources(this.tpCoinURL, "tpCoinURL");
             this.tpCoinURL.Name = "tpCoinURL";
-            this.tpCoinURL.UseVisualStyleBackColor = true;
             // 
             // txtCoinURLUUID
             // 
@@ -1711,6 +1714,7 @@
             // 
             // tpPolr
             // 
+            this.tpPolr.BackColor = System.Drawing.SystemColors.Window;
             this.tpPolr.Controls.Add(this.cbPolrUseAPIv1);
             this.tpPolr.Controls.Add(this.cbPolrIsSecret);
             this.tpPolr.Controls.Add(this.txtPolrAPIKey);
@@ -1719,7 +1723,6 @@
             this.tpPolr.Controls.Add(this.lblPolrAPIHostname);
             resources.ApplyResources(this.tpPolr, "tpPolr");
             this.tpPolr.Name = "tpPolr";
-            this.tpPolr.UseVisualStyleBackColor = true;
             // 
             // cbPolrUseAPIv1
             // 
@@ -1760,10 +1763,10 @@
             // 
             // tpFileUploaders
             // 
+            this.tpFileUploaders.BackColor = System.Drawing.SystemColors.Window;
             this.tpFileUploaders.Controls.Add(this.tcFileUploaders);
             resources.ApplyResources(this.tpFileUploaders, "tpFileUploaders");
             this.tpFileUploaders.Name = "tpFileUploaders";
-            this.tpFileUploaders.UseVisualStyleBackColor = true;
             // 
             // tcFileUploaders
             // 
@@ -1800,6 +1803,7 @@
             // 
             // tpFTP
             // 
+            this.tpFTP.BackColor = System.Drawing.SystemColors.Window;
             this.tpFTP.Controls.Add(this.gbFTPAccount);
             this.tpFTP.Controls.Add(this.btnFTPDuplicate);
             this.tpFTP.Controls.Add(this.btnFTPRemove);
@@ -1814,7 +1818,6 @@
             this.tpFTP.Controls.Add(this.cbFTPText);
             resources.ApplyResources(this.tpFTP, "tpFTP");
             this.tpFTP.Name = "tpFTP";
-            this.tpFTP.UseVisualStyleBackColor = true;
             // 
             // gbFTPAccount
             // 
@@ -2219,6 +2222,7 @@
             // 
             // tpDropbox
             // 
+            this.tpDropbox.BackColor = System.Drawing.SystemColors.Window;
             this.tpDropbox.Controls.Add(this.cbDropboxUseDirectLink);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
@@ -2227,7 +2231,6 @@
             this.tpDropbox.Controls.Add(this.oauth2Dropbox);
             resources.ApplyResources(this.tpDropbox, "tpDropbox");
             this.tpDropbox.Name = "tpDropbox";
-            this.tpDropbox.UseVisualStyleBackColor = true;
             // 
             // cbDropboxUseDirectLink
             // 
@@ -2273,13 +2276,13 @@
             // 
             // tpOneDrive
             // 
+            this.tpOneDrive.BackColor = System.Drawing.SystemColors.Window;
             this.tpOneDrive.Controls.Add(this.tvOneDrive);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
             this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
             this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
             resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
             this.tpOneDrive.Name = "tpOneDrive";
-            this.tpOneDrive.UseVisualStyleBackColor = true;
             // 
             // tvOneDrive
             // 
@@ -2311,6 +2314,7 @@
             // 
             // tpGoogleDrive
             // 
+            this.tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
             this.tpGoogleDrive.Controls.Add(this.txtGoogleDriveFolderID);
@@ -2321,7 +2325,6 @@
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
-            this.tpGoogleDrive.UseVisualStyleBackColor = true;
             // 
             // cbGoogleDriveDirectLink
             // 
@@ -2395,6 +2398,7 @@
             // 
             // tpPuush
             // 
+            this.tpPuush.BackColor = System.Drawing.SystemColors.Window;
             this.tpPuush.Controls.Add(this.pbPuush);
             this.tpPuush.Controls.Add(this.lblPuushAPIKey);
             this.tpPuush.Controls.Add(this.txtPuushAPIKey);
@@ -2406,7 +2410,6 @@
             this.tpPuush.Controls.Add(this.lblPuushPassword);
             resources.ApplyResources(this.tpPuush, "tpPuush");
             this.tpPuush.Name = "tpPuush";
-            this.tpPuush.UseVisualStyleBackColor = true;
             // 
             // pbPuush
             // 
@@ -2466,6 +2469,7 @@
             // 
             // tpBox
             // 
+            this.tpBox.BackColor = System.Drawing.SystemColors.Window;
             this.tpBox.Controls.Add(this.lblBoxFolderTip);
             this.tpBox.Controls.Add(this.cbBoxShare);
             this.tpBox.Controls.Add(this.lvBoxFolders);
@@ -2474,7 +2478,6 @@
             this.tpBox.Controls.Add(this.oauth2Box);
             resources.ApplyResources(this.tpBox, "tpBox");
             this.tpBox.Name = "tpBox";
-            this.tpBox.UseVisualStyleBackColor = true;
             // 
             // lblBoxFolderTip
             // 
@@ -2528,10 +2531,8 @@
             // 
             // tpAmazonS3
             // 
-            this.tpAmazonS3.Controls.Add(this.btnAmazonS3StorageClassHelp);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3StorageClass);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3StorageClass);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UsePathStyle);
+            this.tpAmazonS3.BackColor = System.Drawing.SystemColors.Window;
+            this.tpAmazonS3.Controls.Add(this.gbAmazonS3Advanced);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3Endpoint);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3Region);
@@ -2554,7 +2555,39 @@
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
             resources.ApplyResources(this.tpAmazonS3, "tpAmazonS3");
             this.tpAmazonS3.Name = "tpAmazonS3";
-            this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // gbAmazonS3Advanced
+            // 
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StorageClass);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3PublicACL);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3UsePathStyle);
+            this.gbAmazonS3Advanced.Controls.Add(this.btnAmazonS3StorageClassHelp);
+            this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StorageClass);
+            resources.ApplyResources(this.gbAmazonS3Advanced, "gbAmazonS3Advanced");
+            this.gbAmazonS3Advanced.Name = "gbAmazonS3Advanced";
+            this.gbAmazonS3Advanced.TabStop = false;
+            // 
+            // cbAmazonS3StorageClass
+            // 
+            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmazonS3StorageClass.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
+            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
+            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
+            // 
+            // cbAmazonS3PublicACL
+            // 
+            resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
+            this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
+            this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
+            this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.cbAmazonS3PublicACL_CheckedChanged);
+            // 
+            // cbAmazonS3UsePathStyle
+            // 
+            resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
+            this.cbAmazonS3UsePathStyle.Name = "cbAmazonS3UsePathStyle";
+            this.cbAmazonS3UsePathStyle.UseVisualStyleBackColor = true;
+            this.cbAmazonS3UsePathStyle.CheckedChanged += new System.EventHandler(this.cbAmazonS3UsePathStyle_CheckedChanged);
             // 
             // btnAmazonS3StorageClassHelp
             // 
@@ -2567,21 +2600,6 @@
             // 
             resources.ApplyResources(this.lblAmazonS3StorageClass, "lblAmazonS3StorageClass");
             this.lblAmazonS3StorageClass.Name = "lblAmazonS3StorageClass";
-            // 
-            // cbAmazonS3StorageClass
-            // 
-            this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmazonS3StorageClass.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAmazonS3StorageClass, "cbAmazonS3StorageClass");
-            this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
-            this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
-            // 
-            // cbAmazonS3UsePathStyle
-            // 
-            resources.ApplyResources(this.cbAmazonS3UsePathStyle, "cbAmazonS3UsePathStyle");
-            this.cbAmazonS3UsePathStyle.Name = "cbAmazonS3UsePathStyle";
-            this.cbAmazonS3UsePathStyle.UseVisualStyleBackColor = true;
-            this.cbAmazonS3UsePathStyle.CheckedChanged += new System.EventHandler(this.cbAmazonS3UsePathStyle_CheckedChanged);
             // 
             // lblAmazonS3Endpoint
             // 
@@ -2695,6 +2713,7 @@
             // 
             // tpAzureStorage
             // 
+            this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
             this.tpAzureStorage.Controls.Add(this.cbAzureStorageEnvironment);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageEnvironment);
             this.tpAzureStorage.Controls.Add(this.btnAzureStoragePortal);
@@ -2708,7 +2727,6 @@
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageCustomDomain);
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
-            this.tpAzureStorage.UseVisualStyleBackColor = true;
             // 
             // cbAzureStorageEnvironment
             // 
@@ -2781,12 +2799,12 @@
             // 
             // tpGfycat
             // 
+            this.tpGfycat.BackColor = System.Drawing.SystemColors.Window;
             this.tpGfycat.Controls.Add(this.cbGfycatIsPublic);
             this.tpGfycat.Controls.Add(this.atcGfycatAccountType);
             this.tpGfycat.Controls.Add(this.oauth2Gfycat);
             resources.ApplyResources(this.tpGfycat, "tpGfycat");
             this.tpGfycat.Name = "tpGfycat";
-            this.tpGfycat.UseVisualStyleBackColor = true;
             // 
             // cbGfycatIsPublic
             // 
@@ -2813,6 +2831,7 @@
             // 
             // tpMega
             // 
+            this.tpMega.BackColor = System.Drawing.SystemColors.Window;
             this.tpMega.Controls.Add(this.btnMegaRefreshFolders);
             this.tpMega.Controls.Add(this.lblMegaStatus);
             this.tpMega.Controls.Add(this.btnMegaRegister);
@@ -2826,7 +2845,6 @@
             this.tpMega.Controls.Add(this.lblMegaPassword);
             resources.ApplyResources(this.tpMega, "tpMega");
             this.tpMega.Name = "tpMega";
-            this.tpMega.UseVisualStyleBackColor = true;
             // 
             // btnMegaRefreshFolders
             // 
@@ -2897,6 +2915,7 @@
             // 
             // tpOwnCloud
             // 
+            this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHostExample);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
@@ -2911,7 +2930,6 @@
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
-            this.tpOwnCloud.UseVisualStyleBackColor = true;
             // 
             // lblOwnCloudHostExample
             // 
@@ -2987,6 +3005,7 @@
             // 
             // tpMediaFire
             // 
+            this.tpMediaFire.BackColor = System.Drawing.SystemColors.Window;
             this.tpMediaFire.Controls.Add(this.cbMediaFireUseLongLink);
             this.tpMediaFire.Controls.Add(this.txtMediaFirePath);
             this.tpMediaFire.Controls.Add(this.lblMediaFirePath);
@@ -2996,7 +3015,6 @@
             this.tpMediaFire.Controls.Add(this.lblMediaFireEmail);
             resources.ApplyResources(this.tpMediaFire, "tpMediaFire");
             this.tpMediaFire.Name = "tpMediaFire";
-            this.tpMediaFire.UseVisualStyleBackColor = true;
             // 
             // cbMediaFireUseLongLink
             // 
@@ -3041,6 +3059,7 @@
             // 
             // tpPushbullet
             // 
+            this.tpPushbullet.BackColor = System.Drawing.SystemColors.Window;
             this.tpPushbullet.Controls.Add(this.lblPushbulletDevices);
             this.tpPushbullet.Controls.Add(this.cboPushbulletDevices);
             this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
@@ -3048,7 +3067,6 @@
             this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
             resources.ApplyResources(this.tpPushbullet, "tpPushbullet");
             this.tpPushbullet.Name = "tpPushbullet";
-            this.tpPushbullet.UseVisualStyleBackColor = true;
             // 
             // lblPushbulletDevices
             // 
@@ -3084,6 +3102,7 @@
             // 
             // tpSendSpace
             // 
+            this.tpSendSpace.BackColor = System.Drawing.SystemColors.Window;
             this.tpSendSpace.Controls.Add(this.btnSendSpaceRegister);
             this.tpSendSpace.Controls.Add(this.lblSendSpacePassword);
             this.tpSendSpace.Controls.Add(this.lblSendSpaceUsername);
@@ -3092,7 +3111,6 @@
             this.tpSendSpace.Controls.Add(this.atcSendSpaceAccountType);
             resources.ApplyResources(this.tpSendSpace, "tpSendSpace");
             this.tpSendSpace.Name = "tpSendSpace";
-            this.tpSendSpace.UseVisualStyleBackColor = true;
             // 
             // btnSendSpaceRegister
             // 
@@ -3133,6 +3151,7 @@
             // 
             // tpGe_tt
             // 
+            this.tpGe_tt.BackColor = System.Drawing.SystemColors.Window;
             this.tpGe_tt.Controls.Add(this.lblGe_ttStatus);
             this.tpGe_tt.Controls.Add(this.lblGe_ttPassword);
             this.tpGe_tt.Controls.Add(this.lblGe_ttEmail);
@@ -3141,7 +3160,6 @@
             this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
             resources.ApplyResources(this.tpGe_tt, "tpGe_tt");
             this.tpGe_tt.Name = "tpGe_tt";
-            this.tpGe_tt.UseVisualStyleBackColor = true;
             // 
             // lblGe_ttStatus
             // 
@@ -3178,6 +3196,7 @@
             // 
             // tpHostr
             // 
+            this.tpHostr.BackColor = System.Drawing.SystemColors.Window;
             this.tpHostr.Controls.Add(this.cbLocalhostrDirectURL);
             this.tpHostr.Controls.Add(this.lblLocalhostrPassword);
             this.tpHostr.Controls.Add(this.lblLocalhostrEmail);
@@ -3185,7 +3204,6 @@
             this.tpHostr.Controls.Add(this.txtLocalhostrEmail);
             resources.ApplyResources(this.tpHostr, "tpHostr");
             this.tpHostr.Name = "tpHostr";
-            this.tpHostr.UseVisualStyleBackColor = true;
             // 
             // cbLocalhostrDirectURL
             // 
@@ -3219,13 +3237,13 @@
             // 
             // tpJira
             // 
+            this.tpJira.BackColor = System.Drawing.SystemColors.Window;
             this.tpJira.Controls.Add(this.txtJiraIssuePrefix);
             this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
             this.tpJira.Controls.Add(this.gbJiraServer);
             this.tpJira.Controls.Add(this.oAuthJira);
             resources.ApplyResources(this.tpJira, "tpJira");
             this.tpJira.Name = "tpJira";
-            this.tpJira.UseVisualStyleBackColor = true;
             // 
             // txtJiraIssuePrefix
             // 
@@ -3276,6 +3294,7 @@
             // 
             // tpLambda
             // 
+            this.tpLambda.BackColor = System.Drawing.SystemColors.Window;
             this.tpLambda.Controls.Add(this.lblLambdaInfo);
             this.tpLambda.Controls.Add(this.lblLambdaApiKey);
             this.tpLambda.Controls.Add(this.txtLambdaApiKey);
@@ -3283,7 +3302,6 @@
             this.tpLambda.Controls.Add(this.cbLambdaUploadURL);
             resources.ApplyResources(this.tpLambda, "tpLambda");
             this.tpLambda.Name = "tpLambda";
-            this.tpLambda.UseVisualStyleBackColor = true;
             // 
             // lblLambdaInfo
             // 
@@ -3318,6 +3336,7 @@
             // 
             // tpPomf
             // 
+            this.tpPomf.BackColor = System.Drawing.SystemColors.Window;
             this.tpPomf.Controls.Add(this.btnPomfTest);
             this.tpPomf.Controls.Add(this.txtPomfResultURL);
             this.tpPomf.Controls.Add(this.txtPomfUploadURL);
@@ -3327,7 +3346,6 @@
             this.tpPomf.Controls.Add(this.cbPomfUploaders);
             resources.ApplyResources(this.tpPomf, "tpPomf");
             this.tpPomf.Name = "tpPomf";
-            this.tpPomf.UseVisualStyleBackColor = true;
             // 
             // btnPomfTest
             // 
@@ -3373,6 +3391,7 @@
             // 
             // tpSeafile
             // 
+            this.tpSeafile.BackColor = System.Drawing.SystemColors.Window;
             this.tpSeafile.Controls.Add(this.cbSeafileAPIURL);
             this.tpSeafile.Controls.Add(this.grpSeafileShareSettings);
             this.tpSeafile.Controls.Add(this.btnSeafileLibraryPasswordValidate);
@@ -3396,7 +3415,6 @@
             this.tpSeafile.Controls.Add(this.lblSeafileAPIURL);
             resources.ApplyResources(this.tpSeafile, "tpSeafile");
             this.tpSeafile.Name = "tpSeafile";
-            this.tpSeafile.UseVisualStyleBackColor = true;
             // 
             // cbSeafileAPIURL
             // 
@@ -3660,6 +3678,7 @@
             // 
             // tpStreamable
             // 
+            this.tpStreamable.BackColor = System.Drawing.SystemColors.Window;
             this.tpStreamable.Controls.Add(this.cbStreamableUseDirectURL);
             this.tpStreamable.Controls.Add(this.txtStreamablePassword);
             this.tpStreamable.Controls.Add(this.txtStreamableUsername);
@@ -3668,7 +3687,6 @@
             this.tpStreamable.Controls.Add(this.cbStreamableAnonymous);
             resources.ApplyResources(this.tpStreamable, "tpStreamable");
             this.tpStreamable.Name = "tpStreamable";
-            this.tpStreamable.UseVisualStyleBackColor = true;
             // 
             // cbStreamableUseDirectURL
             // 
@@ -3709,12 +3727,12 @@
             // 
             // tpSul
             // 
+            this.tpSul.BackColor = System.Drawing.SystemColors.Window;
             this.tpSul.Controls.Add(this.btnSulGetAPIKey);
             this.tpSul.Controls.Add(this.txtSulAPIKey);
             this.tpSul.Controls.Add(this.lblSulAPIKey);
             resources.ApplyResources(this.tpSul, "tpSul");
             this.tpSul.Name = "tpSul";
-            this.tpSul.UseVisualStyleBackColor = true;
             // 
             // btnSulGetAPIKey
             // 
@@ -3737,6 +3755,7 @@
             // 
             // tpLithiio
             // 
+            this.tpLithiio.BackColor = System.Drawing.SystemColors.Window;
             this.tpLithiio.Controls.Add(this.btnLithiioFetchAPIKey);
             this.tpLithiio.Controls.Add(this.txtLithiioPassword);
             this.tpLithiio.Controls.Add(this.txtLithiioEmail);
@@ -3747,7 +3766,6 @@
             this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
             resources.ApplyResources(this.tpLithiio, "tpLithiio");
             this.tpLithiio.Name = "tpLithiio";
-            this.tpLithiio.UseVisualStyleBackColor = true;
             // 
             // btnLithiioFetchAPIKey
             // 
@@ -3798,11 +3816,11 @@
             // 
             // tpPlik
             // 
+            this.tpPlik.BackColor = System.Drawing.SystemColors.Window;
             this.tpPlik.Controls.Add(this.gbPlikSettings);
             this.tpPlik.Controls.Add(this.gbPlikLoginCredentials);
             resources.ApplyResources(this.tpPlik, "tpPlik");
             this.tpPlik.Name = "tpPlik";
-            this.tpPlik.UseVisualStyleBackColor = true;
             // 
             // gbPlikSettings
             // 
@@ -3955,6 +3973,7 @@
             // 
             // tpSharedFolder
             // 
+            this.tpSharedFolder.BackColor = System.Drawing.SystemColors.Window;
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderFiles);
@@ -3964,7 +3983,6 @@
             this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
             resources.ApplyResources(this.tpSharedFolder, "tpSharedFolder");
             this.tpSharedFolder.Name = "tpSharedFolder";
-            this.tpSharedFolder.UseVisualStyleBackColor = true;
             // 
             // lblSharedFolderFiles
             // 
@@ -4012,6 +4030,7 @@
             // 
             // tpEmail
             // 
+            this.tpEmail.BackColor = System.Drawing.SystemColors.Window;
             this.tpEmail.Controls.Add(this.txtEmailAutomaticSendTo);
             this.tpEmail.Controls.Add(this.cbEmailAutomaticSend);
             this.tpEmail.Controls.Add(this.lblEmailSmtpServer);
@@ -4029,7 +4048,6 @@
             this.tpEmail.Controls.Add(this.txtEmailDefaultSubject);
             resources.ApplyResources(this.tpEmail, "tpEmail");
             this.tpEmail.Name = "tpEmail";
-            this.tpEmail.UseVisualStyleBackColor = true;
             // 
             // txtEmailAutomaticSendTo
             // 
@@ -4135,10 +4153,10 @@
             // 
             // tpTextUploaders
             // 
+            this.tpTextUploaders.BackColor = System.Drawing.SystemColors.Window;
             this.tpTextUploaders.Controls.Add(this.tcTextUploaders);
             resources.ApplyResources(this.tpTextUploaders, "tpTextUploaders");
             this.tpTextUploaders.Name = "tpTextUploaders";
-            this.tpTextUploaders.UseVisualStyleBackColor = true;
             // 
             // tcTextUploaders
             // 
@@ -4155,6 +4173,7 @@
             // 
             // tpPastebin
             // 
+            this.tpPastebin.BackColor = System.Drawing.SystemColors.Window;
             this.tpPastebin.Controls.Add(this.cbPastebinRaw);
             this.tpPastebin.Controls.Add(this.cbPastebinSyntax);
             this.tpPastebin.Controls.Add(this.btnPastebinRegister);
@@ -4173,7 +4192,6 @@
             this.tpPastebin.Controls.Add(this.btnPastebinLogin);
             resources.ApplyResources(this.tpPastebin, "tpPastebin");
             this.tpPastebin.Name = "tpPastebin";
-            this.tpPastebin.UseVisualStyleBackColor = true;
             // 
             // cbPastebinRaw
             // 
@@ -4276,12 +4294,12 @@
             // 
             // tpPaste_ee
             // 
+            this.tpPaste_ee.BackColor = System.Drawing.SystemColors.Window;
             this.tpPaste_ee.Controls.Add(this.btnPaste_eeGetUserKey);
             this.tpPaste_ee.Controls.Add(this.lblPaste_eeUserAPIKey);
             this.tpPaste_ee.Controls.Add(this.txtPaste_eeUserAPIKey);
             resources.ApplyResources(this.tpPaste_ee, "tpPaste_ee");
             this.tpPaste_ee.Name = "tpPaste_ee";
-            this.tpPaste_ee.UseVisualStyleBackColor = true;
             // 
             // btnPaste_eeGetUserKey
             // 
@@ -4304,6 +4322,7 @@
             // 
             // tpGist
             // 
+            this.tpGist.BackColor = System.Drawing.SystemColors.Window;
             this.tpGist.Controls.Add(this.lblGistCustomURLExample);
             this.tpGist.Controls.Add(this.lblGistOAuthInfo);
             this.tpGist.Controls.Add(this.lblGistCustomURL);
@@ -4314,7 +4333,6 @@
             this.tpGist.Controls.Add(this.atcGistAccountType);
             resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
-            this.tpGist.UseVisualStyleBackColor = true;
             // 
             // lblGistCustomURLExample
             // 
@@ -4369,12 +4387,12 @@
             // 
             // tpUpaste
             // 
+            this.tpUpaste.BackColor = System.Drawing.SystemColors.Window;
             this.tpUpaste.Controls.Add(this.cbUpasteIsPublic);
             this.tpUpaste.Controls.Add(this.lblUpasteUserKey);
             this.tpUpaste.Controls.Add(this.txtUpasteUserKey);
             resources.ApplyResources(this.tpUpaste, "tpUpaste");
             this.tpUpaste.Name = "tpUpaste";
-            this.tpUpaste.UseVisualStyleBackColor = true;
             // 
             // cbUpasteIsPublic
             // 
@@ -4397,6 +4415,7 @@
             // 
             // tpHastebin
             // 
+            this.tpHastebin.BackColor = System.Drawing.SystemColors.Window;
             this.tpHastebin.Controls.Add(this.cbHastebinUseFileExtension);
             this.tpHastebin.Controls.Add(this.txtHastebinSyntaxHighlighting);
             this.tpHastebin.Controls.Add(this.txtHastebinCustomDomain);
@@ -4404,7 +4423,6 @@
             this.tpHastebin.Controls.Add(this.lblHastebinCustomDomain);
             resources.ApplyResources(this.tpHastebin, "tpHastebin");
             this.tpHastebin.Name = "tpHastebin";
-            this.tpHastebin.UseVisualStyleBackColor = true;
             // 
             // cbHastebinUseFileExtension
             // 
@@ -4437,13 +4455,13 @@
             // 
             // tpOneTimeSecret
             // 
+            this.tpOneTimeSecret.BackColor = System.Drawing.SystemColors.Window;
             this.tpOneTimeSecret.Controls.Add(this.lblOneTimeSecretAPIKey);
             this.tpOneTimeSecret.Controls.Add(this.lblOneTimeSecretEmail);
             this.tpOneTimeSecret.Controls.Add(this.txtOneTimeSecretAPIKey);
             this.tpOneTimeSecret.Controls.Add(this.txtOneTimeSecretEmail);
             resources.ApplyResources(this.tpOneTimeSecret, "tpOneTimeSecret");
             this.tpOneTimeSecret.Name = "tpOneTimeSecret";
-            this.tpOneTimeSecret.UseVisualStyleBackColor = true;
             // 
             // lblOneTimeSecretAPIKey
             // 
@@ -4470,10 +4488,10 @@
             // 
             // tpPastie
             // 
+            this.tpPastie.BackColor = System.Drawing.SystemColors.Window;
             this.tpPastie.Controls.Add(this.cbPastieIsPublic);
             resources.ApplyResources(this.tpPastie, "tpPastie");
             this.tpPastie.Name = "tpPastie";
-            this.tpPastie.UseVisualStyleBackColor = true;
             // 
             // cbPastieIsPublic
             // 
@@ -4484,10 +4502,10 @@
             // 
             // tpImageUploaders
             // 
+            this.tpImageUploaders.BackColor = System.Drawing.SystemColors.Window;
             this.tpImageUploaders.Controls.Add(this.tcImageUploaders);
             resources.ApplyResources(this.tpImageUploaders, "tpImageUploaders");
             this.tpImageUploaders.Name = "tpImageUploaders";
-            this.tpImageUploaders.UseVisualStyleBackColor = true;
             // 
             // tcImageUploaders
             // 
@@ -4505,6 +4523,7 @@
             // 
             // tpImgur
             // 
+            this.tpImgur.BackColor = System.Drawing.SystemColors.Window;
             this.tpImgur.Controls.Add(this.cbImgurUseGIFV);
             this.tpImgur.Controls.Add(this.cbImgurUploadSelectedAlbum);
             this.tpImgur.Controls.Add(this.cbImgurDirectLink);
@@ -4516,7 +4535,6 @@
             this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
             resources.ApplyResources(this.tpImgur, "tpImgur");
             this.tpImgur.Name = "tpImgur";
-            this.tpImgur.UseVisualStyleBackColor = true;
             // 
             // cbImgurUseGIFV
             // 
@@ -4605,6 +4623,7 @@
             // 
             // tpImageShack
             // 
+            this.tpImageShack.BackColor = System.Drawing.SystemColors.Window;
             this.tpImageShack.Controls.Add(this.btnImageShackLogin);
             this.tpImageShack.Controls.Add(this.btnImageShackOpenPublicProfile);
             this.tpImageShack.Controls.Add(this.cbImageShackIsPublic);
@@ -4615,7 +4634,6 @@
             this.tpImageShack.Controls.Add(this.lblImageShackPassword);
             resources.ApplyResources(this.tpImageShack, "tpImageShack");
             this.tpImageShack.Name = "tpImageShack";
-            this.tpImageShack.UseVisualStyleBackColor = true;
             // 
             // btnImageShackLogin
             // 
@@ -4670,6 +4688,7 @@
             // 
             // tpTinyPic
             // 
+            this.tpTinyPic.BackColor = System.Drawing.SystemColors.Window;
             this.tpTinyPic.Controls.Add(this.atcTinyPicAccountType);
             this.tpTinyPic.Controls.Add(this.btnTinyPicLogin);
             this.tpTinyPic.Controls.Add(this.txtTinyPicPassword);
@@ -4679,7 +4698,6 @@
             this.tpTinyPic.Controls.Add(this.btnTinyPicOpenMyImages);
             resources.ApplyResources(this.tpTinyPic, "tpTinyPic");
             this.tpTinyPic.Name = "tpTinyPic";
-            this.tpTinyPic.UseVisualStyleBackColor = true;
             // 
             // atcTinyPicAccountType
             // 
@@ -4727,11 +4745,11 @@
             // 
             // tpFlickr
             // 
+            this.tpFlickr.BackColor = System.Drawing.SystemColors.Window;
             this.tpFlickr.Controls.Add(this.cbFlickrDirectLink);
             this.tpFlickr.Controls.Add(this.oauthFlickr);
             resources.ApplyResources(this.tpFlickr, "tpFlickr");
             this.tpFlickr.Name = "tpFlickr";
-            this.tpFlickr.UseVisualStyleBackColor = true;
             // 
             // cbFlickrDirectLink
             // 
@@ -4751,12 +4769,12 @@
             // 
             // tpPhotobucket
             // 
+            this.tpPhotobucket.BackColor = System.Drawing.SystemColors.Window;
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketAlbumPath);
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketAlbums);
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketUserAccount);
             resources.ApplyResources(this.tpPhotobucket, "tpPhotobucket");
             this.tpPhotobucket.Name = "tpPhotobucket";
-            this.tpPhotobucket.UseVisualStyleBackColor = true;
             // 
             // gbPhotobucketAlbumPath
             // 
@@ -4881,6 +4899,7 @@
             // 
             // tpGooglePhotos
             // 
+            this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
             this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
@@ -4888,7 +4907,6 @@
             this.tpGooglePhotos.Controls.Add(this.oauth2Picasa);
             resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
             this.tpGooglePhotos.Name = "tpGooglePhotos";
-            this.tpGooglePhotos.UseVisualStyleBackColor = true;
             // 
             // txtPicasaAlbumID
             // 
@@ -4945,6 +4963,7 @@
             // 
             // tpChevereto
             // 
+            this.tpChevereto.BackColor = System.Drawing.SystemColors.Window;
             this.tpChevereto.Controls.Add(this.btnCheveretoTestAll);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploadURLExample);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploaders);
@@ -4956,7 +4975,6 @@
             this.tpChevereto.Controls.Add(this.lblCheveretoAPIKey);
             resources.ApplyResources(this.tpChevereto, "tpChevereto");
             this.tpChevereto.Name = "tpChevereto";
-            this.tpChevereto.UseVisualStyleBackColor = true;
             // 
             // btnCheveretoTestAll
             // 
@@ -5015,12 +5033,12 @@
             // 
             // tpVgyme
             // 
+            this.tpVgyme.BackColor = System.Drawing.SystemColors.Window;
             this.tpVgyme.Controls.Add(this.llVgymeAccountDetailsPage);
             this.tpVgyme.Controls.Add(this.txtVgymeUserKey);
             this.tpVgyme.Controls.Add(this.lvlVgymeUserKey);
             resources.ApplyResources(this.tpVgyme, "tpVgyme");
             this.tpVgyme.Name = "tpVgyme";
-            this.tpVgyme.UseVisualStyleBackColor = true;
             // 
             // llVgymeAccountDetailsPage
             // 
@@ -5147,6 +5165,8 @@
             this.tpBox.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
+            this.gbAmazonS3Advanced.ResumeLayout(false);
+            this.gbAmazonS3Advanced.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
@@ -5838,5 +5858,7 @@
         private System.Windows.Forms.TextBox txtLithiioEmail;
         private System.Windows.Forms.Label lblLithiioPassword;
         private System.Windows.Forms.Label lblLithiioEmail;
+        private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
+        private System.Windows.Forms.GroupBox gbAmazonS3Advanced;
     }
 }

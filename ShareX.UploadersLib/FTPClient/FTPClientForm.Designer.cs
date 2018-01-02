@@ -293,17 +293,17 @@
             // 
             // tpMain
             // 
+            this.tpMain.BackColor = System.Drawing.SystemColors.Window;
             this.tpMain.Controls.Add(this.scMain);
             resources.ApplyResources(this.tpMain, "tpMain");
             this.tpMain.Name = "tpMain";
-            this.tpMain.UseVisualStyleBackColor = true;
             // 
             // tpAccount
             // 
+            this.tpAccount.BackColor = System.Drawing.SystemColors.Window;
             this.tpAccount.Controls.Add(this.pgAccount);
             resources.ApplyResources(this.tpAccount, "tpAccount");
             this.tpAccount.Name = "tpAccount";
-            this.tpAccount.UseVisualStyleBackColor = true;
             // 
             // pgAccount
             // 
@@ -314,10 +314,10 @@
             // 
             // tpConsole
             // 
+            this.tpConsole.BackColor = System.Drawing.SystemColors.Window;
             this.tpConsole.Controls.Add(this.scConsole);
             resources.ApplyResources(this.tpConsole, "tpConsole");
             this.tpConsole.Name = "tpConsole";
-            this.tpConsole.UseVisualStyleBackColor = true;
             // 
             // scConsole
             // 

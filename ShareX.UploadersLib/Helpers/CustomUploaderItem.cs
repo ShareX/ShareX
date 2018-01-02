@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -109,6 +109,11 @@ namespace ShareX.UploadersLib
             }
 
             return "Name";
+        }
+
+        public string GetFileName()
+        {
+            return ToString() + ".sxcu";
         }
 
         public HttpMethod GetHttpMethod()
@@ -233,7 +238,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string ParseURL(string url, bool output)
+        public string ParseURL(string url, bool output)
         {
             if (string.IsNullOrEmpty(url))
             {
@@ -244,10 +249,11 @@ namespace ShareX.UploadersLib
 
             bool syntaxStart = false;
             int syntaxStartIndex = 0;
+            bool escape = false;
 
             for (int i = 0; i < url.Length; i++)
             {
-                if (url[i] == '$')
+                if (url[i] == '$' && !escape)
                 {
                     if (!syntaxStart)
                     {
@@ -270,10 +276,17 @@ namespace ShareX.UploadersLib
                             }
                         }
                     }
+
+                    escape = false;
+                }
+                else if (url[i] == '\\' && !escape)
+                {
+                    escape = true;
                 }
                 else if (!syntaxStart)
                 {
                     result.Append(url[i]);
+                    escape = false;
                 }
             }
 

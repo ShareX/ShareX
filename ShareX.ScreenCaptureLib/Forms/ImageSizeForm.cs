@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,17 +37,20 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ImageSizeForm : Form
     {
-        public Size Result { get; private set; }
+        public Size ImageSize { get; private set; }
+        public ImageEditorInterpolationMode InterpolationMode { get; private set; }
 
         private double widthRatio, heightRatio;
         private bool ignoreValueChanged = true;
 
-        public ImageSizeForm(Size size)
+        public ImageSizeForm(Size size, ImageEditorInterpolationMode interpolationMode)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            Result = size;
+            ImageSize = size;
+            InterpolationMode = interpolationMode;
+
             widthRatio = (double)size.Width / size.Height;
             heightRatio = (double)size.Height / size.Width;
 
@@ -57,6 +60,9 @@ namespace ShareX.ScreenCaptureLib
 
             nudWidth.TextChanged += NudWidth_TextChanged;
             nudHeight.TextChanged += NudHeight_TextChanged;
+
+            cbResampling.Items.AddRange(Helpers.GetEnumNamesProper<ImageEditorInterpolationMode>());
+            cbResampling.SelectedIndex = (int)InterpolationMode;
 
             ignoreValueChanged = false;
         }
@@ -116,10 +122,16 @@ namespace ShareX.ScreenCaptureLib
             ApplyWidthAspectRatio();
         }
 
+        private void cbResampling_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InterpolationMode = (ImageEditorInterpolationMode)cbResampling.SelectedIndex;
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
+            ImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
+
             DialogResult = DialogResult.OK;
-            Result = new Size((int)nudWidth.Value, (int)nudHeight.Value);
             Close();
         }
 

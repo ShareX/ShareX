@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,7 +39,27 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract ShapeType ShapeType { get; }
 
-        public Rectangle Rectangle { get; set; }
+        private Rectangle rectangle;
+
+        public Rectangle Rectangle
+        {
+            get
+            {
+                return rectangle;
+            }
+            set
+            {
+                rectangle = value;
+                startPosition = rectangle.Location;
+                endPosition = new Point(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
+            }
+        }
+
+        public Rectangle RectangleInsideCanvas => Rectangle.Intersect(Rectangle, Manager.Form.CanvasRectangle);
+
+        public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
+
+        public virtual bool LimitRectangleToInsideCanvas { get; }
 
         private Point startPosition;
 
@@ -49,11 +69,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 return startPosition;
             }
-            set
+            private set
             {
                 startPosition = value;
-
-                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
             }
         }
 
@@ -65,13 +84,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 return endPosition;
             }
-            set
+            private set
             {
                 endPosition = value;
-
-                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
             }
         }
+
+        public Size InitialSize { get; set; }
 
         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
 
@@ -82,6 +102,7 @@ namespace ShareX.ScreenCaptureLib
         protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
+        private Rectangle tempRectangle;
 
         public virtual bool Intersects(Point position)
         {
@@ -125,11 +146,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                EndPosition = EndPosition.Add(x, y);
+                Rectangle = Rectangle.SizeOffset(x, y);
             }
             else
             {
-                StartPosition = StartPosition.Add(x, y);
+                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
             }
         }
 
@@ -145,13 +166,22 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 Manager.IsCreating = true;
-                StartPosition = EndPosition = pos;
+                Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
             }
         }
 
         public virtual void OnCreated()
         {
+            InitialSize = Rectangle.Size;
         }
+
+        public virtual void OnMoving() { }
+
+        public virtual void OnMoved() { }
+
+        public virtual void OnResizing() { }
+
+        public virtual void OnResized() { }
 
         public virtual void OnUpdate()
         {
@@ -190,6 +220,12 @@ namespace ShareX.ScreenCaptureLib
             else if (Manager.IsMoving && !Manager.IsPanning)
             {
                 Move(InputManager.MouseVelocity);
+            }
+
+            if (LimitRectangleToInsideCanvas)
+            {
+                StartPosition = StartPosition.Restrict(Manager.Form.CanvasRectangle);
+                EndPosition = EndPosition.Restrict(Manager.Form.CanvasRectangle);
             }
         }
 
@@ -234,6 +270,9 @@ namespace ShareX.ScreenCaptureLib
                         tempNodePos = node.Position;
                         tempStartPos = Rectangle.Location;
                         tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+                        tempRectangle = Rectangle;
+
+                        OnResizing();
                     }
 
                     if (Manager.IsCornerMoving || Manager.IsPanning)
@@ -241,6 +280,7 @@ namespace ShareX.ScreenCaptureLib
                         tempStartPos.Offset(InputManager.MouseVelocity);
                         tempEndPos.Offset(InputManager.MouseVelocity);
                         tempNodePos.Offset(InputManager.MouseVelocity);
+                        tempRectangle.LocationOffset(InputManager.MouseVelocity);
                     }
 
                     Point pos = InputManager.ClientMousePosition;
@@ -283,6 +323,75 @@ namespace ShareX.ScreenCaptureLib
 
                     StartPosition = startPos;
                     EndPosition = endPos;
+
+                    if (Manager.IsProportionalResizing && !InitialSize.IsEmpty)
+                    {
+                        switch (nodePosition)
+                        {
+                            case NodePosition.Top:
+                            case NodePosition.Right:
+                            case NodePosition.Bottom:
+                            case NodePosition.Left:
+                                return;
+                        }
+
+                        double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
+                        int newWidth = (int)Math.Round(InitialSize.Width * ratio);
+                        int newHeight = (int)Math.Round(InitialSize.Height * ratio);
+
+                        Point anchor = new Point();
+
+                        switch (nodePosition)
+                        {
+                            case NodePosition.TopLeft:
+                            case NodePosition.Left:
+                            case NodePosition.BottomLeft:
+                                anchor.X = tempRectangle.Right - 1;
+                                break;
+                            case NodePosition.TopRight:
+                            case NodePosition.Right:
+                            case NodePosition.BottomRight:
+                                anchor.X = tempRectangle.X;
+                                break;
+                        }
+
+                        switch (nodePosition)
+                        {
+                            case NodePosition.TopLeft:
+                            case NodePosition.Top:
+                            case NodePosition.TopRight:
+                                anchor.Y = tempRectangle.Bottom - 1;
+                                break;
+                            case NodePosition.BottomLeft:
+                            case NodePosition.Bottom:
+                            case NodePosition.BottomRight:
+                                anchor.Y = tempRectangle.Y;
+                                break;
+                        }
+
+                        Rectangle newRect = Rectangle;
+
+                        if (pos.X < anchor.X)
+                        {
+                            newRect.X = newRect.Right - newWidth;
+                        }
+
+                        newRect.Width = newWidth;
+
+                        if (pos.Y < anchor.Y)
+                        {
+                            newRect.Y = newRect.Bottom - newHeight;
+                        }
+
+                        newRect.Height = newHeight;
+
+                        Rectangle = newRect;
+                    }
+
+                    if (LimitRectangleToInsideCanvas)
+                    {
+                        Rectangle = RectangleInsideCanvas;
+                    }
                 }
             }
         }

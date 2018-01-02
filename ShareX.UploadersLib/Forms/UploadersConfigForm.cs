@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -587,6 +587,7 @@ namespace ShareX.UploadersLib
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3StorageClass.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<AmazonS3StorageClass>());
             cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
+            cbAmazonS3PublicACL.Checked = Config.AmazonS3Settings.SetPublicACL;
             UpdateAmazonS3Status();
 
             #endregion
@@ -2265,6 +2266,11 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL(Resources.UploadersConfigForm_AmazonS3StorageClassHelpURL);
         }
 
+        private void cbAmazonS3PublicACL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.SetPublicACL = cbAmazonS3PublicACL.Checked;
+        }
+
         #endregion Amazon S3
 
         #region ownCloud
@@ -3254,6 +3260,8 @@ namespace ShareX.UploadersLib
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
+
+                eiCustomUploaders.DefaultFileName = uploader.GetFileName();
             }
 
             return uploader;

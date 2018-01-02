@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -119,25 +119,24 @@ namespace ShareX.Setup
 
         public static void Zip(string source, string target)
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo()
-            {
-                FileName = Program.ZipPath,
-                Arguments = $"a -tzip \"{target}\" \"{source}\" -r -mx=9",
-                WindowStyle = ProcessWindowStyle.Hidden
-            };
-
-            Process.Start(startInfo).WaitForExit();
+            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"a -tzip \"{target}\" \"{source}\" -r -mx=9");
         }
 
         public static void Unzip(string source, string extract)
         {
-            Console.WriteLine("Extracting: " + source);
+            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"e \"{source}\" \"{extract}\" -r");
+        }
+
+        private static void ProcessStart(string filePath, string arguments)
+        {
+            Console.WriteLine($"Process starting: {filePath} {arguments}");
 
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = Program.ZipPath,
-                Arguments = $"e \"{source}\" \"{extract}\" -r",
-                WindowStyle = ProcessWindowStyle.Hidden
+                FileName = filePath,
+                Arguments = arguments,
+                UseShellExecute = false,
+                CreateNoWindow = true
             };
 
             Process.Start(startInfo).WaitForExit();

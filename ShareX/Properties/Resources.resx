@@ -392,11 +392,6 @@ Would you like to automatically download it?</value>
     <value>Waiting...</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Your clipboard contains an image, would you like to open it in the image editor?
-
-Press yes to open image from clipboard. Alternatively, press no to open image file dialog box.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Image uploader: {0}</value>
   </data>
@@ -444,9 +439,6 @@ Press yes to open image from clipboard. Alternatively, press no to open image fi
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>File path can't be empty.</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Image editor - How to load image?</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Choose a folder to save</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -64,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
                 Pen pen = new Pen(borderColor, borderSize);
                 pen.CustomEndCap = lineCap;
 
-                if (ArrowHeadsBothSide && MathHelpers.Distance(StartPosition, EndPosition) > arrowHeight * borderSize * 2)
+                if (ArrowHeadsBothSide && MathHelpers.Distance(Points[0], Points[Points.Length - 1]) > arrowHeight * borderSize * 2)
                 {
                     pen.CustomStartCap = lineCap;
                 }

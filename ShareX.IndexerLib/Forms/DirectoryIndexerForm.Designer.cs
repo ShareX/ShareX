@@ -109,6 +109,7 @@
             // 
             // tpPreview
             // 
+            this.tpPreview.BackColor = System.Drawing.SystemColors.Window;
             this.tpPreview.Controls.Add(this.txtPreview);
             this.tpPreview.Controls.Add(this.wbPreview);
             this.tpPreview.Location = new System.Drawing.Point(4, 22);
@@ -116,7 +117,6 @@
             this.tpPreview.Size = new System.Drawing.Size(860, 564);
             this.tpPreview.TabIndex = 1;
             this.tpPreview.Text = "Preview";
-            this.tpPreview.UseVisualStyleBackColor = true;
             // 
             // txtPreview
             // 
@@ -131,13 +131,13 @@
             // 
             // tpSettings
             // 
+            this.tpSettings.BackColor = System.Drawing.SystemColors.Window;
             this.tpSettings.Controls.Add(this.pgSettings);
             this.tpSettings.Location = new System.Drawing.Point(4, 22);
             this.tpSettings.Name = "tpSettings";
             this.tpSettings.Size = new System.Drawing.Size(860, 564);
             this.tpSettings.TabIndex = 0;
             this.tpSettings.Text = "Settings";
-            this.tpSettings.UseVisualStyleBackColor = true;
             // 
             // pgSettings
             // 

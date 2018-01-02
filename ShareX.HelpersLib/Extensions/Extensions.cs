@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -575,6 +575,15 @@ namespace ShareX.HelpersLib
         public static Point Center(this Rectangle rect)
         {
             return new Point(rect.X + rect.Width / 2, rect.Y + rect.Height / 2);
+        }
+
+        public static Point Restrict(this Point point, Rectangle rect)
+        {
+            point.X = Math.Max(point.X, rect.X);
+            point.Y = Math.Max(point.Y, rect.Y);
+            point.X = Math.Min(point.X, rect.X + rect.Width - 1);
+            point.Y = Math.Min(point.Y, rect.Y + rect.Height - 1);
+            return point;
         }
 
         public static void RefreshItems(this ComboBox cb)

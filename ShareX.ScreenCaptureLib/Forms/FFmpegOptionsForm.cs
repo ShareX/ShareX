@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -65,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
 
             // General
 
-#if STEAM
+#if STEAM || WindowsStore
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #else
@@ -224,7 +224,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
-#if STEAM
+#if STEAM || WindowsStore
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #endif
@@ -430,14 +430,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            string extractPath = DefaultToolsPath ?? "ffmpeg.exe";
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsPath);
 
             if (result)
             {
                 this.InvokeSafe(() =>
                 {
-                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(extractPath);
+                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(DefaultToolsPath);
                     RefreshSourcesAsync();
                     UpdateUI();
                 });

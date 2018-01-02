@@ -153,4 +153,16 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>추가</value>
   </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>프리셋 삭제</value>
+  </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>새 프리셋</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>이름:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>닫기</value>
+  </data>
 </root>

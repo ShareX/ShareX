@@ -19,8 +19,6 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,6 +98,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Controls\CustomToolStripProfessionalRenderer.cs" />
     <Compile Include="Controls\HotkeySelectionButton.cs">
       <SubType>Component</SubType>
@@ -126,6 +127,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="SevenZipManager.cs" />
+    <Compile Include="Input\HotkeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Input\HotkeyInfo.cs" />
     <Compile Include="Input\KeyboardHook.cs" />
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
@@ -1186,9 +1191,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
       <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -1209,25 +1211,15 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Loading.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Crosshair.cur" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ShareX_Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ShareX_Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cross.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ShareX_Logo_Black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

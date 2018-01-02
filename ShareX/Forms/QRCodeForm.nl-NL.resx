@@ -126,4 +126,19 @@
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Sla op als afbeelding...</value>
   </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Resultaat:</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>Coderen</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>Decoderen</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Decoderen uit afbeeldingsbestand</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>Decoderen uit scherm...</value>
+  </data>
 </root>

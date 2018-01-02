@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,13 +48,14 @@ namespace ShareX
         private int urlPadding = 3;
         private Size textRenderSize;
 
-        protected override CreateParams CreateParams {
-          get {
-            // Turn on WS_EX_TOOLWINDOW style bit
-            CreateParams cp = base.CreateParams;
-            cp.ExStyle |= 0x80;
-            return cp;
-          }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOOLWINDOW;
+                return createParams;
+            }
         }
 
         public NotificationForm(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
@@ -204,7 +205,7 @@ namespace ShareX
                 {
                     case ToastClickAction.AnnotateImage:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
-                            TaskHelpers.AnnotateImage(ToastConfig.FilePath);
+                            TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
                         break;
                     case ToastClickAction.CopyImageToClipboard:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath))

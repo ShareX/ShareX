@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -100,20 +100,6 @@ namespace ShareX
 
             string json = JsonConvert.SerializeObject(newsItems, settings);
             File.WriteAllText("news.json", json);
-        }
-
-        private void ExportExample()
-        {
-            List<NewsItem> newsItems = new List<NewsItem>()
-            {
-                new NewsItem() { DateTime = new DateTime(2017, 06, 20), Text = "ShareX has been released on Windows Store!" },
-                new NewsItem() { DateTime = new DateTime(2017, 06, 20), Text = "ShareX 11.8.0 has been released.", URL = "https://getsharex.com/changelog" },
-                new NewsItem() { DateTime = new DateTime(2017, 04, 14), Text = "We now have a Discord server!", URL = "https://discord.gg/E4R3Qa9" },
-                new NewsItem() { DateTime = new DateTime(2016, 6, 10), Text = "We now have a Patreon page!", URL = "https://www.patreon.com/ShareX" },
-                new NewsItem() { DateTime = new DateTime(2015, 10, 2), Text = "ShareX has been released on Steam!", URL = "http://store.steampowered.com/app/400040/" }
-            };
-
-            ExportNews(newsItems);
         }
     }
 }

@@ -126,4 +126,10 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>로드된 라이브러리</value>
   </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>로그 파일 열기...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>시작 경로:</value>
+  </data>
 </root>

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>하단:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>우단:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>상단:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>좌단:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>가장자리 잘라내기</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>처리중...</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>결과물</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 스크롤 촬영</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>스크롤 딜레이:</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>최대 스크롤 수:</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>스크롤 뒤</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>스크롤할 창이나 컨트롤 선택...</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>스크롤 촬영 시작</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>중복 이미지 제거</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>오프셋을 추측하고 이미지 취합</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>스크롤 방법:</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(선택사항) 창 내 사용자 정의 영역 지정...</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>시작 딜레이:</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>촬영 전 최상단으로 스크롤하는 방법:</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>스크롤 끝 감지</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>촬영 중</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>이미지 갯수:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>마지막 제거:</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>출력 설정 초기화</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항을 추측하고 취합</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>가장자리 값을 추측하고 잘라내기</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>취합 조정사항</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>촬영 설정에 따라 업로드/저장</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>촬영</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>ShareX가 정확한 스크롤 촬영물을 만드는 최선의 노력을 하지만, 모든 스크롤에 대해 제대로 된 촬영을 할 수는 없다는 사실을 이해해 주세요. 이미지가 취합될 때 문제점을 일으킬 수 있는 요소로는, 촬영 중 화면 상의 움직임(예: 웹 페이지 상의 GIF 애니메이션)이나, 화면에 고정된 오브젝트(예: 웹 페이지를 스크롤해도 움직이지 않는 사이트 메뉴나 버튼) 등이 있습니다.</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>이 창을 열기 전 촬영 영역 선택을 시작하기</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>촬영 영역 선택 직후 스크롤 촬영을 시작하기</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>세로값:</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>이전 세로값:</value>
+  </data>
+</root>

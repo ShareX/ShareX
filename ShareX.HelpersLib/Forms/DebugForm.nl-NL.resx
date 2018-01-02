@@ -126,4 +126,7 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Ingeladen assemblies</value>
   </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Open log bestand...</value>
+  </data>
 </root>

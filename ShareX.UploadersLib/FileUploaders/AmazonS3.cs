@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2018 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -67,25 +67,29 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private const string DefaultRegion = "us-east-1";
 
+        // http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
         public static List<AmazonS3Endpoint> Endpoints { get; } = new List<AmazonS3Endpoint>()
         {
-            new AmazonS3Endpoint("Asia Pacific (Tokyo)", "s3-ap-northeast-1.amazonaws.com", "ap-northeast-1"),
-            new AmazonS3Endpoint("Asia Pacific (Seoul)", "s3.ap-northeast-2.amazonaws.com", "ap-northeast-2"),
             new AmazonS3Endpoint("Asia Pacific (Mumbai)", "s3.ap-south-1.amazonaws.com", "ap-south-1"),
-            new AmazonS3Endpoint("Asia Pacific (Singapore)", "s3-ap-southeast-1.amazonaws.com", "ap-southeast-1"),
-            new AmazonS3Endpoint("Asia Pacific (Sydney)", "s3-ap-southeast-2.amazonaws.com", "ap-southeast-2"),
+            new AmazonS3Endpoint("Asia Pacific (Seoul)", "s3.ap-northeast-2.amazonaws.com", "ap-northeast-2"),
+            new AmazonS3Endpoint("Asia Pacific (Singapore)", "s3.ap-southeast-1.amazonaws.com", "ap-southeast-1"),
+            new AmazonS3Endpoint("Asia Pacific (Sydney)", "s3.ap-southeast-2.amazonaws.com", "ap-southeast-2"),
+            new AmazonS3Endpoint("Asia Pacific (Tokyo)", "s3.ap-northeast-1.amazonaws.com", "ap-northeast-1"),
             new AmazonS3Endpoint("Canada (Central)", "s3.ca-central-1.amazonaws.com", "ca-central-1"),
-            new AmazonS3Endpoint("EU Central (Frankfurt)", "s3.eu-central-1.amazonaws.com", "eu-central-1"),
-            new AmazonS3Endpoint("EU West (Ireland)", "s3-eu-west-1.amazonaws.com", "eu-west-1"),
-            new AmazonS3Endpoint("EU West (London)", "s3.eu-west-2.amazonaws.com", "eu-west-2"),
-            new AmazonS3Endpoint("South America (Sao Paulo)", "s3-sa-east-1.amazonaws.com", "sa-east-1"),
-            new AmazonS3Endpoint("US East (Virginia)", "s3.amazonaws.com", "us-east-1"),
-            new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
-            new AmazonS3Endpoint("US West (N. California)", "s3-us-west-1.amazonaws.com", "us-west-1"),
-            new AmazonS3Endpoint("US West (Oregon)", "s3-us-west-2.amazonaws.com", "us-west-2"),
             new AmazonS3Endpoint("China (Beijing)", "s3.cn-north-1.amazonaws.com.cn", "cn-north-1"),
-            new AmazonS3Endpoint("US GovCloud West (Oregon)", "s3-us-gov-west-1.amazonaws.com", "us-gov-west-1"),
-            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io")
+            new AmazonS3Endpoint("China (Ningxia)", "s3.cn-northwest-1.amazonaws.com.cn", "cn-northwest-1"),
+            new AmazonS3Endpoint("EU (Frankfurt)", "s3.eu-central-1.amazonaws.com", "eu-central-1"),
+            new AmazonS3Endpoint("EU (Ireland)", "s3.eu-west-1.amazonaws.com", "eu-west-1"),
+            new AmazonS3Endpoint("EU (London)", "s3.eu-west-2.amazonaws.com", "eu-west-2"),
+            new AmazonS3Endpoint("EU (Paris)", "s3.eu-west-3.amazonaws.com", "eu-west-3"),
+            new AmazonS3Endpoint("South America (São Paulo)", "s3.sa-east-1.amazonaws.com", "sa-east-1"),
+            new AmazonS3Endpoint("US East (N. Virginia)", "s3.amazonaws.com", "us-east-1"),
+            new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
+            new AmazonS3Endpoint("US West (N. California)", "s3.us-west-1.amazonaws.com", "us-west-1"),
+            new AmazonS3Endpoint("US West (Oregon)", "s3.us-west-2.amazonaws.com", "us-west-2"),
+            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io"),
+            new AmazonS3Endpoint("DigitalOcean (Amsterdam)", "ams3.digitaloceanspaces.com", "ams3"),
+            new AmazonS3Endpoint("DigitalOcean (New York)", "nyc3.digitaloceanspaces.com", "nyc3")
         };
 
         private AmazonS3Settings Settings { get; set; }
@@ -97,58 +101,50 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            bool forcePathStyle = Settings.UsePathStyle;
+            bool isPathStyleRequest = Settings.UsePathStyle;
 
-            if (!forcePathStyle && Settings.Bucket.Contains("."))
+            if (!isPathStyleRequest && Settings.Bucket.Contains("."))
             {
-                forcePathStyle = true;
+                isPathStyleRequest = true;
             }
 
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
-            string host = forcePathStyle ? endpoint : $"{Settings.Bucket}.{endpoint}";
+            string host = isPathStyleRequest ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             string region = GetRegion();
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
-            string longDate = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string expiresTotalSeconds = ((long)TimeSpan.FromHours(1).TotalSeconds).ToString();
+            string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string contentType = Helpers.GetMimeType(fileName);
+            string uploadPath = GetUploadPath(fileName);
+            string hashedPayload = "UNSIGNED-PAYLOAD";
 
             NameValueCollection headers = new NameValueCollection();
-            headers["content-type"] = contentType;
             headers["host"] = host;
-            headers["x-amz-acl"] = "public-read";
+            headers["content-type"] = contentType;
+            headers["x-amz-date"] = timeStamp;
+            headers["x-amz-content-sha256"] = hashedPayload;
             headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
-
-            string signedHeaders = GetSignedHeaders(headers);
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("X-Amz-Algorithm", algorithm);
-            args.Add("X-Amz-Credential", credential);
-            args.Add("X-Amz-Date", longDate);
-            args.Add("X-Amz-Expires", expiresTotalSeconds);
-            args.Add("X-Amz-SignedHeaders", signedHeaders);
-
-            string uploadPath = GetUploadPath(fileName);
+            if (Settings.SetPublicACL) headers["x-amz-acl"] = "public-read";
 
             string canonicalURI = uploadPath;
-            if (forcePathStyle) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
+            if (isPathStyleRequest) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
             canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
-
-            string canonicalQueryString = URLHelpers.CreateQuery(args, true);
+            string canonicalQueryString = "";
             string canonicalHeaders = CreateCanonicalHeaders(headers);
+            string signedHeaders = GetSignedHeaders(headers);
 
             string canonicalRequest = "PUT" + "\n" +
                 canonicalURI + "\n" +
                 canonicalQueryString + "\n" +
                 canonicalHeaders + "\n" +
                 signedHeaders + "\n" +
-                "UNSIGNED-PAYLOAD";
+                hashedPayload;
 
             string stringToSign = algorithm + "\n" +
-                longDate + "\n" +
+                timeStamp + "\n" +
                 scope + "\n" +
                 Helpers.BytesToHex(Helpers.ComputeSHA256(canonicalRequest));
 
@@ -156,26 +152,23 @@ namespace ShareX.UploadersLib.FileUploaders
             byte[] dateRegionKey = Helpers.ComputeHMACSHA256(region, dateKey);
             byte[] dateRegionServiceKey = Helpers.ComputeHMACSHA256("s3", dateRegionKey);
             byte[] signingKey = Helpers.ComputeHMACSHA256("aws4_request", dateRegionServiceKey);
+
             string signature = Helpers.BytesToHex(Helpers.ComputeHMACSHA256(stringToSign, signingKey));
 
-            args.Add("X-Amz-Signature", signature);
+            headers["Authorization"] = algorithm + " " +
+                "Credential=" + credential + "," +
+                "SignedHeaders=" + signedHeaders + "," +
+                "Signature=" + signature;
 
-            headers.Remove("content-type");
             headers.Remove("host");
+            headers.Remove("content-type");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.CreateQuery(url, args, true);
             url = URLHelpers.ForcePrefix(url, "https://");
 
             NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
 
-            if (responseHeaders == null || responseHeaders.Count == 0)
-            {
-                Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");
-                return null;
-            }
-
-            if (responseHeaders["ETag"] == null)
+            if (responseHeaders == null || responseHeaders.Count == 0 || responseHeaders["ETag"] == null)
             {
                 Errors.Add("Upload to Amazon S3 failed.");
                 return null;
@@ -245,7 +238,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
                 {
-                    url = URLHelpers.CombineURL(Settings.CustomDomain, uploadPath);
+                    string parsedDomain = new CustomUploaderItem().ParseURL(Settings.CustomDomain, false);
+                    url = URLHelpers.CombineURL(parsedDomain, uploadPath);
                 }
                 else
                 {
@@ -266,19 +260,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string CreateCanonicalHeaders(NameValueCollection headers)
         {
-            string result = "";
-
-            foreach (string key in headers)
-            {
-                result += key.ToLowerInvariant() + ":" + headers[key].Trim() + "\n";
-            }
-
-            return result;
+            return headers.AllKeys.OrderBy(key => key).Select(key => key.ToLowerInvariant() + ":" + headers[key].Trim() + "\n").
+                Aggregate((result, next) => result + next);
         }
 
         private string GetSignedHeaders(NameValueCollection headers)
         {
-            return string.Join(";", headers.AllKeys.Select(x => x.ToLowerInvariant()));
+            return string.Join(";", headers.AllKeys.OrderBy(key => key).Select(key => key.ToLowerInvariant()));
         }
     }
 }
