@@ -58,6 +58,8 @@ namespace ShareX.HelpersLib
         [DefaultValue("")]
         public string CustomFilter { get; set; } = "";
 
+        public string DefaultFileName { get; set; }
+
         public ExportImportControl()
         {
             InitializeComponent();
@@ -130,7 +132,7 @@ namespace ShareX.HelpersLib
                         filter = CustomFilter + "|" + filter;
                     }
 
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = filter })
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = filter, FileName = DefaultFileName })
                     {
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {

@@ -111,6 +111,11 @@ namespace ShareX.UploadersLib
             return "Name";
         }
 
+        public string GetFileName()
+        {
+            return ToString() + ".sxcu";
+        }
+
         public HttpMethod GetHttpMethod()
         {
             switch (RequestType)
@@ -271,9 +276,10 @@ namespace ShareX.UploadersLib
                             }
                         }
                     }
+
                     escape = false;
                 }
-                else if(url[i] == '\\' && !escape)
+                else if (url[i] == '\\' && !escape)
                 {
                     escape = true;
                 }

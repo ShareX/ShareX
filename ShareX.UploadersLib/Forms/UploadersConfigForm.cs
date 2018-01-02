@@ -3260,6 +3260,8 @@ namespace ShareX.UploadersLib
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
+
+                eiCustomUploaders.DefaultFileName = uploader.GetFileName();
             }
 
             return uploader;
