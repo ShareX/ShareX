@@ -1322,7 +1322,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <None Include="Resources\Rectangle.png" />
     <None Include="Resources\camera.png" />
     <None Include="Resources\navigation-090-button.png" />

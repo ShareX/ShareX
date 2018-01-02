@@ -883,7 +883,6 @@
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="Favicons\Polr.ico" />
-    <None Include="packages.config" />
     <None Include="Favicons\Pomf.ico" />
     <None Include="Favicons\Seafile.png" />
     <None Include="Favicons\Streamable.ico" />
