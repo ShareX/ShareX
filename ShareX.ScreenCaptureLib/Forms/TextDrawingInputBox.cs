@@ -71,6 +71,8 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateHorizontalAlignmentImage();
             UpdateVerticalAlignmentImage();
+
+            txtInput.SupportSelectAll();
         }
 
         private void Close(DialogResult result)

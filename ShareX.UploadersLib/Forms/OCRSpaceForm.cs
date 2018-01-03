@@ -44,6 +44,7 @@ namespace ShareX.UploadersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            txtResult.SupportSelectAll();
         }
 
         public OCRSpaceForm(Stream data, string filename) : this()
@@ -124,20 +125,6 @@ namespace ShareX.UploadersLib
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL("https://ocr.space");
-        }
-
-        private void txtResult_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-            {
-                if (sender != null)
-                {
-                    ((TextBox)sender).SelectAll();
-                }
-
-                e.SuppressKeyPress = true; // TextBox will beep if it gets the CTRL+A
-                e.Handled = true;
-            }
         }
     }
 }

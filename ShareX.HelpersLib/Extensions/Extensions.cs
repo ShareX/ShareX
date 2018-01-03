@@ -242,6 +242,19 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void SupportSelectAll(this TextBox tb)
+        {
+            tb.KeyDown += (sender, e) =>
+            {
+                if (e.Control && e.KeyCode == Keys.A)
+                {
+                    tb.SelectAll();
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+                }
+            };
+        }
+
         public static void SaveJPG(this Image img, Stream stream, int quality)
         {
             quality = quality.Between(0, 100);
