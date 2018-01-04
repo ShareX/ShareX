@@ -45,6 +45,7 @@ namespace ShareX
         private bool forceClose, trayMenuSaveSettings = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
+        private DebugForm debugForm;
 
         public MainForm()
         {
@@ -1585,7 +1586,20 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            new DebugForm(DebugHelper.Logger).Show();
+            if (debugForm == null)
+            {
+                debugForm = new DebugForm(DebugHelper.Logger);
+                debugForm.FormClosed += (s, ee) =>
+                {
+                    debugForm = null;
+                };
+
+                debugForm.Show();
+            }
+            else
+            {
+                debugForm.Focus();
+            }
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)
