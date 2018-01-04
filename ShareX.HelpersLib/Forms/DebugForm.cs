@@ -33,9 +33,11 @@ namespace ShareX.HelpersLib
 {
     public partial class DebugForm : Form
     {
+        private static DebugForm instance;
+
         public Logger Logger { get; private set; }
 
-        public DebugForm(Logger logger)
+        private DebugForm(Logger logger)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -54,6 +56,16 @@ namespace ShareX.HelpersLib
             FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
         }
 
+        public static DebugForm GetFormInstance(Logger logger)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new DebugForm(logger);
+            }
+
+            return instance;
+        }
+
         private void logger_MessageAdded(string message)
         {
             this.InvokeSafe(() => AppendMessage(message));
@@ -65,7 +77,7 @@ namespace ShareX.HelpersLib
             {
                 int start = rtbDebug.SelectionStart;
                 int len = rtbDebug.SelectionLength;
-                rtbDebug.AppendText(message + Environment.NewLine);
+                rtbDebug.AppendText(message);
                 if (len > 0)
                 {
                     rtbDebug.Select(start, len);
@@ -97,7 +109,7 @@ namespace ShareX.HelpersLib
             }
             string assemblies = sb.ToString().Trim();
 
-            AppendMessage("Loaded assemblies:\r\n" + assemblies);
+            DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
         }
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)

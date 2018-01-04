@@ -1585,7 +1585,7 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            new DebugForm(DebugHelper.Logger).Show();
+            DebugForm.GetFormInstance(DebugHelper.Logger).ForceActivate();
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)
