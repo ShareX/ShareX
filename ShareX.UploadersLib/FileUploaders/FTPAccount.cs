@@ -244,7 +244,7 @@ namespace ShareX.UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return httpHomeUri.Uri.AbsoluteUri;
+            return httpHomeUri.Uri.OriginalString;
         }
 
         public string GetFtpPath(string filemame)
