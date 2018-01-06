@@ -499,21 +499,24 @@ namespace ShareX
 
         public static Image AddImageEffects(Image img, TaskSettingsImage taskSettingsImage)
         {
-            if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
+            if (!img.PixelFormat.HasFlag(PixelFormat.Indexed))
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettingsImage.ImageEffectPresets,
-                    taskSettingsImage.SelectedImageEffectPreset))
+                if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    imageEffectsForm.ShowDialog();
-                    taskSettingsImage.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettingsImage.ImageEffectPresets,
+                        taskSettingsImage.SelectedImageEffectPreset))
+                    {
+                        imageEffectsForm.ShowDialog();
+                        taskSettingsImage.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    }
                 }
-            }
 
-            if (taskSettingsImage.ImageEffectPresets.IsValidIndex(taskSettingsImage.SelectedImageEffectPreset))
-            {
-                using (img)
+                if (taskSettingsImage.ImageEffectPresets.IsValidIndex(taskSettingsImage.SelectedImageEffectPreset))
                 {
-                    return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(img);
+                    using (img)
+                    {
+                        return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(img);
+                    }
                 }
             }
 
@@ -938,12 +941,22 @@ namespace ShareX
                 img = ImageHelpers.LoadImage(filePath);
             }
 
-            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
-                taskSettings.ImageSettings.SelectedImageEffectPreset))
+            if (img != null)
             {
-                imageEffectsForm.EditorMode();
-                imageEffectsForm.ShowDialog();
-                //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                if (img.PixelFormat.HasFlag(PixelFormat.Indexed))
+                {
+                    MessageBox.Show("Unsupported pixel format: " + img.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                        taskSettings.ImageSettings.SelectedImageEffectPreset))
+                    {
+                        imageEffectsForm.EditorMode();
+                        imageEffectsForm.ShowDialog();
+                        //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    }
+                }
             }
         }
 
