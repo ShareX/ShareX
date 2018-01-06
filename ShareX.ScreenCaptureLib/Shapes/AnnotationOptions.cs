@@ -70,6 +70,9 @@ namespace ShareX.ScreenCaptureLib
         public int TextBorderSize { get; set; } = 0;
         public Color TextFillColor { get; set; } = PrimaryColor;
 
+        // Image drawing
+        public ImageEditorInterpolationMode ImageInterpolationMode = ImageEditorInterpolationMode.Bicubic;
+
         // Step drawing
         public Color StepBorderColor { get; set; } = SecondaryColor;
         public int StepBorderSize { get; set; } = 0;

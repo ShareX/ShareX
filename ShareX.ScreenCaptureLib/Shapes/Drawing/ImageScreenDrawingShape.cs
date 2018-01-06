@@ -33,6 +33,17 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImageScreen;
 
         public Image Image { get; private set; }
+        public ImageEditorInterpolationMode ImageInterpolationMode { get; private set; }
+
+        public override void OnConfigLoad()
+        {
+            ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
+        }
+
+        public override void OnConfigSave()
+        {
+            AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
+        }
 
         public override void OnDraw(Graphics g)
         {
@@ -53,17 +64,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Image != null)
             {
-                if (Manager.IsRenderingOutput)
-                {
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                }
-                else
-                {
-                    g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                }
-
+                g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
                 g.DrawImage(Image, Rectangle);
-
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
         }

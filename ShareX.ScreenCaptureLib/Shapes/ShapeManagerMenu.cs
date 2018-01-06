@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbCursorTypes;
+        private ToolStripLabeledComboBox tscbImageInterpolationMode, tscbCursorTypes;
 
         internal void CreateToolbar()
         {
@@ -474,6 +474,16 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
+
+            tscbImageInterpolationMode = new ToolStripLabeledComboBox("Interpolation mode");
+            tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorInterpolationMode>());
+            tscbImageInterpolationMode.Content.SelectedIndexChanged += (sender, e) =>
+            {
+                AnnotationOptions.ImageInterpolationMode = (ImageEditorInterpolationMode)tscbImageInterpolationMode.Content.SelectedIndex;
+                tscbImageInterpolationMode.Invalidate();
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tscbImageInterpolationMode);
 
             tscbCursorTypes = new ToolStripLabeledComboBox(Resources.ShapeManager_CursorType);
             CursorConverter cursorConverter = new CursorConverter();
@@ -1235,6 +1245,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCornerRadius.Content.Value = cornerRadius;
 
+            tscbImageInterpolationMode.Content.SelectedIndex = (int)AnnotationOptions.ImageInterpolationMode;
+
             tslnudBlurRadius.Content.Value = AnnotationOptions.BlurRadius;
 
             tslnudPixelateSize.Content.Value = AnnotationOptions.PixelateSize;
@@ -1271,6 +1283,8 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
+                case ShapeType.DrawingImage:
+                case ShapeType.DrawingImageScreen:
                 case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
@@ -1331,6 +1345,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
+            tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen;
             tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;

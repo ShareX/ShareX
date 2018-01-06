@@ -1595,7 +1595,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private InterpolationMode GetInterpolationMode(ImageEditorInterpolationMode interpolationMode)
+        internal InterpolationMode GetInterpolationMode(ImageEditorInterpolationMode interpolationMode)
         {
             switch (interpolationMode)
             {
