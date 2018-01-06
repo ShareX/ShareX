@@ -100,8 +100,12 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Image != null)
             {
+                g.PixelOffsetMode = PixelOffsetMode.Half;
                 g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
+
                 g.DrawImage(Image, Rectangle);
+
+                g.PixelOffsetMode = PixelOffsetMode.Default;
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
         }
