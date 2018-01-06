@@ -57,6 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Ge_tt : FileUploader
     {
+        private const string APIURL = "http://api.ge.tt/1";
+
         public string APIKey { get; private set; }
         public string AccessToken { get; set; }
 
@@ -74,7 +76,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(args);
 
-            string response = SendRequest(HttpMethod.POST, "https://api.ge.tt/1/users/login", json, ContentTypeJSON);
+            string url = URLHelpers.CombineURL(APIURL, "users/login");
+            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON);
 
             return JsonConvert.DeserializeObject<Ge_ttLogin>(response);
         }
@@ -84,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("accesstoken", accessToken);
 
-            string url = URLHelpers.CreateQuery("https://api.ge.tt/1/shares/create", args);
+            string url = URLHelpers.CreateQuery(URLHelpers.CombineURL(APIURL, "shares/create"), args);
             string response = SendRequest(HttpMethod.POST, url);
 
             return JsonConvert.DeserializeObject<Ge_ttShare>(response);
@@ -100,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(args2);
 
-            string response = SendRequest(HttpMethod.POST, $"https://api.ge.tt/1/files/{shareName}/create", json, ContentTypeJSON, args);
+            string response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(APIURL, "files", shareName, "create"), json, ContentTypeJSON, args);
 
             return JsonConvert.DeserializeObject<Ge_ttFile>(response);
         }
