@@ -44,5 +44,13 @@ namespace ShareX.HelpersLib
 
             base.OnRenderItemText(e);
         }
+
+        protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+        {
+            if(e.Item is ToolStripDropDownButton && ((ToolStripDropDownButton)e.Item).Owner is ToolStripBorderRight)
+                e.Direction = ArrowDirection.Right;
+            base.OnRenderArrow(e);
+        }
+
     }
 }
