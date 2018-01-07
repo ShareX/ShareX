@@ -117,37 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnColorPicker.Text" xml:space="preserve">
-    <value>Starte Bildschirmfarben Auswähler</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>Texterkennung starten</value>
   </data>
-  <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
-    <value>Drücke die "Strg" Taste wenn dieses Fenster aktiv ist um den Bildschirmfarben Auswähler zu stoppen.</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Sprache:</value>
   </data>
-  <data name="lblCursorPosition.Text" xml:space="preserve">
-    <value>Zeigerposition:</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Ergebnis:</value>
   </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>Kopieren</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Texterkennung (OCR)</value>
   </data>
-  <data name="tsmiCopyAll.Text" xml:space="preserve">
-    <value>Alles kopieren</value>
-  </data>
-  <data name="tsmiCopyRGB.Text" xml:space="preserve">
-    <value>RGB kopieren</value>
-  </data>
-  <data name="tsmiCopyHex.Text" xml:space="preserve">
-    <value>Hex kopieren</value>
-  </data>
-  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
-    <value>CMYK kopieren</value>
-  </data>
-  <data name="tsmiCopyHSB.Text" xml:space="preserve">
-    <value>HSB kopieren</value>
-  </data>
-  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
-    <value>Dezimal kopieren</value>
-  </data>
-  <data name="tsmiCopyPosition.Text" xml:space="preserve">
-    <value>Position kopieren</value>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>Unterstützt von OCR.Space API</value>
   </data>
 </root>
