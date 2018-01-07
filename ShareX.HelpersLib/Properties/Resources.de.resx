@@ -850,4 +850,49 @@ Möchtest du sie herunterladen?</value>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
     <value>Texterkennung (OCR)</value>
   </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Unkenntlich machen</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Hervorheben</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Verpixeln</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Pfeil zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Ellipse zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Linie zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Rechteck zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Schritt hinzufügen</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Freihand zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Bild aus Datei hinzufügen</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Sprechblase hinzufügen</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Mauszeiger einfügen</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Text mit Umriss zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Text mit Hintergrund zeichnen</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Bild zuschneiden</value>
+  </data>
 </root>

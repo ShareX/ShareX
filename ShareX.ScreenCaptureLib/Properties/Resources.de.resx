@@ -239,4 +239,160 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Entf] Region entfernen</value>
   </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
+    <value>[Strg halten + Pfeiltasten] Region verschieben</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
+    <value>[Umschalt halten + Pfeiltasten] Region schneller verschieben/Größe ändern</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Umschalt halten + Pfeiltasten] Mausposition schneller bewegen</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
+    <value>[Strg halten] Auswahl verschieben</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
+    <value>[Strg + Mausrad] Aktuelles Werkzeug ändern</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
+    <value>[Tab] [Mittlere Maustaste] Letztes Anmerkungswerkzeug auswählen</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
+    <value>[Tab] [Mittlere Maustaste] Letztes Regionswerkzeug auswählen</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
+    <value>[Mausrad] Zoom verändern</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Rahmenfarbe...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Rahmengröße:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Füllfarbe...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Eckenradius</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixelgröße:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Hervorhebungsfarbe...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>Hotkeys anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Positions- und Größeninformation anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Lupe anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>FPS anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Animationen aktivieren</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
+    <value>[Strg + V] Bild oder Text einfügen</value>
+  </data>
+  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
+    <value>[Strg + Z] Form rückgängig machen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Formoptionen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Alles löschen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Eine Ebene nach vorne</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Eine Ebene nach hinten</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>In den Vordergrund</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>In den Hintergrund</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Bild speichern</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Bild speichern unter...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Bild in Zwischenablage kopieren</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Bild hochladen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Bild drucken...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Letzte Region aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Aufnehmen</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Bildeditor</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Bildgröße...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Um 90° im Uhrzeigersinn drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Um 90° gegen den Uhrzeigersinn drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Um 180° drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Horizontal spiegeln</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Vertikal spiegeln</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
+    <value>Editorhintergrund...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>Bild/Text einfügen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Lupenpixelanzahl:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Lupenpixelgröße:</value>
+  </data>
 </root>
