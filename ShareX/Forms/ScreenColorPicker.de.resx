@@ -126,4 +126,28 @@
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Zeigerposition:</value>
   </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Alles kopieren</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>RGB kopieren</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>Hex kopieren</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>CMYK kopieren</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>HSB kopieren</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Dezimal kopieren</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Position kopieren</value>
+  </data>
 </root>

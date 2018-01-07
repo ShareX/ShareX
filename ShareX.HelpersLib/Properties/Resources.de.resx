@@ -844,4 +844,10 @@ Möchtest du sie herunterladen?</value>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Standard</value>
   </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Text erkennen (OCR)</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>Texterkennung (OCR)</value>
+  </data>
 </root>

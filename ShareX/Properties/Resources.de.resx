@@ -474,4 +474,36 @@ Sind Sie sich sicher?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>ShareX beim Starten von Windows ausführen</value>
   </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Alle Hotkeys auf die Standardeinstellungen zurücksetzen?</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>Spalten anzeigen</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Bearbeiten...</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Mit ShareX hochladen</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Spalten ausblenden</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Immer im Vordergund</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Position fixieren</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Beim Start von ShareX öffnen</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Linke Maustaste zum verschieben gedrückt halten
+Rechte Maustaste um das Menü zu öffnen
+Mittlere Maustaste um die Aktionsleiste zu schließen</value>
+  </data>
 </root>
