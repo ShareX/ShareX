@@ -1488,7 +1488,11 @@ namespace ShareX.ScreenCaptureLib
 
         public void NewImage()
         {
+            Form.Pause();
+
             Image img = NewImageForm.CreateNewImage(Options, Form);
+
+            Form.Resume();
 
             if (img != null)
             {
@@ -1501,7 +1505,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void OpenImageFile()
         {
+            Form.Pause();
+
             string filePath = ImageHelpers.OpenImageFileDialog(Form);
+
+            Form.Resume();
+
             LoadImageFile(filePath);
         }
 
@@ -1523,7 +1532,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void InsertImageFile()
         {
+            Form.Pause();
+
             string filePath = ImageHelpers.OpenImageFileDialog(Form);
+
+            Form.Resume();
 
             if (!string.IsNullOrEmpty(filePath))
             {
@@ -1572,6 +1585,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void ChangeImageSize()
         {
+            Form.Pause();
+
             Size oldSize = Form.Canvas.Size;
 
             using (ImageSizeForm imageSizeForm = new ImageSizeForm(oldSize, Options.ImageEditorResizeInterpolationMode))
@@ -1593,6 +1608,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+
+            Form.Resume();
         }
 
         internal InterpolationMode GetInterpolationMode(ImageEditorInterpolationMode interpolationMode)
@@ -1615,6 +1632,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void ChangeCanvasSize()
         {
+            Form.Pause();
+
             using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm())
             {
                 if (canvasSizeForm.ShowDialog(Form) == DialogResult.OK)
@@ -1629,6 +1648,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+
+            Form.Resume();
         }
 
         private void AddCropTool()

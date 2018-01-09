@@ -642,12 +642,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem("New image...");
                 tsmiNewImage.Image = Resources.image_empty;
-                tsmiNewImage.Click += (sender, e) =>
-                {
-                    Form.Pause();
-                    NewImage();
-                    Form.Resume();
-                };
+                tsmiNewImage.Click += (sender, e) => NewImage();
                 tsddbImage.DropDownItems.Add(tsmiNewImage);
 
                 ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem("Open image file...");
