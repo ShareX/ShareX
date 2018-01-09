@@ -23,45 +23,53 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ImageScreenDrawingShape : ImageDrawingShape
+    public class ImageFileDrawingShape : ImageDrawingShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingImageScreen;
-
-        public override void OnCreated()
+        public override void OnCreating()
         {
-            if (IsValidShape)
-            {
-                Rectangle = RectangleInsideCanvas;
-                Image = Manager.CropImage(Rectangle);
-            }
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            if (Image == null)
+            if (!OpenImageDialog(true))
             {
                 Remove();
             }
             else
             {
-                base.OnCreated();
+                OnCreated();
+                ShowNodes();
             }
         }
 
-        public override void OnDraw(Graphics g)
+        public override void OnDoubleClicked()
         {
-            if (Image == null)
+            OpenImageDialog(false);
+        }
+
+        private bool OpenImageDialog(bool centerImage)
+        {
+            Manager.IsMoving = false;
+
+            string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
+
+            if (!string.IsNullOrEmpty(filepath))
             {
-                if (IsValidShape)
+                Image img = ImageHelpers.LoadImage(filepath);
+
+                if (img != null)
                 {
-                    Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
+                    SetImage(img, centerImage);
+
+                    return true;
                 }
             }
-            else
-            {
-                base.OnDraw(g);
-            }
+
+            return false;
         }
     }
 }

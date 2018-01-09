@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -33,7 +32,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImage;
 
-        public Image Image { get; private set; }
+        public Image Image { get; protected set; }
         public ImageEditorInterpolationMode ImageInterpolationMode { get; private set; }
 
         public override void OnConfigLoad()
@@ -70,27 +69,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool OpenImageDialog(bool centerImage)
-        {
-            Manager.IsMoving = false;
-
-            string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
-
-            if (!string.IsNullOrEmpty(filepath))
-            {
-                Image img = ImageHelpers.LoadImage(filepath);
-
-                if (img != null)
-                {
-                    SetImage(img, centerImage);
-
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public override void OnDraw(Graphics g)
         {
             DrawImage(g);
@@ -108,27 +86,6 @@ namespace ShareX.ScreenCaptureLib
                 g.PixelOffsetMode = PixelOffsetMode.Default;
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
-        }
-
-        public override void OnCreating()
-        {
-            Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-
-            if (!OpenImageDialog(true))
-            {
-                Remove();
-            }
-            else
-            {
-                OnCreated();
-                ShowNodes();
-            }
-        }
-
-        public override void OnDoubleClicked()
-        {
-            OpenImageDialog(false);
         }
 
         public override void Dispose()

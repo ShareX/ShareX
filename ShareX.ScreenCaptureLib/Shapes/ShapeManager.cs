@@ -930,7 +930,7 @@ namespace ShareX.ScreenCaptureLib
                     shape = new StepDrawingShape();
                     break;
                 case ShapeType.DrawingImage:
-                    shape = new ImageDrawingShape();
+                    shape = new ImageFileDrawingShape();
                     break;
                 case ShapeType.DrawingImageScreen:
                     shape = new ImageScreenDrawingShape();

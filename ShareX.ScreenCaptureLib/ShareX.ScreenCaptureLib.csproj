@@ -140,6 +140,7 @@
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageFileDrawingShape.cs" />
     <Compile Include="Shapes\Tool\BaseTool.cs" />
     <Compile Include="Shapes\Tool\CropTool.cs" />
     <Compile Include="Shapes\Drawing\CursorDrawingShape.cs" />
