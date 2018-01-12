@@ -59,6 +59,8 @@
             this.tsmiWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssCapture1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiShowCursor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -259,6 +261,8 @@
             this.btnCloseNews = new System.Windows.Forms.Button();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
+            this.tssTrayCapture1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayShowCursor = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -440,7 +444,9 @@
             this.tsmiScrollingCapture,
             this.tsmiWebpageCapture,
             this.tsmiTextCapture,
-            this.tsmiAutoCapture});
+            this.tsmiAutoCapture,
+            this.tssCapture1,
+            this.tsmiShowCursor});
             this.tsddbCapture.Image = global::ShareX.Properties.Resources.camera;
             resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
             this.tsddbCapture.Name = "tsddbCapture";
@@ -534,6 +540,19 @@
             this.tsmiAutoCapture.Name = "tsmiAutoCapture";
             resources.ApplyResources(this.tsmiAutoCapture, "tsmiAutoCapture");
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
+            // 
+            // tssCapture1
+            // 
+            this.tssCapture1.Name = "tssCapture1";
+            resources.ApplyResources(this.tssCapture1, "tssCapture1");
+            // 
+            // tsmiShowCursor
+            // 
+            this.tsmiShowCursor.CheckOnClick = true;
+            this.tsmiShowCursor.Image = global::ShareX.Properties.Resources.cursor;
+            this.tsmiShowCursor.Name = "tsmiShowCursor";
+            resources.ApplyResources(this.tsmiShowCursor, "tsmiShowCursor");
+            this.tsmiShowCursor.Click += new System.EventHandler(this.tsmiShowCursor_Click);
             // 
             // tsddbUpload
             // 
@@ -1454,7 +1473,9 @@
             this.tsmiTrayScrollingCapture,
             this.tsmiTrayWebpageCapture,
             this.tsmiTrayTextCapture,
-            this.tsmiTrayAutoCapture});
+            this.tsmiTrayAutoCapture,
+            this.tssTrayCapture1,
+            this.tsmiTrayShowCursor});
             this.tsmiTrayCapture.Image = global::ShareX.Properties.Resources.camera;
             this.tsmiTrayCapture.Name = "tsmiTrayCapture";
             resources.ApplyResources(this.tsmiTrayCapture, "tsmiTrayCapture");
@@ -2039,6 +2060,19 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
+            // tssTrayCapture1
+            // 
+            this.tssTrayCapture1.Name = "tssTrayCapture1";
+            resources.ApplyResources(this.tssTrayCapture1, "tssTrayCapture1");
+            // 
+            // tsmiTrayShowCursor
+            // 
+            this.tsmiTrayShowCursor.CheckOnClick = true;
+            this.tsmiTrayShowCursor.Image = global::ShareX.Properties.Resources.cursor;
+            this.tsmiTrayShowCursor.Name = "tsmiTrayShowCursor";
+            resources.ApplyResources(this.tsmiTrayShowCursor, "tsmiTrayShowCursor");
+            this.tsmiTrayShowCursor.Click += new System.EventHandler(this.tsmiShowCursor_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2315,5 +2349,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewSide;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewBottom;
         private System.Windows.Forms.ToolStripSeparator tssImagePreview;
+        private System.Windows.Forms.ToolStripSeparator tssCapture1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowCursor;
+        private System.Windows.Forms.ToolStripSeparator tssTrayCapture1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowCursor;
     }
 }

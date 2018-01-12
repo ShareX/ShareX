@@ -272,7 +272,8 @@ namespace ShareX
             UpdateDestinationStates();
             UpdateContextMenu();
             UpdateToggleHotkeyButton();
-            AfterSettingsJobs();
+            AfterTaskSettingsJobs();
+            AfterApplicationSettingsJobs();
 
             InitHotkeys();
 
@@ -691,7 +692,7 @@ namespace ShareX
             }
         }
 
-        private void AfterSettingsJobs()
+        private void AfterApplicationSettingsJobs()
         {
             if (Program.Settings.TrayTextMoreInfo)
             {
@@ -716,6 +717,11 @@ namespace ShareX
             Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
             Program.UpdateManager.ConfigureAutoUpdate();
 #endif
+        }
+
+        private void AfterTaskSettingsJobs()
+        {
+            tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
         }
 
         public void UpdateCheckStates()
@@ -1412,6 +1418,12 @@ namespace ShareX
             TaskHelpers.OpenAutoCapture();
         }
 
+        private void tsmiShowCursor_Click(object sender, EventArgs e)
+        {
+            Program.DefaultTaskSettings.CaptureSettings.ShowCursor = ((ToolStripMenuItem)sender).Checked;
+            AfterTaskSettingsJobs();
+        }
+
         private void tsbFileUpload_Click(object sender, EventArgs e)
         {
             UploadManager.UploadFile();
@@ -1539,6 +1551,7 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
+            AfterTaskSettingsJobs();
             SettingManager.SaveApplicationConfigAsync();
         }
 
@@ -1549,7 +1562,7 @@ namespace ShareX
                 settingsForm.ShowDialog();
             }
 
-            AfterSettingsJobs();
+            AfterApplicationSettingsJobs();
             UpdateWorkflowsMenu();
             SettingManager.SaveApplicationConfigAsync();
         }

@@ -1474,6 +1474,7 @@
     <None Include="Resources\color.png" />
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\pipette.png" />
+    <None Include="Resources\cursor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
