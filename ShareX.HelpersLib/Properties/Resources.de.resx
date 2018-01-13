@@ -121,7 +121,7 @@
     <value>Dateipfad</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>Dateipfad ohne Erweiterung + "Output Dateiname Erweiterung"</value>
+    <value>Dateipfad ohne Erweiterung + "Output Dateinamenerweiterung"</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Nach CSS durchsuchen...</value>
@@ -130,13 +130,13 @@
     <value>Anhalten</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Zwischenablageninhalt: Bild (Größe {0}x{1})</value>
+    <value>Zwischenablageninhalt: Bild (Größe {0}x{1} Pixel)</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Zwischenablageninhalt: Länge: {0})</value>
+    <value>Zwischenablageninhalt: Text (Länge: {0})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Zwischenablageninhalt: Datei (Zahl: {0})</value>
+    <value>Zwischenablageninhalt: Datei (Menge: {0})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Zwischenablage ist leer oder enthält unbekannte Daten.</value>
@@ -169,7 +169,7 @@
     <value>Drucken</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Exportieren fehlgeschlagen</value>
+    <value>Export fehlgeschlagen.</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Fehler</value>
@@ -225,7 +225,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Lädt Bild...</value>
   </data>
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Schneiden</value>
+    <value>Ausschneiden</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>Kopieren</value>
@@ -234,16 +234,16 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Einfügen</value>
   </data>
   <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
-    <value>URL um Einstellungen herunterzuladen von</value>
+    <value>URL um Einstellungen herunterzuladen</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Lädt runter...</value>
+    <value>Lädt herunter...</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Erhalte Dateigröße.</value>
+    <value>Ermittle Dateigröße</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
     <value>Lädt Bild: {0}%</value>
@@ -261,13 +261,13 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Herunterladen fehlgeschlagen:</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>16 Farben</value>
+    <value>4 Bit (16 Farben, Schnelles Kodieren, aber schlechtere Qualität)</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>256 Farben (Langsames Kodieren, aber bessere Qualität)</value>
+    <value>8 Bit (256 Farben, Langsames Kodieren, aber bessere Qualität)</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
-    <value>Standard .NET Kodierung (Schnelles kodieren, jedoch durchschnittsqualität)</value>
+    <value>Standard .NET Kodierung (Mittelmäßig schnelles kodieren, jedoch durchschnittsqualität)</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Paletten Größenwandler Grauwert 256 Farben</value>
@@ -294,10 +294,10 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Aus Zwischenablage hochladen</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Aus Zwischenablage mit Inhaltsviewer hochladen</value>
+    <value>Aus Zwischenablage mit Content Viewer hochladen</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Drag &amp; Drop hochladen</value>
+    <value>per Drag &amp; Drop hochladen</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Datei hochladen</value>
@@ -414,22 +414,22 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Aktion ausführen</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Bild zu Datei speichern</value>
+    <value>Bild in Datei speichern</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Bild zu Datei speichern als...</value>
+    <value>Bild in Datei speichern als...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Zeige Datei im Windows Explorer</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Thumbnailbild zu Datei speichern</value>
+    <value>Thumbnailbild in Datei speichern</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>Bild drucken</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Bild zum Host hochladen</value>
+    <value>Bild bei Host hochladen</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>URL in Zwischenablage kopieren</value>
@@ -447,7 +447,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>URL kürzen</value>
   </data>
   <data name="FileExistAction_Ask" xml:space="preserve">
-    <value>Fragen was jetzt zutun ist</value>
+    <value>Fragen, was zu tun ist</value>
   </data>
   <data name="FileExistAction_Cancel" xml:space="preserve">
     <value>Nicht speichern</value>
@@ -484,7 +484,7 @@ Möchtest du sie herunterladen und installieren?</value>
     <value>Update ist verfügbar</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Konnte kein Verzeichnis erstellen, bitte checke deine Pfadeinstellungen.</value>
+    <value>Konnte kein Verzeichnis erstellen</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Farbauswähler</value>
@@ -637,7 +637,7 @@ Möchtest du sie herunterladen und installieren?</value>
     <value>Werkzeuge</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
-    <value>Webpage Aufnahme</value>
+    <value>Websitenaufnahme</value>
   </data>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Bildschirmaufnahme</value>
@@ -725,7 +725,7 @@ Möchtest du sie herunterladen?</value>
     <value>Manuell</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Nach .exe durchsuchen...</value>
+    <value>Nach ausführbarer Datei durchsuchen...</value>
   </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Computername</value>
@@ -803,7 +803,7 @@ Möchtest du sie herunterladen?</value>
     <value>Derzeitiges Jahr (2 Ziffern)</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
-    <value>Zeige Schnellzugriff Menü</value>
+    <value>Zeige Schnellzugriffsmenü</value>
   </data>
   <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
     <value>Andere</value>
@@ -844,55 +844,28 @@ Möchtest du sie herunterladen?</value>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Standard</value>
   </data>
-  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+  <data name="AfterCaptureTasks_doOCR" xml:space="preserve">
     <value>Text erkennen (OCR)</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Texterkennung (OCR)</value>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Datei-Uploader</value>
   </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Unkenntlich machen</value>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Bild-Uploader</value>
   </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Hervorheben</value>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Text-Uploader</value>
   </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Verpixeln</value>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL-Teiler</value>
   </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Pfeil zeichnen</value>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL-Kürzer</value>
   </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Ellipse zeichnen</value>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Bildschirmaufnahme abbrechen</value>
   </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Linie zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Rechteck zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Schritt hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Freihand zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Bild aus Datei hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Sprechblase hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Mauszeiger einfügen</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Text mit Umriss zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Text mit Hintergrund zeichnen</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Bild zuschneiden</value>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Bildschirmaufnahme</value>
   </data>
 </root>
