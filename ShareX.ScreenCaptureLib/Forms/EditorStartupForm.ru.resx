@@ -118,30 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Размер изображения</value>
+    <value>ShareX - Редактор изображений</value>
   </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Ширина:</value>
+  <data name="btnOpenImageFile.Text" xml:space="preserve">
+    <value>Открыть файл изображения...</value>
   </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Высота:</value>
+  <data name="btnCreateNewImage.Text" xml:space="preserve">
+    <value>Создать новое изображение...</value>
   </data>
-  <data name="cbAspectRatio.Text" xml:space="preserve">
-    <value>Сохранять пропорции</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>ОК</value>
+  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Загрузить из буфера обмена</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
-  </data>
-  <data name="lblWidthPixels.Text" xml:space="preserve">
-    <value>пикселей</value>
-  </data>
-  <data name="lblHeightPixels.Text" xml:space="preserve">
-    <value>пикселей</value>
-  </data>
-  <data name="lblResampling.Text" xml:space="preserve">
-    <value>Масштабирование:</value>
   </data>
 </root>

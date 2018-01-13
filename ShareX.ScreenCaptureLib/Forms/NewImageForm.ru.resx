@@ -118,30 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Размер изображения</value>
-  </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Ширина:</value>
-  </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Высота:</value>
-  </data>
-  <data name="cbAspectRatio.Text" xml:space="preserve">
-    <value>Сохранять пропорции</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>ОК</value>
+    <value>ShareX - Новое изображение</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
-  <data name="lblWidthPixels.Text" xml:space="preserve">
-    <value>пикселей</value>
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>Прозрачный</value>
+  </data>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>Цвет фона</value>
+  </data>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>Изменить цвет...</value>
   </data>
   <data name="lblHeightPixels.Text" xml:space="preserve">
     <value>пикселей</value>
   </data>
-  <data name="lblResampling.Text" xml:space="preserve">
-    <value>Масштабирование:</value>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>пикселей</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
   </data>
 </root>
