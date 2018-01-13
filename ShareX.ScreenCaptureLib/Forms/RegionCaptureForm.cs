@@ -1393,19 +1393,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                foreach (BaseShape shape in ShapeManager.Shapes)
-                {
-                    shape.Move(-CanvasRectangle.X, -CanvasRectangle.Y);
-                }
-
-                Image img = GetOutputImage();
-
-                foreach (BaseShape shape in ShapeManager.Shapes)
-                {
-                    shape.Move(CanvasRectangle.X, CanvasRectangle.Y);
-                }
-
-                return img;
+                return ShapeManager.RenderOutputImage(Canvas, CanvasRectangle.Location);
             }
             else if (Result == RegionResult.Region || Result == RegionResult.LastRegion)
             {
@@ -1420,14 +1408,14 @@ namespace ShareX.ScreenCaptureLib
                     gp = regionFillPath;
                 }
 
-                using (Image img = GetOutputImage())
+                using (Image img = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
                 {
-                    return RegionCaptureTasks.ApplyRegionPathToImage(img, gp);
+                    return ShapeManager.RenderOutputImage(img, rect.Location);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
             {
-                return GetOutputImage();
+                return ShapeManager.RenderOutputImage(Canvas);
             }
             else if (Result == RegionResult.Monitor)
             {
@@ -1438,7 +1426,7 @@ namespace ShareX.ScreenCaptureLib
                     Screen screen = screens[MonitorIndex];
                     Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
 
-                    using (Image img = GetOutputImage())
+                    using (Image img = ShapeManager.RenderOutputImage(Canvas))
                     {
                         return ImageHelpers.CropImage(img, screenRect);
                     }
@@ -1448,18 +1436,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
 
-                using (Image img = GetOutputImage())
+                using (Image img = ShapeManager.RenderOutputImage(Canvas))
                 {
                     return ImageHelpers.CropImage(img, activeScreenRect);
                 }
             }
 
             return null;
-        }
-
-        private Image GetOutputImage()
-        {
-            return ShapeManager.RenderOutputImage(Canvas);
         }
 
         internal void OnSaveImageRequested()

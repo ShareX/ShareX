@@ -41,7 +41,7 @@ namespace ShareX
                     {
                         using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                         {
-                            Image img = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
+                            Image img = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath, out _);
                             return new ImageInfo(img);
                         }
                     }

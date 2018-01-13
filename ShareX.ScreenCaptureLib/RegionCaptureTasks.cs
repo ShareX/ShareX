@@ -145,15 +145,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp)
+        public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp, out Rectangle resultArea)
         {
             if (img != null && gp != null)
             {
                 Rectangle regionArea = Rectangle.Round(gp.GetBounds());
                 Rectangle screenRectangle = CaptureHelpers.GetScreenBounds0Based();
-                regionArea = Rectangle.Intersect(regionArea, screenRectangle);
+                resultArea = Rectangle.Intersect(regionArea, screenRectangle);
 
-                if (regionArea.IsValid())
+                if (resultArea.IsValid())
                 {
                     using (Bitmap bmp = img.CreateEmptyBitmap())
                     using (Graphics g = Graphics.FromImage(bmp))
@@ -164,11 +164,12 @@ namespace ShareX.ScreenCaptureLib
 
                         g.FillPath(brush, gp);
 
-                        return ImageHelpers.CropBitmap(bmp, regionArea);
+                        return ImageHelpers.CropBitmap(bmp, resultArea);
                     }
                 }
             }
 
+            resultArea = Rectangle.Empty;
             return null;
         }
 

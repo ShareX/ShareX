@@ -1099,11 +1099,18 @@ namespace ShareX.ScreenCaptureLib
 
         public Image RenderOutputImage(Image img)
         {
+            return RenderOutputImage(img, Point.Empty);
+        }
+
+        public Image RenderOutputImage(Image img, Point offset)
+        {
             Bitmap bmp = new Bitmap(img);
 
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {
                 IsRenderingOutput = true;
+
+                MoveAll(-offset.X, -offset.Y);
 
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
@@ -1123,6 +1130,8 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                 }
+
+                MoveAll(offset);
 
                 IsRenderingOutput = false;
             }
@@ -1324,9 +1333,12 @@ namespace ShareX.ScreenCaptureLib
 
         public void MoveAll(int x, int y)
         {
-            foreach (BaseShape shape in Shapes)
+            if (x != 0 || y != 0)
             {
-                shape.Move(x, y);
+                foreach (BaseShape shape in Shapes)
+                {
+                    shape.Move(x, y);
+                }
             }
         }
 
