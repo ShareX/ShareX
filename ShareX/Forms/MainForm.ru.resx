@@ -717,4 +717,10 @@
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Внизу</value>
   </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Показывать курсор</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Показывать курсор</value>
+  </data>
 </root>

@@ -1120,4 +1120,22 @@
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Полноэкранный</value>
   </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Авторазмер</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>Ступенчатая</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
+    <value>Бикубическая</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>Бикубическая (высококачественная)</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
+    <value>Билинейная (высококачественная)</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
+    <value>Билинейная</value>
+  </data>
 </root>

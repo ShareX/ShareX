@@ -475,7 +475,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
-            tscbImageInterpolationMode = new ToolStripLabeledComboBox("Interpolation mode");
+            tscbImageInterpolationMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_InterpolationMode);
             tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorInterpolationMode>());
             tscbImageInterpolationMode.Content.SelectedIndexChanged += (sender, e) =>
             {
@@ -535,7 +535,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiArrowHeadsBothSide);
 
-            tslnudStepFontSize = new ToolStripLabeledNumericUpDown("Font size:");
+            tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_FontSize);
             tslnudStepFontSize.Content.Minimum = 10;
             tslnudStepFontSize.Content.Maximum = 100;
             tslnudStepFontSize.Content.ValueChanged = (sender, e) =>
@@ -545,7 +545,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
 
-            tsmiStepUseLetters = new ToolStripMenuItem("Use letters");
+            tsmiStepUseLetters = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_UseLetters);
             tsmiStepUseLetters.Checked = false;
             tsmiStepUseLetters.CheckOnClick = true;
             tsmiStepUseLetters.Click += (sender, e) =>
@@ -640,22 +640,22 @@ namespace ShareX.ScreenCaptureLib
                 tsddbImage.Image = Resources.image__pencil;
                 tsMain.Items.Add(tsddbImage);
 
-                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem("New image...");
+                ToolStripMenuItem tsmiNewImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_NewImage);
                 tsmiNewImage.Image = Resources.image_empty;
                 tsmiNewImage.Click += (sender, e) => NewImage();
                 tsddbImage.DropDownItems.Add(tsmiNewImage);
 
-                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem("Open image file...");
+                ToolStripMenuItem tsmiOpenImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_OpenImageFile);
                 tsmiOpenImage.Image = Resources.folder_open_image;
                 tsmiOpenImage.Click += (sender, e) => OpenImageFile();
                 tsddbImage.DropDownItems.Add(tsmiOpenImage);
 
-                ToolStripMenuItem tsmiInsertImageFile = new ToolStripMenuItem("Insert image file...");
+                ToolStripMenuItem tsmiInsertImageFile = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_InsertImageFile);
                 tsmiInsertImageFile.Image = Resources.image__plus;
                 tsmiInsertImageFile.Click += (sender, e) => InsertImageFile();
                 tsddbImage.DropDownItems.Add(tsmiInsertImageFile);
 
-                ToolStripMenuItem tsmiInsertImageFromScreen = new ToolStripMenuItem("Insert image from screen...");
+                ToolStripMenuItem tsmiInsertImageFromScreen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_InsertImageFromScreen);
                 tsmiInsertImageFromScreen.Image = Resources.camera;
                 tsmiInsertImageFromScreen.Click += (sender, e) => InsertImageFromScreen();
                 tsddbImage.DropDownItems.Add(tsmiInsertImageFromScreen);
@@ -672,7 +672,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiCanvasSize.Click += (sender, e) => ChangeCanvasSize();
                 tsddbImage.DropDownItems.Add(tsmiCanvasSize);
 
-                ToolStripMenuItem tsmiCropImage = new ToolStripMenuItem("Crop image...");
+                ToolStripMenuItem tsmiCropImage = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_CropImage);
                 tsmiCropImage.Image = Resources.image_crop;
                 tsmiCropImage.Click += (sender, e) => AddCropTool();
                 tsddbImage.DropDownItems.Add(tsmiCropImage);
@@ -795,7 +795,7 @@ namespace ShareX.ScreenCaptureLib
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
                 tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
 
-                ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem("Auto close editor on task");
+                ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_AutoCloseEditorOnTask);
                 tsmiAutoCloseEditorOnTask.Checked = Options.AutoCloseEditorOnTask;
                 tsmiAutoCloseEditorOnTask.CheckOnClick = true;
                 tsmiAutoCloseEditorOnTask.Click += (sender, e) => Options.AutoCloseEditorOnTask = tsmiAutoCloseEditorOnTask.Checked;

@@ -86,13 +86,13 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.llAttribution);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
             this.Controls.Add(this.cbLanguages);
             this.Controls.Add(this.pbProgress);
             this.Controls.Add(this.btnStartOCR);
+            this.Controls.Add(this.llAttribution);
             this.Name = "OCRSpaceForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.OCRSpaceResultForm_Shown);

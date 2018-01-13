@@ -1193,4 +1193,7 @@ store.book[0].title</value>
   <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
     <value>Получить ключ API...</value>
   </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
 </root>

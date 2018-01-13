@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
             nudWidth.TextChanged += NudWidth_TextChanged;
             nudHeight.TextChanged += NudHeight_TextChanged;
 
-            cbResampling.Items.AddRange(Helpers.GetEnumNamesProper<ImageEditorInterpolationMode>());
+            cbResampling.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorInterpolationMode>());
             cbResampling.SelectedIndex = (int)InterpolationMode;
 
             ignoreValueChanged = false;
