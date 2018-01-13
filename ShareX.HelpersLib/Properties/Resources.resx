@@ -1124,4 +1124,19 @@ Would you like to download it?</value>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Auto size</value>
   </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>High quality bicubic</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
+    <value>Bicubic</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
+    <value>High quality bilinear</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
+    <value>Bilinear</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbor</value>
+  </data>
 </root>

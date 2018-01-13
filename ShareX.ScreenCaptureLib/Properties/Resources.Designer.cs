@@ -340,6 +340,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard does not contain an image..
+        /// </summary>
+        internal static string EditorStartupForm_ClipboardDoesNotContainAnImage {
+            get {
+                return ResourceManager.GetString("EditorStartupForm_ClipboardDoesNotContainAnImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap eraser {
@@ -1512,6 +1521,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto close editor on task.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCloseEditorOnTask {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCloseEditorOnTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto crop image....
         /// </summary>
         internal static string ShapeManager_CreateToolbar_AutoCropImage {
@@ -1580,6 +1598,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_CopyImageToClipboard {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_CopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CropImage", resourceCulture);
             }
         }
         
@@ -1656,6 +1683,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Font size:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FontSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Image {
@@ -1674,11 +1710,56 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insert image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image from screen....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFromScreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpolation mode.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InterpolationMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture last region.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_LastRegion {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_LastRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_NewImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_NewImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_OpenImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_OpenImageFile", resourceCulture);
             }
         }
         
@@ -1796,6 +1877,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use letters.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_UseLetters {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_UseLetters", resourceCulture);
             }
         }
         

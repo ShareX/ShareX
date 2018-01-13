@@ -265,7 +265,7 @@ namespace ShareX.ScreenCaptureLib
         Fullscreen
     }
 
-    public enum ImageEditorInterpolationMode
+    public enum ImageEditorInterpolationMode // Localized
     {
         HighQualityBicubic,
         Bicubic,
