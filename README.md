@@ -9,3 +9,8 @@
 [![Screenshot](https://getsharex.com/img/ShareX_Animation.gif)](https://getsharex.com)
 
 ### Check [getsharex.com](https://getsharex.com) for more info.
+
+[getsharex.com](https://getsharex.com) has Docs, including FAQ.
+Contribute to docs via <https://github.com/ShareX/sharex.github.io>
+
+
