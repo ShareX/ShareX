@@ -711,6 +711,13 @@ namespace ShareX.ScreenCaptureLib
                 tsmiFlipVertical.Click += (sender, e) => RotateImage(RotateFlipType.RotateNoneFlipY);
                 tsddbImage.DropDownItems.Add(tsmiFlipVertical);
 
+                tsddbImage.DropDownItems.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiAddImageEffects = new ToolStripMenuItem("Add image effects...");
+                tsmiAddImageEffects.Image = Resources.image_saturation;
+                tsmiAddImageEffects.Click += (sender, e) => AddImageEffects();
+                tsddbImage.DropDownItems.Add(tsmiAddImageEffects);
+
                 #endregion
             }
 

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -1695,6 +1696,29 @@ namespace ShareX.ScreenCaptureLib
             Image img = (Image)Form.Canvas.Clone();
             img.RotateFlip(type);
             UpdateCanvas(img);
+        }
+
+        private void AddImageEffects()
+        {
+            Form.Pause();
+
+            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(Form.Canvas, new List<ImageEffectPreset>() { new ImageEffectPreset() }, 0))
+            {
+                imageEffectsForm.ShowDialog(Form);
+
+                if (imageEffectsForm.Presets.IsValidIndex(imageEffectsForm.SelectedPresetIndex))
+                {
+                    ImageEffectPreset preset = imageEffectsForm.Presets[imageEffectsForm.SelectedPresetIndex];
+                    Image img = preset.ApplyEffects(Form.Canvas);
+
+                    if (img != null)
+                    {
+                        UpdateCanvas(img);
+                    }
+                }
+            }
+
+            Form.Resume();
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

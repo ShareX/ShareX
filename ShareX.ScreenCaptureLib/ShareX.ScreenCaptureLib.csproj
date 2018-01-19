@@ -213,12 +213,17 @@
       <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
       <Name>ShareX.HelpersLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj">
+      <Project>{d13441b6-96e1-4d1b-8a95-58a7d6cb1e24}</Project>
+      <Name>ShareX.ImageEffectsLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj">
       <Project>{1a190e53-1419-4cc2-b0e5-3bc7ea861c8b}</Project>
       <Name>ShareX.MediaLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\image-saturation.png" />
     <None Include="Resources\image-select.png" />
     <None Include="Resources\image-empty.png" />
     <None Include="Resources\image--plus.png" />
