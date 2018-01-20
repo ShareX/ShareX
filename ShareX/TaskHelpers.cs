@@ -952,7 +952,7 @@ namespace ShareX
                     using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
                         taskSettings.ImageSettings.SelectedImageEffectPreset))
                     {
-                        imageEffectsForm.EditorMode();
+                        imageEffectsForm.ToolMode();
                         imageEffectsForm.ShowDialog();
                         //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                     }

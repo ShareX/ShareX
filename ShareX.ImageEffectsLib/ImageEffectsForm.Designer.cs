@@ -52,6 +52,7 @@
             this.lblPresetName = new System.Windows.Forms.Label();
             this.txtPresetName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +135,7 @@
             // eiImageEffects
             // 
             resources.ApplyResources(this.eiImageEffects, "eiImageEffects");
+            this.eiImageEffects.DefaultFileName = null;
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;
             this.eiImageEffects.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
@@ -222,9 +224,17 @@
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ImageEffectsForm
             // 
@@ -232,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPresetName);
             this.Controls.Add(this.lblPresetName);
@@ -282,6 +293,7 @@
         private System.Windows.Forms.Label lblPresetName;
         private System.Windows.Forms.TextBox txtPresetName;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnOK;
     }
 }
 

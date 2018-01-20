@@ -1704,16 +1704,20 @@ namespace ShareX.ScreenCaptureLib
 
             using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(Form.Canvas, new List<ImageEffectPreset>() { new ImageEffectPreset() }, 0))
             {
-                imageEffectsForm.ShowDialog(Form);
+                imageEffectsForm.EditorMode();
 
-                if (imageEffectsForm.Presets.IsValidIndex(imageEffectsForm.SelectedPresetIndex))
+                if (imageEffectsForm.ShowDialog(Form) == DialogResult.OK)
                 {
-                    ImageEffectPreset preset = imageEffectsForm.Presets[imageEffectsForm.SelectedPresetIndex];
-                    Image img = preset.ApplyEffects(Form.Canvas);
+                    ImageEffectPreset preset = imageEffectsForm.Presets.ReturnIfValidIndex(imageEffectsForm.SelectedPresetIndex);
 
-                    if (img != null)
+                    if (preset != null)
                     {
-                        UpdateCanvas(img);
+                        Image img = preset.ApplyEffects(Form.Canvas);
+
+                        if (img != null)
+                        {
+                            UpdateCanvas(img);
+                        }
                     }
                 }
             }

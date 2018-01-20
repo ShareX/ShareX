@@ -55,11 +55,18 @@ namespace ShareX.ImageEffectsLib
             AddAllEffectsToContextMenu();
         }
 
-        public void EditorMode()
+        public void ToolMode()
         {
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
+        }
+
+        public void EditorMode()
+        {
+            btnOK.Visible = true;
+            // TODO: Translate
+            btnClose.Text = "Cancel";
         }
 
         private void AddAllEffectsToContextMenu()
@@ -578,6 +585,12 @@ namespace ShareX.ImageEffectsLib
                     UpdatePreview();
                 }
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
