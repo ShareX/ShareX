@@ -128,6 +128,7 @@
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
     <Compile Include="ImageEffectPreset.cs" />
+    <Compile Include="Manipulations\AutoCrop.cs" />
     <Compile Include="Manipulations\Crop.cs" />
     <Compile Include="Manipulations\RoundedCorners.cs" />
     <Compile Include="Manipulations\Skew.cs" />

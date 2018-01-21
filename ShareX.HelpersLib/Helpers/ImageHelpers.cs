@@ -1782,10 +1782,6 @@ namespace ShareX.HelpersLib
             return crop;
         }
 
-        /// <summary>
-        /// If crop rectangle and source image rectangle is same then null will be returned.
-        /// After auto crop, source image will be disposed.
-        /// </summary>
         public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
@@ -1802,7 +1798,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return null;
+            return bmp;
         }
 
         public static RotateFlipType RotateImageByExifOrientationData(Image img, bool removeExifOrientationData = true)

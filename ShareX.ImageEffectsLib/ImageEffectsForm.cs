@@ -82,6 +82,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(DrawText));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
+                typeof(AutoCrop),
                 typeof(Canvas),
                 typeof(Crop),
                 typeof(Flip),
