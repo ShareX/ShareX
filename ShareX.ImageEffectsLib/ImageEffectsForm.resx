@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
     <value>pgSettings</value>
@@ -151,7 +151,7 @@
     <value>104, 24</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add</value>
@@ -171,6 +171,9 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 72</value>
   </data>
@@ -178,7 +181,7 @@
     <value>168, 424</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;lvEffects.Name" xml:space="preserve">
     <value>lvEffects</value>
@@ -192,9 +195,6 @@
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 40</value>
   </data>
@@ -202,7 +202,7 @@
     <value>104, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remove</value>
@@ -226,7 +226,7 @@
     <value>104, 24</value>
   </data>
   <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Clear</value>
@@ -250,7 +250,7 @@
     <value>104, 24</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicate</value>
@@ -280,7 +280,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Save image...</value>
@@ -310,7 +310,7 @@
     <value>192, 24</value>
   </data>
   <data name="eiImageEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Name" xml:space="preserve">
     <value>eiImageEffects</value>
@@ -334,7 +334,7 @@
     <value>432, 424</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;pbResult.Name" xml:space="preserve">
     <value>pbResult</value>
@@ -369,6 +369,18 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>From file...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>From clipboard</value>
+  </data>
   <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 48</value>
   </data>
@@ -382,7 +394,7 @@
     <value>120, 24</value>
   </data>
   <data name="mbLoadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Load image</value>
@@ -402,18 +414,6 @@
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>From file...</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>From clipboard</value>
-  </data>
   <data name="btnAddPreset.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
@@ -421,7 +421,7 @@
     <value>136, 23</value>
   </data>
   <data name="btnAddPreset.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>2</value>
   </data>
   <data name="btnAddPreset.Text" xml:space="preserve">
     <value>New preset</value>
@@ -445,7 +445,7 @@
     <value>136, 23</value>
   </data>
   <data name="btnRemovePreset.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
   </data>
   <data name="btnRemovePreset.Text" xml:space="preserve">
     <value>Remove preset</value>
@@ -469,7 +469,7 @@
     <value>304, 21</value>
   </data>
   <data name="cbPresets.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbPresets.Name" xml:space="preserve">
     <value>cbPresets</value>
@@ -493,7 +493,7 @@
     <value>38, 13</value>
   </data>
   <data name="lblPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>5</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Name:</value>
@@ -510,6 +510,9 @@
   <data name="&gt;&gt;lblPresetName.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="txtPresetName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="txtPresetName.Location" type="System.Drawing.Point, System.Drawing">
     <value>672, 8</value>
   </data>
@@ -517,7 +520,7 @@
     <value>288, 20</value>
   </data>
   <data name="txtPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtPresetName.Name" xml:space="preserve">
     <value>txtPresetName</value>
@@ -541,7 +544,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>1</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -558,6 +561,9 @@
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>712, 504</value>
   </data>
@@ -565,7 +571,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>0</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
