@@ -29,7 +29,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -221,7 +220,7 @@ namespace ShareX.ImageEffectsLib
         {
             btnRemovePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
             btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
-            btnClear.Enabled = btnRefresh.Enabled = lvEffects.Items.Count > 0;
+            btnClear.Enabled = lvEffects.Items.Count > 0;
         }
 
         private Image ApplyEffects()
@@ -401,18 +400,6 @@ namespace ShareX.ImageEffectsLib
             RemoveSelectedEffects();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ImageEffectPreset preset = GetSelectedPreset();
-
-            if (preset != null)
-            {
-                lvEffects.Items.Clear();
-                preset.Effects.Clear();
-                UpdatePreview();
-            }
-        }
-
         private void btnDuplicate_Click(object sender, EventArgs e)
         {
             ImageEffectPreset preset = GetSelectedPreset();
@@ -434,6 +421,18 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                lvEffects.Items.Clear();
+                preset.Effects.Clear();
+                UpdatePreview();
+            }
+        }
+
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
             ImageEffectPreset preset = GetSelectedPreset();
@@ -443,11 +442,6 @@ namespace ShareX.ImageEffectsLib
                 preset.Effects.Move(oldIndex, newIndex);
                 UpdatePreview();
             }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            UpdatePreview();
         }
 
         private void lvEffects_SelectedIndexChanged(object sender, EventArgs e)
