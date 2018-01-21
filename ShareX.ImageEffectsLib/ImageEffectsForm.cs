@@ -50,6 +50,10 @@ namespace ShareX.ImageEffectsLib
             Icon = ShareXResources.Icon;
             DefaultImage = img;
             Presets = presets;
+            if (Presets.Count == 0)
+            {
+                Presets.Add(new ImageEffectPreset());
+            }
             SelectedPresetIndex = selectedPresetIndex;
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             AddAllEffectsToContextMenu();

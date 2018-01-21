@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -88,5 +89,7 @@ namespace ShareX.ScreenCaptureLib
         public Size EditorNewImageSize = new Size(800, 600);
         public bool EditorNewImageTransparent = false;
         public Color EditorNewImageBackgroundColor = Color.White;
+        public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
+        public int SelectedImageEffectPreset = 0;
     }
 }
