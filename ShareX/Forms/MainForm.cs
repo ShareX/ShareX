@@ -537,7 +537,8 @@ namespace ShareX
             {
                 for (int i = 0; i < parent.DropDownItems.Count; i++)
                 {
-                    parent.DropDownItems[i].Enabled = UploadersConfigValidator.Validate<T>(i, Program.UploadersConfig);
+                    parent.DropDownItems[i].ForeColor = UploadersConfigValidator.Validate<T>(i, Program.UploadersConfig) ?
+                        SystemColors.ControlText : Color.FromArgb(200, 0, 0);
                 }
             }
         }
