@@ -59,16 +59,20 @@ namespace ShareX.UploadersLib
             {
                 status = value;
 
+                // TODO: Translate
                 switch (status)
                 {
                     case OAuthLoginStatus.LoginRequired:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Not_logged_in_;
+                        lblStatusValue.Text = "Not logged in.";
+                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
                         break;
                     case OAuthLoginStatus.LoginSuccessful:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Logged_in_;
+                        lblStatusValue.Text = "Logged in.";
+                        lblStatusValue.ForeColor = Color.FromArgb(0, 128, 0);
                         break;
                     case OAuthLoginStatus.LoginFailed:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Login_failed_;
+                        lblStatusValue.Text = "Login failed.";
+                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
                         break;
                 }
 

@@ -1148,13 +1148,14 @@ namespace ShareX.UploadersLib
 
         public void UpdatePastebinStatus()
         {
+            // TODO: Translate
             if (Config.PastebinSettings == null || string.IsNullOrEmpty(Config.PastebinSettings.UserKey))
             {
-                lblPastebinLoginStatus.Text = Resources.OAuthControl_Status_Status__Not_logged_in_;
+                lblPastebinLoginStatus.Text = "Not logged in.";
             }
             else
             {
-                lblPastebinLoginStatus.Text = Resources.OAuthControl_Status_Status__Logged_in_;
+                lblPastebinLoginStatus.Text = "Logged in.";
             }
         }
 

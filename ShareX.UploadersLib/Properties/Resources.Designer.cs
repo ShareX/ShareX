@@ -431,33 +431,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status: Logged in..
-        /// </summary>
-        internal static string OAuthControl_Status_Status__Logged_in_ {
-            get {
-                return ResourceManager.GetString("OAuthControl_Status_Status__Logged_in_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status: Login failed..
-        /// </summary>
-        internal static string OAuthControl_Status_Status__Login_failed_ {
-            get {
-                return ResourceManager.GetString("OAuthControl_Status_Status__Login_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status: Not logged in..
-        /// </summary>
-        internal static string OAuthControl_Status_Status__Not_logged_in_ {
-            get {
-                return ResourceManager.GetString("OAuthControl_Status_Status__Not_logged_in_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to New account.
         /// </summary>
         internal static string OAuthInfo_OAuthInfo_New_account {

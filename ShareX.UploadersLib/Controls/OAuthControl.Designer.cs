@@ -30,28 +30,48 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OAuthControl));
             this.gbUserAccount = new System.Windows.Forms.GroupBox();
+            this.flpStatus = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblStatusValue = new System.Windows.Forms.Label();
             this.btnClearAuthorization = new System.Windows.Forms.Button();
             this.btnRefreshAuthorization = new System.Windows.Forms.Button();
             this.btnOpenAuthorizePage = new System.Windows.Forms.Button();
             this.lblVerificationCode = new System.Windows.Forms.Label();
             this.btnCompleteAuthorization = new System.Windows.Forms.Button();
             this.txtVerificationCode = new System.Windows.Forms.TextBox();
-            this.lblLoginStatus = new System.Windows.Forms.Label();
             this.gbUserAccount.SuspendLayout();
+            this.flpStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbUserAccount
             // 
+            this.gbUserAccount.Controls.Add(this.flpStatus);
             this.gbUserAccount.Controls.Add(this.btnClearAuthorization);
             this.gbUserAccount.Controls.Add(this.btnRefreshAuthorization);
             this.gbUserAccount.Controls.Add(this.btnOpenAuthorizePage);
             this.gbUserAccount.Controls.Add(this.lblVerificationCode);
             this.gbUserAccount.Controls.Add(this.btnCompleteAuthorization);
             this.gbUserAccount.Controls.Add(this.txtVerificationCode);
-            this.gbUserAccount.Controls.Add(this.lblLoginStatus);
             resources.ApplyResources(this.gbUserAccount, "gbUserAccount");
             this.gbUserAccount.Name = "gbUserAccount";
             this.gbUserAccount.TabStop = false;
+            // 
+            // flpStatus
+            // 
+            this.flpStatus.Controls.Add(this.lblStatus);
+            this.flpStatus.Controls.Add(this.lblStatusValue);
+            resources.ApplyResources(this.flpStatus, "flpStatus");
+            this.flpStatus.Name = "flpStatus";
+            // 
+            // lblStatus
+            // 
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            this.lblStatus.Name = "lblStatus";
+            // 
+            // lblStatusValue
+            // 
+            resources.ApplyResources(this.lblStatusValue, "lblStatusValue");
+            this.lblStatusValue.Name = "lblStatusValue";
             // 
             // btnClearAuthorization
             // 
@@ -92,11 +112,6 @@
             this.txtVerificationCode.Name = "txtVerificationCode";
             this.txtVerificationCode.TextChanged += new System.EventHandler(this.txtVerificationCode_TextChanged);
             // 
-            // lblLoginStatus
-            // 
-            resources.ApplyResources(this.lblLoginStatus, "lblLoginStatus");
-            this.lblLoginStatus.Name = "lblLoginStatus";
-            // 
             // OAuthControl
             // 
             resources.ApplyResources(this, "$this");
@@ -105,6 +120,8 @@
             this.Name = "OAuthControl";
             this.gbUserAccount.ResumeLayout(false);
             this.gbUserAccount.PerformLayout();
+            this.flpStatus.ResumeLayout(false);
+            this.flpStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -117,7 +134,9 @@
         private System.Windows.Forms.Label lblVerificationCode;
         private System.Windows.Forms.Button btnCompleteAuthorization;
         private System.Windows.Forms.TextBox txtVerificationCode;
-        private System.Windows.Forms.Label lblLoginStatus;
         private System.Windows.Forms.Button btnClearAuthorization;
+        private System.Windows.Forms.FlowLayoutPanel flpStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblStatusValue;
     }
 }

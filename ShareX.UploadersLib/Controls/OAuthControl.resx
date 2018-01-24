@@ -118,14 +118,95 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
+    <value>flpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblStatusValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStatusValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 0</value>
+  </data>
+  <data name="lblStatusValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblStatusValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblStatusValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblStatusValue.Name" xml:space="preserve">
+    <value>lblStatusValue</value>
+  </data>
+  <data name="&gt;&gt;lblStatusValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStatusValue.Parent" xml:space="preserve">
+    <value>flpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblStatusValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 136</value>
+  </data>
+  <data name="flpStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 20</value>
+  </data>
+  <data name="flpStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="flpStatus.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpStatus.Name" xml:space="preserve">
+    <value>flpStatus</value>
+  </data>
+  <data name="&gt;&gt;flpStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpStatus.Parent" xml:space="preserve">
+    <value>gbUserAccount</value>
+  </data>
+  <data name="&gt;&gt;flpStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnClearAuthorization.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnClearAuthorization.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 160</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnClearAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
   </data>
@@ -151,7 +232,7 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;btnClearAuthorization.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnRefreshAuthorization.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -184,7 +265,7 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;btnRefreshAuthorization.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnOpenAuthorizePage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -214,7 +295,7 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;btnOpenAuthorizePage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblVerificationCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,7 +322,7 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;lblVerificationCode.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnCompleteAuthorization.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -274,7 +355,7 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;btnCompleteAuthorization.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -295,33 +376,6 @@
     <value>gbUserAccount</value>
   </data>
   <data name="&gt;&gt;txtVerificationCode.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblLoginStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 136</value>
-  </data>
-  <data name="lblLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lblLoginStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.Name" xml:space="preserve">
-    <value>lblLoginStatus</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="gbUserAccount.Location" type="System.Drawing.Point, System.Drawing">
