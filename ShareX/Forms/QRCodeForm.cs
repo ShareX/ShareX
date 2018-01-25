@@ -106,7 +106,7 @@ namespace ShareX
                 output = string.Join(Environment.NewLine + Environment.NewLine, results.Where(x => !string.IsNullOrEmpty(x)));
             }
 
-            txtDecodeResult.Text = output.Trim();
+            txtDecodeResult.Text = output;
         }
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
@@ -164,6 +164,16 @@ namespace ShareX
                         }
                     }
                 }
+            }
+        }
+
+        private void tsmiDecode_Click(object sender, EventArgs e)
+        {
+            if (pbQRCode.Image != null)
+            {
+                tcMain.SelectedTab = tpDecode;
+
+                DecodeImage((Bitmap)pbQRCode.Image);
             }
         }
 

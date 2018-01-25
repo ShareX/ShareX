@@ -42,6 +42,7 @@
             this.txtDecodeResult = new System.Windows.Forms.TextBox();
             this.lblDecodeResult = new System.Windows.Forms.Label();
             this.btnDecodeFromScreen = new System.Windows.Forms.Button();
+            this.tsmiDecode = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.tcMain.SuspendLayout();
@@ -53,7 +54,8 @@
             // 
             this.cmsQR.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCopy,
-            this.tsmiSaveAs});
+            this.tsmiSaveAs,
+            this.tsmiDecode});
             this.cmsQR.Name = "cmsQR";
             this.cmsQR.ShowImageMargin = false;
             resources.ApplyResources(this.cmsQR, "cmsQR");
@@ -134,6 +136,12 @@
             this.btnDecodeFromScreen.UseVisualStyleBackColor = true;
             this.btnDecodeFromScreen.Click += new System.EventHandler(this.btnDecodeFromScreen_Click);
             // 
+            // tsmiDecode
+            // 
+            this.tsmiDecode.Name = "tsmiDecode";
+            resources.ApplyResources(this.tsmiDecode, "tsmiDecode");
+            this.tsmiDecode.Click += new System.EventHandler(this.tsmiDecode_Click);
+            // 
             // QRCodeForm
             // 
             resources.ApplyResources(this, "$this");
@@ -168,5 +176,6 @@
         private System.Windows.Forms.TextBox txtDecodeResult;
         private System.Windows.Forms.Label lblDecodeResult;
         private System.Windows.Forms.Button btnDecodeFromFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDecode;
     }
 }
