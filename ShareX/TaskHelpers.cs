@@ -38,9 +38,14 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Speech.Synthesis;
 using System.Threading;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.Rendering;
 
 namespace ShareX
 {
@@ -1565,6 +1570,65 @@ namespace ShareX
             };
             updateChecker.CheckUpdate();
             UpdateMessageBox.Start(updateChecker);
+        }
+
+        public static Image QRCodeEncode(string text, int width, int height)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                try
+                {
+                    BarcodeWriter writer = new BarcodeWriter
+                    {
+                        Format = BarcodeFormat.QR_CODE,
+                        Options = new QrCodeEncodingOptions
+                        {
+                            Width = width,
+                            Height = height,
+                            CharacterSet = "UTF-8"
+                        },
+                        Renderer = new BitmapRenderer()
+                    };
+
+                    return writer.Write(text);
+                }
+                catch (Exception e)
+                {
+                    e.ShowError();
+                }
+            }
+
+            return null;
+        }
+
+        public static string[] QRCodeDecode(Bitmap bmp)
+        {
+            try
+            {
+                BarcodeReader barcodeReader = new BarcodeReader
+                {
+                    AutoRotate = true,
+                    TryInverted = true,
+                    Options = new DecodingOptions
+                    {
+                        PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE },
+                        TryHarder = true
+                    }
+                };
+
+                Result[] results = barcodeReader.DecodeMultiple(bmp);
+
+                if (results != null)
+                {
+                    return results.Where(x => x != null).Select(x => x.Text).ToArray();
+                }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
+
+            return null;
         }
     }
 }

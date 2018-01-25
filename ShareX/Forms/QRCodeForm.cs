@@ -35,7 +35,6 @@ using System.Threading;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
-using ZXing.QrCode;
 using ZXing.Rendering;
 
 namespace ShareX
@@ -92,50 +91,19 @@ namespace ShareX
             {
                 ClearQRCode();
 
-                if (!string.IsNullOrEmpty(text))
-                {
-                    try
-                    {
-                        BarcodeWriter writer = new BarcodeWriter
-                        {
-                            Format = BarcodeFormat.QR_CODE,
-                            Options = new QrCodeEncodingOptions
-                            {
-                                Width = pbQRCode.Width,
-                                Height = pbQRCode.Height,
-                                CharacterSet = "UTF-8"
-                            }
-                        };
-
-                        pbQRCode.Image = writer.Write(text);
-                    }
-                    catch (Exception e)
-                    {
-                        e.ShowError();
-                    }
-                }
+                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, pbQRCode.Width, pbQRCode.Height);
             }
         }
 
         private void DecodeImage(Bitmap bmp)
         {
-            BarcodeReader barcodeReader = new BarcodeReader
-            {
-                AutoRotate = true,
-                TryInverted = true,
-                Options = new DecodingOptions
-                {
-                    TryHarder = true
-                }
-            };
-
-            Result[] results = barcodeReader.DecodeMultiple(bmp);
-
             string output = "";
+
+            string[] results = TaskHelpers.QRCodeDecode(bmp);
 
             if (results != null)
             {
-                output = string.Join(Environment.NewLine + Environment.NewLine, results.Where(x => x != null && !string.IsNullOrEmpty(x.Text)).Select(x => x.Text));
+                output = string.Join(Environment.NewLine + Environment.NewLine, results.Where(x => !string.IsNullOrEmpty(x)));
             }
 
             txtDecodeResult.Text = output.Trim();
