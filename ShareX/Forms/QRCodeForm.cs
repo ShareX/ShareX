@@ -35,6 +35,7 @@ using System.Threading;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
+using ZXing.QrCode;
 using ZXing.Rendering;
 
 namespace ShareX
@@ -98,12 +99,12 @@ namespace ShareX
                         BarcodeWriter writer = new BarcodeWriter
                         {
                             Format = BarcodeFormat.QR_CODE,
-                            Options = new EncodingOptions
+                            Options = new QrCodeEncodingOptions
                             {
                                 Width = pbQRCode.Width,
-                                Height = pbQRCode.Height
-                            },
-                            Renderer = new BitmapRenderer()
+                                Height = pbQRCode.Height,
+                                CharacterSet = "UTF-8"
+                            }
                         };
 
                         pbQRCode.Image = writer.Write(text);
