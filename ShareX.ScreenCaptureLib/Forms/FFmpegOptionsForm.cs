@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
     public partial class FFmpegOptionsForm : Form
     {
         public ScreencastOptions Options { get; private set; }
-        public string DefaultToolsPath { get; set; }
+        public string DefaultToolsFolder { get; set; }
 
         private bool settingsLoaded;
 
@@ -430,13 +430,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
 
             if (result)
             {
                 this.InvokeSafe(() =>
                 {
-                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(DefaultToolsPath);
+                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(Path.Combine(DefaultToolsFolder, "ffmpeg.exe"));
                     RefreshSourcesAsync();
                     UpdateUI();
                 });
