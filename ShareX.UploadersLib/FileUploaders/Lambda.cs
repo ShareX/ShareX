@@ -47,6 +47,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
+            // Correct old URLs
+            if (config.LambdaSettings != null && config.LambdaSettings.UploadURL == "https://λ.pw/")
+            {
+                config.LambdaSettings.UploadURL = "https://lbda.net/";
+            }
+
             return new Lambda(config.LambdaSettings);
         }
 
