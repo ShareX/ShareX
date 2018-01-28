@@ -62,9 +62,9 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        private const string uploadUrl = "https://lambda.sx/api/upload";
+        private const string uploadUrl = "https://lbda.net/api/upload";
 
-        public static string[] UploadURLs = new string[] { "https://λ.pw/", "https://lambda.sx/" };
+        public static string[] UploadURLs = new string[] { "https://lbda.net/", "https://lambda.sx/" };
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -109,6 +109,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class LambdaSettings
     {
         public string UserAPIKey = "";
-        public string UploadURL = "https://λ.pw/";
+        public string UploadURL = "https://lbda.net/";
     }
 }
