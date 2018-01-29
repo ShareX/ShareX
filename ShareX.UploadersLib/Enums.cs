@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib
         AzureStorage,
         [Description("Gfycat")]
         Gfycat,
-        [Description("ownCloud")]
+        [Description("ownCloud / Nextcloud")]
         OwnCloud,
         [Description("MediaFire")]
         MediaFire,

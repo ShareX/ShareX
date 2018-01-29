@@ -288,7 +288,7 @@ namespace ShareX.UploadersLib
 
         #endregion
 
-        #region ownCloud
+        #region ownCloud / Nextcloud
 
         public string OwnCloudHost = "";
         public string OwnCloudUsername = "";

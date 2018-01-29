@@ -592,7 +592,7 @@ namespace ShareX.UploadersLib
 
             #endregion
 
-            #region ownCloud
+            #region ownCloud / Nextcloud
 
             txtOwnCloudHost.Text = Config.OwnCloudHost;
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
@@ -2273,7 +2273,7 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
-        #region ownCloud
+        #region ownCloud / Nextcloud
 
         private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
         {
@@ -2310,7 +2310,7 @@ namespace ShareX.UploadersLib
             Config.OwnCloud81Compatibility = cbOwnCloud81Compatibility.Checked;
         }
 
-        #endregion ownCloud
+        #endregion ownCloud / Nextcloud
 
         #region Pushbullet
 
