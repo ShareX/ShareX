@@ -122,8 +122,9 @@ namespace ShareX.UploadersLib.FileUploaders
             string hashedPayload = "UNSIGNED-PAYLOAD";
 
             NameValueCollection headers = new NameValueCollection();
-            headers["host"] = host;
-            headers["content-type"] = contentType;
+            headers["Host"] = host;
+            headers["Content-Length"] = stream.Length.ToString();
+            headers["Content-Type"] = contentType;
             headers["x-amz-date"] = timeStamp;
             headers["x-amz-content-sha256"] = hashedPayload;
             headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
@@ -161,8 +162,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 "SignedHeaders=" + signedHeaders + "," +
                 "Signature=" + signature;
 
-            headers.Remove("host");
-            headers.Remove("content-type");
+            headers.Remove("Host");
+            headers.Remove("Content-Type");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
             url = URLHelpers.ForcePrefix(url, "https://");

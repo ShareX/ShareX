@@ -250,9 +250,9 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                if (!controlChangingColor)
+                if (!controlChangingColor && int.TryParse(txtDecimal.Text, out int dec))
                 {
-                    colorPicker.ChangeColor(ColorHelpers.DecimalToColor(Convert.ToInt32(txtDecimal.Text)), ColorType.Decimal);
+                    colorPicker.ChangeColor(ColorHelpers.DecimalToColor(dec), ColorType.Decimal);
                 }
             }
             catch

@@ -367,7 +367,11 @@ namespace ShareX.UploadersLib
 
                 if (headers["Content-Length"] != null)
                 {
-                    request.ContentLength = Convert.ToInt32(headers["Content-Length"]);
+                    if (long.TryParse(headers["Content-Length"], out contentLength))
+                    {
+                        request.ContentLength = contentLength;
+                    }
+
                     headers.Remove("Content-Length");
                 }
 
