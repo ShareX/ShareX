@@ -260,7 +260,7 @@ namespace ShareX
 
             if (cui != null)
             {
-                return cui.Name;
+                return cui.ToString();
             }
 
             return null;

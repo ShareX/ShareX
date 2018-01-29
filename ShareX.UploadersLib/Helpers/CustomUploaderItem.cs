@@ -89,11 +89,6 @@ namespace ShareX.UploadersLib
         {
         }
 
-        public CustomUploaderItem(string name)
-        {
-            Name = name;
-        }
-
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(Name))
