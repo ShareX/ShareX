@@ -155,7 +155,10 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
-                        if (DirectLink) link += IsCompatibility81 ? "/download" : "&download";
+                        if (DirectLink)
+                        {
+                            link += IsCompatibility81 ? "/download" : "&download";
+                        }
                         return link;
                     }
                     else

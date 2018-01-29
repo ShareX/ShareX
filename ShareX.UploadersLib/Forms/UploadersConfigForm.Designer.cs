@@ -1438,6 +1438,7 @@
             // eiCustomUploaders
             // 
             this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
+            this.eiCustomUploaders.DefaultFileName = null;
             this.eiCustomUploaders.ExportIgnoreDefaultValue = true;
             this.eiCustomUploaders.ExportIgnoreNull = true;
             resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
@@ -1938,6 +1939,7 @@
             // 
             // eiFTP
             // 
+            this.eiFTP.DefaultFileName = null;
             resources.ApplyResources(this.eiFTP, "eiFTP");
             this.eiFTP.Name = "eiFTP";
             this.eiFTP.ObjectType = null;

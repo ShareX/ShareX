@@ -210,7 +210,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>mbCustomUploaderDestinationType</value>
   </data>
   <data name="&gt;&gt;mbCustomUploaderDestinationType.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbCustomUploaderDestinationType.Parent" xml:space="preserve">
     <value>pCustomUploader</value>
@@ -369,7 +369,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -1140,7 +1140,7 @@ store.book[0].title</value>
     <value>lvCustomUploaderRegexps</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderRegexps.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderRegexps.Parent" xml:space="preserve">
     <value>tpCustomUploaderRegexParse</value>
@@ -1374,7 +1374,7 @@ store.book[0].title</value>
     <value>lvCustomUploaderArguments</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderArguments.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderArguments.Parent" xml:space="preserve">
     <value>tpCustomUploaderArguments</value>
@@ -1557,7 +1557,7 @@ store.book[0].title</value>
     <value>lvCustomUploaderHeaders</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderHeaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderHeaders.Parent" xml:space="preserve">
     <value>tpCustomUploaderHeaders</value>
@@ -2328,7 +2328,7 @@ store.book[0].title</value>
     <value>eiCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Parent" xml:space="preserve">
     <value>gbCustomUploaders</value>
@@ -2625,7 +2625,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpCustomUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2760,7 +2760,7 @@ store.book[0].title</value>
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -2808,7 +2808,7 @@ store.book[0].title</value>
     <value>oauth2GoogleURLShortener</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
@@ -2829,7 +2829,7 @@ store.book[0].title</value>
     <value>atcGoogleURLShortenerAccountType</value>
   </data>
   <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
@@ -2844,7 +2844,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpGoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3105,7 +3105,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3264,7 +3264,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3339,7 +3339,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3525,7 +3525,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3960,7 +3960,7 @@ store.book[0].title</value>
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -5333,7 +5333,7 @@ store.book[0].title</value>
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -5342,13 +5342,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5465,7 +5465,7 @@ store.book[0].title</value>
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -5474,13 +5474,13 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -5636,7 +5636,7 @@ store.book[0].title</value>
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -5717,7 +5717,7 @@ store.book[0].title</value>
     <value>oauth2GoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -5726,13 +5726,13 @@ store.book[0].title</value>
     <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5990,13 +5990,13 @@ store.book[0].title</value>
     <value>8</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -6095,7 +6095,7 @@ store.book[0].title</value>
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -6176,7 +6176,7 @@ store.book[0].title</value>
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -6185,13 +6185,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6863,13 +6863,13 @@ store.book[0].title</value>
     <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -7187,13 +7187,13 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -7256,7 +7256,7 @@ store.book[0].title</value>
     <value>atcGfycatAccountType</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -7277,7 +7277,7 @@ store.book[0].title</value>
     <value>oauth2Gfycat</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -7286,13 +7286,13 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -7607,10 +7607,10 @@ store.book[0].title</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -7700,13 +7700,13 @@ store.book[0].title</value>
     <value>16, 232</value>
   </data>
   <data name="cbOwnCloudDirectLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
+    <value>73, 17</value>
   </data>
   <data name="cbOwnCloudDirectLink.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direct link (Adds "&amp;download" to URL)</value>
+    <value>Direct link</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.Name" xml:space="preserve">
     <value>cbOwnCloudDirectLink</value>
@@ -8165,13 +8165,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -8327,13 +8327,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -8495,7 +8495,7 @@ store.book[0].title</value>
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8504,13 +8504,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -8690,13 +8690,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -8849,13 +8849,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -9050,7 +9050,7 @@ store.book[0].title</value>
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -9059,10 +9059,10 @@ store.book[0].title</value>
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -9215,13 +9215,13 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpLambda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpLambda.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -9425,13 +9425,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpPomf.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpPomf.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPomf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPomf.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -9710,7 +9710,7 @@ store.book[0].title</value>
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10386,13 +10386,13 @@ Using an encrypted library disables sharing.</value>
     <value>20</value>
   </data>
   <data name="tpSeafile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpSeafile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -10590,10 +10590,10 @@ Using an encrypted library disables sharing.</value>
     <value>5</value>
   </data>
   <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -10689,13 +10689,13 @@ Using an encrypted library disables sharing.</value>
     <value>2</value>
   </data>
   <data name="tpSul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpSul.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -10920,13 +10920,13 @@ Using an encrypted library disables sharing.</value>
     <value>7</value>
   </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpLithiio.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -11427,13 +11427,13 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="tpPlik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpPlik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -11625,7 +11625,7 @@ Using an encrypted library disables sharing.</value>
     <value>ucLocalhostAccounts</value>
   </data>
   <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
     <value>tpSharedFolder</value>
@@ -11634,13 +11634,13 @@ Using an encrypted library disables sharing.</value>
     <value>6</value>
   </data>
   <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -12054,13 +12054,13 @@ Using an encrypted library disables sharing.</value>
     <value>14</value>
   </data>
   <data name="tpEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 184</value>
   </data>
   <data name="tpEmail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -12681,7 +12681,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaste_ee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -12888,7 +12888,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12909,7 +12909,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcGistAccountType</value>
   </data>
   <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12921,7 +12921,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -13029,7 +13029,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -13188,7 +13188,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -13317,7 +13317,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneTimeSecret.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -13374,7 +13374,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPastie.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -13548,7 +13548,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13569,7 +13569,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13974,7 +13974,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcTinyPicAccountType</value>
   </data>
   <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
     <value>tpTinyPic</value>
@@ -14205,7 +14205,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -14865,7 +14865,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Picasa</value>
   </data>
   <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
     <value>tpGooglePhotos</value>
@@ -15405,7 +15405,7 @@ Using an encrypted library disables sharing.</value>
     <value>ttlvMain</value>
   </data>
   <data name="&gt;&gt;ttlvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ttlvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -15426,7 +15426,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

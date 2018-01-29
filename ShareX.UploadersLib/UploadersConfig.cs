@@ -296,7 +296,7 @@ namespace ShareX.UploadersLib
         public string OwnCloudPath = "/";
         public bool OwnCloudCreateShare = true;
         public bool OwnCloudDirectLink = false;
-        public bool OwnCloud81Compatibility = false;
+        public bool OwnCloud81Compatibility = true;
 
         #endregion
 
