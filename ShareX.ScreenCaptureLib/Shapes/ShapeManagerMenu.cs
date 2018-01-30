@@ -49,8 +49,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop, tsmiMoveUp, tsmiMoveDown,
-            tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop,
+            tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiTips, tsmiImageEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbImageInterpolationMode, tscbCursorTypes;
@@ -564,6 +564,22 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadow);
+
+            tsmiShadowColor = new ToolStripMenuItem("Shadow color...");
+            tsmiShadowColor.Click += (sender, e) =>
+            {
+                Form.Pause();
+
+                if (ColorPickerForm.PickColor(AnnotationOptions.ShadowColor, out Color newColor))
+                {
+                    AnnotationOptions.ShadowColor = newColor;
+                    UpdateMenu();
+                    UpdateCurrentShape();
+                }
+
+                Form.Resume();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -1260,6 +1276,9 @@ namespace ShareX.ScreenCaptureLib
             tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
 
             tsmiShadow.Checked = AnnotationOptions.Shadow;
+
+            if (tsmiShadowColor.Image != null) tsmiShadowColor.Image.Dispose();
+            tsmiShadowColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.ShadowColor, new Rectangle(0, 0, 16, 16));
 
             tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
 

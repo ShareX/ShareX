@@ -45,6 +45,8 @@ namespace ShareX.ScreenCaptureLib
             FillColor = AnnotationOptions.TextFillColor;
             CornerRadius = AnnotationOptions.DrawingCornerRadius;
             Shadow = AnnotationOptions.Shadow;
+            ShadowColor = AnnotationOptions.ShadowColor;
+            ShadowOffset = AnnotationOptions.ShadowOffset;
         }
 
         public override void OnConfigSave()
@@ -55,6 +57,8 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.TextFillColor = FillColor;
             AnnotationOptions.DrawingCornerRadius = CornerRadius;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.ShadowColor = ShadowColor;
+            AnnotationOptions.ShadowOffset = ShadowOffset;
         }
 
         public override void OnDraw(Graphics g)

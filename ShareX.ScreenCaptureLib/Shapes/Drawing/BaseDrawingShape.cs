@@ -36,8 +36,8 @@ namespace ShareX.ScreenCaptureLib
         public Color FillColor { get; set; }
 
         public bool Shadow { get; set; }
-        public Color ShadowColor { get; set; } = Color.FromArgb(125, 0, 0, 0);
-        public Point ShadowOffset { get; set; } = new Point(0, 1);
+        public Color ShadowColor { get; set; }
+        public Point ShadowOffset { get; set; }
 
         public bool IsShapeVisible => IsBorderVisible || IsFillVisible;
         public bool IsBorderVisible => BorderSize > 0 && BorderColor.A > 0;
@@ -49,6 +49,8 @@ namespace ShareX.ScreenCaptureLib
             BorderSize = AnnotationOptions.BorderSize;
             FillColor = AnnotationOptions.FillColor;
             Shadow = AnnotationOptions.Shadow;
+            ShadowColor = AnnotationOptions.ShadowColor;
+            ShadowOffset = AnnotationOptions.ShadowOffset;
         }
 
         public override void OnConfigSave()
@@ -57,6 +59,8 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.BorderSize = BorderSize;
             AnnotationOptions.FillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.ShadowColor = ShadowColor;
+            AnnotationOptions.ShadowOffset = ShadowOffset;
         }
 
         public abstract void OnDraw(Graphics g);

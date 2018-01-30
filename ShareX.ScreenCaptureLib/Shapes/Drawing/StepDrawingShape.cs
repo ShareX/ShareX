@@ -62,6 +62,8 @@ namespace ShareX.ScreenCaptureLib
             BorderSize = AnnotationOptions.StepBorderSize;
             FillColor = AnnotationOptions.StepFillColor;
             Shadow = AnnotationOptions.Shadow;
+            ShadowColor = AnnotationOptions.ShadowColor;
+            ShadowOffset = AnnotationOptions.ShadowOffset;
             FontSize = AnnotationOptions.StepFontSize;
             UseLetters = AnnotationOptions.StepUseLetters;
         }
@@ -72,6 +74,8 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.StepBorderSize = BorderSize;
             AnnotationOptions.StepFillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.ShadowColor = ShadowColor;
+            AnnotationOptions.ShadowOffset = ShadowOffset;
             AnnotationOptions.StepFontSize = FontSize;
             AnnotationOptions.StepUseLetters = UseLetters;
         }

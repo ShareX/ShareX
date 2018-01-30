@@ -39,6 +39,8 @@ namespace ShareX.ScreenCaptureLib
             BorderColor = AnnotationOptions.TextOutlineBorderColor;
             BorderSize = AnnotationOptions.TextOutlineBorderSize;
             Shadow = AnnotationOptions.Shadow;
+            ShadowColor = AnnotationOptions.ShadowColor;
+            ShadowOffset = AnnotationOptions.ShadowOffset;
         }
 
         public override void OnConfigSave()
@@ -47,6 +49,8 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.TextOutlineBorderColor = BorderColor;
             AnnotationOptions.TextOutlineBorderSize = BorderSize;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.ShadowColor = ShadowColor;
+            AnnotationOptions.ShadowOffset = ShadowOffset;
         }
 
         public override void OnDraw(Graphics g)
