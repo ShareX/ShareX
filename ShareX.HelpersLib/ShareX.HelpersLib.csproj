@@ -1219,6 +1219,12 @@
     <None Include="Resources\cross.png" />
     <None Include="Resources\ShareX_Logo_Black.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adjectives.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animals.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

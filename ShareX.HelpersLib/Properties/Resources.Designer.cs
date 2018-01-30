@@ -80,6 +80,80 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to abandoned
+        ///able
+        ///absolute
+        ///academic
+        ///acceptable
+        ///acclaimed
+        ///accomplished
+        ///accurate
+        ///aching
+        ///acidic
+        ///acrobatic
+        ///adorable
+        ///adventurous
+        ///babyish
+        ///back
+        ///bad
+        ///baggy
+        ///bare
+        ///barren
+        ///basic
+        ///beautiful
+        ///belated
+        ///beloved
+        ///calculating
+        ///calm
+        ///candid
+        ///canine
+        ///capital
+        ///carefree
+        ///careful
+        ///careless
+        ///caring
+        ///cautious
+        ///cavernous
+        ///celebrated
+        ///charming
+        ///damaged
+        ///damp
+        ///dangerous
+        ///dapper
+        ///daring
+        ///dark
+        ///darling
+        ///dazzling
+        ///dead
+        ///deadly
+        ///deafening
+        ///dear
+        ///dearest
+        ///each
+        ///eager
+        ///early
+        ///earnest
+        ///easy
+        ///easygoing
+        ///ecstatic
+        ///edible
+        ///educated
+        ///fabulous
+        ///failing
+        ///faint
+        ///fair
+        ///faithful
+        ///fake
+        ///familiar
+        ///fam [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string adjectives {
+            get {
+                return ResourceManager.GetString("adjectives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add image effects / watermark.
         /// </summary>
         internal static string AfterCaptureTasks_AddImageEffects {
@@ -301,6 +375,49 @@ namespace ShareX.HelpersLib.Properties {
         internal static string AmazonS3StorageClass_STANDARD_IA {
             get {
                 return ResourceManager.GetString("AmazonS3StorageClass_STANDARD_IA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to aardvark
+        ///aardwolf
+        ///abalone
+        ///abyssiniancat
+        ///abyssiniangroundhornbill
+        ///acaciarat
+        ///achillestang
+        ///acornbarnacle
+        ///acornweevil
+        ///acornwoodpecker
+        ///acouchi
+        ///adamsstaghornedbeetle
+        ///addax
+        ///adder
+        ///adeliepenguin
+        ///admiralbutterfly
+        ///adouri
+        ///aegeancat
+        ///affenpinscher
+        ///afghanhound
+        ///africanaugurbuzzard
+        ///africanbushviper
+        ///africancivet
+        ///africanclawedfrog
+        ///africanelephant
+        ///africanfisheagle
+        ///africangoldencat
+        ///africangroundhornbill
+        ///africanharrierhawk
+        ///africanhornbill
+        ///africanjacana
+        ///africanmolesnake
+        ///africanparadiseflycatcher
+        ///africanpiedkingfisher
+        ///africanporcu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string animals {
+            get {
+                return ResourceManager.GetString("animals", resourceCulture);
             }
         }
         

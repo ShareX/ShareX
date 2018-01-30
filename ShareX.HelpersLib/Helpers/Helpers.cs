@@ -267,6 +267,16 @@ namespace ShareX.HelpersLib
             return Encoding.UTF8.GetString(Enumerable.Range(1, 255).Select(i => (byte)i).ToArray());
         }
 
+        public static string GetRandomLine(string text)
+        {
+            string[] lines = text.Lines();
+            if (lines != null && lines.Length > 0)
+            {
+                return lines[MathHelpers.Random(0, lines.Length - 1)];
+            }
+            return null;
+        }
+
         public static string GetValidFileName(string fileName, string separator = "")
         {
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();

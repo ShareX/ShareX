@@ -1139,4 +1139,10 @@ Would you like to download it?</value>
   <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
     <value>Nearest neighbor</value>
   </data>
+  <data name="adjectives" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adjectives.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="animals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\animals.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

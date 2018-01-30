@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -229,18 +230,26 @@ namespace ShareX.HelpersLib
 
             string result = sb.ToString();
 
+            result = result.ReplaceAll(CodeMenuEntryFilename.radjective.ToPrefixString(),
+                () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.adjectives)));
+            result = result.ReplaceAll(CodeMenuEntryFilename.ranimal.ToPrefixString(),
+                () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.animals)));
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Numbers).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.ra.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rx.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rx.ToPrefixString().Replace('x', 'X')))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString()));
@@ -250,7 +259,6 @@ namespace ShareX.HelpersLib
             result = result.ReplaceAll(CodeMenuEntryFilename.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString().Replace('x', 'X'), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString());
-
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToLowerInvariant(), () => Guid.NewGuid().ToString().ToLowerInvariant());
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
 
