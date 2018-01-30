@@ -87,8 +87,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 headers = CreateAuthenticationHeader(Email, Password);
             }
             UploadResult result;
-            FileStream fs = stream as FileStream;
-            GetDuration(fs.Name, out TimeSpan duration);
+            TimeSpan duration;
+            using (FileStream fs = stream as FileStream)
+            {
+                GetDuration(fs.Name, out duration);
+            }
             if (stream.Length > 1073741824 || duration > TimeSpan.FromMinutes(10))
             {
                 result = new UploadResult
