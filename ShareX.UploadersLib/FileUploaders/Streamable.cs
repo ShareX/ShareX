@@ -86,24 +86,26 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 headers = CreateAuthenticationHeader(Email, Password);
             }
+
             UploadResult result;
-            //if (!IsVideoFile(fileName))
-            //{
-            //    result = new UploadResult
-            //    {
-            //        IsSuccess = false,
-            //        Response = "Only video files can be uploaded to Streamable."
-            //    };
-            //    Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
-            //    return result;
-            //}
-            bool isOverSize, isOverDuration = false;
-            using (FileStream fs = stream as FileStream)
+
+            if (!IsVideoFile(fileName))
             {
-                GetDuration(fs.Name, out TimeSpan duration);
-                isOverDuration = duration > TimeSpan.FromMinutes(10);
-                isOverSize = new FileInfo(fs.Name).Length > 1073741824; // 10GB
+                result = new UploadResult
+                {
+                    IsSuccess = false,
+                    Response = "Only video files can be uploaded to Streamable."
+                };
+                Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
+                return result;
             }
+
+            bool isOverSize, isOverDuration = false;
+            FileStream fs = stream as FileStream;
+            GetDuration(fs.Name, out TimeSpan duration);
+            isOverDuration = duration > TimeSpan.FromMinutes(10); // video is over 10 minutes
+            isOverSize = new FileInfo(fs.Name).Length > 1073741824; // file is over 10GB
+
             if (isOverSize || isOverDuration)
             {
                 result = new UploadResult
