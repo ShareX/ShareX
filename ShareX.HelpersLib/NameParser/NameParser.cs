@@ -235,6 +235,11 @@ namespace ShareX.HelpersLib
             result = result.ReplaceAll(CodeMenuEntryFilename.ranimal.ToPrefixString(),
                 () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.animals)));
 
+            foreach (Tuple<string, string[]> entry in ListEntryWithArguments(result, CodeMenuEntryFilename.rf.ToPrefixString(), 1))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.GetRandomLineFromFile(entry.Item2[0]));
+            }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Numbers).ToString()));

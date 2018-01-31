@@ -277,6 +277,18 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        public static string GetRandomLineFromFile(string path)
+        {
+            try
+            {
+                return GetRandomLine(File.ReadAllText(path));
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+        }
+
         public static string GetValidFileName(string fileName, string separator = "")
         {
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
