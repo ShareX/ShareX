@@ -88,12 +88,24 @@ namespace ShareX.UploadersLib.FileUploaders
                 headers = CreateAuthenticationHeader(Email, Password);
             }
             UploadResult result;
-            TimeSpan duration;
+            //if (!IsVideoFile(fileName))
+            //{
+            //    result = new UploadResult
+            //    {
+            //        IsSuccess = false,
+            //        Response = "Only video files can be uploaded to Streamable."
+            //    };
+            //    Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
+            //    return result;
+            //}
+            bool isOverSize, isOverDuration = false;
             using (FileStream fs = stream as FileStream)
             {
-                GetDuration(fs.Name, out duration);
+                GetDuration(fs.Name, out TimeSpan duration);
+                isOverDuration = duration > TimeSpan.FromMinutes(10);
+                isOverSize = new FileInfo(fs.Name).Length > 1073741824; // 10GB
             }
-            if (stream.Length > 1073741824 || duration > TimeSpan.FromMinutes(10))
+            if (isOverSize || isOverDuration)
             {
                 result = new UploadResult
                 {
@@ -191,6 +203,46 @@ namespace ShareX.UploadersLib.FileUploaders
                 duration = new TimeSpan();
                 return false;
             }
+        }
+        private string[] videoExtensions = {
+            "3g2",
+            "3gp",
+            "aaf",
+            "asf",
+            "avchd",
+            "avi",
+            "drc",
+            "flv",
+            "m2v",
+            "m4p",
+            "m4v",
+            "mkv",
+            "mng",
+            "mov",
+            "mp2",
+            "mp4",
+            "mpe",
+            "mpeg",
+            "mpg",
+            "mpv",
+            "mxf",
+            "nsv",
+            "ogg",
+            "ogv",
+            "qt",
+            "rm",
+            "rmvb",
+            "roq",
+            "svi",
+            "vob",
+            "webm",
+            "wmv",
+            "yuv"
+        };
+
+        private bool IsVideoFile(string path)
+        {
+            return -1 != Array.IndexOf(videoExtensions, Path.GetExtension(path).ToUpperInvariant());
         }
     }
 
