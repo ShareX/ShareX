@@ -80,7 +80,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-
             NameValueCollection headers = null;
 
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
