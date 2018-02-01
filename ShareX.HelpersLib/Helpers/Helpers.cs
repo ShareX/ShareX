@@ -277,13 +277,13 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static string GetRandomLineFromFile(string path)
+        public static string GetRandomLineFromFile(string path, bool isPreviewMode = false)
         {
             try
             {
                 return GetRandomLine(File.ReadAllText(path));
             }
-            catch (Exception e)
+            catch (Exception e) when (isPreviewMode)
             {
                 return e.Message;
             }

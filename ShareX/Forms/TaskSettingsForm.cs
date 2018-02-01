@@ -1142,7 +1142,8 @@ namespace ShareX
                 ImageHeight = 1080,
                 MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
                 MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength,
-                CustomTimeZone = TaskSettings.UploadSettings.UseCustomTimeZone ? TaskSettings.UploadSettings.CustomTimeZone : null
+                CustomTimeZone = TaskSettings.UploadSettings.UseCustomTimeZone ? TaskSettings.UploadSettings.CustomTimeZone : null,
+                IsPreviewMode = true
             };
 
             lblNameFormatPatternPreview.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
