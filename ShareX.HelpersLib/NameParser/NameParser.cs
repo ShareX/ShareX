@@ -240,9 +240,28 @@ namespace ShareX.HelpersLib
             result = result.ReplaceAll(CodeMenuEntryFilename.ranimal.ToPrefixString(),
                 () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.animals)));
 
-            foreach (Tuple<string, string[]> entry in ListEntryWithArguments(result, CodeMenuEntryFilename.rf.ToPrefixString(), 1))
+            foreach (Tuple<string, string> entry in ListEntryWithArgument(result, CodeMenuEntryFilename.rf.ToPrefixString()))
             {
-                result = result.ReplaceAll(entry.Item1, () => Helpers.GetRandomLineFromFile(entry.Item2[0], IsPreviewMode));
+                result = result.ReplaceAll(entry.Item1, () =>
+                {
+                    try
+                    {
+                        string path = entry.Item2;
+
+                        if (Helpers.IsTextFile(path))
+                        {
+                            return Helpers.GetRandomLineFromFile(path);
+                        }
+                        else
+                        {
+                            throw new Exception("Valid text file path is required.");
+                        }
+                    }
+                    catch (Exception e) when (IsPreviewMode)
+                    {
+                        return e.Message;
+                    }
+                });
             }
 
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
@@ -307,6 +326,14 @@ namespace ShareX.HelpersLib
                     Array.Resize(ref s, elements);
                 }
                 yield return new Tuple<string, string[]>(o.Item1, s);
+            }
+        }
+
+        private IEnumerable<Tuple<string, string>> ListEntryWithArgument(string text, string entry)
+        {
+            foreach (Tuple<string, string[]> o in ListEntryWithArguments(text, entry, 1))
+            {
+                yield return new Tuple<string, string>(o.Item1, o.Item2[0]);
             }
         }
 

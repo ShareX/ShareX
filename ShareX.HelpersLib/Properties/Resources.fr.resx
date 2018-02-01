@@ -1025,6 +1025,6 @@ Voulez-vous la télécharger ?</value>
     <value>Diagonale en avant</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Line aléatoire d'un fichier. Utilisez {chemin} pour indiquer le fichier</value>
+    <value>Ligne aléatoire d'un fichier. Utilisez {chemin} pour indiquer le fichier</value>
   </data>
 </root>
