@@ -151,7 +151,7 @@ namespace ShareX.UploadersLib
             return FileFormName;
         }
 
-        public Dictionary<string, string> GetArguments(string input = null)
+        public Dictionary<string, string> GetArguments(string filename = "", string input = "")
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 
@@ -162,6 +162,7 @@ namespace ShareX.UploadersLib
                     string value = arg.Value;
 
                     value = NameParser.Parse(NameParserType.Text, value);
+                    value = value.Replace("$filename$", filename);
                     value = value.Replace("$input$", input);
 
                     arguments.Add(arg.Key, value);

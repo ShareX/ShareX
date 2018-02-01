@@ -83,7 +83,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             UploadResult result = new UploadResult { URL = url };
 
-            Dictionary<string, string> args = customUploader.GetArguments(url);
+            Dictionary<string, string> args = customUploader.GetArguments("", url);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {

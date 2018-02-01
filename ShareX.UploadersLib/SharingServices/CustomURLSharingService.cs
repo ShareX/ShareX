@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib.SharingServices
 
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
 
-            Dictionary<string, string> args = customUploader.GetArguments(url);
+            Dictionary<string, string> args = customUploader.GetArguments("", url);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {

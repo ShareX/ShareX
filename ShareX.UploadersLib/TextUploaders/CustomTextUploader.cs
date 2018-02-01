@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))))
                 throw new Exception("Atleast one '$input$' required for argument value.");
 
-            Dictionary<string, string> args = customUploader.GetArguments(text);
+            Dictionary<string, string> args = customUploader.GetArguments(fileName, text);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
