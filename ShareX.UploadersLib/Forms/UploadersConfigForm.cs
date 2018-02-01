@@ -588,6 +588,9 @@ namespace ShareX.UploadersLib
             cbAmazonS3StorageClass.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<AmazonS3StorageClass>());
             cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
             cbAmazonS3PublicACL.Checked = Config.AmazonS3Settings.SetPublicACL;
+            cbAmazonS3StripExtensionImage.Checked = Config.AmazonS3Settings.RemoveExtensionImage;
+            cbAmazonS3StripExtensionVideo.Checked = Config.AmazonS3Settings.RemoveExtensionVideo;
+            cbAmazonS3StripExtensionText.Checked = Config.AmazonS3Settings.RemoveExtensionText;
             UpdateAmazonS3Status();
 
             #endregion
@@ -2269,6 +2272,21 @@ namespace ShareX.UploadersLib
         private void cbAmazonS3PublicACL_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.SetPublicACL = cbAmazonS3PublicACL.Checked;
+        }
+
+        private void cbAmazonS3StripExtensionImage_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.RemoveExtensionImage = cbAmazonS3StripExtensionImage.Checked;
+        }
+
+        private void cbAmazonS3StripExtensionVideo_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.RemoveExtensionVideo = cbAmazonS3StripExtensionVideo.Checked;
+        }
+
+        private void cbAmazonS3StripExtensionText_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.RemoveExtensionText = cbAmazonS3StripExtensionText.Checked;
         }
 
         #endregion Amazon S3

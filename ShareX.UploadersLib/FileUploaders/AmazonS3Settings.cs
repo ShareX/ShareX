@@ -38,5 +38,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public string CustomDomain { get; set; }
         public bool SetPublicACL { get; set; } = true;
         public AmazonS3StorageClass StorageClass { get; set; }
+        public bool RemoveExtensionImage { get; set; } = false;
+        public bool RemoveExtensionVideo { get; set; } = false;
+        public bool RemoveExtensionText { get; set; } = false;
     }
 }

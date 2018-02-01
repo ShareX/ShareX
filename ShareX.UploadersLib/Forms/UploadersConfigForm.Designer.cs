@@ -625,6 +625,10 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbAmazonS3StripExtensionImage = new System.Windows.Forms.CheckBox();
+            this.cbAmazonS3StripExtensionVideo = new System.Windows.Forms.CheckBox();
+            this.cbAmazonS3StripExtensionText = new System.Windows.Forms.CheckBox();
+            this.lblAmazonS3StripExtension = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2560,8 +2564,12 @@
             // 
             // gbAmazonS3Advanced
             // 
+            this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StripExtension);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StripExtensionText);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StorageClass);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StripExtensionVideo);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3PublicACL);
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StripExtensionImage);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3UsePathStyle);
             this.gbAmazonS3Advanced.Controls.Add(this.btnAmazonS3StorageClassHelp);
             this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StorageClass);
@@ -5092,6 +5100,32 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbAmazonS3StripExtensionImage
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionImage, "cbAmazonS3StripExtensionImage");
+            this.cbAmazonS3StripExtensionImage.Name = "cbAmazonS3StripExtensionImage";
+            this.cbAmazonS3StripExtensionImage.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionImage.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionImage_CheckedChanged);
+            // 
+            // cbAmazonS3StripExtensionVideo
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionVideo, "cbAmazonS3StripExtensionVideo");
+            this.cbAmazonS3StripExtensionVideo.Name = "cbAmazonS3StripExtensionVideo";
+            this.cbAmazonS3StripExtensionVideo.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionVideo.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionVideo_CheckedChanged);
+            // 
+            // cbAmazonS3StripExtensionText
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionText, "cbAmazonS3StripExtensionText");
+            this.cbAmazonS3StripExtensionText.Name = "cbAmazonS3StripExtensionText";
+            this.cbAmazonS3StripExtensionText.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionText.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionText_CheckedChanged);
+            // 
+            // lblAmazonS3StripExtension
+            // 
+            resources.ApplyResources(this.lblAmazonS3StripExtension, "lblAmazonS3StripExtension");
+            this.lblAmazonS3StripExtension.Name = "lblAmazonS3StripExtension";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5862,5 +5896,9 @@
         private System.Windows.Forms.Label lblLithiioEmail;
         private System.Windows.Forms.CheckBox cbAmazonS3PublicACL;
         private System.Windows.Forms.GroupBox gbAmazonS3Advanced;
+        private System.Windows.Forms.Label lblAmazonS3StripExtension;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionText;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
+        private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
     }
 }
