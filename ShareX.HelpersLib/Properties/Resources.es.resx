@@ -579,4 +579,7 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Nombre de inicio de sesión de usuario</value>
   </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Línea aleatorio de un archivo. Usa {ruta} para indicar el archivo</value>
+  </data>
 </root>

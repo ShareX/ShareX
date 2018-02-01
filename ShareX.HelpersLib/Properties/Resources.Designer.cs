@@ -2645,6 +2645,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random line from a file. Use {path} to determine the file.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_rf_Random_line_from_file {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_rf_Random_line_from_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Random number 0 to 9. Repeat using {n}.
         /// </summary>
         internal static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
