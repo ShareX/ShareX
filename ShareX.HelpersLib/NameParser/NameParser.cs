@@ -53,6 +53,11 @@ namespace ShareX.HelpersLib
         public string ProcessName { get; set; } // %pn
         public TimeZoneInfo CustomTimeZone { get; set; }
 
+        // If we're trying to preview via TaskSettings or not
+        // Used so that %rf throws "File not found" exceptions and brings up a popup on upload
+        // But only returns an error message when previewing to avoid popup spam
+        public bool IsPreviewMode { get; set; } = false;
+
         protected NameParser()
         {
         }
@@ -234,6 +239,11 @@ namespace ShareX.HelpersLib
                 () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.adjectives)));
             result = result.ReplaceAll(CodeMenuEntryFilename.ranimal.ToPrefixString(),
                 () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.animals)));
+
+            foreach (Tuple<string, string[]> entry in ListEntryWithArguments(result, CodeMenuEntryFilename.rf.ToPrefixString(), 1))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.GetRandomLineFromFile(entry.Item2[0], IsPreviewMode));
+            }
 
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
             {

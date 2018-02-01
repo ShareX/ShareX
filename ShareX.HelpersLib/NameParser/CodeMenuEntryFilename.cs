@@ -59,6 +59,8 @@ namespace ShareX.HelpersLib
         // TODO: Translate
         public static readonly CodeMenuEntryFilename radjective = new CodeMenuEntryFilename("radjective", "Random adjective", Resources.ReplCodeMenuCategory_Random);
         public static readonly CodeMenuEntryFilename ranimal = new CodeMenuEntryFilename("ranimal", "Random animal", Resources.ReplCodeMenuCategory_Random);
+        public static readonly CodeMenuEntryFilename rf = new CodeMenuEntryFilename("rf", Resources.ReplCodeMenuEntry_rf_Random_line_from_file, Resources.ReplCodeMenuCategory_Random);
+
         public static readonly CodeMenuEntryFilename width = new CodeMenuEntryFilename("width", Resources.ReplCodeMenuEntry_width_Gets_image_width, Resources.ReplCodeMenuCategory_Image);
         public static readonly CodeMenuEntryFilename height = new CodeMenuEntryFilename("height", Resources.ReplCodeMenuEntry_height_Gets_image_height, Resources.ReplCodeMenuCategory_Image);
         public static readonly CodeMenuEntryFilename un = new CodeMenuEntryFilename("un", Resources.ReplCodeMenuEntry_un_User_name, Resources.ReplCodeMenuCategory_Computer);
