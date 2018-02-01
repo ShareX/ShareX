@@ -29,6 +29,7 @@ using ShareX.UploadersLib.Properties;
 using Shell32;
 using System;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -89,33 +90,34 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result;
 
-            if (!IsVideoFile(fileName))
+            if (IsVideoFile(fileName))
             {
-                result = new UploadResult
-                {
-                    IsSuccess = false,
-                    Response = "Only video files can be uploaded to Streamable."
-                };
-                Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
-                return result;
-            }
+                Debug.WriteLine("It is a video file.");
+                //    result = new UploadResult
+                //    {
+                //        IsSuccess = false,
+                //        Response = "Only video files can be uploaded to Streamable."
+                //    };
+                //    Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
+                //    return result;
+                bool isOverSize, isOverDuration = false;
+                FileStream fs = stream as FileStream;
+                GetDuration(fs.Name, out TimeSpan duration);
+                isOverDuration = duration > TimeSpan.FromMinutes(10); // video is over 10 minutes
+                isOverSize = new FileInfo(fs.Name).Length > 1073741824; // file is over 10GB
 
-            bool isOverSize, isOverDuration = false;
-            FileStream fs = stream as FileStream;
-            GetDuration(fs.Name, out TimeSpan duration);
-            isOverDuration = duration > TimeSpan.FromMinutes(10); // video is over 10 minutes
-            isOverSize = new FileInfo(fs.Name).Length > 1073741824; // file is over 10GB
-
-            if (isOverSize || isOverDuration)
-            {
-                result = new UploadResult
+                if (isOverSize || isOverDuration)
                 {
-                    IsSuccess = false,
-                    Response = "There is a 10 minute limit on video duration and a maximum file size of 1GB for direct file uploads."
-                };
-                Errors.Add("Video size or duration over Streamable limit(1GB and 10 minutes)");
-                return result;
+                    result = new UploadResult
+                    {
+                        IsSuccess = false,
+                        Response = "There is a 10 minute limit on video duration and a maximum file size of 1GB for direct file uploads."
+                    };
+                    Errors.Add("Video size or duration over Streamable limit(1GB and 10 minutes)");
+                    return result;
+                }
             }
+            
             result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
 
             TranscodeFile(result);
