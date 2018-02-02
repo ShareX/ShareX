@@ -118,16 +118,25 @@ namespace ShareX.UploadersLib.FileUploaders
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string contentType = Helpers.GetMimeType(fileName);
-            string uploadPath = GetUploadPath(fileName);
             string hashedPayload = "UNSIGNED-PAYLOAD";
 
-            NameValueCollection headers = new NameValueCollection();
-            headers["Host"] = host;
-            headers["Content-Length"] = stream.Length.ToString();
-            headers["Content-Type"] = contentType;
-            headers["x-amz-date"] = timeStamp;
-            headers["x-amz-content-sha256"] = hashedPayload;
-            headers["x-amz-storage-class"] = Settings.StorageClass.ToString();
+            if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (Settings.RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                fileName = Path.GetFileNameWithoutExtension(fileName);
+            }
+            string uploadPath = GetUploadPath(fileName);
+
+            NameValueCollection headers = new NameValueCollection
+            {
+                ["Host"] = host,
+                ["Content-Length"] = stream.Length.ToString(),
+                ["Content-Type"] = contentType,
+                ["x-amz-date"] = timeStamp,
+                ["x-amz-content-sha256"] = hashedPayload,
+                ["x-amz-storage-class"] = Settings.StorageClass.ToString()
+            };
             if (Settings.SetPublicACL) headers["x-amz-acl"] = "public-read";
 
             string canonicalURI = uploadPath;
