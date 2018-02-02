@@ -92,14 +92,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (IsVideoFile(fileName))
             {
-                Debug.WriteLine("It is a video file.");
-                //    result = new UploadResult
-                //    {
-                //        IsSuccess = false,
-                //        Response = "Only video files can be uploaded to Streamable."
-                //    };
-                //    Errors.Add("Streamable only accept video.\nPlease choose another file or change file upload destination.");
-                //    return result;
                 bool isOverSize, isOverDuration = false;
                 FileStream fs = stream as FileStream;
                 GetDuration(fs.Name, out TimeSpan duration);
