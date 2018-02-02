@@ -167,6 +167,39 @@ namespace ShareX.HelpersLib
             return text;
         }
 
+        public static string BatchReplace(this string text, Dictionary<string, string> replace)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                string current = text.Substring(i);
+
+                bool replaced = false;
+
+                foreach (KeyValuePair<string, string> entry in replace)
+                {
+                    if (current.StartsWith(entry.Key))
+                    {
+                        if (!string.IsNullOrEmpty(entry.Value))
+                        {
+                            sb.Append(entry.Value);
+                        }
+                        i += entry.Key.Length - 1;
+                        replaced = true;
+                        continue;
+                    }
+                }
+
+                if (!replaced)
+                {
+                    sb.Append(text[i]);
+                }
+            }
+
+            return sb.ToString();
+        }
+
         public static string RemoveWhiteSpaces(this string str)
         {
             return new string(str.Where(c => !char.IsWhiteSpace(c)).ToArray());

@@ -162,8 +162,12 @@ namespace ShareX.UploadersLib
                     string value = arg.Value;
 
                     value = NameParser.Parse(NameParserType.Text, value);
-                    value = value.Replace("$filename$", filename);
-                    value = value.Replace("$input$", input);
+
+                    value = value.BatchReplace(new Dictionary<string, string>()
+                    {
+                        { "$filename$", filename },
+                        { "$input$", input }
+                    });
 
                     arguments.Add(arg.Key, value);
                 }
