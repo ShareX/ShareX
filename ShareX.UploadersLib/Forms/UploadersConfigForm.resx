@@ -9005,7 +9005,7 @@ store.book[0].title</value>
     <value>16, 408</value>
   </data>
   <data name="gbAmazonS3Advanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 128</value>
+    <value>416, 143</value>
   </data>
   <data name="gbAmazonS3Advanced.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -15565,5 +15565,113 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 72</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>Remove file extension on:</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StripExtension.Name" xml:space="preserve">
+    <value>lblAmazonS3StripExtension</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StripExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StripExtension.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;lblAmazonS3StripExtension.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 116</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionText.Name" xml:space="preserve">
+    <value>cbAmazonS3StripExtensionText</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionText.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 102</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionVideo.Name" xml:space="preserve">
+    <value>cbAmazonS3StripExtensionVideo</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionVideo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionVideo.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionVideo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>274, 88</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionImage.Name" xml:space="preserve">
+    <value>cbAmazonS3StripExtensionImage</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionImage.Parent" xml:space="preserve">
+    <value>gbAmazonS3Advanced</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3StripExtensionImage.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
 </root>
