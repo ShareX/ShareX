@@ -234,6 +234,33 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Markdown image.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__image {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Markdown link.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__link {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Markdown linked image.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__linked_image {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__linked_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More info.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_More_info {

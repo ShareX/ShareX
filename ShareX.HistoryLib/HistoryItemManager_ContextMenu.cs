@@ -60,6 +60,10 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyForumImage;
         private ToolStripMenuItem tsmiCopyForumLinkedImage;
         private ToolStripSeparator tssCopy4;
+        private ToolStripMenuItem tsmiCopyMarkdownLink;
+        private ToolStripMenuItem tsmiCopyMarkdownImage;
+        private ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
+        private ToolStripSeparator tssCopy5;
         private ToolStripMenuItem tsmiCopyFilePath;
         private ToolStripMenuItem tsmiCopyFileName;
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
@@ -97,6 +101,10 @@ namespace ShareX.HistoryLib
             tsmiCopyForumImage = new ToolStripMenuItem();
             tsmiCopyForumLinkedImage = new ToolStripMenuItem();
             tssCopy4 = new ToolStripSeparator();
+            tsmiCopyMarkdownLink = new ToolStripMenuItem();
+            tsmiCopyMarkdownImage = new ToolStripMenuItem();
+            tsmiCopyMarkdownLinkedImage = new ToolStripMenuItem();
+            tssCopy5 = new ToolStripSeparator();
             tsmiCopyFilePath = new ToolStripMenuItem();
             tsmiCopyFileName = new ToolStripMenuItem();
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
@@ -324,6 +332,32 @@ namespace ShareX.HistoryLib
             tssCopy4.Name = "tssCopy4";
             tssCopy4.Size = new Size(230, 6);
             //
+            // tsmiCopyMarkdownLink
+            //
+            tsmiCopyMarkdownLink.Name = "tsmiCopyMarkdownLink";
+            tsmiCopyMarkdownLink.Size = new Size(233, 22);
+            tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link;
+            tsmiCopyMarkdownLink.Click += tsmiCopyMarkdownLink_Click;
+            //
+            // tsmiCopyMarkdownImage
+            //
+            tsmiCopyMarkdownImage.Name = "tsmiCopyMarkdownImage";
+            tsmiCopyMarkdownImage.Size = new Size(233, 22);
+            tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image;
+            tsmiCopyMarkdownImage.Click += tsmiCopyMarkdownImage_Click;
+            //
+            // tsmiCopyMarkdownLinkedImage
+            //
+            tsmiCopyMarkdownLinkedImage.Name = "tsmiCopyMarkdownLinkedImage";
+            tsmiCopyMarkdownLinkedImage.Size = new Size(233, 22);
+            tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image;
+            tsmiCopyMarkdownLinkedImage.Click += tsmiCopyMarkdownLinkedImage_Click;
+            //
+            // tssCopy5
+            //
+            tssCopy5.Name = "tssCopy5";
+            tssCopy5.Size = new Size(230, 6);
+            //
             // tsmiCopyFilePath
             //
             tsmiCopyFilePath.Name = "tsmiCopyFilePath";
@@ -530,6 +564,21 @@ namespace ShareX.HistoryLib
         private void tsmiCopyForumLinkedImage_Click(object sender, EventArgs e)
         {
             CopyForumLinkedImage();
+        }
+
+        private void tsmiCopyMarkdownLinkedImage_Click(object sender, EventArgs e)
+        {
+            CopyMarkdownLinkedImage();
+        }
+
+        private void tsmiCopyMarkdownLink_Click(object sender, EventArgs e)
+        {
+            CopyMarkdownLink();
+        }
+
+        private void tsmiCopyMarkdownImage_Click(object sender, EventArgs e)
+        {
+            CopyMarkdownImage();
         }
 
         private void tsmiCopyFilePath_Click(object sender, EventArgs e)
