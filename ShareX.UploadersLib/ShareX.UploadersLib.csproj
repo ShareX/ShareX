@@ -233,6 +233,7 @@
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
+    <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />

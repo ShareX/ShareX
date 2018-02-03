@@ -82,8 +82,10 @@ namespace ShareX.UploadersLib.ImageUploaders
                 throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
             }
 
+            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
+
             UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                customUploader.GetArguments(fileName), customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                customUploader.GetArguments(input), customUploader.GetHeaders(input), responseType: customUploader.ResponseType);
 
             if (result.IsSuccess)
             {

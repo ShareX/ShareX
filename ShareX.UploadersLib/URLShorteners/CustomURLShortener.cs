@@ -78,20 +78,25 @@ namespace ShareX.UploadersLib.URLShorteners
             if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
                 throw new Exception("'File form name' cannot be used with custom URL shortener.");
 
-            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$")))
-                throw new Exception("Atleast one '$input$' required for argument value.");
+            if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
+                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
+                throw new Exception("Atleast one '$input$' required for argument or header value.");
 
             UploadResult result = new UploadResult { URL = url };
 
-            Dictionary<string, string> args = customUploader.GetArguments("", url);
+            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
+
+            Dictionary<string, string> args = customUploader.GetArguments(input);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
-                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(input),
+                    responseType: customUploader.ResponseType);
             }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(input),
+                    responseType: customUploader.ResponseType);
             }
 
             try

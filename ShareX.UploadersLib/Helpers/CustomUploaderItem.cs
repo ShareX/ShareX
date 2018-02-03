@@ -151,7 +151,7 @@ namespace ShareX.UploadersLib
             return FileFormName;
         }
 
-        public Dictionary<string, string> GetArguments(string filename = "", string input = "")
+        public Dictionary<string, string> GetArguments(CustomUploaderArgumentInput input)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 
@@ -159,24 +159,14 @@ namespace ShareX.UploadersLib
             {
                 foreach (KeyValuePair<string, string> arg in Arguments)
                 {
-                    string value = arg.Value;
-
-                    value = NameParser.Parse(NameParserType.Text, value);
-
-                    value = value.BatchReplace(new Dictionary<string, string>()
-                    {
-                        { "$filename$", filename },
-                        { "$input$", input }
-                    });
-
-                    arguments.Add(arg.Key, value);
+                    arguments.Add(arg.Key, input.Parse(arg.Value));
                 }
             }
 
             return arguments;
         }
 
-        public NameValueCollection GetHeaders()
+        public NameValueCollection GetHeaders(CustomUploaderArgumentInput input)
         {
             if (Headers != null && Headers.Count > 0)
             {
@@ -184,7 +174,7 @@ namespace ShareX.UploadersLib
 
                 foreach (KeyValuePair<string, string> header in Headers)
                 {
-                    collection.Add(header.Key, header.Value);
+                    collection.Add(header.Key, input.Parse(header.Value));
                 }
 
                 return collection;
