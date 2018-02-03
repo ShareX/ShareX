@@ -96,12 +96,15 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
-            CodeMenuItem customUploaderInput = new CodeMenuItem("$input$", "Text/URL input");
+            CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
+            CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
 
             CodeMenu.Create<CodeMenuEntryFilename>(txtCustomUploaderArgValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, new CodeMenuItem[] { customUploaderInput });
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
+                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
             CodeMenu.Create<CodeMenuEntryFilename>(txtCustomUploaderHeaderValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, new CodeMenuItem[] { customUploaderInput });
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
+                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
 
             // FTP
             cbFTPURLPathProtocol.Items.AddRange(Helpers.GetEnumDescriptions<BrowserProtocol>());
