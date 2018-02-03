@@ -259,6 +259,21 @@ namespace ShareX.HistoryLib
             }
         }
 
+        public void CopyMarkdownLink()
+        {
+            if (HistoryItem != null && IsURLExist) ClipboardHelpers.CopyText(string.Format("[{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+        }
+
+        public void CopyMarkdownImage()
+        {
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("![{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+        }
+
+        public void CopyMarkdownLinkedImage()
+        {
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("[![{0}]({1})]({2})", HistoryItem.Filename, HistoryItem.URL, HistoryItem.URL));
+        }
+
         public void CopyFilePath()
         {
             if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(HistoryItem.Filepath);
