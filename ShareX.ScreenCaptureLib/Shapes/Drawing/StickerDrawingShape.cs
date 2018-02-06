@@ -37,6 +37,15 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingSticker;
 
+        public override void OnConfigLoad()
+        {
+            ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
+        }
+
+        public override void OnConfigSave()
+        {
+        }
+
         public override void ShowNodes()
         {
         }

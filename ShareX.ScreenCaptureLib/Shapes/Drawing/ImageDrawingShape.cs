@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImage;
 
         public Image Image { get; protected set; }
-        public ImageEditorInterpolationMode ImageInterpolationMode { get; private set; }
+        public ImageEditorInterpolationMode ImageInterpolationMode { get; protected set; }
 
         public override void OnConfigLoad()
         {
