@@ -234,6 +234,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\stamp.png" />
     <None Include="packages.config" />
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\image-select.png" />

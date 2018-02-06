@@ -267,6 +267,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingImageScreen:
                         img = Resources.monitor_image;
                         break;
+                    case ShapeType.DrawingSticker:
+                        img = Resources.stamp;
+                        break;
                     case ShapeType.DrawingCursor:
                         img = Resources.cursor;
                         break;
