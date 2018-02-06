@@ -97,6 +97,7 @@
             // 
             // tslSearch
             // 
+            this.tslSearch.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tslSearch.Name = "tslSearch";
             this.tslSearch.Size = new System.Drawing.Size(45, 23);
             this.tslSearch.Text = "Search:";
@@ -106,6 +107,8 @@
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbSearch.Name = "tstbSearch";
             this.tstbSearch.Size = new System.Drawing.Size(100, 26);
+            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
+            this.tstbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyUp);
             this.tstbSearch.TextChanged += new System.EventHandler(this.tstbSearch_TextChanged);
             // 
             // tslStickers
@@ -130,6 +133,7 @@
             this.tsbEditStickers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditStickers.Name = "tsbEditStickers";
             this.tsbEditStickers.Size = new System.Drawing.Size(23, 23);
+            this.tsbEditStickers.Click += new System.EventHandler(this.tsbEditStickers_Click);
             // 
             // tslSize
             // 

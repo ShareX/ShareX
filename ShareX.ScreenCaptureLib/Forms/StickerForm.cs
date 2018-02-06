@@ -95,6 +95,14 @@ namespace ShareX.ScreenCaptureLib
             ilvStickers.Items.AddRange(currentImageFiles);
         }
 
+        private void Close(string filePath)
+        {
+            SelectedImageFile = filePath;
+            StickerSize = (int)tsnudSize.NumericUpDownControl.Value;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
         private void StickerForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
@@ -104,6 +112,44 @@ namespace ShareX.ScreenCaptureLib
         private void tstbSearch_TextChanged(object sender, EventArgs e)
         {
             UpdateImageFiles();
+
+            if (ilvStickers.Items.Count > 0)
+            {
+                ilvStickers.Items[0].Selected = true;
+            }
+        }
+
+        private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void tstbSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                if (ilvStickers.Items.Count > 0)
+                {
+                    Close(ilvStickers.Items[0].FileName);
+                }
+            }
+        }
+
+        private void tscbStickers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadImageFiles();
+        }
+
+        private void tsbEditStickers_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void tsnudSize_ValueChanged(object sender, EventArgs e)
@@ -114,15 +160,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ilvStickers_ItemClick(object sender, Manina.Windows.Forms.ItemClickEventArgs e)
         {
-            SelectedImageFile = e.Item.FileName;
-            StickerSize = (int)tsnudSize.NumericUpDownControl.Value;
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void tscbStickers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadImageFiles();
+            Close(e.Item.FileName);
         }
     }
 }

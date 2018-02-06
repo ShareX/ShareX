@@ -41,10 +41,8 @@ namespace ShareX.ScreenCaptureLib
 
             ItemDrawOrder = ItemDrawOrder.NormalSelectedHovered;
 
-            ImageListView.Colors.SelectedColor1 = Color.Transparent;
-            ImageListView.Colors.SelectedColor2 = Color.FromArgb(252, 221, 132);
-            ImageListView.Colors.HoverColor1 = Color.Transparent;
-            ImageListView.Colors.HoverColor2 = Color.FromArgb(252, 221, 132);
+            ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 = Color.Transparent;
+            ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = Color.FromArgb(252, 221, 132);
         }
 
         public override void DrawItem(Graphics g, ImageListViewItem item, ItemState state, Rectangle bounds)
