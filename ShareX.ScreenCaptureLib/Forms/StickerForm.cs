@@ -64,6 +64,7 @@ namespace ShareX.ScreenCaptureLib
                 tscbStickers.Items.Add(stickerPackInfo);
             }
             tscbStickers.SelectedIndex = 0;
+            tstbSearch.Focus();
         }
 
         public void LoadImageFiles()
@@ -92,6 +93,12 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ilvStickers.Items.AddRange(currentImageFiles);
+        }
+
+        private void StickerForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+            tstbSearch.Focus();
         }
 
         private void tstbSearch_TextChanged(object sender, EventArgs e)
