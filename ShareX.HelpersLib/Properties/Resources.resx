@@ -1146,6 +1146,6 @@ Would you like to download it?</value>
     <value>..\Resources\animals.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Random line from a file. Use {path} to determine the file</value>
+    <value>Random line from a file. Use {filepath} to determine the file</value>
   </data>
 </root>

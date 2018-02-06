@@ -2645,7 +2645,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random line from a file. Use {path} to determine the file.
+        ///   Looks up a localized string similar to Random line from a file. Use {filepath} to determine the file.
         /// </summary>
         internal static string ReplCodeMenuEntry_rf_Random_line_from_file {
             get {
