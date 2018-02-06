@@ -1148,4 +1148,7 @@ Would you like to download it?</value>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
     <value>Random line from a file. Use {filepath} to determine the file</value>
   </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Drawing: Sticker</value>
+  </data>
 </root>
