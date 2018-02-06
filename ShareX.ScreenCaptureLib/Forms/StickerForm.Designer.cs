@@ -119,10 +119,9 @@
             // 
             this.tscbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscbStickers.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.tscbStickers.Items.AddRange(new object[] {
-            "Blob Emoji"});
             this.tscbStickers.Name = "tscbStickers";
             this.tscbStickers.Size = new System.Drawing.Size(121, 26);
+            this.tscbStickers.SelectedIndexChanged += new System.EventHandler(this.tscbStickers_SelectedIndexChanged);
             // 
             // tsbEditStickers
             // 

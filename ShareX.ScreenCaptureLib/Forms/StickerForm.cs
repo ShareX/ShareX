@@ -38,14 +38,16 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class StickerForm : Form
     {
+        public List<StickerPackInfo> StickerPacks { get; set; }
         public string SelectedImageFile { get; set; }
-        public int ImageSize { get; set; }
+        public int StickerSize { get; set; }
 
         private string[] imageFiles;
 
-        public StickerForm(int imageSize = 64)
+        public StickerForm(List<StickerPackInfo> stickerPacks, int stickerSize = 64)
         {
-            ImageSize = imageSize;
+            StickerPacks = stickerPacks;
+            StickerSize = stickerSize;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -54,19 +56,26 @@ namespace ShareX.ScreenCaptureLib
             tsnudSize.NumericUpDownControl.Maximum = 256;
             tsnudSize.NumericUpDownControl.Increment = 16;
             tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
-            tsnudSize.NumericUpDownControl.SetValue(ImageSize);
+            tsnudSize.NumericUpDownControl.SetValue(StickerSize);
             ilvStickers.SetRenderer(new StickerImageListViewRenderer());
-            ilvStickers.ThumbnailSize = new Size(ImageSize, ImageSize);
+            ilvStickers.ThumbnailSize = new Size(StickerSize, StickerSize);
+            foreach (StickerPackInfo stickerPackInfo in StickerPacks)
+            {
+                tscbStickers.Items.Add(stickerPackInfo);
+            }
             tscbStickers.SelectedIndex = 0;
-
-            LoadImageFiles("blobs");
         }
 
-        public void LoadImageFiles(string folderPath)
+        public void LoadImageFiles()
         {
-            imageFiles = Directory.GetFiles(folderPath, "*.png");
+            StickerPackInfo stickerPack = tscbStickers.SelectedItem as StickerPackInfo;
 
-            UpdateImageFiles();
+            if (stickerPack != null && Directory.Exists(stickerPack.FolderPath))
+            {
+                imageFiles = Directory.GetFiles(stickerPack.FolderPath).Where(x => Helpers.IsImageFile(x)).ToArray();
+
+                UpdateImageFiles();
+            }
         }
 
         private void UpdateImageFiles()
@@ -99,9 +108,14 @@ namespace ShareX.ScreenCaptureLib
         private void ilvStickers_ItemClick(object sender, Manina.Windows.Forms.ItemClickEventArgs e)
         {
             SelectedImageFile = e.Item.FileName;
-            ImageSize = (int)tsnudSize.NumericUpDownControl.Value;
+            StickerSize = (int)tsnudSize.NumericUpDownControl.Value;
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void tscbStickers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadImageFiles();
         }
     }
 }

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -83,6 +84,7 @@ namespace ShareX.ScreenCaptureLib
         public bool StepUseLetters { get; set; } = false;
 
         // Sticker drawing
+        public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>() { new StickerPackInfo("Sticker Packs/Blob Emoji", "Blob Emoji") };
         public int StickerSize { get; set; } = 64;
 
         // Blur effect

@@ -59,17 +59,17 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                using (StickerForm stickerForm = new StickerForm(AnnotationOptions.StickerSize))
+                using (StickerForm stickerForm = new StickerForm(AnnotationOptions.StickerPacks, AnnotationOptions.StickerSize))
                 {
                     if (stickerForm.ShowDialog() == DialogResult.OK)
                     {
-                        AnnotationOptions.StickerSize = stickerForm.ImageSize;
+                        AnnotationOptions.StickerSize = stickerForm.StickerSize;
 
                         if (!string.IsNullOrEmpty(stickerForm.SelectedImageFile))
                         {
                             Image img = ImageHelpers.LoadImage(stickerForm.SelectedImageFile);
 
-                            img = ImageHelpers.ResizeImage(img, new Size(stickerForm.ImageSize, stickerForm.ImageSize));
+                            img = ImageHelpers.ResizeImage(img, new Size(stickerForm.StickerSize, stickerForm.StickerSize));
 
                             if (img != null)
                             {
