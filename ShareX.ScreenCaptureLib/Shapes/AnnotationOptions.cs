@@ -82,6 +82,9 @@ namespace ShareX.ScreenCaptureLib
         public int StepFontSize { get; set; } = 18;
         public bool StepUseLetters { get; set; } = false;
 
+        // Sticker drawing
+        public int StickerSize { get; set; } = 64;
+
         // Blur effect
         public int BlurRadius { get; set; } = 15;
 

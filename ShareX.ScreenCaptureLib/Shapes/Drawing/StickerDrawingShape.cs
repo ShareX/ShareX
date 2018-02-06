@@ -50,10 +50,12 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                using (StickerForm stickerForm = new StickerForm())
+                using (StickerForm stickerForm = new StickerForm(AnnotationOptions.StickerSize))
                 {
                     if (stickerForm.ShowDialog() == DialogResult.OK)
                     {
+                        AnnotationOptions.StickerSize = stickerForm.ImageSize;
+
                         if (!string.IsNullOrEmpty(stickerForm.SelectedImageFile))
                         {
                             Image img = ImageHelpers.LoadImage(stickerForm.SelectedImageFile);

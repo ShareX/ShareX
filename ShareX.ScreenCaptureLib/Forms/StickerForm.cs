@@ -43,8 +43,10 @@ namespace ShareX.ScreenCaptureLib
 
         private string[] imageFiles;
 
-        public StickerForm()
+        public StickerForm(int imageSize = 64)
         {
+            ImageSize = imageSize;
+
             InitializeComponent();
             Icon = ShareXResources.Icon;
             tsMain.Renderer = new CustomToolStripProfessionalRenderer();
@@ -52,8 +54,9 @@ namespace ShareX.ScreenCaptureLib
             tsnudSize.NumericUpDownControl.Maximum = 256;
             tsnudSize.NumericUpDownControl.Increment = 16;
             tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
+            tsnudSize.NumericUpDownControl.SetValue(ImageSize);
             ilvStickers.SetRenderer(new StickerImageListViewRenderer());
-            ilvStickers.ThumbnailSize = new Size(64, 64);
+            ilvStickers.ThumbnailSize = new Size(ImageSize, ImageSize);
             tscbStickers.SelectedIndex = 0;
 
             LoadImageFiles("blobs");
