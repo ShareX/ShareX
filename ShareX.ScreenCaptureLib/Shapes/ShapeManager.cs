@@ -936,6 +936,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImageScreen:
                     shape = new ImageScreenDrawingShape();
                     break;
+                case ShapeType.DrawingSticker:
+                    shape = new StickerDrawingShape();
+                    break;
                 case ShapeType.DrawingCursor:
                     shape = new CursorDrawingShape();
                     break;

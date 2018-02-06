@@ -1566,6 +1566,8 @@ namespace ShareX.HelpersLib
         {
             try
             {
+                filePath = Helpers.GetAbsolutePath(filePath);
+
                 if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
                     Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));

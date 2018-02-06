@@ -35,6 +35,7 @@
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.tslStickers = new System.Windows.Forms.ToolStripLabel();
             this.tscbStickers = new System.Windows.Forms.ToolStripComboBox();
+            this.tsbEditStickers = new System.Windows.Forms.ToolStripButton();
             this.tslSize = new System.Windows.Forms.ToolStripLabel();
             this.tsnudSize = new ShareX.HelpersLib.ToolStripNumericUpDown();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -55,6 +56,7 @@
             this.ilvStickers.PersistentCacheSize = ((long)(100));
             this.ilvStickers.Size = new System.Drawing.Size(784, 481);
             this.ilvStickers.TabIndex = 0;
+            this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
             // 
             // toolStripContainer1
             // 
@@ -83,6 +85,7 @@
             this.tstbSearch,
             this.tslStickers,
             this.tscbStickers,
+            this.tsbEditStickers,
             this.tslSize,
             this.tsnudSize});
             this.tsMain.Location = new System.Drawing.Point(0, 0);
@@ -121,6 +124,14 @@
             this.tscbStickers.Name = "tscbStickers";
             this.tscbStickers.Size = new System.Drawing.Size(121, 26);
             // 
+            // tsbEditStickers
+            // 
+            this.tsbEditStickers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditStickers.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.gear;
+            this.tsbEditStickers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditStickers.Name = "tsbEditStickers";
+            this.tsbEditStickers.Size = new System.Drawing.Size(23, 23);
+            // 
             // tslSize
             // 
             this.tslSize.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
@@ -132,7 +143,7 @@
             // 
             this.tsnudSize.Name = "tsnudSize";
             this.tsnudSize.Size = new System.Drawing.Size(41, 23);
-            this.tsnudSize.Text = "16";
+            this.tsnudSize.Text = "64";
             this.tsnudSize.ValueChanged += new System.EventHandler(this.tsnudSize_ValueChanged);
             // 
             // StickerForm
@@ -166,5 +177,6 @@
         private System.Windows.Forms.ToolStripLabel tslSize;
         private System.Windows.Forms.ToolStripComboBox tscbStickers;
         private HelpersLib.ToolStripNumericUpDown tsnudSize;
+        private System.Windows.Forms.ToolStripButton tsbEditStickers;
     }
 }

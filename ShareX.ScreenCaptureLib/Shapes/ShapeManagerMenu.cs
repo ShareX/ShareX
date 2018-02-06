@@ -1006,13 +1006,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Form.ToolbarHeight = menuForm.Height;
             Form.CenterCanvas();
-
-            if (Form.IsEditorMode)
-            {
-                Form.Pause();
-                StickerForm stickerForm = new StickerForm();
-                stickerForm.Show();
-            }
         }
 
         private void MenuForm_KeyDown(object sender, KeyEventArgs e)

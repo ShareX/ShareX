@@ -38,6 +38,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class StickerForm : Form
     {
+        public string SelectedImageFile { get; set; }
+        public int ImageSize { get; set; }
+
         private string[] imageFiles;
 
         public StickerForm()
@@ -88,6 +91,14 @@ namespace ShareX.ScreenCaptureLib
         {
             int size = (int)tsnudSize.NumericUpDownControl.Value;
             ilvStickers.ThumbnailSize = new Size(size, size);
+        }
+
+        private void ilvStickers_ItemClick(object sender, Manina.Windows.Forms.ItemClickEventArgs e)
+        {
+            SelectedImageFile = e.Item.FileName;
+            ImageSize = (int)tsnudSize.NumericUpDownControl.Value;
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
