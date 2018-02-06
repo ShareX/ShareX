@@ -38,23 +38,50 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class StickerForm : Form
     {
+        private string[] imageFiles;
+
         public StickerForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             tsMain.Renderer = new CustomToolStripProfessionalRenderer();
             tsnudSize.NumericUpDownControl.Minimum = 16;
-            tsnudSize.NumericUpDownControl.Maximum = 512;
+            tsnudSize.NumericUpDownControl.Maximum = 256;
             tsnudSize.NumericUpDownControl.Increment = 16;
             tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
             ilvStickers.SetRenderer(new StickerImageListViewRenderer());
             ilvStickers.ThumbnailSize = new Size(64, 64);
-            ilvStickers.Colors.SelectedColor1 = Color.Transparent;
-            ilvStickers.Colors.SelectedColor2 = Color.FromArgb(252, 221, 132);
-            ilvStickers.Colors.HoverColor1 = Color.Transparent;
-            ilvStickers.Colors.HoverColor2 = Color.FromArgb(252, 221, 132);
-            ilvStickers.Items.AddRange(Directory.GetFiles("blobs", "*.png"));
             tscbStickers.SelectedIndex = 0;
+
+            LoadImageFiles("blobs");
+        }
+
+        public void LoadImageFiles(string folderPath)
+        {
+            imageFiles = Directory.GetFiles(folderPath, "*.png");
+
+            UpdateImageFiles();
+        }
+
+        private void UpdateImageFiles()
+        {
+            ilvStickers.Items.Clear();
+
+            string search = tstbSearch.Text;
+
+            string[] currentImageFiles = imageFiles;
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                currentImageFiles = imageFiles.Where(x => x.Contains(search, StringComparison.InvariantCultureIgnoreCase)).ToArray();
+            }
+
+            ilvStickers.Items.AddRange(currentImageFiles);
+        }
+
+        private void tstbSearch_TextChanged(object sender, EventArgs e)
+        {
+            UpdateImageFiles();
         }
 
         private void tsnudSize_ValueChanged(object sender, EventArgs e)

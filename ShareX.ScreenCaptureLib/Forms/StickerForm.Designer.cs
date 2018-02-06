@@ -103,6 +103,7 @@
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbSearch.Name = "tstbSearch";
             this.tstbSearch.Size = new System.Drawing.Size(100, 26);
+            this.tstbSearch.TextChanged += new System.EventHandler(this.tstbSearch_TextChanged);
             // 
             // tslStickers
             // 
