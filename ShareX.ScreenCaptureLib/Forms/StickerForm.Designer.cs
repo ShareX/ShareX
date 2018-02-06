@@ -30,17 +30,17 @@
         {
             this.ilvStickers = new Manina.Windows.Forms.ImageListView();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.tslSearch = new System.Windows.Forms.ToolStripLabel();
+            this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tslStickers = new System.Windows.Forms.ToolStripLabel();
+            this.tscbStickers = new System.Windows.Forms.ToolStripComboBox();
+            this.tslSize = new System.Windows.Forms.ToolStripLabel();
+            this.tsnudSize = new ShareX.HelpersLib.ToolStripNumericUpDown();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
+            this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // ilvStickers
@@ -53,7 +53,7 @@
             this.ilvStickers.Name = "ilvStickers";
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
-            this.ilvStickers.Size = new System.Drawing.Size(784, 484);
+            this.ilvStickers.Size = new System.Drawing.Size(784, 481);
             this.ilvStickers.TabIndex = 0;
             // 
             // toolStripContainer1
@@ -62,7 +62,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.ilvStickers);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 484);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 481);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -72,68 +72,67 @@
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsMain);
             // 
-            // toolStrip2
+            // tsMain
             // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripTextBox1,
-            this.toolStripLabel2,
-            this.toolStripComboBox1,
-            this.toolStripLabel3,
-            this.toolStripTextBox3});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStrip2.Size = new System.Drawing.Size(784, 27);
-            this.toolStrip2.Stretch = true;
-            this.toolStrip2.TabIndex = 0;
+            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslSearch,
+            this.tstbSearch,
+            this.tslStickers,
+            this.tscbStickers,
+            this.tslSize,
+            this.tsnudSize});
+            this.tsMain.Location = new System.Drawing.Point(0, 0);
+            this.tsMain.Name = "tsMain";
+            this.tsMain.Padding = new System.Windows.Forms.Padding(2);
+            this.tsMain.Size = new System.Drawing.Size(784, 30);
+            this.tsMain.Stretch = true;
+            this.tsMain.TabIndex = 0;
             // 
-            // toolStripLabel1
+            // tslSearch
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(45, 20);
-            this.toolStripLabel1.Text = "Search:";
+            this.tslSearch.Name = "tslSearch";
+            this.tslSearch.Size = new System.Drawing.Size(45, 23);
+            this.tslSearch.Text = "Search:";
             // 
-            // toolStripTextBox1
+            // tstbSearch
             // 
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tstbSearch.Name = "tstbSearch";
+            this.tstbSearch.Size = new System.Drawing.Size(100, 26);
             // 
-            // toolStripLabel2
+            // tslStickers
             // 
-            this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(50, 20);
-            this.toolStripLabel2.Text = "Stickers:";
+            this.tslStickers.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
+            this.tslStickers.Name = "tslStickers";
+            this.tslStickers.Size = new System.Drawing.Size(50, 23);
+            this.tslStickers.Text = "Stickers:";
             // 
-            // toolStripComboBox1
+            // tscbStickers
             // 
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
+            this.tscbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tscbStickers.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.tscbStickers.Items.AddRange(new object[] {
             "Blob Emoji"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.tscbStickers.Name = "tscbStickers";
+            this.tscbStickers.Size = new System.Drawing.Size(121, 26);
             // 
-            // toolStripLabel3
+            // tslSize
             // 
-            this.toolStripLabel3.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(30, 20);
-            this.toolStripLabel3.Text = "Size:";
+            this.tslSize.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
+            this.tslSize.Name = "tslSize";
+            this.tslSize.Size = new System.Drawing.Size(30, 23);
+            this.tslSize.Text = "Size:";
             // 
-            // toolStripTextBox3
+            // tsnudSize
             // 
-            this.toolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox3.Name = "toolStripTextBox3";
-            this.toolStripTextBox3.Size = new System.Drawing.Size(30, 23);
-            this.toolStripTextBox3.Text = "64";
-            this.toolStripTextBox3.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tsnudSize.Name = "tsnudSize";
+            this.tsnudSize.Size = new System.Drawing.Size(41, 23);
+            this.tsnudSize.Text = "16";
+            this.tsnudSize.ValueChanged += new System.EventHandler(this.tsnudSize_ValueChanged);
             // 
             // StickerForm
             // 
@@ -149,8 +148,8 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.tsMain.ResumeLayout(false);
+            this.tsMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -159,12 +158,12 @@
 
         private Manina.Windows.Forms.ImageListView ilvStickers;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStrip tsMain;
+        private System.Windows.Forms.ToolStripLabel tslSearch;
+        private System.Windows.Forms.ToolStripTextBox tstbSearch;
+        private System.Windows.Forms.ToolStripLabel tslStickers;
+        private System.Windows.Forms.ToolStripLabel tslSize;
+        private System.Windows.Forms.ToolStripComboBox tscbStickers;
+        private HelpersLib.ToolStripNumericUpDown tsnudSize;
     }
 }

@@ -42,7 +42,11 @@ namespace ShareX.ScreenCaptureLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            toolStrip2.Renderer = new CustomToolStripProfessionalRenderer();
+            tsMain.Renderer = new CustomToolStripProfessionalRenderer();
+            tsnudSize.NumericUpDownControl.Minimum = 16;
+            tsnudSize.NumericUpDownControl.Maximum = 512;
+            tsnudSize.NumericUpDownControl.Increment = 16;
+            tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
             ilvStickers.SetRenderer(new StickerImageListViewRenderer());
             ilvStickers.ThumbnailSize = new Size(64, 64);
             ilvStickers.Colors.SelectedColor1 = Color.Transparent;
@@ -50,7 +54,13 @@ namespace ShareX.ScreenCaptureLib
             ilvStickers.Colors.HoverColor1 = Color.Transparent;
             ilvStickers.Colors.HoverColor2 = Color.FromArgb(252, 221, 132);
             ilvStickers.Items.AddRange(Directory.GetFiles("blobs", "*.png"));
-            toolStripComboBox1.SelectedIndex = 0;
+            tscbStickers.SelectedIndex = 0;
+        }
+
+        private void tsnudSize_ValueChanged(object sender, EventArgs e)
+        {
+            int size = (int)tsnudSize.NumericUpDownControl.Value;
+            ilvStickers.ThumbnailSize = new Size(size, size);
         }
     }
 }
