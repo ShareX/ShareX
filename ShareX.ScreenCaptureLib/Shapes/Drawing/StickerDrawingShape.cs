@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         {
         }
 
-        private void OpenStickerPicker(bool creating)
+        private void OpenStickerForm(bool creating)
         {
             Manager.Form.Pause();
 
@@ -99,12 +99,17 @@ namespace ShareX.ScreenCaptureLib
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            OpenStickerPicker(true);
+            OpenStickerForm(true);
         }
 
         public override void OnDoubleClicked()
         {
-            OpenStickerPicker(false);
+            OpenStickerForm(false);
+        }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+            Move(x, y);
         }
     }
 }
