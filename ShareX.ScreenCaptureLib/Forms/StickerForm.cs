@@ -67,6 +67,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateStickerPacks()
         {
+            ilvStickers.Items.Clear();
             tscbStickers.Items.Clear();
 
             foreach (StickerPackInfo stickerPackInfo in StickerPacks)
@@ -77,6 +78,10 @@ namespace ShareX.ScreenCaptureLib
             if (tscbStickers.Items.Count > SelectedStickerPack)
             {
                 tscbStickers.SelectedIndex = SelectedStickerPack;
+            }
+            else if (tscbStickers.Items.Count > 0)
+            {
+                tscbStickers.SelectedIndex = 0;
             }
         }
 
