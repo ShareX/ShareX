@@ -50,11 +50,8 @@ namespace ShareX.ScreenCaptureLib
         {
         }
 
-        public override void OnCreating()
+        private void OpenStickerPicker(bool creating)
         {
-            Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-
             Manager.Form.Pause();
 
             try
@@ -74,19 +71,40 @@ namespace ShareX.ScreenCaptureLib
                             if (img != null)
                             {
                                 SetImage(img, true);
-                                OnCreated();
+
+                                if (creating)
+                                {
+                                    OnCreated();
+                                }
+
                                 return;
                             }
                         }
                     }
                 }
 
-                Remove();
+                if (creating)
+                {
+                    Remove();
+                }
             }
             finally
             {
                 Manager.Form.Resume();
             }
+        }
+
+        public override void OnCreating()
+        {
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+
+            OpenStickerPicker(true);
+        }
+
+        public override void OnDoubleClicked()
+        {
+            OpenStickerPicker(false);
         }
     }
 }
