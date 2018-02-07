@@ -80,14 +80,22 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Stickers.Add(new StickerPackInfo());
-            cbStickers.Items.Add(Stickers[Stickers.Count - 1]);
+            StickerPackInfo stickerPackInfo = new StickerPackInfo();
+            Stickers.Add(stickerPackInfo);
+            cbStickers.Items.Add(stickerPackInfo);
             cbStickers.SelectedIndex = cbStickers.Items.Count - 1;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            int selected = cbStickers.SelectedIndex;
 
+            if (selected > -1)
+            {
+                Stickers.RemoveAt(selected);
+                cbStickers.Items.RemoveAt(selected);
+                cbStickers.SelectedIndex = cbStickers.Items.Count - 1;
+            }
         }
 
         private void txtFolder_TextChanged(object sender, EventArgs e)
@@ -102,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnFolderBrowse_Click(object sender, EventArgs e)
         {
-
+            Helpers.BrowseFolder(txtFolder, txtFolder.Text);
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

@@ -59,18 +59,26 @@ namespace ShareX.ScreenCaptureLib
             tsnudSize.NumericUpDownControl.SetValue(StickerSize);
             ilvStickers.SetRenderer(new StickerImageListViewRenderer());
             ilvStickers.ThumbnailSize = new Size(StickerSize, StickerSize);
+            UpdateStickerPacks();
+            tstbSearch.Focus();
+        }
+
+        private void UpdateStickerPacks()
+        {
+            tscbStickers.Items.Clear();
+
             foreach (StickerPackInfo stickerPackInfo in StickerPacks)
             {
                 tscbStickers.Items.Add(stickerPackInfo);
             }
+
             if (tscbStickers.Items.Count > 0)
             {
                 tscbStickers.SelectedIndex = 0;
             }
-            tstbSearch.Focus();
         }
 
-        public void LoadImageFiles()
+        private void LoadImageFiles()
         {
             StickerPackInfo stickerPack = tscbStickers.SelectedItem as StickerPackInfo;
 
@@ -155,6 +163,8 @@ namespace ShareX.ScreenCaptureLib
             using (StickerPackForm stickerPackForm = new StickerPackForm(StickerPacks))
             {
                 stickerPackForm.ShowDialog();
+
+                UpdateStickerPacks();
             }
         }
 

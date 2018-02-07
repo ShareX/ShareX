@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -43,7 +44,17 @@ namespace ShareX.ScreenCaptureLib
 
         public override string ToString()
         {
-            return Name;
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return Name;
+            }
+
+            if (!string.IsNullOrEmpty(FolderPath))
+            {
+                return Path.GetFileName(FolderPath);
+            }
+
+            return "";
         }
     }
 }
