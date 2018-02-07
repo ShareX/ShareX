@@ -157,7 +157,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         string link = data.url;
                         if (DirectLink)
                         {
-                            link += IsCompatibility81 ? "/download" : "&download";
+                            link += IsCompatibility81 ? "/preview" : "&preview";
                         }
                         return link;
                     }
