@@ -55,6 +55,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 cbStickers.SelectedIndex = 0;
             }
+
+            UpdateEnabledStates();
         }
 
         private StickerPackInfo GetCurrentStickerPack()
@@ -67,8 +69,15 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
+        private void UpdateEnabledStates()
+        {
+            cbStickers.Enabled = btnRemove.Enabled = txtFolder.Enabled = btnFolderBrowse.Enabled = txtName.Enabled = cbStickers.SelectedIndex > -1;
+        }
+
         private void cbStickers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateEnabledStates();
+
             StickerPackInfo stickerPackInfo = GetCurrentStickerPack();
 
             if (stickerPackInfo != null)
@@ -96,6 +105,8 @@ namespace ShareX.ScreenCaptureLib
                 cbStickers.Items.RemoveAt(selected);
                 cbStickers.SelectedIndex = cbStickers.Items.Count - 1;
             }
+
+            UpdateEnabledStates();
         }
 
         private void txtFolder_TextChanged(object sender, EventArgs e)

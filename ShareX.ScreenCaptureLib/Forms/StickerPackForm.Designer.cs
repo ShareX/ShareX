@@ -44,15 +44,15 @@
             this.lblFolder.Location = new System.Drawing.Point(8, 64);
             this.lblFolder.Name = "lblFolder";
             this.lblFolder.Size = new System.Drawing.Size(39, 13);
-            this.lblFolder.TabIndex = 0;
+            this.lblFolder.TabIndex = 3;
             this.lblFolder.Text = "Folder:";
             // 
             // txtFolder
             // 
             this.txtFolder.Location = new System.Drawing.Point(56, 60);
             this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Size = new System.Drawing.Size(160, 20);
-            this.txtFolder.TabIndex = 1;
+            this.txtFolder.Size = new System.Drawing.Size(288, 20);
+            this.txtFolder.TabIndex = 4;
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
             // 
             // lblName
@@ -61,53 +61,53 @@
             this.lblName.Location = new System.Drawing.Point(8, 88);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 13);
-            this.lblName.TabIndex = 2;
+            this.lblName.TabIndex = 6;
             this.lblName.Text = "Name:";
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(56, 84);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.Size = new System.Drawing.Size(288, 20);
+            this.txtName.TabIndex = 7;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // cbStickers
             // 
             this.cbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStickers.FormattingEnabled = true;
-            this.cbStickers.Location = new System.Drawing.Point(8, 8);
+            this.cbStickers.Location = new System.Drawing.Point(8, 32);
             this.cbStickers.Name = "cbStickers";
-            this.cbStickers.Size = new System.Drawing.Size(208, 21);
-            this.cbStickers.TabIndex = 4;
+            this.cbStickers.Size = new System.Drawing.Size(368, 21);
+            this.cbStickers.TabIndex = 2;
             this.cbStickers.SelectedIndexChanged += new System.EventHandler(this.cbStickers_SelectedIndexChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(8, 32);
+            this.btnAdd.Location = new System.Drawing.Point(8, 8);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 23);
-            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Size = new System.Drawing.Size(184, 23);
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(112, 32);
+            this.btnRemove.Location = new System.Drawing.Point(192, 8);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnRemove.TabIndex = 6;
+            this.btnRemove.Size = new System.Drawing.Size(184, 23);
+            this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnFolderBrowse
             // 
-            this.btnFolderBrowse.Location = new System.Drawing.Point(218, 59);
+            this.btnFolderBrowse.Location = new System.Drawing.Point(350, 59);
             this.btnFolderBrowse.Name = "btnFolderBrowse";
             this.btnFolderBrowse.Size = new System.Drawing.Size(24, 23);
-            this.btnFolderBrowse.TabIndex = 7;
+            this.btnFolderBrowse.TabIndex = 5;
             this.btnFolderBrowse.Text = "...";
             this.btnFolderBrowse.UseVisualStyleBackColor = true;
             this.btnFolderBrowse.Click += new System.EventHandler(this.btnFolderBrowse_Click);
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 113);
+            this.ClientSize = new System.Drawing.Size(383, 113);
             this.Controls.Add(this.btnFolderBrowse);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
