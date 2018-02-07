@@ -85,6 +85,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Sticker drawing
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>() { new StickerPackInfo("Stickers/Blob Emoji") };
+        public int SelectedStickerPack = 0;
         public int StickerSize { get; set; } = 64;
 
         // Blur effect

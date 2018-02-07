@@ -39,14 +39,16 @@ namespace ShareX.ScreenCaptureLib
     public partial class StickerForm : Form
     {
         public List<StickerPackInfo> StickerPacks { get; set; }
-        public string SelectedImageFile { get; set; }
+        public int SelectedStickerPack { get; set; }
         public int StickerSize { get; set; }
+        public string SelectedImageFile { get; set; }
 
         private string[] imageFiles;
 
-        public StickerForm(List<StickerPackInfo> stickerPacks, int stickerSize = 64)
+        public StickerForm(List<StickerPackInfo> stickerPacks, int selectedStickerPack, int stickerSize = 64)
         {
             StickerPacks = stickerPacks;
+            SelectedStickerPack = selectedStickerPack;
             StickerSize = stickerSize;
 
             InitializeComponent();
@@ -72,9 +74,9 @@ namespace ShareX.ScreenCaptureLib
                 tscbStickers.Items.Add(stickerPackInfo);
             }
 
-            if (tscbStickers.Items.Count > 0)
+            if (tscbStickers.Items.Count > SelectedStickerPack)
             {
-                tscbStickers.SelectedIndex = 0;
+                tscbStickers.SelectedIndex = SelectedStickerPack;
             }
         }
 
@@ -156,6 +158,8 @@ namespace ShareX.ScreenCaptureLib
         private void tscbStickers_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadImageFiles();
+
+            SelectedStickerPack = tscbStickers.SelectedIndex;
         }
 
         private void tsbEditStickers_Click(object sender, EventArgs e)

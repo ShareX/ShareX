@@ -125,7 +125,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.lblFolder);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "StickerPackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

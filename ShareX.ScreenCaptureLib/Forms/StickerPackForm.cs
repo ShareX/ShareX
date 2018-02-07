@@ -116,6 +116,7 @@ namespace ShareX.ScreenCaptureLib
             if (stickerPackInfo != null)
             {
                 stickerPackInfo.FolderPath = txtFolder.Text;
+                cbStickers.RefreshItems();
             }
         }
 
@@ -131,6 +132,7 @@ namespace ShareX.ScreenCaptureLib
             if (stickerPackInfo != null)
             {
                 stickerPackInfo.Name = txtName.Text;
+                cbStickers.RefreshItems();
             }
         }
     }
