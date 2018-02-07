@@ -63,7 +63,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 tscbStickers.Items.Add(stickerPackInfo);
             }
-            tscbStickers.SelectedIndex = 0;
+            if (tscbStickers.Items.Count > 0)
+            {
+                tscbStickers.SelectedIndex = 0;
+            }
             tstbSearch.Focus();
         }
 
@@ -149,7 +152,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsbEditStickers_Click(object sender, EventArgs e)
         {
-
+            using (StickerPackForm stickerPackForm = new StickerPackForm(StickerPacks))
+            {
+                stickerPackForm.ShowDialog();
+            }
         }
 
         private void tsnudSize_ValueChanged(object sender, EventArgs e)

@@ -116,6 +116,12 @@
       <DependentUpon>StickerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StickerImageListViewRenderer.cs" />
+    <Compile Include="Forms\StickerPackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StickerPackForm.Designer.cs">
+      <DependentUpon>StickerPackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegionHelpers\ButtonObject.cs" />
     <Compile Include="RegionHelpers\ScrollbarManager.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerForm.resx">
       <DependentUpon>StickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StickerPackForm.resx">
+      <DependentUpon>StickerPackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.fr.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>

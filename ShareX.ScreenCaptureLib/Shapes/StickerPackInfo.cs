@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
         public string FolderPath { get; set; }
         public string Name { get; set; }
 
-        public StickerPackInfo(string folderPath, string name)
+        public StickerPackInfo(string folderPath = "", string name = "")
         {
             FolderPath = folderPath;
             Name = name;
