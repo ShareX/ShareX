@@ -89,10 +89,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            StickerPackInfo stickerPackInfo = new StickerPackInfo();
-            Stickers.Add(stickerPackInfo);
-            cbStickers.Items.Add(stickerPackInfo);
-            cbStickers.SelectedIndex = cbStickers.Items.Count - 1;
+            using (FolderSelectDialog fsd = new FolderSelectDialog())
+            {
+                if (fsd.ShowDialog())
+                {
+                    StickerPackInfo stickerPackInfo = new StickerPackInfo(fsd.FileName);
+                    Stickers.Add(stickerPackInfo);
+                    cbStickers.Items.Add(stickerPackInfo);
+                    cbStickers.SelectedIndex = cbStickers.Items.Count - 1;
+                }
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
