@@ -194,12 +194,7 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image ResizeImageLimit(Image img, Size size)
-        {
-            return ResizeImageLimit(img, size.Width, size.Height);
-        }
-
-        /// <summary>If image size bigger than "size" then resize it and keep aspect ratio else return image.</summary>
+        /// <summary>If image size is bigger than specified size then resize it and keep aspect ratio else return image.</summary>
         public static Image ResizeImageLimit(Image img, int width, int height)
         {
             if (img.Width <= width && img.Height <= height)
@@ -207,42 +202,29 @@ namespace ShareX.HelpersLib
                 return img;
             }
 
-            int newWidth, newHeight;
             double ratioX = (double)width / img.Width;
             double ratioY = (double)height / img.Height;
 
             if (ratioX < ratioY)
             {
-                newWidth = width;
-                newHeight = (int)(img.Height * ratioX);
+                height = (int)(img.Height * ratioX);
             }
-            else
+            else if (ratioX > ratioY)
             {
-                newWidth = (int)(img.Width * ratioY);
-                newHeight = height;
-            }
-
-            return ResizeImage(img, newWidth, newHeight);
-        }
-
-        public static Image ResizeImageLimit(Image img, int maxSize)
-        {
-            double ratio = (double)img.Width / img.Height;
-            double x = Math.Sqrt(maxSize / ratio);
-
-            int width, height;
-            if (ratio > 1)
-            {
-                width = (int)(ratio * x);
-                height = (int)(width / ratio);
-            }
-            else
-            {
-                height = (int)(ratio * x);
-                width = (int)(height / ratio);
+                width = (int)(img.Width * ratioY);
             }
 
             return ResizeImage(img, width, height);
+        }
+
+        public static Image ResizeImageLimit(Image img, Size size)
+        {
+            return ResizeImageLimit(img, size.Width, size.Height);
+        }
+
+        public static Image ResizeImageLimit(Image img, int size)
+        {
+            return ResizeImageLimit(img, size, size);
         }
 
         public static Image CropImage(Image img, Rectangle rect)

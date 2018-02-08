@@ -271,8 +271,12 @@
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
             this.gbAmazonS3Advanced = new System.Windows.Forms.GroupBox();
+            this.lblAmazonS3StripExtension = new System.Windows.Forms.Label();
+            this.cbAmazonS3StripExtensionText = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
+            this.cbAmazonS3StripExtensionVideo = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3PublicACL = new System.Windows.Forms.CheckBox();
+            this.cbAmazonS3StripExtensionImage = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3UsePathStyle = new System.Windows.Forms.CheckBox();
             this.btnAmazonS3StorageClassHelp = new System.Windows.Forms.Button();
             this.lblAmazonS3StorageClass = new System.Windows.Forms.Label();
@@ -625,10 +629,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbAmazonS3StripExtensionImage = new System.Windows.Forms.CheckBox();
-            this.cbAmazonS3StripExtensionVideo = new System.Windows.Forms.CheckBox();
-            this.cbAmazonS3StripExtensionText = new System.Windows.Forms.CheckBox();
-            this.lblAmazonS3StripExtension = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2577,6 +2577,18 @@
             this.gbAmazonS3Advanced.Name = "gbAmazonS3Advanced";
             this.gbAmazonS3Advanced.TabStop = false;
             // 
+            // lblAmazonS3StripExtension
+            // 
+            resources.ApplyResources(this.lblAmazonS3StripExtension, "lblAmazonS3StripExtension");
+            this.lblAmazonS3StripExtension.Name = "lblAmazonS3StripExtension";
+            // 
+            // cbAmazonS3StripExtensionText
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionText, "cbAmazonS3StripExtensionText");
+            this.cbAmazonS3StripExtensionText.Name = "cbAmazonS3StripExtensionText";
+            this.cbAmazonS3StripExtensionText.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionText.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionText_CheckedChanged);
+            // 
             // cbAmazonS3StorageClass
             // 
             this.cbAmazonS3StorageClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2585,12 +2597,26 @@
             this.cbAmazonS3StorageClass.Name = "cbAmazonS3StorageClass";
             this.cbAmazonS3StorageClass.SelectedIndexChanged += new System.EventHandler(this.cbAmazonS3StorageClass_SelectedIndexChanged);
             // 
+            // cbAmazonS3StripExtensionVideo
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionVideo, "cbAmazonS3StripExtensionVideo");
+            this.cbAmazonS3StripExtensionVideo.Name = "cbAmazonS3StripExtensionVideo";
+            this.cbAmazonS3StripExtensionVideo.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionVideo.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionVideo_CheckedChanged);
+            // 
             // cbAmazonS3PublicACL
             // 
             resources.ApplyResources(this.cbAmazonS3PublicACL, "cbAmazonS3PublicACL");
             this.cbAmazonS3PublicACL.Name = "cbAmazonS3PublicACL";
             this.cbAmazonS3PublicACL.UseVisualStyleBackColor = true;
             this.cbAmazonS3PublicACL.CheckedChanged += new System.EventHandler(this.cbAmazonS3PublicACL_CheckedChanged);
+            // 
+            // cbAmazonS3StripExtensionImage
+            // 
+            resources.ApplyResources(this.cbAmazonS3StripExtensionImage, "cbAmazonS3StripExtensionImage");
+            this.cbAmazonS3StripExtensionImage.Name = "cbAmazonS3StripExtensionImage";
+            this.cbAmazonS3StripExtensionImage.UseVisualStyleBackColor = true;
+            this.cbAmazonS3StripExtensionImage.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionImage_CheckedChanged);
             // 
             // cbAmazonS3UsePathStyle
             // 
@@ -5099,32 +5125,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // cbAmazonS3StripExtensionImage
-            // 
-            resources.ApplyResources(this.cbAmazonS3StripExtensionImage, "cbAmazonS3StripExtensionImage");
-            this.cbAmazonS3StripExtensionImage.Name = "cbAmazonS3StripExtensionImage";
-            this.cbAmazonS3StripExtensionImage.UseVisualStyleBackColor = true;
-            this.cbAmazonS3StripExtensionImage.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionImage_CheckedChanged);
-            // 
-            // cbAmazonS3StripExtensionVideo
-            // 
-            resources.ApplyResources(this.cbAmazonS3StripExtensionVideo, "cbAmazonS3StripExtensionVideo");
-            this.cbAmazonS3StripExtensionVideo.Name = "cbAmazonS3StripExtensionVideo";
-            this.cbAmazonS3StripExtensionVideo.UseVisualStyleBackColor = true;
-            this.cbAmazonS3StripExtensionVideo.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionVideo_CheckedChanged);
-            // 
-            // cbAmazonS3StripExtensionText
-            // 
-            resources.ApplyResources(this.cbAmazonS3StripExtensionText, "cbAmazonS3StripExtensionText");
-            this.cbAmazonS3StripExtensionText.Name = "cbAmazonS3StripExtensionText";
-            this.cbAmazonS3StripExtensionText.UseVisualStyleBackColor = true;
-            this.cbAmazonS3StripExtensionText.CheckedChanged += new System.EventHandler(this.cbAmazonS3StripExtensionText_CheckedChanged);
-            // 
-            // lblAmazonS3StripExtension
-            // 
-            resources.ApplyResources(this.lblAmazonS3StripExtension, "lblAmazonS3StripExtension");
-            this.lblAmazonS3StripExtension.Name = "lblAmazonS3StripExtension";
             // 
             // UploadersConfigForm
             // 

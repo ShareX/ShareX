@@ -51,10 +51,11 @@
             this.ilvStickers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ilvStickers.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ilvStickers.Location = new System.Drawing.Point(0, 0);
+            this.ilvStickers.MultiSelect = false;
             this.ilvStickers.Name = "ilvStickers";
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
-            this.ilvStickers.Size = new System.Drawing.Size(784, 481);
+            this.ilvStickers.Size = new System.Drawing.Size(784, 531);
             this.ilvStickers.TabIndex = 0;
             this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
             // 
@@ -64,11 +65,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.ilvStickers);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 481);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 531);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(784, 511);
+            this.toolStripContainer1.Size = new System.Drawing.Size(784, 561);
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -123,7 +124,7 @@
             this.tscbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscbStickers.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.tscbStickers.Name = "tscbStickers";
-            this.tscbStickers.Size = new System.Drawing.Size(121, 26);
+            this.tscbStickers.Size = new System.Drawing.Size(150, 26);
             this.tscbStickers.SelectedIndexChanged += new System.EventHandler(this.tscbStickers_SelectedIndexChanged);
             // 
             // tsbEditStickers
@@ -154,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 511);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "StickerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

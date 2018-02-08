@@ -49,9 +49,9 @@
             // 
             // txtFolder
             // 
-            this.txtFolder.Location = new System.Drawing.Point(56, 60);
+            this.txtFolder.Location = new System.Drawing.Point(80, 60);
             this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Size = new System.Drawing.Size(288, 20);
+            this.txtFolder.Size = new System.Drawing.Size(264, 20);
             this.txtFolder.TabIndex = 4;
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
             // 
@@ -66,9 +66,9 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(56, 84);
+            this.txtName.Location = new System.Drawing.Point(80, 84);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(288, 20);
+            this.txtName.Size = new System.Drawing.Size(264, 20);
             this.txtName.TabIndex = 7;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
