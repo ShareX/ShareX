@@ -133,6 +133,7 @@
             this.tsbEditStickers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditStickers.Name = "tsbEditStickers";
             this.tsbEditStickers.Size = new System.Drawing.Size(23, 23);
+            this.tsbEditStickers.Text = "Edit sticker packs";
             this.tsbEditStickers.Click += new System.EventHandler(this.tsbEditStickers_Click);
             // 
             // tslSize

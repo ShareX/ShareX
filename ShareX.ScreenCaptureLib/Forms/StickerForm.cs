@@ -88,13 +88,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void LoadImageFiles()
         {
+            imageFiles = null;
+            ilvStickers.Items.Clear();
+
             StickerPackInfo stickerPack = tscbStickers.SelectedItem as StickerPackInfo;
 
-            if (stickerPack != null && Directory.Exists(stickerPack.FolderPath))
+            if (stickerPack != null && !string.IsNullOrEmpty(stickerPack.FolderPath))
             {
-                imageFiles = Directory.GetFiles(stickerPack.FolderPath).Where(x => Helpers.IsImageFile(x)).ToArray();
+                string folderPath = Helpers.GetAbsolutePath(stickerPack.FolderPath);
 
-                UpdateImageFiles();
+                if (Directory.Exists(folderPath))
+                {
+                    imageFiles = Directory.GetFiles(folderPath).Where(x => Helpers.IsImageFile(x)).ToArray();
+
+                    UpdateImageFiles();
+                }
             }
         }
 
@@ -135,7 +143,7 @@ namespace ShareX.ScreenCaptureLib
         {
             UpdateImageFiles();
 
-            if (ilvStickers.Items.Count > 0)
+            if (ilvStickers.Items.Count > 0 && !string.IsNullOrEmpty(tstbSearch.Text))
             {
                 ilvStickers.Items[0].Selected = true;
             }
