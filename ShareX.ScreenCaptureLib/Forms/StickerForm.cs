@@ -67,6 +67,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateStickerPacks()
         {
+            imageFiles = null;
             ilvStickers.Items.Clear();
             tscbStickers.Items.Clear();
 
@@ -101,16 +102,19 @@ namespace ShareX.ScreenCaptureLib
         {
             ilvStickers.Items.Clear();
 
-            string search = tstbSearch.Text;
-
-            string[] currentImageFiles = imageFiles;
-
-            if (!string.IsNullOrEmpty(search))
+            if (imageFiles != null && imageFiles.Length > 0)
             {
-                currentImageFiles = imageFiles.Where(x => x.Contains(search, StringComparison.InvariantCultureIgnoreCase)).ToArray();
-            }
+                string[] currentImageFiles = imageFiles;
 
-            ilvStickers.Items.AddRange(currentImageFiles);
+                string search = tstbSearch.Text;
+
+                if (!string.IsNullOrEmpty(search))
+                {
+                    currentImageFiles = imageFiles.Where(x => x.Contains(search, StringComparison.InvariantCultureIgnoreCase)).ToArray();
+                }
+
+                ilvStickers.Items.AddRange(currentImageFiles);
+            }
         }
 
         private void Close(string filePath)
