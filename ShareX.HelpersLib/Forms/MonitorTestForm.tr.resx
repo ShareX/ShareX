@@ -132,7 +132,9 @@
   <data name="btnScreenTearingTest.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Screen tearing test</value>
+  </data>
   <data name="&gt;&gt;btnScreenTearingTest.Name" xml:space="preserve">
     <value>btnScreenTearingTest</value>
   </data>
@@ -364,7 +366,9 @@
   <data name="lblShapeSizeValue.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblShapeSizeValue.Name" xml:space="preserve">
     <value>lblShapeSizeValue</value>
   </data>
@@ -539,7 +543,9 @@
   <data name="lblBlueValue.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblBlueValue.Name" xml:space="preserve">
     <value>lblBlueValue</value>
   </data>
@@ -627,7 +633,9 @@
   <data name="lblGreenValue.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblGreenValue.Name" xml:space="preserve">
     <value>lblGreenValue</value>
   </data>
@@ -715,7 +723,9 @@
   <data name="lblRedValue.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblRedValue.Name" xml:space="preserve">
     <value>lblRedValue</value>
   </data>
@@ -803,7 +813,9 @@
   <data name="lblBlackWhiteValue.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblBlackWhiteValue.Name" xml:space="preserve">
     <value>lblBlackWhiteValue</value>
   </data>
