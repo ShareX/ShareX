@@ -423,7 +423,9 @@
   <data name="btnAddPreset.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>New preset</value>
+  </data>
   <data name="&gt;&gt;btnAddPreset.Name" xml:space="preserve">
     <value>btnAddPreset</value>
   </data>
@@ -445,7 +447,9 @@
   <data name="btnRemovePreset.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Remove preset</value>
+  </data>
   <data name="&gt;&gt;btnRemovePreset.Name" xml:space="preserve">
     <value>btnRemovePreset</value>
   </data>
@@ -491,7 +495,9 @@
   <data name="lblPresetName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="&gt;&gt;lblPresetName.Name" xml:space="preserve">
     <value>lblPresetName</value>
   </data>
@@ -540,7 +546,9 @@
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
   <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
   </data>
