@@ -273,9 +273,7 @@
   <data name="lblY.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
-  <data name="lblY.Text" xml:space="preserve">
-    <value>Y:</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
@@ -300,9 +298,7 @@
   <data name="lblX.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
-  <data name="lblX.Text" xml:space="preserve">
-    <value>X:</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
   </data>
@@ -324,9 +320,7 @@
   <data name="txtX.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
-  <data name="txtX.Text" xml:space="preserve">
-    <value>1920</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -351,9 +345,7 @@
   <data name="txtY.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
-  <data name="txtY.Text" xml:space="preserve">
-    <value>1080</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -438,45 +430,31 @@
   <data name="tsmiCopyAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyAll.Text" xml:space="preserve">
-    <value>Copy all</value>
-  </data>
+  
   <data name="tsmiCopyRGB.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyRGB.Text" xml:space="preserve">
-    <value>Copy RGB</value>
-  </data>
+  
   <data name="tsmiCopyHex.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyHex.Text" xml:space="preserve">
-    <value>Copy hexadecimal</value>
-  </data>
+  
   <data name="tsmiCopyCMYK.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
-    <value>Copy CMYK</value>
-  </data>
+  
   <data name="tsmiCopyHSB.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyHSB.Text" xml:space="preserve">
-    <value>Copy HSB</value>
-  </data>
+  
   <data name="tsmiCopyDecimal.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
-    <value>Copy decimal</value>
-  </data>
+  
   <data name="tsmiCopyPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="tsmiCopyPosition.Text" xml:space="preserve">
-    <value>Copy position</value>
-  </data>
+  
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
