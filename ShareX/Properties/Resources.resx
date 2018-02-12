@@ -967,4 +967,10 @@ Middle click to close</value>
   <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HotkeySelectionControl_BtnConfigureHotkey" xml:space="preserve">
+    <value>Click to configure a Hotkey for this task</value>
+  </data>
+  <data name="HotkeySelectionControl_BtnHotkeyFailed" xml:space="preserve">
+    <value>Hotkey assignment failed. Does another program use this key?</value>
+  </data>
 </root>

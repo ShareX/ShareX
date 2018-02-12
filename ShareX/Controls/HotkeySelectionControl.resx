@@ -118,35 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblHotkeyStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblHotkeyStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 1</value>
-  </data>
-  <data name="lblHotkeyStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 21</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblHotkeyStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblHotkeyStatus.Name" xml:space="preserve">
-    <value>lblHotkeyStatus</value>
-  </data>
-  <data name="&gt;&gt;lblHotkeyStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHotkeyStatus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblHotkeyStatus.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblHotkeyDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHotkeyDescription.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -159,6 +134,7 @@
   <data name="lblHotkeyDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 21</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHotkeyDescription.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -172,13 +148,13 @@
     <value>lblHotkeyDescription</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnHotkey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -187,7 +163,7 @@
     <value>261, 0</value>
   </data>
   <data name="btnHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
+    <value>216, 23</value>
   </data>
   <data name="btnHotkey.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -231,6 +207,9 @@
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="tTHotkeyHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -242,6 +221,12 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>480, 23</value>
+  </data>
+  <data name="&gt;&gt;tTHotkeyHelp.Name" xml:space="preserve">
+    <value>tTHotkeyHelp</value>
+  </data>
+  <data name="&gt;&gt;tTHotkeyHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HotkeySelectionControl</value>
