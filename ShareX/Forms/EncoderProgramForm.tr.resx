@@ -320,7 +320,9 @@
   <data name="btnPathBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnPathBrowse.Name" xml:space="preserve">
     <value>btnPathBrowse</value>
   </data>
