@@ -153,7 +153,9 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  
+  <data name="chIcon.Text" xml:space="preserve">
+    <value></value>
+  <comment>@Invariant</comment></data>
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -169,7 +171,9 @@
   <data name="chFilename.Width" type="System.Int32, mscorlib">
     <value>170</value>
   </data>
-  
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  <comment>@Invariant</comment></data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>230</value>
   </data>
