@@ -216,9 +216,7 @@
   <data name="btnTest.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
+  
   <data name="&gt;&gt;btnTest.Name" xml:space="preserve">
     <value>btnTest</value>
   </data>
