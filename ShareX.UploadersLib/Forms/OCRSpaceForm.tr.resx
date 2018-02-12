@@ -152,7 +152,9 @@
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Language:</value>
+  </data>
   <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
     <value>lblLanguage</value>
   </data>
@@ -208,7 +210,9 @@
   <data name="lblResult.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Result:</value>
+  </data>
   <data name="&gt;&gt;lblResult.Name" xml:space="preserve">
     <value>lblResult</value>
   </data>
@@ -233,7 +237,9 @@
   <data name="llAttribution.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>Powered by OCR.Space API</value>
+  </data>
   <data name="llAttribution.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopRight</value>
   </data>
@@ -258,7 +264,9 @@
   <data name="btnStartOCR.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>Start OCR</value>
+  </data>
   <data name="&gt;&gt;btnStartOCR.Name" xml:space="preserve">
     <value>btnStartOCR</value>
   </data>
@@ -307,7 +315,9 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Optical character recognition</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>OCRSpaceForm</value>
   </data>
