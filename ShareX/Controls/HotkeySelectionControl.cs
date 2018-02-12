@@ -98,13 +98,16 @@ namespace ShareX
             {
                 default:
                 case HotkeyStatus.NotConfigured:
-                    lblHotkeyStatus.BackColor = Color.LightGoldenrodYellow;
+                    btnHotkey.BackColor = Color.LightGoldenrodYellow;
+                    tTHotkeyHelp.SetToolTip(btnHotkey, Resources.HotkeySelectionControl_BtnConfigureHotkey);
                     break;
                 case HotkeyStatus.Failed:
-                    lblHotkeyStatus.BackColor = Color.IndianRed;
+                    btnHotkey.BackColor = Color.IndianRed;
+                    tTHotkeyHelp.SetToolTip(btnHotkey, Resources.HotkeySelectionControl_BtnHotkeyFailed);
                     break;
                 case HotkeyStatus.Registered:
-                    lblHotkeyStatus.BackColor = Color.PaleGreen;
+                    btnHotkey.BackColor = Color.PaleGreen;
+                    tTHotkeyHelp.SetToolTip(btnHotkey, null);
                     break;
             }
         }

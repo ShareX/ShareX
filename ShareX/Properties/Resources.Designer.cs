@@ -1378,6 +1378,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click to configure a Hotkey for this task.
+        /// </summary>
+        public static string HotkeySelectionControl_BtnConfigureHotkey {
+            get {
+                return ResourceManager.GetString("HotkeySelectionControl_BtnConfigureHotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotkey assignment failed. Does another program use this key?.
+        /// </summary>
+        public static string HotkeySelectionControl_BtnHotkeyFailed {
+            get {
+                return ResourceManager.GetString("HotkeySelectionControl_BtnHotkeyFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a hotkey....
         /// </summary>
         public static string HotkeySelectionControl_StartEditing_Select_a_hotkey___ {

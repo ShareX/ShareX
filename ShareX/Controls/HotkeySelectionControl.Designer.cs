@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
-            this.lblHotkeyStatus = new System.Windows.Forms.Label();
             this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
             this.btnHotkey = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.tTHotkeyHelp = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
-            // 
-            // lblHotkeyStatus
-            // 
-            resources.ApplyResources(this.lblHotkeyStatus, "lblHotkeyStatus");
-            this.lblHotkeyStatus.BackColor = System.Drawing.Color.IndianRed;
-            this.lblHotkeyStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHotkeyStatus.Name = "lblHotkeyStatus";
             // 
             // lblHotkeyDescription
             // 
@@ -79,7 +73,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHotkey);
-            this.Controls.Add(this.lblHotkeyStatus);
             this.Controls.Add(this.lblHotkeyDescription);
             this.Name = "HotkeySelectionControl";
             this.ResumeLayout(false);
@@ -87,10 +80,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblHotkeyStatus;
         private ShareX.HelpersLib.LabelNoCopy lblHotkeyDescription;
         private System.Windows.Forms.Button btnHotkey;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ToolTip tTHotkeyHelp;
     }
 }
