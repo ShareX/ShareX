@@ -159,9 +159,7 @@
   <data name="cbOverrideAfterCaptureSettings.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Override "After capture" settings</value>
-  </data>
+  
   <data name="&gt;&gt;cbOverrideAfterCaptureSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterCaptureSettings</value>
   </data>
@@ -189,9 +187,7 @@
   <data name="cbOverrideAfterUploadSettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>Override "After upload" settings</value>
-  </data>
+  
   <data name="&gt;&gt;cbOverrideAfterUploadSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterUploadSettings</value>
   </data>
@@ -219,9 +215,7 @@
   <data name="cbOverrideDestinationSettings.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>Override "Destination" settings</value>
-  </data>
+  
   <data name="&gt;&gt;cbOverrideDestinationSettings.Name" xml:space="preserve">
     <value>cbOverrideDestinationSettings</value>
   </data>
@@ -642,9 +636,7 @@
   <data name="btnWatchFolderEdit.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
-    <value>Edit...</value>
-  </data>
+  
   <data name="&gt;&gt;btnWatchFolderEdit.Name" xml:space="preserve">
     <value>btnWatchFolderEdit</value>
   </data>
@@ -1386,9 +1378,7 @@
   <data name="chkOverrideGeneralSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Override general settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideGeneralSettings.Name" xml:space="preserve">
     <value>chkOverrideGeneralSettings</value>
   </data>
@@ -1731,9 +1721,7 @@
   <data name="lblImagePNGBitDepth.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG bit depth:</value>
-  </data>
+  
   <data name="&gt;&gt;lblImagePNGBitDepth.Name" xml:space="preserve">
     <value>lblImagePNGBitDepth</value>
   </data>
@@ -1758,9 +1746,7 @@
   <data name="cbImageAutoUseJPEG.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>If image size bigger than specified size then use JPEG as image format:</value>
-  </data>
+  
   <data name="&gt;&gt;cbImageAutoUseJPEG.Name" xml:space="preserve">
     <value>cbImageAutoUseJPEG</value>
   </data>
@@ -1893,9 +1879,7 @@
   <data name="lblImageSizeLimitHint.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
-    <value>kB</value>
-  </data>
+  
   <data name="&gt;&gt;lblImageSizeLimitHint.Name" xml:space="preserve">
     <value>lblImageSizeLimitHint</value>
   </data>
@@ -1968,9 +1952,7 @@
   <data name="lblImageJPEGQualityHint.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 - 100</value>
-  </data>
+  
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -2085,9 +2067,7 @@
   <data name="chkOverrideImageSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Override image settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideImageSettings.Name" xml:space="preserve">
     <value>chkOverrideImageSettings</value>
   </data>
@@ -3012,9 +2992,7 @@
   <data name="btnCaptureCustomRegionSelectRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
-    <value>Select region...</value>
-  </data>
+  
   <data name="&gt;&gt;btnCaptureCustomRegionSelectRectangle.Name" xml:space="preserve">
     <value>btnCaptureCustomRegionSelectRectangle</value>
   </data>
@@ -3039,9 +3017,7 @@
   <data name="lblCaptureCustomRegion.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>Pre configured region:</value>
-  </data>
+  
   <data name="&gt;&gt;lblCaptureCustomRegion.Name" xml:space="preserve">
     <value>lblCaptureCustomRegion</value>
   </data>
@@ -3129,9 +3105,7 @@
   <data name="lblCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
+  
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
   </data>
@@ -3159,9 +3133,7 @@
   <data name="lblCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
+  
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
   </data>
@@ -3567,9 +3539,7 @@
   <data name="chkOverrideCaptureSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Override capture settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideCaptureSettings.Name" xml:space="preserve">
     <value>chkOverrideCaptureSettings</value>
   </data>
@@ -3993,9 +3963,7 @@
   <data name="cbRegionCaptureShowFPS.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>Show FPS in top left corner</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureShowFPS.Name" xml:space="preserve">
     <value>cbRegionCaptureShowFPS</value>
   </data>
@@ -4104,9 +4072,7 @@
   <data name="lblRegionCaptureFixedSizeWidth.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Name" xml:space="preserve">
     <value>lblRegionCaptureFixedSizeWidth</value>
   </data>
@@ -4161,9 +4127,7 @@
   <data name="lblRegionCaptureFixedSizeHeight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Name" xml:space="preserve">
     <value>lblRegionCaptureFixedSizeHeight</value>
   </data>
@@ -4212,9 +4176,7 @@
   <data name="cbRegionCaptureIsFixedSize.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
-    <value>Fixed size region mode:</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureIsFixedSize.Name" xml:space="preserve">
     <value>cbRegionCaptureIsFixedSize</value>
   </data>
@@ -4239,9 +4201,7 @@
   <data name="cbRegionCaptureShowCrosshair.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>Show screen wide crosshair</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureShowCrosshair.Name" xml:space="preserve">
     <value>cbRegionCaptureShowCrosshair</value>
   </data>
@@ -4290,9 +4250,7 @@
   <data name="lblRegionCaptureMagnifierPixelSize.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
-    <value>Magnifier pixel size:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMagnifierPixelSize.Name" xml:space="preserve">
     <value>lblRegionCaptureMagnifierPixelSize</value>
   </data>
@@ -4341,9 +4299,7 @@
   <data name="lblRegionCaptureMagnifierPixelCount.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
-    <value>Magnifier pixel count:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMagnifierPixelCount.Name" xml:space="preserve">
     <value>lblRegionCaptureMagnifierPixelCount</value>
   </data>
@@ -4368,9 +4324,7 @@
   <data name="cbRegionCaptureUseSquareMagnifier.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
-    <value>Use square shape magnifier instead of circle</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureUseSquareMagnifier.Name" xml:space="preserve">
     <value>cbRegionCaptureUseSquareMagnifier</value>
   </data>
@@ -4395,9 +4349,7 @@
   <data name="cbRegionCaptureShowMagnifier.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
-    <value>Show magnifier near cursor</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureShowMagnifier.Name" xml:space="preserve">
     <value>cbRegionCaptureShowMagnifier</value>
   </data>
@@ -4422,9 +4374,7 @@
   <data name="cbRegionCaptureShowInfo.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
-    <value>Show position and size info</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureShowInfo.Name" xml:space="preserve">
     <value>cbRegionCaptureShowInfo</value>
   </data>
@@ -4449,9 +4399,7 @@
   <data name="cbRegionCaptureShowTips.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Show hotkeys and tips in right top corner</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureShowTips.Name" xml:space="preserve">
     <value>cbRegionCaptureShowTips</value>
   </data>
@@ -4476,9 +4424,7 @@
   <data name="btnRegionCaptureSnapSizesRemove.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
+  
   <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesRemove</value>
   </data>
@@ -4500,9 +4446,7 @@
   <data name="btnRegionCaptureSnapSizesAdd.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
+  
   <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesAdd</value>
   </data>
@@ -4548,9 +4492,7 @@
   <data name="lblRegionCaptureSnapSizes.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>Sizes region will snap to when holding "Alt" key:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureSnapSizes.Name" xml:space="preserve">
     <value>lblRegionCaptureSnapSizes</value>
   </data>
@@ -4575,9 +4517,7 @@
   <data name="cbRegionCaptureUseCustomInfoText.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>Use custom info text near cursor:</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureUseCustomInfoText.Name" xml:space="preserve">
     <value>cbRegionCaptureUseCustomInfoText</value>
   </data>
@@ -4602,9 +4542,7 @@
   <data name="cbRegionCaptureDetectControls.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
-    <value>Also detect control regions inside windows</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureDetectControls.Name" xml:space="preserve">
     <value>cbRegionCaptureDetectControls</value>
   </data>
@@ -4629,9 +4567,7 @@
   <data name="cbRegionCaptureDetectWindows.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
-    <value>Detect window regions and allow cursor hover capture</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureDetectWindows.Name" xml:space="preserve">
     <value>cbRegionCaptureDetectWindows</value>
   </data>
@@ -4680,9 +4616,7 @@
   <data name="lblRegionCaptureMouse5ClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>Mouse 5 click action:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMouse5ClickAction.Name" xml:space="preserve">
     <value>lblRegionCaptureMouse5ClickAction</value>
   </data>
@@ -4731,9 +4665,7 @@
   <data name="lblRegionCaptureMouse4ClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>Mouse 4 click action:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMouse4ClickAction.Name" xml:space="preserve">
     <value>lblRegionCaptureMouse4ClickAction</value>
   </data>
@@ -4782,9 +4714,7 @@
   <data name="lblRegionCaptureMouseMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>Mouse middle click action:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMouseMiddleClickAction.Name" xml:space="preserve">
     <value>lblRegionCaptureMouseMiddleClickAction</value>
   </data>
@@ -4830,9 +4760,7 @@
   <data name="lblRegionCaptureMouseRightClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>Mouse right click action:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureMouseRightClickAction.Name" xml:space="preserve">
     <value>lblRegionCaptureMouseRightClickAction</value>
   </data>
@@ -4857,9 +4785,7 @@
   <data name="cbRegionCaptureMultiRegionMode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Use multi region mode which will also allow resizing and moving regions</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureMultiRegionMode.Name" xml:space="preserve">
     <value>cbRegionCaptureMultiRegionMode</value>
   </data>
@@ -4977,9 +4903,7 @@
   <data name="btnRegionCaptureSnapSizesDialogCancel.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
+  
   <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesDialogCancel</value>
   </data>
@@ -5001,9 +4925,7 @@
   <data name="btnRegionCaptureSnapSizesDialogAdd.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
+  
   <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogAdd.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesDialogAdd</value>
   </data>
@@ -5052,9 +4974,7 @@
   <data name="RegionCaptureSnapSizesHeight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
+  
   <data name="&gt;&gt;RegionCaptureSnapSizesHeight.Name" xml:space="preserve">
     <value>RegionCaptureSnapSizesHeight</value>
   </data>
@@ -5106,9 +5026,7 @@
   <data name="lblRegionCaptureSnapSizesWidth.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
+  
   <data name="&gt;&gt;lblRegionCaptureSnapSizesWidth.Name" xml:space="preserve">
     <value>lblRegionCaptureSnapSizesWidth</value>
   </data>
@@ -5133,9 +5051,7 @@
   <data name="cbRegionCaptureUseDimming.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Dim background so selection can be differentiated easily (affects startup speed)</value>
-  </data>
+  
   <data name="&gt;&gt;cbRegionCaptureUseDimming.Name" xml:space="preserve">
     <value>cbRegionCaptureUseDimming</value>
   </data>
@@ -5772,9 +5688,7 @@
   <data name="lblGIFFPS.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
-  </data>
+  
   <data name="&gt;&gt;lblGIFFPS.Name" xml:space="preserve">
     <value>lblGIFFPS</value>
   </data>
@@ -5913,9 +5827,7 @@
   <data name="chkOverrideUploadSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Override upload settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideUploadSettings.Name" xml:space="preserve">
     <value>chkOverrideUploadSettings</value>
   </data>
@@ -6111,9 +6023,7 @@
   <data name="lblAutoIncrementNumber.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
+  
   <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
     <value>lblAutoIncrementNumber</value>
   </data>
@@ -6738,9 +6648,7 @@
   <data name="tpUploaderFilters.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>Uploader filters</value>
-  </data>
+  
   <data name="&gt;&gt;tpUploaderFilters.Name" xml:space="preserve">
     <value>tpUploaderFilters</value>
   </data>
@@ -6777,15 +6685,11 @@
   <data name="&gt;&gt;lvUploaderFiltersList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>Uploader</value>
-  </data>
+  
   <data name="chUploaderFiltersName.Width" type="System.Int32, mscorlib">
     <value>128</value>
   </data>
-  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>Extension</value>
-  </data>
+  
   <data name="chUploaderFiltersExtension.Width" type="System.Int32, mscorlib">
     <value>98</value>
   </data>
@@ -6798,9 +6702,7 @@
   <data name="btnUploaderFiltersRemove.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
+  
   <data name="&gt;&gt;btnUploaderFiltersRemove.Name" xml:space="preserve">
     <value>btnUploaderFiltersRemove</value>
   </data>
@@ -6822,9 +6724,7 @@
   <data name="btnUploaderFiltersUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
+  
   <data name="&gt;&gt;btnUploaderFiltersUpdate.Name" xml:space="preserve">
     <value>btnUploaderFiltersUpdate</value>
   </data>
@@ -6846,9 +6746,7 @@
   <data name="btnUploaderFiltersAdd.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
+  
   <data name="&gt;&gt;btnUploaderFiltersAdd.Name" xml:space="preserve">
     <value>btnUploaderFiltersAdd</value>
   </data>
@@ -6873,9 +6771,7 @@
   <data name="lblUploaderFiltersDestination.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
-    <value>Uploader:</value>
-  </data>
+  
   <data name="&gt;&gt;lblUploaderFiltersDestination.Name" xml:space="preserve">
     <value>lblUploaderFiltersDestination</value>
   </data>
@@ -6921,9 +6817,7 @@
   <data name="lblUploaderFiltersExtensionsExample.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
-    <value>Example: png, jpg, jpeg</value>
-  </data>
+  
   <data name="&gt;&gt;lblUploaderFiltersExtensionsExample.Name" xml:space="preserve">
     <value>lblUploaderFiltersExtensionsExample</value>
   </data>
@@ -6948,9 +6842,7 @@
   <data name="lblUploaderFiltersExtensions.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>Extension filter:</value>
-  </data>
+  
   <data name="&gt;&gt;lblUploaderFiltersExtensions.Name" xml:space="preserve">
     <value>lblUploaderFiltersExtensions</value>
   </data>
@@ -7248,9 +7140,7 @@
   <data name="chkOverrideActions.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Override actions</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideActions.Name" xml:space="preserve">
     <value>chkOverrideActions</value>
   </data>
@@ -7362,9 +7252,7 @@
   <data name="lblToolsScreenColorPickerFormat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>Screen color picker format:</value>
-  </data>
+  
   <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Name" xml:space="preserve">
     <value>lblToolsScreenColorPickerFormat</value>
   </data>
@@ -7398,9 +7286,7 @@
   <data name="chkOverrideToolsSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Override tools settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideToolsSettings.Name" xml:space="preserve">
     <value>chkOverrideToolsSettings</value>
   </data>
@@ -7458,9 +7344,7 @@
   <data name="chkOverrideAdvancedSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Override advanced settings</value>
-  </data>
+  
   <data name="&gt;&gt;chkOverrideAdvancedSettings.Name" xml:space="preserve">
     <value>chkOverrideAdvancedSettings</value>
   </data>
