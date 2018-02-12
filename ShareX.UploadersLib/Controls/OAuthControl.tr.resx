@@ -135,7 +135,9 @@
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
   <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
     <value>lblStatus</value>
   </data>
