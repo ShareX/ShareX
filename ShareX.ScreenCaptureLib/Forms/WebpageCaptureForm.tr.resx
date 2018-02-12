@@ -156,7 +156,9 @@
   <data name="lblURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  
+  <data name="lblURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblURL.Name" xml:space="preserve">
     <value>lblURL</value>
   </data>
@@ -334,7 +336,9 @@
   <data name="lblWebpageX.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  
+  <data name="lblWebpageX.Text" xml:space="preserve">
+    <value>x</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblWebpageX.Name" xml:space="preserve">
     <value>lblWebpageX</value>
   </data>
