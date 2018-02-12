@@ -135,7 +135,9 @@
   <data name="lblHeightPixels.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>pixels</value>
+  </data>
   <data name="&gt;&gt;lblHeightPixels.Name" xml:space="preserve">
     <value>lblHeightPixels</value>
   </data>
@@ -163,7 +165,9 @@
   <data name="lblWidthPixels.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>pixels</value>
+  </data>
   <data name="&gt;&gt;lblWidthPixels.Name" xml:space="preserve">
     <value>lblWidthPixels</value>
   </data>
@@ -191,7 +195,9 @@
   <data name="lblHeight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
   <data name="&gt;&gt;lblHeight.Name" xml:space="preserve">
     <value>lblHeight</value>
   </data>
@@ -219,7 +225,9 @@
   <data name="lblWidth.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Width:</value>
+  </data>
   <data name="&gt;&gt;lblWidth.Name" xml:space="preserve">
     <value>lblWidth</value>
   </data>
@@ -292,7 +300,9 @@
   <data name="cbTransparent.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
   <data name="&gt;&gt;cbTransparent.Name" xml:space="preserve">
     <value>cbTransparent</value>
   </data>
@@ -314,7 +324,9 @@
   <data name="btnChangeColor.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>Change color...</value>
+  </data>
   <data name="btnChangeColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -339,7 +351,9 @@
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
   </data>
@@ -361,7 +375,9 @@
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
   </data>
@@ -383,7 +399,9 @@
   <data name="gbBackgroundColor.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
   <data name="&gt;&gt;gbBackgroundColor.Name" xml:space="preserve">
     <value>gbBackgroundColor</value>
   </data>
@@ -408,7 +426,9 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - New image</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NewImageForm</value>
   </data>
