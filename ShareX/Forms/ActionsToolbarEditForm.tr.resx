@@ -128,9 +128,7 @@
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
+  
   <data name="&gt;&gt;btnRemove.Name" xml:space="preserve">
     <value>btnRemove</value>
   </data>
@@ -164,9 +162,7 @@
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
+  
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
   </data>
@@ -225,9 +221,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Edit actions toolbar</value>
-  </data>
+  
   <data name="&gt;&gt;chAction.Name" xml:space="preserve">
     <value>chAction</value>
   </data>
