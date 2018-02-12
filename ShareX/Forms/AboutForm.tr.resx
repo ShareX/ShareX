@@ -219,9 +219,7 @@
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value></value>
-  <comment>@Invariant</comment></data>
+  
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -246,9 +244,7 @@
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="rtbShareXInfo.Text" xml:space="preserve">
-    <value></value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -576,9 +572,7 @@
   <data name="lblBuild.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="lblBuild.Text" xml:space="preserve">
-    <value>Build</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="lblBuild.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
