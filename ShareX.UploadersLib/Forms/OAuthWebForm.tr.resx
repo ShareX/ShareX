@@ -219,9 +219,7 @@
   <data name="tslURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 20</value>
   </data>
-  <data name="tslURL.Text" xml:space="preserve">
-    <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="tstbURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 23</value>
   </data>
