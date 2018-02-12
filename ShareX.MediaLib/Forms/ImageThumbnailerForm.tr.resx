@@ -149,9 +149,7 @@
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add...</value>
-  </data>
+  
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
   </data>
@@ -173,9 +171,7 @@
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
+  
   <data name="&gt;&gt;btnRemove.Name" xml:space="preserve">
     <value>btnRemove</value>
   </data>
@@ -200,9 +196,7 @@
   <data name="lblWidth.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
+  
   <data name="&gt;&gt;lblWidth.Name" xml:space="preserve">
     <value>lblWidth</value>
   </data>
@@ -252,9 +246,7 @@
   <data name="lblHeight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
+  
   <data name="&gt;&gt;lblHeight.Name" xml:space="preserve">
     <value>lblHeight</value>
   </data>
@@ -303,9 +295,7 @@
   <data name="lblOutputFilename.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="lblOutputFilename.Text" xml:space="preserve">
-    <value>Output file name:</value>
-  </data>
+  
   <data name="&gt;&gt;lblOutputFilename.Name" xml:space="preserve">
     <value>lblOutputFilename</value>
   </data>
@@ -327,9 +317,7 @@
   <data name="txtOutputFilename.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="txtOutputFilename.Text" xml:space="preserve">
-    <value>$filename_th</value>
-  </data>
+  
   <data name="&gt;&gt;txtOutputFilename.Name" xml:space="preserve">
     <value>txtOutputFilename</value>
   </data>
@@ -354,9 +342,7 @@
   <data name="btnGenerate.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="btnGenerate.Text" xml:space="preserve">
-    <value>Generate thumbnails</value>
-  </data>
+  
   <data name="&gt;&gt;btnGenerate.Name" xml:space="preserve">
     <value>btnGenerate</value>
   </data>
@@ -381,9 +367,7 @@
   <data name="lblOutputFolder.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>Output folder:</value>
-  </data>
+  
   <data name="&gt;&gt;lblOutputFolder.Name" xml:space="preserve">
     <value>lblOutputFolder</value>
   </data>
@@ -426,9 +410,7 @@
   <data name="btnOutputFolder.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="btnOutputFolder.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
+  
   <data name="&gt;&gt;btnOutputFolder.Name" xml:space="preserve">
     <value>btnOutputFolder</value>
   </data>
@@ -453,9 +435,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Image thumbnailer</value>
-  </data>
+  
   <data name="&gt;&gt;chImages.Name" xml:space="preserve">
     <value>chImages</value>
   </data>
