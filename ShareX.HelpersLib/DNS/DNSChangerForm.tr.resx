@@ -395,7 +395,9 @@
   <data name="btnPingPrimary.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  
+  <data name="btnPingPrimary.Text" xml:space="preserve">
+    <value>Ping</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnPingPrimary.Name" xml:space="preserve">
     <value>btnPingPrimary</value>
   </data>
@@ -417,7 +419,9 @@
   <data name="btnPingSecondary.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  
+  <data name="btnPingSecondary.Text" xml:space="preserve">
+    <value>Ping</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnPingSecondary.Name" xml:space="preserve">
     <value>btnPingSecondary</value>
   </data>
