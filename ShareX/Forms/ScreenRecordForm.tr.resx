@@ -165,7 +165,9 @@
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  
+  <data name="lblTimer.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblTimer.Name" xml:space="preserve">
     <value>lblTimer</value>
   </data>
@@ -265,7 +267,9 @@
   <metadata name="niTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>238, 17</value>
   </metadata>
-  
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  <comment>@Invariant</comment></data>
   <data name="niTray.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
