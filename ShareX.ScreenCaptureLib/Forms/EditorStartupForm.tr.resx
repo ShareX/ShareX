@@ -138,9 +138,7 @@
   <data name="btnOpenImageFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Open image file...</value>
-  </data>
+  
   <data name="btnOpenImageFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -177,9 +175,7 @@
   <data name="btnCreateNewImage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Create new image...</value>
-  </data>
+  
   <data name="btnCreateNewImage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -216,9 +212,7 @@
   <data name="btnLoadImageFromClipboard.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Load image from clipboard</value>
-  </data>
+  
   <data name="btnLoadImageFromClipboard.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -252,9 +246,7 @@
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
+  
   <data name="btnCancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -285,9 +277,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Image editor</value>
-  </data>
+  
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditorStartupForm</value>
   </data>
