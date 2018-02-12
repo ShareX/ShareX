@@ -194,9 +194,7 @@
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
     <value>btnBrowse</value>
   </data>
