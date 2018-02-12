@@ -67,10 +67,10 @@ namespace ShareX.ScreenCaptureLib
                         {
                             Image img = ImageHelpers.LoadImage(stickerForm.SelectedImageFile);
 
-                            img = ImageHelpers.ResizeImageLimit(img, stickerForm.StickerSize);
-
                             if (img != null)
                             {
+                                img = ImageHelpers.ResizeImageLimit(img, stickerForm.StickerSize);
+
                                 SetImage(img, true);
 
                                 if (creating)

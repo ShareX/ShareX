@@ -207,11 +207,11 @@ namespace ShareX.HelpersLib
 
             if (ratioX < ratioY)
             {
-                height = (int)(img.Height * ratioX);
+                height = (int)Math.Round(img.Height * ratioX);
             }
             else if (ratioX > ratioY)
             {
-                width = (int)(img.Width * ratioY);
+                width = (int)Math.Round(img.Width * ratioY);
             }
 
             return ResizeImage(img, width, height);
