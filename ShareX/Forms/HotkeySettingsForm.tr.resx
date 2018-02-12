@@ -309,9 +309,7 @@
   <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>↑</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
     <value>btnMoveUp</value>
   </data>
@@ -339,9 +337,7 @@
   <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>↓</value>
-  <comment>@Invariant</comment></data>
+  
   <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
     <value>btnMoveDown</value>
   </data>
