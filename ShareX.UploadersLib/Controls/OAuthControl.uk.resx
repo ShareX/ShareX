@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,250 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="btnClearAuthorization.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
-  <data name="btnClearAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="btnClearAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnClearAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
-  </data>
-  <data name="btnClearAuthorization.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
     <value>Clear authorization</value>
-  </data>
-  <data name="btnClearAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnClearAuthorization.Name" xml:space="preserve">
-    <value>btnClearAuthorization</value>
-  </data>
-  <data name="&gt;&gt;btnClearAuthorization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClearAuthorization.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;btnClearAuthorization.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnRefreshAuthorization.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnRefreshAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
-  </data>
-  <data name="btnRefreshAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnRefreshAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
-  </data>
-  <data name="btnRefreshAuthorization.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Оновити авторизацію</value>
   </data>
-  <data name="btnRefreshAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshAuthorization.Name" xml:space="preserve">
-    <value>btnRefreshAuthorization</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshAuthorization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshAuthorization.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshAuthorization.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnOpenAuthorizePage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="btnOpenAuthorizePage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnOpenAuthorizePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
-  </data>
-  <data name="btnOpenAuthorizePage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>Step 1: Open authorize page...</value>
-  </data>
-  <data name="btnOpenAuthorizePage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnOpenAuthorizePage.Name" xml:space="preserve">
-    <value>btnOpenAuthorizePage</value>
-  </data>
-  <data name="&gt;&gt;btnOpenAuthorizePage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenAuthorizePage.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;btnOpenAuthorizePage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblVerificationCode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 56</value>
-  </data>
-  <data name="lblVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="lblVerificationCode.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Verification code:</value>
   </data>
-  <data name="&gt;&gt;lblVerificationCode.Name" xml:space="preserve">
-    <value>lblVerificationCode</value>
-  </data>
-  <data name="&gt;&gt;lblVerificationCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVerificationCode.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;lblVerificationCode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnCompleteAuthorization.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnCompleteAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
-  </data>
-  <data name="btnCompleteAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnCompleteAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
-  </data>
-  <data name="btnCompleteAuthorization.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
     <value>Step 2: Complete authorization</value>
-  </data>
-  <data name="btnCompleteAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnCompleteAuthorization.Name" xml:space="preserve">
-    <value>btnCompleteAuthorization</value>
-  </data>
-  <data name="&gt;&gt;btnCompleteAuthorization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCompleteAuthorization.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;btnCompleteAuthorization.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
-  </data>
-  <data name="txtVerificationCode.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtVerificationCode.Name" xml:space="preserve">
-    <value>txtVerificationCode</value>
-  </data>
-  <data name="&gt;&gt;txtVerificationCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtVerificationCode.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;txtVerificationCode.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblLoginStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 136</value>
-  </data>
-  <data name="lblLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lblLoginStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="lblLoginStatus.Text" xml:space="preserve">
     <value>Стан</value>
   </data>
-  <data name="&gt;&gt;lblLoginStatus.Name" xml:space="preserve">
-    <value>lblLoginStatus</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.Parent" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;lblLoginStatus.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gbUserAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gbUserAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 230</value>
-  </data>
-  <data name="gbUserAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>User account</value>
-  </data>
-  <data name="&gt;&gt;gbUserAccount.Name" xml:space="preserve">
-    <value>gbUserAccount</value>
-  </data>
-  <data name="&gt;&gt;gbUserAccount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbUserAccount.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbUserAccount.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>OAuthControl</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

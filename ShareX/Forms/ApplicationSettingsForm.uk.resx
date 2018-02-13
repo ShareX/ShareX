@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,2692 +117,240 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
-  <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
-  </data>
-  <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="btnEditQuickTaskMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Змінити меню швидких завдань...</value>
-  </data>
-  <data name="&gt;&gt;btnEditQuickTaskMenu.Name" xml:space="preserve">
-    <value>btnEditQuickTaskMenu</value>
-  </data>
-  <data name="&gt;&gt;btnEditQuickTaskMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnEditQuickTaskMenu.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbShowTray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
-  </data>
-  <data name="cbShowTray.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Показувати піктограму в області сповіщень</value>
   </data>
-  <data name="&gt;&gt;cbShowTray.Name" xml:space="preserve">
-    <value>cbShowTray</value>
-  </data>
-  <data name="&gt;&gt;cbShowTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbShowTray.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 17</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Показувати перебіг в області сповіщень</value>
-  </data>
-  <data name="&gt;&gt;cbTrayIconProgressEnabled.Name" xml:space="preserve">
-    <value>cbTrayIconProgressEnabled</value>
-  </data>
-  <data name="&gt;&gt;cbTrayIconProgressEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTrayIconProgressEnabled.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnLanguages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="cmsLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 4</value>
-  </data>
-  <data name="&gt;&gt;cmsLanguages.Name" xml:space="preserve">
-    <value>cmsLanguages</value>
-  </data>
-  <data name="&gt;&gt;cmsLanguages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 23</value>
-  </data>
-  <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnLanguages.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnLanguages.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnLanguages.Name" xml:space="preserve">
-    <value>btnLanguages</value>
-  </data>
-  <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRememberMainFormPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 17</value>
-  </data>
-  <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Запам’ятати позицію головного вікна</value>
   </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Name" xml:space="preserve">
-    <value>cbRememberMainFormPosition</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="llTranslators.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 37</value>
-  </data>
-  <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 13</value>
-  </data>
-  <data name="llTranslators.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="llTranslators.Text" xml:space="preserve">
     <value>Допоможіть нам перекласти ShareX Вашою мовою!</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Name" xml:space="preserve">
-    <value>llTranslators</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSilentRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
-  </data>
-  <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Мінімізувати до області сповіщень при запуску</value>
   </data>
-  <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
-    <value>cbSilentRun</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Показувати перебіг на кнопці в панелі завдань</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Name" xml:space="preserve">
-    <value>cbTaskbarProgressEnabled</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRememberMainFormSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
-  </data>
-  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
-  </data>
-  <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Запам’ятати розмір головного вікна</value>
   </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Name" xml:space="preserve">
-    <value>cbRememberMainFormSize</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Мова:</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
-    <value>lblLanguage</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Загальні</value>
   </data>
-  <data name="&gt;&gt;tpGeneral.Name" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;tpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGeneral.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSteamShowInApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbSteamShowInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 17</value>
-  </data>
-  <data name="cbSteamShowInApp.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
   </data>
-  <data name="&gt;&gt;cbSteamShowInApp.Name" xml:space="preserve">
-    <value>cbSteamShowInApp</value>
-  </data>
-  <data name="&gt;&gt;cbSteamShowInApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSteamShowInApp.Parent" xml:space="preserve">
-    <value>gbSteam</value>
-  </data>
-  <data name="&gt;&gt;cbSteamShowInApp.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 192</value>
-  </data>
-  <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 56</value>
-  </data>
-  <data name="gbSteam.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
-    <value>gbSteam</value>
-  </data>
-  <data name="&gt;&gt;gbSteam.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSteam.Parent" xml:space="preserve">
-    <value>tpIntegration</value>
-  </data>
-  <data name="&gt;&gt;gbSteam.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnChromeSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Підтримка розширення Chrome...</value>
   </data>
-  <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
-    <value>btnChromeSupport</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.Parent" xml:space="preserve">
-    <value>gbChrome</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
-  </data>
-  <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 64</value>
-  </data>
-  <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
-    <value>gbChrome</value>
-  </data>
-  <data name="&gt;&gt;gbChrome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbChrome.Parent" xml:space="preserve">
-    <value>tpIntegration</value>
-  </data>
-  <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
-  </data>
-  <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Запустити ShareX під час запуску Windows</value>
   </data>
-  <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
-    <value>cbStartWithWindows</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.Parent" xml:space="preserve">
-    <value>gbWindows</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSendToMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
-  </data>
-  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 17</value>
-  </data>
-  <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показати ShareX в меню „Надіслати“</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Name" xml:space="preserve">
-    <value>cbSendToMenu</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
-    <value>gbWindows</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbShellContextMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
-  </data>
-  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 17</value>
-  </data>
-  <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Показувати кнопку „Вивантажити із ShareX“ у контекстному меню Провідника Windows</value>
   </data>
-  <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
-    <value>cbShellContextMenu</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.Parent" xml:space="preserve">
-    <value>gbWindows</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 104</value>
-  </data>
-  <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Вікна</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
-    <value>gbWindows</value>
-  </data>
-  <data name="&gt;&gt;gbWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbWindows.Parent" xml:space="preserve">
-    <value>tpIntegration</value>
-  </data>
-  <data name="&gt;&gt;gbWindows.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tpIntegration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpIntegration.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpIntegration.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Інтеграція</value>
   </data>
-  <data name="&gt;&gt;tpIntegration.Name" xml:space="preserve">
-    <value>tpIntegration</value>
-  </data>
-  <data name="&gt;&gt;tpIntegration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpIntegration.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 13</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Примітка: Ви повинні повторно відкрити ShareX для застосування зміни особистої теки.</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Name" xml:space="preserve">
-    <value>lblNotePersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 212</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Відкрити...</value>
   </data>
-  <data name="&gt;&gt;btnOpenScreenshotsFolder.Name" xml:space="preserve">
-    <value>btnOpenScreenshotsFolder</value>
-  </data>
-  <data name="&gt;&gt;btnOpenScreenshotsFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenScreenshotsFolder.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;btnOpenScreenshotsFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 61</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 13</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
-    <value>lblPreviewPersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;lblPreviewPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 31</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Огляд...</value>
   </data>
-  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Name" xml:space="preserve">
-    <value>btnBrowsePersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;btnBrowsePersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
-  </data>
-  <data name="lblPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Особиста тека ShareX:</value>
-  </data>
-  <data name="&gt;&gt;lblPersonalFolderPath.Name" xml:space="preserve">
-    <value>lblPersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;lblPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;lblPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
-  </data>
-  <data name="txtPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtPersonalFolderPath.Name" xml:space="preserve">
-    <value>txtPersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;txtPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;txtPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 139</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Огляд...</value>
   </data>
-  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Name" xml:space="preserve">
-    <value>btnBrowseCustomScreenshotsPath</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Відкрити...</value>
-  </data>
-  <data name="&gt;&gt;btnOpenPersonalFolderPath.Name" xml:space="preserve">
-    <value>btnOpenPersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;btnOpenPersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenPersonalFolderPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;btnOpenPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 140</value>
-  </data>
-  <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
-  </data>
-  <data name="txtCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtCustomScreenshotsPath.Name" xml:space="preserve">
-    <value>txtCustomScreenshotsPath</value>
-  </data>
-  <data name="&gt;&gt;txtCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomScreenshotsPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;txtCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 116</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 17</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Користувацька тека для знімків:</value>
   </data>
-  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Name" xml:space="preserve">
-    <value>cbUseCustomScreenshotsPath</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;cbUseCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 172</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Шаблон назви підтек:</value>
   </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Name" xml:space="preserve">
-    <value>lblSaveImageSubFolderPattern</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 217</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 13</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
-    <value>lblSaveImageSubFolderPatternPreview</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 188</value>
-  </data>
-  <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
-  </data>
-  <data name="txtSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Name" xml:space="preserve">
-    <value>txtSaveImageSubFolderPattern</value>
-  </data>
-  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Parent" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;txtSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="tpPaths.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPaths.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Шляхи</value>
   </data>
-  <data name="&gt;&gt;tpPaths.Name" xml:space="preserve">
-    <value>tpPaths</value>
-  </data>
-  <data name="&gt;&gt;tpPaths.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPaths.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="cbExportLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
-  </data>
-  <data name="cbExportLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="cbExportLogs.Text" xml:space="preserve">
     <value>Експорт журналів</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Name" xml:space="preserve">
-    <value>cbExportLogs</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>Експорт історії</value>
   </data>
-  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
-    <value>cbExportHistory</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
-  </data>
-  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cbExportSettings.Text" xml:space="preserve">
     <value>Експорт налаштувань</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
-    <value>cbExportSettings</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
-  </data>
-  <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 24</value>
-  </data>
-  <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pbExportImport.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbExportImport.Name" xml:space="preserve">
-    <value>pbExportImport</value>
-  </data>
-  <data name="&gt;&gt;pbExportImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbExportImport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 23</value>
-  </data>
-  <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Експорт...</value>
   </data>
-  <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
-    <value>btnExport</value>
-  </data>
-  <data name="&gt;&gt;btnExport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
-  </data>
-  <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 23</value>
-  </data>
-  <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Імпорт...</value>
-  </data>
-  <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
-    <value>btnImport</value>
-  </data>
-  <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpExportImport.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpExportImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpExportImport.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="tpExportImport.Text" xml:space="preserve">
     <value>Експорт / імпорт</value>
   </data>
-  <data name="&gt;&gt;tpExportImport.Name" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;tpExportImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpExportImport.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpExportImport.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUploadLimit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 13</value>
-  </data>
-  <data name="lblUploadLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Межа одночасних відвантажень:</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimit.Name" xml:space="preserve">
-    <value>lblUploadLimit</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimit.Parent" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="nudUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="nudUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudUploadLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudUploadLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudUploadLimit.Name" xml:space="preserve">
-    <value>nudUploadLimit</value>
-  </data>
-  <data name="&gt;&gt;nudUploadLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudUploadLimit.Parent" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;nudUploadLimit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblUploadLimitHint.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUploadLimitHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 36</value>
-  </data>
-  <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
-  <data name="lblUploadLimitHint.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 вимикає)</value>
   </data>
-  <data name="&gt;&gt;lblUploadLimitHint.Name" xml:space="preserve">
-    <value>lblUploadLimitHint</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimitHint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimitHint.Parent" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;lblUploadLimitHint.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 21</value>
-  </data>
-  <data name="cbBufferSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Name" xml:space="preserve">
-    <value>cbBufferSize</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Parent" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblBufferSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblBufferSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
-  </data>
-  <data name="lblBufferSize.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Розмір буфера:</value>
-  </data>
-  <data name="&gt;&gt;lblBufferSize.Name" xml:space="preserve">
-    <value>lblBufferSize</value>
-  </data>
-  <data name="&gt;&gt;lblBufferSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblBufferSize.Parent" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;lblBufferSize.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpPerformance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPerformance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
-  </data>
-  <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpPerformance.Name" xml:space="preserve">
-    <value>tpPerformance</value>
-  </data>
-  <data name="&gt;&gt;tpPerformance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPerformance.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpPerformance.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnClipboardFormatEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 16</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnClipboardFormatEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Змінити...</value>
   </data>
-  <data name="&gt;&gt;btnClipboardFormatEdit.Name" xml:space="preserve">
-    <value>btnClipboardFormatEdit</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatEdit.Parent" xml:space="preserve">
-    <value>gbClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatEdit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnClipboardFormatRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 16</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnClipboardFormatRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatRemove.Name" xml:space="preserve">
-    <value>btnClipboardFormatRemove</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatRemove.Parent" xml:space="preserve">
-    <value>gbClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatRemove.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnClipboardFormatAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnClipboardFormatAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="btnClipboardFormatAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnClipboardFormatAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Додати...</value>
   </data>
-  <data name="&gt;&gt;btnClipboardFormatAdd.Name" xml:space="preserve">
-    <value>btnClipboardFormatAdd</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatAdd.Parent" xml:space="preserve">
-    <value>gbClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;btnClipboardFormatAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lvClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Опис</value>
-  </data>
-  <data name="chDescription.Width" type="System.Int32, mscorlib">
-    <value>135</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Формат</value>
   </data>
-  <data name="chFormat.Width" type="System.Int32, mscorlib">
-    <value>320</value>
-  </data>
-  <data name="lvClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 48</value>
-  </data>
-  <data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 264</value>
-  </data>
-  <data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.Name" xml:space="preserve">
-    <value>lvClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
-    <value>gbClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="gbClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 320</value>
-  </data>
-  <data name="gbClipboardFormats.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Формати буфера обміну</value>
-  </data>
-  <data name="&gt;&gt;gbClipboardFormats.Name" xml:space="preserve">
-    <value>gbClipboardFormats</value>
-  </data>
-  <data name="&gt;&gt;gbClipboardFormats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbClipboardFormats.Parent" xml:space="preserve">
-    <value>tpUploadResults</value>
-  </data>
-  <data name="&gt;&gt;gbClipboardFormats.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpUploadResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpUploadResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
-  </data>
-  <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Результати</value>
   </data>
-  <data name="&gt;&gt;tpUploadResults.Name" xml:space="preserve">
-    <value>tpUploadResults</value>
-  </data>
-  <data name="&gt;&gt;tpUploadResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadResults.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadResults.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 34</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 17</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
     <value>При повторній спробі, використовувати вторинні відвантажувачі у зазначеному порядку</value>
-  </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Name" xml:space="preserve">
-    <value>chkUseSecondaryUploaders</value>
-  </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpBackupDestinations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tlpBackupDestinations.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 242</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 263</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі зображень</value>
   </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 242</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 8</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 263</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі файлів</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 242</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 8</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 263</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі тексту</value>
   </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tlpBackupDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 56</value>
-  </data>
-  <data name="tlpBackupDestinations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="tlpBackupDestinations.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>521, 279</value>
-  </data>
-  <data name="tlpBackupDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Name" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="gbSecondaryImageUploaders" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryFileUploaders" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryTextUploaders" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,34,Percent,33" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 11</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 13</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Кількість спроб вивантаження при збої:</value>
-  </data>
-  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Name" xml:space="preserve">
-    <value>cbIfUploadFailRetryOnce</value>
-  </data>
-  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;cbIfUploadFailRetryOnce.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
-  </data>
-  <data name="nudRetryUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
-  </data>
-  <data name="nudRetryUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudRetryUpload.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudRetryUpload.Name" xml:space="preserve">
-    <value>nudRetryUpload</value>
-  </data>
-  <data name="&gt;&gt;nudRetryUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudRetryUpload.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;nudRetryUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpUploadRetry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpUploadRetry.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
-  </data>
-  <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Повторити</value>
   </data>
-  <data name="&gt;&gt;tpUploadRetry.Name" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;tpUploadRetry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadRetry.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadRetry.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tcUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 364</value>
-  </data>
-  <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Name" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Parent" xml:space="preserve">
-    <value>tpUpload</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpUpload.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Вивантажити</value>
-  </data>
-  <data name="&gt;&gt;tpUpload.Name" xml:space="preserve">
-    <value>tpUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUpload.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbHistoryCheckURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbHistoryCheckURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
-  </data>
-  <data name="cbHistoryCheckURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="cbHistoryCheckURL.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>Зберігати лише коли посилання не порожнє</value>
   </data>
-  <data name="&gt;&gt;cbHistoryCheckURL.Name" xml:space="preserve">
-    <value>cbHistoryCheckURL</value>
-  </data>
-  <data name="&gt;&gt;cbHistoryCheckURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbHistoryCheckURL.Parent" xml:space="preserve">
-    <value>gbHistory</value>
-  </data>
-  <data name="&gt;&gt;cbHistoryCheckURL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbHistorySaveTasks.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbHistorySaveTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbHistorySaveTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
-  </data>
-  <data name="cbHistorySaveTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Зберігати завдання до історії</value>
-  </data>
-  <data name="&gt;&gt;cbHistorySaveTasks.Name" xml:space="preserve">
-    <value>cbHistorySaveTasks</value>
-  </data>
-  <data name="&gt;&gt;cbHistorySaveTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbHistorySaveTasks.Parent" xml:space="preserve">
-    <value>gbHistory</value>
-  </data>
-  <data name="&gt;&gt;cbHistorySaveTasks.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="gbHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 80</value>
-  </data>
-  <data name="gbHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="gbHistory.Text" xml:space="preserve">
     <value>Історія</value>
   </data>
-  <data name="&gt;&gt;gbHistory.Name" xml:space="preserve">
-    <value>gbHistory</value>
-  </data>
-  <data name="&gt;&gt;gbHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbHistory.Parent" xml:space="preserve">
-    <value>tpHistory</value>
-  </data>
-  <data name="&gt;&gt;gbHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbRecentTasksTrayMenuMostRecentFirst.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRecentTasksTrayMenuMostRecentFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
-  </data>
-  <data name="cbRecentTasksTrayMenuMostRecentFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 17</value>
-  </data>
-  <data name="cbRecentTasksTrayMenuMostRecentFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
     <value>У меню області сповіщень показувати першими останні завдання</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Name" xml:space="preserve">
-    <value>cbRecentTasksTrayMenuMostRecentFirst</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksTrayMenuMostRecentFirst.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblRecentTasksMaxCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
-  </data>
-  <data name="lblRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 13</value>
-  </data>
-  <data name="lblRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Максимальна кількість завдань для збереження:</value>
   </data>
-  <data name="&gt;&gt;lblRecentTasksMaxCount.Name" xml:space="preserve">
-    <value>lblRecentTasksMaxCount</value>
-  </data>
-  <data name="&gt;&gt;lblRecentTasksMaxCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRecentTasksMaxCount.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;lblRecentTasksMaxCount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="nudRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="nudRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudRecentTasksMaxCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudRecentTasksMaxCount.Name" xml:space="preserve">
-    <value>nudRecentTasksMaxCount</value>
-  </data>
-  <data name="&gt;&gt;nudRecentTasksMaxCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudRecentTasksMaxCount.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;nudRecentTasksMaxCount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 17</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Показувати останні завдання в меню області сповіщень</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Name" xml:space="preserve">
-    <value>cbRecentTasksShowInTrayMenu</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInTrayMenu.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 17</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Показувати останні завдання в головному вікні під час запуску</value>
   </data>
-  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Name" xml:space="preserve">
-    <value>cbRecentTasksShowInMainWindow</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksShowInMainWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbRecentTasksSave.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRecentTasksSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbRecentTasksSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
-  </data>
-  <data name="cbRecentTasksSave.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Зберегти останні завдання</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksSave.Name" xml:space="preserve">
-    <value>cbRecentTasksSave</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksSave.Parent" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;cbRecentTasksSave.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="gbRecentLinks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 96</value>
-  </data>
-  <data name="gbRecentLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 176</value>
-  </data>
-  <data name="gbRecentLinks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
     <value>Останні завдання</value>
   </data>
-  <data name="&gt;&gt;gbRecentLinks.Name" xml:space="preserve">
-    <value>gbRecentLinks</value>
-  </data>
-  <data name="&gt;&gt;gbRecentLinks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbRecentLinks.Parent" xml:space="preserve">
-    <value>tpHistory</value>
-  </data>
-  <data name="&gt;&gt;gbRecentLinks.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpHistory.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="tpHistory.Text" xml:space="preserve">
     <value>Історія</value>
-  </data>
-  <data name="&gt;&gt;tpHistory.Name" xml:space="preserve">
-    <value>tpHistory</value>
-  </data>
-  <data name="&gt;&gt;tpHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpHistory.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpHistory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 17</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Не показувати діалогове вікно друку Windows</value>
   </data>
-  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Name" xml:space="preserve">
-    <value>cbPrintDontShowWindowsDialog</value>
-  </data>
-  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Parent" xml:space="preserve">
-    <value>tpPrint</value>
-  </data>
-  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Не показувати діалогове вікно параметрів друку зображень</value>
-  </data>
-  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Name" xml:space="preserve">
-    <value>cbDontShowPrintSettingDialog</value>
-  </data>
-  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Parent" xml:space="preserve">
-    <value>tpPrint</value>
-  </data>
-  <data name="&gt;&gt;cbDontShowPrintSettingDialog.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnShowImagePrintSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 23</value>
-  </data>
-  <data name="btnShowImagePrintSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
     <value>Параметри друку зображень...</value>
   </data>
-  <data name="&gt;&gt;btnShowImagePrintSettings.Name" xml:space="preserve">
-    <value>btnShowImagePrintSettings</value>
-  </data>
-  <data name="&gt;&gt;btnShowImagePrintSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnShowImagePrintSettings.Parent" xml:space="preserve">
-    <value>tpPrint</value>
-  </data>
-  <data name="&gt;&gt;btnShowImagePrintSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tpPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPrint.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Друк</value>
-  </data>
-  <data name="&gt;&gt;tpPrint.Name" xml:space="preserve">
-    <value>tpPrint</value>
-  </data>
-  <data name="&gt;&gt;tpPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPrint.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 21</value>
-  </data>
-  <data name="cbProxyMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Name" xml:space="preserve">
-    <value>cbProxyMethod</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;cbProxyMethod.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyMethod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="lblProxyMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Параметри проксі:</value>
   </data>
-  <data name="&gt;&gt;lblProxyMethod.Name" xml:space="preserve">
-    <value>lblProxyMethod</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyMethod.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblProxyHost.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Хост:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Name" xml:space="preserve">
-    <value>lblProxyHost</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyHost.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Name" xml:space="preserve">
-    <value>txtProxyHost</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;txtProxyHost.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 80</value>
-  </data>
-  <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudProxyPort.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="nudProxyPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Name" xml:space="preserve">
-    <value>nudProxyPort</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;nudProxyPort.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 64</value>
-  </data>
-  <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Порт:</value>
   </data>
-  <data name="&gt;&gt;lblProxyPort.Name" xml:space="preserve">
-    <value>lblProxyPort</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPort.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 160</value>
-  </data>
-  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblProxyPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Name" xml:space="preserve">
-    <value>lblProxyPassword</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 176</value>
-  </data>
-  <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtProxyPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;txtProxyPassword.Name" xml:space="preserve">
-    <value>txtProxyPassword</value>
-  </data>
-  <data name="&gt;&gt;txtProxyPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtProxyPassword.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;txtProxyPassword.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProxyUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
-  </data>
-  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblProxyUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Ім’я користувача:</value>
   </data>
-  <data name="&gt;&gt;lblProxyUsername.Name" xml:space="preserve">
-    <value>lblProxyUsername</value>
-  </data>
-  <data name="&gt;&gt;lblProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProxyUsername.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;lblProxyUsername.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
-  </data>
-  <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="txtProxyUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtProxyUsername.Name" xml:space="preserve">
-    <value>txtProxyUsername</value>
-  </data>
-  <data name="&gt;&gt;txtProxyUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtProxyUsername.Parent" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;txtProxyUsername.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpProxy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Проксі</value>
-  </data>
-  <data name="&gt;&gt;tpProxy.Name" xml:space="preserve">
-    <value>tpProxy</value>
-  </data>
-  <data name="&gt;&gt;tpProxy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpProxy.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 364</value>
-  </data>
-  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
-    <value>pgSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
-    <value>tpAdvanced</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpAdvanced.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Розширені</value>
   </data>
-  <data name="&gt;&gt;tpAdvanced.Name" xml:space="preserve">
-    <value>tpAdvanced</value>
-  </data>
-  <data name="&gt;&gt;tpAdvanced.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAdvanced.Parent" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 3</value>
-  </data>
-  <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 396</value>
-  </data>
-  <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tcSettings.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;tcSettings.Name" xml:space="preserve">
-    <value>tcSettings</value>
-  </data>
-  <data name="&gt;&gt;tcSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcSettings.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tttvMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tttvMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>731, 396</value>
-  </data>
-  <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tttvMain.Name" xml:space="preserve">
-    <value>tttvMain</value>
-  </data>
-  <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>737, 402</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>640, 440</value>
-  </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — налаштування програми</value>
   </data>
-  <data name="&gt;&gt;chDescription.Name" xml:space="preserve">
-    <value>chDescription</value>
-  </data>
-  <data name="&gt;&gt;chDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chFormat.Name" xml:space="preserve">
-    <value>chFormat</value>
-  </data>
-  <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>chSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>chSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>chSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ApplicationSettingsForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
