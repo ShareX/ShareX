@@ -1325,6 +1325,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbBorderColor.Visible = false;
                     tslnudBorderSize.Visible = false;
                     tsmiShadow.Visible = false;
+                    tsmiShadowColor.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
@@ -1338,6 +1339,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
+                    tsmiShadowColor.Visible = true;
                     break;
             }
 
