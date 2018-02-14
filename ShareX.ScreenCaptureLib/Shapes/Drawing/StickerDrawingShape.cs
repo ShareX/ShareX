@@ -63,23 +63,14 @@ namespace ShareX.ScreenCaptureLib
                         AnnotationOptions.SelectedStickerPack = stickerForm.SelectedStickerPack;
                         AnnotationOptions.StickerSize = stickerForm.StickerSize;
 
-                        if (!string.IsNullOrEmpty(stickerForm.SelectedImageFile))
+                        if (LoadSticker(stickerForm.SelectedImageFile, stickerForm.StickerSize))
                         {
-                            Image img = ImageHelpers.LoadImage(stickerForm.SelectedImageFile);
-
-                            if (img != null)
+                            if (creating)
                             {
-                                img = ImageHelpers.ResizeImageLimit(img, stickerForm.StickerSize);
-
-                                SetImage(img, true);
-
-                                if (creating)
-                                {
-                                    OnCreated();
-                                }
-
-                                return;
+                                OnCreated();
                             }
+
+                            return;
                         }
                     }
                 }
@@ -95,12 +86,41 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private bool LoadSticker(string filePath, int stickerSize)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Image img = ImageHelpers.LoadImage(filePath);
+
+                if (img != null)
+                {
+                    Manager.LastStickerPath = filePath;
+
+                    img = ImageHelpers.ResizeImageLimit(img, stickerSize);
+
+                    SetImage(img, true);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public override void OnCreating()
         {
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            OpenStickerForm(true);
+            if (AnnotationOptions.StickerQuickMode && LoadSticker(Manager.LastStickerPath, AnnotationOptions.StickerSize))
+            {
+                OnCreated();
+                Manager.IsMoving = true;
+            }
+            else
+            {
+                OpenStickerForm(true);
+            }
         }
 
         public override void OnDoubleClicked()

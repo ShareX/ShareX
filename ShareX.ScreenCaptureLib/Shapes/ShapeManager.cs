@@ -217,6 +217,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> ShapeCreated;
 
         internal RegionCaptureForm Form { get; private set; }
+        internal string LastStickerPath { get; set; }
 
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
