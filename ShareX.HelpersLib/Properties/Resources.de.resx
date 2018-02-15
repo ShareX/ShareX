@@ -895,4 +895,7 @@ Möchtest du sie herunterladen?</value>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>Bild zuschneiden</value>
   </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Nach .wav durchsuchen...</value>
+  </data>
 </root>
