@@ -1423,8 +1423,17 @@ namespace ShareX.ScreenCaptureLib
             if (Clipboard.ContainsImage())
             {
                 Image img = ClipboardHelpers.GetImage();
-
                 InsertImage(img, pos);
+            }
+            else if (Clipboard.ContainsFileDropList())
+            {
+                string[] files = Clipboard.GetFileDropList().OfType<string>().Where(x => Helpers.IsImageFile(x)).ToArray();
+
+                if (files.Length > 0 && !string.IsNullOrEmpty(files[0]))
+                {
+                    Image img = ImageHelpers.LoadImage(files[0]);
+                    InsertImage(img, pos);
+                }
             }
             else if (Clipboard.ContainsText())
             {
@@ -1558,7 +1567,6 @@ namespace ShareX.ScreenCaptureLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 Image img = ImageHelpers.LoadImage(filePath);
-
                 InsertImage(img, Form.ClientArea.Center());
             }
         }
