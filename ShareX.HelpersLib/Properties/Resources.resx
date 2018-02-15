@@ -1151,4 +1151,7 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Drawing: Sticker</value>
   </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Browse for a sound file...</value>
+  </data>
 </root>
