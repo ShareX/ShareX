@@ -26,13 +26,8 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -50,23 +45,25 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
         }
 
-        private void btnOpenImageFile_Click(object sender, EventArgs e)
+        private void LoadImageFile(string imageFilePath)
         {
-            string ImageFilePath = ImageHelpers.OpenImageFileDialog(this);
-
-            if (!string.IsNullOrEmpty(ImageFilePath) && File.Exists(ImageFilePath))
+            if (!string.IsNullOrEmpty(imageFilePath))
             {
-                Image = ImageHelpers.LoadImage(ImageFilePath);
+                Image = ImageHelpers.LoadImage(imageFilePath);
 
                 if (Image != null)
                 {
+                    ImageFilePath = imageFilePath;
                     DialogResult = DialogResult.OK;
                     Close();
-                    return;
                 }
             }
+        }
 
-            ImageFilePath = null;
+        private void btnOpenImageFile_Click(object sender, EventArgs e)
+        {
+            string imageFilePath = ImageHelpers.OpenImageFileDialog(this);
+            LoadImageFile(imageFilePath);
         }
 
         private void btnLoadImageFromClipboard_Click(object sender, EventArgs e)
@@ -79,6 +76,15 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DialogResult = DialogResult.OK;
                     Close();
+                }
+            }
+            else if (Clipboard.ContainsFileDropList())
+            {
+                string[] files = Clipboard.GetFileDropList().OfType<string>().Where(x => Helpers.IsImageFile(x)).ToArray();
+
+                if (files.Length > 0)
+                {
+                    LoadImageFile(files[0]);
                 }
             }
             else
