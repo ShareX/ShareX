@@ -324,7 +324,7 @@ namespace ShareX
                 }
             }
 
-            string url = InputBox.GetInputText("ShareX - " + "Shorten URL", inputText, "Shorten");
+            string url = InputBox.GetInputText("ShareX - " + ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText, ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten);
 
             if (!string.IsNullOrEmpty(url))
             {

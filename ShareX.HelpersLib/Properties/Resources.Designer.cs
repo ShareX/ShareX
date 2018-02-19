@@ -480,6 +480,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random adjective.
+        /// </summary>
+        internal static string CodeMenuEntryFilename_RandomAdjective {
+            get {
+                return ResourceManager.GetString("CodeMenuEntryFilename_RandomAdjective", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random animal.
+        /// </summary>
+        internal static string CodeMenuEntryFilename_RandomAnimal {
+            get {
+                return ResourceManager.GetString("CodeMenuEntryFilename_RandomAnimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cross {

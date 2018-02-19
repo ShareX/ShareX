@@ -1151,4 +1151,10 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Drawing: Sticker</value>
   </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Random animal</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Random adjective</value>
+  </data>
 </root>
