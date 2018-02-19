@@ -1138,4 +1138,16 @@
   <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
     <value>Билинейная</value>
   </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Рисование: Стикер</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Случайное животное</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Случайное прилагательное</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Случайная строка из файла. Используйте {filepath}, чтобы указать файл</value>
+  </data>
 </root>

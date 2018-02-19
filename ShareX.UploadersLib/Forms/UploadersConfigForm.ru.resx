@@ -1196,4 +1196,19 @@ store.book[0].title</value>
   <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
     <value>Дополнительно</value>
   </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>Убирать расширение файла:</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>Картинок</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>Текстов</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Задавать файлам public-read ACL</value>
+  </data>
 </root>
