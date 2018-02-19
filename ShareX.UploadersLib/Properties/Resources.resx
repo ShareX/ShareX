@@ -392,4 +392,19 @@ Created folders:</value>
   <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
     <value>"File form name" must be configured.</value>
   </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Not logged in.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Logged in.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Not logged in.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Logged in.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Login failed.</value>
+  </data>
 </root>

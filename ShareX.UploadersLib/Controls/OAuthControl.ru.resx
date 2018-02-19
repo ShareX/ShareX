@@ -138,4 +138,7 @@
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
     <value>Шаг 2: Завершить авторизацию</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Состояние:</value>
+  </data>
 </root>

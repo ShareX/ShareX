@@ -97,6 +97,15 @@ namespace ShareX.ImageEffectsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string ImageEffectsForm_EditorMode_Cancel {
+            get {
+                return ResourceManager.GetString("ImageEffectsForm_EditorMode_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image effects - Width: {0}, Height: {1}, Render time: {2} ms.
         /// </summary>
         internal static string ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms {

@@ -68,8 +68,7 @@ namespace ShareX.ImageEffectsLib
         public void EditorMode()
         {
             btnOK.Visible = true;
-            // TODO: Translate
-            btnClose.Text = "Cancel";
+            btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
         }
 
         private void AddAllEffectsToContextMenu()
