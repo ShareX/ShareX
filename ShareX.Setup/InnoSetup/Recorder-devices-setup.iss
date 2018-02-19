@@ -1,5 +1,5 @@
 #define MyAppName "Recorder Devices for ShareX"
-#define MyAppVersion "0.12.8"
+#define MyAppVersion "0.12.10"
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
 #define MyAppLibDirectory MyAppRootDirectory + "\Lib"

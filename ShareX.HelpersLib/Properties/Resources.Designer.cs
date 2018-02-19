@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib.Properties {
                         "me_extension_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to abandoned
         ///able
@@ -377,7 +377,7 @@ namespace ShareX.HelpersLib.Properties {
                 return ResourceManager.GetString("AmazonS3StorageClass_STANDARD_IA", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to aardvark
         ///aardwolf
@@ -3276,6 +3276,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string UrlShortenerType_CustomURLShortener {
             get {
                 return ResourceManager.GetString("UrlShortenerType_CustomURLShortener", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse for a sound file....
+        /// </summary>
+        internal static string WavFileNameEditor_EditValue_Browse_for_a_sound_file___ {
+            get {
+                return ResourceManager.GetString("WavFileNameEditor_EditValue_Browse_for_a_sound_file___", resourceCulture);
             }
         }
     }
