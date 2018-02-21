@@ -1046,6 +1046,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
+                        case ShapeType.DrawingSticker:
                         case ShapeType.DrawingCursor:
                             return null;
                     }
