@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (img != null)
                 {
-                    Manager.LastStickerPath = filePath;
+                    AnnotationOptions.LastStickerPath = filePath;
 
                     img = ImageHelpers.ResizeImageLimit(img, stickerSize);
 
@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            if (AnnotationOptions.StickerQuickMode && LoadSticker(Manager.LastStickerPath, AnnotationOptions.StickerSize))
+            if (Manager.IsCornerMoving && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
             {
                 OnCreated();
                 Manager.IsMoving = true;

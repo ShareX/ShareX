@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>();
         public int SelectedStickerPack = 0;
         public int StickerSize { get; set; } = 64;
-        public bool StickerQuickMode { get; set; } = false;
+        public string LastStickerPath { get; set; }
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;
