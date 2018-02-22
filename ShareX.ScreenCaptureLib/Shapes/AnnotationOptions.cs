@@ -75,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Image drawing
         public ImageEditorInterpolationMode ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
+        public string LastImageFilePath { get; set; }
 
         // Step drawing
         public Color StepBorderColor { get; set; } = SecondaryColor;

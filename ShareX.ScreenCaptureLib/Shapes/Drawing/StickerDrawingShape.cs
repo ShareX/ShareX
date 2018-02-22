@@ -50,7 +50,37 @@ namespace ShareX.ScreenCaptureLib
         {
         }
 
-        private void OpenStickerForm(bool creating)
+        public override void OnCreating()
+        {
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+
+            if (Manager.IsCornerMoving && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
+            {
+                OnCreated();
+                Manager.IsMoving = true;
+            }
+            else if (OpenStickerForm())
+            {
+                OnCreated();
+            }
+            else
+            {
+                Remove();
+            }
+        }
+
+        public override void OnDoubleClicked()
+        {
+            OpenStickerForm();
+        }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+            Move(x, y);
+        }
+
+        private bool OpenStickerForm()
         {
             Manager.Form.Pause();
 
@@ -63,27 +93,16 @@ namespace ShareX.ScreenCaptureLib
                         AnnotationOptions.SelectedStickerPack = stickerForm.SelectedStickerPack;
                         AnnotationOptions.StickerSize = stickerForm.StickerSize;
 
-                        if (LoadSticker(stickerForm.SelectedImageFile, stickerForm.StickerSize))
-                        {
-                            if (creating)
-                            {
-                                OnCreated();
-                            }
-
-                            return;
-                        }
+                        return LoadSticker(stickerForm.SelectedImageFile, stickerForm.StickerSize);
                     }
-                }
-
-                if (creating)
-                {
-                    Remove();
                 }
             }
             finally
             {
                 Manager.Form.Resume();
             }
+
+            return false;
         }
 
         private bool LoadSticker(string filePath, int stickerSize)
@@ -105,32 +124,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return false;
-        }
-
-        public override void OnCreating()
-        {
-            Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-
-            if (Manager.IsCornerMoving && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
-            {
-                OnCreated();
-                Manager.IsMoving = true;
-            }
-            else
-            {
-                OpenStickerForm(true);
-            }
-        }
-
-        public override void OnDoubleClicked()
-        {
-            OpenStickerForm(false);
-        }
-
-        public override void Resize(int x, int y, bool fromBottomRight)
-        {
-            Move(x, y);
         }
     }
 }
