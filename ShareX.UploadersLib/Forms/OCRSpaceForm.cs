@@ -107,6 +107,7 @@ namespace ShareX.UploadersLib
                         cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
                         pbProgress.Visible = false;
                         txtResult.Focus();
+                        llGoogleTranslate.Enabled = true;
                     }
                 });
             }
@@ -125,6 +126,12 @@ namespace ShareX.UploadersLib
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL("https://ocr.space");
+        }
+
+        private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
+            this.Close();
         }
     }
 }
