@@ -59,9 +59,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
         public string ImageLocation { get; set; }
 
-        //TODO: Is a custom enum for different watermark image sizes a better idea?
-        [DefaultValue(SizeType.AutoSize)]
-        public SizeType SizeMode { get; set; }
+        [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all.")]
+        public DrawImageSizeMode SizeMode { get; set; }
 
         [DefaultValue(typeof(Size), "0, 0")]
         public Size Size { get; set; }
@@ -79,12 +78,12 @@ namespace ShareX.ImageEffectsLib
                 {
                     //Calculate size first
                     Size imageSize = img2.Size;
-                    if (SizeMode == SizeType.Absolute)
+                    if (SizeMode == DrawImageSizeMode.Absolute)
                     {
                         //Use Size property
                         imageSize = Size;
                     }
-                    else if (SizeMode == SizeType.Percent)
+                    else if (SizeMode == DrawImageSizeMode.Percentage)
                     {
                         //Relative size
                         imageSize = new Size((int)(img2.Width * (Size.Width / 100.0)), (int)(img2.Height * (Size.Height / 100.0)));
@@ -108,6 +107,13 @@ namespace ShareX.ImageEffectsLib
             }
 
             return img;
+        }
+
+        public enum DrawImageSizeMode
+        {
+            DontResize,
+            Absolute,
+            Percentage
         }
     }
 }
