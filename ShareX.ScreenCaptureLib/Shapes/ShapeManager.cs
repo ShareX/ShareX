@@ -157,8 +157,11 @@ namespace ShareX.ScreenCaptureLib
         public bool IsMoving { get; set; }
         public bool IsPanning { get; set; }
         public bool IsResizing { get; set; }
+        // Is holding Ctrl?
         public bool IsCornerMoving { get; private set; }
+        // Is holding Shift?
         public bool IsProportionalResizing { get; private set; }
+        // Is holding Alt?
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
 
@@ -217,7 +220,6 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> ShapeCreated;
 
         internal RegionCaptureForm Form { get; private set; }
-        internal string LastStickerPath { get; set; }
 
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
@@ -1044,6 +1046,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
+                        case ShapeType.DrawingSticker:
                         case ShapeType.DrawingCursor:
                             return null;
                     }
