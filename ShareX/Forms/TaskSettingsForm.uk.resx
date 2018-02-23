@@ -117,23 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Use default "After capture" settings</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Use default "After upload" settings</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Use default "Destination" settings</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Опис:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Override default custom uploader:</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Override default FTP account:</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Після захоплення...</value>
@@ -174,17 +159,11 @@
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Відтворити звук після завершення захоплення</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Use general settings in main window task settings</value>
-  </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Загальні</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Формат зображення:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Image size limit for use "Image format 2":</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Якщо файл існує:</value>
@@ -195,36 +174,14 @@
   <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
     <value>кБ (0 вимикає)</value>
   </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 - 100</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>Якість GIF:</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Якість JPEG:</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Use image settings in main window task settings</value>
-  </data>
-  <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>You can enable/disable Image effects from "After capture tasks -&gt; Add image effects".</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Show image effects window after capture</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>Only apply effects to region capture</value>
-  </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Image effects configuration...</value>
-  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Ефекти</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Create thumbnail only if image size is bigger than thumbnail size</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Попередній перегляд</value>
@@ -244,53 +201,20 @@
   <data name="tpImage.Text" xml:space="preserve">
     <value>Зображення</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Ширина</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Висота</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Select a monitor for a custom region:</value>
-  </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>Show cursor in screenshots</value>
-  </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Зміщення тіні:</value>
-  </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>Capture window with transparency</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>When doing window capture if window intersects with taskbar then hide taskbar</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>Capture window with shadow (requires transparency)</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Capture client area when doing window or active window capture</value>
-  </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Затримка для знімка:</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Use capture settings in main window task settings</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захоплення області</value>
@@ -316,9 +240,6 @@
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Запис екрану (кадрів/с):</value>
   </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Run CLI afterwards:</value>
-  </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Профілі...</value>
   </data>
@@ -340,51 +261,14 @@
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Захоплення</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Use upload settings in main window task settings</value>
-  </data>
-  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Use window name pattern for region capture (ShareX will try to detect window behind selection)</value>
-  </data>
-  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Use custom time zone:</value>
-  </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Перегляд:</value>
-  </data>
-  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Name pattern for window capture:</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Перегляд:</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Reset auto increment number</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Use name pattern for file uploads instead actual file name</value>
-  </data>
-  <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Name pattern for capture or clipboard upload:</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Назви файлів</value>
-  </data>
-  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>If clipboard contains a URL then share it using URL sharing service</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>If clipboard contains a file URL then download it and upload</value>
-  </data>
-  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>If clipboard contains a folder path then index that folder and upload the index</value>
-  </data>
-  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>If clipboard contains a URL then use URL shortener</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>Вивантаження з буфера</value>
@@ -416,14 +300,8 @@
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
   </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Use actions in main window task settings</value>
-  </data>
   <data name="tpActions.Text" xml:space="preserve">
     <value>Дії</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Watch folders and if new file created then upload it</value>
   </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Шлях до теки</value>
@@ -443,9 +321,6 @@
   <data name="tpWatchFolders.Text" xml:space="preserve">
     <value>Стежити за теками</value>
   </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Use tools settings in main window task settings</value>
-  </data>
   <data name="tpIndexer.Text" xml:space="preserve">
     <value>Індексатор</value>
   </data>
@@ -454,9 +329,6 @@
   </data>
   <data name="tpTools.Text" xml:space="preserve">
     <value>Інструменти</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Use advanced settings in main window task settings</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Розширені</value>

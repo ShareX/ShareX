@@ -123,9 +123,6 @@
   <data name="cbAccountType.Items" xml:space="preserve">
     <value>Анонім</value>
   </data>
-  <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>User</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -129,15 +129,6 @@
   <data name="lbl2.Text" xml:space="preserve">
     <value>2. Встановіть Chrome-розширення ShareX з веб-магазину Chrome.</value>
   </data>
-  <data name="btnInstallExtension.Text" xml:space="preserve">
-    <value>Install ShareX Chrome extension</value>
-  </data>
-  <data name="lbl3.Text" xml:space="preserve">
-    <value>3. In Chrome right click on image, video, audio or selected text and you will see "Upload with ShareX" button in context menu.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Chrome extension support</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

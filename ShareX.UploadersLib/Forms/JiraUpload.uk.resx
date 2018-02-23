@@ -117,20 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblIssueId.Text" xml:space="preserve">
-    <value>Issue Id:</value>
-  </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Вивантажити</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Скасувати</value>
-  </data>
-  <data name="gpSummary.Text" xml:space="preserve">
-    <value>Summary</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Jira file upload</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

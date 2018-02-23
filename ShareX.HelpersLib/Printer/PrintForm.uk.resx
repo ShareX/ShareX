@@ -123,26 +123,11 @@
   <data name="cbAutoScale.Text" xml:space="preserve">
     <value>Автомасштабування зображення</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margin:</value>
-  </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
     <value>Дозволити збільшення зображення</value>
   </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Center image position</value>
-  </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Preview...</value>
-  </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Print...</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Скасувати</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Print options</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>There is already a file with the same name in this location.
-Select new file name or action:</value>
-  </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
     <value>Перезаписати: </value>
   </data>

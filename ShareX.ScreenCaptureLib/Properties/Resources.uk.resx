@@ -132,12 +132,7 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Якість:</value>
   </data>
-  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
-    <value>RGB: {0}, {1}, {2}
-Hex: {3}
-X: {4} Y: {5}</value>
-    <comment>@Invariant</comment>
-  </data>
+  
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Почати захоплення</value>
   </data>
@@ -156,9 +151,7 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>праворуч внизу</value>
   </data>
-  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} W: {2} H: {3}</value>
-  </data>
+  
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Утримувати лівий притиск на виділенні] Переміщення області</value>
   </data>

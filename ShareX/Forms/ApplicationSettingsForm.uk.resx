@@ -150,16 +150,8 @@
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
   </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Підтримка розширення Chrome...</value>
-  </data>
-  <data name="gbChrome.Text" xml:space="preserve">
-    <value>Chrome</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Запустити ShareX під час запуску Windows</value>
@@ -183,10 +175,6 @@
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Відкрити...</value>
   </data>
-  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
-    <value>...</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Огляд...</value>
   </data>
@@ -204,10 +192,6 @@
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Шаблон назви підтек:</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
-    <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Шляхи</value>

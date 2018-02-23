@@ -129,10 +129,6 @@
   <data name="lblNew.Text" xml:space="preserve">
     <value>Новий:</value>
   </data>
-  <data name="txtHex.Text" xml:space="preserve">
-    <value>FF00FF00</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Шістнадцятковий:</value>
     <comment>@Invariant</comment>
@@ -148,18 +144,6 @@
   </data>
   <data name="lblCyan.Text" xml:space="preserve">
     <value>Блакитний:</value>
-  </data>
-  <data name="lblHue.Text" xml:space="preserve">
-    <value>°</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblBrightnessPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblSaturationPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>Синій:</value>
@@ -181,26 +165,6 @@
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
     <value>Десятковий:</value>
-  </data>
-  <data name="txtDecimal.Text" xml:space="preserve">
-    <value>12345678</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblCyanPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblMagentaPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblYellowPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblKeyPerc.Text" xml:space="preserve">
-    <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
     <value>Альфа:</value>

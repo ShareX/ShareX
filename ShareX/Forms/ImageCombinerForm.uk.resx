@@ -132,14 +132,8 @@
   <data name="chFilepath.Text" xml:space="preserve">
     <value>Шлях до файла зображення</value>
   </data>
-  <data name="btnCombine.Text" xml:space="preserve">
-    <value>Combine images and save/upload depending on after capture settings</value>
-  </data>
   <data name="lblSpace.Text" xml:space="preserve">
     <value>Простір між зображеннями:</value>
-  </data>
-  <data name="lblOrientation.Text" xml:space="preserve">
-    <value>Combine orientation:</value>
   </data>
   <data name="lblSpacePixel.Text" xml:space="preserve">
     <value>пікселів</value>

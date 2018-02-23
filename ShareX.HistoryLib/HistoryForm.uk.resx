@@ -120,44 +120,8 @@
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Застосувати фільтри</value>
   </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Remove filters</value>
-  </data>
-  <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Host filter:</value>
-  </data>
-  <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Type filter:</value>
-  </data>
-  <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>From:</value>
-  </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filename filter:</value>
-  </data>
-  <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>To:</value>
-  </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Date filter:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contains</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Starts with</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Ends with</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Exact match</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Фільтри</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Назва файла</value>
@@ -165,9 +129,6 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>Посилання</value>
     <comment>@Invariant</comment>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - History</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

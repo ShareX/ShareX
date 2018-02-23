@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Network adapters:</value>
-  </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Preferred DNS server:</value>
-  </data>
   <data name="lblAlternateDNS.Text" xml:space="preserve">
     <value>Альтернативний DNS-сервер:</value>
   </data>
@@ -132,12 +126,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Закрити</value>
   </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>DNS servers:</value>
-  </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>Obtain DNS server address automatically</value>
-  </data>
   <data name="btnPingPrimary.Text" xml:space="preserve">
     <value>Пінг</value>
     <comment>@Invariant</comment>
@@ -145,9 +133,6 @@
   <data name="btnPingSecondary.Text" xml:space="preserve">
     <value>Пінг</value>
     <comment>@Invariant</comment>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - DNS Changer</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

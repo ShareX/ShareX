@@ -121,9 +121,6 @@
     <value>Посилання:</value>
     <comment>@Invariant</comment>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Authorization</value>
-  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

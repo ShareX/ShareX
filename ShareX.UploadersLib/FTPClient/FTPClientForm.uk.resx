@@ -129,38 +129,8 @@
   <data name="chFiletype.Text" xml:space="preserve">
     <value>Тип файла</value>
   </data>
-  <data name="chLastModified.Text" xml:space="preserve">
-    <value>Last modified</value>
-  </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connect</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Disconnect</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open URL</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rename</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
     <value>Оновити</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Create directory</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copy URL(s) to clipboard</value>
-  </data>
-  <data name="lblConnecting.Text" xml:space="preserve">
-    <value>Connecting to FTP server...</value>
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Файли</value>
@@ -170,9 +140,6 @@
   </data>
   <data name="tpConsole.Text" xml:space="preserve">
     <value>Консоль</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FTP client</value>
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -117,30 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
-    <value>Press "Ctrl" button when this window active to stop screen color picker.</value>
-  </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Запустити вибирач кольору з екрану</value>
   </data>
-  <data name="lblY.Text" xml:space="preserve">
-    <value>Y:</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblX.Text" xml:space="preserve">
-    <value>X:</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Скопіювати все</value>
-  </data>
-  <data name="txtX.Text" xml:space="preserve">
-    <value>1680</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="txtY.Text" xml:space="preserve">
-    <value>1050</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Позиція курсора:</value>

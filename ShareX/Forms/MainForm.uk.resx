@@ -138,12 +138,6 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>Посилання</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Patreon campaign web page</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Hide Patreon button permanently</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Весь екран</value>
   </data>
@@ -155,12 +149,6 @@
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Область</value>
-  </data>
-  <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Region (Light)</value>
-  </data>
-  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Region (Transparent)</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Остання область</value>
@@ -342,9 +330,6 @@
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Зупинити вивантаження</value>
   </data>
-  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Enter</value>
-  </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>Посилання</value>
   </data>
@@ -357,14 +342,8 @@
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>Посилання на видалення</value>
   </data>
-  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Enter</value>
-  </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Файл</value>
-  </data>
-  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Enter</value>
   </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
     <value>Тека</value>
@@ -374,9 +353,6 @@
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Відкрити</value>
-  </data>
-  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+C</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>Посилання</value>
@@ -390,14 +366,8 @@
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
     <value>Посилання на видалення</value>
   </data>
-  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+C</value>
-  </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Файл</value>
-  </data>
-  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+C</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Зображення</value>
@@ -429,18 +399,6 @@
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
     <value>Форумне (BBCode) зображення з посилання</value>
   </data>
-  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
-    <value>Markdown link</value>
-  </data>
-  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
-    <value>Markdown image</value>
-  </data>
-  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
-    <value>Markdown linked image</value>
-  </data>
-  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Shift+C</value>
-  </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
     <value>Шлях до файла</value>
   </data>
@@ -456,32 +414,17 @@
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Копіювати</value>
   </data>
-  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+U</value>
-  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Вивантажити</value>
-  </data>
-  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+D</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Завантажити</value>
   </data>
-  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+E</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Редагувати зображення...</value>
   </data>
-  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Del</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Вилучити завдання зі списку</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Del</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Видалити файл локально...</value>
@@ -497,9 +440,6 @@
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Показати QR-код...</value>
-  </data>
-  <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>OCR image...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Об’єднати зображення...</value>
@@ -525,9 +465,6 @@
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Автоматично</value>
   </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Side</value>
-  </data>
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Знизу</value>
   </data>
@@ -545,12 +482,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Область</value>
-  </data>
-  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Region (Light)</value>
-  </data>
-  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Region (Transparent)</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Остання область</value>
@@ -737,15 +668,6 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Вихід</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Discord server invite link</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Hide Discord button permanently</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Закрити</value>

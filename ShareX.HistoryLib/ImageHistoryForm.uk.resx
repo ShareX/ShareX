@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
-    <value>Thumbnails</value>
-  </data>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Gallery</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Pane</value>
-  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Режим перегляду</value>
   </data>
@@ -148,27 +139,6 @@
   <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
     <value>250 × 250</value>
     <comment>@Invariant</comment>
-  </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Thumbnail size</value>
-  </data>
-  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
-    <value>Last 100</value>
-  </data>
-  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
-    <value>Last 250</value>
-  </data>
-  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
-    <value>Last 1000</value>
-  </data>
-  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
-    <value>No limit</value>
-  </data>
-  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
-    <value>Maximum image limit</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Image history</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
