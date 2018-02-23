@@ -28,6 +28,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -58,6 +59,12 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
         public string ImageLocation { get; set; }
 
+        [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all.")]
+        public DrawImageSizeMode SizeMode { get; set; }
+
+        [DefaultValue(typeof(Size), "0, 0")]
+        public Size Size { get; set; }
+
         public DrawImage()
         {
             this.ApplyDefaultPropertyValues();
@@ -69,8 +76,22 @@ namespace ShareX.ImageEffectsLib
             {
                 using (Image img2 = ImageHelpers.LoadImage(ImageLocation))
                 {
-                    Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, img2.Size);
-                    Rectangle imageRectangle = new Rectangle(imagePosition, img2.Size);
+                    //Calculate size first
+                    Size imageSize = img2.Size;
+                    if (SizeMode == DrawImageSizeMode.Absolute)
+                    {
+                        //Use Size property
+                        imageSize = Size;
+                    }
+                    else if (SizeMode == DrawImageSizeMode.Percentage)
+                    {
+                        //Relative size
+                        imageSize = new Size((int)(img2.Width * (Size.Width / 100.0)), (int)(img2.Height * (Size.Height / 100.0)));
+                    }
+
+                    //Place the image
+                    Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, imageSize);
+                    Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
 
                     if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(imageRectangle))
                     {
@@ -86,6 +107,13 @@ namespace ShareX.ImageEffectsLib
             }
 
             return img;
+        }
+
+        public enum DrawImageSizeMode
+        {
+            DontResize,
+            Absolute,
+            Percentage
         }
     }
 }
