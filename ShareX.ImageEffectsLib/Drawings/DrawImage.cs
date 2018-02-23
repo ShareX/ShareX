@@ -78,15 +78,20 @@ namespace ShareX.ImageEffectsLib
                 {
                     //Calculate size first
                     Size imageSize = img2.Size;
-                    if (SizeMode == DrawImageSizeMode.Absolute)
+                    if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                     {
                         //Use Size property
                         imageSize = Size;
                     }
-                    else if (SizeMode == DrawImageSizeMode.Percentage)
+                    else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
                     {
-                        //Relative size
+                        //Relative size (percentage of watermark)
                         imageSize = new Size((int)(img2.Width * (Size.Width / 100.0)), (int)(img2.Height * (Size.Height / 100.0)));
+                    }
+                    else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
+                    {
+                        //Relative size (percentage of image)
+                        imageSize = new Size((int)(img.Width * (Size.Width / 100.0)), (int)(img.Height * (Size.Height / 100.0)));
                     }
 
                     //Place the image
@@ -112,8 +117,9 @@ namespace ShareX.ImageEffectsLib
         public enum DrawImageSizeMode
         {
             DontResize,
-            Absolute,
-            Percentage
+            AbsoluteSize,
+            PercentageOfWatermark,
+            PercentageOfCanvas
         }
     }
 }
