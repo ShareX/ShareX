@@ -40,6 +40,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using ZXing;
@@ -1574,7 +1575,7 @@ namespace ShareX
 
         public static Image QRCodeEncode(string text, int width, int height)
         {
-            if (!string.IsNullOrEmpty(text))
+            if (CheckQRCodeContent(text))
             {
                 try
                 {
@@ -1629,6 +1630,11 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        public static bool CheckQRCodeContent(string content)
+        {
+            return !string.IsNullOrEmpty(content) && Encoding.UTF8.GetByteCount(content) <= 2952;
         }
     }
 }
