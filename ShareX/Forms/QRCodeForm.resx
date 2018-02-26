@@ -122,25 +122,34 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy to clipboard</value>
+    <value>Copy image to clipboard</value>
   </data>
   <data name="tsmiSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Save as image file...</value>
   </data>
+  <data name="tsmiUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiUpload.Text" xml:space="preserve">
+    <value>Upload image</value>
+  </data>
+  <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="tsmiDecode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiDecode.Text" xml:space="preserve">
     <value>Decode</value>
   </data>
   <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 70</value>
+    <value>181, 120</value>
   </data>
   <data name="cmsQR.Text" xml:space="preserve">
     <value>QR</value>
@@ -422,6 +431,18 @@
   </data>
   <data name="&gt;&gt;tsmiDecode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiUpload.Name" xml:space="preserve">
+    <value>tsmiUpload</value>
+  </data>
+  <data name="&gt;&gt;tsmiUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tss1.Name" xml:space="preserve">
+    <value>tss1</value>
+  </data>
+  <data name="&gt;&gt;tss1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>QRCodeForm</value>

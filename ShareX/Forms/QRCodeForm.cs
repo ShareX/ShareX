@@ -168,6 +168,15 @@ namespace ShareX
             }
         }
 
+        private void tsmiUpload_Click(object sender, EventArgs e)
+        {
+            if (pbQRCode.Image != null)
+            {
+                Image img = (Image)pbQRCode.Image.Clone();
+                UploadManager.UploadImage(img);
+            }
+        }
+
         private void tsmiDecode_Click(object sender, EventArgs e)
         {
             if (pbQRCode.Image != null)
