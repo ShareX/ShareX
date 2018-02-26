@@ -33,6 +33,8 @@
             this.cmsQR = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDecode = new System.Windows.Forms.ToolStripMenuItem();
             this.txtQRCode = new System.Windows.Forms.TextBox();
             this.pbQRCode = new System.Windows.Forms.PictureBox();
@@ -43,8 +45,6 @@
             this.txtDecodeResult = new System.Windows.Forms.TextBox();
             this.lblDecodeResult = new System.Windows.Forms.Label();
             this.btnDecodeFromScreen = new System.Windows.Forms.Button();
-            this.tsmiUpload = new System.Windows.Forms.ToolStripMenuItem();
-            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.tcMain.SuspendLayout();
@@ -75,6 +75,17 @@
             this.tsmiSaveAs.Name = "tsmiSaveAs";
             resources.ApplyResources(this.tsmiSaveAs, "tsmiSaveAs");
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
+            // 
+            // tsmiUpload
+            // 
+            this.tsmiUpload.Name = "tsmiUpload";
+            resources.ApplyResources(this.tsmiUpload, "tsmiUpload");
+            this.tsmiUpload.Click += new System.EventHandler(this.tsmiUpload_Click);
+            // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            resources.ApplyResources(this.tss1, "tss1");
             // 
             // tsmiDecode
             // 
@@ -145,17 +156,6 @@
             this.btnDecodeFromScreen.Name = "btnDecodeFromScreen";
             this.btnDecodeFromScreen.UseVisualStyleBackColor = true;
             this.btnDecodeFromScreen.Click += new System.EventHandler(this.btnDecodeFromScreen_Click);
-            // 
-            // tsmiUpload
-            // 
-            this.tsmiUpload.Name = "tsmiUpload";
-            resources.ApplyResources(this.tsmiUpload, "tsmiUpload");
-            this.tsmiUpload.Click += new System.EventHandler(this.tsmiUpload_Click);
-            // 
-            // tss1
-            // 
-            this.tss1.Name = "tss1";
-            resources.ApplyResources(this.tss1, "tss1");
             // 
             // QRCodeForm
             // 

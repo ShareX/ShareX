@@ -121,6 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 98</value>
+  </data>
+  <data name="cmsQR.Text" xml:space="preserve">
+    <value>QR</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
+    <value>cmsQR</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -148,29 +160,23 @@
   <data name="tsmiDecode.Text" xml:space="preserve">
     <value>Decode</value>
   </data>
-  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 120</value>
-  </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
-    <value>cmsQR</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtQRCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="txtQRCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
-  <data name="txtQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 20</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtQRCode.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtQRCode.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="txtQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 56</value>
+  </data>
   <data name="txtQRCode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -190,10 +196,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbQRCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
+    <value>8, 72</value>
   </data>
   <data name="pbQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 444</value>
+    <value>460, 404</value>
   </data>
   <data name="pbQRCode.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -275,6 +281,9 @@
   </data>
   <data name="txtDecodeResult.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="txtDecodeResult.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
   </data>
   <data name="txtDecodeResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>460, 412</value>
@@ -426,12 +435,6 @@
   <data name="&gt;&gt;tsmiSaveAs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiDecode.Name" xml:space="preserve">
-    <value>tsmiDecode</value>
-  </data>
-  <data name="&gt;&gt;tsmiDecode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiUpload.Name" xml:space="preserve">
     <value>tsmiUpload</value>
   </data>
@@ -443,6 +446,12 @@
   </data>
   <data name="&gt;&gt;tss1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDecode.Name" xml:space="preserve">
+    <value>tsmiDecode</value>
+  </data>
+  <data name="&gt;&gt;tsmiDecode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>QRCodeForm</value>
