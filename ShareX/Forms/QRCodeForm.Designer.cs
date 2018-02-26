@@ -33,6 +33,7 @@
             this.cmsQR = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDecode = new System.Windows.Forms.ToolStripMenuItem();
             this.txtQRCode = new System.Windows.Forms.TextBox();
             this.pbQRCode = new System.Windows.Forms.PictureBox();
             this.tcMain = new System.Windows.Forms.TabControl();
@@ -42,7 +43,6 @@
             this.txtDecodeResult = new System.Windows.Forms.TextBox();
             this.lblDecodeResult = new System.Windows.Forms.Label();
             this.btnDecodeFromScreen = new System.Windows.Forms.Button();
-            this.tsmiDecode = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.tcMain.SuspendLayout();
@@ -71,6 +71,12 @@
             this.tsmiSaveAs.Name = "tsmiSaveAs";
             resources.ApplyResources(this.tsmiSaveAs, "tsmiSaveAs");
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
+            // 
+            // tsmiDecode
+            // 
+            this.tsmiDecode.Name = "tsmiDecode";
+            resources.ApplyResources(this.tsmiDecode, "tsmiDecode");
+            this.tsmiDecode.Click += new System.EventHandler(this.tsmiDecode_Click);
             // 
             // txtQRCode
             // 
@@ -135,12 +141,6 @@
             this.btnDecodeFromScreen.Name = "btnDecodeFromScreen";
             this.btnDecodeFromScreen.UseVisualStyleBackColor = true;
             this.btnDecodeFromScreen.Click += new System.EventHandler(this.btnDecodeFromScreen_Click);
-            // 
-            // tsmiDecode
-            // 
-            this.tsmiDecode.Name = "tsmiDecode";
-            resources.ApplyResources(this.tsmiDecode, "tsmiDecode");
-            this.tsmiDecode.Click += new System.EventHandler(this.tsmiDecode_Click);
             // 
             // QRCodeForm
             // 

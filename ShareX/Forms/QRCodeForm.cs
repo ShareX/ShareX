@@ -91,7 +91,8 @@ namespace ShareX
             {
                 ClearQRCode();
 
-                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, pbQRCode.Width, pbQRCode.Height);
+                int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
+                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, size);
             }
         }
 

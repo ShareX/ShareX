@@ -1602,6 +1602,11 @@ namespace ShareX
             return null;
         }
 
+        public static Image QRCodeEncode(string text, int size)
+        {
+            return QRCodeEncode(text, size, size);
+        }
+
         public static string[] QRCodeDecode(Bitmap bmp)
         {
             try

@@ -140,7 +140,7 @@
     <value>Decode</value>
   </data>
   <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 92</value>
+    <value>152, 70</value>
   </data>
   <data name="cmsQR.Text" xml:space="preserve">
     <value>QR</value>
@@ -185,6 +185,9 @@
   </data>
   <data name="pbQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>460, 444</value>
+  </data>
+  <data name="pbQRCode.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
   </data>
   <data name="pbQRCode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
