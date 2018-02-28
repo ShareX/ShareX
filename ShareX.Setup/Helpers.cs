@@ -24,11 +24,11 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 using System.Linq;
-using System.Collections.Generic;
+using System.Net;
 
 namespace ShareX.Setup
 {

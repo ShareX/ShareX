@@ -28,9 +28,9 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Cache;
-using System.Linq;
 
 namespace ShareX
 {

@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.ImageUploaders;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Windows.Forms;
 

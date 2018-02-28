@@ -737,7 +737,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiAddImageEffects.Click += (sender, e) => AddImageEffects();
                 tsddbImage.DropDownItems.Add(tsmiAddImageEffects);
 
-                #endregion
+                #endregion Image
             }
 
             tsMain.Items.Add(new ToolStripSeparator());

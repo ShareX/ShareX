@@ -28,7 +28,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
