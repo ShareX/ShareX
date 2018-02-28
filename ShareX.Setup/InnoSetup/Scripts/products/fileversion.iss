@@ -21,3 +21,5 @@ begin
 	else
 		Result := '0';
 end;
+
+[Setup]

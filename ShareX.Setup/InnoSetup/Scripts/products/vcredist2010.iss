@@ -1,45 +1,32 @@
-// requires Windows 7, Windows 7 Service Pack 1, Windows Server 2003 Service Pack 2, Windows Server 2008, Windows Server 2008 R2, Windows Server 2008 R2 SP1, Windows Vista Service Pack 1, Windows XP Service Pack 3
-// requires Windows Installer 3.1 or later
-// requires Internet Explorer 5.01 or later
-// http://www.microsoft.com/downloads/en/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992
+; requires Windows 7, Windows Server 2003 R2 (32-Bit x86), Windows Server 2003 Service Pack 2, Windows Server 2008 R2, Windows Server 2008 Service Pack 2, Windows Vista Service Pack 2, Windows XP Service Pack 3
+; http://www.microsoft.com/en-us/download/details.aspx?id=5555
 
 [CustomMessages]
 vcredist2010_title=Visual C++ 2010 Redistributable
+vcredist2010_title_x64=Visual C++ 2010 64-Bit Redistributable
 
-en.vcredist2010_size=4.8 MB
-de.vcredist2010_size=4,8 MB
-
-en.vcredist2010_size_x64=5.5 MB
-de.vcredist2010_size_x64=5,5 MB
-
-en.vcredist2010_size_ia64=2.2 MB
-de.vcredist2010_size_ia64=2,2 MB
-
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
-en.vcredist2010_lcid=
-de.vcredist2010_lcid='/lcid 1031 '
-
+vcredist2010_size=8.6 MB
+vcredist2010_size_x64=9.8 MB
 
 [Code]
 const
-	vcredist2010_url = 'http://download.microsoft.com/download/5/B/C/5BC5DBB3-652D-4DCE-B14A-475AB85EEF6E/vcredist_x86.exe';
-	vcredist2010_url_x64 = 'http://download.microsoft.com/download/3/2/2/3224B87F-CFA0-4E70-BDA3-3DE650EFEBA5/vcredist_x64.exe';
-	vcredist2010_url_ia64 = 'http://download.microsoft.com/download/3/3/A/33A75193-2CBC-424E-A886-287551FF1EB5/vcredist_IA64.exe';
+	vcredist2010_url = 'http://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe';
+	vcredist2010_url_x64 = 'http://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe';
 
-procedure vcredist2010();
-var
-	version: cardinal;
+	vcredist2010_upgradecode = '{1F4F1D2A-D9DA-32CF-9909-48485DA06DD5}';
+	vcredist2010_upgradecode_x64 = '{5B75F761-BAC8-33BC-A381-464DDDD813A3}';
+
+procedure vcredist2010(minVersion: string);
 begin
-  RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\VisualStudio\10.0\VC\VCRedist\' + GetString('x86', 'x64', 'ia64'), 'Installed', version);
-
-  if ((version <> 1)) then
-    RegQueryDWordValue(HKLM, 'SOFTWARE\Wow6432Node\Microsoft\VisualStudio\10.0\VC\VCRedist\' + GetString('x86', 'x64', 'ia64'), 'Installed', version);
-
-	if ((version <> 1)) then
-		AddProduct('vcredist2010' + GetArchitectureString() + '.exe',
-			CustomMessage('vcredist2010_lcid') + '/passive /norestart',
-			CustomMessage('vcredist2010_title'),
-			CustomMessage('vcredist2010_size' + GetArchitectureString()),
-			GetString(vcredist2010_url, vcredist2010_url_x64, vcredist2010_url_ia64),
-			false, false);
+	if (not IsIA64()) then begin
+		if (not msiproductupgrade(GetString(vcredist2010_upgradecode, vcredist2010_upgradecode_x64, ''), minVersion)) then
+			AddProduct('vcredist2010' + GetArchitectureString() + '.exe',
+				'/passive /norestart',
+				CustomMessage('vcredist2010_title' + GetArchitectureString()),
+				CustomMessage('vcredist2010_size' + GetArchitectureString()),
+				GetString(vcredist2010_url, vcredist2010_url_x64, ''),
+				false, false, false);
+	end;
 end;
+
+[Setup]

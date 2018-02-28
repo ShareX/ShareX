@@ -1,6 +1,6 @@
 [Code]
 type
-	NetFXType = (NetFx10, NetFx11, NetFx20, NetFx30, NetFx35, NetFx40Client, NetFx40Full);
+	NetFXType = (NetFx10, NetFx11, NetFx20, NetFx30, NetFx35, NetFx40Client, NetFx40Full, NetFx4x);
 
 const
 	netfx11plus_reg = 'Software\Microsoft\NET Framework Setup\NDP\';
@@ -30,6 +30,12 @@ begin
 				RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Client' + lcid, 'Install', regVersion);
 			NetFx40Full:
 				RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Install', regVersion);
+			NetFx4x:
+			begin
+				RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Release', regVersion);
+				Result := (regVersion >= 378389); // 4.5.0+
+				Exit;
+			end;
 		end;
 		Result := (regVersion <> 0);
 	end;
@@ -44,7 +50,7 @@ begin
 
 	case version of
 		NetFx10:
-			//not supported
+			// not supported
 			regVersion := -1;
 		NetFx11:
 			if (not RegQueryDWordValue(HKLM, netfx11plus_reg + 'v1.1.4322' + lcid, 'SP', regVersion)) then
@@ -64,6 +70,29 @@ begin
 		NetFx40Full:
 			if (not RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Servicing', regVersion)) then
 				regVersion := -1;
+		NetFx4x:
+			if (RegQueryDWordValue(HKLM, netfx11plus_reg + 'v4\Full' + lcid, 'Release', regVersion)) then begin
+				if (regVersion >= 461308) then
+					regVersion := 71 // 4.7.1+
+				else if (regVersion >= 460798) then
+					regVersion := 70 // 4.7+
+				else if (regVersion >= 394802) then
+					regVersion := 62 // 4.6.2+
+				else if (regVersion >= 394254) then
+					regVersion := 61 // 4.6.1+
+				else if (regVersion >= 393295) then
+					regVersion := 60 // 4.6+
+				else if (regVersion >= 379893) then
+					regVersion := 52 // 4.5.2+
+				else if (regVersion >= 378675) then
+					regVersion := 51 // 4.5.1+
+				else if (regVersion >= 378389) then
+					regVersion := 50 // 4.5+
+				else
+					regVersion := -1;
+			end;
 	end;
 	Result := regVersion;
 end;
+
+[Setup]

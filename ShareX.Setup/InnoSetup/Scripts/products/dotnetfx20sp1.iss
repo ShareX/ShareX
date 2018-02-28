@@ -1,13 +1,11 @@
-// requires Windows 2000 Service Pack 4, Windows Server 2003, Windows XP Service Pack 2
-// requires KB 835732 on Windows 2000 Service Pack 4
-// http://www.microsoft.com/downloads/details.aspx?FamilyID=79bc3b77-e02c-4ad3-aacf-a7633f706ba5
+; requires Windows 2000 Service Pack 4, Windows Server 2003, Windows XP Service Pack 2
+; requires KB 835732 on Windows 2000 Service Pack 4
+; http://www.microsoft.com/downloads/details.aspx?FamilyID=79bc3b77-e02c-4ad3-aacf-a7633f706ba5
 
 [CustomMessages]
 dotnetfx20sp1_title=.NET Framework 2.0 Service Pack 1
 
-en.dotnetfx20sp1_size=23.6 MB
-de.dotnetfx20sp1_size=23,6 MB
-
+dotnetfx20sp1_size=23.6 MB
 
 [Code]
 const
@@ -23,5 +21,7 @@ begin
 			CustomMessage('dotnetfx20sp1_title'),
 			CustomMessage('dotnetfx20sp1_size'),
 			GetString(dotnetfx20sp1_url, dotnetfx20sp1_url_x64, dotnetfx20sp1_url_ia64),
-			false, false);
+			false, false, false);
 end;
+
+[Setup]
