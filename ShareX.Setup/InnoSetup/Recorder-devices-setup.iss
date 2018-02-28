@@ -17,9 +17,7 @@ OutputBaseFilename=Recorder-devices-setup
 OutputDir={#MyAppOutputDirectory}
 ShowLanguageDialog=no
 
-[Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+#include "Scripts\lang\english.iss"
 
 [Files]
 Source: "{#MyAppLibDirectory}\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
@@ -32,13 +30,11 @@ Source: "{#MyAppLibDirectory}\virtual-audio-capturer-x64.dll"; DestDir: {app}; F
 #include "Scripts\products\stringversion.iss"
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
-#include "Scripts\products\msi31.iss"
 #include "Scripts\products\vcredist2010.iss"
 
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  msi31('3.1');
-  vcredist2010();
+  vcredist2010('10');
   Result := true;
 end;

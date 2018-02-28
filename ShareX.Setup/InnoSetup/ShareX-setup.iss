@@ -43,9 +43,7 @@ WizardImageFile=WizardImageFile.bmp
 WizardImageStretch=no
 WizardSmallImageFile=WizardSmallImageFile.bmp
 
-[Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+#include "Scripts\lang\english.iss"
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
@@ -113,14 +111,12 @@ Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey unins
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
 #include "Scripts\products\dotnetfxversion.iss"
-#include "Scripts\products\msi31.iss"
-#include "Scripts\products\dotnetfx40full.iss"
+#include "scripts\products\dotnetfx46.iss"
 
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  msi31('3.1');
-  dotnetfx40full();
+  dotnetfx46(50);
   Result := true;
 end;
 
