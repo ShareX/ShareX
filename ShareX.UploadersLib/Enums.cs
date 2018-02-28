@@ -33,6 +33,8 @@ namespace ShareX.UploadersLib
     {
         [Description("Imgur")]
         Imgur,
+        [Description("Kek.gg")]
+        Kek,
         [Description("ImageShack")]
         ImageShack,
         [Description("TinyPic")]

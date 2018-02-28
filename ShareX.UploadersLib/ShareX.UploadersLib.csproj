@@ -242,6 +242,7 @@
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
+    <Compile Include="ImageUploaders\KekUploader.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
