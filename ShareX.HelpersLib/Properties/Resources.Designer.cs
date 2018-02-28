@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib.Properties {
                         "me_extension_", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to abandoned
         ///able
@@ -377,7 +377,7 @@ namespace ShareX.HelpersLib.Properties {
                 return ResourceManager.GetString("AmazonS3StorageClass_STANDARD_IA", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to aardvark
         ///aardwolf
