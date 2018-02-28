@@ -105,7 +105,6 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontc
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
 
-[Code]
 #include "Scripts\products.iss"
 #include "Scripts\products\stringversion.iss"
 #include "Scripts\products\winversion.iss"
@@ -113,6 +112,7 @@ Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey unins
 #include "Scripts\products\dotnetfxversion.iss"
 #include "scripts\products\dotnetfx46.iss"
 
+[Code]
 function InitializeSetup(): Boolean;
 begin
   initwinversion();

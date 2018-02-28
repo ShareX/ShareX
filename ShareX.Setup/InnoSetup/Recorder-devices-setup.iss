@@ -25,13 +25,14 @@ Source: "{#MyAppLibDirectory}\screen-capture-recorder-x64.dll"; DestDir: {app}; 
 Source: "{#MyAppLibDirectory}\virtual-audio-capturer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
 Source: "{#MyAppLibDirectory}\virtual-audio-capturer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
 
-[Code]
 #include "Scripts\products.iss"
 #include "Scripts\products\stringversion.iss"
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
+#include "scripts\products\msiproduct.iss"
 #include "Scripts\products\vcredist2010.iss"
 
+[Code]
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
