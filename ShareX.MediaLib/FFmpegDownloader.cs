@@ -38,14 +38,14 @@ namespace ShareX.MediaLib
 
             if (NativeMethods.Is64Bit())
             {
-                url = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
+                url = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip";
             }
             else
             {
-                url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
+                url = "https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip";
             }
 
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
+            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
             {
                 form.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 form.InstallType = InstallType.Event;

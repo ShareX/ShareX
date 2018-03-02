@@ -91,7 +91,6 @@ namespace ShareX.Setup
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        public static string SevenZipPath => Path.Combine(ParentDir, "Lib", "7za.exe");
         public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
@@ -238,15 +237,7 @@ namespace ShareX.Setup
 
             SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
             SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
-
-            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
-            {
-                SetupHelpers.CopyFiles(source, "*.dll", destination, new string[] { "7z.dll" });
-            }
-            else
-            {
-                SetupHelpers.CopyFiles(source, "*.dll", destination);
-            }
+            SetupHelpers.CopyFiles(source, "*.dll", destination);
 
             if (job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
@@ -309,7 +300,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg32bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
                     ZipManager.Extract(filename, "", new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
@@ -321,7 +312,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg64bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
                     ZipManager.Extract(filename, "", new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }
