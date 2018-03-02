@@ -117,16 +117,6 @@ namespace ShareX.Setup
             }
         }
 
-        public static void Zip(string source, string target)
-        {
-            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"a -tzip \"{target}\" \"{source}\" -r -mx=9");
-        }
-
-        public static void Unzip(string source, string extract)
-        {
-            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"e \"{source}\" \"{extract}\" -r");
-        }
-
         private static void ProcessStart(string filePath, string arguments)
         {
             Console.WriteLine($"Process starting: {filePath} {arguments}");

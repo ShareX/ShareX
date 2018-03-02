@@ -104,7 +104,6 @@ Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
 Zeranoe FFmpeg: http://ffmpeg.zeranoe.com/builds
-7-Zip: http://www.7-zip.org
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET

@@ -33,14 +33,14 @@ using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
-    public class ZipManager
+    public static class ZipManager
     {
-        public void Extract(string archivePath, string destination)
+        public static void Extract(string archivePath, string destination)
         {
             ZipFile.ExtractToDirectory(archivePath, destination);
         }
 
-        public void Extract(string archivePath, string destination, List<string> files)
+        public static void Extract(string archivePath, string destination, List<string> files)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
@@ -60,7 +60,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void Compress(string archivePath, List<string> files, string workingDirectory = "")
+        public static void Compress(string source, string archivePath, CompressionLevel compression = CompressionLevel.Optimal)
+        {
+            if (File.Exists(archivePath))
+            {
+                File.Delete(archivePath);
+            }
+
+            ZipFile.CreateFromDirectory(source, archivePath, compression, false);
+        }
+
+        public static void Compress(string archivePath, List<string> files, string workingDirectory = "", CompressionLevel compression = CompressionLevel.Optimal)
         {
             if (File.Exists(archivePath))
             {
@@ -71,7 +81,7 @@ namespace ShareX.HelpersLib
             {
                 foreach (string file in files)
                 {
-                    archive.CreateEntryFromFile(Path.Combine(workingDirectory, file), file);
+                    archive.CreateEntryFromFile(Path.Combine(workingDirectory, file), file, compression);
                 }
             }
         }

@@ -281,8 +281,7 @@ namespace ShareX
                     files.Add($"{Program.LogsFoldername}\\*.txt");
                 }
 
-                ZipManager zipManager = new ZipManager();
-                zipManager.Compress(archivePath, files, Program.PersonalFolder);
+                ZipManager.Compress(archivePath, files, Program.PersonalFolder);
                 return true;
             }
             catch (Exception e)
@@ -298,8 +297,7 @@ namespace ShareX
         {
             try
             {
-                ZipManager zipManager = new ZipManager();
-                zipManager.Extract(archivePath, Program.PersonalFolder);
+                ZipManager.Extract(archivePath, Program.PersonalFolder);
                 return true;
             }
             catch (Exception e)

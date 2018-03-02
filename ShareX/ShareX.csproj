@@ -1365,10 +1365,6 @@
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\application-network.png" />
-    <None Include="..\Lib\7za.exe">
-      <Link>7za.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
     <None Include="Resources\Twitter.ico" />
