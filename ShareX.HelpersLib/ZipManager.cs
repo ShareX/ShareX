@@ -52,7 +52,7 @@ namespace ShareX.HelpersLib
                     {
                         if (file.Equals(entryName, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            entry.ExtractToFile(Path.Combine(destination, entryName));
+                            entry.ExtractToFile(Path.Combine(destination, entryName), true);
                             break;
                         }
                     }
