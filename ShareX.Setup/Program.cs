@@ -99,17 +99,17 @@ namespace ShareX.Setup
         {
             Console.WriteLine("ShareX setup started.");
 
-            if (Helpers.CheckArguments(args, "-AppVeyorRelease"))
+            if (SetupHelpers.CheckArguments(args, "-AppVeyorRelease"))
             {
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorRelease;
             }
-            else if (Helpers.CheckArguments(args, "-AppVeyorSteam"))
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteam"))
             {
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorSteam;
             }
-            else if (Helpers.CheckArguments(args, "-AppVeyorWindowsStore"))
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorWindowsStore"))
             {
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorWindowsStore;
@@ -217,10 +217,10 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(SteamOutputDir);
 
-            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
-            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
-            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
-            Helpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
+            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
+            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
+            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
+            SetupHelpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
 
             CreateFolder(SteamDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
@@ -236,24 +236,24 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            Helpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
-            Helpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
+            SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
+            SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
 
             if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                Helpers.CopyFiles(source, "*.dll", destination, new string[] { "7z.dll" });
+                SetupHelpers.CopyFiles(source, "*.dll", destination, new string[] { "7z.dll" });
             }
             else
             {
-                Helpers.CopyFiles(source, "*.dll", destination);
+                SetupHelpers.CopyFiles(source, "*.dll", destination);
             }
 
             if (job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                Helpers.CopyFiles(source, "*.pdb", destination);
+                SetupHelpers.CopyFiles(source, "*.pdb", destination);
             }
 
-            Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            SetupHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
 
             if (job != SetupJobs.CreateWindowsStoreFolder && job != SetupJobs.CreateWindowsStoreDebugFolder)
             {
@@ -262,16 +262,16 @@ namespace ShareX.Setup
                     CompileISSFile("Recorder-devices-setup.iss");
                 }
 
-                Helpers.CopyFile(RecorderDevicesSetupPath, destination);
+                SetupHelpers.CopyFile(RecorderDevicesSetupPath, destination);
 
-                Helpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+                SetupHelpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
-                Helpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
+                SetupHelpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
             if (job == SetupJobs.CreateSteamFolder)
@@ -284,7 +284,7 @@ namespace ShareX.Setup
             }
             else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                Helpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
+                SetupHelpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
                 CopyFFmpeg(destination, false, true);
             }
@@ -309,24 +309,24 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg32bit))
                 {
-                    string filename = Helpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
+                    string filename = SetupHelpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
                     ZipManager.Extract(filename, "", new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
 
-                Helpers.CopyFile(FFmpeg32bit, destination);
+                SetupHelpers.CopyFile(FFmpeg32bit, destination);
             }
 
             if (include64bit)
             {
                 if (!File.Exists(FFmpeg64bit))
                 {
-                    string filename = Helpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
+                    string filename = SetupHelpers.DownloadFile("http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
                     ZipManager.Extract(filename, "", new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }
 
-                Helpers.CopyFile(FFmpeg64bit, destination);
+                SetupHelpers.CopyFile(FFmpeg64bit, destination);
             }
         }
 
