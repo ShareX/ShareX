@@ -27,33 +27,60 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination)
-        {
-            ZipFile.ExtractToDirectory(archivePath, destination);
-        }
-
-        public static void Extract(string archivePath, string destination, List<string> files)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, List<string> fileFilter = null)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
+                string fullName = Directory.CreateDirectory(destination).FullName;
+
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
                     string entryName = entry.Name;
 
-                    foreach (string file in files)
+                    if (fileFilter != null)
                     {
-                        if (file.Equals(entryName, StringComparison.InvariantCultureIgnoreCase))
+                        bool match = false;
+
+                        foreach (string file in fileFilter)
                         {
-                            entry.ExtractToFile(Path.Combine(destination, entryName), true);
-                            break;
+                            if (file.Equals(entryName, StringComparison.OrdinalIgnoreCase))
+                            {
+                                match = true;
+                                break;
+                            }
+                        }
+
+                        if (!match)
+                        {
+                            continue;
+                        }
+                    }
+
+                    if (retainDirectoryStructure)
+                    {
+                        entryName = entry.FullName;
+                    }
+
+                    string fullPath = Path.GetFullPath(Path.Combine(fullName, entryName));
+
+                    if (fullPath.StartsWith(fullName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (Path.GetFileName(fullPath).Length == 0)
+                        {
+                            if (entry.Length == 0)
+                            {
+                                Directory.CreateDirectory(fullPath);
+                            }
+                        }
+                        else
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+                            entry.ExtractToFile(fullPath, true);
                         }
                     }
                 }
