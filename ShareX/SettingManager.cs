@@ -263,23 +263,10 @@ namespace ShareX
             try
             {
                 List<string> files = new List<string>();
-
-                if (Settings.ExportSettings)
-                {
-                    files.Add(ApplicationConfigFilename);
-                    files.Add(HotkeysConfigFilename);
-                    files.Add(UploadersConfigFilename);
-                }
-
-                if (Settings.ExportHistory)
-                {
-                    files.Add(Program.HistoryFilename);
-                }
-
-                if (Settings.ExportLogs)
-                {
-                    files.Add($"{Program.LogsFoldername}\\*.txt");
-                }
+                files.Add(ApplicationConfigFilename);
+                files.Add(HotkeysConfigFilename);
+                files.Add(UploadersConfigFilename);
+                files.Add(Program.HistoryFilename);
 
                 ZipManager.Compress(archivePath, files, Program.PersonalFolder);
                 return true;

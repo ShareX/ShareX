@@ -415,7 +415,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -716,7 +716,7 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -902,7 +902,7 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -1016,7 +1016,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -1259,7 +1259,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -1321,7 +1321,7 @@
     <value>2</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 80</value>
   </data>
   <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 24</value>
@@ -1344,95 +1344,8 @@
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="cbExportLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
-  </data>
-  <data name="cbExportLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Export logs</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Name" xml:space="preserve">
-    <value>cbExportLogs</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Export history</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
-    <value>cbExportHistory</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
-  </data>
-  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Export settings</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
-    <value>cbExportSettings</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 96</value>
+    <value>208, 16</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1453,10 +1366,10 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 16</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1465,7 +1378,7 @@
     <value>3</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Export...</value>
+    <value>Export settings...</value>
   </data>
   <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
     <value>btnExport</value>
@@ -1477,13 +1390,13 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>16, 48</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1492,7 +1405,7 @@
     <value>4</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Import...</value>
+    <value>Import settings...</value>
   </data>
   <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
     <value>btnImport</value>
@@ -1504,7 +1417,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1804,7 +1717,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1915,7 +1828,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -1969,7 +1882,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2023,7 +1936,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -3007,7 +2920,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
