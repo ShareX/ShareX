@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
-                string fullName = Directory.CreateDirectory(destination).FullName;
+                string fullName = Directory.CreateDirectory(Path.GetFullPath(destination)).FullName;
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
