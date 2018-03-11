@@ -83,7 +83,7 @@ Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "
 Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
 
 [Run]
-Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall
+Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
 
 [UninstallRun]
 Filename: regsvr32; WorkingDir: {app}; Parameters: "/s /u screen-capture-recorder.dll"; Check: not IsWin64
@@ -135,6 +135,11 @@ begin
       Result := True;
       Exit;
     end;
+end;
+
+function IsNoRun: Boolean;
+begin
+  Result := CmdLineParamExists('/NORUN');
 end;
 
 function IsPuushMode: Boolean;
