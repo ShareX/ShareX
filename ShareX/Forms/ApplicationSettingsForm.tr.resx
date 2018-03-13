@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Check for pre-release updates</value>
-  </data>
-  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>On tray icon middle click:</value>
-  </data>
-  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
-    <value>On tray icon double left click:</value>
-  </data>
-  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
-    <value>On tray icon left click:</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Hızlı görev menüsünü düzenle...</value>
   </data>
@@ -156,38 +144,14 @@
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
   </data>
-  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
-  </data>
-  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
-  </data>
-  <data name="gbFirefox.Text" xml:space="preserve">
-    <value>Firefox addon</value>
-  </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>ShareX açık iken Steam de "Uygulamada" olarak göster</value>
-  </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
-  </data>
-  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
-  </data>
-  <data name="gbChrome.Text" xml:space="preserve">
-    <value>Chrome extension</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX göster</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>"ShareX ile yükle" tuşunu sağ tık menüsünde göster</value>
-  </data>
-  <data name="gbWindows.Text" xml:space="preserve">
-    <value>Windows</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Entegrasyon</value>
@@ -197,9 +161,6 @@
   </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Aç...</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
-    <value>...</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Gözat...</value>
@@ -219,14 +180,8 @@
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Alt dizin şablonu:</value>
   </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
-  </data>
-  <data name="btnResetSettings.Text" xml:space="preserve">
-    <value>Reset settings...</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
@@ -335,9 +290,6 @@
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Sunucu:</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Port:</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
