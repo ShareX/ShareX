@@ -120,18 +120,12 @@
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Filtreleri uygula</value>
   </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value/>
-  <comment>@Invariant</comment></data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Tarih ve saat</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
   </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  <comment>@Invariant</comment></data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Filtreleri kaldır</value>
   </data>
