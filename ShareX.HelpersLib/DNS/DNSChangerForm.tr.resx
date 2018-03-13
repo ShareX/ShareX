@@ -138,12 +138,6 @@
   <data name="cbAutomatic.Text" xml:space="preserve">
     <value>DNS sunucu adresini otomatik al</value>
   </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>Ping</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>Ping</value>
-  <comment>@Invariant</comment></data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - DNS Değiştirici</value>
   </data>
