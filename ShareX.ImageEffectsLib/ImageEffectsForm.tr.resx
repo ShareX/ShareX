@@ -141,18 +141,6 @@
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>Panodan</value>
   </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>New preset</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Remove preset</value>
-  </data>
-  <data name="lblPresetName.Text" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
