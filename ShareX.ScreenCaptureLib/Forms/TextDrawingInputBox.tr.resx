@@ -117,40 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblFont.Text" xml:space="preserve">
-    <value>Font:</value>
-  </data>
-  <data name="lblTextSize.Text" xml:space="preserve">
-    <value>Size:</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
-    <value>Left</value>
-  </data>
-  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
-    <value>Center</value>
-  </data>
-  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
-    <value>Right</value>
-  </data>
-  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
-    <value>Top</value>
-  </data>
-  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
-    <value>Middle</value>
-  </data>
-  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
-    <value>Bottom</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>New line: Ctrl + Enter</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Text input</value>
-  </data>
 </root>
