@@ -120,9 +120,6 @@
   <data name="btnStart.Text" xml:space="preserve">
     <value>Başlat</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>00:00:00</value>
-  <comment>@Invariant</comment></data>
   <data name="btnAbort.Text" xml:space="preserve">
     <value>İptal</value>
   </data>
@@ -132,9 +129,6 @@
   <data name="tsmiAbort.Text" xml:space="preserve">
     <value>İptal</value>
   </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-  <comment>@Invariant</comment></data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Ekran kaydetme</value>
   </data>
