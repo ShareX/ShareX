@@ -123,9 +123,6 @@
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Hepsini kopyala</value>
   </data>
-  <data name="rtbDebug.Text" xml:space="preserve">
-    <value/>
-  <comment>@Invariant</comment></data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Kütük dosyasını aç...</value>
   </data>
