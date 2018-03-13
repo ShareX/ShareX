@@ -120,9 +120,6 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
