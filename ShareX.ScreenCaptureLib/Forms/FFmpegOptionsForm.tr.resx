@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,53 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ekran kayıt ayarları</value>
+  <data name="lblx264CRF.Text" xml:space="preserve">
+    <value>CRF:</value>
+  <comment>@Invariant</comment></data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Video kalitesini belirler.
+0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
+Kaliteyi arttırmak dosya boyutunu arttırır.</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Kopyala</value>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>İndir</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Yenile</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>CMD ile test et</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Özel komutları kullan</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Kaynaklar</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Kalite:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Kalite:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Video kaynağı:</value>
-  </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Varsayılan 128k.</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Çözücüler</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Komut satırı önizleme</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Video çözücü:</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bit hızı:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Ek komut satırı parametreleri</value>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Hızlı ön ayar = Hızlı kodlama fakat yüksek dosya boyutu.
+Yavaş ön ayar = Yavaş kodlama fakat düşük dosya boyutu.
+Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>0-10 arasında, 10 en yüksek kalite. 3-6 arası denenebilir. Varsayılan 3'dür.</value>
@@ -171,42 +139,8 @@
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>0-9 arası, küçük değer yüksek kalite anlamına gelir.</value>
   </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Ses çözücü:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Ses kaynağı:</value>
-  </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Video kalitesini belirler.
-0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
-Kaliteyi arttırmak dosya boyutunu arttırır.</value>
-  </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Değişken bit hızı:</value>
-  </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
-  </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Ön ayar:</value>
-  </data>
-  <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>Değişken bit hızı:</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Hızlı ön ayar = Hızlı kodlama fakat yüksek dosya boyutu.
-Yavaş ön ayar = Yavaş kodlama fakat düşük dosya boyutu.
-Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg yolu</value>
-  </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
-  </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Kayıt cihazlarını yükle</value>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Varsayılan 128k.</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
     <value>Varsayılan full.</value>
@@ -214,20 +148,132 @@ Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hı
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>Varsayılan sierra2_4a.</value>
   </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Kıpırtılandırma modu:</value>
-  </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Palet modu:</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>Kişisel dosya yolu kullan</value>
-  </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Seçili olan ses çözücü bu video format ı tarafından desteklenmemektedir.</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.
 Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Video çözücü:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Ön ayar:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Değişken bit hızı:</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  <comment>@Invariant</comment></data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg yolu</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Kişisel dosya yolu kullan</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Özel komutları kullan</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Komut satırı önizleme</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Ek komut satırı parametreleri</value>
+  </data>
+  <data name="tpX264.Text" xml:space="preserve">
+    <value>x264 / x265</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Değişken bit hızı:</value>
+  </data>
+  <data name="tpVpx.Text" xml:space="preserve">
+    <value>VP8</value>
+  <comment>@Invariant</comment></data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="tpNVENC.Text" xml:space="preserve">
+    <value>NVENC</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Kıpırtılandırma modu:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palet modu:</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>GIF</value>
+  <comment>@Invariant</comment></data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>CMD ile test et</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="tpAAC.Text" xml:space="preserve">
+    <value>AAC</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Video kaynağı:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Ses kaynağı:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Ses çözücü:</value>
+  </data>
+  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
+    <value>?</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Kayıt cihazlarını yükle</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Kaynaklar</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Çözücüler</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Ekran kayıt ayarları</value>
+  </data>
+  <data name="btnFFmpegHelp.Text" xml:space="preserve">
+    <value/>
+    <comment>@Invariant</comment>
   </data>
 </root>
