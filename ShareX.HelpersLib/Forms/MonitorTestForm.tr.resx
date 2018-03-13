@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>Screen tearing test</value>
-  </data>
   <data name="btnGradientColor2.Text" xml:space="preserve">
     <value>Renk 2</value>
   </data>
@@ -138,9 +135,6 @@
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>Boyut:</value>
   </data>
-  <data name="lblShapeSizeValue.Text" xml:space="preserve">
-    <value>1</value>
-  <comment>@Invariant</comment></data>
   <data name="btnColorDialog.Text" xml:space="preserve">
     <value>Renk penceresi...</value>
   </data>
@@ -159,27 +153,15 @@
   <data name="lblBlue.Text" xml:space="preserve">
     <value>M:</value>
   </data>
-  <data name="lblBlueValue.Text" xml:space="preserve">
-    <value>0</value>
-  <comment>@Invariant</comment></data>
   <data name="lblGreen.Text" xml:space="preserve">
     <value>Y:</value>
   </data>
-  <data name="lblGreenValue.Text" xml:space="preserve">
-    <value>0</value>
-  <comment>@Invariant</comment></data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>K:</value>
   </data>
-  <data name="lblRedValue.Text" xml:space="preserve">
-    <value>0</value>
-  <comment>@Invariant</comment></data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
     <value>Kırmızı, Yeşil, Mavi:</value>
   </data>
-  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
-    <value>0</value>
-  <comment>@Invariant</comment></data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>Siyah, Beyaz:</value>
   </data>
