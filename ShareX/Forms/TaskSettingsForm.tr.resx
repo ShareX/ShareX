@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Override "After capture" settings</value>
-  </data>
-  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>Override "After upload" settings</value>
-  </data>
-  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>Override "Destination" settings</value>
-  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Açıklama:</value>
   </data>
@@ -146,9 +137,6 @@
   </data>
   <data name="tpActions.Text" xml:space="preserve">
     <value>Aksiyon</value>
-  </data>
-  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
-    <value>Edit...</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Dizinleri takip et ve eğer yeni dosya yaratılırsa onu yükle</value>
@@ -210,35 +198,17 @@
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Yakalama yapıldıktan sonra ses çal</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Override general settings</value>
-  </data>
-  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG bit depth:</value>
-  </data>
-  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>If image size bigger than specified size then use JPEG as image format:</value>
-  </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Resim biçimi:</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Dosya varsa:</value>
   </data>
-  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
-    <value>kB</value>
-  </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 - 100</value>
-  </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>GIF kalitesi:</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG kalitesi:</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Override image settings</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efekt</value>
@@ -273,23 +243,11 @@
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>En:</value>
   </data>
-  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
-    <value>Select region...</value>
-  </data>
-  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>Pre configured region:</value>
-  </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Genişlik</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Yükseklik</value>
-  </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
   </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Ekran görüntülerinde imleç göster</value>
@@ -315,92 +273,8 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Beklemesi süresi:</value>
   </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Override capture settings</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Bölge yakala</value>
-  </data>
-  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>Show FPS in top left corner</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
-    <value>Fixed size region mode:</value>
-  </data>
-  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>Show screen wide crosshair</value>
-  </data>
-  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
-    <value>Magnifier pixel size:</value>
-  </data>
-  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
-    <value>Magnifier pixel count:</value>
-  </data>
-  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
-    <value>Use square shape magnifier instead of circle</value>
-  </data>
-  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
-    <value>Show magnifier near cursor</value>
-  </data>
-  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
-    <value>Show position and size info</value>
-  </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Show hotkeys and tips in right top corner</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>Sizes region will snap to when holding "Alt" key:</value>
-  </data>
-  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>Use custom info text near cursor:</value>
-  </data>
-  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
-    <value>Also detect control regions inside windows</value>
-  </data>
-  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
-    <value>Detect window regions and allow cursor hover capture</value>
-  </data>
-  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>Mouse 5 click action:</value>
-  </data>
-  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>Mouse 4 click action:</value>
-  </data>
-  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>Mouse middle click action:</value>
-  </data>
-  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>Mouse right click action:</value>
-  </data>
-  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Use multi region mode which will also allow resizing and moving regions</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Dim background so selection can be differentiated easily (affects startup speed)</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Ekran kaydedici</value>
@@ -432,17 +306,8 @@
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sabit süre:</value>
   </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Override upload settings</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dosya adlandırma</value>
-  </data>
-  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
     <value>Bölge yakalamada pencere isim kalıbını kullan (ShareX otomatik seçimdeki pencereyi tespit etmeye çalışır)</value>
@@ -483,33 +348,6 @@
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
     <value>Pano URL içeriyorsa URL kısaltıcı kullan</value>
   </data>
-  <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>Uploader filters</value>
-  </data>
-  <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>Uploader</value>
-  </data>
-  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>Extension</value>
-  </data>
-  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
-    <value>Uploader:</value>
-  </data>
-  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
-    <value>Example: png, jpg, jpeg</value>
-  </data>
-  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>Extension filter:</value>
-  </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>
@@ -534,9 +372,6 @@
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Override actions</value>
-  </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Dizin yolu</value>
   </data>
@@ -545,15 +380,6 @@
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
     <value>Alt dizinleri de dahil et</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>Screen color picker format:</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Override tools settings</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Override advanced settings</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Görev ayarları</value>
