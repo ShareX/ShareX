@@ -117,34 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add...</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="lblOutputFilename.Text" xml:space="preserve">
-    <value>Output file name:</value>
-  </data>
-  <data name="txtOutputFilename.Text" xml:space="preserve">
-    <value>$filename_th</value>
-  </data>
-  <data name="btnGenerate.Text" xml:space="preserve">
-    <value>Generate thumbnails</value>
-  </data>
-  <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>Output folder:</value>
-  </data>
-  <data name="btnOutputFolder.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Image thumbnailer</value>
-  </data>
 </root>
