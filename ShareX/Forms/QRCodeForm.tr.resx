@@ -117,35 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Panoya kopyala</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Resim dosyası olarak kaydet...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Upload image</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Decode</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Encode</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Decode from image file...</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Result:</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Decode from screen...</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Decode</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - QR kod</value>
