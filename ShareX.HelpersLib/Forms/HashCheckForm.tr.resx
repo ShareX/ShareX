@@ -129,9 +129,6 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Hedef:</value>
   </data>
-  <data name="lblProgressPercentage.Text" xml:space="preserve">
-    <value>0%</value>
-  <comment>@Invariant</comment></data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Başlat</value>
   </data>
@@ -144,21 +141,12 @@
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Hepsini kopyala</value>
   </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>Hash:</value>
-  </data>
   <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
     <value>Çöz</value>
-  </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
   </data>
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
     <value>Çöz</value>
   </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>ASCII:</value>
-  <comment>@Invariant</comment></data>
   <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
     <value>Çöz</value>
   </data>
