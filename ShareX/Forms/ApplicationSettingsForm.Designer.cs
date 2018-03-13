@@ -79,9 +79,6 @@ namespace ShareX
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
             this.tpExportImport = new System.Windows.Forms.TabPage();
             this.btnResetSettings = new System.Windows.Forms.Button();
-            this.cbExportLogs = new System.Windows.Forms.CheckBox();
-            this.cbExportHistory = new System.Windows.Forms.CheckBox();
-            this.cbExportSettings = new System.Windows.Forms.CheckBox();
             this.pbExportImport = new System.Windows.Forms.ProgressBar();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
@@ -524,9 +521,6 @@ namespace ShareX
             // 
             this.tpExportImport.BackColor = System.Drawing.SystemColors.Window;
             this.tpExportImport.Controls.Add(this.btnResetSettings);
-            this.tpExportImport.Controls.Add(this.cbExportLogs);
-            this.tpExportImport.Controls.Add(this.cbExportHistory);
-            this.tpExportImport.Controls.Add(this.cbExportSettings);
             this.tpExportImport.Controls.Add(this.pbExportImport);
             this.tpExportImport.Controls.Add(this.btnExport);
             this.tpExportImport.Controls.Add(this.btnImport);
@@ -539,27 +533,6 @@ namespace ShareX
             this.btnResetSettings.Name = "btnResetSettings";
             this.btnResetSettings.UseVisualStyleBackColor = true;
             this.btnResetSettings.Click += new System.EventHandler(this.btnResetSettings_Click);
-            // 
-            // cbExportLogs
-            // 
-            resources.ApplyResources(this.cbExportLogs, "cbExportLogs");
-            this.cbExportLogs.Name = "cbExportLogs";
-            this.cbExportLogs.UseVisualStyleBackColor = true;
-            this.cbExportLogs.CheckedChanged += new System.EventHandler(this.cbExportLogs_CheckedChanged);
-            // 
-            // cbExportHistory
-            // 
-            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
-            this.cbExportHistory.Name = "cbExportHistory";
-            this.cbExportHistory.UseVisualStyleBackColor = true;
-            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
-            // 
-            // cbExportSettings
-            // 
-            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
-            this.cbExportSettings.Name = "cbExportSettings";
-            this.cbExportSettings.UseVisualStyleBackColor = true;
-            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
             // 
             // pbExportImport
             // 
@@ -1074,7 +1047,6 @@ namespace ShareX
             this.tpPaths.ResumeLayout(false);
             this.tpPaths.PerformLayout();
             this.tpExportImport.ResumeLayout(false);
-            this.tpExportImport.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpPerformance.ResumeLayout(false);
@@ -1193,9 +1165,6 @@ namespace ShareX
         private System.Windows.Forms.TabPage tpExportImport;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.CheckBox cbExportLogs;
-        private System.Windows.Forms.CheckBox cbExportHistory;
-        private System.Windows.Forms.CheckBox cbExportSettings;
         private System.Windows.Forms.ProgressBar pbExportImport;
         private System.Windows.Forms.Button btnEditQuickTaskMenu;
         private System.Windows.Forms.TabPage tpHistory;

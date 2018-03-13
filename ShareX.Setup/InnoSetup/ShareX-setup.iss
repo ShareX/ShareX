@@ -26,8 +26,12 @@ ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
-DisableReadyPage=yes
+DisableStartupPrompt=yes
+DisableWelcomePage=yes
 DisableProgramGroupPage=yes
+DisableReadyPage=no
+DisableReadyMemo=no
+DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
 MinVersion=0,5.01.2600
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
@@ -43,9 +47,7 @@ WizardImageFile=WizardImageFile.bmp
 WizardImageStretch=no
 WizardSmallImageFile=WizardSmallImageFile.bmp
 
-[Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+#include "Scripts\lang\english.iss"
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
@@ -58,7 +60,6 @@ Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupD
 Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppFilepath}.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppReleaseDirectory}\7za.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\ShareX.NativeMessagingHost\bin\Release\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion
@@ -86,7 +87,7 @@ Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "
 Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
 
 [Run]
-Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall
+Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
 
 [UninstallRun]
 Filename: regsvr32; WorkingDir: {app}; Parameters: "/s /u screen-capture-recorder.dll"; Check: not IsWin64
@@ -107,20 +108,21 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontc
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
 
-[Code]
+[CustomMessages]
+DependenciesDir=Dependencies
+
 #include "Scripts\products.iss"
 #include "Scripts\products\stringversion.iss"
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
 #include "Scripts\products\dotnetfxversion.iss"
-#include "Scripts\products\msi31.iss"
-#include "Scripts\products\dotnetfx40full.iss"
+#include "scripts\products\dotnetfx46.iss"
 
+[Code]
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  msi31('3.1');
-  dotnetfx40full();
+  dotnetfx46(62);
   Result := true;
 end;
 
@@ -140,6 +142,11 @@ begin
       Result := True;
       Exit;
     end;
+end;
+
+function IsNoRun: Boolean;
+begin
+  Result := CmdLineParamExists('/NORUN');
 end;
 
 function IsPuushMode: Boolean;

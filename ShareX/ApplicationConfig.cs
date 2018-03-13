@@ -93,14 +93,6 @@ namespace ShareX
 
         #endregion Paths
 
-        #region Export / Import
-
-        public bool ExportSettings = true;
-        public bool ExportHistory = true;
-        public bool ExportLogs = false;
-
-        #endregion Export / Import
-
         #region Proxy
 
         public ProxyInfo ProxySettings = new ProxyInfo();

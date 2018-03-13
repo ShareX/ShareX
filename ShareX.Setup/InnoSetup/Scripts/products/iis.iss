@@ -1,7 +1,6 @@
 [CustomMessages]
 iis_title=Internet Information Services (IIS)
 
-
 [Code]
 function iis(): boolean;
 begin
@@ -10,3 +9,5 @@ begin
 	else
 		Result := true;
 end;
+
+[Setup]

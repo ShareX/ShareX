@@ -737,7 +737,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiAddImageEffects.Click += (sender, e) => AddImageEffects();
                 tsddbImage.DropDownItems.Add(tsmiAddImageEffects);
 
-                #endregion
+                #endregion Image
             }
 
             tsMain.Items.Add(new ToolStripSeparator());
@@ -1325,6 +1325,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbBorderColor.Visible = false;
                     tslnudBorderSize.Visible = false;
                     tsmiShadow.Visible = false;
+                    tsmiShadowColor.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
@@ -1338,6 +1339,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
+                    tsmiShadowColor.Visible = true;
                     break;
             }
 

@@ -175,13 +175,21 @@ namespace ShareX.ScreenCaptureLib
             InitialSize = Rectangle.Size;
         }
 
-        public virtual void OnMoving() { }
+        public virtual void OnMoving()
+        {
+        }
 
-        public virtual void OnMoved() { }
+        public virtual void OnMoved()
+        {
+        }
 
-        public virtual void OnResizing() { }
+        public virtual void OnResizing()
+        {
+        }
 
-        public virtual void OnResized() { }
+        public virtual void OnResized()
+        {
+        }
 
         public virtual void OnUpdate()
         {

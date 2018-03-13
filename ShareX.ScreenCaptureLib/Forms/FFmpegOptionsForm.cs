@@ -115,6 +115,10 @@ namespace ShareX.ScreenCaptureLib
             // MP3
             tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
 
+#if WindowsStore
+            btnTest.Visible = false;
+#endif
+
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
             if (Options.FFmpeg.UseCustomCommands)

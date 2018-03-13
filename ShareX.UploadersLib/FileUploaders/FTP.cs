@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using FluentFTP;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
@@ -30,7 +31,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
-using System.Net.FtpClient;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;

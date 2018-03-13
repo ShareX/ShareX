@@ -24,11 +24,9 @@
 #endregion License Information (GPL v3)
 
 using IWshRuntimeLibrary;
-using ShareX.HelpersLib.Properties;
 using Shell32;
 using System;
 using System.IO;
-using System.Windows.Forms;
 using File = System.IO.File;
 using Folder = Shell32.Folder;
 
@@ -45,7 +43,7 @@ namespace ShareX.HelpersLib
         public static bool SetShortcut(bool create, string shortcutPath, string targetPath = "", string arguments = "")
         {
             try
-            { 
+            {
                 if (create)
                 {
                     return Create(shortcutPath, targetPath, arguments);

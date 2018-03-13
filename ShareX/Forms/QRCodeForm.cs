@@ -58,7 +58,7 @@ namespace ShareX
                 {
                     text = Clipboard.GetText();
 
-                    if (text.Length <= 1000)
+                    if (TaskHelpers.CheckQRCodeContent(text))
                     {
                         txtQRCode.Text = text;
                     }
@@ -91,7 +91,8 @@ namespace ShareX
             {
                 ClearQRCode();
 
-                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, pbQRCode.Width, pbQRCode.Height);
+                int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
+                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, size);
             }
         }
 
@@ -164,6 +165,15 @@ namespace ShareX
                         }
                     }
                 }
+            }
+        }
+
+        private void tsmiUpload_Click(object sender, EventArgs e)
+        {
+            if (pbQRCode.Image != null)
+            {
+                Image img = (Image)pbQRCode.Image.Clone();
+                UploadManager.UploadImage(img);
             }
         }
 

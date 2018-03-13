@@ -157,12 +157,6 @@ namespace ShareX
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
 
-            // Export / Import
-            cbExportSettings.Checked = Program.Settings.ExportSettings;
-            cbExportHistory.Checked = Program.Settings.ExportHistory;
-            cbExportLogs.Checked = Program.Settings.ExportLogs;
-            UpdateExportButton();
-
             // Proxy
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
@@ -320,11 +314,6 @@ namespace ShareX
             }
 
             lblPreviewPersonalFolderPath.Text = personalPath;
-        }
-
-        private void UpdateExportButton()
-        {
-            btnExport.Enabled = Program.Settings.ExportSettings || Program.Settings.ExportHistory || Program.Settings.ExportLogs;
         }
 
         #region General
@@ -528,24 +517,6 @@ namespace ShareX
         #endregion Paths
 
         #region Export / Import
-
-        private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportSettings = cbExportSettings.Checked;
-            UpdateExportButton();
-        }
-
-        private void cbExportHistory_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportHistory = cbExportHistory.Checked;
-            UpdateExportButton();
-        }
-
-        private void cbExportLogs_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportLogs = cbExportLogs.Checked;
-            UpdateExportButton();
-        }
 
         private void btnExport_Click(object sender, EventArgs e)
         {

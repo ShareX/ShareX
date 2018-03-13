@@ -262,32 +262,14 @@ namespace ShareX
         {
             try
             {
-                if (File.Exists(archivePath))
-                {
-                    File.Delete(archivePath);
-                }
-
                 List<string> files = new List<string>();
+                files.Add(ApplicationConfigFilename);
+                files.Add(HotkeysConfigFilename);
+                files.Add(UploadersConfigFilename);
+                files.Add(Program.HistoryFilename);
 
-                if (Settings.ExportSettings)
-                {
-                    files.Add(ApplicationConfigFilename);
-                    files.Add(HotkeysConfigFilename);
-                    files.Add(UploadersConfigFilename);
-                }
-
-                if (Settings.ExportHistory)
-                {
-                    files.Add(Program.HistoryFilename);
-                }
-
-                if (Settings.ExportLogs)
-                {
-                    files.Add($"{Program.LogsFoldername}\\*.txt");
-                }
-
-                SevenZipManager sevenZipManager = new SevenZipManager();
-                return sevenZipManager.Compress(archivePath, files, Program.PersonalFolder);
+                ZipManager.Compress(archivePath, files, Program.PersonalFolder);
+                return true;
             }
             catch (Exception e)
             {
@@ -302,8 +284,8 @@ namespace ShareX
         {
             try
             {
-                SevenZipManager sevenZipManager = new SevenZipManager();
-                return sevenZipManager.Extract(archivePath, Program.PersonalFolder);
+                ZipManager.Extract(archivePath, Program.PersonalFolder);
+                return true;
             }
             catch (Exception e)
             {

@@ -431,6 +431,33 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logged in..
+        /// </summary>
+        internal static string OAuthControl_Status_LoggedIn {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_LoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login failed..
+        /// </summary>
+        internal static string OAuthControl_Status_LoginFailed {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_LoginFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not logged in..
+        /// </summary>
+        internal static string OAuthControl_Status_NotLoggedIn {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_NotLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New account.
         /// </summary>
         internal static string OAuthInfo_OAuthInfo_New_account {
@@ -909,6 +936,24 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_TestFTPAccount_Connected_Created_folders {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_Created_folders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logged in..
+        /// </summary>
+        internal static string UploadersConfigForm_UpdatePastebinStatus_LoggedIn {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdatePastebinStatus_LoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not logged in..
+        /// </summary>
+        internal static string UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn", resourceCulture);
             }
         }
         

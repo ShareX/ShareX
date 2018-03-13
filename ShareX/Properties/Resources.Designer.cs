@@ -2515,6 +2515,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shorten.
+        /// </summary>
+        public static string UploadManager_ShowShortenURLDialog_Shorten {
+            get {
+                return ResourceManager.GetString("UploadManager_ShowShortenURLDialog_Shorten", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shorten URL.
+        /// </summary>
+        public static string UploadManager_ShowShortenURLDialog_ShortenURL {
+            get {
+                return ResourceManager.GetString("UploadManager_ShowShortenURLDialog_ShortenURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File upload.
         /// </summary>
         public static string UploadManager_UploadFile_File_upload {

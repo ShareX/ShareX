@@ -75,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Image drawing
         public ImageEditorInterpolationMode ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
+        public string LastImageFilePath { get; set; }
 
         // Step drawing
         public Color StepBorderColor { get; set; } = SecondaryColor;
@@ -87,6 +88,7 @@ namespace ShareX.ScreenCaptureLib
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>();
         public int SelectedStickerPack = 0;
         public int StickerSize { get; set; } = 64;
+        public string LastStickerPath { get; set; }
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;

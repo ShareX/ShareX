@@ -24,15 +24,15 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 using System.Linq;
-using System.Collections.Generic;
+using System.Net;
 
 namespace ShareX.Setup
 {
-    internal class Helpers
+    internal class SetupHelpers
     {
         public static string DownloadFile(string url)
         {
@@ -90,43 +90,6 @@ namespace ShareX.Setup
             CopyFiles(files, toFolder);
         }
 
-        public static void CopyAll(string sourceDirectory, string targetDirectory)
-        {
-            DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
-            DirectoryInfo diTarget = new DirectoryInfo(targetDirectory);
-
-            CopyAll(diSource, diTarget);
-        }
-
-        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
-        {
-            if (!Directory.Exists(target.FullName))
-            {
-                Directory.CreateDirectory(target.FullName);
-            }
-
-            foreach (FileInfo fi in source.GetFiles())
-            {
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-            }
-
-            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
-                CopyAll(diSourceSubDir, nextTargetSubDir);
-            }
-        }
-
-        public static void Zip(string source, string target)
-        {
-            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"a -tzip \"{target}\" \"{source}\" -r -mx=9");
-        }
-
-        public static void Unzip(string source, string extract)
-        {
-            ProcessStart(Path.GetFullPath(Program.SevenZipPath), $"e \"{source}\" \"{extract}\" -r");
-        }
-
         private static void ProcessStart(string filePath, string arguments)
         {
             Console.WriteLine($"Process starting: {filePath} {arguments}");
@@ -156,11 +119,6 @@ namespace ShareX.Setup
             }
 
             return false;
-        }
-
-        public static void CreateEmptyFile(string path)
-        {
-            File.Create(path).Dispose();
         }
     }
 }

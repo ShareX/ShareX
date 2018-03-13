@@ -24,11 +24,11 @@
 #endregion License Information (GPL v3)
 
 using Manina.Windows.Forms;
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
-using ShareX.HelpersLib;
 using static Manina.Windows.Forms.ImageListView;
 
 namespace ShareX.ScreenCaptureLib

@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib.FileUploaders
         // More clones: https://github.com/tsudoko/long-live-pomf/blob/master/long-live-pomf.md
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
-            //new PomfUploader("https://pomf.se/upload.php"),           
+            //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("https://comfy.moe/upload.php"),
             new PomfUploader("https://doko.moe/upload.php"),
             new PomfUploader("https://edfile.pro/upload/archive"),

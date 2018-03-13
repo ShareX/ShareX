@@ -36,6 +36,7 @@
             this.llAttribution = new System.Windows.Forms.LinkLabel();
             this.btnStartOCR = new System.Windows.Forms.Button();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
+            this.llGoogleTranslate = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // cbLanguages
@@ -82,10 +83,18 @@
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
+            // llGoogleTranslate
+            // 
+            resources.ApplyResources(this.llGoogleTranslate, "llGoogleTranslate");
+            this.llGoogleTranslate.Name = "llGoogleTranslate";
+            this.llGoogleTranslate.TabStop = true;
+            this.llGoogleTranslate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llGoogleTranslate_LinkClicked);
+            // 
             // OCRSpaceForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.llGoogleTranslate);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
@@ -110,5 +119,6 @@
         private System.Windows.Forms.LinkLabel llAttribution;
         private System.Windows.Forms.Button btnStartOCR;
         private System.Windows.Forms.ProgressBar pbProgress;
+        private System.Windows.Forms.LinkLabel llGoogleTranslate;
     }
 }

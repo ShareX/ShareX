@@ -25,6 +25,7 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace ShareX.HelpersLib
@@ -43,13 +44,6 @@ namespace ShareX.HelpersLib
             SevenZipPath = sevenZipPath;
         }
 
-        public bool Compress(string archivePath, List<string> files, string workingDirectory = "")
-        {
-            string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
-            string arguments = $"a -tzip \"{archivePath}\" {fileArgs} -mx=9";
-            return Run(arguments, workingDirectory) == 0;
-        }
-
         public bool Extract(string archivePath, string destination)
         {
             string arguments = $"x \"{archivePath}\" -o\"{destination}\" -y";
@@ -61,6 +55,18 @@ namespace ShareX.HelpersLib
             string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
             string arguments = $"e \"{archivePath}\" -o\"{destination}\" {fileArgs} -r -y";
             return Run(arguments) == 0;
+        }
+
+        public bool Compress(string archivePath, List<string> files, string workingDirectory = "")
+        {
+            if (File.Exists(archivePath))
+            {
+                File.Delete(archivePath);
+            }
+
+            string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
+            string arguments = $"a -tzip \"{archivePath}\" {fileArgs} -mx=9";
+            return Run(arguments, workingDirectory) == 0;
         }
 
         private int Run(string arguments, string workingDirectory = "")

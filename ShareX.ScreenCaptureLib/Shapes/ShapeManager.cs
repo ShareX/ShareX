@@ -157,8 +157,11 @@ namespace ShareX.ScreenCaptureLib
         public bool IsMoving { get; set; }
         public bool IsPanning { get; set; }
         public bool IsResizing { get; set; }
+        // Is holding Ctrl?
         public bool IsCornerMoving { get; private set; }
+        // Is holding Shift?
         public bool IsProportionalResizing { get; private set; }
+        // Is holding Alt?
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
 
@@ -1043,6 +1046,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
+                        case ShapeType.DrawingSticker:
                         case ShapeType.DrawingCursor:
                             return null;
                     }
@@ -1422,8 +1426,17 @@ namespace ShareX.ScreenCaptureLib
             if (Clipboard.ContainsImage())
             {
                 Image img = ClipboardHelpers.GetImage();
-
                 InsertImage(img, pos);
+            }
+            else if (Clipboard.ContainsFileDropList())
+            {
+                string[] files = Clipboard.GetFileDropList().OfType<string>().Where(x => Helpers.IsImageFile(x)).ToArray();
+
+                if (files.Length > 0 && !string.IsNullOrEmpty(files[0]))
+                {
+                    Image img = ImageHelpers.LoadImage(files[0]);
+                    InsertImage(img, pos);
+                }
             }
             else if (Clipboard.ContainsText())
             {
@@ -1557,7 +1570,6 @@ namespace ShareX.ScreenCaptureLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 Image img = ImageHelpers.LoadImage(filePath);
-
                 InsertImage(img, Form.ClientArea.Center());
             }
         }
