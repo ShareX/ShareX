@@ -13,6 +13,8 @@ ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
+DisableReadyPage=no
+DisableReadyMemo=no
 OutputBaseFilename=Recorder-devices-setup
 OutputDir={#MyAppOutputDirectory}
 ShowLanguageDialog=no
@@ -24,6 +26,9 @@ Source: "{#MyAppLibDirectory}\screen-capture-recorder.dll"; DestDir: {app}; Flag
 Source: "{#MyAppLibDirectory}\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
 Source: "{#MyAppLibDirectory}\virtual-audio-capturer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
 Source: "{#MyAppLibDirectory}\virtual-audio-capturer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
+
+[CustomMessages]
+DependenciesDir=Dependencies
 
 #include "Scripts\products.iss"
 #include "Scripts\products\stringversion.iss"
