@@ -129,12 +129,6 @@
   <data name="lblNew.Text" xml:space="preserve">
     <value>Yeni:</value>
   </data>
-  <data name="txtHex.Text" xml:space="preserve">
-    <value>FF00FF00</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblHex.Text" xml:space="preserve">
-    <value>Hex:</value>
-  <comment>@Invariant</comment></data>
   <data name="lblKey.Text" xml:space="preserve">
     <value>Anahtar:</value>
   </data>
@@ -147,15 +141,6 @@
   <data name="lblCyan.Text" xml:space="preserve">
     <value>Deniz mavisi:</value>
   </data>
-  <data name="lblHue.Text" xml:space="preserve">
-    <value>°</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblBrightnessPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblSaturationPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>Mavi:</value>
   </data>
@@ -177,26 +162,8 @@
   <data name="lblDecimal.Text" xml:space="preserve">
     <value>Ondalık:</value>
   </data>
-  <data name="txtDecimal.Text" xml:space="preserve">
-    <value>12345678</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblCyanPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblMagentaPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblYellowPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblKeyPerc.Text" xml:space="preserve">
-    <value>%</value>
-  <comment>@Invariant</comment></data>
   <data name="lblAlpha.Text" xml:space="preserve">
     <value>Alfa:</value>
-  </data>
-  <data name="cbTransparent.ToolTip" xml:space="preserve">
-    <value>Transparent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Renk seçici</value>
