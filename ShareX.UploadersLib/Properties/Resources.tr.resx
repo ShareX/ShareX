@@ -211,49 +211,4 @@ Oluşturulmuş dizinler:</value>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Ana klasör</value>
   </data>
-  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Remove all custom uploaders?</value>
-  </data>
-  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>Paste verification code here</value>
-  </data>
-  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
-    <value>An argument with the same name already exists.</value>
-  </data>
-  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
-    <value>A header with the same name already exists.</value>
-  </data>
-  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
-    <value>https://aws.amazon.com/s3/storage-classes/</value>
-  </data>
-  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
-    <value>Key file does not exist.</value>
-  </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"Request URL" must be configured.</value>
-  </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>"Destination type" must be configured.</value>
-  </data>
-  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"Request URL" must be configured.</value>
-  </data>
-  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
-    <value>"File form name" must be configured.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
-    <value>Not logged in.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
-    <value>Logged in.</value>
-  </data>
-  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
-    <value>Not logged in.</value>
-  </data>
-  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
-    <value>Logged in.</value>
-  </data>
-  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
-    <value>Login failed.</value>
-  </data>
 </root>
