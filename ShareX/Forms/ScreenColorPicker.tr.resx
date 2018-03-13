@@ -123,43 +123,10 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Ekran rengi seçmeye başla</value>
   </data>
-  <data name="lblY.Text" xml:space="preserve">
-    <value>Y:</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblX.Text" xml:space="preserve">
-    <value>X:</value>
-  <comment>@Invariant</comment></data>
-  <data name="txtX.Text" xml:space="preserve">
-    <value>1920</value>
-  <comment>@Invariant</comment></data>
-  <data name="txtY.Text" xml:space="preserve">
-    <value>1080</value>
-  <comment>@Invariant</comment></data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>İmleç pozisyonu:</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Kopyala</value>
-  </data>
-  <data name="tsmiCopyAll.Text" xml:space="preserve">
-    <value>Copy all</value>
-  </data>
-  <data name="tsmiCopyRGB.Text" xml:space="preserve">
-    <value>Copy RGB</value>
-  </data>
-  <data name="tsmiCopyHex.Text" xml:space="preserve">
-    <value>Copy hexadecimal</value>
-  </data>
-  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
-    <value>Copy CMYK</value>
-  </data>
-  <data name="tsmiCopyHSB.Text" xml:space="preserve">
-    <value>Copy HSB</value>
-  </data>
-  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
-    <value>Copy decimal</value>
-  </data>
-  <data name="tsmiCopyPosition.Text" xml:space="preserve">
-    <value>Copy position</value>
   </data>
 </root>
