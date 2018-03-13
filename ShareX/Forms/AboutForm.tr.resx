@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value/>
-  <comment>@Invariant</comment></data>
-  <data name="rtbShareXInfo.Text" xml:space="preserve">
-    <value/>
-  <comment>@Invariant</comment></data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>
   </data>
@@ -132,9 +126,6 @@
   <data name="btnLicenses.Text" xml:space="preserve">
     <value>Lisanslar...</value>
   </data>
-  <data name="lblBuild.Text" xml:space="preserve">
-    <value>Build</value>
-  <comment>@Invariant</comment></data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Hakkında</value>
   </data>
