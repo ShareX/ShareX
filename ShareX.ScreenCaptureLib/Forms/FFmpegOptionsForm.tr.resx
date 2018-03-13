@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblx264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  <comment>@Invariant</comment></data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Video kalitesini belirler.
 0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
@@ -167,9 +164,6 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>İndir</value>
   </data>
-  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  <comment>@Invariant</comment></data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
     <value>FFmpeg yolu</value>
   </data>
@@ -185,39 +179,15 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Ek komut satırı parametreleri</value>
   </data>
-  <data name="tpX264.Text" xml:space="preserve">
-    <value>x264 / x265</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  <comment>@Invariant</comment></data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Değişken bit hızı:</value>
   </data>
-  <data name="tpVpx.Text" xml:space="preserve">
-    <value>VP8</value>
-  <comment>@Invariant</comment></data>
-  <data name="tpXvid.Text" xml:space="preserve">
-    <value>Xvid</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblNVENCPreset.Text" xml:space="preserve">
-    <value>Preset:</value>
-  </data>
-  <data name="lblNVENCBitrate.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="tpNVENC.Text" xml:space="preserve">
-    <value>NVENC</value>
-  <comment>@Invariant</comment></data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Kıpırtılandırma modu:</value>
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Palet modu:</value>
   </data>
-  <data name="tpGIF.Text" xml:space="preserve">
-    <value>GIF</value>
-  <comment>@Invariant</comment></data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>CMD ile test et</value>
   </data>
@@ -227,21 +197,12 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bit hızı:</value>
   </data>
-  <data name="tpAAC.Text" xml:space="preserve">
-    <value>AAC</value>
-  <comment>@Invariant</comment></data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Kalite:</value>
   </data>
-  <data name="tpVorbis.Text" xml:space="preserve">
-    <value>Vorbis</value>
-  <comment>@Invariant</comment></data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Kalite:</value>
   </data>
-  <data name="tpMP3.Text" xml:space="preserve">
-    <value>MP3</value>
-  <comment>@Invariant</comment></data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Video kaynağı:</value>
   </data>
@@ -251,9 +212,6 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Ses çözücü:</value>
   </data>
-  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
-    <value>?</value>
-  <comment>@Invariant</comment></data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
   </data>
@@ -271,9 +229,5 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Ekran kayıt ayarları</value>
-  </data>
-  <data name="btnFFmpegHelp.Text" xml:space="preserve">
-    <value/>
-    <comment>@Invariant</comment>
   </data>
 </root>
