@@ -117,34 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblHeightPixels.Text" xml:space="preserve">
-    <value>pixels</value>
-  </data>
-  <data name="lblWidthPixels.Text" xml:space="preserve">
-    <value>pixels</value>
-  </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
-  <data name="cbTransparent.Text" xml:space="preserve">
-    <value>Transparent</value>
-  </data>
-  <data name="btnChangeColor.Text" xml:space="preserve">
-    <value>Change color...</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="gbBackgroundColor.Text" xml:space="preserve">
-    <value>Background color</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - New image</value>
-  </data>
 </root>
