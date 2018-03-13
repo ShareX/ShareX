@@ -117,22 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Language:</value>
-  </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Result:</value>
-  </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Powered by OCR.Space API</value>
-  </data>
-  <data name="btnStartOCR.Text" xml:space="preserve">
-    <value>Start OCR</value>
-  </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Open in Google Translate and close window</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Optical character recognition</value>
-  </data>
 </root>
