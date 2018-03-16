@@ -180,7 +180,7 @@ namespace ShareX.ScreenCaptureLib
         {
             using (StickerPackForm stickerPackForm = new StickerPackForm(StickerPacks))
             {
-                stickerPackForm.ShowDialog();
+                stickerPackForm.ShowDialog(this);
 
                 UpdateStickerPacks();
             }

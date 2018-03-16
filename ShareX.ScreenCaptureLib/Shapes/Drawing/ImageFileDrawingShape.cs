@@ -59,7 +59,9 @@ namespace ShareX.ScreenCaptureLib
         private bool OpenImageDialog(bool centerImage)
         {
             Manager.IsMoving = false;
+            Manager.Form.Pause();
             string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
+            Manager.Form.Resume();
             return LoadImageFile(filepath, centerImage);
         }
 
