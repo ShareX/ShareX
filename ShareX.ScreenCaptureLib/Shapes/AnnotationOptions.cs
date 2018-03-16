@@ -85,7 +85,10 @@ namespace ShareX.ScreenCaptureLib
         public bool StepUseLetters { get; set; } = false;
 
         // Sticker drawing
-        public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>();
+        public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>()
+        {
+            new StickerPackInfo(@"Stickers\BlobEmoji", "Blob Emoji")
+        };
         public int SelectedStickerPack = 0;
         public int StickerSize { get; set; } = 64;
         public string LastStickerPath { get; set; }
