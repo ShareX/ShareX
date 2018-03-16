@@ -61,7 +61,7 @@ namespace ShareX.Setup
             AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
         }
 
-        private static SetupJobs Job = SetupJobs.WindowsStore;
+        private static SetupJobs Job = SetupJobs.Stable;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
@@ -264,6 +264,8 @@ namespace ShareX.Setup
             {
                 SetupHelpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
+
+            Helpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
             if (job == SetupJobs.CreateSteamFolder)
             {
