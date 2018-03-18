@@ -106,7 +106,7 @@ namespace ShareX.HelpersLib
 
         public void WriteInput(string input)
         {
-            if (processRunning && process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
+            if (processRunning && process != null && process.StartInfo.RedirectStandardInput)
             {
                 process.StandardInput.WriteLine(input);
             }

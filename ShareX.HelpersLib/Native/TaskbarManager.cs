@@ -112,7 +112,7 @@ namespace ShareX.HelpersLib
                 {
                     Process currentProcess = Process.GetCurrentProcess();
 
-                    if (currentProcess == null || currentProcess.MainWindowHandle == IntPtr.Zero)
+                    if (currentProcess.MainWindowHandle == IntPtr.Zero)
                     {
                         _mainWindowHandle = IntPtr.Zero;
                     }

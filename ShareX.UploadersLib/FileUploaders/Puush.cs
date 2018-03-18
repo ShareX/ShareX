@@ -90,7 +90,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string[] values = response.Split(',');
 
-                if (values != null && values.Length > 1)
+                if (values.Length > 1)
                 {
                     int status;
 
@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string[] values = result.Response.Split(',');
 
-                if (values != null && values.Length > 0)
+                if (values.Length > 0)
                 {
                     int status;
 

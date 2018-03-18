@@ -132,10 +132,7 @@ namespace ShareX.HelpersLib
                     semaphore.WaitOne();
                     UpdateRemoteObject(AppName);
 
-                    if (eventWaitHandle != null)
-                    {
-                        eventWaitHandle.Set();
-                    }
+                    eventWaitHandle.Set();
                 }
             }
             catch (Exception e)

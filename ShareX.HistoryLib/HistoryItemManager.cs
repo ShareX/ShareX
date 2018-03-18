@@ -166,7 +166,7 @@ namespace ShareX.HistoryLib
 
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).Select(x => x.URL).ToArray();
 
-                if (array != null && array.Length > 0)
+                if (array.Length > 0)
                 {
                     string urls = string.Join("\r\n", array);
 
@@ -216,7 +216,7 @@ namespace ShareX.HistoryLib
 
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).Select(x => string.Format("<a href=\"{0}\">{0}</a>", x.URL)).ToArray();
 
-                if (array != null && array.Length > 0)
+                if (array.Length > 0)
                 {
                     string htmlLinks = string.Join("\r\n", array);
 

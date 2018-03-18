@@ -167,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
 
         private bool isAnnotated;
 
-        public bool IsAnnotated => isAnnotated || DrawingShapes.Where(x => x.ShapeType != ShapeType.DrawingCursor).Count() > 0 || EffectShapes.Length > 0;
+        public bool IsAnnotated => isAnnotated || DrawingShapes.Count(x => x.ShapeType != ShapeType.DrawingCursor) > 0 || EffectShapes.Length > 0;
 
         public InputManager InputManager { get; private set; } = new InputManager();
         public List<SimpleWindowInfo> Windows { get; set; }

@@ -172,16 +172,13 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 XDocument xd = XDocument.Parse(response);
 
-                if (xd != null)
+                foreach (XElement entry in xd.Descendants(AtomNS + "entry"))
                 {
-                    foreach (XElement entry in xd.Descendants(AtomNS + "entry"))
-                    {
-                        GooglePhotosAlbumInfo album = new GooglePhotosAlbumInfo();
-                        album.ID = entry.GetElementValue(GPhotoNS + "id");
-                        album.Name = entry.GetElementValue(AtomNS + "title");
-                        album.Summary = entry.GetElementValue(AtomNS + "summary");
-                        albumList.Add(album);
-                    }
+                    GooglePhotosAlbumInfo album = new GooglePhotosAlbumInfo();
+                    album.ID = entry.GetElementValue(GPhotoNS + "id");
+                    album.Name = entry.GetElementValue(AtomNS + "title");
+                    album.Summary = entry.GetElementValue(AtomNS + "summary");
+                    albumList.Add(album);
                 }
             }
 

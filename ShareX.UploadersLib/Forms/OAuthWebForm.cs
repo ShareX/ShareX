@@ -62,15 +62,12 @@ namespace ShareX.UploadersLib
             {
                 NameValueCollection args = HttpUtility.ParseQueryString(url);
 
-                if (args != null)
-                {
-                    Code = args["code"];
+                Code = args["code"];
 
-                    if (!string.IsNullOrEmpty(Code))
-                    {
-                        DialogResult = DialogResult.OK;
-                        Close();
-                    }
+                if (!string.IsNullOrEmpty(Code))
+                {
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
             }
         }

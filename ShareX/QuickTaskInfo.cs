@@ -84,7 +84,7 @@ namespace ShareX
             {
                 string[] flags = AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()).ToArray();
 
-                if (flags != null && flags.Length > 0)
+                if (flags.Length > 0)
                 {
                     result += ", " + string.Join(", ", flags);
                 }

@@ -195,7 +195,7 @@ namespace ShareX
                     processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).
                     Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).ToList();
 
-                if (conflictProcessNames != null && conflictProcessNames.Count > 0)
+                if (conflictProcessNames.Count > 0)
                 {
                     text += "\r\n\r\n" + Resources.HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ + "\r\n\r\n" + string.Join("\r\n", conflictProcessNames);
                 }

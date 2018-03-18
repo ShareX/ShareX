@@ -85,10 +85,6 @@ namespace ShareX.UploadersLib
         private string response;
         private List<Match> regexResult;
 
-        public CustomUploaderItem()
-        {
-        }
-
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(Name))
