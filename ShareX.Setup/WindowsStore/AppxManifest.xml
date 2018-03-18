@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2">
   <Identity Name="19568ShareX.ShareX" ProcessorArchitecture="x64" Publisher="CN=366A5DE5-2EC7-43FD-B559-05986578C4CC" Version="12.0.0.0" />
   <Properties>
     <DisplayName>ShareX</DisplayName>
@@ -35,6 +35,14 @@
         <desktop:Extension Category="windows.startupTask" Executable="ShareX_DesktopBridgeHelper.exe" EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask TaskId="ShareX" Enabled="true" DisplayName="ShareX" />
         </desktop:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="ShareXCustomUploader" desktop2:UseUrl="false" Parameters='-CustomUploader "%1"'>
+            <uap:DisplayName>ShareX custom uploader</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.sxcu</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
