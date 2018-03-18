@@ -35,6 +35,14 @@
         <desktop:Extension Category="windows.startupTask" Executable="ShareX_DesktopBridgeHelper.exe" EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask TaskId="ShareX" Enabled="true" DisplayName="ShareX" />
         </desktop:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="sharexcustomuploader" UseUrl="false" Parameters='-CustomUploader "%1"'>
+            <uap:DisplayName>ShareX custom uploader</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.sxcu</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
