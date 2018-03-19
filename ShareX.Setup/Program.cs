@@ -47,6 +47,7 @@ namespace ShareX.Setup
             CreateWindowsStoreFolder = 1 << 6,
             CreateWindowsStoreDebugFolder = 1 << 7,
             CompileAppx = 1 << 8,
+            DownloadFFmpeg = 1 << 9,
 
             Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
@@ -58,7 +59,9 @@ namespace ShareX.Setup
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable,
             AppVeyorSteam = CreateSteamFolder,
-            AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx
+            AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx,
+            AppVeyorSteamRelease = AppVeyorSteam | DownloadFFmpeg,
+            AppVeyorWindowsStoreRelease = AppVeyorWindowsStore | DownloadFFmpeg
         }
 
         private static SetupJobs Job = SetupJobs.Stable;
@@ -113,6 +116,16 @@ namespace ShareX.Setup
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorWindowsStore;
             }
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteamRelease"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorSteamRelease;
+            }
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorWindowsStoreRelease"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorWindowsStoreRelease;
+            }
 
             Console.WriteLine("Setup job: " + Job);
 
@@ -136,11 +149,21 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
             {
                 CreateSteamFolder();
+
+                if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
+                {
+                    CopyFFmpeg(SteamUpdatesDir, true, true);
+                }
             }
 
             if (Job.HasFlag(SetupJobs.CreateWindowsStoreFolder))
             {
                 CreateFolder(WindowsStoreDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreFolder);
+
+                if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
+                {
+                    CopyFFmpeg(WindowsStoreOutputDir, false, true);
+                }
             }
 
             if (Job.HasFlag(SetupJobs.CreateWindowsStoreDebugFolder))
@@ -150,8 +173,20 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CompileAppx))
             {
-                Process.Start(@"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
-                    $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o").WaitForExit();
+                Process p = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
+                        Arguments = $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true
+                    }
+                };
+                p.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
+                p.Start();
+                p.BeginOutputReadLine();
+                p.WaitForExit();
 
                 Directory.Delete(WindowsStoreOutputDir, true);
             }
@@ -267,11 +302,7 @@ namespace ShareX.Setup
 
             Helpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
-            if (job == SetupJobs.CreateSteamFolder)
-            {
-                CopyFFmpeg(destination, true, true);
-            }
-            else if (job == SetupJobs.CreatePortableAppsFolder)
+            if (job == SetupJobs.CreatePortableAppsFolder)
             {
                 Helpers.CreateEmptyFile(Path.Combine(destination, "PortableApps"));
             }
@@ -279,7 +310,6 @@ namespace ShareX.Setup
             {
                 SetupHelpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
-                CopyFFmpeg(destination, false, true);
             }
             else if (job == SetupJobs.CreatePortable)
             {
