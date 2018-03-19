@@ -155,9 +155,11 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
+                        bool isImage = Helpers.GetMimeType(path).StartsWith("image");
                         if (DirectLink)
                         {
-                            link += IsCompatibility81 ? "/preview" : "&preview";
+                            link += IsCompatibility81 ? "/" : "&";
+                            link += isImage ? "preview" : "download";
                         }
                         return link;
                     }
