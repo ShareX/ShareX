@@ -342,7 +342,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (imageInfo != null && imageInfo.Image != null && taskSettings != null)
+            if (imageInfo != null && imageInfo.Image != null)
             {
                 if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
                 {

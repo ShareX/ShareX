@@ -135,7 +135,7 @@ namespace ShareX
                 e.Graphics.FillRectangle(brush, e.CellBounds);
             }
 
-            if (NewsManager != null && NewsManager.NewsItems != null & NewsManager.NewsItems.IsValidIndex(e.Row) &&
+            if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.IsValidIndex(e.Row) &&
                 NewsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
             {
                 e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));

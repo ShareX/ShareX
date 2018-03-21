@@ -270,7 +270,7 @@ namespace ShareX.HelpersLib
         public static string GetRandomLine(string text)
         {
             string[] lines = text.Trim().Lines();
-            if (lines != null && lines.Length > 0)
+            if (lines.Length > 0)
             {
                 return lines[MathHelpers.Random(0, lines.Length - 1)];
             }

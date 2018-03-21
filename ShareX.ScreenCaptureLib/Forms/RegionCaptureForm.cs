@@ -329,7 +329,7 @@ namespace ShareX.ScreenCaptureLib
 
                 CenterCanvas();
             }
-            else if (!IsEditorMode && Options.UseDimming)
+            else if (Options.UseDimming)
             {
                 using (Bitmap darkBackground = (Bitmap)Canvas.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
