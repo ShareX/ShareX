@@ -108,7 +108,12 @@ namespace ShareX.HelpersLib
             {
                 foreach (string file in files)
                 {
-                    archive.CreateEntryFromFile(Path.Combine(workingDirectory, file), file, compression);
+                    string filePath = Path.Combine(workingDirectory, file);
+
+                    if (File.Exists(filePath))
+                    {
+                        archive.CreateEntryFromFile(filePath, file, compression);
+                    }
                 }
             }
         }

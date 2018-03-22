@@ -1548,18 +1548,21 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                filePath = Helpers.GetAbsolutePath(filePath);
-
-                if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
+                if (!string.IsNullOrEmpty(filePath))
                 {
-                    Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                    filePath = Helpers.GetAbsolutePath(filePath);
 
-                    if (HelpersOptions.RotateImageByExifOrientationData)
+                    if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
-                        RotateImageByExifOrientationData(img);
-                    }
+                        Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
 
-                    return img;
+                        if (HelpersOptions.RotateImageByExifOrientationData)
+                        {
+                            RotateImageByExifOrientationData(img);
+                        }
+
+                        return img;
+                    }
                 }
             }
             catch (Exception e)

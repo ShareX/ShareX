@@ -110,6 +110,7 @@ Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: https://ocr.space
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
+Blob Emoji: http://blobs.gg
 
 Copyright (c) 2007-2018 ShareX Team";
         }
