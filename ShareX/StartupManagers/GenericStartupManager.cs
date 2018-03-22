@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#if !WindowsStore
+
 using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
@@ -61,3 +63,5 @@ namespace ShareX
         }
     }
 }
+
+#endif

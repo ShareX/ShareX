@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#if STEAM
+
 using ShareX.HelpersLib;
 
 namespace ShareX
@@ -32,3 +34,5 @@ namespace ShareX
         public override string StartupTargetPath => Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
     }
 }
+
+#endif
