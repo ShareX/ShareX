@@ -1543,7 +1543,6 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
         public static Image LoadImage(string filePath)
         {
             try
@@ -1554,6 +1553,7 @@ namespace ShareX.HelpersLib
 
                     if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
+                        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
                         Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
 
                         if (HelpersOptions.RotateImageByExifOrientationData)
