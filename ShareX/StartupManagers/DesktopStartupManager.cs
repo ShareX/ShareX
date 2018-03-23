@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#if !WindowsStore
+
 using System.Windows.Forms;
 
 namespace ShareX
@@ -32,3 +34,5 @@ namespace ShareX
         public override string StartupTargetPath => Application.ExecutablePath;
     }
 }
+
+#endif

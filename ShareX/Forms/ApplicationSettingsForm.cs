@@ -31,6 +31,10 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+#if WindowsStore
+using Windows.ApplicationModel;
+#endif
+
 namespace ShareX
 {
     public partial class ApplicationSettingsForm : Form
@@ -251,7 +255,7 @@ namespace ShareX
 
             try
             {
-                StartupTaskState state = StartupManagerFactory.StartupManager.State;
+                var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
                 cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
 
                 if (state == StartupTaskState.DisabledByUser)
@@ -405,7 +409,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)

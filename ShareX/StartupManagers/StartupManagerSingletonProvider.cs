@@ -25,31 +25,18 @@
 
 namespace ShareX
 {
-    public static class StartupManagerFactory
+    public static class StartupManagerSingletonProvider
     {
-        private static IStartupManager startupManager;
+        public static IStartupManager CurrentStartupManager { get; private set; }
 
-        public static IStartupManager StartupManager
-        {
-            get
-            {
-                if (startupManager == null)
-                {
-                    startupManager = CreateStartupManager();
-                }
-
-                return startupManager;
-            }
-        }
-
-        public static IStartupManager CreateStartupManager()
+        static StartupManagerSingletonProvider()
         {
 #if WindowsStore
-            return new CentennialStartupManager();
+            CurrentStartupManager = new CentennialStartupManager();
 #elif STEAM
-            return new SteamStartupManager();
+            CurrentStartupManager = new SteamStartupManager();
 #else
-            return new DesktopStartupManager();
+            CurrentStartupManager = new DesktopStartupManager();
 #endif
         }
     }
