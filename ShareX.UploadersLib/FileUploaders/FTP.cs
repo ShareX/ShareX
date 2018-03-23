@@ -231,10 +231,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 try
                 {
-                    using (Stream remoteStream = client.OpenWrite(remotePath))
-                    {
-                        return TransferData(localStream, remoteStream);
-                    }
+                    return UploadData2(localStream, remotePath);
                 }
                 catch (FtpCommandException e)
                 {
@@ -243,10 +240,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         CreateMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
-                        using (Stream remoteStream = client.OpenWrite(remotePath))
-                        {
-                            return TransferData(localStream, remoteStream);
-                        }
+                        return UploadData2(localStream, remotePath);
                     }
 
                     throw e;
@@ -254,6 +248,17 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return false;
+        }
+
+        private bool UploadData2(Stream localStream, string remotePath)
+        {
+            bool result;
+            using (Stream remoteStream = client.OpenWrite(remotePath))
+            {
+                result = TransferData(localStream, remoteStream);
+            }
+            FtpReply ftpReply = client.GetReply();
+            return result && ftpReply.Success;
         }
 
         public void UploadData(byte[] data, string remotePath)
@@ -322,6 +327,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     TransferData(remoteStream, localStream);
                 }
+                client.GetReply();
             }
         }
 
