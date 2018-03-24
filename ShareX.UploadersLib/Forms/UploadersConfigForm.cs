@@ -2331,6 +2331,11 @@ namespace ShareX.UploadersLib
             Config.OwnCloud81Compatibility = cbOwnCloud81Compatibility.Checked;
         }
 
+        private void cbOwnCloudUsePreviewLinks_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudUsePreviewLinks = cbOwnCloudUsePreviewLinks.Checked;
+        }
+
         #endregion ownCloud / Nextcloud
 
         #region Pushbullet
