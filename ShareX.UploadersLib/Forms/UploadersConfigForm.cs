@@ -607,6 +607,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
+            cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
 
             #endregion ownCloud / Nextcloud
 
