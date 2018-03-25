@@ -501,22 +501,30 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.NumPad5:
                             CurrentTool = ShapeType.DrawingArrow;
                             break;
-                        case Keys.T:
+                        case Keys.O:
                         case Keys.NumPad6:
                             CurrentTool = ShapeType.DrawingTextOutline;
                             break;
+                        case Keys.I:
                         case Keys.NumPad7:
                             CurrentTool = ShapeType.DrawingStep;
                             break;
-                        case Keys.O:
+                        case Keys.B:
                         case Keys.NumPad8:
                             CurrentTool = ShapeType.EffectBlur;
                             break;
+                        case Keys.P:
                         case Keys.NumPad9:
                             CurrentTool = ShapeType.EffectPixelate;
                             break;
                         case Keys.H:
                             CurrentTool = ShapeType.EffectHighlight;
+                            break;
+                        case Keys.T:
+                            CurrentTool = ShapeType.DrawingTextBackground;
+                            break;
+                        case Keys.S:
+                            CurrentTool = ShapeType.DrawingSpeechBalloon;
                             break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard(true);

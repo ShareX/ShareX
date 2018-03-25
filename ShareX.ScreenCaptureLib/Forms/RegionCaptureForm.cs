@@ -816,7 +816,7 @@ namespace ShareX.ScreenCaptureLib
             ShapeManager.DrawObjects(g);
 
             // Draw F1 tips
-            if (!IsEditorMode && Options.ShowHotkeys)
+            if (Options.ShowHotkeys)
             {
                 DrawTips(g);
             }
@@ -1077,7 +1077,7 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
 
-            if (Mode == RegionCaptureMode.Annotation && !ShapeManager.IsCreating)
+            if (IsAnnotationMode && !ShapeManager.IsCreating)
             {
                 sb.AppendLine();
 
@@ -1090,37 +1090,38 @@ namespace ShareX.ScreenCaptureLib
                     sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool);
                 }
 
+                void AddToolShortcut(ShapeType type, string shortcut)
+                {
+                    if (ShapeManager.CurrentTool == type)
+                    {
+                        sb.Append("-> ");
+                    }
+
+                    string description = string.Format("[{0}] {1}", shortcut, type.GetLocalizedDescription());
+                    sb.AppendLine(description);
+                }
+
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size);
-                if (ShapeManager.CurrentTool == ShapeType.RegionRectangle) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 0", ShapeType.RegionRectangle.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.RegionEllipse) sb.Append("-> ");
-                sb.AppendLine(ShapeType.RegionEllipse.GetLocalizedDescription());
-                if (ShapeManager.CurrentTool == ShapeType.RegionFreehand) sb.Append("-> ");
-                sb.AppendLine(ShapeType.RegionFreehand.GetLocalizedDescription());
-                if (ShapeManager.CurrentTool == ShapeType.DrawingRectangle) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 1 / R", ShapeType.DrawingRectangle.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingEllipse) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 2 / E", ShapeType.DrawingEllipse.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingFreehand) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 3 / F", ShapeType.DrawingFreehand.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingLine) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4 / L", ShapeType.DrawingLine.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingArrow) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5 / A", ShapeType.DrawingArrow.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingTextOutline) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6 / T", ShapeType.DrawingTextOutline.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingSpeechBalloon) sb.Append("-> ");
-                sb.AppendLine(ShapeType.DrawingSpeechBalloon.GetLocalizedDescription());
-                if (ShapeManager.CurrentTool == ShapeType.DrawingStep) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingStep.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.DrawingImage) sb.Append("-> ");
-                sb.AppendLine(ShapeType.DrawingImage.GetLocalizedDescription());
-                if (ShapeManager.CurrentTool == ShapeType.EffectBlur) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8 / O", ShapeType.EffectBlur.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.EffectPixelate) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.EffectPixelate.GetLocalizedDescription()));
-                if (ShapeManager.CurrentTool == ShapeType.EffectHighlight) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "H", ShapeType.EffectHighlight.GetLocalizedDescription()));
+                if (Mode == RegionCaptureMode.Annotation)
+                {
+                    AddToolShortcut(ShapeType.RegionRectangle, "Numpad 0");
+                }
+                AddToolShortcut(ShapeType.DrawingRectangle,      "Numpad 1 / R");
+                AddToolShortcut(ShapeType.DrawingEllipse,        "Numpad 2 / E");
+                AddToolShortcut(ShapeType.DrawingFreehand,       "Numpad 3 / F");
+                AddToolShortcut(ShapeType.DrawingLine,           "Numpad 4 / L");
+                AddToolShortcut(ShapeType.DrawingArrow,          "Numpad 5 / A");
+                AddToolShortcut(ShapeType.DrawingTextOutline,    "Numpad 6 / O");
+                AddToolShortcut(ShapeType.DrawingStep,           "Numpad 7 / I");
+                AddToolShortcut(ShapeType.EffectBlur,            "Numpad 8 / B");
+                AddToolShortcut(ShapeType.EffectPixelate,        "Numpad 9 / P");
+                AddToolShortcut(ShapeType.EffectHighlight,       "H");
+                AddToolShortcut(ShapeType.DrawingTextBackground, "T");
+                AddToolShortcut(ShapeType.DrawingSpeechBalloon,  "S");
+                if (IsEditorMode)
+                {
+                    AddToolShortcut(ShapeType.ToolCrop, "C");
+                }
             }
 
             sb.AppendLine();
