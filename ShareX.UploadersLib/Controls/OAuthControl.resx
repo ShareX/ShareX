@@ -181,7 +181,7 @@
     <value>13, 136</value>
   </data>
   <data name="flpStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 20</value>
+    <value>299, 20</value>
   </data>
   <data name="flpStatus.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

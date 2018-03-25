@@ -157,10 +157,9 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
-                        bool isImage = Helpers.GetMimeType(path).StartsWith("image");
                         if (PreviewLink)
                         {
-                            link += isImage ? "/preview" : "/download";
+                            link += Helpers.IsImageFile(path) ? "/preview" : "/download";
                         }
                         else if (DirectLink)
                         {
