@@ -297,6 +297,7 @@ namespace ShareX.UploadersLib
         public bool OwnCloudCreateShare = true;
         public bool OwnCloudDirectLink = false;
         public bool OwnCloud81Compatibility = true;
+        public bool OwnCloudUsePreviewLinks = false;
 
         #endregion ownCloud / Nextcloud
 
