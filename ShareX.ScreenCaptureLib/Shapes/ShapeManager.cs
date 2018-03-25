@@ -481,32 +481,42 @@ namespace ShareX.ScreenCaptureLib
                 {
                     switch (e.KeyData)
                     {
+                        case Keys.R:
                         case Keys.NumPad1:
                             CurrentTool = ShapeType.DrawingRectangle;
                             break;
+                        case Keys.E:
                         case Keys.NumPad2:
                             CurrentTool = ShapeType.DrawingEllipse;
                             break;
+                        case Keys.F:
                         case Keys.NumPad3:
                             CurrentTool = ShapeType.DrawingFreehand;
                             break;
+                        case Keys.L:
                         case Keys.NumPad4:
                             CurrentTool = ShapeType.DrawingLine;
                             break;
+                        case Keys.A:
                         case Keys.NumPad5:
                             CurrentTool = ShapeType.DrawingArrow;
                             break;
+                        case Keys.T:
                         case Keys.NumPad6:
                             CurrentTool = ShapeType.DrawingTextOutline;
                             break;
                         case Keys.NumPad7:
                             CurrentTool = ShapeType.DrawingStep;
                             break;
+                        case Keys.O:
                         case Keys.NumPad8:
                             CurrentTool = ShapeType.EffectBlur;
                             break;
                         case Keys.NumPad9:
                             CurrentTool = ShapeType.EffectPixelate;
+                            break;
+                        case Keys.H:
+                            CurrentTool = ShapeType.EffectHighlight;
                             break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard(true);
@@ -529,6 +539,16 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.Q:
                             Options.QuickCrop = !Options.QuickCrop;
                             tsmiQuickCrop.Checked = !Options.QuickCrop;
+                            break;
+                    }
+                }
+
+                if (Form.IsEditorMode)
+                {
+                    switch (e.KeyData)
+                    {
+                        case Keys.C:
+                            CurrentTool = ShapeType.ToolCrop;
                             break;
                     }
                 }

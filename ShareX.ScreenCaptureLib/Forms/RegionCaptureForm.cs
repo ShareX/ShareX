@@ -1098,17 +1098,17 @@ namespace ShareX.ScreenCaptureLib
                 if (ShapeManager.CurrentTool == ShapeType.RegionFreehand) sb.Append("-> ");
                 sb.AppendLine(ShapeType.RegionFreehand.GetLocalizedDescription());
                 if (ShapeManager.CurrentTool == ShapeType.DrawingRectangle) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 1", ShapeType.DrawingRectangle.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 1 / R", ShapeType.DrawingRectangle.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingEllipse) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 2", ShapeType.DrawingEllipse.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 2 / E", ShapeType.DrawingEllipse.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingFreehand) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 3", ShapeType.DrawingFreehand.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 3 / F", ShapeType.DrawingFreehand.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingLine) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4 / L", ShapeType.DrawingLine.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingArrow) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5 / A", ShapeType.DrawingArrow.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingTextOutline) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingTextOutline.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6 / T", ShapeType.DrawingTextOutline.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.DrawingSpeechBalloon) sb.Append("-> ");
                 sb.AppendLine(ShapeType.DrawingSpeechBalloon.GetLocalizedDescription());
                 if (ShapeManager.CurrentTool == ShapeType.DrawingStep) sb.Append("-> ");
@@ -1116,11 +1116,11 @@ namespace ShareX.ScreenCaptureLib
                 if (ShapeManager.CurrentTool == ShapeType.DrawingImage) sb.Append("-> ");
                 sb.AppendLine(ShapeType.DrawingImage.GetLocalizedDescription());
                 if (ShapeManager.CurrentTool == ShapeType.EffectBlur) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.EffectBlur.GetLocalizedDescription()));
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8 / O", ShapeType.EffectBlur.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.EffectPixelate) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.EffectPixelate.GetLocalizedDescription()));
                 if (ShapeManager.CurrentTool == ShapeType.EffectHighlight) sb.Append("-> ");
-                sb.AppendLine(ShapeType.EffectHighlight.GetLocalizedDescription());
+                sb.AppendLine(string.Format("[{0}] {1}", "H", ShapeType.EffectHighlight.GetLocalizedDescription()));
             }
 
             sb.AppendLine();
