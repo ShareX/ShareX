@@ -123,6 +123,9 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Bu ayarı özel alan adı kullanan bucket sahibiyseniz kullanın.</value>
   </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Diğer yükleyiciler</value>
+  </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Güncelle</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Ekle</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Özel yükleyiciler</value>
   </data>
   <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
     <value>URL bölümüne sözdizimini ekle</value>
@@ -171,6 +177,9 @@ store.book[0].title</value>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Argümanlar</value>
+  </data>
   <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
     <value>Güncelle</value>
   </data>
@@ -186,8 +195,8 @@ store.book[0].title</value>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>Değer</value>
   </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argümanlar</value>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Başlıklar</value>
   </data>
   <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
     <value>Güncelle</value>
@@ -203,9 +212,6 @@ store.book[0].title</value>
   </data>
   <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
     <value>Değer</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Başlıklar</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>İstek türü:</value>
@@ -243,6 +249,9 @@ store.book[0].title</value>
   <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
     <value>Son cevabı göster...</value>
   </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Yükleyiciler</value>
+  </data>
   <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
     <value>Hepsi...</value>
   </data>
@@ -255,20 +264,14 @@ store.book[0].title</value>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Yükleyiciler</value>
-  </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
     <value>Yazı yükleyici:</value>
   </data>
   <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
     <value>URL kısaltıcı:</value>
   </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Özel yükleyiciler</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Diğer yükleyiciler</value>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL kısaltıcılar</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Alan adı:</value>
@@ -297,8 +300,23 @@ store.book[0].title</value>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>API sunucu: (örneğin: http://example.com/api.php, polr.me kullanmak için boş bırakın)</value>
   </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Yazı:</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Resim:</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Dizin paylaş</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Eposta</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>Dosya yükleyiciler</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Paylaşılabilir URL oluştur:</value>
@@ -492,14 +510,14 @@ store.book[0].title</value>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Yükleyiciler:</value>
   </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Paylaşma ayarları</value>
+  </data>
   <data name="lblSeafileSharePassword.Text" xml:space="preserve">
     <value>Paylaşma şifresi:</value>
   </data>
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
     <value>Son kullanma (gün):</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Paylaşma ayarları</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Denetle</value>
@@ -532,6 +550,9 @@ store.book[0].title</value>
   <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
     <value>Kütüphane seç:</value>
   </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Hesap bilgisi</value>
+  </data>
   <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
     <value>Yenile</value>
   </data>
@@ -541,14 +562,14 @@ store.book[0].title</value>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Kullanım:</value>
   </data>
-  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
-    <value>Hesap bilgisi</value>
-  </data>
   <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
     <value>Doğrula</value>
   </data>
   <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
     <value>Doğrula</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Yetki fişini al</value>
   </data>
   <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
     <value>Al</value>
@@ -558,9 +579,6 @@ store.book[0].title</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
     <value>Şifre:</value>
-  </data>
-  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
-    <value>Yetki fişini al</value>
   </data>
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Geçersiz SSL sertifika hatasını yoksay</value>
@@ -583,18 +601,6 @@ store.book[0].title</value>
   <data name="lblSulAPIKey.Text" xml:space="preserve">
     <value>API anahtarı:</value>
   </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>Dosya:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Yazı:</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Resim:</value>
-  </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Dizin paylaş</value>
-  </data>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
     <value>SMTP sunucusu:</value>
   </data>
@@ -613,11 +619,8 @@ store.book[0].title</value>
   <data name="lblEmailDefaultBody.Text" xml:space="preserve">
     <value>Varsayılan mesaj:</value>
   </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>Eposta</value>
-  </data>
-  <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Dosya yükleyiciler</value>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Yazı yükleyiciler</value>
   </data>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Saf adres kullan</value>
@@ -676,8 +679,8 @@ store.book[0].title</value>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Eposta:</value>
   </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Yazı yükleyiciler</value>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Resim yükleyiciler</value>
   </data>
   <data name="cbImgurUseGIFV.Text" xml:space="preserve">
     <value>GIF yerine GIFV adresi kullan</value>
@@ -730,14 +733,17 @@ store.book[0].title</value>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Resimlerim sayfasını aç</value>
   </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Resimleri buraya yükle</value>
+  </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Albüm ekle</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
     <value>Albüm kaldır</value>
   </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Resimleri buraya yükle</value>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Yeni albüm oluştur</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
     <value>Yeni albüm adı (2 ve 50 karakter arasında olmalıdır. Harfler, sayılar, alttan çizgi (_), çizgi (-) ve boşluk izin verilen karakterlerdir)</value>
@@ -748,8 +754,8 @@ store.book[0].title</value>
   <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
     <value>Albüm oluştur</value>
   </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Yeni albüm oluştur</value>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Kullanıcı hesabı</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
     <value>Varsayılan albüm adı</value>
@@ -765,9 +771,6 @@ store.book[0].title</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Giriş gereklidir.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Kullanıcı hesabı</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>Yükleme için Albüm ID (Boş = Albüm yok):</value>
@@ -804,9 +807,6 @@ store.book[0].title</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Kullanıcı anahtarı:</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Resim yükleyiciler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Hedef ayarları</value>
