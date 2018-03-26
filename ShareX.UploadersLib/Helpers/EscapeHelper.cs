@@ -24,35 +24,30 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
 {
-    public class CustomUploaderArgumentInput
+    public class EscapeHelper
     {
-        public string Filename { get; set; }
-        public string Input { get; set; }
+        public string EscapeCharacter { get; set; } = @"\";
+        public string EscapeableCharacter { get; set; } = "%";
 
-        public CustomUploaderArgumentInput(string filename, string input)
+        private string escapeCharacterReserve = Helpers.GetRandomAlphanumeric(32);
+        private string escapeableCharacterReserve = Helpers.GetRandomAlphanumeric(32);
+
+        public string Parse(string input, Func<string, string> action)
         {
-            Filename = filename;
-            Input = input;
-        }
-
-        public string Parse(string arg)
-        {
-            NameParser nameParser = new NameParser(NameParserType.Text);
-
-            EscapeHelper escapeHelper = new EscapeHelper();
-            arg = escapeHelper.Parse(arg, nameParser.Parse);
-
-            arg = arg.BatchReplace(new Dictionary<string, string>()
-            {
-                { "$filename$", Filename },
-                { "$input$", Input }
-            });
-
-            return arg;
+            input = input.Replace(EscapeCharacter + EscapeCharacter, escapeCharacterReserve);
+            input = input.Replace(EscapeCharacter + EscapeableCharacter, escapeableCharacterReserve);
+            input = action(input);
+            input = input.Replace(escapeableCharacterReserve, EscapeableCharacter);
+            input = input.Replace(escapeCharacterReserve, EscapeCharacter);
+            return input;
         }
     }
 }
