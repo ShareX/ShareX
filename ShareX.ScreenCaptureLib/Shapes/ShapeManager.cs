@@ -558,6 +558,21 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.C:
                             CurrentTool = ShapeType.ToolCrop;
                             break;
+                        case Keys.Control | Keys.S:
+                            Form.OnSaveImageRequested();
+                            break;
+                        case Keys.Control | Keys.Shift | Keys.S:
+                            Form.OnSaveImageAsRequested();
+                            break;
+                        case Keys.Control | Keys.Shift | Keys.C:
+                            Form.OnCopyImageRequested();
+                            break;
+                        case Keys.Control | Keys.U:
+                            Form.OnUploadImageRequested();
+                            break;
+                        case Keys.Control | Keys.P:
+                            Form.OnPrintImageRequested();
+                            break;
                     }
                 }
             }
