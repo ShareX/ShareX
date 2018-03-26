@@ -35,7 +35,6 @@ namespace ShareX.ScreenCaptureLib
         public static Image GetRegionImage(RegionCaptureOptions options)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.ShowHotkeys = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
             {
@@ -48,7 +47,6 @@ namespace ShareX.ScreenCaptureLib
         public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.ShowHotkeys = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
             {
@@ -93,7 +91,6 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.DetectWindows = false;
-            newOptions.ShowHotkeys = false;
             newOptions.UseDimming = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions))
@@ -117,7 +114,6 @@ namespace ShareX.ScreenCaptureLib
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.UseDimming = false;
             newOptions.ShowMagnifier = false;
-            newOptions.ShowHotkeys = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))
             {
@@ -136,7 +132,6 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.QuickCrop = false;
-            newOptions.ShowHotkeys = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
             {

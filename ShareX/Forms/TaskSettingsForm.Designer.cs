@@ -135,7 +135,6 @@
             this.cbRegionCaptureUseSquareMagnifier = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureShowMagnifier = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureShowInfo = new System.Windows.Forms.CheckBox();
-            this.cbRegionCaptureShowTips = new System.Windows.Forms.CheckBox();
             this.btnRegionCaptureSnapSizesRemove = new System.Windows.Forms.Button();
             this.btnRegionCaptureSnapSizesAdd = new System.Windows.Forms.Button();
             this.cbRegionCaptureSnapSizes = new System.Windows.Forms.ComboBox();
@@ -224,6 +223,7 @@
             this.btnActionsRemove = new System.Windows.Forms.Button();
             this.chkOverrideActions = new System.Windows.Forms.CheckBox();
             this.tpWatchFolders = new System.Windows.Forms.TabPage();
+            this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.cbWatchFolderEnabled = new System.Windows.Forms.CheckBox();
             this.lvWatchFolderList = new System.Windows.Forms.ListView();
             this.chWatchFolderFolderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -240,7 +240,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1040,14 +1039,11 @@
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowCrosshair);
-            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMagnifierPixelSize);
-            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelCount);
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMagnifierPixelCount);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseSquareMagnifier);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowMagnifier);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowInfo);
-            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowTips);
             this.tpRegionCapture.Controls.Add(this.btnRegionCaptureSnapSizesRemove);
             this.tpRegionCapture.Controls.Add(this.btnRegionCaptureSnapSizesAdd);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureSnapSizes);
@@ -1067,6 +1063,8 @@
             this.tpRegionCapture.Controls.Add(this.pRegionCaptureSnapSizes);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseDimming);
             this.tpRegionCapture.Controls.Add(this.txtRegionCaptureCustomInfoText);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelCount);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
             // 
@@ -1209,13 +1207,6 @@
             this.cbRegionCaptureShowInfo.Name = "cbRegionCaptureShowInfo";
             this.cbRegionCaptureShowInfo.UseVisualStyleBackColor = true;
             this.cbRegionCaptureShowInfo.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowInfo_CheckedChanged);
-            // 
-            // cbRegionCaptureShowTips
-            // 
-            resources.ApplyResources(this.cbRegionCaptureShowTips, "cbRegionCaptureShowTips");
-            this.cbRegionCaptureShowTips.Name = "cbRegionCaptureShowTips";
-            this.cbRegionCaptureShowTips.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureShowTips.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowTips_CheckedChanged);
             // 
             // btnRegionCaptureSnapSizesRemove
             // 
@@ -1943,6 +1934,13 @@
             resources.ApplyResources(this.tpWatchFolders, "tpWatchFolders");
             this.tpWatchFolders.Name = "tpWatchFolders";
             // 
+            // btnWatchFolderEdit
+            // 
+            resources.ApplyResources(this.btnWatchFolderEdit, "btnWatchFolderEdit");
+            this.btnWatchFolderEdit.Name = "btnWatchFolderEdit";
+            this.btnWatchFolderEdit.UseVisualStyleBackColor = true;
+            this.btnWatchFolderEdit.Click += new System.EventHandler(this.btnWatchFolderEdit_Click);
+            // 
             // cbWatchFolderEnabled
             // 
             resources.ApplyResources(this.cbWatchFolderEnabled, "cbWatchFolderEnabled");
@@ -2059,13 +2057,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // btnWatchFolderEdit
-            // 
-            resources.ApplyResources(this.btnWatchFolderEdit, "btnWatchFolderEdit");
-            this.btnWatchFolderEdit.Name = "btnWatchFolderEdit";
-            this.btnWatchFolderEdit.UseVisualStyleBackColor = true;
-            this.btnWatchFolderEdit.Click += new System.EventHandler(this.btnWatchFolderEdit_Click);
             // 
             // TaskSettingsForm
             // 
@@ -2332,7 +2323,6 @@
         private System.Windows.Forms.Label RegionCaptureSnapSizesHeight;
         private System.Windows.Forms.NumericUpDown nudRegionCaptureSnapSizesWidth;
         private System.Windows.Forms.Label lblRegionCaptureSnapSizesWidth;
-        private System.Windows.Forms.CheckBox cbRegionCaptureShowTips;
         private System.Windows.Forms.CheckBox cbRegionCaptureShowInfo;
         private System.Windows.Forms.CheckBox cbRegionCaptureShowMagnifier;
         private System.Windows.Forms.Label lblRegionCaptureMagnifierPixelCount;

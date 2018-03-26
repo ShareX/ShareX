@@ -449,13 +449,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Shift | Keys.Delete:
                     DeleteAllShapes();
                     break;
-                case Keys.F1:
-                    Options.ShowHotkeys = !Options.ShowHotkeys;
-                    if (tsmiTips != null)
-                    {
-                        tsmiTips.Checked = Options.ShowHotkeys;
-                    }
-                    break;
             }
 
             if (!IsCreating)
@@ -501,6 +494,12 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.NumPad6:
                             CurrentTool = ShapeType.DrawingTextOutline;
                             break;
+                        case Keys.T:
+                            CurrentTool = ShapeType.DrawingTextBackground;
+                            break;
+                        case Keys.S:
+                            CurrentTool = ShapeType.DrawingSpeechBalloon;
+                            break;
                         case Keys.I:
                         case Keys.NumPad7:
                             CurrentTool = ShapeType.DrawingStep;
@@ -515,12 +514,6 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.H:
                             CurrentTool = ShapeType.EffectHighlight;
-                            break;
-                        case Keys.T:
-                            CurrentTool = ShapeType.DrawingTextBackground;
-                            break;
-                        case Keys.S:
-                            CurrentTool = ShapeType.DrawingSpeechBalloon;
                             break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard(true);

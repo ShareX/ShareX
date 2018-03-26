@@ -234,13 +234,6 @@ namespace ShareX.ScreenCaptureLib
         ToolCrop
     }
 
-    public enum RegionAnnotateMode
-    {
-        Capture,
-        Rectangle,
-        Pen
-    }
-
     public enum ScrollingCaptureScrollMethod // Localized
     {
         Automatic,

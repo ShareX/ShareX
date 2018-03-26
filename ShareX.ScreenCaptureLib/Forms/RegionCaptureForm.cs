@@ -815,12 +815,6 @@ namespace ShareX.ScreenCaptureLib
             // Draw resize nodes
             ShapeManager.DrawObjects(g);
 
-            // Draw F1 tips
-            if (Options.ShowHotkeys)
-            {
-                DrawTips(g);
-            }
-
             // Draw magnifier
             if (Options.ShowMagnifier || Options.ShowInfo)
             {
@@ -938,28 +932,6 @@ namespace ShareX.ScreenCaptureLib
             DrawInfoText(g, text, backgroundRect, infoFont, backgroundPadding);
         }
 
-        private void DrawTips(Graphics g)
-        {
-            StringBuilder sb = new StringBuilder();
-            WriteTips(sb);
-            string tipText = sb.ToString().Trim();
-
-            Size textSize = g.MeasureString(tipText, infoFont).ToSize();
-            int offset = 10;
-            int padding = 10;
-            int rectWidth = textSize.Width + padding * 2 + 2;
-            int rectHeight = textSize.Height + padding * 2;
-            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(screenBounds.X + screenBounds.Width - rectWidth - offset, screenBounds.Y + offset, rectWidth, rectHeight);
-
-            if (textRectangle.Offset(10).Contains(InputManager.ClientMousePosition))
-            {
-                textRectangle.Y = screenBounds.Height - rectHeight - offset;
-            }
-
-            DrawInfoText(g, tipText, textRectangle, infoFont, padding);
-        }
-
         private void DrawTextAnimation(Graphics g, TextAnimation textAnimation)
         {
             Size textSize = g.MeasureString(textAnimation.Text, infoFontMedium).ToSize();
@@ -991,141 +963,6 @@ namespace ShareX.ScreenCaptureLib
             int margin = 20;
             Rectangle textRectangle = new Rectangle(ClientArea.Width / 2 - textSize.Width / 2, ClientArea.Height - textSize.Height - margin, textSize.Width, textSize.Height);
             DrawTextAnimation(g, textAnimation, textRectangle, padding);
-        }
-
-        private void WriteTips(StringBuilder sb)
-        {
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
-            sb.AppendLine();
-
-            if (ShapeManager.IsCreating)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Insert__Stop_region_selection);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
-            }
-            else
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
-                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion);
-            }
-
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
-
-            if (!ShapeManager.IsCreating && !Options.QuickCrop && ShapeManager.Regions.Length > 0)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions);
-            }
-
-            sb.AppendLine();
-
-            if ((!Options.QuickCrop || !ShapeManager.IsCurrentShapeTypeRegion) && ShapeManager.CurrentShape != null && !ShapeManager.IsCreating)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region);
-                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner);
-                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner);
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region);
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region);
-            }
-            else
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position);
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster);
-            }
-
-            if (ShapeManager.IsCreating)
-            {
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
-
-                if (ShapeManager.CurrentTool != ShapeType.RegionFreehand && ShapeManager.CurrentTool != ShapeType.DrawingFreehand)
-                {
-                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
-                }
-            }
-
-            if (ShapeManager.Shapes.Count > 0)
-            {
-                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_CtrlZUndoShape);
-            }
-
-            sb.AppendLine();
-
-            if (ShapeManager.IsCurrentShapeValid)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size);
-            }
-            else if (Options.UseCustomInfoText)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_info);
-            }
-            else
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
-            }
-
-            if (IsAnnotationMode)
-            {
-                sb.AppendLine(Resources.RegionCaptureForm_WriteTips_CtrlVPasteImageOrText);
-            }
-
-            sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool);
-
-            sb.AppendLine();
-
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
-            sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
-
-            if (IsAnnotationMode && !ShapeManager.IsCreating)
-            {
-                sb.AppendLine();
-
-                if (ShapeManager.IsCurrentShapeTypeRegion)
-                {
-                    sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool);
-                }
-                else
-                {
-                    sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool);
-                }
-
-                void AddToolShortcut(ShapeType type, string shortcut)
-                {
-                    if (ShapeManager.CurrentTool == type)
-                    {
-                        sb.Append("-> ");
-                    }
-
-                    string description = string.Format("[{0}] {1}", shortcut, type.GetLocalizedDescription());
-                    sb.AppendLine(description);
-                }
-
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size);
-                if (Mode == RegionCaptureMode.Annotation)
-                {
-                    AddToolShortcut(ShapeType.RegionRectangle, "Numpad 0");
-                }
-                AddToolShortcut(ShapeType.DrawingRectangle,      "Numpad 1 / R");
-                AddToolShortcut(ShapeType.DrawingEllipse,        "Numpad 2 / E");
-                AddToolShortcut(ShapeType.DrawingFreehand,       "Numpad 3 / F");
-                AddToolShortcut(ShapeType.DrawingLine,           "Numpad 4 / L");
-                AddToolShortcut(ShapeType.DrawingArrow,          "Numpad 5 / A");
-                AddToolShortcut(ShapeType.DrawingTextOutline,    "Numpad 6 / O");
-                AddToolShortcut(ShapeType.DrawingStep,           "Numpad 7 / I");
-                AddToolShortcut(ShapeType.EffectBlur,            "Numpad 8 / B");
-                AddToolShortcut(ShapeType.EffectPixelate,        "Numpad 9 / P");
-                AddToolShortcut(ShapeType.EffectHighlight,       "H");
-                AddToolShortcut(ShapeType.DrawingTextBackground, "T");
-                AddToolShortcut(ShapeType.DrawingSpeechBalloon,  "S");
-                if (IsEditorMode)
-                {
-                    AddToolShortcut(ShapeType.ToolCrop, "C");
-                }
-            }
-
-            sb.AppendLine();
-            sb.AppendLine(Resources.RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly);
         }
 
         internal string GetAreaText(Rectangle area)
