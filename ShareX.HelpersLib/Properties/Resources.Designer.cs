@@ -2915,7 +2915,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Arrow.
+        ///   Looks up a localized string similar to Drawing: Arrow (A).
         /// </summary>
         internal static string ShapeType_DrawingArrow {
             get {
@@ -2933,7 +2933,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Ellipse.
+        ///   Looks up a localized string similar to Drawing: Ellipse (E).
         /// </summary>
         internal static string ShapeType_DrawingEllipse {
             get {
@@ -2942,7 +2942,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Freehand.
+        ///   Looks up a localized string similar to Drawing: Freehand (F).
         /// </summary>
         internal static string ShapeType_DrawingFreehand {
             get {
@@ -2969,7 +2969,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Line.
+        ///   Looks up a localized string similar to Drawing: Line (L).
         /// </summary>
         internal static string ShapeType_DrawingLine {
             get {
@@ -2978,7 +2978,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Rectangle.
+        ///   Looks up a localized string similar to Drawing: Rectangle (R).
         /// </summary>
         internal static string ShapeType_DrawingRectangle {
             get {
@@ -2987,7 +2987,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Speech balloon.
+        ///   Looks up a localized string similar to Drawing: Speech balloon (S).
         /// </summary>
         internal static string ShapeType_DrawingSpeechBalloon {
             get {
@@ -2996,7 +2996,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Step.
+        ///   Looks up a localized string similar to Drawing: Step (I).
         /// </summary>
         internal static string ShapeType_DrawingStep {
             get {
@@ -3014,7 +3014,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Text (Background).
+        ///   Looks up a localized string similar to Drawing: Text (Background) (T).
         /// </summary>
         internal static string ShapeType_DrawingTextBackground {
             get {
@@ -3023,7 +3023,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drawing: Text (Outline).
+        ///   Looks up a localized string similar to Drawing: Text (Outline) (O).
         /// </summary>
         internal static string ShapeType_DrawingTextOutline {
             get {
@@ -3032,7 +3032,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effect: Blur.
+        ///   Looks up a localized string similar to Effect: Blur (B).
         /// </summary>
         internal static string ShapeType_EffectBlur {
             get {
@@ -3041,7 +3041,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effect: Highlight.
+        ///   Looks up a localized string similar to Effect: Highlight (H).
         /// </summary>
         internal static string ShapeType_EffectHighlight {
             get {
@@ -3050,7 +3050,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effect: Pixelate.
+        ///   Looks up a localized string similar to Effect: Pixelate (P).
         /// </summary>
         internal static string ShapeType_EffectPixelate {
             get {
@@ -3086,7 +3086,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tool: Crop image.
+        ///   Looks up a localized string similar to Tool: Crop image (C).
         /// </summary>
         internal static string ShapeType_ToolCrop {
             get {

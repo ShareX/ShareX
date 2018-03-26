@@ -583,22 +583,22 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Cancel task (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>Save image</value>
+    <value>Save image (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>Save image as...</value>
+    <value>Save image as... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copy image to clipboard</value>
+    <value>Copy image to clipboard (Ctrl + Shift + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
-    <value>Upload image</value>
+    <value>Upload image (Ctrl + U)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>Print image...</value>
+    <value>Print image... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>Run after capture tasks</value>
+    <value>Run after capture tasks (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Capture last region</value>

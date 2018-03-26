@@ -1603,7 +1603,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy image to clipboard.
+        ///   Looks up a localized string similar to Copy image to clipboard (Ctrl + Shift + C).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_CopyImageToClipboard {
             get {
@@ -1783,7 +1783,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print image....
+        ///   Looks up a localized string similar to Print image... (Ctrl + P).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_PrintImage {
             get {
@@ -1819,7 +1819,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Run after capture tasks.
+        ///   Looks up a localized string similar to Run after capture tasks (Enter).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_RunAfterCaptureTasks {
             get {
@@ -1828,7 +1828,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save image.
+        ///   Looks up a localized string similar to Save image (Ctrl + S).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_SaveImage {
             get {
@@ -1837,7 +1837,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save image as....
+        ///   Looks up a localized string similar to Save image as... (Ctrl + Shift + S).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_SaveImageAs {
             get {
@@ -1882,7 +1882,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload image.
+        ///   Looks up a localized string similar to Upload image (Ctrl + U).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
