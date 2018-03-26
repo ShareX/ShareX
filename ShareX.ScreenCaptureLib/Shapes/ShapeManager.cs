@@ -413,19 +413,15 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = true;
                     break;
                 case Keys.Left:
-                case Keys.A:
                     isLeftPressed = true;
                     break;
                 case Keys.Right:
-                case Keys.D:
                     isRightPressed = true;
                     break;
                 case Keys.Up:
-                case Keys.W:
                     isUpPressed = true;
                     break;
                 case Keys.Down:
-                case Keys.S:
                     isDownPressed = true;
                     break;
             }
@@ -652,19 +648,15 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = false;
                     break;
                 case Keys.Left:
-                case Keys.A:
                     isLeftPressed = false;
                     break;
                 case Keys.Right:
-                case Keys.D:
                     isRightPressed = false;
                     break;
                 case Keys.Up:
-                case Keys.W:
                     isUpPressed = false;
                     break;
                 case Keys.Down:
-                case Keys.S:
                     isDownPressed = false;
                     break;
             }
