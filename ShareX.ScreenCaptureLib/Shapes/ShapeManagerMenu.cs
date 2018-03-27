@@ -143,7 +143,7 @@ namespace ShareX.ScreenCaptureLib
 
                 tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbCompleteEdit.Image = Resources.tick;
-                tsbCompleteEdit.Click += (sender, e) => Form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                tsbCompleteEdit.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateRunAfterCaptureTasks);
                 tsMain.Items.Add(tsbCompleteEdit);
 
                 if (Form.Mode == RegionCaptureMode.TaskEditor)
@@ -151,13 +151,13 @@ namespace ShareX.ScreenCaptureLib
                     ToolStripButton tsbClose = new ToolStripButton(Resources.ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick);
                     tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbClose.Image = Resources.control;
-                    tsbClose.Click += (sender, e) => Form.Close(RegionResult.AnnotateContinueTask);
+                    tsbClose.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateContinueTask);
                     tsMain.Items.Add(tsbClose);
 
                     ToolStripButton tsbCloseCancel = new ToolStripButton(Resources.ShapeManager_CreateToolbar_CancelTaskEsc);
                     tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
                     tsbCloseCancel.Image = Resources.cross;
-                    tsbCloseCancel.Click += (sender, e) => Form.Close(RegionResult.AnnotateCancelTask);
+                    tsbCloseCancel.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateCancelTask);
                     tsMain.Items.Add(tsbCloseCancel);
 
                     tsMain.Items.Add(new ToolStripSeparator());
@@ -757,7 +757,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiRegionCapture.Click += (sender, e) =>
                 {
                     Form.UpdateRegionPath();
-                    Form.Close(RegionResult.Region);
+                    Form.CloseWindow(RegionResult.Region);
                 };
                 tsddbCapture.DropDownItems.Add(tsmiRegionCapture);
 
@@ -765,20 +765,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ToolStripMenuItem tsmiLastRegionCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_LastRegion);
                     tsmiLastRegionCapture.Image = Resources.layers;
-                    tsmiLastRegionCapture.Click += (sender, e) => Form.Close(RegionResult.LastRegion);
+                    tsmiLastRegionCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.LastRegion);
                     tsddbCapture.DropDownItems.Add(tsmiLastRegionCapture);
                 }
 
                 ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
                 tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
                 tsmiFullscreenCapture.ShortcutKeyDisplayString = "Space";
-                tsmiFullscreenCapture.Click += (sender, e) => Form.Close(RegionResult.Fullscreen);
+                tsmiFullscreenCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.Fullscreen);
                 tsddbCapture.DropDownItems.Add(tsmiFullscreenCapture);
 
                 ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
                 tsmiActiveMonitorCapture.Image = Resources.monitor;
                 tsmiActiveMonitorCapture.ShortcutKeyDisplayString = "~";
-                tsmiActiveMonitorCapture.Click += (sender, e) => Form.Close(RegionResult.ActiveMonitor);
+                tsmiActiveMonitorCapture.Click += (sender, e) => Form.CloseWindow(RegionResult.ActiveMonitor);
                 tsddbCapture.DropDownItems.Add(tsmiActiveMonitorCapture);
 
                 ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
@@ -797,7 +797,7 @@ namespace ShareX.ScreenCaptureLib
                     tsmi.Click += (sender, e) =>
                     {
                         Form.MonitorIndex = index;
-                        Form.Close(RegionResult.Monitor);
+                        Form.CloseWindow(RegionResult.Monitor);
                     };
                     tsmiMonitorCapture.DropDownItems.Add(tsmi);
                 }
@@ -1015,7 +1015,6 @@ namespace ShareX.ScreenCaptureLib
         private void MenuForm_KeyUp(object sender, KeyEventArgs e)
         {
             form_KeyUp(sender, e);
-            Form.RegionCaptureForm_KeyUp(sender, e);
 
             e.Handled = true;
         }

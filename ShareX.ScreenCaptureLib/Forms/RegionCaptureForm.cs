@@ -100,7 +100,7 @@ namespace ShareX.ScreenCaptureLib
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
-        private bool pause, isKeyAllowed;
+        private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
@@ -233,7 +233,6 @@ namespace ShareX.ScreenCaptureLib
 
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
-            KeyUp += RegionCaptureForm_KeyUp;
             MouseDown += RegionCaptureForm_MouseDown;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
@@ -483,27 +482,46 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (IsEditorMode && Options.ImageEditorStartMode == ImageEditorStartMode.PreviousState)
+            if (IsEditorMode)
             {
-                Options.ImageEditorWindowState.UpdateFormState(this);
+                if (e.CloseReason == CloseReason.UserClosing && !forceClose && !IsFullscreen && !ShowExitConfirmation())
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+                if (Options.ImageEditorStartMode == ImageEditorStartMode.PreviousState)
+                {
+                    Options.ImageEditorWindowState.UpdateFormState(this);
+                }
             }
+        }
+
+        internal bool ShowExitConfirmation()
+        {
+            bool result = true;
+
+            if (ShapeManager != null && ShapeManager.IsAnnotated)
+            {
+                Pause();
+                // TODO: Translate
+                result = MessageBox.Show(this, "There is unsaved changes. Would you like to close image editor?", "ShareX - Image editor",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+                Resume();
+            }
+
+            return result;
         }
 
         internal void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyData)
-            {
-                case Keys.Control | Keys.C:
-                    CopyAreaInfo();
-                    break;
-            }
-        }
-
-        internal void RegionCaptureForm_KeyUp(object sender, KeyEventArgs e)
-        {
             if (e.KeyData == Keys.Escape)
             {
-                Close();
+                if (!IsEditorMode || ShowExitConfirmation())
+                {
+                    CloseWindow();
+                }
+
                 return;
             }
 
@@ -514,23 +532,26 @@ namespace ShareX.ScreenCaptureLib
 
             isKeyAllowed = true;
 
+            switch (e.KeyData)
+            {
+                case Keys.Space:
+                    CloseWindow(RegionResult.Fullscreen);
+                    break;
+                case Keys.Enter:
+                    CloseWindow(RegionResult.Region);
+                    break;
+                case Keys.Oemtilde:
+                    CloseWindow(RegionResult.ActiveMonitor);
+                    break;
+                case Keys.Control | Keys.C:
+                    CopyAreaInfo();
+                    break;
+            }
+
             if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
             {
                 MonitorKey(e.KeyData - Keys.D0);
                 return;
-            }
-
-            switch (e.KeyData)
-            {
-                case Keys.Space:
-                    Close(RegionResult.Fullscreen);
-                    break;
-                case Keys.Enter:
-                    Close(RegionResult.Region);
-                    break;
-                case Keys.Oemtilde:
-                    Close(RegionResult.ActiveMonitor);
-                    break;
             }
         }
 
@@ -545,7 +566,7 @@ namespace ShareX.ScreenCaptureLib
                     SelectedWindow = ShapeManager.FindSelectedWindow();
                 }
 
-                Close(RegionResult.Region);
+                CloseWindow(RegionResult.Region);
             }
         }
 
@@ -560,13 +581,13 @@ namespace ShareX.ScreenCaptureLib
 
             MonitorIndex = index;
 
-            Close(RegionResult.Monitor);
+            CloseWindow(RegionResult.Monitor);
         }
 
-        internal void Close(RegionResult result)
+        internal void CloseWindow(RegionResult result = RegionResult.Close)
         {
             Result = result;
-
+            forceClose = true;
             Close();
         }
 
@@ -1291,7 +1312,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.AutoCloseEditorOnTask)
                 {
-                    Close();
+                    CloseWindow();
                     TaskEx.Run(() => SaveImageRequested(img, ImageFilePath));
                 }
                 else
@@ -1309,7 +1330,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.AutoCloseEditorOnTask)
                 {
-                    Close();
+                    CloseWindow();
                     TaskEx.Run(() => SaveImageAsRequested(img, ImageFilePath));
                 }
                 else
@@ -1327,7 +1348,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.AutoCloseEditorOnTask)
                 {
-                    Close();
+                    CloseWindow();
                     TaskEx.Run(() => CopyImageRequested(img));
                 }
                 else
@@ -1345,7 +1366,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.AutoCloseEditorOnTask)
                 {
-                    Close();
+                    CloseWindow();
                     TaskEx.Run(() => UploadImageRequested(img));
                 }
                 else
@@ -1363,7 +1384,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.AutoCloseEditorOnTask)
                 {
-                    Close();
+                    CloseWindow();
                     TaskEx.Run(() => PrintImageRequested(img));
                 }
                 else

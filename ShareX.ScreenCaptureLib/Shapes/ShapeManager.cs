@@ -323,7 +323,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Form.Close();
+                    Form.CloseWindow();
                 }
             }
             else if (e.Button == MouseButtons.Middle)
@@ -354,7 +354,7 @@ namespace ShareX.ScreenCaptureLib
                 if (IsCurrentShapeTypeRegion && ValidRegions.Length > 0)
                 {
                     Form.UpdateRegionPath();
-                    Form.Close(RegionResult.Region);
+                    Form.CloseWindow(RegionResult.Region);
                 }
                 else if (CurrentShape != null && !IsCreating)
                 {
@@ -685,11 +685,14 @@ namespace ShareX.ScreenCaptureLib
                 case RegionCaptureAction.CancelCapture:
                     if (Form.Mode == RegionCaptureMode.TaskEditor)
                     {
-                        Form.Close(RegionResult.AnnotateContinueTask);
+                        if (Form.ShowExitConfirmation())
+                        {
+                            Form.CloseWindow(RegionResult.AnnotateContinueTask);
+                        }
                     }
                     else
                     {
-                        Form.Close();
+                        Form.CloseWindow();
                     }
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
@@ -699,11 +702,14 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else if (Form.Mode == RegionCaptureMode.TaskEditor)
                     {
-                        Form.Close(RegionResult.AnnotateContinueTask);
+                        if (Form.ShowExitConfirmation())
+                        {
+                            Form.CloseWindow(RegionResult.AnnotateContinueTask);
+                        }
                     }
                     else
                     {
-                        Form.Close();
+                        Form.CloseWindow();
                     }
                     break;
                 case RegionCaptureAction.RemoveShape:
@@ -713,10 +719,10 @@ namespace ShareX.ScreenCaptureLib
                     SwapShapeType();
                     break;
                 case RegionCaptureAction.CaptureFullscreen:
-                    Form.Close(RegionResult.Fullscreen);
+                    Form.CloseWindow(RegionResult.Fullscreen);
                     break;
                 case RegionCaptureAction.CaptureActiveMonitor:
-                    Form.Close(RegionResult.ActiveMonitor);
+                    Form.CloseWindow(RegionResult.ActiveMonitor);
                     break;
             }
         }
@@ -801,7 +807,7 @@ namespace ShareX.ScreenCaptureLib
                     if (Options.QuickCrop && IsCurrentShapeTypeRegion)
                     {
                         Form.UpdateRegionPath();
-                        Form.Close(RegionResult.Region);
+                        Form.CloseWindow(RegionResult.Region);
                     }
                     else
                     {
