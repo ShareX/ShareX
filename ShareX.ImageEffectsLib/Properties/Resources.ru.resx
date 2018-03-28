@@ -97,4 +97,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>Рисование</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
+    <value>Обработка</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
+    <value>Регулировки</value>
+  </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
+    <value>Эффекты изображения - Ширина: {0}, Высота: {1}, Время рендера: {2} мс</value>
+  </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
 </root>
