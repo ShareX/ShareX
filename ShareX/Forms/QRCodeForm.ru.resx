@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Скопировать в буфер обмена</value>
+  </data>
+  <data name="tsmiSaveAs.Text" xml:space="preserve">
+    <value>Сохранить как файл изображения…</value>
+  </data>
+  <data name="tsmiDecode.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>Кодировать</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Декодировать с файла картинки...</value>
+  </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>Декодировать с экрана...</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - QR код</value>
+  </data>
 </root>
