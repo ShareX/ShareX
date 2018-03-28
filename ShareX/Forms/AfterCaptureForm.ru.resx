@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Скопировать</value>
+  </data>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>После захвата</value>
+  </data>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>Перед загрузкой</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>После загрузки</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Задачи после захвата</value>
+  </data>
 </root>
