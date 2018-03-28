@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Уже существует файл с таким именем в этом каталоге.
+Выберите новое имя файла или действие:</value>
+  </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>Перезаписать:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Не сохранять</value>
+  </data>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>Использовать уникальное имя:</value>
+  </data>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>Использовать новое имя:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Как сохранить?</value>
+  </data>
 </root>
