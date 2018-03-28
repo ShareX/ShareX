@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,161 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Подключение к {0}</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Обновление авторизации не поддерживается.</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Неверное имя устройства</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Состояние: вход не удался.</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Не удалось обновить список папок Box.</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Корневая директория</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Вход выполнен под именем {0}.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Ошибка при парсинге ответа.</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>FTP клиент ShareX</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Имя создаваемой папки</value>
-  </data>
-  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Выбрать файл ключа...</value>
-  </data>
-  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Выбрать файл сертификата...</value>
-  </data>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Новый аккаунт</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Подключено!
-Созданы папки:</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Подключено!</value>
-  </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Ошибка: Результат пуст</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} успешно создано.</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>Регистрация в SendSpace</value>
-  </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Запрашиваем папки...</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Вход не выполнен.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Не настроено</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Неверная аутентификация</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Настроено</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Нажмите кнопку обновить</value>
-  </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Вход успешен.</value>
-  </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Вход не удался</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Выбранная папка:</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Состояние: вход выполнен.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Состояние: вход не выполнен.</value>
-  </data>
-  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>Запрос не найден</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Путь к материнскому альбому, например</value>
-  </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Необходима аутентификация.</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккаунт FTP.</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>
-  </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Ошибка твита</value>
-  </data>
-  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Убрать все пользовательские загрузчики?</value>
-  </data>
-  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>Вставьте код подтверждения сюда</value>
-  </data>
-  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Аргумент с таким именем уже существует.</value>
-  </data>
-  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Заголовок с таким именем уже существует.</value>
-  </data>
-  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
-    <value>https://aws.amazon.com/ru/s3/storage-classes/</value>
-  </data>
-  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
-    <value>Файл ключа не существует.</value>
-  </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"URL запроса" должен быть настроен.</value>
-  </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>"Тип сервиса" должен быть настроен.</value>
-  </data>
-  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"URL запроса" должен быть настроен.</value>
-  </data>
-  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
-    <value>"Имя формы с файлом" должно быть настроено.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
-    <value>Вход не выполнен.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
-    <value>Вход выполнен.</value>
-  </data>
-  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
-    <value>Вход не выполнен.</value>
-  </data>
-  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
-    <value>Вход выполнен.</value>
-  </data>
-  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
-    <value>Вход не удался.</value>
-  </data>
 </root>
