@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Копия</value>
+  </data>
 </root>
