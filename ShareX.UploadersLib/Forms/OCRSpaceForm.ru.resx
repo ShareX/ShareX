@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>Работает через API OCR.Space</value>
+  </data>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>Начать распознавание</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Оптическое распознавание символов</value>
+  </data>
 </root>
