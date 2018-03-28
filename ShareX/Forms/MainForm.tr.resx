@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -135,9 +135,6 @@
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Kalan</value>
   </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Yakala</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Tam ekran</value>
   </data>
@@ -153,6 +150,9 @@
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
   </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Bölge (Saydam)</value>
+  </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
   </data>
@@ -162,11 +162,20 @@
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>Ekran kaydetme (GIF)</value>
   </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama...</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Web sayfası yakala...</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
+  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Otomatik yakalama...</value>
   </data>
-  <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Yükle</value>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Yakala</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
     <value>Dosya yükle...</value>
@@ -183,11 +192,14 @@
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
   </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>İş akışları</value>
   </data>
-  <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Araçlar</value>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Renk seçici...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
@@ -204,11 +216,17 @@
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Cetvel...</value>
+  </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Dizini indeksle...</value>
   </data>
-  <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>Cetvel...</value>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Resim birleştirici...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video küçük resim yapıcı...</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP istemcisi...</value>
@@ -219,14 +237,14 @@
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
   </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Yakalama sonrası</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>Yükleme sonrası</value>
-  </data>
-  <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>Hedefler</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Resim yükleyiciler</value>
@@ -246,11 +264,14 @@
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
   </data>
-  <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Uygulama ayarları...</value>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Hedefler</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Görev ayarları...</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Uygulama ayarları...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Kısayol ayarları...</value>
@@ -263,9 +284,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Resim geçmişi...</value>
-  </data>
-  <data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Hata ayıklama</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Hata ayıklama kütüğü...</value>
@@ -285,14 +303,14 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>URL paylaşım testi</value>
   </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
+  </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Hataları göster</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Yüklemeyi durdur</value>
-  </data>
-  <data name="tsmiOpen.Text" xml:space="preserve">
-    <value>Aç</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
     <value>Kısaltılmış URL</value>
@@ -312,8 +330,8 @@
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Küçük resim dosya</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Kopyala</value>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Aç</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
     <value>Kısaltılmış URL</value>
@@ -369,6 +387,9 @@
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Klasör</value>
   </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Yükle</value>
   </data>
@@ -396,8 +417,8 @@
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Menüyü gizle</value>
   </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Resim ön izleme</value>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Kolonları gizle</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Göster</value>
@@ -408,8 +429,8 @@
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Otomatik</value>
   </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Yakala</value>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Resim ön izleme</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Tam ekran</value>
@@ -426,6 +447,9 @@
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
   </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Bölge (Saydam)</value>
+  </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
   </data>
@@ -435,11 +459,20 @@
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>Ekran kaydetme (GIF)</value>
   </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama...</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Web sayfası yakala...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
+  </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Otomatik yakalama...</value>
   </data>
-  <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Yükle</value>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Yakala</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
     <value>Dosya yükle...</value>
@@ -456,11 +489,14 @@
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
   </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>İş akışları</value>
   </data>
-  <data name="tsmiTrayTools.Text" xml:space="preserve">
-    <value>Araçlar</value>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Renk seçici...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
@@ -477,11 +513,17 @@
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Cetvel...</value>
+  </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Dizini indeksle...</value>
   </data>
-  <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>Cetvel...</value>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Resim birleştirici...</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video küçük resim yapıcı...</value>
   </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP istemcisi...</value>
@@ -492,14 +534,14 @@
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
   </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>Yakalama sonrası</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Yükleme sonrası</value>
-  </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Hedefler</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Resim yükleyiciler</value>
@@ -519,14 +561,20 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
   </data>
-  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Uygulama ayarları...</value>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Hedefler</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Görev ayarları...</value>
   </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>Uygulama ayarları...</value>
+  </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Kısayol ayarları...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Kısayolları devre dışı bırak</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Ekran görüntüsü dizini...</value>
@@ -537,77 +585,8 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Resim geçmişi...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Bağış...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Hakkında...</value>
-  </data>
-  <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>ShareX penceresini göster</value>
-  </data>
-  <data name="tsmiTrayExit.Text" xml:space="preserve">
-    <value>Çıkış</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>Renk seçici...</value>
-  </data>
-  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>Renk seçici...</value>
-  </data>
-  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>Son adresler</value>
-  </data>
-  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Bölge (Saydam)</value>
-  </data>
-  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Bölge (Saydam)</value>
-  </data>
-  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
-    <value>Kısayolları devre dışı bırak</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Web sayfası yakala...</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Web sayfası yakala...</value>
-  </data>
-  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>Video küçük resim yapıcı...</value>
-  </data>
-  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Video küçük resim yapıcı...</value>
-  </data>
-  <data name="tsmiImageCombiner.Text" xml:space="preserve">
-    <value>Resim birleştirici...</value>
-  </data>
-  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
-    <value>Resim birleştirici...</value>
-  </data>
-  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
-    <value>Kaydırarak yakalama...</value>
-  </data>
-  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
-    <value>Kaydırarak yakalama...</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Hata ayıklama</value>
-  </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
     <value>Hata ayıklama kütüğü...</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Dosya yükleme testi</value>
   </data>
   <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
     <value>Resim yükleme testi</value>
@@ -615,19 +594,31 @@
   <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
     <value>Yazı yükleme testi</value>
   </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL paylaşım testi</value>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Dosya yükleme testi</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
     <value>URL kısaltma testi</value>
   </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Kolonları gizle</value>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>URL paylaşım testi</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Yazı yakalama (OCR)...</value>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
   </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Yazı yakalama (OCR)...</value>
+  <data name="tsmiTrayDonate.Text" xml:space="preserve">
+    <value>Bağış...</value>
+  </data>
+  <data name="tsmiTrayAbout.Text" xml:space="preserve">
+    <value>Hakkında...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Son adresler</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>ShareX penceresini göster</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Çıkış</value>
   </data>
 </root>
