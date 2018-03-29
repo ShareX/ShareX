@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Már van egy fájl ugyanezzel a névvel a megadott elérési úton.
+Válassz új fájlnevet vagy teendőt:</value>
+  </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>Felülírás:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Ne mentsünk</value>
+  </data>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>Egyedi név használata:</value>
+  </data>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>Új név használata:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hogyan mentsünk?</value>
+  </data>
 </root>
