@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>在該位置已經存在具有相同名稱的檔案。
+請選擇新的檔名或以下動作：</value>
+  </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>覆蓋:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>不要儲存</value>
+  </data>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>使用唯一的名稱:</value>
+  </data>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>使用新的名字:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 如何儲存?</value>
+  </data>
 </root>
