@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tsmiExportClipboard.Text" xml:space="preserve">
+    <value>Másolás vágólapra</value>
+  </data>
+  <data name="tsmiExportFile.Text" xml:space="preserve">
+    <value>Mentés fájlba...</value>
+  </data>
+  <data name="tsmiExportUpload.Text" xml:space="preserve">
+    <value>Feltöltés szövegként</value>
+  </data>
+  <data name="tsmiImportClipboard.Text" xml:space="preserve">
+    <value>Vágólapról</value>
+  </data>
+  <data name="tsmiImportFile.Text" xml:space="preserve">
+    <value>Fájlból...</value>
+  </data>
+  <data name="tsmiImportURL.Text" xml:space="preserve">
+    <value>URL-ből...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
 </root>
