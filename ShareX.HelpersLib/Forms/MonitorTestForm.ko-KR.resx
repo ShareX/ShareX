@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,58 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 모니터 테스트</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>닫기</value>
-  </data>
-  <data name="btnGradientColor1.Text" xml:space="preserve">
-    <value>색 1</value>
-  </data>
-  <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>색 2</value>
-  </data>
-  <data name="lblBlue.Text" xml:space="preserve">
-    <value>B:</value>
-  </data>
-  <data name="lblGreen.Text" xml:space="preserve">
-    <value>G:</value>
-  </data>
-  <data name="lblRed.Text" xml:space="preserve">
-    <value>R:</value>
-  </data>
-  <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>크기:</value>
-  </data>
-  <data name="cbShapes.Items" xml:space="preserve">
-    <value>가로선</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
-    <value>세로선</value>
-  </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
-    <value>체크무늬</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>바깥쪽을 눌러 이 설정판을 숨기거나 표시할 수 있습니다.</value>
-  </data>
-  <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>회색조:</value>
-  </data>
-  <data name="rbGradient.Text" xml:space="preserve">
-    <value>그라디언트:</value>
-  </data>
-  <data name="rbShapes.Text" xml:space="preserve">
-    <value>무늬:</value>
-  </data>
-  <data name="rbRedGreenBlue.Text" xml:space="preserve">
-    <value>RGB 색상:</value>
-  </data>
-  <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>색상 대화상자...</value>
-  </data>
-  <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>화면 찢김 현상 테스트</value>
-  </data>
 </root>
