@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Aspetta Fino al Completamento dell'Operazione</value>
+  </data>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Riduci all'Area di Notifica Automaticamente</value>
+  </data>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Regione</value>
+  </data>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Seleziona Regione</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Itervallo di Ripetizione</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - Auto Cattura</value>
+  </data>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>secondi</value>
+  </data>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Regione</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Schermo Intero</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Regione Personalizzata</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Auto Cattura</value>
+  </data>
 </root>
