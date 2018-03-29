@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Sao chép hình ảnh</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Sao chép đường dẫn</value>
+  </data>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>Mở liên kết...</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Mở tệp tin...</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Mở thư mục...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Định dạng</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Sau khi tải lên</value>
+  </data>
 </root>
