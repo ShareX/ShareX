@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Làm lại</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Nhân bản</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Lưu ảnh...</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Từ tệp tin...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Từ vùng nhớ tạm</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hiệu ứng ảnh</value>
+  </data>
 </root>
