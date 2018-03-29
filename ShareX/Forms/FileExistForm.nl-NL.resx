@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Er bestaad reeds een bestand met deze naam op deze locatie.
+Selecteer een nieuwe bestandsnaam of actie:</value>
+  </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>Overschrijven:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Niet opslaan</value>
+  </data>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>Gebruik een unieke naam:</value>
+  </data>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>Gebruik nieuwe naam:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hoe opslaan?</value>
+  </data>
 </root>
