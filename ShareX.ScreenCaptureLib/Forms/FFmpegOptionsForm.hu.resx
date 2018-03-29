@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,47 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg beállítások</value>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Megszabja a videó minőségét.
+0 a legjobb, 23 az alapértelmezett, 51 pedig a legrosszabb minőség.
+Növeld a fájlméretet a minőség növeléséhez.</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Másolás</value>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>Az értékek 0-10 közt változhatnak, ahol 10 a legmagasabb minőség. A 3–6 közti értékekkel érdemes kísérletezni. Az alapértelmezés 3.</value>
+  </data>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>Az értékek 0-9 közt változhatnak, ahol az alacsonyabb érték jobb minőséget jelent. A 0-3 közti érték alapesetben zajos eredményeket fog szülni, a 4 (alapértelmezett) viszonylag megfelelő, a 6 pedig egy "elfogadható" minőség.</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Az alapértelmezett 128k.</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Videó kodek:</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Letöltés</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Frissítés</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Tesztelés CMD-vel</value>
-  </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Egyedi parancsok használata</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Kodekek</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>További parancssori paraméterek</value>
   </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
     <value>Parancssor előnézet</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Források</value>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>További parancssori paraméterek</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Tesztelés CMD-vel</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Másolás</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitráta:</value>
   </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Audió kodek:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Audió forrás:</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Videó kodek:</value>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Minőség:</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Minőség:</value>
@@ -165,21 +164,22 @@
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Videó forrás:</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Minőség:</value>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Audió forrás:</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Az alapértelmezett 128k.</value>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Audió kodek:</value>
   </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Az értékek 0-9 közt változhatnak, ahol az alacsonyabb érték jobb minőséget jelent. A 0-3 közti érték alapesetben zajos eredményeket fog szülni, a 4 (alapértelmezett) viszonylag megfelelő, a 6 pedig egy "elfogadható" minőség.</value>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Frissítés</value>
   </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Az értékek 0-10 közt változhatnak, ahol 10 a legmagasabb minőség. A 3–6 közti értékekkel érdemes kísérletezni. Az alapértelmezés 3.</value>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Források</value>
   </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Megszabja a videó minőségét.
-0 a legjobb, 23 az alapértelmezett, 51 pedig a legrosszabb minőség.
-Növeld a fájlméretet a minőség növeléséhez.</value>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Kodekek</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - FFmpeg beállítások</value>
   </data>
 </root>

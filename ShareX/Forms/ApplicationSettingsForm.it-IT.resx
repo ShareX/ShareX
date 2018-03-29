@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Sfoglia...</value>
-  </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Controlla aggiornamenti pre-release</value>
   </data>
@@ -180,14 +177,11 @@
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Estensione per Chrome</value>
   </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Esegui ShareX all'Avvio di Windows</value>
-  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostra ShareX nel Menu "Invia a"</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integrazione</value>
@@ -204,6 +198,9 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Cartella Personale di ShareX:</value>
   </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Apri...</value>
   </data>
@@ -218,15 +215,6 @@
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Ripristina Impostazioni...</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Esporta Log</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Esporta Cronologia</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Esporta Impostazioni</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Esporta...</value>
@@ -306,6 +294,9 @@
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Mostra Operazioni Recenti nel Menu dell'Area di Notifica</value>
   </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Mostra Operazioni Recenti nella Finestra Principale all'Avvio</value>
+  </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Salva Operazioni Recenti</value>
   </data>
@@ -315,43 +306,31 @@
   <data name="tpHistory.Text" xml:space="preserve">
     <value>Cronologia</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avanzate</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Impostazioni Applicazione</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configurazione Proxy:</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Porta:</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nome Utente:</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
-    <value>Mostra Operazioni Recenti nella Finestra Principale all'Avvio</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Stampa</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Impostazioni di Stampa...</value>
-  </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Non Mostrare la Finestra di Stampa di Windows</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Non Mostrare la Finestra delle Impostazioni di Stampa</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Impostazioni di Stampa...</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Configurazione Proxy:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Porta:</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Nome Utente:</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Avanzate</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Impostazioni Applicazione</value>
   </data>
 </root>

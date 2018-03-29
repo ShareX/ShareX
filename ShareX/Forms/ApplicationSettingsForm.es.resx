@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,122 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avanzado</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de la aplicación</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Abrir...</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar...</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 deshabilita)</value>
-  </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Tamaño de búfer:</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Carpeta personal ShareX:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Cargadores de archivos secundarios</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>No mostrar diálogo imprimir de Windows</value>
-  </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Mostrar icono de la bandeja</value>
   </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Minimizar a la bandeja al iniciar Windows</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Añadir...</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en el botón barra de tareas</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Límite de subida simultánea:</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Mostrar el progreso en icono de la bandeja</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Recordar la posición de la ventana principal</value>
   </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>Minimizar a la bandeja al iniciar Windows</value>
   </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Puerto:</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Imagen configuracion de impresion...</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuración de proxy:</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>No mostrar el diálogo de configuración de impresión de la imagen</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Cargadores textos secundarios</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Subir</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de reintentos si subir falla</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Idioma:</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Mostrar el progreso en el botón barra de tareas</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Recordar tamaño de la ventana principal</value>
   </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modelo subcarpeta:</value>
-  </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Rutas</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en icono de la bandeja</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Idioma:</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostrar ShareX en "Enviar a" menú</value>
@@ -240,11 +144,59 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
   </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Abrir...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>Carpeta personal ShareX:</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Abrir...</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Utilizar carpeta screenshots personalizadas</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>Modelo subcarpeta:</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Rutas</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Límite de subida simultánea:</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 deshabilita)</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Tamaño de búfer:</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Añadir...</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Formatos del portapapeles</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Cargadores de imágenes secundarias</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Resultados</value>
@@ -252,13 +204,52 @@
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Cargadores de imágenes secundarias</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilizar carpeta screenshots personalizadas</value>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Cargadores de archivos secundarios</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Cargadores textos secundarios</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Número de reintentos si subir falla</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Reintentar</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>No mostrar diálogo imprimir de Windows</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>No mostrar el diálogo de configuración de impresión de la imagen</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Imagen configuracion de impresion...</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Configuración de proxy:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Puerto:</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Avanzado</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Configuración de la aplicación</value>
   </data>
 </root>

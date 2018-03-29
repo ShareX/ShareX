@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Tùy chọn ghi lại màn hình</value>
-  </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Sao chép</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Đường dẫn tới FFmpeg</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>Sử dụng đường dẫn tùy chỉnh</value>
-  </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Nhân tố thừa số không đổi (Constant Rate Factor - CRF): Phạm vi của bộ lượng tử hóa là 0-51: trong đó 0 là lossless (không mất mát thông tin), 23 là mặc định, 51 là tồi nhất.
 Giá trị thấp hơn sẽ cho chất lượng cao hơn và phạm vi ổn định theo đánh giá chủ quan là 18-28.
@@ -137,26 +125,19 @@ Phạm vi được tính theo lũy thừa (số mũ), vì vậy tăng giá trị
 Cách dùng phổ biến là chọn giá trị cao nhất mà vẫn cho kết quả có thể chấp nhận được.
 Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu như nhìn không tốt thì chọn giá trị thấp hơn.</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Mặc định là 128k.</value>
-  </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>1 là chất lượng cao nhất/kích thước tệp lớn nhất và 31 là chất lượng kém nhất/kích thước tệp nhỏ nhất.</value>
   </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Nguồn video:</value>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Bộ thiết lập trước (preset) là một bộ các lựa chọn cung cấp từ tốc độ encode nhất định tới độ nén. Bộ thiết lập chậm hơn sẽ cho khả năng nén cao hơn (khă năng nén là chất lượng trên kích thước tệp).
+Điều này có nghĩa là, nếu bạn mong muốn một kích thước tệp hoặc bit rate nhất định, bộ thiết lập chậm hơn sẽ cho chất lượng cao hơn.
+Tương tự, với chất lượng encode không đổi, bạn sẽ giảm được số bit rate bằng việc chọn bộ thiết lập chậm hơn.</value>
   </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Video codec:</value>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>Phạm vi là 0 - 10, 10 cho chất lượng cao nhất, 3-6 là phạm vi tốt để dùng. Mặc định là 3.</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codec</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Chất lượng:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Chất lượng:</value>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Mặc định là 128k.</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
     <value>Mặc định là tất cả.</value>
@@ -164,58 +145,32 @@ Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu nh�
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>Mặc định là sierra2_4a</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Tải về</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Kiểm tra với CMD</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Nguồn</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Đối số thêm cho câu lệnh</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Nguồn audio:</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Audio codec:</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Sử dụng lệnh tùy chỉnh:</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Làm mới</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Xem trước dòng lệnh</value>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Bộ thiết lập:</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Biến bitrate:</value>
   </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Đường dẫn tới FFmpeg</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Sử dụng đường dẫn tùy chỉnh</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Sử dụng lệnh tùy chỉnh:</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Xem trước dòng lệnh</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Đối số thêm cho câu lệnh</value>
+  </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Biến bitrate:</value>
-  </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce transparent results, 4 (default) should be close to perceptual transparency, and 6 produces an "acceptable" quality.</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Phạm vi là 0 - 10, 10 cho chất lượng cao nhất, 3-6 là phạm vi tốt để dùng. Mặc định là 3.</value>
-  </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Cài đặt thiết bị ghi</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Bộ thiết lập trước (preset) là một bộ các lựa chọn cung cấp từ tốc độ encode nhất định tới độ nén. Bộ thiết lập chậm hơn sẽ cho khả năng nén cao hơn (khă năng nén là chất lượng trên kích thước tệp).
-Điều này có nghĩa là, nếu bạn mong muốn một kích thước tệp hoặc bit rate nhất định, bộ thiết lập chậm hơn sẽ cho chất lượng cao hơn.
-Tương tự, với chất lượng encode không đổi, bạn sẽ giảm được số bit rate bằng việc chọn bộ thiết lập chậm hơn.</value>
-  </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Bộ thiết lập:</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Chế độ dither:</value>
@@ -223,7 +178,40 @@ Tương tự, với chất lượng encode không đổi, bạn sẽ giảm đư
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Chế độ bảng:</value>
   </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Kiểm tra với CMD</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Chất lượng:</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Chất lượng:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Nguồn video:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Nguồn audio:</value>
+  </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Cài đặt "screen-capture-recorder" và "virtual-audio-capturer" cho nguồn video/audio.</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Cài đặt thiết bị ghi</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Nguồn</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Codec</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Tùy chọn ghi lại màn hình</value>
   </data>
 </root>

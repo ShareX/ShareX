@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,50 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Conexión a {0}</value>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Nueva cuenta</value>
   </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Autorización de refrescar no es compatible.</value>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>Carpeta seleccionada:</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nombre del equipo no es válido</value>
+  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
+    <value>Inicio de sesión fallido</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Estado: Inicio de sesión fallido.</value>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Ruta de álbum e.g.</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Cuadro de lista de carpetas de refrescar falló</value>
+  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
+    <value>Error: El resultado está vacía.</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Error</value>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
+    <value>Conectado!</value>
   </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Carpeta raíz</value>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>No configurado</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Conectado como {0}.</value>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} creado con éxito.</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>ShareX cliente FTP</value>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
+    <value>Conectado!
+Creado carpetas:</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Buscar un archivo de certificado...</value>
   </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Consulta carpetas...</value>
+  </data>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>Registro de SendSpace</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Autenticación no es válido</value>
+  </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Problema no encontrado</value>
   </data>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Nueva cuenta</value>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Inicia sesión con éxito.</value>
   </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Error Tweet</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Estado: No ha iniciado sesión.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Estado: Iniciado sesión.</value>
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
+    <value>Se requiere autenticación</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Buscar un archivo de clave...</value>
@@ -168,53 +172,31 @@
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Nombre del directorio para crear</value>
   </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Se requiere autenticación</value>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>ShareX cliente FTP</value>
   </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Inicio de sesión fallido</value>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Conexión a {0}</value>
   </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Conectado!</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Conectado!
-Creado carpetas:</value>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Autorización de refrescar no es compatible.</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configurado</value>
   </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Error Tweet</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Nombre del equipo no es válido</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Cuadro de lista de carpetas de refrescar falló</value>
+  </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Haga clic en botón de refrescar</value>
   </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Inicia sesión con éxito.</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Carpeta seleccionada:</value>
-  </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Error: El resultado está vacía.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>No configurado</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Autenticación no es válido</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ruta de álbum e.g.</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Sin iniciar sesión.</value>
-  </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Consulta carpetas...</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} creado con éxito.</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>Registro de SendSpace</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Carpeta raíz</value>
   </data>
 </root>

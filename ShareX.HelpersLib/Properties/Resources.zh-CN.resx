@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,11 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>手动</value>
+  </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>文件路径</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>文件路径没有扩展名+"输出文件的扩展名"</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>活动窗口标题</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>活动窗口的进程名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>当前年度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>当前年度（2位）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>当前月度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>当月名（本地语言）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>当月名称（英语）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>当前日期</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>当前小时</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>当前分钟</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>目前秒</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>当前毫秒</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>获取AM/ PM</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>当前周（本地语言）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>当前周（英语）</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Unix时间戳</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>自动递增数</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>随机数0至9</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>随机字母数字字符</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>图像宽度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>图像高度</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>用户登录名</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>计算机名称</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>新线</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>浏览文件夹...</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>浏览可执行文件...</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>浏览层叠样式表...</value>
@@ -648,6 +732,21 @@
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>其他</value>
   </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>自动递增的字母数字不区分大小写。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>自动递增的十六进制。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>随机的十六进制字符。重复使用 {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>自动递增的字母数字区分大小写。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>由 {n} 为基础制动递增的字母数字 (1 &lt; n &lt; 63)</value>
+  </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>随机GUID</value>
   </data>
@@ -703,103 +802,19 @@
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>显示"上传后"窗口</value>
   </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>浏览文件夹...</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>手动</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>浏览可执行文件...</value>
-  </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>计算机名称</value>
-  </data>
-  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>当前日期</value>
-  </data>
-  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>当前小时</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>图像高度</value>
-  </data>
-  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>自动递增数</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>当前分钟</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>当前月度</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>当月名（本地语言）</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>当月名称（英语）</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>当前毫秒</value>
-  </data>
-  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
-    <value>新线</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>获取AM/ PM</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>活动窗口的进程名</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>随机字母数字字符</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>随机数0至9</value>
-  </data>
-  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>目前秒</value>
-  </data>
-  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>活动窗口标题</value>
-  </data>
-  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>用户登录名</value>
-  </data>
-  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>用户名</value>
-  </data>
-  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>Unix时间戳</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>当前周（本地语言）</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>当前周（英语）</value>
-  </data>
-  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>图像宽度</value>
-  </data>
-  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>当前年度</value>
-  </data>
-  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>当前年度（2位）</value>
-  </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>显示快速任务菜单</value>
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>打开历史记录</value>
   </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>打开历史图片</value>
   </data>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
     <value>其他</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
@@ -817,11 +832,11 @@
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>其他</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>使用自定义区域开始屏幕录制</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>屏幕录制</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>使用自定义区域开始屏幕录制（GIF）</value>
@@ -889,44 +904,14 @@
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>区域：矩形</value>
   </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>绘图：鼠绘</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>绘图：图片</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>区域：鼠绘</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>中止屏幕录制</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>模拟鼠标滚轮滚动</value>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>自动尝试所有方法，直到完成工作</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>模拟按下“Page Down”键</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>模拟按下“Home”键</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>随机的十六进制字符。重复使用 {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>自动递增的字母数字不区分大小写。0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>自动递增的十六进制。0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>自动递增的字母数字区分大小写。0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
-    <value>由 {n} 为基础制动递增的字母数字 (1 &lt; n &lt; 63)</value>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>模拟鼠标滚轮滚动</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
     <value>发送滚动消息至窗口或控件</value>
@@ -934,23 +919,32 @@
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
     <value>先模拟按下“Home”键，然后发送滚动至消息上方</value>
   </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>模拟按下“Home”键</value>
+  </data>
   <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
     <value>禁用滚动至顶部</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>发送滚动消息至顶部</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>自动尝试所有方法，直到完成工作</value>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>中止屏幕录制</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>屏幕录制</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>区域：鼠绘</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>绘图：鼠绘</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>绘图：图片</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>绘图：言语气球</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>进度: {0}</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>取消下载</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>切换工作栏</value>
@@ -969,12 +963,6 @@
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>绘图：文字（底色）</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>检测可用的代理。请从主菜单打开应用程序设置，选择代理并设置代理服务器。</value>
-  </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>图像剪贴</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>绘图：图像（屏幕）</value>
@@ -999,11 +987,5 @@
   </data>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>自动检测</value>
-  </data>
-  <data name="PNGBitDepth_Bit32" xml:space="preserve">
-    <value>32 bit</value>
-  </data>
-  <data name="PNGBitDepth_Bit24" xml:space="preserve">
-    <value>24 bit</value>
   </data>
 </root>
