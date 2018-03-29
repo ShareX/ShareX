@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
+    <value>Dupliceer</value>
+  </data>
+  <data name="btnEncodersAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="btnEncodersEdit.Text" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="btnEncodersRemove.Text" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="chEncoderDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="chEncoderPath.Text" xml:space="preserve">
+    <value>Pad</value>
+  </data>
+  <data name="chEncoderArgs.Text" xml:space="preserve">
+    <value>Argumenten</value>
+  </data>
+  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
+    <value>Extensie resultaat</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Conversie profielen</value>
+  </data>
 </root>
