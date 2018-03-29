@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnApplyFilters.Text" xml:space="preserve">
+    <value>Áp dụng bộ lọc</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Ngày &amp; giờ</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Tên tệp</value>
+  </data>
+  <data name="btnRemoveFilters.Text" xml:space="preserve">
+    <value>Xóa bộ lọc</value>
+  </data>
+  <data name="cbHostFilter.Text" xml:space="preserve">
+    <value>Lọc Host:</value>
+  </data>
+  <data name="cbTypeFilter.Text" xml:space="preserve">
+    <value>Lọc loại tệp:</value>
+  </data>
+  <data name="lblFilterFrom.Text" xml:space="preserve">
+    <value>Từ:</value>
+  </data>
+  <data name="cbFilenameFilter.Text" xml:space="preserve">
+    <value>Lọc tên tệp:</value>
+  </data>
+  <data name="lblFilterTo.Text" xml:space="preserve">
+    <value>Tới:</value>
+  </data>
+  <data name="cbDateFilter.Text" xml:space="preserve">
+    <value>Lọc theo ngày</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
+    <value>Chứa</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
+    <value>Bắt đầu với</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
+    <value>Kết thúc với</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
+    <value>Chính xác</value>
+  </data>
+  <data name="gbFilters.Text" xml:space="preserve">
+    <value>Bộ lọc</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
 </root>
