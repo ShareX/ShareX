@@ -7,3 +7,14 @@ files:
       two_letters_code:
         ru: ru
         pt-BR: pt-BR
+        de: de
+        es-ES: es
+        fr: fr
+        hu: hu
+        it: it-IT
+        ko: ko-KR
+        nl: nl-NL
+        tr: tr
+        vi: vi-VN
+        zh-CN: zh-CN
+        zh-TW: zh-TW
