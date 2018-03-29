@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnFilePathBrowse.Text" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="lblHashType.Text" xml:space="preserve">
+    <value>Hash típusa:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Eredmény:</value>
+  </data>
+  <data name="lblTarget.Text" xml:space="preserve">
+    <value>Cél:</value>
+  </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Indítás</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Fájl elérési útvonal:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Hash ellenőrzés</value>
+  </data>
 </root>
