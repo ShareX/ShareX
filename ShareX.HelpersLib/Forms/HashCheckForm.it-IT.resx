@@ -117,4 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnFilePathBrowse.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="lblHashType.Text" xml:space="preserve">
+    <value>Tipo Hash:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Risultato:</value>
+  </data>
+  <data name="lblTarget.Text" xml:space="preserve">
+    <value>Obiettivo</value>
+  </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Controlla</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Percorso File:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Controlla Hash File</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Copia Tutto</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Decodifica</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Decodifica</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Decodifica</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Esadecimale:</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Decodifica</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binario:</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Codifica</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Testo:</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Conversioni Testo</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Controlla Hash</value>
+  </data>
 </root>
