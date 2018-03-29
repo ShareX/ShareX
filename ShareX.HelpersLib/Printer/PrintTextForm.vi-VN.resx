@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>In...</value>
+  </data>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>Xem trước...</value>
+  </data>
+  <data name="btnChangeFont.Text" xml:space="preserve">
+    <value>Thay đổi font...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Lựa chọn in</value>
+  </data>
 </root>
