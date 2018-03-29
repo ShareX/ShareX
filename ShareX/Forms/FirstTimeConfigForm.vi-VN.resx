@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>Khởi động ShareX cùng Windows</value>
+  </data>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>Hiện nút "Upload with ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Hiện ShareX ở menu "Send to"</value>
+  </data>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Bạn có thể tìm thấy những thiết lập này ở "Thiết lập ứng dụng -&gt; Tích hợp"</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Thiết lập lần đầu cho ShareX</value>
+  </data>
 </root>
