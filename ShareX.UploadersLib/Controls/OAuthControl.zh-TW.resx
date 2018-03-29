@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnClearAuthorization.Text" xml:space="preserve">
+    <value>清除授權</value>
+  </data>
+  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
+    <value>重新整理授權</value>
+  </data>
+  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
+    <value>第1步:開啟網頁授權...</value>
+  </data>
+  <data name="lblVerificationCode.Text" xml:space="preserve">
+    <value>驗證碼（從獲得授權頁面驗證碼）:</value>
+  </data>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>第2步:完成授權</value>
+  </data>
+  <data name="gbUserAccount.Text" xml:space="preserve">
+    <value>使用者帳戶</value>
+  </data>
 </root>
