@@ -952,18 +952,12 @@ namespace ShareX.UploadersLib
 
         private void txtTinyPicUsername_TextChanged(object sender, EventArgs e)
         {
-            if (Config.TinyPicRememberUserPass)
-            {
-                Config.TinyPicUsername = txtTinyPicUsername.Text;
-            }
+            Config.TinyPicUsername = txtTinyPicUsername.Text;
         }
 
         private void txtTinyPicPassword_TextChanged(object sender, EventArgs e)
         {
-            if (Config.TinyPicRememberUserPass)
-            {
-                Config.TinyPicPassword = txtTinyPicPassword.Text;
-            }
+            Config.TinyPicPassword = txtTinyPicPassword.Text;
         }
 
         private void btnTinyPicLogin_Click(object sender, EventArgs e)

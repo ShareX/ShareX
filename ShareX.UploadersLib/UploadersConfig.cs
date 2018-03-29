@@ -61,7 +61,6 @@ namespace ShareX.UploadersLib
         public string TinyPicRegistrationCode = "";
         public string TinyPicUsername = "";
         public string TinyPicPassword = "";
-        public bool TinyPicRememberUserPass = false;
 
         #endregion TinyPic
 
