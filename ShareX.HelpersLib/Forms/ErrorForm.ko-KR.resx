@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnSendBugReport.Text" xml:space="preserve">
+    <value>버그 리포트 보내기</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>프로그램 종료</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>로그 파일 열기...</value>
+  </data>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="lblErrorMessage.Text" xml:space="preserve">
+    <value>오류
+오류 2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 오류</value>
+  </data>
 </root>
