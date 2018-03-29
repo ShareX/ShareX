@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -135,9 +135,6 @@
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Restante</value>
   </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capturar</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>
   </data>
@@ -165,8 +162,8 @@
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Captura automática...</value>
   </data>
-  <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Subir</value>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capturar</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
     <value>Subir archivo...</value>
@@ -183,11 +180,11 @@
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Arrastrar y soltar upload...</value>
   </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>Flujos de trabajo</value>
-  </data>
-  <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Herramientas</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Selector de color...</value>
@@ -222,14 +219,14 @@
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prueba del monitor...</value>
   </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Herramientas</value>
+  </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tareas después de capturar</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>Tareas después de subir</value>
-  </data>
-  <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>Destinaciones</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imágenes</value>
@@ -249,11 +246,14 @@
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Configuración de destinacion...</value>
   </data>
-  <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Ajustes: Aplicaciones...</value>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinaciones</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Ajustes: Tareas...</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Ajustes: Aplicaciones...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Ajustes: Teclas rápidas...</value>
@@ -266,9 +266,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Historial de la imagen...</value>
-  </data>
-  <data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Depurar</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuración...</value>
@@ -288,14 +285,14 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Prueba de compartir URL</value>
   </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Depurar</value>
+  </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Mostrar errores</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Detener upload</value>
-  </data>
-  <data name="tsmiOpen.Text" xml:space="preserve">
-    <value>Abrir</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
     <value>URL acortada</value>
@@ -315,8 +312,8 @@
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Archivo de miniatura</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar</value>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Abrir</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
     <value>URL acortada</value>
@@ -372,6 +369,9 @@
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Carpeta</value>
   </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
@@ -399,9 +399,6 @@
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Ocultar menú</value>
   </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Previsualización de imagen</value>
-  </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Mostrar</value>
   </data>
@@ -411,8 +408,8 @@
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automático</value>
   </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capturar</value>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Previsualización de imagen</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>
@@ -441,8 +438,8 @@
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Captura automática...</value>
   </data>
-  <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Subir</value>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capturar</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
     <value>Subir archivo...</value>
@@ -459,11 +456,11 @@
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Arrastrar y soltar upload...</value>
   </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Flujos de trabajo</value>
-  </data>
-  <data name="tsmiTrayTools.Text" xml:space="preserve">
-    <value>Herramientas</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Selector de color...</value>
@@ -498,14 +495,14 @@
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Prueba del monitor...</value>
   </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Herramientas</value>
+  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>Después de capturar</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Después de subir</value>
-  </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Destinaciones</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imágenes</value>
@@ -525,17 +522,17 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Configuración de destinacion...</value>
   </data>
-  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Ajustes: Aplicaciones...</value>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinaciones</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Ajustes: Tareas...</value>
   </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>Ajustes: Aplicaciones...</value>
+  </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Ajustes: Teclas rápidas...</value>
-  </data>
-  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>Enlaces recientes</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Carpeta de imágenes...</value>
@@ -552,25 +549,13 @@
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
     <value>Sobre...</value>
   </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Enlaces recientes</value>
+  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Mostrar la ventana ShareX</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Salir</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiMonitor.Text" xml:space="preserve">
-    <value>Monitor</value>
-  </data>
-  <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
-    <value>Monitor</value>
   </data>
 </root>
