@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnYes.Text" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>Non chiedere più fino al prossimo avvio di ShareX</value>
+  </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>Mostra Cambiamenti</value>
+  </data>
 </root>
