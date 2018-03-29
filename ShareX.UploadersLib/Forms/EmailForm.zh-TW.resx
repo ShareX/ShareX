@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblToEmail.Text" xml:space="preserve">
+    <value>傳送到電子郵件:</value>
+  </data>
+  <data name="lblSubject.Text" xml:space="preserve">
+    <value>主旨:</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>訊息:</value>
+  </data>
+  <data name="btnSend.Text" xml:space="preserve">
+    <value>傳送</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 傳送電子郵件</value>
+  </data>
 </root>
