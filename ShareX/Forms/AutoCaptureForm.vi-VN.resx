@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Chờ đến khi tác vụ hoàn thành</value>
+  </data>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Tự động thu nhỏ xuống khay hệ thống</value>
+  </data>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Vùng</value>
+  </data>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Chọn vùng</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Thời gian lặp lại:</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - Tự động chụp</value>
+  </data>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Vùng</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Toàn màn hình</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Vùng tự tạo</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Tự động chụp</value>
+  </data>
 </root>
