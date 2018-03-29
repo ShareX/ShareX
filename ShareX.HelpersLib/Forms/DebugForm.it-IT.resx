@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnLoadedAssemblies.Text" xml:space="preserve">
+    <value>Assemblati Caricati</value>
+  </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Copia Tutto</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Apri File di Log</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Percorso di Avvio:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Log di Debug</value>
+  </data>
 </root>
