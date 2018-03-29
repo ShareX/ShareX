@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>去除</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>还原默认</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>提示：如果您添加空的任务，它会被转换为菜单中的分隔线。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 快速任务菜单编辑</value>
+  </data>
 </root>
