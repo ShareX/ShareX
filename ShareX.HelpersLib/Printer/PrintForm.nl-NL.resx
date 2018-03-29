@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbAutoRotate.Text" xml:space="preserve">
+    <value>Afbeelding automatisch draaien</value>
+  </data>
+  <data name="cbAutoScale.Text" xml:space="preserve">
+    <value>Afbeelding automatisch schalen</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Marge:</value>
+  </data>
+  <data name="cbAllowEnlarge.Text" xml:space="preserve">
+    <value>Afbeelding mag vergroot worden</value>
+  </data>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>Centreer afbeeldingspositie</value>
+  </data>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>Voorbeeld...</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>Afdrukken...</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Afdrukopties</value>
+  </data>
 </root>
