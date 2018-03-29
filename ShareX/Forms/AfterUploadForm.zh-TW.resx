@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>複製圖片</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>複製連結</value>
+  </data>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>開啟連結</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>開啟檔案</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>開啟資料夾</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 上傳後</value>
+  </data>
 </root>
