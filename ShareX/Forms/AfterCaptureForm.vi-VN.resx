@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>Sau khi chụp</value>
+  </data>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>Trước khi tải lên</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Tác vụ sau khi chụp</value>
+  </data>
 </root>
