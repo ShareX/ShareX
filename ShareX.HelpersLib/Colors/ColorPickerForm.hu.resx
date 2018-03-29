@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
+  <data name="lblOld.Text" xml:space="preserve">
+    <value>Régi:</value>
+  </data>
+  <data name="lblNew.Text" xml:space="preserve">
+    <value>Új:</value>
+  </data>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>Kulcs:</value>
+  </data>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Sárga:</value>
+  </data>
+  <data name="lblCyan.Text" xml:space="preserve">
+    <value>Cián:</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Kék:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Zöld:</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>Vörös:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Fényesség:</value>
+  </data>
+  <data name="rbSaturation.Text" xml:space="preserve">
+    <value>Telítettség:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Színárnyalat:</value>
+  </data>
+  <data name="lblDecimal.Text" xml:space="preserve">
+    <value>Decimális:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Színszedő</value>
+  </data>
 </root>
