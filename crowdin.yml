@@ -2,9 +2,9 @@ files:
   - source: '*.resx'
     ignore:
       - '*.*.resx'
-    translation: /%original_path%/%file_name%.%two_letters_code%.%file_extension%
+    translation: /%original_path%/%file_name%.%locale%.%file_extension%
     languages_mapping:
-      two_letters_code:
+      locale:
         ru: ru
         pt-BR: pt-BR
         de: de
