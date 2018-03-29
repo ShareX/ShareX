@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>Network adapter:</value>
+  </data>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>Máy chủ DNS ưa dùng:</value>
+  </data>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>Máy chủ DNS thay thế:</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="lblDNS.Text" xml:space="preserve">
+    <value>Máy chủ DNS:</value>
+  </data>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>Nhận địa chỉ máy chủ DNS tự động</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Trình đổi DNS ShareX</value>
+  </data>
 </root>
