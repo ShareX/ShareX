@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>Netwerkadapters:</value>
+  </data>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>Voorkeurs DNS server:</value>
+  </data>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>Alternatieve DNS server:</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>&amp;Toepassen</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>&amp;Sluiten</value>
+  </data>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>Verkrijg het adres van de DNS server automatisch</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX DNS Wijziger</value>
+  </data>
 </root>
