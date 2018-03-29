@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>Bestandslocatie:</value>
+  </data>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>Argumenten:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>Extensie filter: (Voorbeeld: jpg png mp4)</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>Extensie van resultaat: (Leeg = gebruik zelfde als origineel)</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Verborgen scherm</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Acties</value>
+  </data>
 </root>
