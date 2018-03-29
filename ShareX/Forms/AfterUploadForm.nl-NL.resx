@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Kopieer afbeelding</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Kopieer link</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Open bestand...</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Open map...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formaat</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Na uploaden</value>
+  </data>
 </root>
