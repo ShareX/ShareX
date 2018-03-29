@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>文件路径：</value>
+  </data>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>参数：</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>扩展名过滤：(例如：jpg png mp4)</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>输出文件的扩展名：（空=使用相同的文件名）</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>隐藏窗口</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 动作</value>
+  </data>
 </root>
