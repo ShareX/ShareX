@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,14 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>Вручную</value>
+  </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Путь к файлу</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>Путь к файлу без расширения + "Расширение итогового файла"</value>
   </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>Заголовок активного окна</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Имя процесса активного окна</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>Текущий год</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>Текущий год (2 цифры)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Текущий месяц</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Имя текущего месяца (Местный язык)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Имя текущего месяца (Английский)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Сегодняшний день</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Текущий Час</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Текущая минута</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>Текущая секунда</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Текущая миллисекунда</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>Получает AM/PM</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Текущий день недели (Местный язык)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Текущий день недели (Английский)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Временная метка UNIX</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Случайное число от 0 до 9. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Случайный алфавитно-цифровой символ. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Ширина картинки</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Высота картинки</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Логин пользователя</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Имя компьютера</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>Новая строка</value>
+  </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Обзор папок...</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Обзор выполняемых файлов...</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Обзор каскадных таблиц стилей...</value>
@@ -721,87 +802,6 @@
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Показать окно «После загрузки»</value>
   </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Вручную</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Обзор выполняемых файлов...</value>
-  </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>Имя компьютера</value>
-  </data>
-  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Сегодняшний день</value>
-  </data>
-  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Текущий Час</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Высота картинки</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>Текущая минута</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>Текущий месяц</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>Имя текущего месяца (Местный язык)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>Имя текущего месяца (Английский)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>Текущая миллисекунда</value>
-  </data>
-  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
-    <value>Новая строка</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>Получает AM/PM</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Имя процесса активного окна</value>
-  </data>
-  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>Текущая секунда</value>
-  </data>
-  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Заголовок активного окна</value>
-  </data>
-  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Логин пользователя</value>
-  </data>
-  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>Имя пользователя</value>
-  </data>
-  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>Временная метка UNIX</value>
-  </data>
-  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Ширина картинки</value>
-  </data>
-  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Текущий год</value>
-  </data>
-  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>Текущий год (2 цифры)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Текущий день недели (Местный язык)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Текущий день недели (Английский)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Случайный алфавитно-цифровой символ. Повторение задается через {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Случайное число от 0 до 9. Повторение задается через {n}</value>
-  </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Открыть меню быстрых задач</value>
   </data>
@@ -810,6 +810,9 @@
   </data>
   <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
     <value>Другие</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Открыть окно истории изображений</value>
   </data>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
     <value>Другие</value>
@@ -823,44 +826,53 @@
   <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
     <value>Выберите файл</value>
   </data>
-  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
-    <value>Открыть окно истории изображений</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Захват экрана</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захват текста (ORC)</value>
-  </data>
-  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>Распознать текст (OCR)</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Запись экрана</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Запись экрана</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
-    <value>Начать/Остановить запись подготовленной области экрана</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Начать/Остановить запись подготовленной области экрана (GIF)</value>
-  </data>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Открыть главное окно</value>
   </data>
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Другие</value>
   </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Начать/Остановить запись подготовленной области экрана</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Начать/Остановить запись подготовленной области экрана (GIF)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Распознать текст (OCR)</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>Захват текста (ORC)</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Захват экрана</value>
+  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Отменить захват</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Захват активного монитора</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Захват всего экрана</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Ничего не делать</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Убрать фигуру</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Убрать фигуру или отменить захват</value>
   </data>
-  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>Захват активного монитора</value>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Сменить тип инструмента</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Рисование: Стрелка</value>
@@ -892,53 +904,41 @@
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Область: Прямоугольник</value>
   </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Область: От руки</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Рисование: От руки</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
-    <value>Захват всего экрана</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Запись экрана</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>Отменить запись экрана</value>
-  </data>
-  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
-    <value>Убрать фигуру</value>
-  </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>Автоматически пробовать все методы пока один не сработает</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>Симулировать нажатие клавиши "Page down"</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Симулировать нажатие клавиши "Home"</value>
-  </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>Симулировать прокрутку мыши</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Сначала симулировать нажатие клавиши "Home", потом отправить сообщение "scroll top"</value>
-  </data>
-  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
-    <value>Сменить тип инструмента</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Отправить сообщение "scroll top"</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
     <value>Отправить окну или элементу сообщение "scroll"</value>
   </data>
-  <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Ничего не делать</value>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>Сначала симулировать нажатие клавиши "Home", потом отправить сообщение "scroll top"</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Симулировать нажатие клавиши "Home"</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
     <value>Отключить прокрутку вверх</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>Отправить сообщение "scroll top"</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Отменить запись экрана</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Область: От руки</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Рисование: От руки</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Рисование: Картинка из файла</value>
@@ -949,8 +949,14 @@
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Переключить панель действий</value>
   </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Другие</value>
+  </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>Выйти из ShareX</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Другие</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Рисование: Текст с обводкой</value>
@@ -958,26 +964,11 @@
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Рисование: Текст с фоном</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
-    <value>Другие</value>
-  </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>Другие</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Загрузка отменена.</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Возможно используется прокси. Откройте Настройки приложения из главного меню и выберите Прокси для ввода настроек своего прокси сервера.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Прогресс: {0}</value>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Кадрировать</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Рисование: Картинка с экрана</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Кадрировать</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Поиск по картинке в Google</value>
@@ -1006,6 +997,27 @@
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 бит</value>
   </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Рисование: Курсор</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Сокращение ссылки</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Загрузка текста</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Сервис отправки ссылок</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Пользовательский сервис отправки ссылок</value>
+  </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Обратно диагональный</value>
   </data>
@@ -1017,27 +1029,6 @@
   </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
     <value>Вертикальный</value>
-  </data>
-  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
-    <value>Пользовательский сервис отправки ссылок</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
-    <value>Сервис отправки ссылок</value>
-  </data>
-  <data name="HotkeyType_ShortenURL" xml:space="preserve">
-    <value>Сокращение ссылки</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Рисование: Курсор</value>
-  </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Загрузка</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Загрузка</value>
-  </data>
-  <data name="HotkeyType_UploadText" xml:space="preserve">
-    <value>Загрузка текста</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
     <value>Стандартное хранилище</value>
@@ -1066,11 +1057,11 @@
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Публичная</value>
   </data>
-  <data name="PastebinPrivacy_Private" xml:space="preserve">
-    <value>Личная (только участники)</value>
-  </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Не публиковать</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Личная (только участники)</value>
   </data>
   <data name="PastebinExpiration_N" xml:space="preserve">
     <value>Никогда</value>
@@ -1093,15 +1084,6 @@
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Месяц</value>
   </data>
-  <data name="MinusLinkType_Direct" xml:space="preserve">
-    <value>Прямая</value>
-  </data>
-  <data name="MinusLinkType_Page" xml:space="preserve">
-    <value>Страница</value>
-  </data>
-  <data name="MinusLinkType_Raw" xml:space="preserve">
-    <value>Сырая</value>
-  </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Текущая версия</value>
   </data>
@@ -1123,20 +1105,23 @@
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Авторазмер</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Ступенчатая</value>
+  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>Бикубическая (высококачественная)</value>
   </data>
   <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
     <value>Бикубическая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Бикубическая (высококачественная)</value>
   </data>
   <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
     <value>Билинейная (высококачественная)</value>
   </data>
   <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
     <value>Билинейная</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>Ступенчатая</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Случайная строка из файла. Используйте {filepath}, чтобы указать файл</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Рисование: Стикер</value>
@@ -1146,8 +1131,5 @@
   </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Случайное прилагательное</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Случайная строка из файла. Используйте {filepath}, чтобы указать файл</value>
   </data>
 </root>
