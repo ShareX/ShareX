@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,20 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tpAccount.Text" xml:space="preserve">
-    <value>Compte</value>
-  </data>
-  <data name="lblConnecting.Text" xml:space="preserve">
-    <value>Connexion au serveur FTP...</value>
-  </data>
-  <data name="tpConsole.Text" xml:space="preserve">
-    <value>Console</value>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>statut</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
-  </data>
-  <data name="tpMain.Text" xml:space="preserve">
-    <value>Fichiers</value>
   </data>
   <data name="chFilesize.Text" xml:space="preserve">
     <value>Taille du fichier</value>
@@ -141,23 +132,14 @@
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Dernière modification</value>
   </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>statut</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Client FTP</value>
-  </data>
-  <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="tsmiDownload.Text" xml:space="preserve">
-    <value>Télécharger</value>
-  </data>
   <data name="tsmiConnect.Text" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="tsmiDisconnect.Text" xml:space="preserve">
     <value>Se déconnecter</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>Télécharger</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>Ouvrir l'URL</value>
@@ -165,13 +147,28 @@
   <data name="tsmiRename.Text" xml:space="preserve">
     <value>Renommer</value>
   </data>
-  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
-    <value>Créer le dossier</value>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
   <data name="tsmiRefresh.Text" xml:space="preserve">
     <value>Rafraîchir</value>
   </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Créer le dossier</value>
+  </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>Copier le(s) URL(s) dans le presse-papier</value>
+  </data>
+  <data name="lblConnecting.Text" xml:space="preserve">
+    <value>Connexion au serveur FTP...</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Fichiers</value>
+  </data>
+  <data name="tpAccount.Text" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Client FTP</value>
   </data>
 </root>
