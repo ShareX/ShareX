@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,57 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg opties</value>
-  </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Kopieer</value>
-  </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Ververs</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Test met CLI</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Gebruik aangepaste commando's</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Extra command line argumenten</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Voorbeeld van command line</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Bronnen</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Audio codec:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Audio bron:</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Video codec:</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Kwaliteit:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Video bron:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Kwaliteit:</value>
-  </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): Het bereik van de schaal is 0-51: waar 0 verliesloos is, 23 standaard en 51 het ergste is.
 Een lagere waarde betekent hogere kwaliteit en een subjectieve schaal is 18-28.
@@ -176,17 +125,28 @@ Het bereik is exponentieel, dus de CRF met 6 verhogen halveert ongeveer de bitra
 Een veelgebruikte methode is om de hoogste CRF waarde te kiezen die nog een acceptabele kwaliteit genereert.
 Als het resultaat er goed uitziet, probeer een hogere waarde, is het slechter, probeer een lagere waarde.</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Standaard is 128k.</value>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 is de hoogste kwaliteit/grootste bestandsgrootte en 31 is de laagste kwaliteit/kleinste bestandsgrootte.</value>
   </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Het bereik is 0-9 waar een lagere waarde hogere kwaliteit betekend. 0-3 zal transparante resultaten produceren, 4 (standaardkeuze) is quasi transparant en 6 is acceptabele kwaliteit.</value>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Een preset is een verzameling van opties die een bepaalde encoding snelheid en compressieratio opleveren. Een tragere preset zal meer compressie opleveren (compressie is kwaliteit tegenover bestandsgrootte).
+Bijvoorbeeld kan er, als je een bepaalde bestandsgrootte of bit rate nastreeft, betere kwaliteit behaald worden met een tragere preset.
+Gelijkaardig kan er voor een constante kwaliteitsencoding een tragere preset gekozen worden om de bitrate omlaag te halen.</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Het bereik is 0-10, met 10 de hoogste kwaliteit. 3-6 is een aanbevolen bereik. 3 is standaard.</value>
   </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Opnametoestellen installeren</value>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>Het bereik is 0-9 waar een lagere waarde hogere kwaliteit betekend. 0-3 zal transparante resultaten produceren, 4 (standaardkeuze) is quasi transparant en 6 is acceptabele kwaliteit.</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Standaard is 128k.</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>volledig: Bereken volledige frame histogrammen.
+verschil: Bereken de histogrammen enkel voor afwijkende delen tegenover het vorige frame. Dit kan belangrijk zijn om een grotere prioriteit te geven aan bewegende delen bij een statische achtergrond.
+
+Standaard: volledig.</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>bayer: 8x8 geordende bayer dithering (deterministisch)
@@ -197,31 +157,12 @@ sierra2_4a: Frankie Sierra dithering v2 "Lite" (error difusie)
 
 Standaard: sierra2_4a.</value>
   </data>
-  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>volledig: Bereken volledige frame histogrammen.
-verschil: Bereken de histogrammen enkel voor afwijkende delen tegenover het vorige frame. Dit kan belangrijk zijn om een grotere prioriteit te geven aan bewegende delen bij een statische achtergrond.
-
-Standaard: volledig.</value>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>Deze audio codec wordt niet ondersteund door de geselecteerde videocontainer.</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg pad</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Een preset is een verzameling van opties die een bepaalde encoding snelheid en compressieratio opleveren. Een tragere preset zal meer compressie opleveren (compressie is kwaliteit tegenover bestandsgrootte).
-Bijvoorbeeld kan er, als je een bepaalde bestandsgrootte of bit rate nastreeft, betere kwaliteit behaald worden met een tragere preset.
-Gelijkaardig kan er voor een constante kwaliteitsencoding een tragere preset gekozen worden om de bitrate omlaag te halen.</value>
-  </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Dithering modus:</value>
-  </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Palette stats modus:</value>
-  </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Installeert "screen-capture-recorder" en "virtual-audio-capturer" video/audio bronnen.</value>
-  </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Variabele bitrate:</value>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Voor realtime encoding (zoals schermopname) is het aangeraden om een zo snel mogelijke preset te kiezen.
+Anders kan het niet bijhouden met de opname en zullen er framedrops volgen.</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>Voorkeur:</value>
@@ -229,17 +170,61 @@ Gelijkaardig kan er voor een constante kwaliteitsencoding een tragere preset gek
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Variabele bitrate:</value>
   </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1 is de hoogste kwaliteit/grootste bestandsgrootte en 31 is de laagste kwaliteit/kleinste bestandsgrootte.</value>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg pad</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Gebruik afwijkend pad</value>
   </data>
-  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>Deze audio codec wordt niet ondersteund door de geselecteerde videocontainer.</value>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Gebruik aangepaste commando's</value>
   </data>
-  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
-    <value>Voor realtime encoding (zoals schermopname) is het aangeraden om een zo snel mogelijke preset te kiezen.
-Anders kan het niet bijhouden met de opname en zullen er framedrops volgen.</value>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Voorbeeld van command line</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Extra command line argumenten</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Variabele bitrate:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Dithering modus:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palette stats modus:</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Test met CLI</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Kopieer</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Kwaliteit:</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Kwaliteit:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Video bron:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Audio bron:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Installeert "screen-capture-recorder" en "virtual-audio-capturer" video/audio bronnen.</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Opnametoestellen installeren</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Ververs</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Bronnen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - FFmpeg opties</value>
   </data>
 </root>
