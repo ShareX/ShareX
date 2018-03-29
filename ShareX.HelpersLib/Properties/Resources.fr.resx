@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,11 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>Chemin du fichier</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>Chemin du fichier sans extension + Option « Extension du nom de fichier de sortie »</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>Titre de la fenêtre active</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Nom du processus de la fenêtre active</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>Année en cours</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>Année en cours (2 chiffres)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Mois en cours</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Nom du mois en cours (dans la langue locale)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Nom du mois en cours (en anglais)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Journée en cours</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Heure actuelle</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Minute actuelle</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>Seconde actuelle</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Milliseconde actuelle</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>Obtient AM / PM</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Nom de la semaine en cours (dans la langue locale)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Nom de la semaine en cours (en anglais)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Heure Unix</value>
+  </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
     <value>Incrémentation automatique du numéro. Ajoutez un 0 au début avec {n}</value>
   </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Nombre aléatoire de 0 à 9. Recommencez à l'aide de {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Caractère alphanumérique aléatoire. Recommencez à l'aide de {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Largeur de l'image</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Hauteur de l'image</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Nom de connexion de l'utilisateur </value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Nom de l'ordinateur</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>Nouvelle ligne</value>
+  </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Parcourir et chercher un dossier...</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Parcourir et chercher un exécutable...</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Parcourir et chercher une feuille de style en cascade...</value>
@@ -179,9 +263,6 @@
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Nom du fichier : {0}</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
-    <value>OK</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -328,9 +409,6 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capturer tout l'écran</value>
-  </data>
-  <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR code</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capturer une région (Simple)</value>
@@ -675,9 +753,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Aléatoire</value>
   </data>
-  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
-    <value>Image</value>
-  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
   </data>
@@ -739,119 +814,47 @@ Voulez-vous la télécharger ?</value>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>Choisir le chemin du dossier</value>
   </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Parcourir et chercher un exécutable...</value>
-  </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>Nom de l'ordinateur</value>
-  </data>
-  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Journée en cours</value>
-  </data>
-  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Heure actuelle</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>Milliseconde actuelle</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>Minute actuelle</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>Mois en cours</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>Nom du mois en cours (en anglais)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>Nom du mois en cours (dans la langue locale)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>Seconde actuelle</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Nom de la semaine en cours (en anglais)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Nom de la semaine en cours (dans la langue locale)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Année en cours</value>
-  </data>
-  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>Année en cours (2 chiffres)</value>
-  </data>
-  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
-    <value>Chemin du fichier</value>
-  </data>
-  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>Chemin du fichier sans extension + Option « Extension du nom de fichier de sortie »</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>Obtient AM / PM</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Hauteur de l'image</value>
-  </data>
-  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Largeur de l'image</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manuel</value>
-  </data>
-  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
-    <value>Nouvelle ligne</value>
-  </data>
-  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>Nom d'utilisateur</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Nom du processus de la fenêtre active</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Caractère alphanumérique aléatoire. Recommencez à l'aide de {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Nombre aléatoire de 0 à 9. Recommencez à l'aide de {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Titre de la fenêtre active</value>
-  </data>
-  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Nom de connexion de l'utilisateur </value>
-  </data>
-  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>Heure Unix</value>
-  </data>
   <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
     <value>Choisir un fichier</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>Autre</value>
   </data>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Ouvrir la fenêtre principale</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Enregistrer l'écran</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Enregistrer l'écran</value>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Autre</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Démarrer l'enregistrement de l'écran en utilisant la région personnalisée</value>
   </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Enregistrer l'écran</value>
+  </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Démarrer l'enregistrement de l'écran (GIF) en utilisant la région personnalisée</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Enregistrer l'écran</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Reconnaître un texte (OCR)</value>
   </data>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
     <value>Capture de texte (OCR)</value>
   </data>
-  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>Reconnaître un texte (OCR)</value>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Capture d'écran</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Annuler la capture</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Capturer l'écran actif</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Capture plein écran</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Ne rien faire</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Supprimer une forme</value>
@@ -859,44 +862,62 @@ Voulez-vous la télécharger ?</value>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Supprimer une forme ou annuler la capture</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simuler un défilement à la souris</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Désactiver le défilement jusqu'en haut</value>
-  </data>
-  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
-    <value>Annuler la capture</value>
-  </data>
-  <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Ne rien faire</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Enregistrer l'écran</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>Annuler l'enregistrement d'écran</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
-    <value>Capture plein écran</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>Capturer l'écran actif</value>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Changer le type d'outil</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Dessin : Flèche</value>
   </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Effet : Flou</value>
+  </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Dessin : Ellipse</value>
   </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Effet : Surligner</value>
+  </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Dessin : Ligne</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Effet : Pixeliser</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Dessin : Rectangle</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Dessin : Etape</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Région : Ellipse</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Région : Rectangle</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Automatiquement essayer toutes les méthodes jusqu'à ce qu'une fonctionne</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Simuler un appui sur la touche "Page suivante"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Simuler un défilement à la souris</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Simuler un appui de la touche "Début"</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Désactiver le défilement jusqu'en haut</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Annuler l'enregistrement d'écran</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Enregistrer l'écran</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Région : Main levée</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
     <value>Dessin : Main levée</value>
@@ -907,101 +928,47 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Dessin : Bulle de dialogue</value>
   </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Région : Ellipse</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Région : Rectangle</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Région : Main levée</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Effet : Flou</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Effet : Pixeliser</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Effet : Surligner</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simuler un appui de la touche "Début"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatiquement essayer toutes les méthodes jusqu'à ce qu'une fonctionne</value>
-  </data>
-  <data name="HotkeyType_ExitShareX" xml:space="preserve">
-    <value>Quitter ShareX</value>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Activer la barre d'outils des actions</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Autre</value>
   </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Quitter ShareX</value>
+  </data>
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>Autre</value>
-  </data>
-  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
-    <value>Changer le type d'outil</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simuler un appui sur la touche "Page suivante"</value>
-  </data>
-  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Activer la barre d'outils des actions</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Dessin : Texte (Arrière-plan)</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Dessin : Texte (Contour)</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>Recadrer l'image</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Téléchargement annulé.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Progression : {0}</value>
-  </data>
-  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Service de mise en ligne d'images</value>
-  </data>
-  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
-    <value>Service de mise en ligne de textes</value>
-  </data>
-  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
-    <value>Service de mise en ligne de fichiers</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
-    <value>Raccourcisseur d'URL</value>
-  </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Recherche d'images Google</value>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Dessin : Texte (Arrière-plan)</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Dessin : Image (Écran)</value>
   </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Proxy possiblement détecté. Merci d'ouvrir les Paramètres de l'application depuis le menu principal et choisissez Proxy pour entrer les paramètres du serveur proxy.</value>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Recherche d'images Google</value>
   </data>
-  <data name="HotkeyType_UploadText" xml:space="preserve">
-    <value>Mettre en ligne un texte</value>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Raccourcisseur d'URL</value>
   </data>
-  <data name="PNGBitDepth_Automatic" xml:space="preserve">
-    <value>Détecter automatiquement</value>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Service de mise en ligne de fichiers</value>
   </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Mettre en ligne</value>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Service de mise en ligne de textes</value>
   </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Mettre en ligne</value>
-  </data>
-  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
-    <value>Horizontal</value>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Service de mise en ligne d'images</value>
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Par défaut</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Détecter automatiquement</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Dessin : Curseur</value>
@@ -1009,20 +976,29 @@ Voulez-vous la télécharger ?</value>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Raccourcir l'URL</value>
   </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Mettre en ligne</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Mettre en ligne un texte</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Mettre en ligne</value>
+  </data>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Service de partage d'URL</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Service de partage d'URL personnalisé</value>
   </data>
-  <data name="LinearGradientMode_Vertical" xml:space="preserve">
-    <value>Verticale</value>
-  </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonale en arrière</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonale en avant</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Verticale</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
     <value>Ligne aléatoire d'un fichier. Utilisez {chemin} pour indiquer le fichier</value>
