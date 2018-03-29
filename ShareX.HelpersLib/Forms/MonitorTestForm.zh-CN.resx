@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>屏幕撕裂测试</value>
+  </data>
+  <data name="btnGradientColor2.Text" xml:space="preserve">
+    <value>颜色2</value>
+  </data>
+  <data name="btnGradientColor1.Text" xml:space="preserve">
+    <value>颜色1</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>您可以点击外面隐藏/显示此面板.</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>梯度：</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>尺寸：</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>颜色对话框...</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>检查</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>水平线</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>垂直线</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>形状：</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>红,  绿,  蓝：</value>
+  </data>
+  <data name="rbBlackWhite.Text" xml:space="preserve">
+    <value>黑色,  白色：</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>显示器测试</value>
+  </data>
 </root>
