@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Pad naar map:</value>
+  </data>
+  <data name="lblFilterExample.Text" xml:space="preserve">
+    <value>Voorbeeld: *.png</value>
+  </data>
+  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Inclusief deelmappen</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Monitor map</value>
+  </data>
 </root>
