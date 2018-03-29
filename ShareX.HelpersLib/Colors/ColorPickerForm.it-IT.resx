@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="lblOld.Text" xml:space="preserve">
+    <value>Vecchio:</value>
+  </data>
+  <data name="lblNew.Text" xml:space="preserve">
+    <value>Nuovo:</value>
+  </data>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>Chiave:</value>
+  </data>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Giallo:</value>
+  </data>
+  <data name="lblCyan.Text" xml:space="preserve">
+    <value>Ciano:</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Blu:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Verde:</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>Rosso:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Luminosità:</value>
+  </data>
+  <data name="rbSaturation.Text" xml:space="preserve">
+    <value>Saturazione:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Tonalità:</value>
+  </data>
+  <data name="lblDecimal.Text" xml:space="preserve">
+    <value>Decimale:</value>
+  </data>
+  <data name="lblAlpha.Text" xml:space="preserve">
+    <value>Trasparenza:</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Trasparente</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Seleziona Colore</value>
+  </data>
 </root>
