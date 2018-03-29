@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
+    <value>Miniature</value>
+  </data>
+  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
+    <value>Galleria</value>
+  </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Pannello</value>
+  </data>
+  <data name="tsddbViewMode.Text" xml:space="preserve">
+    <value>Tipo Visualizzazione</value>
+  </data>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Dimensione Miniature</value>
+  </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>Ultime 100</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>Ultime 250</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>Ultime 1000</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>Nessun Limite</value>
+  </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>Limite Massimo di Immagini</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Cronologia Immagini</value>
+  </data>
 </root>
