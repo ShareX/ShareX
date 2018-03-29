@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>檔名</value>
+  </data>
+  <data name="chFilesize.Text" xml:space="preserve">
+    <value>檔案大小</value>
+  </data>
+  <data name="chFiletype.Text" xml:space="preserve">
+    <value>檔案類型</value>
+  </data>
+  <data name="chLastModified.Text" xml:space="preserve">
+    <value>最後修改</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>連線</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>斷開</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>開啟 RUL</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>重新命名</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>創建目錄</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>複製 RUL(s) 刀剪貼簿</value>
+  </data>
+  <data name="lblConnecting.Text" xml:space="preserve">
+    <value>連線到FTP伺服器...</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="tpAccount.Text" xml:space="preserve">
+    <value>帳戶</value>
+  </data>
+  <data name="tpConsole.Text" xml:space="preserve">
+    <value>控制檯</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX FTP客戶端</value>
+  </data>
 </root>
