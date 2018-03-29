@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>állapot</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Fájlnév</value>
+  </data>
+  <data name="chFilesize.Text" xml:space="preserve">
+    <value>Fájlméret</value>
+  </data>
+  <data name="chFiletype.Text" xml:space="preserve">
+    <value>Fájl típus</value>
+  </data>
+  <data name="chLastModified.Text" xml:space="preserve">
+    <value>Utolsó módosítás</value>
+  </data>
+  <data name="lblConnecting.Text" xml:space="preserve">
+    <value>Csatlakozás az FTP szerverhez...</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Fájlok</value>
+  </data>
+  <data name="tpAccount.Text" xml:space="preserve">
+    <value>Fiók</value>
+  </data>
+  <data name="tpConsole.Text" xml:space="preserve">
+    <value>Konzol</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> ShareX FTP kliens</value>
+  </data>
 </root>
