@@ -34,18 +34,13 @@ namespace ShareX
     public class CentennialStartupManager : IStartupManager
     {
         private const int StartupTargetIndex = 0;
-        private static StartupTask packageTask;
+        private readonly StartupTask packageTask = StartupTask.GetForCurrentPackageAsync().GetAwaiter().GetResult()[StartupTargetIndex];
 
         public StartupTaskState State
         {
-            get
-            {
-                AcquirePackageTask().GetAwaiter().GetResult();
-                return packageTask.State;
-            }
+            get => packageTask.State;
             set
             {
-                AcquirePackageTask().GetAwaiter().GetResult();
                 if (value == StartupTaskState.Enabled)
                 {
                     packageTask.RequestEnableAsync().GetAwaiter().GetResult();
@@ -58,14 +53,6 @@ namespace ShareX
                 {
                     throw new NotSupportedException();
                 }
-            }
-        }
-
-        private async Task AcquirePackageTask()
-        {
-            if (packageTask == null)
-            {
-                packageTask = (await StartupTask.GetForCurrentPackageAsync())[StartupTargetIndex];
             }
         }
     }
