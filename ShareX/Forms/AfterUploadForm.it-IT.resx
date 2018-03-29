@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Copia Immagine</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Copia Link</value>
+  </data>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>Apri Link...</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Apri File...</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Apri Cartella...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Secrizione</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Dopo l'Upload</value>
+  </data>
 </root>
