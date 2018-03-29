@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Đã có một tệp cùng tên ở đây.
+Chọn tên tệp mới hoặc hành động:</value>
+  </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>Đè lên:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Không lưu</value>
+  </data>
+  <data name="btnUniqueName.Text" xml:space="preserve">
+    <value>Dùng tên duy nhất</value>
+  </data>
+  <data name="btnNewName.Text" xml:space="preserve">
+    <value>Dùng tên mới:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Lưu như thế nào?</value>
+  </data>
 </root>
