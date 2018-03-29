@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
+    <value>Duplica</value>
+  </data>
+  <data name="btnEncodersAdd.Text" xml:space="preserve">
+    <value>Aggiungu</value>
+  </data>
+  <data name="btnEncodersEdit.Text" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="btnEncodersRemove.Text" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="chEncoderDescription.Text" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="chEncoderPath.Text" xml:space="preserve">
+    <value>Percorso</value>
+  </data>
+  <data name="chEncoderArgs.Text" xml:space="preserve">
+    <value>Parametri</value>
+  </data>
+  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
+    <value>Estensione in Uscita</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Profili Codificatore</value>
+  </data>
 </root>
