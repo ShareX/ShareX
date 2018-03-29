@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Formato:</value>
+  </data>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Formato del Contenuto degli Appunti</value>
+  </data>
 </root>
