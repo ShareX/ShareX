@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,101 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Captura rolante</value>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Selecionar janela ou conteúdo para rolar...</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
     <value>Iniciar captura</value>
   </data>
-  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
-    <value>Adivinhar ajustes de combinação &amp; combinar</value>
-  </data>
-  <data name="btnGuessEdges.Text" xml:space="preserve">
-    <value>Adivinhar valores das bordas para apará-las</value>
-  </data>
-  <data name="btnResetCombine.Text" xml:space="preserve">
-    <value>Resetar opções de saída</value>
-  </data>
-  <data name="btnSelectHandle.Text" xml:space="preserve">
-    <value>Selecionar janela ou conteúdo para rolar...</value>
-  </data>
-  <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>(Opcional) Selecionar região personalizada na janela...</value>
-  </data>
-  <data name="btnStartTask.Text" xml:space="preserve">
-    <value>Enviar/salvar depenendo das configurações pós-captura</value>
-  </data>
-  <data name="tpOutput.Text" xml:space="preserve">
-    <value>Saída</value>
-  </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>Captura</value>
-  </data>
-  <data name="lblTrimTop.Text" xml:space="preserve">
-    <value>Superior:</value>
-  </data>
-  <data name="lblTrimBottom.Text" xml:space="preserve">
-    <value>Inferior:</value>
-  </data>
-  <data name="lblTrimLeft.Text" xml:space="preserve">
-    <value>Esquerda:</value>
-  </data>
-  <data name="lblTrimRight.Text" xml:space="preserve">
-    <value>Direita:</value>
-  </data>
-  <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>Atraso inicial:</value>
-  </data>
-  <data name="lblScrollMethod.Text" xml:space="preserve">
-    <value>Método de rolagem:</value>
-  </data>
   <data name="lblScrollDelay.Text" xml:space="preserve">
     <value>Atraso de rolagem:</value>
-  </data>
-  <data name="lblNote.Text" xml:space="preserve">
-    <value>Por favor note que enquanto o ShareX se esforça para renderizar uma captura rolante precisa, ainda não é possível capturar corretamente todo conteúdo rolante. As principais razões que podem causar problemas enquanto as imagens são mescladas são movimentos na tela enquanto estiver capturando (por exemplo, se uma página da web possui um GIF animado ou objetos estáticos (que não mudam de posição) na tela enquanto estiver rolando).</value>
-  </data>
-  <data name="lblProcessing.Text" xml:space="preserve">
-    <value>Processando...</value>
   </data>
   <data name="lblMaximumScrollCount.Text" xml:space="preserve">
     <value>Número máximo de rolagens:</value>
   </data>
-  <data name="lblImageCount.Text" xml:space="preserve">
-    <value>Número de imagens:</value>
-  </data>
-  <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>Remover última:</value>
-  </data>
-  <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Vertical:</value>
-  </data>
-  <data name="lblCombineLastVertical.Text" xml:space="preserve">
-    <value>Última vertical:</value>
-  </data>
-  <data name="gbTrimEdges.Text" xml:space="preserve">
-    <value>Aparar bordas</value>
-  </data>
-  <data name="gbImages.Text" xml:space="preserve">
-    <value>Imagens</value>
-  </data>
-  <data name="gbCombineAdjustments.Text" xml:space="preserve">
-    <value>Mesclar ajustes</value>
-  </data>
-  <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>Adivinhar offsets automaticamente e mesclá-los após a captura</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
-    <value>Detectar automaticamente o fim da rolagem</value>
-  </data>
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Remover imagens iguais</value>
   </data>
-  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Iniciar captura rolante imediatamente após a seleção da região de captura</value>
-  </data>
-  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Adivinhar offsets automaticamente e mesclá-los após a captura</value>
   </data>
   <data name="chkAutoUpload.Text" xml:space="preserve">
     <value>Enviar/salvar dependendo das configurações pós-captura</value>
@@ -219,13 +141,88 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Pós-captura</value>
   </data>
-  <data name="gbBeforeCapture.Text" xml:space="preserve">
-    <value>Pré-captura</value>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Método de rolagem:</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Detectar automaticamente o fim da rolagem</value>
   </data>
   <data name="gbWhileCapturing.Text" xml:space="preserve">
     <value>Enquanto estiver capturando</value>
   </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Método de rolagem do topo antes da captura:</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Atraso inicial:</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Iniciar captura rolante imediatamente após a seleção da região de captura</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Opcional) Selecionar região personalizada na janela...</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Pré-captura</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Por favor note que enquanto o ShareX se esforça para renderizar uma captura rolante precisa, ainda não é possível capturar corretamente todo conteúdo rolante. As principais razões que podem causar problemas enquanto as imagens são mescladas são movimentos na tela enquanto estiver capturando (por exemplo, se uma página da web possui um GIF animado ou objetos estáticos (que não mudam de posição) na tela enquanto estiver rolando).</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Captura</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Número de imagens:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Remover última:</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Resetar opções de saída</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Adivinhar ajustes de combinação &amp; combinar</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Enviar/salvar depenendo das configurações pós-captura</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Adivinhar valores das bordas para apará-las</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Última vertical:</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Mesclar ajustes</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Inferior:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Direita:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Superior:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Esquerda:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Aparar bordas</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Processando...</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Saída</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Captura rolante</value>
   </data>
 </root>
