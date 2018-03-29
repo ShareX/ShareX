@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Aggiungi</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Suggerimento: Le operazioni vuote saranno convertite in linee di separazione nel menu.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Modifica il Menu Operazioni Veloci</value>
+  </data>
 </root>
