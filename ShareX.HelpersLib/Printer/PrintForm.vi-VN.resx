@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbAutoRotate.Text" xml:space="preserve">
+    <value>Tự động xoay ảnh</value>
+  </data>
+  <data name="cbAutoScale.Text" xml:space="preserve">
+    <value>Tự động chỉnh kích thước ảnh</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Khoảng cách lề:</value>
+  </data>
+  <data name="cbAllowEnlarge.Text" xml:space="preserve">
+    <value>Cho phép ảnh to lên</value>
+  </data>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>Vị trí trung tâm ảnh</value>
+  </data>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>Xem trước...</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>In...</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Lựa chọn in</value>
+  </data>
 </root>
