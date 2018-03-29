@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblFullName.Text" xml:space="preserve">
+    <value>Volledige naam:</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Gebruiker/Wachtwoord box</value>
+  </data>
 </root>
