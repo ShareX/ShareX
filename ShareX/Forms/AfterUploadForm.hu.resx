@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Kép másolása</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Hivatkozás másolása</value>
+  </data>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>Hivatkozás megnyitása...</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Fájl megnyitása...</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Mappa megnyitása...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formátum</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Feltöltés után</value>
+  </data>
 </root>
