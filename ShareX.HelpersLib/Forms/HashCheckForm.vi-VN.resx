@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnFilePathBrowse.Text" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
+  <data name="lblHashType.Text" xml:space="preserve">
+    <value>Kiểu Hash:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Kết quả:</value>
+  </data>
+  <data name="lblTarget.Text" xml:space="preserve">
+    <value>Đối tượng:</value>
+  </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Đường dẫn tệp tin:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kiểm tra Hash</value>
+  </data>
 </root>
