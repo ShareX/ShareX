@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Định dạng:</value>
+  </data>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Mô tả:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Định dạng nội dung trong vùng nhớ tạm</value>
+  </data>
 </root>
