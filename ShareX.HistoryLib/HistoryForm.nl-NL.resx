@@ -117,46 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Pas filters toe</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Datum &amp; tijd</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Bestandsnaam</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Verwijder filters</value>
-  </data>
-  <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Bestandstype filter:</value>
-  </data>
-  <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>Van:</value>
-  </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Bestandsnaam filter:</value>
-  </data>
-  <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>Tot:</value>
-  </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Datumfilter:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Bevat</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Start met</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Eindigt op</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Exacte overeenkomst</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Geschiedenis</value>
-  </data>
 </root>
