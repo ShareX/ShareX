@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,35 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Filtreleri uygula</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbDateFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
   </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Tarih ve saat</value>
+  <data name="cbDateFilter.Text" xml:space="preserve">
+    <value>Tarih filtresi:</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Dosya adı</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Filtreleri kaldır</value>
-  </data>
-  <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Sunucu filtresi:</value>
-  </data>
-  <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Dosya türü filtresi:</value>
+  <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Tarihten:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Dosya adı filtresi:</value>
+  <data name="lblFilterTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Tarihe:</value>
   </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Tarih filtresi:</value>
+  <data name="btnApplyFilters.Text" xml:space="preserve">
+    <value>Filtreleri uygula</value>
   </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>İçeren</value>
@@ -159,8 +151,41 @@
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
     <value>Tam eşleşme</value>
   </data>
+  <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 17</value>
+  </data>
+  <data name="cbFilenameFilter.Text" xml:space="preserve">
+    <value>Dosya adı filtresi:</value>
+  </data>
+  <data name="cbFilenameFilterCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
+  </data>
+  <data name="btnRemoveFilters.Text" xml:space="preserve">
+    <value>Filtreleri kaldır</value>
+  </data>
+  <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="cbHostFilter.Text" xml:space="preserve">
+    <value>Sunucu filtresi:</value>
+  </data>
+  <data name="cbTypeFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="cbTypeFilter.Text" xml:space="preserve">
+    <value>Dosya türü filtresi:</value>
+  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filtreler</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Tarih ve saat</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Dosya adı</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Geçmiş</value>

@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Yeni hesap</value>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Tweet hatası</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
+    <value>Durum: Giriş yapılmış.</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
+    <value>Durum: Giriş yapılmamış.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Seçili dizin:</value>
@@ -126,60 +132,54 @@
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Giriş yapılamadı.</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ana album yolu, örneğin:</value>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Giriş başarılı.</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
+    <value>Yenile tuşuna basın</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
+    <value>Ayarlanmış</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Hatalı yetkilendirme</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
+    <value>Giriş yapılmamış.</value>
+  </data>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} başarıyla oluşturuldu.</value>
+  </data>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>SendSpace kayıt</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Hata: Sonuç boş.</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Hata</value>
-  </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>Bağlandı!</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Ayarlanmamış</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} başarıyla oluşturuldu.</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Bağlandı!
 Oluşturulmuş dizinler:</value>
   </data>
-  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Sertifika dosyası için gözat...</value>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>Anahtar dosyası için gözat...</value>
   </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Klasörler isteniyor...</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>SendSpace kayıt</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Hatalı yetkilendirme</value>
-  </data>
-  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>Sorun bulunamadı</value>
-  </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Giriş başarılı.</value>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Yeni hesap</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Yetkilendirme gerekiyor.</value>
   </data>
-  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Anahtar dosyası için gözat...</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Geçerli FTP hesabı bulunamadı.</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Oluşturulacak dizin adı</value>
-  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP istemci</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>Sorun bulunamadı</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>Ayarlanmamış</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>{0} bağlanıyor</value>
@@ -187,28 +187,43 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Yetkilendirme yenileme desteklenmiyor.</value>
   </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP istemcisi sadece FTP veya FTPS destekliyor.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Ayarlanmış</value>
-  </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Tweet hatası</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Hatalı cihaz adı</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Yanıt çözümleme başarısız oldu.</value>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Durum: Giriş başarısız.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box dizin listesi yenileme başarısız</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Yenile tuşuna basın</value>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Hata</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Ana klasör</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>{0} olarak giriş yapılmış.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Yanıt çözümleme başarısız oldu.</value>
+  </data>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>Oluşturulacak dizin adı</value>
+  </data>
+  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
+    <value>Sertifika dosyası için gözat...</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Ana album yolu, örneğin:</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Klasörler isteniyor...</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP istemcisi sadece FTP veya FTPS destekliyor.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Geçerli FTP hesabı bulunamadı.</value>
   </data>
 </root>
