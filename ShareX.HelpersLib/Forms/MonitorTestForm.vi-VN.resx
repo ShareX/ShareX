@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,26 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>Màu 2</value>
-  </data>
-  <data name="btnGradientColor1.Text" xml:space="preserve">
-    <value>Màu 1</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Bạn có thể nhấn ra ngoài để ẩn/hiện khung này.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kiểm tra màn hình</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Đóng</value>
   </data>
-  <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>Kích thước:</value>
-  </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
     <value>Hộp thoại chọn màu...</value>
   </data>
-  <data name="cbShapes.Items" xml:space="preserve">
-    <value>Kẻ ca rô</value>
+  <data name="btnGradientColor1.Text" xml:space="preserve">
+    <value>Màu 1</value>
+  </data>
+  <data name="btnGradientColor2.Text" xml:space="preserve">
+    <value>Màu 2</value>
   </data>
   <data name="cbShapes.Items1" xml:space="preserve">
     <value>Vạch ngang</value>
@@ -144,16 +138,34 @@
   <data name="cbShapes.Items2" xml:space="preserve">
     <value>Vạch dọc</value>
   </data>
-  <data name="rbShapes.Text" xml:space="preserve">
-    <value>Hình dạng:</value>
-  </data>
-  <data name="rbRedGreenBlue.Text" xml:space="preserve">
-    <value>Đỏ, Xanh lục, Xanh dương (R,G,B):</value>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Bạn có thể nhấn ra ngoài để ẩn/hiện khung này.</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>Đen, Trắng:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Kiểm tra màn hình</value>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Gradient:</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>Đỏ, Xanh lục, Xanh dương (R,G,B):</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>Hình dạng:</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Kích thước:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>G:</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>B:</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Kẻ ca rô</value>
   </data>
 </root>

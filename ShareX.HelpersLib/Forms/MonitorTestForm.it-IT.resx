@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,44 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>Prova Screen Tearing</value>
-  </data>
-  <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>Colore 2</value>
-  </data>
-  <data name="btnGradientColor1.Text" xml:space="preserve">
-    <value>Colore 1</value>
-  </data>
   <data name="lblTip.Text" xml:space="preserve">
     <value>Clicca fuori per nascondere/mostrare questo pannello.</value>
   </data>
-  <data name="rbGradient.Text" xml:space="preserve">
-    <value>Gradiente:</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Chiudi</value>
-  </data>
-  <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>Dimensione:</value>
-  </data>
-  <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>Seleziona Colore...</value>
-  </data>
-  <data name="cbShapes.Items" xml:space="preserve">
-    <value>Linee Orizzontali</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
-    <value>Linee Verticali</value>
-  </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
-    <value>Scacchiera</value>
-  </data>
-  <data name="rbShapes.Text" xml:space="preserve">
-    <value>Forma:</value>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>B:</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
     <value>V:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R:</value>
   </data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
     <value>Rosso, Verde, Blu:</value>
@@ -164,5 +137,38 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Prova Monitor</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>Forma:</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>Linee Verticali</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Linee Orizzontali</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Gradiente:</value>
+  </data>
+  <data name="btnGradientColor2.Text" xml:space="preserve">
+    <value>Colore 2</value>
+  </data>
+  <data name="btnGradientColor1.Text" xml:space="preserve">
+    <value>Colore 1</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Dimensione:</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Prova Screen Tearing</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>Seleziona Colore...</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Scacchiera</value>
   </data>
 </root>

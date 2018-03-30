@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Dateiüberprüfung...</value>
+  </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Durchsuchen...</value>
+  </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Dateipfad:</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hashtyp:</value>
@@ -129,23 +138,23 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Ziel:</value>
   </data>
-  <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Dateipfad:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Dateihashüberprüfung</value>
   </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Kopiere alles</value>
   </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
+  </data>
   <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
     <value>Dekodieren</value>
   </data>
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
     <value>Dekodieren</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
   </data>
   <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
     <value>Dekodieren</value>
@@ -156,16 +165,16 @@
   <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
     <value>Dekodieren</value>
   </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>Binär:</value>
-  </data>
   <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
     <value>Kodieren</value>
   </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binär:</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
   <data name="tpTextConversions.Text" xml:space="preserve">
     <value>Textumwandlung</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Dateiüberprüfung...</value>
   </data>
 </root>

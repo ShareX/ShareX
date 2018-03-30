@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,17 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>이름</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>텍스트</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>값</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>파일 이름</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>이름 복사</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>파일 이름</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>값 복사</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>파일 이름 + 확장자</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>폴더</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>포럼용 (BBCode) 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크 걸린 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>HTML 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML 링크</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>HTML 링크 걸린 이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>이미지 미리보기</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>자세한 정보</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>열기</value>
@@ -138,65 +171,17 @@
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>섬네일 URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>삭제 URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
-    <value>파일 이름</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>폴더</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>복사</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
-    <value>텍스트</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML 링크</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>HTML 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML 링크 걸린 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>포럼용 (BBCode) 링크</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>포럼용 (BBCode) 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>포럼용 (BBCode) 링크 걸린 이미지</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>파일 경로</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>파일 이름</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>파일 이름 + 확장자</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>보기</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>이미지 미리보기</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>자세한 정보</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>삭제 URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URL들 ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML 링크 ({0})</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>복사</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>총: {0}</value>
@@ -204,10 +189,28 @@
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>필터됨: {0}</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>다음 XML 파일을 읽어 들일 때 오류가 발생했습니다: {0}</value>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>이름 복사</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>값 복사</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>값</value>
+  </data>
+  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
+    <value>HTML 링크 ({0})</value>
+  </data>
+  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
+    <value>URL들 ({0})</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>오류</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>다음 XML 파일을 읽어 들일 때 오류가 발생했습니다: {0}</value>
   </data>
 </root>

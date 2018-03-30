@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,86 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Tự thiết lập</value>
-  </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Đường dẫn tệp</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>Đường dẫn tệp không có phần mở rộng + "Phần mở rộng của tệp xuất ra"</value>
-  </data>
-  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Tiêu đề của cửa sổ đang kích hoạt</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Tên tiến trình của cửa sổ đang hoạt động</value>
-  </data>
-  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Năm hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>Năm hiện tại (2 chữ số)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>Tháng hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>Tên tháng hiện tại (Ngôn ngữ thiết lập trên máy)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>Tên tháng hiện tại (Tiếng Anh)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Ngày hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Giờ hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>Phút hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>Giây hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>Miligiây hiện tại</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>Lấy AM/PM (Sáng/Chiều)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Tên tuần hiện tại (Ngôn ngữ thiết lập trên máy)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Tên tuần hiện tại (Tiếng Anh)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>Dấu thời gian của Unix</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Số ngẫu nhiên từ 0 đến 9. Lặp lại dùng {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Kí tự hệ bảng chữ cái &amp; số. Lặp lại dùng {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Chiều rộng của ảnh</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Chiều cao của ảnh</value>
-  </data>
-  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>Tên tài khoản</value>
-  </data>
-  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Tên tài khoản đăng nhập</value>
-  </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>Tên máy tính</value>
-  </data>
-  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
-    <value>Dòng mới</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Duyệt đến một thư mục...</value>
@@ -261,6 +186,9 @@
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Tên tệp: {0}</value>
   </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Hủy bỏ</value>
   </data>
@@ -272,6 +200,9 @@
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Hue: {0:0.0}°, Tương phản: {1:0.0}%, Độ sáng: {2:0.0}%</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
   </data>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Nhập vào thất bại.</value>
@@ -434,6 +365,9 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Tùy chỉnh dịch vụ tải lên tệp tin</value>
   </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="FileDestination_SharedFolder" xml:space="preserve">
     <value>Thư mục được chia sẻ</value>
   </data>
@@ -457,6 +391,9 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Dịch vụ tải lên file</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Tùy chỉnh dịch vụ URL rút gọn</value>
@@ -714,8 +651,20 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Khác</value>
   </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Auto increment hexadecimal. 0 pad left using {n}</value>
+  </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Kí tự hệ cơ số 16. Lặp lại dùng {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Auto increment alphanumeric case-sensitive. 0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63)</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID ngẫu nhiên</value>
@@ -755,5 +704,83 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Công cụ</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>Năm hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>Năm hiện tại (2 chữ số)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Phút hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Tháng hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Tên tháng hiện tại (Ngôn ngữ thiết lập trên máy)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Tên tháng hiện tại (Tiếng Anh)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Miligiây hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>Giây hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>Tiêu đề của cửa sổ đang kích hoạt</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Tên máy tính</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Ngày hiện tại</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Giờ hiện tại</value>
+  </data>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>Tự thiết lập</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Chiều cao của ảnh</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>Dòng mới</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Dấu thời gian của Unix</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Tên tuần hiện tại (Ngôn ngữ thiết lập trên máy)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Tên tuần hiện tại (Tiếng Anh)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Chiều rộng của ảnh</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>Lấy AM/PM (Sáng/Chiều)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Tên tài khoản đăng nhập</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Tên tiến trình của cửa sổ đang hoạt động</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Số ngẫu nhiên từ 0 đến 9. Lặp lại dùng {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Kí tự hệ bảng chữ cái &amp; số. Lặp lại dùng {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Auto increment number. 0 pad left using {n}</value>
   </data>
 </root>

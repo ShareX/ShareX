@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,69 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Tài khoản mới</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Thư mục đã chọn:</value>
-  </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Đăng nhập thất bại.</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Đường dẫn tới album cha, v.d.</value>
-  </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Lỗi: Kết quả trống</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Lỗi</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Đã kết nối!</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Chưa thiết lập</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} đã được tạo thành công.</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Đã kết nối!
-Các thư mục đã tạo:</value>
-  </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Duyệt lấy tệp tin xác thực...</value>
-  </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Đang lấy các thư mục...</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>Đăng ký SendSpace</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Xác thực không hợp lệ</value>
-  </data>
-  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>Không thể tìm thấy vấn đề</value>
-  </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Đăng nhập thành công.</value>
-  </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Việc xác thực được yêu cầu.</value>
-  </data>
-  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Duyệt lấy tệp key...</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Không thể tìm thấy tài khoản FTP hợp lệ.</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Tên đường dẫn sẽ tạo</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Trình FTP ShareX</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Đang kết nối tới {0}</value>
@@ -187,25 +126,101 @@ Các thư mục đã tạo:</value>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Làm mới quá trình xác thực không được hỗ trợ.</value>
   </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Trình FTP chỉ hỗ trợ FTP và FTPS.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Đã thiết lập</value>
-  </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Lỗi khi Tweet</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Tên thiết bị không hợp lệ</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Trạng thái: Đăng nhập thất bại.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Làm mới danh sách thư mục thất bại</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Nhấn nút làm mới</value>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Lỗi</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Thư mục gốc</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Đăng nhập với tư cách {0}.</value>
+  </data>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>Trình FTP ShareX</value>
+  </data>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>Tên đường dẫn sẽ tạo</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>Không thể tìm thấy vấn đề</value>
+  </data>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>Duyệt lấy tệp key...</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
+    <value>Trạng thái: Đã đăng nhập.</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
+    <value>Trạng thái: Chưa đăng nhập.</value>
+  </data>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Tài khoản mới</value>
+  </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Lỗi khi Tweet</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>Trình FTP chỉ hỗ trợ FTP và FTPS.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Không thể tìm thấy tài khoản FTP hợp lệ.</value>
+  </data>
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
+    <value>Việc xác thực được yêu cầu.</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>Thư mục đã chọn:</value>
+  </data>
+  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
+    <value>Đăng nhập thất bại.</value>
+  </data>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Đăng nhập thành công.</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
+    <value>Đã thiết lập</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Xác thực không hợp lệ</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>Chưa thiết lập</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
+    <value>Chưa đăng nhập.</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Đang lấy các thư mục...</value>
+  </data>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} đã được tạo thành công.</value>
+  </data>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>Đăng ký SendSpace</value>
+  </data>
+  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
+    <value>Lỗi: Kết quả trống</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
+    <value>Đã kết nối!</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
+    <value>Đã kết nối!
+Các thư mục đã tạo:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Đường dẫn tới album cha, v.d.</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
+    <value>Nhấn nút làm mới</value>
   </data>
 </root>

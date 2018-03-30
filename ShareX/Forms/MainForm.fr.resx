@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -135,12 +135,6 @@
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Restant</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Ouvrir la page web de la campagne Patreon de ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Cacher le bouton Patreon de manière définitive</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Plein écran</value>
   </data>
@@ -150,14 +144,8 @@
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Écran</value>
   </data>
-  <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>Région</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Région (Simple)</value>
-  </data>
-  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Région (Transparent)</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Dernière région</value>
@@ -168,20 +156,8 @@
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>Enregistrement d'écran (GIF)</value>
   </data>
-  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
-    <value>Capture avec défilement...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Capture de texte (OCR)...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Capture automatique...</value>
-  </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capturer</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
     <value>Mettre en ligne un fichier...</value>
@@ -192,23 +168,14 @@
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Mettre en ligne depuis le presse-papier...</value>
   </data>
-  <data name="tsmiUploadText.Text" xml:space="preserve">
-    <value>Mettre en ligne un texte...</value>
-  </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
     <value>Mettre en ligne depuis une URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Mettre en ligne par glisser-déposer...</value>
   </data>
-  <data name="tsmiShortenURL.Text" xml:space="preserve">
-    <value>Raccourcir l'URL...</value>
-  </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Mettre en ligne</value>
-  </data>
-  <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>Sélecteur de couleurs...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran...</value>
@@ -222,20 +189,14 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Changeur de DNS...</value>
   </data>
-  <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>Règle...</value>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexeur de dossiers...</value>
   </data>
-  <data name="tsmiImageCombiner.Text" xml:space="preserve">
-    <value>Combineur d'images...</value>
-  </data>
-  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures d'image...</value>
-  </data>
-  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures de vidéo...</value>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Règle...</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>Client FTP...</value>
@@ -273,11 +234,11 @@
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Paramètres de destination...</value>
   </data>
-  <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Paramètres des tâches...</value>
-  </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Paramètres de l'application...</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Paramètres des tâches...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Paramètres des raccourcis clavier...</value>
@@ -290,9 +251,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Historique des images...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Nouveautés</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Journal de débogage...</value>
@@ -315,20 +273,11 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Déboguer</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Dons...</value>
-  </data>
-  <data name="tsbAbout.Text" xml:space="preserve">
-    <value>À propos...</value>
-  </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Afficher les erreurs</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Arrêter la mise en ligne</value>
-  </data>
-  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Entrée</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
     <value>URL raccourcie</value>
@@ -339,14 +288,8 @@
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>URL de suppression </value>
   </data>
-  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Entrée</value>
-  </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Fichier</value>
-  </data>
-  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Maj+Entrée</value>
   </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
     <value>Dossier</value>
@@ -365,9 +308,6 @@
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
     <value>URL de suppression </value>
-  </data>
-  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Maj+C</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Fichier</value>
@@ -399,18 +339,6 @@
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
     <value>Image liée pour forum (BBCode)</value>
   </data>
-  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
-    <value>Lien Markdown</value>
-  </data>
-  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
-    <value>Image Markdown</value>
-  </data>
-  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
-    <value>Image liée Markdown</value>
-  </data>
-  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Maj+C</value>
-  </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
     <value>Chemin du fichier</value>
   </data>
@@ -429,20 +357,8 @@
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
-  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
-    <value>Télécharger</value>
-  </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Modifier l'image...</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Suppr</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>Supprimer la tâche de la liste</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Maj+Suppr</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Supprimer le fichier local...</value>
@@ -453,17 +369,8 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Partager l'URL</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Rechercher une image avec Google...</value>
-  </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Afficher le QR code...</value>
-  </data>
-  <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>Image OCR...</value>
-  </data>
-  <data name="tsmiCombineImages.Text" xml:space="preserve">
-    <value>Combiner des images...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>Afficher la réponse...</value>
@@ -473,9 +380,6 @@
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Cacher le menu</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Cacher les colonnes</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Afficher</value>
@@ -498,14 +402,8 @@
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Écran</value>
   </data>
-  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>Région</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Région (Simple)</value>
-  </data>
-  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Région (Transparent)</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Dernière région</value>
@@ -516,20 +414,8 @@
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>Enregistrement d'écran (GIF)</value>
   </data>
-  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
-    <value>Capture avec défilement...</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Capture de texte (OCR)...</value>
-  </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Capture automatique...</value>
-  </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capturer</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
     <value>Mettre en ligne un fichier...</value>
@@ -540,23 +426,14 @@
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Mettre en ligne depuis le presse-papier...</value>
   </data>
-  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
-    <value>Mettre en ligne un texte...</value>
-  </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
     <value>Mettre en ligne depuis une URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Mettre en ligne par glisser-déposer...</value>
   </data>
-  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
-    <value>Raccourcir l'URL...</value>
-  </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Mettre en ligne</value>
-  </data>
-  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>Sélecteur de couleurs...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran...</value>
@@ -570,20 +447,14 @@
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Changeur de DNS...</value>
   </data>
-  <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>Règle...</value>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexeur de dossiers...</value>
   </data>
-  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
-    <value>Combineur d'images...</value>
-  </data>
-  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures d'image...</value>
-  </data>
-  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures de vidéo...</value>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Règle...</value>
   </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>Client FTP...</value>
@@ -621,17 +492,14 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Paramètres de destination...</value>
   </data>
-  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Paramètres des tâches...</value>
-  </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>Paramètres de l'application...</value>
   </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>Paramètres des tâches...</value>
+  </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Paramètres des raccourcis clavier...</value>
-  </data>
-  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
-    <value>Désactiver les raccourcis clavier</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Dossier des captures d'écran...</value>
@@ -641,6 +509,96 @@
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Historique des images...</value>
+  </data>
+  <data name="tsmiTrayDonate.Text" xml:space="preserve">
+    <value>Dons...</value>
+  </data>
+  <data name="tsmiTrayAbout.Text" xml:space="preserve">
+    <value>À propos...</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>Afficher la fenêtre de ShareX</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capturer</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capturer</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>Région</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>Région</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Sélecteur de couleurs...</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Région (Transparent)</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Sélecteur de couleurs...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Liens récents</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Région (Transparent)</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Capturer une page Web...</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Capturer une page Web...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Désactiver les raccourcis clavier</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures de vidéo...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures de vidéo...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Combineur d'images...</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Combineur d'images...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Capture avec défilement...</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Capture avec défilement...</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
     <value>Journal de débogage...</value>
@@ -663,25 +621,118 @@
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Déboguer</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Dons...</value>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Cacher les colonnes</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>À propos...</value>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Ouvrir la page web de la campagne Patreon de ShareX</value>
   </data>
-  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>Liens récents</value>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Cacher le bouton Patreon de manière définitive</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Capture de texte (OCR)...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Capture de texte (OCR)...</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Entrée</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Entrée</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Maj+Entrée</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Maj+C</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Maj+C</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Suppr</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Maj+Suppr</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Combiner des images...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Supprimer la tâche de la liste</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Image OCR...</value>
+  </data>
+  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
+    <value>Modifier l'image...</value>
+  </data>
+  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
+    <value>Modifier l'image...</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Rechercher une image avec Google...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Activer la barre d'outils des actions</value>
   </data>
-  <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>Afficher la fenêtre de ShareX</value>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Dons...</value>
   </data>
-  <data name="tsmiTrayExit.Text" xml:space="preserve">
-    <value>Quitter</value>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>À propos...</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Fermer</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Nouveautés</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Image Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Lien Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Image liée Markdown</value>
   </data>
 </root>
