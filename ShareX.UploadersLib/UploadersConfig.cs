@@ -430,6 +430,14 @@ namespace ShareX.UploadersLib
 
         #endregion polr
 
+        #region Firebase Dynamic Links
+
+        public string FirebaseWebAPIKey = "";
+        public string FirebaseDynamicLinkDomain = "";
+        public bool FirebaseIsShort = true;
+
+        #endregion Firebase Dynamic Links
+
         #endregion URL shorteners
 
         #region Other uploaders

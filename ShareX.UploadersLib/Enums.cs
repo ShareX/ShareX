@@ -173,6 +173,8 @@ namespace ShareX.UploadersLib
         TwoGP,
         [Description("Polr")]
         Polr,
+        [Description("Firebase Dynamic Links")]
+        FirebaseDynamicLinks,
         CustomURLShortener // Localized
     }
 

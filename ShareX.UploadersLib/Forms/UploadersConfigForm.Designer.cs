@@ -170,6 +170,13 @@
             this.lblPolrAPIKey = new System.Windows.Forms.Label();
             this.txtPolrAPIHostname = new System.Windows.Forms.TextBox();
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
+            this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
+            this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbFirebaseDomain = new System.Windows.Forms.Label();
+            this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
+            this.lbFirebaseWebAPIKey = new System.Windows.Forms.Label();
+            this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
@@ -651,6 +658,7 @@
             this.tpAdFly.SuspendLayout();
             this.tpCoinURL.SuspendLayout();
             this.tpPolr.SuspendLayout();
+            this.tpFirebaseDynamicLinks.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpFTP.SuspendLayout();
@@ -1534,6 +1542,7 @@
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
             this.tcURLShorteners.Controls.Add(this.tpCoinURL);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
+            this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
@@ -1766,6 +1775,55 @@
             // 
             resources.ApplyResources(this.lblPolrAPIHostname, "lblPolrAPIHostname");
             this.lblPolrAPIHostname.Name = "lblPolrAPIHostname";
+            // 
+            // tpFirebaseDynamicLinks
+            // 
+            this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseWebAPIKey);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.label1);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lbFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lbFirebaseWebAPIKey);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
+            resources.ApplyResources(this.tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
+            this.tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
+            this.tpFirebaseDynamicLinks.UseVisualStyleBackColor = true;
+            // 
+            // txtFirebaseWebAPIKey
+            // 
+            resources.ApplyResources(this.txtFirebaseWebAPIKey, "txtFirebaseWebAPIKey");
+            this.txtFirebaseWebAPIKey.Name = "txtFirebaseWebAPIKey";
+            this.txtFirebaseWebAPIKey.UseSystemPasswordChar = true;
+            this.txtFirebaseWebAPIKey.TextChanged += new System.EventHandler(this.txtFirebaseWebAPIKey_TextChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // lbFirebaseDomain
+            // 
+            resources.ApplyResources(this.lbFirebaseDomain, "lbFirebaseDomain");
+            this.lbFirebaseDomain.Name = "lbFirebaseDomain";
+            // 
+            // txtFirebaseDomain
+            // 
+            resources.ApplyResources(this.txtFirebaseDomain, "txtFirebaseDomain");
+            this.txtFirebaseDomain.Name = "txtFirebaseDomain";
+            this.txtFirebaseDomain.TextChanged += new System.EventHandler(this.txtFirebaseDomain_TextChanged);
+            // 
+            // lbFirebaseWebAPIKey
+            // 
+            resources.ApplyResources(this.lbFirebaseWebAPIKey, "lbFirebaseWebAPIKey");
+            this.lbFirebaseWebAPIKey.Name = "lbFirebaseWebAPIKey";
+            // 
+            // cbFirebaseIsShort
+            // 
+            resources.ApplyResources(this.cbFirebaseIsShort, "cbFirebaseIsShort");
+            this.cbFirebaseIsShort.Checked = true;
+            this.cbFirebaseIsShort.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbFirebaseIsShort.Name = "cbFirebaseIsShort";
+            this.cbFirebaseIsShort.UseVisualStyleBackColor = true;
+            this.cbFirebaseIsShort.CheckedChanged += new System.EventHandler(this.cbFirebaseIsShort_CheckedChanged);
             // 
             // tpFileUploaders
             // 
@@ -5181,6 +5239,8 @@
             this.tpCoinURL.PerformLayout();
             this.tpPolr.ResumeLayout(false);
             this.tpPolr.PerformLayout();
+            this.tpFirebaseDynamicLinks.ResumeLayout(false);
+            this.tpFirebaseDynamicLinks.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpFTP.ResumeLayout(false);
@@ -5910,5 +5970,12 @@
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
         private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
+        internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
+        private System.Windows.Forms.CheckBox cbFirebaseIsShort;
+        private System.Windows.Forms.Label lbFirebaseWebAPIKey;
+        private System.Windows.Forms.TextBox txtFirebaseDomain;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbFirebaseDomain;
+        private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
     }
 }
