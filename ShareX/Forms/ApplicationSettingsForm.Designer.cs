@@ -141,6 +141,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbEditWithShareX = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -392,6 +393,7 @@ namespace ShareX
             // 
             // gbWindows
             // 
+            this.gbWindows.Controls.Add(this.cbEditWithShareX);
             this.gbWindows.Controls.Add(this.cbStartWithWindows);
             this.gbWindows.Controls.Add(this.cbSendToMenu);
             this.gbWindows.Controls.Add(this.cbShellContextMenu);
@@ -1020,6 +1022,13 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbEditWithShareX
+            // 
+            resources.ApplyResources(this.cbEditWithShareX, "cbEditWithShareX");
+            this.cbEditWithShareX.Name = "cbEditWithShareX";
+            this.cbEditWithShareX.UseVisualStyleBackColor = true;
+            this.cbEditWithShareX.CheckedChanged += new System.EventHandler(this.cbEditWithShareX_CheckedChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1191,5 +1200,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbChromeExtensionSupport;
         private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
         private System.Windows.Forms.Button btnResetSettings;
+        private System.Windows.Forms.CheckBox cbEditWithShareX;
     }
 }

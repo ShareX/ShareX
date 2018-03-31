@@ -44,16 +44,21 @@ namespace ShareX
 
         private static readonly string ShellExtMenuFiles = @"Software\Classes\*\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFilesCmd = ShellExtMenuFiles + @"\command";
-
         private static readonly string ShellExtMenuDirectory = @"Software\Classes\Directory\shell\" + ApplicationName;
         private static readonly string ShellExtMenuDirectoryCmd = ShellExtMenuDirectory + @"\command";
-
         private static readonly string ShellExtMenuFolders = @"Software\Classes\Folder\shell\" + ApplicationName;
         private static readonly string ShellExtMenuFoldersCmd = ShellExtMenuFolders + @"\command";
-
         private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
         private static readonly string ShellExtIcon = ApplicationPath + ",0";
         private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
+
+        private static readonly string ShellExtEditMenuJpeg = @"Software\Classes\.jpg\shell\" + ApplicationName;
+        private static readonly string ShellExtEditMenuJpegCmd = ShellExtEditMenuJpeg + @"\command";
+        private static readonly string ShellExtEditMenuPng = @"Software\Classes\.png\shell\" + ApplicationName;
+        private static readonly string ShellExtEditMenuPngCmd = ShellExtEditMenuPng + @"\command";
+        private static readonly string ShellExtEditDesc = "Edit with ShareX"; // TODO: Translate
+        private static readonly string ShellExtEditIcon = ApplicationPath + ",0";
+        private static readonly string ShellExtEditPath = ApplicationPath + " -ImageEditor \"%1\"";
 
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
         private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
@@ -117,6 +122,57 @@ namespace ShareX
             RegistryHelpers.RemoveRegistry(ShellExtMenuFiles, true);
             RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory, true);
             RegistryHelpers.RemoveRegistry(ShellExtMenuFolders, true);
+        }
+
+        public static bool CheckEditShellContextMenuButton()
+        {
+            try
+            {
+                return RegistryHelpers.CheckRegistry(ShellExtEditMenuJpegCmd, null, ShellExtEditPath) && RegistryHelpers.CheckRegistry(ShellExtEditMenuPngCmd, null, ShellExtEditPath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreateEditShellContextMenuButton(bool create)
+        {
+            try
+            {
+                if (create)
+                {
+                    UnregisterEditShellContextMenuButton();
+                    RegisterEditShellContextMenuButton();
+                }
+                else
+                {
+                    UnregisterEditShellContextMenuButton();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterEditShellContextMenuButton()
+        {
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuJpeg, ShellExtEditDesc);
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuJpeg, "Icon", ShellExtEditIcon);
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuJpegCmd, ShellExtEditPath);
+
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuPng, ShellExtEditDesc);
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuPng, "Icon", ShellExtEditIcon);
+            RegistryHelpers.CreateRegistry(ShellExtEditMenuPngCmd, ShellExtEditPath);
+        }
+
+        private static void UnregisterEditShellContextMenuButton()
+        {
+            RegistryHelpers.RemoveRegistry(ShellExtEditMenuJpeg, true);
+            RegistryHelpers.RemoveRegistry(ShellExtEditMenuPng, true);
         }
 
         public static bool CheckCustomUploaderExtension()

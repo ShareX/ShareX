@@ -140,6 +140,7 @@ namespace ShareX
             gbFirefox.Visible = false;
 #else
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+            cbEditWithShareX.Checked = IntegrationHelpers.CheckEditShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
             btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
@@ -424,6 +425,14 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenu.Checked);
+            }
+        }
+
+        private void cbEditWithShareX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                IntegrationHelpers.CreateEditShellContextMenuButton(cbEditWithShareX.Checked);
             }
         }
 

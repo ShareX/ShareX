@@ -415,7 +415,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -655,7 +655,7 @@
     <value>1</value>
   </data>
   <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>8, 240</value>
   </data>
   <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -706,7 +706,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 312</value>
+    <value>8, 336</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -781,7 +781,7 @@
     <value>1</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>8, 144</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -803,6 +803,36 @@
   </data>
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="cbEditWithShareX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbEditWithShareX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbEditWithShareX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="cbEditWithShareX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 17</value>
+  </data>
+  <data name="cbEditWithShareX.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+  </data>
+  <data name="&gt;&gt;cbEditWithShareX.Name" xml:space="preserve">
+    <value>cbEditWithShareX</value>
+  </data>
+  <data name="&gt;&gt;cbEditWithShareX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbEditWithShareX.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;cbEditWithShareX.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -829,7 +859,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -838,7 +868,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 96</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
@@ -859,7 +889,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -889,13 +919,13 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 104</value>
+    <value>536, 128</value>
   </data>
   <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1717,7 +1747,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1828,7 +1858,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -1882,7 +1912,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -1936,7 +1966,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2920,7 +2950,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
