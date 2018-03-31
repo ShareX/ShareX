@@ -325,7 +325,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(fileName))
             {
-                string ext = Path.GetExtension(fileName).ToLower();
+                string ext = Path.GetExtension(fileName).ToLowerInvariant();
 
                 if (!string.IsNullOrEmpty(ext))
                 {
@@ -336,17 +336,11 @@ namespace ShareX.HelpersLib
                         return mimeType;
                     }
 
-                    using (RegistryKey regKey = Registry.ClassesRoot.OpenSubKey(ext))
-                    {
-                        if (regKey != null && regKey.GetValue("Content Type") != null)
-                        {
-                            mimeType = regKey.GetValue("Content Type").ToString();
+                    mimeType = RegistryHelpers.GetRegistryValue(ext, "Content Type", RegistryHive.ClassesRoot);
 
-                            if (!string.IsNullOrEmpty(mimeType))
-                            {
-                                return mimeType;
-                            }
-                        }
+                    if (!string.IsNullOrEmpty(mimeType))
+                    {
+                        return mimeType;
                     }
                 }
             }
@@ -1167,16 +1161,11 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                RegistryKey rk = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+                string productName = RegistryHelpers.GetRegistryValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
 
-                if (rk != null)
+                if (!string.IsNullOrEmpty(productName))
                 {
-                    string productName = rk.GetValue("ProductName") as string;
-
-                    if (!string.IsNullOrEmpty(productName))
-                    {
-                        return productName;
-                    }
+                    return productName;
                 }
             }
             catch
