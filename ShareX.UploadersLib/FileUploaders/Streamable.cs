@@ -29,7 +29,6 @@ using ShareX.UploadersLib.Properties;
 using Shell32;
 using System;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
