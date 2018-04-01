@@ -39,6 +39,7 @@ namespace ShareX.HelpersLib
             AddDNS(Resources.DNSChangerForm_DNSChangerForm_Manual);
             AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/
             AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // https://www.opendns.com
+            AddDNS("Cloudflare", "1.1.1.1", "1.0.0.1"); // https://1.1.1.1
             AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com
             AddDNS("Norton ConnectSafe", "199.85.126.10", "199.85.127.10"); // https://dns.norton.com
             AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // https://www.comodo.com/secure-dns/
