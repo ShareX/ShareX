@@ -312,8 +312,6 @@ namespace ShareX.UploadersLib
 
             #region Gist
 
-            atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
-
             if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
             {
                 oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
@@ -1254,12 +1252,6 @@ namespace ShareX.UploadersLib
         #endregion Paste.ee
 
         #region Gist
-
-        private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
-            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
-        }
 
         private void oAuth2Gist_OpenButtonClicked()
         {

@@ -531,7 +531,6 @@
             this.cbGistUseRawURL = new System.Windows.Forms.CheckBox();
             this.cbGistPublishPublic = new System.Windows.Forms.CheckBox();
             this.oAuth2Gist = new ShareX.UploadersLib.OAuthControl();
-            this.atcGistAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpUpaste = new System.Windows.Forms.TabPage();
             this.cbUpasteIsPublic = new System.Windows.Forms.CheckBox();
             this.lblUpasteUserKey = new System.Windows.Forms.Label();
@@ -4375,7 +4374,6 @@
             this.tpGist.Controls.Add(this.cbGistUseRawURL);
             this.tpGist.Controls.Add(this.cbGistPublishPublic);
             this.tpGist.Controls.Add(this.oAuth2Gist);
-            this.tpGist.Controls.Add(this.atcGistAccountType);
             resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
             // 
@@ -4416,19 +4414,12 @@
             // 
             // oAuth2Gist
             // 
-            resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.IsRefreshable = false;
+            resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.Name = "oAuth2Gist";
             this.oAuth2Gist.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
             this.oAuth2Gist.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Gist_ClearButtonClicked);
-            // 
-            // atcGistAccountType
-            // 
-            resources.ApplyResources(this.atcGistAccountType, "atcGistAccountType");
-            this.atcGistAccountType.Name = "atcGistAccountType";
-            this.atcGistAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcGistAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
             // 
             // tpUpaste
             // 
@@ -5486,7 +5477,6 @@
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
         private System.Windows.Forms.CheckBox cbGistPublishPublic;
         private OAuthControl oAuth2Gist;
-        private AccountTypeControl atcGistAccountType;
         private System.Windows.Forms.CheckBox cbUpasteIsPublic;
         private System.Windows.Forms.Label lblUpasteUserKey;
         private System.Windows.Forms.TextBox txtUpasteUserKey;
