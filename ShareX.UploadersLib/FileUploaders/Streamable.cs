@@ -26,7 +26,10 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
+using Shell32;
+using System;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -85,7 +88,29 @@ namespace ShareX.UploadersLib.FileUploaders
                 headers = CreateAuthenticationHeader(Email, Password);
             }
 
-            UploadResult result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
+            UploadResult result;
+
+            if (IsVideoFile(fileName))
+            {
+                bool isOverSize, isOverDuration = false;
+                FileStream fs = stream as FileStream;
+                GetDuration(fs.Name, out TimeSpan duration);
+                isOverDuration = duration > TimeSpan.FromMinutes(10); // video is over 10 minutes
+                isOverSize = new FileInfo(fs.Name).Length > 1073741824; // file is over 10GB
+
+                if (isOverSize || isOverDuration)
+                {
+                    result = new UploadResult
+                    {
+                        IsSuccess = false,
+                        Response = "There is a 10 minute limit on video duration and a maximum file size of 1GB for direct file uploads."
+                    };
+                    Errors.Add("Video size or duration over Streamable limit(1GB and 10 minutes)");
+                    return result;
+                }
+            }
+            
+            result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
 
             TranscodeFile(result);
 
@@ -154,6 +179,65 @@ namespace ShareX.UploadersLib.FileUploaders
                 Errors.Add("Could not create video");
                 result.IsSuccess = false;
             }
+        }
+        private bool GetDuration(string filename, out TimeSpan duration)
+        {
+            try
+            {
+                var shl = new Shell();
+                var fldr = shl.NameSpace(Path.GetDirectoryName(filename));
+                var itm = fldr.ParseName(Path.GetFileName(filename));
+
+                // Index 27 is the video duration [This may not always be the case]
+                var propValue = fldr.GetDetailsOf(itm, 27);
+
+                return TimeSpan.TryParse(propValue, out duration);
+            }
+            catch (Exception)
+            {
+                duration = new TimeSpan();
+                return false;
+            }
+        }
+        private string[] videoExtensions = {
+            "3g2",
+            "3gp",
+            "aaf",
+            "asf",
+            "avchd",
+            "avi",
+            "drc",
+            "flv",
+            "m2v",
+            "m4p",
+            "m4v",
+            "mkv",
+            "mng",
+            "mov",
+            "mp2",
+            "mp4",
+            "mpe",
+            "mpeg",
+            "mpg",
+            "mpv",
+            "mxf",
+            "nsv",
+            "ogg",
+            "ogv",
+            "qt",
+            "rm",
+            "rmvb",
+            "roq",
+            "svi",
+            "vob",
+            "webm",
+            "wmv",
+            "yuv"
+        };
+
+        private bool IsVideoFile(string path)
+        {
+            return -1 != Array.IndexOf(videoExtensions, Path.GetExtension(path).ToUpperInvariant());
         }
     }
 
