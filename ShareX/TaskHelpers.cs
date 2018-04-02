@@ -135,10 +135,10 @@ namespace ShareX
                     OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
-                    OpenAutoCapture();
+                    OpenAutoCapture(safeTaskSettings);
                     break;
                 case HotkeyType.StartAutoCapture:
-                    StartAutoCapture();
+                    StartAutoCapture(safeTaskSettings);
                     break;
                 // Screen record
                 case HotkeyType.ScreenRecorder:
@@ -653,8 +653,11 @@ namespace ShareX
             scrollingCaptureForm.Show();
         }
 
-        public static void OpenAutoCapture()
+        public static void OpenAutoCapture(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            AutoCaptureForm.Instance.TaskSettings = taskSettings;
             AutoCaptureForm.Instance.ForceActivate();
         }
 
@@ -674,11 +677,14 @@ namespace ShareX
             webpageCaptureForm.Show();
         }
 
-        public static void StartAutoCapture()
+        public static void StartAutoCapture(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             if (!AutoCaptureForm.IsRunning)
             {
                 AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.TaskSettings = taskSettings;
                 form.Show();
                 form.Execute();
             }

@@ -51,6 +51,7 @@ namespace ShareX
         }
 
         public static bool IsRunning { get; private set; }
+        public TaskSettings TaskSettings { get; internal set; }
 
         private bool isLoaded;
         private Timer statusTimer;
@@ -107,7 +108,15 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                TaskSettings taskSettings;
+                if(this.TaskSettings != null)
+                {
+                    taskSettings = this.TaskSettings;
+                }
+                else
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
 
                 Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
 
