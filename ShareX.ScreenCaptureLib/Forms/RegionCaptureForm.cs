@@ -236,6 +236,8 @@ namespace ShareX.ScreenCaptureLib
             MouseDown += RegionCaptureForm_MouseDown;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
+            LostFocus += RegionCaptureForm_LostFocus;
+            GotFocus += RegionCaptureForm_GotFocus;
             FormClosing += RegionCaptureForm_FormClosing;
 
             ResumeLayout(false);
@@ -478,6 +480,16 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
         {
             OnMoved();
+        }
+
+        private void RegionCaptureForm_GotFocus(object sender, EventArgs e)
+        {
+            Resume();
+        }
+
+        private void RegionCaptureForm_LostFocus(object sender, EventArgs e)
+        {
+            Pause();
         }
 
         private void RegionCaptureForm_FormClosing(object sender, FormClosingEventArgs e)

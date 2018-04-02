@@ -76,6 +76,8 @@ namespace ShareX.ScreenCaptureLib
             menuForm.KeyDown += MenuForm_KeyDown;
             menuForm.KeyUp += MenuForm_KeyUp;
             menuForm.LocationChanged += MenuForm_LocationChanged;
+            menuForm.GotFocus += MenuForm_GotFocus;
+            menuForm.LostFocus += MenuForm_LostFocus;
 
             menuForm.SuspendLayout();
 
@@ -1022,6 +1024,16 @@ namespace ShareX.ScreenCaptureLib
         private void MenuForm_LocationChanged(object sender, EventArgs e)
         {
             CheckMenuPosition();
+        }
+
+        private void MenuForm_GotFocus(object sender, EventArgs e)
+        {
+            Form.Resume();
+        }
+
+        private void MenuForm_LostFocus(object sender, EventArgs e)
+        {
+            Form.Pause();
         }
 
         private void TsMain_MouseLeave(object sender, EventArgs e)
