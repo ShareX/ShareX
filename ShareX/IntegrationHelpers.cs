@@ -39,34 +39,34 @@ namespace ShareX
 {
     public static class IntegrationHelpers
     {
-        private static readonly string ApplicationPath = string.Format("\"{0}\"", Application.ExecutablePath);
+        private static readonly string ApplicationPath = $"\"{Application.ExecutablePath}\"";
 
         private static readonly string ShellExtMenuName = "ShareX";
-        private static readonly string ShellExtMenuFiles = @"Software\Classes\*\shell\" + ShellExtMenuName;
-        private static readonly string ShellExtMenuFilesCmd = ShellExtMenuFiles + @"\command";
-        private static readonly string ShellExtMenuDirectory = @"Software\Classes\Directory\shell\" + ShellExtMenuName;
-        private static readonly string ShellExtMenuDirectoryCmd = ShellExtMenuDirectory + @"\command";
-        private static readonly string ShellExtMenuFolders = @"Software\Classes\Folder\shell\" + ShellExtMenuName;
-        private static readonly string ShellExtMenuFoldersCmd = ShellExtMenuFolders + @"\command";
+        private static readonly string ShellExtMenuFiles = $@"Software\Classes\*\shell\{ShellExtMenuName}";
+        private static readonly string ShellExtMenuFilesCmd = $@"{ShellExtMenuFiles}\command";
+        private static readonly string ShellExtMenuDirectory = $@"Software\Classes\Directory\shell\{ShellExtMenuName}";
+        private static readonly string ShellExtMenuDirectoryCmd = $@"{ShellExtMenuDirectory}\command";
+        private static readonly string ShellExtMenuFolders = $@"Software\Classes\Folder\shell\{ShellExtMenuName}";
+        private static readonly string ShellExtMenuFoldersCmd = $@"{ShellExtMenuFolders}\command";
         private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
-        private static readonly string ShellExtIcon = ApplicationPath + ",0";
-        private static readonly string ShellExtPath = ApplicationPath + " \"%1\"";
+        private static readonly string ShellExtIcon = $"{ApplicationPath},0";
+        private static readonly string ShellExtPath = $"{ApplicationPath} \"%1\"";
 
         private static readonly string ShellExtEditName = "ShareXImageEditor";
-        private static readonly string ShellExtEditImage = @"Software\Classes\SystemFileAssociations\image\shell\" + ShellExtEditName;
-        private static readonly string ShellExtEditImageCmd = ShellExtEditImage + @"\command";
+        private static readonly string ShellExtEditImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtEditName}";
+        private static readonly string ShellExtEditImageCmd = $@"{ShellExtEditImage}\command";
         private static readonly string ShellExtEditDesc = "Edit with ShareX"; // TODO: Translate
-        private static readonly string ShellExtEditIcon = ApplicationPath + ",0";
-        private static readonly string ShellExtEditPath = ApplicationPath + " -ImageEditor \"%1\"";
+        private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
+        private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
         private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
-        private static readonly string ShellCustomUploaderAssociatePath = @"Software\Classes\" + ShellCustomUploaderExtensionValue;
+        private static readonly string ShellCustomUploaderAssociatePath = $@"Software\Classes\{ShellCustomUploaderExtensionValue}";
         private static readonly string ShellCustomUploaderAssociateValue = "ShareX custom uploader";
-        private static readonly string ShellCustomUploaderIconPath = ShellCustomUploaderAssociatePath + @"\DefaultIcon";
-        private static readonly string ShellCustomUploaderIconValue = ApplicationPath + ",0";
-        private static readonly string ShellCustomUploaderCommandPath = ShellCustomUploaderAssociatePath + @"\shell\open\command";
-        private static readonly string ShellCustomUploaderCommandValue = ApplicationPath + " -CustomUploader \"%1\"";
+        private static readonly string ShellCustomUploaderIconPath = $@"{ShellCustomUploaderAssociatePath}\DefaultIcon";
+        private static readonly string ShellCustomUploaderIconValue = $"{ApplicationPath},0";
+        private static readonly string ShellCustomUploaderCommandPath = $@"{ShellCustomUploaderAssociatePath}\shell\open\command";
+        private static readonly string ShellCustomUploaderCommandValue = $"{ApplicationPath} -CustomUploader \"%1\"";
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
         private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
@@ -75,7 +75,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) && RegistryHelpers.CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
+                return RegistryHelpers.CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) &&
+                    RegistryHelpers.CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
             }
             catch (Exception e)
             {
@@ -224,7 +225,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) && File.Exists(Program.ChromeHostManifestFilePath);
+                return RegistryHelpers.CheckRegistry(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
+                    File.Exists(Program.ChromeHostManifestFilePath);
             }
             catch (Exception e)
             {
@@ -293,7 +295,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) && File.Exists(Program.FirefoxHostManifestFilePath);
+                return RegistryHelpers.CheckRegistry(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
+                    File.Exists(Program.FirefoxHostManifestFilePath);
             }
             catch (Exception e)
             {
@@ -403,6 +406,7 @@ namespace ShareX
         {
             StartupManagerSingletonProvider.CurrentStartupManager.State = StartupTaskState.Disabled;
             CreateShellContextMenuButton(false);
+            CreateEditShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateSendToMenuButton(false);
         }
