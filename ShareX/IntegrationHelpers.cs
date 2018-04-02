@@ -46,8 +46,6 @@ namespace ShareX
         private static readonly string ShellExtMenuFilesCmd = $@"{ShellExtMenuFiles}\command";
         private static readonly string ShellExtMenuDirectory = $@"Software\Classes\Directory\shell\{ShellExtMenuName}";
         private static readonly string ShellExtMenuDirectoryCmd = $@"{ShellExtMenuDirectory}\command";
-        private static readonly string ShellExtMenuFolders = $@"Software\Classes\Folder\shell\{ShellExtMenuName}";
-        private static readonly string ShellExtMenuFoldersCmd = $@"{ShellExtMenuFolders}\command";
         private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
         private static readonly string ShellExtIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtPath = $"{ApplicationPath} \"%1\"";
@@ -121,7 +119,6 @@ namespace ShareX
         {
             RegistryHelpers.RemoveRegistry(ShellExtMenuFiles, true);
             RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory, true);
-            RegistryHelpers.RemoveRegistry(ShellExtMenuFolders, true);
         }
 
         public static bool CheckEditShellContextMenuButton()
