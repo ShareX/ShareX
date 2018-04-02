@@ -108,35 +108,25 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                TaskSettings taskSettings;
-                if(this.TaskSettings != null)
-                {
-                    taskSettings = this.TaskSettings;
-                }
-                else
-                {
-                    taskSettings = TaskSettings.GetDefaultTaskSettings();
-                }
-
-                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+                Image img = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rect);
 
                 if (img != null)
                 {
-                    taskSettings.UseDefaultAfterCaptureJob = false;
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
-                    taskSettings.UseDefaultAdvancedSettings = false;
-                    taskSettings.AdvancedSettings.DisableNotifications = true;
+                    TaskSettings.UseDefaultAfterCaptureJob = false;
+                    TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
+                    TaskSettings.UseDefaultAdvancedSettings = false;
+                    TaskSettings.AdvancedSettings.DisableNotifications = true;
 
-                    UploadManager.RunImageTask(img, taskSettings, true, true);
+                    UploadManager.RunImageTask(img, TaskSettings, true, true);
                 }
             }
         }
 
-        private void SelectRegion(TaskSettings taskSettings)
+        private void SelectRegion()
         {
             Rectangle rect;
 
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();
@@ -217,8 +207,7 @@ namespace ShareX
 
         private void btnRegion_Click(object sender, EventArgs e)
         {
-            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-            SelectRegion(taskSettings);
+            SelectRegion();
         }
 
         private void nudDuration_ValueChanged(object sender, EventArgs e)
