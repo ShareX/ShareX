@@ -48,8 +48,8 @@ namespace ShareX.ScreenCaptureLib
         private bool shouldDraw = true;
         private bool shouldDrawBefore = true;
         private Stopwatch changeTime;
-        private int opacityLast = 255;
-        private int opacityCurrent = 255;
+        private int opacityLast;
+        private int opacityCurrent;
         private RegionCaptureForm form;
 
         public ImageEditorScrollbar(Orientation orientation, RegionCaptureForm form)
@@ -59,10 +59,10 @@ namespace ShareX.ScreenCaptureLib
 
             changeTime = Stopwatch.StartNew();
 
-            if (form.ClientArea.Contains(form.CanvasRectangle))
+            if (!form.ClientArea.Contains(form.CanvasRectangle))
             {
-                opacityLast = 0;
-                opacityCurrent = 0;
+                opacityLast = 255;
+                opacityCurrent = 255;
             }
         }
 
@@ -75,24 +75,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 shouldDraw = form.ShapeManager.IsPanning && (form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right);
 
-                if (shouldDraw != shouldDrawBefore)
-                {
-                    changeTime = Stopwatch.StartNew();
-                    opacityLast = opacityCurrent;
-                }
-                shouldDrawBefore = shouldDraw;
-
-                if (shouldDraw)
-                {
-                    opacityCurrent = opacityLast + OpacityGain(changeTime);
-                }
-                else
-                {
-                    opacityCurrent = opacityLast - OpacityLoss(changeTime);
-                }
-                opacityCurrent = opacityCurrent.Between(0, 255);
-
-                Visible = opacityCurrent > 0;
+                UpdateOpacity();
 
                 if (Visible)
                 {
@@ -114,24 +97,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 shouldDraw = form.ShapeManager.IsPanning && (form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom);
 
-                if (shouldDraw != shouldDrawBefore)
-                {
-                    changeTime = Stopwatch.StartNew();
-                    opacityLast = opacityCurrent;
-                }
-                shouldDrawBefore = shouldDraw;
+                UpdateOpacity();
 
-                if (shouldDraw)
-                {
-                    opacityCurrent = opacityLast + OpacityGain(changeTime);
-                }
-                else
-                {
-                    opacityCurrent = opacityLast - OpacityLoss(changeTime);
-                }
-                opacityCurrent = opacityCurrent.Between(0, 255);
-
-                Visible = opacityCurrent > 0;
                 if (Visible)
                 {
                     int verticalTrackLength = form.ClientArea.Height - Margin * 2 - Thickness - Padding * 2;
@@ -162,6 +129,30 @@ namespace ShareX.ScreenCaptureLib
                 g.DrawCapsule(thumbBrush, ThumbRectangle);
                 g.SmoothingMode = SmoothingMode.None;
             }
+        }
+
+        private void UpdateOpacity()
+        {
+            if (shouldDraw != shouldDrawBefore)
+            {
+                changeTime = Stopwatch.StartNew();
+                opacityLast = opacityCurrent;
+            }
+
+            shouldDrawBefore = shouldDraw;
+
+            if (shouldDraw)
+            {
+                opacityCurrent = opacityLast + OpacityGain(changeTime);
+            }
+            else
+            {
+                opacityCurrent = opacityLast - OpacityLoss(changeTime);
+            }
+
+            opacityCurrent = opacityCurrent.Between(0, 255);
+
+            Visible = opacityCurrent > 0;
         }
 
         private int OpacityGain(Stopwatch changeTime)
