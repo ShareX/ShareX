@@ -35,23 +35,19 @@ namespace ShareX.ScreenCaptureLib
         private RegionCaptureForm form;
         private ImageEditorScrollbar horizontalScrollbar, verticalScrollbar;
 
-        public ScrollbarManager(RegionCaptureForm regionCaptureForm)
+        public ScrollbarManager(RegionCaptureForm regionCaptureForm, ShapeManager shapeManager)
         {
             form = regionCaptureForm;
             horizontalScrollbar = new ImageEditorScrollbar(Orientation.Horizontal, form);
+            shapeManager.DrawableObjects.Add(horizontalScrollbar);
             verticalScrollbar = new ImageEditorScrollbar(Orientation.Vertical, form);
+            shapeManager.DrawableObjects.Add(verticalScrollbar);
         }
 
         public void Update()
         {
             horizontalScrollbar.Update();
             verticalScrollbar.Update();
-        }
-
-        public void Draw(Graphics g)
-        {
-            horizontalScrollbar.OnDraw(g);
-            verticalScrollbar.OnDraw(g);
         }
     }
 }

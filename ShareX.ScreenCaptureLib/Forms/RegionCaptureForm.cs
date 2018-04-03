@@ -105,7 +105,6 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
-        private ScrollbarManager scrollbarManager;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
@@ -129,19 +128,14 @@ namespace ShareX.ScreenCaptureLib
                 Duration = TimeSpan.FromMilliseconds(200)
             };
 
-            if (IsEditorMode)
+            if (IsEditorMode && Options.ShowEditorPanTip)
             {
-                scrollbarManager = new ScrollbarManager(this);
-
-                if (Options.ShowEditorPanTip)
+                editorPanTipAnimation = new TextAnimation()
                 {
-                    editorPanTipAnimation = new TextAnimation()
-                    {
-                        Duration = TimeSpan.FromMilliseconds(5000),
-                        FadeOutDuration = TimeSpan.FromMilliseconds(1000),
-                        Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
-                    };
-                }
+                    Duration = TimeSpan.FromMilliseconds(5000),
+                    FadeOutDuration = TimeSpan.FromMilliseconds(1000),
+                    Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
+                };
             }
 
             borderPen = new Pen(Color.Black);
@@ -673,11 +667,6 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
-
-            if (scrollbarManager != null)
-            {
-                scrollbarManager.Update();
-            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -870,12 +859,6 @@ namespace ShareX.ScreenCaptureLib
             if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
             {
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
-            }
-
-            // Draw scroll bars
-            if (scrollbarManager != null)
-            {
-                scrollbarManager.Draw(g);
             }
         }
 
