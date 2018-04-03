@@ -59,33 +59,33 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Orientation == Orientation.Horizontal)
                 {
-                    int horizontalTrackLength = form.ClientArea.Width - Margin * 2 - Thickness - Padding * 2;
-                    int horizontalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Width / form.CanvasRectangle.Width * horizontalTrackLength));
+                    int horizontalTrackLength = form.ClientArea.Width - Margin * 2 - Padding * 2 - Thickness;
 
-                    Rectangle = new Rectangle(new Point(Margin - Padding, form.ClientArea.Bottom - (Thickness + Margin) - Padding),
-                        new Size(horizontalTrackLength + Padding * 2, Thickness + Padding * 2));
+                    Rectangle = new Rectangle(Margin, form.ClientArea.Bottom - Margin - Padding * 2 - Thickness - 1, horizontalTrackLength, Padding * 2 + Thickness);
+
+                    int horizontalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Width /
+                        form.CanvasRectangle.Width * (horizontalTrackLength - Padding * 2)));
 
                     double limitHorizontal = (horizontalTrackLength - horizontalThumbLength) / 2.0f;
-                    double thumbHorizontalPositionX = Math.Round(Rectangle.X + Rectangle.Width / 2.0f - (horizontalThumbLength / 2.0f) -
-                        Math.Min(limitHorizontal, Math.Max(-limitHorizontal, form.CanvasCenterOffset.X / form.CanvasRectangle.Width * horizontalTrackLength)));
+                    double thumbHorizontalPositionX = Math.Round(Rectangle.X + Rectangle.Width / 2.0f - (horizontalThumbLength / 2.0f) + Padding -
+                        Math.Min(limitHorizontal, Math.Max(-limitHorizontal, form.CanvasCenterOffset.X / form.CanvasRectangle.Width * (horizontalTrackLength - Padding * 2))));
 
-                    ThumbRectangle = new Rectangle(new Point((int)thumbHorizontalPositionX, form.ClientArea.Bottom - (Thickness + Margin)),
-                        new Size(horizontalThumbLength, Thickness));
+                    ThumbRectangle = new Rectangle((int)thumbHorizontalPositionX, form.ClientArea.Bottom - Margin - Padding - Thickness - 1, horizontalThumbLength, Thickness);
                 }
                 else
                 {
-                    int verticalTrackLength = form.ClientArea.Height - Margin * 2 - Thickness - Padding * 2;
-                    int verticalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Height / form.CanvasRectangle.Height * verticalTrackLength));
+                    int verticalTrackLength = form.ClientArea.Height - Margin * 2 - Padding * 2 - Thickness;
 
-                    Rectangle = new Rectangle(new Point(form.ClientArea.Right - (Thickness + Margin) - Padding, Margin - Padding),
-                        new Size(Thickness + Padding * 2, verticalTrackLength + Padding * 2));
+                    Rectangle = new Rectangle(form.ClientArea.Right - Margin - Padding * 2 - Thickness - 1, Margin, Padding * 2 + Thickness, verticalTrackLength);
+
+                    int verticalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Height /
+                        form.CanvasRectangle.Height * (verticalTrackLength - Padding * 2)));
 
                     double limitVertical = (verticalTrackLength - verticalThumbLength) / 2.0f;
-                    double thumbVerticalPositionY = Math.Round(Rectangle.Y + Rectangle.Height / 2.0f - (verticalThumbLength / 2.0f) -
+                    double thumbVerticalPositionY = Math.Round(Rectangle.Y + Rectangle.Height / 2.0f - (verticalThumbLength / 2.0f) + Padding -
                         Math.Min(limitVertical, Math.Max(-limitVertical, form.CanvasCenterOffset.Y / form.CanvasRectangle.Height * verticalTrackLength)));
 
-                    ThumbRectangle = new Rectangle(new Point(form.ClientArea.Right - (Thickness + Margin), (int)thumbVerticalPositionY),
-                        new Size(Thickness, verticalThumbLength));
+                    ThumbRectangle = new Rectangle(form.ClientArea.Right - Margin - Padding - Thickness - 1, (int)thumbVerticalPositionY, Thickness, verticalThumbLength);
                 }
             }
         }
@@ -113,7 +113,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                Opacity = 0.7f;
+                Opacity = 0.8f;
             }
 
             Visible = Opacity > 0;
@@ -131,6 +131,13 @@ namespace ShareX.ScreenCaptureLib
                 g.DrawCapsule(thumbBrush, ThumbRectangle);
                 g.SmoothingMode = SmoothingMode.None;
             }
+        }
+
+        public override void OnMouseDown(Point position)
+        {
+            base.OnMouseDown(position);
+
+            // Pan here
         }
     }
 }
