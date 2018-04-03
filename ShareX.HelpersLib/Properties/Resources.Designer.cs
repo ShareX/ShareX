@@ -253,6 +253,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scan QR code.
+        /// </summary>
+        internal static string AfterCaptureTasks_ScanQRCode {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_ScanQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Print image.
         /// </summary>
         internal static string AfterCaptureTasks_SendImageToPrinter {

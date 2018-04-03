@@ -1010,7 +1010,7 @@ namespace ShareX
 
         public static void OpenQRCode()
         {
-            new QRCodeForm().Show();
+            QRCodeForm.EncodeClipboard().Show();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1336,6 +1336,8 @@ namespace ShareX
                         return Resources.clipboard_list;
                     case AfterCaptureTasks.ShowInExplorer:
                         return Resources.folder_stand;
+                    case AfterCaptureTasks.ScanQRCode:
+                        return Resources.barcode_2d;
                     case AfterCaptureTasks.DoOCR:
                         return Resources.edit_drop_cap;
                     case AfterCaptureTasks.ShowBeforeUploadWindow:

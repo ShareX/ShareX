@@ -1160,4 +1160,7 @@ Would you like to download it?</value>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Browse for a sound file...</value>
   </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>Scan QR code</value>
+  </data>
 </root>
