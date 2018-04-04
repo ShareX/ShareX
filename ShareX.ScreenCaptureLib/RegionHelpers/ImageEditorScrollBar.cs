@@ -41,6 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public Color TrackColor { get; set; } = Color.FromArgb(49, 54, 66);
         public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104);
         public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
+        public bool AutoHide { get; set; } = true;
         public Rectangle ThumbRectangle { get; private set; }
 
         private RegionCaptureForm form;
@@ -53,7 +54,25 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            UpdateOpacity();
+            if (AutoHide)
+            {
+                bool isScrollbarNeeded;
+
+                if (Orientation == Orientation.Horizontal)
+                {
+                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right;
+                }
+                else
+                {
+                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
+                }
+
+                Visible = isScrollbarNeeded || IsDragging;
+            }
+            else
+            {
+                Visible = true;
+            }
 
             if (Visible)
             {
@@ -108,22 +127,6 @@ namespace ShareX.ScreenCaptureLib
                     ThumbRectangle = new Rectangle(thumbSideOffset, thumbPosition, Thickness, thumbLength);
                 }
             }
-        }
-
-        private void UpdateOpacity()
-        {
-            bool isScrollbarNeeded;
-
-            if (Orientation == Orientation.Horizontal)
-            {
-                isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right;
-            }
-            else
-            {
-                isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
-            }
-
-            Visible = isScrollbarNeeded || IsDragging;
         }
 
         public override void OnDraw(Graphics g)
