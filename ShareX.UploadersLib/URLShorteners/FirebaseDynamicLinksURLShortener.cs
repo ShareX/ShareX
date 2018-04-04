@@ -60,8 +60,8 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             UploadResult result = new UploadResult { URL = url };
 
-            string RequestUrl = BrowserProtocol.https + "firebasedynamiclinks.googleapis.com/v1/shortLinks";
-            string longDynamicLink = BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url;
+            string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
+            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + url);
             string option;
 
             Dictionary<string, string> args = new Dictionary<string, string>
