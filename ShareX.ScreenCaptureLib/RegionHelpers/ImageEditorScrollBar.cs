@@ -34,14 +34,13 @@ namespace ShareX.ScreenCaptureLib
     internal class ImageEditorScrollbar : DrawableObject
     {
         public Orientation Orientation { get; set; }
-        public int Thickness { get; set; } = 15; //10;
-        public int Margin { get; set; } = 5; //15;
-        public int Padding { get; set; } = 1; //2;
-        public bool IsCapsule { get; set; } = true; //true;
-        public Color TrackColor { get; set; } = Color.FromArgb(49, 54, 66); //60, 60, 60);
-        public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104); //130, 130, 130);
+        public int Thickness { get; set; } = 15;
+        public int Margin { get; set; } = 5;
+        public int Padding { get; set; } = 1;
+        public bool IsCapsule { get; set; } = true;
+        public Color TrackColor { get; set; } = Color.FromArgb(49, 54, 66);
+        public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104);
         public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
-        public float Opacity { get; private set; }
         public Rectangle ThumbRectangle { get; private set; }
 
         private RegionCaptureForm form;
@@ -92,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
                 int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
                 double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
                 int thumbPosition = (int)Math.Round(Margin + trackLength / 2.0f - (thumbLength / 2.0f) -
-                        Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
+                    Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
                 int trackWidth = Padding * 2 + Thickness;
                 int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
@@ -186,9 +185,14 @@ namespace ShareX.ScreenCaptureLib
 
             int centerOffsetNew = (int)((trackLengthInternal / 2.0f - mousePositionLocal) / trackLengthInternal * inImageSize);
 
-            form.CanvasCenterOffset = Orientation == Orientation.Horizontal
-                ? new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y)
-                : new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
+            if (Orientation == Orientation.Horizontal)
+            {
+                form.CanvasCenterOffset = new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y);
+            }
+            else
+            {
+                form.CanvasCenterOffset = new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
+            }
 
             form.AutomaticPan();
         }
