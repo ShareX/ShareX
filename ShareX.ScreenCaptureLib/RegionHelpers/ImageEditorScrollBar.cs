@@ -146,9 +146,13 @@ namespace ShareX.ScreenCaptureLib
                 if (IsCapsule)
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.Half;
+
                     g.DrawCapsule(trackBrush, Rectangle);
                     g.DrawCapsule(thumbBrush, ThumbRectangle);
+
                     g.SmoothingMode = SmoothingMode.None;
+                    g.PixelOffsetMode = PixelOffsetMode.Default;
                 }
                 else
                 {
