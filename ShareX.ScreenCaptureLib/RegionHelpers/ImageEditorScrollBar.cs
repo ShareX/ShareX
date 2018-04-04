@@ -35,11 +35,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public Orientation Orientation { get; set; }
         public int Thickness { get; set; } = 15; //10;
-        public int Margin { get; set; } = 0; //15;
+        public int Margin { get; set; } = 5; //15;
         public int Padding { get; set; } = 1; //2;
-        public bool IsCapsule { get; set; } = false; //true;
-        public Color TrackColor { get; set; } = Color.FromArgb(255, 0, 0); //60, 60, 60);
-        public Color ThumbColor { get; set; } = Color.FromArgb(255, 255, 255); //130, 130, 130);
+        public bool IsCapsule { get; set; } = true; //true;
+        public Color TrackColor { get; set; } = Color.FromArgb(49, 54, 66); //60, 60, 60);
+        public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104); //130, 130, 130);
+        public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
         public float Opacity { get; private set; }
         public Rectangle ThumbRectangle { get; private set; }
 
@@ -94,8 +95,8 @@ namespace ShareX.ScreenCaptureLib
                         Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
                 int trackWidth = Padding * 2 + Thickness;
-                int trackSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding * 2;
-                int thumbSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding;
+                int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
+                int trackSideOffset = thumbSideOffset - Padding;
 
                 if (Orientation == Orientation.Horizontal)
                 {
@@ -123,41 +124,36 @@ namespace ShareX.ScreenCaptureLib
                 isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
             }
 
-            if (!isScrollbarNeeded && !IsDragging)
-            {
-                Opacity = 0f;
-            }
-            else if (IsDragging || form.ShapeManager.IsPanning || IsCursorHover)
-            {
-                Opacity = 1f;
-            }
-            else
-            {
-                Opacity = 0.8f;
-            }
-
-            Visible = Opacity > 0;
+            Visible = isScrollbarNeeded || IsDragging;
         }
 
         public override void OnDraw(Graphics g)
         {
-            if (Visible)
+            Color thumbColor;
+
+            if (IsDragging || form.ShapeManager.IsPanning || IsCursorHover)
             {
-                using (Brush trackBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), TrackColor)))
-                using (Brush thumbBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), ThumbColor)))
+                thumbColor = ActiveThumbColor;
+            }
+            else
+            {
+                thumbColor = ThumbColor;
+            }
+
+            using (Brush trackBrush = new SolidBrush(TrackColor))
+            using (Brush thumbBrush = new SolidBrush(thumbColor))
+            {
+                if (IsCapsule)
                 {
-                    if (IsCapsule)
-                    {
-                        g.SmoothingMode = SmoothingMode.HighQuality;
-                        g.DrawCapsule(trackBrush, Rectangle);
-                        g.DrawCapsule(thumbBrush, ThumbRectangle);
-                        g.SmoothingMode = SmoothingMode.None;
-                    }
-                    else
-                    {
-                        g.FillRectangle(trackBrush, Rectangle);
-                        g.FillRectangle(thumbBrush, ThumbRectangle);
-                    }
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.DrawCapsule(trackBrush, Rectangle);
+                    g.DrawCapsule(thumbBrush, ThumbRectangle);
+                    g.SmoothingMode = SmoothingMode.None;
+                }
+                else
+                {
+                    g.FillRectangle(trackBrush, Rectangle);
+                    g.FillRectangle(thumbBrush, ThumbRectangle);
                 }
             }
         }
