@@ -57,35 +57,47 @@ namespace ShareX.ScreenCaptureLib
                 Rectangle imageRectangleVisible = form.CanvasRectangle;
                 imageRectangleVisible.Intersect(form.ClientArea);
 
+                int inClientAreaSize, inImageVisibleSize, inImageSize, sideOffsetBase;
+                float inCanvasCenterOffset;
+
                 if (Orientation == Orientation.Horizontal)
                 {
-                    int horizontalTrackLength = form.ClientArea.Width - Margin * 2 - Padding * 2 - Thickness;
-
-                    Rectangle = new Rectangle(Margin, form.ClientArea.Bottom - Margin - Padding * 2 - Thickness - 1, horizontalTrackLength, Padding * 2 + Thickness);
-
-                    int horizontalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Width /
-                        form.CanvasRectangle.Width * (horizontalTrackLength - Padding * 2)));
-
-                    double limitHorizontal = (horizontalTrackLength - horizontalThumbLength) / 2.0f;
-                    double thumbHorizontalPositionX = Math.Round(Rectangle.X + Rectangle.Width / 2.0f - (horizontalThumbLength / 2.0f) + Padding -
-                        Math.Min(limitHorizontal, Math.Max(-limitHorizontal, form.CanvasCenterOffset.X / form.CanvasRectangle.Width * (horizontalTrackLength - Padding * 2))));
-
-                    ThumbRectangle = new Rectangle((int)thumbHorizontalPositionX, form.ClientArea.Bottom - Margin - Padding - Thickness - 1, horizontalThumbLength, Thickness);
+                    inClientAreaSize = form.ClientArea.Width;
+                    inImageVisibleSize = imageRectangleVisible.Width;
+                    inImageSize = form.CanvasRectangle.Width;
+                    sideOffsetBase = form.ClientArea.Bottom;
+                    inCanvasCenterOffset = form.CanvasCenterOffset.X;
                 }
                 else
                 {
-                    int verticalTrackLength = form.ClientArea.Height - Margin * 2 - Padding * 2 - Thickness;
+                    inClientAreaSize = form.ClientArea.Height;
+                    inImageVisibleSize = imageRectangleVisible.Height;
+                    inImageSize = form.CanvasRectangle.Height;
+                    sideOffsetBase = form.ClientArea.Right;
+                    inCanvasCenterOffset = form.CanvasCenterOffset.Y;
+                }
 
-                    Rectangle = new Rectangle(form.ClientArea.Right - Margin - Padding * 2 - Thickness - 1, Margin, Padding * 2 + Thickness, verticalTrackLength);
+                int trackLength = inClientAreaSize - Margin * 2 - Padding * 2 - Thickness;
+                int trackLengthInternal = trackLength - Padding * 2;
 
-                    int verticalThumbLength = Math.Max(Thickness, (int)Math.Round((float)imageRectangleVisible.Height /
-                        form.CanvasRectangle.Height * (verticalTrackLength - Padding * 2)));
+                int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
+                double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
+                int thumbPosition = (int)Math.Round(Margin + trackLength / 2.0f - (thumbLength / 2.0f) -
+                        Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
-                    double limitVertical = (verticalTrackLength - verticalThumbLength) / 2.0f;
-                    double thumbVerticalPositionY = Math.Round(Rectangle.Y + Rectangle.Height / 2.0f - (verticalThumbLength / 2.0f) + Padding -
-                        Math.Min(limitVertical, Math.Max(-limitVertical, form.CanvasCenterOffset.Y / form.CanvasRectangle.Height * verticalTrackLength)));
+                int trackWidth = Padding * 2 + Thickness;
+                int trackSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding * 2;
+                int thumbSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding;
 
-                    ThumbRectangle = new Rectangle(form.ClientArea.Right - Margin - Padding - Thickness - 1, (int)thumbVerticalPositionY, Thickness, verticalThumbLength);
+                if (Orientation == Orientation.Horizontal)
+                {
+                    Rectangle = new Rectangle(Margin, trackSideOffset, trackLength, trackWidth);
+                    ThumbRectangle = new Rectangle(thumbPosition, thumbSideOffset, thumbLength, Thickness);
+                }
+                else
+                {
+                    Rectangle = new Rectangle(trackSideOffset, Margin, trackWidth, trackLength);
+                    ThumbRectangle = new Rectangle(thumbSideOffset, thumbPosition, Thickness, thumbLength);
                 }
             }
         }
