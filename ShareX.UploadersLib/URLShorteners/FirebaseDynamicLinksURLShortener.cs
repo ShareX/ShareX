@@ -1,9 +1,9 @@
 ﻿/* https://github.com/matthewburnett */
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Drawing;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -29,10 +29,20 @@ namespace ShareX.UploadersLib.URLShorteners
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
     }
 
-    public class FirebaseDynamicLinksURLShortenerServiceResponse
+    public class FirebaseResponse
     {
         public string shortLink { get; set; }
-        public string previewLink { get; set; }
+    }
+
+    public class FirebaseRequest
+    {
+        public string longDynamicLink { get; set; }
+        public FirebaseRequestSuffix suffix { get; set; }
+    }
+
+    public class FirebaseRequestSuffix
+    {
+        public string option { get; set; }
     }
 
     public sealed class FirebaseDynamicLinksURLShortener : URLShortener
@@ -40,15 +50,14 @@ namespace ShareX.UploadersLib.URLShorteners
         public string FirebaseWebAPIKey { get; set; }
         public string DynamicLinkDomain { get; set; }
         public bool IsShort { get; set; }
-        private string option;
-        private string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=";
 
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
 
-            RequestUrl = RequestUrl + FirebaseWebAPIKey;
-            string longDynamicLink = BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url;
+            string RequestUrl = HttpUtility.UrlEncode("https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + FirebaseWebAPIKey);
+            string longDynamicLink = HttpUtility.UrlEncode(BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url);
+            string option;
 
             if (IsShort)
             {
@@ -59,19 +68,30 @@ namespace ShareX.UploadersLib.URLShorteners
                 option = "UNGUESSABLE";
             }
 
-            var FDLObject = new
-            {
-                longDynamicLink,
+            //var FDLObject = new
+            //{
+            //    longDynamicLink,
 
-                suffix = new
-                {
-                    option
-                }
+            //    suffix = new
+            //    {
+            //        option
+            //    }
+            //};
+
+            FirebaseRequestSuffix suffix = new FirebaseRequestSuffix
+            {
+                option = option
             };
 
-            string json = JsonConvert.SerializeObject(FDLObject);
-            string response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON);
-            result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseDynamicLinksURLShortenerServiceResponse>(response).shortLink;
+            FirebaseRequest request = new FirebaseRequest
+            {
+                longDynamicLink = longDynamicLink,
+                suffix = suffix
+            };
+
+            string json = JsonConvert.SerializeObject(request);
+            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON);
+            result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
 
             return result;
         }
