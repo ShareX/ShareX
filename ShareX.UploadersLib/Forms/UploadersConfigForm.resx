@@ -3545,6 +3545,156 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFirebaseIsShort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 85</value>
+  </data>
+  <data name="cbFirebaseIsShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 17</value>
+  </data>
+  <data name="cbFirebaseIsShort.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Short link</value>
+  </data>
+  <data name="&gt;&gt;cbFirebaseIsShort.Name" xml:space="preserve">
+    <value>cbFirebaseIsShort</value>
+  </data>
+  <data name="&gt;&gt;cbFirebaseIsShort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFirebaseIsShort.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;cbFirebaseIsShort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 61</value>
+  </data>
+  <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>.app.goo.gl</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Name" xml:space="preserve">
+    <value>lblFirebaseDomain</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 58</value>
+  </data>
+  <data name="txtFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="txtFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseDomain.Name" xml:space="preserve">
+    <value>txtFirebaseDomain</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseDomain.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseDomain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="txtFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseWebAPIKey.Name" xml:space="preserve">
+    <value>txtFirebaseWebAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseWebAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseWebAPIKey.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;txtFirebaseWebAPIKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Web API Key:</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Name" xml:space="preserve">
+    <value>lblFirebaseWebAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 537</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase Dynamic Links</value>
+  </data>
+  <data name="&gt;&gt;tpFirebaseDynamicLinks.Name" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;tpFirebaseDynamicLinks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpFirebaseDynamicLinks.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpFirebaseDynamicLinks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -11775,7 +11925,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 999</value>
+    <value>792, 2037</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -13056,7 +13206,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
