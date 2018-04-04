@@ -3566,58 +3566,61 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtFirebaseWebAPIKey.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblFirebaseDynamicDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblFirebaseDynamicDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFirebaseDynamicDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 83</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblFirebaseDynamicDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblFirebaseDynamicDomain.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="lblFirebaseDynamicDomain.Text" xml:space="preserve">
     <value>.app.goo.gl</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;lblFirebaseDynamicDomain.Name" xml:space="preserve">
+    <value>lblFirebaseDynamicDomain</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDynamicDomain.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDynamicDomain.Parent" xml:space="preserve">
     <value>tpFirebaseDynamicLinks</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDynamicDomain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 64</value>
   </data>
-  <data name="lbFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
   </data>
-  <data name="lbFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lbFirebaseDomain.Text" xml:space="preserve">
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
     <value>Dynamic link domain:</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseDomain.Name" xml:space="preserve">
-    <value>lbFirebaseDomain</value>
+  <data name="&gt;&gt;lblFirebaseDomain.Name" xml:space="preserve">
+    <value>lblFirebaseDomain</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseDomain.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDomain.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseDomain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDomain.Parent" xml:space="preserve">
     <value>tpFirebaseDynamicLinks</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseDomain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="txtFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
@@ -3641,34 +3644,34 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtFirebaseDomain.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblFirebaseWebAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 17</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lbFirebaseWebAPIKey.Text" xml:space="preserve">
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
     <value>Web API Key:</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseWebAPIKey.Name" xml:space="preserve">
-    <value>lbFirebaseWebAPIKey</value>
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Name" xml:space="preserve">
+    <value>lblFirebaseWebAPIKey</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseWebAPIKey.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseWebAPIKey.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.Parent" xml:space="preserve">
     <value>tpFirebaseDynamicLinks</value>
   </data>
-  <data name="&gt;&gt;lbFirebaseWebAPIKey.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblFirebaseWebAPIKey.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
@@ -11955,7 +11958,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 3594</value>
+    <value>792, 4113</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>

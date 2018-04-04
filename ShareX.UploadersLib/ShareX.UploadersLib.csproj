@@ -932,9 +932,6 @@
   <ItemGroup>
     <None Include="Favicons\Firebase.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Firebase.ico" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)APIKeys\

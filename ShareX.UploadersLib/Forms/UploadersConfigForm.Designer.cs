@@ -172,10 +172,10 @@
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
             this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbFirebaseDomain = new System.Windows.Forms.Label();
+            this.lblFirebaseDynamicDomain = new System.Windows.Forms.Label();
+            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
-            this.lbFirebaseWebAPIKey = new System.Windows.Forms.Label();
+            this.lblFirebaseWebAPIKey = new System.Windows.Forms.Label();
             this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
@@ -1779,10 +1779,10 @@
             // tpFirebaseDynamicLinks
             // 
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseWebAPIKey);
-            this.tpFirebaseDynamicLinks.Controls.Add(this.label1);
-            this.tpFirebaseDynamicLinks.Controls.Add(this.lbFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDynamicDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomain);
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
-            this.tpFirebaseDynamicLinks.Controls.Add(this.lbFirebaseWebAPIKey);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseWebAPIKey);
             this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
             resources.ApplyResources(this.tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
             this.tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
@@ -1795,15 +1795,15 @@
             this.txtFirebaseWebAPIKey.UseSystemPasswordChar = true;
             this.txtFirebaseWebAPIKey.TextChanged += new System.EventHandler(this.txtFirebaseWebAPIKey_TextChanged);
             // 
-            // label1
+            // lblFirebaseDynamicDomain
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblFirebaseDynamicDomain, "lblFirebaseDynamicDomain");
+            this.lblFirebaseDynamicDomain.Name = "lblFirebaseDynamicDomain";
             // 
-            // lbFirebaseDomain
+            // lblFirebaseDomain
             // 
-            resources.ApplyResources(this.lbFirebaseDomain, "lbFirebaseDomain");
-            this.lbFirebaseDomain.Name = "lbFirebaseDomain";
+            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
+            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
             // 
             // txtFirebaseDomain
             // 
@@ -1811,10 +1811,10 @@
             this.txtFirebaseDomain.Name = "txtFirebaseDomain";
             this.txtFirebaseDomain.TextChanged += new System.EventHandler(this.txtFirebaseDomain_TextChanged);
             // 
-            // lbFirebaseWebAPIKey
+            // lblFirebaseWebAPIKey
             // 
-            resources.ApplyResources(this.lbFirebaseWebAPIKey, "lbFirebaseWebAPIKey");
-            this.lbFirebaseWebAPIKey.Name = "lbFirebaseWebAPIKey";
+            resources.ApplyResources(this.lblFirebaseWebAPIKey, "lblFirebaseWebAPIKey");
+            this.lblFirebaseWebAPIKey.Name = "lblFirebaseWebAPIKey";
             // 
             // cbFirebaseIsShort
             // 
@@ -5972,10 +5972,10 @@
         private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
         internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
         private System.Windows.Forms.CheckBox cbFirebaseIsShort;
-        private System.Windows.Forms.Label lbFirebaseWebAPIKey;
+        private System.Windows.Forms.Label lblFirebaseWebAPIKey;
         private System.Windows.Forms.TextBox txtFirebaseDomain;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbFirebaseDomain;
+        private System.Windows.Forms.Label lblFirebaseDynamicDomain;
+        private System.Windows.Forms.Label lblFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
     }
 }

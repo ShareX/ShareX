@@ -21,7 +21,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return new FirebaseDynamicLinksURLShortener
             {
                 FirebaseWebAPIKey = config.FirebaseWebAPIKey,
-                dynamicLinkDomain = config.FirebaseDynamicLinkDomain,
+                DynamicLinkDomain = config.FirebaseDynamicLinkDomain,
                 IsShort = config.FirebaseIsShort
             };
         }
@@ -29,20 +29,26 @@ namespace ShareX.UploadersLib.URLShorteners
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
     }
 
+    public class FirebaseDynamicLinksURLShortenerServiceResponse
+    {
+        public string shortLink { get; set; }
+        public string previewLink { get; set; }
+    }
+
     public sealed class FirebaseDynamicLinksURLShortener : URLShortener
     {
         public string FirebaseWebAPIKey { get; set; }
-        public string dynamicLinkDomain { get; set; }
+        public string DynamicLinkDomain { get; set; }
         public bool IsShort { get; set; }
         private string option;
-        private string requesturl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=";
+        private string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=";
 
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
 
-            string apiurl = requesturl + FirebaseWebAPIKey;
-            string longDynamicLink = BrowserProtocol.https + dynamicLinkDomain + ".app.goo.gl/?link=" + url;
+            RequestUrl = RequestUrl + FirebaseWebAPIKey;
+            string longDynamicLink = BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url;
 
             if (IsShort)
             {
@@ -64,8 +70,8 @@ namespace ShareX.UploadersLib.URLShorteners
             };
 
             string json = JsonConvert.SerializeObject(FDLObject);
-            string response = SendRequest(HttpMethod.POST, apiurl, json, ContentTypeJSON);
-            result.ShortenedURL = Helpers.ParseJSON(response, "shortLink");
+            string response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON);
+            result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseDynamicLinksURLShortenerServiceResponse>(response).shortLink;
 
             return result;
         }
