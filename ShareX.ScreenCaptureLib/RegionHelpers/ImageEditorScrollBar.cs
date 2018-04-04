@@ -161,7 +161,33 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnMouseDown(position);
 
-            // Pan here
+            int inMousePosition, inClientAreaSize, inImageSize;
+
+            if (Orientation == Orientation.Horizontal)
+            {
+                inMousePosition = position.X;
+                inClientAreaSize = form.ClientArea.Width;
+                inImageSize = form.CanvasRectangle.Width;
+            }
+            else
+            {
+                inMousePosition = position.Y;
+                inClientAreaSize = form.ClientArea.Height;
+                inImageSize = form.CanvasRectangle.Height;
+            }
+
+            int mousePositionLocal = inMousePosition - Margin - Padding;
+
+            int trackLength = inClientAreaSize - Margin * 2 - Padding * 2 - Thickness;
+            int trackLengthInternal = trackLength - Padding * 2;
+
+            int centerOffsetNew = (int)((trackLengthInternal / 2.0f - mousePositionLocal) / trackLengthInternal * inImageSize);
+
+            form.CanvasCenterOffset = Orientation == Orientation.Horizontal
+                ? new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y)
+                : new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
+
+            form.AutomaticPan();
         }
     }
 }
