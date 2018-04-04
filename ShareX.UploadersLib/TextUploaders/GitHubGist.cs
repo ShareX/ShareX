@@ -30,6 +30,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 
@@ -41,18 +42,14 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override Icon ServiceIcon => Resources.GitHub;
 
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.GistOAuth2Info);
+        }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            OAuth2Info oauth = null;
-
-            if (!config.GistAnonymousLogin)
-            {
-                oauth = config.GistOAuth2Info;
-            }
-
-            return new GitHubGist(oauth)
+            return new GitHubGist(config.GistOAuth2Info)
             {
                 PublicUpload = config.GistPublishPublic,
                 RawURL = config.GistRawURL,
@@ -72,10 +69,6 @@ namespace ShareX.UploadersLib.TextUploaders
         public bool PublicUpload { get; set; }
         public bool RawURL { get; set; }
         public string CustomURLAPI { get; set; }
-
-        public GitHubGist()
-        {
-        }
 
         public GitHubGist(OAuth2Info oAuthInfos)
         {
@@ -133,8 +126,6 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 };
 
-                string json = JsonConvert.SerializeObject(gistUploadObject);
-
                 string url;
 
                 if (!string.IsNullOrEmpty(CustomURLAPI))
@@ -148,27 +139,41 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 url = URLHelpers.CombineURL(url, "gists");
 
-                if (AuthInfo != null)
-                {
-                    url += "?access_token=" + AuthInfo.Token.access_token;
-                }
+                string json = JsonConvert.SerializeObject(gistUploadObject);
 
-                string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON);
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("access_token", AuthInfo.Token.access_token);
+
+                string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, args);
+
+                GistResponse gistResponse = JsonConvert.DeserializeObject<GistResponse>(response);
 
                 if (response != null)
                 {
                     if (RawURL)
                     {
-                        ur.URL = Helpers.ParseJSON(response, "files.*.raw_url");
+                        ur.URL = gistResponse.files.First().Value.raw_url;
                     }
                     else
                     {
-                        ur.URL = Helpers.ParseJSON(response, "html_url");
+                        ur.URL = gistResponse.html_url;
                     }
                 }
             }
 
             return ur;
+        }
+
+        private class GistResponse
+        {
+            public string html_url { get; set; }
+            public Dictionary<string, GistFileInfo> files { get; set; }
+        }
+
+        private class GistFileInfo
+        {
+            public string filename { get; set; }
+            public string raw_url { get; set; }
         }
     }
 }

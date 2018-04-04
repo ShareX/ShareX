@@ -3545,6 +3545,24 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 563</value>
+  </data>
+  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txtFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 33</value>
   </data>
@@ -3577,207 +3595,6 @@ store.book[0].title</value>
   </data>
   <data name="lblFirebaseDynamicDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
-  </data>
-  <data name="lblFirebaseDynamicDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblFirebaseDynamicDomain.Text" xml:space="preserve">
-    <value>.app.goo.gl</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDynamicDomain.Name" xml:space="preserve">
-    <value>lblFirebaseDynamicDomain</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDynamicDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDynamicDomain.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDynamicDomain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 64</value>
-  </data>
-  <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 13</value>
-  </data>
-  <data name="lblFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblFirebaseDomain.Text" xml:space="preserve">
-    <value>Dynamic link domain:</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Name" xml:space="preserve">
-    <value>lblFirebaseDomain</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 80</value>
-  </data>
-  <data name="txtFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
-  </data>
-  <data name="txtFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseDomain.Name" xml:space="preserve">
-    <value>txtFirebaseDomain</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseDomain.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseDomain.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 17</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
-    <value>Web API Key:</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseWebAPIKey.Name" xml:space="preserve">
-    <value>lblFirebaseWebAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseWebAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseWebAPIKey.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseWebAPIKey.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbFirebaseIsShort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 106</value>
-  </data>
-  <data name="cbFirebaseIsShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
-  </data>
-  <data name="cbFirebaseIsShort.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
-    <value>Short link</value>
-  </data>
-  <data name="&gt;&gt;cbFirebaseIsShort.Name" xml:space="preserve">
-    <value>cbFirebaseIsShort</value>
-  </data>
-  <data name="&gt;&gt;cbFirebaseIsShort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFirebaseIsShort.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;cbFirebaseIsShort.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
-    <value>Firebase Dynamic Links</value>
-  </data>
-  <data name="&gt;&gt;tpFirebaseDynamicLinks.Name" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;tpFirebaseDynamicLinks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpFirebaseDynamicLinks.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpFirebaseDynamicLinks.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 563</value>
-  </data>
-  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 569</value>
-  </data>
-  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
-    <value>tcUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="txtSFTPKeyPassphrase.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 44</value>
@@ -4942,6 +4759,21 @@ store.book[0].title</value>
   </data>
   <data name="btnFTPDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>696, 11</value>
+  </data>
+  <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 23</value>
+  </data>
+  <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnFTPDuplicate.Name" xml:space="preserve">
+    <value>btnFTPDuplicate</value>
   </data>
   <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
     <value>696, 11</value>
@@ -11958,7 +11790,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 4113</value>
+    <value>792, 999</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -13050,7 +12882,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGistCustomURLExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 364</value>
+    <value>224, 316</value>
   </data>
   <data name="lblGistCustomURLExample.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 13</value>
@@ -13080,16 +12912,16 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGistOAuthInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>13, 16</value>
   </data>
   <data name="lblGistOAuthInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 13</value>
+    <value>200, 13</value>
   </data>
   <data name="lblGistOAuthInfo.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="lblGistOAuthInfo.Text" xml:space="preserve">
-    <value>Note: User account is not supported for GitHub Enterprise.</value>
+    <value>Note: GitHub Enterprise is not supported.</value>
   </data>
   <data name="&gt;&gt;lblGistOAuthInfo.Name" xml:space="preserve">
     <value>lblGistOAuthInfo</value>
@@ -13110,7 +12942,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 344</value>
+    <value>13, 296</value>
   </data>
   <data name="lblGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -13134,7 +12966,7 @@ Using an encrypted library disables sharing.</value>
     <value>2</value>
   </data>
   <data name="txtGistCustomURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 360</value>
+    <value>16, 312</value>
   </data>
   <data name="txtGistCustomURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -13161,7 +12993,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistUseRawURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 320</value>
+    <value>16, 272</value>
   </data>
   <data name="cbGistUseRawURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -13191,7 +13023,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGistPublishPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 248</value>
   </data>
   <data name="cbGistPublishPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -13214,11 +13046,8 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbGistPublishPublic.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 40</value>
   </data>
   <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 205</value>
@@ -13238,32 +13067,11 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Name" xml:space="preserve">
-    <value>atcGistAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
-    <value>tpGist</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="tpGist.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

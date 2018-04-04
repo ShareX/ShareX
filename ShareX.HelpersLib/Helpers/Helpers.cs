@@ -1142,12 +1142,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        // http://goessner.net/articles/JsonPath/
-        public static string ParseJSON(string text, string jsonPath)
-        {
-            return (string)JToken.Parse(text).SelectToken("$." + jsonPath);
-        }
-
         public static T[] GetInstances<T>() where T : class
         {
             IEnumerable<T> instances = from t in Assembly.GetCallingAssembly().GetTypes()

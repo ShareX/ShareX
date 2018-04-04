@@ -2008,7 +2008,6 @@ namespace ShareX.UploadersLib
                     {
                         oAuth2Gist.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        atcGistAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
                 }
             }

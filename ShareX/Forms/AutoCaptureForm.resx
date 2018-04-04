@@ -121,6 +121,12 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tspbBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 16</value>
+  </data>
+  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
   <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 241</value>
   </data>
@@ -145,12 +151,6 @@
   </data>
   <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="tspbBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
-  </data>
-  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
   </data>
   <data name="btnExecute.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -369,54 +369,6 @@
   <data name="&gt;&gt;lblDurationSeconds.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;rbFullscreen.Name" xml:space="preserve">
-    <value>rbFullscreen</value>
-  </data>
-  <data name="&gt;&gt;rbFullscreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbFullscreen.Parent" xml:space="preserve">
-    <value>gbRegion</value>
-  </data>
-  <data name="&gt;&gt;rbFullscreen.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbCustomRegion.Name" xml:space="preserve">
-    <value>rbCustomRegion</value>
-  </data>
-  <data name="&gt;&gt;rbCustomRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbCustomRegion.Parent" xml:space="preserve">
-    <value>gbRegion</value>
-  </data>
-  <data name="&gt;&gt;rbCustomRegion.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="gbRegion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 96</value>
-  </data>
-  <data name="gbRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbRegion.Text" xml:space="preserve">
-    <value>Region</value>
-  </data>
-  <data name="&gt;&gt;gbRegion.Name" xml:space="preserve">
-    <value>gbRegion</value>
-  </data>
-  <data name="&gt;&gt;gbRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbRegion.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbRegion.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="rbFullscreen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -470,6 +422,30 @@
   </data>
   <data name="&gt;&gt;rbCustomRegion.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="gbRegion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 96</value>
+  </data>
+  <data name="gbRegion.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="&gt;&gt;gbRegion.Name" xml:space="preserve">
+    <value>gbRegion</value>
+  </data>
+  <data name="&gt;&gt;gbRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbRegion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbRegion.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

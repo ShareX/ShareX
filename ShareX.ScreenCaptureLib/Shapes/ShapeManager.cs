@@ -222,6 +222,7 @@ namespace ShareX.ScreenCaptureLib
         internal RegionCaptureForm Form { get; private set; }
 
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
+        private ScrollbarManager scrollbarManager;
 
         public ShapeManager(RegionCaptureForm form)
         {
@@ -263,6 +264,11 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 CurrentTool = ShapeType.RegionRectangle;
+            }
+
+            if (form.IsEditorMode)
+            {
+                scrollbarManager = new ScrollbarManager(form, this);
             }
         }
 
@@ -741,6 +747,11 @@ namespace ShareX.ScreenCaptureLib
             UpdateCurrentHoverShape();
 
             UpdateNodes();
+
+            if (scrollbarManager != null)
+            {
+                scrollbarManager.Update();
+            }
         }
 
         private void StartRegionSelection()

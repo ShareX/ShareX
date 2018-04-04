@@ -718,6 +718,11 @@ namespace ShareX
                 {
                     Helpers.OpenFolderWithFile(Info.FilePath);
                 }
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
+                {
+                    QRCodeForm.DecodeFile(Info.FilePath).ShowDialog();
+                }
             }
         }
 
