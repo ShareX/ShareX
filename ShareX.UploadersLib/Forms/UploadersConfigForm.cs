@@ -776,14 +776,6 @@ namespace ShareX.UploadersLib
 
             #endregion Polr
 
-            #region Firebase Dynamic Links
-
-            txtFirebaseWebAPIKey.Text = Config.FirebaseWebAPIKey;
-            txtFirebaseDomain.Text = Config.FirebaseDynamicLinkDomain;
-            cbFirebaseIsShort.Checked = Config.FirebaseIsShort;
-
-            #endregion Firebase Dynamic Links
-
             #endregion URL shorteners
 
             #region Other uploaders
@@ -3126,25 +3118,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Polr
-
-        #region Firebase Dynamic Links
-
-        private void txtFirebaseWebAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.FirebaseWebAPIKey = txtFirebaseWebAPIKey.Text;
-        }
-
-        private void txtFirebaseDomain_TextChanged(object sender, EventArgs e)
-        {
-            Config.FirebaseDynamicLinkDomain = txtFirebaseDomain.Text;
-        }
-
-        private void cbFirebaseIsShort_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.FirebaseIsShort = cbFirebaseIsShort.Checked;
-        }
-
-        #endregion Firebase Dynamic Links
 
         #endregion URL shorteners
 

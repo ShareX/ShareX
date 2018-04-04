@@ -3557,44 +3557,44 @@ store.book[0].title</value>
   <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
     <value>tcURLShorteners</value>
   </data>
-  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 33</value>
+  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
+    <value>tpURLShorteners</value>
   </data>
-  <data name="txtFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 20</value>
-  </data>
-  <data name="txtFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseWebAPIKey.Name" xml:space="preserve">
-    <value>txtFirebaseWebAPIKey</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseWebAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseWebAPIKey.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;txtFirebaseWebAPIKey.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblFirebaseDynamicDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="lblFirebaseDynamicDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="lblFirebaseDynamicDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 83</value>
+  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 569</value>
   </data>
-  <data name="lblFirebaseDynamicDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL shorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
+    <value>tcUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="txtSFTPKeyPassphrase.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 44</value>
@@ -4759,21 +4759,6 @@ store.book[0].title</value>
   </data>
   <data name="btnFTPDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 11</value>
-  </data>
-  <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnFTPDuplicate.Text" xml:space="preserve">
-    <value>Duplicate</value>
-  </data>
-  <data name="&gt;&gt;btnFTPDuplicate.Name" xml:space="preserve">
-    <value>btnFTPDuplicate</value>
   </data>
   <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
     <value>696, 11</value>
