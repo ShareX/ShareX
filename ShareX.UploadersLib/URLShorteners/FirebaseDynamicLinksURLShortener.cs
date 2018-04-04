@@ -1,9 +1,9 @@
 ﻿/* https://github.com/matthewburnett */
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Drawing;
-using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -55,8 +55,8 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             UploadResult result = new UploadResult { URL = url };
 
-            string RequestUrl = HttpUtility.UrlEncode("https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + FirebaseWebAPIKey);
-            string longDynamicLink = HttpUtility.UrlEncode(BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url);
+            string RequestUrl = URLHelpers.ForcePrefix("firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + FirebaseWebAPIKey);
+            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + url);
             string option;
 
             if (IsShort)
@@ -67,16 +67,6 @@ namespace ShareX.UploadersLib.URLShorteners
             {
                 option = "UNGUESSABLE";
             }
-
-            //var FDLObject = new
-            //{
-            //    longDynamicLink,
-
-            //    suffix = new
-            //    {
-            //        option
-            //    }
-            //};
 
             FirebaseRequestSuffix suffix = new FirebaseRequestSuffix
             {
