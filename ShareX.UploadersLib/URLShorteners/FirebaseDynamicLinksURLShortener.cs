@@ -32,6 +32,7 @@ namespace ShareX.UploadersLib.URLShorteners
     public class FirebaseResponse
     {
         public string shortLink { get; set; }
+        public string previewLink { get; set; }
     }
 
     public class FirebaseRequest
