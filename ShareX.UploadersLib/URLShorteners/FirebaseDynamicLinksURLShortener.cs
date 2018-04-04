@@ -5,6 +5,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -61,7 +62,7 @@ namespace ShareX.UploadersLib.URLShorteners
             UploadResult result = new UploadResult { URL = url };
 
             string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
-            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + url);
+            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + HttpUtility.UrlEncode(url));
             string option;
 
             Dictionary<string, string> args = new Dictionary<string, string>
