@@ -123,11 +123,11 @@ namespace ShareX.ScreenCaptureLib
                 isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
             }
 
-            if (!isScrollbarNeeded)
+            if (!isScrollbarNeeded && !IsDragging)
             {
                 Opacity = 0f;
             }
-            else if (form.ShapeManager.IsPanning || IsCursorHover)
+            else if (IsDragging || form.ShapeManager.IsPanning || IsCursorHover)
             {
                 Opacity = 1f;
             }
@@ -162,7 +162,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void Scroll(Point position)
+        private void Scroll(Point position)
         {
             int inMousePosition, inClientAreaSize, inImageSize;
 
