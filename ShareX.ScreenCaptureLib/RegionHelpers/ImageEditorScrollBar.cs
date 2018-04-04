@@ -34,11 +34,12 @@ namespace ShareX.ScreenCaptureLib
     internal class ImageEditorScrollbar : DrawableObject
     {
         public Orientation Orientation { get; set; }
-        public int Thickness { get; set; } = 10;
-        public int Margin { get; set; } = 15;
-        public int Padding { get; set; } = 2;
-        public float Opacity { get; set; }
-        public Rectangle ThumbRectangle { get; set; }
+        public int Thickness { get; set; } = 15;
+        public int Margin { get; set; } = 0;
+        public int Padding { get; set; } = 1;
+        public bool IsCapsule { get; set; } = false;
+        public float Opacity { get; private set; }
+        public Rectangle ThumbRectangle { get; private set; }
 
         private RegionCaptureForm form;
 
@@ -133,15 +134,24 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (!Visible) return;
-
-            using (Brush trackBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), 60, 60, 60)))
-            using (Brush thumbBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), 130, 130, 130)))
+            if (Visible)
             {
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.DrawCapsule(trackBrush, Rectangle);
-                g.DrawCapsule(thumbBrush, ThumbRectangle);
-                g.SmoothingMode = SmoothingMode.None;
+                using (Brush trackBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), 60, 60, 60)))
+                using (Brush thumbBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), 130, 130, 130)))
+                {
+                    if (IsCapsule)
+                    {
+                        g.SmoothingMode = SmoothingMode.HighQuality;
+                        g.DrawCapsule(trackBrush, Rectangle);
+                        g.DrawCapsule(thumbBrush, ThumbRectangle);
+                        g.SmoothingMode = SmoothingMode.None;
+                    }
+                    else
+                    {
+                        g.FillRectangle(trackBrush, Rectangle);
+                        g.FillRectangle(thumbBrush, ThumbRectangle);
+                    }
+                }
             }
         }
 
