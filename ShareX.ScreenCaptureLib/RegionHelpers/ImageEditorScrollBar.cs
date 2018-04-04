@@ -57,6 +57,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (Visible)
             {
+                if (IsDragging)
+                {
+                    Scroll(form.ShapeManager.InputManager.ClientMousePosition);
+                }
+
                 Rectangle imageRectangleVisible = form.CanvasRectangle;
                 imageRectangleVisible.Intersect(form.ClientArea);
 
@@ -157,10 +162,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnMouseDown(Point position)
+        public void Scroll(Point position)
         {
-            base.OnMouseDown(position);
-
             int inMousePosition, inClientAreaSize, inImageSize;
 
             if (Orientation == Orientation.Horizontal)
