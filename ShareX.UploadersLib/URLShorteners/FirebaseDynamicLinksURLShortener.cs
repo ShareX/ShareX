@@ -69,15 +69,13 @@ namespace ShareX.UploadersLib.URLShorteners
                 option = "UNGUESSABLE";
             }
 
-            FirebaseRequestSuffix suffix = new FirebaseRequestSuffix
-            {
-                option = option
-            };
-
             FirebaseRequest request = new FirebaseRequest
             {
                 longDynamicLink = longDynamicLink,
-                suffix = suffix
+                suffix = new FirebaseRequestSuffix
+                {
+                    option = option
+                }
             };
 
             string json = JsonConvert.SerializeObject(request);
