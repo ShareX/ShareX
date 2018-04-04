@@ -352,6 +352,7 @@
     <Compile Include="BaseUploaders\Uploader.cs" />
     <Compile Include="BaseUploaders\URLShortener.cs" />
     <Compile Include="BaseServices\URLShortenerService.cs" />
+    <Compile Include="URLShorteners\FirebaseDynamicLinksURLShortener.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
@@ -927,6 +928,9 @@
     <None Include="Favicons\Plik.ico" />
     <None Include="Favicons\Gfycat.png" />
     <None Include="Favicons\GooglePhotos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Firebase.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
