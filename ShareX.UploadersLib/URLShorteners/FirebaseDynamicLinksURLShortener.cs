@@ -3,6 +3,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,13 +15,16 @@ namespace ShareX.UploadersLib.URLShorteners
 
         public override Icon ServiceIcon => Resources.Firebase;
 
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public override bool CheckConfig(UploadersConfig config) 
+        {
+            return !string.IsNullOrEmpty(config.FirebaseWebAPIKey) && !string.IsNullOrEmpty(config.FirebaseDynamicLinkDomain);
+        }
 
         public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new FirebaseDynamicLinksURLShortener
             {
-                FirebaseWebAPIKey = config.FirebaseWebAPIKey,
+                WebAPIKey = config.FirebaseWebAPIKey,
                 DynamicLinkDomain = config.FirebaseDynamicLinkDomain,
                 IsShort = config.FirebaseIsShort
             };
@@ -48,7 +52,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class FirebaseDynamicLinksURLShortener : URLShortener
     {
-        public string FirebaseWebAPIKey { get; set; }
+        public string WebAPIKey { get; set; }
         public string DynamicLinkDomain { get; set; }
         public bool IsShort { get; set; }
 
@@ -56,9 +60,14 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             UploadResult result = new UploadResult { URL = url };
 
-            string RequestUrl = URLHelpers.ForcePrefix("firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + FirebaseWebAPIKey);
-            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + url);
+            string RequestUrl = BrowserProtocol.https + "firebasedynamiclinks.googleapis.com/v1/shortLinks";
+            string longDynamicLink = BrowserProtocol.https + DynamicLinkDomain + ".app.goo.gl/?link=" + url;
             string option;
+
+            Dictionary<string, string> args = new Dictionary<string, string>
+            {
+                { "key", WebAPIKey }
+            };
 
             if (IsShort)
             {
@@ -79,7 +88,7 @@ namespace ShareX.UploadersLib.URLShorteners
             };
 
             string json = JsonConvert.SerializeObject(request);
-            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON);
+            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON, args);
             result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
 
             return result;
