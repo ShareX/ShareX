@@ -426,7 +426,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void AutomaticPan()
+        public void AutomaticPan()
         {
             AutomaticPan(CanvasCenterOffset);
         }

@@ -72,7 +72,7 @@ namespace ShareX
 
         public static string TitleLong => $"{Title} ({Build})";
 
-        public static bool Beta { get; } = false;
+        public static bool Beta { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
         public static bool PortableApps { get; private set; }

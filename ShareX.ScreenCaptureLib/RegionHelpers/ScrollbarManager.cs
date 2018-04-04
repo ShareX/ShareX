@@ -23,14 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
     internal class ScrollbarManager
     {
-        public bool IsVisible => horizontalScrollbar.Visible || verticalScrollbar.Visible;
+        public bool Visible => horizontalScrollbar.Visible || verticalScrollbar.Visible;
 
         private RegionCaptureForm form;
         private ImageEditorScrollbar horizontalScrollbar, verticalScrollbar;

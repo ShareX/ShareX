@@ -34,13 +34,14 @@ namespace ShareX.ScreenCaptureLib
     internal class ImageEditorScrollbar : DrawableObject
     {
         public Orientation Orientation { get; set; }
-        public int Thickness { get; set; } = 15; //10;
-        public int Margin { get; set; } = 0; //15;
-        public int Padding { get; set; } = 1; //2;
-        public bool IsCapsule { get; set; } = false; //true;
-        public Color TrackColor { get; set; } = Color.FromArgb(255, 0, 0); //60, 60, 60);
-        public Color ThumbColor { get; set; } = Color.FromArgb(255, 255, 255); //130, 130, 130);
-        public float Opacity { get; private set; }
+        public int Thickness { get; set; } = 15;
+        public int Margin { get; set; } = 5;
+        public int Padding { get; set; } = 1;
+        public bool IsCapsule { get; set; } = true;
+        public Color TrackColor { get; set; } = Color.FromArgb(49, 54, 66);
+        public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104);
+        public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
+        public bool AutoHide { get; set; } = true;
         public Rectangle ThumbRectangle { get; private set; }
 
         private RegionCaptureForm form;
@@ -53,10 +54,33 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            UpdateOpacity();
+            if (AutoHide)
+            {
+                bool isScrollbarNeeded;
+
+                if (Orientation == Orientation.Horizontal)
+                {
+                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right;
+                }
+                else
+                {
+                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
+                }
+
+                Visible = isScrollbarNeeded || IsDragging;
+            }
+            else
+            {
+                Visible = true;
+            }
 
             if (Visible)
             {
+                if (IsDragging)
+                {
+                    Scroll(form.ShapeManager.InputManager.ClientMousePosition);
+                }
+
                 Rectangle imageRectangleVisible = form.CanvasRectangle;
                 imageRectangleVisible.Intersect(form.ClientArea);
 
@@ -86,11 +110,11 @@ namespace ShareX.ScreenCaptureLib
                 int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
                 double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
                 int thumbPosition = (int)Math.Round(Margin + trackLength / 2.0f - (thumbLength / 2.0f) -
-                        Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
+                    Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
                 int trackWidth = Padding * 2 + Thickness;
-                int trackSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding * 2;
-                int thumbSideOffset = sideOffsetBase - Margin - Thickness - 1 - Padding;
+                int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
+                int trackSideOffset = thumbSideOffset - Padding;
 
                 if (Orientation == Orientation.Horizontal)
                 {
@@ -105,63 +129,75 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void UpdateOpacity()
-        {
-            bool isScrollbarNeeded;
-
-            if (Orientation == Orientation.Horizontal)
-            {
-                isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right;
-            }
-            else
-            {
-                isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
-            }
-
-            if (!isScrollbarNeeded)
-            {
-                Opacity = 0f;
-            }
-            else if (form.ShapeManager.IsPanning || IsCursorHover)
-            {
-                Opacity = 1f;
-            }
-            else
-            {
-                Opacity = 0.8f;
-            }
-
-            Visible = Opacity > 0;
-        }
-
         public override void OnDraw(Graphics g)
         {
-            if (Visible)
+            Color thumbColor;
+
+            if (IsDragging || form.ShapeManager.IsPanning || IsCursorHover)
             {
-                using (Brush trackBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), TrackColor)))
-                using (Brush thumbBrush = new SolidBrush(Color.FromArgb((int)(255 * Opacity), ThumbColor)))
+                thumbColor = ActiveThumbColor;
+            }
+            else
+            {
+                thumbColor = ThumbColor;
+            }
+
+            using (Brush trackBrush = new SolidBrush(TrackColor))
+            using (Brush thumbBrush = new SolidBrush(thumbColor))
+            {
+                if (IsCapsule)
                 {
-                    if (IsCapsule)
-                    {
-                        g.SmoothingMode = SmoothingMode.HighQuality;
-                        g.DrawCapsule(trackBrush, Rectangle);
-                        g.DrawCapsule(thumbBrush, ThumbRectangle);
-                        g.SmoothingMode = SmoothingMode.None;
-                    }
-                    else
-                    {
-                        g.FillRectangle(trackBrush, Rectangle);
-                        g.FillRectangle(thumbBrush, ThumbRectangle);
-                    }
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.Half;
+
+                    g.DrawCapsule(trackBrush, Rectangle);
+                    g.DrawCapsule(thumbBrush, ThumbRectangle);
+
+                    g.SmoothingMode = SmoothingMode.None;
+                    g.PixelOffsetMode = PixelOffsetMode.Default;
+                }
+                else
+                {
+                    g.FillRectangle(trackBrush, Rectangle);
+                    g.FillRectangle(thumbBrush, ThumbRectangle);
                 }
             }
         }
 
-        public override void OnMouseDown(Point position)
+        private void Scroll(Point position)
         {
-            base.OnMouseDown(position);
+            int inMousePosition, inClientAreaSize, inImageSize;
 
-            // Pan here
+            if (Orientation == Orientation.Horizontal)
+            {
+                inMousePosition = position.X;
+                inClientAreaSize = form.ClientArea.Width;
+                inImageSize = form.CanvasRectangle.Width;
+            }
+            else
+            {
+                inMousePosition = position.Y;
+                inClientAreaSize = form.ClientArea.Height;
+                inImageSize = form.CanvasRectangle.Height;
+            }
+
+            int mousePositionLocal = inMousePosition - Margin - Padding;
+
+            int trackLength = inClientAreaSize - Margin * 2 - Padding * 2 - Thickness;
+            int trackLengthInternal = trackLength - Padding * 2;
+
+            int centerOffsetNew = (int)((trackLengthInternal / 2.0f - mousePositionLocal) / trackLengthInternal * inImageSize);
+
+            if (Orientation == Orientation.Horizontal)
+            {
+                form.CanvasCenterOffset = new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y);
+            }
+            else
+            {
+                form.CanvasCenterOffset = new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
+            }
+
+            form.AutomaticPan();
         }
     }
 }
