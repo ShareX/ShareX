@@ -1,7 +1,6 @@
 ﻿/* https://github.com/matthewburnett */
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,21 +33,27 @@ namespace ShareX.UploadersLib.URLShorteners
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
     }
 
+    public class FirebaseRequest
+    {
+        public DynamicLinkInfo dynamicLinkInfo { get; set; }
+    }
+
+    public class DynamicLinkInfo
+    {
+        public string dynamicLinkDomain { get; set; }
+        public string link { get; set; }
+        public Suffix suffix { get; set; }
+    }
+
+    public class Suffix
+    {
+        public string option { get; set; }
+    }
+
     public class FirebaseResponse
     {
         public string shortLink { get; set; }
         public string previewLink { get; set; }
-    }
-
-    public class FirebaseRequest
-    {
-        public string longDynamicLink { get; set; }
-        public FirebaseRequestSuffix suffix { get; set; }
-    }
-
-    public class FirebaseRequestSuffix
-    {
-        public string option { get; set; }
     }
 
     public sealed class FirebaseDynamicLinksURLShortener : URLShortener
@@ -62,10 +67,9 @@ namespace ShareX.UploadersLib.URLShorteners
             UploadResult result = new UploadResult { URL = url };
 
             string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
-            string longDynamicLink = URLHelpers.ForcePrefix(DynamicLinkDomain + ".app.goo.gl/?link=" + HttpUtility.UrlEncode(url));
             string option;
 
-            Dictionary<string, string> args = new Dictionary<string, string>
+            Dictionary<string, string> RequestUrlArgs = new Dictionary<string, string>
             {
                 { "key", WebAPIKey }
             };
@@ -81,15 +85,19 @@ namespace ShareX.UploadersLib.URLShorteners
 
             FirebaseRequest request = new FirebaseRequest
             {
-                longDynamicLink = longDynamicLink,
-                suffix = new FirebaseRequestSuffix
+                dynamicLinkInfo = new DynamicLinkInfo
                 {
-                    option = option
+                    dynamicLinkDomain = DynamicLinkDomain + ".app.goo.gl",
+                    link = HttpUtility.UrlEncode(url),
+                    suffix = new Suffix
+                    {
+                        option = option
+                    }
                 }
             };
 
             string json = JsonConvert.SerializeObject(request);
-            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON, args);
+            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON, RequestUrlArgs);
             result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
 
             return result;
