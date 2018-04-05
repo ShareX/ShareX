@@ -96,8 +96,9 @@ namespace ShareX.UploadersLib.URLShorteners
                 }
             };
 
-            string json = JsonConvert.SerializeObject(request);
-            result.Response = SendRequest(HttpMethod.POST, RequestUrl, json, ContentTypeJSON, RequestUrlArgs);
+            string RequestJson = JsonConvert.SerializeObject(request);
+
+            result.Response = SendRequest(HttpMethod.POST, RequestUrl, RequestJson, ContentTypeJSON, RequestUrlArgs);
             result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
 
             return result;
