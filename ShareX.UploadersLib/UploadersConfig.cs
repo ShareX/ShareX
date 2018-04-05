@@ -111,6 +111,7 @@ namespace ShareX.UploadersLib
         #region Paste.ee
 
         public string Paste_eeUserKey = "";
+        public bool Paste_eeEncryptPaste = false;
 
         #endregion Paste.ee
 

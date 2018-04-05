@@ -53,7 +53,10 @@ namespace ShareX.UploadersLib.TextUploaders
                 apiKey = APIKeys.Paste_eeApplicationKey;
             }
 
-            return new Paste_ee(apiKey);
+            return new Paste_ee(apiKey)
+            {
+                EncryptPaste = config.Paste_eeEncryptPaste
+            };
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
@@ -62,6 +65,7 @@ namespace ShareX.UploadersLib.TextUploaders
     public sealed class Paste_ee : TextUploader
     {
         public string APIKey { get; private set; }
+        public bool EncryptPaste { get; set; }
 
         public Paste_ee(string apiKey)
         {
@@ -81,7 +85,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 Paste_eeSubmitRequestBody requestBody = new Paste_eeSubmitRequestBody()
                 {
-                    encrypted = false,
+                    encrypted = EncryptPaste,
                     description = "",
                     expiration = "never",
                     sections = new Paste_eeSubmitRequestBodySection[]
