@@ -117,27 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Додати</value>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Попередній перегляд зображення</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Змінити</value>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>Копіювати зображення</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Вилучити</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Відновити до типових</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Закрити</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Порада: Якщо Ви додасте порожнє завдання, то воно буде перетворено у роздільник рядків меню.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Редактор меню швидких завдань</value>
-  </data>
+  <metadata name="cmsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

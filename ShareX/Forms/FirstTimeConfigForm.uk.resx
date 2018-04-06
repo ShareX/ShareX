@@ -132,6 +132,9 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>Гаразд</value>
   </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Ці налаштування можна знайти в „Налаштування програми -&gt; Інтеграції“.</value>
+  </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Налаштування ShareX при першому запуску</value>
   </data>

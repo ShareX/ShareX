@@ -129,8 +129,14 @@
   <data name="lblPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
+  <data name="lblFullName.Text" xml:space="preserve">
+    <value>Повне імʼя:</value>
+  </data>
   <data name="lblEmail.Text" xml:space="preserve">
     <value>Ел. пошта:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Інформація про обліковий запис</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -138,6 +138,12 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>Посилання</value>
   </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Відкрити сторінку компанії ShareX на Patreon</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Остаточно приховати кнопку Patreon</value>
+  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Весь екран</value>
   </data>
@@ -149,6 +155,12 @@
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Область</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Область (світло)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (прозорість)</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Остання область</value>
@@ -399,6 +411,15 @@
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
     <value>Форумне (BBCode) зображення з посилання</value>
   </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Позначити посилання</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Позначити зображення</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Позначити зображення з посиланням</value>
+  </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
     <value>Шлях до файла</value>
   </data>
@@ -441,6 +462,9 @@
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Показати QR-код...</value>
   </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Розпізнати зображення...</value>
+  </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Об’єднати зображення...</value>
   </data>
@@ -465,6 +489,9 @@
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Автоматично</value>
   </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Сторона</value>
+  </data>
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Знизу</value>
   </data>
@@ -482,6 +509,12 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Область</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>Область (світло)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (прозорість)</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Остання область</value>
@@ -668,6 +701,12 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Вихід</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>Відкрити посилання запрошення на сервер ShareX у Discord</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Остаточно приховати кнопку Discord</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Закрити</value>

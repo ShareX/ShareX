@@ -126,6 +126,15 @@
   <data name="tsmiExportUpload.Text" xml:space="preserve">
     <value>Вивантажити як текст</value>
   </data>
+  <data name="tsmiImportClipboard.Text" xml:space="preserve">
+    <value>З буфера обміну</value>
+  </data>
+  <data name="tsmiImportFile.Text" xml:space="preserve">
+    <value>З файла...</value>
+  </data>
+  <data name="tsmiImportURL.Text" xml:space="preserve">
+    <value>З посилання...</value>
+  </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value> Імпорт</value>
   </data>

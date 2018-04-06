@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Вже існує файл з такою ж назвою в цій теці.
+Виберіть нову назву файла або дію:</value>
+  </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
     <value>Перезаписати: </value>
   </data>

@@ -117,26 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Додати</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Мова:</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Змінити</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Результат:</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Вилучити</value>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>Наданий OCR.Space API</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Відновити до типових</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Закрити</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Порада: Якщо Ви додасте порожнє завдання, то воно буде перетворено у роздільник рядків меню.</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>Запустити ОРС</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Редактор меню швидких завдань</value>
+    <value>ShareX — Оптичне розпізнавання символів</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
