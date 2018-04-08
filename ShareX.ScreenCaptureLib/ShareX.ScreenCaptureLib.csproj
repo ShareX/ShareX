@@ -125,7 +125,7 @@
     <Compile Include="Forms\StickerPackForm.Designer.cs">
       <DependentUpon>StickerPackForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegionHelpers\ButtonObject.cs" />
+    <Compile Include="RegionHelpers\ImageEditorButton.cs" />
     <Compile Include="RegionHelpers\ImageEditorScrollbar.cs" />
     <Compile Include="RegionHelpers\ScrollbarManager.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
@@ -203,7 +203,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Shapes\ShapeManager.cs" />
-    <Compile Include="RegionHelpers\DrawableObject.cs" />
+    <Compile Include="RegionHelpers\ImageEditorControl.cs" />
     <Compile Include="Forms\RegionCaptureForm.cs">
       <SubType>Form</SubType>
     </Compile>

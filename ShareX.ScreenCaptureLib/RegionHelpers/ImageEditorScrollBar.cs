@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ImageEditorScrollbar : DrawableObject
+    internal class ImageEditorScrollbar : ImageEditorControl
     {
         public Orientation Orientation { get; set; }
         public int Thickness { get; set; } = 15;
