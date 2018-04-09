@@ -74,7 +74,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 }
             };
 
-            string RequestUrl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
+            string requesturl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
@@ -89,9 +89,9 @@ namespace ShareX.UploadersLib.URLShorteners
                 };
             }
 
-            string RequestJson = JsonConvert.SerializeObject(request);
+            string requestjson = JsonConvert.SerializeObject(request);
 
-            result.Response = SendRequest(HttpMethod.POST, RequestUrl, RequestJson, ContentTypeJSON, args);
+            result.Response = SendRequest(HttpMethod.POST, requesturl, requestjson, ContentTypeJSON, args);
             result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
 
             return result;
