@@ -29,7 +29,7 @@ using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ButtonObject : DrawableObject
+    internal class ImageEditorButton : ImageEditorControl
     {
         public string Text { get; set; }
         public Color ButtonColor { get; set; }

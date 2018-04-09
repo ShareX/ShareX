@@ -178,7 +178,7 @@ namespace ShareX.ScreenCaptureLib
 
         public AnnotationOptions AnnotationOptions => Options.AnnotationOptions;
 
-        internal List<DrawableObject> DrawableObjects { get; private set; }
+        internal List<ImageEditorControl> DrawableObjects { get; private set; }
         internal ResizeNode[] ResizeNodes { get; private set; }
 
         private bool nodesVisible;
@@ -229,7 +229,7 @@ namespace ShareX.ScreenCaptureLib
             Form = form;
             Options = form.Options;
 
-            DrawableObjects = new List<DrawableObject>();
+            DrawableObjects = new List<ImageEditorControl>();
             ResizeNodes = new ResizeNode[9];
 
             for (int i = 0; i < ResizeNodes.Length; i++)
@@ -856,7 +856,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal void UpdateObjects()
         {
-            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+            ImageEditorControl[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
             Point position = InputManager.ClientMousePosition;
 
@@ -864,7 +864,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 for (int i = 0; i < objects.Length; i++)
                 {
-                    DrawableObject obj = objects[i];
+                    ImageEditorControl obj = objects[i];
 
                     if (obj.Visible)
                     {
@@ -895,7 +895,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (InputManager.IsMouseReleased(MouseButtons.Left))
                 {
-                    foreach (DrawableObject obj in objects)
+                    foreach (ImageEditorControl obj in objects)
                     {
                         if (obj.IsDragging)
                         {
@@ -908,7 +908,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal void DrawObjects(Graphics g)
         {
-            foreach (DrawableObject obj in DrawableObjects)
+            foreach (ImageEditorControl obj in DrawableObjects)
             {
                 if (obj.Visible)
                 {

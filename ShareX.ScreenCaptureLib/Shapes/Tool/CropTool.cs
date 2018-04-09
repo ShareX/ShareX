@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool LimitRectangleToInsideCanvas { get; } = true;
 
-        private ButtonObject confirmButton, cancelButton;
+        private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(80, 40);
         private int buttonOffset = 15;
 
@@ -75,7 +75,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            confirmButton = new ButtonObject()
+            confirmButton = new ImageEditorButton()
             {
                 Text = "\u2714",
                 ButtonColor = Color.ForestGreen,
@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
             confirmButton.MouseLeave += () => Manager.Form.SetDefaultCursor();
             Manager.DrawableObjects.Add(confirmButton);
 
-            cancelButton = new ButtonObject()
+            cancelButton = new ImageEditorButton()
             {
                 Text = "\u2716",
                 ButtonColor = Color.FromArgb(227, 45, 45),

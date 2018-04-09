@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal abstract class DrawableObject
+    internal abstract class ImageEditorControl
     {
         public event MouseEventHandler MouseDown, MouseUp;
         public event Action MouseEnter, MouseLeave;
