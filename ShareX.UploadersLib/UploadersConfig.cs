@@ -434,7 +434,7 @@ namespace ShareX.UploadersLib
 
         public string FirebaseWebAPIKey = "";
         public string FirebaseDynamicLinkDomain = "";
-        public bool FirebaseIsShort = true;
+        public bool FirebaseIsShort = false;
 
         #endregion Firebase Dynamic Links
 
