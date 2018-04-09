@@ -3,9 +3,7 @@
 using Newtonsoft.Json;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
-using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
