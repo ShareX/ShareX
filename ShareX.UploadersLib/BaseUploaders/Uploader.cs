@@ -189,7 +189,7 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        public string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
             string boundary = CreateBoundary();
