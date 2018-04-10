@@ -398,6 +398,8 @@ namespace ShareX.UploadersLib
             if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+
+                tvOneDrive.Enabled = true;
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
@@ -412,8 +414,6 @@ namespace ShareX.UploadersLib
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                 btnGoogleDriveRefreshFolders.Enabled = true;
-
-                tvOneDrive.Enabled = true;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
