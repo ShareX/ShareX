@@ -2100,5 +2100,91 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gfycat
+
+        #region Generic OAuth2
+
+        public OAuth2Info OAuth2Open(IOAuth2 uploader)
+        {
+            try
+            {
+                string url = uploader.GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    URLHelpers.OpenURL(url);
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is opened: " + url);
+                    return uploader.AuthInfo;
+                }
+                else
+                {
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return null;
+        }
+
+        public bool OAuth2Complete(IOAuth2 uploader, OAuthControl oauth2, string code)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && uploader.AuthInfo != null)
+                {
+                    bool result = uploader.GetAccessToken(code);
+
+                    if (result)
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return false;
+        }
+
+        public bool OAuth2Refresh(IOAuth2 uploader, OAuthControl oauth2)
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(uploader.AuthInfo))
+                {
+                    bool result = uploader.RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return false;
+        }
+
+        #endregion Generic OAuth2
     }
 }

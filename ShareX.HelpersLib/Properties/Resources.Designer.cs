@@ -137,15 +137,7 @@ namespace ShareX.HelpersLib.Properties {
         ///easygoing
         ///ecstatic
         ///edible
-        ///educated
-        ///fabulous
-        ///failing
-        ///faint
-        ///fair
-        ///faithful
-        ///fake
-        ///familiar
-        ///fam [rest of string was truncated]&quot;;.
+        ///educat [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string adjectives {
             get {
@@ -421,8 +413,7 @@ namespace ShareX.HelpersLib.Properties {
         ///africanjacana
         ///africanmolesnake
         ///africanparadiseflycatcher
-        ///africanpiedkingfisher
-        ///africanporcu [rest of string was truncated]&quot;;.
+        ///a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string animals {
             get {
@@ -3294,6 +3285,33 @@ namespace ShareX.HelpersLib.Properties {
         internal static string WavFileNameEditor_EditValue_Browse_for_a_sound_file___ {
             get {
                 return ResourceManager.GetString("WavFileNameEditor_EditValue_Browse_for_a_sound_file___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private.
+        /// </summary>
+        internal static string YouTubeVideoPrivacy_Private {
+            get {
+                return ResourceManager.GetString("YouTubeVideoPrivacy_Private", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Public.
+        /// </summary>
+        internal static string YouTubeVideoPrivacy_Public {
+            get {
+                return ResourceManager.GetString("YouTubeVideoPrivacy_Public", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlisted.
+        /// </summary>
+        internal static string YouTubeVideoPrivacy_Unlisted {
+            get {
+                return ResourceManager.GetString("YouTubeVideoPrivacy_Unlisted", resourceCulture);
             }
         }
     }

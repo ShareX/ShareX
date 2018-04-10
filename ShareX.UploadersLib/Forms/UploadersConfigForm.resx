@@ -11762,6 +11762,99 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
+  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 238</value>
+  </data>
+  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
+    <value>oauth2YouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 273</value>
+  </data>
+  <data name="cbYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 21</value>
+  </data>
+  <data name="cbYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubePrivacyType.Name" xml:space="preserve">
+    <value>cbYouTubePrivacyType</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubePrivacyType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubePrivacyType.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubePrivacyType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblYouTubePrivacyType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 257</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Privacy type:</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePrivacyType.Name" xml:space="preserve">
+    <value>lblYouTubePrivacyType</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePrivacyType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePrivacyType.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePrivacyType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 519</value>
+  </data>
+  <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="tpYouTube.Text" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="&gt;&gt;tpYouTube.Name" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;tpYouTube.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpYouTube.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
   <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -11967,7 +12060,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -12387,7 +12480,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

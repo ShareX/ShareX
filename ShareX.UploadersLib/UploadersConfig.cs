@@ -381,6 +381,13 @@ namespace ShareX.UploadersLib
 
         #endregion Plik
 
+        #region YouTube
+
+        public OAuth2Info YouTubeOAuth2Info = null;
+        public YouTubeVideoPrivacy YouTubePrivacyType = YouTubeVideoPrivacy.Public;
+
+        #endregion YouTube
+
         #endregion File uploaders
 
         #region URL shorteners

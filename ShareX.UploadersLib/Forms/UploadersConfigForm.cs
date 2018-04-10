@@ -398,6 +398,8 @@ namespace ShareX.UploadersLib
             if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+
+                tvOneDrive.Enabled = true;
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
@@ -412,8 +414,6 @@ namespace ShareX.UploadersLib
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                 btnGoogleDriveRefreshFolders.Enabled = true;
-
-                tvOneDrive.Enabled = true;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
@@ -717,6 +717,19 @@ namespace ShareX.UploadersLib
             cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
 
             #endregion Gfycat
+
+            #region YouTube
+
+            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
+            {
+                oauth2YouTube.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            cbYouTubePrivacyType.Items.Clear();
+            cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
+            cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
+
+            #endregion YouTube
 
             #endregion File uploaders
 
@@ -2992,6 +3005,36 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gfycat
+
+        #region YouTube
+
+        private void oauth2YouTube_OpenButtonClicked()
+        {
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.YouTubeOAuth2Info = OAuth2Open(new YouTube(oauth));
+        }
+
+        private void oauth2YouTube_CompleteButtonClicked(string code)
+        {
+            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube, code);
+        }
+
+        private void oauth2YouTube_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube);
+        }
+
+        private void oauth2YouTube_ClearButtonClicked()
+        {
+            Config.YouTubeOAuth2Info = null;
+        }
+
+        private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.YouTubePrivacyType = (YouTubeVideoPrivacy)cbYouTubePrivacyType.SelectedIndex;
+        }
+
+        #endregion YouTube
 
         #endregion File uploaders
 

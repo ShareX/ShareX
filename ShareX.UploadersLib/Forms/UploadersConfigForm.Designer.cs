@@ -481,6 +481,10 @@
             this.lblPlikUsername = new System.Windows.Forms.Label();
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
+            this.tpYouTube = new System.Windows.Forms.TabPage();
+            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
+            this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
+            this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
@@ -700,6 +704,7 @@
             this.gbPlikSettings.SuspendLayout();
             this.gbPlikLoginCredentials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).BeginInit();
+            this.tpYouTube.SuspendLayout();
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
@@ -1848,6 +1853,7 @@
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpPlik);
+            this.tcFileUploaders.Controls.Add(this.tpYouTube);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -4064,6 +4070,37 @@
             this.txtPlikLogin.Name = "txtPlikLogin";
             this.txtPlikLogin.TextChanged += new System.EventHandler(this.txtPlikLogin_TextChanged);
             // 
+            // tpYouTube
+            // 
+            this.tpYouTube.Controls.Add(this.oauth2YouTube);
+            this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
+            this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
+            resources.ApplyResources(this.tpYouTube, "tpYouTube");
+            this.tpYouTube.Name = "tpYouTube";
+            this.tpYouTube.UseVisualStyleBackColor = true;
+            // 
+            // oauth2YouTube
+            // 
+            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
+            this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
+            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
+            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
+            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
+            // 
+            // cbYouTubePrivacyType
+            // 
+            this.cbYouTubePrivacyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYouTubePrivacyType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbYouTubePrivacyType, "cbYouTubePrivacyType");
+            this.cbYouTubePrivacyType.Name = "cbYouTubePrivacyType";
+            this.cbYouTubePrivacyType.SelectedIndexChanged += new System.EventHandler(this.cbYouTubePrivacyType_SelectedIndexChanged);
+            // 
+            // lblYouTubePrivacyType
+            // 
+            resources.ApplyResources(this.lblYouTubePrivacyType, "lblYouTubePrivacyType");
+            this.lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
+            // 
             // tpSharedFolder
             // 
             this.tpSharedFolder.BackColor = System.Drawing.SystemColors.Window;
@@ -5301,6 +5338,8 @@
             this.gbPlikLoginCredentials.ResumeLayout(false);
             this.gbPlikLoginCredentials.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).EndInit();
+            this.tpYouTube.ResumeLayout(false);
+            this.tpYouTube.PerformLayout();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
             this.tpEmail.ResumeLayout(false);
@@ -5957,5 +5996,9 @@
         private System.Windows.Forms.TextBox txtFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
         private System.Windows.Forms.Label lblFirebaseWebAPIKey;
+        private OAuthControl oauth2YouTube;
+        private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
+        private System.Windows.Forms.Label lblYouTubePrivacyType;
+        internal System.Windows.Forms.TabPage tpYouTube;
     }
 }

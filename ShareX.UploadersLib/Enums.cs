@@ -139,6 +139,8 @@ namespace ShareX.UploadersLib
         Transfersh,
         [Description("Plik")]
         Plik,
+        [Description("YouTube")]
+        YouTube,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

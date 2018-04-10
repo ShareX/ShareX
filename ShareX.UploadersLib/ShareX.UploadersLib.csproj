@@ -168,6 +168,7 @@
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
+    <Compile Include="FileUploaders\YouTube.cs" />
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +241,7 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
+    <Compile Include="Helpers\GoogleOAuth2.cs" />
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
@@ -932,6 +934,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Firebase.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\YouTube.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
