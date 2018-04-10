@@ -12036,13 +12036,13 @@ Using an encrypted library disables sharing.</value>
     <value>6</value>
   </data>
   <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 184</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
