@@ -27,6 +27,7 @@ using IWshRuntimeLibrary;
 using Shell32;
 using System;
 using System.IO;
+using System.Reflection;
 using File = System.IO.File;
 using Folder = Shell32.Folder;
 
@@ -114,8 +115,9 @@ namespace ShareX.HelpersLib
 
             try
             {
-                Shell shell = new ShellClass();
-                Folder folder = shell.NameSpace(directory);
+                Type t = Type.GetTypeFromProgID("Shell.Application");
+                object shell = Activator.CreateInstance(t);
+                Folder folder = (Folder)t.InvokeMember("NameSpace", BindingFlags.InvokeMethod, null, shell, new object[] { directory });
                 FolderItem folderItem = folder.ParseName(filename);
 
                 if (folderItem != null)

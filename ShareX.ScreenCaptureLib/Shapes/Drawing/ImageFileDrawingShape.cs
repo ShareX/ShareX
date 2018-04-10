@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            if (Manager.IsCornerMoving && LoadImageFile(AnnotationOptions.LastImageFilePath, true))
+            if (Manager.IsCtrlModifier && LoadImageFile(AnnotationOptions.LastImageFilePath, true))
             {
                 OnCreated();
                 Manager.IsMoving = true;

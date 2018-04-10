@@ -1793,8 +1793,6 @@
             // cbFirebaseIsShort
             // 
             resources.ApplyResources(this.cbFirebaseIsShort, "cbFirebaseIsShort");
-            this.cbFirebaseIsShort.Checked = true;
-            this.cbFirebaseIsShort.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbFirebaseIsShort.Name = "cbFirebaseIsShort";
             this.cbFirebaseIsShort.UseVisualStyleBackColor = true;
             this.cbFirebaseIsShort.CheckedChanged += new System.EventHandler(this.cbFirebaseIsShort_CheckedChanged);

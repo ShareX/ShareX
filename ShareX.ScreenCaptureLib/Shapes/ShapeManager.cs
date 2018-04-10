@@ -158,6 +158,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsPanning { get; set; }
         public bool IsResizing { get; set; }
         // Is holding Ctrl?
+        public bool IsCtrlModifier { get; private set; }
         public bool IsCornerMoving { get; private set; }
         // Is holding Shift?
         public bool IsProportionalResizing { get; private set; }
@@ -178,7 +179,7 @@ namespace ShareX.ScreenCaptureLib
 
         public AnnotationOptions AnnotationOptions => Options.AnnotationOptions;
 
-        internal List<DrawableObject> DrawableObjects { get; private set; }
+        internal List<ImageEditorControl> DrawableObjects { get; private set; }
         internal ResizeNode[] ResizeNodes { get; private set; }
 
         private bool nodesVisible;
@@ -229,7 +230,7 @@ namespace ShareX.ScreenCaptureLib
             Form = form;
             Options = form.Options;
 
-            DrawableObjects = new List<DrawableObject>();
+            DrawableObjects = new List<ImageEditorControl>();
             ResizeNodes = new ResizeNode[9];
 
             for (int i = 0; i < ResizeNodes.Length; i++)
@@ -282,7 +283,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_LostFocus(object sender, EventArgs e)
         {
-            IsCornerMoving = IsProportionalResizing = IsSnapResizing = false;
+            ResetModifiers();
         }
 
         private void form_MouseDown(object sender, MouseEventArgs e)
@@ -410,7 +411,17 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.ControlKey:
-                    IsCornerMoving = true;
+                    if (!IsCtrlModifier && !IsCornerMoving)
+                    {
+                        if (IsCreating || IsResizing)
+                        {
+                            IsCornerMoving = true;
+                        }
+                        else
+                        {
+                            IsCtrlModifier = true;
+                        }
+                    }
                     break;
                 case Keys.ShiftKey:
                     IsProportionalResizing = true;
@@ -638,6 +649,7 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.ControlKey:
+                    IsCtrlModifier = false;
                     IsCornerMoving = false;
                     break;
                 case Keys.ShiftKey:
@@ -856,7 +868,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal void UpdateObjects()
         {
-            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+            ImageEditorControl[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
             Point position = InputManager.ClientMousePosition;
 
@@ -864,7 +876,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 for (int i = 0; i < objects.Length; i++)
                 {
-                    DrawableObject obj = objects[i];
+                    ImageEditorControl obj = objects[i];
 
                     if (obj.Visible)
                     {
@@ -895,7 +907,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (InputManager.IsMouseReleased(MouseButtons.Left))
                 {
-                    foreach (DrawableObject obj in objects)
+                    foreach (ImageEditorControl obj in objects)
                     {
                         if (obj.IsDragging)
                         {
@@ -908,7 +920,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal void DrawObjects(Graphics g)
         {
-            foreach (DrawableObject obj in DrawableObjects)
+            foreach (ImageEditorControl obj in DrawableObjects)
             {
                 if (obj.Visible)
                 {
@@ -1262,6 +1274,11 @@ namespace ShareX.ScreenCaptureLib
             DeselectCurrentShape();
         }
 
+        private void ResetModifiers()
+        {
+            IsCtrlModifier = IsCornerMoving = IsProportionalResizing = IsSnapResizing = false;
+        }
+
         private void ClearTools()
         {
             foreach (BaseTool tool in ToolShapes)
@@ -1278,13 +1295,16 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape GetIntersectShape(Point position)
         {
-            for (int i = Shapes.Count - 1; i >= 0; i--)
+            if (!IsCtrlModifier)
             {
-                BaseShape shape = Shapes[i];
-
-                if (shape.ShapeType == CurrentTool && shape.Intersects(position))
+                for (int i = Shapes.Count - 1; i >= 0; i--)
                 {
-                    return shape;
+                    BaseShape shape = Shapes[i];
+
+                    if (shape.ShapeType == CurrentTool && shape.Intersects(position))
+                    {
+                        return shape;
+                    }
                 }
             }
 
