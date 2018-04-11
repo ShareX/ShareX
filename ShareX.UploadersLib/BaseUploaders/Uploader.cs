@@ -148,7 +148,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        public string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
             string query = URLHelpers.CreateQuery(args);
@@ -189,7 +189,7 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        public string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
             string boundary = CreateBoundary();

@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib
             args.Add("redirect_uri", RedirectMethod);
             args.Add("grant_type", "authorization_code");
 
-            string response = GoogleUploader.SendRequestMultiPart(TokenEndpoint, args);
+            string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = GoogleUploader.SendRequestMultiPart(TokenEndpoint, args);
+                string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
