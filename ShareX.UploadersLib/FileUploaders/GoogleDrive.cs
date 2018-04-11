@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -72,107 +71,39 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class GoogleDrive : FileUploader, IOAuth2
     {
-        public OAuth2Info AuthInfo { get; set; }
+        private GoogleOAuth2 GoogleAuth { get; set; }
         public bool IsPublic { get; set; }
         public bool DirectLink { get; set; }
         public string FolderID { get; set; }
 
         public GoogleDrive(OAuth2Info oauth)
         {
-            AuthInfo = oauth;
-        }
-
-        public string GetAuthorizationURL()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("response_type", "code");
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("scope", "https://www.googleapis.com/auth/drive");
-
-            return URLHelpers.CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
-        }
-
-        public bool GetAccessToken(string code)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("code", code);
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("grant_type", "authorization_code");
-
-            string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-            if (!string.IsNullOrEmpty(response))
+            GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                if (token != null && !string.IsNullOrEmpty(token.access_token))
-                {
-                    token.UpdateExpireDate();
-                    AuthInfo.Token = token;
-                    return true;
-                }
-            }
-
-            return false;
+                Scope = "https://www.googleapis.com/auth/drive"
+            };
         }
+
+        public OAuth2Info AuthInfo => GoogleAuth.AuthInfo;
 
         public bool RefreshAccessToken()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("refresh_token", AuthInfo.Token.refresh_token);
-                args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("client_secret", AuthInfo.Client_Secret);
-                args.Add("grant_type", "refresh_token");
-
-                string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                    if (token != null && !string.IsNullOrEmpty(token.access_token))
-                    {
-                        token.UpdateExpireDate();
-                        string refresh_token = AuthInfo.Token.refresh_token;
-                        AuthInfo.Token = token;
-                        AuthInfo.Token.refresh_token = refresh_token;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return GoogleAuth.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
-                {
-                    Errors.Add("Refresh access token failed.");
-                    return false;
-                }
-            }
-            else
-            {
-                Errors.Add("Login is required.");
-                return false;
-            }
-
-            return true;
+            return GoogleAuth.CheckAuthorization();
         }
 
-        private NameValueCollection GetAuthHeaders()
+        public string GetAuthorizationURL()
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
+            return GoogleAuth.GetAuthorizationURL();
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            return GoogleAuth.GetAccessToken(code);
         }
 
         private string GetMetadata(string title, string parentID)
@@ -218,7 +149,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 withLink = withLink.ToString()
             });
 
-            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, null, GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)
@@ -240,7 +171,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("q", query);
 
-            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, GetAuthHeaders());
+            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, GoogleAuth.GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -261,7 +192,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = GetMetadata(fileName, FolderID);
 
-            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", stream, fileName, headers: GetAuthHeaders(),
+            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", stream, fileName, headers: GoogleAuth.GetAuthHeaders(),
                 contentType: "multipart/related", metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))

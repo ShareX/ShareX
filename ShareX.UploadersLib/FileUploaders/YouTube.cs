@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "youtube.upload"
+                Scope = "https://www.googleapis.com/auth/youtube.upload"
             };
         }
 
@@ -139,6 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         case YouTubeVideoStatus.UploadFailed:
                             Errors.Add("Upload failed: " + upload.status.failureReason);
                             break;
+
                         case YouTubeVideoStatus.UploadRejected:
                             Errors.Add("Upload rejected: " + upload.status.rejectionReason);
                             break;
