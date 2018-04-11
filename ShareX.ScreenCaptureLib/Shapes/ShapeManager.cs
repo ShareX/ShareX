@@ -1031,6 +1031,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 shape.OnConfigLoad();
                 shape.OnMoved();
+
+                Form.Invalidate();
             }
         }
 
