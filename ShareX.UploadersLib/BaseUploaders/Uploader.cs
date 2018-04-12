@@ -290,6 +290,64 @@ namespace ShareX.UploadersLib
             return result;
         }
 
+        protected UploadResult SendRequestFileRaw(string url, Stream data, string fileName, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.PUT)
+        {
+            UploadResult result = new UploadResult();
+
+            IsUploading = true;
+            StopUploadRequested = false;
+
+            try
+            {
+                url = URLHelpers.CreateQuery(url, args);
+
+                long contentLength = data.Length;
+                string contentType = Helpers.GetMimeType(fileName);
+
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+
+                using (Stream requestStream = request.GetRequestStream())
+                {
+                    if (!TransferData(data, requestStream))
+                    {
+                        return null;
+                    }
+                }
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    result.Response = ResponseToString(response, responseType);
+                }
+
+                result.IsSuccess = true;
+            }
+            catch (Exception e)
+            {
+                if (!StopUploadRequested)
+                {
+                    string response = AddWebError(e, url);
+
+                    if (ReturnResponseOnError && e is WebException)
+                    {
+                        result.Response = response;
+                    }
+                }
+            }
+            finally
+            {
+                currentRequest = null;
+                IsUploading = false;
+
+                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
+                {
+                    WriteVerboseLog(url, args, headers, result.Response);
+                }
+            }
+
+            return result;
+        }
+
         private HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {

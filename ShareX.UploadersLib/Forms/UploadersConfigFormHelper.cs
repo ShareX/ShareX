@@ -793,7 +793,7 @@ namespace ShareX.UploadersLib
             OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
             OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
             tnParent.Nodes.Clear();
-            foreach (OneDriveFileInfo folder in oneDrivePathInfo.data.Where(x => x.id.StartsWith("folder.")))
+            foreach (OneDriveFileInfo folder in oneDrivePathInfo.value)
             {
                 OneDriveAddFolder(folder, tnParent);
             }

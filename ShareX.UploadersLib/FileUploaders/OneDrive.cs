@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -59,13 +60,16 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class OneDrive : FileUploader, IOAuth2
     {
+        private const string AuthorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+        private const string TokenEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
 
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
-            id = "me/skydrive",
+            id = "", // empty defaults to root
             name = Resources.OneDrive_RootFolder_Root_folder
         };
 
@@ -78,11 +82,11 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("scope", "wl.offline_access wl.skydrive_update");
+            args.Add("scope", "offline_access files.readwrite");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return URLHelpers.CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
+            return URLHelpers.CreateQuery(AuthorizationEndpoint, args);
         }
 
         public bool GetAccessToken(string code)
@@ -94,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("code", code);
             args.Add("grant_type", "authorization_code");
 
-            string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
+            string response = SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -117,12 +121,11 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("redirect_uri", Links.URL_CALLBACK);
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("refresh_token", AuthInfo.Token.refresh_token);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequestURLEncoded(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
+                string response = SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -161,29 +164,38 @@ namespace ShareX.UploadersLib.FileUploaders
             return true;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
+        private string GetFolderUrl(string folderID)
+        {
+            string folderPath;
+
+            if (!string.IsNullOrEmpty(folderID))
+            {
+                folderPath = URLHelpers.CombineURL("me/drive/items", folderID);
+            }
+            else
+            {
+                folderPath = "me/drive/root";
+            }
+
+            return folderPath;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("access_token", AuthInfo.Token.access_token);
-            args.Add("overwrite", "true");
-            args.Add("downsize_photo_uploads", "false");
+            string folderPath = GetFolderUrl(FolderID);
 
-            string folderPath;
+            string url = URLHelpers.BuildUri("https://graph.microsoft.com", $"/v1.0/{folderPath}:/{fileName}:/content", "select=id,webUrl");
 
-            if (!string.IsNullOrEmpty(FolderID))
-            {
-                folderPath = URLHelpers.CombineURL(FolderID, "files");
-            }
-            else
-            {
-                folderPath = "me/skydrive/files";
-            }
-
-            string url = URLHelpers.CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
-
-            UploadResult result = SendRequestFile(url, stream, fileName);
+            UploadResult result = SendRequestFileRaw(url, stream, fileName, headers: GetAuthHeaders());
 
             if (result.IsSuccess)
             {
@@ -195,7 +207,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 else
                 {
-                    result.URL = uploadInfo.source;
+                    result.URL = uploadInfo.webUrl;
                 }
             }
 
@@ -204,9 +216,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string CreateShareableLink(string id, OneDriveLinkType linkType = OneDriveLinkType.Read)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("access_token", AuthInfo.Token.access_token);
-
             string linkTypeValue;
 
             switch (linkType)
@@ -216,35 +225,42 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
                 default:
                 case OneDriveLinkType.Read:
-                    linkTypeValue = "shared_read_link";
+                    linkTypeValue = "view";
                     break;
                 case OneDriveLinkType.Edit:
-                    linkTypeValue = "shared_edit_link";
+                    linkTypeValue = "edit";
                     break;
             }
 
-            string response = SendRequest(HttpMethod.GET, $"https://apis.live.net/v5.0/{id}/{linkTypeValue}", args);
-
-            OneDriveShareableLinkInfo shareableLinkInfo = JsonConvert.DeserializeObject<OneDriveShareableLinkInfo>(response);
-
-            if (shareableLinkInfo != null)
+            string json = JsonConvert.SerializeObject(new
             {
-                return shareableLinkInfo.link;
+                type = linkTypeValue
+            });
+
+            string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, ContentTypeJSON,
+                headers: GetAuthHeaders());
+
+            OneDrivePermissionInfo permissionInfo = JsonConvert.DeserializeObject<OneDrivePermissionInfo>(response);
+
+            if (permissionInfo != null && permissionInfo.link != null)
+            {
+                return permissionInfo.link.webUrl;
             }
 
             return null;
         }
 
-        public OneDrivePathInfo GetPathInfo(string path)
+        public OneDrivePathInfo GetPathInfo(string id)
         {
             if (!CheckAuthorization()) return null;
 
+            string folderPath = GetFolderUrl(id);
+
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("access_token", AuthInfo.Token.access_token);
+            args.Add("select", "id,name");
+            args.Add("filter", "folder ne null");
 
-            if (!path.EndsWith("files")) path += "/files";
-
-            string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
+            string response = SendRequest(HttpMethod.GET, $"https://graph.microsoft.com/v1.0/{folderPath}/children", args, GetAuthHeaders());
 
             if (response != null)
             {
@@ -260,17 +276,23 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public string id { get; set; }
         public string name { get; set; }
-        public string source { get; set; }
+        public string webUrl { get; set; }
+    }
+
+    public class OneDrivePermissionInfo
+    {
+        public OneDriveShareableLinkInfo link { get; set; }
     }
 
     public class OneDriveShareableLinkInfo
     {
-        public string link { get; set; }
+        public string webUrl { get; set; }
+        public string webHtml { get; set; }
     }
 
     public class OneDrivePathInfo
     {
-        public OneDriveFileInfo[] data { get; set; }
+        public OneDriveFileInfo[] value { get; set; }
     }
 
     public enum OneDriveLinkType
