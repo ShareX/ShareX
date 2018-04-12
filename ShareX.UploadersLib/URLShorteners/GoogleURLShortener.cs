@@ -24,9 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -53,108 +51,48 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public class GoogleURLShortener : URLShortener, IOAuth2
     {
+        private GoogleOAuth2 GoogleAuth { get; set; }
         public AccountType UploadMethod { get; set; }
         public string AnonymousKey { get; set; }
-        public OAuth2Info AuthInfo { get; set; }
 
         public GoogleURLShortener(AccountType uploadMethod, string anonymousKey, OAuth2Info oauth)
         {
             UploadMethod = uploadMethod;
             AnonymousKey = anonymousKey;
-            AuthInfo = oauth;
-        }
-
-        public GoogleURLShortener(string anonymousKey)
-        {
-            UploadMethod = AccountType.Anonymous;
-            AnonymousKey = anonymousKey;
-        }
-
-        public GoogleURLShortener(OAuth2Info oauth)
-        {
-            UploadMethod = AccountType.User;
-            AuthInfo = oauth;
-        }
-
-        public string GetAuthorizationURL()
-        {
-            return string.Format("https://accounts.google.com/o/oauth2/auth?response_type={0}&client_id={1}&redirect_uri={2}&scope={3}",
-                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", URLHelpers.URLEncode("https://www.googleapis.com/auth/urlshortener"));
-        }
-
-        public bool GetAccessToken(string code)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("code", code);
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("grant_type", "authorization_code");
-
-            string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-            if (!string.IsNullOrEmpty(response))
+            GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                if (token != null && !string.IsNullOrEmpty(token.access_token))
-                {
-                    token.UpdateExpireDate();
-                    AuthInfo.Token = token;
-                    return true;
-                }
-            }
-
-            return false;
+                Scope = "https://www.googleapis.com/auth/urlshortener"
+            };
         }
+
+        public GoogleURLShortener(string anonymousKey) : this(AccountType.Anonymous, anonymousKey, null)
+        {
+        }
+
+        public GoogleURLShortener(OAuth2Info oauth) : this(AccountType.User, null, oauth)
+        {
+        }
+
+        public OAuth2Info AuthInfo => GoogleAuth.AuthInfo;
 
         public bool RefreshAccessToken()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("refresh_token", AuthInfo.Token.refresh_token);
-                args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("client_secret", AuthInfo.Client_Secret);
-                args.Add("grant_type", "refresh_token");
-
-                string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                    if (token != null && !string.IsNullOrEmpty(token.access_token))
-                    {
-                        token.UpdateExpireDate();
-                        string refresh_token = AuthInfo.Token.refresh_token;
-                        AuthInfo.Token = token;
-                        AuthInfo.Token.refresh_token = refresh_token;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return GoogleAuth.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
-                {
-                    Errors.Add("Refresh access token failed.");
-                    return false;
-                }
-            }
-            else
-            {
-                Errors.Add("Login is required.");
-                return false;
-            }
+            return GoogleAuth.CheckAuthorization();
+        }
 
-            return true;
+        public string GetAuthorizationURL()
+        {
+            return GoogleAuth.GetAuthorizationURL();
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            return GoogleAuth.GetAccessToken(code);
         }
 
         public override UploadResult ShortenURL(string url)

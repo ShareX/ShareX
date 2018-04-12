@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "youtube.upload"
+                Scope = "https://www.googleapis.com/auth/youtube.upload"
             };
         }
 

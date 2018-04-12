@@ -32,6 +32,10 @@ namespace ShareX.UploadersLib
 {
     public class GoogleOAuth2 : IOAuth2
     {
+        private const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+        private const string TokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
+        private const string RedirectMethod = "urn:ietf:wg:oauth:2.0:oob"; // Manual copy-paste method
+
         public OAuth2Info AuthInfo { get; private set; }
         private Uploader GoogleUploader { get; set; }
         public string Scope { get; set; }
@@ -47,10 +51,10 @@ namespace ShareX.UploadersLib
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("scope", "https://www.googleapis.com/auth/" + Scope);
+            args.Add("redirect_uri", RedirectMethod);
+            args.Add("scope", Scope);
 
-            return URLHelpers.CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
+            return URLHelpers.CreateQuery(AuthorizationEndpoint, args);
         }
 
         public bool GetAccessToken(string code)
@@ -59,10 +63,10 @@ namespace ShareX.UploadersLib
             args.Add("code", code);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
+            args.Add("redirect_uri", RedirectMethod);
             args.Add("grant_type", "authorization_code");
 
-            string response = GoogleUploader.SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
+            string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -89,7 +93,7 @@ namespace ShareX.UploadersLib
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = GoogleUploader.SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
+                string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {

@@ -568,7 +568,7 @@ namespace ShareX.UploadersLib
                     {
                         foreach (GoogleDriveFile folder in folders)
                         {
-                            ListViewItem lvi = new ListViewItem(folder.title);
+                            ListViewItem lvi = new ListViewItem(folder.name);
                             lvi.SubItems.Add(folder.description);
                             lvi.Tag = folder;
                             lvGoogleDriveFoldersList.Items.Add(lvi);
