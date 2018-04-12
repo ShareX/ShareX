@@ -920,11 +920,9 @@ namespace ShareX.UploadersLib
                 case FTPProtocol.FTP:
                     rbFTPProtocolFTP.Checked = true;
                     break;
-
                 case FTPProtocol.FTPS:
                     rbFTPProtocolFTPS.Checked = true;
                     break;
-
                 case FTPProtocol.SFTP:
                     rbFTPProtocolSFTP.Checked = true;
                     break;
@@ -1842,13 +1840,11 @@ namespace ShareX.UploadersLib
                                 result.Errors = imageUploader.Errors;
                             }
                             break;
-
                         case CustomUploaderDestinationType.TextUploader:
                             CustomTextUploader textUploader = new CustomTextUploader(item);
                             result = textUploader.UploadText("ShareX text upload test", "Test.txt");
                             result.Errors = textUploader.Errors;
                             break;
-
                         case CustomUploaderDestinationType.FileUploader:
                             using (Stream stream = ShareXResources.Logo.GetStream())
                             {
@@ -1857,13 +1853,11 @@ namespace ShareX.UploadersLib
                                 result.Errors = fileUploader.Errors;
                             }
                             break;
-
                         case CustomUploaderDestinationType.URLShortener:
                             CustomURLShortener urlShortener = new CustomURLShortener(item);
                             result = urlShortener.ShortenURL(Links.URL_WEBSITE);
                             result.Errors = urlShortener.Errors;
                             break;
-
                         case CustomUploaderDestinationType.URLSharingService:
                             CustomURLSharer urlSharer = new CustomURLSharer(item);
                             result = urlSharer.ShareURL(Links.URL_WEBSITE);

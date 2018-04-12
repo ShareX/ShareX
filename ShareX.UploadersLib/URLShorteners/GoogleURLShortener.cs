@@ -109,7 +109,6 @@ namespace ShareX.UploadersLib.URLShorteners
                     case AccountType.Anonymous:
                         query = string.Format("https://www.googleapis.com/urlshortener/v1/url?key={0}", AnonymousKey);
                         break;
-
                     case AccountType.User:
                         if (!CheckAuthorization())
                         {

@@ -139,7 +139,6 @@ namespace ShareX.UploadersLib.FileUploaders
                         case YouTubeVideoStatus.UploadFailed:
                             Errors.Add("Upload failed: " + upload.status.failureReason);
                             break;
-
                         case YouTubeVideoStatus.UploadRejected:
                             Errors.Add("Upload rejected: " + upload.status.rejectionReason);
                             break;
