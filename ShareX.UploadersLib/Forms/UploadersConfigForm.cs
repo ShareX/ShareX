@@ -738,6 +738,7 @@ namespace ShareX.UploadersLib
             #region Google URL Shortener
 
             atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
+            oauth2GoogleURLShortener.Enabled = Config.GoogleURLShortenerAccountType == AccountType.User;
 
             if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
             {
@@ -3069,6 +3070,7 @@ namespace ShareX.UploadersLib
         private void atcGoogleURLShortenerAccountType_AccountTypeChanged(AccountType accountType)
         {
             Config.GoogleURLShortenerAccountType = accountType;
+            oauth2GoogleURLShortener.Enabled = accountType == AccountType.User;
         }
 
         private void oauth2GoogleURLShortener_OpenButtonClicked()
