@@ -385,6 +385,7 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info YouTubeOAuth2Info = null;
         public YouTubeVideoPrivacy YouTubePrivacyType = YouTubeVideoPrivacy.Public;
+        public bool YouTubeUseShortenedLink = false;
 
         #endregion YouTube
 

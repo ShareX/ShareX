@@ -345,4 +345,11 @@ namespace ShareX.UploadersLib
         ThumbnailURL,
         DeletionURL
     }
+
+    public enum YouTubeVideoPrivacy // Localized
+    {
+        Public,
+        Unlisted,
+        Private
+    }
 }

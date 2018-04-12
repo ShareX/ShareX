@@ -728,6 +728,7 @@ namespace ShareX.UploadersLib
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
             cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
+            cbYouTubeUseShortenedLink.Checked = Config.YouTubeUseShortenedLink;
 
             #endregion YouTube
 
@@ -3033,6 +3034,11 @@ namespace ShareX.UploadersLib
         private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.YouTubePrivacyType = (YouTubeVideoPrivacy)cbYouTubePrivacyType.SelectedIndex;
+        }
+
+        private void cbYouTubeUseShortenedLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.YouTubeUseShortenedLink = cbYouTubeUseShortenedLink.Checked;
         }
 
         #endregion YouTube

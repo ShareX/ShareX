@@ -639,6 +639,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4072,6 +4073,7 @@
             // 
             // tpYouTube
             // 
+            this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
             this.tpYouTube.Controls.Add(this.oauth2YouTube);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
@@ -5212,6 +5214,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbYouTubeUseShortenedLink
+            // 
+            resources.ApplyResources(this.cbYouTubeUseShortenedLink, "cbYouTubeUseShortenedLink");
+            this.cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
+            this.cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
+            this.cbYouTubeUseShortenedLink.CheckedChanged += new System.EventHandler(this.cbYouTubeUseShortenedLink_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6000,5 +6009,6 @@
         private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
         private System.Windows.Forms.Label lblYouTubePrivacyType;
         internal System.Windows.Forms.TabPage tpYouTube;
+        private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
     }
 }

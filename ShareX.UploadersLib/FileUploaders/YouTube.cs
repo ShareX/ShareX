@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Drawing;
@@ -48,7 +47,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new YouTube(config.YouTubeOAuth2Info)
             {
-                PrivacyType = config.YouTubePrivacyType
+                PrivacyType = config.YouTubePrivacyType,
+                UseShortenedLink = config.YouTubeUseShortenedLink
             };
         }
 
@@ -57,44 +57,43 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class YouTube : FileUploader, IOAuth2
     {
-        private GoogleOAuth2 GoogleAuth { get; set; }
+        public OAuth2Info AuthInfo => googleAuth.AuthInfo;
         public YouTubeVideoPrivacy PrivacyType { get; set; }
+        public bool UseShortenedLink { get; set; }
+
+        private GoogleOAuth2 googleAuth;
 
         public YouTube(OAuth2Info oauth)
         {
-            GoogleAuth = new GoogleOAuth2(oauth, this)
+            googleAuth = new GoogleOAuth2(oauth, this)
             {
                 Scope = "https://www.googleapis.com/auth/youtube.upload"
             };
         }
 
-        public OAuth2Info AuthInfo => GoogleAuth.AuthInfo;
-
         public bool RefreshAccessToken()
         {
-            return GoogleAuth.RefreshAccessToken();
+            return googleAuth.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            return GoogleAuth.CheckAuthorization();
+            return googleAuth.CheckAuthorization();
         }
 
         public string GetAuthorizationURL()
         {
-            return GoogleAuth.GetAuthorizationURL();
+            return googleAuth.GetAuthorizationURL();
         }
 
         public bool GetAccessToken(string code)
         {
-            return GoogleAuth.GetAccessToken(code);
+            return googleAuth.GetAccessToken(code);
         }
 
         private string GetMetadata(string title)
         {
-            object metadata;
-
-            metadata = new
+            object metadata = new
             {
                 snippet = new
                 {
@@ -102,7 +101,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 },
                 status = new
                 {
-                    privacyStatus = PrivacyType
+                    privacyStatus = PrivacyType.ToString()
                 }
             };
 
@@ -115,32 +114,37 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!Helpers.IsVideoFile(fileName))
             {
-                Errors.Add("YouTube only supports video files");
+                Errors.Add("YouTube only supports video files.");
                 return null;
             }
 
             string metadata = GetMetadata(fileName);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName,
-                headers: GoogleAuth.GetAuthHeaders(), metadata: metadata);
+                headers: googleAuth.GetAuthHeaders(), metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                YouTubeVideo upload = JsonConvert.DeserializeObject<YouTubeVideo>(result.Response);
+                YouTubeVideo video = JsonConvert.DeserializeObject<YouTubeVideo>(result.Response);
 
-                if (upload != null)
+                if (video != null)
                 {
-                    AllowReportProgress = false;
+                    if (UseShortenedLink)
+                    {
+                        result.URL = $"https://youtu.be/{video.id}";
+                    }
+                    else
+                    {
+                        result.URL = $"https://www.youtube.com/watch?v={video.id}";
+                    }
 
-                    result.URL = "https://youtu.be/" + upload.id;
-
-                    switch (upload.status.uploadStatus)
+                    switch (video.status.uploadStatus)
                     {
                         case YouTubeVideoStatus.UploadFailed:
-                            Errors.Add("Upload failed: " + upload.status.failureReason);
+                            Errors.Add("Upload failed: " + video.status.failureReason);
                             break;
                         case YouTubeVideoStatus.UploadRejected:
-                            Errors.Add("Upload rejected: " + upload.status.rejectionReason);
+                            Errors.Add("Upload rejected: " + video.status.rejectionReason);
                             break;
                     }
                 }
@@ -171,13 +175,5 @@ namespace ShareX.UploadersLib.FileUploaders
         public string uploadStatus { get; set; }
         public string failureReason { get; set; }
         public string rejectionReason { get; set; }
-    }
-
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum YouTubeVideoPrivacy // Localized
-    {
-        Public,
-        Unlisted,
-        Private
     }
 }
