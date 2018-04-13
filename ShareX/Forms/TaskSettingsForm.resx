@@ -3363,34 +3363,34 @@
   <data name="&gt;&gt;tpRegionCapture.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chkConfirmAbort.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbScreenRecorderConfirmAbort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkConfirmAbort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbScreenRecorderConfirmAbort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkConfirmAbort.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbScreenRecorderConfirmAbort.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 183</value>
   </data>
-  <data name="chkConfirmAbort.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbScreenRecorderConfirmAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
   </data>
-  <data name="chkConfirmAbort.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbScreenRecorderConfirmAbort.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="chkConfirmAbort.Text" xml:space="preserve">
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
     <value>Ask for confirmation when aborting</value>
   </data>
-  <data name="&gt;&gt;chkConfirmAbort.Name" xml:space="preserve">
-    <value>chkConfirmAbort</value>
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Name" xml:space="preserve">
+    <value>cbScreenRecorderConfirmAbort</value>
   </data>
-  <data name="&gt;&gt;chkConfirmAbort.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkConfirmAbort.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Parent" xml:space="preserve">
     <value>tpScreenRecorder</value>
   </data>
-  <data name="&gt;&gt;chkConfirmAbort.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbScreenRecorderShowCursor.AutoSize" type="System.Boolean, mscorlib">

@@ -161,7 +161,7 @@
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
-            this.chkConfirmAbort = new System.Windows.Forms.CheckBox();
+            this.cbScreenRecorderConfirmAbort = new System.Windows.Forms.CheckBox();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
@@ -1407,7 +1407,7 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
-            this.tpScreenRecorder.Controls.Add(this.chkConfirmAbort);
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderConfirmAbort);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1426,12 +1426,12 @@
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
             // 
-            // chkConfirmAbort
+            // cbScreenRecorderConfirmAbort
             // 
-            resources.ApplyResources(this.chkConfirmAbort, "chkConfirmAbort");
-            this.chkConfirmAbort.Name = "chkConfirmAbort";
-            this.chkConfirmAbort.UseVisualStyleBackColor = true;
-            this.chkConfirmAbort.CheckedChanged += new System.EventHandler(this.chkConfirmAbort_CheckedChanged);
+            resources.ApplyResources(this.cbScreenRecorderConfirmAbort, "cbScreenRecorderConfirmAbort");
+            this.cbScreenRecorderConfirmAbort.Name = "cbScreenRecorderConfirmAbort";
+            this.cbScreenRecorderConfirmAbort.UseVisualStyleBackColor = true;
+            this.cbScreenRecorderConfirmAbort.CheckedChanged += new System.EventHandler(this.chkConfirmAbort_CheckedChanged);
             // 
             // cbScreenRecorderShowCursor
             // 
@@ -2366,6 +2366,6 @@
         private System.Windows.Forms.ComboBox cbImagePNGBitDepth;
         private System.Windows.Forms.Label lblImagePNGBitDepth;
         private System.Windows.Forms.Button btnWatchFolderEdit;
-        private System.Windows.Forms.CheckBox chkConfirmAbort;
+        private System.Windows.Forms.CheckBox cbScreenRecorderConfirmAbort;
     }
 }
