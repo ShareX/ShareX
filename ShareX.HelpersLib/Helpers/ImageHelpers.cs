@@ -274,6 +274,12 @@ namespace ShareX.HelpersLib
                     }
                 }
 
+                // If all pixels transparent
+                if (!leave)
+                {
+                    return bmp;
+                }
+
                 leave = false;
 
                 // Find Y

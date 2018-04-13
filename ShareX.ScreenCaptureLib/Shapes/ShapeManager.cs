@@ -1540,9 +1540,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void UpdateCanvas(Image img)
+        public void UpdateCanvas(Image img, bool centerCanvas = true)
         {
-            Form.InitBackground(img);
+            Form.InitBackground(img, centerCanvas);
 
             foreach (BaseEffectShape effect in EffectShapes)
             {

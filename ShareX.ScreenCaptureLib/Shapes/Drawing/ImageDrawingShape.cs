@@ -23,8 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -85,6 +88,24 @@ namespace ShareX.ScreenCaptureLib
 
                 g.PixelOffsetMode = PixelOffsetMode.Default;
                 g.InterpolationMode = InterpolationMode.Bilinear;
+            }
+        }
+
+        public override void OnMoved()
+        {
+            Rectangle canvas = Manager.Form.CanvasRectangle;
+
+            if (!canvas.Contains(Rectangle))
+            {
+                Padding margin = new Padding(Math.Max(0, canvas.X - Rectangle.X), Math.Max(0, canvas.Y - Rectangle.Y),
+                    Math.Max(0, Rectangle.Right - canvas.Right), Math.Max(0, Rectangle.Bottom - canvas.Bottom));
+                Image img = ImageHelpers.AddCanvas(Manager.Form.Canvas, margin);
+
+                if (img != null)
+                {
+                    Manager.Form.CanvasRectangle = Manager.Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
+                    Manager.UpdateCanvas(img, false);
+                }
             }
         }
 

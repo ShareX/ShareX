@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
         public Image Canvas { get; private set; }
-        public Rectangle CanvasRectangle { get; private set; }
+        public Rectangle CanvasRectangle { get; internal set; }
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
@@ -292,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void InitBackground(Image canvas)
+        internal void InitBackground(Image canvas, bool centerCanvas = true)
         {
             if (Canvas != null) Canvas.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
@@ -322,7 +322,10 @@ namespace ShareX.ScreenCaptureLib
                     backgroundBrush.TranslateTransform(CanvasRectangle.X, CanvasRectangle.Y);
                 }
 
-                CenterCanvas();
+                if (centerCanvas)
+                {
+                    CenterCanvas();
+                }
             }
             else if (!IsEditorMode && Options.UseDimming)
             {
