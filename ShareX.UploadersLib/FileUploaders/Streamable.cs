@@ -89,14 +89,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result;
 
-            if (IsVideoFile(fileName))
+            if (Helpers.IsVideoFile(fileName))
             {
                 bool isOverSize, isOverDuration = false;
                 FileStream fs = stream as FileStream;
                 GetDuration(fs.Name, out TimeSpan duration);
                 isOverDuration = duration > TimeSpan.FromMinutes(10); // video is over 10 minutes
-                isOverSize = new FileInfo(fs.Name).Length > 1073741824; // file is over 10GB
-
+                isOverSize = new FileInfo(fs.Name).Length > 1024 * 1024 * 1024; // file is over 10GB
+                
                 if (isOverSize || isOverDuration)
                 {
                     result = new UploadResult
@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return result;
                 }
             }
-            
+
             result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
 
             TranscodeFile(result);
@@ -197,46 +197,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 duration = new TimeSpan();
                 return false;
             }
-        }
-        private string[] videoExtensions = {
-            "3g2",
-            "3gp",
-            "aaf",
-            "asf",
-            "avchd",
-            "avi",
-            "drc",
-            "flv",
-            "m2v",
-            "m4p",
-            "m4v",
-            "mkv",
-            "mng",
-            "mov",
-            "mp2",
-            "mp4",
-            "mpe",
-            "mpeg",
-            "mpg",
-            "mpv",
-            "mxf",
-            "nsv",
-            "ogg",
-            "ogv",
-            "qt",
-            "rm",
-            "rmvb",
-            "roq",
-            "svi",
-            "vob",
-            "webm",
-            "wmv",
-            "yuv"
-        };
-
-        private bool IsVideoFile(string path)
-        {
-            return -1 != Array.IndexOf(videoExtensions, Path.GetExtension(path).ToUpperInvariant());
         }
     }
 
