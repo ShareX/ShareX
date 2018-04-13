@@ -2022,6 +2022,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
+        /// </summary>
+        public static string ScreenRecord_ConfirmCancel {
+            get {
+                return ResourceManager.GetString("ScreenRecord_ConfirmCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download of FFmpeg failed..
         /// </summary>
         public static string ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_ {

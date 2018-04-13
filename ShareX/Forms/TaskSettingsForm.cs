@@ -289,6 +289,7 @@ namespace ShareX
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            chkConfirmAbort.Checked = TaskSettings.CaptureSettings.AskConfirmationOnAbort;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
@@ -1098,6 +1099,11 @@ namespace ShareX
         private void cbScreenRecorderShowCursor_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
+        }
+
+        private void chkConfirmAbort_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.AskConfirmationOnAbort = chkConfirmAbort.Checked;
         }
 
         private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)

@@ -641,6 +641,9 @@ Would you like to restart ShareX?</value>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Stop screen color picker</value>
   </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Are you sure you want to abort this recording?</value>
+  </data>
   <data name="upload_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

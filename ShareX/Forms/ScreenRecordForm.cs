@@ -226,7 +226,11 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                AbortRecording();
+                if (!Program.DefaultTaskSettings.CaptureSettings.AskConfirmationOnAbort ||
+                MessageBox.Show(Resources.ScreenRecord_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    AbortRecording();
+                }
             }
         }
 
