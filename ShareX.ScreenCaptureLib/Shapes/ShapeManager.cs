@@ -1747,6 +1747,25 @@ namespace ShareX.ScreenCaptureLib
             Form.Resume();
         }
 
+        public void AutoResizeCanvas()
+        {
+            Rectangle canvas = Form.CanvasRectangle;
+            Rectangle combinedImageRectangle = Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
+
+            if (!canvas.Contains(combinedImageRectangle))
+            {
+                Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
+                    Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
+                Image img = ImageHelpers.AddCanvas(Form.Canvas, margin);
+
+                if (img != null)
+                {
+                    Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
+                    UpdateCanvas(img, false);
+                }
+            }
+        }
+
         private void AddCropTool()
         {
             CurrentTool = ShapeType.ToolCrop;
