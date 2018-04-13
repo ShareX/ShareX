@@ -179,8 +179,8 @@ namespace ShareX.UploadersLib
 
         #region OneDrive
 
-        public OAuth2Info OneDriveOAuth2Info = null;
-        public OneDriveFileInfo OneDriveSelectedFolder = OneDrive.RootFolder;
+        public OAuth2Info OneDriveV2OAuth2Info = null;
+        public OneDriveFileInfo OneDriveV2SelectedFolder = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink = true;
 
         #endregion OneDrive

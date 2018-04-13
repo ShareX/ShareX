@@ -395,7 +395,7 @@ namespace ShareX.UploadersLib
             tvOneDrive.Nodes.Clear();
             OneDriveAddFolder(OneDrive.RootFolder, null);
 
-            if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+            if (OAuth2Info.CheckOAuth(Config.OneDriveV2OAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
 
@@ -403,7 +403,7 @@ namespace ShareX.UploadersLib
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
-            lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveSelectedFolder.name;
+            lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveV2SelectedFolder.name;
             tvOneDrive.CollapseAll();
 
             #endregion OneDrive
@@ -1750,7 +1750,7 @@ namespace ShareX.UploadersLib
 
         private void oAuth2OneDrive_ClearButtonClicked()
         {
-            Config.OneDriveOAuth2Info = null;
+            Config.OneDriveV2OAuth2Info = null;
         }
 
         private void cbOneDriveCreateShareableLink_CheckedChanged(object sender, EventArgs e)
@@ -1764,7 +1764,7 @@ namespace ShareX.UploadersLib
             if (file != null)
             {
                 lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
-                Config.OneDriveSelectedFolder = file;
+                Config.OneDriveV2SelectedFolder = file;
             }
         }
 

@@ -715,7 +715,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Config.OneDriveOAuth2Info = oauth;
+                    Config.OneDriveV2OAuth2Info = oauth;
                     URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("OneDriveAuthOpen - Authorization URL is opened: " + url);
                 }
@@ -734,9 +734,9 @@ namespace ShareX.UploadersLib
         {
             try
             {
-                if (!string.IsNullOrEmpty(code) && Config.OneDriveOAuth2Info != null)
+                if (!string.IsNullOrEmpty(code) && Config.OneDriveV2OAuth2Info != null)
                 {
-                    bool result = new OneDrive(Config.OneDriveOAuth2Info).GetAccessToken(code);
+                    bool result = new OneDrive(Config.OneDriveV2OAuth2Info).GetAccessToken(code);
 
                     if (result)
                     {
@@ -763,9 +763,9 @@ namespace ShareX.UploadersLib
         {
             try
             {
-                if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+                if (OAuth2Info.CheckOAuth(Config.OneDriveV2OAuth2Info))
                 {
-                    bool result = new OneDrive(Config.OneDriveOAuth2Info).RefreshAccessToken();
+                    bool result = new OneDrive(Config.OneDriveV2OAuth2Info).RefreshAccessToken();
 
                     if (result)
                     {
@@ -790,7 +790,7 @@ namespace ShareX.UploadersLib
         public void OneDriveListFolders(OneDriveFileInfo fileEntry, TreeNode tnParent)
         {
             Application.DoEvents();
-            OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
+            OneDrive oneDrive = new OneDrive(Config.OneDriveV2OAuth2Info);
             OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
             tnParent.Nodes.Clear();
             foreach (OneDriveFileInfo folder in oneDrivePathInfo.value)

@@ -43,14 +43,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.OneDriveOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.OneDriveV2OAuth2Info);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new OneDrive(config.OneDriveOAuth2Info)
+            return new OneDrive(config.OneDriveV2OAuth2Info)
             {
-                FolderID = config.OneDriveSelectedFolder.id,
+                FolderID = config.OneDriveV2SelectedFolder.id,
                 AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
             };
         }
