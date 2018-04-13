@@ -711,6 +711,7 @@ namespace ShareX.UploadersLib
             try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.OneDriveClientID, APIKeys.OneDriveClientSecret);
+                oauth.Proof = new OAuth2ProofKey(OAuth2ChallengeMethod.SHA256);
                 string url = new OneDrive(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))

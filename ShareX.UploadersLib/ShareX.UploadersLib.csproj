@@ -243,6 +243,7 @@
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\GoogleOAuth2.cs" />
     <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
+    <Compile Include="Helpers\OAuth\OAuth2ProofKey.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />

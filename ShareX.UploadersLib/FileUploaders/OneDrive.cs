@@ -85,6 +85,11 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("scope", "offline_access files.readwrite");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
+            if (AuthInfo.Proof != null)
+            {
+                args.Add("code_challenge", AuthInfo.Proof.CodeChallenge);
+                args.Add("code_challenge_method", AuthInfo.Proof.ChallengeMethod);
+            }
 
             return URLHelpers.CreateQuery(AuthorizationEndpoint, args);
         }
@@ -97,6 +102,10 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_secret", AuthInfo.Client_Secret);
             args.Add("code", code);
             args.Add("grant_type", "authorization_code");
+            if (AuthInfo.Proof != null)
+            {
+                args.Add("code_verifier", AuthInfo.Proof.CodeVerifier);
+            }
 
             string response = SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
