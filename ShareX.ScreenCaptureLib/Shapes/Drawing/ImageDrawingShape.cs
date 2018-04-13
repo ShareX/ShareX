@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -94,11 +95,12 @@ namespace ShareX.ScreenCaptureLib
         public override void OnMoved()
         {
             Rectangle canvas = Manager.Form.CanvasRectangle;
+            Rectangle combinedImageRectangle = Manager.Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
 
-            if (!canvas.Contains(Rectangle))
+            if (!canvas.Contains(combinedImageRectangle))
             {
-                Padding margin = new Padding(Math.Max(0, canvas.X - Rectangle.X), Math.Max(0, canvas.Y - Rectangle.Y),
-                    Math.Max(0, Rectangle.Right - canvas.Right), Math.Max(0, Rectangle.Bottom - canvas.Bottom));
+                Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
+                    Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
                 Image img = ImageHelpers.AddCanvas(Manager.Form.Canvas, margin);
 
                 if (img != null)
