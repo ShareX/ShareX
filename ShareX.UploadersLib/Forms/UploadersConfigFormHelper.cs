@@ -792,7 +792,7 @@ namespace ShareX.UploadersLib
         {
             Application.DoEvents();
             OneDrive oneDrive = new OneDrive(Config.OneDriveV2OAuth2Info);
-            OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
+            OneDriveFileList oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
             tnParent.Nodes.Clear();
             foreach (OneDriveFileInfo folder in oneDrivePathInfo.value)
             {

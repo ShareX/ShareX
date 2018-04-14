@@ -67,6 +67,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
 
+        private string sessionUrl;
+
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
             id = "", // empty defaults to root
@@ -196,15 +198,43 @@ namespace ShareX.UploadersLib.FileUploaders
             return folderPath;
         }
 
+        private string CreateSession(string fileName)
+        {
+            string json = JsonConvert.SerializeObject(new
+            {
+                item = new Dictionary<string, string>
+                {
+                    { "name", fileName },
+                    { "@microsoft.graph.conflictBehavior", "replace" }
+                }
+            });
+
+            string folderPath = GetFolderUrl(FolderID);
+
+            string url = URLHelpers.BuildUri("https://graph.microsoft.com", $"/v1.0/{folderPath}:/{fileName}:/createUploadSession");
+
+            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, headers: GetAuthHeaders());
+
+            OneDriveUploadSession session = JsonConvert.DeserializeObject<OneDriveUploadSession>(response);
+
+            if (session != null)
+            {
+                return session.uploadUrl;
+            }
+
+            return null;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
-            string folderPath = GetFolderUrl(FolderID);
+            if (string.IsNullOrEmpty(sessionUrl))
+            {
+                sessionUrl = CreateSession(fileName);
+            }
 
-            string url = URLHelpers.BuildUri("https://graph.microsoft.com", $"/v1.0/{folderPath}:/{fileName}:/content", "select=id,webUrl");
-
-            UploadResult result = SendRequestFileRaw(url, stream, fileName, headers: GetAuthHeaders());
+            UploadResult result = SendRequestBytes(sessionUrl, stream, fileName);
 
             if (result.IsSuccess)
             {
@@ -249,7 +279,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, ContentTypeJSON,
                 headers: GetAuthHeaders());
 
-            OneDrivePermissionInfo permissionInfo = JsonConvert.DeserializeObject<OneDrivePermissionInfo>(response);
+            OneDrivePermission permissionInfo = JsonConvert.DeserializeObject<OneDrivePermission>(response);
 
             if (permissionInfo != null && permissionInfo.link != null)
             {
@@ -259,7 +289,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public OneDrivePathInfo GetPathInfo(string id)
+        public OneDriveFileList GetPathInfo(string id)
         {
             if (!CheckAuthorization()) return null;
 
@@ -273,7 +303,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (response != null)
             {
-                OneDrivePathInfo pathInfo = JsonConvert.DeserializeObject<OneDrivePathInfo>(response);
+                OneDriveFileList pathInfo = JsonConvert.DeserializeObject<OneDriveFileList>(response);
                 return pathInfo;
             }
 
@@ -288,20 +318,26 @@ namespace ShareX.UploadersLib.FileUploaders
         public string webUrl { get; set; }
     }
 
-    public class OneDrivePermissionInfo
+    public class OneDrivePermission
     {
-        public OneDriveShareableLinkInfo link { get; set; }
+        public OneDriveShareableLink link { get; set; }
     }
 
-    public class OneDriveShareableLinkInfo
+    public class OneDriveShareableLink
     {
         public string webUrl { get; set; }
         public string webHtml { get; set; }
     }
 
-    public class OneDrivePathInfo
+    public class OneDriveFileList
     {
         public OneDriveFileInfo[] value { get; set; }
+    }
+
+    public class OneDriveUploadSession
+    {
+        public string uploadUrl { get; set; }
+        public string[] nextExpectedRanges { get; set; }
     }
 
     public enum OneDriveLinkType

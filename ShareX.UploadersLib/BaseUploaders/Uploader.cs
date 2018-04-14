@@ -290,7 +290,7 @@ namespace ShareX.UploadersLib
             return result;
         }
 
-        protected UploadResult SendRequestFileRaw(string url, Stream data, string fileName, Dictionary<string, string> args = null,
+        protected UploadResult SendRequestBytes(string url, Stream data, string fileName, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.PUT)
         {
             UploadResult result = new UploadResult();
@@ -304,6 +304,14 @@ namespace ShareX.UploadersLib
 
                 long contentLength = data.Length;
                 string contentType = Helpers.GetMimeType(fileName);
+
+                if (headers == null)
+                {
+                    headers = new NameValueCollection();
+                }
+                long startByte = 0;
+                long endByte = data.Length - 1;
+                headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{contentLength}");
 
                 HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
 
