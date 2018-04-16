@@ -1685,12 +1685,12 @@ namespace ShareX.ScreenCaptureLib
                         case ImageInsertMethod.CanvasExpandDown:
                             pos = new Point(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
                             centerImage = false;
-                            ChangeCanvasSize(new Padding(0, 0, Math.Max(0, img.Width - Form.CanvasRectangle.Width), img.Height));
+                            ChangeCanvasSize(new Padding(0, 0, Math.Max(0, img.Width - Form.CanvasRectangle.Width), img.Height), Options.EditorCanvasColor);
                             break;
                         case ImageInsertMethod.CanvasExpandRight:
                             pos = new Point(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
                             centerImage = false;
-                            ChangeCanvasSize(new Padding(0, 0, img.Width, Math.Max(0, img.Height - Form.CanvasRectangle.Height)));
+                            ChangeCanvasSize(new Padding(0, 0, img.Width, Math.Max(0, img.Height - Form.CanvasRectangle.Height)), Options.EditorCanvasColor);
                             break;
                     }
                 }
@@ -1761,7 +1761,7 @@ namespace ShareX.ScreenCaptureLib
                 if (canvasSizeForm.ShowDialog(Form) == DialogResult.OK)
                 {
                     Padding canvas = canvasSizeForm.Canvas;
-                    Image img = ImageHelpers.AddCanvas(Form.Canvas, canvas);
+                    Image img = ImageHelpers.AddCanvas(Form.Canvas, canvas, Options.EditorCanvasColor);
 
                     if (img != null)
                     {
@@ -1783,13 +1783,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
                     Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
-                ChangeCanvasSize(margin);
+                ChangeCanvasSize(margin, Options.EditorCanvasColor);
             }
         }
 
-        private void ChangeCanvasSize(Padding margin)
+        private void ChangeCanvasSize(Padding margin, Color canvasColor)
         {
-            Image img = ImageHelpers.AddCanvas(Form.Canvas, margin);
+            Image img = ImageHelpers.AddCanvas(Form.Canvas, margin, canvasColor);
 
             if (img != null)
             {
