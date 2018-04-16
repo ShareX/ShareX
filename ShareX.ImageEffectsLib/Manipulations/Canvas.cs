@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -35,6 +36,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
         public Padding Margin { get; set; }
 
+        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
+
         public Canvas()
         {
             this.ApplyDefaultPropertyValues();
@@ -42,7 +46,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            Image result = ImageHelpers.AddCanvas(img, Margin);
+            Image result = ImageHelpers.AddCanvas(img, Margin, Color);
 
             if (result == null)
             {
