@@ -62,12 +62,11 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private const string AuthorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
         private const string TokenEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/token";
+        private const int MaxSegmentSize = 64 * 1024 * 1024; // 64 MiB
 
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
-
-        private string sessionUrl;
 
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
@@ -229,12 +228,25 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            if (string.IsNullOrEmpty(sessionUrl))
-            {
-                sessionUrl = CreateSession(fileName);
-            }
+            string sessionUrl = CreateSession(fileName);
+            long position = 0;
+            UploadResult result = new UploadResult();
 
-            UploadResult result = SendRequestBytes(sessionUrl, stream, fileName);
+            do
+            {
+                result = SendRequestBytes(sessionUrl, stream, fileName, position, MaxSegmentSize);
+
+                if (result.IsSuccess)
+                {
+                    position += MaxSegmentSize;
+                }
+                else
+                {
+                    SendRequest(HttpMethod.DELETE, sessionUrl);
+                    break;
+                }
+            }
+            while (position < stream.Length);
 
             if (result.IsSuccess)
             {
@@ -242,6 +254,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (AutoCreateShareableLink)
                 {
+                    AllowReportProgress = false;
+
                     result.URL = CreateShareableLink(uploadInfo.id);
                 }
                 else
