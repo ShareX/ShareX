@@ -1479,21 +1479,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void PasteFromClipboard(bool insertMousePosition)
         {
-            Point pos;
-
-            if (insertMousePosition)
-            {
-                pos = InputManager.ClientMousePosition;
-            }
-            else
-            {
-                pos = Form.ClientArea.Center();
-            }
-
             if (Clipboard.ContainsImage())
             {
                 Image img = ClipboardHelpers.GetImage();
-                InsertImage(img, pos);
+                InsertImage(img);
             }
             else if (Clipboard.ContainsFileDropList())
             {
@@ -1502,7 +1491,7 @@ namespace ShareX.ScreenCaptureLib
                 if (files.Length > 0 && !string.IsNullOrEmpty(files[0]))
                 {
                     Image img = ImageHelpers.LoadImage(files[0]);
-                    InsertImage(img, pos);
+                    InsertImage(img);
                 }
             }
             else if (Clipboard.ContainsText())
@@ -1511,6 +1500,17 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!string.IsNullOrEmpty(text))
                 {
+                    Point pos;
+
+                    if (insertMousePosition)
+                    {
+                        pos = InputManager.ClientMousePosition;
+                    }
+                    else
+                    {
+                        pos = Form.ClientArea.Center();
+                    }
+
                     CurrentTool = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
                     shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
@@ -1637,7 +1637,7 @@ namespace ShareX.ScreenCaptureLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 Image img = ImageHelpers.LoadImage(filePath);
-                InsertImage(img, Form.ClientArea.Center());
+                InsertImage(img);
             }
         }
 
@@ -1661,17 +1661,44 @@ namespace ShareX.ScreenCaptureLib
                 Form.Resume();
             }
 
-            InsertImage(img, Form.ClientArea.Center());
+            InsertImage(img);
         }
 
-        private void InsertImage(Image img, Point pos)
+        private void InsertImage(Image img)
         {
             if (img != null)
             {
+                Point pos;
+                bool centerImage;
+
+                using (ImageInsertForm imageInsertForm = new ImageInsertForm())
+                {
+                    imageInsertForm.ShowDialog(Form);
+
+                    switch (imageInsertForm.ImageInsertMethod)
+                    {
+                        default:
+                        case ImageInsertMethod.Center:
+                            pos = Form.ClientArea.Center();
+                            centerImage = true;
+                            break;
+                        case ImageInsertMethod.CanvasExpandDown:
+                            pos = new Point(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
+                            centerImage = false;
+                            ChangeCanvasSize(new Padding(0, 0, Math.Max(0, img.Width - Form.CanvasRectangle.Width), img.Height));
+                            break;
+                        case ImageInsertMethod.CanvasExpandRight:
+                            pos = new Point(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
+                            centerImage = false;
+                            ChangeCanvasSize(new Padding(0, 0, img.Width, Math.Max(0, img.Height - Form.CanvasRectangle.Height)));
+                            break;
+                    }
+                }
+
                 CurrentTool = ShapeType.DrawingImage;
                 ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
                 shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
-                shape.SetImage(img, true);
+                shape.SetImage(img, centerImage);
                 shape.OnCreated();
                 AddShape(shape);
                 SelectCurrentShape();
@@ -1756,13 +1783,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
                     Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
-                Image img = ImageHelpers.AddCanvas(Form.Canvas, margin);
+                ChangeCanvasSize(margin);
+            }
+        }
 
-                if (img != null)
-                {
-                    Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
-                    UpdateCanvas(img, false);
-                }
+        private void ChangeCanvasSize(Padding margin)
+        {
+            Image img = ImageHelpers.AddCanvas(Form.Canvas, margin);
+
+            if (img != null)
+            {
+                Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
+                UpdateCanvas(img, false);
             }
         }
 

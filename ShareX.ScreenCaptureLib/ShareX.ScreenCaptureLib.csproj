@@ -100,6 +100,12 @@
     <Compile Include="Forms\EditorStartupForm.Designer.cs">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ImageInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageInsertForm.Designer.cs">
+      <DependentUpon>ImageInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layout-center.png" />
+    <None Include="Resources\layout-split.png" />
+    <None Include="Resources\layout-split-vertical.png" />
     <None Include="packages.config" />
     <None Include="Resources\stamp.png" />
     <None Include="Resources\image-saturation.png" />
@@ -335,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageInsertForm.resx">
+      <DependentUpon>ImageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>

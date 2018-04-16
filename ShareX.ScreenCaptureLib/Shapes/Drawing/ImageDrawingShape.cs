@@ -90,10 +90,10 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnMoved()
         {
-            if (Manager.Form.IsEditorMode)
+            /*if (Manager.Form.IsEditorMode)
             {
                 Manager.AutoResizeCanvas();
-            }
+            }*/
         }
 
         public override void Dispose()
