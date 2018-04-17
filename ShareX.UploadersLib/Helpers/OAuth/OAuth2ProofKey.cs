@@ -33,18 +33,20 @@ namespace ShareX.UploadersLib
 
             var buffer = new byte[32];
 
-            var rng = new RNGCryptoServiceProvider();
-            rng.GetBytes(buffer);
-
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(buffer);
+            }
             CodeVerifier = CleanBase64(buffer);
             CodeChallenge = CodeVerifier;
 
             if (Method == OAuth2ChallengeMethod.SHA256)
             {
-                var sha = new SHA256Managed();
-                sha.ComputeHash(Encoding.UTF8.GetBytes(CodeVerifier));
-
-                CodeChallenge = CleanBase64(sha.Hash);
+                using (var sha = SHA256.Create())
+                {
+                    sha.ComputeHash(Encoding.UTF8.GetBytes(CodeVerifier));
+                    CodeChallenge = CleanBase64(sha.Hash);
+                }
             }
         }
 
