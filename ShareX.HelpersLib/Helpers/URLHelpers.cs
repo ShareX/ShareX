@@ -424,5 +424,13 @@ namespace ShareX.HelpersLib
 
             return url;
         }
+
+        public static string BuildUri(string root, string path, string query = null)
+        {
+            UriBuilder builder = new UriBuilder(root);
+            builder.Path = path;
+            builder.Query = query;
+            return builder.Uri.AbsoluteUri;
+        }
     }
 }
