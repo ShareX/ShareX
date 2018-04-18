@@ -1462,7 +1462,7 @@ namespace ShareX
 
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenColorPicker();
+            TaskHelpers.ShowScreenColorPickerDialog();
         }
 
         private void tsmiScreenColorPicker_Click(object sender, EventArgs e)

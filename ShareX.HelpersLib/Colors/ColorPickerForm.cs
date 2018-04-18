@@ -25,28 +25,39 @@
 
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public partial class ColorPickerForm : Form
     {
-        public MyColor NewColor { get; protected set; }
+        public Func<PointInfo> OpenScreenColorPicker;
+
+        public MyColor NewColor { get; private set; }
         public MyColor OldColor { get; private set; }
+        public bool IsScreenColorPickerMode { get; private set; }
 
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm() : this(Color.Red, false)
-        {
-        }
-
-        public ColorPickerForm(Color currentColor, bool showOldColor = true)
+        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            SetCurrentColor(currentColor, showOldColor);
+            IsScreenColorPickerMode = isScreenColorPickerMode;
+
+            SetCurrentColor(currentColor, !IsScreenColorPickerMode);
+
+            btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
+            mbCopy.Visible = btnClose.Visible = pSceenColorPicker.Visible = IsScreenColorPickerMode;
+        }
+
+        public void EnableScreenColorPickerButton(Func<PointInfo> openScreenColorPicker)
+        {
+            OpenScreenColorPicker = openScreenColorPicker;
+            btnPickColor.Visible = true;
         }
 
         public static bool PickColor(Color currentColor, out Color newColor)
@@ -72,6 +83,18 @@ namespace ShareX.HelpersLib
             colorPicker.ChangeColor(currentColor);
             nudAlpha.SetValue(currentColor.A);
             DrawPreviewColors();
+        }
+
+        private void UpdateColor(int x, int y)
+        {
+            UpdateColor(x, y, CaptureHelpers.GetPixelColor(x, y));
+        }
+
+        private void UpdateColor(int x, int y, Color color)
+        {
+            txtX.Text = x.ToString();
+            txtY.Text = y.ToString();
+            colorPicker.ChangeColor(color);
         }
 
         private void UpdateControls(MyColor color, ColorType type)
@@ -162,6 +185,11 @@ namespace ShareX.HelpersLib
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
             Close();
         }
 
@@ -265,6 +293,70 @@ namespace ShareX.HelpersLib
             if (e.Button == MouseButtons.Left && oldColorExist)
             {
                 colorPicker.ChangeColor(OldColor);
+            }
+        }
+
+        private void tsmiCopyAll_Click(object sender, EventArgs e)
+        {
+            string colors = colorPicker.SelectedColor.ToString();
+            colors += Environment.NewLine + string.Format("Cursor position (X, Y) = {0}, {1}", txtX.Text, txtY.Text);
+            ClipboardHelpers.CopyText(colors);
+        }
+
+        private void tsmiCopyRGB_Click(object sender, EventArgs e)
+        {
+            RGBA rgba = colorPicker.SelectedColor.RGBA;
+            ClipboardHelpers.CopyText($"{rgba.Red}, {rgba.Green}, {rgba.Blue}");
+        }
+
+        private void tsmiCopyHexadecimal_Click(object sender, EventArgs e)
+        {
+            string hex = ColorHelpers.ColorToHex(colorPicker.SelectedColor, ColorFormat.RGB);
+            ClipboardHelpers.CopyText("#" + hex);
+        }
+
+        private void tsmiCopyCMYK_Click(object sender, EventArgs e)
+        {
+            CMYK cmyk = colorPicker.SelectedColor.CMYK;
+            ClipboardHelpers.CopyText($"{cmyk.Cyan100:0.0}%, {cmyk.Magenta100:0.0}%, {cmyk.Yellow100:0.0}%, {cmyk.Key100:0.0}%");
+        }
+
+        private void tsmiCopyHSB_Click(object sender, EventArgs e)
+        {
+            HSB hsb = colorPicker.SelectedColor.HSB;
+            ClipboardHelpers.CopyText($"{hsb.Hue360:0.0}°, {hsb.Saturation100:0.0}%, {hsb.Brightness100:0.0}%");
+        }
+
+        private void tsmiCopyDecimal_Click(object sender, EventArgs e)
+        {
+            int dec = ColorHelpers.ColorToDecimal(colorPicker.SelectedColor, ColorFormat.RGB);
+            ClipboardHelpers.CopyText(dec.ToString());
+        }
+
+        private void tsmiCopyPosition_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText($"{txtX.Text}, {txtY.Text}");
+        }
+
+        private void btnPickColor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetCurrentColor(NewColor, true);
+
+                Hide();
+                Thread.Sleep(250);
+
+                PointInfo pointInfo = OpenScreenColorPicker();
+
+                if (pointInfo != null)
+                {
+                    UpdateColor(pointInfo.Position.X, pointInfo.Position.Y, pointInfo.Color);
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
             }
         }
 

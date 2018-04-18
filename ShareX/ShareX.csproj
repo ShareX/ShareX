@@ -240,12 +240,6 @@
     <Compile Include="Forms\QuickTaskInfoEditForm.Designer.cs">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ScreenColorPicker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScreenColorPicker.Designer.cs">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FirstTimeConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1038,48 +1032,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.zh-TW.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.de.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.es.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.fr.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.hu.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.it-IT.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.ko-KR.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.nl-NL.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.pt-BR.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.ru.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.tr.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.vi-VN.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.zh-CN.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenColorPicker.zh-TW.resx">
-      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRecordForm.de.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>

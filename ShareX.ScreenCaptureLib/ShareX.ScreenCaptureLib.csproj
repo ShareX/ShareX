@@ -158,7 +158,6 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Animations\ColorBlinkAnimation.cs" />
-    <Compile Include="RegionHelpers\PointInfo.cs" />
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
