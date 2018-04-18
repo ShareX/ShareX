@@ -151,8 +151,8 @@ namespace ShareX.UploadersLib
     {
         [Description("bit.ly")]
         BITLY,
-        [Description("goo.gl")]
-        Google,
+        [Description("Firebase Dynamic Links")]
+        FirebaseDynamicLinks,
         [Description("is.gd")]
         ISGD,
         [Description("v.gd")]
@@ -175,8 +175,6 @@ namespace ShareX.UploadersLib
         TwoGP,
         [Description("Polr")]
         Polr,
-        [Description("Firebase Dynamic Links")]
-        FirebaseDynamicLinks,
         CustomURLShortener // Localized
     }
 
