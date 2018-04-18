@@ -1986,42 +1986,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cursor position (X, Y) = {0}, {1}.
-        /// </summary>
-        public static string ScreenColorPicker_btnCopyAll_Click_Cursor_position {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_btnCopyAll_Click_Cursor_position", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        public static string ScreenColorPicker_ScreenColorPicker_Close {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_ScreenColorPicker_Close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start screen color picker.
-        /// </summary>
-        public static string ScreenColorPicker_UpdateControls_Start_screen_color_picker {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Start_screen_color_picker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop screen color picker.
-        /// </summary>
-        public static string ScreenColorPicker_UpdateControls_Stop_screen_color_picker {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Stop_screen_color_picker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
         /// </summary>
         public static string ScreenRecord_ConfirmCancel {

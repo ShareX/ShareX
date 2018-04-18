@@ -638,9 +638,6 @@ Would you like to restart ShareX?</value>
   <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Stop screen color picker</value>
-  </data>
   <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
     <value>Are you sure you want to abort this recording?</value>
   </data>
@@ -661,9 +658,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="nl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Cursor position (X, Y) = {0}, {1}</value>
   </data>
   <data name="folder_open_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-open-document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -739,9 +733,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="film" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\film.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Close</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Left click to copy URL to clipboard. Right click to open URL.</value>
@@ -963,9 +954,6 @@ Middle click to close</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Download of FFmpeg failed.</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Start screen color picker</value>
   </data>
   <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -67,10 +67,27 @@
             this.lblKeyPerc = new System.Windows.Forms.Label();
             this.nudAlpha = new System.Windows.Forms.NumericUpDown();
             this.lblAlpha = new System.Windows.Forms.Label();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.cmsCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiCopyAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyRGB = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyHexadecimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyCMYK = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyHSB = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyDecimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyPosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.pSceenColorPicker = new System.Windows.Forms.Panel();
+            this.txtY = new System.Windows.Forms.TextBox();
+            this.txtX = new System.Windows.Forms.TextBox();
+            this.lblY = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblCursorPosition = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnPickColor = new System.Windows.Forms.Button();
+            this.mbCopy = new ShareX.HelpersLib.MenuButton();
             this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
             this.colorPicker = new ShareX.HelpersLib.ColorPicker();
-            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).BeginInit();
@@ -82,6 +99,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSaturation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).BeginInit();
+            this.cmsCopy.SuspendLayout();
+            this.pSceenColorPicker.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -385,12 +404,134 @@
             resources.ApplyResources(this.lblAlpha, "lblAlpha");
             this.lblAlpha.Name = "lblAlpha";
             // 
+            // ttMain
+            // 
+            this.ttMain.AutoPopDelay = 5000;
+            this.ttMain.InitialDelay = 100;
+            this.ttMain.ReshowDelay = 100;
+            // 
+            // cmsCopy
+            // 
+            this.cmsCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCopyAll,
+            this.tsmiCopyRGB,
+            this.tsmiCopyHexadecimal,
+            this.tsmiCopyCMYK,
+            this.tsmiCopyHSB,
+            this.tsmiCopyDecimal,
+            this.tsmiCopyPosition});
+            this.cmsCopy.Name = "cmsCopy";
+            this.cmsCopy.ShowImageMargin = false;
+            resources.ApplyResources(this.cmsCopy, "cmsCopy");
+            // 
+            // tsmiCopyAll
+            // 
+            this.tsmiCopyAll.Name = "tsmiCopyAll";
+            resources.ApplyResources(this.tsmiCopyAll, "tsmiCopyAll");
+            this.tsmiCopyAll.Click += new System.EventHandler(this.tsmiCopyAll_Click);
+            // 
+            // tsmiCopyRGB
+            // 
+            this.tsmiCopyRGB.Name = "tsmiCopyRGB";
+            resources.ApplyResources(this.tsmiCopyRGB, "tsmiCopyRGB");
+            this.tsmiCopyRGB.Click += new System.EventHandler(this.tsmiCopyRGB_Click);
+            // 
+            // tsmiCopyHexadecimal
+            // 
+            this.tsmiCopyHexadecimal.Name = "tsmiCopyHexadecimal";
+            resources.ApplyResources(this.tsmiCopyHexadecimal, "tsmiCopyHexadecimal");
+            this.tsmiCopyHexadecimal.Click += new System.EventHandler(this.tsmiCopyHexadecimal_Click);
+            // 
+            // tsmiCopyCMYK
+            // 
+            this.tsmiCopyCMYK.Name = "tsmiCopyCMYK";
+            resources.ApplyResources(this.tsmiCopyCMYK, "tsmiCopyCMYK");
+            this.tsmiCopyCMYK.Click += new System.EventHandler(this.tsmiCopyCMYK_Click);
+            // 
+            // tsmiCopyHSB
+            // 
+            this.tsmiCopyHSB.Name = "tsmiCopyHSB";
+            resources.ApplyResources(this.tsmiCopyHSB, "tsmiCopyHSB");
+            this.tsmiCopyHSB.Click += new System.EventHandler(this.tsmiCopyHSB_Click);
+            // 
+            // tsmiCopyDecimal
+            // 
+            this.tsmiCopyDecimal.Name = "tsmiCopyDecimal";
+            resources.ApplyResources(this.tsmiCopyDecimal, "tsmiCopyDecimal");
+            this.tsmiCopyDecimal.Click += new System.EventHandler(this.tsmiCopyDecimal_Click);
+            // 
+            // tsmiCopyPosition
+            // 
+            this.tsmiCopyPosition.Name = "tsmiCopyPosition";
+            resources.ApplyResources(this.tsmiCopyPosition, "tsmiCopyPosition");
+            this.tsmiCopyPosition.Click += new System.EventHandler(this.tsmiCopyPosition_Click);
+            // 
+            // pSceenColorPicker
+            // 
+            this.pSceenColorPicker.Controls.Add(this.btnPickColor);
+            this.pSceenColorPicker.Controls.Add(this.txtY);
+            this.pSceenColorPicker.Controls.Add(this.txtX);
+            this.pSceenColorPicker.Controls.Add(this.lblY);
+            this.pSceenColorPicker.Controls.Add(this.lblX);
+            this.pSceenColorPicker.Controls.Add(this.lblCursorPosition);
+            resources.ApplyResources(this.pSceenColorPicker, "pSceenColorPicker");
+            this.pSceenColorPicker.Name = "pSceenColorPicker";
+            // 
+            // txtY
+            // 
+            resources.ApplyResources(this.txtY, "txtY");
+            this.txtY.Name = "txtY";
+            this.txtY.ReadOnly = true;
+            // 
+            // txtX
+            // 
+            resources.ApplyResources(this.txtX, "txtX");
+            this.txtX.Name = "txtX";
+            this.txtX.ReadOnly = true;
+            // 
+            // lblY
+            // 
+            resources.ApplyResources(this.lblY, "lblY");
+            this.lblY.Name = "lblY";
+            // 
+            // lblX
+            // 
+            resources.ApplyResources(this.lblX, "lblX");
+            this.lblX.Name = "lblX";
+            // 
+            // lblCursorPosition
+            // 
+            resources.ApplyResources(this.lblCursorPosition, "lblCursorPosition");
+            this.lblCursorPosition.Name = "lblCursorPosition";
+            // 
+            // btnClose
+            // 
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnPickColor
+            // 
+            resources.ApplyResources(this.btnPickColor, "btnPickColor");
+            this.btnPickColor.Name = "btnPickColor";
+            this.btnPickColor.UseVisualStyleBackColor = true;
+            this.btnPickColor.Click += new System.EventHandler(this.btnPickColor_Click);
+            // 
+            // mbCopy
+            // 
+            resources.ApplyResources(this.mbCopy, "mbCopy");
+            this.mbCopy.Menu = this.cmsCopy;
+            this.mbCopy.Name = "mbCopy";
+            this.mbCopy.UseVisualStyleBackColor = true;
+            // 
             // cbTransparent
             // 
             this.cbTransparent.Color = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.cbTransparent, "cbTransparent");
             this.cbTransparent.ManualButtonClick = true;
             this.cbTransparent.Name = "cbTransparent";
+            this.cbTransparent.Offset = 3;
             this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
             this.cbTransparent.UseVisualStyleBackColor = true;
             this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
@@ -411,18 +552,15 @@
             this.colorPicker.Name = "colorPicker";
             this.colorPicker.ColorChanged += new ShareX.HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 
-            // ttMain
-            // 
-            this.ttMain.AutoPopDelay = 5000;
-            this.ttMain.InitialDelay = 100;
-            this.ttMain.ReshowDelay = 100;
-            // 
             // ColorPickerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pSceenColorPicker);
+            this.Controls.Add(this.mbCopy);
             this.Controls.Add(this.cbTransparent);
             this.Controls.Add(this.nudBlue);
             this.Controls.Add(this.nudGreen);
@@ -467,7 +605,6 @@
             this.MaximizeBox = false;
             this.Name = "ColorPickerForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).EndInit();
@@ -479,6 +616,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSaturation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).EndInit();
+            this.cmsCopy.ResumeLayout(false);
+            this.pSceenColorPicker.ResumeLayout(false);
+            this.pSceenColorPicker.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +667,22 @@
         protected System.Windows.Forms.Button btnOK;
         private ColorButton cbTransparent;
         private System.Windows.Forms.ToolTip ttMain;
+        private MenuButton mbCopy;
+        private System.Windows.Forms.ContextMenuStrip cmsCopy;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyAll;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyRGB;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyHexadecimal;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyCMYK;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyHSB;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyDecimal;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyPosition;
+        private System.Windows.Forms.Panel pSceenColorPicker;
+        private System.Windows.Forms.Label lblCursorPosition;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.TextBox txtX;
+        private System.Windows.Forms.TextBox txtY;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnPickColor;
     }
 }

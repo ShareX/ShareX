@@ -51,6 +51,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public int Offset { get; set; } = 3;
+
         [DefaultValue(false)]
         public bool ManualButtonClick { get; set; }
 
@@ -84,9 +86,8 @@ namespace ShareX.HelpersLib
         {
             base.OnPaint(pevent);
 
-            int offset = 3;
-            int boxSize = ClientRectangle.Height - offset * 2;
-            Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - offset - boxSize, offset, boxSize, boxSize);
+            int boxSize = ClientRectangle.Height - Offset * 2;
+            Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - Offset - boxSize, Offset, boxSize, boxSize);
 
             Graphics g = pevent.Graphics;
 
