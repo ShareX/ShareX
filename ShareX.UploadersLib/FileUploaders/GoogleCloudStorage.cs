@@ -24,13 +24,15 @@ namespace ShareX.UploadersLib.FileUploaders
     public sealed class GoogleCloudStorage : FileUploader
     {
         public string APIKey { get; set; }
+        public string bucket { get; set; }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>
-            {
-                { "key", APIKey }
-            };
+            string uploadurl = $"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o";
+            string objecturl = $"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o/{fileName}/acl";
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("key", APIKey);
 
             return null;
         }

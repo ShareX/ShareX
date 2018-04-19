@@ -99,10 +99,10 @@ namespace ShareX.UploadersLib
         Mega,
         [Description("Amazon S3")]
         AmazonS3,
-        [Description("Azure Storage")]
-        AzureStorage,
         [Description("Google Cloud Storage")]
         GoogleCloudStorage,
+        [Description("Azure Storage")]
+        AzureStorage,
         [Description("Gfycat")]
         Gfycat,
         [Description("ownCloud / Nextcloud")]
