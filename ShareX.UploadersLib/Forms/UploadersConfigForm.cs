@@ -736,18 +736,6 @@ namespace ShareX.UploadersLib
 
             #region URL shorteners
 
-            #region Google URL Shortener
-
-            atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
-            oauth2GoogleURLShortener.Enabled = Config.GoogleURLShortenerAccountType == AccountType.User;
-
-            if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
-            {
-                oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            #endregion Google URL Shortener
-
             #region bit.ly
 
             if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
@@ -3070,36 +3058,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion bit.ly
-
-        #region Google URL Shortener
-
-        private void atcGoogleURLShortenerAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.GoogleURLShortenerAccountType = accountType;
-            oauth2GoogleURLShortener.Enabled = accountType == AccountType.User;
-        }
-
-        private void oauth2GoogleURLShortener_OpenButtonClicked()
-        {
-            GoogleURLShortenerAuthOpen();
-        }
-
-        private void oauth2GoogleURLShortener_CompleteButtonClicked(string code)
-        {
-            GoogleURLShortenerAuthComplete(code);
-        }
-
-        private void oauth2GoogleURLShortener_RefreshButtonClicked()
-        {
-            GoogleURLShortenerAuthRefresh();
-        }
-
-        private void oauth2GoogleURLShortener_ClearButtonClicked()
-        {
-            Config.GoogleURLShortenerOAuth2Info = null;
-        }
-
-        #endregion Google URL Shortener
 
         #region yourls.org
 

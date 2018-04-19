@@ -151,8 +151,6 @@ namespace ShareX.UploadersLib
     {
         [Description("bit.ly")]
         BITLY,
-        [Description("goo.gl")]
-        Google,
         [Description("is.gd")]
         ISGD,
         [Description("v.gd")]

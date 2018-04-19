@@ -363,7 +363,6 @@
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
     <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
-    <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
     <Compile Include="URLShorteners\QRnetURLShortener.cs" />
@@ -961,7 +960,6 @@
     <None Include="Favicons\Dropbox.ico" />
     <None Include="Favicons\Flickr.ico" />
     <None Include="Favicons\Gett.ico" />
-    <None Include="Favicons\Google.ico" />
     <None Include="Favicons\GoogleDrive.ico" />
     <None Include="Favicons\ImageShack.ico" />
     <None Include="Favicons\Imgur.ico" />
