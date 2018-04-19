@@ -120,48 +120,17 @@
   <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
     <value>Назва:</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="page_white_c" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_c.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_paint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_paint.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Upaste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Upaste.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Натисніть кнопку „Оновити“</value>
   </data>
   <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
     <value>Стан: авторизований.</value>
   </data>
-  <data name="page_white_php" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_php.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_gear.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>FTP-клієнт підтримує лише FTP або FTPS.</value>
   </data>
-  <data name="OneTimeSecret" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OneTimeSecret.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
     <value>Ви впевнені, що хочете видалити „{0}“ з Dropbox?</value>
-  </data>
-  <data name="page_white_tux" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_tux.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="package" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_csharp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_csharp.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Назва теки для створення</value>
@@ -169,23 +138,8 @@
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Збій авторизації.</value>
   </data>
-  <data name="Picasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Picasa.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Знайти ключовий файл...</value>
-  </data>
-  <data name="Pastebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pastebin.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OwnCloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OwnCloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hostr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Hostr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_visualstudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_visualstudio.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>З’єднано!
@@ -197,50 +151,8 @@
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Помилка: Результат порожній.</value>
   </data>
-  <data name="server_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server-network.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MediaFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\MediaFire.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_vector.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_acrobat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_acrobat.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jira" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\jira.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Up1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Up1.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_film" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_film.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Flickr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Flickr.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gett" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Gett.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Google.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_star.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hastebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Hastebin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_gray.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Вибрана тека:</value>
-  </data>
-  <data name="Imgur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Imgur.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Не налаштовано</value>
@@ -248,198 +160,25 @@
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} вдало створено.</value>
   </data>
-  <data name="Pomf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pomf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Шлях до батьківського альбому, наприклад,</value>
-  </data>
-  <data name="GitHub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GitHub.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>З’єднано!</value>
   </data>
-  <data name="folder_photos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_photos.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Знайти файл сертифіката...</value>
   </data>
-  <data name="page_white_code" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_code.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Yourls" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Yourls.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mega" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Mega.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_sound.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
-  
-  
-  <data name="Photobucket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Photobucket.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_word" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_word.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="folder_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_user.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
-  <data name="page_white_excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_excel.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Потрібна автентифікація.</value>
   </data>
-  <data name="Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Minus.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="ImageShack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\ImageShack.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Box.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_cplusplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_cplusplus.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
   <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
     <value>Ел. пошта:</value>
-  </data>
-  
-  <data name="Dropbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Dropbox.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bitly" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Bitly.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_actionscript" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_actionscript.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SendSpace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\SendSpace.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Seafile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Seafile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Sul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="globe_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\globe-network.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
-  <data name="TinyPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\TinyPic.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_text.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lambda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Lambda.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="Pushbullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Pushbullet.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GoogleDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GoogleDrive.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Twitter.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Polr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Polr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Оновлення авторизації не підтримується.</value>
   </data>
-  
-  <data name="page_white_powerpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_powerpoint.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_dvd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_dvd.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AdFly" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\AdFly.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="folder_public" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_public.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_flash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_flash.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="page_white_compressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_compressed.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CoinURL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\CoinURL.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chevereto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Chevereto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AmazonS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\AmazonS3.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="page_white_picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_picture.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  
-  
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Помилка</value>
-  </data>
-  
-  <data name="OneDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\OneDrive.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="page_white_ruby" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_ruby.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
-  <data name="page_white_cup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page_white_cup.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-network.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mail.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="question_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\question-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Streamable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\streamable.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Vgyme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\vgyme.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SomeImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\someimage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

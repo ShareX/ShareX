@@ -132,7 +132,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Якість:</value>
   </data>
-  
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Почати захоплення</value>
   </data>
@@ -151,7 +150,6 @@
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>праворуч внизу</value>
   </data>
-  
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Утримувати лівий притиск на виділенні] Переміщення області</value>
   </data>
@@ -195,10 +193,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
     <value>[Numpad + або -] Змінити кут трикутника</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
     <value>[M] {0} лупа</value>
@@ -289,9 +283,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
     <value>[1, 2, 3 ... 0] Захоплення монітора</value>
-  </data>
-  <data name="exclamation_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exclamation-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
     <value>[Коліщатко миші] Перемкнути режими</value>

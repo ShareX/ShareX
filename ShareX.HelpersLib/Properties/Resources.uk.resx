@@ -117,94 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShareX_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShareX_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShareX_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShareX_Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShareX_Logo_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShareX_Logo_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Шлях до файла</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Позначка часу Unix</value>
   </data>
-  
-  
-  
-  
-  
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Ім’я користувача</value>
   </data>
-  
-  
-  
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Огляд тек...</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
     <value>Огляд виконуваних файлів...</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Не вдалось перевірити оновлення</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
     <value>Доступна нова версія {0}</value>
   </data>
-  
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>Очікування.</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Закрити</value>
   </data>
-  
-  
-  
-  
   <data name="Error" xml:space="preserve">
     <value>Помилка</value>
   </data>
-  
-  
   <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
     <value>Гаразд</value>
   </data>
@@ -217,45 +159,21 @@
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
     <value>Ні</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Стан: {0}</value>
   </data>
-  
-  
-  
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>Копіювати</value>
   </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Вставити</value>
   </data>
-  
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="ProxyMethod_Automatic" xml:space="preserve">
     <value>Автоматично</value>
   </data>
-  
-  
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
     <value>Захоплення активного монітора</value>
   </data>
@@ -268,8 +186,6 @@
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Вивантажити з буфера обміну</value>
   </data>
-  
-  
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Вивантажити файл</value>
   </data>
@@ -279,78 +195,30 @@
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP-клієнт</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Вибір кольору з екрана</value>
   </data>
-  
-  
-  
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Вивантажити з посилання</value>
   </data>
-  
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Ел. пошта</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>Ел. пошта</value>
   </data>
-  
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Додати ефекти/водяний знак</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="FileExistAction_Ask" xml:space="preserve">
     <value>Запитати, що робити</value>
   </data>
-  
-  
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Додати номер до назви файла</value>
   </data>
-  
-  
-  
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Автоматично</value>
   </data>
-  
-  
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Доступна нова версія {0}.
 Чи хочете Ви завантажити і встановити її?</value>
@@ -358,17 +226,9 @@
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Доступне оновлення</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
     <value>.NET (погана якість)</value>
   </data>
-  
   <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
@@ -414,7 +274,6 @@
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
-  
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
@@ -463,51 +322,30 @@
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
-  
   <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  
   <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
     <value>Інструменти</value>
   </data>
-  
   <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
     <value>Інструменти</value>
   </data>
-  
   <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
     <value>Інструменти</value>
   </data>
-  
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>Зображення</value>
   </data>
-  
-  
-  
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
-  
   <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
     <value>Інструменти</value>
   </data>
@@ -517,34 +355,16 @@
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Інструменти</value>
   </data>
-  
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
     <value>Доступна нова версія {0}.
 Чи хочете Ви завантажити її?</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  
-  
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
   </data>
@@ -554,57 +374,18 @@
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>Захоплення активного монітора</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>Перервати запис екрану</value>
   </data>
   <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  
-  
-  
-  
-  
-  
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>Вийти з ShareX</value>
   </data>
-  
-  
-  
-  
-  
-  
   <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
     <value>Скорочення посилань</value>
   </data>
-  
-  
-  
-  
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Автоматичне визначення</value>
   </data>
@@ -614,8 +395,6 @@
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 біт</value>
   </data>
-  
-  
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Вивантажити</value>
   </data>
@@ -628,27 +407,12 @@
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Служба обміну посиланнями</value>
   </data>
-  
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Зворотна діагональ</value>
   </data>
-  
-  
-  
-  
-  
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Великий квадрат</value>
   </data>
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <data name="PastebinExpiration_M10" xml:space="preserve">
     <value>10 хвилин</value>
   </data>
@@ -667,12 +431,6 @@
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 місяць</value>
   </data>
-  
-  
-  
-  
-  
-  
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Автоматичний розмір</value>
   </data>
