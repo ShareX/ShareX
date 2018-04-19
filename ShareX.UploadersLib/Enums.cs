@@ -101,6 +101,8 @@ namespace ShareX.UploadersLib
         AmazonS3,
         [Description("Azure Storage")]
         AzureStorage,
+        [Description("Google Cloud Storage")]
+        GoogleCloudStorage,
         [Description("Gfycat")]
         Gfycat,
         [Description("ownCloud / Nextcloud")]
