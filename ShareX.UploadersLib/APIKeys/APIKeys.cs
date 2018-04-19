@@ -37,14 +37,9 @@ namespace ShareX.UploadersLib
         public static readonly string FlickrSecret = "";
         public static readonly string PhotobucketConsumerKey = "";
         public static readonly string PhotobucketConsumerSecret = "";
-        public static readonly string TwitsnapsKey = "";
-        public static readonly string TwitPicKey = "";
-        public static readonly string SlimgClientID = "";
-        public static readonly string SlimgClientSecret = "";
 
         // Text uploaders
         public static readonly string PastebinKey = "";
-        public static readonly string PastebinCaKey = "";
         public static readonly string GitHubID = "";
         public static readonly string GitHubSecret = "";
         public static readonly string Paste_eeApplicationKey = "";
@@ -52,8 +47,6 @@ namespace ShareX.UploadersLib
         // File uploaders
         public static readonly string DropboxConsumerKey = "";
         public static readonly string DropboxConsumerSecret = "";
-        public static readonly string CopyConsumerKey = "";
-        public static readonly string CopyConsumerSecret = "";
         public static readonly string BoxClientID = "";
         public static readonly string BoxClientSecret = "";
         public static readonly string SendSpaceKey = "";
@@ -71,7 +64,6 @@ namespace ShareX.UploadersLib
         public static readonly string BitlyClientSecret = "";
 
         // Other services
-        public static readonly string GoogleAPIKey = "";
         public static readonly string GoogleClientID = "";
         public static readonly string GoogleClientSecret = "";
         public static readonly string TwitterConsumerKey = "";
