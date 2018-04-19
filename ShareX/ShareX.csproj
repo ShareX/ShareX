@@ -1489,6 +1489,9 @@
     <None Include="Resources\pipette.png" />
     <None Include="Resources\cursor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ua.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

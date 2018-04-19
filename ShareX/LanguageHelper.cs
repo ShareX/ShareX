@@ -116,6 +116,9 @@ namespace ShareX
                 case SupportedLanguage.Turkish:
                     icon = Resources.tr;
                     break;
+                case SupportedLanguage.Ukrainian:
+                    icon = Resources.ua;
+                    break;
                 case SupportedLanguage.Vietnamese:
                     icon = Resources.vn;
                     break;
@@ -169,6 +172,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Turkish:
                     cultureName = "tr-TR";
+                    break;
+                case SupportedLanguage.Ukrainian:
+                    cultureName = "uk-UA";
                     break;
                 case SupportedLanguage.Vietnamese:
                     cultureName = "vi-VN";
