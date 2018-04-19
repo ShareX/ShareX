@@ -50,8 +50,13 @@ namespace ShareX.HelpersLib
 
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
 
-            btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
+            btnOK.Visible = btnCancel.Visible = pColorPicker.Visible = !IsScreenColorPickerMode;
             mbCopy.Visible = btnClose.Visible = pSceenColorPicker.Visible = IsScreenColorPickerMode;
+
+            if (!IsScreenColorPickerMode)
+            {
+                PrepareRecentColors();
+            }
         }
 
         public void EnableScreenColorPickerButton(Func<PointInfo> openScreenColorPicker)
@@ -73,6 +78,26 @@ namespace ShareX.HelpersLib
 
             newColor = currentColor;
             return false;
+        }
+
+        private void PrepareRecentColors()
+        {
+            for (int i = 0; i < 32; i++)
+            {
+                ColorButton colorButton = new ColorButton()
+                {
+                    Color = new HSB(i / 32d, 1d, 1d),
+                    Size = new Size(16, 16),
+                    Offset = 2,
+                    Margin = new Padding(0),
+                    ManualButtonClick = true
+                };
+
+                colorButton.Click += (sender, e) => SetCurrentColor(colorButton.Color, true);
+
+                flpRecentColors.Controls.Add(colorButton);
+                if ((i + 1) % 16 == 0) flpRecentColors.SetFlowBreak(colorButton, true);
+            }
         }
 
         public void SetCurrentColor(Color currentColor, bool keepPreviousColor)

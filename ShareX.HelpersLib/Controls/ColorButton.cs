@@ -51,6 +51,7 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(3)]
         public int Offset { get; set; } = 3;
 
         [DefaultValue(false)]
