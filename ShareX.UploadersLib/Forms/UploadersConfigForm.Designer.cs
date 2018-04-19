@@ -141,6 +141,9 @@
             this.txtBitlyDomain = new System.Windows.Forms.TextBox();
             this.lblBitlyDomain = new System.Windows.Forms.Label();
             this.oauth2Bitly = new ShareX.UploadersLib.OAuthControl();
+            this.tpGoogleURLShortener = new System.Windows.Forms.TabPage();
+            this.oauth2GoogleURLShortener = new ShareX.UploadersLib.OAuthControl();
+            this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpYourls = new System.Windows.Forms.TabPage();
             this.txtYourlsPassword = new System.Windows.Forms.TextBox();
             this.txtYourlsUsername = new System.Windows.Forms.TextBox();
@@ -479,7 +482,6 @@
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.tpYouTube = new System.Windows.Forms.TabPage();
-            this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
             this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
@@ -637,6 +639,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -653,6 +656,7 @@
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
             this.tpBitly.SuspendLayout();
+            this.tpGoogleURLShortener.SuspendLayout();
             this.tpYourls.SuspendLayout();
             this.tpAdFly.SuspendLayout();
             this.tpCoinURL.SuspendLayout();
@@ -1537,11 +1541,12 @@
             // tcURLShorteners
             // 
             this.tcURLShorteners.Controls.Add(this.tpBitly);
-            this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
+            this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
             this.tcURLShorteners.Controls.Add(this.tpCoinURL);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
+            this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
@@ -1574,6 +1579,30 @@
             this.oauth2Bitly.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
             this.oauth2Bitly.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
             this.oauth2Bitly.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Bitly_ClearButtonClicked);
+            // 
+            // tpGoogleURLShortener
+            // 
+            this.tpGoogleURLShortener.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGoogleURLShortener.Controls.Add(this.oauth2GoogleURLShortener);
+            this.tpGoogleURLShortener.Controls.Add(this.atcGoogleURLShortenerAccountType);
+            resources.ApplyResources(this.tpGoogleURLShortener, "tpGoogleURLShortener");
+            this.tpGoogleURLShortener.Name = "tpGoogleURLShortener";
+            // 
+            // oauth2GoogleURLShortener
+            // 
+            resources.ApplyResources(this.oauth2GoogleURLShortener, "oauth2GoogleURLShortener");
+            this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
+            this.oauth2GoogleURLShortener.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
+            this.oauth2GoogleURLShortener.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
+            this.oauth2GoogleURLShortener.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleURLShortener_ClearButtonClicked);
+            this.oauth2GoogleURLShortener.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleURLShortener_RefreshButtonClicked);
+            // 
+            // atcGoogleURLShortenerAccountType
+            // 
+            resources.ApplyResources(this.atcGoogleURLShortenerAccountType, "atcGoogleURLShortenerAccountType");
+            this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
+            this.atcGoogleURLShortenerAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
             // 
             // tpYourls
             // 
@@ -4052,13 +4081,6 @@
             this.tpYouTube.Name = "tpYouTube";
             this.tpYouTube.UseVisualStyleBackColor = true;
             // 
-            // cbYouTubeUseShortenedLink
-            // 
-            resources.ApplyResources(this.cbYouTubeUseShortenedLink, "cbYouTubeUseShortenedLink");
-            this.cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
-            this.cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
-            this.cbYouTubeUseShortenedLink.CheckedChanged += new System.EventHandler(this.cbYouTubeUseShortenedLink_CheckedChanged);
-            // 
             // oauth2YouTube
             // 
             resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
@@ -5192,6 +5214,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbYouTubeUseShortenedLink
+            // 
+            resources.ApplyResources(this.cbYouTubeUseShortenedLink, "cbYouTubeUseShortenedLink");
+            this.cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
+            this.cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
+            this.cbYouTubeUseShortenedLink.CheckedChanged += new System.EventHandler(this.cbYouTubeUseShortenedLink_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5229,6 +5258,7 @@
             this.tcURLShorteners.ResumeLayout(false);
             this.tpBitly.ResumeLayout(false);
             this.tpBitly.PerformLayout();
+            this.tpGoogleURLShortener.ResumeLayout(false);
             this.tpYourls.ResumeLayout(false);
             this.tpYourls.PerformLayout();
             this.tpAdFly.ResumeLayout(false);
@@ -5428,6 +5458,8 @@
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
         private OAuthControl oauth2Bitly;
+        private OAuthControl oauth2GoogleURLShortener;
+        private AccountTypeControl atcGoogleURLShortenerAccountType;
         private System.Windows.Forms.TextBox txtYourlsPassword;
         private System.Windows.Forms.TextBox txtYourlsUsername;
         private System.Windows.Forms.TextBox txtYourlsSignature;
@@ -5821,6 +5853,7 @@
         internal System.Windows.Forms.TabPage tpSharedFolder;
         internal System.Windows.Forms.TabPage tpEmail;
         internal System.Windows.Forms.TabPage tpBitly;
+        internal System.Windows.Forms.TabPage tpGoogleURLShortener;
         internal System.Windows.Forms.TabPage tpYourls;
         internal System.Windows.Forms.TabPage tpAdFly;
         internal System.Windows.Forms.TabPage tpCoinURL;
