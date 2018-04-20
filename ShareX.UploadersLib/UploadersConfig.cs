@@ -407,13 +407,6 @@ namespace ShareX.UploadersLib
 
         #endregion bit.ly
 
-        #region Google URL Shortener
-
-        public AccountType GoogleURLShortenerAccountType = AccountType.Anonymous;
-        public OAuth2Info GoogleURLShortenerOAuth2Info = null;
-
-        #endregion Google URL Shortener
-
         #region yourls.org
 
         public string YourlsAPIURL = "http://yoursite.com/yourls-api.php";

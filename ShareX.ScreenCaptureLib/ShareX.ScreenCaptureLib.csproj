@@ -326,6 +326,9 @@
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\CanvasSizeForm.id-ID.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CanvasSizeForm.ko-KR.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,11 +338,17 @@
     <EmbeddedResource Include="Forms\CanvasSizeForm.ru.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditorStartupForm.id-ID.resx">
+      <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditorStartupForm.resx">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditorStartupForm.ru.resx">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.id-ID.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
@@ -347,8 +356,17 @@
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.uk.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageInsertForm.id-ID.resx">
+      <DependentUpon>ImageInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageInsertForm.resx">
       <DependentUpon>ImageInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.id-ID.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.id-ID.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>
@@ -369,6 +387,9 @@
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.fr.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.id-ID.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
@@ -413,6 +434,9 @@
     <EmbeddedResource Include="Forms\TextDrawingInputBox.fr.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.id-ID.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.it-IT.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +462,9 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.fr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.id-ID.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.it-IT.resx">
@@ -485,6 +512,7 @@
     <EmbeddedResource Include="Properties\Resources.hu.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.id-ID.resx" />
     <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx">
       <SubType>Designer</SubType>
