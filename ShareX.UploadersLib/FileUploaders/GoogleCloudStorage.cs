@@ -17,7 +17,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new GoogleCloudStorage(config.YouTubeOAuth2Info)
+            return new GoogleCloudStorage(config.GoogleCloudStorageOAuth2Info)
             {
                 bucket = config.GoogleCloudStorageBucket
             };
@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 { "name", fileName }
             };
 
-            ObjectACL requestacl = new ObjectACL
+            ObjectACL publicacl = new ObjectACL
             {
                 entity = "allUsers",
                 role = "READER"
@@ -101,7 +101,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (responseHeaders != null)
             {
-                string requestjson = JsonConvert.SerializeObject(requestacl);
+                string requestjson = JsonConvert.SerializeObject(publicacl);
                 SendRequest(HttpMethod.POST, aclurl, requestjson, ContentTypeJSON, headers: googleAuth.GetAuthHeaders());
             }
 

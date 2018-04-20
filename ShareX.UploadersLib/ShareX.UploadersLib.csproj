@@ -977,6 +977,9 @@
   <ItemGroup>
     <None Include="Favicons\YouTube.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoogleCloudStorage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)APIKeys\
