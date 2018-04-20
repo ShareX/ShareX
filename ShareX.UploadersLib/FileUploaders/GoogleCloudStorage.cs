@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -26,6 +27,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 bucket = config.GoogleCloudStorageBucket
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleCloudStorage;
     }
 
     public sealed class GoogleCloudStorage : FileUploader, IOAuth2

@@ -302,6 +302,7 @@
             this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
             this.lblAzureStorageEnvironment = new System.Windows.Forms.Label();
@@ -1808,6 +1809,7 @@
             this.tcFileUploaders.Controls.Add(this.tpPuush);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
+            this.tcFileUploaders.Controls.Add(this.tpGoogleCloudStorage);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
             this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
@@ -2773,6 +2775,12 @@
             resources.ApplyResources(this.txtAmazonS3AccessKey, "txtAmazonS3AccessKey");
             this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
+            // 
+            // tpGoogleCloudStorage
+            // 
+            resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
+            this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
+            this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
             // 
             // tpAzureStorage
             // 
@@ -5977,5 +5985,6 @@
         private System.Windows.Forms.Label lblYouTubePrivacyType;
         internal System.Windows.Forms.TabPage tpYouTube;
         private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
+        internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
     }
 }
