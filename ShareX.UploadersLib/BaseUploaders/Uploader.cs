@@ -159,7 +159,7 @@ namespace ShareX.UploadersLib
         protected NameValueCollection SendRequestGetHeaders(HttpMethod method, string url, Stream data, string contentType, Dictionary<string, string> args,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
-            using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
+            using (HttpWebResponse response = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
                 if (response != null)
                 {
