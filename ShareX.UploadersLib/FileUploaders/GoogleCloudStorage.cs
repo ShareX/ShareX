@@ -29,7 +29,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -130,10 +129,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 role = "READER"
             };
 
-            NameValueCollection headers = googleAuth.GetAuthHeaders();
-            headers.Add("Content-Length", stream.Length.ToString());
-
-            result.Response = SendRequest(HttpMethod.POST, uploadurl, stream, contentType, args, headers);
+            result.Response = SendRequest(HttpMethod.POST, uploadurl, stream, contentType, args);
             string responsename = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response).name;
 
             if (responsename == fileName)
