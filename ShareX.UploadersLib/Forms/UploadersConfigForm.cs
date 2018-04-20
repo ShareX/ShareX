@@ -739,6 +739,9 @@ namespace ShareX.UploadersLib
                 oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
+            txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
+            txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
+
             #endregion Google Cloud Storage
 
             #endregion File uploaders
@@ -3061,6 +3064,16 @@ namespace ShareX.UploadersLib
         private void oauth2GoogleCloudStorage_RefreshButtonClicked()
         {
             OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+        }
+
+        private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageBucket = txtGoogleCloudStorageBucket.Text;
+        }
+
+        private void txtGoogleCloudStorageDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageDomain = txtGoogleCloudStorageDomain.Text;
         }
 
         #endregion Google Cloud Storage

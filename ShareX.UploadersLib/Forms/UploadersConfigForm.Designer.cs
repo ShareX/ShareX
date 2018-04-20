@@ -303,6 +303,7 @@
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
             this.lblAzureStorageEnvironment = new System.Windows.Forms.Label();
@@ -638,7 +639,10 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
+            this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageDomain = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2780,10 +2784,23 @@
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageDomain);
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageDomain);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageBucket);
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageBucket);
             this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // oauth2GoogleCloudStorage
+            // 
+            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
+            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
+            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
+            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
+            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
             // 
             // tpAzureStorage
             // 
@@ -5203,14 +5220,27 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // oauth2GoogleCloudStorage
+            // txtGoogleCloudStorageBucket
             // 
-            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
-            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
-            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
-            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
-            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
-            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
+            resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
+            this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
+            this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
+            // 
+            // lblGoogleCloudStorageBucket
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageBucket, "lblGoogleCloudStorageBucket");
+            this.lblGoogleCloudStorageBucket.Name = "lblGoogleCloudStorageBucket";
+            // 
+            // txtGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageDomain, "txtGoogleCloudStorageDomain");
+            this.txtGoogleCloudStorageDomain.Name = "txtGoogleCloudStorageDomain";
+            this.txtGoogleCloudStorageDomain.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageDomain_TextChanged);
+            // 
+            // lblGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageDomain, "lblGoogleCloudStorageDomain");
+            this.lblGoogleCloudStorageDomain.Name = "lblGoogleCloudStorageDomain";
             // 
             // UploadersConfigForm
             // 
@@ -5291,6 +5321,7 @@
             this.gbAmazonS3Advanced.ResumeLayout(false);
             this.gbAmazonS3Advanced.PerformLayout();
             this.tpGoogleCloudStorage.ResumeLayout(false);
+            this.tpGoogleCloudStorage.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
@@ -6000,5 +6031,9 @@
         private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
         internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
         private OAuthControl oauth2GoogleCloudStorage;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
+        private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
+        private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
     }
 }
