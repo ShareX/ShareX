@@ -5423,13 +5423,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7097,7 +7097,7 @@ store.book[0].title</value>
     <value>16, 349</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -7172,7 +7172,7 @@ store.book[0].title</value>
     <value>16, 310</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7217,7 +7217,7 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 271</value>
+    <value>16, 271</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
@@ -12168,7 +12168,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 4624</value>
+    <value>792, 5143</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
