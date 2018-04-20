@@ -392,7 +392,8 @@ namespace ShareX.UploadersLib
         #region Google Cloud Storage
 
         public OAuth2Info GoogleCloudStorageOAuth2Info = null;
-        public string GoogleCloudStorageBucket = "cdn.riolu.com";
+        public string GoogleCloudStorageBucket = "";
+        public string GoogleCloudStorageDomain = "";
 
         #endregion Google Cloud Storage
 

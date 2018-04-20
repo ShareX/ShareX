@@ -43,14 +43,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.GoogleCloudStorageOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.GoogleCloudStorageOAuth2Info) && !string.IsNullOrEmpty(config.GoogleCloudStorageBucket);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new GoogleCloudStorage(config.GoogleCloudStorageOAuth2Info)
             {
-                bucket = config.GoogleCloudStorageBucket
+                bucket = config.GoogleCloudStorageBucket,
+                domain = config.GoogleCloudStorageDomain
             };
         }
 
@@ -103,6 +104,8 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         public string bucket { get; set; }
+        public string path { get; set; }
+        public string domain { get; set; }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -110,10 +113,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result = new UploadResult();
 
-            result.URL = $"https://storage.googleapis.com/{bucket}/{fileName}";
+            path = path + "/";
 
-            string uploadurl = $"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o";
-            string aclurl = $"https://www.googleapis.com/storage/v1/b/{bucket}/o/{fileName}/acl";
+            string uploadurl = $"https://www.googleapis.com/upload/storage/v1/b/{path}{bucket}/o";
+            string aclurl = $"https://www.googleapis.com/storage/v1/b/{bucket}/o/{path}{fileName}/acl";
 
             string contentType = Helpers.GetMimeType(fileName);
 
@@ -137,6 +140,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 string requestjson = JsonConvert.SerializeObject(publicacl);
                 SendRequest(HttpMethod.POST, aclurl, requestjson, ContentTypeJSON, headers: googleAuth.GetAuthHeaders());
             }
+
+            if (string.IsNullOrEmpty(domain))
+            {
+                domain = "storage.googleapis.com";
+            }
+
+            result.URL = $"https://{domain}/{bucket}/{path}{fileName}";
 
             return result;
         }
