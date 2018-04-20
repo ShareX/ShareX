@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 role = "READER"
             };
 
-            result.Response = SendRequest(HttpMethod.POST, uploadurl, stream, contentType, args);
+            result.Response = SendRequest(HttpMethod.POST, uploadurl, stream, contentType, args, googleAuth.GetAuthHeaders());
             string responsename = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response).name;
 
             if (responsename == fileName)
