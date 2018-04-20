@@ -638,6 +638,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -677,6 +678,7 @@
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.gbAmazonS3Advanced.SuspendLayout();
+            this.tpGoogleCloudStorage.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
             this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
@@ -2778,6 +2780,7 @@
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
@@ -5200,6 +5203,15 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // oauth2GoogleCloudStorage
+            // 
+            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
+            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
+            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
+            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
+            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5278,6 +5290,7 @@
             this.tpAmazonS3.PerformLayout();
             this.gbAmazonS3Advanced.ResumeLayout(false);
             this.gbAmazonS3Advanced.PerformLayout();
+            this.tpGoogleCloudStorage.ResumeLayout(false);
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
@@ -5986,5 +5999,6 @@
         internal System.Windows.Forms.TabPage tpYouTube;
         private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
         internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
+        private OAuthControl oauth2GoogleCloudStorage;
     }
 }

@@ -732,6 +732,15 @@ namespace ShareX.UploadersLib
 
             #endregion YouTube
 
+            #region Google Cloud Storage
+
+            if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
+            {
+                oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            #endregion Google Cloud Storage
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -3030,6 +3039,31 @@ namespace ShareX.UploadersLib
         }
 
         #endregion YouTube
+
+        #region Google Cloud Storage
+
+        private void oauth2GoogleCloudStorage_ClearButtonClicked()
+        {
+            Config.GoogleCloudStorageOAuth2Info = null;
+        }
+
+        private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
+        {
+            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage, code);
+        }
+
+        private void oauth2GoogleCloudStorage_OpenButtonClicked()
+        {
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.GoogleCloudStorageOAuth2Info = OAuth2Open(new GoogleCloudStorage(oauth));
+        }
+
+        private void oauth2GoogleCloudStorage_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+        }
+
+        #endregion Google Cloud Storage
 
         #endregion File uploaders
 
