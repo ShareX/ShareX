@@ -303,6 +303,12 @@
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.txtGoogleCloudStorageObjectPrefix = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageObjectPrefix = new System.Windows.Forms.Label();
+            this.lblGoogleCloudStorageDomain = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
             this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
@@ -639,10 +645,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
-            this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
-            this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
-            this.lblGoogleCloudStorageDomain = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2784,6 +2786,8 @@
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageObjectPrefix);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageObjectPrefix);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageDomain);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageDomain);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageBucket);
@@ -2792,6 +2796,39 @@
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // txtGoogleCloudStorageObjectPrefix
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageObjectPrefix, "txtGoogleCloudStorageObjectPrefix");
+            this.txtGoogleCloudStorageObjectPrefix.Name = "txtGoogleCloudStorageObjectPrefix";
+            this.txtGoogleCloudStorageObjectPrefix.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageObjectPrefix_TextChanged);
+            // 
+            // lblGoogleCloudStorageObjectPrefix
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageObjectPrefix, "lblGoogleCloudStorageObjectPrefix");
+            this.lblGoogleCloudStorageObjectPrefix.Name = "lblGoogleCloudStorageObjectPrefix";
+            // 
+            // lblGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageDomain, "lblGoogleCloudStorageDomain");
+            this.lblGoogleCloudStorageDomain.Name = "lblGoogleCloudStorageDomain";
+            // 
+            // txtGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageDomain, "txtGoogleCloudStorageDomain");
+            this.txtGoogleCloudStorageDomain.Name = "txtGoogleCloudStorageDomain";
+            this.txtGoogleCloudStorageDomain.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageDomain_TextChanged);
+            // 
+            // lblGoogleCloudStorageBucket
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageBucket, "lblGoogleCloudStorageBucket");
+            this.lblGoogleCloudStorageBucket.Name = "lblGoogleCloudStorageBucket";
+            // 
+            // txtGoogleCloudStorageBucket
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
+            this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
+            this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
             // 
             // oauth2GoogleCloudStorage
             // 
@@ -5220,28 +5257,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // txtGoogleCloudStorageBucket
-            // 
-            resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
-            this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
-            this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
-            // 
-            // lblGoogleCloudStorageBucket
-            // 
-            resources.ApplyResources(this.lblGoogleCloudStorageBucket, "lblGoogleCloudStorageBucket");
-            this.lblGoogleCloudStorageBucket.Name = "lblGoogleCloudStorageBucket";
-            // 
-            // txtGoogleCloudStorageDomain
-            // 
-            resources.ApplyResources(this.txtGoogleCloudStorageDomain, "txtGoogleCloudStorageDomain");
-            this.txtGoogleCloudStorageDomain.Name = "txtGoogleCloudStorageDomain";
-            this.txtGoogleCloudStorageDomain.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageDomain_TextChanged);
-            // 
-            // lblGoogleCloudStorageDomain
-            // 
-            resources.ApplyResources(this.lblGoogleCloudStorageDomain, "lblGoogleCloudStorageDomain");
-            this.lblGoogleCloudStorageDomain.Name = "lblGoogleCloudStorageDomain";
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6035,5 +6050,7 @@
         private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
         private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
     }
 }

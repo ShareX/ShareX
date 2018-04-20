@@ -122,7 +122,6 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult();
 
             string contentType = Helpers.GetMimeType(fileName);
-
             string uploadpath = GetUploadPath(fileName);
 
             Dictionary<string, string> args = new Dictionary<string, string>
@@ -148,10 +147,15 @@ namespace ShareX.UploadersLib.FileUploaders
                 SendRequest(HttpMethod.POST, $"https://www.googleapis.com/storage/v1/b/{bucket}/o/{encodeduploadpath}/acl",
                     requestjson, ContentTypeJSON, headers: googleAuth.GetAuthHeaders());
             }
+            else
+            {
+                Errors.Add("Upload to Google Cloud Storage failed.");
+                return null;
+            }
 
             if (string.IsNullOrEmpty(domain))
             {
-                domain = "storage.googleapis.com/{bucket}";
+                domain = $"storage.googleapis.com/{bucket}";
             }
 
             result.URL = $"https://{domain}/{uploadpath}";

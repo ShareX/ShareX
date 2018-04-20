@@ -95,6 +95,7 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtDropboxPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtGoogleCloudStorageObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
@@ -741,6 +742,7 @@ namespace ShareX.UploadersLib
 
             txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
             txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
+            txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
 
             #endregion Google Cloud Storage
 
@@ -3074,6 +3076,11 @@ namespace ShareX.UploadersLib
         private void txtGoogleCloudStorageDomain_TextChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageDomain = txtGoogleCloudStorageDomain.Text;
+        }
+
+        private void txtGoogleCloudStorageObjectPrefix_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageObjectPrefix = txtGoogleCloudStorageObjectPrefix.Text;
         }
 
         #endregion Google Cloud Storage

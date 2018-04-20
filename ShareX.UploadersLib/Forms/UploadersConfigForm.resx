@@ -5423,13 +5423,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 202</value>
+    <value>4, 40</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7067,13 +7067,13 @@ store.book[0].title</value>
     <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -7093,11 +7093,59 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 349</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
+    <value>txtGoogleCloudStorageObjectPrefix</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 333</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
+    <value>lblGoogleCloudStorageObjectPrefix</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 313</value>
+    <value>13, 294</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -7118,13 +7166,13 @@ store.book[0].title</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 329</value>
+    <value>16, 310</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>324, 20</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -7139,7 +7187,7 @@ store.book[0].title</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7166,13 +7214,13 @@ store.book[0].title</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 271</value>
+    <value>20, 271</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -7187,7 +7235,7 @@ store.book[0].title</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -7208,7 +7256,7 @@ store.book[0].title</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -12120,7 +12168,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 3067</value>
+    <value>792, 4624</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -15915,7 +15963,7 @@ Using an encrypted library disables sharing.</value>
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>59</value>
+    <value>54</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
