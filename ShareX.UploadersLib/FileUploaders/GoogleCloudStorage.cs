@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -9,6 +11,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class GoogleCloudStorageNewFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleCloudStorage;
+
+        public override Image ServiceImage => Resources.GoogleCloudStorage;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -64,20 +68,22 @@ namespace ShareX.UploadersLib.FileUploaders
             public string role { get; set; }
         }
 
+        public class GoogleCloudStorageResponse
+        {
+            public string name { get; set; }
+        }
+
         public string bucket { get; set; }
-        public string domain { get; set; }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
-            if (string.IsNullOrEmpty(domain))
-            {
-                domain = "storage.googleapis.com";
-            }
+            UploadResult result = new UploadResult();
+
+            result.URL = $"https://storage.googleapis.com/{bucket}/{fileName}";
 
             string uploadurl = $"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o";
-            string publicurl = $"https://{domain}/{bucket}/{fileName}";
             string aclurl = $"https://www.googleapis.com/storage/v1/b/{bucket}/o/{fileName}/acl";
 
             string contentType = Helpers.GetMimeType(fileName);
@@ -97,19 +103,16 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = googleAuth.GetAuthHeaders();
             headers.Add("Content-Length", stream.Length.ToString());
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.POST, uploadurl, stream, contentType, args, headers);
+            result.Response = SendRequest(HttpMethod.POST, uploadurl, stream, contentType, args, headers);
+            string responsename = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response).name;
 
-            if (responseHeaders != null)
+            if (responsename == fileName)
             {
                 string requestjson = JsonConvert.SerializeObject(publicacl);
                 SendRequest(HttpMethod.POST, aclurl, requestjson, ContentTypeJSON, headers: googleAuth.GetAuthHeaders());
             }
 
-            return new UploadResult
-            {
-                IsSuccess = true,
-                URL = publicurl
-            };
+            return result;
         }
     }
 }
