@@ -1013,7 +1013,7 @@
     <None Include="Favicons\YouTube.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GoogleCloudStorage.png" />
+    <None Include="Favicons\GoogleCloudStorage.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

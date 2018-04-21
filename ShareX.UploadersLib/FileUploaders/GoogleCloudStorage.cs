@@ -28,7 +28,6 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -39,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleCloudStorage;
 
-        public override Image ServiceImage => Resources.GoogleCloudStorage;
+        public override Icon ServiceIcon => Resources.GoogleCloudStorage;
 
         public override bool CheckConfig(UploadersConfig config)
         {
