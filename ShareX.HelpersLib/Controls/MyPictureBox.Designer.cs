@@ -82,6 +82,7 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.pbMain);
             this.Name = "MyPictureBox";
+            this.Resize += new System.EventHandler(this.MyPictureBox_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
