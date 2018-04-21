@@ -124,18 +124,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string contentType = Helpers.GetMimeType(fileName);
             string uploadpath = GetUploadPath(fileName);
 
             if (string.IsNullOrEmpty(domain))
             {
                 domain = $"storage.googleapis.com/{bucket}";
             }
-
-            Dictionary<string, string> args = new Dictionary<string, string>
-            {
-                { "uploadType", "multipart" }
-            };
 
             Metadata metadata = new Metadata
             {
@@ -152,8 +146,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadatajson = JsonConvert.SerializeObject(metadata);
 
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o", stream, fileName,
-                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson, args: args);
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o?uploadType=multipart", stream, fileName,
+                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+            GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
+
+            if (upload.name != uploadpath)
+            {
+                Errors.Add("Upload failed.");
+                return null;
+            }
 
             result.URL = $"https://{domain}/{uploadpath}";
 
