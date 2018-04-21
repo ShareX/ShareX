@@ -389,6 +389,15 @@ namespace ShareX.UploadersLib
 
         #endregion YouTube
 
+        #region Google Cloud Storage
+
+        public OAuth2Info GoogleCloudStorageOAuth2Info = null;
+        public string GoogleCloudStorageBucket = "";
+        public string GoogleCloudStorageDomain = "";
+        public string GoogleCloudStorageObjectPrefix = "ShareX/%y/%mo";
+
+        #endregion Google Cloud Storage
+
         #endregion File uploaders
 
         #region URL shorteners

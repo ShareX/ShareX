@@ -142,6 +142,7 @@
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\AzureStorage.cs" />
     <Compile Include="FileUploaders\Box.cs" />
+    <Compile Include="FileUploaders\GoogleCloudStorage.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
     <Compile Include="FileUploaders\Plik.cs" />
     <Compile Include="FileUploaders\PlikSettings.cs" />
@@ -1010,6 +1011,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\YouTube.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\GoogleCloudStorage.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

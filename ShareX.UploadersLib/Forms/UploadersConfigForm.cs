@@ -95,6 +95,7 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtDropboxPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtGoogleCloudStorageObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
@@ -731,6 +732,19 @@ namespace ShareX.UploadersLib
             cbYouTubeUseShortenedLink.Checked = Config.YouTubeUseShortenedLink;
 
             #endregion YouTube
+
+            #region Google Cloud Storage
+
+            if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
+            {
+                oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
+            txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
+            txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
+
+            #endregion Google Cloud Storage
 
             #endregion File uploaders
 
@@ -3030,6 +3044,46 @@ namespace ShareX.UploadersLib
         }
 
         #endregion YouTube
+
+        #region Google Cloud Storage
+
+        private void oauth2GoogleCloudStorage_ClearButtonClicked()
+        {
+            Config.GoogleCloudStorageOAuth2Info = null;
+        }
+
+        private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
+        {
+            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage, code);
+        }
+
+        private void oauth2GoogleCloudStorage_OpenButtonClicked()
+        {
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.GoogleCloudStorageOAuth2Info = OAuth2Open(new GoogleCloudStorage(oauth));
+        }
+
+        private void oauth2GoogleCloudStorage_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+        }
+
+        private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageBucket = txtGoogleCloudStorageBucket.Text;
+        }
+
+        private void txtGoogleCloudStorageDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageDomain = txtGoogleCloudStorageDomain.Text;
+        }
+
+        private void txtGoogleCloudStorageObjectPrefix_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageObjectPrefix = txtGoogleCloudStorageObjectPrefix.Text;
+        }
+
+        #endregion Google Cloud Storage
 
         #endregion File uploaders
 
