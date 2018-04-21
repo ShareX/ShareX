@@ -31,7 +31,6 @@ using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -100,15 +99,21 @@ namespace ShareX.UploadersLib.FileUploaders
             return URLHelpers.CombineURL(path, fileName);
         }
 
-        public class ObjectACL
-        {
-            public string entity { get; set; }
-            public string role { get; set; }
-        }
-
         public class GoogleCloudStorageResponse
         {
             public string name { get; set; }
+        }
+
+        public class Metadata
+        {
+            public string name { get; set; }
+            public Acl[] acl { get; set; }
+        }
+
+        public class Acl
+        {
+            public string entity { get; set; }
+            public string role { get; set; }
         }
 
         public string bucket { get; set; }
@@ -119,44 +124,36 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            UploadResult result = new UploadResult();
-
             string contentType = Helpers.GetMimeType(fileName);
             string uploadpath = GetUploadPath(fileName);
-
-            Dictionary<string, string> args = new Dictionary<string, string>
-            {
-                { "uploadType", "media" },
-                { "name", uploadpath }
-            };
-
-            ObjectACL publicacl = new ObjectACL
-            {
-                entity = "allUsers",
-                role = "READER"
-            };
-
-            result.Response = SendRequest(HttpMethod.POST, $"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o",
-                stream, contentType, args, googleAuth.GetAuthHeaders());
-            string responsename = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response).name;
-
-            if (responsename == uploadpath)
-            {
-                string encodeduploadpath = HttpUtility.UrlEncode(uploadpath);
-                string requestjson = JsonConvert.SerializeObject(publicacl);
-                SendRequest(HttpMethod.POST, $"https://www.googleapis.com/storage/v1/b/{bucket}/o/{encodeduploadpath}/acl",
-                    requestjson, ContentTypeJSON, headers: googleAuth.GetAuthHeaders());
-            }
-            else
-            {
-                Errors.Add("Upload to Google Cloud Storage failed.");
-                return null;
-            }
 
             if (string.IsNullOrEmpty(domain))
             {
                 domain = $"storage.googleapis.com/{bucket}";
             }
+
+            Dictionary<string, string> args = new Dictionary<string, string>
+            {
+                { "uploadType", "multipart" }
+            };
+
+            Metadata metadata = new Metadata
+            {
+                name = uploadpath,
+                acl = new Acl[]
+                {
+                    new Acl
+                    {
+                        entity = "allUsers",
+                        role = "READER"
+                    }
+                }
+            };
+
+            string metadatajson = JsonConvert.SerializeObject(metadata);
+
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o", stream, fileName,
+                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson, args: args);
 
             result.URL = $"https://{domain}/{uploadpath}";
 
