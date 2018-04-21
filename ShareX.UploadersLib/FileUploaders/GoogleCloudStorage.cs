@@ -50,9 +50,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new GoogleCloudStorage(config.GoogleCloudStorageOAuth2Info)
             {
-                bucket = config.GoogleCloudStorageBucket,
-                domain = config.GoogleCloudStorageDomain,
-                prefix = config.GoogleCloudStorageObjectPrefix
+                Bucket = config.GoogleCloudStorageBucket,
+                Domain = config.GoogleCloudStorageDomain,
+                Prefix = config.GoogleCloudStorageObjectPrefix
             };
         }
 
@@ -61,6 +61,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class GoogleCloudStorage : FileUploader, IOAuth2
     {
+        public string Bucket { get; set; }
+        public string Domain { get; set; }
+        public string Prefix { get; set; }
+
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
         private GoogleOAuth2 googleAuth;
@@ -95,7 +99,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            string path = NameParser.Parse(NameParserType.FolderPath, prefix.Trim('/'));
+            string path = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
             return URLHelpers.CombineURL(path, fileName);
         }
 
@@ -116,19 +120,15 @@ namespace ShareX.UploadersLib.FileUploaders
             public string role { get; set; }
         }
 
-        public string bucket { get; set; }
-        public string domain { get; set; }
-        public string prefix { get; set; }
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
             string uploadpath = GetUploadPath(fileName);
 
-            if (string.IsNullOrEmpty(domain))
+            if (string.IsNullOrEmpty(Domain))
             {
-                domain = $"storage.googleapis.com/{bucket}";
+                Domain = $"storage.googleapis.com/{Bucket}";
             }
 
             Metadata metadata = new Metadata
@@ -146,7 +146,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadatajson = JsonConvert.SerializeObject(metadata);
 
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{bucket}/o?uploadType=multipart", stream, fileName,
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
                 headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
@@ -156,7 +156,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            result.URL = URLHelpers.FixPrefix($"{domain}/{uploadpath}", "https://");
+            result.URL = URLHelpers.FixPrefix($"{Domain}/{uploadpath}", "https://");
 
             return result;
         }
