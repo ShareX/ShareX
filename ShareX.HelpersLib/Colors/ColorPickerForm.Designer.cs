@@ -574,10 +574,10 @@
             // 
             // ColorPickerForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
-            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.pColorPicker);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pSceenColorPicker);
