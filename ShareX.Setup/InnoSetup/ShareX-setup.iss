@@ -82,9 +82,9 @@ Source: "puush"; DestDir: {app}; Check: IsPuushMode
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
-Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon; Check: ShouldCreateDesktopIcon
-Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon
-Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon; Check: ShouldCreateIcon(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'))
+Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon; Check: ShouldCreateIcon(ExpandConstant('{sendto}\{#MyAppName}.lnk'))
+Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon; Check: ShouldCreateIcon(ExpandConstant('{userstartup}\{#MyAppName}.lnk'))
 
 [Run]
 Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
@@ -126,11 +126,6 @@ begin
   Result := true;
 end;
 
-function DesktopIconExists(): Boolean;
-begin
-  Result := FileExists(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'));
-end;
-
 function CmdLineParamExists(const value: string): Boolean;
 var
   i: Integer;  
@@ -159,10 +154,10 @@ begin
   Result := CmdLineParamExists('/UPDATE');
 end;
 
-function ShouldCreateDesktopIcon: Boolean;
+function ShouldCreateIcon(const value: string): Boolean;
 begin
   if IsUpdating() then
     Result := False
   else
-    Result := not DesktopIconExists();
+    Result := not FileExists(value);
 end;
