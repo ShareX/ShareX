@@ -51,10 +51,10 @@ WizardSmallImageFile=WizardSmallImageFile.bmp
 #include "Scripts\lang\english.iss"
 
 [Tasks]
-Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
-Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"
-Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"
-Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"
+Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateIcon(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'))
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateContextMenuButton
+Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateIcon(ExpandConstant('{sendto}\{#MyAppName}.lnk'))
+Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: ShouldCreateIcon(ExpandConstant('{userstartup}\{#MyAppName}.lnk'))
 
 [Files]
 Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
@@ -82,9 +82,9 @@ Source: "puush"; DestDir: {app}; Check: IsPuushMode
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
-Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon; Check: ShouldCreateIcon(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'))
-Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon; Check: ShouldCreateIcon(ExpandConstant('{sendto}\{#MyAppName}.lnk'))
-Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon; Check: ShouldCreateIcon(ExpandConstant('{userstartup}\{#MyAppName}.lnk'))
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon
+Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon
+Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
 
 [Run]
 Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
@@ -154,10 +154,18 @@ begin
   Result := CmdLineParamExists('/UPDATE');
 end;
 
-function ShouldCreateIcon(const value: string): Boolean;
+function ShouldCreateIcon(const file: string): Boolean;
 begin
   if IsUpdating() then
     Result := False
   else
-    Result := not FileExists(value);
+    Result := not FileExists(file);
+end;
+
+function ShouldCreateContextMenuButton: Boolean;
+begin
+  if IsUpdating() then
+    Result := False
+  else
+    Result := not (RegKeyExists(HKEY_CURRENT_USER, 'Software\Classes\*\shell\{#MyAppName}') and RegKeyExists(HKEY_CURRENT_USER, 'Software\Classes\Directory\shell\{#MyAppName}'));
 end;
