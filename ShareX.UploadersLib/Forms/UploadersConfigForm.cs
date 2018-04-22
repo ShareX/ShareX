@@ -112,13 +112,6 @@ namespace ShareX.UploadersLib
             cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
             eiFTP.ObjectType = typeof(FTPAccount);
 
-            // Localhost
-            ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
-            ucLocalhostAccounts.btnRemove.Click += LocalhostAccountRemoveButton_Click;
-            ucLocalhostAccounts.btnDuplicate.Click += LocalhostAccountDuplicateButton_Click;
-            ucLocalhostAccounts.btnTest.Visible = false;
-            ucLocalhostAccounts.pgSettings.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
-
             // Custom uploader
             txtCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
@@ -484,25 +477,16 @@ namespace ShareX.UploadersLib
 
             #endregion SendSpace
 
-            #region Localhost
+            #region Shared folder
 
-            if (Config.LocalhostAccountList == null || Config.LocalhostAccountList.Count == 0)
+            if (Config.LocalhostAccountList == null)
             {
-                LocalhostAccountsSetup(new List<LocalhostAccount>());
-            }
-            else
-            {
-                LocalhostAccountsSetup(Config.LocalhostAccountList);
-                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
-                {
-                    ucLocalhostAccounts.lbAccounts.SelectedIndex = 0;
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                }
+                Config.LocalhostAccountList = new List<LocalhostAccount>();
             }
 
-            #endregion Localhost
+            SharedFolderUpdateControls();
+
+            #endregion Shared folder
 
             #region Jira
 
@@ -2376,67 +2360,6 @@ namespace ShareX.UploadersLib
 
         #region Shared folder
 
-        private void LocalhostAccountsSetup(IEnumerable<LocalhostAccount> accs)
-        {
-            if (accs != null)
-            {
-                int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
-
-                ucLocalhostAccounts.lbAccounts.Items.Clear();
-                Config.LocalhostAccountList = new List<LocalhostAccount>();
-                Config.LocalhostAccountList.AddRange(accs);
-
-                cboSharedFolderFiles.Items.Clear();
-                cboSharedFolderImages.Items.Clear();
-                cboSharedFolderText.Items.Clear();
-
-                foreach (LocalhostAccount acc in Config.LocalhostAccountList)
-                {
-                    ucLocalhostAccounts.lbAccounts.Items.Add(acc);
-                    cboSharedFolderFiles.Items.Add(acc);
-                    cboSharedFolderImages.Items.Add(acc);
-                    cboSharedFolderText.Items.Add(acc);
-                }
-
-                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
-                {
-                    ucLocalhostAccounts.lbAccounts.SelectedIndex = sel.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                }
-            }
-        }
-
-        private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
-        {
-            LocalhostAccount acc = new LocalhostAccount();
-            Config.LocalhostAccountList.Add(acc);
-            ucLocalhostAccounts.AddItem(acc);
-        }
-
-        private void LocalhostAccountRemoveButton_Click(object sender, EventArgs e)
-        {
-            int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
-            if (ucLocalhostAccounts.RemoveItem(sel))
-            {
-                Config.LocalhostAccountList.RemoveAt(sel);
-            }
-        }
-
-        private void LocalhostAccountDuplicateButton_Click(object sender, EventArgs e)
-        {
-            LocalhostAccount src = (LocalhostAccount)ucLocalhostAccounts.lbAccounts.Items[ucLocalhostAccounts.lbAccounts.SelectedIndex];
-            LocalhostAccount clone = src.Clone();
-            Config.LocalhostAccountList.Add(clone);
-            ucLocalhostAccounts.AddItem(clone);
-        }
-
-        private void SettingsGrid_LocalhostPropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-            LocalhostAccountsSetup(Config.LocalhostAccountList);
-        }
-
         private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.LocalhostSelectedImages = cboSharedFolderImages.SelectedIndex;
@@ -2450,6 +2373,45 @@ namespace ShareX.UploadersLib
         private void cboSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.LocalhostSelectedFiles = cboSharedFolderFiles.SelectedIndex;
+        }
+
+        private void btnSharedFolderAdd_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount acc = new LocalhostAccount();
+            SharedFolderAddItem(acc);
+        }
+
+        private void btnSharedFolderRemove_Click(object sender, EventArgs e)
+        {
+            int index = lbSharedFolderAccounts.SelectedIndex;
+            SharedFolderRemoveItem(index);
+        }
+
+        private void btnSharedFolderDuplicate_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount account = (LocalhostAccount)lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+            LocalhostAccount clone = account.Clone();
+            SharedFolderAddItem(clone);
+        }
+
+        private void lbSharedFolderAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SharedFolderUpdateEnabledStates();
+
+            if (lbSharedFolderAccounts.SelectedIndex > -1)
+            {
+                pgSharedFolderAccount.SelectedObject = lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+            }
+        }
+
+        private void pgSharedFolderAccount_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            SharedFolderUpdateControls();
+
+            if (lbSharedFolderAccounts.SelectedIndex > -1)
+            {
+                lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex] = pgSharedFolderAccount.SelectedObject;
+            }
         }
 
         #endregion Shared folder

@@ -287,12 +287,6 @@
     <Compile Include="Forms\UserPassBox.Designer.cs">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AccountsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\AccountsControl.Designer.cs">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\CertFileNameEditor.cs" />
     <Compile Include="BaseUploaders\FileUploader.cs" />
     <Compile Include="FileUploaders\Dropbox.cs" />
@@ -374,51 +368,6 @@
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\AccountsControl.de.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.es.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.fr.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.hu.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.id-ID.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.it-IT.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.ko-KR.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.nl-NL.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.pt-BR.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.ru.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.tr.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.uk.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.vi-VN.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.zh-CN.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.zh-TW.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.de.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -897,9 +846,6 @@
     <EmbeddedResource Include="Forms\UserPassBox.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AccountsControl.resx">
-      <DependentUpon>AccountsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>

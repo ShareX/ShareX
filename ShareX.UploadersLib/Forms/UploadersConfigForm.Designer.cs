@@ -488,17 +488,21 @@
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.tpYouTube = new System.Windows.Forms.TabPage();
             this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
-            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
             this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
+            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
+            this.lbSharedFolderAccounts = new System.Windows.Forms.ListBox();
+            this.pgSharedFolderAccount = new System.Windows.Forms.PropertyGrid();
+            this.btnSharedFolderDuplicate = new System.Windows.Forms.Button();
+            this.btnSharedFolderRemove = new System.Windows.Forms.Button();
+            this.btnSharedFolderAdd = new System.Windows.Forms.Button();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
             this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
             this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
-            this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
             this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
@@ -4110,9 +4114,9 @@
             // tpYouTube
             // 
             this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
-            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
+            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             resources.ApplyResources(this.tpYouTube, "tpYouTube");
             this.tpYouTube.Name = "tpYouTube";
             this.tpYouTube.UseVisualStyleBackColor = true;
@@ -4123,15 +4127,6 @@
             this.cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
             this.cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
             this.cbYouTubeUseShortenedLink.CheckedChanged += new System.EventHandler(this.cbYouTubeUseShortenedLink_CheckedChanged);
-            // 
-            // oauth2YouTube
-            // 
-            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
-            this.oauth2YouTube.Name = "oauth2YouTube";
-            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
-            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
-            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
-            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
             // 
             // cbYouTubePrivacyType
             // 
@@ -4146,18 +4141,67 @@
             resources.ApplyResources(this.lblYouTubePrivacyType, "lblYouTubePrivacyType");
             this.lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
             // 
+            // oauth2YouTube
+            // 
+            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
+            this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
+            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
+            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
+            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
+            // 
             // tpSharedFolder
             // 
             this.tpSharedFolder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpSharedFolder.Controls.Add(this.lbSharedFolderAccounts);
+            this.tpSharedFolder.Controls.Add(this.pgSharedFolderAccount);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderDuplicate);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderRemove);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderAdd);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderImages);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
-            this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
             resources.ApplyResources(this.tpSharedFolder, "tpSharedFolder");
             this.tpSharedFolder.Name = "tpSharedFolder";
+            // 
+            // lbSharedFolderAccounts
+            // 
+            this.lbSharedFolderAccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.lbSharedFolderAccounts, "lbSharedFolderAccounts");
+            this.lbSharedFolderAccounts.Name = "lbSharedFolderAccounts";
+            this.lbSharedFolderAccounts.SelectedIndexChanged += new System.EventHandler(this.lbSharedFolderAccounts_SelectedIndexChanged);
+            // 
+            // pgSharedFolderAccount
+            // 
+            resources.ApplyResources(this.pgSharedFolderAccount, "pgSharedFolderAccount");
+            this.pgSharedFolderAccount.Name = "pgSharedFolderAccount";
+            this.pgSharedFolderAccount.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgSharedFolderAccount.ToolbarVisible = false;
+            this.pgSharedFolderAccount.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSharedFolderAccount_PropertyValueChanged);
+            // 
+            // btnSharedFolderDuplicate
+            // 
+            resources.ApplyResources(this.btnSharedFolderDuplicate, "btnSharedFolderDuplicate");
+            this.btnSharedFolderDuplicate.Name = "btnSharedFolderDuplicate";
+            this.btnSharedFolderDuplicate.UseVisualStyleBackColor = true;
+            this.btnSharedFolderDuplicate.Click += new System.EventHandler(this.btnSharedFolderDuplicate_Click);
+            // 
+            // btnSharedFolderRemove
+            // 
+            resources.ApplyResources(this.btnSharedFolderRemove, "btnSharedFolderRemove");
+            this.btnSharedFolderRemove.Name = "btnSharedFolderRemove";
+            this.btnSharedFolderRemove.UseVisualStyleBackColor = true;
+            this.btnSharedFolderRemove.Click += new System.EventHandler(this.btnSharedFolderRemove_Click);
+            // 
+            // btnSharedFolderAdd
+            // 
+            resources.ApplyResources(this.btnSharedFolderAdd, "btnSharedFolderAdd");
+            this.btnSharedFolderAdd.Name = "btnSharedFolderAdd";
+            this.btnSharedFolderAdd.UseVisualStyleBackColor = true;
+            this.btnSharedFolderAdd.Click += new System.EventHandler(this.btnSharedFolderAdd_Click);
             // 
             // lblSharedFolderFiles
             // 
@@ -4197,11 +4241,6 @@
             resources.ApplyResources(this.cboSharedFolderImages, "cboSharedFolderImages");
             this.cboSharedFolderImages.Name = "cboSharedFolderImages";
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
-            // 
-            // ucLocalhostAccounts
-            // 
-            resources.ApplyResources(this.ucLocalhostAccounts, "ucLocalhostAccounts");
-            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
             // 
             // tpEmail
             // 
@@ -5265,6 +5304,8 @@
             this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
             this.Controls.Add(this.ttlvMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UploadersConfigForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.UploadersConfigForm_Shown);
@@ -5597,7 +5638,6 @@
         private System.Windows.Forms.NumericUpDown nudEmailSmtpPort;
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
-        private AccountsControl ucLocalhostAccounts;
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
         private System.Windows.Forms.Label lblSharedFolderImages;
@@ -6052,5 +6092,10 @@
         private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
         private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Button btnSharedFolderDuplicate;
+        private System.Windows.Forms.Button btnSharedFolderRemove;
+        private System.Windows.Forms.Button btnSharedFolderAdd;
+        private System.Windows.Forms.PropertyGrid pgSharedFolderAccount;
+        private System.Windows.Forms.ListBox lbSharedFolderAccounts;
     }
 }

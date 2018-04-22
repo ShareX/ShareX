@@ -537,7 +537,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>True</value>
   </data>
   <data name="txtTwitterDefaultMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 48</value>
+    <value>496, 48</value>
   </data>
   <data name="txtTwitterDefaultMessage.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -987,7 +987,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpCustomUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4026,7 +4026,7 @@ store.book[0].title</value>
     <value>16, 248</value>
   </data>
   <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtBitlyDomain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4209,7 +4209,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4530,7 +4530,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4710,7 +4710,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4857,7 +4857,7 @@ store.book[0].title</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -5106,7 +5106,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -5128,6 +5128,9 @@ store.book[0].title</value>
   </data>
   <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbFirebaseIsShort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbFirebaseIsShort.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 85</value>
@@ -5155,6 +5158,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFirebaseDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 61</value>
@@ -5205,7 +5211,7 @@ store.book[0].title</value>
     <value>16, 32</value>
   </data>
   <data name="txtFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>232, 20</value>
   </data>
   <data name="txtFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -5224,6 +5230,9 @@ store.book[0].title</value>
   </data>
   <data name="lblFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 16</value>
@@ -5493,13 +5502,13 @@ store.book[0].title</value>
     <value>5</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6192,13 +6201,13 @@ store.book[0].title</value>
     <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -6218,15 +6227,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 367</value>
-  </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageObjectPrefix</value>
   </data>
@@ -6238,21 +6238,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 351</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
-    <value>Path:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageObjectPrefix</value>
@@ -6266,21 +6251,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 303</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
-    <value>Custom domain:</value>
-  </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageDomain</value>
   </data>
@@ -6292,15 +6262,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 319</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageDomain</value>
@@ -6314,21 +6275,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 255</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
-    <value>Bucket name:</value>
-  </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageBucket</value>
   </data>
@@ -6341,15 +6287,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 271</value>
-  </data>
-  <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageBucket</value>
   </data>
@@ -6361,15 +6298,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
     <value>oauth2GoogleCloudStorage</value>
@@ -6384,13 +6312,13 @@ store.book[0].title</value>
     <value>6</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpGoogleCloudStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -8348,18 +8276,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbYouTubeUseShortenedLink.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
-    <value>oauth2YouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
-    <value>tpYouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.Name" xml:space="preserve">
     <value>cbYouTubePrivacyType</value>
   </data>
@@ -8370,7 +8286,7 @@ store.book[0].title</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.Name" xml:space="preserve">
     <value>lblYouTubePrivacyType</value>
@@ -8382,13 +8298,25 @@ store.book[0].title</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
+    <value>oauth2YouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 202</value>
+    <value>4, 40</value>
   </data>
   <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -8408,6 +8336,141 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
+  <data name="lbSharedFolderAccounts.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lbSharedFolderAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="lbSharedFolderAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 480</value>
+  </data>
+  <data name="lbSharedFolderAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lbSharedFolderAccounts.Name" xml:space="preserve">
+    <value>lbSharedFolderAccounts</value>
+  </data>
+  <data name="&gt;&gt;lbSharedFolderAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbSharedFolderAccounts.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;lbSharedFolderAccounts.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pgSharedFolderAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 80</value>
+  </data>
+  <data name="pgSharedFolderAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 480</value>
+  </data>
+  <data name="pgSharedFolderAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pgSharedFolderAccount.Name" xml:space="preserve">
+    <value>pgSharedFolderAccount</value>
+  </data>
+  <data name="&gt;&gt;pgSharedFolderAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSharedFolderAccount.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;pgSharedFolderAccount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 48</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderDuplicate.Name" xml:space="preserve">
+    <value>btnSharedFolderDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderDuplicate.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderDuplicate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnSharedFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 48</value>
+  </data>
+  <data name="btnSharedFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="btnSharedFolderRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderRemove.Name" xml:space="preserve">
+    <value>btnSharedFolderRemove</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderRemove.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderRemove.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnSharedFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="btnSharedFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="btnSharedFolderAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderAdd.Name" xml:space="preserve">
+    <value>btnSharedFolderAdd</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderAdd.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;btnSharedFolderAdd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>544, 16</value>
+  </data>
+  <data name="lblSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="lblSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>File:</value>
+  </data>
   <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
     <value>lblSharedFolderFiles</value>
   </data>
@@ -8418,7 +8481,25 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
+  </data>
+  <data name="lblSharedFolderText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 16</value>
+  </data>
+  <data name="lblSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="lblSharedFolderText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Text:</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderText.Name" xml:space="preserve">
     <value>lblSharedFolderText</value>
@@ -8430,7 +8511,16 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
+  </data>
+  <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 12</value>
+  </data>
+  <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderFiles.Name" xml:space="preserve">
     <value>cboSharedFolderFiles</value>
@@ -8442,7 +8532,25 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
+  </data>
+  <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSharedFolderImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="lblSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Image:</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderImages.Name" xml:space="preserve">
     <value>lblSharedFolderImages</value>
@@ -8454,6 +8562,15 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderImages.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 12</value>
+  </data>
+  <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderText.Name" xml:space="preserve">
@@ -8466,7 +8583,16 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderText.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
+  </data>
+  <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 12</value>
+  </data>
+  <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderImages.Name" xml:space="preserve">
     <value>cboSharedFolderImages</value>
@@ -8478,28 +8604,16 @@ store.book[0].title</value>
     <value>tpSharedFolder</value>
   </data>
   <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
-    <value>ucLocalhostAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 202</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -12627,6 +12741,180 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;txtAmazonS3AccessKey.ZOrder" xml:space="preserve">
     <value>20</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 367</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
+    <value>txtGoogleCloudStorageObjectPrefix</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 351</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
+    <value>lblGoogleCloudStorageObjectPrefix</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 303</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Custom domain:</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Name" xml:space="preserve">
+    <value>lblGoogleCloudStorageDomain</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 319</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
+    <value>txtGoogleCloudStorageDomain</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 255</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Bucket name:</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Name" xml:space="preserve">
+    <value>lblGoogleCloudStorageBucket</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 271</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
+    <value>txtGoogleCloudStorageBucket</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 238</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
+    <value>oauth2GoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
@@ -17177,6 +17465,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbYouTubeUseShortenedLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbYouTubeUseShortenedLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbYouTubeUseShortenedLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 304</value>
   </data>
@@ -17201,27 +17492,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbYouTubeUseShortenedLink.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 232</value>
-  </data>
-  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
-    <value>oauth2YouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
-    <value>tpYouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="cbYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 272</value>
   </data>
@@ -17241,10 +17511,13 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblYouTubePrivacyType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblYouTubePrivacyType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 256</value>
@@ -17268,187 +17541,28 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 16</value>
-  </data>
-  <data name="lblSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="lblSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>File:</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
-    <value>lblSharedFolderFiles</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSharedFolderText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 16</value>
-  </data>
-  <data name="lblSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="lblSharedFolderText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Text:</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Name" xml:space="preserve">
-    <value>lblSharedFolderText</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 12</value>
-  </data>
-  <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Name" xml:space="preserve">
-    <value>cboSharedFolderFiles</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSharedFolderImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="lblSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 232</value>
   </data>
-  <data name="lblSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Image:</value>
+  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
+    <value>oauth2YouTube</value>
   </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Name" xml:space="preserve">
-    <value>lblSharedFolderImages</value>
+  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
   </data>
-  <data name="&gt;&gt;lblSharedFolderImages.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;lblSharedFolderImages.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 12</value>
-  </data>
-  <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Name" xml:space="preserve">
-    <value>cboSharedFolderText</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderText.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
-  </data>
-  <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Name" xml:space="preserve">
-    <value>cboSharedFolderImages</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 5662</value>
-  </data>
-  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
-    <value>ucLocalhostAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>

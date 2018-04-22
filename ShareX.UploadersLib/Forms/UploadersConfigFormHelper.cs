@@ -2106,5 +2106,76 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Generic OAuth2
+
+        #region Shared folder
+
+        private void SharedFolderUpdateControls()
+        {
+            int selected = lbSharedFolderAccounts.SelectedIndex;
+
+            lbSharedFolderAccounts.Items.Clear();
+            cboSharedFolderImages.Items.Clear();
+            cboSharedFolderText.Items.Clear();
+            cboSharedFolderFiles.Items.Clear();
+
+            if (Config.LocalhostAccountList.Count > 0)
+            {
+                foreach (LocalhostAccount account in Config.LocalhostAccountList)
+                {
+                    lbSharedFolderAccounts.Items.Add(account);
+                    cboSharedFolderImages.Items.Add(account);
+                    cboSharedFolderText.Items.Add(account);
+                    cboSharedFolderFiles.Items.Add(account);
+                }
+
+                lbSharedFolderAccounts.SelectedIndex = selected.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, Config.LocalhostAccountList.Count - 1);
+            }
+
+            SharedFolderUpdateEnabledStates();
+        }
+
+        private void SharedFolderUpdateEnabledStates()
+        {
+            cboSharedFolderImages.Enabled = cboSharedFolderText.Enabled = cboSharedFolderFiles.Enabled = Config.LocalhostAccountList.Count > 0;
+            btnSharedFolderRemove.Enabled = btnSharedFolderDuplicate.Enabled = lbSharedFolderAccounts.SelectedIndex > -1;
+        }
+
+        private void SharedFolderAddItem(LocalhostAccount account)
+        {
+            Config.LocalhostAccountList.Add(account);
+            lbSharedFolderAccounts.Items.Add(account);
+            lbSharedFolderAccounts.SelectedIndex = lbSharedFolderAccounts.Items.Count - 1;
+            SharedFolderUpdateControls();
+        }
+
+        private bool SharedFolderRemoveItem(int index)
+        {
+            if (index.IsBetween(0, lbSharedFolderAccounts.Items.Count - 1))
+            {
+                Config.LocalhostAccountList.RemoveAt(index);
+                lbSharedFolderAccounts.Items.RemoveAt(index);
+
+                if (lbSharedFolderAccounts.Items.Count > 0)
+                {
+                    lbSharedFolderAccounts.SelectedIndex = index == lbSharedFolderAccounts.Items.Count ? lbSharedFolderAccounts.Items.Count - 1 : index;
+                    pgSharedFolderAccount.SelectedObject = lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+                }
+                else
+                {
+                    pgSharedFolderAccount.SelectedObject = null;
+                }
+
+                SharedFolderUpdateControls();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        #endregion Shared folder
     }
 }
