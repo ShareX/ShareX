@@ -118,44 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnApplyFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnApplyFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 210</value>
-  </data>
-  <data name="btnApplyFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnApplyFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Apply filters</value>
-  </data>
-  <data name="&gt;&gt;btnApplyFilters.Name" xml:space="preserve">
-    <value>btnApplyFilters</value>
-  </data>
-  <data name="&gt;&gt;btnApplyFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnApplyFilters.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="chIcon.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -173,7 +146,7 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>230</value>
   </data>
@@ -193,7 +166,7 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -226,16 +199,16 @@
     <value>406, 368</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Name" xml:space="preserve">
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -290,6 +263,33 @@
   </data>
   <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnApplyFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnApplyFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 210</value>
+  </data>
+  <data name="btnApplyFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 24</value>
+  </data>
+  <data name="btnApplyFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnApplyFilters.Text" xml:space="preserve">
+    <value>Apply filters</value>
+  </data>
+  <data name="&gt;&gt;btnApplyFilters.Name" xml:space="preserve">
+    <value>btnApplyFilters</value>
+  </data>
+  <data name="&gt;&gt;btnApplyFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnApplyFilters.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 150</value>
@@ -595,7 +595,7 @@
     <value>406, 250</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filters</value>
@@ -607,10 +607,34 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbFilters.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 641</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -643,7 +667,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

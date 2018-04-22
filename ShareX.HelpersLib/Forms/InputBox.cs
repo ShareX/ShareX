@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -48,6 +49,8 @@ namespace ShareX.HelpersLib
         private void InputBox_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+            this.MinimumSize = new Size(384, this.Size.Height);
+            this.MaximumSize = new Size(1000, this.Size.Height);
 
             txtInputText.SelectionLength = txtInputText.Text.Length;
         }
@@ -99,28 +102,28 @@ namespace ShareX.HelpersLib
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtInputText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            //
+            // 
             // btnOK
-            //
+            // 
             resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            //
+            // 
             // btnCancel
-            //
+            // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            //
+            // 
             // txtInputText
-            //
+            // 
             resources.ApplyResources(this.txtInputText, "txtInputText");
             this.txtInputText.Name = "txtInputText";
-            //
+            // 
             // InputBox
-            //
+            // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
