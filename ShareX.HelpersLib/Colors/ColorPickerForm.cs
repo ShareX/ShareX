@@ -82,11 +82,13 @@ namespace ShareX.HelpersLib
 
         private void PrepareRecentColors()
         {
-            for (int i = 0; i < 32; i++)
+            int length = Math.Min(HelpersOptions.RecentColors.Count, HelpersOptions.RecentColorsMax);
+
+            for (int i = 0; i < length; i++)
             {
                 ColorButton colorButton = new ColorButton()
                 {
-                    Color = new HSB(i / 32d, 1d, 1d),
+                    Color = HelpersOptions.RecentColors[i],
                     Size = new Size(16, 16),
                     Offset = 0,
                     BorderColor = Color.FromArgb(100, 100, 100),
@@ -99,6 +101,18 @@ namespace ShareX.HelpersLib
                 flpRecentColors.Controls.Add(colorButton);
                 if ((i + 1) % 16 == 0) flpRecentColors.SetFlowBreak(colorButton, true);
             }
+        }
+
+        private void AddRecentColor(Color color)
+        {
+            HelpersOptions.RecentColors.Remove(color);
+
+            if (HelpersOptions.RecentColors.Count >= HelpersOptions.RecentColorsMax)
+            {
+                HelpersOptions.RecentColors.RemoveRange(HelpersOptions.RecentColorsMax - 1, HelpersOptions.RecentColors.Count - HelpersOptions.RecentColorsMax + 1);
+            }
+
+            HelpersOptions.RecentColors.Insert(0, color);
         }
 
         public void SetCurrentColor(Color currentColor, bool keepPreviousColor)
@@ -209,6 +223,7 @@ namespace ShareX.HelpersLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            AddRecentColor(NewColor);
             DialogResult = DialogResult.OK;
             Close();
         }
