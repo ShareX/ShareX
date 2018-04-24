@@ -88,8 +88,9 @@ namespace ShareX.HelpersLib
                 {
                     Color = new HSB(i / 32d, 1d, 1d),
                     Size = new Size(16, 16),
-                    Offset = 2,
-                    Margin = new Padding(0),
+                    Offset = 0,
+                    BorderColor = Color.FromArgb(100, 100, 100),
+                    Margin = new Padding(1),
                     ManualButtonClick = true
                 };
 

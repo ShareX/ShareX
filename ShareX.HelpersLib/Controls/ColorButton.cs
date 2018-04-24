@@ -51,6 +51,9 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(typeof(Color), "DarkGray")]
+        public Color BorderColor { get; set; } = Color.DarkGray;
+
         [DefaultValue(3)]
         public int Offset { get; set; } = 3;
 
@@ -85,7 +88,10 @@ namespace ShareX.HelpersLib
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            base.OnPaint(pevent);
+            if (Offset > 0)
+            {
+                base.OnPaint(pevent);
+            }
 
             int boxSize = ClientRectangle.Height - Offset * 2;
             Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - Offset - boxSize, Offset, boxSize, boxSize);
@@ -108,7 +114,10 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            g.DrawRectangleProper(Pens.DarkGray, boxRectangle);
+            using (Pen borderPen = new Pen(BorderColor))
+            {
+                g.DrawRectangleProper(borderPen, boxRectangle);
+            }
         }
     }
 }
