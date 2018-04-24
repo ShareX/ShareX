@@ -51,10 +51,10 @@ WizardSmallImageFile=WizardSmallImageFile.bmp
 #include "Scripts\lang\english.iss"
 
 [Tasks]
-Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateIcon(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'))
-Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateContextMenuButton
-Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: ShouldCreateIcon(ExpandConstant('{sendto}\{#MyAppName}.lnk'))
-Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: ShouldCreateIcon(ExpandConstant('{userstartup}\{#MyAppName}.lnk'))
+Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
+Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
+Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
 [Files]
 Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
@@ -137,28 +137,17 @@ begin
   Result := CmdLineParamExists('/NORUN');
 end;
 
-function IsPuushMode: Boolean;
-begin
-  Result := CmdLineParamExists('-puush');
-end;
-
 function IsUpdating: Boolean;
 begin
   Result := CmdLineParamExists('/UPDATE');
 end;
 
-function ShouldCreateIcon(const file: string): Boolean;
+function IsPuushMode: Boolean;
 begin
-  if IsUpdating() then
-    Result := False
-  else
-    Result := not FileExists(file);
+  Result := CmdLineParamExists('-puush');
 end;
 
-function ShouldCreateContextMenuButton: Boolean;
+function DesktopIconExists(): Boolean;
 begin
-  if IsUpdating() then
-    Result := False
-  else
-    Result := not (RegKeyExists(HKEY_CURRENT_USER, 'Software\Classes\*\shell\{#MyAppName}') and RegKeyExists(HKEY_CURRENT_USER, 'Software\Classes\Directory\shell\{#MyAppName}'));
+  Result := FileExists(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'));
 end;
