@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -58,7 +59,12 @@ namespace ShareX.HelpersLib
         public int Offset { get; set; } = 3;
 
         [DefaultValue(false)]
+        public bool HoverEffect { get; set; } = false;
+
+        [DefaultValue(false)]
         public bool ManualButtonClick { get; set; }
+
+        private bool isMouseHover;
 
         protected void OnColorChanged(Color color)
         {
@@ -86,6 +92,20 @@ namespace ShareX.HelpersLib
             }
         }
 
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            isMouseHover = true;
+
+            base.OnMouseEnter(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            isMouseHover = false;
+
+            base.OnMouseLeave(e);
+        }
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
             if (Offset > 0)
@@ -111,6 +131,14 @@ namespace ShareX.HelpersLib
                 using (Brush brush = new SolidBrush(Color))
                 {
                     g.FillRectangle(brush, boxRectangle);
+                }
+            }
+
+            if (HoverEffect && isMouseHover)
+            {
+                using (Brush hoverBrush = new SolidBrush(Color.FromArgb(100, 255, 255, 255)))
+                {
+                    g.FillRectangle(hoverBrush, boxRectangle);
                 }
             }
 

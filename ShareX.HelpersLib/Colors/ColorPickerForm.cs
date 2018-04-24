@@ -90,9 +90,10 @@ namespace ShareX.HelpersLib
                 {
                     Color = HelpersOptions.RecentColors[i],
                     Size = new Size(16, 16),
-                    Offset = 0,
-                    BorderColor = Color.FromArgb(100, 100, 100),
                     Margin = new Padding(1),
+                    BorderColor = Color.FromArgb(100, 100, 100),
+                    Offset = 0,
+                    HoverEffect = true,
                     ManualButtonClick = true
                 };
 
