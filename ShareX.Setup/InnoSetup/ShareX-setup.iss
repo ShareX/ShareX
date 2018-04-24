@@ -132,17 +132,17 @@ begin
     end;
 end;
 
-function IsNoRun: Boolean;
-begin
-  Result := CmdLineParamExists('/NORUN');
-end;
-
-function IsUpdating: Boolean;
+function IsUpdating(): Boolean;
 begin
   Result := CmdLineParamExists('/UPDATE');
 end;
 
-function IsPuushMode: Boolean;
+function IsNoRun(): Boolean;
+begin
+  Result := CmdLineParamExists('/NORUN');
+end;
+
+function IsPuushMode(): Boolean;
 begin
   Result := CmdLineParamExists('-puush');
 end;
