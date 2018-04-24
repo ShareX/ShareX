@@ -155,7 +155,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            result.URL = URLHelpers.FixPrefix($"{Domain}/{uploadpath}", "https://");
+            result.URL = URLHelpers.FixPrefix($"{Domain}/{URLHelpers.URLPathEncode(uploadpath)}", "https://");
 
             return result;
         }
