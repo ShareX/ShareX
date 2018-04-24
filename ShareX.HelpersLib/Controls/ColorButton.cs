@@ -77,7 +77,7 @@ namespace ShareX.HelpersLib
 
         public void ShowColorDialog()
         {
-            if (ColorPickerForm.PickColor(Color, out Color newColor))
+            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm()))
             {
                 Color = newColor;
             }
