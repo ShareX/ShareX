@@ -65,11 +65,11 @@ namespace ShareX.HelpersLib
             btnPickColor.Visible = true;
         }
 
-        public static bool PickColor(Color currentColor, out Color newColor)
+        public static bool PickColor(Color currentColor, out Color newColor, Form owner = null)
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog(owner) == DialogResult.OK)
                 {
                     newColor = dialog.NewColor;
                     return true;
@@ -194,6 +194,11 @@ namespace ShareX.HelpersLib
         }
 
         #region Events
+
+        private void ColorPickerForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
 
         private void colorPicker_ColorChanged(object sender, ColorEventArgs e)
         {

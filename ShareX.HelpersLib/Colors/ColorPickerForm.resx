@@ -1209,15 +1209,6 @@
   <metadata name="cmsCopy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
-  <data name="cmsCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 158</value>
-  </data>
-  <data name="&gt;&gt;cmsCopy.Name" xml:space="preserve">
-    <value>cmsCopy</value>
-  </data>
-  <data name="&gt;&gt;cmsCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiCopyAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
@@ -1260,98 +1251,14 @@
   <data name="tsmiCopyPosition.Text" xml:space="preserve">
     <value>Copy position</value>
   </data>
-  <data name="&gt;&gt;btnPickColor.Name" xml:space="preserve">
-    <value>btnPickColor</value>
+  <data name="cmsCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 158</value>
   </data>
-  <data name="&gt;&gt;btnPickColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cmsCopy.Name" xml:space="preserve">
+    <value>cmsCopy</value>
   </data>
-  <data name="&gt;&gt;btnPickColor.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;btnPickColor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtY.Name" xml:space="preserve">
-    <value>txtY</value>
-  </data>
-  <data name="&gt;&gt;txtY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtY.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtX.Name" xml:space="preserve">
-    <value>txtX</value>
-  </data>
-  <data name="&gt;&gt;txtX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtX.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;txtX.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblY.Name" xml:space="preserve">
-    <value>lblY</value>
-  </data>
-  <data name="&gt;&gt;lblY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblY.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblX.Name" xml:space="preserve">
-    <value>lblX</value>
-  </data>
-  <data name="&gt;&gt;lblX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblX.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblCursorPosition.Name" xml:space="preserve">
-    <value>lblCursorPosition</value>
-  </data>
-  <data name="&gt;&gt;lblCursorPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCursorPosition.Parent" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;lblCursorPosition.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="pSceenColorPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 272</value>
-  </data>
-  <data name="pSceenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 56</value>
-  </data>
-  <data name="pSceenColorPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="&gt;&gt;pSceenColorPicker.Name" xml:space="preserve">
-    <value>pSceenColorPicker</value>
-  </data>
-  <data name="&gt;&gt;pSceenColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pSceenColorPicker.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pSceenColorPicker.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;cmsCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnPickColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1524,6 +1431,27 @@
   <data name="&gt;&gt;lblCursorPosition.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="pSceenColorPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 272</value>
+  </data>
+  <data name="pSceenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 56</value>
+  </data>
+  <data name="pSceenColorPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;pSceenColorPicker.Name" xml:space="preserve">
+    <value>pSceenColorPicker</value>
+  </data>
+  <data name="&gt;&gt;pSceenColorPicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pSceenColorPicker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pSceenColorPicker.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1623,51 +1551,6 @@
   <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;lblRecentColors.Name" xml:space="preserve">
-    <value>lblRecentColors</value>
-  </data>
-  <data name="&gt;&gt;lblRecentColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRecentColors.Parent" xml:space="preserve">
-    <value>pColorPicker</value>
-  </data>
-  <data name="&gt;&gt;lblRecentColors.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flpRecentColors.Name" xml:space="preserve">
-    <value>flpRecentColors</value>
-  </data>
-  <data name="&gt;&gt;flpRecentColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpRecentColors.Parent" xml:space="preserve">
-    <value>pColorPicker</value>
-  </data>
-  <data name="&gt;&gt;flpRecentColors.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pColorPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 271</value>
-  </data>
-  <data name="pColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 56</value>
-  </data>
-  <data name="pColorPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="&gt;&gt;pColorPicker.Name" xml:space="preserve">
-    <value>pColorPicker</value>
-  </data>
-  <data name="&gt;&gt;pColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pColorPicker.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pColorPicker.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblRecentColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1714,6 +1597,27 @@
     <value>pColorPicker</value>
   </data>
   <data name="&gt;&gt;flpRecentColors.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pColorPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 271</value>
+  </data>
+  <data name="pColorPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 56</value>
+  </data>
+  <data name="pColorPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;pColorPicker.Name" xml:space="preserve">
+    <value>pColorPicker</value>
+  </data>
+  <data name="&gt;&gt;pColorPicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pColorPicker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pColorPicker.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

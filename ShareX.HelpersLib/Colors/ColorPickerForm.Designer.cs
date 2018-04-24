@@ -626,6 +626,7 @@
             this.MaximizeBox = false;
             this.Name = "ColorPickerForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Shown += new System.EventHandler(this.ColorPickerForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).EndInit();
