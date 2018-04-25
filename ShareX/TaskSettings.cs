@@ -370,6 +370,7 @@ namespace ShareX
         public string NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
         public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
+        public bool FileUploadReplaceProblematicCharacters = true;
 
         #endregion Upload
 
