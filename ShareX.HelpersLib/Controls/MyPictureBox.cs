@@ -242,7 +242,7 @@ namespace ShareX.HelpersLib
 
         public void LoadImageFromURLAsync(string url)
         {
-            if (!string.IsNullOrEmpty(url))
+            if (!string.IsNullOrEmpty(url) && !url.StartsWith("ftp://") && !url.StartsWith("ftps://"))
             {
                 LoadImageAsync(url);
             }
