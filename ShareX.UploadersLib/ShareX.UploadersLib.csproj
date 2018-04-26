@@ -959,7 +959,7 @@
     <None Include="Favicons\YouTube.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Favicons\GoogleCloudStorage.ico" />
+    <None Include="Favicons\GoogleCloud.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

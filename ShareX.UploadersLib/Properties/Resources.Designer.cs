@@ -286,9 +286,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon GoogleCloudStorage {
+        internal static System.Drawing.Icon GoogleCloud {
             get {
-                object obj = ResourceManager.GetObject("GoogleCloudStorage", resourceCulture);
+                object obj = ResourceManager.GetObject("GoogleCloud", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

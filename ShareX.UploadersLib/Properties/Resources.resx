@@ -410,7 +410,7 @@ Created folders:</value>
   <data name="YouTube" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\youtube.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GoogleCloudStorage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\favicons\googlecloudstorage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GoogleCloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\favicons\googlecloud.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
