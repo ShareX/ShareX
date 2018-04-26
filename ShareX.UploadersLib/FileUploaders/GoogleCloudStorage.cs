@@ -64,6 +64,59 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Domain { get; set; }
         public string Prefix { get; set; }
 
+        public class GoogleCloudStorageResponse
+        {
+            public string name { get; set; }
+        }
+
+        public class Metadata
+        {
+            public string name { get; set; }
+            public Acl[] acl { get; set; }
+        }
+
+        public class Acl
+        {
+            public string entity { get; set; }
+            public string role { get; set; }
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            if (!CheckAuthorization()) return null;
+
+            string uploadpath = GetUploadPath(fileName);
+
+            Metadata metadata = new Metadata
+            {
+                name = uploadpath,
+                acl = new Acl[]
+                {
+                    new Acl
+                    {
+                        entity = "allUsers",
+                        role = "READER"
+                    }
+                }
+            };
+
+            string metadatajson = JsonConvert.SerializeObject(metadata);
+
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
+                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+            GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
+
+            if (upload.name != uploadpath)
+            {
+                Errors.Add("Upload failed.");
+                return null;
+            }
+
+            result.URL = GenerateURL(uploadpath);
+
+            return result;
+        }
+
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
         private GoogleOAuth2 googleAuth;
@@ -102,62 +155,29 @@ namespace ShareX.UploadersLib.FileUploaders
             return URLHelpers.CombineURL(path, fileName);
         }
 
-        public class GoogleCloudStorageResponse
+        public string GenerateURL(string uploadPath)
         {
-            public string name { get; set; }
-        }
-
-        public class Metadata
-        {
-            public string name { get; set; }
-            public Acl[] acl { get; set; }
-        }
-
-        public class Acl
-        {
-            public string entity { get; set; }
-            public string role { get; set; }
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            if (!CheckAuthorization()) return null;
-
-            string uploadpath = GetUploadPath(fileName);
+            if (string.IsNullOrEmpty(Bucket))
+            {
+                return "";
+            }
 
             if (string.IsNullOrEmpty(Domain))
             {
                 Domain = $"storage.googleapis.com/{Bucket}";
             }
 
-            Metadata metadata = new Metadata
-            {
-                name = uploadpath,
-                acl = new Acl[]
-                {
-                    new Acl
-                    {
-                        entity = "allUsers",
-                        role = "READER"
-                    }
-                }
-            };
+            uploadPath = URLHelpers.URLPathEncode(uploadPath);
 
-            string metadatajson = JsonConvert.SerializeObject(metadata);
+            string url = URLHelpers.CombineURL(Domain, uploadPath);
 
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
-                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
-            GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
+            return URLHelpers.FixPrefix(url, "https://");
+        }
 
-            if (upload.name != uploadpath)
-            {
-                Errors.Add("Upload failed.");
-                return null;
-            }
-
-            result.URL = URLHelpers.FixPrefix($"{Domain}/{URLHelpers.URLPathEncode(uploadpath)}", "https://");
-
-            return result;
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
         }
     }
 }

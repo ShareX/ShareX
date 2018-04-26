@@ -471,6 +471,22 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
+        #region Google Cloud Storage
+
+        private void UpdateGoogleCloudStorageStatus()
+        {
+            GoogleCloudStorage GCS = new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info)
+            {
+                Bucket = Config.GoogleCloudStorageBucket,
+                Domain = Config.GoogleCloudStorageDomain,
+                Prefix = Config.GoogleCloudStorageObjectPrefix
+            };
+
+            lblGoogleCloudStoragePathPreview.Text = GCS.GetPreviewURL();
+        }
+
+        #endregion Google Cloud Storage
+
         #region Google Drive
 
         public void GoogleDriveAuthOpen()

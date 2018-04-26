@@ -3033,16 +3033,19 @@ namespace ShareX.UploadersLib
         private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageBucket = txtGoogleCloudStorageBucket.Text;
+            UpdateGoogleCloudStorageStatus();
         }
 
         private void txtGoogleCloudStorageDomain_TextChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageDomain = txtGoogleCloudStorageDomain.Text;
+            UpdateGoogleCloudStorageStatus();
         }
 
         private void txtGoogleCloudStorageObjectPrefix_TextChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageObjectPrefix = txtGoogleCloudStorageObjectPrefix.Text;
+            UpdateGoogleCloudStorageStatus();
         }
 
         #endregion Google Cloud Storage
