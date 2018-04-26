@@ -95,6 +95,7 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtDropboxPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtGoogleCloudStorageObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
@@ -110,13 +111,6 @@ namespace ShareX.UploadersLib
             cbFTPURLPathProtocol.Items.AddRange(Helpers.GetEnumDescriptions<BrowserProtocol>());
             cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
             eiFTP.ObjectType = typeof(FTPAccount);
-
-            // Localhost
-            ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
-            ucLocalhostAccounts.btnRemove.Click += LocalhostAccountRemoveButton_Click;
-            ucLocalhostAccounts.btnDuplicate.Click += LocalhostAccountDuplicateButton_Click;
-            ucLocalhostAccounts.btnTest.Visible = false;
-            ucLocalhostAccounts.pgSettings.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
 
             // Custom uploader
             txtCustomUploaderLog.AddContextMenu();
@@ -395,13 +389,15 @@ namespace ShareX.UploadersLib
             tvOneDrive.Nodes.Clear();
             OneDriveAddFolder(OneDrive.RootFolder, null);
 
-            if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+            if (OAuth2Info.CheckOAuth(Config.OneDriveV2OAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+
+                tvOneDrive.Enabled = true;
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
-            lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveSelectedFolder.name;
+            lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveV2SelectedFolder.name;
             tvOneDrive.CollapseAll();
 
             #endregion OneDrive
@@ -412,8 +408,6 @@ namespace ShareX.UploadersLib
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                 btnGoogleDriveRefreshFolders.Enabled = true;
-
-                tvOneDrive.Enabled = true;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
@@ -483,25 +477,16 @@ namespace ShareX.UploadersLib
 
             #endregion SendSpace
 
-            #region Localhost
+            #region Shared folder
 
-            if (Config.LocalhostAccountList == null || Config.LocalhostAccountList.Count == 0)
+            if (Config.LocalhostAccountList == null)
             {
-                LocalhostAccountsSetup(new List<LocalhostAccount>());
-            }
-            else
-            {
-                LocalhostAccountsSetup(Config.LocalhostAccountList);
-                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
-                {
-                    ucLocalhostAccounts.lbAccounts.SelectedIndex = 0;
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                }
+                Config.LocalhostAccountList = new List<LocalhostAccount>();
             }
 
-            #endregion Localhost
+            SharedFolderUpdateControls();
+
+            #endregion Shared folder
 
             #region Jira
 
@@ -718,20 +703,36 @@ namespace ShareX.UploadersLib
 
             #endregion Gfycat
 
+            #region YouTube
+
+            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
+            {
+                oauth2YouTube.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            cbYouTubePrivacyType.Items.Clear();
+            cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
+            cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
+            cbYouTubeUseShortenedLink.Checked = Config.YouTubeUseShortenedLink;
+
+            #endregion YouTube
+
+            #region Google Cloud Storage
+
+            if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
+            {
+                oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
+            }
+
+            txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
+            txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
+            txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
+
+            #endregion Google Cloud Storage
+
             #endregion File uploaders
 
             #region URL shorteners
-
-            #region Google URL Shortener
-
-            atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
-
-            if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
-            {
-                oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            #endregion Google URL Shortener
 
             #region bit.ly
 
@@ -775,6 +776,14 @@ namespace ShareX.UploadersLib
             cbPolrUseAPIv1.Checked = Config.PolrUseAPIv1;
 
             #endregion Polr
+
+            #region Firebase Dynamic Links
+
+            txtFirebaseWebAPIKey.Text = Config.FirebaseWebAPIKey;
+            txtFirebaseDomain.Text = Config.FirebaseDynamicLinkDomain;
+            cbFirebaseIsShort.Checked = Config.FirebaseIsShort;
+
+            #endregion Firebase Dynamic Links
 
             #endregion URL shorteners
 
@@ -1727,7 +1736,7 @@ namespace ShareX.UploadersLib
 
         private void oAuth2OneDrive_ClearButtonClicked()
         {
-            Config.OneDriveOAuth2Info = null;
+            Config.OneDriveV2OAuth2Info = null;
         }
 
         private void cbOneDriveCreateShareableLink_CheckedChanged(object sender, EventArgs e)
@@ -1741,7 +1750,7 @@ namespace ShareX.UploadersLib
             if (file != null)
             {
                 lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
-                Config.OneDriveSelectedFolder = file;
+                Config.OneDriveV2SelectedFolder = file;
             }
         }
 
@@ -2351,67 +2360,6 @@ namespace ShareX.UploadersLib
 
         #region Shared folder
 
-        private void LocalhostAccountsSetup(IEnumerable<LocalhostAccount> accs)
-        {
-            if (accs != null)
-            {
-                int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
-
-                ucLocalhostAccounts.lbAccounts.Items.Clear();
-                Config.LocalhostAccountList = new List<LocalhostAccount>();
-                Config.LocalhostAccountList.AddRange(accs);
-
-                cboSharedFolderFiles.Items.Clear();
-                cboSharedFolderImages.Items.Clear();
-                cboSharedFolderText.Items.Clear();
-
-                foreach (LocalhostAccount acc in Config.LocalhostAccountList)
-                {
-                    ucLocalhostAccounts.lbAccounts.Items.Add(acc);
-                    cboSharedFolderFiles.Items.Add(acc);
-                    cboSharedFolderImages.Items.Add(acc);
-                    cboSharedFolderText.Items.Add(acc);
-                }
-
-                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
-                {
-                    ucLocalhostAccounts.lbAccounts.SelectedIndex = sel.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
-                }
-            }
-        }
-
-        private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
-        {
-            LocalhostAccount acc = new LocalhostAccount();
-            Config.LocalhostAccountList.Add(acc);
-            ucLocalhostAccounts.AddItem(acc);
-        }
-
-        private void LocalhostAccountRemoveButton_Click(object sender, EventArgs e)
-        {
-            int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
-            if (ucLocalhostAccounts.RemoveItem(sel))
-            {
-                Config.LocalhostAccountList.RemoveAt(sel);
-            }
-        }
-
-        private void LocalhostAccountDuplicateButton_Click(object sender, EventArgs e)
-        {
-            LocalhostAccount src = (LocalhostAccount)ucLocalhostAccounts.lbAccounts.Items[ucLocalhostAccounts.lbAccounts.SelectedIndex];
-            LocalhostAccount clone = src.Clone();
-            Config.LocalhostAccountList.Add(clone);
-            ucLocalhostAccounts.AddItem(clone);
-        }
-
-        private void SettingsGrid_LocalhostPropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-            LocalhostAccountsSetup(Config.LocalhostAccountList);
-        }
-
         private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.LocalhostSelectedImages = cboSharedFolderImages.SelectedIndex;
@@ -2425,6 +2373,45 @@ namespace ShareX.UploadersLib
         private void cboSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.LocalhostSelectedFiles = cboSharedFolderFiles.SelectedIndex;
+        }
+
+        private void btnSharedFolderAdd_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount acc = new LocalhostAccount();
+            SharedFolderAddItem(acc);
+        }
+
+        private void btnSharedFolderRemove_Click(object sender, EventArgs e)
+        {
+            int index = lbSharedFolderAccounts.SelectedIndex;
+            SharedFolderRemoveItem(index);
+        }
+
+        private void btnSharedFolderDuplicate_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount account = (LocalhostAccount)lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+            LocalhostAccount clone = account.Clone();
+            SharedFolderAddItem(clone);
+        }
+
+        private void lbSharedFolderAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SharedFolderUpdateEnabledStates();
+
+            if (lbSharedFolderAccounts.SelectedIndex > -1)
+            {
+                pgSharedFolderAccount.SelectedObject = lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+            }
+        }
+
+        private void pgSharedFolderAccount_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            SharedFolderUpdateControls();
+
+            if (lbSharedFolderAccounts.SelectedIndex > -1)
+            {
+                lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex] = pgSharedFolderAccount.SelectedObject;
+            }
         }
 
         #endregion Shared folder
@@ -2985,6 +2972,81 @@ namespace ShareX.UploadersLib
 
         #endregion Gfycat
 
+        #region YouTube
+
+        private void oauth2YouTube_OpenButtonClicked()
+        {
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.YouTubeOAuth2Info = OAuth2Open(new YouTube(oauth));
+        }
+
+        private void oauth2YouTube_CompleteButtonClicked(string code)
+        {
+            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube, code);
+        }
+
+        private void oauth2YouTube_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube);
+        }
+
+        private void oauth2YouTube_ClearButtonClicked()
+        {
+            Config.YouTubeOAuth2Info = null;
+        }
+
+        private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.YouTubePrivacyType = (YouTubeVideoPrivacy)cbYouTubePrivacyType.SelectedIndex;
+        }
+
+        private void cbYouTubeUseShortenedLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.YouTubeUseShortenedLink = cbYouTubeUseShortenedLink.Checked;
+        }
+
+        #endregion YouTube
+
+        #region Google Cloud Storage
+
+        private void oauth2GoogleCloudStorage_ClearButtonClicked()
+        {
+            Config.GoogleCloudStorageOAuth2Info = null;
+        }
+
+        private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
+        {
+            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage, code);
+        }
+
+        private void oauth2GoogleCloudStorage_OpenButtonClicked()
+        {
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.GoogleCloudStorageOAuth2Info = OAuth2Open(new GoogleCloudStorage(oauth));
+        }
+
+        private void oauth2GoogleCloudStorage_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+        }
+
+        private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageBucket = txtGoogleCloudStorageBucket.Text;
+        }
+
+        private void txtGoogleCloudStorageDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageDomain = txtGoogleCloudStorageDomain.Text;
+        }
+
+        private void txtGoogleCloudStorageObjectPrefix_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageObjectPrefix = txtGoogleCloudStorageObjectPrefix.Text;
+        }
+
+        #endregion Google Cloud Storage
+
         #endregion File uploaders
 
         #region URL shorteners
@@ -3012,35 +3074,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion bit.ly
-
-        #region Google URL Shortener
-
-        private void atcGoogleURLShortenerAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.GoogleURLShortenerAccountType = accountType;
-        }
-
-        private void oauth2GoogleURLShortener_OpenButtonClicked()
-        {
-            GoogleURLShortenerAuthOpen();
-        }
-
-        private void oauth2GoogleURLShortener_CompleteButtonClicked(string code)
-        {
-            GoogleURLShortenerAuthComplete(code);
-        }
-
-        private void oauth2GoogleURLShortener_RefreshButtonClicked()
-        {
-            GoogleURLShortenerAuthRefresh();
-        }
-
-        private void oauth2GoogleURLShortener_ClearButtonClicked()
-        {
-            Config.GoogleURLShortenerOAuth2Info = null;
-        }
-
-        #endregion Google URL Shortener
 
         #region yourls.org
 
@@ -3118,6 +3151,25 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Polr
+
+        #region Firebase Dynamic Links
+
+        private void txtFirebaseWebAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.FirebaseWebAPIKey = txtFirebaseWebAPIKey.Text;
+        }
+
+        private void txtFirebaseDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.FirebaseDynamicLinkDomain = txtFirebaseDomain.Text;
+        }
+
+        private void cbFirebaseIsShort_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.FirebaseIsShort = cbFirebaseIsShort.Checked;
+        }
+
+        #endregion Firebase Dynamic Links
 
         #endregion URL shorteners
 

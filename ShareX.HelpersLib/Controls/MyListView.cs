@@ -34,6 +34,7 @@ namespace ShareX.HelpersLib
     public class MyListView : ListView
     {
         public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
+
         public event ListViewItemMovedEventHandler ItemMoved;
 
         [DefaultValue(false)]
@@ -328,6 +329,15 @@ namespace ShareX.HelpersLib
 
                 Point[] rightTriangle = new Point[] { new Point(right, y - 4), new Point(right - 8, y), new Point(right, y + 4) };
                 g.FillPolygon(SystemBrushes.HotTrack, rightTriangle);
+            }
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
+            foreach (ColumnHeader column in Columns)
+            {
+                column.Width = (int)Math.Round(column.Width * factor.Width);
             }
         }
     }

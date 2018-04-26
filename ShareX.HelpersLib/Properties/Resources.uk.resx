@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>Шлях до файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Позначка часу Unix</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Ім’я користувача</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>Огляд тек...</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Огляд виконуваних файлів...</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>Не вдалось перевірити оновлення</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>Доступна нова версія {0}</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>Очікування.</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>Гаразд</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>Стан: {0}</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>Вставити</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>Захоплення активного монітора</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>Захоплення активного вікна</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Автоматичне захоплення</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>Вивантажити з буфера обміну</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>Вивантажити файл</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>Вивантажити теку</value>
+  </data>
+  <data name="HotkeyType_FTPClient" xml:space="preserve">
+    <value>FTP-клієнт</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>Вибір кольору з екрана</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Вивантажити з посилання</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Ел. пошта</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Ел. пошта</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>Додати ефекти/водяний знак</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>Запитати, що робити</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Додати номер до назви файла</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Доступна нова версія {0}.
+Чи хочете Ви завантажити і встановити її?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Доступне оновлення</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (погана якість)</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Генератор мініатюр відео</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Доступна нова версія {0}.
+Чи хочете Ви завантажити її?</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Захоплення екрана</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Скасувати захоплення</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Захоплення активного монітора</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Перервати запис екрану</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Вийти з ShareX</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Скорочення посилань</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Автоматичне визначення</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 біт</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 біт</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Вивантажити текст</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Служба обміну посиланнями</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Зворотна діагональ</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Великий квадрат</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 хвилин</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 година</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 день</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 тиждень</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 тижні</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 місяць</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Автоматичний розмір</value>
+  </data>
+</root>

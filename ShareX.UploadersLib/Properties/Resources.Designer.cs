@@ -189,6 +189,16 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon Firebase {
+            get {
+                object obj = ResourceManager.GetObject("Firebase", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon Flickr {
             get {
                 object obj = ResourceManager.GetObject("Flickr", resourceCulture);
@@ -276,9 +286,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Google {
+        internal static System.Drawing.Icon GoogleCloudStorage {
             get {
-                object obj = ResourceManager.GetObject("Google", resourceCulture);
+                object obj = ResourceManager.GetObject("GoogleCloudStorage", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -973,6 +983,16 @@ namespace ShareX.UploadersLib.Properties {
         internal static System.Drawing.Icon Yourls {
             get {
                 object obj = ResourceManager.GetObject("Yourls", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon YouTube {
+            get {
+                object obj = ResourceManager.GetObject("YouTube", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

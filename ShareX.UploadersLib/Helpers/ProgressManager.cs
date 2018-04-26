@@ -60,9 +60,10 @@ namespace ShareX.UploadersLib
         private long speedTest;
         private FixedSizedQueue<double> averageSpeed = new FixedSizedQueue<double>(10);
 
-        public ProgressManager(long length)
+        public ProgressManager(long length, long position = 0)
         {
             Length = length;
+            Position = position;
             startTimer.Start();
             smoothTimer.Start();
         }

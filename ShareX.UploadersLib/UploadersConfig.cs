@@ -111,6 +111,7 @@ namespace ShareX.UploadersLib
         #region Paste.ee
 
         public string Paste_eeUserKey = "";
+        public bool Paste_eeEncryptPaste = false;
 
         #endregion Paste.ee
 
@@ -178,8 +179,8 @@ namespace ShareX.UploadersLib
 
         #region OneDrive
 
-        public OAuth2Info OneDriveOAuth2Info = null;
-        public OneDriveFileInfo OneDriveSelectedFolder = OneDrive.RootFolder;
+        public OAuth2Info OneDriveV2OAuth2Info = null;
+        public OneDriveFileInfo OneDriveV2SelectedFolder = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink = true;
 
         #endregion OneDrive
@@ -380,6 +381,23 @@ namespace ShareX.UploadersLib
 
         #endregion Plik
 
+        #region YouTube
+
+        public OAuth2Info YouTubeOAuth2Info = null;
+        public YouTubeVideoPrivacy YouTubePrivacyType = YouTubeVideoPrivacy.Public;
+        public bool YouTubeUseShortenedLink = false;
+
+        #endregion YouTube
+
+        #region Google Cloud Storage
+
+        public OAuth2Info GoogleCloudStorageOAuth2Info = null;
+        public string GoogleCloudStorageBucket = "";
+        public string GoogleCloudStorageDomain = "";
+        public string GoogleCloudStorageObjectPrefix = "ShareX/%y/%mo";
+
+        #endregion Google Cloud Storage
+
         #endregion File uploaders
 
         #region URL shorteners
@@ -390,13 +408,6 @@ namespace ShareX.UploadersLib
         public string BitlyDomain = "";
 
         #endregion bit.ly
-
-        #region Google URL Shortener
-
-        public AccountType GoogleURLShortenerAccountType = AccountType.Anonymous;
-        public OAuth2Info GoogleURLShortenerOAuth2Info = null;
-
-        #endregion Google URL Shortener
 
         #region yourls.org
 
@@ -428,6 +439,14 @@ namespace ShareX.UploadersLib
         public bool PolrUseAPIv1 = false;
 
         #endregion polr
+
+        #region Firebase Dynamic Links
+
+        public string FirebaseWebAPIKey = "";
+        public string FirebaseDynamicLinkDomain = "";
+        public bool FirebaseIsShort = false;
+
+        #endregion Firebase Dynamic Links
 
         #endregion URL shorteners
 

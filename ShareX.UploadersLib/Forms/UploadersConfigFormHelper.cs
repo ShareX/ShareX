@@ -568,7 +568,7 @@ namespace ShareX.UploadersLib
                     {
                         foreach (GoogleDriveFile folder in folders)
                         {
-                            ListViewItem lvi = new ListViewItem(folder.title);
+                            ListViewItem lvi = new ListViewItem(folder.name);
                             lvi.SubItems.Add(folder.description);
                             lvi.Tag = folder;
                             lvGoogleDriveFoldersList.Items.Add(lvi);
@@ -711,11 +711,12 @@ namespace ShareX.UploadersLib
             try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.OneDriveClientID, APIKeys.OneDriveClientSecret);
+                oauth.Proof = new OAuth2ProofKey(OAuth2ChallengeMethod.SHA256);
                 string url = new OneDrive(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Config.OneDriveOAuth2Info = oauth;
+                    Config.OneDriveV2OAuth2Info = oauth;
                     URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("OneDriveAuthOpen - Authorization URL is opened: " + url);
                 }
@@ -734,9 +735,9 @@ namespace ShareX.UploadersLib
         {
             try
             {
-                if (!string.IsNullOrEmpty(code) && Config.OneDriveOAuth2Info != null)
+                if (!string.IsNullOrEmpty(code) && Config.OneDriveV2OAuth2Info != null)
                 {
-                    bool result = new OneDrive(Config.OneDriveOAuth2Info).GetAccessToken(code);
+                    bool result = new OneDrive(Config.OneDriveV2OAuth2Info).GetAccessToken(code);
 
                     if (result)
                     {
@@ -763,9 +764,9 @@ namespace ShareX.UploadersLib
         {
             try
             {
-                if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+                if (OAuth2Info.CheckOAuth(Config.OneDriveV2OAuth2Info))
                 {
-                    bool result = new OneDrive(Config.OneDriveOAuth2Info).RefreshAccessToken();
+                    bool result = new OneDrive(Config.OneDriveV2OAuth2Info).RefreshAccessToken();
 
                     if (result)
                     {
@@ -790,10 +791,10 @@ namespace ShareX.UploadersLib
         public void OneDriveListFolders(OneDriveFileInfo fileEntry, TreeNode tnParent)
         {
             Application.DoEvents();
-            OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
-            OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
+            OneDrive oneDrive = new OneDrive(Config.OneDriveV2OAuth2Info);
+            OneDriveFileList oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
             tnParent.Nodes.Clear();
-            foreach (OneDriveFileInfo folder in oneDrivePathInfo.data.Where(x => x.id.StartsWith("folder.")))
+            foreach (OneDriveFileInfo folder in oneDrivePathInfo.value)
             {
                 OneDriveAddFolder(folder, tnParent);
             }
@@ -1311,87 +1312,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Twitter
-
-        #region goo.gl
-
-        public void GoogleURLShortenerAuthOpen()
-        {
-            try
-            {
-                OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-
-                string url = new GoogleURLShortener(oauth).GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    Config.GoogleURLShortenerOAuth2Info = oauth;
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("GoogleURLShortenerAuthOpen - Authorization URL is opened: " + url);
-                }
-                else
-                {
-                    DebugHelper.WriteLine("GoogleURLShortenerAuthOpen - Authorization URL is empty.");
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void GoogleURLShortenerAuthComplete(string code)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(code) && Config.GoogleURLShortenerOAuth2Info != null)
-                {
-                    bool result = new GoogleDrive(Config.GoogleURLShortenerOAuth2Info).GetAccessToken(code);
-
-                    if (result)
-                    {
-                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void GoogleURLShortenerAuthRefresh()
-        {
-            try
-            {
-                if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
-                {
-                    bool result = new GoogleDrive(Config.GoogleURLShortenerOAuth2Info).RefreshAccessToken();
-
-                    if (result)
-                    {
-                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        #endregion goo.gl
 
         #region bit.ly
 
@@ -2100,5 +2020,162 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gfycat
+
+        #region Generic OAuth2
+
+        public OAuth2Info OAuth2Open(IOAuth2 uploader)
+        {
+            try
+            {
+                string url = uploader.GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    URLHelpers.OpenURL(url);
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is opened: " + url);
+                    return uploader.AuthInfo;
+                }
+                else
+                {
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return null;
+        }
+
+        public bool OAuth2Complete(IOAuth2 uploader, OAuthControl oauth2, string code)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && uploader.AuthInfo != null)
+                {
+                    bool result = uploader.GetAccessToken(code);
+
+                    if (result)
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return false;
+        }
+
+        public bool OAuth2Refresh(IOAuth2 uploader, OAuthControl oauth2)
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(uploader.AuthInfo))
+                {
+                    bool result = uploader.RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+            return false;
+        }
+
+        #endregion Generic OAuth2
+
+        #region Shared folder
+
+        private void SharedFolderUpdateControls()
+        {
+            int selected = lbSharedFolderAccounts.SelectedIndex;
+
+            lbSharedFolderAccounts.Items.Clear();
+            cboSharedFolderImages.Items.Clear();
+            cboSharedFolderText.Items.Clear();
+            cboSharedFolderFiles.Items.Clear();
+
+            if (Config.LocalhostAccountList.Count > 0)
+            {
+                foreach (LocalhostAccount account in Config.LocalhostAccountList)
+                {
+                    lbSharedFolderAccounts.Items.Add(account);
+                    cboSharedFolderImages.Items.Add(account);
+                    cboSharedFolderText.Items.Add(account);
+                    cboSharedFolderFiles.Items.Add(account);
+                }
+
+                lbSharedFolderAccounts.SelectedIndex = selected.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, Config.LocalhostAccountList.Count - 1);
+                cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, Config.LocalhostAccountList.Count - 1);
+            }
+
+            SharedFolderUpdateEnabledStates();
+        }
+
+        private void SharedFolderUpdateEnabledStates()
+        {
+            cboSharedFolderImages.Enabled = cboSharedFolderText.Enabled = cboSharedFolderFiles.Enabled = Config.LocalhostAccountList.Count > 0;
+            btnSharedFolderRemove.Enabled = btnSharedFolderDuplicate.Enabled = lbSharedFolderAccounts.SelectedIndex > -1;
+        }
+
+        private void SharedFolderAddItem(LocalhostAccount account)
+        {
+            Config.LocalhostAccountList.Add(account);
+            lbSharedFolderAccounts.Items.Add(account);
+            lbSharedFolderAccounts.SelectedIndex = lbSharedFolderAccounts.Items.Count - 1;
+            SharedFolderUpdateControls();
+        }
+
+        private bool SharedFolderRemoveItem(int index)
+        {
+            if (index.IsBetween(0, lbSharedFolderAccounts.Items.Count - 1))
+            {
+                Config.LocalhostAccountList.RemoveAt(index);
+                lbSharedFolderAccounts.Items.RemoveAt(index);
+
+                if (lbSharedFolderAccounts.Items.Count > 0)
+                {
+                    lbSharedFolderAccounts.SelectedIndex = index == lbSharedFolderAccounts.Items.Count ? lbSharedFolderAccounts.Items.Count - 1 : index;
+                    pgSharedFolderAccount.SelectedObject = lbSharedFolderAccounts.Items[lbSharedFolderAccounts.SelectedIndex];
+                }
+                else
+                {
+                    pgSharedFolderAccount.SelectedObject = null;
+                }
+
+                SharedFolderUpdateControls();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        #endregion Shared folder
     }
 }

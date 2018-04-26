@@ -267,4 +267,11 @@ namespace ShareX.ScreenCaptureLib
         Bilinear,
         NearestNeighbor
     }
+
+    public enum ImageInsertMethod
+    {
+        Center,
+        CanvasExpandDown,
+        CanvasExpandRight
+    }
 }

@@ -23,16 +23,22 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Generic;
+using System.Drawing;
+
 namespace ShareX.HelpersLib
 {
     public static class HelpersOptions
     {
-        public static ProxyInfo CurrentProxy = new ProxyInfo();
-        public static bool AcceptInvalidSSLCertificates = false;
-        public static bool DefaultCopyImageFillBackground = true;
-        public static bool UseAlternativeCopyImage = true;
-        public static bool UseAlternativeGetImage = true;
-        public static bool RotateImageByExifOrientationData = true;
-        public static string BrowserPath = null;
+        public const int RecentColorsMax = 32;
+
+        public static ProxyInfo CurrentProxy { get; set; } = new ProxyInfo();
+        public static bool AcceptInvalidSSLCertificates { get; set; } = false;
+        public static bool DefaultCopyImageFillBackground { get; set; } = true;
+        public static bool UseAlternativeCopyImage { get; set; } = true;
+        public static bool UseAlternativeGetImage { get; set; } = true;
+        public static bool RotateImageByExifOrientationData { get; set; } = true;
+        public static string BrowserPath { get; set; } = "";
+        public static List<Color> RecentColors { get; set; } = new List<Color>();
     }
 }

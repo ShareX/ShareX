@@ -289,6 +289,7 @@ namespace ShareX
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            cbScreenRecorderConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
@@ -308,6 +309,7 @@ namespace ShareX
             CodeMenu.Create<CodeMenuEntryFilename>(txtNameFormatPatternActiveWindow, CodeMenuEntryFilename.n);
             cbRegionCaptureUseWindowPattern.Checked = TaskSettings.UploadSettings.RegionCaptureUseWindowPattern;
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
+            cbFileUploadReplaceProblematicCharacters.Checked = TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters;
             UpdateNameFormatPreviews();
             cbNameFormatCustomTimeZone.Checked = cbNameFormatTimeZone.Enabled = TaskSettings.UploadSettings.UseCustomTimeZone;
             cbNameFormatTimeZone.Items.AddRange(TimeZoneInfo.GetSystemTimeZones().ToArray());
@@ -1100,6 +1102,11 @@ namespace ShareX
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
         }
 
+        private void chkConfirmAbort_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort = cbScreenRecorderConfirmAbort.Checked;
+        }
+
         private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.RunScreencastCLI = cboEncoder.Enabled = btnEncoderConfig.Enabled = chkRunScreencastCLI.Checked;
@@ -1512,6 +1519,11 @@ namespace ShareX
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
+        }
+
+        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         #endregion Tools

@@ -421,7 +421,7 @@
     <value>btnAfterCapture</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -451,7 +451,7 @@
     <value>btnAfterUpload</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -523,7 +523,7 @@
     <value>btnDestinations</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -553,7 +553,7 @@
     <value>btnTask</value>
   </data>
   <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -3363,6 +3363,36 @@
   <data name="&gt;&gt;tpRegionCapture.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbScreenRecorderConfirmAbort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 183</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 17</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>Ask for confirmation when aborting</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Name" xml:space="preserve">
+    <value>cbScreenRecorderConfirmAbort</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderConfirmAbort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbScreenRecorderShowCursor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3391,7 +3421,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;cbScreenRecorderShowCursor.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3418,7 +3448,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;btnScreenRecorderFFmpegOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblScreenRecorderStartDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3448,7 +3478,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;lblScreenRecorderStartDelay.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chkScreenRecordAutoStart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3478,7 +3508,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;chkScreenRecordAutoStart.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3508,7 +3538,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;lblScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="nudScreenRecordFPS.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 36</value>
@@ -3532,7 +3562,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudScreenRecordFPS.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblScreenRecordFPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3562,7 +3592,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;lblScreenRecordFPS.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="chkRunScreencastCLI.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3592,7 +3622,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;chkRunScreencastCLI.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnEncoderConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3619,7 +3649,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;btnEncoderConfig.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cboEncoder.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 158</value>
@@ -3640,7 +3670,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;cboEncoder.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="nudScreenRecorderDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 134</value>
@@ -3664,7 +3694,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudScreenRecorderDuration.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="nudScreenRecorderStartDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 110</value>
@@ -3688,7 +3718,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudScreenRecorderStartDelay.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3718,7 +3748,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;cbScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="nudGIFFPS.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 60</value>
@@ -3742,7 +3772,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudGIFFPS.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblGIFFPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3772,7 +3802,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="tpScreenRecorder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3909,11 +3939,38 @@
   <data name="&gt;&gt;tpUploadMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 183</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 17</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Replace characters problematic in URLs by underscores when uploading</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadReplaceProblematicCharacters.Name" xml:space="preserve">
+    <value>cbFileUploadReplaceProblematicCharacters</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadReplaceProblematicCharacters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadReplaceProblematicCharacters.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadReplaceProblematicCharacters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblAutoIncrementNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 189</value>
+    <value>304, 211</value>
   </data>
   <data name="lblAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -3934,7 +3991,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbRegionCaptureUseWindowPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3961,7 +4018,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3970,7 +4027,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>8, 238</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
@@ -3991,7 +4048,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbNameFormatCustomTimeZone.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblNameFormatPatternPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4021,7 +4078,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4051,7 +4108,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4081,10 +4138,10 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbNameFormatTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 240</value>
+    <value>8, 262</value>
   </data>
   <data name="cbNameFormatTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -4102,7 +4159,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbNameFormatTimeZone.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 88</value>
@@ -4123,13 +4180,13 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnResetAutoIncrementNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 184</value>
+    <value>8, 206</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -4150,7 +4207,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbFileUploadUseNamePattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4180,7 +4237,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblNameFormatPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4210,7 +4267,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>
@@ -4231,7 +4288,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="tpFileNaming.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -4435,7 +4492,7 @@
     <value>lvUploaderFiltersList</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
     <value>tpUploaderFilters</value>
@@ -4810,7 +4867,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -5401,7 +5458,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>

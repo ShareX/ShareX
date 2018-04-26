@@ -150,15 +150,18 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(DownloadLocation);
+                    ProcessStartInfo psi = new ProcessStartInfo(DownloadLocation)
+                    {
+                        Arguments = "/UPDATE"
+                    };
 
                     if (InstallType == InstallType.Silent)
                     {
-                        psi.Arguments = "/SILENT";
+                        psi.Arguments += " /SILENT";
                     }
                     else if (InstallType == InstallType.VerySilent)
                     {
-                        psi.Arguments = "/VERYSILENT";
+                        psi.Arguments += " /VERYSILENT";
                     }
 
                     if (Helpers.IsDefaultInstallDir())

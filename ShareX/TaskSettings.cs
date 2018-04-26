@@ -344,6 +344,7 @@ namespace ShareX
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordAutoStart = true;
+        public bool ScreenRecordAskConfirmationOnAbort = false;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
@@ -369,6 +370,7 @@ namespace ShareX
         public string NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
         public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
+        public bool FileUploadReplaceProblematicCharacters = false;
 
         #endregion Upload
 

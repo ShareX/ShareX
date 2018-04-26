@@ -170,7 +170,7 @@ namespace ShareX
                     break;
                 // Tools
                 case HotkeyType.ColorPicker:
-                    OpenColorPicker();
+                    ShowScreenColorPickerDialog(safeTaskSettings);
                     break;
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(safeTaskSettings);
@@ -727,9 +727,25 @@ namespace ShareX
             Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
         }
 
-        public static void OpenColorPicker()
+        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null, bool checkClipboard = true)
         {
-            new ScreenColorPicker(true).Show();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            Color color = Color.Red;
+
+            if (checkClipboard && Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
+                {
+                    color = clipboardColor;
+                }
+            }
+
+            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
+            colorPickerForm.EnableScreenColorPickerButton(() => RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions));
+            colorPickerForm.Show();
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -1010,7 +1026,7 @@ namespace ShareX
 
         public static void OpenQRCode()
         {
-            new QRCodeForm().Show();
+            QRCodeForm.EncodeClipboard().Show();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1336,6 +1352,8 @@ namespace ShareX
                         return Resources.clipboard_list;
                     case AfterCaptureTasks.ShowInExplorer:
                         return Resources.folder_stand;
+                    case AfterCaptureTasks.ScanQRCode:
+                        return Resources.barcode_2d;
                     case AfterCaptureTasks.DoOCR:
                         return Resources.edit_drop_cap;
                     case AfterCaptureTasks.ShowBeforeUploadWindow:

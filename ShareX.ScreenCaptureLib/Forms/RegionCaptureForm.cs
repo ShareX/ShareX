@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
         public Image Canvas { get; private set; }
-        public Rectangle CanvasRectangle { get; private set; }
+        public Rectangle CanvasRectangle { get; internal set; }
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
@@ -105,7 +105,6 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
-        private ScrollbarManager scrollbarManager;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
@@ -129,19 +128,14 @@ namespace ShareX.ScreenCaptureLib
                 Duration = TimeSpan.FromMilliseconds(200)
             };
 
-            if (IsEditorMode)
+            if (IsEditorMode && Options.ShowEditorPanTip)
             {
-                scrollbarManager = new ScrollbarManager(this);
-
-                if (Options.ShowEditorPanTip)
+                editorPanTipAnimation = new TextAnimation()
                 {
-                    editorPanTipAnimation = new TextAnimation()
-                    {
-                        Duration = TimeSpan.FromMilliseconds(5000),
-                        FadeOutDuration = TimeSpan.FromMilliseconds(1000),
-                        Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
-                    };
-                }
+                    Duration = TimeSpan.FromMilliseconds(5000),
+                    FadeOutDuration = TimeSpan.FromMilliseconds(1000),
+                    Text = Resources.RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging
+                };
             }
 
             borderPen = new Pen(Color.Black);
@@ -298,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void InitBackground(Image canvas)
+        internal void InitBackground(Image canvas, bool centerCanvas = true)
         {
             if (Canvas != null) Canvas.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
@@ -328,7 +322,10 @@ namespace ShareX.ScreenCaptureLib
                     backgroundBrush.TranslateTransform(CanvasRectangle.X, CanvasRectangle.Y);
                 }
 
-                CenterCanvas();
+                if (centerCanvas)
+                {
+                    CenterCanvas();
+                }
             }
             else if (!IsEditorMode && Options.UseDimming)
             {
@@ -432,7 +429,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void AutomaticPan()
+        public void AutomaticPan()
         {
             AutomaticPan(CanvasCenterOffset);
         }
@@ -673,11 +670,6 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
-
-            if (scrollbarManager != null)
-            {
-                scrollbarManager.Update();
-            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -870,12 +862,6 @@ namespace ShareX.ScreenCaptureLib
             if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
             {
                 DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
-            }
-
-            // Draw scroll bars
-            if (scrollbarManager != null)
-            {
-                scrollbarManager.Draw(g);
             }
         }
 

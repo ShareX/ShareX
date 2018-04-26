@@ -85,7 +85,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -135,6 +135,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="PointInfo.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>
@@ -481,6 +482,9 @@
     <EmbeddedResource Include="Colors\ColorPickerForm.hu.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colors\ColorPickerForm.id-ID.resx">
+      <DependentUpon>ColorPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.it-IT.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -500,6 +504,9 @@
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.tr.resx">
+      <DependentUpon>ColorPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colors\ColorPickerForm.uk.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.vi-VN.resx">
@@ -523,6 +530,9 @@
     <EmbeddedResource Include="Colors\GradientPickerForm.hu.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colors\GradientPickerForm.id-ID.resx">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\GradientPickerForm.it-IT.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,6 +552,9 @@
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\GradientPickerForm.tr.resx">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colors\GradientPickerForm.uk.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\GradientPickerForm.vi-VN.resx">
@@ -565,6 +578,9 @@
     <EmbeddedResource Include="Controls\ExportImportControl.hu.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExportImportControl.id-ID.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.it-IT.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -583,23 +599,17 @@
     <EmbeddedResource Include="Controls\ExportImportControl.tr.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExportImportControl.uk.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.vi-VN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-CN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DoubleLabeledNumericUpDown.resx">
-      <DependentUpon>DoubleLabeledNumericUpDown.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-TW.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\LabeledComboBox.resx">
-      <DependentUpon>LabeledComboBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\LabeledNumericUpDown.resx">
-      <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.de.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
@@ -615,6 +625,9 @@
     <EmbeddedResource Include="Controls\MyPictureBox.hu.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MyPictureBox.id-ID.resx">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.it-IT.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
@@ -636,15 +649,15 @@
       <DependentUpon>MyPictureBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MyPictureBox.uk.resx">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.vi-VN.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.zh-CN.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\BlackStyle\UpdatePanel.resx">
-      <DependentUpon>UpdatePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.zh-TW.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
@@ -659,6 +672,9 @@
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.hu.resx">
+      <DependentUpon>DNSChangerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DNS\DNSChangerForm.id-ID.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.it-IT.resx">
@@ -682,6 +698,9 @@
     <EmbeddedResource Include="DNS\DNSChangerForm.tr.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DNS\DNSChangerForm.uk.resx">
+      <DependentUpon>DNSChangerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.vi-VN.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -703,6 +722,9 @@
     <EmbeddedResource Include="Forms\ClipboardContentViewer.hu.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.id-ID.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.it-IT.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -719,6 +741,9 @@
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.tr.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.uk.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.vi-VN.resx">
@@ -740,6 +765,9 @@
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.hu.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebugForm.id-ID.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.it-IT.resx">
@@ -766,6 +794,9 @@
     <EmbeddedResource Include="Forms\DebugForm.tr.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebugForm.uk.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.vi-VN.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -785,6 +816,9 @@
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.hu.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorForm.id-ID.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.it-IT.resx">
@@ -808,6 +842,9 @@
     <EmbeddedResource Include="Forms\ErrorForm.tr.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorForm.uk.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.vi-VN.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -827,6 +864,9 @@
       <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HashCheckForm.hu.resx">
+      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HashCheckForm.id-ID.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HashCheckForm.it-IT.resx">
@@ -850,6 +890,9 @@
     <EmbeddedResource Include="Forms\HashCheckForm.tr.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HashCheckForm.uk.resx">
+      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HashCheckForm.vi-VN.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -869,6 +912,9 @@
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.hu.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputBox.id-ID.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.it-IT.resx">
@@ -892,6 +938,9 @@
     <EmbeddedResource Include="Forms\InputBox.tr.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputBox.uk.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.vi-VN.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -911,6 +960,9 @@
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MonitorTestForm.hu.resx">
+      <DependentUpon>MonitorTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MonitorTestForm.id-ID.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MonitorTestForm.it-IT.resx">
@@ -934,6 +986,9 @@
     <EmbeddedResource Include="Forms\MonitorTestForm.tr.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MonitorTestForm.uk.resx">
+      <DependentUpon>MonitorTestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MonitorTestForm.vi-VN.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -943,17 +998,8 @@
     <EmbeddedResource Include="Forms\MonitorTestForm.zh-TW.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OutputBox.resx">
-      <DependentUpon>OutputBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TabToListView.resx">
-      <DependentUpon>TabToListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TabToTreeView.resx">
-      <DependentUpon>TabToTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.de.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
@@ -965,6 +1011,9 @@
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.hu.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintForm.id-ID.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.it-IT.resx">
@@ -983,6 +1032,9 @@
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.tr.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintForm.uk.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.vi-VN.resx">
@@ -1006,6 +1058,9 @@
     <EmbeddedResource Include="Printer\PrintTextForm.hu.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintTextForm.id-ID.resx">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintTextForm.it-IT.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1024,6 +1079,9 @@
     <EmbeddedResource Include="Printer\PrintTextForm.tr.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintTextForm.uk.resx">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintTextForm.vi-VN.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1037,12 +1095,14 @@
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
+    <EmbeddedResource Include="Properties\Resources.id-ID.resx" />
     <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Properties\Resources.uk.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
@@ -1060,6 +1120,9 @@
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.hu.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\DownloaderForm.id-ID.resx">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.it-IT.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
@@ -1100,6 +1163,9 @@
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.tr.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\DownloaderForm.uk.resx">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.vi-VN.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1119,6 +1185,9 @@
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.hu.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.id-ID.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.it-IT.resx">
@@ -1147,6 +1216,9 @@
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.tr.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.uk.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.vi-VN.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1168,6 +1240,9 @@
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.hu.resx">
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.id-ID.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.it-IT.resx">
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -1187,6 +1262,9 @@
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.tr.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.uk.resx">
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.vi-VN.resx">

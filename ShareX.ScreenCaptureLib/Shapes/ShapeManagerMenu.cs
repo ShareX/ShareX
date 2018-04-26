@@ -100,19 +100,6 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.SuspendLayout();
 
-            // https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
-            using (Graphics g = menuForm.CreateGraphics())
-            {
-                double scale = Math.Max(g.DpiX, g.DpiY) / 96.0;
-                double newScale = ((int)Math.Floor(scale * 100) / 25 * 25) / 100.0;
-                if (newScale > 1)
-                {
-                    int newWidth = (int)(tsMain.ImageScalingSize.Width * newScale);
-                    int newHeight = (int)(tsMain.ImageScalingSize.Height * newScale);
-                    tsMain.ImageScalingSize = new Size(newWidth, newHeight);
-                }
-            }
-
             menuForm.Controls.Add(tsMain);
 
             if (Form.IsFullscreen)
@@ -335,7 +322,7 @@ namespace ShareX.ScreenCaptureLib
                     borderColor = AnnotationOptions.BorderColor;
                 }
 
-                if (ColorPickerForm.PickColor(borderColor, out Color newColor))
+                if (ColorPickerForm.PickColor(borderColor, out Color newColor, Form))
                 {
                     if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
@@ -385,7 +372,7 @@ namespace ShareX.ScreenCaptureLib
                     fillColor = AnnotationOptions.FillColor;
                 }
 
-                if (ColorPickerForm.PickColor(fillColor, out Color newColor))
+                if (ColorPickerForm.PickColor(fillColor, out Color newColor, Form))
                 {
                     if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
@@ -414,7 +401,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                if (ColorPickerForm.PickColor(AnnotationOptions.HighlightColor, out Color newColor))
+                if (ColorPickerForm.PickColor(AnnotationOptions.HighlightColor, out Color newColor, Form))
                 {
                     AnnotationOptions.HighlightColor = newColor;
                     UpdateMenu();
@@ -575,7 +562,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                if (ColorPickerForm.PickColor(AnnotationOptions.ShadowColor, out Color newColor))
+                if (ColorPickerForm.PickColor(AnnotationOptions.ShadowColor, out Color newColor, Form))
                 {
                     AnnotationOptions.ShadowColor = newColor;
                     UpdateMenu();
@@ -834,7 +821,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Form.Pause();
 
-                    if (ColorPickerForm.PickColor(Options.ImageEditorBackgroundColor, out Color newColor))
+                    if (ColorPickerForm.PickColor(Options.ImageEditorBackgroundColor, out Color newColor, Form))
                     {
                         Options.ImageEditorBackgroundColor = newColor;
                         UpdateMenu();

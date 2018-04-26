@@ -99,6 +99,8 @@ namespace ShareX.UploadersLib
         Mega,
         [Description("Amazon S3")]
         AmazonS3,
+        [Description("Google Cloud Storage")]
+        GoogleCloudStorage,
         [Description("Azure Storage")]
         AzureStorage,
         [Description("Gfycat")]
@@ -139,6 +141,8 @@ namespace ShareX.UploadersLib
         Transfersh,
         [Description("Plik")]
         Plik,
+        [Description("YouTube")]
+        YouTube,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
@@ -149,8 +153,6 @@ namespace ShareX.UploadersLib
     {
         [Description("bit.ly")]
         BITLY,
-        [Description("goo.gl")]
-        Google,
         [Description("is.gd")]
         ISGD,
         [Description("v.gd")]
@@ -173,6 +175,8 @@ namespace ShareX.UploadersLib
         TwoGP,
         [Description("Polr")]
         Polr,
+        [Description("Firebase Dynamic Links")]
+        FirebaseDynamicLinks,
         CustomURLShortener // Localized
     }
 
@@ -340,5 +344,12 @@ namespace ShareX.UploadersLib
         URL,
         ThumbnailURL,
         DeletionURL
+    }
+
+    public enum YouTubeVideoPrivacy // Localized
+    {
+        Public,
+        Unlisted,
+        Private
     }
 }

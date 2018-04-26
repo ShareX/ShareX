@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -170,6 +171,12 @@ namespace ShareX.HelpersLib
             {
                 TabChanged(tabPage);
             }
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
+            scMain.SplitterDistance = (int)Math.Round(scMain.SplitterDistance * factor.Width);
         }
     }
 }

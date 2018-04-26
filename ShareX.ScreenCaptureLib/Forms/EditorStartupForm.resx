@@ -129,7 +129,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnOpenImageFile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
+    <value>3, 0, 0, 0</value>
   </data>
   <data name="btnOpenImageFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 32</value>
@@ -169,7 +169,7 @@
     <value>8, 88</value>
   </data>
   <data name="btnCreateNewImage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
+    <value>3, 0, 0, 0</value>
   </data>
   <data name="btnCreateNewImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 32</value>
@@ -208,7 +208,7 @@
     <value>8, 48</value>
   </data>
   <data name="btnLoadImageFromClipboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
+    <value>3, 0, 0, 0</value>
   </data>
   <data name="btnLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 32</value>
@@ -244,7 +244,7 @@
     <value>8, 128</value>
   </data>
   <data name="btnCancel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
+    <value>3, 0, 0, 0</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 32</value>

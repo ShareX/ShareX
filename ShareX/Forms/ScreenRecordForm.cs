@@ -46,18 +46,20 @@ namespace ShareX
         public bool IsStopRequested { get; private set; }
         public bool IsAbortRequested { get; private set; }
 
+        private TaskSettings taskSettings;
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
         private bool activateWindow;
         private float duration;
 
-        public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true, float duration = 0)
+        public ScreenRecordForm(Rectangle regionRectangle, TaskSettings taskSettings, bool activateWindow = true, float duration = 0)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
 
+            this.taskSettings = taskSettings;
             this.activateWindow = activateWindow;
             this.duration = duration;
 
@@ -226,7 +228,11 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                AbortRecording();
+                if (!taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort ||
+                    MessageBox.Show(Resources.ScreenRecord_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    AbortRecording();
+                }
             }
         }
 

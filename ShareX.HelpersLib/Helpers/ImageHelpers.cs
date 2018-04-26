@@ -274,6 +274,12 @@ namespace ShareX.HelpersLib
                     }
                 }
 
+                // If all pixels transparent
+                if (!leave)
+                {
+                    return bmp;
+                }
+
                 leave = false;
 
                 // Find Y
@@ -405,6 +411,11 @@ namespace ShareX.HelpersLib
 
         public static Image AddCanvas(Image img, Padding margin)
         {
+            return AddCanvas(img, margin, Color.Transparent);
+        }
+
+        public static Image AddCanvas(Image img, Padding margin, Color canvasColor)
+        {
             if (margin.All == 0 || img.Width + margin.Horizontal < 1 || img.Height + margin.Vertical < 1)
             {
                 return null;
@@ -416,6 +427,35 @@ namespace ShareX.HelpersLib
             {
                 g.SetHighQuality();
                 g.DrawImage(img, margin.Left, margin.Top, img.Width, img.Height);
+
+                if (canvasColor.A > 0)
+                {
+                    g.CompositingMode = CompositingMode.SourceCopy;
+                    g.SmoothingMode = SmoothingMode.None;
+
+                    using (Brush brush = new SolidBrush(canvasColor))
+                    {
+                        if (margin.Top > 0)
+                        {
+                            g.FillRectangle(brush, 0, 0, bmp.Width, margin.Top);
+                        }
+
+                        if (margin.Right > 0)
+                        {
+                            g.FillRectangle(brush, bmp.Width - margin.Right, 0, margin.Right, bmp.Height);
+                        }
+
+                        if (margin.Bottom > 0)
+                        {
+                            g.FillRectangle(brush, 0, bmp.Height - margin.Bottom, bmp.Width, margin.Bottom);
+                        }
+
+                        if (margin.Left > 0)
+                        {
+                            g.FillRectangle(brush, 0, 0, margin.Left, bmp.Height);
+                        }
+                    }
+                }
             }
 
             return bmp;

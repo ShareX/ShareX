@@ -128,9 +128,7 @@
             this.nudRegionCaptureFixedSizeHeight = new System.Windows.Forms.NumericUpDown();
             this.cbRegionCaptureIsFixedSize = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureShowCrosshair = new System.Windows.Forms.CheckBox();
-            this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.lblRegionCaptureMagnifierPixelSize = new System.Windows.Forms.Label();
-            this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.lblRegionCaptureMagnifierPixelCount = new System.Windows.Forms.Label();
             this.cbRegionCaptureUseSquareMagnifier = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureShowMagnifier = new System.Windows.Forms.CheckBox();
@@ -160,7 +158,10 @@
             this.lblRegionCaptureSnapSizesWidth = new System.Windows.Forms.Label();
             this.cbRegionCaptureUseDimming = new System.Windows.Forms.CheckBox();
             this.txtRegionCaptureCustomInfoText = new System.Windows.Forms.TextBox();
+            this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
+            this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.cbScreenRecorderConfirmAbort = new System.Windows.Forms.CheckBox();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
@@ -240,6 +241,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbFileUploadReplaceProblematicCharacters = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -269,11 +271,11 @@
             this.flpRegionCaptureFixedSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).BeginInit();
             this.pRegionCaptureSnapSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).BeginInit();
             this.tpScreenRecorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
@@ -1160,27 +1162,10 @@
             this.cbRegionCaptureShowCrosshair.UseVisualStyleBackColor = true;
             this.cbRegionCaptureShowCrosshair.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowCrosshair_CheckedChanged);
             // 
-            // nudRegionCaptureMagnifierPixelSize
-            // 
-            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelSize, "nudRegionCaptureMagnifierPixelSize");
-            this.nudRegionCaptureMagnifierPixelSize.Name = "nudRegionCaptureMagnifierPixelSize";
-            this.nudRegionCaptureMagnifierPixelSize.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelSize_ValueChanged);
-            // 
             // lblRegionCaptureMagnifierPixelSize
             // 
             resources.ApplyResources(this.lblRegionCaptureMagnifierPixelSize, "lblRegionCaptureMagnifierPixelSize");
             this.lblRegionCaptureMagnifierPixelSize.Name = "lblRegionCaptureMagnifierPixelSize";
-            // 
-            // nudRegionCaptureMagnifierPixelCount
-            // 
-            this.nudRegionCaptureMagnifierPixelCount.Increment = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelCount, "nudRegionCaptureMagnifierPixelCount");
-            this.nudRegionCaptureMagnifierPixelCount.Name = "nudRegionCaptureMagnifierPixelCount";
-            this.nudRegionCaptureMagnifierPixelCount.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelCount_ValueChanged);
             // 
             // lblRegionCaptureMagnifierPixelCount
             // 
@@ -1403,9 +1388,27 @@
             this.txtRegionCaptureCustomInfoText.Name = "txtRegionCaptureCustomInfoText";
             this.txtRegionCaptureCustomInfoText.TextChanged += new System.EventHandler(this.txtRegionCaptureCustomInfoText_TextChanged);
             // 
+            // nudRegionCaptureMagnifierPixelCount
+            // 
+            this.nudRegionCaptureMagnifierPixelCount.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelCount, "nudRegionCaptureMagnifierPixelCount");
+            this.nudRegionCaptureMagnifierPixelCount.Name = "nudRegionCaptureMagnifierPixelCount";
+            this.nudRegionCaptureMagnifierPixelCount.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelCount_ValueChanged);
+            // 
+            // nudRegionCaptureMagnifierPixelSize
+            // 
+            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelSize, "nudRegionCaptureMagnifierPixelSize");
+            this.nudRegionCaptureMagnifierPixelSize.Name = "nudRegionCaptureMagnifierPixelSize";
+            this.nudRegionCaptureMagnifierPixelSize.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelSize_ValueChanged);
+            // 
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderConfirmAbort);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1423,6 +1426,13 @@
             this.tpScreenRecorder.Controls.Add(this.lblGIFFPS);
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
+            // 
+            // cbScreenRecorderConfirmAbort
+            // 
+            resources.ApplyResources(this.cbScreenRecorderConfirmAbort, "cbScreenRecorderConfirmAbort");
+            this.cbScreenRecorderConfirmAbort.Name = "cbScreenRecorderConfirmAbort";
+            this.cbScreenRecorderConfirmAbort.UseVisualStyleBackColor = true;
+            this.cbScreenRecorderConfirmAbort.CheckedChanged += new System.EventHandler(this.chkConfirmAbort_CheckedChanged);
             // 
             // cbScreenRecorderShowCursor
             // 
@@ -1621,6 +1631,7 @@
             // tpFileNaming
             // 
             this.tpFileNaming.BackColor = System.Drawing.SystemColors.Window;
+            this.tpFileNaming.Controls.Add(this.cbFileUploadReplaceProblematicCharacters);
             this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
             this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
@@ -2058,6 +2069,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbFileUploadReplaceProblematicCharacters
+            // 
+            resources.ApplyResources(this.cbFileUploadReplaceProblematicCharacters, "cbFileUploadReplaceProblematicCharacters");
+            this.cbFileUploadReplaceProblematicCharacters.Name = "cbFileUploadReplaceProblematicCharacters";
+            this.cbFileUploadReplaceProblematicCharacters.UseVisualStyleBackColor = true;
+            this.cbFileUploadReplaceProblematicCharacters.CheckedChanged += new System.EventHandler(this.cbFileUploadReplaceProblematicCharacters_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2108,12 +2126,12 @@
             this.flpRegionCaptureFixedSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).EndInit();
             this.pRegionCaptureSnapSizes.ResumeLayout(false);
             this.pRegionCaptureSnapSizes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).EndInit();
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
@@ -2357,5 +2375,7 @@
         private System.Windows.Forms.ComboBox cbImagePNGBitDepth;
         private System.Windows.Forms.Label lblImagePNGBitDepth;
         private System.Windows.Forms.Button btnWatchFolderEdit;
+        private System.Windows.Forms.CheckBox cbScreenRecorderConfirmAbort;
+        private System.Windows.Forms.CheckBox cbFileUploadReplaceProblematicCharacters;
     }
 }

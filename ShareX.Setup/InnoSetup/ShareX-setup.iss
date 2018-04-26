@@ -33,7 +33,8 @@ DisableReadyPage=no
 DisableReadyMemo=no
 DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
-MinVersion=0,5.01.2600
+; .NET 4.6.2 is supported only on Windows 7 SP1 and up
+MinVersion=0,6.1.7601
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
 PrivilegesRequired=none
@@ -50,11 +51,10 @@ WizardSmallImageFile=WizardSmallImageFile.bmp
 #include "Scripts\lang\english.iss"
 
 [Tasks]
-Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
-Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"
-Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"
-Name: "CreateQuickLaunchIcon"; Description: "Create a quick launch shortcut"; GroupDescription: "Additional shortcuts:"; OnlyBelowVersion: 0,6.1
-Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"
+Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
+Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
+Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
 [Files]
 Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
@@ -82,8 +82,7 @@ Source: "puush"; DestDir: {app}; Check: IsPuushMode
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
-Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon; Check: not DesktopIconExists
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateQuickLaunchIcon
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon
 Name: "{sendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon
 Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
 
@@ -101,6 +100,7 @@ Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreate
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
 
 [CustomMessages]
 DependenciesDir=Dependencies
@@ -120,11 +120,6 @@ begin
   Result := true;
 end;
 
-function DesktopIconExists(): Boolean;
-begin
-  Result := FileExists(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'));
-end;
-
 function CmdLineParamExists(const value: string): Boolean;
 var
   i: Integer;  
@@ -138,12 +133,22 @@ begin
     end;
 end;
 
-function IsNoRun: Boolean;
+function IsUpdating(): Boolean;
+begin
+  Result := CmdLineParamExists('/UPDATE');
+end;
+
+function IsNoRun(): Boolean;
 begin
   Result := CmdLineParamExists('/NORUN');
 end;
 
-function IsPuushMode: Boolean;
+function IsPuushMode(): Boolean;
 begin
   Result := CmdLineParamExists('-puush');
+end;
+
+function DesktopIconExists(): Boolean;
+begin
+  Result := FileExists(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'));
 end;

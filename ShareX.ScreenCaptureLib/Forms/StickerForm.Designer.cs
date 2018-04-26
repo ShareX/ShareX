@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickerForm));
             this.ilvStickers = new Manina.Windows.Forms.ImageListView();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
@@ -48,15 +49,12 @@
             // 
             this.ilvStickers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ilvStickers.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ilvStickers.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.ilvStickers, "ilvStickers");
             this.ilvStickers.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ilvStickers.Location = new System.Drawing.Point(0, 0);
             this.ilvStickers.MultiSelect = false;
             this.ilvStickers.Name = "ilvStickers";
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
-            this.ilvStickers.Size = new System.Drawing.Size(784, 531);
-            this.ilvStickers.TabIndex = 0;
             this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
             // 
             // toolStripContainer1
@@ -65,13 +63,9 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.ilvStickers);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 531);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(784, 561);
-            this.toolStripContainer1.TabIndex = 2;
-            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
@@ -79,7 +73,7 @@
             // 
             // tsMain
             // 
-            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslSearch,
@@ -89,25 +83,20 @@
             this.tsbEditStickers,
             this.tslSize,
             this.tsnudSize});
-            this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Padding = new System.Windows.Forms.Padding(2);
-            this.tsMain.Size = new System.Drawing.Size(784, 30);
             this.tsMain.Stretch = true;
-            this.tsMain.TabIndex = 0;
             // 
             // tslSearch
             // 
             this.tslSearch.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tslSearch.Name = "tslSearch";
-            this.tslSearch.Size = new System.Drawing.Size(45, 23);
-            this.tslSearch.Text = "Search:";
+            resources.ApplyResources(this.tslSearch, "tslSearch");
             // 
             // tstbSearch
             // 
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbSearch.Name = "tstbSearch";
-            this.tstbSearch.Size = new System.Drawing.Size(100, 26);
+            resources.ApplyResources(this.tstbSearch, "tstbSearch");
             this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             this.tstbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyUp);
             this.tstbSearch.TextChanged += new System.EventHandler(this.tstbSearch_TextChanged);
@@ -116,50 +105,41 @@
             // 
             this.tslStickers.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tslStickers.Name = "tslStickers";
-            this.tslStickers.Size = new System.Drawing.Size(50, 23);
-            this.tslStickers.Text = "Stickers:";
+            resources.ApplyResources(this.tslStickers, "tslStickers");
             // 
             // tscbStickers
             // 
             this.tscbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tscbStickers.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            resources.ApplyResources(this.tscbStickers, "tscbStickers");
             this.tscbStickers.Name = "tscbStickers";
-            this.tscbStickers.Size = new System.Drawing.Size(150, 26);
             this.tscbStickers.SelectedIndexChanged += new System.EventHandler(this.tscbStickers_SelectedIndexChanged);
             // 
             // tsbEditStickers
             // 
             this.tsbEditStickers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEditStickers.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.gear;
-            this.tsbEditStickers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbEditStickers, "tsbEditStickers");
             this.tsbEditStickers.Name = "tsbEditStickers";
-            this.tsbEditStickers.Size = new System.Drawing.Size(23, 23);
-            this.tsbEditStickers.Text = "Edit sticker packs";
             this.tsbEditStickers.Click += new System.EventHandler(this.tsbEditStickers_Click);
             // 
             // tslSize
             // 
             this.tslSize.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tslSize.Name = "tslSize";
-            this.tslSize.Size = new System.Drawing.Size(30, 23);
-            this.tslSize.Text = "Size:";
+            resources.ApplyResources(this.tslSize, "tslSize");
             // 
             // tsnudSize
             // 
             this.tsnudSize.Name = "tsnudSize";
-            this.tsnudSize.Size = new System.Drawing.Size(41, 23);
-            this.tsnudSize.Text = "64";
+            resources.ApplyResources(this.tsnudSize, "tsnudSize");
             this.tsnudSize.ValueChanged += new System.EventHandler(this.tsnudSize_ValueChanged);
             // 
             // StickerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "StickerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Sticker picker";
             this.Shown += new System.EventHandler(this.StickerForm_Shown);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);

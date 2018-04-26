@@ -711,6 +711,7 @@ namespace ShareX
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
+            HelpersOptions.RecentColors = Program.Settings.RecentColors;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
 #if RELEASE
@@ -1462,7 +1463,7 @@ namespace ShareX
 
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenColorPicker();
+            TaskHelpers.ShowScreenColorPickerDialog();
         }
 
         private void tsmiScreenColorPicker_Click(object sender, EventArgs e)
