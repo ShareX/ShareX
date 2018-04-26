@@ -303,6 +303,8 @@
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.lblGoogleCloudStoragePathPreview = new System.Windows.Forms.Label();
+            this.lblGoogleCloudStoragePathPreviewLabel = new System.Windows.Forms.Label();
             this.txtGoogleCloudStorageObjectPrefix = new System.Windows.Forms.TextBox();
             this.lblGoogleCloudStorageObjectPrefix = new System.Windows.Forms.Label();
             this.lblGoogleCloudStorageDomain = new System.Windows.Forms.Label();
@@ -2790,6 +2792,8 @@
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageObjectPrefix);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageObjectPrefix);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageDomain);
@@ -2800,6 +2804,16 @@
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // lblGoogleCloudStoragePathPreview
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStoragePathPreview, "lblGoogleCloudStoragePathPreview");
+            this.lblGoogleCloudStoragePathPreview.Name = "lblGoogleCloudStoragePathPreview";
+            // 
+            // lblGoogleCloudStoragePathPreviewLabel
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStoragePathPreviewLabel, "lblGoogleCloudStoragePathPreviewLabel");
+            this.lblGoogleCloudStoragePathPreviewLabel.Name = "lblGoogleCloudStoragePathPreviewLabel";
             // 
             // txtGoogleCloudStorageObjectPrefix
             // 
@@ -6097,5 +6111,7 @@
         private System.Windows.Forms.Button btnSharedFolderAdd;
         private System.Windows.Forms.PropertyGrid pgSharedFolderAccount;
         private System.Windows.Forms.ListBox lbSharedFolderAccounts;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreviewLabel;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
     }
 }

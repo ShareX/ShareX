@@ -173,5 +173,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return URLHelpers.FixPrefix(url, "https://");
         }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
+        }
     }
 }
