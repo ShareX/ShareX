@@ -912,17 +912,28 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
         {
+            DrawInfoText(g, text, rect, font, new Point(padding, padding));
+        }
+
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding)
+        {
             DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, Brushes.White, Brushes.Black);
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
             Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
         {
+            DrawInfoText(g, text, rect, font, new Point(padding, padding), backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+        }
+
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding,
+            Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
+        {
             g.FillRectangle(backgroundBrush, rect.Offset(-2));
             g.DrawRectangleProper(innerBorderPen, rect.Offset(-1));
             g.DrawRectangleProper(outerBorderPen, rect);
 
-            g.DrawTextWithShadow(text, rect.Offset(-padding).Location, font, textBrush, textShadowBrush);
+            g.DrawTextWithShadow(text, rect.LocationOffset(padding.X, padding.Y).Location, font, textBrush, textShadowBrush);
         }
 
         internal void DrawAreaText(Graphics g, string text, Rectangle area)
@@ -1137,7 +1148,31 @@ namespace ShareX.ScreenCaptureLib
             if (Options.ShowInfo)
             {
                 infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
-                DrawInfoText(g, infoText, infoTextRect, infoFont, infoTextPadding);
+
+                Point padding = new Point(infoTextPadding, infoTextPadding);
+                Rectangle colorRect = Rectangle.Empty;
+
+                if (Mode == RegionCaptureMode.ScreenColorPicker)
+                {
+                    int colorBoxOffset = 3;
+                    int colorBoxWidth = 15;
+                    colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset, colorBoxWidth, infoTextRect.Height - colorBoxOffset * 2);
+                    int colorExtraWidth = colorRect.Width + colorBoxOffset;
+                    infoTextRect.Width += colorExtraWidth;
+                    padding.X += colorExtraWidth;
+                }
+
+                DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
+
+                if (Mode == RegionCaptureMode.ScreenColorPicker)
+                {
+                    using (Brush colorBrush = new SolidBrush(CurrentColor))
+                    {
+                        g.FillRectangle(colorBrush, colorRect);
+                    }
+
+                    g.DrawRectangleProper(Pens.White, colorRect);
+                }
             }
         }
 
