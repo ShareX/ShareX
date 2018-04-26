@@ -469,7 +469,7 @@
     <value>4</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>On start minimize to tray</value>
+    <value>Minimize to tray on start</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
     <value>cbSilentRun</value>
