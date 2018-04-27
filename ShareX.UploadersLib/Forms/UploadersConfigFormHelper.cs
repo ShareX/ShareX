@@ -444,7 +444,6 @@ namespace ShareX.UploadersLib
                     {
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
                     }
                     else
                     {

@@ -162,7 +162,7 @@ namespace ShareX.UploadersLib
         {
             NameValueCollection args = HttpUtility.ParseQueryString(accessTokenResponse);
 
-            if (args != null && args[ParameterToken] != null)
+            if (args[ParameterToken] != null)
             {
                 oauth.UserToken = args[ParameterToken];
 

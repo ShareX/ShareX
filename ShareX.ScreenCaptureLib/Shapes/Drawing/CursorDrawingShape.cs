@@ -34,10 +34,6 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap cursorBitmap;
 
-        public CursorDrawingShape()
-        {
-        }
-
         public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
             Dispose();

@@ -799,11 +799,8 @@ namespace ShareX.HelpersLib
                 bytesText[bytesText.Length - 1] = 0;
                 pi.Value = bytesText;
 
-                if (pi != null)
-                {
-                    img.SetPropertyItem(pi);
-                    return true;
-                }
+                img.SetPropertyItem(pi);
+                return true;
             }
             catch (Exception e)
             {

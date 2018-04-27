@@ -89,10 +89,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DebugHelper.WriteException(ex);
 
-                    if (bmp != null)
-                    {
-                        bmp.Dispose();
-                    }
+                    bmp.Dispose();
                 }
             }
 

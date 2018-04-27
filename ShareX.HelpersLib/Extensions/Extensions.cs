@@ -610,6 +610,7 @@ namespace ShareX.HelpersLib
 
             if (index > -1)
             {
+                // TODO: fix it. Assigned to itself
                 lb.Items[index] = lb.Items[index];
             }
         }

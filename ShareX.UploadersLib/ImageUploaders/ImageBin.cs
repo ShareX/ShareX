@@ -47,11 +47,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             if (result.IsSuccess)
             {
                 Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
-                if (match != null)
-                {
-                    string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
-                    result.URL = url;
-                }
+                string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
+                result.URL = url;
             }
 
             return result;

@@ -58,34 +58,31 @@ namespace ShareX.HelpersLib
                     {
                         XDocument xd = XDocument.Load(xml);
 
-                        if (xd != null)
+                        string node;
+
+                        switch (ReleaseType)
                         {
-                            string node;
+                            default:
+                            case ReleaseChannelType.Stable:
+                                node = "Stable";
+                                break;
+                            case ReleaseChannelType.Beta:
+                                node = "Beta|Stable";
+                                break;
+                            case ReleaseChannelType.Dev:
+                                node = "Dev|Beta|Stable";
+                                break;
+                        }
 
-                            switch (ReleaseType)
-                            {
-                                default:
-                                case ReleaseChannelType.Stable:
-                                    node = "Stable";
-                                    break;
-                                case ReleaseChannelType.Beta:
-                                    node = "Beta|Stable";
-                                    break;
-                                case ReleaseChannelType.Dev:
-                                    node = "Dev|Beta|Stable";
-                                    break;
-                            }
+                        string path = string.Format("Update/{0}/{1}", ApplicationName, node);
+                        XElement xe = xd.GetNode(path);
 
-                            string path = string.Format("Update/{0}/{1}", ApplicationName, node);
-                            XElement xe = xd.GetNode(path);
-
-                            if (xe != null)
-                            {
-                                LatestVersion = new Version(xe.Element("Version").Value);
-                                DownloadURL = xe.Element("URL").Value;
-                                RefreshStatus();
-                                return;
-                            }
+                        if (xe != null)
+                        {
+                            LatestVersion = new Version(xe.Element("Version").Value);
+                            DownloadURL = xe.Element("URL").Value;
+                            RefreshStatus();
+                            return;
                         }
                     }
                 }

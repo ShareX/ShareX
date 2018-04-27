@@ -437,6 +437,7 @@ namespace ShareX.UploadersLib
                                 {
                                     string path = URLHelpers.CombineURL(currentDirectory, filename);
                                     string movePath = "";
+                                    //TODO: Fix it! Expression always false. Look if expression above (file.Type == FtpFileSystemObjectType.Directory)
                                     if (file.Type == FtpFileSystemObjectType.Link)
                                     {
                                         if (file.Name == ".")

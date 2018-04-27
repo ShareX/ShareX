@@ -181,6 +181,7 @@ namespace ShareX.ImageEffectsLib
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(Padding.Left + textSize.Width + Padding.Right, Padding.Top + textSize.Height + Padding.Bottom);
+                // TODO: img.Size used after null check. See above
                 Point watermarkPosition = Helpers.GetPosition(Placement, Offset, img.Size, watermarkSize);
                 Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 

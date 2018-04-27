@@ -146,14 +146,11 @@ namespace ShareX.MediaLib
                 }
                 finally
                 {
-                    if (images != null)
+                    foreach (Image image in images)
                     {
-                        foreach (Image image in images)
+                        if (image != null)
                         {
-                            if (image != null)
-                            {
-                                image.Dispose();
-                            }
+                            image.Dispose();
                         }
                     }
                 }

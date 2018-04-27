@@ -51,11 +51,6 @@ namespace ShareX.ScreenCaptureLib
                 newPoints[newPoints.Length - 1] = Points[Points.Length - 1];
             }
 
-            for (int i = 0; i < newPoints.Length; i++)
-            {
-                if (newPoints[i] == null) newPoints[i] = new Point();
-            }
-
             Points = newPoints;
         }
 
