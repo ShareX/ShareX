@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
             Icon = ShareXResources.Icon;
 
             AddDNS(Resources.DNSChangerForm_DNSChangerForm_Manual);
+            AddDNS("Cloudflare DNS", "1.1.1.1", "1.0.0.1"); // https://1.1.1.1/
             AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/
             AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // https://www.opendns.com
             AddDNS("Cloudflare", "1.1.1.1", "1.0.0.1"); // https://1.1.1.1
