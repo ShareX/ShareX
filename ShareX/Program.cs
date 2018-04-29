@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -226,13 +227,22 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
+#if !DEBUG // Allow Visual Studio to break on exceptions in Debug builds.
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+#endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
             CLI = new CLIManager(args);
             CLI.ParseCommands();
+
+            // Fix the hand cursor before we open any form.
+            try
+            {
+                FixHandCursor();
+            }
+            catch (Exception) { } // If it fails, we'll just have to live with the old hand.
 
 #if STEAM
             if (CheckUninstall()) return; // Steam will run ShareX with -Uninstall when uninstalling
@@ -579,6 +589,13 @@ namespace ShareX
                     DebugHelper.WriteException(e);
                 }
             }).Start();
+        }
+
+        private static void FixHandCursor()
+        {
+            // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
+            typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
+                ?.SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
         }
     }
 }

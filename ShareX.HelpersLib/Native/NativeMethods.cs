@@ -194,6 +194,9 @@ namespace ShareX.HelpersLib
         public static extern bool IsZoomed(IntPtr hWnd);
 
         [DllImport("user32.dll")]
+        public static extern IntPtr LoadCursor(IntPtr hInstance, int iconId);
+
+        [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool PrintWindow(IntPtr hwnd, IntPtr hDC, uint nFlags);
 
