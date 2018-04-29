@@ -203,7 +203,6 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 item = new Dictionary<string, string>
                 {
-                    { "name", fileName },
                     { "@microsoft.graph.conflictBehavior", "replace" }
                 }
             });
@@ -211,7 +210,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string folderPath = GetFolderUrl(FolderID);
 
             string url = URLHelpers.BuildUri("https://graph.microsoft.com", $"/v1.0/{folderPath}:/{fileName}:/createUploadSession");
-
+            
             string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, headers: GetAuthHeaders());
 
             OneDriveUploadSession session = JsonConvert.DeserializeObject<OneDriveUploadSession>(response);
