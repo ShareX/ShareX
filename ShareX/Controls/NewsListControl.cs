@@ -66,6 +66,8 @@ namespace ShareX
             {
                 if (NewsManager != null && NewsManager.NewsItems != null)
                 {
+                    tlpMain.SuspendLayout();
+
                     foreach (NewsItem item in NewsManager.NewsItems)
                     {
                         if (item != null)
@@ -73,6 +75,8 @@ namespace ShareX
                             AddNewsItem(item);
                         }
                     }
+
+                    tlpMain.ResumeLayout();
 
                     OnNewsLoaded();
                 }
