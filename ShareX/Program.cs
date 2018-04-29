@@ -237,13 +237,6 @@ namespace ShareX
             CLI = new CLIManager(args);
             CLI.ParseCommands();
 
-            // Fix the hand cursor before we open any form.
-            try
-            {
-                FixHandCursor();
-            }
-            catch (Exception) { } // If it fails, we'll just have to live with the old hand.
-
 #if STEAM
             if (CheckUninstall()) return; // Steam will run ShareX with -Uninstall when uninstalling
 #endif
@@ -298,6 +291,7 @@ namespace ShareX
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
+            TryFixHandCursor();
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
@@ -510,6 +504,7 @@ namespace ShareX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                TryFixHandCursor();
                 Application.Run(new DNSChangerForm());
                 return true;
             }
@@ -591,11 +586,15 @@ namespace ShareX
             }).Start();
         }
 
-        private static void FixHandCursor()
+        private static void TryFixHandCursor()
         {
-            // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
-            typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
-                ?.SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
+            try
+            {
+                // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
+                typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
+                    ?.SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
+            }
+            catch { } // If it fails, we'll just have to live with the old hand.
         }
     }
 }
