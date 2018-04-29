@@ -196,7 +196,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 368</value>
+    <value>408, 368</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -592,7 +592,7 @@
     <value>8, 384</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 250</value>
+    <value>408, 250</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -619,7 +619,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 641</value>
+    <value>425, 641</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -652,7 +652,7 @@
     <value>100</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 641</value>
+    <value>981, 641</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>550</value>
@@ -682,7 +682,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>984, 641</value>
+    <value>981, 641</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 500</value>
