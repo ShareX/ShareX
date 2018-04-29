@@ -117,10 +117,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     name = name,
                     parents = new[]
                     {
-                        new
-                        {
-                            id = parentID
-                        }
+                        parentID
                     }
                 };
             }
