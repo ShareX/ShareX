@@ -30,7 +30,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -291,7 +290,7 @@ namespace ShareX
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
-            TryFixHandCursor();
+            Helpers.TryFixHandCursor();
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
@@ -504,7 +503,7 @@ namespace ShareX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                TryFixHandCursor();
+                Helpers.TryFixHandCursor();
                 Application.Run(new DNSChangerForm());
                 return true;
             }
@@ -584,17 +583,6 @@ namespace ShareX
                     DebugHelper.WriteException(e);
                 }
             }).Start();
-        }
-
-        private static void TryFixHandCursor()
-        {
-            try
-            {
-                // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
-                typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
-                    ?.SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
-            }
-            catch { } // If it fails, we'll just have to live with the old hand.
         }
     }
 }
