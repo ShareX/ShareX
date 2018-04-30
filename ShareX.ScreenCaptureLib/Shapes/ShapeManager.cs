@@ -372,56 +372,32 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys.HasFlag(Keys.Control) && Form.Mode == RegionCaptureMode.Annotation)
+            if (e.Delta > 0)
             {
-                if (e.Delta > 0)
+                if (Options.ShowMagnifier)
                 {
-                    CurrentTool = CurrentTool.Previous<ShapeType>();
-
-                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
-                    {
-                        CurrentTool = CurrentTool.Previous<ShapeType>();
-                    }
+                    Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
                 }
-                else if (e.Delta < 0)
+                else
                 {
-                    CurrentTool = CurrentTool.Next<ShapeType>();
-
-                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
-                    {
-                        CurrentTool = CurrentTool.Next<ShapeType>();
-                    }
+                    Options.ShowMagnifier = true;
                 }
             }
-            else
+            else if (e.Delta < 0)
             {
-                if (e.Delta > 0)
+                int magnifierPixelCount = Options.MagnifierPixelCount - 2;
+                if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
                 {
-                    if (Options.ShowMagnifier)
-                    {
-                        Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
-                    }
-                    else
-                    {
-                        Options.ShowMagnifier = true;
-                    }
+                    magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
+                    Options.ShowMagnifier = false;
                 }
-                else if (e.Delta < 0)
-                {
-                    int magnifierPixelCount = Options.MagnifierPixelCount - 2;
-                    if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
-                    {
-                        magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
-                        Options.ShowMagnifier = false;
-                    }
-                    Options.MagnifierPixelCount = magnifierPixelCount;
-                }
+                Options.MagnifierPixelCount = magnifierPixelCount;
+            }
 
-                if (Form.IsAnnotationMode)
-                {
-                    tsmiShowMagnifier.Checked = Options.ShowMagnifier;
-                    tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
-                }
+            if (Form.IsAnnotationMode)
+            {
+                tsmiShowMagnifier.Checked = Options.ShowMagnifier;
+                tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
             }
         }
 
