@@ -927,6 +927,28 @@ namespace ShareX.ScreenCaptureLib
                 tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
             }
 
+            tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiKeybinds = new ToolStripMenuItem("Open keybinds web page...");
+            tsmiKeybinds.Click += (sender, e) =>
+            {
+                if (Form.IsFullscreen)
+                {
+                    if (MessageBox.Show(Form, "This window will close before opening the keybinds web page. Do you want to continue?",
+                        "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Form.CloseWindow();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                URLHelpers.OpenURL("https://getsharex.com/docs/region-capture");
+            };
+            tsddbOptions.DropDownItems.Add(tsmiKeybinds);
+
             #endregion Options
 
             if (Form.IsFullscreen)
