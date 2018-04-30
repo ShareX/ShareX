@@ -485,6 +485,7 @@ namespace ShareX.ScreenCaptureLib
                 tscbCursorTypes.Content.Add(name);
             }
             tscbCursorTypes.Content.SelectedIndex = 3; // Cursors.Default
+            tscbCursorTypes.Content.SelectedIndexChanged += (sender, e) => UpdateCurrentShape();
             tsddbShapeOptions.DropDownItems.Add(tscbCursorTypes);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
