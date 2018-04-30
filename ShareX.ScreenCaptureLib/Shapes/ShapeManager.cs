@@ -397,11 +397,30 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (e.Delta > 0)
                 {
-                    Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
+                    if (Options.ShowMagnifier)
+                    {
+                        Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
+                    }
+                    else
+                    {
+                        Options.ShowMagnifier = true;
+                    }
                 }
                 else if (e.Delta < 0)
                 {
-                    Options.MagnifierPixelCount = Math.Max(Options.MagnifierPixelCount - 2, RegionCaptureOptions.MagnifierPixelCountMinimum);
+                    int magnifierPixelCount = Options.MagnifierPixelCount - 2;
+                    if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
+                    {
+                        magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
+                        Options.ShowMagnifier = false;
+                    }
+                    Options.MagnifierPixelCount = magnifierPixelCount;
+                }
+
+                if (Form.IsAnnotationMode)
+                {
+                    tsmiShowMagnifier.Checked = Options.ShowMagnifier;
+                    tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
                 }
             }
         }

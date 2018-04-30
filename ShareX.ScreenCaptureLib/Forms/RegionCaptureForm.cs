@@ -31,7 +31,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -514,7 +513,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Pause();
                 // TODO: Translate
-                result = MessageBox.Show(this, "There is unsaved changes. Would you like to close image editor?", "ShareX - Image editor",
+                result = MessageBox.Show(this, "There is unsaved changes.\r\nWould you like to close image editor?", "ShareX - Image editor",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
                 Resume();
             }
