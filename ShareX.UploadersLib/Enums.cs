@@ -216,7 +216,8 @@ namespace ShareX.UploadersLib
         POST,
         PUT,
         PATCH,
-        DELETE
+        DELETE,
+        HEAD
     }
 
     public enum ResponseType // Localized

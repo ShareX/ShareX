@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib
 
         private HttpWebRequest currentRequest;
         private Logger verboseLogger;
-
+        
         public static void UpdateServicePointManager()
         {
             ServicePointManager.DefaultConnectionLimit = 25;
@@ -246,8 +246,15 @@ namespace ShareX.UploadersLib
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
 
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+                var head_requst = GetHeadResponse(url, headers, cookies);
+                if(head_requst.StatusCode == HttpStatusCode.Redirect || head_requst.StatusCode == HttpStatusCode.Moved)
+                {
+                    var nurl = head_requst.Headers.Get("Location");
+                    url = !string.IsNullOrEmpty(nurl) ? nurl : url;
+                }
 
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+                
                 using (Stream requestStream = request.GetRequestStream())
                 {
                     requestStream.Write(bytesArguments, 0, bytesArguments.Length);
@@ -467,6 +474,34 @@ namespace ShareX.UploadersLib
             currentRequest = request;
 
             return request;
+        }
+
+        private HttpWebResponse GetHeadResponse(string url, NameValueCollection headers = null, CookieCollection cookies = null)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AllowAutoRedirect = false;
+
+            request.Method = HttpMethod.HEAD.ToString();
+
+            if (headers != null)
+            {
+                if (headers["Accept"] != null)
+                {
+                    request.Accept = headers["Accept"];
+                    headers.Remove("Accept");
+                }
+
+                request.Headers.Add(headers);
+            }
+
+            request.CookieContainer = new CookieContainer();
+            if (cookies != null) request.CookieContainer.Add(cookies);
+            IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+            if (proxy != null) request.Proxy = proxy;
+            request.UserAgent = ShareXResources.UserAgent;
+            request.KeepAlive = false;
+            
+            return (HttpWebResponse)request.GetResponse();
         }
 
         protected bool TransferData(Stream dataStream, Stream requestStream, long dataPosition = 0, long dataLength = -1)
