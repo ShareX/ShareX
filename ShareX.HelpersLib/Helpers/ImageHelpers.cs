@@ -1875,5 +1875,21 @@ namespace ShareX.HelpersLib
                     return RotateFlipType.Rotate270FlipNone;
             }
         }
+
+        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int value)
+        {
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int i = 0; i < unsafeBitmap.PixelCount; i++)
+                {
+                    ColorBgra color = unsafeBitmap.GetPixel(i);
+                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > value ? lightColor : darkColor;
+                    color.Red = newColor.R;
+                    color.Green = newColor.G;
+                    color.Blue = newColor.B;
+                    unsafeBitmap.SetPixel(i, color);
+                }
+            }
+        }
     }
 }

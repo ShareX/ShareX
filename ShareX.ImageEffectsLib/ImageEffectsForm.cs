@@ -104,6 +104,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(MatrixColor),
                 typeof(Polaroid),
                 typeof(Saturation),
+                typeof(SelectiveColor),
                 typeof(Sepia));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,

@@ -107,6 +107,7 @@
     <Compile Include="Adjustments\Alpha.cs" />
     <Compile Include="Adjustments\BlackWhite.cs" />
     <Compile Include="Adjustments\Polaroid.cs" />
+    <Compile Include="Adjustments\SelectiveColor.cs" />
     <Compile Include="Adjustments\Sepia.cs" />
     <Compile Include="Adjustments\MatrixColor.cs" />
     <Compile Include="Drawings\DrawCheckerboard.cs" />
