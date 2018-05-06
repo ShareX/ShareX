@@ -127,8 +127,10 @@ namespace ShareX
 
 #if STEAM || WindowsStore
             cbCheckPreReleaseUpdates.Visible = false;
+            btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
@@ -388,15 +390,16 @@ namespace ShareX
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
+            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
         }
 
-        private void cbCheckPreReleaseUpdates_MouseUp(object sender, MouseEventArgs e)
+        private void btnCheckDevBuild_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Middle)
+            // TODO: Translate
+            if (MessageBox.Show("Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?", "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
                 TaskHelpers.DownloadAppVeyorBuild();
-                Cursor = Cursors.Default;
             }
         }
 
