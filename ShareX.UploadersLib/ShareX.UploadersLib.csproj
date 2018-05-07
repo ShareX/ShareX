@@ -98,18 +98,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentFTP, Version=19.2.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentFTP.19.2.2\lib\net45\FluentFTP.dll</HintPath>
-    </Reference>
-    <Reference Include="MegaApiClient, Version=1.6.3.424, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
-      <HintPath>..\packages\MegaApiClient.1.6.3\lib\net46\MegaApiClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -939,7 +927,6 @@
     <None Include="Favicons\Vgyme.ico" />
     <None Include="Favicons\Lithiio.ico" />
     <None Include="Favicons\puush.ico" />
-    <None Include="packages.config" />
     <None Include="Resources\puush-256.png" />
     <None Include="Resources\folder-network.png" />
     <None Include="Resources\globe-network.png" />
@@ -960,6 +947,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\GoogleCloud.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentFTP">
+      <Version>19.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="MegaApiClient">
+      <Version>1.6.3</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2016.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
