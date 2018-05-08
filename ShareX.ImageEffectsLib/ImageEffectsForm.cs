@@ -35,6 +35,8 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {
+        public event Action<Image> ImageProcessRequested;
+
         public Image DefaultImage { get; private set; }
 
         public List<ImageEffectPreset> Presets { get; private set; }
@@ -58,17 +60,27 @@ namespace ShareX.ImageEffectsLib
             AddAllEffectsToContextMenu();
         }
 
-        public void ToolMode()
+        public void ToolMode(Action<Image> imageProcessRequested)
         {
+            ImageProcessRequested += imageProcessRequested;
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
+            btnUploadImage.Visible = true;
         }
 
         public void EditorMode()
         {
             btnOK.Visible = true;
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
+        }
+
+        protected void OnImageProcessRequested(Image img)
+        {
+            if (ImageProcessRequested != null)
+            {
+                ImageProcessRequested(img);
+            }
         }
 
         private void AddAllEffectsToContextMenu()
@@ -541,6 +553,19 @@ namespace ShareX.ImageEffectsLib
                     {
                         ImageHelpers.SaveImageFileDialog(img);
                     }
+                }
+            }
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            if (DefaultImage != null)
+            {
+                Image img = ApplyEffects();
+
+                if (img != null)
+                {
+                    OnImageProcessRequested(img);
                 }
             }
         }
