@@ -1876,14 +1876,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int value)
+        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int threshold)
         {
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
             {
                 for (int i = 0; i < unsafeBitmap.PixelCount; i++)
                 {
                     ColorBgra color = unsafeBitmap.GetPixel(i);
-                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > value ? lightColor : darkColor;
+                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > threshold ? lightColor : darkColor;
                     color.Red = newColor.R;
                     color.Green = newColor.G;
                     color.Blue = newColor.B;

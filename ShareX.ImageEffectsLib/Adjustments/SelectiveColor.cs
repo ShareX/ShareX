@@ -24,14 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -44,8 +39,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color DarkColor { get; set; }
 
-        [DefaultValue(120)]
-        public int Value { get; set; }
+        [DefaultValue(130)]
+        public int Threshold { get; set; }
 
         public SelectiveColor()
         {
@@ -54,7 +49,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            ImageHelpers.SelectiveColor((Bitmap)img, LightColor, DarkColor, Value);
+            ImageHelpers.SelectiveColor((Bitmap)img, LightColor, DarkColor, Threshold);
             return img;
         }
     }
