@@ -32,6 +32,7 @@ namespace ShareX.ScreenCaptureLib
     public class LineDrawingShape : BaseDrawingShape
     {
         public const int MaximumCenterPointCount = 5;
+        private const int MinimumCollisionSize = 10;
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
 
@@ -105,7 +106,22 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 AutoPositionCenterPoints();
-                Rectangle = Points.CreateRectangle();
+                CalculateRectangle();
+            }
+        }
+
+        private void CalculateRectangle()
+        {
+            Rectangle = Points.CreateRectangle();
+
+            if (Rectangle.Width < MinimumCollisionSize)
+            {
+                Rectangle = new Rectangle(Rectangle.X - MinimumCollisionSize / 2, Rectangle.Y, Rectangle.Width + MinimumCollisionSize, Rectangle.Height);
+            }
+
+            if (Rectangle.Height < MinimumCollisionSize)
+            {
+                Rectangle = new Rectangle(Rectangle.X, Rectangle.Y - MinimumCollisionSize / 2, Rectangle.Width, Rectangle.Height + MinimumCollisionSize);
             }
         }
 
