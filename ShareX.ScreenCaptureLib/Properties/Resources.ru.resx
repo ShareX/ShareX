@@ -518,4 +518,11 @@
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Режим интерполяции</value>
   </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
+    <value>Есть несохраненные изменения.
+Хотите закрыть редактор изображений?</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - Редактор изображений</value>
+  </data>
 </root>

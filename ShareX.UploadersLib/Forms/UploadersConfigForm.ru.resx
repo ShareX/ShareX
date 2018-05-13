@@ -1211,4 +1211,49 @@ store.book[0].title</value>
   <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
     <value>Задавать файлам public-read ACL</value>
   </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Короткая ссылка</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Ключ веб API:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Динамические ссылки Firebase</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Путь:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Пользовательский домен:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Имя ведра:</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Использовать ссылки на предпросмотр (только NextCloud)</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="tpPastie.Text" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Тип доступа:</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>Использовать короткую ссылку</value>
+  </data>
 </root>

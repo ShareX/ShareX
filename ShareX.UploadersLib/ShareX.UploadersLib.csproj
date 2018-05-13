@@ -599,6 +599,9 @@
     <EmbeddedResource Include="Forms\PuushLoginForm.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ru.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.de.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -118,21 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Оптическое распознавание символов</value>
+    <value>ShareX - Загрузка текста</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Язык:</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Загрузить</value>
   </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Результат:</value>
-  </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Работает через API OCR.Space</value>
-  </data>
-  <data name="btnStartOCR.Text" xml:space="preserve">
-    <value>Начать распознавание</value>
-  </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Открыть в Google Translate и закрыть окно</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
   </data>
 </root>
