@@ -118,21 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Оптическое распознавание символов</value>
+    <value>ShareX - Вставка изображения</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Язык:</value>
+  <data name="btnCenter.Text" xml:space="preserve">
+    <value>Вставить изображение в центре</value>
   </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Результат:</value>
+  <data name="btnCanvasExpandDown.Text" xml:space="preserve">
+    <value>Вставить изображение снизу (расширить полотно)</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Работает через API OCR.Space</value>
-  </data>
-  <data name="btnStartOCR.Text" xml:space="preserve">
-    <value>Начать распознавание</value>
-  </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Открыть в Google Translate и закрыть окно</value>
+  <data name="btnCanvasExpandRight.Text" xml:space="preserve">
+    <value>Вставить изображение справа (расширить полотно)</value>
   </data>
 </root>

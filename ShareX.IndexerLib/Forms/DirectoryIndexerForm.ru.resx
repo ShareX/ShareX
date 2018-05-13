@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Оптическое распознавание символов</value>
+    <value>ShareX - Индексация папки</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Язык:</value>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Выбрать папку...</value>
   </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Результат:</value>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Индексировать выбранную папку</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Работает через API OCR.Space</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Загрузить и закрыть это окно</value>
   </data>
-  <data name="btnStartOCR.Text" xml:space="preserve">
-    <value>Начать распознавание</value>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Открыть в Google Translate и закрыть окно</value>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Настройки</value>
   </data>
 </root>
