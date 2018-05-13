@@ -455,6 +455,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset ShareX settings?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
         ///Would you like to restart ShareX?.
         /// </summary>
@@ -1501,6 +1519,15 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit with ShareX.
+        /// </summary>
+        public static string IntegrationHelpers_EditWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
             }
         }
         

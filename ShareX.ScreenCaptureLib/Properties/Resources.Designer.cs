@@ -902,6 +902,25 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ShareX - Image editor.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are unsaved changes.
+        ///Would you like to close image editor?.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_Text {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tip: You can pan image by holding mouse middle button and dragging..
         /// </summary>
         internal static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {

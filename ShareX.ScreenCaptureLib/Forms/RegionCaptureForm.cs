@@ -512,8 +512,7 @@ namespace ShareX.ScreenCaptureLib
             if (ShapeManager != null && ShapeManager.IsAnnotated)
             {
                 Pause();
-                // TODO: Translate
-                result = MessageBox.Show(this, "There is unsaved changes.\r\nWould you like to close image editor?", "ShareX - Image editor",
+                result = MessageBox.Show(this, Resources.RegionCaptureForm_ShowExitConfirmation_Text, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
                 Resume();
             }

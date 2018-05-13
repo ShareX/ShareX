@@ -53,7 +53,7 @@ namespace ShareX
         private static readonly string ShellExtEditName = "ShareXImageEditor";
         private static readonly string ShellExtEditImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtEditName}";
         private static readonly string ShellExtEditImageCmd = $@"{ShellExtEditImage}\command";
-        private static readonly string ShellExtEditDesc = "Edit with ShareX"; // TODO: Translate
+        private static readonly string ShellExtEditDesc = Resources.IntegrationHelpers_EditWithShareX;
         private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 

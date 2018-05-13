@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 288</value>
+    <value>582, 288</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 32</value>
+    <value>94, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +154,7 @@
     <value>480, 288</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 32</value>
+    <value>94, 32</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -235,7 +235,7 @@
     <value>25</value>
   </data>
   <data name="txtHex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 174</value>
+    <value>604, 174</value>
   </data>
   <data name="txtHex.MaxLength" type="System.Int32, mscorlib">
     <value>9</value>
@@ -295,7 +295,7 @@
     <value>27</value>
   </data>
   <data name="nudKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 142</value>
+    <value>604, 142</value>
   </data>
   <data name="nudKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -319,7 +319,7 @@
     <value>28</value>
   </data>
   <data name="nudYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 108</value>
+    <value>604, 108</value>
   </data>
   <data name="nudYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -343,7 +343,7 @@
     <value>29</value>
   </data>
   <data name="nudMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 78</value>
+    <value>604, 78</value>
   </data>
   <data name="nudMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -367,7 +367,7 @@
     <value>30</value>
   </data>
   <data name="nudCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 46</value>
+    <value>604, 46</value>
   </data>
   <data name="nudCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -964,7 +964,7 @@
     <value>20</value>
   </data>
   <data name="txtDecimal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 204</value>
+    <value>604, 204</value>
   </data>
   <data name="txtDecimal.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -1000,7 +1000,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCyanPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 50</value>
+    <value>662, 50</value>
   </data>
   <data name="lblCyanPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1033,7 +1033,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMagentaPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 82</value>
+    <value>662, 82</value>
   </data>
   <data name="lblMagentaPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1066,7 +1066,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblYellowPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 112</value>
+    <value>662, 112</value>
   </data>
   <data name="lblYellowPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1099,7 +1099,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblKeyPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 146</value>
+    <value>662, 146</value>
   </data>
   <data name="lblKeyPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1123,7 +1123,7 @@
     <value>15</value>
   </data>
   <data name="nudAlpha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 14</value>
+    <value>604, 14</value>
   </data>
   <data name="nudAlpha.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -1179,33 +1179,6 @@
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="cbTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTransparent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>612, 13</value>
-  </data>
-  <data name="cbTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="cbTransparent.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="cbTransparent.ToolTip" xml:space="preserve">
-    <value>Transparent</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Name" xml:space="preserve">
-    <value>cbTransparent</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="cmsCopy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
@@ -1456,10 +1429,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 288</value>
+    <value>582, 288</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 32</value>
+    <value>94, 32</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -1479,80 +1452,11 @@
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="mbCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="mbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 288</value>
-  </data>
-  <data name="mbCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 32</value>
-  </data>
-  <data name="mbCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="mbCopy.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="&gt;&gt;mbCopy.Name" xml:space="preserve">
-    <value>mbCopy</value>
-  </data>
-  <data name="&gt;&gt;mbCopy.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mbCopy.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mbCopy.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pbColorPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 208</value>
-  </data>
-  <data name="pbColorPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 56</value>
-  </data>
-  <data name="pbColorPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;pbColorPreview.Name" xml:space="preserve">
-    <value>pbColorPreview</value>
-  </data>
-  <data name="&gt;&gt;pbColorPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbColorPreview.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbColorPreview.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="colorPicker.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colorPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="colorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 261</value>
-  </data>
-  <data name="colorPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;colorPicker.Name" xml:space="preserve">
-    <value>colorPicker</value>
-  </data>
-  <data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorPicker, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
   <data name="lblRecentColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblRecentColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblRecentColors.Location" type="System.Drawing.Point, System.Drawing">
     <value>-3, 0</value>
@@ -1620,6 +1524,105 @@
   <data name="&gt;&gt;pColorPicker.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="mbCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mbCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 288</value>
+  </data>
+  <data name="mbCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 32</value>
+  </data>
+  <data name="mbCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;mbCopy.Name" xml:space="preserve">
+    <value>mbCopy</value>
+  </data>
+  <data name="&gt;&gt;mbCopy.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mbCopy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mbCopy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbTransparent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 13</value>
+  </data>
+  <data name="cbTransparent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="cbTransparent.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Name" xml:space="preserve">
+    <value>cbTransparent</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="pbColorPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 208</value>
+  </data>
+  <data name="pbColorPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 56</value>
+  </data>
+  <data name="pbColorPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;pbColorPreview.Name" xml:space="preserve">
+    <value>pbColorPreview</value>
+  </data>
+  <data name="&gt;&gt;pbColorPreview.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbColorPreview.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbColorPreview.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="colorPicker.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colorPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="colorPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 261</value>
+  </data>
+  <data name="colorPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.Name" xml:space="preserve">
+    <value>colorPicker</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ColorPicker, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1627,7 +1630,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>640, 328</value>
+    <value>684, 328</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
