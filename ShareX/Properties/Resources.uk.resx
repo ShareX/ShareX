@@ -516,6 +516,9 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
     <value>Після вивантаження: {0}</value>
   </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Скинути всі швидкі завдання до типових значень?</value>
+  </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Іспанська</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Введіть текст для кодування</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Запуск було вимкнено у Диспетчері завдань</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Запустити ShareX під час запуску Windows</value>

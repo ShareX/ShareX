@@ -129,7 +129,28 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Скасувати</value>
   </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Очистити</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Дублювати</value>
+  </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Оновити</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Зберегти зображення...</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Завантажити зображення</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>З файла...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>З буфера обміну</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Ефекти зображення</value>
   </data>
 </root>

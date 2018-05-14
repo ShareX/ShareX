@@ -150,6 +150,9 @@
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>праворуч внизу</value>
   </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} Y: {1} Ш: {2} В: {3}</value>
+  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Утримувати лівий притиск на виділенні] Переміщення області</value>
   </data>

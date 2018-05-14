@@ -126,4 +126,7 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
   </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Дублікат</value>
+  </data>
 </root>

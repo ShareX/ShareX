@@ -120,8 +120,56 @@
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>При 1 буде найкраща якість і найбільший розмір файла, при 31 - найгірша якість і найменший розмір.</value>
   </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Типово 128k.</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>Типово full.</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>Типово sierra2_4a.</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Відео-кодек:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Шаблон:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Змінний бітрейт:</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Шлях до FFmpeg</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Використовувати користувацький шлях</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Перегляд командного рядка</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Користувацькі команди</value>
+  </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Додаткові аргументи командного рядка</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>кбіт/с</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Змінний бітрейт:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Режим розпливання:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Режим палітри:</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Тест у консолі</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Копіювати</value>

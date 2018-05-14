@@ -123,11 +123,32 @@
   <data name="btnGradientColor1.Text" xml:space="preserve">
     <value>&#x41A;&#x43E;&#x43B;&#x456;&#x440; 1</value>
   </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>&#x412;&#x438; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43D;&#x430;&#x442;&#x438;&#x441;&#x43D;&#x443;&#x442;&#x438; &#x437;&#x43E;&#x432;&#x43D;&#x456; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x438;&#x445;&#x43E;&#x432;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;/&#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x443; &#x446;&#x456;&#x454;&#x457; &#x43F;&#x430;&#x43D;&#x435;&#x43B;&#x456;.</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>&#x413;&#x440;&#x430;&#x434;&#x456;&#x454;&#x43D;&#x442;:</value>
+  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>&#x417;&#x430;&#x43A;&#x440;&#x438;&#x442;&#x438;</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>&#x420;&#x43E;&#x437;&#x43C;&#x456;&#x440;:</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>&#x412;&#x438;&#x431;&#x456;&#x440; &#x43A;&#x43E;&#x43B;&#x44C;&#x43E;&#x440;&#x443;...</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>&#x428;&#x430;&#x445;&#x456;&#x432;&#x43D;&#x438;&#x446;&#x44F;</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>&#x413;&#x43E;&#x440;&#x438;&#x437;&#x43E;&#x43D;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x456; &#x43B;&#x456;&#x43D;&#x456;&#x457;</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>&#x412;&#x435;&#x440;&#x442;&#x438;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x456; &#x43B;&#x456;&#x43D;&#x456;&#x457;</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>&#x424;&#x456;&#x433;&#x443;&#x440;&#x430;:</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>&#x421;:</value>
@@ -135,7 +156,16 @@
   <data name="lblGreen.Text" xml:space="preserve">
     <value>&#x417;:</value>
   </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>&#x427;:</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>&#x427;&#x435;&#x440;&#x432;&#x43E;&#x43D;&#x438;&#x439;, &#x437;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x439;, &#x441;&#x438;&#x43D;&#x456;&#x439;:</value>
+  </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>&#x427;&#x43E;&#x440;&#x43D;&#x438;&#x439;, &#x431;&#x456;&#x43B;&#x438;&#x439;:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX &#x2014; &#x41F;&#x435;&#x440;&#x435;&#x432;&#x456;&#x440;&#x43A;&#x430; &#x43C;&#x43E;&#x43D;&#x456;&#x442;&#x43E;&#x440;&#x443;</value>
   </data>
 </root>

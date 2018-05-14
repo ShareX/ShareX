@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Виберіть вікно або елемент керування для прокручування...</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Почати захоплення з прокручуванням</value>
+  </data>
   <data name="lblScrollDelay.Text" xml:space="preserve">
     <value>Затримка прокручування:</value>
   </data>
@@ -126,11 +132,20 @@
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Захоплення</value>
   </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Вивантаження/збереження залежить від налаштувань дій після захоплення</value>
+  </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Виявляти зсуви та обʼєднати забраження</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
     <value>(Необов'язково) Вибрати область у вікні...</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Затримка початку:</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Почати захоплення прокручування відразу після вибору області захоплення</value>
   </data>
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Вилучити дублікати зображень</value>
@@ -150,8 +165,17 @@
   <data name="lblImageCount.Text" xml:space="preserve">
     <value>Кількість:</value>
   </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Вилучити останні:</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Скинути параметри виведення</value>
+  </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
     <value>Виявляти коригування обʼєднання та обʼєднати</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Вивантажити/зберегти в залежності від налаштувань дій після захоплення</value>
   </data>
   <data name="btnGuessEdges.Text" xml:space="preserve">
     <value>Визначати розміри країв для обрізання</value>
@@ -162,8 +186,20 @@
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
     <value>Остання верт.:</value>
   </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Вертикаль:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Обрізати краї</value>
+  </data>
   <data name="lblTrimBottom.Text" xml:space="preserve">
     <value>Знизу:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Справа:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Вгорі:</value>
   </data>
   <data name="lblTrimLeft.Text" xml:space="preserve">
     <value>Зліва:</value>
@@ -179,5 +215,8 @@
   </data>
   <data name="cbAutoClose.Text" xml:space="preserve">
     <value>Закрити це вікно після обробки</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Захоплення з прокручуванням</value>
   </data>
 </root>

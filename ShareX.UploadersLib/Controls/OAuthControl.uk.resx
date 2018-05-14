@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnClearAuthorization.Text" xml:space="preserve">
+    <value>Очистити авторизацію</value>
+  </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Оновити авторизацію</value>
   </data>
+  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
+    <value>Крок 1: Відкрийте сторінку авторизації...</value>
+  </data>
+  <data name="lblVerificationCode.Text" xml:space="preserve">
+    <value>Код підтвердження:</value>
+  </data>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>Крок 2: Завершіть авторизацію</value>
+  </data>
   <data name="lblLoginStatus.Text" xml:space="preserve">
     <value>Стан</value>
+  </data>
+  <data name="gbUserAccount.Text" xml:space="preserve">
+    <value>Обліковий запис користувача</value>
   </data>
 </root>

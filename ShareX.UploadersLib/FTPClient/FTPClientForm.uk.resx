@@ -154,7 +154,7 @@
     <value>Оновити</value>
   </data>
   <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Створити каталог</value>
+    <value>Створити теку</value>
   </data>
   <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>Копіювати посилання у буфер обміну</value>

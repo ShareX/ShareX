@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblProgress.Text" xml:space="preserve">
+    <value>Перебіг:</value>
+  </data>
+  <data name="cbShowChangelog.Text" xml:space="preserve">
+    <value>Нотатки про оновлення</value>
+  </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Стан:</value>
   </data>
   <data name="lblFilename.Text" xml:space="preserve">
     <value>Назва файла:</value>
+  </data>
+  <data name="btnAction.Text" xml:space="preserve">
+    <value>Завантажити</value>
   </data>
 </root>
