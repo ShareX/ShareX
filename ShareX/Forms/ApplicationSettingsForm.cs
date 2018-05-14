@@ -31,6 +31,10 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+#if WindowsStore
+using Windows.ApplicationModel;
+#endif
+
 namespace ShareX
 {
     public partial class ApplicationSettingsForm : Form
@@ -123,8 +127,10 @@ namespace ShareX
 
 #if STEAM || WindowsStore
             cbCheckPreReleaseUpdates.Visible = false;
+            btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
@@ -136,6 +142,7 @@ namespace ShareX
             gbFirefox.Visible = false;
 #else
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+            cbEditWithShareX.Checked = IntegrationHelpers.CheckEditShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
             btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
@@ -251,7 +258,7 @@ namespace ShareX
 
             try
             {
-                StartupTaskState state = StartupManagerFactory.StartupManager.State;
+                var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
                 cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
 
                 if (state == StartupTaskState.DisabledByUser)
@@ -383,15 +390,15 @@ namespace ShareX
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
+            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
         }
 
-        private void cbCheckPreReleaseUpdates_MouseUp(object sender, MouseEventArgs e)
+        private void btnCheckDevBuild_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Middle)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning, "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
                 TaskHelpers.DownloadAppVeyorBuild();
-                Cursor = Cursors.Default;
             }
         }
 
@@ -405,7 +412,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerFactory.StartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)
@@ -420,6 +427,14 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenu.Checked);
+            }
+        }
+
+        private void cbEditWithShareX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                IntegrationHelpers.CreateEditShellContextMenuButton(cbEditWithShareX.Checked);
             }
         }
 
@@ -602,7 +617,7 @@ namespace ShareX
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();
                 SettingManager.SaveAllSettings();

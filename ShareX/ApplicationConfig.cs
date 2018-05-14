@@ -287,5 +287,11 @@ namespace ShareX
         public bool ActionsToolbarStayTopMost = true;
 
         #endregion Actions toolbar
+
+        #region Color Picker Form
+
+        public List<Color> RecentColors = new List<Color>();
+
+        #endregion Color Picker Form
     }
 }

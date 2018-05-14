@@ -894,28 +894,28 @@ Would you like to download it?</value>
     <value>Swap tool type</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Drawing: Arrow</value>
+    <value>Drawing: Arrow (A)</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Effect: Blur</value>
+    <value>Effect: Blur (B)</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Drawing: Ellipse</value>
+    <value>Drawing: Ellipse (E)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Effect: Highlight</value>
+    <value>Effect: Highlight (H)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Drawing: Line</value>
+    <value>Drawing: Line (L)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Effect: Pixelate</value>
+    <value>Effect: Pixelate (P)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Drawing: Rectangle</value>
+    <value>Drawing: Rectangle (R)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Drawing: Step</value>
+    <value>Drawing: Step (I)</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Region: Ellipse</value>
@@ -957,13 +957,13 @@ Would you like to download it?</value>
     <value>Region: Freehand</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Drawing: Freehand</value>
+    <value>Drawing: Freehand (F)</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Drawing: Image (File)</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Drawing: Speech balloon</value>
+    <value>Drawing: Speech balloon (S)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Toggle actions toolbar</value>
@@ -978,13 +978,13 @@ Would you like to download it?</value>
     <value>Other</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Drawing: Text (Outline)</value>
+    <value>Drawing: Text (Outline) (O)</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Drawing: Text (Background)</value>
+    <value>Drawing: Text (Background) (T)</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Tool: Crop image</value>
+    <value>Tool: Crop image (C)</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Drawing: Image (Screen)</value>
@@ -1159,5 +1159,17 @@ Would you like to download it?</value>
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Browse for a sound file...</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>Scan QR code</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Unlisted</value>
   </data>
 </root>

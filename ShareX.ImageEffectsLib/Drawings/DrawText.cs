@@ -58,7 +58,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        [DefaultValue("getsharex.com"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
@@ -131,7 +131,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
-        [DefaultValue(typeof(Color), "0, 20, 40"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "0, 30, 80"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
         [DefaultValue(false)]

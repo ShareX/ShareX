@@ -41,7 +41,9 @@ namespace ShareX.UploadersLib
 
         public string Parse(string arg)
         {
-            arg = NameParser.Parse(NameParserType.Text, arg);
+            NameParser nameParser = new NameParser(NameParserType.Text);
+            EscapeHelper escapeHelper = new EscapeHelper();
+            arg = escapeHelper.Parse(arg, nameParser.Parse);
 
             arg = arg.BatchReplace(new Dictionary<string, string>()
             {

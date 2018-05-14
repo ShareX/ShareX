@@ -28,7 +28,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ResizeNode : DrawableObject
+    internal class ResizeNode : ImageEditorControl
     {
         public const int DefaultSize = 13;
 

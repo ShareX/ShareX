@@ -52,18 +52,29 @@ namespace ShareX
             {
                 txtQRCode.Text = text;
             }
-            else
-            {
-                if (Clipboard.ContainsText())
-                {
-                    text = Clipboard.GetText();
+        }
 
-                    if (TaskHelpers.CheckQRCodeContent(text))
-                    {
-                        txtQRCode.Text = text;
-                    }
+        public static QRCodeForm EncodeClipboard()
+        {
+            if (Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (TaskHelpers.CheckQRCodeContent(text))
+                {
+                    return new QRCodeForm(text);
                 }
             }
+
+            return new QRCodeForm();
+        }
+
+        public static QRCodeForm DecodeFile(string filePath)
+        {
+            QRCodeForm form = new QRCodeForm();
+            form.tcMain.SelectedTab = form.tpDecode;
+            form.DecodeFromFile(filePath);
+            return form;
         }
 
         private void QRCodeForm_Shown(object sender, EventArgs e)
@@ -108,6 +119,20 @@ namespace ShareX
             }
 
             txtDecodeResult.Text = output;
+        }
+
+        private void DecodeFromFile(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                using (Image img = ImageHelpers.LoadImage(filePath))
+                {
+                    if (img != null)
+                    {
+                        DecodeImage((Bitmap)img);
+                    }
+                }
+            }
         }
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
@@ -212,16 +237,7 @@ namespace ShareX
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
 
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                using (Image img = ImageHelpers.LoadImage(filePath))
-                {
-                    if (img != null)
-                    {
-                        DecodeImage((Bitmap)img);
-                    }
-                }
-            }
+            DecodeFromFile(filePath);
         }
     }
 }

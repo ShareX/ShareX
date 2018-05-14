@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.OtherServices
             arguments.Add("language", Language.ToString());
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
-            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
+            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, args: arguments);
 
             if (ur.IsSuccess)
             {

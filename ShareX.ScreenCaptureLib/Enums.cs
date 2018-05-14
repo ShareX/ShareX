@@ -234,13 +234,6 @@ namespace ShareX.ScreenCaptureLib
         ToolCrop
     }
 
-    public enum RegionAnnotateMode
-    {
-        Capture,
-        Rectangle,
-        Pen
-    }
-
     public enum ScrollingCaptureScrollMethod // Localized
     {
         Automatic,
@@ -273,5 +266,12 @@ namespace ShareX.ScreenCaptureLib
         HighQualityBilinear,
         Bilinear,
         NearestNeighbor
+    }
+
+    public enum ImageInsertMethod
+    {
+        Center,
+        CanvasExpandDown,
+        CanvasExpandRight
     }
 }

@@ -35,6 +35,8 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {
+        public event Action<Image> ImageProcessRequested;
+
         public Image DefaultImage { get; private set; }
 
         public List<ImageEffectPreset> Presets { get; private set; }
@@ -58,17 +60,27 @@ namespace ShareX.ImageEffectsLib
             AddAllEffectsToContextMenu();
         }
 
-        public void ToolMode()
+        public void EnableToolMode(Action<Image> imageProcessRequested)
         {
+            ImageProcessRequested += imageProcessRequested;
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
+            btnUploadImage.Visible = true;
         }
 
         public void EditorMode()
         {
             btnOK.Visible = true;
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
+        }
+
+        protected void OnImageProcessRequested(Image img)
+        {
+            if (ImageProcessRequested != null)
+            {
+                ImageProcessRequested(img);
+            }
         }
 
         private void AddAllEffectsToContextMenu()
@@ -104,6 +116,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(MatrixColor),
                 typeof(Polaroid),
                 typeof(Saturation),
+                typeof(SelectiveColor),
                 typeof(Sepia));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
@@ -193,22 +206,31 @@ namespace ShareX.ImageEffectsLib
 
                 if (preset != null && DefaultImage != null)
                 {
-                    Stopwatch timer = Stopwatch.StartNew();
+                    Cursor = Cursors.WaitCursor;
 
-                    using (Image preview = ApplyEffects())
+                    try
                     {
-                        if (preview != null)
+                        Stopwatch timer = Stopwatch.StartNew();
+
+                        using (Image preview = ApplyEffects())
                         {
-                            pbResult.LoadImage(preview);
-                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
-                                preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                            if (preview != null)
+                            {
+                                pbResult.LoadImage(preview);
+                                Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                    preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                            }
+                            else
+                            {
+                                pbResult.Reset();
+                                Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                                    0, 0, timer.ElapsedMilliseconds);
+                            }
                         }
-                        else
-                        {
-                            pbResult.Reset();
-                            Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
-                                0, 0, timer.ElapsedMilliseconds);
-                        }
+                    }
+                    finally
+                    {
+                        Cursor = Cursors.Default;
                     }
                 }
 
@@ -540,6 +562,19 @@ namespace ShareX.ImageEffectsLib
                     {
                         ImageHelpers.SaveImageFileDialog(img);
                     }
+                }
+            }
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            if (DefaultImage != null)
+            {
+                Image img = ApplyEffects();
+
+                if (img != null)
+                {
+                    OnImageProcessRequested(img);
                 }
             }
         }

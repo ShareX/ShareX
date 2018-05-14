@@ -54,6 +54,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 Path = config.OwnCloudPath,
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
+                PreviewLink = config.OwnCloudUsePreviewLinks,
                 IsCompatibility81 = config.OwnCloud81Compatibility
             };
         }
@@ -69,6 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
+        public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
 
         public OwnCloud(string host, string username, string password)
@@ -155,9 +157,13 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
-                        if (DirectLink)
+                        if (PreviewLink)
                         {
-                            link += IsCompatibility81 ? "/preview" : "&preview";
+                            link += Helpers.IsImageFile(path) ? "/preview" : "/download";
+                        }
+                        else if (DirectLink)
+                        {
+                            link += (IsCompatibility81 ? "/" : "&") + "download";
                         }
                         return link;
                     }

@@ -566,4 +566,16 @@
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Сократить</value>
   </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Редактировать в ShareX</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Вы действительно хотите отменить эту запись?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Хотите сбросить настройки ShareX?</value>
+  </data>
 </root>

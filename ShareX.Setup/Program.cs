@@ -96,6 +96,7 @@ namespace ShareX.Setup
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
+        public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe";
 
         private static void Main(string[] args)
         {
@@ -177,7 +178,7 @@ namespace ShareX.Setup
                 {
                     StartInfo = new ProcessStartInfo
                     {
-                        FileName = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe",
+                        FileName = MakeAppxPath,
                         Arguments = $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o",
                         UseShellExecute = false,
                         RedirectStandardOutput = true
@@ -293,7 +294,7 @@ namespace ShareX.Setup
                 SetupHelpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
-            string[] languages = new string[] { "de", "es", "fr", "hu", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
+            string[] languages = new string[] { "de", "es", "fr", "hu", "id-ID", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
@@ -332,7 +333,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg32bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-4.0-win32-static.zip");
                     ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
@@ -344,7 +345,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg64bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-4.0-win64-static.zip");
                     ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }

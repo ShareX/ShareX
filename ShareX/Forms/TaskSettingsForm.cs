@@ -263,7 +263,6 @@ namespace ShareX
             CodeMenu.Create<CodeMenuEntryPixelInfo>(txtRegionCaptureCustomInfoText);
             txtRegionCaptureCustomInfoText.Text = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText;
             cbRegionCaptureSnapSizes.Items.AddRange(TaskSettings.CaptureSettings.SurfaceOptions.SnapSizes.ToArray());
-            cbRegionCaptureShowTips.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowHotkeys;
             cbRegionCaptureShowInfo.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowInfo;
             cbRegionCaptureShowMagnifier.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
             cbRegionCaptureUseSquareMagnifier.Enabled = nudRegionCaptureMagnifierPixelCount.Enabled = nudRegionCaptureMagnifierPixelSize.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
@@ -290,6 +289,7 @@ namespace ShareX
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            cbScreenRecorderConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
@@ -309,6 +309,7 @@ namespace ShareX
             CodeMenu.Create<CodeMenuEntryFilename>(txtNameFormatPatternActiveWindow, CodeMenuEntryFilename.n);
             cbRegionCaptureUseWindowPattern.Checked = TaskSettings.UploadSettings.RegionCaptureUseWindowPattern;
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
+            cbFileUploadReplaceProblematicCharacters.Checked = TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters;
             UpdateNameFormatPreviews();
             cbNameFormatCustomTimeZone.Checked = cbNameFormatTimeZone.Enabled = TaskSettings.UploadSettings.UseCustomTimeZone;
             cbNameFormatTimeZone.Items.AddRange(TimeZoneInfo.GetSystemTimeZones().ToArray());
@@ -966,11 +967,6 @@ namespace ShareX
             pRegionCaptureSnapSizes.Visible = false;
         }
 
-        private void cbRegionCaptureShowTips_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.SurfaceOptions.ShowHotkeys = cbRegionCaptureShowTips.Checked;
-        }
-
         private void cbRegionCaptureShowInfo_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.SurfaceOptions.ShowInfo = cbRegionCaptureShowInfo.Checked;
@@ -1104,6 +1100,11 @@ namespace ShareX
         private void cbScreenRecorderShowCursor_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
+        }
+
+        private void chkConfirmAbort_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort = cbScreenRecorderConfirmAbort.Checked;
         }
 
         private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
@@ -1518,6 +1519,11 @@ namespace ShareX
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
+        }
+
+        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         #endregion Tools

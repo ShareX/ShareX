@@ -655,7 +655,7 @@ namespace ShareX
                     tsmiSearchImage.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
-                    tsmiCombineImages.Visible = uim.SelectedItems.Where(x => x.IsImageFile).Count() > 1;
+                    tsmiCombineImages.Visible = uim.SelectedItems.Count(x => x.IsImageFile) > 1;
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
@@ -711,6 +711,7 @@ namespace ShareX
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
+            HelpersOptions.RecentColors = Program.Settings.RecentColors;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
 #if RELEASE
@@ -1462,7 +1463,7 @@ namespace ShareX
 
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenColorPicker();
+            TaskHelpers.ShowScreenColorPickerDialog();
         }
 
         private void tsmiScreenColorPicker_Click(object sender, EventArgs e)

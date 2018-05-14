@@ -72,7 +72,7 @@ namespace ShareX
 
         public static string TitleLong => $"{Title} ({Build})";
 
-        public static bool Beta { get; } = false;
+        public static bool Beta { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
         public static bool PortableApps { get; private set; }
@@ -226,8 +226,10 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
+#if !DEBUG // Allow Visual Studio to break on exceptions in Debug builds.
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+#endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
@@ -288,6 +290,7 @@ namespace ShareX
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
+            Helpers.TryFixHandCursor();
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
@@ -500,6 +503,7 @@ namespace ShareX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                Helpers.TryFixHandCursor();
                 Application.Run(new DNSChangerForm());
                 return true;
             }

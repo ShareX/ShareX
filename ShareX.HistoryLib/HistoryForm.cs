@@ -243,7 +243,7 @@ namespace ShareX.HistoryLib
 
                 IEnumerable<string> types = from hi in historyItems
                                             group hi by hi.Type
-                            into t
+                                            into t
                                             let count = t.Count()
                                             select string.Format(" - {0}: {1:N0}", t.Key, count);
 

@@ -23,6 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+#if WindowsStore
+using Windows.ApplicationModel;
+#endif
+
 namespace ShareX
 {
     public interface IStartupManager

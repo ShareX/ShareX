@@ -455,6 +455,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset ShareX settings?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
         ///Would you like to restart ShareX?.
         /// </summary>
@@ -1408,6 +1426,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap id {
+            get {
+                object obj = ResourceManager.GetObject("id", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
@@ -1491,6 +1519,15 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit with ShareX.
+        /// </summary>
+        public static string IntegrationHelpers_EditWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
             }
         }
         
@@ -1986,38 +2023,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cursor position (X, Y) = {0}, {1}.
+        ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
         /// </summary>
-        public static string ScreenColorPicker_btnCopyAll_Click_Cursor_position {
+        public static string ScreenRecord_ConfirmCancel {
             get {
-                return ResourceManager.GetString("ScreenColorPicker_btnCopyAll_Click_Cursor_position", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        public static string ScreenColorPicker_ScreenColorPicker_Close {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_ScreenColorPicker_Close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start screen color picker.
-        /// </summary>
-        public static string ScreenColorPicker_UpdateControls_Start_screen_color_picker {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Start_screen_color_picker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop screen color picker.
-        /// </summary>
-        public static string ScreenColorPicker_UpdateControls_Stop_screen_color_picker {
-            get {
-                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Stop_screen_color_picker", resourceCulture);
+                return ResourceManager.GetString("ScreenRecord_ConfirmCancel", resourceCulture);
             }
         }
         
@@ -2414,6 +2424,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap Twitter {
             get {
                 object obj = ResourceManager.GetObject("Twitter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ua {
+            get {
+                object obj = ResourceManager.GetObject("ua", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

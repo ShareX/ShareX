@@ -148,7 +148,7 @@
     <value>Редактировать меню быстрых задач</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Показывать кнопку "Загрузить с помощью ShareX" в контекстном меню</value>
+    <value>Показывать пункт "Загрузить с помощью ShareX" в контекстном меню проводника Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показывать ShareX в меню "Отправить"</value>
@@ -244,7 +244,7 @@
     <value>Вторичные для файлов</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Форматы содержимого буфера</value>
+    <value>Форматы содержимого буфера - они появятся в контекстном меню в главном окне</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Результаты</value>
@@ -350,5 +350,11 @@
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Дополнение для Firefox</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Установить dev сборку...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
   </data>
 </root>

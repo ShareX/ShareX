@@ -135,10 +135,10 @@ namespace ShareX
                     OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
-                    OpenAutoCapture();
+                    OpenAutoCapture(safeTaskSettings);
                     break;
                 case HotkeyType.StartAutoCapture:
-                    StartAutoCapture();
+                    StartAutoCapture(safeTaskSettings);
                     break;
                 // Screen record
                 case HotkeyType.ScreenRecorder:
@@ -170,7 +170,7 @@ namespace ShareX
                     break;
                 // Tools
                 case HotkeyType.ColorPicker:
-                    OpenColorPicker();
+                    ShowScreenColorPickerDialog(safeTaskSettings);
                     break;
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(safeTaskSettings);
@@ -653,8 +653,11 @@ namespace ShareX
             scrollingCaptureForm.Show();
         }
 
-        public static void OpenAutoCapture()
+        public static void OpenAutoCapture(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            AutoCaptureForm.Instance.TaskSettings = taskSettings;
             AutoCaptureForm.Instance.ForceActivate();
         }
 
@@ -674,11 +677,14 @@ namespace ShareX
             webpageCaptureForm.Show();
         }
 
-        public static void StartAutoCapture()
+        public static void StartAutoCapture(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             if (!AutoCaptureForm.IsRunning)
             {
                 AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.TaskSettings = taskSettings;
                 form.Show();
                 form.Execute();
             }
@@ -721,9 +727,25 @@ namespace ShareX
             Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
         }
 
-        public static void OpenColorPicker()
+        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null, bool checkClipboard = true)
         {
-            new ScreenColorPicker(true).Show();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            Color color = Color.Red;
+
+            if (checkClipboard && Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
+                {
+                    color = clipboardColor;
+                }
+            }
+
+            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
+            colorPickerForm.EnableScreenColorPickerButton(() => RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions));
+            colorPickerForm.Show();
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -958,7 +980,7 @@ namespace ShareX
                     using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
                         taskSettings.ImageSettings.SelectedImageEffectPreset))
                     {
-                        imageEffectsForm.ToolMode();
+                        imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings));
                         imageEffectsForm.ShowDialog();
                         //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                     }
@@ -1004,7 +1026,7 @@ namespace ShareX
 
         public static void OpenQRCode()
         {
-            new QRCodeForm().Show();
+            QRCodeForm.EncodeClipboard().Show();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1330,6 +1352,8 @@ namespace ShareX
                         return Resources.clipboard_list;
                     case AfterCaptureTasks.ShowInExplorer:
                         return Resources.folder_stand;
+                    case AfterCaptureTasks.ScanQRCode:
+                        return Resources.barcode_2d;
                     case AfterCaptureTasks.DoOCR:
                         return Resources.edit_drop_cap;
                     case AfterCaptureTasks.ShowBeforeUploadWindow:

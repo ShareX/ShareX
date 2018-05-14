@@ -2,4 +2,19 @@ files:
   - source: '*.resx'
     ignore:
       - '*.*.resx'
-    translation: /%original_path%/%file_name%.%two_letters_code%.%file_extension%
+    translation: /%original_path%/%file_name%.%locale%.%file_extension%
+    languages_mapping:
+      locale:
+        ru: ru
+        pt-BR: pt-BR
+        de: de
+        es-ES: es
+        fr: fr
+        hu: hu
+        it: it-IT
+        ko: ko-KR
+        nl: nl-NL
+        tr: tr
+        vi: vi-VN
+        zh-CN: zh-CN
+        zh-TW: zh-TW

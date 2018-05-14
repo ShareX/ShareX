@@ -60,7 +60,8 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                Bitmap bmp = new Bitmap(16, 16);
+                int size = Height - ExtraImagePadding * 2;
+                Bitmap bmp = new Bitmap(size, size);
 
                 using (Graphics g = Graphics.FromImage(bmp))
                 using (Brush brush = new SolidBrush(Color.FromArgb(230, 0, 0)))
@@ -69,7 +70,7 @@ namespace ShareX.HelpersLib
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
                     g.PixelOffsetMode = PixelOffsetMode.Half;
-                    g.DrawRoundedRectangle(brush, null, new Rectangle(0, 0, 16, 16), 3);
+                    g.DrawRoundedRectangle(brush, null, new Rectangle(0, 0, bmp.Width, bmp.Height), 3);
                     stringFormat.Alignment = StringAlignment.Center;
                     stringFormat.LineAlignment = StringAlignment.Center;
                     string text;
@@ -81,7 +82,7 @@ namespace ShareX.HelpersLib
                     {
                         text = Counter.ToString();
                     }
-                    g.DrawString(text, font, Brushes.White, new Rectangle(0, 0, 16, 16), stringFormat);
+                    g.DrawString(text, font, Brushes.White, new Rectangle(0, 0, bmp.Width, bmp.Height), stringFormat);
                 }
 
                 if (ExtraImage != null)

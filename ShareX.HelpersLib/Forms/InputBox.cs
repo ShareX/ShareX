@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -48,6 +49,8 @@ namespace ShareX.HelpersLib
         private void InputBox_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+            this.MinimumSize = new Size(384, this.Size.Height);
+            this.MaximumSize = new Size(1000, this.Size.Height);
 
             txtInputText.SelectionLength = txtInputText.Text.Length;
         }

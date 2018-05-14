@@ -148,7 +148,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        public string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
             string query = URLHelpers.CreateQuery(args);
@@ -255,6 +255,78 @@ namespace ShareX.UploadersLib
                     requestStream.Write(bytesDataDatafile, 0, bytesDataDatafile.Length);
                     if (!TransferData(data, requestStream)) return null;
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
+                }
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    result.Response = ResponseToString(response, responseType);
+                }
+
+                result.IsSuccess = true;
+            }
+            catch (Exception e)
+            {
+                if (!StopUploadRequested)
+                {
+                    string response = AddWebError(e, url);
+
+                    if (ReturnResponseOnError && e is WebException)
+                    {
+                        result.Response = response;
+                    }
+                }
+            }
+            finally
+            {
+                currentRequest = null;
+                IsUploading = false;
+
+                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
+                {
+                    WriteVerboseLog(url, args, headers, result.Response);
+                }
+            }
+
+            return result;
+        }
+
+        protected UploadResult SendRequestBytes(string url, Stream data, string fileName, long contentPosition = 0, long contentLength = -1, Dictionary<string, string> args = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.PUT)
+        {
+            UploadResult result = new UploadResult();
+
+            IsUploading = true;
+            StopUploadRequested = false;
+
+            try
+            {
+                url = URLHelpers.CreateQuery(url, args);
+
+                if (contentLength == -1)
+                {
+                    contentLength = data.Length;
+                }
+                contentLength = Math.Min(contentLength, data.Length - contentPosition);
+
+                string contentType = Helpers.GetMimeType(fileName);
+
+                if (headers == null)
+                {
+                    headers = new NameValueCollection();
+                }
+                long startByte = contentPosition;
+                long endByte = startByte + contentLength - 1;
+                long dataLength = data.Length;
+                headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{dataLength}");
+
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+
+                using (Stream requestStream = request.GetRequestStream())
+                {
+                    if (!TransferData(data, requestStream, contentPosition, contentLength))
+                    {
+                        return null;
+                    }
                 }
 
                 using (WebResponse response = request.GetResponse())
@@ -397,21 +469,34 @@ namespace ShareX.UploadersLib
             return request;
         }
 
-        protected bool TransferData(Stream dataStream, Stream requestStream)
+        protected bool TransferData(Stream dataStream, Stream requestStream, long dataPosition = 0, long dataLength = -1)
         {
+            if (dataPosition >= dataStream.Length)
+            {
+                return true;
+            }
             if (dataStream.CanSeek)
             {
-                dataStream.Position = 0;
+                dataStream.Position = dataPosition;
             }
 
-            ProgressManager progress = new ProgressManager(dataStream.Length);
-            int length = (int)Math.Min(BufferSize, dataStream.Length);
+            if (dataLength == -1)
+            {
+                dataLength = dataStream.Length;
+            }
+            dataLength = Math.Min(dataLength, dataStream.Length - dataPosition);
+
+            ProgressManager progress = new ProgressManager(dataStream.Length, dataPosition);
+            int length = (int)Math.Min(BufferSize, dataLength);
             byte[] buffer = new byte[length];
             int bytesRead;
 
+            long bytesRemaining = dataLength;
             while (!StopUploadRequested && (bytesRead = dataStream.Read(buffer, 0, length)) > 0)
             {
                 requestStream.Write(buffer, 0, bytesRead);
+                bytesRemaining -= bytesRead;
+                length = (int)Math.Min(buffer.Length, bytesRemaining);
 
                 if (AllowReportProgress && progress.UpdateProgress(bytesRead))
                 {

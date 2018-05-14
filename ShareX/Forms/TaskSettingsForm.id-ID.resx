@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan "Setelah mengambil"</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan "Setelah mengunggah"</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan "Tujuan"</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Deskripsi:</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Ganti akun FTP bawaan</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Ganti pengunggah khusus bawaan</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>Setelah mengambil...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>Setelah mengunggah...</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Pengunggah gambar</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Pengunggah teks</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Pengunggah file</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Penyingkat URL</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Layanan berbagi URL</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Tujuan...</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Tugas...</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Tugas</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Setelah tugas selesai:</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Putar suara setelah tugas selesai</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Putar suara setelah pengambilan dibuat</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan umum</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Kedalaman bit PNG:</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Bila ukuran gambar lebih besar dari yang ditentukan maka gunakan JPEG sebagai format gambar:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Format gambar:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Bila file ada:</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>Kualitas GIF:</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>Kualitas JPEG:</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan gambar</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>Anda bisa aktif/nonaktifkan efek Gambar dari "Tugas setelah mengambil -&gt; Tambah efek gambar"</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Tampilkan jendela efek gambar setelah mengambil</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>Hanya terapkan efek untuk pengambilan area</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Konfigurasi efek gambar...</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Efek</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Hanya buat thumbnail bila ukuran gambar lebih besar dari ukuran thumbnail</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>Nama thumbnail:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>Tinggi:</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Lebar:</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Thumbnail</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Pilih area...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Area pra-konfigurasi:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Lebar</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Tinggi</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Tampilkan penunjuk di screenshot</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Offset bayangan:</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Jepret jendela dengan transparansi</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>Saat melakukan pengambilan jendela bila jendela berpotongan dengan taskbar maka sembunyikan taskbar</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Jepret jendela dengan bayangan (transparansi diperlukan)</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Ambil area klien saat melakukan pengambilan jendela jendela yang aktif</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan ambil</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Tampilkan FPS di pojok kiri atas</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Lebar:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Tinggi:</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Tampilkan info ukuran dan posisi</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Tinggi:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Lebar:</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Ambil area</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>detik</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Profil...</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>FPS GIF:</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Perekam layar</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Ambil</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan unggah</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>Opsi perekaman layar...</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Tampilkan penunjuk dalam perekaman</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Mulai merekam setelah:</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>FPS perekaman layar:</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Gunakan zona waktu khusus:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Pratinjau:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Pratinjau:</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Pengunggah</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Ekstensi</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Buang</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Perbarui</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Pengunggah:</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Contoh: png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Filter ekstensi:</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Filter pengunggah:</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Duplikat</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Jalur</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Argu</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Ekstensi</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Buang</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Ganti tindakan</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Jalur folder</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Sertakan subdirektori</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Buang</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Tambah...</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Pantau folder</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Format pemilih warna layar:</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan alat</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Alat</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Ganti pengaturan lanjutan</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Lanjutan</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Pengaturan tugas</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>Jalankan CLI setelah:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Pola nama untuk pengambilan jendela:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Durasi tetap:</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Mode area ukuran tetap:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Ukuran piksel kaca pembesar:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Jumlah piksel kaca pembesar:</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Tampilkan kaca pembesar di dekat penunjuk</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Gunakan kaca pembesar bentuk persegi, bukan lingkaran</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Tunda screenshot:</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Tampilkan garis bidik layar</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Gunakan teks info khusus di dekat kursor:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Tindakan klik kanan tetikus:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Tindakan klik tengah tetikus:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Tindakan klik 5x tetikus:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Tindakan klik 4x tetikus:</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Deteksi area jendela dan izinkan</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Juga deteksi area kendali di dalam jendela</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Penamaan file</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Pantau folder dan bila file baru dibuat lalu unggah</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>Minta konfirmasi saat menggagalkan</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Gunakan mode multi area yang juga mengizinkan mengubah ukuran dan memindahkan area</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Redupkan latar belakang agar pilihan bisa dibedakan dengan mudah (mempengaruhi kecepatan mulai)</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>Ukuran area akan berubah saat menekan "Alt":</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Gunakan pola nama jendela untuk pengambilan area (ShareX akan coba mendeteksi jendela di belakang pemilihan)</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Pola nama untuk pengambilan atau unggahan papan klip:</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Gunakan pola nama untuk unggahan file bukan nama file sebenarnya</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Atur ulang otomatis nomori</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Bila papan klip berisi URL, bagikan dengan layanan berbagi URL</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Bila papan klip berisi URL file, unduh filenya lalu unggah</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Bila papan klip berisi jalur folder, indeks foldernya lalu unggah indeksnya</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Unggahan papan klip</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Bila papan klip berisi URL, maka gunakan penyingkat URL</value>
+  </data>
+</root>

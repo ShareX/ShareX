@@ -651,4 +651,43 @@
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Verberg Patreon knop voorgoed</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Open ShareX Patreon</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Tekst vastleggen (OCR)...</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Laat cursor zien</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Upload tekst...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Foto-editor...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Over...</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google afbeelding zoeken...</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Afbeeldingen combineren...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Tekst vastleggen (OCR)...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Upload tekst...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Foto-editor...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Laat cursor zien</value>
+  </data>
 </root>

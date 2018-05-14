@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -718,6 +719,11 @@ namespace ShareX
                 {
                     Helpers.OpenFolderWithFile(Info.FilePath);
                 }
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
+                {
+                    QRCodeForm.DecodeFile(Info.FilePath).ShowDialog();
+                }
             }
         }
 
@@ -847,6 +853,19 @@ namespace ShareX
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
                 {
                     uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
+                }
+
+                if (Info.TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters)
+                {
+                    // http://www.ietf.org/rfc/rfc3986.txt
+                    // Section 2.3:
+                    //   Characters that are allowed in a URI but do not have a reserved
+                    //   purpose are called unreserved.  These include uppercase and lowercase
+                    //   letters, decimal digits, hyphen, period, underscore, and tilde.
+                    //      unreserved = ALPHA / DIGIT / "-" / "." / "_" / "~"
+                    //
+                    // \w takes care of alpha, digit and _ for us
+                    fileName = Regex.Replace(fileName, @"[^\w-.~]", "_");
                 }
 
                 Info.UploadDuration = Stopwatch.StartNew();

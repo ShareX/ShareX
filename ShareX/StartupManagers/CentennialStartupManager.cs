@@ -26,29 +26,28 @@
 #if WindowsStore
 
 using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 
 namespace ShareX
 {
     public class CentennialStartupManager : IStartupManager
     {
-        public int StartupTargetIndex { get; set; }
+        private const int StartupTargetIndex = 0;
+        private readonly StartupTask packageTask = StartupTask.GetForCurrentPackageAsync().GetAwaiter().GetResult()[StartupTargetIndex];
 
         public StartupTaskState State
         {
-            get
-            {
-                return (StartupTaskState)StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].State;
-            }
+            get => packageTask.State;
             set
             {
                 if (value == StartupTaskState.Enabled)
                 {
-                    StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].RequestEnableAsync().AsTask().GetAwaiter().GetResult();
+                    packageTask.RequestEnableAsync().GetAwaiter().GetResult();
                 }
                 else if (value == StartupTaskState.Disabled)
                 {
-                    StartupTask.GetForCurrentPackageAsync().AsTask().GetAwaiter().GetResult()[StartupTargetIndex].Disable();
+                    packageTask.Disable();
                 }
                 else
                 {

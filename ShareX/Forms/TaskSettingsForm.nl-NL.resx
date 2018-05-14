@@ -448,4 +448,13 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Bewerk...</value>
   </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Voorbeeld: png, jpg, jpeg</value>
+  </data>
 </root>

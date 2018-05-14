@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -51,8 +52,19 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(typeof(Color), "DarkGray")]
+        public Color BorderColor { get; set; } = Color.DarkGray;
+
+        [DefaultValue(3)]
+        public int Offset { get; set; } = 3;
+
+        [DefaultValue(false)]
+        public bool HoverEffect { get; set; } = false;
+
         [DefaultValue(false)]
         public bool ManualButtonClick { get; set; }
+
+        private bool isMouseHover;
 
         protected void OnColorChanged(Color color)
         {
@@ -74,19 +86,35 @@ namespace ShareX.HelpersLib
 
         public void ShowColorDialog()
         {
-            if (ColorPickerForm.PickColor(Color, out Color newColor))
+            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm()))
             {
                 Color = newColor;
             }
         }
 
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            isMouseHover = true;
+
+            base.OnMouseEnter(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            isMouseHover = false;
+
+            base.OnMouseLeave(e);
+        }
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            base.OnPaint(pevent);
+            if (Offset > 0)
+            {
+                base.OnPaint(pevent);
+            }
 
-            int offset = 3;
-            int boxSize = ClientRectangle.Height - offset * 2;
-            Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - offset - boxSize, offset, boxSize, boxSize);
+            int boxSize = ClientRectangle.Height - Offset * 2;
+            Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - Offset - boxSize, Offset, boxSize, boxSize);
 
             Graphics g = pevent.Graphics;
 
@@ -106,7 +134,18 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            g.DrawRectangleProper(Pens.DarkGray, boxRectangle);
+            if (HoverEffect && isMouseHover)
+            {
+                using (Brush hoverBrush = new SolidBrush(Color.FromArgb(100, 255, 255, 255)))
+                {
+                    g.FillRectangle(hoverBrush, boxRectangle);
+                }
+            }
+
+            using (Pen borderPen = new Pen(BorderColor))
+            {
+                g.DrawRectangleProper(borderPen, boxRectangle);
+            }
         }
     }
 }

@@ -540,4 +540,10 @@
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Изменить...</value>
   </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>Запрашивать подтверждение на отмену</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Заменять проблемные для URL символы подчеркиваниями при загрузке</value>
+  </data>
 </root>

@@ -171,4 +171,43 @@
   <data name="cbTransparent.ToolTip" xml:space="preserve">
     <value>Прозрачный</value>
   </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Позиция курсора:</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Скопировать все</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Скопировать RGB</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Скопировать шестнадцатеричное значение</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Скопировать CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Скопировать HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Скопировать десятичное значение</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Скопировать позицию</value>
+  </data>
+  <data name="btnPickColor.Text" xml:space="preserve">
+    <value>Взять цвет с экрана...</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Скопировать</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Шестнадцатеричный:</value>
+  </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>Последние цвета:</value>
+  </data>
 </root>

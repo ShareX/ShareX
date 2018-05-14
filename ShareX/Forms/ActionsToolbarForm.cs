@@ -101,19 +101,6 @@ namespace ShareX
                 ShowItemToolTips = false
             };
 
-            // https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
-            using (Graphics g = CreateGraphics())
-            {
-                double scale = Math.Max(g.DpiX, g.DpiY) / 96.0;
-                double newScale = ((int)Math.Floor(scale * 100) / 25 * 25) / 100.0;
-                if (newScale > 1)
-                {
-                    int newWidth = (int)(tsMain.ImageScalingSize.Width * newScale);
-                    int newHeight = (int)(tsMain.ImageScalingSize.Height * newScale);
-                    tsMain.ImageScalingSize = new Size(newWidth, newHeight);
-                }
-            }
-
             tsMain.MouseLeave += tsMain_MouseLeave;
 
             Controls.Add(tsMain);

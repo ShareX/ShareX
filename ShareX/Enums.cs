@@ -51,6 +51,8 @@ namespace ShareX
         German,
         [Description("Magyar (Hungarian)")]
         Hungarian,
+        [Description("Bahasa Indonesia (Indonesian)")]
+        Indonesian,
         [Description("Italiano (Italian)")]
         Italian,
         [Description("한국어 (Korean)")]
@@ -67,6 +69,8 @@ namespace ShareX
         TraditionalChinese,
         [Description("Türkçe (Turkish)")]
         Turkish,
+        [Description("Українська (Ukrainian)")]
+        Ukrainian,
         [Description("Tiếng Việt (Vietnamese)")]
         Vietnamese
     }
@@ -110,10 +114,11 @@ namespace ShareX
         CopyFileToClipboard = 1 << 10,
         CopyFilePathToClipboard = 1 << 11,
         ShowInExplorer = 1 << 12,
-        DoOCR = 1 << 13,
-        ShowBeforeUploadWindow = 1 << 14,
-        UploadImageToHost = 1 << 15,
-        DeleteFile = 1 << 16
+        ScanQRCode = 1 << 13,
+        DoOCR = 1 << 14,
+        ShowBeforeUploadWindow = 1 << 15,
+        UploadImageToHost = 1 << 16,
+        DeleteFile = 1 << 17
     }
 
     [Flags]
@@ -265,10 +270,12 @@ namespace ShareX
         Default, Light, Transparent
     }
 
+#if !WindowsStore
     public enum StartupTaskState
     {
         Disabled = 0,
         DisabledByUser = 1,
         Enabled = 2
     }
+#endif
 }

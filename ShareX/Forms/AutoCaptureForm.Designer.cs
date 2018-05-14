@@ -77,6 +77,7 @@
             // 
             // tsslStatus
             // 
+            this.tsslStatus.BackColor = System.Drawing.Color.Transparent;
             this.tsslStatus.Name = "tsslStatus";
             resources.ApplyResources(this.tsslStatus, "tsslStatus");
             // 

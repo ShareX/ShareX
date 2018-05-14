@@ -141,9 +141,6 @@
             this.txtBitlyDomain = new System.Windows.Forms.TextBox();
             this.lblBitlyDomain = new System.Windows.Forms.Label();
             this.oauth2Bitly = new ShareX.UploadersLib.OAuthControl();
-            this.tpGoogleURLShortener = new System.Windows.Forms.TabPage();
-            this.oauth2GoogleURLShortener = new ShareX.UploadersLib.OAuthControl();
-            this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpYourls = new System.Windows.Forms.TabPage();
             this.txtYourlsPassword = new System.Windows.Forms.TextBox();
             this.txtYourlsUsername = new System.Windows.Forms.TextBox();
@@ -170,6 +167,12 @@
             this.lblPolrAPIKey = new System.Windows.Forms.Label();
             this.txtPolrAPIHostname = new System.Windows.Forms.TextBox();
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
+            this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
+            this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
+            this.lblFirebaseDomain = new System.Windows.Forms.Label();
+            this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
+            this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
+            this.lblFirebaseWebAPIKey = new System.Windows.Forms.Label();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
@@ -299,6 +302,16 @@
             this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.lblGoogleCloudStoragePathPreview = new System.Windows.Forms.Label();
+            this.lblGoogleCloudStoragePathPreviewLabel = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageObjectPrefix = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageObjectPrefix = new System.Windows.Forms.Label();
+            this.lblGoogleCloudStorageDomain = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
+            this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
+            this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
+            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
             this.lblAzureStorageEnvironment = new System.Windows.Forms.Label();
@@ -328,6 +341,7 @@
             this.txtMegaPassword = new System.Windows.Forms.TextBox();
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
+            this.cbOwnCloudUsePreviewLinks = new System.Windows.Forms.CheckBox();
             this.lblOwnCloudHostExample = new System.Windows.Forms.Label();
             this.cbOwnCloud81Compatibility = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudDirectLink = new System.Windows.Forms.CheckBox();
@@ -474,14 +488,23 @@
             this.lblPlikUsername = new System.Windows.Forms.Label();
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
+            this.tpYouTube = new System.Windows.Forms.TabPage();
+            this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
+            this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
+            this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
+            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
+            this.lbSharedFolderAccounts = new System.Windows.Forms.ListBox();
+            this.pgSharedFolderAccount = new System.Windows.Forms.PropertyGrid();
+            this.btnSharedFolderDuplicate = new System.Windows.Forms.Button();
+            this.btnSharedFolderRemove = new System.Windows.Forms.Button();
+            this.btnSharedFolderAdd = new System.Windows.Forms.Button();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
             this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
             this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
-            this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
             this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
@@ -530,7 +553,6 @@
             this.cbGistUseRawURL = new System.Windows.Forms.CheckBox();
             this.cbGistPublishPublic = new System.Windows.Forms.CheckBox();
             this.oAuth2Gist = new ShareX.UploadersLib.OAuthControl();
-            this.atcGistAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpUpaste = new System.Windows.Forms.TabPage();
             this.cbUpasteIsPublic = new System.Windows.Forms.CheckBox();
             this.lblUpasteUserKey = new System.Windows.Forms.Label();
@@ -645,11 +667,11 @@
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
             this.tpBitly.SuspendLayout();
-            this.tpGoogleURLShortener.SuspendLayout();
             this.tpYourls.SuspendLayout();
             this.tpAdFly.SuspendLayout();
             this.tpCoinURL.SuspendLayout();
             this.tpPolr.SuspendLayout();
+            this.tpFirebaseDynamicLinks.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpFTP.SuspendLayout();
@@ -668,6 +690,7 @@
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.gbAmazonS3Advanced.SuspendLayout();
+            this.tpGoogleCloudStorage.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
             this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
@@ -693,6 +716,7 @@
             this.gbPlikSettings.SuspendLayout();
             this.gbPlikLoginCredentials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).BeginInit();
+            this.tpYouTube.SuspendLayout();
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
@@ -1528,11 +1552,11 @@
             // tcURLShorteners
             // 
             this.tcURLShorteners.Controls.Add(this.tpBitly);
-            this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
             this.tcURLShorteners.Controls.Add(this.tpCoinURL);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
+            this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
@@ -1565,30 +1589,6 @@
             this.oauth2Bitly.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
             this.oauth2Bitly.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
             this.oauth2Bitly.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Bitly_ClearButtonClicked);
-            // 
-            // tpGoogleURLShortener
-            // 
-            this.tpGoogleURLShortener.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGoogleURLShortener.Controls.Add(this.oauth2GoogleURLShortener);
-            this.tpGoogleURLShortener.Controls.Add(this.atcGoogleURLShortenerAccountType);
-            resources.ApplyResources(this.tpGoogleURLShortener, "tpGoogleURLShortener");
-            this.tpGoogleURLShortener.Name = "tpGoogleURLShortener";
-            // 
-            // oauth2GoogleURLShortener
-            // 
-            resources.ApplyResources(this.oauth2GoogleURLShortener, "oauth2GoogleURLShortener");
-            this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
-            this.oauth2GoogleURLShortener.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
-            this.oauth2GoogleURLShortener.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
-            this.oauth2GoogleURLShortener.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleURLShortener_ClearButtonClicked);
-            this.oauth2GoogleURLShortener.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleURLShortener_RefreshButtonClicked);
-            // 
-            // atcGoogleURLShortenerAccountType
-            // 
-            resources.ApplyResources(this.atcGoogleURLShortenerAccountType, "atcGoogleURLShortenerAccountType");
-            this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
-            this.atcGoogleURLShortenerAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
             // 
             // tpYourls
             // 
@@ -1766,6 +1766,47 @@
             resources.ApplyResources(this.lblPolrAPIHostname, "lblPolrAPIHostname");
             this.lblPolrAPIHostname.Name = "lblPolrAPIHostname";
             // 
+            // tpFirebaseDynamicLinks
+            // 
+            this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseWebAPIKey);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseWebAPIKey);
+            resources.ApplyResources(this.tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
+            this.tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
+            this.tpFirebaseDynamicLinks.UseVisualStyleBackColor = true;
+            // 
+            // cbFirebaseIsShort
+            // 
+            resources.ApplyResources(this.cbFirebaseIsShort, "cbFirebaseIsShort");
+            this.cbFirebaseIsShort.Name = "cbFirebaseIsShort";
+            this.cbFirebaseIsShort.UseVisualStyleBackColor = true;
+            this.cbFirebaseIsShort.CheckedChanged += new System.EventHandler(this.cbFirebaseIsShort_CheckedChanged);
+            // 
+            // lblFirebaseDomain
+            // 
+            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
+            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
+            // 
+            // txtFirebaseDomain
+            // 
+            resources.ApplyResources(this.txtFirebaseDomain, "txtFirebaseDomain");
+            this.txtFirebaseDomain.Name = "txtFirebaseDomain";
+            this.txtFirebaseDomain.TextChanged += new System.EventHandler(this.txtFirebaseDomain_TextChanged);
+            // 
+            // txtFirebaseWebAPIKey
+            // 
+            resources.ApplyResources(this.txtFirebaseWebAPIKey, "txtFirebaseWebAPIKey");
+            this.txtFirebaseWebAPIKey.Name = "txtFirebaseWebAPIKey";
+            this.txtFirebaseWebAPIKey.UseSystemPasswordChar = true;
+            this.txtFirebaseWebAPIKey.TextChanged += new System.EventHandler(this.txtFirebaseWebAPIKey_TextChanged);
+            // 
+            // lblFirebaseWebAPIKey
+            // 
+            resources.ApplyResources(this.lblFirebaseWebAPIKey, "lblFirebaseWebAPIKey");
+            this.lblFirebaseWebAPIKey.Name = "lblFirebaseWebAPIKey";
+            // 
             // tpFileUploaders
             // 
             this.tpFileUploaders.BackColor = System.Drawing.SystemColors.Window;
@@ -1782,6 +1823,7 @@
             this.tcFileUploaders.Controls.Add(this.tpPuush);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
+            this.tcFileUploaders.Controls.Add(this.tpGoogleCloudStorage);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
             this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
@@ -1799,6 +1841,7 @@
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpPlik);
+            this.tcFileUploaders.Controls.Add(this.tpYouTube);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -2747,6 +2790,73 @@
             this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
             // 
+            // tpGoogleCloudStorage
+            // 
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageObjectPrefix);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageObjectPrefix);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageDomain);
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageDomain);
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageBucket);
+            this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageBucket);
+            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
+            resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
+            this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
+            this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // lblGoogleCloudStoragePathPreview
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStoragePathPreview, "lblGoogleCloudStoragePathPreview");
+            this.lblGoogleCloudStoragePathPreview.Name = "lblGoogleCloudStoragePathPreview";
+            // 
+            // lblGoogleCloudStoragePathPreviewLabel
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStoragePathPreviewLabel, "lblGoogleCloudStoragePathPreviewLabel");
+            this.lblGoogleCloudStoragePathPreviewLabel.Name = "lblGoogleCloudStoragePathPreviewLabel";
+            // 
+            // txtGoogleCloudStorageObjectPrefix
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageObjectPrefix, "txtGoogleCloudStorageObjectPrefix");
+            this.txtGoogleCloudStorageObjectPrefix.Name = "txtGoogleCloudStorageObjectPrefix";
+            this.txtGoogleCloudStorageObjectPrefix.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageObjectPrefix_TextChanged);
+            // 
+            // lblGoogleCloudStorageObjectPrefix
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageObjectPrefix, "lblGoogleCloudStorageObjectPrefix");
+            this.lblGoogleCloudStorageObjectPrefix.Name = "lblGoogleCloudStorageObjectPrefix";
+            // 
+            // lblGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageDomain, "lblGoogleCloudStorageDomain");
+            this.lblGoogleCloudStorageDomain.Name = "lblGoogleCloudStorageDomain";
+            // 
+            // txtGoogleCloudStorageDomain
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageDomain, "txtGoogleCloudStorageDomain");
+            this.txtGoogleCloudStorageDomain.Name = "txtGoogleCloudStorageDomain";
+            this.txtGoogleCloudStorageDomain.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageDomain_TextChanged);
+            // 
+            // lblGoogleCloudStorageBucket
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageBucket, "lblGoogleCloudStorageBucket");
+            this.lblGoogleCloudStorageBucket.Name = "lblGoogleCloudStorageBucket";
+            // 
+            // txtGoogleCloudStorageBucket
+            // 
+            resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
+            this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
+            this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
+            // 
+            // oauth2GoogleCloudStorage
+            // 
+            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
+            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
+            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
+            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
+            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
+            // 
             // tpAzureStorage
             // 
             this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
@@ -2952,6 +3062,7 @@
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudUsePreviewLinks);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHostExample);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
@@ -2966,6 +3077,13 @@
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
+            // 
+            // cbOwnCloudUsePreviewLinks
+            // 
+            resources.ApplyResources(this.cbOwnCloudUsePreviewLinks, "cbOwnCloudUsePreviewLinks");
+            this.cbOwnCloudUsePreviewLinks.Name = "cbOwnCloudUsePreviewLinks";
+            this.cbOwnCloudUsePreviewLinks.UseVisualStyleBackColor = true;
+            this.cbOwnCloudUsePreviewLinks.CheckedChanged += new System.EventHandler(this.cbOwnCloudUsePreviewLinks_CheckedChanged);
             // 
             // lblOwnCloudHostExample
             // 
@@ -4007,18 +4125,97 @@
             this.txtPlikLogin.Name = "txtPlikLogin";
             this.txtPlikLogin.TextChanged += new System.EventHandler(this.txtPlikLogin_TextChanged);
             // 
+            // tpYouTube
+            // 
+            this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
+            this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
+            this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
+            this.tpYouTube.Controls.Add(this.oauth2YouTube);
+            resources.ApplyResources(this.tpYouTube, "tpYouTube");
+            this.tpYouTube.Name = "tpYouTube";
+            this.tpYouTube.UseVisualStyleBackColor = true;
+            // 
+            // cbYouTubeUseShortenedLink
+            // 
+            resources.ApplyResources(this.cbYouTubeUseShortenedLink, "cbYouTubeUseShortenedLink");
+            this.cbYouTubeUseShortenedLink.Name = "cbYouTubeUseShortenedLink";
+            this.cbYouTubeUseShortenedLink.UseVisualStyleBackColor = true;
+            this.cbYouTubeUseShortenedLink.CheckedChanged += new System.EventHandler(this.cbYouTubeUseShortenedLink_CheckedChanged);
+            // 
+            // cbYouTubePrivacyType
+            // 
+            this.cbYouTubePrivacyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYouTubePrivacyType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbYouTubePrivacyType, "cbYouTubePrivacyType");
+            this.cbYouTubePrivacyType.Name = "cbYouTubePrivacyType";
+            this.cbYouTubePrivacyType.SelectedIndexChanged += new System.EventHandler(this.cbYouTubePrivacyType_SelectedIndexChanged);
+            // 
+            // lblYouTubePrivacyType
+            // 
+            resources.ApplyResources(this.lblYouTubePrivacyType, "lblYouTubePrivacyType");
+            this.lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
+            // 
+            // oauth2YouTube
+            // 
+            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
+            this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
+            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
+            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
+            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
+            // 
             // tpSharedFolder
             // 
             this.tpSharedFolder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpSharedFolder.Controls.Add(this.lbSharedFolderAccounts);
+            this.tpSharedFolder.Controls.Add(this.pgSharedFolderAccount);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderDuplicate);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderRemove);
+            this.tpSharedFolder.Controls.Add(this.btnSharedFolderAdd);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderImages);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
-            this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
             resources.ApplyResources(this.tpSharedFolder, "tpSharedFolder");
             this.tpSharedFolder.Name = "tpSharedFolder";
+            // 
+            // lbSharedFolderAccounts
+            // 
+            this.lbSharedFolderAccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.lbSharedFolderAccounts, "lbSharedFolderAccounts");
+            this.lbSharedFolderAccounts.Name = "lbSharedFolderAccounts";
+            this.lbSharedFolderAccounts.SelectedIndexChanged += new System.EventHandler(this.lbSharedFolderAccounts_SelectedIndexChanged);
+            // 
+            // pgSharedFolderAccount
+            // 
+            resources.ApplyResources(this.pgSharedFolderAccount, "pgSharedFolderAccount");
+            this.pgSharedFolderAccount.Name = "pgSharedFolderAccount";
+            this.pgSharedFolderAccount.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgSharedFolderAccount.ToolbarVisible = false;
+            this.pgSharedFolderAccount.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSharedFolderAccount_PropertyValueChanged);
+            // 
+            // btnSharedFolderDuplicate
+            // 
+            resources.ApplyResources(this.btnSharedFolderDuplicate, "btnSharedFolderDuplicate");
+            this.btnSharedFolderDuplicate.Name = "btnSharedFolderDuplicate";
+            this.btnSharedFolderDuplicate.UseVisualStyleBackColor = true;
+            this.btnSharedFolderDuplicate.Click += new System.EventHandler(this.btnSharedFolderDuplicate_Click);
+            // 
+            // btnSharedFolderRemove
+            // 
+            resources.ApplyResources(this.btnSharedFolderRemove, "btnSharedFolderRemove");
+            this.btnSharedFolderRemove.Name = "btnSharedFolderRemove";
+            this.btnSharedFolderRemove.UseVisualStyleBackColor = true;
+            this.btnSharedFolderRemove.Click += new System.EventHandler(this.btnSharedFolderRemove_Click);
+            // 
+            // btnSharedFolderAdd
+            // 
+            resources.ApplyResources(this.btnSharedFolderAdd, "btnSharedFolderAdd");
+            this.btnSharedFolderAdd.Name = "btnSharedFolderAdd";
+            this.btnSharedFolderAdd.UseVisualStyleBackColor = true;
+            this.btnSharedFolderAdd.Click += new System.EventHandler(this.btnSharedFolderAdd_Click);
             // 
             // lblSharedFolderFiles
             // 
@@ -4058,11 +4255,6 @@
             resources.ApplyResources(this.cboSharedFolderImages, "cboSharedFolderImages");
             this.cboSharedFolderImages.Name = "cboSharedFolderImages";
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
-            // 
-            // ucLocalhostAccounts
-            // 
-            resources.ApplyResources(this.ucLocalhostAccounts, "ucLocalhostAccounts");
-            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
             // 
             // tpEmail
             // 
@@ -4366,7 +4558,6 @@
             this.tpGist.Controls.Add(this.cbGistUseRawURL);
             this.tpGist.Controls.Add(this.cbGistPublishPublic);
             this.tpGist.Controls.Add(this.oAuth2Gist);
-            this.tpGist.Controls.Add(this.atcGistAccountType);
             resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
             // 
@@ -4407,19 +4598,12 @@
             // 
             // oAuth2Gist
             // 
-            resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.IsRefreshable = false;
+            resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.Name = "oAuth2Gist";
             this.oAuth2Gist.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
             this.oAuth2Gist.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Gist_ClearButtonClicked);
-            // 
-            // atcGistAccountType
-            // 
-            resources.ApplyResources(this.atcGistAccountType, "atcGistAccountType");
-            this.atcGistAccountType.Name = "atcGistAccountType";
-            this.atcGistAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcGistAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
             // 
             // tpUpaste
             // 
@@ -5134,6 +5318,8 @@
             this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
             this.Controls.Add(this.ttlvMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UploadersConfigForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.UploadersConfigForm_Shown);
@@ -5163,7 +5349,6 @@
             this.tcURLShorteners.ResumeLayout(false);
             this.tpBitly.ResumeLayout(false);
             this.tpBitly.PerformLayout();
-            this.tpGoogleURLShortener.ResumeLayout(false);
             this.tpYourls.ResumeLayout(false);
             this.tpYourls.PerformLayout();
             this.tpAdFly.ResumeLayout(false);
@@ -5172,6 +5357,8 @@
             this.tpCoinURL.PerformLayout();
             this.tpPolr.ResumeLayout(false);
             this.tpPolr.PerformLayout();
+            this.tpFirebaseDynamicLinks.ResumeLayout(false);
+            this.tpFirebaseDynamicLinks.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpFTP.ResumeLayout(false);
@@ -5203,6 +5390,8 @@
             this.tpAmazonS3.PerformLayout();
             this.gbAmazonS3Advanced.ResumeLayout(false);
             this.gbAmazonS3Advanced.PerformLayout();
+            this.tpGoogleCloudStorage.ResumeLayout(false);
+            this.tpGoogleCloudStorage.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
@@ -5250,6 +5439,8 @@
             this.gbPlikLoginCredentials.ResumeLayout(false);
             this.gbPlikLoginCredentials.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlikTTL)).EndInit();
+            this.tpYouTube.ResumeLayout(false);
+            this.tpYouTube.PerformLayout();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
             this.tpEmail.ResumeLayout(false);
@@ -5359,8 +5550,6 @@
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
         private OAuthControl oauth2Bitly;
-        private OAuthControl oauth2GoogleURLShortener;
-        private AccountTypeControl atcGoogleURLShortenerAccountType;
         private System.Windows.Forms.TextBox txtYourlsPassword;
         private System.Windows.Forms.TextBox txtYourlsUsername;
         private System.Windows.Forms.TextBox txtYourlsSignature;
@@ -5463,7 +5652,6 @@
         private System.Windows.Forms.NumericUpDown nudEmailSmtpPort;
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
-        private AccountsControl ucLocalhostAccounts;
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
         private System.Windows.Forms.Label lblSharedFolderImages;
@@ -5477,7 +5665,6 @@
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
         private System.Windows.Forms.CheckBox cbGistPublishPublic;
         private OAuthControl oAuth2Gist;
-        private AccountTypeControl atcGistAccountType;
         private System.Windows.Forms.CheckBox cbUpasteIsPublic;
         private System.Windows.Forms.Label lblUpasteUserKey;
         private System.Windows.Forms.TextBox txtUpasteUserKey;
@@ -5755,7 +5942,6 @@
         internal System.Windows.Forms.TabPage tpSharedFolder;
         internal System.Windows.Forms.TabPage tpEmail;
         internal System.Windows.Forms.TabPage tpBitly;
-        internal System.Windows.Forms.TabPage tpGoogleURLShortener;
         internal System.Windows.Forms.TabPage tpYourls;
         internal System.Windows.Forms.TabPage tpAdFly;
         internal System.Windows.Forms.TabPage tpCoinURL;
@@ -5900,5 +6086,32 @@
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionText;
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
+        private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
+        internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
+        private System.Windows.Forms.CheckBox cbFirebaseIsShort;
+        private System.Windows.Forms.Label lblFirebaseDomain;
+        private System.Windows.Forms.TextBox txtFirebaseDomain;
+        private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
+        private System.Windows.Forms.Label lblFirebaseWebAPIKey;
+        private OAuthControl oauth2YouTube;
+        private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
+        private System.Windows.Forms.Label lblYouTubePrivacyType;
+        internal System.Windows.Forms.TabPage tpYouTube;
+        private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
+        internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
+        private OAuthControl oauth2GoogleCloudStorage;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
+        private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
+        private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
+        private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.Button btnSharedFolderDuplicate;
+        private System.Windows.Forms.Button btnSharedFolderRemove;
+        private System.Windows.Forms.Button btnSharedFolderAdd;
+        private System.Windows.Forms.PropertyGrid pgSharedFolderAccount;
+        private System.Windows.Forms.ListBox lbSharedFolderAccounts;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreviewLabel;
+        private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
     }
 }

@@ -227,7 +227,7 @@ namespace ShareX.HelpersLib
         {
             Color currentColor = Color.FromArgb(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
-            if (ColorPickerForm.PickColor(currentColor, out Color newColor))
+            if (ColorPickerForm.PickColor(currentColor, out Color newColor, this))
             {
                 tbRed.Value = newColor.R;
                 tbGreen.Value = newColor.G;
