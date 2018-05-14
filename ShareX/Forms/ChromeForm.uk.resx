@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Твіт</value>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Увімкнути підтримку Chrome</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Скасувати</value>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>Вимкнути підтримку Chrome</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1. Увімкніть підтримку Chrome, інакше розширення не зможе взаємодіяти з ShareX.</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. Встановіть Chrome-розширення ShareX з веб-магазину Chrome.</value>
+  </data>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>Встановити розширення ShareX для Chrome</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3. У Chrome за правим притиском на зображенні, відео, аудіо чи вибраному тексті Ви побачите кнопку „Вивантажити із ShareX“ у контекстному меню.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Повідомлення у Twitter</value>
+    <value>ShareX — Підтримка розширення для Chrome</value>
   </data>
 </root>

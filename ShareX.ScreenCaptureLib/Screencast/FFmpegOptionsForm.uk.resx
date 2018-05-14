@@ -117,13 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Твіт</value>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>При 1 буде найкраща якість і найбільший розмір файла, при 31 - найгірша якість і найменший розмір.</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Скасувати</value>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Типово 128k.</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Повідомлення у Twitter</value>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>Типово full.</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>Типово sierra2_4a.</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Відео-кодек:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Шаблон:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Змінний бітрейт:</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Шлях до FFmpeg</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Використовувати користувацький шлях</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Перегляд командного рядка</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Користувацькі команди</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Додаткові аргументи командного рядка</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>кбіт/с</value>
+  <comment>@Invariant</comment></data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Змінний бітрейт:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Режим розпливання:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Режим палітри:</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Тест у консолі</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Швидкотік:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Якість:</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Якість:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Джерело відео:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Джерело звуку:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Аудіо-кодек:</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Кодеки</value>
+  </data>
+  <data name="btnHelp.Text" xml:space="preserve">
+    <value>Допомога...</value>
   </data>
 </root>

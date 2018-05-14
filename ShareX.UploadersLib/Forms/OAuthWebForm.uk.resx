@@ -120,4 +120,7 @@
   <data name="tslURL.Text" xml:space="preserve">
     <value>Посилання:</value>
   <comment>@Invariant</comment></data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Авторизація</value>
+  </data>
 </root>

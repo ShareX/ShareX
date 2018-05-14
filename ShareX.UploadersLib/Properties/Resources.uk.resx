@@ -169,16 +169,52 @@
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Знайти файл сертифіката...</value>
   </data>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Новий обліковий запис</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Хибна автентифікація</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>Запит не знайдено</value>
+  </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Помилка твіту</value>
+  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Потрібна автентифікація.</value>
+  </data>
+  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
+    <value>Шлях не існує:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
     <value>Ел. пошта:</value>
   </data>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Зʼєднання з {0}</value>
+  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Оновлення авторизації не підтримується.</value>
   </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Назва теки для створення</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>Ід. користувача:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Хибна назва пристрою</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Шлях вивантаження:</value>
+  </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Помилка</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Видалити файл?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Коренева тека</value>
   </data>
 </root>

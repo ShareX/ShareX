@@ -180,6 +180,9 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Якість JPEG:</value>
   </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Показати вікно ефектів зображення після захоплення</value>
+  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Ефекти</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Висота</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Показувати курсор на знімках</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Зміщення тіні:</value>
