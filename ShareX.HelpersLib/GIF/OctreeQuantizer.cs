@@ -172,7 +172,7 @@ namespace ShareX.HelpersLib
                 int index;
 
                 // Find the deepest level containing at least one reducible node
-                for (index = _maxColorBits - 1; (index > 0) && (null == _reducibleNodes[index]); index--) ;
+                for (index = _maxColorBits - 1; (index > 0) && (null == _reducibleNodes[index]); index--);
 
                 // Reduce the node most recently added to the list at level 'index'
                 OctreeNode node = _reducibleNodes[index];
