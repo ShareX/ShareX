@@ -12,7 +12,7 @@ a:link, a:visited {
 }
 
 ul {
-    margin: 0px 0px 8px 0px;
+    margin: 0 0 8px 0;
     list-style-type: none;
     padding-left: 10px;
 }
@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #000000;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding: 4px 0px 4px 10px;
-    margin: 0px 10px -10px 10px;
+    padding: 4px 0 4px 10px;
+    margin: 0 10px -10px 10px;
     color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     background-color: #336699;
-    margin: 0px 0px -10px 0px;
+    margin: 0 0 -10px 0;
     font-size: x-large;
 }
 
@@ -62,18 +62,18 @@ h6 {
 
 .MainFolderBorder, .FolderBorder {
     border-style: solid;
-    border-width: 0px 1px 1px 1px;
+    border-width: 0 1px 1px 1px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 20px 0px 0px 0px;
+    padding: 20px 0 0 0;
 }
 
 .MainFolderBorder {
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 10px 0;
 }
 
 .FolderBorder {
-    margin: 0px 10px 10px 10px;
+    margin: 0 10px 10px 10px;
 }
 
 .FolderInfo {
