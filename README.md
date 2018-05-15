@@ -1,6 +1,7 @@
 # ShareX
 
-[![Build status](https://img.shields.io/appveyor/ci/ShareX/sharex.svg?label=Build&maxAge=60)](https://ci.appveyor.com/project/ShareX/sharex)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/sharex/sharex?svg=true)](https://ci.appveyor.com/project/ShareX/sharex)
+[![CodeFactor](https://www.codefactor.io/repository/github/sharex/sharex/badge)](https://www.codefactor.io/repository/github/sharex/sharex)
 [![License](https://img.shields.io/github/license/ShareX/ShareX.svg?label=License&maxAge=86400)](./LICENSE.txt)
 [![Release](https://img.shields.io/github/release/ShareX/ShareX.svg?label=Release&maxAge=60)](https://github.com/ShareX/ShareX/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/latest/total.svg?label=Downloads&maxAge=60)](https://getsharex.com/downloads/)
