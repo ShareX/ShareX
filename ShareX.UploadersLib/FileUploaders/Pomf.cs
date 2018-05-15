@@ -73,7 +73,6 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.space/api/upload"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
-            new PomfUploader("https://kyouko.se/upload.php", "https://a.kyouko.se"),
             new PomfUploader("http://reich.io/upload.php"),
             new PomfUploader("https://safe.moe/api/upload"),
             //new PomfUploader("https://sugoi.vidyagam.es/upload.php"), - dangerous site
