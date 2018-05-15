@@ -102,7 +102,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             new CheveretoUploader("http://imeggo.com/api/1/upload", "61b66b1ebe8b1dff4eaf3b371f150199"),
             new CheveretoUploader("https://picr.ws/api/1/upload", "2fbe6bbdac3ceab2e33d47a9a562cef9"),
             new CheveretoUploader("https://site.pictures/api/1/upload", "3d1c64db9c84e0f4a14a734d43a28e4f"),
-            new CheveretoUploader("https://lensdump.com/api/1/upload", "575a59e53766002e09a8ca989702e9b9")
+            new CheveretoUploader("https://lensdump.com/api/1/upload", "575a59e53766002e09a8ca989702e9b9"),
+            new CheveretoUploader("http://img.land/api/1/upload", "7ffe1d087609af47b159b807e05842a5")
         };
 
         public CheveretoUploader Uploader { get; private set; }
