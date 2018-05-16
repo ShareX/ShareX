@@ -59,9 +59,9 @@ namespace ShareX.UploadersLib
 
         public static string GenerateQuery(string url, Dictionary<string, string> args, HttpMethod httpMethod, OAuthInfo oauth, out Dictionary<string, string> parameters)
         {
-            if (string.IsNullOrEmpty(oauth.ConsumerKey)
-                || (string.IsNullOrEmpty(oauth.ConsumerSecret) && oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1)
-                || (oauth.ConsumerPrivateKey == null && oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1))
+            if (string.IsNullOrEmpty(oauth.ConsumerKey) ||
+                (oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1 && string.IsNullOrEmpty(oauth.ConsumerSecret)) ||
+                (oauth.SignatureMethod == OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1 && string.IsNullOrEmpty(oauth.ConsumerPrivateKey)))
             {
                 throw new Exception("ConsumerKey or ConsumerSecret or ConsumerPrivateKey empty.");
             }
@@ -76,11 +76,9 @@ namespace ShareX.UploadersLib
                 case OAuthInfo.OAuthInfoSignatureMethod.HMAC_SHA1:
                     parameters.Add(ParameterSignatureMethod, HMACSHA1SignatureType);
                     break;
-
                 case OAuthInfo.OAuthInfoSignatureMethod.RSA_SHA1:
                     parameters.Add(ParameterSignatureMethod, RSASHA1SignatureType);
                     break;
-
                 default:
                     throw new NotImplementedException("Unsupported signature method");
             }
@@ -245,9 +243,9 @@ namespace ShareX.UploadersLib
             {
                 string port = "";
 
-                if (uri.Scheme == "http" && uri.Port != 80 ||
-                    uri.Scheme == "https" && uri.Port != 443 ||
-                    uri.Scheme == "ftp" && uri.Port != 20)
+                if ((uri.Scheme == "http" && uri.Port != 80) ||
+                    (uri.Scheme == "https" && uri.Port != 443) ||
+                    (uri.Scheme == "ftp" && uri.Port != 20))
                 {
                     port = ":" + uri.Port;
                 }
