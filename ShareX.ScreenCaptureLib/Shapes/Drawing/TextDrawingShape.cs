@@ -162,7 +162,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (center)
             {
-                location = new Point(Rectangle.X - size.Width / 2, Rectangle.Y - size.Height / 2);
+                location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
             }
             else
             {

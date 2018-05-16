@@ -131,9 +131,9 @@ namespace ShareX.HelpersLib
 
         public static double ToDouble(this Version value)
         {
-            return Math.Max(value.Major, 0) * Math.Pow(10, 12) +
-                Math.Max(value.Minor, 0) * Math.Pow(10, 9) +
-                Math.Max(value.Build, 0) * Math.Pow(10, 6) +
+            return (Math.Max(value.Major, 0) * Math.Pow(10, 12)) +
+                (Math.Max(value.Minor, 0) * Math.Pow(10, 9)) +
+                (Math.Max(value.Build, 0) * Math.Pow(10, 6)) +
                 Math.Max(value.Revision, 0);
         }
 
@@ -169,7 +169,7 @@ namespace ShareX.HelpersLib
 
         public static Rectangle Offset(this Rectangle rect, int offset)
         {
-            return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + offset * 2, rect.Height + offset * 2);
+            return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
@@ -587,7 +587,7 @@ namespace ShareX.HelpersLib
 
         public static Point Center(this Rectangle rect)
         {
-            return new Point(rect.X + rect.Width / 2, rect.Y + rect.Height / 2);
+            return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
         }
 
         public static Point Restrict(this Point point, Rectangle rect)

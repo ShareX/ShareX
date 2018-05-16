@@ -656,7 +656,7 @@ namespace ShareX.HelpersLib
             {
                 if (biCompression == BI_COMPRESSION.BI_BITFIELDS)
                 {
-                    return biSize + 3 * 4;
+                    return biSize + (3 * 4);
                 }
 
                 return biSize;

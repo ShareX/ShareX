@@ -114,7 +114,7 @@ namespace ShareX.HelpersLib
 
         public static float Lerp(float value1, float value2, float amount)
         {
-            return value1 + (value2 - value1) * amount;
+            return value1 + ((value2 - value1) * amount);
         }
 
         public static Vector2 Lerp(Vector2 pos1, Vector2 pos2, float amount)

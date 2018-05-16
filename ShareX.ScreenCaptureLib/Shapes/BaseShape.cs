@@ -161,7 +161,7 @@ namespace ShareX.ScreenCaptureLib
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
                 Manager.IsMoving = true;
-                Rectangle = new Rectangle(new Point(pos.X - Options.FixedSize.Width / 2, pos.Y - Options.FixedSize.Height / 2), Options.FixedSize);
+                Rectangle = new Rectangle(new Point(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
             }
             else
             {
@@ -407,11 +407,11 @@ namespace ShareX.ScreenCaptureLib
         public virtual void OnNodePositionUpdate()
         {
             int xStart = Rectangle.X;
-            int xMid = Rectangle.X + Rectangle.Width / 2;
+            int xMid = Rectangle.X + (Rectangle.Width / 2);
             int xEnd = Rectangle.X + Rectangle.Width - 1;
 
             int yStart = Rectangle.Y;
-            int yMid = Rectangle.Y + Rectangle.Height / 2;
+            int yMid = Rectangle.Y + (Rectangle.Height / 2);
             int yEnd = Rectangle.Y + Rectangle.Height - 1;
 
             Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);

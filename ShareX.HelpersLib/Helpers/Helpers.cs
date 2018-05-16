@@ -271,7 +271,7 @@ namespace ShareX.HelpersLib
 
         public static string GetRandomKey(int length = 5, int count = 3, char separator = '-')
         {
-            return Enumerable.Range(1, (length + 1) * count - 1).Aggregate("", (x, index) => x += index % (length + 1) == 0 ? separator : GetRandomChar(Alphanumeric));
+            return Enumerable.Range(1, ((length + 1) * count) - 1).Aggregate("", (x, index) => x += index % (length + 1) == 0 ? separator : GetRandomChar(Alphanumeric));
         }
 
         public static string GetAllCharacters()
@@ -929,8 +929,8 @@ namespace ShareX.HelpersLib
 
         public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
-            int midX = backgroundSize.Width / 2 - objectSize.Width / 2;
-            int midY = backgroundSize.Height / 2 - objectSize.Height / 2;
+            int midX = (backgroundSize.Width / 2) - (objectSize.Width / 2);
+            int midY = (backgroundSize.Height / 2) - (objectSize.Height / 2);
             int right = backgroundSize.Width - objectSize.Width;
             int bottom = backgroundSize.Height - objectSize.Height;
 
@@ -1274,7 +1274,7 @@ namespace ShareX.HelpersLib
             string result = "";
             while (--num >= 0)
             {
-                result = (char)('A' + num % 26) + result;
+                result = (char)('A' + (num % 26)) + result;
                 num /= 26;
             }
             return result;

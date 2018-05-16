@@ -50,7 +50,7 @@ namespace ShareX.HelpersLib
 
         private void DrawCrosshair(Graphics g, Pen pen, int offset, int height)
         {
-            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - height / 2, clientWidth - offset * 2, height));
+            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - (height / 2), clientWidth - (offset * 2), height));
         }
 
         // Y = Hue 360 -> 0
@@ -62,7 +62,7 @@ namespace ShareX.HelpersLib
 
                 for (int y = 0; y < clientHeight; y++)
                 {
-                    color.Hue = 1.0 - (double)y / (clientHeight - 1);
+                    color.Hue = 1.0 - ((double)y / (clientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {

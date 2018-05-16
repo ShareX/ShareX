@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Opacity = 1 - (Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
+                    Opacity = 1 - ((Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds);
                 }
 
                 if (Opacity == 0)

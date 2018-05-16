@@ -46,17 +46,17 @@ namespace ShareX.ScreenCaptureLib
             if (confirmButton != null && cancelButton != null)
             {
                 if (Rectangle.Bottom + buttonOffset + buttonSize.Height > Manager.Form.ClientArea.Bottom &&
-                    Rectangle.Width > buttonSize.Width * 2 + buttonOffset * 3 &&
-                    Rectangle.Height > buttonSize.Height + buttonOffset * 2)
+                    Rectangle.Width > (buttonSize.Width * 2) + (buttonOffset * 3) &&
+                    Rectangle.Height > buttonSize.Height + (buttonOffset * 2))
                 {
-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset * 2 - buttonSize.Width * 2,
+                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
                     cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset - buttonSize.Width,
                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
                 }
                 else
                 {
-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width * 2 - buttonOffset,
+                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
                     cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width,
                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);

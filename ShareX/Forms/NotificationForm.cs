@@ -80,8 +80,8 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
-                textRenderSize = Helpers.MeasureText(config.Text, textFont, size.Width - textPadding * 2);
-                size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
+                textRenderSize = Helpers.MeasureText(config.Text, textFont, size.Width - (textPadding * 2));
+                size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
             Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, size);

@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = true;
             Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(new Point(pos.X - Rectangle.Width / 2, pos.Y - Rectangle.Height / 2), Rectangle.Size);
+            Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
         }
 
         public override void OnConfigLoad()
@@ -96,7 +96,7 @@ namespace ShareX.ScreenCaptureLib
                 int padding = 3;
 
                 Point center = Rectangle.Center();
-                Rectangle = new Rectangle(center.X - maxSize / 2 - padding, center.Y - maxSize / 2 - padding, maxSize + padding * 2, maxSize + padding * 2);
+                Rectangle = new Rectangle(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
 
                 DrawEllipse(g);
 

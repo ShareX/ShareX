@@ -1111,7 +1111,7 @@ namespace ShareX.ScreenCaptureLib
 
                         return new RectangleRegionShape()
                         {
-                            Rectangle = new Rectangle(new Point(location.X - Options.FixedSize.Width / 2, location.Y - Options.FixedSize.Height / 2), Options.FixedSize)
+                            Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2), location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize)
                         };
                     }
                     else

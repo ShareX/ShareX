@@ -579,6 +579,9 @@
     <PackageReference Include="ImageListView">
       <Version>11.0.4</Version>
     </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers">
+      <Version>1.1.0-beta007</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -116,12 +116,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (Rectangle.Width < MinimumCollisionSize)
             {
-                Rectangle = new Rectangle(Rectangle.X - MinimumCollisionSize / 2, Rectangle.Y, Rectangle.Width + MinimumCollisionSize, Rectangle.Height);
+                Rectangle = new Rectangle(Rectangle.X - (MinimumCollisionSize / 2), Rectangle.Y, Rectangle.Width + MinimumCollisionSize, Rectangle.Height);
             }
 
             if (Rectangle.Height < MinimumCollisionSize)
             {
-                Rectangle = new Rectangle(Rectangle.X, Rectangle.Y - MinimumCollisionSize / 2, Rectangle.Width, Rectangle.Height + MinimumCollisionSize);
+                Rectangle = new Rectangle(Rectangle.X, Rectangle.Y - (MinimumCollisionSize / 2), Rectangle.Width, Rectangle.Height + MinimumCollisionSize);
             }
         }
 

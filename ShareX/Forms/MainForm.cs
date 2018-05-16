@@ -228,7 +228,7 @@ namespace ShareX
                 {
                     StartPosition = FormStartPosition.Manual;
                     Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
-                    Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
+                    Location = new Point((activeScreen.Width / 2) - (Size.Width / 2), (activeScreen.Height / 2) - (Size.Height / 2));
                 }
             }
             else

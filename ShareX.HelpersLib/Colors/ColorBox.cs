@@ -64,7 +64,7 @@ namespace ShareX.HelpersLib
 
                 for (int y = 0; y < clientHeight; y++)
                 {
-                    start.Brightness = end.Brightness = 1.0 - (double)y / (clientHeight - 1);
+                    start.Brightness = end.Brightness = 1.0 - ((double)y / (clientHeight - 1));
 
                     using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {

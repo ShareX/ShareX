@@ -864,8 +864,8 @@ namespace ShareX.HelpersLib
 
                 double cos = Math.Abs(Math.Cos(angleRadians));
                 double sin = Math.Abs(Math.Sin(angleRadians));
-                newWidth = (int)Math.Round(oldWidth * cos + oldHeight * sin);
-                newHeight = (int)Math.Round(oldWidth * sin + oldHeight * cos);
+                newWidth = (int)Math.Round((oldWidth * cos) + (oldHeight * sin));
+                newHeight = (int)Math.Round((oldWidth * sin) + (oldHeight * cos));
             }
 
             // If upsizing not wanted and clipping not OK need a scaling factor
@@ -1017,18 +1017,18 @@ namespace ShareX.HelpersLib
                                         int imageX = (x - s + filterX + width) % width;
                                         int imageY = (y - s + filterY + height) % height;
 
-                                        rgb = imageY * pbits.Stride + 3 * imageX;
+                                        rgb = (imageY * pbits.Stride) + (3 * imageX);
 
                                         red += rgbValues[rgb + 2] * filter[filterX, filterY];
                                         green += rgbValues[rgb + 1] * filter[filterX, filterY];
                                         blue += rgbValues[rgb + 0] * filter[filterX, filterY];
                                     }
 
-                                    rgb = y * pbits.Stride + 3 * x;
+                                    rgb = (y * pbits.Stride) + (3 * x);
 
-                                    int r = Math.Min(Math.Max((int)(factor * red + (bias * rgbValues[rgb + 2])), 0), 255);
-                                    int g = Math.Min(Math.Max((int)(factor * green + (bias * rgbValues[rgb + 1])), 0), 255);
-                                    int b = Math.Min(Math.Max((int)(factor * blue + (bias * rgbValues[rgb + 0])), 0), 255);
+                                    int r = Math.Min(Math.Max((int)((factor * red) + (bias * rgbValues[rgb + 2])), 0), 255);
+                                    int g = Math.Min(Math.Max((int)((factor * green) + (bias * rgbValues[rgb + 1])), 0), 255);
+                                    int b = Math.Min(Math.Max((int)((factor * blue) + (bias * rgbValues[rgb + 0])), 0), 255);
 
                                     result[x, y] = Color.FromArgb(r, g, b);
                                 }
@@ -1040,7 +1040,7 @@ namespace ShareX.HelpersLib
                         {
                             for (int y = s; y < height - s; y++)
                             {
-                                rgb = y * pbits.Stride + 3 * x;
+                                rgb = (y * pbits.Stride) + (3 * x);
 
                                 rgbValues[rgb + 2] = result[x, y].R;
                                 rgbValues[rgb + 1] = result[x, y].G;
@@ -1439,7 +1439,7 @@ namespace ShareX.HelpersLib
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    points.Add(new Point(img.Width - 1 - tornRange * x, img.Height - 1 - MathHelpers.Random(0, tornDepth)));
+                    points.Add(new Point(img.Width - 1 - (tornRange * x), img.Height - 1 - MathHelpers.Random(0, tornDepth)));
                 }
             }
             else
@@ -1452,7 +1452,7 @@ namespace ShareX.HelpersLib
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - tornRange * y));
+                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - (tornRange * y)));
                 }
             }
             else
@@ -1704,7 +1704,7 @@ namespace ShareX.HelpersLib
             {
                 g.CompositingMode = CompositingMode.SourceCopy;
 
-                Rectangle holeRect = new Rectangle(rect.Width / 2 - holeSize / 2, rect.Height / 2 - holeSize / 2, holeSize, holeSize);
+                Rectangle holeRect = new Rectangle((rect.Width / 2) - (holeSize / 2), (rect.Height / 2) - (holeSize / 2), holeSize, holeSize);
 
                 g.FillRectangle(Brushes.Transparent, holeRect);
                 g.DrawRectangleProper(Pens.Black, holeRect);

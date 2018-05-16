@@ -1106,7 +1106,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (tsMain.Width < rectScreen.Width)
             {
-                menuForm.Location = new Point(rectScreen.X + rectScreen.Width / 2 - tsMain.Width / 2, rectScreen.Y);
+                menuForm.Location = new Point(rectScreen.X + (rectScreen.Width / 2) - (tsMain.Width / 2), rectScreen.Y);
             }
             else
             {

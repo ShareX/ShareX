@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 position = value;
 
-                Rectangle = new Rectangle(position.X - (Size - 1) / 2, position.Y - (Size - 1) / 2, Size, Size);
+                Rectangle = new Rectangle(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
             }
         }
 

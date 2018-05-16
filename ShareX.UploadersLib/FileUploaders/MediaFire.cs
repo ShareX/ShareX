@@ -207,7 +207,7 @@ namespace ShareX.UploadersLib.FileUploaders
             for (int i = 0; i < b.Length; ++i)
             {
                 res[2 * i] = IntToChar(b[i] >> 4);
-                res[2 * i + 1] = IntToChar(b[i] & 0xf);
+                res[(2 * i) + 1] = IntToChar(b[i] & 0xf);
             }
             return new string(res);
         }

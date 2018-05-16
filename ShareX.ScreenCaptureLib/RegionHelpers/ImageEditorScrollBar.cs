@@ -104,15 +104,15 @@ namespace ShareX.ScreenCaptureLib
                     inCanvasCenterOffset = form.CanvasCenterOffset.Y;
                 }
 
-                int trackLength = inClientAreaSize - Margin * 2 - Padding * 2 - Thickness;
-                int trackLengthInternal = trackLength - Padding * 2;
+                int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+                int trackLengthInternal = trackLength - (Padding * 2);
 
                 int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
                 double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
-                int thumbPosition = (int)Math.Round(Margin + trackLength / 2.0f - (thumbLength / 2.0f) -
+                int thumbPosition = (int)Math.Round(Margin + (trackLength / 2.0f) - (thumbLength / 2.0f) -
                     Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
-                int trackWidth = Padding * 2 + Thickness;
+                int trackWidth = (Padding * 2) + Thickness;
                 int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
                 int trackSideOffset = thumbSideOffset - Padding;
 
@@ -183,10 +183,10 @@ namespace ShareX.ScreenCaptureLib
 
             int mousePositionLocal = inMousePosition - Margin - Padding;
 
-            int trackLength = inClientAreaSize - Margin * 2 - Padding * 2 - Thickness;
-            int trackLengthInternal = trackLength - Padding * 2;
+            int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+            int trackLengthInternal = trackLength - (Padding * 2);
 
-            int centerOffsetNew = (int)((trackLengthInternal / 2.0f - mousePositionLocal) / trackLengthInternal * inImageSize);
+            int centerOffsetNew = (int)(((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize);
 
             if (Orientation == Orientation.Horizontal)
             {
