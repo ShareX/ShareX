@@ -136,7 +136,7 @@ namespace ShareX.HelpersLib
 
             string result = "";
             int quotient = Math.Abs(value);
-            while (0 < quotient)
+            while (quotient > 0)
             {
                 int temp = quotient % radix;
                 result = digits[temp] + result;

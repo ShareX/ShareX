@@ -134,7 +134,7 @@ namespace ShareX.HelpersLib
                 try
                 {
                     int num2 = (int)r.CallAs(typeIFileDialog, dialog, "Show", hWndOwner);
-                    flag = 0 == num2;
+                    flag = num2 == 0;
                 }
                 finally
                 {
