@@ -1769,17 +1769,18 @@ namespace ShareX.UploadersLib
 
         private void oauth2GoogleDrive_OpenButtonClicked()
         {
-            GoogleDriveAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.GoogleDriveOAuth2Info = OAuth2Open(new GoogleDrive(oauth));
         }
 
         private void oauth2GoogleDrive_CompleteButtonClicked(string code)
         {
-            GoogleDriveAuthComplete(code);
+            btnGoogleDriveRefreshFolders.Enabled = OAuth2Complete(new GoogleDrive(Config.GoogleDriveOAuth2Info), code, oauth2GoogleDrive);
         }
 
         private void oauth2GoogleDrive_RefreshButtonClicked()
         {
-            GoogleDriveAuthRefresh();
+            btnGoogleDriveRefreshFolders.Enabled = OAuth2Refresh(new GoogleDrive(Config.GoogleDriveOAuth2Info), oauth2GoogleDrive);
         }
 
         private void oauth2GoogleDrive_ClearButtonClicked()
@@ -2982,7 +2983,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2YouTube_CompleteButtonClicked(string code)
         {
-            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube, code);
+            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), code, oauth2YouTube);
         }
 
         private void oauth2YouTube_RefreshButtonClicked()
@@ -3016,7 +3017,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
         {
-            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage, code);
+            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), code, oauth2GoogleCloudStorage);
         }
 
         private void oauth2GoogleCloudStorage_OpenButtonClicked()

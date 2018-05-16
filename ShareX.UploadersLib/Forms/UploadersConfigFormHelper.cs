@@ -489,87 +489,6 @@ namespace ShareX.UploadersLib
 
         #region Google Drive
 
-        public void GoogleDriveAuthOpen()
-        {
-            try
-            {
-                OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-
-                string url = new GoogleDrive(oauth).GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    Config.GoogleDriveOAuth2Info = oauth;
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("GoogleDriveAuthOpen - Authorization URL is opened: " + url);
-                }
-                else
-                {
-                    DebugHelper.WriteLine("GoogleDriveAuthOpen - Authorization URL is empty.");
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void GoogleDriveAuthComplete(string code)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(code) && Config.GoogleDriveOAuth2Info != null)
-                {
-                    bool result = new GoogleDrive(Config.GoogleDriveOAuth2Info).GetAccessToken(code);
-
-                    if (result)
-                    {
-                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    btnGoogleDriveRefreshFolders.Enabled = result;
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void GoogleDriveAuthRefresh()
-        {
-            try
-            {
-                if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
-                {
-                    bool result = new GoogleDrive(Config.GoogleDriveOAuth2Info).RefreshAccessToken();
-
-                    if (result)
-                    {
-                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    btnGoogleDriveRefreshFolders.Enabled = result;
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
         private void GoogleDriveRefreshFolders()
         {
             try
@@ -2037,92 +1956,6 @@ namespace ShareX.UploadersLib
 
         #endregion Gfycat
 
-        #region Generic OAuth2
-
-        public OAuth2Info OAuth2Open(IOAuth2 uploader)
-        {
-            try
-            {
-                string url = uploader.GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is opened: " + url);
-                    return uploader.AuthInfo;
-                }
-                else
-                {
-                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is empty.");
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-            return null;
-        }
-
-        public bool OAuth2Complete(IOAuth2 uploader, OAuthControl oauth2, string code)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(code) && uploader.AuthInfo != null)
-                {
-                    bool result = uploader.GetAccessToken(code);
-
-                    if (result)
-                    {
-                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-            return false;
-        }
-
-        public bool OAuth2Refresh(IOAuth2 uploader, OAuthControl oauth2)
-        {
-            try
-            {
-                if (OAuth2Info.CheckOAuth(uploader.AuthInfo))
-                {
-                    bool result = uploader.RefreshAccessToken();
-
-                    if (result)
-                    {
-                        oauth2.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        oauth2.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-            return false;
-        }
-
-        #endregion Generic OAuth2
-
         #region Shared folder
 
         private void SharedFolderUpdateControls()
@@ -2193,5 +2026,86 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Shared folder
+
+        #region Generic OAuth2
+
+        private OAuth2Info OAuth2Open(IOAuth2 uploader)
+        {
+            try
+            {
+                string url = uploader.GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    URLHelpers.OpenURL(url);
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is opened: " + url);
+                    return uploader.AuthInfo;
+                }
+                else
+                {
+                    DebugHelper.WriteLine(uploader.ToString() + " - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+
+            return null;
+        }
+
+        private bool OAuth2Complete(IOAuth2 uploader, string code, OAuthControl control)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && uploader.AuthInfo != null)
+                {
+                    bool result = uploader.GetAccessToken(code);
+                    ConfigureOAuthStatus(control, result);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+
+            return false;
+        }
+
+        private bool OAuth2Refresh(IOAuth2 uploader, OAuthControl oauth2)
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(uploader.AuthInfo))
+                {
+                    bool result = uploader.RefreshAccessToken();
+                    ConfigureOAuthStatus(oauth2, result);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+
+            return false;
+        }
+
+        private void ConfigureOAuthStatus(OAuthControl oauth2, bool result)
+        {
+            if (result)
+            {
+                oauth2.Status = OAuthLoginStatus.LoginSuccessful;
+                MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                oauth2.Status = OAuthLoginStatus.LoginFailed;
+                MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion Generic OAuth2
     }
 }
