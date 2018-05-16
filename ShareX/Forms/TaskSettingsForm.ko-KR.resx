@@ -558,4 +558,10 @@
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>"Alt" 키를 누르고 있으면 달라붙을 영역 크기:</value>
   </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>중단 할 때 확인을 요청</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>업로드 할 때 URL에 문제가있는 문자를 밑줄로 바꾸기</value>
+  </data>
 </root>
