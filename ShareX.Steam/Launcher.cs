@@ -208,7 +208,9 @@ namespace ShareX.Steam
                             return;
                         }
                     }
-                    catch { }
+                    catch
+                    {
+                    }
 
                     // Workaround 2
                     string path = Path.Combine(Environment.SystemDirectory, "cmd.exe");

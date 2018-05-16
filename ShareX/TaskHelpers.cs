@@ -1021,7 +1021,9 @@ namespace ShareX
                 psi.Verb = "runas";
                 Process.Start(psi);
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         public static void OpenQRCode()

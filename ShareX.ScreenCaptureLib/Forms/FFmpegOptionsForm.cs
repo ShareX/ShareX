@@ -220,7 +220,9 @@ namespace ShareX.ScreenCaptureLib
                     backColor = Color.FromArgb(200, 255, 200);
                 }
             }
-            catch { }
+            catch
+            {
+            }
 
             txtFFmpegPath.BackColor = backColor;
 #endif

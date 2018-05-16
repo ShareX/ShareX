@@ -68,7 +68,9 @@ namespace ShareX.HelpersLib
                         g.FillRectangle(brush, rect);
                     }
                 }
-                catch { }
+                catch
+                {
+                }
             }
         }
 
