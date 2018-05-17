@@ -165,4 +165,7 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>닫기</value>
   </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>이미지 업로드</value>
+  </data>
 </root>

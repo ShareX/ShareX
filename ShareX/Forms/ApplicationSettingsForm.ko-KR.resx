@@ -354,4 +354,10 @@
   <data name="cbEditWithShareX.ImeMode" xml:space="preserve">
     <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 편집" 버튼 표시하기</value>
   </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>dev build 설치...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
+  </data>
 </root>

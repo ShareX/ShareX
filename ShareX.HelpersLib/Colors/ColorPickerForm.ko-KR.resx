@@ -207,4 +207,7 @@
   <data name="tsmiCopyRGB.Text" xml:space="preserve">
     <value>RGB 복사</value>
   </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>최근 색상:</value>
+  </data>
 </root>

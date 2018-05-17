@@ -132,4 +132,7 @@
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
     <value>조절</value>
   </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
 </root>
