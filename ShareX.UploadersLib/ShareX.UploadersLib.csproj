@@ -587,6 +587,9 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.id-ID.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.ko-KR.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,6 +598,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.uk.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ko-KR.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>

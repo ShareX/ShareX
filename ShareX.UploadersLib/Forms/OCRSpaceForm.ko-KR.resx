@@ -117,28 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>인증 코드 (인증 페이지에서 인증 코드를 획득하세요):</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>언어:</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>상태</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>결과:</value>
   </data>
-  <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>사용자 계정</value>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>OCR.Space API로 구동</value>
   </data>
-  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>인증 새로고침</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>OCR 시작하기</value>
   </data>
-  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>구글번역 열고 창 닫기</value>
   </data>
-  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>인증 초기화</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>상태:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 텍스트 촬영</value>
   </data>
 </root>

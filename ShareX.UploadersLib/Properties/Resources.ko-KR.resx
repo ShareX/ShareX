@@ -256,4 +256,19 @@
   <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
     <value>"파일 폼 항목명" 항목을 설정해야 합니다.</value>
   </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>로그인 되어있지 않음.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>로그인 되어있음.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>로그인 되어있지 않음.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>로그인 되어있음.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>로그인 실패.</value>
+  </data>
 </root>

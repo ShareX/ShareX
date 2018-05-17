@@ -117,28 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>인증 코드 (인증 페이지에서 인증 코드를 획득하세요):</value>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>상태</value>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>이메일:</value>
   </data>
-  <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>사용자 계정</value>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>로그인</value>
   </data>
-  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>인증 새로고침</value>
-  </data>
-  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>인증 초기화</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>상태:</value>
+  <data name="llForgottenPassword.Text" xml:space="preserve">
+    <value>비밀번호를 잊으셨나요?</value>
   </data>
 </root>
