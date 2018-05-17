@@ -373,6 +373,9 @@
     <EmbeddedResource Include="Forms\NewImageForm.id-ID.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.ko-KR.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
