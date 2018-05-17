@@ -351,4 +351,7 @@
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
   </data>
+  <data name="cbEditWithShareX.ImeMode" xml:space="preserve">
+    <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 편집" 버튼 표시하기</value>
+  </data>
 </root>
