@@ -133,9 +133,6 @@
         </Reference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup />
-    </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
