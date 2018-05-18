@@ -130,16 +130,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon CoinURL {
-            get {
-                object obj = ResourceManager.GetObject("CoinURL", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Response parse failed..
         /// </summary>
         internal static string CustomFileUploader_Upload_Response_parse_failed_ {

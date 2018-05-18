@@ -157,9 +157,6 @@
             this.lblAdflyAPIUID = new System.Windows.Forms.Label();
             this.txtAdflyAPIKEY = new System.Windows.Forms.TextBox();
             this.lblAdflyAPIKEY = new System.Windows.Forms.Label();
-            this.tpCoinURL = new System.Windows.Forms.TabPage();
-            this.txtCoinURLUUID = new System.Windows.Forms.TextBox();
-            this.lblCoinURLUUID = new System.Windows.Forms.Label();
             this.tpPolr = new System.Windows.Forms.TabPage();
             this.cbPolrUseAPIv1 = new System.Windows.Forms.CheckBox();
             this.cbPolrIsSecret = new System.Windows.Forms.CheckBox();
@@ -669,7 +666,6 @@
             this.tpBitly.SuspendLayout();
             this.tpYourls.SuspendLayout();
             this.tpAdFly.SuspendLayout();
-            this.tpCoinURL.SuspendLayout();
             this.tpPolr.SuspendLayout();
             this.tpFirebaseDynamicLinks.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
@@ -1554,7 +1550,6 @@
             this.tcURLShorteners.Controls.Add(this.tpBitly);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
-            this.tcURLShorteners.Controls.Add(this.tpCoinURL);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
             this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
@@ -1696,26 +1691,6 @@
             // 
             resources.ApplyResources(this.lblAdflyAPIKEY, "lblAdflyAPIKEY");
             this.lblAdflyAPIKEY.Name = "lblAdflyAPIKEY";
-            // 
-            // tpCoinURL
-            // 
-            this.tpCoinURL.BackColor = System.Drawing.SystemColors.Window;
-            this.tpCoinURL.Controls.Add(this.txtCoinURLUUID);
-            this.tpCoinURL.Controls.Add(this.lblCoinURLUUID);
-            resources.ApplyResources(this.tpCoinURL, "tpCoinURL");
-            this.tpCoinURL.Name = "tpCoinURL";
-            // 
-            // txtCoinURLUUID
-            // 
-            resources.ApplyResources(this.txtCoinURLUUID, "txtCoinURLUUID");
-            this.txtCoinURLUUID.Name = "txtCoinURLUUID";
-            this.txtCoinURLUUID.UseSystemPasswordChar = true;
-            this.txtCoinURLUUID.TextChanged += new System.EventHandler(this.txtCoinURLUUID_TextChanged);
-            // 
-            // lblCoinURLUUID
-            // 
-            resources.ApplyResources(this.lblCoinURLUUID, "lblCoinURLUUID");
-            this.lblCoinURLUUID.Name = "lblCoinURLUUID";
             // 
             // tpPolr
             // 
@@ -5353,8 +5328,6 @@
             this.tpYourls.PerformLayout();
             this.tpAdFly.ResumeLayout(false);
             this.tpAdFly.PerformLayout();
-            this.tpCoinURL.ResumeLayout(false);
-            this.tpCoinURL.PerformLayout();
             this.tpPolr.ResumeLayout(false);
             this.tpPolr.PerformLayout();
             this.tpFirebaseDynamicLinks.ResumeLayout(false);
@@ -5801,8 +5774,6 @@
         private System.Windows.Forms.Label lblTwitterDefaultMessage;
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
-        private System.Windows.Forms.TextBox txtCoinURLUUID;
-        private System.Windows.Forms.Label lblCoinURLUUID;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
         private System.Windows.Forms.Button btnCustomUploaderClearUploaders;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
@@ -5944,7 +5915,6 @@
         internal System.Windows.Forms.TabPage tpBitly;
         internal System.Windows.Forms.TabPage tpYourls;
         internal System.Windows.Forms.TabPage tpAdFly;
-        internal System.Windows.Forms.TabPage tpCoinURL;
         internal System.Windows.Forms.TabPage tpPolr;
         internal System.Windows.Forms.TabPage tpTwitter;
         internal System.Windows.Forms.TabPage tpCustomUploaders;

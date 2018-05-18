@@ -342,7 +342,6 @@
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
-    <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
@@ -915,7 +914,6 @@
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />
     <None Include="Favicons\Hastebin.png" />
-    <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />

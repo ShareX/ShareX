@@ -763,12 +763,6 @@ namespace ShareX.UploadersLib
 
             #endregion adf.ly
 
-            #region coinurl.com
-
-            txtCoinURLUUID.Text = Config.CoinURLUUID;
-
-            #endregion coinurl.com
-
             #region Polr
 
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
@@ -3132,15 +3126,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion adf.ly
-
-        #region CoinURL
-
-        private void txtCoinURLUUID_TextChanged(object sender, EventArgs e)
-        {
-            Config.CoinURLUUID = txtCoinURLUUID.Text;
-        }
-
-        #endregion CoinURL
 
         #region Polr
 
