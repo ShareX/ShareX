@@ -1591,7 +1591,7 @@ namespace ShareX
         {
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
-                IsBeta = Program.Beta,
+                IsBeta = Program.Dev,
                 IsPortable = Program.Portable,
                 Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
             };
