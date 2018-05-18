@@ -891,7 +891,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
-    <None Include="app.config" />
     <None Include="Favicons\Yourls.ico" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
