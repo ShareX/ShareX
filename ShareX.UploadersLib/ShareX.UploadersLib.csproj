@@ -333,7 +333,6 @@
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
     <Compile Include="TextUploaders\Pastebin.cs" />
-    <Compile Include="TextUploaders\Pastee.cs" />
     <Compile Include="TextUploaders\Slexy.cs" />
     <Compile Include="BaseUploaders\Uploader.cs" />
     <Compile Include="BaseUploaders\URLShortener.cs" />
