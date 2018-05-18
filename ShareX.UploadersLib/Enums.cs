@@ -127,8 +127,6 @@ namespace ShareX.UploadersLib
         Pomf,
         [Description("Uguu")]
         Uguu,
-        [Description("Dropfile")]
-        Dropfile,
         [Description("Seafile")]
         Seafile,
         [Description("Streamable")]

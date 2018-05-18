@@ -136,7 +136,6 @@
     <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
-    <Compile Include="FileUploaders\Dropfile.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
     <Compile Include="FileUploaders\Copy.cs" />
     <Compile Include="FileUploaders\Email.cs" />
