@@ -165,8 +165,6 @@ namespace ShareX.UploadersLib
         YOURLS,
         [Description("adf.ly")]
         AdFly,
-        [Description("coinurl.com")]
-        CoinURL,
         [Description("qr.net")]
         QRnet,
         [Description("vurl.com")]
