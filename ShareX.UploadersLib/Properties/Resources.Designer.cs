@@ -138,7 +138,6 @@ namespace ShareX.UploadersLib.Properties {
             }
         }
 
-
         /// <summary>
         ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
         /// </summary>
