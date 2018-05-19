@@ -496,7 +496,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -2782,7 +2782,7 @@ store.book[0].title</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -3043,7 +3043,7 @@ store.book[0].title</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3202,7 +3202,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -3214,81 +3214,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="txtCoinURLUUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtCoinURLUUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtCoinURLUUID.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Name" xml:space="preserve">
-    <value>txtCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblCoinURLUUID.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCoinURLUUID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCoinURLUUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblCoinURLUUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lblCoinURLUUID.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
-    <value>lblCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpCoinURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
-  </data>
-  <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="cbPolrUseAPIv1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3463,7 +3388,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
   </data>
@@ -3474,7 +3399,7 @@ store.book[0].title</value>
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3633,7 +3558,7 @@ store.book[0].title</value>
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpFirebaseDynamicLinks.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -5146,7 +5071,7 @@ store.book[0].title</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -5445,7 +5370,7 @@ store.book[0].title</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -5577,7 +5502,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -5829,7 +5754,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -6093,7 +6018,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPuush.Name" xml:space="preserve">
     <value>tpPuush</value>
   </data>
@@ -6288,7 +6213,7 @@ store.book[0].title</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -7089,7 +7014,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -7331,20 +7256,20 @@ store.book[0].title</value>
     <value>8</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpGoogleCloudStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="tpGoogleCloudStorage.Text" xml:space="preserve">
     <value>Google Cloud Storage</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleCloudStorage.Name" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
   </data>
@@ -7668,7 +7593,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAzureStorage.Text" xml:space="preserve">
     <value>Azure Storage</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
     <value>tpAzureStorage</value>
   </data>
@@ -7767,7 +7692,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
     <value>tpGfycat</value>
   </data>
@@ -8085,7 +8010,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -8466,7 +8391,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud / Nextcloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -8676,7 +8601,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -8838,7 +8763,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -9015,7 +8940,7 @@ store.book[0].title</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -9201,7 +9126,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -9360,7 +9285,7 @@ store.book[0].title</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -9567,7 +9492,7 @@ store.book[0].title</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -9726,7 +9651,7 @@ store.book[0].title</value>
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -9936,7 +9861,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
   </data>
@@ -10897,7 +10822,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
@@ -11098,7 +11023,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
   </data>
@@ -11203,7 +11128,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
   </data>
@@ -11437,7 +11362,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>Lithiio</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
   </data>
@@ -11944,7 +11869,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPlik.Name" xml:space="preserve">
     <value>tpPlik</value>
   </data>
@@ -12070,7 +11995,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpYouTube.Text" xml:space="preserve">
     <value>YouTube</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYouTube.Name" xml:space="preserve">
     <value>tpYouTube</value>
   </data>
@@ -13303,7 +13228,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -13408,7 +13333,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -13624,7 +13549,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -13732,7 +13657,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -13891,7 +13816,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -14020,7 +13945,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -14404,7 +14329,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -14644,7 +14569,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -14848,7 +14773,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -14926,7 +14851,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -15418,7 +15343,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -15586,7 +15511,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGooglePhotos.Text" xml:space="preserve">
     <value>Google Photos</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGooglePhotos.Name" xml:space="preserve">
     <value>tpGooglePhotos</value>
   </data>
@@ -15856,7 +15781,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -15964,7 +15889,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>
   </data>

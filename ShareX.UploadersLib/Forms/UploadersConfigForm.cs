@@ -29,6 +29,7 @@ using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -762,12 +763,6 @@ namespace ShareX.UploadersLib
 
             #endregion adf.ly
 
-            #region coinurl.com
-
-            txtCoinURLUUID.Text = Config.CoinURLUUID;
-
-            #endregion coinurl.com
-
             #region Polr
 
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
@@ -831,12 +826,13 @@ namespace ShareX.UploadersLib
 
         private void oauth2Imgur_OpenButtonClicked()
         {
-            ImgurAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
+            Config.ImgurOAuth2Info = OAuth2Open(new Imgur(oauth));
         }
 
         private void oauth2Imgur_CompleteButtonClicked(string code)
         {
-            ImgurAuthComplete(code);
+            btnImgurRefreshAlbumList.Enabled = OAuth2Complete(new Imgur(Config.ImgurOAuth2Info), code, oauth2Imgur);
         }
 
         private void oauth2Imgur_ClearButtonClicked()
@@ -846,7 +842,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2Imgur_RefreshButtonClicked()
         {
-            ImgurAuthRefresh();
+            btnImgurRefreshAlbumList.Enabled = OAuth2Refresh(new Imgur(Config.ImgurOAuth2Info), oauth2Imgur);
         }
 
         private void cbImgurDirectLink_CheckedChanged(object sender, EventArgs e)
@@ -1078,12 +1074,13 @@ namespace ShareX.UploadersLib
 
         private void oauth2Picasa_OpenButtonClicked()
         {
-            GooglePhotosAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
+            Config.PicasaOAuth2Info = OAuth2Open(new GooglePhotos(oauth));
         }
 
         private void oauth2Picasa_CompleteButtonClicked(string code)
         {
-            GooglePhotosAuthComplete(code);
+            btnPicasaRefreshAlbumList.Enabled = OAuth2Complete(new GooglePhotos(Config.PicasaOAuth2Info), code, oauth2Picasa);
         }
 
         private void oauth2Picasa_ClearButtonClicked()
@@ -1093,7 +1090,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2Picasa_RefreshButtonClicked()
         {
-            GooglePhotosAuthRefresh();
+            btnPicasaRefreshAlbumList.Enabled = OAuth2Refresh(new GooglePhotos(Config.PicasaOAuth2Info), oauth2Picasa);
         }
 
         private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
@@ -1264,12 +1261,13 @@ namespace ShareX.UploadersLib
 
         private void oAuth2Gist_OpenButtonClicked()
         {
-            GistAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GitHubID, APIKeys.GitHubSecret);
+            Config.GistOAuth2Info = OAuth2Open(new GitHubGist(oauth));
         }
 
         private void oAuth2Gist_CompleteButtonClicked(string code)
         {
-            GistAuthComplete(code);
+            OAuth2Complete(new GitHubGist(Config.GistOAuth2Info), code, oAuth2Gist);
         }
 
         private void oAuth2Gist_ClearButtonClicked()
@@ -1686,12 +1684,13 @@ namespace ShareX.UploadersLib
 
         private void oauth2Dropbox_OpenButtonClicked()
         {
-            DropboxAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.DropboxConsumerKey, APIKeys.DropboxConsumerSecret);
+            Config.DropboxOAuth2Info = OAuth2Open(new Dropbox(oauth));
         }
 
         private void oauth2Dropbox_CompleteButtonClicked(string code)
         {
-            DropboxAuthComplete(code);
+            OAuth2Complete(new Dropbox(Config.DropboxOAuth2Info), code, oauth2Dropbox);
         }
 
         private void oauth2Dropbox_ClearButtonClicked()
@@ -1721,17 +1720,19 @@ namespace ShareX.UploadersLib
 
         private void oAuth2OneDrive_OpenButtonClicked()
         {
-            OneDriveAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.OneDriveClientID, APIKeys.OneDriveClientSecret);
+            oauth.Proof = new OAuth2ProofKey(OAuth2ChallengeMethod.SHA256);
+            Config.OneDriveV2OAuth2Info = OAuth2Open(new OneDrive(oauth));
         }
 
         private void oAuth2OneDrive_CompleteButtonClicked(string code)
         {
-            OneDriveAuthComplete(code);
+            tvOneDrive.Enabled = OAuth2Complete(new OneDrive(Config.OneDriveV2OAuth2Info), code, oAuth2OneDrive);
         }
 
         private void oAuth2OneDrive_RefreshButtonClicked()
         {
-            OneDriveAuthRefresh();
+            tvOneDrive.Enabled = OAuth2Refresh(new OneDrive(Config.OneDriveV2OAuth2Info), oAuth2OneDrive);
         }
 
         private void oAuth2OneDrive_ClearButtonClicked()
@@ -1898,17 +1899,18 @@ namespace ShareX.UploadersLib
 
         private void oauth2Box_OpenButtonClicked()
         {
-            BoxAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.BoxClientID, APIKeys.BoxClientSecret);
+            Config.BoxOAuth2Info = OAuth2Open(new Box(oauth));
         }
 
         private void oauth2Box_CompleteButtonClicked(string code)
         {
-            BoxAuthComplete(code);
+            btnBoxRefreshFolders.Enabled = OAuth2Complete(new Box(Config.BoxOAuth2Info), code, oauth2Box);
         }
 
         private void oauth2Box_RefreshButtonClicked()
         {
-            BoxAuthRefresh();
+            btnBoxRefreshFolders.Enabled = OAuth2Refresh(new Box(Config.BoxOAuth2Info), oauth2Box);
         }
 
         private void oauth2Box_ClearButtonClicked()
@@ -2948,12 +2950,13 @@ namespace ShareX.UploadersLib
 
         private void oauth2Gfycat_OpenButtonClicked()
         {
-            GfycatAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.GfycatClientID, APIKeys.GfycatClientSecret);
+            Config.GfycatOAuth2Info = OAuth2Open(new GfycatUploader(oauth));
         }
 
         private void oauth2Gfycat_CompleteButtonClicked(string code)
         {
-            GfycatAuthComplete(code);
+            OAuth2Complete(new GfycatUploader(Config.GfycatOAuth2Info), code, oauth2Gfycat);
         }
 
         private void oauth2Gfycat_ClearButtonClicked()
@@ -2963,7 +2966,7 @@ namespace ShareX.UploadersLib
 
         private void oauth2Gfycat_RefreshButtonClicked()
         {
-            GfycatAuthRefresh();
+            OAuth2Refresh(new GfycatUploader(Config.GfycatOAuth2Info), oauth2Gfycat);
         }
 
         private void cbGfycatIsPublic_CheckedChanged(object sender, EventArgs e)
@@ -3059,12 +3062,13 @@ namespace ShareX.UploadersLib
 
         private void oauth2Bitly_OpenButtonClicked()
         {
-            BitlyAuthOpen();
+            OAuth2Info oauth = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
+            Config.BitlyOAuth2Info = OAuth2Open(new BitlyURLShortener(oauth));
         }
 
         private void oauth2Bitly_CompleteButtonClicked(string code)
         {
-            BitlyAuthComplete(code);
+            OAuth2Complete(new BitlyURLShortener(Config.BitlyOAuth2Info), code, oauth2Bitly);
         }
 
         private void oauth2Bitly_ClearButtonClicked()
@@ -3122,15 +3126,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion adf.ly
-
-        #region CoinURL
-
-        private void txtCoinURLUUID_TextChanged(object sender, EventArgs e)
-        {
-            Config.CoinURLUUID = txtCoinURLUUID.Text;
-        }
-
-        #endregion CoinURL
 
         #region Polr
 

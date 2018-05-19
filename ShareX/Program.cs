@@ -64,7 +64,7 @@ namespace ShareX
                 string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
                 if (version.Build > 0) title += "." + version.Build;
                 if (version.Revision > 0) title += "." + version.Revision;
-                if (Beta) title += " Beta";
+                if (Dev) title += " Dev";
                 if (Portable) title += " Portable";
                 return title;
             }
@@ -72,7 +72,7 @@ namespace ShareX
 
         public static string TitleLong => $"{Title} ({Build})";
 
-        public static bool Beta { get; } = true;
+        public static bool Dev { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
         public static bool PortableApps { get; private set; }
@@ -286,7 +286,7 @@ namespace ShareX
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
-            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
+            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
@@ -540,7 +540,7 @@ namespace ShareX
         {
             List<string> flags = new List<string>();
 
-            if (Beta) flags.Add(nameof(Beta));
+            if (Dev) flags.Add(nameof(Dev));
             if (MultiInstance) flags.Add(nameof(MultiInstance));
             if (Portable) flags.Add(nameof(Portable));
             if (PortableApps) flags.Add(nameof(PortableApps));
