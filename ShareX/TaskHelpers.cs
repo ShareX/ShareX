@@ -704,7 +704,8 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
             historyForm.Show();
@@ -713,7 +714,8 @@ namespace ShareX
         public static void OpenImageHistory()
         {
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
-                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
+                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
             imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
             imageHistoryForm.Show();
@@ -1591,7 +1593,7 @@ namespace ShareX
         {
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
-                IsBeta = Program.Beta,
+                IsBeta = Program.Dev,
                 IsPortable = Program.Portable,
                 Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
             };

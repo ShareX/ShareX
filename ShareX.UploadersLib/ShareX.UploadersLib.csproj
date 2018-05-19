@@ -136,7 +136,6 @@
     <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
-    <Compile Include="FileUploaders\Dropfile.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
     <Compile Include="FileUploaders\Copy.cs" />
     <Compile Include="FileUploaders\Email.cs" />
@@ -334,7 +333,6 @@
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
     <Compile Include="TextUploaders\Pastebin.cs" />
-    <Compile Include="TextUploaders\Pastee.cs" />
     <Compile Include="TextUploaders\Slexy.cs" />
     <Compile Include="BaseUploaders\Uploader.cs" />
     <Compile Include="BaseUploaders\URLShortener.cs" />
@@ -344,7 +342,6 @@
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
-    <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
@@ -897,7 +894,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
-    <None Include="app.config" />
     <None Include="Favicons\Yourls.ico" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
@@ -924,7 +920,6 @@
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />
     <None Include="Favicons\Hastebin.png" />
-    <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />

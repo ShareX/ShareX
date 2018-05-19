@@ -46,7 +46,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] historyItems;
 
-        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount)
+        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -112,7 +112,7 @@ namespace ShareX.HistoryLib
                 tsmiMaxImageLimit1000.RadioCheck();
             }
 
-            him = new HistoryItemManager();
+            him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
         }
 

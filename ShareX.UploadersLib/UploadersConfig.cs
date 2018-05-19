@@ -425,12 +425,6 @@ namespace ShareX.UploadersLib
 
         #endregion adf.ly
 
-        #region coinurl.com
-
-        public string CoinURLUUID = "";
-
-        #endregion coinurl.com
-
         #region polr
 
         public string PolrAPIHostname = "";

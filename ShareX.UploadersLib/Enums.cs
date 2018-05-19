@@ -62,8 +62,6 @@ namespace ShareX.UploadersLib
         Paste2,
         [Description("Slexy")]
         Slexy,
-        [Description("Pastee.org")]
-        Pastee,
         [Description("Paste.ee")]
         Paste_ee,
         [Description("GitHub Gist")]
@@ -127,8 +125,6 @@ namespace ShareX.UploadersLib
         Pomf,
         [Description("Uguu")]
         Uguu,
-        [Description("Dropfile")]
-        Dropfile,
         [Description("Seafile")]
         Seafile,
         [Description("Streamable")]
@@ -165,8 +161,6 @@ namespace ShareX.UploadersLib
         YOURLS,
         [Description("adf.ly")]
         AdFly,
-        [Description("coinurl.com")]
-        CoinURL,
         [Description("qr.net")]
         QRnet,
         [Description("vurl.com")]
