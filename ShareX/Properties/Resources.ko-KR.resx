@@ -560,4 +560,7 @@ ShareX를 재시작할까요?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>작업 관리자에 의해 ShareX를 시작 프로그램으로 지정할 수 없습니다</value>
   </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>중단 하시겠습니까?</value>
+  </data>
 </root>

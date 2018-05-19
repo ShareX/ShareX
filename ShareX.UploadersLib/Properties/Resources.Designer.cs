@@ -137,7 +137,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("CustomFileUploader_Upload_Response_parse_failed_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
         /// </summary>

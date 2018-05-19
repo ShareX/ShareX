@@ -138,4 +138,7 @@
   <data name="btnClearAuthorization.Text" xml:space="preserve">
     <value>인증 초기화</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>상태:</value>
+  </data>
 </root>

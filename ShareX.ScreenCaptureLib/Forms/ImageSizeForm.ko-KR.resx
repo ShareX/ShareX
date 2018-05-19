@@ -141,4 +141,7 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>취소</value>
   </data>
+  <data name="lblResampling.Text" xml:space="preserve">
+    <value>리샘플링:</value>
+  </data>
 </root>
