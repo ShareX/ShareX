@@ -46,7 +46,7 @@ namespace ShareX.HistoryLib
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
 
-        public HistoryForm(string historyPath, int maxItemCount, int splitterDistance = 0)
+        public HistoryForm(string historyPath, int maxItemCount, int splitterDistance = 0, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
@@ -67,7 +67,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager();
+            him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
 
             pbThumbnail.Reset();
