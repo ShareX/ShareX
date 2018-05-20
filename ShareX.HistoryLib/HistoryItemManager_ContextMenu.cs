@@ -489,10 +489,10 @@ namespace ShareX.HistoryLib
             tsmiShowImagePreview.Enabled = IsImageFile;
 
             // Upload file
-            tsmiUploadFile.Enabled = IsFileExist;
+            tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
 
             // Edit image
-            tsmiEditImage.Enabled = IsImageFile;
+            tsmiEditImage.Enabled = editImage != null && IsImageFile;
 
             cmsHistory.ResumeLayout();
         }

@@ -169,7 +169,7 @@
     <value>btnTextColor</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
     <value>flpProperties</value>

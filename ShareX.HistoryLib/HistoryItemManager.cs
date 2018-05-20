@@ -53,10 +53,10 @@ namespace ShareX.HistoryLib
 
         public HistoryItemManager(Action<string> uploadFile, Action<string> editImage)
         {
-            InitializeComponent();
-
             this.uploadFile = uploadFile;
             this.editImage = editImage;
+
+            InitializeComponent();
         }
 
         public HistoryRefreshInfoResult RefreshInfo()
