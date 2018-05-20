@@ -117,37 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>픽셀</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>픽셀</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>높이</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>너비</value>
+  </data>
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>투명</value>
+  </data>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>색상 변경...</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>배경 색</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR코드</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>클립보드에 복사</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>이미지로 저장...</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>결과:</value>
-  </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>화면에서 디코드...</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>이미지 파일에서 디코드...</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>인코드</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>이미지 업로드</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>디코드</value>
+    <value>ShareX - 새 이미지</value>
   </data>
 </root>

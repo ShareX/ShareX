@@ -117,37 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR코드</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>언어:</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>클립보드에 복사</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>이미지로 저장...</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
+  <data name="lblResult.Text" xml:space="preserve">
     <value>결과:</value>
   </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>OCR.Space API로 구동</value>
   </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>화면에서 디코드...</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>OCR 시작하기</value>
   </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>이미지 파일에서 디코드...</value>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>구글번역 열고 창 닫기</value>
   </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>인코드</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>이미지 업로드</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>디코드</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 텍스트 촬영</value>
   </data>
 </root>

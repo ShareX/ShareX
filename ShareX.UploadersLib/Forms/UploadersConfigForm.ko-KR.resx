@@ -1383,4 +1383,58 @@ store.book[0].title</value>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>사용량:</value>
   </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>웹 API 키:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase 다이나믹 링크</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>파일 확장자 제거:</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>비디오</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>파일에 공용 읽기 ACL설정</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>미리보기</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>URL 미리보기:</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>경로:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>개인 맞춤 도메인:</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>미리보기 링크 사용(NextCloud만)</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>단축 링크 사용</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>개인 정보 유형:</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>중복</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
 </root>

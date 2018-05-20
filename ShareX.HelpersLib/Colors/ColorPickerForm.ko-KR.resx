@@ -145,7 +145,7 @@
     <value>마젠타:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>십진수:</value>
+    <value>10진수:</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>파랑:</value>
@@ -170,5 +170,44 @@
   </data>
   <data name="cbTransparent.ToolTip" xml:space="preserve">
     <value>투명</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="btnPickColor.Text" xml:space="preserve">
+    <value>화면에서 색상 선택</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>커서 위치</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>16진수</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>모두 복사</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>CMYK 복사</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>10진수 복사</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>16진수 복사</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>HSB 복사</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>위치 복사</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>RGB 복사</value>
+  </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>최근 색상:</value>
   </data>
 </root>
