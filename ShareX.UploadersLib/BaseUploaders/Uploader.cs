@@ -246,7 +246,7 @@ namespace ShareX.UploadersLib
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
 
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -319,7 +319,7 @@ namespace ShareX.UploadersLib
                 long dataLength = data.Length;
                 headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{dataLength}");
 
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -372,16 +372,16 @@ namespace ShareX.UploadersLib
             {
                 url = URLHelpers.CreateQuery(url, args);
 
-                long length = 0;
+                long contentLength = 0;
 
                 if (data != null)
                 {
-                    length = data.Length;
+                    contentLength = data.Length;
                 }
 
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, length);
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
-                if (length > 0)
+                if (contentLength > 0)
                 {
                     using (Stream requestStream = request.GetRequestStream())
                     {
@@ -412,17 +412,19 @@ namespace ShareX.UploadersLib
 
         #region Helper methods
 
-        private HttpWebRequest PrepareWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null, long contentLength = 0)
+        private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null, long contentLength = 0)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            request.Method = method.ToString();
+            string accept = null;
+            string referer = null;
+            string userAgent = ShareXResources.UserAgent;
 
             if (headers != null)
             {
                 if (headers["Accept"] != null)
                 {
-                    request.Accept = headers["Accept"];
+                    accept = headers["Accept"];
                     headers.Remove("Accept");
                 }
 
@@ -436,15 +438,30 @@ namespace ShareX.UploadersLib
                     headers.Remove("Content-Length");
                 }
 
+                if (headers["Referer"] != null)
+                {
+                    referer = headers["Referer"];
+                    headers.Remove("Referer");
+                }
+
+                if (headers["User-Agent"] != null)
+                {
+                    userAgent = headers["User-Agent"];
+                    headers.Remove("User-Agent");
+                }
+
                 request.Headers.Add(headers);
             }
 
+            request.Accept = accept;
+            request.ContentType = contentType;
             request.CookieContainer = new CookieContainer();
             if (cookies != null) request.CookieContainer.Add(cookies);
+            request.Method = method.ToString();
             IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             if (proxy != null) request.Proxy = proxy;
-            request.UserAgent = ShareXResources.UserAgent;
-            request.ContentType = contentType;
+            request.Referer = referer;
+            request.UserAgent = userAgent;
 
             if (contentLength > 0)
             {
