@@ -228,7 +228,7 @@
     <value>도메인:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
+    <value>참고: 시그니쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
@@ -237,7 +237,7 @@
     <value>사용자 ID:</value>
   </data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>시그내쳐:</value>
+    <value>시그니쳐:</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
