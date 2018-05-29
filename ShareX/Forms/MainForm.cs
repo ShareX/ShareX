@@ -704,6 +704,7 @@ namespace ShareX
                 niTray.Text = "ShareX";
             }
 
+            HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
             HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;

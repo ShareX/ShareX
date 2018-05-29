@@ -43,7 +43,6 @@ namespace ShareX
         public bool ShowUploadWarning = true; // First time upload warning
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public int NameParserAutoIncrementNumber = 0;
-        public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
         public ApplicationConfig()
@@ -190,6 +189,24 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
+
+        [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
+        public bool DisableHotkeys { get; set; }
+
+        private int hotkeyRepeatLimit;
+
+        [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
+        public int HotkeyRepeatLimit
+        {
+            get
+            {
+                return hotkeyRepeatLimit;
+            }
+            set
+            {
+                hotkeyRepeatLimit = Math.Max(value, 200);
+            }
+        }
 
         [Category("Clipboard"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }

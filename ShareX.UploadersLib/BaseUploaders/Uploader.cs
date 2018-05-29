@@ -492,6 +492,7 @@ namespace ShareX.UploadersLib
             {
                 return true;
             }
+
             if (dataStream.CanSeek)
             {
                 dataStream.Position = dataPosition;
