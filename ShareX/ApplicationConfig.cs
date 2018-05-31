@@ -40,8 +40,6 @@ namespace ShareX
         public TaskSettings DefaultTaskSettings = new TaskSettings();
 
         public string FileUploadDefaultDirectory = "";
-        public bool ShowUploadWarning = true; // First time upload warning
-        public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
@@ -231,6 +229,12 @@ namespace ShareX
 
         [Category("Upload"), DefaultValue(false), Description("Writes verbose web request logs to \"{PersonalFolder}\\Logs\\ShareX-Request-Logs.txt\" file for debugging purposes.")]
         public bool VerboseRequestLogs { get; set; }
+
+        [Category("Upload"), DefaultValue(true), Description("Show first time upload warning.")]
+        public bool ShowUploadWarning { get; set; }
+
+        [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
+        public bool ShowMultiUploadWarning { get; set; }
 
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
