@@ -729,25 +729,11 @@ namespace ShareX
             Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
         }
 
-        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null, bool checkClipboard = true)
+        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Color color = Color.Red;
-
-            if (checkClipboard && Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
-
-                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
-                {
-                    color = clipboardColor;
-                }
-            }
-
-            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
-            colorPickerForm.EnableScreenColorPickerButton(() => RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions));
-            colorPickerForm.Show();
+            RegionCaptureTasks.ShowScreenColorPickerDialog(taskSettings.CaptureSettings.SurfaceOptions, true);
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)

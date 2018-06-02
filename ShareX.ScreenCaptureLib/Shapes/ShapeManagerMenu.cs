@@ -323,7 +323,7 @@ namespace ShareX.ScreenCaptureLib
                     borderColor = AnnotationOptions.BorderColor;
                 }
 
-                if (ColorPickerForm.PickColor(borderColor, out Color newColor, Form))
+                if (PickColor(borderColor, out Color newColor))
                 {
                     if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
@@ -373,7 +373,7 @@ namespace ShareX.ScreenCaptureLib
                     fillColor = AnnotationOptions.FillColor;
                 }
 
-                if (ColorPickerForm.PickColor(fillColor, out Color newColor, Form))
+                if (PickColor(fillColor, out Color newColor))
                 {
                     if (shapeType == ShapeType.DrawingTextBackground || shapeType == ShapeType.DrawingSpeechBalloon)
                     {
@@ -402,7 +402,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                if (ColorPickerForm.PickColor(AnnotationOptions.HighlightColor, out Color newColor, Form))
+                if (PickColor(AnnotationOptions.HighlightColor, out Color newColor))
                 {
                     AnnotationOptions.HighlightColor = newColor;
                     UpdateMenu();
@@ -564,7 +564,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                if (ColorPickerForm.PickColor(AnnotationOptions.ShadowColor, out Color newColor, Form))
+                if (PickColor(AnnotationOptions.ShadowColor, out Color newColor))
                 {
                     AnnotationOptions.ShadowColor = newColor;
                     UpdateMenu();
@@ -823,7 +823,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Form.Pause();
 
-                    if (ColorPickerForm.PickColor(Options.ImageEditorBackgroundColor, out Color newColor, Form))
+                    if (PickColor(Options.ImageEditorBackgroundColor, out Color newColor))
                     {
                         Options.ImageEditorBackgroundColor = newColor;
                         UpdateMenu();

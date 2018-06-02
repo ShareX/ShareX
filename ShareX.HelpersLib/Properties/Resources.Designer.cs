@@ -137,7 +137,15 @@ namespace ShareX.HelpersLib.Properties {
         ///easygoing
         ///ecstatic
         ///edible
-        ///educat [rest of string was truncated]&quot;;.
+        ///educated
+        ///fabulous
+        ///failing
+        ///faint
+        ///fair
+        ///faithful
+        ///fake
+        ///familiar
+        ///fam [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string adjectives {
             get {
@@ -413,7 +421,8 @@ namespace ShareX.HelpersLib.Properties {
         ///africanjacana
         ///africanmolesnake
         ///africanparadiseflycatcher
-        ///a [rest of string was truncated]&quot;;.
+        ///africanpiedkingfisher
+        ///africanporcu [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string animals {
             get {
@@ -2263,6 +2272,16 @@ namespace ShareX.HelpersLib.Properties {
         internal static string PastebinPrivacy_Unlisted {
             get {
                 return ResourceManager.GetString("PastebinPrivacy_Unlisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pipette {
+            get {
+                object obj = ResourceManager.GetObject("pipette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

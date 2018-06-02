@@ -1857,6 +1857,18 @@ namespace ShareX.ScreenCaptureLib
             Form.Resume();
         }
 
+        private bool PickColor(Color currentColor, out Color newColor)
+        {
+            Func<PointInfo> openScreenColorPicker = null;
+
+            if (!Form.IsFullscreen)
+            {
+                openScreenColorPicker = () => RegionCaptureTasks.GetPointInfo(Options);
+            }
+
+            return ColorPickerForm.PickColor(currentColor, out newColor, Form, openScreenColorPicker);
+        }
+
         private void OnCurrentShapeChanged(BaseShape shape)
         {
             if (CurrentShapeChanged != null)
