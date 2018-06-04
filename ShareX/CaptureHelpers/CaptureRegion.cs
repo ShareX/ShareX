@@ -99,7 +99,7 @@ namespace ShareX
 
                 if (imageInfo.Image != null)
                 {
-                    if (form.IsAnnotated)
+                    if (form.IsModified)
                     {
                         AllowAnnotation = false;
                     }
