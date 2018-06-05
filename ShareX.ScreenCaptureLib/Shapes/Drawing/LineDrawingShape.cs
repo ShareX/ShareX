@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
 
-        public Point[] Points { get; private set; }
+        public Point[] Points { get; private set; } = new Point[2];
         public bool CenterNodeActive { get; private set; }
         public int CenterPointCount { get; private set; }
 
@@ -74,10 +74,9 @@ namespace ShareX.ScreenCaptureLib
             int previousCenterPointCount = CenterPointCount;
             CenterPointCount = AnnotationOptions.LineCenterPointCount.Between(0, MaximumCenterPointCount);
 
-            AdjustPoints(CenterPointCount);
-
             if (CenterPointCount != previousCenterPointCount)
             {
+                AdjustPoints(CenterPointCount);
                 CenterNodeActive = false;
                 AutoPositionCenterPoints();
             }
