@@ -34,6 +34,7 @@
             // tlpMain
             // 
             this.tlpMain.AutoScroll = true;
+            this.tlpMain.BackColor = System.Drawing.SystemColors.Window;
             this.tlpMain.ColumnCount = 2;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
