@@ -45,13 +45,13 @@
             // lblCheckingUpdates
             // 
             resources.ApplyResources(this.lblCheckingUpdates, "lblCheckingUpdates");
-            this.lblCheckingUpdates.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCheckingUpdates.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCheckingUpdates.Name = "lblCheckingUpdates";
             // 
             // lblStatus
             // 
             resources.ApplyResources(this.lblStatus, "lblStatus");
-            this.lblStatus.ForeColor = System.Drawing.Color.DimGray;
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblStatus.Name = "lblStatus";
             // 
             // llblUpdateAvailable
