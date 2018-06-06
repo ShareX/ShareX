@@ -95,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string targetPath = GetUploadPath(fileName);
-            string url = "";
+            string url;
             if (AzureStorageContainer == "$root")
             {
                 url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{targetPath}";
@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = "";
+            string canonicalizedResource;
             if (AzureStorageContainer == "$root")
             {
                 canonicalizedResource = $"/{AzureStorageAccountName}/{targetPath}";
