@@ -667,6 +667,8 @@ namespace ShareX.UploadersLib
             txtAzureStorageContainer.Text = Config.AzureStorageContainer;
             cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
             txtAzureStorageCustomDomain.Text = Config.AzureStorageCustomDomain;
+            txtAzureStorageUploadPath.Text = Config.AzureStorageUploadPath;
+            cbAzureStorageExcludeContainer.Checked = Config.AzureStorageExcludeContainer;
 
             #endregion Azure Storage
 
@@ -2870,6 +2872,16 @@ namespace ShareX.UploadersLib
             Config.AzureStorageCustomDomain = txtAzureStorageCustomDomain.Text;
         }
 
+        private void txtAzureStorageUploadPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageUploadPath = txtAzureStorageUploadPath.Text;
+        }
+
+        private void cbAzureStorageExcludeContainer_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageExcludeContainer = cbAzureStorageExcludeContainer.Checked;
+        }
+
         private void btnAzureStoragePortal_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
@@ -3744,9 +3756,11 @@ namespace ShareX.UploadersLib
                 case URLType.URL:
                     tb = txtCustomUploaderURL;
                     break;
+
                 case URLType.ThumbnailURL:
                     tb = txtCustomUploaderThumbnailURL;
                     break;
+
                 case URLType.DeletionURL:
                     tb = txtCustomUploaderDeletionURL;
                     break;

@@ -372,6 +372,8 @@ namespace ShareX.UploadersLib
         public string AzureStorageContainer = "";
         public string AzureStorageEnvironment = "blob.core.windows.net";
         public string AzureStorageCustomDomain = "";
+        public string AzureStorageUploadPath = "";
+        public bool AzureStorageExcludeContainer = false;
 
         #endregion Azure Storage
 

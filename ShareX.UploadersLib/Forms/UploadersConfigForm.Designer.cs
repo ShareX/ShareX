@@ -310,6 +310,9 @@
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
             this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
+            this.cbAzureStorageExcludeContainer = new System.Windows.Forms.CheckBox();
+            this.txtAzureStorageUploadPath = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageUploadPath = new System.Windows.Forms.Label();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
             this.lblAzureStorageEnvironment = new System.Windows.Forms.Label();
             this.btnAzureStoragePortal = new System.Windows.Forms.Button();
@@ -1463,7 +1466,6 @@
             // 
             this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
             this.eiCustomUploaders.DefaultFileName = null;
-            this.eiCustomUploaders.ExportIgnoreDefaultValue = true;
             this.eiCustomUploaders.ExportIgnoreNull = true;
             resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
@@ -2835,6 +2837,9 @@
             // tpAzureStorage
             // 
             this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
+            this.tpAzureStorage.Controls.Add(this.cbAzureStorageExcludeContainer);
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageUploadPath);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageUploadPath);
             this.tpAzureStorage.Controls.Add(this.cbAzureStorageEnvironment);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageEnvironment);
             this.tpAzureStorage.Controls.Add(this.btnAzureStoragePortal);
@@ -2848,6 +2853,24 @@
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageCustomDomain);
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
+            // 
+            // cbAzureStorageExcludeContainer
+            // 
+            resources.ApplyResources(this.cbAzureStorageExcludeContainer, "cbAzureStorageExcludeContainer");
+            this.cbAzureStorageExcludeContainer.Name = "cbAzureStorageExcludeContainer";
+            this.cbAzureStorageExcludeContainer.UseVisualStyleBackColor = true;
+            this.cbAzureStorageExcludeContainer.CheckedChanged += new System.EventHandler(this.cbAzureStorageExcludeContainer_CheckedChanged);
+            // 
+            // txtAzureStorageUploadPath
+            // 
+            resources.ApplyResources(this.txtAzureStorageUploadPath, "txtAzureStorageUploadPath");
+            this.txtAzureStorageUploadPath.Name = "txtAzureStorageUploadPath";
+            this.txtAzureStorageUploadPath.TextChanged += new System.EventHandler(this.txtAzureStorageUploadPath_TextChanged);
+            // 
+            // lblAzureStorageUploadPath
+            // 
+            resources.ApplyResources(this.lblAzureStorageUploadPath, "lblAzureStorageUploadPath");
+            this.lblAzureStorageUploadPath.Name = "lblAzureStorageUploadPath";
             // 
             // cbAzureStorageEnvironment
             // 
@@ -6083,5 +6106,8 @@
         private System.Windows.Forms.ListBox lbSharedFolderAccounts;
         private System.Windows.Forms.Label lblGoogleCloudStoragePathPreviewLabel;
         private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
+        private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
+        private System.Windows.Forms.Label lblAzureStorageUploadPath;
+        private System.Windows.Forms.CheckBox cbAzureStorageExcludeContainer;
     }
 }
