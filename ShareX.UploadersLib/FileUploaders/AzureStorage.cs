@@ -95,10 +95,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string targetPath = GetUploadPath(fileName);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{targetPath}";
+            string url = "";
             if (AzureStorageContainer == "$root")
             {
                 url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{targetPath}";
+            }
+            else
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{targetPath}";
             }
             string contentType = Helpers.GetMimeType(fileName);
 
@@ -108,10 +112,14 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{targetPath}";
+            string canonicalizedResource = "";
             if (AzureStorageContainer == "$root")
             {
                 canonicalizedResource = $"/{AzureStorageAccountName}/{targetPath}";
+            }
+            else
+            {
+                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{targetPath}";
             }
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
