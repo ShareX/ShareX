@@ -702,7 +702,7 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(Image img)
         {
-            return DrawCheckers(img, 10, Color.FromArgb(230, 230, 230), Color.White);
+            return DrawCheckers(img, 10, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
@@ -743,7 +743,7 @@ namespace ShareX.HelpersLib
 
         public static Image CreateCheckerPattern(int width, int height)
         {
-            return CreateCheckerPattern(width, height, Color.FromArgb(230, 230, 230), Color.White);
+            return CreateCheckerPattern(width, height, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
         private static Image CreateCheckerPattern(int width, int height, Color color1, Color color2)
