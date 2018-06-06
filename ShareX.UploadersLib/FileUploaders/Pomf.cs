@@ -63,7 +63,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             //new PomfUploader("https://pomf.se/upload.php"),
-            new PomfUploader("https://catgirl.pw/upload.php"),
             new PomfUploader("https://comfy.moe/upload.php"),
             new PomfUploader("https://doko.moe/upload.php"),
             new PomfUploader("https://edfile.pro/upload/archive"),
@@ -79,7 +78,8 @@ namespace ShareX.UploadersLib.FileUploaders
             //new PomfUploader("https://sugoi.vidyagam.es/upload.php"), - dangerous site
             new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
             new PomfUploader("https://void.cat/upload.php"),
-            new PomfUploader("https://vidga.me/upload.php")
+            new PomfUploader("https://vidga.me/upload.php"),
+            new PomfUploader("https://catgirl.pw/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
