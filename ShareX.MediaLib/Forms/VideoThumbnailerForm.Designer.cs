@@ -50,7 +50,6 @@
             // 
             // pgOptions
             // 
-            this.pgOptions.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgOptions, "pgOptions");
             this.pgOptions.Name = "pgOptions";
             this.pgOptions.PropertySort = System.Windows.Forms.PropertySort.Categorized;
