@@ -3401,6 +3401,33 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 55</value>
+  </data>
+  <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lblFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Name" xml:space="preserve">
+    <value>lblFirebaseDomain</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3408,7 +3435,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbFirebaseIsShort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 85</value>
+    <value>16, 97</value>
   </data>
   <data name="cbFirebaseIsShort.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
@@ -3429,43 +3456,13 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;cbFirebaseIsShort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFirebaseDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 61</value>
-  </data>
-  <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="lblFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblFirebaseDomain.Text" xml:space="preserve">
-    <value>.app.goo.gl</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Name" xml:space="preserve">
-    <value>lblFirebaseDomain</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.Parent" xml:space="preserve">
-    <value>tpFirebaseDynamicLinks</value>
-  </data>
-  <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="txtFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 58</value>
+    <value>16, 71</value>
   </data>
   <data name="txtFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+    <value>120, 20</value>
   </data>
   <data name="txtFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3540,7 +3537,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>

@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.URLShorteners
             {
                 dynamicLinkInfo = new DynamicLinkInfo
                 {
-                    dynamicLinkDomain = DynamicLinkDomain + ".app.goo.gl",
+                    dynamicLinkDomain = DynamicLinkDomain,
                     link = url
                 }
             };
