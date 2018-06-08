@@ -166,7 +166,6 @@
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
             this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
             this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
-            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
             this.lblFirebaseWebAPIKey = new System.Windows.Forms.Label();
@@ -651,6 +650,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1745,8 +1745,8 @@
             // 
             // tpFirebaseDynamicLinks
             // 
-            this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
             this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomain);
+            this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseWebAPIKey);
             this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseWebAPIKey);
@@ -1760,11 +1760,6 @@
             this.cbFirebaseIsShort.Name = "cbFirebaseIsShort";
             this.cbFirebaseIsShort.UseVisualStyleBackColor = true;
             this.cbFirebaseIsShort.CheckedChanged += new System.EventHandler(this.cbFirebaseIsShort_CheckedChanged);
-            // 
-            // lblFirebaseDomain
-            // 
-            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
-            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
             // 
             // txtFirebaseDomain
             // 
@@ -5308,6 +5303,11 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblFirebaseDomain
+            // 
+            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
+            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6082,7 +6082,6 @@
         private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
         internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
         private System.Windows.Forms.CheckBox cbFirebaseIsShort;
-        private System.Windows.Forms.Label lblFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
         private System.Windows.Forms.Label lblFirebaseWebAPIKey;
@@ -6109,5 +6108,6 @@
         private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
         private System.Windows.Forms.Label lblAzureStorageUploadPath;
         private System.Windows.Forms.CheckBox cbAzureStorageExcludeContainer;
+        private System.Windows.Forms.Label lblFirebaseDomain;
     }
 }
