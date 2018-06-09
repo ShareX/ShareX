@@ -3756,11 +3756,9 @@ namespace ShareX.UploadersLib
                 case URLType.URL:
                     tb = txtCustomUploaderURL;
                     break;
-
                 case URLType.ThumbnailURL:
                     tb = txtCustomUploaderThumbnailURL;
                     break;
-
                 case URLType.DeletionURL:
                     tb = txtCustomUploaderDeletionURL;
                     break;
