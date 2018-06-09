@@ -3537,7 +3537,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -7279,6 +7279,84 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpGoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="cbAzureStorageExcludeContainer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAzureStorageExcludeContainer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbAzureStorageExcludeContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 299</value>
+  </data>
+  <data name="cbAzureStorageExcludeContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="cbAzureStorageExcludeContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbAzureStorageExcludeContainer.Text" xml:space="preserve">
+    <value>Exclude container name from returned URL</value>
+  </data>
+  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Name" xml:space="preserve">
+    <value>cbAzureStorageExcludeContainer</value>
+  </data>
+  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;cbAzureStorageExcludeContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtAzureStorageUploadPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 223</value>
+  </data>
+  <data name="txtAzureStorageUploadPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 20</value>
+  </data>
+  <data name="txtAzureStorageUploadPath.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageUploadPath.Name" xml:space="preserve">
+    <value>txtAzureStorageUploadPath</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageUploadPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageUploadPath.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageUploadPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 207</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>Upload Path:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageUploadPath.Name" xml:space="preserve">
+    <value>lblAzureStorageUploadPath</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageUploadPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageUploadPath.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageUploadPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
   </data>
@@ -7310,7 +7388,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;cbAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="lblAzureStorageEnvironment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7340,7 +7418,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnAzureStoragePortal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7352,7 +7430,7 @@ store.book[0].title</value>
     <value>24, 24</value>
   </data>
   <data name="btnAzureStoragePortal.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="btnAzureStoragePortal.Text" xml:space="preserve">
     <value>...</value>
@@ -7367,7 +7445,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;btnAzureStoragePortal.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="txtAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -7376,7 +7454,7 @@ store.book[0].title</value>
     <value>526, 20</value>
   </data>
   <data name="txtAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageContainer.Name" xml:space="preserve">
     <value>txtAzureStorageContainer</value>
@@ -7388,7 +7466,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lblAzureStorageContainer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7403,7 +7481,7 @@ store.book[0].title</value>
     <value>55, 13</value>
   </data>
   <data name="lblAzureStorageContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblAzureStorageContainer.Text" xml:space="preserve">
     <value>Container:</value>
@@ -7418,7 +7496,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="txtAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -7427,7 +7505,7 @@ store.book[0].title</value>
     <value>526, 20</value>
   </data>
   <data name="txtAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccessKey.Name" xml:space="preserve">
     <value>txtAzureStorageAccessKey</value>
@@ -7439,7 +7517,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="lblAzureStorageAccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7457,7 +7535,7 @@ store.book[0].title</value>
     <value>65, 13</value>
   </data>
   <data name="lblAzureStorageAccessKey.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
     <value>Access key:</value>
@@ -7472,7 +7550,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="txtAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -7493,7 +7571,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="lblAzureStorageAccountName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7526,16 +7604,16 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="txtAzureStorageCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 222</value>
+    <value>16, 273</value>
   </data>
   <data name="txtAzureStorageCustomDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>526, 20</value>
   </data>
   <data name="txtAzureStorageCustomDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageCustomDomain.Name" xml:space="preserve">
     <value>txtAzureStorageCustomDomain</value>
@@ -7547,19 +7625,19 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="lblAzureStorageCustomDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 206</value>
+    <value>13, 257</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
   </data>
   <data name="lblAzureStorageCustomDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Custom Domain:</value>
@@ -7574,10 +7652,10 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 202</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>

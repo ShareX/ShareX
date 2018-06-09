@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain);
+            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath, config.AzureStorageExcludeContainer);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
@@ -66,14 +66,18 @@ namespace ShareX.UploadersLib.FileUploaders
         public string AzureStorageContainer { get; private set; }
         public string AzureStorageEnvironment { get; private set; }
         public string AzureStorageCustomDomain { get; private set; }
+        public string AzureStorageUploadPath { get; private set; }
+        public bool AzureStorageExcludeContainer { get; private set; }
 
-        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain)
+        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain, string uploadPath, bool excludeContainer)
         {
             AzureStorageAccountName = azureStorageAccountName;
             AzureStorageAccountAccessKey = azureStorageAccessKey;
             AzureStorageContainer = azureStorageContainer;
             AzureStorageEnvironment = (!string.IsNullOrEmpty(azureStorageEnvironment)) ? azureStorageEnvironment : "blob.core.windows.net";
             AzureStorageCustomDomain = customDomain;
+            AzureStorageUploadPath = uploadPath;
+            AzureStorageExcludeContainer = excludeContainer;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -90,7 +94,16 @@ namespace ShareX.UploadersLib.FileUploaders
             CreateContainerIfNotExists();
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{fileName}";
+            string targetPath = GetUploadPath(fileName);
+            string url;
+            if (AzureStorageContainer == "$root")
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{targetPath}";
+            }
+            else
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{targetPath}";
+            }
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -99,7 +112,15 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{fileName}";
+            string canonicalizedResource;
+            if (AzureStorageContainer == "$root")
+            {
+                canonicalizedResource = $"/{AzureStorageAccountName}/{targetPath}";
+            }
+            else
+            {
+                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{targetPath}";
+            }
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
@@ -112,7 +133,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
                 {
-                    result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, fileName);
+                    if (AzureStorageExcludeContainer)
+                    {
+                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
+                    }
+                    else
+                    {
+                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, targetPath);
+                    }
                     result = URLHelpers.FixPrefix(result);
                 }
                 else
@@ -223,6 +251,19 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return hashedString;
+        }
+
+        private string GetUploadPath(string fileName)
+        {
+            if (!String.IsNullOrEmpty(AzureStorageUploadPath))
+            {
+                string path = NameParser.Parse(NameParserType.FolderPath, AzureStorageUploadPath.Trim('/'));
+                return URLHelpers.CombineURL(path, fileName);
+            }
+            else
+            {
+                return fileName;
+            }
         }
     }
 }
