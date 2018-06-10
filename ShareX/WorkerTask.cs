@@ -394,10 +394,9 @@ namespace ShareX
 
                     if (isError && Program.Settings.MaxUploadFailRetry > 0)
                     {
-                        DebugHelper.WriteLine("Upload failed. Retrying upload.");
-
-                        for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
+                        for (int retry = 1; !StopRequested && isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
                         {
+                            DebugHelper.WriteLine("Upload failed. Retrying upload.");
                             isError = DoUpload(retry);
                         }
                     }
@@ -1090,14 +1089,19 @@ namespace ShareX
         {
             Info.TaskEndTime = DateTime.Now;
 
-            Status = TaskStatus.Completed;
-
             if (StopRequested)
             {
+                Status = TaskStatus.Stopped;
                 Info.Status = Resources.UploadTask_OnUploadCompleted_Stopped;
+            }
+            else if (Info.Result.IsError)
+            {
+                Status = TaskStatus.Failed;
+                Info.Status = Resources.TaskManager_task_UploadCompleted_Error;
             }
             else
             {
+                Status = TaskStatus.Completed;
                 Info.Status = Resources.UploadTask_OnUploadCompleted_Done;
             }
 

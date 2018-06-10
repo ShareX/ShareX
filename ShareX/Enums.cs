@@ -93,6 +93,8 @@ namespace ShareX
         Preparing,
         Working,
         Stopping,
+        Stopped,
+        Failed,
         Completed,
         History
     }
