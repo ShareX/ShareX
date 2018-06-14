@@ -1746,13 +1746,6 @@ namespace ShareX.HelpersLib
 
                 leave = false;
 
-                if (!sameColorCrop)
-                {
-                    checkColor = unsafeBitmap.GetPixel(0, 0);
-                    mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
-                    check = checkColor.Bgra & mask;
-                }
-
                 // Find Y (Top to bottom)
                 for (int y = 0; y < bmp.Height && !leave; y++)
                 {
@@ -1771,7 +1764,7 @@ namespace ShareX.HelpersLib
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, bmp.Height - 1);
                     mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
                     check = checkColor.Bgra & mask;
                 }
@@ -1791,13 +1784,6 @@ namespace ShareX.HelpersLib
                 }
 
                 leave = false;
-
-                if (!sameColorCrop)
-                {
-                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
-                    mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
-                    check = checkColor.Bgra & mask;
-                }
 
                 // Find Height (Bottom to top)
                 for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
