@@ -1711,9 +1711,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false)
+        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+            if (sides == AnchorStyles.None)
+            {
+                return source;
+            }
+
             Rectangle crop = source;
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
@@ -1724,43 +1731,51 @@ namespace ShareX.HelpersLib
                 uint mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
                 uint check = checkColor.Bgra & mask;
 
-                // Find X (Left to right)
-                for (int x = 0; x < bmp.Width && !leave; x++)
+                if (sides.HasFlag(AnchorStyles.Left))
                 {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find X (Left to right)
+                    for (int x = 0; x < bmp.Width && !leave; x++)
                     {
-                        if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.X = x;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.X = x;
+                                crop.Width -= x;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
-                }
 
-                // If all pixels same color
-                if (!leave)
-                {
-                    return crop;
-                }
-
-                leave = false;
-
-                // Find Y (Top to bottom)
-                for (int y = 0; y < bmp.Height && !leave; y++)
-                {
-                    for (int x = 0; x < bmp.Width; x++)
+                    // If all pixels same color
+                    if (!leave)
                     {
-                        if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                        return crop;
+                    }
+
+                    leave = false;
+                }
+
+                if (sides.HasFlag(AnchorStyles.Top))
+                {
+                    // Find Y (Top to bottom)
+                    for (int y = 0; y < bmp.Height && !leave; y++)
+                    {
+                        for (int x = 0; x < bmp.Width; x++)
                         {
-                            crop.Y = y;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Y = y;
+                                crop.Height -= y;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
-                }
 
-                leave = false;
+                    leave = false;
+                }
 
                 if (!sameColorCrop)
                 {
@@ -1769,32 +1784,38 @@ namespace ShareX.HelpersLib
                     check = checkColor.Bgra & mask;
                 }
 
-                // Find Width (Right to left)
-                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
+                if (sides.HasFlag(AnchorStyles.Right))
                 {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find Width (Right to left)
+                    for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
                     {
-                        if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.Width = x - crop.X + 1;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Width = x - crop.X + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
+
+                    leave = false;
                 }
 
-                leave = false;
-
-                // Find Height (Bottom to top)
-                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
+                if (sides.HasFlag(AnchorStyles.Bottom))
                 {
-                    for (int x = 0; x < bmp.Width; x++)
+                    // Find Height (Bottom to top)
+                    for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
                     {
-                        if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                        for (int x = 0; x < bmp.Width; x++)
                         {
-                            crop.Height = y - crop.Y + 1;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Height = y - crop.Y + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
                 }
@@ -1803,10 +1824,11 @@ namespace ShareX.HelpersLib
             return crop;
         }
 
-        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
+        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop);
+            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop, sides);
 
             if (source != rect)
             {
