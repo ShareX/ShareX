@@ -30,6 +30,7 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -125,36 +126,40 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null);
-
-            if (responseHeaders != null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null))
             {
-                string result;
-
-                if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
+                if (response != null && response.Headers != null)
                 {
-                    if (AzureStorageExcludeContainer)
+                    string result;
+
+                    if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
                     {
-                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
+                        if (AzureStorageExcludeContainer)
+                        {
+                            result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
+                        }
+                        else
+                        {
+                            result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, targetPath);
+                        }
+
+                        result = URLHelpers.FixPrefix(result);
                     }
                     else
                     {
-                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, targetPath);
+                        result = url;
                     }
-                    result = URLHelpers.FixPrefix(result);
-                }
-                else
-                {
-                    result = url;
-                }
 
-                return new UploadResult { IsSuccess = true, URL = result };
+                    return new UploadResult
+                    {
+                        IsSuccess = true,
+                        URL = result
+                    };
+                }
             }
-            else
-            {
-                Errors.Add("Upload failed.");
-                return null;
-            }
+
+            Errors.Add("Upload failed.");
+            return null;
         }
 
         private void CreateContainerIfNotExists()
@@ -173,23 +178,24 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, null, null, null, requestHeaders, null);
-
-            if (responseHeaders != null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, null, null, null, requestHeaders, null))
             {
-                SetContainerACL();
-            }
-            else
-            {
-                if (Errors.Count > 0)
+                if (response != null && response.Headers != null)
                 {
-                    if (Errors[0].Contains("409"))
+                    SetContainerACL();
+                }
+                else
+                {
+                    if (Errors.Count > 0)
                     {
-                        SetContainerACL();
-                    }
-                    else
-                    {
-                        Errors.Add("Upload to Azure storage failed.");
+                        if (Errors[0].Contains("409"))
+                        {
+                            SetContainerACL();
+                        }
+                        else
+                        {
+                            Errors.Add("Upload to Azure storage failed.");
+                        }
                     }
                 }
             }
@@ -212,11 +218,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, null, null, null, requestHeaders, null);
-
-            if (responseHeaders == null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, null, null, null, requestHeaders, null))
             {
-                Errors.Add("There was an issue with setting ACL on the container.");
+                if (response == null || response.Headers == null)
+                {
+                    Errors.Add("There was an issue with setting ACL on the container.");
+                }
             }
         }
 

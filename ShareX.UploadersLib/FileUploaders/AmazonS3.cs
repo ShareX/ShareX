@@ -32,6 +32,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -178,19 +179,25 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(host, canonicalURI);
             url = URLHelpers.ForcePrefix(url, "https://");
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
-
-            if (responseHeaders == null || responseHeaders.Count == 0 || responseHeaders["ETag"] == null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, headers))
             {
-                Errors.Add("Upload to Amazon S3 failed.");
-                return null;
+                if (response != null)
+                {
+                    NameValueCollection responseHeaders = response.Headers;
+
+                    if (responseHeaders != null && responseHeaders["ETag"] != null)
+                    {
+                        return new UploadResult
+                        {
+                            IsSuccess = true,
+                            URL = GenerateURL(uploadPath)
+                        };
+                    }
+                }
             }
 
-            return new UploadResult
-            {
-                IsSuccess = true,
-                URL = GenerateURL(uploadPath)
-            };
+            Errors.Add("Upload to Amazon S3 failed.");
+            return null;
         }
 
         private string GetRegion()
