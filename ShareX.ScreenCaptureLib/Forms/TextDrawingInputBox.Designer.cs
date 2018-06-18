@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextDrawingInputBox));
             this.txtInput = new System.Windows.Forms.TextBox();
-            this.btnTextColor = new ShareX.HelpersLib.ColorButton();
             this.flpProperties = new System.Windows.Forms.FlowLayoutPanel();
             this.lblFont = new System.Windows.Forms.Label();
             this.cbFonts = new System.Windows.Forms.ComboBox();
@@ -42,6 +41,7 @@
             this.cbUnderline = new System.Windows.Forms.CheckBox();
             this.btnAlignmentHorizontal = new System.Windows.Forms.Button();
             this.btnAlignmentVertical = new System.Windows.Forms.Button();
+            this.btnGradient = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.cmsAlignmentHorizontal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiAlignmentLeft = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,10 +53,20 @@
             this.tsmiAlignmentBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTip = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cmsGradient = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiSecondColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEnableGradient = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGradientMode = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTextColor = new ShareX.HelpersLib.ColorButton();
+            this.tsrbmiGradientHorizontal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientVertical = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientForwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientBackwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
             this.flpProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).BeginInit();
             this.cmsAlignmentHorizontal.SuspendLayout();
             this.cmsAlignmentVertical.SuspendLayout();
+            this.cmsGradient.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
@@ -67,14 +77,6 @@
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             this.txtInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyUp);
             // 
-            // btnTextColor
-            // 
-            resources.ApplyResources(this.btnTextColor, "btnTextColor");
-            this.btnTextColor.Color = System.Drawing.Color.Empty;
-            this.btnTextColor.Name = "btnTextColor";
-            this.btnTextColor.UseVisualStyleBackColor = true;
-            this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
-            // 
             // flpProperties
             // 
             resources.ApplyResources(this.flpProperties, "flpProperties");
@@ -83,6 +85,7 @@
             this.flpProperties.Controls.Add(this.lblTextSize);
             this.flpProperties.Controls.Add(this.nudTextSize);
             this.flpProperties.Controls.Add(this.btnTextColor);
+            this.flpProperties.Controls.Add(this.btnGradient);
             this.flpProperties.Controls.Add(this.cbBold);
             this.flpProperties.Controls.Add(this.cbItalic);
             this.flpProperties.Controls.Add(this.cbUnderline);
@@ -164,6 +167,14 @@
             this.btnAlignmentVertical.UseVisualStyleBackColor = true;
             this.btnAlignmentVertical.Click += new System.EventHandler(this.btnAlignmentVertical_Click);
             // 
+            // btnGradient
+            // 
+            this.btnGradient.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.gradient;
+            resources.ApplyResources(this.btnGradient, "btnGradient");
+            this.btnGradient.Name = "btnGradient";
+            this.btnGradient.UseVisualStyleBackColor = true;
+            this.btnGradient.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnGradient_MouseDown);
+            // 
             // btnOK
             // 
             resources.ApplyResources(this.btnOK, "btnOK");
@@ -244,6 +255,74 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmsGradient
+            // 
+            this.cmsGradient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEnableGradient,
+            this.tsmiSecondColor,
+            this.tsmiGradientMode});
+            this.cmsGradient.Name = "cmsGradient";
+            resources.ApplyResources(this.cmsGradient, "cmsGradient");
+            // 
+            // tsmiSecondColor
+            // 
+            this.tsmiSecondColor.Name = "tsmiSecondColor";
+            resources.ApplyResources(this.tsmiSecondColor, "tsmiSecondColor");
+            this.tsmiSecondColor.Click += new System.EventHandler(this.tsmiSecondColor_Click);
+            // 
+            // tsmiEnableGradient
+            // 
+            this.tsmiEnableGradient.CheckOnClick = true;
+            this.tsmiEnableGradient.Name = "tsmiEnableGradient";
+            resources.ApplyResources(this.tsmiEnableGradient, "tsmiEnableGradient");
+            this.tsmiEnableGradient.Click += new System.EventHandler(this.tsmiEnableGradient_Click);
+            // 
+            // tsmiGradientMode
+            // 
+            this.tsmiGradientMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsrbmiGradientHorizontal,
+            this.tsrbmiGradientVertical,
+            this.tsrbmiGradientForwardDiagonal,
+            this.tsrbmiGradientBackwardDiagonal});
+            this.tsmiGradientMode.Name = "tsmiGradientMode";
+            resources.ApplyResources(this.tsmiGradientMode, "tsmiGradientMode");
+            // 
+            // btnTextColor
+            // 
+            resources.ApplyResources(this.btnTextColor, "btnTextColor");
+            this.btnTextColor.Color = System.Drawing.Color.Empty;
+            this.btnTextColor.Name = "btnTextColor";
+            this.btnTextColor.UseVisualStyleBackColor = true;
+            this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
+            // 
+            // tsrbmiGradientHorizontal
+            // 
+            this.tsrbmiGradientHorizontal.CheckOnClick = true;
+            this.tsrbmiGradientHorizontal.Name = "tsrbmiGradientHorizontal";
+            resources.ApplyResources(this.tsrbmiGradientHorizontal, "tsrbmiGradientHorizontal");
+            this.tsrbmiGradientHorizontal.Click += new System.EventHandler(this.tsrbmiGradientHorizontal_Click);
+            // 
+            // tsrbmiGradientVertical
+            // 
+            this.tsrbmiGradientVertical.CheckOnClick = true;
+            this.tsrbmiGradientVertical.Name = "tsrbmiGradientVertical";
+            resources.ApplyResources(this.tsrbmiGradientVertical, "tsrbmiGradientVertical");
+            this.tsrbmiGradientVertical.Click += new System.EventHandler(this.tsrbmiGradientVertical_Click);
+            // 
+            // tsrbmiGradientForwardDiagonal
+            // 
+            this.tsrbmiGradientForwardDiagonal.CheckOnClick = true;
+            this.tsrbmiGradientForwardDiagonal.Name = "tsrbmiGradientForwardDiagonal";
+            resources.ApplyResources(this.tsrbmiGradientForwardDiagonal, "tsrbmiGradientForwardDiagonal");
+            this.tsrbmiGradientForwardDiagonal.Click += new System.EventHandler(this.tsrbmiGradientForwardDiagonal_Click);
+            // 
+            // tsrbmiGradientBackwardDiagonal
+            // 
+            this.tsrbmiGradientBackwardDiagonal.CheckOnClick = true;
+            this.tsrbmiGradientBackwardDiagonal.Name = "tsrbmiGradientBackwardDiagonal";
+            resources.ApplyResources(this.tsrbmiGradientBackwardDiagonal, "tsrbmiGradientBackwardDiagonal");
+            this.tsrbmiGradientBackwardDiagonal.Click += new System.EventHandler(this.tsrbmiGradientBackwardDiagonal_Click);
+            // 
             // TextDrawingInputBox
             // 
             resources.ApplyResources(this, "$this");
@@ -265,6 +344,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).EndInit();
             this.cmsAlignmentHorizontal.ResumeLayout(false);
             this.cmsAlignmentVertical.ResumeLayout(false);
+            this.cmsGradient.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +375,14 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAlignmentBottom;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnGradient;
+        private System.Windows.Forms.ContextMenuStrip cmsGradient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEnableGradient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSecondColor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGradientMode;
+        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientHorizontal;
+        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientVertical;
+        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientForwardDiagonal;
+        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientBackwardDiagonal;
     }
 }

@@ -36,6 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public string Text { get; set; }
         public TextDrawingOptions TextOptions { get; set; }
+        public virtual bool SupportGradient { get; }
 
         public override void OnConfigLoad()
         {
@@ -130,7 +131,7 @@ namespace ShareX.ScreenCaptureLib
 
             Manager.Form.Pause();
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions))
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions, SupportGradient))
             {
                 result = inputBox.ShowDialog(Manager.Form) == DialogResult.OK;
                 Text = inputBox.InputText;

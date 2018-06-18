@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -37,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
 
-        public TextDrawingInputBox(string text, TextDrawingOptions options)
+        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -65,6 +66,32 @@ namespace ShareX.ScreenCaptureLib
 
             nudTextSize.SetValue(Options.Size);
             btnTextColor.Color = Options.Color;
+
+            btnGradient.Visible = supportGradient;
+
+            if (supportGradient)
+            {
+                tsmiEnableGradient.Checked = Options.Gradient;
+
+                tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
+
+                switch (Options.GradientMode)
+                {
+                    case LinearGradientMode.Horizontal:
+                        tsrbmiGradientHorizontal.Checked = true;
+                        break;
+                    case LinearGradientMode.Vertical:
+                        tsrbmiGradientVertical.Checked = true;
+                        break;
+                    case LinearGradientMode.ForwardDiagonal:
+                        tsrbmiGradientForwardDiagonal.Checked = true;
+                        break;
+                    case LinearGradientMode.BackwardDiagonal:
+                        tsrbmiGradientBackwardDiagonal.Checked = true;
+                        break;
+                }
+            }
+
             cbBold.Checked = Options.Bold;
             cbItalic.Checked = Options.Italic;
             cbUnderline.Checked = Options.Underline;
@@ -108,6 +135,14 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.Color = btnTextColor.Color;
             UpdateInputBox();
+        }
+
+        private void btnGradient_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmsGradient.Show(btnGradient, new Point(1, btnGradient.Height));
+            }
         }
 
         private void cbBold_CheckedChanged(object sender, EventArgs e)
@@ -277,6 +312,39 @@ namespace ShareX.ScreenCaptureLib
                     btnAlignmentVertical.Image = Resources.edit_vertical_alignment;
                     break;
             }
+        }
+
+        private void tsmiEnableGradient_Click(object sender, EventArgs e)
+        {
+            Options.Gradient = tsmiEnableGradient.Checked;
+        }
+
+        private void tsmiSecondColor_Click(object sender, EventArgs e)
+        {
+            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this);
+            Options.Color2 = newColor;
+            if (tsmiSecondColor.Image != null) tsmiSecondColor.Image.Dispose();
+            tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
+        }
+
+        private void tsrbmiGradientHorizontal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.Horizontal;
+        }
+
+        private void tsrbmiGradientVertical_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.Vertical;
+        }
+
+        private void tsrbmiGradientForwardDiagonal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.ForwardDiagonal;
+        }
+
+        private void tsrbmiGradientBackwardDiagonal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.BackwardDiagonal;
         }
     }
 }

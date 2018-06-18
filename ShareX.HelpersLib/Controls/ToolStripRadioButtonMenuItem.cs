@@ -37,48 +37,37 @@ namespace ShareX.HelpersLib
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text)
-            : base(text, null, (EventHandler)null)
+        public ToolStripRadioButtonMenuItem(string text) : base(text, null, (EventHandler)null)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(Image image)
-            : base(null, image, (EventHandler)null)
+        public ToolStripRadioButtonMenuItem(Image image) : base(null, image, (EventHandler)null)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text, Image image)
-            : base(text, image, (EventHandler)null)
+        public ToolStripRadioButtonMenuItem(string text, Image image) : base(text, image, (EventHandler)null)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text, Image image,
-            EventHandler onClick)
-            : base(text, image, onClick)
+        public ToolStripRadioButtonMenuItem(string text, Image image, EventHandler onClick) : base(text, image, onClick)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text, Image image,
-            EventHandler onClick, string name)
-            : base(text, image, onClick, name)
+        public ToolStripRadioButtonMenuItem(string text, Image image, EventHandler onClick, string name) : base(text, image, onClick, name)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text, Image image,
-            params ToolStripItem[] dropDownItems)
-            : base(text, image, dropDownItems)
+        public ToolStripRadioButtonMenuItem(string text, Image image, params ToolStripItem[] dropDownItems) : base(text, image, dropDownItems)
         {
             Initialize();
         }
 
-        public ToolStripRadioButtonMenuItem(string text, Image image,
-            EventHandler onClick, Keys shortcutKeys)
-            : base(text, image, onClick)
+        public ToolStripRadioButtonMenuItem(string text, Image image, EventHandler onClick, Keys shortcutKeys) : base(text, image, onClick)
         {
             Initialize();
             ShortcutKeys = shortcutKeys;
@@ -160,32 +149,23 @@ namespace ShareX.HelpersLib
             }
 
             // Calculate the position at which to display the RadioButton.
-            Int32 offset = (ContentRectangle.Height -
-                            RadioButtonRenderer.GetGlyphSize(
-                                e.Graphics, buttonState).Height) / 2;
-            Point imageLocation = new Point(
-                ContentRectangle.Location.X + 4,
-                ContentRectangle.Location.Y + offset);
+            Int32 offset = (ContentRectangle.Height - RadioButtonRenderer.GetGlyphSize(e.Graphics, buttonState).Height) / 2;
+            Point imageLocation = new Point(ContentRectangle.Location.X + 4, ContentRectangle.Location.Y + offset);
 
             // If the item is selected and the RadioButton paints with partial
             // transparency, such as when theming is enabled, the check mark
             // shows through the RadioButton image. In this case, paint a
             // non-transparent background first to cover the check mark.
-            if (Checked && RadioButtonRenderer
-                .IsBackgroundPartiallyTransparent(buttonState))
+            if (Checked && RadioButtonRenderer.IsBackgroundPartiallyTransparent(buttonState))
             {
-                Size glyphSize = RadioButtonRenderer
-                    .GetGlyphSize(e.Graphics, buttonState);
+                Size glyphSize = RadioButtonRenderer.GetGlyphSize(e.Graphics, buttonState);
                 glyphSize.Height--;
                 glyphSize.Width--;
-                Rectangle backgroundRectangle =
-                    new Rectangle(imageLocation, glyphSize);
-                e.Graphics.FillEllipse(
-                    SystemBrushes.Control, backgroundRectangle);
+                Rectangle backgroundRectangle = new Rectangle(imageLocation, glyphSize);
+                e.Graphics.FillEllipse(SystemBrushes.Control, backgroundRectangle);
             }
 
-            RadioButtonRenderer.DrawRadioButton(
-                e.Graphics, imageLocation, buttonState);
+            RadioButtonRenderer.DrawRadioButton(e.Graphics, imageLocation, buttonState);
         }
 
         private bool mouseHoverState;
@@ -230,13 +210,11 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                ToolStripMenuItem ownerMenuItem =
-                    OwnerItem as ToolStripMenuItem;
+                ToolStripMenuItem ownerMenuItem = OwnerItem as ToolStripMenuItem;
 
                 // Use the base value in design mode to prevent the designer
                 // from setting the base value to the calculated value.
-                if (!DesignMode &&
-                    ownerMenuItem != null && ownerMenuItem.CheckOnClick)
+                if (!DesignMode && ownerMenuItem != null && ownerMenuItem.CheckOnClick)
                 {
                     return base.Enabled && ownerMenuItem.Checked;
                 }
@@ -254,20 +232,19 @@ namespace ShareX.HelpersLib
         // CheckedChanged event.
         protected override void OnOwnerChanged(EventArgs e)
         {
-            ToolStripMenuItem ownerMenuItem =
-                OwnerItem as ToolStripMenuItem;
+            ToolStripMenuItem ownerMenuItem = OwnerItem as ToolStripMenuItem;
+
             if (ownerMenuItem != null && ownerMenuItem.CheckOnClick)
             {
-                ownerMenuItem.CheckedChanged +=
-                    OwnerMenuItem_CheckedChanged;
+                ownerMenuItem.CheckedChanged += OwnerMenuItem_CheckedChanged;
             }
+
             base.OnOwnerChanged(e);
         }
 
         // When the checked state of the parent item changes,
         // repaint the item so that the new Enabled state is displayed.
-        private void OwnerMenuItem_CheckedChanged(
-            object sender, EventArgs e)
+        private void OwnerMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             Invalidate();
         }

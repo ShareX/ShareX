@@ -243,6 +243,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gradient.png" />
     <None Include="Resources\layout-center.png" />
     <None Include="Resources\layout-split.png" />
     <None Include="Resources\layout-split-vertical.png" />
