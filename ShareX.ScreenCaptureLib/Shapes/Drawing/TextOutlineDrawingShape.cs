@@ -123,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (TextOptions.Gradient)
                         {
-                            textBrush = new LinearGradientBrush(pathRect, textColor, TextOptions.Color2, TextOptions.GradientMode);
+                            textBrush = new LinearGradientBrush(Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
                         }
                         else
                         {
