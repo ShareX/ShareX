@@ -432,6 +432,72 @@
   <data name="&gt;&gt;nudTextSize.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
+  </metadata>
+  <data name="btnTextColor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="btnTextColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTextColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 3</value>
+  </data>
+  <data name="btnTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnTextColor.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnTextColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="&gt;&gt;btnTextColor.Name" xml:space="preserve">
+    <value>btnTextColor</value>
+  </data>
+  <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
+    <value>flpProperties</value>
+  </data>
+  <data name="&gt;&gt;btnTextColor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
+  </metadata>
+  <data name="btnGradient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGradient.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 3</value>
+  </data>
+  <data name="btnGradient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 24</value>
+  </data>
+  <data name="btnGradient.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="&gt;&gt;btnGradient.Name" xml:space="preserve">
+    <value>btnGradient</value>
+  </data>
+  <data name="&gt;&gt;btnGradient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGradient.Parent" xml:space="preserve">
+    <value>flpProperties</value>
+  </data>
+  <data name="&gt;&gt;btnGradient.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="cbBold.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -449,6 +515,9 @@
   </data>
   <data name="cbBold.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Bold</value>
   </data>
   <data name="&gt;&gt;cbBold.Name" xml:space="preserve">
     <value>cbBold</value>
@@ -480,6 +549,9 @@
   <data name="cbItalic.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Italic</value>
+  </data>
   <data name="&gt;&gt;cbItalic.Name" xml:space="preserve">
     <value>cbItalic</value>
   </data>
@@ -510,6 +582,9 @@
   <data name="cbUnderline.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Underline</value>
+  </data>
   <data name="&gt;&gt;cbUnderline.Name" xml:space="preserve">
     <value>cbUnderline</value>
   </data>
@@ -536,6 +611,9 @@
   </data>
   <data name="btnAlignmentHorizontal.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Horizontal alignment</value>
   </data>
   <data name="&gt;&gt;btnAlignmentHorizontal.Name" xml:space="preserve">
     <value>btnAlignmentHorizontal</value>
@@ -564,6 +642,9 @@
   <data name="btnAlignmentVertical.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Vertical alignment</value>
+  </data>
   <data name="&gt;&gt;btnAlignmentVertical.Name" xml:space="preserve">
     <value>btnAlignmentVertical</value>
   </data>
@@ -575,30 +656,6 @@
   </data>
   <data name="&gt;&gt;btnAlignmentVertical.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="btnGradient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnGradient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 3</value>
-  </data>
-  <data name="btnGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 24</value>
-  </data>
-  <data name="btnGradient.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Name" xml:space="preserve">
-    <value>btnGradient</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -753,17 +810,32 @@
   <metadata name="cmsGradient.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>373, 17</value>
   </metadata>
+  <data name="cmsGradient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsGradient.Name" xml:space="preserve">
+    <value>cmsGradient</value>
+  </data>
+  <data name="&gt;&gt;cmsGradient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiEnableGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="tsmiEnableGradient.Text" xml:space="preserve">
     <value>Enable gradient</value>
   </data>
   <data name="tsmiSecondColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>Second color...</value>
+    <value>Second text color...</value>
+  </data>
+  <data name="tsmiGradientMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Gradient mode</value>
   </data>
   <data name="tsrbmiGradientHorizontal.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -789,51 +861,9 @@
   <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
     <value>Backward diagonal</value>
   </data>
-  <data name="tsmiGradientMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="tsmiGradientMode.Text" xml:space="preserve">
-    <value>Gradient mode</value>
-  </data>
-  <data name="cmsGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 92</value>
-  </data>
-  <data name="&gt;&gt;cmsGradient.Name" xml:space="preserve">
-    <value>cmsGradient</value>
-  </data>
-  <data name="&gt;&gt;cmsGradient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnTextColor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="btnTextColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 3</value>
-  </data>
-  <data name="btnTextColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="btnTextColor.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnTextColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Name" xml:space="preserve">
-    <value>btnTextColor</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
+  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -842,9 +872,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>534, 361</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -888,16 +915,16 @@
   <data name="&gt;&gt;tsmiAlignmentBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiSecondColor.Name" xml:space="preserve">
-    <value>tsmiSecondColor</value>
-  </data>
-  <data name="&gt;&gt;tsmiSecondColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiEnableGradient.Name" xml:space="preserve">
     <value>tsmiEnableGradient</value>
   </data>
   <data name="&gt;&gt;tsmiEnableGradient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiSecondColor.Name" xml:space="preserve">
+    <value>tsmiSecondColor</value>
+  </data>
+  <data name="&gt;&gt;tsmiSecondColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiGradientMode.Name" xml:space="preserve">
@@ -929,6 +956,12 @@
   </data>
   <data name="&gt;&gt;tsrbmiGradientBackwardDiagonal.Type" xml:space="preserve">
     <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ttTextInput.Name" xml:space="preserve">
+    <value>ttTextInput</value>
+  </data>
+  <data name="&gt;&gt;ttTextInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>TextDrawingInputBox</value>
