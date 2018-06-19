@@ -650,6 +650,8 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
+            this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2837,6 +2839,8 @@
             // tpAzureStorage
             // 
             this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreview);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreviewLabel);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageUploadPath);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageUploadPath);
             this.tpAzureStorage.Controls.Add(this.cbAzureStorageEnvironment);
@@ -5300,6 +5304,16 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblAzureStorageURLPreview
+            // 
+            resources.ApplyResources(this.lblAzureStorageURLPreview, "lblAzureStorageURLPreview");
+            this.lblAzureStorageURLPreview.Name = "lblAzureStorageURLPreview";
+            // 
+            // lblAzureStorageURLPreviewLabel
+            // 
+            resources.ApplyResources(this.lblAzureStorageURLPreviewLabel, "lblAzureStorageURLPreviewLabel");
+            this.lblAzureStorageURLPreviewLabel.Name = "lblAzureStorageURLPreviewLabel";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6100,5 +6114,7 @@
         private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
         private System.Windows.Forms.Label lblAzureStorageUploadPath;
         private System.Windows.Forms.Label lblFirebaseDomain;
+        private System.Windows.Forms.Label lblAzureStorageURLPreview;
+        private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
     }
 }

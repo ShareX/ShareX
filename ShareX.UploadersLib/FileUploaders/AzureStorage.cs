@@ -93,16 +93,8 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string targetPath = GetUploadPath(fileName);
-            string url;
-            if (AzureStorageContainer == "$root")
-            {
-                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{targetPath}";
-            }
-            else
-            {
-                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{targetPath}";
-            }
+            string uploadPath = GetUploadPath(fileName);
+            string url = GenerateURL(uploadPath);
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -114,11 +106,11 @@ namespace ShareX.UploadersLib.FileUploaders
             string canonicalizedResource;
             if (AzureStorageContainer == "$root")
             {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{targetPath}";
+                canonicalizedResource = $"/{AzureStorageAccountName}/{uploadPath}";
             }
             else
             {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{targetPath}";
+                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{uploadPath}";
             }
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
@@ -132,8 +124,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
                     {
-                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
-                        result = URLHelpers.FixPrefix(result);
+                        result = GenerateURL(uploadPath, AzureStorageCustomDomain);
                     }
                     else
                     {
@@ -196,6 +187,33 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 return fileName;
             }
+        }
+
+        public string GenerateURL(string uploadPath, string customDomain = null)
+        {
+            string url;
+
+            if (!string.IsNullOrEmpty(customDomain))
+            {
+                url = URLHelpers.CombineURL(customDomain, uploadPath);
+                url = URLHelpers.FixPrefix(url);
+            }
+            else if (AzureStorageContainer == "$root")
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{uploadPath}";
+            }
+            else
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{uploadPath}";
+            }
+
+            return url;
+        }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath, AzureStorageCustomDomain);
         }
     }
 }

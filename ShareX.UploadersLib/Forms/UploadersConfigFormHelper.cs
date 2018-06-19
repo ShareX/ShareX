@@ -245,7 +245,9 @@ namespace ShareX.UploadersLib
 
         private void UpdateAmazonS3Status()
         {
-            lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GetPreviewURL();
+            AmazonS3 s3 = new AmazonS3(Config.AmazonS3Settings);
+
+            lblAmazonS3PathPreview.Text = s3.GetPreviewURL();
         }
 
         #endregion Amazon S3
@@ -254,17 +256,29 @@ namespace ShareX.UploadersLib
 
         private void UpdateGoogleCloudStorageStatus()
         {
-            GoogleCloudStorage GCS = new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info)
+            GoogleCloudStorage gcs = new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info)
             {
                 Bucket = Config.GoogleCloudStorageBucket,
                 Domain = Config.GoogleCloudStorageDomain,
                 Prefix = Config.GoogleCloudStorageObjectPrefix
             };
 
-            lblGoogleCloudStoragePathPreview.Text = GCS.GetPreviewURL();
+            lblGoogleCloudStoragePathPreview.Text = gcs.GetPreviewURL();
         }
 
         #endregion Google Cloud Storage
+
+        #region Azure Storage
+
+        private void UpdateAzureStorageStatus()
+        {
+            AzureStorage azure = new AzureStorage(Config.AzureStorageAccountName, Config.AzureStorageAccountAccessKey, Config.AzureStorageContainer,
+                Config.AzureStorageEnvironment, Config.AzureStorageCustomDomain, Config.AzureStorageUploadPath);
+
+            lblAzureStorageURLPreview.Text = azure.GetPreviewURL();
+        }
+
+        #endregion Azure Storage
 
         #region Google Drive
 
