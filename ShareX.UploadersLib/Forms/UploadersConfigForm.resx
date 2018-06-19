@@ -7286,7 +7286,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbAzureStorageExcludeContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 299</value>
+    <value>16, 304</value>
   </data>
   <data name="cbAzureStorageExcludeContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 17</value>
@@ -7661,7 +7661,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>

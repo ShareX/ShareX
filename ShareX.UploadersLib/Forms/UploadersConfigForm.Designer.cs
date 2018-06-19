@@ -165,6 +165,7 @@
             this.txtPolrAPIHostname = new System.Windows.Forms.TextBox();
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
             this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
+            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
             this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
@@ -650,7 +651,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1754,6 +1754,11 @@
             resources.ApplyResources(this.tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
             this.tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
             this.tpFirebaseDynamicLinks.UseVisualStyleBackColor = true;
+            // 
+            // lblFirebaseDomain
+            // 
+            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
+            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
             // 
             // cbFirebaseIsShort
             // 
@@ -5303,11 +5308,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // lblFirebaseDomain
-            // 
-            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
-            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
             // 
             // UploadersConfigForm
             // 

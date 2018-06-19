@@ -92,8 +92,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            CreateContainerIfNotExists();
-
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string targetPath = GetUploadPath(fileName);
             string url;
@@ -162,71 +160,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        private void CreateContainerIfNotExists()
-        {
-            string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container";
-
-            NameValueCollection requestHeaders = new NameValueCollection();
-            requestHeaders["Content-Length"] = "0";
-            requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = APIVersion;
-
-            string canonicalizedHeaders = $"x-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\nrestype:container";
-            string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
-
-            requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
-
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, null, null, null, requestHeaders, null))
-            {
-                if (response != null && response.Headers != null)
-                {
-                    SetContainerACL();
-                }
-                else
-                {
-                    if (Errors.Count > 0)
-                    {
-                        if (Errors[0].Contains("409"))
-                        {
-                            SetContainerACL();
-                        }
-                        else
-                        {
-                            Errors.Add("Upload to Azure storage failed.");
-                        }
-                    }
-                }
-            }
-        }
-
-        private void SetContainerACL()
-        {
-            string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container&comp=acl";
-
-            NameValueCollection requestHeaders = new NameValueCollection();
-            requestHeaders["Content-Length"] = "0";
-            requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = APIVersion;
-            requestHeaders["x-ms-blob-public-access"] = "container";
-
-            string canonicalizedHeaders = $"x-ms-blob-public-access:container\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\ncomp:acl\nrestype:container";
-            string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
-
-            requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
-
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, null, null, null, requestHeaders, null))
-            {
-                if (response == null || response.Headers == null)
-                {
-                    Errors.Add("There was an issue with setting ACL on the container.");
-                }
-            }
-        }
-
         private string GenerateStringToSign(string canonicalizedHeaders, string canonicalizedResource, string contentLength = "", string contentType = "")
         {
             string stringToSign = "PUT" + "\n" +
@@ -262,7 +195,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            if (!String.IsNullOrEmpty(AzureStorageUploadPath))
+            if (!string.IsNullOrEmpty(AzureStorageUploadPath))
             {
                 string path = NameParser.Parse(NameParserType.FolderPath, AzureStorageUploadPath.Trim('/'));
                 return URLHelpers.CombineURL(path, fileName);
