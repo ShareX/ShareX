@@ -52,7 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath, config.AzureStorageExcludeContainer);
+            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer,
+                config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
@@ -68,9 +69,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public string AzureStorageEnvironment { get; private set; }
         public string AzureStorageCustomDomain { get; private set; }
         public string AzureStorageUploadPath { get; private set; }
-        public bool AzureStorageExcludeContainer { get; private set; }
 
-        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain, string uploadPath, bool excludeContainer)
+        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment,
+            string customDomain, string uploadPath)
         {
             AzureStorageAccountName = azureStorageAccountName;
             AzureStorageAccountAccessKey = azureStorageAccessKey;
@@ -78,7 +79,6 @@ namespace ShareX.UploadersLib.FileUploaders
             AzureStorageEnvironment = (!string.IsNullOrEmpty(azureStorageEnvironment)) ? azureStorageEnvironment : "blob.core.windows.net";
             AzureStorageCustomDomain = customDomain;
             AzureStorageUploadPath = uploadPath;
-            AzureStorageExcludeContainer = excludeContainer;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -132,15 +132,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
                     {
-                        if (AzureStorageExcludeContainer)
-                        {
-                            result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
-                        }
-                        else
-                        {
-                            result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, targetPath);
-                        }
-
+                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
                         result = URLHelpers.FixPrefix(result);
                     }
                     else

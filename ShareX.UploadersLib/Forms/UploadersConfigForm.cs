@@ -668,7 +668,6 @@ namespace ShareX.UploadersLib
             cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
             txtAzureStorageCustomDomain.Text = Config.AzureStorageCustomDomain;
             txtAzureStorageUploadPath.Text = Config.AzureStorageUploadPath;
-            cbAzureStorageExcludeContainer.Checked = Config.AzureStorageExcludeContainer;
 
             #endregion Azure Storage
 
@@ -2875,11 +2874,6 @@ namespace ShareX.UploadersLib
         private void txtAzureStorageUploadPath_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageUploadPath = txtAzureStorageUploadPath.Text;
-        }
-
-        private void cbAzureStorageExcludeContainer_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.AzureStorageExcludeContainer = cbAzureStorageExcludeContainer.Checked;
         }
 
         private void btnAzureStoragePortal_Click(object sender, EventArgs e)
