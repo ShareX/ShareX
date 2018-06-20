@@ -310,6 +310,8 @@
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
             this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
+            this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
+            this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
             this.txtAzureStorageUploadPath = new System.Windows.Forms.TextBox();
             this.lblAzureStorageUploadPath = new System.Windows.Forms.Label();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
@@ -650,8 +652,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
-            this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2856,6 +2856,16 @@
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageCustomDomain);
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
+            // 
+            // lblAzureStorageURLPreview
+            // 
+            resources.ApplyResources(this.lblAzureStorageURLPreview, "lblAzureStorageURLPreview");
+            this.lblAzureStorageURLPreview.Name = "lblAzureStorageURLPreview";
+            // 
+            // lblAzureStorageURLPreviewLabel
+            // 
+            resources.ApplyResources(this.lblAzureStorageURLPreviewLabel, "lblAzureStorageURLPreviewLabel");
+            this.lblAzureStorageURLPreviewLabel.Name = "lblAzureStorageURLPreviewLabel";
             // 
             // txtAzureStorageUploadPath
             // 
@@ -5303,16 +5313,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // lblAzureStorageURLPreview
-            // 
-            resources.ApplyResources(this.lblAzureStorageURLPreview, "lblAzureStorageURLPreview");
-            this.lblAzureStorageURLPreview.Name = "lblAzureStorageURLPreview";
-            // 
-            // lblAzureStorageURLPreviewLabel
-            // 
-            resources.ApplyResources(this.lblAzureStorageURLPreviewLabel, "lblAzureStorageURLPreviewLabel");
-            this.lblAzureStorageURLPreviewLabel.Name = "lblAzureStorageURLPreviewLabel";
             // 
             // UploadersConfigForm
             // 
