@@ -652,6 +652,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblFirebaseDomainExample = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1747,6 +1748,7 @@
             // 
             // tpFirebaseDynamicLinks
             // 
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomainExample);
             this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomain);
             this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
@@ -5314,6 +5316,11 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblFirebaseDomainExample
+            // 
+            resources.ApplyResources(this.lblFirebaseDomainExample, "lblFirebaseDomainExample");
+            this.lblFirebaseDomainExample.Name = "lblFirebaseDomainExample";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6116,5 +6123,6 @@
         private System.Windows.Forms.Label lblFirebaseDomain;
         private System.Windows.Forms.Label lblAzureStorageURLPreview;
         private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
+        private System.Windows.Forms.Label lblFirebaseDomainExample;
     }
 }
