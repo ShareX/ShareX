@@ -171,7 +171,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 uploadPath = fileName;
             }
 
-            return URLHelpers.URLPathEncode(uploadPath);
+            return Uri.EscapeUriString(uploadPath);
         }
 
         public string GenerateURL(string uploadPath, bool isRequest = false)
