@@ -1679,11 +1679,6 @@ namespace ShareX.UploadersLib
 
         #region Dropbox
 
-        private void pbDropboxLogo_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://www.dropbox.com");
-        }
-
         private void oauth2Dropbox_OpenButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.DropboxConsumerKey, APIKeys.DropboxConsumerSecret);
@@ -1859,11 +1854,6 @@ namespace ShareX.UploadersLib
             }
 
             return result;
-        }
-
-        private void pbPuush_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Puush.PuushURL);
         }
 
         private void llPuushForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
