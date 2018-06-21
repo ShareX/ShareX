@@ -69,7 +69,7 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(text))
             {
-                foreach (char c in text)
+                foreach (char c in Encoding.UTF8.GetBytes(text))
                 {
                     if (unreservedCharacters.Contains(c))
                     {
@@ -77,12 +77,7 @@ namespace ShareX.HelpersLib
                     }
                     else
                     {
-                        byte[] bytes = Encoding.UTF8.GetBytes(c.ToString());
-
-                        foreach (byte b in bytes)
-                        {
-                            result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", b);
-                        }
+                        result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
                 }
             }
