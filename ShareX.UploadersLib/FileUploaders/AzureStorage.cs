@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string uploadPath = GetUploadPath(fileName);
-            string url = GenerateURL(uploadPath);
+            string url = GenerateURL(uploadPath, true);
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -103,15 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource;
-            if (AzureStorageContainer == "$root")
-            {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{uploadPath}";
-            }
-            else
-            {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{uploadPath}";
-            }
+            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{uploadPath}";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
@@ -120,21 +112,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (response != null && response.Headers != null)
                 {
-                    string result;
-
-                    if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
-                    {
-                        result = GenerateURL(uploadPath, AzureStorageCustomDomain);
-                    }
-                    else
-                    {
-                        result = url;
-                    }
-
                     return new UploadResult
                     {
                         IsSuccess = true,
-                        URL = result
+                        URL = GenerateURL(uploadPath)
                     };
                 }
             }
@@ -189,16 +170,16 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public string GenerateURL(string uploadPath, string customDomain = null)
+        public string GenerateURL(string uploadPath, bool isRequest = false)
         {
             string url;
 
-            if (!string.IsNullOrEmpty(customDomain))
+            if (!isRequest && !string.IsNullOrEmpty(AzureStorageCustomDomain))
             {
-                url = URLHelpers.CombineURL(customDomain, uploadPath);
+                url = URLHelpers.CombineURL(AzureStorageCustomDomain, uploadPath);
                 url = URLHelpers.FixPrefix(url, "https://");
             }
-            else if (AzureStorageContainer == "$root")
+            else if (!isRequest && AzureStorageContainer == "$root")
             {
                 url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{uploadPath}";
             }
@@ -213,7 +194,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GetPreviewURL()
         {
             string uploadPath = GetUploadPath("example.png");
-            return GenerateURL(uploadPath, AzureStorageCustomDomain);
+            return GenerateURL(uploadPath);
         }
     }
 }
