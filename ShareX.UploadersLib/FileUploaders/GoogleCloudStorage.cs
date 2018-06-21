@@ -150,7 +150,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 Domain = URLHelpers.CombineURL("storage.googleapis.com", Bucket);
             }
 
-            uploadPath = URLHelpers.URLPathEncode(uploadPath);
+            uploadPath = URLHelpers.URLEncode(uploadPath, true);
 
             string url = URLHelpers.CombineURL(Domain, uploadPath);
 

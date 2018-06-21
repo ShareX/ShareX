@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string canonicalURI = uploadPath;
             if (isPathStyleRequest) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
-            canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
+            canonicalURI = URLHelpers.URLEncode(canonicalURI, true);
             string canonicalQueryString = "";
             string canonicalHeaders = CreateCanonicalHeaders(headers);
             string signedHeaders = GetSignedHeaders(headers);
@@ -251,7 +251,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
-                uploadPath = URLHelpers.URLPathEncode(uploadPath);
+                uploadPath = URLHelpers.URLEncode(uploadPath, true);
 
                 string url;
 
