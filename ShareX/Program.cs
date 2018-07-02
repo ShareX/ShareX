@@ -211,7 +211,8 @@ namespace ShareX
             get
             {
                 string subFolderName = NameParser.Parse(NameParserType.FolderPath, Settings.SaveImageSubFolderPattern);
-                return Path.Combine(ScreenshotsParentFolder, subFolderName);
+                string folderPath = Path.Combine(ScreenshotsParentFolder, subFolderName);
+                return Helpers.GetAbsolutePath(folderPath);
             }
         }
 
