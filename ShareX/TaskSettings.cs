@@ -157,7 +157,7 @@ namespace ShareX
             {
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
                 {
-                    return Helpers.ExpandFolderVariables(AdvancedSettings.CapturePath);
+                    return Helpers.GetAbsolutePath(AdvancedSettings.CapturePath);
                 }
 
                 return Program.ScreenshotsFolder;
