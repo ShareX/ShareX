@@ -26,6 +26,7 @@
 /* https://github.com/matthewburnett */
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
@@ -60,7 +61,7 @@ namespace ShareX.UploadersLib.URLShorteners
     public class FirebaseRequest
     {
         public DynamicLinkInfo dynamicLinkInfo { get; set; }
-        public Suffix suffix { get; set; }
+        public FirebaseSuffix suffix { get; set; }
     }
 
     public class DynamicLinkInfo
@@ -69,7 +70,7 @@ namespace ShareX.UploadersLib.URLShorteners
         public string link { get; set; }
     }
 
-    public class Suffix
+    public class FirebaseSuffix
     {
         public string option { get; set; }
     }
@@ -94,7 +95,7 @@ namespace ShareX.UploadersLib.URLShorteners
             {
                 dynamicLinkInfo = new DynamicLinkInfo
                 {
-                    dynamicLinkDomain = DynamicLinkDomain,
+                    dynamicLinkDomain = URLHelpers.RemovePrefixes(DynamicLinkDomain),
                     link = url
                 }
             };
@@ -108,7 +109,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             if (IsShort)
             {
-                request.suffix = new Suffix
+                request.suffix = new FirebaseSuffix
                 {
                     option = "SHORT"
                 };
@@ -117,7 +118,13 @@ namespace ShareX.UploadersLib.URLShorteners
             string requestjson = JsonConvert.SerializeObject(request);
 
             result.Response = SendRequest(HttpMethod.POST, requesturl, requestjson, ContentTypeJSON, args);
-            result.ShortenedURL = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response).shortLink;
+
+            FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
+
+            if (firebaseResponse != null)
+            {
+                result.ShortenedURL = firebaseResponse.shortLink;
+            }
 
             return result;
         }
