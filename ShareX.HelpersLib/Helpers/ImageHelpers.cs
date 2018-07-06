@@ -1136,8 +1136,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        // https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/
         public static void BoxBlur(Bitmap bmp, int range)
+        {
+            BoxBlur(bmp, range, new Rectangle(0, 0, bmp.Width, bmp.Height));
+        }
+
+        // https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/
+        public static void BoxBlur(Bitmap bmp, int range, Rectangle rect)
         {
             if (range > 1)
             {
@@ -1148,22 +1153,24 @@ namespace ShareX.HelpersLib
 
                 using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
                 {
-                    BoxBlurHorizontal(unsafeBitmap, range);
-                    BoxBlurVertical(unsafeBitmap, range);
-                    BoxBlurHorizontal(unsafeBitmap, range);
-                    BoxBlurVertical(unsafeBitmap, range);
+                    BoxBlurHorizontal(unsafeBitmap, range, rect);
+                    BoxBlurVertical(unsafeBitmap, range, rect);
+                    BoxBlurHorizontal(unsafeBitmap, range, rect);
+                    BoxBlurVertical(unsafeBitmap, range, rect);
                 }
             }
         }
 
-        private static void BoxBlurHorizontal(UnsafeBitmap unsafeBitmap, int range)
+        private static void BoxBlurHorizontal(UnsafeBitmap unsafeBitmap, int range, Rectangle rect)
         {
-            int w = unsafeBitmap.Width;
-            int h = unsafeBitmap.Height;
+            int left = rect.X;
+            int top = rect.Y;
+            int right = rect.Right;
+            int bottom = rect.Bottom;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[w];
+            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Width];
 
-            for (int y = 0; y < h; y++)
+            for (int y = top; y < bottom; y++)
             {
                 int hits = 0;
                 int r = 0;
@@ -1171,10 +1178,10 @@ namespace ShareX.HelpersLib
                 int b = 0;
                 int a = 0;
 
-                for (int x = -halfRange; x < w; x++)
+                for (int x = left - halfRange; x < right; x++)
                 {
                     int oldPixel = x - halfRange - 1;
-                    if (oldPixel >= 0)
+                    if (oldPixel >= left)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(oldPixel, y);
 
@@ -1190,7 +1197,7 @@ namespace ShareX.HelpersLib
                     }
 
                     int newPixel = x + halfRange;
-                    if (newPixel < w)
+                    if (newPixel < right)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(newPixel, y);
 
@@ -1205,27 +1212,29 @@ namespace ShareX.HelpersLib
                         hits++;
                     }
 
-                    if (x >= 0)
+                    if (x >= left)
                     {
                         newColors[x] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
                     }
                 }
 
-                for (int x = 0; x < w; x++)
+                for (int x = left; x < right; x++)
                 {
                     unsafeBitmap.SetPixel(x, y, newColors[x]);
                 }
             }
         }
 
-        private static void BoxBlurVertical(UnsafeBitmap unsafeBitmap, int range)
+        private static void BoxBlurVertical(UnsafeBitmap unsafeBitmap, int range, Rectangle rect)
         {
-            int w = unsafeBitmap.Width;
-            int h = unsafeBitmap.Height;
+            int left = rect.X;
+            int top = rect.Y;
+            int right = rect.Right;
+            int bottom = rect.Bottom;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[h];
+            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Width];
 
-            for (int x = 0; x < w; x++)
+            for (int x = left; x < right; x++)
             {
                 int hits = 0;
                 int r = 0;
@@ -1233,10 +1242,10 @@ namespace ShareX.HelpersLib
                 int b = 0;
                 int a = 0;
 
-                for (int y = -halfRange; y < h; y++)
+                for (int y = top - halfRange; y < bottom; y++)
                 {
                     int oldPixel = y - halfRange - 1;
-                    if (oldPixel >= 0)
+                    if (oldPixel >= top)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(x, oldPixel);
 
@@ -1252,7 +1261,7 @@ namespace ShareX.HelpersLib
                     }
 
                     int newPixel = y + halfRange;
-                    if (newPixel < h)
+                    if (newPixel < bottom)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(x, newPixel);
 
@@ -1267,13 +1276,13 @@ namespace ShareX.HelpersLib
                         hits++;
                     }
 
-                    if (y >= 0)
+                    if (y >= top)
                     {
                         newColors[y] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
                     }
                 }
 
-                for (int y = 0; y < h; y++)
+                for (int y = top; y < bottom; y++)
                 {
                     unsafeBitmap.SetPixel(x, y, newColors[y]);
                 }

@@ -100,13 +100,6 @@ namespace ShareX.UploadersLib.URLShorteners
                 }
             };
 
-            string requesturl = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks";
-
-            Dictionary<string, string> args = new Dictionary<string, string>
-            {
-                { "key", WebAPIKey }
-            };
-
             if (IsShort)
             {
                 request.suffix = new FirebaseSuffix
@@ -115,10 +108,13 @@ namespace ShareX.UploadersLib.URLShorteners
                 };
             }
 
+            Dictionary<string, string> args = new Dictionary<string, string>
+            {
+                { "key", WebAPIKey }
+            };
+
             string requestjson = JsonConvert.SerializeObject(request);
-
-            result.Response = SendRequest(HttpMethod.POST, requesturl, requestjson, ContentTypeJSON, args);
-
+            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", requestjson, ContentTypeJSON, args);
             FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
 
             if (firebaseResponse != null)
