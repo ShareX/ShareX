@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>Después de capturar</value>
+  </data>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>Destinos</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Después de subir</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Nombre de archivo:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Después de capturar</value>
   </data>
 </root>

@@ -118,12 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Cliente FTP</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Nombre de archivo</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="chFilesize.Text" xml:space="preserve">
+    <value>Tamaño de archivo</value>
+  </data>
+  <data name="chFiletype.Text" xml:space="preserve">
+    <value>Tipo de archivo</value>
+  </data>
+  <data name="chLastModified.Text" xml:space="preserve">
+    <value>Última modificación</value>
+  </data>
+  <data name="lblConnecting.Text" xml:space="preserve">
+    <value>Conectando con el servidor FTP...</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>estado</value>
+  </data>
+  <data name="tpAccount.Text" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+  <data name="tpConsole.Text" xml:space="preserve">
+    <value>Consola</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>Connectar</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Copiar URL al portapapeles</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Crear carpeta</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>Desconectar</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>Abrir URL</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Cambiar nombre</value>
   </data>
 </root>

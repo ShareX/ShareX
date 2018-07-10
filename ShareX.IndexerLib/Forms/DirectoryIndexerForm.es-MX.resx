@@ -118,12 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Indizador de carpetas</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Examinar carpeta...</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Indizar carpeta seleccionada</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Subir y cerrar esta ventana</value>
+  </data>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Configuración</value>
   </data>
 </root>

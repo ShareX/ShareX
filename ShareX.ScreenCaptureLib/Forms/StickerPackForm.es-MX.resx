@@ -118,12 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Colecciones de etiquetas</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Agregar</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnFolderBrowse.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="lblFolder.Text" xml:space="preserve">
+    <value>Carpeta:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nombre:</value>
   </data>
 </root>

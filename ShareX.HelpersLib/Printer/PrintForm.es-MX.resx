@@ -117,13 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbAutoRotate.Text" xml:space="preserve">
+    <value>Girar imagen automáticamente</value>
+  </data>
+  <data name="cbAutoScale.Text" xml:space="preserve">
+    <value>Redimensionar imagen automáticamente</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Margen:</value>
+  </data>
+  <data name="cbAllowEnlarge.Text" xml:space="preserve">
+    <value>Permitir ampliación de imagen</value>
+  </data>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>Centrar posición de la imagen</value>
+  </data>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>Vista previa...</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>Imprimir...</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Opciones de impresión</value>
   </data>
 </root>

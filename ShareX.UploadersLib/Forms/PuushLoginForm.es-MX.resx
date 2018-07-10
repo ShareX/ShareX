@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>Acceso a puush</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>Acceder</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Correo electrónico:</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="llForgottenPassword.Text" xml:space="preserve">
+    <value>Recuperar contraseña</value>
   </data>
 </root>

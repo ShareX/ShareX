@@ -117,13 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Esperar hasta que las tareas terminen</value>
+  </data>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Minimizar al área de notificación automáticamente</value>
+  </data>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Región</value>
+  </data>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Seleccionar región</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Tiempo de repetición:</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>Share X - Captura automática</value>
+  </data>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>sgundos</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Pantralla completa</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Región personalizada</value>
+  </data>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Región</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>Share X - Captura automática</value>
   </data>
 </root>

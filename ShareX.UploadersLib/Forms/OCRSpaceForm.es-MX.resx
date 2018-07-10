@@ -118,12 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Reconocimiento óptico de caracteres (OCR)</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>Iniciar OCR</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Resultado:</value>
+  </data>
+  <data name="llAttribution.Text" xml:space="preserve">
+    <value>Con tecnología de OCR.Space API</value>
+  </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>Abrir en Google Translate y cerrar ventana</value>
   </data>
 </root>
