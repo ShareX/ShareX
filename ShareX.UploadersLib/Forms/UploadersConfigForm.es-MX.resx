@@ -1398,4 +1398,13 @@ tienda.libro[0].titulo</value>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROYECTO-</value>
   </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>Vista previa de URL:</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>Ejemplo: google.page.link</value>
+  </data>
 </root>
