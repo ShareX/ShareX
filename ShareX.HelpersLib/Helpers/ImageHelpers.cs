@@ -1711,9 +1711,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false)
+        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+            if (sides == AnchorStyles.None)
+            {
+                return source;
+            }
+
             Rectangle crop = source;
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
@@ -1721,86 +1728,94 @@ namespace ShareX.HelpersLib
                 bool leave = false;
 
                 ColorBgra checkColor = unsafeBitmap.GetPixel(0, 0);
+                uint mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
+                uint check = checkColor.Bgra & mask;
 
-                // Find X (Left to right)
-                for (int x = 0; x < bmp.Width && !leave; x++)
+                if (sides.HasFlag(AnchorStyles.Left))
                 {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find X (Left to right)
+                    for (int x = 0; x < bmp.Width && !leave; x++)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.X = x;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.X = x;
+                                crop.Width -= x;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
+
+                    // If all pixels same color
+                    if (!leave)
+                    {
+                        return crop;
+                    }
+
+                    leave = false;
                 }
 
-                // If all pixels same color
-                if (!leave)
+                if (sides.HasFlag(AnchorStyles.Top))
                 {
-                    return crop;
-                }
+                    // Find Y (Top to bottom)
+                    for (int y = 0; y < bmp.Height && !leave; y++)
+                    {
+                        for (int x = 0; x < bmp.Width; x++)
+                        {
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Y = y;
+                                crop.Height -= y;
+                                leave = true;
+                                break;
+                            }
+                        }
+                    }
 
-                leave = false;
+                    leave = false;
+                }
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(0, 0);
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, bmp.Height - 1);
+                    mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
+                    check = checkColor.Bgra & mask;
                 }
 
-                // Find Y (Top to bottom)
-                for (int y = 0; y < bmp.Height && !leave; y++)
+                if (sides.HasFlag(AnchorStyles.Right))
                 {
-                    for (int x = 0; x < bmp.Width; x++)
+                    // Find Width (Right to left)
+                    for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.Y = y;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Width = x - crop.X + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
+
+                    leave = false;
                 }
 
-                leave = false;
-
-                if (!sameColorCrop)
+                if (sides.HasFlag(AnchorStyles.Bottom))
                 {
-                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
-                }
-
-                // Find Width (Right to left)
-                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
-                {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find Height (Bottom to top)
+                    for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int x = 0; x < bmp.Width; x++)
                         {
-                            crop.Width = x - crop.X + 1;
-                            leave = true;
-                            break;
-                        }
-                    }
-                }
-
-                leave = false;
-
-                if (!sameColorCrop)
-                {
-                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
-                }
-
-                // Find Height (Bottom to top)
-                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
-                {
-                    for (int x = 0; x < bmp.Width; x++)
-                    {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
-                        {
-                            crop.Height = y - crop.Y + 1;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Height = y - crop.Y + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
                 }
@@ -1809,10 +1824,11 @@ namespace ShareX.HelpersLib
             return crop;
         }
 
-        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
+        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop);
+            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop, sides);
 
             if (source != rect)
             {

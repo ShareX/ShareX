@@ -3222,7 +3222,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbPolrUseAPIv1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>16, 136</value>
   </data>
   <data name="cbPolrUseAPIv1.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3252,7 +3252,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbPolrIsSecret.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>16, 112</value>
   </data>
   <data name="cbPolrIsSecret.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>
@@ -3276,7 +3276,7 @@ store.book[0].title</value>
     <value>1</value>
   </data>
   <data name="txtPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="txtPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 20</value>
@@ -3303,7 +3303,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>13, 64</value>
   </data>
   <data name="lblPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -3401,11 +3401,38 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="lblFirebaseDomainExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 84</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 13</value>
+  </data>
+  <data name="lblFirebaseDomainExample.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>Example: google.page.link</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomainExample.Name" xml:space="preserve">
+    <value>lblFirebaseDomainExample</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomainExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomainExample.Parent" xml:space="preserve">
+    <value>tpFirebaseDynamicLinks</value>
+  </data>
+  <data name="&gt;&gt;lblFirebaseDomainExample.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblFirebaseDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 55</value>
+    <value>13, 64</value>
   </data>
   <data name="lblFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -3426,7 +3453,7 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;lblFirebaseDomain.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbFirebaseIsShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3435,7 +3462,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbFirebaseIsShort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 97</value>
+    <value>16, 112</value>
   </data>
   <data name="cbFirebaseIsShort.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
@@ -3456,13 +3483,13 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;cbFirebaseIsShort.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtFirebaseDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 71</value>
+    <value>16, 80</value>
   </data>
   <data name="txtFirebaseDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
+    <value>344, 20</value>
   </data>
   <data name="txtFirebaseDomain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3477,13 +3504,13 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;txtFirebaseDomain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtFirebaseWebAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
   <data name="txtFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+    <value>344, 20</value>
   </data>
   <data name="txtFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3498,7 +3525,7 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;txtFirebaseWebAPIKey.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblFirebaseWebAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3510,13 +3537,13 @@ store.book[0].title</value>
     <value>13, 16</value>
   </data>
   <data name="lblFirebaseWebAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
+    <value>73, 13</value>
   </data>
   <data name="lblFirebaseWebAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
-    <value>Web API Key:</value>
+    <value>Web API key:</value>
   </data>
   <data name="&gt;&gt;lblFirebaseWebAPIKey.Name" xml:space="preserve">
     <value>lblFirebaseWebAPIKey</value>
@@ -3528,7 +3555,7 @@ store.book[0].title</value>
     <value>tpFirebaseDynamicLinks</value>
   </data>
   <data name="&gt;&gt;lblFirebaseWebAPIKey.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -5088,7 +5115,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbDropboxUseDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
+    <value>16, 296</value>
   </data>
   <data name="cbDropboxUseDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -5118,7 +5145,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 344</value>
+    <value>16, 272</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 17</value>
@@ -5141,146 +5168,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbDropboxAutoCreateShareableLink.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pbDropboxLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="pbDropboxLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbDropboxLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbDropboxLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 64</value>
-  </data>
-  <data name="pbDropboxLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;pbDropboxLogo.Name" xml:space="preserve">
-    <value>pbDropboxLogo</value>
-  </data>
-  <data name="&gt;&gt;pbDropboxLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbDropboxLogo.Parent" xml:space="preserve">
-    <value>tpDropbox</value>
-  </data>
-  <data name="&gt;&gt;pbDropboxLogo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblDropboxPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5288,7 +5175,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblDropboxPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 296</value>
+    <value>13, 224</value>
   </data>
   <data name="lblDropboxPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -5309,10 +5196,10 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;lblDropboxPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="txtDropboxPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 312</value>
+    <value>16, 240</value>
   </data>
   <data name="txtDropboxPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
@@ -5330,10 +5217,10 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;txtDropboxPath.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 16</value>
   </data>
   <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 200</value>
@@ -5351,7 +5238,7 @@ store.book[0].title</value>
     <value>tpDropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 202</value>
@@ -5764,33 +5651,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpGoogleDrive.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pbPuush.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="pbPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 86</value>
-  </data>
-  <data name="pbPuush.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbPuush.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;pbPuush.Name" xml:space="preserve">
-    <value>pbPuush</value>
-  </data>
-  <data name="&gt;&gt;pbPuush.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPuush.Parent" xml:space="preserve">
-    <value>tpPuush</value>
-  </data>
-  <data name="&gt;&gt;pbPuush.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblPuushAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5798,7 +5658,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblPuushAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 264</value>
+    <value>13, 176</value>
   </data>
   <data name="lblPuushAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -5819,10 +5679,10 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;lblPuushAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="txtPuushAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 280</value>
+    <value>16, 192</value>
   </data>
   <data name="txtPuushAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -5840,7 +5700,7 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;txtPuushAPIKey.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="llPuushForgottenPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5849,7 +5709,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="llPuushForgottenPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 200</value>
+    <value>13, 112</value>
   </data>
   <data name="llPuushForgottenPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -5870,13 +5730,13 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;llPuushForgottenPassword.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnPuushLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPuushLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 224</value>
+    <value>16, 136</value>
   </data>
   <data name="btnPuushLogin.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 32</value>
@@ -5897,10 +5757,10 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;btnPuushLogin.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txtPuushPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+    <value>16, 80</value>
   </data>
   <data name="txtPuushPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -5918,10 +5778,10 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;txtPuushPassword.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="txtPuushEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPuushEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -5939,7 +5799,7 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;txtPuushEmail.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblPuushEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5948,7 +5808,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblPuushEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 104</value>
+    <value>13, 16</value>
   </data>
   <data name="lblPuushEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -5969,7 +5829,7 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;lblPuushEmail.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblPuushPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5978,7 +5838,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblPuushPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 152</value>
+    <value>13, 64</value>
   </data>
   <data name="lblPuushPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5999,16 +5859,16 @@ store.book[0].title</value>
     <value>tpPuush</value>
   </data>
   <data name="&gt;&gt;lblPuushPassword.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 202</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>972, 519</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -6824,13 +6684,13 @@ store.book[0].title</value>
     <value>13, 112</value>
   </data>
   <data name="lblAmazonS3Endpoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
+    <value>57, 13</value>
   </data>
   <data name="lblAmazonS3Endpoints.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
-    <value>Regions:</value>
+    <value>Endpoints:</value>
   </data>
   <data name="&gt;&gt;lblAmazonS3Endpoints.Name" xml:space="preserve">
     <value>lblAmazonS3Endpoints</value>
@@ -7079,7 +6939,7 @@ store.book[0].title</value>
     <value>1</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 367</value>
+    <value>16, 320</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
@@ -7106,16 +6966,16 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 351</value>
+    <value>13, 304</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>68, 13</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
-    <value>Path:</value>
+    <value>Upload path:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageObjectPrefix</value>
@@ -7136,7 +6996,7 @@ store.book[0].title</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 303</value>
+    <value>13, 352</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -7160,7 +7020,7 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 319</value>
+    <value>16, 368</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
@@ -7279,35 +7139,65 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpGoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblAzureStorageURLPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblAzureStorageURLPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 299</value>
+  <data name="lblAzureStorageURLPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 325</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
+  <data name="lblAzureStorageURLPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="lblAzureStorageURLPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.Text" xml:space="preserve">
-    <value>Exclude container name from returned URL</value>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>Preview</value>
   </data>
-  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Name" xml:space="preserve">
-    <value>cbAzureStorageExcludeContainer</value>
+  <data name="&gt;&gt;lblAzureStorageURLPreview.Name" xml:space="preserve">
+    <value>lblAzureStorageURLPreview</value>
   </data>
-  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblAzureStorageURLPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbAzureStorageExcludeContainer.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblAzureStorageURLPreview.Parent" xml:space="preserve">
     <value>tpAzureStorage</value>
   </data>
-  <data name="&gt;&gt;cbAzureStorageExcludeContainer.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblAzureStorageURLPreview.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 304</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>URL preview:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageURLPreviewLabel.Name" xml:space="preserve">
+    <value>lblAzureStorageURLPreviewLabel</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageURLPreviewLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageURLPreviewLabel.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageURLPreviewLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="txtAzureStorageUploadPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 223</value>
@@ -7328,7 +7218,10 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageUploadPath.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblAzureStorageUploadPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7337,13 +7230,13 @@ store.book[0].title</value>
     <value>13, 207</value>
   </data>
   <data name="lblAzureStorageUploadPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>68, 13</value>
   </data>
   <data name="lblAzureStorageUploadPath.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
-    <value>Upload Path:</value>
+    <value>Upload path:</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageUploadPath.Name" xml:space="preserve">
     <value>lblAzureStorageUploadPath</value>
@@ -7355,7 +7248,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageUploadPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
@@ -7388,7 +7281,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;cbAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblAzureStorageEnvironment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7418,7 +7311,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnAzureStoragePortal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7445,7 +7338,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;btnAzureStoragePortal.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -7466,7 +7359,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblAzureStorageContainer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7496,7 +7389,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -7517,7 +7410,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblAzureStorageAccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7550,7 +7443,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="txtAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -7571,7 +7464,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblAzureStorageAccountName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7604,7 +7497,7 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="txtAzureStorageCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 273</value>
@@ -7625,7 +7518,10 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblAzureStorageCustomDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7634,13 +7530,13 @@ store.book[0].title</value>
     <value>13, 257</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>82, 13</value>
   </data>
   <data name="lblAzureStorageCustomDomain.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
-    <value>Custom Domain:</value>
+    <value>Custom domain:</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageCustomDomain.Name" xml:space="preserve">
     <value>lblAzureStorageCustomDomain</value>
@@ -7652,10 +7548,10 @@ store.book[0].title</value>
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 202</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>

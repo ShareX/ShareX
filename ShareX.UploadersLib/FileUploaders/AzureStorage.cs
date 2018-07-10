@@ -30,6 +30,7 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -51,7 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer, config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath, config.AzureStorageExcludeContainer);
+            return new AzureStorage(config.AzureStorageAccountName, config.AzureStorageAccountAccessKey, config.AzureStorageContainer,
+                config.AzureStorageEnvironment, config.AzureStorageCustomDomain, config.AzureStorageUploadPath);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAzureStorage;
@@ -67,9 +69,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public string AzureStorageEnvironment { get; private set; }
         public string AzureStorageCustomDomain { get; private set; }
         public string AzureStorageUploadPath { get; private set; }
-        public bool AzureStorageExcludeContainer { get; private set; }
 
-        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment, string customDomain, string uploadPath, bool excludeContainer)
+        public AzureStorage(string azureStorageAccountName, string azureStorageAccessKey, string azureStorageContainer, string azureStorageEnvironment,
+            string customDomain, string uploadPath)
         {
             AzureStorageAccountName = azureStorageAccountName;
             AzureStorageAccountAccessKey = azureStorageAccessKey;
@@ -77,7 +79,6 @@ namespace ShareX.UploadersLib.FileUploaders
             AzureStorageEnvironment = (!string.IsNullOrEmpty(azureStorageEnvironment)) ? azureStorageEnvironment : "blob.core.windows.net";
             AzureStorageCustomDomain = customDomain;
             AzureStorageUploadPath = uploadPath;
-            AzureStorageExcludeContainer = excludeContainer;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -91,19 +92,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            CreateContainerIfNotExists();
-
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string targetPath = GetUploadPath(fileName);
-            string url;
-            if (AzureStorageContainer == "$root")
-            {
-                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{targetPath}";
-            }
-            else
-            {
-                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{targetPath}";
-            }
+            string uploadPath = GetUploadPath(fileName);
+            string url = GenerateURL(uploadPath, true);
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -112,112 +103,25 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
 
             string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource;
-            if (AzureStorageContainer == "$root")
-            {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{targetPath}";
-            }
-            else
-            {
-                canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{targetPath}";
-            }
+            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{uploadPath}";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null);
-
-            if (responseHeaders != null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null))
             {
-                string result;
-
-                if (!string.IsNullOrEmpty(AzureStorageCustomDomain))
+                if (response != null && response.Headers != null)
                 {
-                    if (AzureStorageExcludeContainer)
+                    return new UploadResult
                     {
-                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, targetPath);
-                    }
-                    else
-                    {
-                        result = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, targetPath);
-                    }
-                    result = URLHelpers.FixPrefix(result);
-                }
-                else
-                {
-                    result = url;
-                }
-
-                return new UploadResult { IsSuccess = true, URL = result };
-            }
-            else
-            {
-                Errors.Add("Upload failed.");
-                return null;
-            }
-        }
-
-        private void CreateContainerIfNotExists()
-        {
-            string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container";
-
-            NameValueCollection requestHeaders = new NameValueCollection();
-            requestHeaders["Content-Length"] = "0";
-            requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = APIVersion;
-
-            string canonicalizedHeaders = $"x-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\nrestype:container";
-            string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
-
-            requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
-
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, null, null, null, requestHeaders, null);
-
-            if (responseHeaders != null)
-            {
-                SetContainerACL();
-            }
-            else
-            {
-                if (Errors.Count > 0)
-                {
-                    if (Errors[0].Contains("409"))
-                    {
-                        SetContainerACL();
-                    }
-                    else
-                    {
-                        Errors.Add("Upload to Azure storage failed.");
-                    }
+                        IsSuccess = true,
+                        URL = GenerateURL(uploadPath)
+                    };
                 }
             }
-        }
 
-        private void SetContainerACL()
-        {
-            string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
-            string url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}?restype=container&comp=acl";
-
-            NameValueCollection requestHeaders = new NameValueCollection();
-            requestHeaders["Content-Length"] = "0";
-            requestHeaders["x-ms-date"] = date;
-            requestHeaders["x-ms-version"] = APIVersion;
-            requestHeaders["x-ms-blob-public-access"] = "container";
-
-            string canonicalizedHeaders = $"x-ms-blob-public-access:container\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
-            string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}\ncomp:acl\nrestype:container";
-            string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource);
-
-            requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
-
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, null, null, null, requestHeaders, null);
-
-            if (responseHeaders == null)
-            {
-                Errors.Add("There was an issue with setting ACL on the container.");
-            }
+            Errors.Add("Upload failed.");
+            return null;
         }
 
         private string GenerateStringToSign(string canonicalizedHeaders, string canonicalizedResource, string contentLength = "", string contentType = "")
@@ -255,15 +159,46 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            if (!String.IsNullOrEmpty(AzureStorageUploadPath))
+            string uploadPath;
+
+            if (!string.IsNullOrEmpty(AzureStorageUploadPath))
             {
                 string path = NameParser.Parse(NameParserType.FolderPath, AzureStorageUploadPath.Trim('/'));
-                return URLHelpers.CombineURL(path, fileName);
+                uploadPath = URLHelpers.CombineURL(path, fileName);
             }
             else
             {
-                return fileName;
+                uploadPath = fileName;
             }
+
+            return Uri.EscapeUriString(uploadPath);
+        }
+
+        public string GenerateURL(string uploadPath, bool isRequest = false)
+        {
+            string url;
+
+            if (!isRequest && !string.IsNullOrEmpty(AzureStorageCustomDomain))
+            {
+                url = URLHelpers.CombineURL(AzureStorageCustomDomain, uploadPath);
+                url = URLHelpers.FixPrefix(url, "https://");
+            }
+            else if (!isRequest && AzureStorageContainer == "$root")
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{uploadPath}";
+            }
+            else
+            {
+                url = $"https://{AzureStorageAccountName}.{AzureStorageEnvironment}/{AzureStorageContainer}/{uploadPath}";
+            }
+
+            return url;
+        }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
         }
     }
 }

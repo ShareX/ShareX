@@ -156,20 +156,6 @@ namespace ShareX.UploadersLib
             return SendRequest(method, url, query, ContentTypeURLEncoded, args, headers, cookies, responseType);
         }
 
-        protected NameValueCollection SendRequestGetHeaders(HttpMethod method, string url, Stream data, string contentType, Dictionary<string, string> args,
-            NameValueCollection headers = null, CookieCollection cookies = null)
-        {
-            using (HttpWebResponse response = GetResponse(method, url, data, contentType, null, headers, cookies))
-            {
-                if (response != null)
-                {
-                    return response.Headers;
-                }
-
-                return null;
-            }
-        }
-
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
@@ -290,8 +276,9 @@ namespace ShareX.UploadersLib
             return result;
         }
 
-        protected UploadResult SendRequestBytes(string url, Stream data, string fileName, long contentPosition = 0, long contentLength = -1, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.PUT)
+        protected UploadResult SendRequestFileRange(string url, Stream data, string fileName, long contentPosition = 0, long contentLength = -1,
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text,
+            HttpMethod method = HttpMethod.PUT)
         {
             UploadResult result = new UploadResult();
 
@@ -362,7 +349,7 @@ namespace ShareX.UploadersLib
             return result;
         }
 
-        private HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
+        protected HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
             IsUploading = true;

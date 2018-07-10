@@ -33,6 +33,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingTextOutline;
 
+        public override bool SupportGradient { get; } = true;
+
         public override void OnConfigLoad()
         {
             TextOptions = AnnotationOptions.TextOutlineOptions.Copy();
@@ -64,12 +66,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (GraphicsPath gp = new GraphicsPath())
                 {
+                    gp.FillMode = FillMode.Winding;
+
                     using (Font font = new Font(options.Font, options.Size, options.Style))
                     using (StringFormat sf = new StringFormat { Alignment = options.AlignmentHorizontal, LineAlignment = options.AlignmentVertical })
                     {
                         float emSize = g.DpiY * font.SizeInPoints / 72;
                         gp.AddString(text, font.FontFamily, (int)font.Style, emSize, rect, sf);
                     }
+
+                    RectangleF pathRect = gp.GetBounds();
+
+                    if (pathRect.IsEmpty) return;
 
                     g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -109,9 +117,27 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
 
-                    using (Brush textBrush = new SolidBrush(textColor))
+                    Brush textBrush = null;
+
+                    try
                     {
+                        if (TextOptions.Gradient)
+                        {
+                            textBrush = new LinearGradientBrush(Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
+                        }
+                        else
+                        {
+                            textBrush = new SolidBrush(textColor);
+                        }
+
                         g.FillPath(textBrush, gp);
+                    }
+                    finally
+                    {
+                        if (textBrush != null)
+                        {
+                            textBrush.Dispose();
+                        }
                     }
 
                     g.SmoothingMode = SmoothingMode.None;

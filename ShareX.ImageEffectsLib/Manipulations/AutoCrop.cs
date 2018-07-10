@@ -26,15 +26,24 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     [Description("Auto crop")]
     internal class AutoCrop : ImageEffect
     {
+        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
+        public AnchorStyles Sides { get; set; }
+
+        public AutoCrop()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Image Apply(Image img)
         {
-            return ImageHelpers.AutoCropImage((Bitmap)img);
+            return ImageHelpers.AutoCropImage((Bitmap)img, false, Sides);
         }
     }
 }

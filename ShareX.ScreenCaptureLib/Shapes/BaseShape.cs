@@ -162,6 +162,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Manager.IsMoving = true;
                 Rectangle = new Rectangle(new Point(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                OnCreated();
             }
             else
             {

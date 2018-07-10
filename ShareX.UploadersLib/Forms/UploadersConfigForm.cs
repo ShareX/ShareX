@@ -668,7 +668,7 @@ namespace ShareX.UploadersLib
             cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
             txtAzureStorageCustomDomain.Text = Config.AzureStorageCustomDomain;
             txtAzureStorageUploadPath.Text = Config.AzureStorageUploadPath;
-            cbAzureStorageExcludeContainer.Checked = Config.AzureStorageExcludeContainer;
+            UpdateAzureStorageStatus();
 
             #endregion Azure Storage
 
@@ -1679,11 +1679,6 @@ namespace ShareX.UploadersLib
 
         #region Dropbox
 
-        private void pbDropboxLogo_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://www.dropbox.com");
-        }
-
         private void oauth2Dropbox_OpenButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.DropboxConsumerKey, APIKeys.DropboxConsumerSecret);
@@ -1859,11 +1854,6 @@ namespace ShareX.UploadersLib
             }
 
             return result;
-        }
-
-        private void pbPuush_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Puush.PuushURL);
         }
 
         private void llPuushForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -2850,6 +2840,12 @@ namespace ShareX.UploadersLib
         private void txtAzureStorageAccountName_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageAccountName = txtAzureStorageAccountName.Text;
+            UpdateAzureStorageStatus();
+        }
+
+        private void btnAzureStoragePortal_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
         }
 
         private void txtAzureStorageAccessKey_TextChanged(object sender, EventArgs e)
@@ -2860,31 +2856,25 @@ namespace ShareX.UploadersLib
         private void txtAzureStorageContainer_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageContainer = txtAzureStorageContainer.Text;
+            UpdateAzureStorageStatus();
         }
 
         private void cbAzureStorageEnvironment_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.AzureStorageEnvironment = cbAzureStorageEnvironment.Text;
-        }
-
-        private void txtAzureStorageCustomDomain_TextChanged(object sender, EventArgs e)
-        {
-            Config.AzureStorageCustomDomain = txtAzureStorageCustomDomain.Text;
+            UpdateAzureStorageStatus();
         }
 
         private void txtAzureStorageUploadPath_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageUploadPath = txtAzureStorageUploadPath.Text;
+            UpdateAzureStorageStatus();
         }
 
-        private void cbAzureStorageExcludeContainer_CheckedChanged(object sender, EventArgs e)
+        private void txtAzureStorageCustomDomain_TextChanged(object sender, EventArgs e)
         {
-            Config.AzureStorageExcludeContainer = cbAzureStorageExcludeContainer.Checked;
-        }
-
-        private void btnAzureStoragePortal_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/Resources/resourceType/Microsoft.Storage%2FStorageAccounts");
+            Config.AzureStorageCustomDomain = txtAzureStorageCustomDomain.Text;
+            UpdateAzureStorageStatus();
         }
 
         #endregion Azure Storage

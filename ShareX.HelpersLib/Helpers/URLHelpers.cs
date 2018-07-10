@@ -63,41 +63,37 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static string Encode(string text, string unreservedCharacters)
+        public static string URLEncode(string text, bool isPath = false)
         {
             StringBuilder result = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
             {
-                foreach (char c in text)
+                string unreservedCharacters;
+
+                if (isPath)
                 {
-                    if (unreservedCharacters.Contains(c))
+                    unreservedCharacters = Helpers.URLPathCharacters;
+                }
+                else
+                {
+                    unreservedCharacters = Helpers.URLCharacters;
+                }
+
+                foreach (char c in Encoding.UTF8.GetBytes(text))
+                {
+                    if (unreservedCharacters.IndexOf(c) != -1)
                     {
                         result.Append(c);
                     }
                     else
                     {
-                        byte[] bytes = Encoding.UTF8.GetBytes(c.ToString());
-
-                        foreach (byte b in bytes)
-                        {
-                            result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", b);
-                        }
+                        result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
                 }
             }
 
             return result.ToString();
-        }
-
-        public static string URLEncode(string text)
-        {
-            return Encode(text, Helpers.URLCharacters);
-        }
-
-        public static string URLPathEncode(string text)
-        {
-            return Encode(text, Helpers.URLPathCharacters);
         }
 
         public static string HtmlEncode(string text)

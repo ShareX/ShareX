@@ -70,6 +70,7 @@ namespace ShareX.HelpersLib
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
         private static Cursor[] _cursorList;
+
         public static Cursor[] CursorList
         {
             get

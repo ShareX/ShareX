@@ -235,7 +235,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             do
             {
-                result = SendRequestBytes(sessionUrl, stream, fileName, position, MaxSegmentSize);
+                result = SendRequestFileRange(sessionUrl, stream, fileName, position, MaxSegmentSize);
 
                 if (result.IsSuccess)
                 {

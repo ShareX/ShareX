@@ -165,6 +165,8 @@
             this.txtPolrAPIHostname = new System.Windows.Forms.TextBox();
             this.lblPolrAPIHostname = new System.Windows.Forms.Label();
             this.tpFirebaseDynamicLinks = new System.Windows.Forms.TabPage();
+            this.lblFirebaseDomainExample = new System.Windows.Forms.Label();
+            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.cbFirebaseIsShort = new System.Windows.Forms.CheckBox();
             this.txtFirebaseDomain = new System.Windows.Forms.TextBox();
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
@@ -230,7 +232,6 @@
             this.tpDropbox = new System.Windows.Forms.TabPage();
             this.cbDropboxUseDirectLink = new System.Windows.Forms.CheckBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
-            this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
@@ -251,7 +252,6 @@
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpPuush = new System.Windows.Forms.TabPage();
-            this.pbPuush = new System.Windows.Forms.PictureBox();
             this.lblPuushAPIKey = new System.Windows.Forms.Label();
             this.txtPuushAPIKey = new System.Windows.Forms.TextBox();
             this.llPuushForgottenPassword = new System.Windows.Forms.LinkLabel();
@@ -309,7 +309,8 @@
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
             this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
-            this.cbAzureStorageExcludeContainer = new System.Windows.Forms.CheckBox();
+            this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
+            this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
             this.txtAzureStorageUploadPath = new System.Windows.Forms.TextBox();
             this.lblAzureStorageUploadPath = new System.Windows.Forms.Label();
             this.cbAzureStorageEnvironment = new System.Windows.Forms.ComboBox();
@@ -650,7 +651,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblFirebaseDomain = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -681,11 +681,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFTPPort)).BeginInit();
             this.gbFTPS.SuspendLayout();
             this.tpDropbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).BeginInit();
             this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpPuush.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.gbAmazonS3Advanced.SuspendLayout();
@@ -1746,6 +1744,7 @@
             // 
             // tpFirebaseDynamicLinks
             // 
+            this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomainExample);
             this.tpFirebaseDynamicLinks.Controls.Add(this.lblFirebaseDomain);
             this.tpFirebaseDynamicLinks.Controls.Add(this.cbFirebaseIsShort);
             this.tpFirebaseDynamicLinks.Controls.Add(this.txtFirebaseDomain);
@@ -1754,6 +1753,16 @@
             resources.ApplyResources(this.tpFirebaseDynamicLinks, "tpFirebaseDynamicLinks");
             this.tpFirebaseDynamicLinks.Name = "tpFirebaseDynamicLinks";
             this.tpFirebaseDynamicLinks.UseVisualStyleBackColor = true;
+            // 
+            // lblFirebaseDomainExample
+            // 
+            resources.ApplyResources(this.lblFirebaseDomainExample, "lblFirebaseDomainExample");
+            this.lblFirebaseDomainExample.Name = "lblFirebaseDomainExample";
+            // 
+            // lblFirebaseDomain
+            // 
+            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
+            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
             // 
             // cbFirebaseIsShort
             // 
@@ -2247,7 +2256,6 @@
             this.tpDropbox.BackColor = System.Drawing.SystemColors.Window;
             this.tpDropbox.Controls.Add(this.cbDropboxUseDirectLink);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
-            this.tpDropbox.Controls.Add(this.pbDropboxLogo);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
             this.tpDropbox.Controls.Add(this.txtDropboxPath);
             this.tpDropbox.Controls.Add(this.oauth2Dropbox);
@@ -2267,14 +2275,6 @@
             this.cbDropboxAutoCreateShareableLink.Name = "cbDropboxAutoCreateShareableLink";
             this.cbDropboxAutoCreateShareableLink.UseVisualStyleBackColor = true;
             this.cbDropboxAutoCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbDropboxAutoCreateShareableLink_CheckedChanged);
-            // 
-            // pbDropboxLogo
-            // 
-            this.pbDropboxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pbDropboxLogo, "pbDropboxLogo");
-            this.pbDropboxLogo.Name = "pbDropboxLogo";
-            this.pbDropboxLogo.TabStop = false;
-            this.pbDropboxLogo.Click += new System.EventHandler(this.pbDropboxLogo_Click);
             // 
             // lblDropboxPath
             // 
@@ -2421,7 +2421,6 @@
             // tpPuush
             // 
             this.tpPuush.BackColor = System.Drawing.SystemColors.Window;
-            this.tpPuush.Controls.Add(this.pbPuush);
             this.tpPuush.Controls.Add(this.lblPuushAPIKey);
             this.tpPuush.Controls.Add(this.txtPuushAPIKey);
             this.tpPuush.Controls.Add(this.llPuushForgottenPassword);
@@ -2432,15 +2431,6 @@
             this.tpPuush.Controls.Add(this.lblPuushPassword);
             resources.ApplyResources(this.tpPuush, "tpPuush");
             this.tpPuush.Name = "tpPuush";
-            // 
-            // pbPuush
-            // 
-            this.pbPuush.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPuush.Image = global::ShareX.UploadersLib.Properties.Resources.puush_256;
-            resources.ApplyResources(this.pbPuush, "pbPuush");
-            this.pbPuush.Name = "pbPuush";
-            this.pbPuush.TabStop = false;
-            this.pbPuush.Click += new System.EventHandler(this.pbPuush_Click);
             // 
             // lblPuushAPIKey
             // 
@@ -2833,7 +2823,8 @@
             // tpAzureStorage
             // 
             this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
-            this.tpAzureStorage.Controls.Add(this.cbAzureStorageExcludeContainer);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreview);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreviewLabel);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageUploadPath);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageUploadPath);
             this.tpAzureStorage.Controls.Add(this.cbAzureStorageEnvironment);
@@ -2850,12 +2841,15 @@
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
             // 
-            // cbAzureStorageExcludeContainer
+            // lblAzureStorageURLPreview
             // 
-            resources.ApplyResources(this.cbAzureStorageExcludeContainer, "cbAzureStorageExcludeContainer");
-            this.cbAzureStorageExcludeContainer.Name = "cbAzureStorageExcludeContainer";
-            this.cbAzureStorageExcludeContainer.UseVisualStyleBackColor = true;
-            this.cbAzureStorageExcludeContainer.CheckedChanged += new System.EventHandler(this.cbAzureStorageExcludeContainer_CheckedChanged);
+            resources.ApplyResources(this.lblAzureStorageURLPreview, "lblAzureStorageURLPreview");
+            this.lblAzureStorageURLPreview.Name = "lblAzureStorageURLPreview";
+            // 
+            // lblAzureStorageURLPreviewLabel
+            // 
+            resources.ApplyResources(this.lblAzureStorageURLPreviewLabel, "lblAzureStorageURLPreviewLabel");
+            this.lblAzureStorageURLPreviewLabel.Name = "lblAzureStorageURLPreviewLabel";
             // 
             // txtAzureStorageUploadPath
             // 
@@ -5304,11 +5298,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lblFirebaseDomain
-            // 
-            resources.ApplyResources(this.lblFirebaseDomain, "lblFirebaseDomain");
-            this.lblFirebaseDomain.Name = "lblFirebaseDomain";
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5373,14 +5362,12 @@
             this.gbFTPS.PerformLayout();
             this.tpDropbox.ResumeLayout(false);
             this.tpDropbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).EndInit();
             this.tpOneDrive.ResumeLayout(false);
             this.tpOneDrive.PerformLayout();
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
             this.tpPuush.ResumeLayout(false);
             this.tpPuush.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).EndInit();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
@@ -5559,7 +5546,6 @@
         internal System.Windows.Forms.TabPage tpFileUploaders;
         private System.Windows.Forms.TabControl tcFileUploaders;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
-        private System.Windows.Forms.PictureBox pbDropboxLogo;
         private System.Windows.Forms.Label lblDropboxPath;
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;
@@ -5955,7 +5941,6 @@
         private System.Windows.Forms.Label lblPuushEmail;
         private System.Windows.Forms.Label lblPuushPassword;
         internal System.Windows.Forms.TabPage tpPuush;
-        private System.Windows.Forms.PictureBox pbPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
         private System.Windows.Forms.Label lblOwnCloudHostExample;
         internal System.Windows.Forms.TabPage tpPastie;
@@ -6108,7 +6093,9 @@
         private System.Windows.Forms.Label lblGoogleCloudStoragePathPreview;
         private System.Windows.Forms.TextBox txtAzureStorageUploadPath;
         private System.Windows.Forms.Label lblAzureStorageUploadPath;
-        private System.Windows.Forms.CheckBox cbAzureStorageExcludeContainer;
         private System.Windows.Forms.Label lblFirebaseDomain;
+        private System.Windows.Forms.Label lblAzureStorageURLPreview;
+        private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
+        private System.Windows.Forms.Label lblFirebaseDomainExample;
     }
 }
