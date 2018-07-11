@@ -118,12 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Información de cuenta</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Correo electrónico:</value>
+  </data>
+  <data name="lblFullName.Text" xml:space="preserve">
+    <value>Nombre completo:</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
   </data>
 </root>

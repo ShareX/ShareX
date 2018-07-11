@@ -117,13 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Prueba de defecto de pantalla partida</value>
+  </data>
+  <data name="btnGradientColor2.Text" xml:space="preserve">
+    <value>Color 2</value>
+  </data>
+  <data name="btnGradientColor1.Text" xml:space="preserve">
+    <value>Color 1</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Clic fuera de este panel panel para ocultarlo o mostrarlo.</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Degradado:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Tamaño:</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>Seleccionar color...</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Líneas horizontales</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>Líneas verticales</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Cuadrícula bicolor</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>Forma:</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>A:</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>V:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>Rojo, Verde, Azul:</value>
+  </data>
+  <data name="rbBlackWhite.Text" xml:space="preserve">
+    <value>Negro, Blanco:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Prueba de monitor</value>
   </data>
 </root>

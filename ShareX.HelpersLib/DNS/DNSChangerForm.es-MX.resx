@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>Adaptadores de red:</value>
+  </data>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>Servidor DNS preferido:</value>
+  </data>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>Servidor DNS alternativo:</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="lblDNS.Text" xml:space="preserve">
+    <value>Servidores DNS:</value>
+  </data>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>Obtener dirección del servidor DNS automáticamente</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Modificador de DNS</value>
   </data>
 </root>

@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>Iniciar ShareX al inciar Windows</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>Mostrar botón de "Subir con ShareX" en el menú contextual</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Mostrar ShareX en el menú de "Enviar a"</value>
+  </data>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>Mientras ShareX está abierto, mostrar estado de "En aplicación" en Steam</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Esta configuración está en "Configuración de programa -&gt; Pestaña Integración"</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Configuración inicial de ShareX</value>
   </data>
 </root>

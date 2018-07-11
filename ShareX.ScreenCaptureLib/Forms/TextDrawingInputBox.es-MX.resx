@@ -118,12 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Indicar texto</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Tipografía:</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>Tamaño:</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Nueva línea: Ctrl+Intro</value>
+  </data>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>Centro</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>Izquierda</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>Medio</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>Derecha</value>
+  </data>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>Arriba</value>
   </data>
 </root>

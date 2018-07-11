@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+  <data name="btnClearAuthorization.Text" xml:space="preserve">
+    <value>Borrar autorización</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
+    <value>Paso 1: Ir a página de autorización...</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>Paso 2: Completar autorización</value>
+  </data>
+  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
+    <value>Actualizar autorización</value>
+  </data>
+  <data name="gbUserAccount.Text" xml:space="preserve">
+    <value>Cuenta de usuario</value>
+  </data>
+  <data name="lblLoginStatus.Text" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="lblVerificationCode.Text" xml:space="preserve">
+    <value>Código de verificación:</value>
   </data>
 </root>

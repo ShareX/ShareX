@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Restaurar atajos predefinidos...</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Agregar...</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Configuración de atajos de teclado</value>
   </data>
 </root>

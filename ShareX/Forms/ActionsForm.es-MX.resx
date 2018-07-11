@@ -117,13 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>Ubicación del archivo:</value>
+  </data>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>Argumentos:</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>Filtro de extensión: (ejemplo: jpg png mp4)</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>Extensión de archivo final: (dejar vacío para usar el mismo nombre)</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Ventana oculta</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+    <value>ShareX - Acciones</value>
   </data>
 </root>

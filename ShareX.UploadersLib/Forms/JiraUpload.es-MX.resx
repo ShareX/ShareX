@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR código</value>
+    <value>ShareX - Subir archivo Jira</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar imagen como...</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="gpSummary.Text" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="lblIssueId.Text" xml:space="preserve">
+    <value>ID de la incidencia:</value>
   </data>
 </root>
