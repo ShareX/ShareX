@@ -258,7 +258,14 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.monitor_image;
                         break;
                     case ShapeType.DrawingSticker:
-                        img = Resources.stamp;
+                        if (MathHelpers.Random(1, 10) == 1)
+                        {
+                            img = Resources.smiley_cool;
+                        }
+                        else
+                        {
+                            img = Resources.smiley_yell;
+                        }
                         break;
                     case ShapeType.DrawingCursor:
                         img = Resources.cursor;
