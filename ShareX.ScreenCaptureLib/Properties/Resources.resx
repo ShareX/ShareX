@@ -189,7 +189,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="layout-center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layout_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
@@ -451,7 +451,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>There are unsaved changes.
 Would you like to close image editor?</value>
   </data>
-  <data name="layout-split" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layout_split" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-split.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drive_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -547,7 +547,7 @@ Would you like to close image editor?</value>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Stop capture</value>
   </data>
-  <data name="layout-split-vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layout_split_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-split-vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
@@ -570,9 +570,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="layer_shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stamp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Font size:</value>
@@ -630,5 +627,11 @@ X: {4} Y: {5}</value>
   </data>
   <data name="gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smiley_cool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smiley-cool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smiley_yell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smiley-yell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

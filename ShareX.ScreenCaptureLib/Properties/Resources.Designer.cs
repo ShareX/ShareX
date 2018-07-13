@@ -778,7 +778,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_center {
             get {
-                object obj = ResourceManager.GetObject("layout-center", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_center", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -788,7 +788,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_split {
             get {
-                object obj = ResourceManager.GetObject("layout-split", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_split", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -798,7 +798,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_split_vertical {
             get {
-                object obj = ResourceManager.GetObject("layout-split-vertical", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_split_vertical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1599,9 +1599,19 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stamp {
+        internal static System.Drawing.Bitmap smiley_cool {
             get {
-                object obj = ResourceManager.GetObject("stamp", resourceCulture);
+                object obj = ResourceManager.GetObject("smiley_cool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smiley_yell {
+            get {
+                object obj = ResourceManager.GetObject("smiley_yell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

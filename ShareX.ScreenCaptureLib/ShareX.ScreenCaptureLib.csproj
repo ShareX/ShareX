@@ -243,11 +243,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\smiley-yell.png" />
+    <None Include="Resources\smiley-cool.png" />
     <None Include="Resources\gradient.png" />
     <None Include="Resources\layout-center.png" />
     <None Include="Resources\layout-split.png" />
     <None Include="Resources\layout-split-vertical.png" />
-    <None Include="Resources\stamp.png" />
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\image-select.png" />
     <None Include="Resources\image-empty.png" />
