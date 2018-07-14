@@ -853,6 +853,8 @@ namespace ShareX
                     uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
                 }
 
+                fileName = URLHelpers.RemoveBidiControlCharacters(fileName);
+
                 if (Info.TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters)
                 {
                     // http://www.ietf.org/rfc/rfc3986.txt

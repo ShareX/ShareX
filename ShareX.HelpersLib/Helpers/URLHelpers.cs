@@ -36,6 +36,12 @@ namespace ShareX.HelpersLib
 {
     public static class URLHelpers
     {
+        public const string URLCharacters = Helpers.Alphanumeric + "-._~"; // 45 46 95 126
+        public const string URLPathCharacters = URLCharacters + "/"; // 47
+        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
+
+        public static readonly char[] BidiControlCharacters = new char[] { '\u200E', '\u200F', '\u202A', '\u202B', '\u202C', '\u202D', '\u202E' };
+
         public static void OpenURL(string url)
         {
             if (!string.IsNullOrEmpty(url))
@@ -73,11 +79,11 @@ namespace ShareX.HelpersLib
 
                 if (isPath)
                 {
-                    unreservedCharacters = Helpers.URLPathCharacters;
+                    unreservedCharacters = URLPathCharacters;
                 }
                 else
                 {
-                    unreservedCharacters = Helpers.URLCharacters;
+                    unreservedCharacters = URLCharacters;
                 }
 
                 foreach (char c in Encoding.UTF8.GetBytes(text))
@@ -94,6 +100,11 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string RemoveBidiControlCharacters(string text)
+        {
+            return new string(text.Where(c => !BidiControlCharacters.Contains(c)).ToArray());
         }
 
         public static string HtmlEncode(string text)
