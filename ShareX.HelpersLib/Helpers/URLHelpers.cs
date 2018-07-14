@@ -71,7 +71,7 @@ namespace ShareX.HelpersLib
 
         public static string URLEncode(string text, bool isPath = false)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
             {
@@ -90,21 +90,48 @@ namespace ShareX.HelpersLib
                 {
                     if (unreservedCharacters.IndexOf(c) != -1)
                     {
-                        result.Append(c);
+                        sb.Append(c);
                     }
                     else
                     {
-                        result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
+                        sb.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
                 }
             }
 
-            return result.ToString();
+            return sb.ToString();
         }
 
         public static string RemoveBidiControlCharacters(string text)
         {
             return new string(text.Where(c => !BidiControlCharacters.Contains(c)).ToArray());
+        }
+
+        public static string ReplaceReservedCharacters(string text, string replace)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string last = null;
+
+            foreach (char c in text)
+            {
+                if (URLCharacters.Contains(c))
+                {
+                    last = c.ToString();
+                }
+                else if (last != replace)
+                {
+                    last = replace;
+                }
+                else
+                {
+                    continue;
+                }
+
+                sb.Append(last);
+            }
+
+            return sb.ToString();
         }
 
         public static string HtmlEncode(string text)

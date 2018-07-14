@@ -857,15 +857,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters)
                 {
-                    // http://www.ietf.org/rfc/rfc3986.txt
-                    // Section 2.3:
-                    //   Characters that are allowed in a URI but do not have a reserved
-                    //   purpose are called unreserved.  These include uppercase and lowercase
-                    //   letters, decimal digits, hyphen, period, underscore, and tilde.
-                    //      unreserved = ALPHA / DIGIT / "-" / "." / "_" / "~"
-                    //
-                    // \w takes care of alpha, digit and _ for us
-                    fileName = Regex.Replace(fileName, @"[^\w-.~]", "_");
+                    fileName = URLHelpers.ReplaceReservedCharacters(fileName, "_");
                 }
 
                 Info.UploadDuration = Stopwatch.StartNew();

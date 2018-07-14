@@ -83,7 +83,7 @@ namespace ShareX.HelpersLib
 
             if (WindowText != null)
             {
-                string windowText = WindowText.Replace(' ', '_');
+                string windowText = WindowText.Trim().Replace(' ', '_');
                 if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
                 {
                     windowText = windowText.Remove(MaxTitleLength);
