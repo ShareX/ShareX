@@ -181,7 +181,7 @@ namespace ShareX
                 try
                 {
                     string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
-                    path = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
+                    path = TaskHelpers.HandleExistsFile(taskSettings.CaptureFolder, filename, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
                     {

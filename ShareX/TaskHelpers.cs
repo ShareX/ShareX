@@ -266,7 +266,7 @@ namespace ShareX
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
-                string thumbnailFilePath = CheckFilePath(folder, thumbnailFileName, taskSettings);
+                string thumbnailFilePath = HandleExistsFile(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
@@ -380,12 +380,17 @@ namespace ShareX
             }
         }
 
-        public static void SaveImageAsFile(Image img, TaskSettings taskSettings)
+        public static void SaveImageAsFile(Image img, TaskSettings taskSettings, bool overwriteFile = false)
         {
             using (ImageData imageData = PrepareImage(img, taskSettings))
             {
                 string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), img);
-                string filePath = CheckFilePath(taskSettings.CaptureFolder, fileName, taskSettings);
+                string filePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+
+                if (!overwriteFile)
+                {
+                    filePath = HandleExistsFile(filePath, taskSettings);
+                }
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
@@ -599,10 +604,14 @@ namespace ShareX
             }
         }
 
-        public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
+        public static string HandleExistsFile(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
+            return HandleExistsFile(filepath, taskSettings);
+        }
 
+        public static string HandleExistsFile(string filepath, TaskSettings taskSettings)
+        {
             if (File.Exists(filepath))
             {
                 switch (taskSettings.ImageSettings.FileExistAction)
@@ -888,18 +897,34 @@ namespace ShareX
 
                         form.SaveImageRequested += (output, newFilePath) =>
                         {
-                            Program.MainForm.InvokeSafe(() =>
+                            using (output)
                             {
-                                using (output) { ImageHelpers.SaveImage(output, newFilePath); }
-                            });
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                ImageHelpers.SaveImage(output, newFilePath);
+                            }
+
+                            return newFilePath;
                         };
 
                         form.SaveImageAsRequested += (output, newFilePath) =>
                         {
-                            Program.MainForm.InvokeSafe(() =>
+                            using (output)
                             {
-                                using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
-                            });
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                ImageHelpers.SaveImageFileDialog(output, newFilePath);
+                            }
+
+                            return newFilePath;
                         };
 
                         form.CopyImageRequested += output =>

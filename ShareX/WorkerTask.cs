@@ -574,7 +574,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                tempImage = TaskHelpers.AnnotateImage(tempImage, Info.FileName, Info.TaskSettings, true);
+                tempImage = TaskHelpers.AnnotateImage(tempImage, null, Info.TaskSettings, true);
 
                 if (tempImage == null)
                 {
@@ -604,7 +604,7 @@ namespace ShareX
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                     {
-                        string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
+                        string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
                         if (!string.IsNullOrEmpty(filePath))
                         {
@@ -729,7 +729,7 @@ namespace ShareX
         {
             if (Info.TaskSettings.AdvancedSettings.TextTaskSaveAsFile)
             {
-                string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
+                string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
@@ -974,7 +974,7 @@ namespace ShareX
         {
             string url = Info.Result.URL.Trim();
             Info.Result.URL = "";
-            Info.FilePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
+            Info.FilePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
             if (!string.IsNullOrEmpty(Info.FilePath))
             {

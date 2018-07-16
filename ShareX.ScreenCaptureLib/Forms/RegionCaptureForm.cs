@@ -39,8 +39,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
-        public event Action<Image, string> SaveImageRequested;
-        public event Action<Image, string> SaveImageAsRequested;
+        public event Func<Image, string, string> SaveImageRequested;
+        public event Func<Image, string, string> SaveImageAsRequested;
         public event Action<Image> CopyImageRequested;
         public event Action<Image> UploadImageRequested;
         public event Action<Image> PrintImageRequested;
@@ -238,6 +238,8 @@ namespace ShareX.ScreenCaptureLib
 
         internal void UpdateTitle()
         {
+            if (forceClose) return;
+
             string text;
 
             if (IsEditorMode)
@@ -1346,11 +1348,14 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.AutoCloseEditorOnTask)
                 {
                     CloseWindow();
-                    TaskEx.Run(() => SaveImageRequested(img, ImageFilePath));
                 }
-                else
+
+                string imageFilePath = SaveImageRequested(img, ImageFilePath);
+
+                if (!string.IsNullOrEmpty(imageFilePath))
                 {
-                    SaveImageRequested(img, ImageFilePath);
+                    ImageFilePath = imageFilePath;
+                    UpdateTitle();
                 }
             }
         }
@@ -1366,11 +1371,14 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.AutoCloseEditorOnTask)
                 {
                     CloseWindow();
-                    TaskEx.Run(() => SaveImageAsRequested(img, ImageFilePath));
                 }
-                else
+
+                string imageFilePath = SaveImageAsRequested(img, ImageFilePath);
+
+                if (!string.IsNullOrEmpty(imageFilePath))
                 {
-                    SaveImageAsRequested(img, ImageFilePath);
+                    ImageFilePath = imageFilePath;
+                    UpdateTitle();
                 }
             }
         }
@@ -1384,12 +1392,9 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.AutoCloseEditorOnTask)
                 {
                     CloseWindow();
-                    TaskEx.Run(() => CopyImageRequested(img));
                 }
-                else
-                {
-                    CopyImageRequested(img);
-                }
+
+                CopyImageRequested(img);
             }
         }
 
@@ -1402,12 +1407,9 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.AutoCloseEditorOnTask)
                 {
                     CloseWindow();
-                    TaskEx.Run(() => UploadImageRequested(img));
                 }
-                else
-                {
-                    UploadImageRequested(img);
-                }
+
+                UploadImageRequested(img);
             }
         }
 
@@ -1420,12 +1422,9 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.AutoCloseEditorOnTask)
                 {
                     CloseWindow();
-                    TaskEx.Run(() => PrintImageRequested(img));
                 }
-                else
-                {
-                    PrintImageRequested(img);
-                }
+
+                PrintImageRequested(img);
             }
         }
 
