@@ -921,7 +921,7 @@ namespace ShareX
                                     newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
                                 }
 
-                                ImageHelpers.SaveImageFileDialog(output, newFilePath);
+                                newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);
                             }
 
                             return newFilePath;
