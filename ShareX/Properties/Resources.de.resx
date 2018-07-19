@@ -258,7 +258,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>FFmpeg-Video- und -Audioquellen können nicht beide "Nichts" sein.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Änderungen</value>
+    <value>Änderungsprotokoll</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>Tastenkürzel</value>
@@ -304,13 +304,13 @@ Möchtest du es automatisch herunterladen?</value>
 Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>starte Bildschirmfarbauswähler</value>
+    <value>Starte Bildschirmfarbauswähler</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Benutze neuen Namen:</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>stoppe Bildschirmfarbauswähler</value>
+    <value>Stoppe Bildschirmfarbauswähler</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
@@ -325,7 +325,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Warnung: Erstes Hochladen</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Chrome Unterstützung aktiviert.</value>
+    <value>Chrome-Unterstützung aktiviert.</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
     <value>Erweiterung kann nicht leer sein.</value>
@@ -379,7 +379,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>URL-Teiler: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Chrome Unterstützung deaktiviert.</value>
+    <value>Chrome-Unterstützung deaktiviert.</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Start</value>
@@ -409,7 +409,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Fertig</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} wird gleich hochgeladen {1} Du solltest ein anderes Ziel auswählen.</value>
+    <value>{0} wird in Kürze zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Webseite</value>
@@ -442,7 +442,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>FFmpeg-Fehler</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>Bist du sicher, dass du {0} Datei(en) hochladen möchtest?</value>
+    <value>Bist du sicher, dass du {0} Dateien hochladen möchtest?</value>
   </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Angepasst</value>
@@ -465,11 +465,11 @@ Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische 
     <value>Es wurde keine gültiger CLI-Videocodec ausgewählt</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Kann keinen gültiges FTP Konto finden.</value>
+    <value>Kann kein gültiges FTP Konto finden.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
-Sind Sie sich sicher?</value>
+Bist du sicher?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>ShareX beim Starten von Windows ausführen</value>
