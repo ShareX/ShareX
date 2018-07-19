@@ -330,6 +330,4 @@ ASALocalRun/
 
 # ShareX
 Output/
-ShareX.UploadersLib/APIKeys/APIKeysLocal.cs
-Lib/ffmpeg.exe
-Lib/ffmpeg-x64.exe
+APIKeysLocal.cs
