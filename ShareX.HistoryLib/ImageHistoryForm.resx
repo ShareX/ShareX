@@ -213,6 +213,24 @@
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 22</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 25</value>
+  </data>
+  <data name="tsbSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
   <data name="tsmiViewModeThumbnails.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 22</value>
   </data>
@@ -232,7 +250,7 @@
     <value>Pane</value>
   </data>
   <data name="tsddbViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
+    <value>79, 22</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>View mode</value>
@@ -242,33 +260,33 @@
   </data>
   <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
     <value>75 x 75</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
     <value>100 x 100</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
     <value>150 x 150</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
     <value>200 x 200</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
     <value>250 x 250</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tsddbThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>100, 22</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>Thumbnail size</value>
@@ -316,7 +334,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbMaxImageLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 20</value>
+    <value>137, 22</value>
   </data>
   <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
     <value>Maximum image limit</value>
@@ -324,11 +342,8 @@
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
-  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 1</value>
-  </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 25</value>
+    <value>629, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -383,6 +398,24 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Image history</value>
+  </data>
+  <data name="&gt;&gt;tslSearch.Name" xml:space="preserve">
+    <value>tslSearch</value>
+  </data>
+  <data name="&gt;&gt;tslSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tstbSearch.Name" xml:space="preserve">
+    <value>tstbSearch</value>
+  </data>
+  <data name="&gt;&gt;tstbSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbSearch.Name" xml:space="preserve">
+    <value>tsbSearch</value>
+  </data>
+  <data name="&gt;&gt;tsbSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbViewMode.Name" xml:space="preserve">
     <value>tsddbViewMode</value>

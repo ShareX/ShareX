@@ -32,6 +32,9 @@
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
             this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.tslSearch = new System.Windows.Forms.ToolStripLabel();
+            this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.tsddbViewMode = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiViewModeThumbnails = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiViewModeGallery = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,11 +93,33 @@
             resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslSearch,
+            this.tstbSearch,
+            this.tsbSearch,
             this.tsddbViewMode,
             this.tsddbThumbnailSize,
             this.tsddbMaxImageLimit});
             this.tsMain.Name = "tsMain";
             this.tsMain.ShowItemToolTips = false;
+            // 
+            // tslSearch
+            // 
+            this.tslSearch.Name = "tslSearch";
+            resources.ApplyResources(this.tslSearch, "tslSearch");
+            // 
+            // tstbSearch
+            // 
+            this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tstbSearch.Name = "tstbSearch";
+            resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            // 
+            // tsbSearch
+            // 
+            this.tsbSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSearch.Image = global::ShareX.HistoryLib.Properties.Resources.magnifier;
+            resources.ApplyResources(this.tsbSearch, "tsbSearch");
+            this.tsbSearch.Name = "tsbSearch";
+            this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
             // 
             // tsddbViewMode
             // 
@@ -103,6 +128,7 @@
             this.tsmiViewModeThumbnails,
             this.tsmiViewModeGallery,
             this.tsmiViewModePane});
+            this.tsddbViewMode.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.tsddbViewMode.Name = "tsddbViewMode";
             resources.ApplyResources(this.tsddbViewMode, "tsddbViewMode");
             // 
@@ -133,7 +159,7 @@
             this.tsmiThumbnailSize150,
             this.tsmiThumbnailSize200,
             this.tsmiThumbnailSize250});
-            this.tsddbThumbnailSize.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tsddbThumbnailSize.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.tsddbThumbnailSize.Name = "tsddbThumbnailSize";
             resources.ApplyResources(this.tsddbThumbnailSize, "tsddbThumbnailSize");
             // 
@@ -176,6 +202,7 @@
             this.tsmiMaxImageLimit1000,
             this.tsmiMaxImageLimit0});
             resources.ApplyResources(this.tsddbMaxImageLimit, "tsddbMaxImageLimit");
+            this.tsddbMaxImageLimit.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.tsddbMaxImageLimit.Name = "tsddbMaxImageLimit";
             // 
             // tsmiMaxImageLimit100
@@ -243,5 +270,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit250;
         private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit1000;
         private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit0;
+        private System.Windows.Forms.ToolStripLabel tslSearch;
+        private System.Windows.Forms.ToolStripTextBox tstbSearch;
+        private System.Windows.Forms.ToolStripButton tsbSearch;
     }
 }

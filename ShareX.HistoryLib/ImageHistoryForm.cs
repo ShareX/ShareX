@@ -41,6 +41,7 @@ namespace ShareX.HistoryLib
         public int MaxItemCount { get; set; }
         public int ViewMode { get; set; }
         public Size ThumbnailSize { get; set; }
+        public string SearchText { get; set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
@@ -53,6 +54,7 @@ namespace ShareX.HistoryLib
 
             HistoryPath = historyPath;
 
+            tsMain.Renderer = new CustomToolStripProfessionalRenderer();
             ViewMode = viewMode.Between(0, 3);
             ilvImages.View = (View)ViewMode;
 
@@ -142,7 +144,8 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = allHistoryItems[i];
 
-                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath))
+                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath) &&
+                    (string.IsNullOrEmpty(SearchText) || Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     result.Add(hi);
 
@@ -199,6 +202,12 @@ namespace ShareX.HistoryLib
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
             him.ShowImagePreview();
+        }
+
+        private void tsbSearch_Click(object sender, EventArgs e)
+        {
+            SearchText = tstbSearch.Text;
+            RefreshHistoryItems();
         }
 
         private void tsmiViewModeThumbnails_Click(object sender, EventArgs e)
