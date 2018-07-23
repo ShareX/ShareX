@@ -99,13 +99,15 @@ namespace ShareX.HistoryLib
 
         private void RefreshHistoryItems()
         {
+            SearchText = tstbSearch.Text;
+
             if (history == null)
             {
                 history = new HistoryManager(HistoryPath);
             }
 
             ilvImages.Items.Clear();
-            ImageListViewItem[] ilvItems = GetHistoryItems().Select(historyItem => new ImageListViewItem(historyItem.Filepath) { Tag = historyItem }).ToArray();
+            ImageListViewItem[] ilvItems = GetHistoryItems().Select(hi => new ImageListViewItem(hi.Filepath) { Tag = hi }).ToArray();
             ilvImages.Items.AddRange(ilvItems);
         }
 
@@ -131,6 +133,7 @@ namespace ShareX.HistoryLib
 
         private void ImageHistoryForm_Shown(object sender, EventArgs e)
         {
+            tstbSearch.Focus();
             Application.DoEvents();
             this.ForceActivate();
             RefreshHistoryItems();
@@ -138,12 +141,10 @@ namespace ShareX.HistoryLib
 
         private void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyData)
+            if (e.KeyCode == Keys.F5)
             {
-                case Keys.F5:
-                    RefreshHistoryItems();
-                    e.Handled = true;
-                    break;
+                RefreshHistoryItems();
+                e.Handled = true;
             }
         }
 
@@ -165,9 +166,18 @@ namespace ShareX.HistoryLib
             him.ShowImagePreview();
         }
 
+        private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                RefreshHistoryItems();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
         private void tsbSearch_Click(object sender, EventArgs e)
         {
-            SearchText = tstbSearch.Text;
             RefreshHistoryItems();
         }
 

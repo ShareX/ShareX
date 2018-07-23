@@ -106,6 +106,7 @@
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbSearch.Name = "tstbSearch";
             resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             // 
             // tsbSearch
             // 
