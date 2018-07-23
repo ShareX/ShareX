@@ -38,16 +38,14 @@ namespace ShareX.HistoryLib
     public partial class ImageHistoryForm : Form
     {
         public string HistoryPath { get; private set; }
-        public int MaxItemCount { get; set; }
         public int ViewMode { get; set; }
         public Size ThumbnailSize { get; set; }
         public string SearchText { get; set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
-        private HistoryItem[] historyItems;
 
-        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount, Action<string> uploadFile = null, Action<string> editImage = null)
+        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -95,25 +93,6 @@ namespace ShareX.HistoryLib
                     break;
             }
 
-            MaxItemCount = maxItemCount;
-
-            if (MaxItemCount <= 0)
-            {
-                tsmiMaxImageLimit0.RadioCheck();
-            }
-            else if (MaxItemCount <= 100)
-            {
-                tsmiMaxImageLimit100.RadioCheck();
-            }
-            else if (MaxItemCount <= 250)
-            {
-                tsmiMaxImageLimit250.RadioCheck();
-            }
-            else
-            {
-                tsmiMaxImageLimit1000.RadioCheck();
-            }
-
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
         }
@@ -125,40 +104,22 @@ namespace ShareX.HistoryLib
                 history = new HistoryManager(HistoryPath);
             }
 
-            historyItems = GetHistoryItems();
-
             ilvImages.Items.Clear();
-            ImageListViewItem[] ilvItems = historyItems.Select(historyItem => new ImageListViewItem(historyItem.Filepath) { Tag = historyItem }).ToArray();
+            ImageListViewItem[] ilvItems = GetHistoryItems().Select(historyItem => new ImageListViewItem(historyItem.Filepath) { Tag = historyItem }).ToArray();
             ilvImages.Items.AddRange(ilvItems);
         }
 
-        private HistoryItem[] GetHistoryItems()
+        private IEnumerable<HistoryItem> GetHistoryItems()
         {
-            List<HistoryItem> result = new List<HistoryItem>();
+            List<HistoryItem> historyItems = history.GetHistoryItems();
+            IEnumerable<HistoryItem> filteredHistoryItems = historyItems.Where(hi => !string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath)).Reverse();
 
-            List<HistoryItem> allHistoryItems = history.GetHistoryItems();
-
-            int itemCount = 0;
-
-            for (int i = allHistoryItems.Count - 1; i >= 0; i--)
+            if (!string.IsNullOrEmpty(SearchText))
             {
-                HistoryItem hi = allHistoryItems[i];
-
-                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath) &&
-                    (string.IsNullOrEmpty(SearchText) || Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    result.Add(hi);
-
-                    itemCount++;
-
-                    if (MaxItemCount > 0 && itemCount >= MaxItemCount)
-                    {
-                        break;
-                    }
-                }
+                filteredHistoryItems = filteredHistoryItems.Where(hi => Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase));
             }
 
-            return result.ToArray();
+            return filteredHistoryItems;
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -264,34 +225,6 @@ namespace ShareX.HistoryLib
             tsmiThumbnailSize250.RadioCheck();
             ilvImages.ThumbnailSize = new Size(250, 250);
             ThumbnailSize = ilvImages.ThumbnailSize;
-        }
-
-        private void tsmiMaxImageLimit100_Click(object sender, EventArgs e)
-        {
-            tsmiMaxImageLimit100.RadioCheck();
-            MaxItemCount = 100;
-            RefreshHistoryItems();
-        }
-
-        private void tsmiMaxImageLimit250_Click(object sender, EventArgs e)
-        {
-            tsmiMaxImageLimit250.RadioCheck();
-            MaxItemCount = 250;
-            RefreshHistoryItems();
-        }
-
-        private void tsmiMaxImageLimit1000_Click(object sender, EventArgs e)
-        {
-            tsmiMaxImageLimit1000.RadioCheck();
-            MaxItemCount = 1000;
-            RefreshHistoryItems();
-        }
-
-        private void tsmiMaxImageLimit0_Click(object sender, EventArgs e)
-        {
-            tsmiMaxImageLimit0.RadioCheck();
-            MaxItemCount = 0;
-            RefreshHistoryItems();
         }
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)

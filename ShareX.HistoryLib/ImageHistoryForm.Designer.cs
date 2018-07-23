@@ -45,11 +45,6 @@
             this.tsmiThumbnailSize150 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailSize200 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailSize250 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsddbMaxImageLimit = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiMaxImageLimit100 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMaxImageLimit250 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMaxImageLimit1000 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMaxImageLimit0 = new System.Windows.Forms.ToolStripMenuItem();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -97,8 +92,7 @@
             this.tstbSearch,
             this.tsbSearch,
             this.tsddbViewMode,
-            this.tsddbThumbnailSize,
-            this.tsddbMaxImageLimit});
+            this.tsddbThumbnailSize});
             this.tsMain.Name = "tsMain";
             this.tsMain.ShowItemToolTips = false;
             // 
@@ -193,42 +187,6 @@
             resources.ApplyResources(this.tsmiThumbnailSize250, "tsmiThumbnailSize250");
             this.tsmiThumbnailSize250.Click += new System.EventHandler(this.tsmiThumbnailSize250_Click);
             // 
-            // tsddbMaxImageLimit
-            // 
-            this.tsddbMaxImageLimit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbMaxImageLimit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiMaxImageLimit100,
-            this.tsmiMaxImageLimit250,
-            this.tsmiMaxImageLimit1000,
-            this.tsmiMaxImageLimit0});
-            resources.ApplyResources(this.tsddbMaxImageLimit, "tsddbMaxImageLimit");
-            this.tsddbMaxImageLimit.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.tsddbMaxImageLimit.Name = "tsddbMaxImageLimit";
-            // 
-            // tsmiMaxImageLimit100
-            // 
-            this.tsmiMaxImageLimit100.Name = "tsmiMaxImageLimit100";
-            resources.ApplyResources(this.tsmiMaxImageLimit100, "tsmiMaxImageLimit100");
-            this.tsmiMaxImageLimit100.Click += new System.EventHandler(this.tsmiMaxImageLimit100_Click);
-            // 
-            // tsmiMaxImageLimit250
-            // 
-            this.tsmiMaxImageLimit250.Name = "tsmiMaxImageLimit250";
-            resources.ApplyResources(this.tsmiMaxImageLimit250, "tsmiMaxImageLimit250");
-            this.tsmiMaxImageLimit250.Click += new System.EventHandler(this.tsmiMaxImageLimit250_Click);
-            // 
-            // tsmiMaxImageLimit1000
-            // 
-            this.tsmiMaxImageLimit1000.Name = "tsmiMaxImageLimit1000";
-            resources.ApplyResources(this.tsmiMaxImageLimit1000, "tsmiMaxImageLimit1000");
-            this.tsmiMaxImageLimit1000.Click += new System.EventHandler(this.tsmiMaxImageLimit1000_Click);
-            // 
-            // tsmiMaxImageLimit0
-            // 
-            this.tsmiMaxImageLimit0.Name = "tsmiMaxImageLimit0";
-            resources.ApplyResources(this.tsmiMaxImageLimit0, "tsmiMaxImageLimit0");
-            this.tsmiMaxImageLimit0.Click += new System.EventHandler(this.tsmiMaxImageLimit0_Click);
-            // 
             // ImageHistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -265,11 +223,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiViewModeThumbnails;
         private System.Windows.Forms.ToolStripMenuItem tsmiViewModeGallery;
         private System.Windows.Forms.ToolStripMenuItem tsmiViewModePane;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbMaxImageLimit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit100;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit250;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit1000;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMaxImageLimit0;
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;

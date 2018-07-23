@@ -723,20 +723,15 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
-                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount,
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode, Program.Settings.ImageHistoryThumbnailSize,
                 filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
+            imageHistoryForm.FormClosed += (sender, e) =>
+            {
+                Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
+                Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
+            };
             imageHistoryForm.Show();
-        }
-
-        private static void imageHistoryForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ImageHistoryForm imageHistoryForm = sender as ImageHistoryForm;
-            Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
-            Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
-            Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
         }
 
         public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
