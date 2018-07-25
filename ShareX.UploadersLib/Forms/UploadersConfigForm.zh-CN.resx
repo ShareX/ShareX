@@ -1437,7 +1437,7 @@ store.book[0].title</value>
     <value>URL预览：</value>
   </data>
   <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
-    <value>URL分享服务：</value>
+    <value>URL分享：</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>用法：</value>

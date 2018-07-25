@@ -198,7 +198,7 @@
     <value>FFmpeg下载失败。</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[方向键 ] 移动光标的位置</value>
+    <value>[方向键 ] 移动光标位置</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] 捕捉活动显示器</value>
@@ -522,7 +522,7 @@
     <value>[C]屏幕宽十字线</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
-    <value>Canvas尺寸...</value>
+    <value>画布尺寸...</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>中心光标</value>

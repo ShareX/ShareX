@@ -137,7 +137,7 @@
 
 {1}
 
-请选择一个不同的热键,   或退出冲突的应用程序,   然后重新打开ShareX.</value>
+请选择一个不同的快捷键,   或退出冲突的应用程序,   然后重新打开ShareX.</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>文件删除确认</value>
@@ -212,7 +212,7 @@
     <value>使用新的名字:</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>停止屏幕颜色选择器</value>
+    <value>终止屏幕拾色</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>丢失</value>

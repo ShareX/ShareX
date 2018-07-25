@@ -136,7 +136,7 @@
     <value>高</value>
   </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>在屏幕截图上显示光标（鼠标指针）</value>
+    <value>在屏幕截图上显示鼠标指针</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>阴影偏移:</value>
@@ -298,7 +298,7 @@
     <value>屏幕录制选项...</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>在录像中显示光标（鼠标指针）</value>
+    <value>在录像中显示鼠标指针</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>宽度：</value>

@@ -145,7 +145,7 @@
     <value>历史记录...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>热键设置...</value>
+    <value>快捷键设置...</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>历史图片...</value>
@@ -568,7 +568,7 @@
     <value>网页捕捉...</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>颜色选择器...</value>
+    <value>拾色器...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>
@@ -586,7 +586,7 @@
     <value>网页捕捉...</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>颜色选择器...</value>
+    <value>拾色器...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>
@@ -739,7 +739,7 @@
     <value>URL短链</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
-    <value>显示光标</value>
+    <value>显示指针</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>图像编辑...</value>
@@ -751,7 +751,7 @@
     <value>URL短链...</value>
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
-    <value>显示光标</value>
+    <value>显示指针</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>上传文本...</value>
