@@ -283,7 +283,7 @@
     <value>之后运行CLI:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>屏幕记录FPS:</value>
+    <value>屏幕录制FPS:</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
@@ -301,7 +301,7 @@
     <value>在录像中显示光标（鼠标指针）</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>宽：</value>
+    <value>宽度：</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>高：</value>
@@ -439,10 +439,10 @@
     <value>检测窗口区域，并允许光标悬停捕获</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>鼠标中键单击动作：</value>
+    <value>鼠标中键单击动作</value>
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>鼠标右键单击动作：</value>
+    <value>鼠标右键单击动作</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>使用多区域模式，将允许调整大小和运动区域</value>
@@ -457,7 +457,7 @@
     <value>高度：</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>宽度：</value>
+    <value>宽：</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>灰暗的背景，这样选择可以更易区分（将影响启动速度）</value>
@@ -484,7 +484,7 @@
     <value>覆盖图片设置</value>
   </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>上传到：</value>
+    <value>上传到</value>
   </data>
   <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
     <value>扩展</value>
@@ -508,7 +508,7 @@
     <value>扩展筛选：</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>上传筛选：</value>
+    <value>上传筛选</value>
   </data>
   <data name="chkOverrideActions.Text" xml:space="preserve">
     <value>覆盖动作</value>
@@ -527,5 +527,41 @@
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG 图像色深</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>编辑...</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>上传时使用下划线替换URL中的问题字符</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>终止时确认</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>鼠标侧键1动作</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>鼠标侧键2动作</value>
   </data>
 </root>

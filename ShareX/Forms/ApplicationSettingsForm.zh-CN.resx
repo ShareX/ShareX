@@ -205,10 +205,10 @@
     <value>图片打印设置..</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>域名：</value>
+    <value>主机：</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>代理服务器的配置：</value>
+    <value>代理服务器配置：</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>端口：</value>
@@ -362,5 +362,11 @@
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox 扩展程序</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>安装dev build...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
   </data>
 </root>

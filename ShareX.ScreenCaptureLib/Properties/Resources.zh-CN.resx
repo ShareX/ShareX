@@ -228,13 +228,13 @@
     <value>[Shift] 更改边框颜色</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮] 更改边框尺寸</value>
+    <value>[Ctrl + 鼠标滚轮] 更改边框尺寸</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
     <value>[Shift] 更改画笔颜色</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮] 更改画笔大小</value>
+    <value>[Ctrl + 鼠标滚轮] 更改画笔大小</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
     <value>[按住Ctrl + 方向键] 移动区域</value>
@@ -324,7 +324,7 @@
     <value>[Tab] [单击中键] 选择最后一个注解工具</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮] 更改放大镜尺寸</value>
+    <value>[Ctrl + 鼠标滚轮] 更改放大镜尺寸</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
     <value>[按住Ctrl键] 移动选择区域</value>
@@ -351,7 +351,7 @@
     <value>[Ctrl + Z] 撤消形状</value>
   </data>
   <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
-    <value>[方向键] 从右下角角调整区域大小</value>
+    <value>[方向键] 从右下角调整区域大小</value>
   </data>
   <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
     <value>[按住Alt + 方向键] 从左上角调整区域大小</value>
@@ -393,16 +393,16 @@
     <value>应用更改 &amp; 继续工作 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>继续工作 (Space or right click)</value>
+    <value>继续工作（空格或鼠标右键）</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
     <value>取消工作 (ESC)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>保存图像</value>
+    <value>保存图像（Ctrl + S）</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>保存图像为…</value>
+    <value>保存图像为…（Ctrl + Shift + S）</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>将图像复制到剪贴板</value>
@@ -414,12 +414,193 @@
     <value>打印图像…</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>完成捕捉任务后运行</value>
+    <value>完成捕捉任务后运行（Enter）</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>捕捉最后区域</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>捕捉</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>自动裁剪图像...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>任务中自动关闭编辑器</value>
+  </data>
+  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
+    <value>两端箭头</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>注释菜单</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
+    <value>全屏启动编辑器</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartEditorMaximized" xml:space="preserve">
+    <value>最大化启动编辑器</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
+    <value>[按住Shift]移动选取而不是调整大小</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RememberEditorWindowState" xml:space="preserve">
+    <value>记住编辑器窗口状态</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
+    <value>[数字键4]三角形</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
+    <value>[Tab切换]调整锚点尺寸为{0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Ctrl+方向键]快速移动指针位置</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
+    <value>顶端左侧</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
+    <value>低端右侧</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
+    <value>[数字键1]矩形</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
+    <value>[M]{0}放大镜</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
+    <value>[数字键2]圆角矩形</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
+    <value>[数字键+ 或 -]更改圆角矩形圆角半径</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + 鼠标滚轮]更改放大镜像素大小</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[鼠标滚轮]更改放大镜显示像素数</value>
+  </data>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
+    <value>监视器{0}（X:{1} Y:{2} 宽度:{3} 高度:{4}）</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
+    <value>[I]{0}的位置与大小信息</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
+    <value>[数字键3]椭圆</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
+    <value>[Q]激活快速截图模式</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
+    <value>[鼠标右键][Esc]取消截图</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
+    <value>[按住Hold]快速移动调整大小</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
+    <value>[数字键+ 或 -]更改三角形角度</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
+    <value>[数字键5]菱形</value>
+  </data>
+  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>区域截图</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
+    <value>[Q]激活多区域模式</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
+    <value>[方向键]从{0}更改所选区域大小</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
+    <value>[C]屏幕宽十字线</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Canvas尺寸...</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>中心光标</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>剪贴板中无图像</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>裁剪图像...</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>指针类型...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
+    <value>编辑器背景色...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>编辑器启动模式：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>启用动画</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>水平翻转</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>垂直翻转</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>字号：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>图像编辑器</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>图像尺寸...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>插入图像文件...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>从屏幕中插入图像...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>插值模式</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>新图像...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>打开图像文件...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>粘贴图像/文本</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>旋转180度</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>顺时针旋转90度</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>逆时针旋转90度</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - 图像编辑器</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
+    <value>有未保存的更改。
+要关闭图像编辑器吗？</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>提示：按住鼠标中键拖拽可以平移图像</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
+    <value>使用字母</value>
   </data>
 </root>
