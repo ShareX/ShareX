@@ -137,7 +137,7 @@
 
 {1}
 
-请选择一个不同的热键,   或退出冲突的应用程序,   然后重新打开ShareX.</value>
+请选择一个不同的快捷键,   或退出冲突的应用程序,   然后重新打开ShareX.</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>文件删除确认</value>
@@ -212,7 +212,7 @@
     <value>使用新的名字:</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>停止屏幕颜色选择器</value>
+    <value>终止屏幕拾色</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>丢失</value>
@@ -254,7 +254,7 @@
     <value>左键点击复制网址到剪贴板，右键点击打开网址。</value>
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
-    <value>在队列</value>
+    <value>队列中</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>文件上传</value>
@@ -443,7 +443,7 @@
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>你确定要上传这个截图？
-按"否",   取消当前文件的上传和禁用自动截图上传。</value>
+按"否",   取消当前文件的上传并禁用自动截图上传。</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>上传中</value>
@@ -486,7 +486,7 @@
     <value>继续</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>上传至Sharex</value>
+    <value>使用ShareX上传</value>
   </data>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>分隔符</value>
@@ -549,5 +549,32 @@
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Windows 启动时运行 ShareX</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>输入文本生成二维码</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>开机启动项已被任务管理器禁用</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>你确定要终止录制吗？</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>意大利语</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>生成URL短链</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>使用ShareX编辑</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Dev builds并不稳定，仅可用于测试目的，要安装吗？</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>要重置ShareX设置项吗？</value>
   </data>
 </root>

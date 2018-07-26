@@ -177,7 +177,4 @@
   <data name="lblHashCheckHash.Text" xml:space="preserve">
     <value>哈希（Hash）：</value>
   </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>ASCII：</value>
-  </data>
 </root>

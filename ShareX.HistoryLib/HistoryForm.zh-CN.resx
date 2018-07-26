@@ -165,4 +165,7 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>到：</value>
   </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
 </root>

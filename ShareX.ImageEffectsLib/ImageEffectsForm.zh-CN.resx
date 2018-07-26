@@ -153,4 +153,19 @@
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>从剪切板...</value>
   </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>上传图像</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>删除预设</value>
+  </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>新预设</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>名称：</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
 </root>

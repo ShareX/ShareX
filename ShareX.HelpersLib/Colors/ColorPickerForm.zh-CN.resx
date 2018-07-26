@@ -171,4 +171,52 @@
   <data name="cbTransparent.ToolTip" xml:space="preserve">
     <value>透明</value>
   </data>
+  <data name="lblY.Text" xml:space="preserve">
+    <value>Y：</value>
+  </data>
+  <data name="lblX.Text" xml:space="preserve">
+    <value>X：</value>
+  </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>最近颜色：</value>
+  </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>从屏幕选取颜色</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>16进制：</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>指针位置：</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>复制RGB</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>复制位置</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>复制HSB</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>复制16进制</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>复制十进制</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>复制CMYK</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>复制全部</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="btnPickColor.Text" xml:space="preserve">
+    <value>拾色</value>
+  </data>
 </root>

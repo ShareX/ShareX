@@ -130,7 +130,7 @@
     <value>文件名：</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
-    <value>进度情况：</value>
+    <value>进度：</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>状态：</value>

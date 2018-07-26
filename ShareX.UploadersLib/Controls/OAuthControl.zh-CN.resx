@@ -138,4 +138,7 @@
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>验证码：</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>状态：</value>
+  </data>
 </root>

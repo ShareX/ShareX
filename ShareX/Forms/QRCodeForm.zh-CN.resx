@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,5 +125,29 @@
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>保存为图像文件...</value>
+  </data>
+  <data name="cmsQR.Text" xml:space="preserve">
+    <value>QR</value>
+  </data>
+  <data name="tsmiUpload.Text" xml:space="preserve">
+    <value>上传图像</value>
+  </data>
+  <data name="tsmiDecode.Text" xml:space="preserve">
+    <value>识别</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>识别图像文件中的二维码...</value>
+  </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>结果:</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>扫描屏幕上的二维码...</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>识别</value>
   </data>
 </root>
