@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.OtherServices;
@@ -126,9 +127,7 @@ namespace ShareX
         public int HistoryMaxItemCount = 0;
         public int HistorySplitterDistance = 550;
 
-        public WindowState ImageHistoryWindowState = new WindowState();
-        public int ImageHistoryViewMode = 3;
-        public Size ImageHistoryThumbnailSize = new Size(150, 150);
+        public ImageHistorySettings ImageHistorySettings = new ImageHistorySettings();
 
         #endregion History
 

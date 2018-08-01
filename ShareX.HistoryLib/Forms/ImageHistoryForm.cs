@@ -38,63 +38,28 @@ namespace ShareX.HistoryLib
     public partial class ImageHistoryForm : Form
     {
         public string HistoryPath { get; private set; }
-        public int ViewMode { get; set; }
-        public Size ThumbnailSize { get; set; }
+        public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
 
-        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, Action<string> uploadFile = null, Action<string> editImage = null)
+        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
             HistoryPath = historyPath;
+            Settings = settings;
 
             tsMain.Renderer = new CustomToolStripProfessionalRenderer();
-            ViewMode = viewMode.Between(0, 3);
-            ilvImages.View = (View)ViewMode;
-
-            switch (ilvImages.View)
-            {
-                default:
-                case View.Thumbnails:
-                    tsmiViewModeThumbnails.RadioCheck();
-                    break;
-                case View.Gallery:
-                    tsmiViewModeGallery.RadioCheck();
-                    break;
-                case View.Pane:
-                    tsmiViewModePane.RadioCheck();
-                    break;
-            }
-
-            ThumbnailSize = thumbnailSize;
-            ilvImages.ThumbnailSize = ThumbnailSize;
-
-            switch (ThumbnailSize.Width)
-            {
-                case 75:
-                    tsmiThumbnailSize75.RadioCheck();
-                    break;
-                default:
-                case 100:
-                    tsmiThumbnailSize100.RadioCheck();
-                    break;
-                case 150:
-                    tsmiThumbnailSize150.RadioCheck();
-                    break;
-                case 200:
-                    tsmiThumbnailSize200.RadioCheck();
-                    break;
-                case 250:
-                    tsmiThumbnailSize250.RadioCheck();
-                    break;
-            }
+            ilvImages.View = (View)Settings.ViewMode;
+            ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
+
+            Settings.WindowState.AutoHandleFormState(this);
         }
 
         private void RefreshHistoryItems()
@@ -181,60 +146,15 @@ namespace ShareX.HistoryLib
             RefreshHistoryItems();
         }
 
-        private void tsmiViewModeThumbnails_Click(object sender, EventArgs e)
+        private void tsbSettings_Click(object sender, EventArgs e)
         {
-            tsmiViewModeThumbnails.RadioCheck();
-            ilvImages.View = View.Thumbnails;
-            ViewMode = (int)ilvImages.View;
-        }
+            using (ImageHistorySettingsForm form = new ImageHistorySettingsForm(Settings))
+            {
+                form.ShowDialog();
+            }
 
-        private void tsmiViewModeGallery_Click(object sender, EventArgs e)
-        {
-            tsmiViewModeGallery.RadioCheck();
-            ilvImages.View = View.Gallery;
-            ViewMode = (int)ilvImages.View;
-        }
-
-        private void tsmiViewModePane_Click(object sender, EventArgs e)
-        {
-            tsmiViewModePane.RadioCheck();
-            ilvImages.View = View.Pane;
-            ViewMode = (int)ilvImages.View;
-        }
-
-        private void tsmiThumbnailSize75_Click(object sender, EventArgs e)
-        {
-            tsmiThumbnailSize75.RadioCheck();
-            ilvImages.ThumbnailSize = new Size(75, 75);
-            ThumbnailSize = ilvImages.ThumbnailSize;
-        }
-
-        private void tsmiThumbnailSize100_Click(object sender, EventArgs e)
-        {
-            tsmiThumbnailSize100.RadioCheck();
-            ilvImages.ThumbnailSize = new Size(100, 100);
-            ThumbnailSize = ilvImages.ThumbnailSize;
-        }
-
-        private void tsmiThumbnailSize150_Click(object sender, EventArgs e)
-        {
-            tsmiThumbnailSize150.RadioCheck();
-            ilvImages.ThumbnailSize = new Size(150, 150);
-            ThumbnailSize = ilvImages.ThumbnailSize;
-        }
-
-        private void tsmiThumbnailSize200_Click(object sender, EventArgs e)
-        {
-            tsmiThumbnailSize200.RadioCheck();
-            ilvImages.ThumbnailSize = new Size(200, 200);
-            ThumbnailSize = ilvImages.ThumbnailSize;
-        }
-
-        private void tsmiThumbnailSize250_Click(object sender, EventArgs e)
-        {
-            tsmiThumbnailSize250.RadioCheck();
-            ilvImages.ThumbnailSize = new Size(250, 250);
-            ThumbnailSize = ilvImages.ThumbnailSize;
+            ilvImages.View = (View)Settings.ViewMode;
+            ilvImages.ThumbnailSize = Settings.ThumbnailSize;
         }
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)

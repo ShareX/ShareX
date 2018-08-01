@@ -35,16 +35,8 @@
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
-            this.tsddbViewMode = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiViewModeThumbnails = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiViewModeGallery = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiViewModePane = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsddbThumbnailSize = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiThumbnailSize75 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailSize100 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailSize150 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailSize200 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailSize250 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -72,6 +64,11 @@
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
             this.ilvImages.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] {
+            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "", 100, 0, true),
+            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "", 100, 1, true),
+            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "", 100, 2, true),
+            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "", 100, 3, true)});
             resources.ApplyResources(this.ilvImages, "ilvImages");
             this.ilvImages.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ilvImages.Name = "ilvImages";
@@ -91,8 +88,8 @@
             this.tslSearch,
             this.tstbSearch,
             this.tsbSearch,
-            this.tsddbViewMode,
-            this.tsddbThumbnailSize});
+            this.tss1,
+            this.tsbSettings});
             this.tsMain.Name = "tsMain";
             this.tsMain.ShowItemToolTips = false;
             // 
@@ -116,77 +113,17 @@
             this.tsbSearch.Name = "tsbSearch";
             this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
             // 
-            // tsddbViewMode
+            // tsbSettings
             // 
-            this.tsddbViewMode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbViewMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiViewModeThumbnails,
-            this.tsmiViewModeGallery,
-            this.tsmiViewModePane});
-            this.tsddbViewMode.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.tsddbViewMode.Name = "tsddbViewMode";
-            resources.ApplyResources(this.tsddbViewMode, "tsddbViewMode");
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbSettings, "tsbSettings");
+            this.tsbSettings.Name = "tsbSettings";
+            this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
             // 
-            // tsmiViewModeThumbnails
+            // tss1
             // 
-            this.tsmiViewModeThumbnails.Name = "tsmiViewModeThumbnails";
-            resources.ApplyResources(this.tsmiViewModeThumbnails, "tsmiViewModeThumbnails");
-            this.tsmiViewModeThumbnails.Click += new System.EventHandler(this.tsmiViewModeThumbnails_Click);
-            // 
-            // tsmiViewModeGallery
-            // 
-            this.tsmiViewModeGallery.Name = "tsmiViewModeGallery";
-            resources.ApplyResources(this.tsmiViewModeGallery, "tsmiViewModeGallery");
-            this.tsmiViewModeGallery.Click += new System.EventHandler(this.tsmiViewModeGallery_Click);
-            // 
-            // tsmiViewModePane
-            // 
-            this.tsmiViewModePane.Name = "tsmiViewModePane";
-            resources.ApplyResources(this.tsmiViewModePane, "tsmiViewModePane");
-            this.tsmiViewModePane.Click += new System.EventHandler(this.tsmiViewModePane_Click);
-            // 
-            // tsddbThumbnailSize
-            // 
-            this.tsddbThumbnailSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbThumbnailSize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiThumbnailSize75,
-            this.tsmiThumbnailSize100,
-            this.tsmiThumbnailSize150,
-            this.tsmiThumbnailSize200,
-            this.tsmiThumbnailSize250});
-            this.tsddbThumbnailSize.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.tsddbThumbnailSize.Name = "tsddbThumbnailSize";
-            resources.ApplyResources(this.tsddbThumbnailSize, "tsddbThumbnailSize");
-            // 
-            // tsmiThumbnailSize75
-            // 
-            this.tsmiThumbnailSize75.Name = "tsmiThumbnailSize75";
-            resources.ApplyResources(this.tsmiThumbnailSize75, "tsmiThumbnailSize75");
-            this.tsmiThumbnailSize75.Click += new System.EventHandler(this.tsmiThumbnailSize75_Click);
-            // 
-            // tsmiThumbnailSize100
-            // 
-            this.tsmiThumbnailSize100.Name = "tsmiThumbnailSize100";
-            resources.ApplyResources(this.tsmiThumbnailSize100, "tsmiThumbnailSize100");
-            this.tsmiThumbnailSize100.Click += new System.EventHandler(this.tsmiThumbnailSize100_Click);
-            // 
-            // tsmiThumbnailSize150
-            // 
-            this.tsmiThumbnailSize150.Name = "tsmiThumbnailSize150";
-            resources.ApplyResources(this.tsmiThumbnailSize150, "tsmiThumbnailSize150");
-            this.tsmiThumbnailSize150.Click += new System.EventHandler(this.tsmiThumbnailSize150_Click);
-            // 
-            // tsmiThumbnailSize200
-            // 
-            this.tsmiThumbnailSize200.Name = "tsmiThumbnailSize200";
-            resources.ApplyResources(this.tsmiThumbnailSize200, "tsmiThumbnailSize200");
-            this.tsmiThumbnailSize200.Click += new System.EventHandler(this.tsmiThumbnailSize200_Click);
-            // 
-            // tsmiThumbnailSize250
-            // 
-            this.tsmiThumbnailSize250.Name = "tsmiThumbnailSize250";
-            resources.ApplyResources(this.tsmiThumbnailSize250, "tsmiThumbnailSize250");
-            this.tsmiThumbnailSize250.Click += new System.EventHandler(this.tsmiThumbnailSize250_Click);
+            this.tss1.Name = "tss1";
+            resources.ApplyResources(this.tss1, "tss1");
             // 
             // ImageHistoryForm
             // 
@@ -214,18 +151,10 @@
         private Manina.Windows.Forms.ImageListView ilvImages;
         private System.Windows.Forms.ToolStripContainer tscMain;
         private System.Windows.Forms.ToolStrip tsMain;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbThumbnailSize;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize75;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize100;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize150;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize200;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize250;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbViewMode;
-        private System.Windows.Forms.ToolStripMenuItem tsmiViewModeThumbnails;
-        private System.Windows.Forms.ToolStripMenuItem tsmiViewModeGallery;
-        private System.Windows.Forms.ToolStripMenuItem tsmiViewModePane;
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
+        private System.Windows.Forms.ToolStripSeparator tss1;
+        private System.Windows.Forms.ToolStripButton tsbSettings;
     }
 }

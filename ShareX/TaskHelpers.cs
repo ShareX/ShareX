@@ -723,14 +723,8 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode, Program.Settings.ImageHistoryThumbnailSize,
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
                 filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
-            Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.FormClosed += (sender, e) =>
-            {
-                Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
-                Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
-            };
             imageHistoryForm.Show();
         }
 
