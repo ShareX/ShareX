@@ -43,6 +43,7 @@ namespace ShareX.HistoryLib
 
         private HistoryManager history;
         private HistoryItemManager him;
+        private string defaultTitle;
 
         public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -59,7 +60,14 @@ namespace ShareX.HistoryLib
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
 
+            defaultTitle = Text;
+
             Settings.WindowState.AutoHandleFormState(this);
+        }
+
+        private void UpdateTitle(int total, int filtered)
+        {
+            Text = $"{defaultTitle} (Total: {total.ToString("N0")} - Filtered: {filtered.ToString("N0")})";
         }
 
         private void RefreshHistoryItems()
@@ -79,12 +87,29 @@ namespace ShareX.HistoryLib
         private IEnumerable<HistoryItem> GetHistoryItems()
         {
             List<HistoryItem> historyItems = history.GetHistoryItems();
-            IEnumerable<HistoryItem> filteredHistoryItems = historyItems.Where(hi => !string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath)).Reverse();
+            List<HistoryItem> filteredHistoryItems = new List<HistoryItem>();
 
-            if (!string.IsNullOrEmpty(SearchText))
+            int itemCount = 0;
+
+            for (int i = historyItems.Count - 1; i >= 0; i--)
             {
-                filteredHistoryItems = filteredHistoryItems.Where(hi => Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase));
+                HistoryItem hi = historyItems[i];
+
+                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) &&
+                    (string.IsNullOrEmpty(SearchText) || Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    filteredHistoryItems.Add(hi);
+
+                    itemCount++;
+
+                    if (Settings.MaxItemCount > 0 && itemCount >= Settings.MaxItemCount)
+                    {
+                        break;
+                    }
+                }
             }
+
+            UpdateTitle(historyItems.Count, itemCount);
 
             return filteredHistoryItems;
         }
@@ -155,6 +180,7 @@ namespace ShareX.HistoryLib
 
             ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
+            RefreshHistoryItems();
         }
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)
