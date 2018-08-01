@@ -36,20 +36,18 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryForm : Form
     {
-        public event Action<int> SplitterDistanceChanged;
-
         public string HistoryPath { get; private set; }
-        public int MaxItemCount { get; set; }
+        public HistorySettings Settings { get; private set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
 
-        public HistoryForm(string historyPath, int maxItemCount, int splitterDistance = 0, Action<string> uploadFile = null, Action<string> editImage = null)
+        public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             HistoryPath = historyPath;
-            MaxItemCount = maxItemCount;
+            Settings = settings;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -74,10 +72,12 @@ namespace ShareX.HistoryLib
             cbFilenameFilterMethod.SelectedIndex = 0; // Contains
             lvHistory.FillLastColumn();
 
-            if (splitterDistance > 0)
+            if (Settings.SplitterDistance > 0)
             {
-                scMain.SplitterDistance = splitterDistance;
+                scMain.SplitterDistance = Settings.SplitterDistance;
             }
+
+            Settings.WindowState.AutoHandleFormState(this);
         }
 
         private void RefreshHistoryItems()
@@ -101,9 +101,9 @@ namespace ShareX.HistoryLib
             IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems();
             tempHistoryItems = tempHistoryItems.Reverse();
 
-            if (MaxItemCount > 0)
+            if (Settings.MaxItemCount > 0)
             {
-                tempHistoryItems = tempHistoryItems.Take(MaxItemCount);
+                tempHistoryItems = tempHistoryItems.Take(Settings.MaxItemCount);
             }
 
             return tempHistoryItems.ToArray();
@@ -289,14 +289,6 @@ namespace ShareX.HistoryLib
             }
         }
 
-        protected void OnSplitterDistanceChanged(int splitterDistance)
-        {
-            if (SplitterDistanceChanged != null)
-            {
-                SplitterDistanceChanged(splitterDistance);
-            }
-        }
-
         #region Form events
 
         private void HistoryForm_Shown(object sender, EventArgs e)
@@ -342,7 +334,7 @@ namespace ShareX.HistoryLib
 
         private void scMain_SplitterMoved(object sender, SplitterEventArgs e)
         {
-            OnSplitterDistanceChanged(scMain.SplitterDistance);
+            Settings.SplitterDistance = scMain.SplitterDistance;
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)
