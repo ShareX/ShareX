@@ -39,5 +39,7 @@ namespace ShareX.HistoryLib
         public int ViewMode { get; set; } = 3;
         public Size ThumbnailSize { get; set; } = new Size(150, 150);
         public int MaxItemCount { get; set; } = 250;
+        public bool RememberSearchText { get; set; } = false;
+        public string SearchText { get; set; } = "";
     }
 }

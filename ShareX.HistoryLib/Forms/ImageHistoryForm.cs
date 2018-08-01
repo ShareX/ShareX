@@ -62,6 +62,11 @@ namespace ShareX.HistoryLib
 
             defaultTitle = Text;
 
+            if (Settings.RememberSearchText)
+            {
+                tstbSearch.Text = Settings.SearchText;
+            }
+
             Settings.WindowState.AutoHandleFormState(this);
         }
 
@@ -72,24 +77,35 @@ namespace ShareX.HistoryLib
 
         private void RefreshHistoryItems()
         {
-            SearchText = tstbSearch.Text;
-
-            if (history == null)
-            {
-                history = new HistoryManager(HistoryPath);
-            }
-
+            UpdateSearchText();
             ilvImages.Items.Clear();
             ImageListViewItem[] ilvItems = GetHistoryItems().Select(hi => new ImageListViewItem(hi.Filepath) { Tag = hi }).ToArray();
             ilvImages.Items.AddRange(ilvItems);
         }
 
+        private void UpdateSearchText()
+        {
+            SearchText = tstbSearch.Text;
+
+            if (Settings.RememberSearchText)
+            {
+                Settings.SearchText = SearchText;
+            }
+            else
+            {
+                Settings.SearchText = "";
+            }
+        }
+
         private IEnumerable<HistoryItem> GetHistoryItems()
         {
+            if (history == null)
+            {
+                history = new HistoryManager(HistoryPath);
+            }
+
             List<HistoryItem> historyItems = history.GetHistoryItems();
             List<HistoryItem> filteredHistoryItems = new List<HistoryItem>();
-
-            int itemCount = 0;
 
             for (int i = historyItems.Count - 1; i >= 0; i--)
             {
@@ -100,16 +116,14 @@ namespace ShareX.HistoryLib
                 {
                     filteredHistoryItems.Add(hi);
 
-                    itemCount++;
-
-                    if (Settings.MaxItemCount > 0 && itemCount >= Settings.MaxItemCount)
+                    if (Settings.MaxItemCount > 0 && filteredHistoryItems.Count >= Settings.MaxItemCount)
                     {
                         break;
                     }
                 }
             }
 
-            UpdateTitle(historyItems.Count, itemCount);
+            UpdateTitle(historyItems.Count, filteredHistoryItems.Count);
 
             return filteredHistoryItems;
         }

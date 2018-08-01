@@ -35,8 +35,8 @@
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
-            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -113,17 +113,17 @@
             this.tsbSearch.Name = "tsbSearch";
             this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
             // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            resources.ApplyResources(this.tss1, "tss1");
+            // 
             // tsbSettings
             // 
             this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
-            // 
-            // tss1
-            // 
-            this.tss1.Name = "tss1";
-            resources.ApplyResources(this.tss1, "tss1");
             // 
             // ImageHistoryForm
             // 

@@ -50,6 +50,7 @@ namespace ShareX.HistoryLib
             cbViewMode.SelectedIndex = Settings.ViewMode;
             nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
             nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
+            cbRememberSearchText.Checked = Settings.RememberSearchText;
         }
 
         private void cbViewMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +66,11 @@ namespace ShareX.HistoryLib
         private void nudMaximumImageLimit_ValueChanged(object sender, EventArgs e)
         {
             Settings.MaxItemCount = (int)nudMaximumImageLimit.Value;
+        }
+
+        private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.RememberSearchText = cbRememberSearchText.Checked;
         }
     }
 }

@@ -82,11 +82,6 @@ namespace ShareX.HistoryLib
 
         private void RefreshHistoryItems()
         {
-            if (history == null)
-            {
-                history = new HistoryManager(HistoryPath);
-            }
-
             allHistoryItems = GetHistoryItems();
             ApplyFiltersAndAdd();
         }
@@ -98,6 +93,11 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems()
         {
+            if (history == null)
+            {
+                history = new HistoryManager(HistoryPath);
+            }
+
             IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems();
             tempHistoryItems = tempHistoryItems.Reverse();
 
