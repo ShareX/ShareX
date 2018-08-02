@@ -119,7 +119,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] ApplyFilters(HistoryItem[] historyItems)
         {
-            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && !cbFilenameFilter.Checked && !cbDateFilter.Checked)
+            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && string.IsNullOrEmpty(txtFilenameFilter.Text) && !cbDateFilter.Checked)
             {
                 return historyItems;
             }
@@ -146,13 +146,13 @@ namespace ShareX.HistoryLib
                 }
             }
 
-            if (cbFilenameFilter.Checked)
+            if (!string.IsNullOrEmpty(txtFilenameFilter.Text))
             {
                 string filenameFilter = txtFilenameFilter.Text;
 
                 if (!string.IsNullOrEmpty(filenameFilter))
                 {
-                    StringComparison filenameRule = StringComparison.CurrentCultureIgnoreCase;
+                    StringComparison filenameRule = StringComparison.InvariantCultureIgnoreCase;
 
                     switch (cbFilenameFilterMethod.SelectedIndex)
                     {
@@ -409,11 +409,6 @@ namespace ShareX.HistoryLib
                 DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
                 DoDragDrop(data, DragDropEffects.Copy);
             }
-        }
-
-        private void txtFilenameFilter_TextChanged(object sender, EventArgs e)
-        {
-            cbFilenameFilter.Checked = txtFilenameFilter.TextLength > 0;
         }
 
         #endregion Form events

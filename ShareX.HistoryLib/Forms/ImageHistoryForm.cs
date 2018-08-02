@@ -112,7 +112,7 @@ namespace ShareX.HistoryLib
                 HistoryItem hi = historyItems[i];
 
                 if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) &&
-                    (string.IsNullOrEmpty(SearchText) || Helpers.GetFilenameSafe(hi.Filepath).Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
+                    (string.IsNullOrEmpty(SearchText) || hi.Filename.Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     filteredHistoryItems.Add(hi);
 

@@ -166,7 +166,7 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -205,7 +205,7 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -215,6 +215,33 @@
   </data>
   <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="lblFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblFilenameFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Filename filter:</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Name" xml:space="preserve">
+    <value>lblFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cbHostFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 176</value>
@@ -235,7 +262,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnRemoveFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -262,7 +289,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnApplyFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -289,7 +316,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 150</value>
@@ -310,7 +337,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbHostFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -340,7 +367,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbTypeFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -370,10 +397,10 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="dtpFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 46</value>
+    <value>88, 94</value>
   </data>
   <data name="dtpFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -391,7 +418,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblFilterFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -400,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 50</value>
+    <value>13, 98</value>
   </data>
   <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -421,36 +448,6 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbFilenameFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
-  </data>
-  <data name="cbFilenameFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filename filter:</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Name" xml:space="preserve">
-    <value>cbFilenameFilter</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="lblFilterTo.AutoSize" type="System.Boolean, mscorlib">
@@ -460,7 +457,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 74</value>
+    <value>13, 122</value>
   </data>
   <data name="lblFilterTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 13</value>
@@ -490,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbDateFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 72</value>
   </data>
   <data name="cbDateFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 17</value>
@@ -514,7 +511,7 @@
     <value>10</value>
   </data>
   <data name="dtpFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 70</value>
+    <value>88, 118</value>
   </data>
   <data name="dtpFilterTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -535,7 +532,7 @@
     <value>11</value>
   </data>
   <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 121</value>
+    <value>16, 46</value>
   </data>
   <data name="txtFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 20</value>
@@ -568,7 +565,7 @@
     <value>Exact match</value>
   </data>
   <data name="cbFilenameFilterMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 96</value>
+    <value>168, 20</value>
   </data>
   <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 21</value>
@@ -667,7 +664,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

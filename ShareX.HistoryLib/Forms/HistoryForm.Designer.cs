@@ -47,12 +47,12 @@
             this.cbTypeFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.lblFilterFrom = new System.Windows.Forms.Label();
-            this.cbFilenameFilter = new System.Windows.Forms.CheckBox();
             this.lblFilterTo = new System.Windows.Forms.Label();
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
+            this.lblFilenameFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -134,6 +134,7 @@
             // gbFilters
             // 
             resources.ApplyResources(this.gbFilters, "gbFilters");
+            this.gbFilters.Controls.Add(this.lblFilenameFilter);
             this.gbFilters.Controls.Add(this.cbHostFilterSelection);
             this.gbFilters.Controls.Add(this.btnRemoveFilters);
             this.gbFilters.Controls.Add(this.btnApplyFilters);
@@ -142,7 +143,6 @@
             this.gbFilters.Controls.Add(this.cbTypeFilter);
             this.gbFilters.Controls.Add(this.dtpFilterFrom);
             this.gbFilters.Controls.Add(this.lblFilterFrom);
-            this.gbFilters.Controls.Add(this.cbFilenameFilter);
             this.gbFilters.Controls.Add(this.lblFilterTo);
             this.gbFilters.Controls.Add(this.cbDateFilter);
             this.gbFilters.Controls.Add(this.dtpFilterTo);
@@ -200,12 +200,6 @@
             resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
             this.lblFilterFrom.Name = "lblFilterFrom";
             // 
-            // cbFilenameFilter
-            // 
-            resources.ApplyResources(this.cbFilenameFilter, "cbFilenameFilter");
-            this.cbFilenameFilter.Name = "cbFilenameFilter";
-            this.cbFilenameFilter.UseVisualStyleBackColor = true;
-            // 
             // lblFilterTo
             // 
             resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
@@ -226,7 +220,6 @@
             // 
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
-            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.txtFilenameFilter_TextChanged);
             // 
             // cbFilenameFilterMethod
             // 
@@ -239,6 +232,11 @@
             resources.GetString("cbFilenameFilterMethod.Items3")});
             resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
+            // 
+            // lblFilenameFilter
+            // 
+            resources.ApplyResources(this.lblFilenameFilter, "lblFilenameFilter");
+            this.lblFilenameFilter.Name = "lblFilenameFilter";
             // 
             // HistoryForm
             // 
@@ -281,11 +279,11 @@
         private System.Windows.Forms.CheckBox cbTypeFilter;
         private System.Windows.Forms.DateTimePicker dtpFilterFrom;
         private System.Windows.Forms.Label lblFilterFrom;
-        private System.Windows.Forms.CheckBox cbFilenameFilter;
         private System.Windows.Forms.Label lblFilterTo;
         private System.Windows.Forms.CheckBox cbDateFilter;
         private System.Windows.Forms.DateTimePicker dtpFilterTo;
         private System.Windows.Forms.TextBox txtFilenameFilter;
         private System.Windows.Forms.ComboBox cbFilenameFilterMethod;
+        private System.Windows.Forms.Label lblFilenameFilter;
     }
 }
