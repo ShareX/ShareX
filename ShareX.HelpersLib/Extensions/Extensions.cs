@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encoder = System.Drawing.Imaging.Encoder;
 
@@ -618,6 +619,12 @@ namespace ShareX.HelpersLib
         {
             string error = fullError ? e.ToString() : e.Message;
             MessageBox.Show(error, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static Task ContinueInCurrentContext(this Task task, Action action)
+        {
+            TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+            return task.ContinueWith(t => action, scheduler);
         }
     }
 }

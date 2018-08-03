@@ -313,7 +313,7 @@ namespace ShareX
             Task.Run(() =>
             {
                 SettingManager.WaitHotkeysConfig();
-            }).ContinueWith(t =>
+            }).ContinueInCurrentContext(() =>
             {
                 if (Program.HotkeyManager == null)
                 {
@@ -335,7 +335,7 @@ namespace ShareX
                 DebugHelper.WriteLine("WatchFolderManager started.");
 
                 UpdateWorkflowsMenu();
-            }, TaskScheduler.FromCurrentSynchronizationContext());
+            });
         }
 
         private void HandleHotkeys(HotkeySettings hotkeySetting)

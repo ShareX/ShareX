@@ -62,7 +62,7 @@ namespace ShareX
                 NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
                 NewsManager.UpdateNews();
                 NewsManager.UpdateUnread();
-            }).ContinueWith(t =>
+            }).ContinueInCurrentContext(() =>
             {
                 if (NewsManager != null && NewsManager.NewsItems != null)
                 {
@@ -80,7 +80,7 @@ namespace ShareX
 
                     OnNewsLoaded();
                 }
-            }, TaskScheduler.FromCurrentSynchronizationContext());
+            });
         }
 
         protected void OnNewsLoaded()
