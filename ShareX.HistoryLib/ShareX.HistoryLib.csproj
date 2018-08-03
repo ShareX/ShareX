@@ -124,9 +124,8 @@
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HistoryItemManager.cs" />
-    <Compile Include="HistoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XMLManager.cs" />
+    <Compile Include="HistoryManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
