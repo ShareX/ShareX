@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -545,20 +546,18 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void FTPTestAccountAsync(FTPAccount account)
+        private async Task FTPTestAccountAsync(FTPAccount account)
         {
             if (account != null)
             {
                 btnFTPTest.Enabled = false;
 
-                TaskEx.Run(() =>
+                await Task.Run(() =>
                 {
                     FTPTestAccount(account);
-                },
-                () =>
-                {
-                    btnFTPTest.Enabled = true;
                 });
+
+                btnFTPTest.Enabled = true;
             }
         }
 
@@ -1247,7 +1246,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void TestCustomUploader(CustomUploaderDestinationType type, CustomUploaderItem item)
+        private async Task TestCustomUploader(CustomUploaderDestinationType type, CustomUploaderItem item)
         {
             btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
                 btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = false;
@@ -1256,7 +1255,7 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderLog.ResetText();
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 try
                 {
@@ -1300,49 +1299,47 @@ namespace ShareX.UploadersLib
                     result = new UploadResult();
                     result.Errors.Add(e.Message);
                 }
-            },
-            () =>
+            });
+
+            if (!IsDisposed)
             {
-                if (!IsDisposed)
+                if (result != null)
                 {
-                    if (result != null)
+                    if (((type == CustomUploaderDestinationType.ImageUploader || type == CustomUploaderDestinationType.TextUploader ||
+                        type == CustomUploaderDestinationType.FileUploader) && !string.IsNullOrEmpty(result.URL)) ||
+                        (type == CustomUploaderDestinationType.URLShortener && !string.IsNullOrEmpty(result.ShortenedURL)) ||
+                        (type == CustomUploaderDestinationType.URLSharingService && !result.IsError && !string.IsNullOrEmpty(result.URL)))
                     {
-                        if (((type == CustomUploaderDestinationType.ImageUploader || type == CustomUploaderDestinationType.TextUploader ||
-                            type == CustomUploaderDestinationType.FileUploader) && !string.IsNullOrEmpty(result.URL)) ||
-                            (type == CustomUploaderDestinationType.URLShortener && !string.IsNullOrEmpty(result.ShortenedURL)) ||
-                            (type == CustomUploaderDestinationType.URLSharingService && !result.IsError && !string.IsNullOrEmpty(result.URL)))
-                        {
-                            txtCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
+                        txtCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
 
-                            if (!string.IsNullOrEmpty(result.ThumbnailURL))
-                            {
-                                txtCustomUploaderLog.AppendText("Thumbnail URL: " + result.ThumbnailURL + Environment.NewLine);
-                            }
-
-                            if (!string.IsNullOrEmpty(result.DeletionURL))
-                            {
-                                txtCustomUploaderLog.AppendText("Deletion URL: " + result.DeletionURL + Environment.NewLine);
-                            }
-                        }
-                        else if (result.IsError)
+                        if (!string.IsNullOrEmpty(result.ThumbnailURL))
                         {
-                            txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString() + Environment.NewLine);
-                        }
-                        else
-                        {
-                            txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ + Environment.NewLine);
+                            txtCustomUploaderLog.AppendText("Thumbnail URL: " + result.ThumbnailURL + Environment.NewLine);
                         }
 
-                        txtCustomUploaderLog.ScrollToCaret();
-
-                        btnCustomUploaderShowLastResponse.Tag = result.Response;
-                        btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
+                        if (!string.IsNullOrEmpty(result.DeletionURL))
+                        {
+                            txtCustomUploaderLog.AppendText("Deletion URL: " + result.DeletionURL + Environment.NewLine);
+                        }
+                    }
+                    else if (result.IsError)
+                    {
+                        txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString() + Environment.NewLine);
+                    }
+                    else
+                    {
+                        txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ + Environment.NewLine);
                     }
 
-                    btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
-                        btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = true;
+                    txtCustomUploaderLog.ScrollToCaret();
+
+                    btnCustomUploaderShowLastResponse.Tag = result.Response;
+                    btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
                 }
-            });
+
+                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
+                    btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = true;
+            }
         }
 
         #endregion Custom uploader

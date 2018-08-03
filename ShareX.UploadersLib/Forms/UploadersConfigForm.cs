@@ -36,6 +36,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -1136,29 +1137,27 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnCheveretoTestAll_Click(object sender, EventArgs e)
+        private async void btnCheveretoTestAll_Click(object sender, EventArgs e)
         {
             btnCheveretoTestAll.Enabled = false;
             btnCheveretoTestAll.Text = "Testing...";
             string result = null;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 result = Chevereto.TestUploaders();
-            },
-            () =>
-            {
-                if (!IsDisposed)
-                {
-                    btnCheveretoTestAll.Text = "Test all";
-                    btnCheveretoTestAll.Enabled = true;
-
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        MessageBox.Show(result, "Chevereto test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
             });
+
+            if (!IsDisposed)
+            {
+                btnCheveretoTestAll.Text = "Test all";
+                btnCheveretoTestAll.Enabled = true;
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show(result, "Chevereto test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
@@ -1637,13 +1636,13 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnFTPTest_Click(object sender, EventArgs e)
+        private async void btnFTPTest_Click(object sender, EventArgs e)
         {
             FTPAccount account = FTPGetSelectedAccount();
 
             if (account != null)
             {
-                FTPTestAccountAsync(account);
+                await FTPTestAccountAsync(account);
             }
             else
             {
@@ -2478,29 +2477,27 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnPomfTest_Click(object sender, EventArgs e)
+        private async void btnPomfTest_Click(object sender, EventArgs e)
         {
             btnPomfTest.Enabled = false;
             btnPomfTest.Text = "Testing...";
             string result = null;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 result = Pomf.TestUploaders();
-            },
-            () =>
-            {
-                if (!IsDisposed)
-                {
-                    btnPomfTest.Text = "Test all";
-                    btnPomfTest.Enabled = true;
-
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        Debug.WriteLine("Pomf test results:\r\n\r\n" + result);
-                    }
-                }
             });
+
+            if (!IsDisposed)
+            {
+                btnPomfTest.Text = "Test all";
+                btnPomfTest.Enabled = true;
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    Debug.WriteLine("Pomf test results:\r\n\r\n" + result);
+                }
+            }
         }
 
         private void txtPomfUploadURL_TextChanged(object sender, EventArgs e)
@@ -3762,11 +3759,11 @@ namespace ShareX.UploadersLib
             Config.CustomImageUploaderSelected = cbCustomUploaderImageUploader.SelectedIndex;
         }
 
-        private void btnCustomUploaderImageUploaderTest_Click(object sender, EventArgs e)
+        private async void btnCustomUploaderImageUploaderTest_Click(object sender, EventArgs e)
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderDestinationType.ImageUploader, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
+                await TestCustomUploader(CustomUploaderDestinationType.ImageUploader, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
             }
         }
 
@@ -3775,11 +3772,11 @@ namespace ShareX.UploadersLib
             Config.CustomTextUploaderSelected = cbCustomUploaderTextUploader.SelectedIndex;
         }
 
-        private void btnCustomUploaderTextUploaderTest_Click(object sender, EventArgs e)
+        private async void btnCustomUploaderTextUploaderTest_Click(object sender, EventArgs e)
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderDestinationType.TextUploader, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
+                await TestCustomUploader(CustomUploaderDestinationType.TextUploader, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
             }
         }
 
@@ -3788,11 +3785,11 @@ namespace ShareX.UploadersLib
             Config.CustomFileUploaderSelected = cbCustomUploaderFileUploader.SelectedIndex;
         }
 
-        private void btnCustomUploaderFileUploaderTest_Click(object sender, EventArgs e)
+        private async void btnCustomUploaderFileUploaderTest_Click(object sender, EventArgs e)
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
             {
-                TestCustomUploader(CustomUploaderDestinationType.FileUploader, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
+                await TestCustomUploader(CustomUploaderDestinationType.FileUploader, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
             }
         }
 
@@ -3801,11 +3798,11 @@ namespace ShareX.UploadersLib
             Config.CustomURLShortenerSelected = cbCustomUploaderURLShortener.SelectedIndex;
         }
 
-        private void btnCustomUploaderURLShortenerTest_Click(object sender, EventArgs e)
+        private async void btnCustomUploaderURLShortenerTest_Click(object sender, EventArgs e)
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
             {
-                TestCustomUploader(CustomUploaderDestinationType.URLShortener, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
+                await TestCustomUploader(CustomUploaderDestinationType.URLShortener, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
             }
         }
 
@@ -3814,11 +3811,11 @@ namespace ShareX.UploadersLib
             Config.CustomURLSharingServiceSelected = cbCustomUploaderURLSharingService.SelectedIndex;
         }
 
-        private void btnCustomUploaderURLSharingServiceTest_Click(object sender, EventArgs e)
+        private async void btnCustomUploaderURLSharingServiceTest_Click(object sender, EventArgs e)
         {
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
             {
-                TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
+                await TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
             }
         }
 

@@ -353,8 +353,9 @@
             this.Controls.Add(this.tcFTP);
             this.Controls.Add(this.txtRename);
             this.Name = "FTPClientForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClient2_FormClosing);
-            this.Resize += new System.EventHandler(this.FTPClient_Resize);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClientForm_FormClosing);
+            this.Load += new System.EventHandler(this.FTPClientForm_Load);
+            this.Resize += new System.EventHandler(this.FTPClientForm_Resize);
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

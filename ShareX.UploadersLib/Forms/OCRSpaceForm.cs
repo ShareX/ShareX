@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -53,13 +54,13 @@ namespace ShareX.UploadersLib
             this.filename = filename;
         }
 
-        private void OCRSpaceResultForm_Shown(object sender, EventArgs e)
+        private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
         {
             UpdateControls();
 
             if (string.IsNullOrEmpty(Result))
             {
-                StartOCR(data, filename);
+                await StartOCR(data, filename);
             }
         }
 
@@ -75,14 +76,14 @@ namespace ShareX.UploadersLib
             btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
         }
 
-        private void StartOCR(Stream stream, string filename)
+        private async Task StartOCR(Stream stream, string filename)
         {
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
             {
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
                 pbProgress.Visible = true;
 
-                TaskEx.Run(() =>
+                await Task.Run(() =>
                 {
                     try
                     {
@@ -98,18 +99,16 @@ namespace ShareX.UploadersLib
                     {
                         DebugHelper.WriteException(e);
                     }
-                },
-                () =>
-                {
-                    if (!IsDisposed)
-                    {
-                        UpdateControls();
-                        cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
-                        pbProgress.Visible = false;
-                        txtResult.Focus();
-                        llGoogleTranslate.Enabled = true;
-                    }
                 });
+
+                if (!IsDisposed)
+                {
+                    UpdateControls();
+                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                    pbProgress.Visible = false;
+                    txtResult.Focus();
+                    llGoogleTranslate.Enabled = true;
+                }
             }
         }
 
@@ -118,9 +117,9 @@ namespace ShareX.UploadersLib
             Language = (OCRSpaceLanguages)cbLanguages.SelectedIndex;
         }
 
-        private void btnStartOCR_Click(object sender, EventArgs e)
+        private async void btnStartOCR_Click(object sender, EventArgs e)
         {
-            StartOCR(data, filename);
+            await StartOCR(data, filename);
         }
 
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

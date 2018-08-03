@@ -814,11 +814,11 @@ namespace ShareX.HelpersLib
             return true;
         }
 
-        public static void WaitWhileAsync(Func<bool> check, int interval, int timeout, Action onSuccess, int waitStart = 0)
+        public static async Task WaitWhileAsync(Func<bool> check, int interval, int timeout, Action onSuccess, int waitStart = 0)
         {
             bool result = false;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 if (waitStart > 0)
                 {
@@ -826,11 +826,9 @@ namespace ShareX.HelpersLib
                 }
 
                 result = WaitWhile(check, interval, timeout);
-            },
-            () =>
-            {
-                if (result) onSuccess();
-            }, false);
+            });
+
+            if (result) onSuccess();
         }
 
         public static bool IsFileLocked(string path)

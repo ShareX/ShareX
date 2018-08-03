@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -63,17 +64,6 @@ namespace ShareX.UploadersLib
             pgAccount.SelectedObject = Client.Account;
             Text = Resources.FTPClientForm_FTPClientForm_ShareX_FTP_client + " - " + account.Name;
             lblConnecting.Text = string.Format(Resources.FTPClientForm_FTPClientForm_Connecting_to__0_, account.FTPAddress);
-
-            TaskEx.Run(() =>
-            {
-                Client.Connect();
-            },
-            () =>
-            {
-                pConnecting.Visible = false;
-                Refresh();
-                RefreshDirectory();
-            });
         }
 
         #region Methods
@@ -329,6 +319,18 @@ namespace ShareX.UploadersLib
 
         #region Events
 
+        private async void FTPClientForm_Load(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                Client.Connect();
+            });
+
+            pConnecting.Visible = false;
+            Refresh();
+            RefreshDirectory();
+        }
+
         private void lvFTPList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             FTPDownload(true);
@@ -564,7 +566,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void FTPClient_Resize(object sender, EventArgs e)
+        private void FTPClientForm_Resize(object sender, EventArgs e)
         {
             Refresh();
         }
@@ -589,7 +591,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void FTPClient2_FormClosing(object sender, FormClosingEventArgs e)
+        private void FTPClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Client != null)
             {

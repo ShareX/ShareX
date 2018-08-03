@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -55,14 +56,13 @@ namespace ShareX
 
         public void Start()
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 NewsManager = new NewsManager();
                 NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
                 NewsManager.UpdateNews();
                 NewsManager.UpdateUnread();
-            },
-            () =>
+            }).ContinueWith(t =>
             {
                 if (NewsManager != null && NewsManager.NewsItems != null)
                 {
@@ -80,7 +80,7 @@ namespace ShareX
 
                     OnNewsLoaded();
                 }
-            });
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         protected void OnNewsLoaded()
@@ -106,19 +106,18 @@ namespace ShareX
             }
         }
 
-        private void TlpMain_Layout(object sender, LayoutEventArgs e)
+        private async void TlpMain_Layout(object sender, LayoutEventArgs e)
         {
-            TaskEx.RunDelayed(() =>
+            await Task.Delay(1);
+
+            if (tlpMain.HorizontalScroll.Visible)
             {
-                if (tlpMain.HorizontalScroll.Visible)
-                {
-                    tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-                }
-                else
-                {
-                    tlpMain.Padding = new Padding(0);
-                }
-            }, 1);
+                tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
+            }
+            else
+            {
+                tlpMain.Padding = new Padding(0);
+            }
         }
 
         private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)

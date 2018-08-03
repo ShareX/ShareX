@@ -29,6 +29,7 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if WindowsStore
@@ -533,7 +534,7 @@ namespace ShareX
 
         #region Export / Import
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private async void btnExport_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -552,27 +553,25 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Export started: {exportPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.SaveAllSettings();
                         SettingManager.Export(exportPath);
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    DebugHelper.WriteLine($"Export completed: {exportPath}");
                 }
             }
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private async void btnImport_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -589,28 +588,26 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Import started: {importPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.Import(importPath);
                         SettingManager.LoadAllSettings();
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            UpdateControls();
-
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        LanguageHelper.ChangeLanguage(Program.Settings.Language);
-
-                        Program.MainForm.UpdateControls();
-
-                        DebugHelper.WriteLine($"Import completed: {importPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        UpdateControls();
+
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    LanguageHelper.ChangeLanguage(Program.Settings.Language);
+
+                    Program.MainForm.UpdateControls();
+
+                    DebugHelper.WriteLine($"Import completed: {importPath}");
                 }
             }
         }

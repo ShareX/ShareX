@@ -31,6 +31,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -142,7 +143,7 @@ namespace ShareX
             }
         }
 
-        public static void ClipboardUpload(TaskSettings taskSettings = null)
+        public static async Task ClipboardUpload(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -191,7 +192,7 @@ namespace ShareX
 
                     if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
                     {
-                        IndexFolder(text, taskSettings);
+                        await IndexFolder(text, taskSettings);
                     }
                     else
                     {
@@ -514,18 +515,18 @@ namespace ShareX
             }
         }
 
-        public static void IndexFolder(TaskSettings taskSettings = null)
+        public static async Task IndexFolder(TaskSettings taskSettings = null)
         {
             using (FolderSelectDialog dlg = new FolderSelectDialog())
             {
                 if (dlg.ShowDialog())
                 {
-                    IndexFolder(dlg.FileName, taskSettings);
+                    await IndexFolder(dlg.FileName, taskSettings);
                 }
             }
         }
 
-        public static void IndexFolder(string folderPath, TaskSettings taskSettings = null)
+        public static async Task IndexFolder(string folderPath, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
@@ -535,19 +536,17 @@ namespace ShareX
 
                 string source = null;
 
-                TaskEx.Run(() =>
+                await Task.Run(() =>
                 {
                     source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
-                },
-                () =>
-                {
-                    if (!string.IsNullOrEmpty(source))
-                    {
-                        WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
-                        task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
-                        TaskManager.Start(task);
-                    }
                 });
+
+                if (!string.IsNullOrEmpty(source))
+                {
+                    WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
+                    task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                    TaskManager.Start(task);
+                }
             }
         }
     }

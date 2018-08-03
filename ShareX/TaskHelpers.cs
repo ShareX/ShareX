@@ -642,11 +642,11 @@ namespace ShareX
                 Program.Settings.DropHoverOpacity, taskSettings).ForceActivate();
         }
 
-        public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)
+        public static async Task StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
+            await ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
         }
 
         public static void AbortScreenRecording()

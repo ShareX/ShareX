@@ -29,6 +29,7 @@ using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -40,7 +41,7 @@ namespace ShareX
         private static ScreenRecorder screenRecorder;
         private static ScreenRecordForm recordForm;
 
-        public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
+        public static async Task StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
             if (IsRecording)
             {
@@ -51,7 +52,7 @@ namespace ShareX
             }
             else
             {
-                StartRecording(outputType, taskSettings, startMethod);
+                await StartRecording(outputType, taskSettings, startMethod);
             }
         }
 
@@ -71,7 +72,7 @@ namespace ShareX
             }
         }
 
-        private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
+        private static async Task StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
             if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
             {
@@ -176,7 +177,7 @@ namespace ShareX
             recordForm.StopRequested += StopRecording;
             recordForm.Show();
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 try
                 {
@@ -297,31 +298,29 @@ namespace ShareX
                         }
                     }
                 }
-            },
-            () =>
+            });
+
+            string customFileName;
+
+            if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, null, path))
             {
-                string customFileName;
-
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, null, path))
+                if (!string.IsNullOrEmpty(customFileName))
                 {
-                    if (!string.IsNullOrEmpty(customFileName))
+                    string currentFilename = Path.GetFileNameWithoutExtension(path);
+                    string ext = Path.GetExtension(path);
+
+                    if (!currentFilename.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
                     {
-                        string currentFilename = Path.GetFileNameWithoutExtension(path);
-                        string ext = Path.GetExtension(path);
-
-                        if (!currentFilename.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            path = Helpers.RenameFile(path, customFileName + ext);
-                        }
+                        path = Helpers.RenameFile(path, customFileName + ext);
                     }
-
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
-                    TaskManager.Start(task);
                 }
 
-                abortRequested = false;
-                IsRecording = false;
-            });
+                WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
+                TaskManager.Start(task);
+            }
+
+            abortRequested = false;
+            IsRecording = false;
         }
     }
 }

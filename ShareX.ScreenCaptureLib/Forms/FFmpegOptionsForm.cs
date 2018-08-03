@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             SettingsLoad();
         }
 
-        private void SettingsLoad()
+        private async Task SettingsLoad()
         {
             settingsLoaded = false;
 
@@ -76,7 +76,7 @@ namespace ShareX.ScreenCaptureLib
             txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
             txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
 
-            RefreshSourcesAsync();
+            await RefreshSourcesAsync();
 
 #if WindowsStore
             btnInstallHelperDevices.Visible = false;
@@ -132,48 +132,46 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void RefreshSourcesAsync(bool selectDevices = false)
+        private async Task RefreshSourcesAsync(bool selectDevices = false)
         {
             btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 using (FFmpegHelper ffmpeg = new FFmpegHelper(Options))
                 {
                     devices = ffmpeg.GetDirectShowDevices();
                 }
-            },
-            () =>
-            {
-                cboVideoSource.Items.Clear();
-                cboVideoSource.Items.Add(FFmpegHelper.SourceNone);
-                cboVideoSource.Items.Add(FFmpegHelper.SourceGDIGrab);
-                cboAudioSource.Items.Clear();
-                cboAudioSource.Items.Add(FFmpegHelper.SourceNone);
-
-                if (devices != null)
-                {
-                    cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
-                    cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
-                }
-
-                if (selectDevices && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
-                {
-                    Options.FFmpeg.VideoSource = FFmpegHelper.SourceVideoDevice;
-                }
-
-                cboVideoSource.Text = Options.FFmpeg.VideoSource;
-
-                if (selectDevices && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
-                {
-                    Options.FFmpeg.AudioSource = FFmpegHelper.SourceAudioDevice;
-                }
-
-                cboAudioSource.Text = Options.FFmpeg.AudioSource;
-
-                btnRefreshSources.Enabled = true;
             });
+
+            cboVideoSource.Items.Clear();
+            cboVideoSource.Items.Add(FFmpegHelper.SourceNone);
+            cboVideoSource.Items.Add(FFmpegHelper.SourceGDIGrab);
+            cboAudioSource.Items.Clear();
+            cboAudioSource.Items.Add(FFmpegHelper.SourceNone);
+
+            if (devices != null)
+            {
+                cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
+                cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
+            }
+
+            if (selectDevices && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
+            {
+                Options.FFmpeg.VideoSource = FFmpegHelper.SourceVideoDevice;
+            }
+
+            cboVideoSource.Text = Options.FFmpeg.VideoSource;
+
+            if (selectDevices && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
+            {
+                Options.FFmpeg.AudioSource = FFmpegHelper.SourceAudioDevice;
+            }
+
+            cboAudioSource.Text = Options.FFmpeg.AudioSource;
+
+            btnRefreshSources.Enabled = true;
         }
 
         private void UpdateUI()
@@ -243,17 +241,17 @@ namespace ShareX.ScreenCaptureLib
             UpdateFFmpegPathUI();
         }
 
-        private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
+        private async void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
             if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), true))
             {
-                RefreshSourcesAsync();
+                await RefreshSourcesAsync();
             }
         }
 
-        private void btnRefreshSources_Click(object sender, EventArgs e)
+        private async void btnRefreshSources_Click(object sender, EventArgs e)
         {
-            RefreshSourcesAsync();
+            await RefreshSourcesAsync();
         }
 
         private void cboVideoSource_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,28 +266,29 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void btnInstallHelperDevices_Click(object sender, EventArgs e)
+        private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
             string filepath = Helpers.GetAbsolutePath(FFmpegHelper.DeviceSetupPath);
 
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
-                Task.Run(() =>
+                bool result = false;
+
+                await Task.Run(() =>
                 {
                     try
                     {
                         Process process = Process.Start(filepath);
 
-                        if (process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0)
-                        {
-                            this.InvokeSafe(() =>
-                            {
-                                RefreshSourcesAsync(true);
-                            });
-                        }
+                        result = process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0;
                     }
                     catch { }
                 });
+
+                if (result)
+                {
+                    await RefreshSourcesAsync(true);
+                }
             }
             else
             {
@@ -441,10 +440,10 @@ namespace ShareX.ScreenCaptureLib
 
             if (result)
             {
-                this.InvokeSafe(() =>
+                this.InvokeSafe(async () =>
                 {
                     txtFFmpegPath.Text = Helpers.GetVariableFolderPath(Path.Combine(DefaultToolsFolder, "ffmpeg.exe"));
-                    RefreshSourcesAsync();
+                    await RefreshSourcesAsync();
                     UpdateUI();
                 });
 
