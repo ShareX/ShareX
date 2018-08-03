@@ -85,9 +85,7 @@ namespace ShareX.UploadersLib
 
         private void ValidateIssueId(string issueId)
         {
-            Task.Factory
-                .StartNew(() => _getSummary(issueId))
-                .ContinueWith(UpdateSummaryAsync);
+            Task.Run(() => _getSummary(issueId)).ContinueWith(UpdateSummaryAsync);
         }
 
         private void UpdateSummaryAsync(Task<string> task)

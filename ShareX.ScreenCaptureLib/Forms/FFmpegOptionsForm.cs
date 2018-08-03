@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -273,7 +274,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     try
                     {

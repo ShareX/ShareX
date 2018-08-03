@@ -30,6 +30,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace ShareX.HelpersLib
@@ -46,7 +47,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(url))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     try
                     {

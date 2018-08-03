@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
@@ -82,7 +83,7 @@ namespace ShareX.HistoryLib
 
         public static void AddHistoryItemAsync(string historyPath, HistoryItem historyItem)
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 HistoryManager history = new HistoryManager(historyPath);
                 history.AppendHistoryItem(historyItem);

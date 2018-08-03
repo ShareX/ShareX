@@ -42,6 +42,7 @@ using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
@@ -1121,7 +1122,7 @@ namespace ShareX
 
                 if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                 {
-                    TaskEx.Run(() =>
+                    Task.Run(() =>
                     {
                         using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                         {
@@ -1282,7 +1283,7 @@ namespace ShareX
 
         public static void TextToSpeechAsync(string text)
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 using (SpeechSynthesizer speaker = new SpeechSynthesizer())
                 {

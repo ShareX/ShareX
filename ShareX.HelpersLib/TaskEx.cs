@@ -31,11 +31,6 @@ namespace ShareX.HelpersLib
 {
     public static class TaskEx
     {
-        public static Task Run(Action thread)
-        {
-            return Task.Factory.StartNew(thread);
-        }
-
         public static Task Run(Action thread, Action completed, bool completedInFormThread = true)
         {
             TaskScheduler taskScheduler;
@@ -49,7 +44,7 @@ namespace ShareX.HelpersLib
                 taskScheduler = TaskScheduler.Current;
             }
 
-            return Run(thread).ContinueWith(task => completed(), taskScheduler);
+            return Task.Run(thread).ContinueWith(task => completed(), taskScheduler);
         }
 
         public static void RunDelayed(Action thread, int delay)

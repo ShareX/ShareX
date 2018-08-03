@@ -46,6 +46,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -661,7 +662,7 @@ namespace ShareX.HelpersLib
         {
             if (stream != null)
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     using (stream)
                     using (SoundPlayer soundPlayer = new SoundPlayer(stream))
@@ -676,7 +677,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     using (SoundPlayer soundPlayer = new SoundPlayer(filepath))
                     {

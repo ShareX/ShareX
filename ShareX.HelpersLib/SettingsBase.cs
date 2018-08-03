@@ -28,6 +28,7 @@ using Newtonsoft.Json.Converters;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -90,7 +91,7 @@ namespace ShareX.HelpersLib
 
         public void SaveAsync(string filePath)
         {
-            TaskEx.Run(() => Save(filePath));
+            Task.Run(() => Save(filePath));
         }
 
         public void SaveAsync()

@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -111,7 +112,7 @@ namespace ShareX
 
             ApplicationConfigBackwardCompatibilityTasks();
 
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 LoadUploadersConfig();
                 uploadersConfigResetEvent.Set();

@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -283,7 +284,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 IntPtr handle = Handle;
 
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     WindowsRectangleList wla = new WindowsRectangleList();
                     wla.IgnoreHandle = handle;

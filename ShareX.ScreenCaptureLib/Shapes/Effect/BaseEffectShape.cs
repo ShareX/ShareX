@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -152,7 +153,7 @@ namespace ShareX.ScreenCaptureLib
 
                     cachedEffect = Manager.CropImage(RectangleInsideCanvas);
 
-                    TaskEx.Run(() =>
+                    Task.Run(() =>
                     {
                         ApplyEffect((Bitmap)cachedEffect);
 
