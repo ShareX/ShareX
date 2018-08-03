@@ -30,6 +30,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -126,12 +127,11 @@ namespace ShareX.HelpersLib
         {
             if (RunInstallerInBackground)
             {
-                Thread thread = new Thread(() =>
+                Task.Run(() =>
                 {
                     Thread.Sleep(delay);
                     RunInstaller();
                 });
-                thread.Start();
             }
             else
             {

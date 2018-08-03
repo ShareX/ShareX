@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -63,7 +64,7 @@ namespace ShareX.MediaLib
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
 
-                new Thread(() =>
+                Task.Run(() =>
                 {
                     List<VideoThumbnailInfo> thumbnails = null;
 
@@ -90,7 +91,7 @@ namespace ShareX.MediaLib
                             pbProgress.Visible = false;
                         });
                     }
-                }).Start();
+                });
             }
         }
 

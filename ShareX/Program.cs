@@ -32,6 +32,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -560,7 +561,7 @@ namespace ShareX
 
         private static void CleanTempFiles()
         {
-            new Thread(() =>
+            Task.Run(() =>
             {
                 try
                 {
@@ -582,7 +583,7 @@ namespace ShareX
                 {
                     DebugHelper.WriteException(e);
                 }
-            }).Start();
+            });
         }
     }
 }
