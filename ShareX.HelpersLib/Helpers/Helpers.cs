@@ -885,37 +885,51 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void BackupFileMonthly(string filepath, string destinationFolder)
+        public static void CopyFile(string filePath, string destinationFolder, bool overwrite = true)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(destinationFolder))
             {
-                string filename = Path.GetFileNameWithoutExtension(filepath);
-                string extension = Path.GetExtension(filepath);
-                string newFilename = string.Format("{0}-{1:yyyy-MM}{2}", filename, DateTime.Now, extension);
-                string newFilepath = Path.Combine(destinationFolder, newFilename);
-
-                if (!File.Exists(newFilepath))
-                {
-                    CreateDirectoryFromFilePath(newFilepath);
-                    File.Copy(filepath, newFilepath, false);
-                }
+                string fileName = Path.GetFileName(filePath);
+                string destinationFilePath = Path.Combine(destinationFolder, fileName);
+                CreateDirectoryFromDirectoryPath(destinationFolder);
+                File.Copy(filePath, destinationFilePath, overwrite);
             }
         }
 
-        public static void BackupFileWeekly(string filepath, string destinationFolder)
+        public static string BackupFileWeekly(string filePath, string destinationFolder)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                string filename = Path.GetFileNameWithoutExtension(filepath);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
                 DateTime dateTime = DateTime.Now;
-                string extension = Path.GetExtension(filepath);
-                string newFilename = string.Format("{0}-{1:yyyy-MM}-W{2:00}{3}", filename, dateTime, dateTime.WeekOfYear(), extension);
-                string newFilepath = Path.Combine(destinationFolder, newFilename);
+                string extension = Path.GetExtension(filePath);
+                string newFileName = string.Format("{0}-{1:yyyy-MM}-W{2:00}{3}", fileName, dateTime, dateTime.WeekOfYear(), extension);
+                string newFilePath = Path.Combine(destinationFolder, newFileName);
 
-                if (!File.Exists(newFilepath))
+                if (!File.Exists(newFilePath))
                 {
-                    CreateDirectoryFromFilePath(newFilepath);
-                    File.Copy(filepath, newFilepath, false);
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
+                    File.Copy(filePath, newFilePath, false);
+                    return newFilePath;
+                }
+            }
+
+            return null;
+        }
+
+        public static void BackupFileMonthly(string filePath, string destinationFolder)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string extension = Path.GetExtension(filePath);
+                string newFileName = string.Format("{0}-{1:yyyy-MM}{2}", fileName, DateTime.Now, extension);
+                string newFilePath = Path.Combine(destinationFolder, newFileName);
+
+                if (!File.Exists(newFilePath))
+                {
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
+                    File.Copy(filePath, newFilePath, false);
                 }
             }
         }

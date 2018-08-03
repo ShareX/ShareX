@@ -223,13 +223,13 @@
     <value>13, 24</value>
   </data>
   <data name="lblFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
+    <value>52, 13</value>
   </data>
   <data name="lblFilenameFilter.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
-    <value>Filename filter:</value>
+    <value>Filename:</value>
   </data>
   <data name="&gt;&gt;lblFilenameFilter.Name" xml:space="preserve">
     <value>lblFilenameFilter</value>
@@ -349,13 +349,13 @@
     <value>16, 179</value>
   </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 17</value>
+    <value>51, 17</value>
   </data>
   <data name="cbHostFilter.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Host filter:</value>
+    <value>Host:</value>
   </data>
   <data name="&gt;&gt;cbHostFilter.Name" xml:space="preserve">
     <value>cbHostFilter</value>
@@ -379,13 +379,13 @@
     <value>16, 152</value>
   </data>
   <data name="cbTypeFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>53, 17</value>
   </data>
   <data name="cbTypeFilter.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Type filter:</value>
+    <value>Type:</value>
   </data>
   <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
     <value>cbTypeFilter</value>
@@ -490,13 +490,13 @@
     <value>16, 72</value>
   </data>
   <data name="cbDateFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 17</value>
+    <value>52, 17</value>
   </data>
   <data name="cbDateFilter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Date filter:</value>
+    <value>Date:</value>
   </data>
   <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
     <value>cbDateFilter</value>

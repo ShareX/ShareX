@@ -37,17 +37,26 @@ namespace ShareX.HelpersLib
         public delegate void SettingsSavedEventHandler(T settings, string filePath, bool result);
         public event SettingsSavedEventHandler SettingsSaved;
 
-        [Browsable(false)]
+        [Browsable(false), JsonIgnore]
         public string FilePath { get; private set; }
 
         [Browsable(false)]
         public string ApplicationVersion { get; set; }
 
-        [Browsable(false)]
+        [Browsable(false), JsonIgnore]
         public bool IsFirstTimeRun { get; private set; }
 
-        [Browsable(false)]
+        [Browsable(false), JsonIgnore]
         public bool IsUpgrade { get; private set; }
+
+        [Browsable(false), JsonIgnore]
+        public string BackupFolder { get; set; }
+
+        [Browsable(false), JsonIgnore]
+        public bool CreateBackup { get; set; }
+
+        [Browsable(false), JsonIgnore]
+        public bool CreateWeeklyBackup { get; set; }
 
         public bool IsUpgradeFrom(string version)
         {
@@ -67,7 +76,7 @@ namespace ShareX.HelpersLib
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
 
-            bool result = SaveInternal(this, FilePath, true);
+            bool result = SaveInternal(FilePath);
 
             OnSettingsSaved(FilePath, result);
 
@@ -89,23 +98,26 @@ namespace ShareX.HelpersLib
             SaveAsync(FilePath);
         }
 
-        public static T Load(string filePath)
+        public static T Load(string filePath, string backupFolder = null, bool createBackup = false, bool createWeeklyBackup = false)
         {
-            T setting = LoadInternal(filePath, true);
+            T setting = LoadInternal(filePath, backupFolder);
 
             if (setting != null)
             {
                 setting.FilePath = filePath;
                 setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
                 setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
+                setting.BackupFolder = backupFolder;
+                setting.CreateBackup = createBackup;
+                setting.CreateWeeklyBackup = createWeeklyBackup;
             }
 
             return setting;
         }
 
-        private static bool SaveInternal(object obj, string filePath, bool createBackup)
+        private bool SaveInternal(string filePath)
         {
-            string typeName = obj.GetType().Name;
+            string typeName = GetType().Name;
             DebugHelper.WriteLine("{0} save started: {1}", typeName, filePath);
 
             bool isSuccess = false;
@@ -114,7 +126,7 @@ namespace ShareX.HelpersLib
             {
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    lock (obj)
+                    lock (this)
                     {
                         Helpers.CreateDirectoryFromFilePath(filePath);
 
@@ -130,21 +142,26 @@ namespace ShareX.HelpersLib
                             JsonSerializer serializer = new JsonSerializer();
                             serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                             serializer.Converters.Add(new StringEnumConverter());
-                            serializer.Serialize(jsonWriter, obj);
+                            serializer.Serialize(jsonWriter, this);
                             jsonWriter.Flush();
                         }
 
                         if (File.Exists(filePath))
                         {
-                            if (createBackup)
+                            if (CreateBackup)
                             {
-                                File.Copy(filePath, filePath + ".bak", true);
+                                Helpers.CopyFile(filePath, BackupFolder);
                             }
 
                             File.Delete(filePath);
                         }
 
                         File.Move(tempFilePath, filePath);
+
+                        if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
+                        {
+                            Helpers.BackupFileWeekly(filePath, BackupFolder);
+                        }
 
                         isSuccess = true;
                     }
@@ -162,7 +179,7 @@ namespace ShareX.HelpersLib
             return isSuccess;
         }
 
-        private static T LoadInternal(string filePath, bool checkBackup)
+        private static T LoadInternal(string filePath, string backupFolder = null)
         {
             string typeName = typeof(T).Name;
 
@@ -209,9 +226,11 @@ namespace ShareX.HelpersLib
                     DebugHelper.WriteException(e, typeName + " load failed: " + filePath);
                 }
 
-                if (checkBackup)
+                if (!string.IsNullOrEmpty(backupFolder))
                 {
-                    return LoadInternal(filePath + ".bak", false);
+                    string fileName = Path.GetFileName(filePath);
+                    string backupFilePath = Path.Combine(backupFolder, fileName);
+                    return LoadInternal(backupFilePath);
                 }
             }
 

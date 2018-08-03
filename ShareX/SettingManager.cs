@@ -141,18 +141,18 @@ namespace ShareX
 
         public static void LoadApplicationConfig()
         {
-            Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
+            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
         }
 
         public static void LoadUploadersConfig()
         {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath);
+            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, true, true);
         }
 
         public static void LoadHotkeysConfig()
         {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
+            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, true, true);
         }
 
         public static void LoadAllSettings()
@@ -242,20 +242,16 @@ namespace ShareX
             SaveHotkeysConfigAsync();
         }
 
-        public static void BackupSettings()
-        {
-            Helpers.BackupFileWeekly(ApplicationConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(UploadersConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(Program.HistoryFilePath, BackupFolder);
-        }
-
         public static void ResetSettings()
         {
-            Settings = new ApplicationConfig();
-            DefaultTaskSettings = Settings.DefaultTaskSettings;
-            UploadersConfig = new UploadersConfig();
-            HotkeysConfig = new HotkeysConfig();
+            if (File.Exists(ApplicationConfigFilePath)) File.Delete(ApplicationConfigFilePath);
+            LoadApplicationConfig();
+
+            if (File.Exists(UploadersConfigFilePath)) File.Delete(UploadersConfigFilePath);
+            LoadUploadersConfig();
+
+            if (File.Exists(HotkeysConfigFilePath)) File.Delete(HotkeysConfigFilePath);
+            LoadHotkeysConfig();
         }
 
         public static bool Export(string archivePath)

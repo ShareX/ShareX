@@ -300,7 +300,6 @@ namespace ShareX
 
             if (WatchFolderManager != null) WatchFolderManager.Dispose();
             SettingManager.SaveAllSettings();
-            SettingManager.BackupSettings();
 
             DebugHelper.Logger.AsyncWrite = false;
             DebugHelper.WriteLine("ShareX closing.");
