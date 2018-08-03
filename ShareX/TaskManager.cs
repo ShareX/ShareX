@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -382,7 +383,8 @@ namespace ShareX
                                 if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
                                    (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
                                 {
-                                    HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
+                                    HistoryItem historyItem = info.GetHistoryItem();
+                                    AppendHistoryItemAsync(historyItem);
                                 }
 
                                 RecentManager.Add(task);
@@ -553,6 +555,21 @@ namespace ShareX
                 }
             };
             timer.Start();
+        }
+
+        private static void AppendHistoryItemAsync(HistoryItem historyItem)
+        {
+            Task.Run(() =>
+            {
+                HistoryManager history = new HistoryManager(Program.HistoryFilePath)
+                {
+                    BackupFolder = SettingManager.BackupFolder,
+                    CreateBackup = false,
+                    CreateWeeklyBackup = true
+                };
+
+                history.AppendHistoryItem(historyItem);
+            });
         }
 
         public static void AddRecentTasksToMainWindow()

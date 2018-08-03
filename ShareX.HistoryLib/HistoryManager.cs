@@ -84,15 +84,6 @@ namespace ShareX.HistoryLib
             return false;
         }
 
-        public static void AddHistoryItemAsync(string historyPath, HistoryItem historyItem)
-        {
-            Task.Run(() =>
-            {
-                HistoryManager history = new HistoryManager(historyPath);
-                history.AppendHistoryItem(historyItem);
-            });
-        }
-
         private bool IsValidHistoryItem(HistoryItem historyItem)
         {
             return historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTime != DateTime.MinValue &&
@@ -172,6 +163,19 @@ namespace ShareX.HistoryLib
                         }
 
                         writer.WriteWhitespace(Environment.NewLine);
+                    }
+
+                    if (!string.IsNullOrEmpty(BackupFolder))
+                    {
+                        if (CreateBackup)
+                        {
+                            Helpers.CopyFile(FilePath, BackupFolder);
+                        }
+
+                        if (CreateWeeklyBackup)
+                        {
+                            Helpers.BackupFileWeekly(FilePath, BackupFolder);
+                        }
                     }
                 }
 
