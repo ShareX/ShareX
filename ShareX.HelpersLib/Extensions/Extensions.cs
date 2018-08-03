@@ -624,7 +624,7 @@ namespace ShareX.HelpersLib
         public static Task ContinueInCurrentContext(this Task task, Action action)
         {
             TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
-            return task.ContinueWith(t => action, scheduler);
+            return task.ContinueWith(t => action(), scheduler);
         }
     }
 }

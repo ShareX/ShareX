@@ -36,20 +36,23 @@ namespace ShareX
         public bool AllowAutoHideForm { get; set; } = true;
         public bool AllowAnnotation { get; set; } = true;
 
-        public async Task Capture(bool autoHideForm)
+        public void Capture(bool autoHideForm)
         {
-            await Capture(null, autoHideForm);
+            Capture(null, autoHideForm);
         }
 
-        public async Task Capture(TaskSettings taskSettings = null, bool autoHideForm = false)
+        public void Capture(TaskSettings taskSettings = null, bool autoHideForm = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
             {
                 int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
-                await Task.Delay(delay);
-                CaptureInternal(taskSettings, autoHideForm);
+
+                Task.Delay(delay).ContinueInCurrentContext(() =>
+                {
+                    CaptureInternal(taskSettings, autoHideForm);
+                });
             }
             else
             {

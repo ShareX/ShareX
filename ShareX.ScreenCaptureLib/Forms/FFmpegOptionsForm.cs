@@ -56,8 +56,6 @@ namespace ShareX.ScreenCaptureLib
             cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
             cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
             cbGIFDither.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>());
-
-            SettingsLoad();
         }
 
         private async Task SettingsLoad()
@@ -225,6 +223,11 @@ namespace ShareX.ScreenCaptureLib
 
             txtFFmpegPath.BackColor = backColor;
 #endif
+        }
+
+        private async void FFmpegOptionsForm_Load(object sender, EventArgs e)
+        {
+            await SettingsLoad();
         }
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
@@ -511,7 +514,7 @@ namespace ShareX.ScreenCaptureLib
             return Options.FFmpeg;
         }
 
-        private void eiFFmpeg_ImportRequested(object obj)
+        private async void eiFFmpeg_ImportRequested(object obj)
         {
             FFmpegOptions ffmpegOptions = obj as FFmpegOptions;
 
@@ -520,7 +523,7 @@ namespace ShareX.ScreenCaptureLib
                 string tempFFmpegPath = Options.FFmpeg.CLIPath;
                 Options.FFmpeg = ffmpegOptions;
                 Options.FFmpeg.CLIPath = tempFFmpegPath;
-                SettingsLoad();
+                await SettingsLoad();
             }
         }
     }
