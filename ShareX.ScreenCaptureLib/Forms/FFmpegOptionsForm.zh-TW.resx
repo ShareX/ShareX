@@ -217,7 +217,7 @@
     <value>1為最高品質和檔案最大, 31最低品質和檔案最小</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-       <value>選擇的視頻容器不支持此音頻解碼器。</value>
+    <value>選擇的視頻容器不支持此音頻解碼器。</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>及時編碼（例如錄製畫面）建議選擇越快的設定越好

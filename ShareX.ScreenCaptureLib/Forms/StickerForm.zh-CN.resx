@@ -120,9 +120,6 @@
   <data name="tslStickers.Text" xml:space="preserve">
     <value>贴纸：</value>
   </data>
-  <data name="toolStripContainer1.Text" xml:space="preserve">
-    <value>条带容器</value>
-  </data>
   <data name="tslSize.Text" xml:space="preserve">
     <value>尺寸：</value>
   </data>
