@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>여분 저장소 사용 줄이기</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>저장된 오브젝트에 대해 여분 저장소 사용을 줄입니다.
-이 설정을 사용하면 오브젝트를 저장하는 비용이 줄어들지만,
-가용성이 99.999999999%에서 99.99%로 줄어듦니다.
-이것은 Amazon S3에서 오브젝트를 잃어버릴 수 있는 가능성이 생긴다는 뜻입니다.</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>커스텀 도메인 사용:</value>
   </data>
@@ -463,39 +454,6 @@
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira 이슈 접두사:</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>폴더 삭제</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>폴더 추가</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>폴더 목록 갱신하기</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>업로드할 곳</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>로그인 상태:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL 종류:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>이메일:</value>

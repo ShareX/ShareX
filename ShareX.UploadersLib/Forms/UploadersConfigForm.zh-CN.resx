@@ -507,39 +507,6 @@
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira问题的前缀:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>删除文件夹</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>添加文件夹</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>刷新文件夹列表</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>上传图像</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>授权</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>用户名：</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>刷新授权</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>登录状态：</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>认证</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL类型：</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>邮箱：</value>
   </data>
@@ -819,14 +786,6 @@
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>创建新相册</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>采用精简冗余存储</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>存储对象使用一个较低的冗余存储类。
-使用此选项,对象可以很方便的存储,但只有99.99％的持久性，而不是99.999999999％。
-这意味着,他们可以从Amazon S3某些点丢失。</value>
-  </data>
   <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
     <value>示例：
 
@@ -850,9 +809,6 @@ store.book[0].title</value>
   </data>
   <data name="lblPuushPassword.Text" xml:space="preserve">
     <value>密码：</value>
-  </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>创建一个帐户...</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>忘记密码？</value>
@@ -1001,9 +957,6 @@ store.book[0].title</value>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1与兼容性</value>
   </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>公开</value>
-  </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API密钥:</value>
   </data>
@@ -1108,9 +1061,6 @@ store.book[0].title</value>
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>是否公开上传?</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>使用 "https://" 链接</value>
   </data>
   <data name="llSomeImageAPIKey.Text" xml:space="preserve">
     <value>获得API密匙：https://someimage.com/api</value>

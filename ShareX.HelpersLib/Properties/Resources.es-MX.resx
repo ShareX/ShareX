@@ -782,14 +782,8 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>La configuración de DNS falló.</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Progreso: {0}</value>
-  </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Estado: {0}</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Descarga interrumpida.</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>En espera.</value>
@@ -952,12 +946,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
     <value>Vertical</value>
-  </data>
-  <data name="MinusLinkType_Direct" xml:space="preserve">
-    <value>Directo</value>
-  </data>
-  <data name="MinusLinkType_Page" xml:space="preserve">
-    <value>Página</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
     <value>Aceptar</value>

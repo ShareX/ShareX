@@ -120,14 +120,6 @@
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Özel alan adı kullan:</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Düşük yedekli depolama kullan</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Yüklenen öğeler için düşük yedekli depolama sınıfı kullan.
-Bu ayar ile öğeler daha düşük ücretle depolanır fakat 99.99999999% yerine 99.99% dayanıklılığa sahip olur.
-Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Bu ayarı özel alan adı kullanan bucket sahibiyseniz kullanın.</value>
   </data>
@@ -485,42 +477,6 @@ store.book[0].title</value>
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira sorun öneki:</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Dizin kaldır</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Dizin ekle</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Genel</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Dizin listesini yeniden yükle</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Resimleri buraya yükle</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Yetkilendir</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Kullanıcı adı:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Şifre:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Yetki yenile</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Giriş durumu:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Yetkilendirme</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL türü:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Eposta:</value>

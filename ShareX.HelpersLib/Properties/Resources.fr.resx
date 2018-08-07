@@ -958,12 +958,6 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_DrawingCrop" xml:space="preserve">
     <value>Recadrer l'image</value>
   </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Téléchargement annulé.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Progression : {0}</value>
-  </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Service de mise en ligne d'images</value>
   </data>
@@ -981,9 +975,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Dessin : Image (Écran)</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Proxy possiblement détecté. Merci d'ouvrir les Paramètres de l'application depuis le menu principal et choisissez Proxy pour entrer les paramètres du serveur proxy.</value>
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Mettre en ligne un texte</value>

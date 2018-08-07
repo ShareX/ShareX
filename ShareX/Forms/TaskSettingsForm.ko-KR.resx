@@ -543,9 +543,6 @@
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
     <value>화면을 가로지르는 조준선 보이기</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>좌측 상단 구석에 단축키와 팁 보이기</value>
-  </data>
   <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
     <value>커서 근처 돋보기 보이기</value>
   </data>

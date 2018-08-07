@@ -477,42 +477,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Préfixe du problème Jira :</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Supprimer un dossier</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Ajouter un dossier</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recharger la liste des dossiers</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Mettre en ligne les images vers</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autoriser</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur :</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Rafraîchir l'autorisation</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>État de la connexion :</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authentification</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Type d'URL :</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Adresse e-mail :</value>
   </data>
@@ -828,16 +792,8 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Créer un nouvel album</value>
   </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Utilisez une classe de stockage de redondance inférieure pour les objets stockés.
-Avec cette option, les objets coûtent moins chers en espace disque, mais ont 99,99% de durabilité, au lieu de 99,999999999%.
-Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Utiliser un domaine personnalisé :</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Utiliser le stockage de redondance réduite</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne de textes</value>
@@ -899,9 +855,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Utiliser l'URL brute</value>
   </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Créer un compte...</value>
-  </data>
   <data name="lblPuushEmail.Text" xml:space="preserve">
     <value>Adresse e-mail :</value>
   </data>
@@ -961,9 +914,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   </data>
   <data name="lblUpleaUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>Utiliser les liens "https://"</value>
   </data>
   <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
     <value>Clé d'accès :</value>

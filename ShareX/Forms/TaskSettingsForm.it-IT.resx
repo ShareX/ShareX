@@ -333,9 +333,6 @@
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Mostra Informazioni su Posizione e Dimensine</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Mostra Scorciatoie e Suggerimenti in Alto a Destra</value>
-  </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Premendo "Alt" la Dimesione delle Regioni sarà Adattata a:</value>
   </data>

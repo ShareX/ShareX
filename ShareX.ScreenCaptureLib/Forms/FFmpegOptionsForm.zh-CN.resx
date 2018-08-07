@@ -235,7 +235,4 @@
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
     <value>默认值为full</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>帮助...</value>
-  </data>
 </root>

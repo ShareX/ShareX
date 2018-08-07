@@ -159,9 +159,6 @@
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Aggiungi Album</value>
   </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Aggiungi Cartella</value>
-  </data>
   <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
     <value>Aggiungi Sintassi a Campo URL</value>
   </data>
@@ -218,12 +215,6 @@
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>URL API: (es. "http://demo.polr.me/api/v2/action/shorten")</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticazione</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizza</value>
   </data>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Token Autenticazione:</value>
@@ -468,9 +459,6 @@ store.book[0].title</value>
   <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Accesso richiesto.</value>
   </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Stato Accesso:</value>
-  </data>
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
     <value>minuti</value>
   </data>
@@ -537,9 +525,6 @@ store.book[0].title</value>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
@@ -579,9 +564,6 @@ store.book[0].title</value>
   <data name="lblFTPProtocol.Text" xml:space="preserve">
     <value>Protocollo</value>
   </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Pubblico</value>
-  </data>
   <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
     <value>Aggiorna</value>
   </data>
@@ -596,9 +578,6 @@ store.book[0].title</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
     <value>Aggiorna Lista Album</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Aggiorna Autorizzazione</value>
   </data>
   <data name="btnFlickrCheckToken.Text" xml:space="preserve">
     <value>Aggiorna Autorizzazione</value>
@@ -620,9 +599,6 @@ store.book[0].title</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
     <value>Registrati...</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Aggiorna Lista Cartella</value>
   </data>
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>Cartella Remota:</value>
@@ -653,9 +629,6 @@ store.book[0].title</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>Rimuovi Estensione File dal Percorso URL</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Rimuovi Cartella</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Tipo Richiesta:</value>
@@ -825,22 +798,13 @@ store.book[0].title</value>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Accorciamento URL</value>
   </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo URL:</value>
-  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Utilizzo:</value>
   </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>Usa Collegamenti "https://"</value>
-  </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Carica Immagini in</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Carica Immagini in</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
@@ -889,9 +853,6 @@ store.book[0].title</value>
     <value>Nome Utente:</value>
   </data>
   <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Nome Utente:</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
     <value>Nome Utente:</value>
   </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
@@ -1099,9 +1060,6 @@ Usare una library criptata disabilita la condivisione.</value>
   <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
     <value>Crea Album</value>
   </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Crea Account...</value>
-  </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Crea Nuovo Album</value>
   </data>
@@ -1137,14 +1095,6 @@ Usare una library criptata disabilita la condivisione.</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>File Rimossi Automaticamente in </value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Utilizzare una classe di ridondanza storage inferiore per gli oggetti memorizzati.
-Con questa opzione gli oggetti sono più economici da memorizzare, ma hanno una resistenza del 99,99%, invece che del 99,999999999%.
-Significa che ad un certo punto possono essere persi da Amazon S3.</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Usa Ridondanza Storage Ridotta</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Usa questa opzione se hai un bucket impostato con un dominio personalizzato.

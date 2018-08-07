@@ -389,39 +389,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira issue prefix:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Xóa thư mục</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Thêm thư mục</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Tải lại danh sách thư mục</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Tải lên ảnh tới</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Xác thực</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Tên tài khoản:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Làm mới việc xác thực</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Trạng thái đăng nhập:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Xác thực</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Kiểu URL:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -715,13 +682,5 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Tạo album mới</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Dùng vùng lưu trữ dự phòng đã được giảm</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Sử dụng bộ nhớ cấp thấp để lưu trữ dữ liệu.
-Với lựa chọn này, dữ liệu sẽ được lưu trữ với chi phí rẻ hơn, nhưng chỉ có độ bền 99,99% thay vì 99,999999999%.
-Điều này đồng nghĩa với việc nó có thể mất khỏi Amazon S3 ở một thời điểm nào đó.</value>
   </data>
 </root>

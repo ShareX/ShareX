@@ -777,9 +777,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Data e Ora</value>
   </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Scaricamento annullato.</value>
-  </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Disegna: Freccia</value>
   </data>
@@ -955,9 +952,6 @@ Vuoi scaricarla ora?</value>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Disegna: Testo (Contorno)</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Avanzamento: {0}</value>
-  </data>
   <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
     <value>Servizio Accorciamento URL</value>
   </data>
@@ -990,9 +984,6 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Cambia Tipo di Strumento</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Identificato possiblie proxy. Dalla fiestra principale aprire "Impostazioni Applicazione" -&gt; "Proxy" per inserire le impostazioni del server proxy.</value>
   </data>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
@@ -1083,15 +1074,6 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonale Indietro</value>
-  </data>
-  <data name="MinusLinkType_Direct" xml:space="preserve">
-    <value>Diretto</value>
-  </data>
-  <data name="MinusLinkType_Page" xml:space="preserve">
-    <value>Pagina</value>
-  </data>
-  <data name="MinusLinkType_Raw" xml:space="preserve">
-    <value>Grezzo</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Servizio Condivisione URL Personalizzato</value>

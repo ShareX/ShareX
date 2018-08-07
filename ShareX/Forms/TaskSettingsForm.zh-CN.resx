@@ -426,9 +426,6 @@
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>显示位置以及尺寸</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>在右上角显示快捷键以及提示</value>
-  </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>按”ALT”键时、自动吸附区域</value>
   </data>

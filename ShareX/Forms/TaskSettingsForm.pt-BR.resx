@@ -414,9 +414,6 @@
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Mostrar informações de posição e tamanho</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Mostrar atalhos e dicas no canto superior direito</value>
-  </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
   </data>

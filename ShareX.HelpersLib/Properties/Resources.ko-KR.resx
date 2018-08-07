@@ -621,12 +621,6 @@
   <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
     <value>URL 단축기</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>진행 상황: {0}</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>다운로드가 취소되었습니다.</value>
-  </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>구글 이미지 검색</value>
   </data>
@@ -888,9 +882,6 @@
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>텍스트 업로드</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>프록시를 사용하고 있는 것 같습니다. 메인 메뉴에서 "프로그램 설정"을 누른 뒤, "프록시" 항목을 선택하여 프록시 서버 설정을 입력 해 주세요.</value>
   </data>
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>기타</value>

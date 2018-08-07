@@ -449,39 +449,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira probléma prefixum:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Mappa eltávolítása</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Mappa hozzáadása</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Mappalista frissítése</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Képek feltöltése ide</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Felhatalmazás frissítése</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Bejelentkezési állapot:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL típusa:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -643,12 +610,5 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Új album létrehozása</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Csökkentett redundanciájú tároló használata</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Alacsonyabb redundancia tárolótípus használata a tárolt objektumokhoz.
-Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás, szemben a 99.999999999%-al.</value>
   </data>
 </root>

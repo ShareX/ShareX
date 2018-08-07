@@ -120,12 +120,6 @@
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Tweet hatası</value>
   </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Durum: Giriş yapılmış.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Durum: Giriş yapılmamış.</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Seçili dizin:</value>
   </data>
@@ -143,9 +137,6 @@
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
     <value>Hatalı yetkilendirme</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Giriş yapılmamış.</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} başarıyla oluşturuldu.</value>
@@ -190,9 +181,6 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Hatalı cihaz adı</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Durum: Giriş başarısız.</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box dizin listesi yenileme başarısız</value>
   </data>
@@ -201,9 +189,6 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Ana klasör</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>{0} olarak giriş yapılmış.</value>
   </data>
   <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
     <value>Yanıt çözümleme başarısız oldu.</value>

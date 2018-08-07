@@ -562,7 +562,4 @@ en el portapapeles</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de tarea</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Mostrar consejos en la esquina superior derecha</value>
-  </data>
 </root>

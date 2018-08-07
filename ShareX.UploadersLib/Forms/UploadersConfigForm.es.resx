@@ -455,39 +455,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira problema prefijo:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Quitar carpeta</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Añadir carpeta</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recargar lista de carpetas</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Subir imágenes a</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizar</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Estado de iniciar sesión:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo de URL:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -649,13 +616,5 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Crear nuevo álbum</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Utilice almacenaje de redundancia reducida</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Utilice una clase de almacenamiento de menor redundancia para los objetos almacenados.
-Con esta opción, los objetos son más barato para almacenar, pero tienen el 99,99% de durabilidad, en lugar de 99.999999999%.
-Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   </data>
 </root>

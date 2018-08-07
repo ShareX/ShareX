@@ -423,39 +423,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJETO-</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Remover pasta</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Adicionar pasta</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Atualizar lista de pastas</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Enviar imagens para</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizar</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Usuário:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Atualizar autorização</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Status do login:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticação</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo da URL:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -1032,22 +999,11 @@ store.book[0].title</value>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Criar novo álbum</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Usar armazenamento reduzido de redundância</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Usar uma classe de hospedagem de menor redundância para objetos guardados.
-Com esta opção, os objetos são mais baratos de armazenar, mas possuem durabilidade de 99.99%, ao invés de 99.999999999%.
-Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value>
-  </data>
   <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
     <value>Todos...</value>
   </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Chave da API:</value>
-  </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Criar uma conta...</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>Esqueceu sua senha?</value>
@@ -1069,9 +1025,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Usar link direto</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Público</value>
   </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Usar link direto</value>

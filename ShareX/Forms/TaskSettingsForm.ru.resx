@@ -462,9 +462,6 @@
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Размеры области для привязки, если зажата кнопка "Alt":</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Показывать горячие клавиши и подсказки в верхнем правом углу</value>
-  </data>
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Показывать информацию о позиции и размере</value>
   </data>

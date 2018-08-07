@@ -964,15 +964,6 @@
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>Другие</value>
   </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>Загрузка отменена.</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>Возможно используется прокси. Откройте Настройки приложения из главного меню и выберите Прокси для ввода настроек своего прокси сервера.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>Прогресс: {0}</value>
-  </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>Рисование: Картинка с экрана</value>
   </data>
@@ -1092,15 +1083,6 @@
   </data>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Месяц</value>
-  </data>
-  <data name="MinusLinkType_Direct" xml:space="preserve">
-    <value>Прямая</value>
-  </data>
-  <data name="MinusLinkType_Page" xml:space="preserve">
-    <value>Страница</value>
-  </data>
-  <data name="MinusLinkType_Raw" xml:space="preserve">
-    <value>Сырая</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Текущая версия</value>

@@ -528,39 +528,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira Ausgabe Prefix:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Entferne Ordner</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Ordner hinzufügen</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Lade Ordnerliste neu</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Lade Bilder hoch nach</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorisieren</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Benutzername:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Aktualisiere Autorisierung</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Einloggstatus:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authentifizierung</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL typ:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>E-Mail:</value>
   </data>
@@ -848,13 +815,5 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Erstelle neues Album</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Benutze geringeren Redundanzspeicher</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Benutze eine geringe Redundanz Speicherklasse für gespeicherte Elemente.
-Mit dieser Option sind Objekte billiger zu speichern, haben aber eine 99,99% Beständigkeit, anstatt von 99,999999999%
-d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
 </root>

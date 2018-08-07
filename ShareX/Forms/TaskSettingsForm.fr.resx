@@ -450,9 +450,6 @@
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>Filtres de service de mise en ligne</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Afficher les raccourcis clavier et les astuces dans le coin haut droit</value>
-  </data>
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Afficher les infos sur la position et la taille</value>
   </data>

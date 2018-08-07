@@ -120,94 +120,28 @@
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Avvia Cattura</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Doppio Click Sinistro] [Invio] Cattura Regioni</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg scaricato con successo.</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Ferma Cattura</value>
   </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Nascondi Scorciatoie</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Annulla Cattura</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
-    <value>[Tenere Premuto Alt + Tasti Freccia] Ridimensiona Regione da in Alto a Sinistra</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Tenere Premuto Alt] Aggancia Selezione alle Dimensioni Pre Impostate</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
-    <value>[Tenere Premuto Ctrl + Tasti Freccia] Muovi Regione</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
-    <value>[Tenere Premuto Ctrl] Muovi Selezione</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] [Doppio Click Sinistro] Abilita Cattura Monitor</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3, ... 0] Cattura Monitor</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Seleziona Modalità Cattura</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] Seleziona Modalità </value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] Seleziona Modalità </value>
-  </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Cattura</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Ctrl + C] Copia Posizione e Dimesione</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Tasti Freccia] Muovi Posizione Cursore</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Rilascia Click Sinistro] [Ins] Termina Selezione Regione</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Maiusc] Cambia Colore Penna</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[Rotella Mouse] Cambia Modalità</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Canc] Rimuovi Regione</value>
-  </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Ferma</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Click Destro] [Canc] Annulla Selezione Regione</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl + Rotella Mouse] Cambia Dimesione Bordo</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
 Larghezza: {4} px / Altezza: {5} px
 Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Maiusc] Cambia Colore Bordo</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Cerca "ffmpeg.exe"</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Tenere Premuto Click Sinistro] [Ins] Avvia Selezione Regione</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualità:</value>
@@ -221,59 +155,8 @@ Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Cattura Ragionr</value>
   </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl + Rotella Mouse] Cambia Dimesione Penna</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Ctrl + C] Copia Informazioni</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Ctrl + C] Copia Posizione</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Tenere Premuto Maiusc] Ridimensionamento Proporzionale</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Spazio] [Click Sinistro] Cattura Schermo Intero</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
-    <value>[Ctrl + Rotella Mouse] Cambia Strumento</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Tenere Premuto Click Sinistro sulla Selezione] Muovi Regione</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Tenere Premuto Maiusc + Tasti Freccia] Muovi Posizione Cursore più Velocemente</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
-    <value>[Tenere Premuto Maiusc + Tasti Freccia] Ridimensione o Muovi Posizione Cursore più Velocemente</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
-    <value>[Rotella Mouse] Cambia Dimensione Lente d'Ingrandimento</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
-    <value>[Tab] [Click Centrale] Seleziona Ultimo Strumento Annotazione</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
-    <value>[Tab] [Click Centrale] Seleziona Ultimo Strumento Regione</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
-    <value>[Tasti Freccia] Ridimensiona Regione da in Basso a Destra</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
-    <value>[Ctrl + V] Incolla Immagine o Testo</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
-    <value>[Ctrl + Z] Annulla Forma</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
-    <value>Nota: Nascondendo questi suggerimenti aumenteranno notevolmente gli FPS.</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion" xml:space="preserve">
-    <value>[Click Destro] Annulla Cattura / Rimuovi Regione</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Colore Bordo...</value>
@@ -418,9 +301,6 @@ Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Cattura Rettangolare Semplice</value>
-  </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Cattura Rettangolare Annotata</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Cattura Rettangolare Trasparente</value>
