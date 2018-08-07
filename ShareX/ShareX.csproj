@@ -1631,12 +1631,9 @@
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\pipette.png" />
     <None Include="Resources\cursor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ua.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\id.png" />
+    <None Include="Resources\mx.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">

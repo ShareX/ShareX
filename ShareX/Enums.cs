@@ -57,6 +57,8 @@ namespace ShareX
         Italian,
         [Description("한국어 (Korean)")]
         Korean,
+        [Description("Español mexicano (Mexican Spanish)")]
+        MexicanSpanish,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
         [Description("Русский (Russian)")]

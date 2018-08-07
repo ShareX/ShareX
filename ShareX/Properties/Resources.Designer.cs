@@ -1812,6 +1812,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap mx {
+            get {
+                object obj = ResourceManager.GetObject("mx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap navigation_000_button {
             get {
                 object obj = ResourceManager.GetObject("navigation_000_button", resourceCulture);
