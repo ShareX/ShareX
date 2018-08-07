@@ -296,6 +296,7 @@
   <data name="btnFolderBrowse.Text" xml:space="preserve">
     <value>...</value>
     
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnFolderBrowse.Name" xml:space="preserve">
     <value>btnFolderBrowse</value>

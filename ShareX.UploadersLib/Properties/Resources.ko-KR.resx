@@ -223,9 +223,6 @@
   <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
     <value>같은 이름의 헤더가 이미 존재합니다.</value>
   </data>
-  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
-    <value>https://aws.amazon.com/s3/storage-classes/</value>
-  </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>키 파일을 찾을 수 없습니다.</value>
   </data>

@@ -2259,7 +2259,7 @@ namespace ShareX.UploadersLib
 
         private void btnAmazonS3StorageClassHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Resources.UploadersConfigForm_AmazonS3StorageClassHelpURL);
+            URLHelpers.OpenURL("https://aws.amazon.com/s3/storage-classes/");
         }
 
         private void cbAmazonS3PublicACL_CheckedChanged(object sender, EventArgs e)

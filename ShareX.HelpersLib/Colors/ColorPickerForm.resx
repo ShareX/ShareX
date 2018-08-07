@@ -282,7 +282,7 @@
   </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Hex:</value>
-    <comment>@Invariant</comment>
+    
   </data>
   <data name="&gt;&gt;lblHex.Name" xml:space="preserve">
     <value>lblHex</value>

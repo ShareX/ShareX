@@ -207,4 +207,7 @@
   <data name="cbTransparent.ToolTip" xml:space="preserve">
     <value>Saydam</value>
   </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Heksadesimal:</value>
+  </data>
 </root>

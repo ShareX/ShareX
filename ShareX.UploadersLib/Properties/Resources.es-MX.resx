@@ -168,10 +168,6 @@
   <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
     <value>Ya existe un encabezado con el mismo nombre.</value>
   </data>
-  <data name="UploadersConfigForm_AmazonS3StorageClassHelpURL" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
     <value>Ya existe un argumento con el mismo nombre.</value>
   </data>

@@ -329,6 +329,7 @@
   </data>
   <data name="txtOutputFilename.Text" xml:space="preserve">
     <value>$filename_th</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtOutputFilename.Name" xml:space="preserve">
     <value>txtOutputFilename</value>
@@ -428,6 +429,7 @@
   </data>
   <data name="btnOutputFolder.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnOutputFolder.Name" xml:space="preserve">
     <value>btnOutputFolder</value>
