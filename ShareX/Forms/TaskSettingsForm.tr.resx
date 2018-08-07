@@ -229,16 +229,16 @@
     <value>Kopyala</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL kısaltıcı kullan</value>
+    <value>Pano adres içeriyorsa adres kısaltıcı kullan</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Pano dizin yolu içeriyorsa dizini indeksle ve indeksi yükle</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Eğer pano dosya URL bilgisi içeriyorsa indir ve yükle</value>
+    <value>Eğer pano dosya adresi içeriyorsa dosyayı indir ve yükle</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL paylaşım servisi ile paylaş</value>
+    <value>Pano adres içeriyorsa adres paylaşım servisi ile paylaş</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>Panodan yükleme</value>
@@ -358,10 +358,10 @@
     <value>Görev...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL paylaşım servisleri</value>
+    <value>Adres paylaşım servisleri</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
+    <value>Adres kısaltıcılar</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dosya yükleyiciler</value>
@@ -386,5 +386,17 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Özel yükleyiciyi değiştir:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>En:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>En:</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
   </data>
 </root>

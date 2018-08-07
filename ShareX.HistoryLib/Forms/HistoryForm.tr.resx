@@ -122,7 +122,7 @@
     <value>82, 17</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Tarih filtresi:</value>
+    <value>Tarih:</value>
   </data>
   <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -143,10 +143,10 @@
     <value>İçeren</value>
   </data>
   <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Başlayan</value>
+    <value>İle başlayan</value>
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Biten</value>
+    <value>İle biten</value>
   </data>
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
     <value>Tam eşleşme</value>
@@ -167,7 +167,7 @@
     <value>95, 17</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Sunucu filtresi:</value>
+    <value>Sunucu:</value>
   </data>
   <data name="cbTypeFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -179,12 +179,18 @@
     <value>Filtreler</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Tarih ve saat</value>
+    <value>Tarih</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Geçmiş</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Dosya ismi:</value>
   </data>
 </root>

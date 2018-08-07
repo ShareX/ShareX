@@ -126,9 +126,6 @@
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>保存为图像文件...</value>
   </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
   <data name="tsmiUpload.Text" xml:space="preserve">
     <value>上传图像</value>
   </data>

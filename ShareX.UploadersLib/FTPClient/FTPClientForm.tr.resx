@@ -157,7 +157,7 @@
     <value>İndir</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL aç</value>
+    <value>Adresi aç</value>
   </data>
   <data name="tsmiRename.Text" xml:space="preserve">
     <value>Yeniden adlandır</value>

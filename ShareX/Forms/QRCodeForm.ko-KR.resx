@@ -129,9 +129,6 @@
   <data name="lblDecodeResult.Text" xml:space="preserve">
     <value>결과:</value>
   </data>
-  <data name="cmsQR.Text" xml:space="preserve">
-    <value>QR</value>
-  </data>
   <data name="btnDecodeFromScreen.Text" xml:space="preserve">
     <value>화면에서 디코드...</value>
   </data>

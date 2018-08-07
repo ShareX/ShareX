@@ -284,6 +284,7 @@
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Name" xml:space="preserve">
     <value>lblThumbnailSizeUnit</value>
@@ -313,7 +314,7 @@
     <value>7</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
-    <value>Remember search text</value>
+    <value>Remember search input</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.Name" xml:space="preserve">
     <value>cbRememberSearchText</value>

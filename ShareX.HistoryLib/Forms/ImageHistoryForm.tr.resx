@@ -120,4 +120,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Resim geçmişi</value>
   </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Arama:</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Ayarlar...</value>
+  </data>
 </root>

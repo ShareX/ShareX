@@ -309,4 +309,13 @@
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Açılışta ana pencerede son görevleri göster</value>
   </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Geliştirici sürümünü kur...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Firefox eklentisi</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Ayarları sıfırla...</value>
+  </data>
 </root>

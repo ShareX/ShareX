@@ -715,6 +715,7 @@ Would you like to download and install it?</value>
   </data>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Open image history window</value>
@@ -952,6 +953,7 @@ Would you like to download and install it?</value>
   </data>
   <data name="PNGBitDepth_Bit32" xml:space="preserve">
     <value>32 bit</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
     <value>Small square</value>
