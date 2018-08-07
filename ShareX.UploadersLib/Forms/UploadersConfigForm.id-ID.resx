@@ -594,9 +594,6 @@
   <data name="tpGooglePhotos.Text" xml:space="preserve">
     <value>Google Photo</value>
   </data>
-  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
   </data>
@@ -616,9 +613,6 @@
     <value>Azure Storage</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
-    <value>Chevereto</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
     <value>Chevereto</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
@@ -926,9 +920,6 @@
   </data>
   <data name="cbPlikIsSecured.Text" xml:space="preserve">
     <value>Nama pengguna dan sandi diperlukan?</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
   </data>
   <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
     <value>JalurX:</value>

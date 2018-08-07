@@ -123,9 +123,6 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>확인</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>새로고침</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>삭제</value>
   </data>
@@ -146,9 +143,6 @@
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>초기화</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>추가</value>

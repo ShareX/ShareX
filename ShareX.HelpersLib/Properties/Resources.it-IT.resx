@@ -771,9 +771,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>Scegli Cartella</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>Ritaglia Immagine</value>
-  </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Data e Ora</value>
   </data>

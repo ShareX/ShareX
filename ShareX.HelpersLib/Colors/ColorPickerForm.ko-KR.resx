@@ -174,9 +174,6 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>닫기</value>
   </data>
-  <data name="btnPickColor.Text" xml:space="preserve">
-    <value>화면에서 색상 선택</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>커서 위치</value>
   </data>

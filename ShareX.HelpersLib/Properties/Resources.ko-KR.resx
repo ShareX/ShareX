@@ -649,9 +649,6 @@
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>화살표 그리기</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>이미지 자르기</value>
-  </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>커서 그리기</value>
   </data>

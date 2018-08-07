@@ -132,9 +132,6 @@
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Güncelle</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
@@ -239,9 +236,6 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Yardım...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Alanları temizle --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Resim yükleyici:</value>
@@ -706,15 +700,6 @@ store.book[0].title</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Hedef ayarları</value>
   </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>Direk adres</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API anahtarı:</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API anahtarını burdan alabilirsiniz: https://someimage.com/api</value>
-  </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Kullanıcı anahtarı:</value>
   </data>
@@ -786,18 +771,6 @@ store.book[0].title</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Resimleri buraya yükle</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Adım 1: Yetki sayfasını aç</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Adım 2: Yetkilendirmeyi tamamla</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Yetki yenile</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Fotoğraf akışınız...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Resimlerim sayfasını aç</value>

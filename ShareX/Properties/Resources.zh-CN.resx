@@ -299,9 +299,6 @@
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>下载中</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>图像编辑器 - 怎么上传图像？</value>
-  </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>完成</value>
   </data>
@@ -325,11 +322,6 @@
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>等待...</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>剪贴板中包含一个图像，你想在图像编辑器中打开它吗？
-
-按“Yes”从剪贴板中打开图像。或者，按“No”打开图像文件对话框。</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>图片上传: {0}</value>

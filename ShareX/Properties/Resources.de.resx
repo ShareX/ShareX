@@ -200,11 +200,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Bitte warten...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>In deiner Zwischenablage befindet sich ein Bild, willst du es im Bildeditor öffnen?
-
-Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Dateiauswahl zu öffnen.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Bildhochlader: {0}</value>
   </data>
@@ -398,9 +393,6 @@ Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Herunterladen</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Bildeditor - Wie soll das Bild geladen werden?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Fortsetzen</value>

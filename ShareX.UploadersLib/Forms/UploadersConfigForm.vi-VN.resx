@@ -134,9 +134,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Cập nhật</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
@@ -184,9 +181,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Trợ giúp...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Xóa các trường --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh:</value>
@@ -265,9 +259,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>API key:</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
     <value>API key:</value>
@@ -613,18 +604,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Tải lên ảnh tới</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Bước 1: Mở trang xác thực...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Bước 2: Hoàn thành việc xác thực</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Làm mới việc xác thực</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Các bức ảnh của bạn...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Mở trang hình ảnh của tôi...</value>

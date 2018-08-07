@@ -224,7 +224,4 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>Pixel grootte:</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Toon sneltoetsen</value>
-  </data>
 </root>

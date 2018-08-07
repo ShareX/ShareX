@@ -182,9 +182,6 @@
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
     <value>Цвет заливки...</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Показать подсказки</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Показывать полноэкранное перекрестье</value>
   </data>
@@ -343,15 +340,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Отразить по вертикали</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorMaximized" xml:space="preserve">
-    <value>Разворачивать редактор на весь экран</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RememberEditorWindowState" xml:space="preserve">
-    <value>Помнить состояние окна редактора</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
-    <value>Запускать редактор в полноэкранном режиме</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
     <value>Цвет фона редактора...</value>

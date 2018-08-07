@@ -179,9 +179,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>Capturer l'écran actif</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Afficher les raccourcis clavier</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Options</value>
   </data>

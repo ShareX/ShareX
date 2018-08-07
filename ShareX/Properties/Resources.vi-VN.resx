@@ -296,9 +296,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Đang tải về</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Trình chỉnh sửa ảnh - Đọc ảnh như thế nào?</value>
-  </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Đã xong</value>
   </data>
@@ -322,11 +319,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Đang đợi...</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Vùng nhớ tạm có chứa ảnh, bạn có muốn mở ảnh trong trình sửa ảnh?
-
-Nhấn Có để đồng ý mở ảnh từ vùng nhớ tạm hoặc Không để mở ảnh trong hộp thoại.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh: {0}</value>

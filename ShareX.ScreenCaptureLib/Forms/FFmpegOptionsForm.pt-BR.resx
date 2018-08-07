@@ -225,9 +225,6 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="btnFFmpegHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>

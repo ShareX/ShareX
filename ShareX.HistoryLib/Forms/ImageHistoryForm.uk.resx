@@ -120,19 +120,4 @@
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Режим перегляду</value>
   </data>
-  <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
-    <value>75 × 75</value>
-  <comment>@Invariant</comment></data>
-  <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
-    <value>100 × 100</value>
-  <comment>@Invariant</comment></data>
-  <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
-    <value>150 × 150</value>
-  <comment>@Invariant</comment></data>
-  <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
-    <value>200 × 200</value>
-  <comment>@Invariant</comment></data>
-  <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
-    <value>250 × 250</value>
-  <comment>@Invariant</comment></data>
 </root>

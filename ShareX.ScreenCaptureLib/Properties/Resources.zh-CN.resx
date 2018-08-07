@@ -188,9 +188,6 @@
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>显示位置和尺寸信息</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>显示提示</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>多区域模式</value>
   </data>
@@ -313,21 +310,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>注释菜单</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorFullscreen" xml:space="preserve">
-    <value>全屏启动编辑器</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_StartEditorMaximized" xml:space="preserve">
-    <value>最大化启动编辑器</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_RememberEditorWindowState" xml:space="preserve">
-    <value>记住编辑器窗口状态</value>
-  </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>监视器{0}（X:{1} Y:{2} 宽度:{3} 高度:{4}）</value>
-  </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>区域截图</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>画布尺寸...</value>

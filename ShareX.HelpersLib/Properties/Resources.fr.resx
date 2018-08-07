@@ -955,9 +955,6 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Dessin : Texte (Contour)</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>Recadrer l'image</value>
-  </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Service de mise en ligne d'images</value>
   </data>

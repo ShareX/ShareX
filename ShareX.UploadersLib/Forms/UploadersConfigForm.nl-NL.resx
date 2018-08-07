@@ -134,9 +134,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
   </data>
@@ -217,9 +214,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Help...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Leeg velden --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Afbeeldingsuploader:</value>
@@ -716,18 +710,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Upload afbeeldingen naar</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Stap 1: Open toestemmingspagina...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Stap 2: Vervolledig toestemming</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Ververs toestemming</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Jouw fotoseries...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Open pagina met mijn afbeeldingen...</value>

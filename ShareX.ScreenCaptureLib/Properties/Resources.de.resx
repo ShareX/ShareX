@@ -182,9 +182,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Optionen</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Hotkeys anzeigen</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Positions- und Größeninformation anzeigen</value>
   </data>

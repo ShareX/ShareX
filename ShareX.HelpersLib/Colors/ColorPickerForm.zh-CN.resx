@@ -216,7 +216,4 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>
   </data>
-  <data name="btnPickColor.Text" xml:space="preserve">
-    <value>拾色</value>
-  </data>
 </root>

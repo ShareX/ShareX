@@ -228,7 +228,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 滚动捕捉</value>
   </data>
-  <data name="cbAutoClose.Text" xml:space="preserve">
-    <value>处理完成后关闭此窗口</value>
-  </data>
 </root>

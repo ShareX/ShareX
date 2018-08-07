@@ -134,9 +134,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Hozzáadás</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Frissítés</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
   </data>
@@ -163,9 +160,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Súgó...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Mezők törlése --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Kép feltöltő:</value>
@@ -307,18 +301,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Képek feltöltése ide</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Lépés 2: Felhatalmazás befejezése</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Felhatalmazás frissítése</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>A fotó streamed...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>A képeim oldalának megnyitása...</value>

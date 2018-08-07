@@ -227,9 +227,6 @@ Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Mostra Mirino a Dimensione Schermo</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Mostra Scorciatoie</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Lente d'Ingrandimento Quadrata</value>
   </data>

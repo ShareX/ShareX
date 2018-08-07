@@ -299,9 +299,6 @@ Gostaria de reiniciar agora?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Baixando</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Editor de imagem - como carregar a imagem?</value>
-  </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Pronto</value>
   </data>
@@ -325,11 +322,6 @@ Gostaria de reiniciar agora?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Esperando...</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Sua área de transferência possui uma imagem, gostaria de abrí-la em no editor de imagem?
-
-Aperte sim para abrir a imagem da área de transferência. Aperte não para escolher outra imagem.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Envio de imagens: {0}</value>

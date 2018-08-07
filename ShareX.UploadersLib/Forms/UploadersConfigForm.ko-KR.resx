@@ -134,9 +134,6 @@
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>추가</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>갱신</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>삭제</value>
   </data>
@@ -163,9 +160,6 @@
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>도움말...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>필드 전부 초기화 --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>이미지 업로더:</value>
@@ -307,18 +301,6 @@
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>업로드할 곳</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>포토스트림 보기...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>내 이미지 페이지 열기...</value>
@@ -812,9 +794,6 @@ store.book[0].title</value>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
   </data>
-  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
   </data>
@@ -826,12 +805,6 @@ store.book[0].title</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>오래되어 권장되지 않는 API v1 사용하기</value>

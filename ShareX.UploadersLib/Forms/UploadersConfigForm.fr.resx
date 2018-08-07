@@ -131,9 +131,6 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Mettre à jour</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
@@ -238,9 +235,6 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Aide...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Vider les champs ci-dessous</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne d'images :</value>
@@ -645,15 +639,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de destination</value>
   </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>URL direct</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Clé API :</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Pour obtenir la clé API, visitez https://someimage.com/api</value>
-  </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Clé utilisateur :</value>
   </data>
@@ -725,18 +710,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Étape 1 : Ouvrez la page d'autorisation...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Étape 2 : Complétez l'autorisation</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Rafraîchir l'autorisation</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Votre photostream...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Ouvrir ma page d'images...</value>
@@ -897,23 +870,8 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
     <value>Envoyer des e-mails sans afficher de boite de dialogue pour cette adresse e-mail :</value>
   </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>Adresse E-mail :</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>Clé API :</value>
-  </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Obtenir la clé API</value>
-  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Exemple : http://exemple.com/owncloud</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
     <value>Clé d'accès :</value>
@@ -923,12 +881,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Est-ce une mise en ligne publique ?</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>Informations de l'utilisateur</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>Membre Premium</value>
   </data>
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>Nom du compte :</value>
@@ -1062,9 +1014,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>Autres paramètres</value>
   </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>Identifiants de connexion</value>
-  </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>jamais</value>
   </data>
@@ -1089,9 +1038,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Commentaire (Markdown)</value>
   </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>Téléchargement instantané activé</value>
-  </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Identifiants de connexion</value>
   </data>
@@ -1100,9 +1046,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   </data>
   <data name="lblAzureStorageContainer.Text" xml:space="preserve">
     <value>Conteneur :</value>
-  </data>
-  <data name="sulKeyLink.Text" xml:space="preserve">
-    <value>Cliquez ici pour obtenir votre clé API !</value>
   </data>
   <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>Dupliquer</value>

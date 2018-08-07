@@ -134,9 +134,6 @@
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>删除</value>
   </data>
@@ -229,9 +226,6 @@
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>帮助...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>清除全部 --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>图片上传：</value>
@@ -720,18 +714,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>上传图像</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>第1步：打开授权页面...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>第2步：完成授权</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>刷新授权</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>你的照片流...</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>打开我的图片页...</value>
   </data>
@@ -969,33 +951,6 @@ store.book[0].title</value>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>API密钥：</value>
   </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>获得API密匙...</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>登录认证</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>API密匙：</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>账号：</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>用户信息</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>邮箱：</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>是否为高级会员</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>启用即时下载</value>
-  </data>
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>其它设置</value>
   </data>
@@ -1062,20 +1017,8 @@ store.book[0].title</value>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>是否公开上传?</value>
   </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>获得API密匙：https://someimage.com/api</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API密匙：</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>直接URL</value>
-  </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>永不</value>
-  </data>
-  <data name="sulKeyLink.Text" xml:space="preserve">
-    <value>点击这里获得你的API密钥！</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>用户密钥：</value>

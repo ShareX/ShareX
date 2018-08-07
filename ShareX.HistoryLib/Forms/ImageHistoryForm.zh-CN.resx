@@ -156,19 +156,4 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>搜索：</value>
   </data>
-  <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
-    <value>75 x 75</value>
-  </data>
-  <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
-    <value>250 x 250</value>
-  </data>
-  <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
-    <value>200 x 200</value>
-  </data>
-  <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
-    <value>150 x 150</value>
-  </data>
-  <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
-    <value>100 x 100</value>
-  </data>
 </root>

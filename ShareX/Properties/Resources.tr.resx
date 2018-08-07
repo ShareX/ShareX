@@ -231,11 +231,6 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Bekliyor...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Panonuzda resim bulunmaktadır, bunu resim düzenleyicide açmak ister misiniz?
-
-Evet tuşuna basarsanız panonuzdaki resim açılır. Veya hayır tuşuna basarak resim dosyası seçebilirsiniz.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Resim yükleyici: {0}</value>
   </data>
@@ -438,9 +433,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>İndiriliyor</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Resim düzenleyici - Resim nasıl açılsın?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Devam et</value>

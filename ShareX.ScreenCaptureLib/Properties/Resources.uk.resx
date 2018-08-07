@@ -128,9 +128,6 @@
 Ширина: {4} пікс. / Висота: {5} пікс.
 Відстань: {6:0.00} пікс. / Кут: {7:0.00}°</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Захоплення області</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Швидкотік: {0}к</value>
   </data>
@@ -148,9 +145,6 @@
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg вдало завантажено.</value>
-  </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Монітор {0} (X:{1} Y:{2} Ширина:{3} Висота:{4})</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Збій завантаження FFmpeg.</value>

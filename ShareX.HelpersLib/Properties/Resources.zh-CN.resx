@@ -964,9 +964,6 @@
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>绘图：文字（底色）</value>
   </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>图像剪贴</value>
-  </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>绘图：图像（屏幕）</value>
   </data>
