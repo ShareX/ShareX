@@ -297,12 +297,6 @@
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Recente taken opslaan</value>
   </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Exporteer geschiedenis</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Exporteer instellingen</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Exporteer...</value>
   </data>

@@ -132,9 +132,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro por fecha:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtro por nombre:</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Contiene</value>
   </data>

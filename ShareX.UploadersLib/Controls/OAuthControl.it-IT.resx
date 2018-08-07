@@ -123,9 +123,6 @@
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Aggiorna Autorizzazione</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Stato</value>
-  </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Account Utente</value>
   </data>

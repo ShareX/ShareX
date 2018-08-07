@@ -132,9 +132,6 @@
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Tài khoản người dùng</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Trạng thái</value>
-  </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Mã xác thực:</value>
   </data>

@@ -153,9 +153,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro de fecha:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtro de nombre del archivo:</value>
-  </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Filtro de tipo de archivo:</value>
   </data>

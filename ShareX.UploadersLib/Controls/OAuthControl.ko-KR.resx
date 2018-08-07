@@ -120,9 +120,6 @@
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>인증 코드 (인증 페이지에서 인증 코드를 획득하세요):</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>상태</value>
-  </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>사용자 계정</value>
   </data>

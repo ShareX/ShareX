@@ -132,9 +132,6 @@
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>От:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>По имени файла:</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Содержит</value>
   </data>

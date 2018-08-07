@@ -654,12 +654,6 @@
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Объединить изображения...</value>
   </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>Редактировать изображение…</value>
-  </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>Редактировать изображение…</value>
-  </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>Новости</value>
   </data>

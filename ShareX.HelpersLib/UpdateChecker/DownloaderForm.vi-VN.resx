@@ -123,9 +123,6 @@
   <data name="btnAction.Text" xml:space="preserve">
     <value>Tải về</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Hiện thay đổi trong cập nhật</value>
-  </data>
   <data name="lblFilename.Text" xml:space="preserve">
     <value>Tên file:</value>
   </data>

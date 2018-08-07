@@ -282,15 +282,6 @@
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Kütüğü dışarı aktar</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Geçmişi dışarı aktar</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Ayarları dışarı aktar</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
   </data>

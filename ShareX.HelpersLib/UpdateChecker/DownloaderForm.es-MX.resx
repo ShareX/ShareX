@@ -123,9 +123,6 @@
   <data name="btnAction.Text" xml:space="preserve">
     <value>Descargar</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Mostrar notas de actualización</value>
-  </data>
   <data name="lblFilename.Text" xml:space="preserve">
     <value>Nombre de archivo:</value>
   </data>

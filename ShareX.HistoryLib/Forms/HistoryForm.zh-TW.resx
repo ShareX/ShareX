@@ -129,9 +129,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>日期篩選:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>檔名篩選:</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>包含</value>
   </data>

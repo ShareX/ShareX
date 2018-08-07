@@ -129,9 +129,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Dátum szűrő:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Fájlnév szűrő:</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Tartalmaz</value>
   </data>

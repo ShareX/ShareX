@@ -120,34 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>이미지 히스토리</value>
   </data>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>갤러리</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>구획</value>
-  </data>
-  <data name="tsddbViewMode.Text" xml:space="preserve">
-    <value>보기 방식</value>
-  </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>섬네일 크기</value>
-  </data>
-  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
-    <value>섬네일</value>
-  </data>
-  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
-    <value>최근 100개</value>
-  </data>
-  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
-    <value>최근 1000개</value>
-  </data>
-  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
-    <value>최근 250개</value>
-  </data>
-  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
-    <value>최대 이미지 수</value>
-  </data>
-  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
-    <value>제한 없음</value>
-  </data>
 </root>

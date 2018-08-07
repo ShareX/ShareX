@@ -129,9 +129,6 @@
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Da:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtro Nome File:</value>
-  </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>A:</value>
   </data>

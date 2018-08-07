@@ -282,15 +282,6 @@
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>编辑快速任务菜单...</value>
   </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>导出设置</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>导出历史</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>导出日志</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>导出...</value>
   </data>

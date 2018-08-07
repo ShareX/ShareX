@@ -144,9 +144,6 @@
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>...으로 끝남</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>파일 이름 필터:</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>날짜 필터:</value>
   </data>

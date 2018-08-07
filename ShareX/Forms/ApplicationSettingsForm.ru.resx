@@ -273,12 +273,6 @@
   <data name="tpExportImport.Text" xml:space="preserve">
     <value>Экспорт / Импорт</value>
   </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Экспортировать историю</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Экспортировать настройки</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
   </data>
@@ -299,9 +293,6 @@
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Каталоги</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Экспортитовать логи</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Сохранять задачи в историю</value>

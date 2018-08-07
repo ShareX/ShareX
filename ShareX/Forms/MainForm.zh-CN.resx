@@ -642,9 +642,6 @@
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>编辑图片...</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>从列表中删除任务</value>
   </data>
@@ -656,9 +653,6 @@
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>图片拼接...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>编辑图片...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>显示工作栏</value>

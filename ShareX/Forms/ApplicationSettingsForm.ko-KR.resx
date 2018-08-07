@@ -297,15 +297,6 @@
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>설정 초기화...</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>로그 내보내기</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>히스토리 내보내기</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>설정 내보내기</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>내보내기...</value>
   </data>

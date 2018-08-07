@@ -135,9 +135,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Tên tệp</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Lọc tên tệp:</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Bộ lọc</value>
   </data>

@@ -651,13 +651,7 @@
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合併圖片...</value>
   </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>注釋圖片...</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>切換動作工具列</value>
-  </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>注釋圖片...</value>
   </data>
 </root>

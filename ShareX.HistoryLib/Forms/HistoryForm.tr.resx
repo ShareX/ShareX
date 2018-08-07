@@ -154,9 +154,6 @@
   <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Dosya adı filtresi:</value>
-  </data>
   <data name="cbFilenameFilterCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
   </data>

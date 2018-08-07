@@ -147,9 +147,6 @@
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Запустити ShareX під час запуску Windows</value>
-  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показати ShareX в меню „Надіслати“</value>
   </data>
@@ -188,15 +185,6 @@
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Шляхи</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Експорт журналів</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Експорт історії</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Експорт налаштувань</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Експорт...</value>

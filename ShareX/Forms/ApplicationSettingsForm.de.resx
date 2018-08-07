@@ -303,17 +303,8 @@
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Pfade</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Logs exportieren</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Chronik exportieren</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Exportieren...</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Einstellungen exportieren</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Tray Symbol Mittelere Maustaste Aktion:</value>

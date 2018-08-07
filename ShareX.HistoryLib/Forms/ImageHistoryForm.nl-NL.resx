@@ -120,22 +120,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Afbeeldingsgeschiedenis</value>
   </data>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Gallerij</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Paneel</value>
-  </data>
-  <data name="tsddbViewMode.Text" xml:space="preserve">
-    <value>Modus</value>
-  </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Afmetingen miniatuur</value>
-  </data>
-  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
-    <value>Miniaturen</value>
-  </data>
-  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
-    <value>Geen limiet</value>
-  </data>
 </root>

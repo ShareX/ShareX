@@ -123,9 +123,6 @@
   <data name="btnAction.Text" xml:space="preserve">
     <value>Download</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Toon update notas</value>
-  </data>
   <data name="lblFilename.Text" xml:space="preserve">
     <value>Bestandsnaam:</value>
   </data>

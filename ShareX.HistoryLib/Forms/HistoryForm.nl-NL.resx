@@ -129,9 +129,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Datumfilter:</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Bestandsnaam filter:</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Bevat</value>
   </data>

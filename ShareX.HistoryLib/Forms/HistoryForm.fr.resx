@@ -141,9 +141,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtre des noms de fichier :</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filtres</value>
   </data>

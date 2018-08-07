@@ -144,9 +144,6 @@
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Parametri Aggiuntivi da Riga di Comando</value>
   </data>
-  <data name="tpX264.Text" xml:space="preserve">
-    <value>x264 / x265</value>
-  </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Bitrate Variabile:</value>
   </data>
@@ -179,9 +176,6 @@
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Codificatore Audio:</value>
-  </data>
-  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
-    <value>?</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Aggiorna</value>

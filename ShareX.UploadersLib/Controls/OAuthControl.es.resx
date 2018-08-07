@@ -126,9 +126,6 @@
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>Paso 1: Abrir la página de autorización </value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Cuenta de usuario</value>
   </data>

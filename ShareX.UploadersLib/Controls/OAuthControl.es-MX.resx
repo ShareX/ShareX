@@ -132,9 +132,6 @@
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Cuenta de usuario</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Estado:</value>
   </data>

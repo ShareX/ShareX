@@ -1148,9 +1148,6 @@ tienda.libro[0].titulo</value>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Ejemplo: http://example.com/owncloud</value>
   </data>
-  <data name="cbAzureStorageExcludeContainer.Text" xml:space="preserve">
-    <value>Excluir el nombre del contenedor de la URL devuelta</value>
-  </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>Expiración:</value>
   </data>

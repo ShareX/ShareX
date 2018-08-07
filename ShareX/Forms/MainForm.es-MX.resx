@@ -756,10 +756,4 @@
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>Realizar anotación...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>Realizar anotación...</value>
-  </data>
 </root>

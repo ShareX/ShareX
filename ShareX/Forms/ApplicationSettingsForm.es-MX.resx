@@ -357,18 +357,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Share X - Configuración de programa</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Exportar registros</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Exportar historial</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Exportar configuración</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Abrir ShareX al iniciar Windows</value>
-  </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Instalar versión de desarrollador...</value>
   </data>
