@@ -331,7 +331,7 @@ Otomatik olarak indirmek ister misiniz?</value>
     <value>Resim buraya kaydedilemedi: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX dil değişikliklerinin uygulanması için yeniden başlatılmalı.
+    <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
 ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">

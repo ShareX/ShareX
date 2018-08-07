@@ -160,7 +160,7 @@
     <value>3</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Override "After capture" settings</value>
+    <value>Override after capture settings</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterCaptureSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterCaptureSettings</value>
@@ -190,7 +190,7 @@
     <value>5</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>Override "After upload" settings</value>
+    <value>Override after upload settings</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterUploadSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterUploadSettings</value>
@@ -220,7 +220,7 @@
     <value>7</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>Override "Destination" settings</value>
+    <value>Override destinations</value>
   </data>
   <data name="&gt;&gt;cbOverrideDestinationSettings.Name" xml:space="preserve">
     <value>cbOverrideDestinationSettings</value>
