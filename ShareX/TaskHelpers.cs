@@ -1072,12 +1072,12 @@ namespace ShareX
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath));
+                    OCRImage(fs, Path.GetFileName(filePath), filePath);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName)
+        public static void OCRImage(Stream stream, string fileName, string filePath = "")
         {
             if (stream != null)
             {
@@ -1086,6 +1086,10 @@ namespace ShareX
                     form.Language = Program.Settings.OCRLanguage;
                     form.ShowDialog();
                     Program.Settings.OCRLanguage = form.Language;
+                    if (filePath != "")
+                    {
+                        File.WriteAllText(Path.ChangeExtension(filePath, ".txt"), form.Result, Encoding.UTF8);
+                    }
                 }
             }
         }

@@ -1013,7 +1013,7 @@ namespace ShareX
         {
             if (Data != null && Info.DataType == EDataType.Image)
             {
-                TaskHelpers.OCRImage(Data, Info.FileName);
+                TaskHelpers.OCRImage(Data, Info.FileName, Info.FilePath);
             }
         }
 
