@@ -617,7 +617,7 @@
             // 
             resources.ApplyResources(this.nudImageAutoUseJPEGSize, "nudImageAutoUseJPEGSize");
             this.nudImageAutoUseJPEGSize.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});

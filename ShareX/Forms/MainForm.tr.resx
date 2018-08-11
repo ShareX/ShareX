@@ -205,7 +205,7 @@
     <value>QR kod...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>Dizini indeksle...</value>
+    <value>Dizin indeksleyici...</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
@@ -478,7 +478,7 @@
     <value>QR kod...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Dizini indeksle...</value>
+    <value>Dizin indeksleyici...</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
