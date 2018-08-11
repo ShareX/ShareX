@@ -1077,7 +1077,7 @@ namespace ShareX
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName, string filePath = "")
+        public static void OCRImage(Stream stream, string fileName, string filePath = null)
         {
             if (stream != null)
             {
@@ -1086,9 +1086,11 @@ namespace ShareX
                     form.Language = Program.Settings.OCRLanguage;
                     form.ShowDialog();
                     Program.Settings.OCRLanguage = form.Language;
-                    if (filePath != "")
+
+                    if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
                     {
-                        File.WriteAllText(Path.ChangeExtension(filePath, ".txt"), form.Result, Encoding.UTF8);
+                        string textPath = Path.ChangeExtension(filePath, "txt");
+                        File.WriteAllText(textPath, form.Result, Encoding.UTF8);
                     }
                 }
             }
