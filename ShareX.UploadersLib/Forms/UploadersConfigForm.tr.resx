@@ -835,4 +835,55 @@ store.book[0].title</value>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Yorum (Markdown)</value>
   </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>Yazı</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>Resim:</value>
+  </data>
+  <data name="lblFTPName.Text" xml:space="preserve">
+    <value>İsim:</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblFTPPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="lblFTPText.Text" xml:space="preserve">
+    <value>Yazı:</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
 </root>

@@ -211,4 +211,16 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Geçerli FTP hesabı bulunamadı.</value>
   </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Giriş başarısız.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Giriş başarılı.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Giriş yapılmadı.</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Doğrulama kodunu buraya yapıştır</value>
+  </data>
 </root>

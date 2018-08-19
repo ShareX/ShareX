@@ -976,7 +976,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blur radius:.
+        ///   Looks up a localized string similar to Blur strength:.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Blur_radius_ {
             get {

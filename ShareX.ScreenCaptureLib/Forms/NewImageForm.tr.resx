@@ -117,19 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim düzenleyici</value>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Yükseklik:</value>
   </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Resim dosyası aç...</value>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Genişlik:</value>
   </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Yeni resim oluştur...</value>
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>Saydam</value>
   </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Panodan resim yükle</value>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>Rengi değiştir...</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Tamam</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>İptal</value>
+  </data>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>Arkaplan rengi</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Yeni resim</value>
   </data>
 </root>

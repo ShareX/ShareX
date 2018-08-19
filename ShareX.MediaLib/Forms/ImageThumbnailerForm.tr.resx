@@ -120,4 +120,25 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Küçük resim yapıcı</value>
   </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Yükseklik:</value>
+  </data>
+  <data name="lblOutputFilename.Text" xml:space="preserve">
+    <value>Çıktı dosya ismi:</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>Küçük resimleri yarat</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Çıktı klasörü:</value>
+  </data>
 </root>

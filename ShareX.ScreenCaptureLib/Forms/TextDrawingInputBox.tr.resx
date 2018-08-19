@@ -118,18 +118,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim düzenleyici</value>
-  </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Resim dosyası aç...</value>
-  </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Yeni resim oluştur...</value>
-  </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Panodan resim yükle</value>
+    <value>ShareX - Yazı girdisi</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>İptal</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Yazı rengi</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Kalın</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Eğik</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Alt çizgi</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Yatay hiza</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Dikey hiza</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>Sağ</value>
+  </data>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>Üst</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Yeni satır: Ctrl + Enter</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>İkinci yazı rengi:</value>
+  </data>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Yazı tipi:</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>Boyut:</value>
   </data>
 </root>

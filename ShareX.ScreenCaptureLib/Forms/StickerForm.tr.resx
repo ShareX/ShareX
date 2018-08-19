@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Arama:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Resim düzenleyici</value>
+    <value>ShareX - Çıkartma seçici</value>
   </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Resim dosyası aç...</value>
+  <data name="tslSize.Text" xml:space="preserve">
+    <value>Boyut:</value>
   </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Yeni resim oluştur...</value>
+  <data name="tslStickers.Text" xml:space="preserve">
+    <value>Çıkartmalar:</value>
   </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Panodan resim yükle</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+  <data name="tsbEditStickers.Text" xml:space="preserve">
+    <value>Çıkartma paketlerini düzenle</value>
   </data>
 </root>

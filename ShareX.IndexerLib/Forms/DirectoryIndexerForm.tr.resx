@@ -120,4 +120,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Dizin indeksleyici</value>
   </data>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Klasöre gözat...</value>
+  </data>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Seçili klasörü indeksle</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Yükle ve bu pencereyi kapat</value>
+  </data>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
 </root>

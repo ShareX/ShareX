@@ -147,4 +147,19 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Dosyadan...</value>
   </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>Yeni ön ayar</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Ön ayarı sil</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>İsim:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Resimi yükle</value>
+  </data>
 </root>

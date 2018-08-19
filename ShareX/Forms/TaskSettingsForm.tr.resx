@@ -301,10 +301,10 @@
     <value>Ekran kaydında imleç göster</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>En:</value>
+    <value>Genişlik:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>Boy:</value>
+    <value>Yükseklik:</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
     <value>Küçük resim adı:</value>
@@ -388,10 +388,10 @@
     <value>Özel yükleyiciyi değiştir:</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>En:</value>
+    <value>Genişlik:</value>
   </data>
   <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
-    <value>En:</value>
+    <value>Genişlik:</value>
   </data>
   <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
     <value>Ekle</value>
@@ -415,10 +415,10 @@
     <value>Uzantı filtresi:</value>
   </data>
   <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
-    <value>Boy:</value>
+    <value>Yükseklik:</value>
   </data>
   <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
-    <value>Boy:</value>
+    <value>Yükseklik:</value>
   </data>
   <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
     <value>kB</value>
