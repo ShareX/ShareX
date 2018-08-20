@@ -1146,8 +1146,11 @@ namespace ShareX
             }
         }
 
-        private void lvUploads_SelectedIndexChanged(object sender, EventArgs e)
+        private async void lvUploads_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lvUploads.SelectedIndexChanged -= lvUploads_SelectedIndexChanged;
+            await Task.Delay(1);
+            lvUploads.SelectedIndexChanged += lvUploads_SelectedIndexChanged;
             UpdateContextMenu();
         }
 
