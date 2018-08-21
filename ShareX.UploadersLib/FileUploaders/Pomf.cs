@@ -73,7 +73,6 @@ namespace ShareX.UploadersLib.FileUploaders
             //new PomfUploader("https://sugoi.vidyagam.es/upload.php"), - dangerous site
             new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
             new PomfUploader("https://upload.void.cat/src/php/upload.php"),
-            
         };
 
         public PomfUploader Uploader { get; private set; }
