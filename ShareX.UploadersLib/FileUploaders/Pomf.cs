@@ -64,24 +64,16 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("https://coka.la/upload.php"),
-            new PomfUploader("https://comfy.moe/upload.php"),
             new PomfUploader("https://doko.moe/upload.php"),
             new PomfUploader("https://edfile.pro/api/upload"),
-            //new PomfUploader("https://filebox.moe/upload.php"),
-            new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
-            new PomfUploader("https://maro.xyz/upload.php", "https://a.maro.xyz/"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.space/api/upload"),
-            new PomfUploader("https://pomf.su/upload.php"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
-            new PomfUploader("http://reich.io/upload.php"),
-            new PomfUploader("https://safe.moe/api/upload"),
             //new PomfUploader("https://sugoi.vidyagam.es/upload.php"), - dangerous site
             new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
-            new PomfUploader("https://void.cat/upload.php"),
-            new PomfUploader("https://vidga.me/upload.php"),
-            new PomfUploader("https://catgirl.pw/upload.php")
+            new PomfUploader("https://upload.void.cat/src/php/upload.php"),
+            
         };
 
         public PomfUploader Uploader { get; private set; }
