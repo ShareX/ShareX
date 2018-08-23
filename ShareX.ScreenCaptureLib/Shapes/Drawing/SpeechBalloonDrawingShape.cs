@@ -63,6 +63,12 @@ namespace ShareX.ScreenCaptureLib
             TailPosition = Rectangle.Location.Add(0, Rectangle.Height + 30);
         }
 
+        protected override void UseSimpleNodeShape()
+        {
+            ChangeNodeShape(NodeShape.Square);
+            Manager.ResizeNodes[(int)NodePosition.Extra].Shape = NodeShape.Circle;
+        }
+
         public override void OnNodeVisible()
         {
             base.OnNodeVisible();

@@ -109,8 +109,34 @@ namespace ShareX.ScreenCaptureLib
             return Rectangle.Contains(position);
         }
 
+        internal void ChangeNodeShape(NodeShape nodeShape)
+        {
+            foreach (ResizeNode node in Manager.ResizeNodes)
+            {
+                node.Shape = nodeShape;
+            }
+        }
+
+        protected virtual void UseSimpleNodeShape()
+        {
+            ChangeNodeShape(NodeShape.Square);
+        }
+
+        protected void UpdateNodeShape()
+        {
+            if (Options.UseSimpleNodeDesign)
+            {
+                UseSimpleNodeShape();
+            }
+            else
+            {
+                ChangeNodeShape(NodeShape.CustomNode);
+            }
+        }
+
         public virtual void ShowNodes()
         {
+            UpdateNodeShape();
             Manager.NodesVisible = true;
         }
 

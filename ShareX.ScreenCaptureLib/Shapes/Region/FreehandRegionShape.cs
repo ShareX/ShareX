@@ -57,6 +57,11 @@ namespace ShareX.ScreenCaptureLib
         private List<Point> points = new List<Point>();
         private bool isPolygonMode;
 
+        protected override void UseSimpleNodeShape()
+        {
+            ChangeNodeShape(NodeShape.Circle);
+        }
+
         public override void OnUpdate()
         {
             if (Manager.IsCreating)

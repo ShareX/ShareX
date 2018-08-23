@@ -42,6 +42,11 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsValidShape => Rectangle.Width > 1 || Rectangle.Height > 1;
 
+        protected override void UseSimpleNodeShape()
+        {
+            ChangeNodeShape(NodeShape.Circle);
+        }
+
         private void AdjustPoints(int centerPointCount)
         {
             Point[] newPoints = new Point[2 + centerPointCount];
