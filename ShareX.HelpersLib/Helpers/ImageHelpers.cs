@@ -1232,7 +1232,7 @@ namespace ShareX.HelpersLib
             int right = rect.Right;
             int bottom = rect.Bottom;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Width];
+            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Height];
 
             for (int x = left; x < right; x++)
             {
