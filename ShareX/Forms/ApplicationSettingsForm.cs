@@ -65,11 +65,13 @@ namespace ShareX
         {
             string currentPersonalPath = txtPersonalFolderPath.Text;
 
-            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
+            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase) &&
+                (string.IsNullOrEmpty(currentPersonalPath) || Helpers.IsValidFilePath(currentPersonalPath)))
             {
-                Program.WritePersonalPathConfig(currentPersonalPath);
-
-                MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Program.WritePersonalPathConfig(currentPersonalPath))
+                {
+                    MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -300,28 +302,34 @@ namespace ShareX
         {
             string personalPath = txtPersonalFolderPath.Text;
 
-            if (string.IsNullOrEmpty(personalPath))
+            try
             {
-                if (Program.PortableApps)
+                if (string.IsNullOrEmpty(personalPath))
                 {
-                    personalPath = Program.PortableAppsPersonalFolder;
-                }
-                else if (Program.Portable)
-                {
-                    personalPath = Program.PortablePersonalFolder;
+                    if (Program.PortableApps)
+                    {
+                        personalPath = Program.PortableAppsPersonalFolder;
+                    }
+                    else if (Program.Portable)
+                    {
+                        personalPath = Program.PortablePersonalFolder;
+                    }
+                    else
+                    {
+                        personalPath = Program.DefaultPersonalFolder;
+                    }
                 }
                 else
                 {
-                    personalPath = Program.DefaultPersonalFolder;
+                    personalPath = Helpers.GetAbsolutePath(personalPath);
                 }
-            }
-            else
-            {
-                personalPath = Helpers.ExpandFolderVariables(personalPath);
-                personalPath = Helpers.GetAbsolutePath(personalPath);
-            }
 
-            lblPreviewPersonalFolderPath.Text = personalPath;
+                lblPreviewPersonalFolderPath.Text = personalPath;
+            }
+            catch (Exception e)
+            {
+                lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
+            }
         }
 
         #region General

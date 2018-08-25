@@ -884,6 +884,21 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static bool IsValidFilePath(string path)
+        {
+            FileInfo fi = null;
+
+            try
+            {
+                fi = new FileInfo(path);
+            }
+            catch (ArgumentException) { }
+            catch (PathTooLongException) { }
+            catch (NotSupportedException) { }
+
+            return fi != null;
+        }
+
         public static void CopyFile(string filePath, string destinationFolder, bool overwrite = true)
         {
             if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(destinationFolder))

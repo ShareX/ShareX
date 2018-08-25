@@ -447,7 +447,7 @@ namespace ShareX
             return "";
         }
 
-        public static void WritePersonalPathConfig(string path)
+        public static bool WritePersonalPathConfig(string path)
         {
             if (path == null)
             {
@@ -470,6 +470,7 @@ namespace ShareX
                     {
                         Helpers.CreateDirectoryFromFilePath(PersonalPathConfigFilePath);
                         File.WriteAllText(PersonalPathConfigFilePath, path, Encoding.UTF8);
+                        return true;
                     }
                     catch (UnauthorizedAccessException)
                     {
@@ -478,6 +479,8 @@ namespace ShareX
                     }
                 }
             }
+
+            return false;
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
