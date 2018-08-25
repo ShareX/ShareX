@@ -42,7 +42,7 @@ namespace ShareX
     {
         private const int MaxBufferSizePower = 14;
 
-        private bool ready;
+        private bool ready, isValidPersonalPath;
         private string lastPersonalPath;
 
         public ApplicationSettingsForm()
@@ -63,14 +63,16 @@ namespace ShareX
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string currentPersonalPath = txtPersonalFolderPath.Text;
-
-            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase) &&
-                (string.IsNullOrEmpty(currentPersonalPath) || Helpers.IsValidFilePath(currentPersonalPath)))
+            if (isValidPersonalPath)
             {
-                if (Program.WritePersonalPathConfig(currentPersonalPath))
+                string currentPersonalPath = txtPersonalFolderPath.Text;
+
+                if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (Program.WritePersonalPathConfig(currentPersonalPath))
+                    {
+                        MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
@@ -325,9 +327,11 @@ namespace ShareX
                 }
 
                 lblPreviewPersonalFolderPath.Text = personalPath;
+                isValidPersonalPath = true;
             }
             catch (Exception e)
             {
+                isValidPersonalPath = false;
                 lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
             }
         }
