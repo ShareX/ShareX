@@ -110,11 +110,11 @@ namespace ShareX
         {
             get
             {
-                string oldPath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
+                string relativePath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
 
-                if (Portable || File.Exists(oldPath))
+                if (File.Exists(relativePath))
                 {
-                    return oldPath;
+                    return relativePath;
                 }
 
                 return CurrentPersonalPathConfigFilePath;
@@ -223,6 +223,8 @@ namespace ShareX
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
         public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
+        private static string PersonalPathDetectionMethod;
+
         #endregion Paths
 
         [STAThread]
@@ -270,6 +272,12 @@ namespace ShareX
             DebugHelper.WriteLine(Title);
             DebugHelper.WriteLine("Build: " + Build);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
+
+            if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
+            {
+                DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
+            }
+
             DebugHelper.WriteLine("Personal path: " + PersonalFolder);
             DebugHelper.WriteLine("Operating system: " + Helpers.GetWindowsProductName());
 
@@ -363,17 +371,37 @@ namespace ShareX
 
             if (!Sandbox)
             {
-                Portable = CLI.IsCommandExist("portable", "p");
-
-                if (Portable)
+                if (CLI.IsCommandExist("portable", "p"))
                 {
+                    Portable = true;
                     CustomPersonalPath = PortablePersonalFolder;
+                    PersonalPathDetectionMethod = "Portable CLI flag";
+                }
+                else if (File.Exists(PortableCheckFilePath))
+                {
+                    Portable = true;
+                    CustomPersonalPath = PortablePersonalFolder;
+                    PersonalPathDetectionMethod = $"Portable file ({PortableCheckFilePath})";
+                }
+                else if (File.Exists(PortableAppsCheckFilePath))
+                {
+                    Portable = PortableApps = true;
+                    CustomPersonalPath = PortableAppsPersonalFolder;
+                    PersonalPathDetectionMethod = $"PortableApps file ({PortableAppsCheckFilePath})";
                 }
                 else
                 {
-                    PortableApps = File.Exists(PortableAppsCheckFilePath);
-                    Portable = PortableApps || File.Exists(PortableCheckFilePath);
-                    CheckPersonalPathConfig();
+#if !WindowsStore
+                    MigratePersonalPathConfig();
+#endif
+
+                    string customPersonalPath = ReadPersonalPathConfig();
+
+                    if (!string.IsNullOrEmpty(customPersonalPath))
+                    {
+                        CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
+                        PersonalPathDetectionMethod = $"PersonalPath.cfg file ({PersonalPathConfigFilePath})";
+                    }
                 }
 
                 if (!Directory.Exists(PersonalFolder))
@@ -389,29 +417,6 @@ namespace ShareX
                         CustomPersonalPath = "";
                     }
                 }
-            }
-        }
-
-        private static void CheckPersonalPathConfig()
-        {
-#if !WindowsStore
-            MigratePersonalPathConfig();
-#endif
-
-            string customPersonalPath = ReadPersonalPathConfig();
-
-            if (!string.IsNullOrEmpty(customPersonalPath))
-            {
-                customPersonalPath = Helpers.ExpandFolderVariables(customPersonalPath);
-                CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
-            }
-            else if (PortableApps)
-            {
-                CustomPersonalPath = PortableAppsPersonalFolder;
-            }
-            else if (Portable)
-            {
-                CustomPersonalPath = PortablePersonalFolder;
             }
         }
 
