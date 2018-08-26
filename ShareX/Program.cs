@@ -104,7 +104,7 @@ namespace ShareX
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
         public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
-        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
+        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath(@"..\..\Data");
 
         private static string PersonalPathConfigFilePath
         {
@@ -412,8 +412,20 @@ namespace ShareX
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalFolder, e),
-                            "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StringBuilder sb = new StringBuilder();
+
+                        sb.AppendFormat("{0} \"{1}\"", Resources.Program_Run_Unable_to_create_folder_, PersonalFolder);
+                        sb.AppendLine();
+
+                        if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
+                        {
+                            sb.AppendLine("Personal path detection method: " + PersonalPathDetectionMethod);
+                        }
+
+                        sb.AppendLine();
+                        sb.Append(e);
+
+                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }
