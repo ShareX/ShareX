@@ -117,16 +117,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected virtual void UseSimpleNodeShape()
+        protected virtual void UseLightResizeNodes()
         {
             ChangeNodeShape(NodeShape.Square);
         }
 
         protected void UpdateNodeShape()
         {
-            if (Options.UseSimpleNodeDesign)
+            if (Options.UseLightResizeNodes)
             {
-                UseSimpleNodeShape();
+                UseLightResizeNodes();
             }
             else
             {

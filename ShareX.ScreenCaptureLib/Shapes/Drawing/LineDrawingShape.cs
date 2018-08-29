@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsValidShape => Rectangle.Width > 1 || Rectangle.Height > 1;
 
-        protected override void UseSimpleNodeShape()
+        protected override void UseLightResizeNodes()
         {
             ChangeNodeShape(NodeShape.Circle);
         }

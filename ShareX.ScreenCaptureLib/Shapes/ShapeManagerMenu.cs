@@ -892,6 +892,12 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.Click += (sender, e) => Options.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowCrosshair);
 
+            ToolStripMenuItem tsmiUseLightResizeNodes = new ToolStripMenuItem("Use light resize nodes");
+            tsmiUseLightResizeNodes.Checked = Options.UseLightResizeNodes;
+            tsmiUseLightResizeNodes.CheckOnClick = true;
+            tsmiUseLightResizeNodes.Click += (sender, e) => Options.UseLightResizeNodes = tsmiUseLightResizeNodes.Checked;
+            tsddbOptions.DropDownItems.Add(tsmiUseLightResizeNodes);
+
             ToolStripMenuItem tsmiEnableAnimations = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_EnableAnimations);
             tsmiEnableAnimations.Checked = Options.EnableAnimations;
             tsmiEnableAnimations.CheckOnClick = true;
