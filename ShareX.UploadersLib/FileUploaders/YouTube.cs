@@ -112,12 +112,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            if (!Helpers.IsVideoFile(fileName))
-            {
-                Errors.Add("YouTube only supports video files.");
-                return null;
-            }
-
             string metadata = GetMetadata(fileName);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName,
