@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 DirectLink = config.OwnCloudDirectLink,
                 PreviewLink = config.OwnCloudUsePreviewLinks,
                 IsCompatibility81 = config.OwnCloud81Compatibility,
-                AutoEpxireTime = config.OwnCloudExpiryTime,
+                AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire
             };
         }
@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Username { get; set; }
         public string Password { get; set; }
         public string Path { get; set; }
-        public string AutoEpxireTime { get; set; }
+        public int AutoExpireTime { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
         public bool PreviewLink { get; set; }
@@ -145,16 +145,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (AutoExpire)
             {
-                if (string.IsNullOrEmpty(AutoEpxireTime))
+                if (AutoExpireTime == 0)
                 {
-                    throw new Exception("ownCloud Auto Epxire Time is empty.");
+                    throw new Exception("ownCloud Auto Epxire Time is not valid.");
                 }
                 else
                 {
                     try
                     {
-                        int days = int.Parse(AutoEpxireTime);
-                        DateTime expireTime = DateTime.UtcNow.AddDays(days);
+                        DateTime expireTime = DateTime.UtcNow.AddDays(AutoExpireTime);
                         args.Add("expireDate", $"{expireTime.Year}-{expireTime.Month}-{expireTime.Day}");
                     }
                     catch

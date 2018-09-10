@@ -589,7 +589,7 @@ namespace ShareX.UploadersLib
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
             txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
-            txtOwnCloudExpiryTime.Text = Config.OwnCloudExpiryTime;
+            txtOwnCloudExpiryTime.Value = Config.OwnCloudExpiryTime;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
@@ -2310,7 +2310,7 @@ namespace ShareX.UploadersLib
 
         private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
         {
-            Config.OwnCloudExpiryTime =txtOwnCloudExpiryTime.Value.ToString();
+            Config.OwnCloudExpiryTime = Convert.ToInt32(txtOwnCloudExpiryTime.Value);
         }
 
         private void cbOwnCloudCreateShare_CheckedChanged(object sender, EventArgs e)
