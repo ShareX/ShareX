@@ -1117,7 +1117,7 @@ store.book[0].title</value>
     <value>Ключ веб API:</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
-    <value>Динамические ссылки Firebase</value>
+    <value>Firebase Dynamic Links</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Путь:</value>
@@ -1140,13 +1140,40 @@ store.book[0].title</value>
   <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
     <value>Дублировать</value>
   </data>
-  <data name="tpPastie.Text" xml:space="preserve">
-    <value>Вставить</value>
-  </data>
   <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
     <value>Тип доступа:</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Использовать короткую ссылку</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>Пример: google.page.link</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>Домен:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>URL API:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID API:</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
   </data>
 </root>
