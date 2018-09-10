@@ -58,7 +58,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoEpxireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire
-
             };
         }
 
@@ -163,7 +162,6 @@ namespace ShareX.UploadersLib.FileUploaders
                         throw new Exception("ownCloud Auto Expire time is invalid");
                     }
                 }
-
             }
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");

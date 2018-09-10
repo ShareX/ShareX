@@ -2337,8 +2337,6 @@ namespace ShareX.UploadersLib
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
         }
 
-
-
         #endregion ownCloud / Nextcloud
 
         #region Pushbullet
@@ -3863,6 +3861,5 @@ namespace ShareX.UploadersLib
         #endregion Custom uploaders
 
         #endregion Other uploaders
-
     }
 }
