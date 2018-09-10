@@ -55,7 +55,10 @@ namespace ShareX.UploadersLib.FileUploaders
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
                 PreviewLink = config.OwnCloudUsePreviewLinks,
-                IsCompatibility81 = config.OwnCloud81Compatibility
+                IsCompatibility81 = config.OwnCloud81Compatibility,
+                AutoEpxireTime = config.OwnCloudExpiryTime,
+                AutoExpire = config.OwnCloudAutoExpire
+
             };
         }
 
@@ -68,10 +71,12 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Username { get; set; }
         public string Password { get; set; }
         public string Path { get; set; }
+        public string AutoEpxireTime { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
         public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
+        public bool AutoExpire { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
@@ -128,7 +133,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        // http://doc.owncloud.org/server/7.0/developer_manual/core/ocs-share-api.html#create-a-new-share
+        // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
         public string ShareFile(string path)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -138,6 +143,28 @@ namespace ShareX.UploadersLib.FileUploaders
             // args.Add("publicUpload", "false"); // allow public upload to a public shared folder (true/false)
             // args.Add("password", ""); // password to protect public link Share with
             args.Add("permissions", "1"); // 1 = read; 2 = update; 4 = create; 8 = delete; 16 = share; 31 = all (default: 31, for public shares: 1)
+
+            if (AutoExpire)
+            {
+                if (string.IsNullOrEmpty(AutoEpxireTime))
+                {
+                    throw new Exception("ownCloud Auto Epxire Time is empty.");
+                }
+                else
+                {
+                    try
+                    {
+                        int days = int.Parse(AutoEpxireTime);
+                        DateTime expireTime = DateTime.UtcNow.AddDays(days);
+                        args.Add("expireDate", $"{expireTime.Year}-{expireTime.Month}-{expireTime.Day}");
+                    }
+                    catch
+                    {
+                        throw new Exception("ownCloud Auto Expire time is invalid");
+                    }
+                }
+
+            }
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
             url = URLHelpers.FixPrefix(url);

@@ -589,10 +589,12 @@ namespace ShareX.UploadersLib
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
             txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
+            txtOwnCloudExpiryTime.Text = Config.OwnCloudExpiryTime;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
+            cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;       
 
             #endregion ownCloud / Nextcloud
 
@@ -2306,6 +2308,11 @@ namespace ShareX.UploadersLib
             Config.OwnCloudPath = txtOwnCloudPath.Text;
         }
 
+        private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudExpiryTime =txtOwnCloudExpiryTime.Value.ToString();
+        }
+
         private void cbOwnCloudCreateShare_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudCreateShare = cbOwnCloudCreateShare.Checked;
@@ -2325,6 +2332,12 @@ namespace ShareX.UploadersLib
         {
             Config.OwnCloudUsePreviewLinks = cbOwnCloudUsePreviewLinks.Checked;
         }
+        private void cbOwnCloudAutoExpire_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
+        }
+
+
 
         #endregion ownCloud / Nextcloud
 
@@ -3850,5 +3863,6 @@ namespace ShareX.UploadersLib
         #endregion Custom uploaders
 
         #endregion Other uploaders
+
     }
 }
