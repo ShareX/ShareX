@@ -1323,5 +1323,13 @@ namespace ShareX.HelpersLib
                 return false;
             }
         }
+
+        /// <summary>
+        /// Returns whether the HttpWebResponse was successful (has a 2xx status code).
+        /// </summary>
+        /// <param name="res">The HttpWebResponse to check.</param>
+        /// <returns>true if 2xx status code, otherwise false.</returns>
+        public static bool IsSuccessfulResponse(HttpWebResponse res) =>
+            int.TryParse(res.StatusCode.ToString(), out var rc) && (rc >= 200 && rc <= 299);
     }
 }
