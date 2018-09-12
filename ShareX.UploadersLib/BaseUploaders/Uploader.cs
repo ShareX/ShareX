@@ -350,7 +350,7 @@ namespace ShareX.UploadersLib
         }
 
         protected HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+            NameValueCollection headers = null, CookieCollection cookies = null, bool allowNon2xxResponses = false)
         {
             IsUploading = true;
             StopUploadRequested = false;
@@ -380,6 +380,12 @@ namespace ShareX.UploadersLib
                 }
 
                 return (HttpWebResponse)request.GetResponse();
+            }
+            catch (WebException we) when (we.Response != null && allowNon2xxResponses)
+            {
+                // if we.Response != null, then the request was successful, but
+                // returned a non-200 status code
+                return we.Response as HttpWebResponse;
             }
             catch (Exception e)
             {
