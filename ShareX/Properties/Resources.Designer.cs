@@ -483,11 +483,29 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Startup has been disabled by your organization.
+        /// </summary>
+        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Startup has been disabled in Task Manager.
         /// </summary>
         public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text {
             get {
                 return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startup has been enabled by your organization.
+        /// </summary>
+        public static string ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text", resourceCulture);
             }
         }
         
