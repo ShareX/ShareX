@@ -15,7 +15,7 @@
     <Resource uap:Scale="400" />
   </Resources>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17134.0" MaxVersionTested="10.0.17134.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
