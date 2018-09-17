@@ -83,6 +83,7 @@ namespace ShareX.ScreenCaptureLib
         public Color StepFillColor { get; set; } = PrimaryColor;
         public int StepFontSize { get; set; } = 18;
         public bool StepUseLetters { get; set; } = false;
+        public int StartingStepNumber { get; set; } = 1;
 
         // Sticker drawing
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>()
