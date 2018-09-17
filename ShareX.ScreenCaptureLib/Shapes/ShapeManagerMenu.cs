@@ -1315,6 +1315,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
+            tslnudStartingStepValue.Content.Value = AnnotationOptions.StartingStepNumber;
             tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
 
             tsmiShadow.Checked = AnnotationOptions.Shadow;
@@ -1406,6 +1407,7 @@ namespace ShareX.ScreenCaptureLib
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen;
+            tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
             tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
