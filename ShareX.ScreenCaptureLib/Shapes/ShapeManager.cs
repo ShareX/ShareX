@@ -152,6 +152,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
         public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentTool);
+        public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
         public bool IsMoving { get; set; }
@@ -1474,7 +1475,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void OrderStepShapes()
         {
-            int i = AnnotationOptions.StartingStepNumber;
+            int i = StartingStepNumber;
 
             foreach (StepDrawingShape shape in Shapes.OfType<StepDrawingShape>())
             {

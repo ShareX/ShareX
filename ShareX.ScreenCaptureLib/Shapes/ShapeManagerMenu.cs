@@ -551,11 +551,10 @@ namespace ShareX.ScreenCaptureLib
             tslnudStartingStepValue.Content.Maximum = 10000;
             tslnudStartingStepValue.Content.ValueChanged = (sender, e) =>
             {
-                AnnotationOptions.StartingStepNumber = (int)tslnudStartingStepValue.Content.Value;
+                StartingStepNumber = (int)tslnudStartingStepValue.Content.Value;
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStartingStepValue);
-            AnnotationOptions.StartingStepNumber = 1;
 
             tsmiStepUseLetters = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_UseLetters);
             tsmiStepUseLetters.Checked = false;
@@ -1315,7 +1314,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
-            tslnudStartingStepValue.Content.Value = AnnotationOptions.StartingStepNumber;
+            tslnudStartingStepValue.Content.Value = StartingStepNumber;
             tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
 
             tsmiShadow.Checked = AnnotationOptions.Shadow;
