@@ -486,4 +486,22 @@ Bist du sicher?</value>
 Rechte Maustaste um das Menü zu öffnen
 Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Möchten Sie die Aufnahme wirklich beenden?</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>mit ShareX bearbeiten</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Entwicklungs-Versionen können instabil sein und sind nur für Testzwecke geeignet. Möchten Sie diese trotzdem installieren?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Möchten Sie die ShareX-Einstellungen zurücksetzen?</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>URL-Kürzen</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Kürzen</value>
+  </data>
 </root>

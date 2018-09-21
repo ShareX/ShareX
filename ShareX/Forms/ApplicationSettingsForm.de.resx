@@ -333,4 +333,19 @@
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Aktiviere Firefox-Erweiterungsunterstützung</value>
   </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome Erweiterung</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Exportieren / Importieren</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Firefox Erweiterung</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Entwicklungs-Version installieren...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Zeige "Bearbeiten mit ShareX"-Eintrag im Kontextmenü</value>
+  </data>
 </root>
