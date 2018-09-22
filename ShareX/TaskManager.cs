@@ -588,6 +588,5 @@ namespace ShareX
         }
 
         public static void ClearTasks() => Tasks.Clear();
-
     }
 }
