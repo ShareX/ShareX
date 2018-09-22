@@ -215,6 +215,7 @@ namespace ShareX
             Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
 
             // History
+            cbHistoryShow.Checked = Program.Settings.HistoryShow;
             cbHistorySaveTasks.Checked = Program.Settings.HistorySaveTasks;
             cbHistoryCheckURL.Checked = Program.Settings.HistoryCheckURL;
 
@@ -777,6 +778,11 @@ namespace ShareX
         #endregion Upload
 
         #region History
+
+        private void cbHistoryShow_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.HistoryShow = cbHistoryShow.Checked;
+        }
 
         private void cbHistorySaveTasks_CheckedChanged(object sender, EventArgs e)
         {

@@ -59,7 +59,9 @@ namespace ShareX
             if (task != null)
             {
                 Tasks.Add(task);
-                UpdateMainFormTip();
+
+                if (Program.Settings.HistoryShow)
+                    UpdateMainFormTip();
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -71,7 +73,8 @@ namespace ShareX
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
-                CreateListViewItem(task);
+                if (Program.Settings.HistoryShow)
+                    CreateListViewItem(task);
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -574,7 +577,7 @@ namespace ShareX
 
         public static void AddRecentTasksToMainWindow()
         {
-            if (ListViewControl.Items.Count == 0)
+            if (ListViewControl.Items.Count == 0 && Program.Settings.HistoryShow)
             {
                 foreach (RecentTask recentTask in RecentManager.Tasks)
                 {
@@ -583,5 +586,8 @@ namespace ShareX
                 }
             }
         }
+
+        public static void ClearTasks() => Tasks.Clear();
+
     }
 }
