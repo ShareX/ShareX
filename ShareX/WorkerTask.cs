@@ -304,8 +304,6 @@ namespace ShareX
             }
             finally
             {
-                Dispose();
-
                 if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                 {
                     File.Delete(Info.FilePath);
@@ -596,9 +594,9 @@ namespace ShareX
             if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.DoOCR,
                 AfterCaptureTasks.UploadImageToHost))
             {
-                using (tempImage)
+                using (var image = (Image)tempImage.Clone())
                 {
-                    ImageData imageData = TaskHelpers.PrepareImage(tempImage, Info.TaskSettings);
+                    ImageData imageData = TaskHelpers.PrepareImage(image, Info.TaskSettings);
                     Data = imageData.ImageStream;
                     Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
 
@@ -954,6 +952,11 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        public Image GetImage()
+        {
+            return tempImage;
         }
 
         private UploadResult GetInvalidConfigResult(IUploaderService uploaderService)
