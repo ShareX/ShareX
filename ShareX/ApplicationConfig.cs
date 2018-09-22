@@ -115,6 +115,7 @@ namespace ShareX
 
         public bool HistorySaveTasks = true;
         public bool HistoryCheckURL = false;
+        public bool HistoryShow = true;
 
         public RecentTask[] RecentTasks = null;
         public bool RecentTasksSave = true;

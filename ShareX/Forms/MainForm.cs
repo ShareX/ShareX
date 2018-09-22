@@ -715,6 +715,19 @@ namespace ShareX
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
+            if (Program.Settings.HistoryShow && lvUploads.Items.Count == 0)
+            { 
+                lvUploads.Items.Clear();
+                TaskManager.AddRecentTasksToMainWindow();
+            }
+            else if (!Program.Settings.HistoryShow)
+            {
+                lvUploads.Items.Clear();
+                TaskManager.ClearTasks();
+                TaskManager.UpdateMainFormTip();
+                UpdateContextMenu();
+            }
+
 #if RELEASE
             Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps;
             Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;

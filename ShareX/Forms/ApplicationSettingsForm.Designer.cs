@@ -143,6 +143,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbHistoryShow = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -821,6 +822,7 @@ namespace ShareX
             // 
             // gbHistory
             // 
+            this.gbHistory.Controls.Add(this.cbHistoryShow);
             this.gbHistory.Controls.Add(this.cbHistoryCheckURL);
             this.gbHistory.Controls.Add(this.cbHistorySaveTasks);
             resources.ApplyResources(this.gbHistory, "gbHistory");
@@ -1035,6 +1037,13 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbHistoryShow
+            // 
+            resources.ApplyResources(this.cbHistoryShow, "cbHistoryShow");
+            this.cbHistoryShow.Name = "cbHistoryShow";
+            this.cbHistoryShow.UseVisualStyleBackColor = true;
+            this.cbHistoryShow.CheckedChanged += new System.EventHandler(this.cbHistoryShow_CheckedChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1208,5 +1217,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
+        private System.Windows.Forms.CheckBox cbHistoryShow;
     }
 }

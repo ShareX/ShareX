@@ -348,4 +348,7 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Zeige "Bearbeiten mit ShareX"-Eintrag im Kontextmenü</value>
   </data>
+  <data name="cbHistoryShow.Text" xml:space="preserve">
+    <value>Chronik anzeigen</value>
+  </data>
 </root>
