@@ -28,6 +28,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class AbooFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Aboo;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.AbooAccountType == AccountType.Anonymous;
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Aboo();
+        }
+    }
+
     public sealed class Aboo : FileUploader
     {
         public const string AbooURL = "https://aboo.se";
@@ -56,7 +71,6 @@ namespace ShareX.UploadersLib.FileUploaders
                     Errors.Add($"Message: {response.error.message}, type: {response.error.type}, code: {response.error.code}");
                 }
             }
-
             return result;
         }
 

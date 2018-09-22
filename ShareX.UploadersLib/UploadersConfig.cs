@@ -403,9 +403,7 @@ namespace ShareX.UploadersLib
 
         #region Aboo
 
-        public OAuth2Info AbooOAuth2Info = null;
         public AccountType AbooAccountType = AccountType.Anonymous;
-        public bool AbooIsPublic = true;
 
         #endregion Aboo
 
