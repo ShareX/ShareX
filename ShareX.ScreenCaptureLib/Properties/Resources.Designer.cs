@@ -1559,9 +1559,9 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ShapeOptions", resourceCulture);
             }
         }
-		
-		/// <summary>
-        ///   Looks up a localized string similar Value of first step options.
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value of first step:.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_StartingStepValue {
             get {

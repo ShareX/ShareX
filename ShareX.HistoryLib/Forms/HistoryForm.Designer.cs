@@ -39,6 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.lblFilenameFilter = new System.Windows.Forms.Label();
             this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
             this.btnRemoveFilters = new System.Windows.Forms.Button();
             this.btnApplyFilters = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
-            this.lblFilenameFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -151,6 +151,11 @@
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.TabStop = false;
             // 
+            // lblFilenameFilter
+            // 
+            resources.ApplyResources(this.lblFilenameFilter, "lblFilenameFilter");
+            this.lblFilenameFilter.Name = "lblFilenameFilter";
+            // 
             // cbHostFilterSelection
             // 
             this.cbHostFilterSelection.FormattingEnabled = true;
@@ -232,11 +237,6 @@
             resources.GetString("cbFilenameFilterMethod.Items3")});
             resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
-            // 
-            // lblFilenameFilter
-            // 
-            resources.ApplyResources(this.lblFilenameFilter, "lblFilenameFilter");
-            this.lblFilenameFilter.Name = "lblFilenameFilter";
             // 
             // HistoryForm
             // 
