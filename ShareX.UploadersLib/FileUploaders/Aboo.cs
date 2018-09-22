@@ -104,25 +104,25 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private class AbooUploadFile
         {
-            public AUrl url { get; set; }
-            public AMetadata metadata { get;set; }
+            public AbooUrl url { get; set; }
+            public AbooMetadata metadata { get;set; }
         }
 
-        private class AUrl
+        private class AbooUrl
         {
             public string minimal { get; set; }
             public string full { get; set; }
         }
 
-        private class AMetadata
+        private class AbooMetadata
         {
             public string id { get; set; }
             public string name { get; set; }
             public string mimetype { get; set; }
-            public ASize size { get; set; }
+            public AbooSize size { get; set; }
         }
 
-        private class ASize
+        private class AbooSize
         {
             public string bytes { get; set; }
             public string readable { get; set; }
