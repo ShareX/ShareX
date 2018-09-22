@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public class Aboo : FileUploader
+    public sealed class Aboo : FileUploader
     {
         public const string AbooURL = "https://aboo.se";
 
@@ -105,7 +105,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private class AbooUploadFile
         {
             public AbooUrl url { get; set; }
-            public AbooMetadata metadata { get;set; }
+            public AbooMetadata metadata { get; set; }
         }
 
         private class AbooUrl
