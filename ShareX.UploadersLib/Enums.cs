@@ -139,6 +139,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Aboo.se")]
+        Aboo,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
