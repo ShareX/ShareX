@@ -24,29 +24,10 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.Properties;
-using System.Drawing;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class AbooFileUploaderService : FileUploaderService
-    {
-        public override FileDestination EnumValue { get; } = FileDestination.Aboo;
-
-        public override Icon ServiceIcon => Resources.Aboo;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return true;
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new Aboo();
-        }
-    }
-
     public sealed class Aboo : FileUploader
     {
         public const string AbooURL = "https://aboo.se";
