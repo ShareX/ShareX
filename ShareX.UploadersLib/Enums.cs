@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
-        [Description("Aboo")]
+        [Description("Aboo.se")]
         Aboo,
         SharedFolder, // Localized
         Email, // Localized
