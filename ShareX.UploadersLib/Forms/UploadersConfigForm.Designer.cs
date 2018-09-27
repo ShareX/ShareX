@@ -35,6 +35,12 @@
             this.cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
             this.mbCustomUploaderDestinationType = new ShareX.HelpersLib.MenuButton();
             this.cmsCustomUploaderDestinationType = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtB2CustomUrl = new System.Windows.Forms.TextBox();
+            this.cbB2CustomUrl = new System.Windows.Forms.CheckBox();
+            this.txtB2Bucket = new System.Windows.Forms.TextBox();
+            this.txtB2UploadPath = new System.Windows.Forms.TextBox();
+            this.txtB2ApplicationKey = new System.Windows.Forms.TextBox();
+            this.txtB2ApplicationKeyId = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
@@ -324,6 +330,14 @@
             this.lblAzureStorageAccountName = new System.Windows.Forms.Label();
             this.txtAzureStorageCustomDomain = new System.Windows.Forms.TextBox();
             this.lblAzureStorageCustomDomain = new System.Windows.Forms.Label();
+            this.tbBackblazeB2 = new System.Windows.Forms.TabPage();
+            this.lblB2ManageLink = new System.Windows.Forms.LinkLabel();
+            this.txtB2UrlPreview = new System.Windows.Forms.TextBox();
+            this.lblB2UrlPreview = new System.Windows.Forms.Label();
+            this.lblB2Bucket = new System.Windows.Forms.Label();
+            this.lblB2UploadPath = new System.Windows.Forms.Label();
+            this.lblB2ApplicationKey = new System.Windows.Forms.Label();
+            this.lblB2ApplicationKeyId = new System.Windows.Forms.Label();
             this.tpGfycat = new System.Windows.Forms.TabPage();
             this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
             this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
@@ -689,6 +703,7 @@
             this.gbAmazonS3Advanced.SuspendLayout();
             this.tpGoogleCloudStorage.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
+            this.tbBackblazeB2.SuspendLayout();
             this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -779,6 +794,50 @@
             this.cmsCustomUploaderDestinationType.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.cmsCustomUploaderDestinationType.Name = "cmsCustomUploaderDestinationType";
             resources.ApplyResources(this.cmsCustomUploaderDestinationType, "cmsCustomUploaderDestinationType");
+            // 
+            // txtB2CustomUrl
+            // 
+            resources.ApplyResources(this.txtB2CustomUrl, "txtB2CustomUrl");
+            this.txtB2CustomUrl.Name = "txtB2CustomUrl";
+            this.ttHelpTip.SetToolTip(this.txtB2CustomUrl, resources.GetString("txtB2CustomUrl.ToolTip"));
+            this.txtB2CustomUrl.TextChanged += new System.EventHandler(this.txtB2CustomUrl_TextChanged);
+            // 
+            // cbB2CustomUrl
+            // 
+            resources.ApplyResources(this.cbB2CustomUrl, "cbB2CustomUrl");
+            this.cbB2CustomUrl.Name = "cbB2CustomUrl";
+            this.ttHelpTip.SetToolTip(this.cbB2CustomUrl, resources.GetString("cbB2CustomUrl.ToolTip"));
+            this.cbB2CustomUrl.UseVisualStyleBackColor = true;
+            this.cbB2CustomUrl.CheckedChanged += new System.EventHandler(this.cbB2CustomUrl_CheckedChanged);
+            // 
+            // txtB2Bucket
+            // 
+            resources.ApplyResources(this.txtB2Bucket, "txtB2Bucket");
+            this.txtB2Bucket.Name = "txtB2Bucket";
+            this.ttHelpTip.SetToolTip(this.txtB2Bucket, resources.GetString("txtB2Bucket.ToolTip"));
+            this.txtB2Bucket.TextChanged += new System.EventHandler(this.txtB2Bucket_TextChanged);
+            // 
+            // txtB2UploadPath
+            // 
+            resources.ApplyResources(this.txtB2UploadPath, "txtB2UploadPath");
+            this.txtB2UploadPath.Name = "txtB2UploadPath";
+            this.ttHelpTip.SetToolTip(this.txtB2UploadPath, resources.GetString("txtB2UploadPath.ToolTip"));
+            this.txtB2UploadPath.TextChanged += new System.EventHandler(this.txtB2UploadPath_TextChanged);
+            // 
+            // txtB2ApplicationKey
+            // 
+            resources.ApplyResources(this.txtB2ApplicationKey, "txtB2ApplicationKey");
+            this.txtB2ApplicationKey.Name = "txtB2ApplicationKey";
+            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKey, resources.GetString("txtB2ApplicationKey.ToolTip"));
+            this.txtB2ApplicationKey.UseSystemPasswordChar = true;
+            this.txtB2ApplicationKey.TextChanged += new System.EventHandler(this.txtB2ApplicationKey_TextChanged);
+            // 
+            // txtB2ApplicationKeyId
+            // 
+            resources.ApplyResources(this.txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
+            this.txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
+            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKeyId, resources.GetString("txtB2ApplicationKeyId.ToolTip"));
+            this.txtB2ApplicationKeyId.TextChanged += new System.EventHandler(this.txtB2ApplicationKeyId_TextChanged);
             // 
             // tpOtherUploaders
             // 
@@ -1807,6 +1866,7 @@
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpGoogleCloudStorage);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
+            this.tcFileUploaders.Controls.Add(this.tbBackblazeB2);
             this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
@@ -2930,6 +2990,64 @@
             // 
             resources.ApplyResources(this.lblAzureStorageCustomDomain, "lblAzureStorageCustomDomain");
             this.lblAzureStorageCustomDomain.Name = "lblAzureStorageCustomDomain";
+            // 
+            // tbBackblazeB2
+            // 
+            this.tbBackblazeB2.BackColor = System.Drawing.SystemColors.Window;
+            this.tbBackblazeB2.Controls.Add(this.lblB2ManageLink);
+            this.tbBackblazeB2.Controls.Add(this.txtB2UrlPreview);
+            this.tbBackblazeB2.Controls.Add(this.txtB2CustomUrl);
+            this.tbBackblazeB2.Controls.Add(this.lblB2UrlPreview);
+            this.tbBackblazeB2.Controls.Add(this.cbB2CustomUrl);
+            this.tbBackblazeB2.Controls.Add(this.lblB2Bucket);
+            this.tbBackblazeB2.Controls.Add(this.txtB2Bucket);
+            this.tbBackblazeB2.Controls.Add(this.txtB2UploadPath);
+            this.tbBackblazeB2.Controls.Add(this.lblB2UploadPath);
+            this.tbBackblazeB2.Controls.Add(this.txtB2ApplicationKey);
+            this.tbBackblazeB2.Controls.Add(this.lblB2ApplicationKey);
+            this.tbBackblazeB2.Controls.Add(this.lblB2ApplicationKeyId);
+            this.tbBackblazeB2.Controls.Add(this.txtB2ApplicationKeyId);
+            resources.ApplyResources(this.tbBackblazeB2, "tbBackblazeB2");
+            this.tbBackblazeB2.Name = "tbBackblazeB2";
+            // 
+            // lblB2ManageLink
+            // 
+            resources.ApplyResources(this.lblB2ManageLink, "lblB2ManageLink");
+            this.lblB2ManageLink.Name = "lblB2ManageLink";
+            this.lblB2ManageLink.TabStop = true;
+            this.lblB2ManageLink.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lblB2ManageLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblB2ManageLink_LinkClicked);
+            // 
+            // txtB2UrlPreview
+            // 
+            resources.ApplyResources(this.txtB2UrlPreview, "txtB2UrlPreview");
+            this.txtB2UrlPreview.Name = "txtB2UrlPreview";
+            this.txtB2UrlPreview.ReadOnly = true;
+            // 
+            // lblB2UrlPreview
+            // 
+            resources.ApplyResources(this.lblB2UrlPreview, "lblB2UrlPreview");
+            this.lblB2UrlPreview.Name = "lblB2UrlPreview";
+            // 
+            // lblB2Bucket
+            // 
+            resources.ApplyResources(this.lblB2Bucket, "lblB2Bucket");
+            this.lblB2Bucket.Name = "lblB2Bucket";
+            // 
+            // lblB2UploadPath
+            // 
+            resources.ApplyResources(this.lblB2UploadPath, "lblB2UploadPath");
+            this.lblB2UploadPath.Name = "lblB2UploadPath";
+            // 
+            // lblB2ApplicationKey
+            // 
+            resources.ApplyResources(this.lblB2ApplicationKey, "lblB2ApplicationKey");
+            this.lblB2ApplicationKey.Name = "lblB2ApplicationKey";
+            // 
+            // lblB2ApplicationKeyId
+            // 
+            resources.ApplyResources(this.lblB2ApplicationKeyId, "lblB2ApplicationKeyId");
+            this.lblB2ApplicationKeyId.Name = "lblB2ApplicationKeyId";
             // 
             // tpGfycat
             // 
@@ -5378,6 +5496,8 @@
             this.tpGoogleCloudStorage.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
+            this.tbBackblazeB2.ResumeLayout(false);
+            this.tbBackblazeB2.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
             this.tpGfycat.PerformLayout();
             this.tpMega.ResumeLayout(false);
@@ -6097,5 +6217,19 @@
         private System.Windows.Forms.Label lblAzureStorageURLPreview;
         private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
         private System.Windows.Forms.Label lblFirebaseDomainExample;
+        internal System.Windows.Forms.TabPage tbBackblazeB2;
+        private System.Windows.Forms.TextBox txtB2CustomUrl;
+        private System.Windows.Forms.Label lblB2UrlPreview;
+        private System.Windows.Forms.CheckBox cbB2CustomUrl;
+        private System.Windows.Forms.Label lblB2Bucket;
+        private System.Windows.Forms.TextBox txtB2Bucket;
+        private System.Windows.Forms.TextBox txtB2UploadPath;
+        private System.Windows.Forms.Label lblB2UploadPath;
+        private System.Windows.Forms.TextBox txtB2ApplicationKey;
+        private System.Windows.Forms.Label lblB2ApplicationKey;
+        private System.Windows.Forms.Label lblB2ApplicationKeyId;
+        private System.Windows.Forms.TextBox txtB2ApplicationKeyId;
+        private System.Windows.Forms.TextBox txtB2UrlPreview;
+        private System.Windows.Forms.LinkLabel lblB2ManageLink;
     }
 }

@@ -281,6 +281,34 @@ namespace ShareX.UploadersLib
 
         #endregion Azure Storage
 
+        #region Backblaze B2
+
+        private void B2UpdateCustomDomainPreview()
+        {
+            var uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
+
+            if (cbB2CustomUrl.Checked)
+            {
+                var customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
+                if (URLHelpers.IsValidURL(customUrl))
+                {
+                    txtB2UrlPreview.Text = customUrl + uploadPath + "example.png";
+                }
+                else
+                {
+                    txtB2UrlPreview.Text = "invalid custom URL";
+                }
+            }
+            else
+            {
+                var bucket = URLHelpers.URLEncode(Config.B2BucketName);
+                var url = $"https://f001.backblazeb2.com/file/{bucket}/{uploadPath}example.png";
+                txtB2UrlPreview.Text = url;
+            }
+        }
+
+        #endregion Backblaze B2
+
         #region Google Drive
 
         private void GoogleDriveRefreshFolders()

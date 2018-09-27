@@ -101,6 +101,8 @@ namespace ShareX.UploadersLib
         GoogleCloudStorage,
         [Description("Azure Storage")]
         AzureStorage,
+        [Description("Backblaze B2")]
+        BackblazeB2,
         [Description("Gfycat")]
         Gfycat,
         [Description("ownCloud / Nextcloud")]

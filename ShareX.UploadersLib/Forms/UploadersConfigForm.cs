@@ -673,6 +673,19 @@ namespace ShareX.UploadersLib
 
             #endregion Azure Storage
 
+            #region Backblaze B2
+
+            txtB2ApplicationKeyId.Text = Config.B2ApplicationKeyId;
+            txtB2ApplicationKey.Text = Config.B2ApplicationKey;
+            txtB2Bucket.Text = Config.B2BucketName;
+            txtB2UploadPath.Text = Config.B2UploadPath;
+            cbB2CustomUrl.Checked = Config.B2UseCustomUrl;
+            txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Text = Config.B2CustomUrl;
+            B2UpdateCustomDomainPreview();
+
+            #endregion Backblaze B2
+
             #region Plik
 
             txtPlikAPIKey.Text = Config.PlikSettings.APIKey;
@@ -2875,6 +2888,50 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Azure Storage
+
+        #region Backblaze B2
+
+        private void txtB2ApplicationKeyId_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2ApplicationKeyId = txtB2ApplicationKeyId.Text.Trim();
+        }
+
+        private void txtB2ApplicationKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2ApplicationKey = txtB2ApplicationKey.Text.Trim();
+        }
+
+        private void cbB2CustomUrl_CheckedChanged(object sender, EventArgs e)
+        {
+            txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            Config.B2UseCustomUrl = cbB2CustomUrl.Checked;
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void txtB2CustomUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2CustomUrl = txtB2CustomUrl.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void lblB2ManageLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://secure.backblaze.com/b2_buckets.htm");
+        }
+
+        private void txtB2UploadPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2UploadPath = txtB2UploadPath.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void txtB2Bucket_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2BucketName = txtB2Bucket.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        #endregion Backblaze B2
 
         #region Plik
 
