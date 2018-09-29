@@ -594,7 +594,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
-            cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;       
+            cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
 
             #endregion ownCloud / Nextcloud
 
@@ -2332,6 +2332,7 @@ namespace ShareX.UploadersLib
         {
             Config.OwnCloudUsePreviewLinks = cbOwnCloudUsePreviewLinks.Checked;
         }
+
         private void cbOwnCloudAutoExpire_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
@@ -3694,11 +3695,11 @@ namespace ShareX.UploadersLib
                     {
                         if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
                         {
-                            syntax = string.Format("$regex:{0},{1}$", selectedIndex + 1, match.Groups[1].Value);
+                            syntax = string.Format("$regex:{0}|{1}$", selectedIndex + 1, match.Groups[1].Value);
                         }
                         else
                         {
-                            syntax = string.Format("$regex:{0},1$", selectedIndex + 1);
+                            syntax = string.Format("$regex:{0}|1$", selectedIndex + 1);
                         }
                     }
                     else

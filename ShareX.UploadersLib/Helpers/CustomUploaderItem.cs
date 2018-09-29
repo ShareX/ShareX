@@ -356,7 +356,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    if (syntax[i] == ',')
+                    if (syntax[i] == '|' || syntax[i] == ',')
                     {
                         isGroupRegex = true;
                     }
