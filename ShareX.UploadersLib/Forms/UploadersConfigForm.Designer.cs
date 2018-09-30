@@ -330,7 +330,7 @@
             this.lblAzureStorageAccountName = new System.Windows.Forms.Label();
             this.txtAzureStorageCustomDomain = new System.Windows.Forms.TextBox();
             this.lblAzureStorageCustomDomain = new System.Windows.Forms.Label();
-            this.tbBackblazeB2 = new System.Windows.Forms.TabPage();
+            this.tpBackblazeB2 = new System.Windows.Forms.TabPage();
             this.lblB2ManageLink = new System.Windows.Forms.LinkLabel();
             this.txtB2UrlPreview = new System.Windows.Forms.TextBox();
             this.lblB2UrlPreview = new System.Windows.Forms.Label();
@@ -703,7 +703,7 @@
             this.gbAmazonS3Advanced.SuspendLayout();
             this.tpGoogleCloudStorage.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
-            this.tbBackblazeB2.SuspendLayout();
+            this.tpBackblazeB2.SuspendLayout();
             this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -1866,7 +1866,7 @@
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpGoogleCloudStorage);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
-            this.tcFileUploaders.Controls.Add(this.tbBackblazeB2);
+            this.tcFileUploaders.Controls.Add(this.tpBackblazeB2);
             this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
@@ -2991,24 +2991,24 @@
             resources.ApplyResources(this.lblAzureStorageCustomDomain, "lblAzureStorageCustomDomain");
             this.lblAzureStorageCustomDomain.Name = "lblAzureStorageCustomDomain";
             // 
-            // tbBackblazeB2
+            // tpBackblazeB2
             // 
-            this.tbBackblazeB2.BackColor = System.Drawing.SystemColors.Window;
-            this.tbBackblazeB2.Controls.Add(this.lblB2ManageLink);
-            this.tbBackblazeB2.Controls.Add(this.txtB2UrlPreview);
-            this.tbBackblazeB2.Controls.Add(this.txtB2CustomUrl);
-            this.tbBackblazeB2.Controls.Add(this.lblB2UrlPreview);
-            this.tbBackblazeB2.Controls.Add(this.cbB2CustomUrl);
-            this.tbBackblazeB2.Controls.Add(this.lblB2Bucket);
-            this.tbBackblazeB2.Controls.Add(this.txtB2Bucket);
-            this.tbBackblazeB2.Controls.Add(this.txtB2UploadPath);
-            this.tbBackblazeB2.Controls.Add(this.lblB2UploadPath);
-            this.tbBackblazeB2.Controls.Add(this.txtB2ApplicationKey);
-            this.tbBackblazeB2.Controls.Add(this.lblB2ApplicationKey);
-            this.tbBackblazeB2.Controls.Add(this.lblB2ApplicationKeyId);
-            this.tbBackblazeB2.Controls.Add(this.txtB2ApplicationKeyId);
-            resources.ApplyResources(this.tbBackblazeB2, "tbBackblazeB2");
-            this.tbBackblazeB2.Name = "tbBackblazeB2";
+            this.tpBackblazeB2.BackColor = System.Drawing.SystemColors.Window;
+            this.tpBackblazeB2.Controls.Add(this.lblB2ManageLink);
+            this.tpBackblazeB2.Controls.Add(this.txtB2UrlPreview);
+            this.tpBackblazeB2.Controls.Add(this.txtB2CustomUrl);
+            this.tpBackblazeB2.Controls.Add(this.lblB2UrlPreview);
+            this.tpBackblazeB2.Controls.Add(this.cbB2CustomUrl);
+            this.tpBackblazeB2.Controls.Add(this.lblB2Bucket);
+            this.tpBackblazeB2.Controls.Add(this.txtB2Bucket);
+            this.tpBackblazeB2.Controls.Add(this.txtB2UploadPath);
+            this.tpBackblazeB2.Controls.Add(this.lblB2UploadPath);
+            this.tpBackblazeB2.Controls.Add(this.txtB2ApplicationKey);
+            this.tpBackblazeB2.Controls.Add(this.lblB2ApplicationKey);
+            this.tpBackblazeB2.Controls.Add(this.lblB2ApplicationKeyId);
+            this.tpBackblazeB2.Controls.Add(this.txtB2ApplicationKeyId);
+            resources.ApplyResources(this.tpBackblazeB2, "tpBackblazeB2");
+            this.tpBackblazeB2.Name = "tpBackblazeB2";
             // 
             // lblB2ManageLink
             // 
@@ -5496,8 +5496,8 @@
             this.tpGoogleCloudStorage.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
-            this.tbBackblazeB2.ResumeLayout(false);
-            this.tbBackblazeB2.PerformLayout();
+            this.tpBackblazeB2.ResumeLayout(false);
+            this.tpBackblazeB2.PerformLayout();
             this.tpGfycat.ResumeLayout(false);
             this.tpGfycat.PerformLayout();
             this.tpMega.ResumeLayout(false);
@@ -6217,7 +6217,7 @@
         private System.Windows.Forms.Label lblAzureStorageURLPreview;
         private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
         private System.Windows.Forms.Label lblFirebaseDomainExample;
-        internal System.Windows.Forms.TabPage tbBackblazeB2;
+        internal System.Windows.Forms.TabPage tpBackblazeB2;
         private System.Windows.Forms.TextBox txtB2CustomUrl;
         private System.Windows.Forms.Label lblB2UrlPreview;
         private System.Windows.Forms.CheckBox cbB2CustomUrl;

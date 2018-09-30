@@ -989,14 +989,9 @@
     <None Include="Favicons\Plik.ico" />
     <None Include="Favicons\Gfycat.png" />
     <None Include="Favicons\GooglePhotos.ico" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Favicons\BackblazeB2.ico" />
     <None Include="Favicons\Firebase.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\YouTube.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\GoogleCloud.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1016,16 +1011,15 @@
       <Version>4.5.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Favicons\BackblazeB2.ico" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cd $(ProjectDir)APIKeys\
+    <PreBuildEvent>
+      cd $(ProjectDir)APIKeys\
 
-if not exist APIKeysLocal.cs (
-    type nul &gt; APIKeysLocal.cs
-)</PreBuildEvent>
+      if not exist APIKeysLocal.cs (
+      type nul &gt; APIKeysLocal.cs
+      )
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

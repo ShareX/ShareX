@@ -39,6 +39,7 @@ using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -70,6 +71,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 customUrl: config.B2CustomUrl
                 );
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBackblazeB2;
     }
 
     /// <summary>
