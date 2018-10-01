@@ -1602,7 +1602,12 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            DebugForm.GetFormInstance(DebugHelper.Logger).ForceActivate();
+            var form = DebugForm.GetFormInstance(DebugHelper.Logger);
+            if (!form.HasUploadRequested)
+            {
+                form.UploadRequested += text => UploadManager.UploadText(text);
+            }
+            form.ForceActivate();
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)

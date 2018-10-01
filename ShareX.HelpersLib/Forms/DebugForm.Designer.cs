@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ShareX.HelpersLib
 {
     partial class DebugForm
     {

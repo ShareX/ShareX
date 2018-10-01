@@ -28,15 +28,19 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using ShareX.HelpersLib;
 
-namespace ShareX
+namespace ShareX.HelpersLib
 {
     public partial class DebugForm : Form
     {
         private static DebugForm instance;
 
+        public delegate void EventHandler(string log);
+        public event EventHandler UploadRequested;
+
         public Logger Logger { get; private set; }
+
+        public bool HasUploadRequested => UploadRequested != null;
 
         private DebugForm(Logger logger)
         {
@@ -54,6 +58,7 @@ namespace ShareX
             llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
 
             Logger.MessageAdded += logger_MessageAdded;
+            Activated += (sender, e) => btnUploadLog.Visible = HasUploadRequested;
             FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
         }
 
@@ -117,7 +122,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(rtbDebug.Text))
             {
-                UploadManager.UploadText(rtbDebug.Text);
+                UploadRequested?.Invoke(rtbDebug.Text);
             }
         }
 
