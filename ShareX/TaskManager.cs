@@ -418,13 +418,10 @@ namespace ShareX
                                                 {
                                                     Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
                                                     FilePath = info.FilePath,
+                                                    Image = task.Image,
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };
-                                                if (info.DataType == EDataType.Image)
-                                                {
-                                                    toastConfig.Image = task.Image;
-                                                }
                                                 NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
                                                     (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
                                                     info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
