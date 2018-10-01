@@ -129,8 +129,8 @@ namespace ShareX.HelpersLib
             this.FormBorderStyle = FormBorderStyle.None;
             this.Text = "ShareX - Image viewer";
             this.TopMost = true;
-            this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
 
             this.pbPreview.Cursor = Cursors.Hand;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
