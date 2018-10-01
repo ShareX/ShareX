@@ -124,12 +124,13 @@ namespace ShareX.HelpersLib
             this.SuspendLayout();
 
             this.BackColor = SystemColors.Window;
-            this.Bounds = CaptureHelpers.GetScreenBounds();
+            this.Bounds = CaptureHelpers.GetActiveScreenBounds();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Text = "ShareX - Image viewer";
             this.TopMost = true;
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.Manual;
 
             this.pbPreview.Cursor = Cursors.Hand;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
