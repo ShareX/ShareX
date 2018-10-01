@@ -98,6 +98,8 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtGoogleCloudStorageObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtB2UploadPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtB2CustomUrl, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
@@ -120,6 +122,10 @@ namespace ShareX.UploadersLib
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
+
+            // Backblaze B2
+            txtB2Bucket.HandleCreated += (sender, e) =>
+                txtB2Bucket.SetWatermark("Optional, only used if you didn't set a bucket when you made the key", showCueWhenFocus: true);
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
@@ -674,6 +680,20 @@ namespace ShareX.UploadersLib
             UpdateAzureStorageStatus();
 
             #endregion Azure Storage
+
+            #region Backblaze B2
+
+            txtB2ApplicationKeyId.Text = Config.B2ApplicationKeyId;
+            txtB2ApplicationKey.Text = Config.B2ApplicationKey;
+            txtB2Bucket.Text = Config.B2BucketName;
+            txtB2UploadPath.Text = Config.B2UploadPath;
+            cbB2CustomUrl.Checked = Config.B2UseCustomUrl;
+            txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Enabled = cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Text = Config.B2CustomUrl;
+            B2UpdateCustomDomainPreview();
+
+            #endregion Backblaze B2
 
             #region Plik
 
@@ -2887,6 +2907,51 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Azure Storage
+
+        #region Backblaze B2
+
+        private void txtB2ApplicationKeyId_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2ApplicationKeyId = txtB2ApplicationKeyId.Text.Trim();
+        }
+
+        private void txtB2ApplicationKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2ApplicationKey = txtB2ApplicationKey.Text.Trim();
+        }
+
+        private void cbB2CustomUrl_CheckedChanged(object sender, EventArgs e)
+        {
+            txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Enabled = cbB2CustomUrl.Checked;
+            Config.B2UseCustomUrl = cbB2CustomUrl.Checked;
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void txtB2CustomUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2CustomUrl = txtB2CustomUrl.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void lblB2ManageLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://secure.backblaze.com/b2_buckets.htm");
+        }
+
+        private void txtB2UploadPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2UploadPath = txtB2UploadPath.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        private void txtB2Bucket_TextChanged(object sender, EventArgs e)
+        {
+            Config.B2BucketName = txtB2Bucket.Text.Trim();
+            B2UpdateCustomDomainPreview();
+        }
+
+        #endregion Backblaze B2
 
         #region Plik
 
