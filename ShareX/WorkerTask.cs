@@ -304,14 +304,9 @@ namespace ShareX
             }
             finally
             {
-                bool hasFile = !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath);
+                Dispose(!(Info.DataType == EDataType.Image && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification));
 
-                if (hasFile || Info.DataType != EDataType.Image)
-                {
-                    Dispose();
-                }
-
-                if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && hasFile)
+                if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                 {
                     File.Delete(Info.FilePath);
                 }
@@ -1117,7 +1112,7 @@ namespace ShareX
             }
         }
 
-        public void Dispose()
+        private void Dispose(bool shouldDisposeImage)
         {
             if (Data != null)
             {
@@ -1125,11 +1120,16 @@ namespace ShareX
                 Data = null;
             }
 
-            if (Image != null)
+            if (Image != null && shouldDisposeImage)
             {
                 Image.Dispose();
                 Image = null;
             }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
     }
 }
