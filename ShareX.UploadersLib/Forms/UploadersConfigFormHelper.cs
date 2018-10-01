@@ -301,7 +301,9 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                var bucket = URLHelpers.URLEncode(Config.B2BucketName);
+                var bucket = string.IsNullOrEmpty(Config.B2BucketName) ?
+                    "[bucket]" :
+                    URLHelpers.URLEncode(Config.B2BucketName);
                 var url = $"https://f001.backblazeb2.com/file/{bucket}/{uploadPath}example.png";
                 txtB2UrlPreview.Text = url;
             }

@@ -689,6 +689,7 @@ namespace ShareX.UploadersLib
             txtB2UploadPath.Text = Config.B2UploadPath;
             cbB2CustomUrl.Checked = Config.B2UseCustomUrl;
             txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Enabled = cbB2CustomUrl.Checked;
             txtB2CustomUrl.Text = Config.B2CustomUrl;
             B2UpdateCustomDomainPreview();
 
@@ -2922,6 +2923,7 @@ namespace ShareX.UploadersLib
         private void cbB2CustomUrl_CheckedChanged(object sender, EventArgs e)
         {
             txtB2CustomUrl.ReadOnly = !cbB2CustomUrl.Checked;
+            txtB2CustomUrl.Enabled = cbB2CustomUrl.Checked;
             Config.B2UseCustomUrl = cbB2CustomUrl.Checked;
             B2UpdateCustomDomainPreview();
         }
