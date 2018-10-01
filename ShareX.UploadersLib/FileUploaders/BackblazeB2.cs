@@ -59,8 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return
                 !string.IsNullOrWhiteSpace(config.B2ApplicationKeyId) &&
-                !string.IsNullOrWhiteSpace(config.B2ApplicationKey) &&
-                !string.IsNullOrWhiteSpace(config.B2BucketName);
+                !string.IsNullOrWhiteSpace(config.B2ApplicationKey);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -125,7 +124,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (authError != null)
             {
                 DebugHelper.WriteLine("B2 uploader: Failed to authorize.");
-                Errors.Add("Could not authenticate with B2: " + authError);
+                Errors.Add($"Could not authenticate with B2: {authError}");
                 return null;
             }
 
@@ -136,7 +135,7 @@ namespace ShareX.UploadersLib.FileUploaders
             var bucketId = auth.allowed?.bucketId;
             if (bucketId == null)
             {
-                DebugHelper.WriteLine("B2 uploader: This doesn't look like an app key, so I'm looking for a bucket ID.");
+                DebugHelper.WriteLine("B2 uploader: Key doesn't have a bucket ID set, so I'm looking for a bucket ID.");
 
                 var newBucketId = B2ApiGetBucketId(auth, BucketName, out var getBucketError);
                 if (getBucketError != null)
@@ -300,7 +299,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["Authorization"] = auth.authorizationToken
             };
 
-            var reqBody = new Dictionary<string, string> { ["bucketName"] = bucketName };
+            var reqBody = new Dictionary<string, string>
+            {
+                ["accountId"] = auth.accountId,
+                ["bucketName"] = bucketName
+            };
 
             using (var data = CreateJsonBody(reqBody))
             {

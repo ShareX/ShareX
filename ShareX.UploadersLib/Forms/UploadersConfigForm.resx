@@ -261,9 +261,15 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>Use custom URL (supports pattern format):</value>
   </data>
   <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>If enabled, the URL you receive will be the upload path appended to the given URL. This is useful in conjunction with a service like CloudFlare or another service acting as frontend to B2. See the article "Creating a Vanity URL with B2" in the B2 knowledge base.
+    <value>If enabled, the URL you receive will be the upload path
+appended to the given URL.
 
-If disabled, then the URL you will receive will be determined by B2. </value>
+This is useful in conjunction with a service like CloudFlare or
+another service acting as frontend to B2. See the article
+"Creating a Vanity URL with B2" in the B2 knowledge base.
+
+If disabled, then the URL you will receive will be determined
+by Backblaze B2. </value>
   </data>
   <data name="&gt;&gt;cbB2CustomUrl.Name" xml:space="preserve">
     <value>cbB2CustomUrl</value>
@@ -289,7 +295,9 @@ If disabled, then the URL you will receive will be determined by B2. </value>
   <data name="txtB2Bucket.ToolTip" xml:space="preserve">
     <value>Where to store your files.
 
-The bucket needs to be public as the Backblaze B2 Cloud Storage API does not allow for download links that last longer than a week.</value>
+This only takes effect when you did not set
+"Allow access to bucket(s)" to a bucket
+when you made the application key.</value>
   </data>
   <data name="&gt;&gt;txtB2Bucket.Name" xml:space="preserve">
     <value>txtB2Bucket</value>
@@ -337,7 +345,7 @@ The bucket needs to be public as the Backblaze B2 Cloud Storage API does not all
     <value>3</value>
   </data>
   <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>The application key.</value>
+    <value>The application key. Looks alphanumeric.</value>
   </data>
   <data name="&gt;&gt;txtB2ApplicationKey.Name" xml:space="preserve">
     <value>txtB2ApplicationKey</value>
@@ -361,7 +369,7 @@ The bucket needs to be public as the Backblaze B2 Cloud Storage API does not all
     <value>2</value>
   </data>
   <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>The Application Key ID looks like an all-lowercase hexadecimal string.</value>
+    <value>The Application Key ID. Looks like a lowercase hexadecimal string.</value>
   </data>
   <data name="&gt;&gt;txtB2ApplicationKeyId.Name" xml:space="preserve">
     <value>txtB2ApplicationKeyId</value>
@@ -8047,13 +8055,13 @@ store.book[0].title</value>
     <value>2</value>
   </data>
   <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 519</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>

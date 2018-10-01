@@ -98,6 +98,8 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtMediaFirePath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtGoogleCloudStorageObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtB2UploadPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtB2CustomUrl, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
@@ -120,6 +122,9 @@ namespace ShareX.UploadersLib
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
+
+            // Backblaze B2
+            SetPlaceholderText(txtB2Bucket, "Optional, only used if you didn't set a bucket when you made the key");
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;

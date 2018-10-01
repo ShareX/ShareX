@@ -380,7 +380,7 @@ namespace ShareX.UploadersLib
 
         public string B2ApplicationKeyId = "";
         public string B2ApplicationKey = "";
-        public string B2BucketName = "mybucket";
+        public string B2BucketName = "";
         public string B2UploadPath = "ShareX/%y/%mo/";
         public bool B2UseCustomUrl = false;
         public string B2CustomUrl = "https://example.com/";
