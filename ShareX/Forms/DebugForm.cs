@@ -28,8 +28,9 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using ShareX.HelpersLib;
 
-namespace ShareX.HelpersLib
+namespace ShareX
 {
     public partial class DebugForm : Form
     {
@@ -110,6 +111,14 @@ namespace ShareX.HelpersLib
             string assemblies = sb.ToString().Trim();
 
             DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
+        }
+
+        private void btnUploadLog_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(rtbDebug.Text))
+            {
+                UploadManager.UploadText(rtbDebug.Text);
+            }
         }
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)

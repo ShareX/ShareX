@@ -276,12 +276,6 @@
     <Compile Include="UITypeEditors\CssFileNameEditor.cs" />
     <Compile Include="CursorData.cs" />
     <Compile Include="UITypeEditors\ExeFileNameEditor.cs" />
-    <Compile Include="Forms\DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DebugTimer.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Forms\HashCheckForm.cs">
@@ -769,59 +763,8 @@
     <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-TW.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.de.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.es-MX.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.es.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.fr.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.hu.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.id-ID.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.it-IT.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.ko-KR.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.nl-NL.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.pt-BR.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.ru.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.tr.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.uk.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.vi-VN.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.zh-CN.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.zh-TW.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.de.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>

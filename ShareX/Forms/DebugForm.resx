@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLoadedAssemblies.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCopyAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="rtbDebug.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -185,6 +185,9 @@
   </data>
   <data name="rtbDebug.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbDebug.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="rtbDebug.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -199,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbDebug.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnOpenLogFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -229,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOpenLogFile.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="llRunningFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpRunningFrom.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblRunningFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,6 +328,30 @@
     <value>flpRunningFrom</value>
   </data>
   <data name="&gt;&gt;lblRunningFrom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnUploadLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 512</value>
+  </data>
+  <data name="btnUploadLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="btnUploadLog.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnUploadLog.Text" xml:space="preserve">
+    <value>Upload log</value>
+  </data>
+  <data name="&gt;&gt;btnUploadLog.Name" xml:space="preserve">
+    <value>btnUploadLog</value>
+  </data>
+  <data name="&gt;&gt;btnUploadLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUploadLog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUploadLog.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
