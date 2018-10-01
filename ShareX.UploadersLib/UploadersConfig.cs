@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
@@ -455,6 +456,12 @@ namespace ShareX.UploadersLib
         public bool FirebaseIsShort = false;
 
         #endregion Firebase Dynamic Links
+
+        #region Kutt
+
+        public KuttSettings KuttSettings = new KuttSettings();
+
+        #endregion Kutt
 
         #endregion URL shorteners
 

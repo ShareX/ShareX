@@ -173,6 +173,8 @@ namespace ShareX.UploadersLib
         Polr,
         [Description("Firebase Dynamic Links")]
         FirebaseDynamicLinks,
+        [Description("Kutt")]
+        Kutt,
         CustomURLShortener // Localized
     }
 
