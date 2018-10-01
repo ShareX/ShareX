@@ -805,6 +805,15 @@ namespace ShareX.UploadersLib
 
             #endregion Firebase Dynamic Links
 
+            #region Kutt
+
+            txtKuttHost.Text = Config.KuttSettings.Host;
+            txtKuttAPIKey.Text = Config.KuttSettings.APIKey;
+            txtKuttPassword.Text = Config.KuttSettings.Password;
+            cbKuttReuse.Checked = Config.KuttSettings.Reuse;
+
+            #endregion Kutt
+
             #endregion URL shorteners
 
             #region Other uploaders
@@ -3245,6 +3254,30 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Firebase Dynamic Links
+
+        #region Kutt
+
+        private void txtKuttHost_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Host = txtKuttHost.Text;
+        }
+
+        private void txtKuttAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.APIKey = txtKuttAPIKey.Text;
+        }
+
+        private void txtKuttPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Password = txtKuttPassword.Text;
+        }
+
+        private void cbKuttReuse_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Reuse = cbKuttReuse.Checked;
+        }
+
+        #endregion Kutt
 
         #endregion URL shorteners
 

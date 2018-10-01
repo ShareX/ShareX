@@ -339,6 +339,7 @@
     <Compile Include="BaseUploaders\URLShortener.cs" />
     <Compile Include="BaseServices\URLShortenerService.cs" />
     <Compile Include="URLShorteners\FirebaseDynamicLinksURLShortener.cs" />
+    <Compile Include="URLShorteners\KuttURLShortener.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
@@ -1007,6 +1008,9 @@
     <PackageReference Include="SSH.NET">
       <Version>2016.1.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Kutt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
