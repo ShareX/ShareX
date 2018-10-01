@@ -39,6 +39,9 @@ namespace ShareX.HelpersLib
             screenshot = image;
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            var currentScreen = Screen.FromPoint(Cursor.Position);
+            StartPosition = FormStartPosition.CenterScreen;
+            Location = currentScreen.Bounds.Location;
         }
 
         public static void ShowImage(Image img)
