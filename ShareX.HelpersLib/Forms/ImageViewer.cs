@@ -39,9 +39,6 @@ namespace ShareX.HelpersLib
             screenshot = image;
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            var currentScreen = Screen.FromPoint(Cursor.Position);
-            StartPosition = FormStartPosition.CenterScreen;
-            Location = currentScreen.Bounds.Location;
         }
 
         public static void ShowImage(Image img)
@@ -127,12 +124,13 @@ namespace ShareX.HelpersLib
             this.SuspendLayout();
 
             this.BackColor = SystemColors.Window;
-            this.Bounds = CaptureHelpers.GetScreenBounds();
+            this.Bounds = CaptureHelpers.GetActiveScreenBounds();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Text = "ShareX - Image viewer";
             this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             this.pbPreview.Cursor = Cursors.Hand;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
