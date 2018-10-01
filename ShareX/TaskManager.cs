@@ -423,7 +423,7 @@ namespace ShareX
                                                 };
                                                 if (info.DataType == EDataType.Image)
                                                 {
-                                                    toastConfig.Image = task.GetImage();
+                                                    toastConfig.Image = task.Image;
                                                 }
                                                 NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
                                                     (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
