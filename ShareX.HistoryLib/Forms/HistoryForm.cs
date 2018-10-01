@@ -119,7 +119,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] ApplyFilters(HistoryItem[] historyItems)
         {
-            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && string.IsNullOrEmpty(txtFilenameFilter.Text) && !cbDateFilter.Checked)
+            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && string.IsNullOrEmpty(txtFilenameFilter.Text) && !cbDateFilter.Checked && string.IsNullOrEmpty(txtUrlFilter.Text))
             {
                 return historyItems;
             }
@@ -171,6 +171,11 @@ namespace ShareX.HistoryLib
                             break;
                     }
                 }
+            }
+
+            if (!string.IsNullOrEmpty(txtUrlFilter.Text))
+            {
+                result = result.Where(x => x.URL?.Contains(txtUrlFilter.Text, StringComparison.InvariantCultureIgnoreCase) ?? false);
             }
 
             if (cbDateFilter.Checked)

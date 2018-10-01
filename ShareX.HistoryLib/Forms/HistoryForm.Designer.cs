@@ -53,6 +53,8 @@
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
+            this.txtUrlFilter = new System.Windows.Forms.TextBox();
+            this.lblFilterUrl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -134,6 +136,8 @@
             // gbFilters
             // 
             resources.ApplyResources(this.gbFilters, "gbFilters");
+            this.gbFilters.Controls.Add(this.lblFilterUrl);
+            this.gbFilters.Controls.Add(this.txtUrlFilter);
             this.gbFilters.Controls.Add(this.lblFilenameFilter);
             this.gbFilters.Controls.Add(this.cbHostFilterSelection);
             this.gbFilters.Controls.Add(this.btnRemoveFilters);
@@ -238,6 +242,16 @@
             resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
             // 
+            // txtUrlFilter
+            // 
+            resources.ApplyResources(this.txtUrlFilter, "txtUrlFilter");
+            this.txtUrlFilter.Name = "txtUrlFilter";
+            // 
+            // lblFilterUrl
+            // 
+            resources.ApplyResources(this.lblFilterUrl, "lblFilterUrl");
+            this.lblFilterUrl.Name = "lblFilterUrl";
+            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -285,5 +299,7 @@
         private System.Windows.Forms.TextBox txtFilenameFilter;
         private System.Windows.Forms.ComboBox cbFilenameFilterMethod;
         private System.Windows.Forms.Label lblFilenameFilter;
+        private System.Windows.Forms.TextBox txtUrlFilter;
+        private System.Windows.Forms.Label lblFilterUrl;
     }
 }
