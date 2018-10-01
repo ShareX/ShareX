@@ -40,7 +40,7 @@ namespace ShareX
         private AfterCaptureForm(TaskSettings taskSettings)
         {
             TaskSettings = taskSettings;
-
+            
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
@@ -97,6 +97,7 @@ namespace ShareX
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
             AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowQuickTaskMenu, AfterCaptureTasks.ShowAfterCaptureWindow };
+            int itemHeight = 0;
 
             foreach (AfterCaptureTasks task in Helpers.GetEnums<AfterCaptureTasks>())
             {
@@ -105,7 +106,15 @@ namespace ShareX
                 CheckItem(lvi, afterCaptureTasks.HasFlag(task));
                 lvi.Tag = task;
                 lvAfterCaptureTasks.Items.Add(lvi);
+
+                if (itemHeight == 0)
+                    itemHeight = lvi.Bounds.Height;
             }
+
+            int newListViewHeight = lvAfterCaptureTasks.Items.Count * itemHeight;
+            int listViewHeightDifference = newListViewHeight - lvAfterCaptureTasks.Height;
+            if(listViewHeightDifference > 0)
+                Height += listViewHeightDifference;
         }
 
         private AfterCaptureTasks GetAfterCaptureTasks()
