@@ -162,4 +162,10 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>An:</value>
   </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Dateiname:</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
 </root>

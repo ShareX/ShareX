@@ -350,7 +350,7 @@ namespace ShareX.UploadersLib
         }
 
         protected HttpWebResponse GetResponse(HttpMethod method, string url, Stream data = null, string contentType = null, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+            NameValueCollection headers = null, CookieCollection cookies = null, bool allowNon2xxResponses = false)
         {
             IsUploading = true;
             StopUploadRequested = false;
@@ -380,6 +380,12 @@ namespace ShareX.UploadersLib
                 }
 
                 return (HttpWebResponse)request.GetResponse();
+            }
+            catch (WebException we) when (we.Response != null && allowNon2xxResponses)
+            {
+                // if we.Response != null, then the request was successful, but
+                // returned a non-200 status code
+                return we.Response as HttpWebResponse;
             }
             catch (Exception e)
             {
@@ -586,37 +592,36 @@ namespace ShareX.UploadersLib
             return Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
         }
 
-        private string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
+        protected static string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
         {
-            if (response != null)
+            if (response == null)
             {
-                using (response)
-                {
-                    switch (responseType)
-                    {
-                        case ResponseType.Text:
-                            using (Stream responseStream = response.GetResponseStream())
-                            using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                            {
-                                return reader.ReadToEnd();
-                            }
-                        case ResponseType.RedirectionURL:
-                            return response.ResponseUri.OriginalString;
-                        case ResponseType.Headers:
-                            StringBuilder sbHeaders = new StringBuilder();
-                            foreach (string key in response.Headers.AllKeys)
-                            {
-                                string value = response.Headers[key];
-                                sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
-                            }
-                            return sbHeaders.ToString().Trim();
-                        case ResponseType.LocationHeader:
-                            return response.Headers["Location"];
-                    }
-                }
+                return null;
             }
 
-            return null;
+            switch (responseType)
+            {
+                case ResponseType.Text:
+                    using (Stream responseStream = response.GetResponseStream())
+                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                case ResponseType.RedirectionURL:
+                    return response.ResponseUri.OriginalString;
+                case ResponseType.Headers:
+                    StringBuilder sbHeaders = new StringBuilder();
+                    foreach (string key in response.Headers.AllKeys)
+                    {
+                        string value = response.Headers[key];
+                        sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
+                    }
+                    return sbHeaders.ToString().Trim();
+                case ResponseType.LocationHeader:
+                    return response.Headers["Location"];
+                default:
+                    return null;
+            }
         }
 
         protected NameValueCollection CreateAuthenticationHeader(string username, string password)
@@ -645,21 +650,26 @@ namespace ShareX.UploadersLib
                     sb.AppendLine(URLHelpers.RemoveQuery(url));
                 }
 
-                if (e is WebException)
+                if (e is WebException webException)
                 {
                     try
                     {
-                        response = ResponseToString(((WebException)e).Response);
-
-                        if (!string.IsNullOrEmpty(response))
+                        var res = webException.Response;
+                        using (res)
                         {
-                            sb.AppendLine();
-                            sb.AppendLine("Response:");
-                            sb.AppendLine(response);
+                            response = ResponseToString(res);
+
+                            if (!string.IsNullOrEmpty(response))
+                            {
+                                sb.AppendLine();
+                                sb.AppendLine("Response:");
+                                sb.AppendLine(response);
+                            }
                         }
                     }
-                    catch
+                    catch (Exception nested)
                     {
+                        DebugHelper.WriteException(nested, "AddWebError() WebException handler");
                     }
                 }
 

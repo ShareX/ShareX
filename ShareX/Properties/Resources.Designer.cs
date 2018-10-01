@@ -1828,6 +1828,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must reopen ShareX for personal folder changes to take effect..
+        /// </summary>
+        public static string MustReopenForPersonalFolderChangesToTakeEffect {
+            get {
+                return ResourceManager.GetString("MustReopenForPersonalFolderChangesToTakeEffect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap mx {

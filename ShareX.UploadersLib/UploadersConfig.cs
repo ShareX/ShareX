@@ -378,6 +378,17 @@ namespace ShareX.UploadersLib
 
         #endregion Azure Storage
 
+        #region Backblaze B2
+
+        public string B2ApplicationKeyId = "";
+        public string B2ApplicationKey = "";
+        public string B2BucketName = "";
+        public string B2UploadPath = "ShareX/%y/%mo/";
+        public bool B2UseCustomUrl = false;
+        public string B2CustomUrl = "https://example.com/";
+
+        #endregion Backblaze B2
+
         #region Plik
 
         public PlikSettings PlikSettings = new PlikSettings();

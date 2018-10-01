@@ -988,4 +988,7 @@ Middle click to close</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Startup has been enabled by your organization</value>
   </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>You must reopen ShareX for personal folder changes to take effect.</value>
+  </data>
 </root>

@@ -1561,6 +1561,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value of first step:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartingStepValue {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartingStepValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
