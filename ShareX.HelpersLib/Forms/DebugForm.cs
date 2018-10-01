@@ -35,7 +35,12 @@ namespace ShareX.HelpersLib
     {
         private static DebugForm instance;
 
+        public delegate void EventHandler(string log);
+        public event EventHandler UploadRequested;
+
         public Logger Logger { get; private set; }
+
+        public bool HasUploadRequested => UploadRequested != null;
 
         private DebugForm(Logger logger)
         {
@@ -53,6 +58,7 @@ namespace ShareX.HelpersLib
             llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
 
             Logger.MessageAdded += logger_MessageAdded;
+            Activated += (sender, e) => btnUploadLog.Visible = HasUploadRequested;
             FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
         }
 
@@ -110,6 +116,14 @@ namespace ShareX.HelpersLib
             string assemblies = sb.ToString().Trim();
 
             DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
+        }
+
+        private void btnUploadLog_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(rtbDebug.Text))
+            {
+                UploadRequested?.Invoke(rtbDebug.Text);
+            }
         }
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)

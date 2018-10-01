@@ -131,6 +131,12 @@
     <Compile Include="Controls\ToolStripNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="PointInfo.cs" />
     <Compile Include="SevenZipManager.cs" />
@@ -276,12 +282,6 @@
     <Compile Include="UITypeEditors\CssFileNameEditor.cs" />
     <Compile Include="CursorData.cs" />
     <Compile Include="UITypeEditors\ExeFileNameEditor.cs" />
-    <Compile Include="Forms\DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DebugTimer.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Forms\HashCheckForm.cs">
@@ -769,6 +769,9 @@
     <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-TW.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.de.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -801,9 +804,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.ru.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
