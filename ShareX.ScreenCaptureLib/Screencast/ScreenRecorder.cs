@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
                 throw new Exception("Screen recorder cache path is empty.");
             }
 
-            FPS = outputType == ScreenRecordOutput.GIF ? options.GIFFPS : options.ScreenRecordFPS;
+            FPS = options.FPS;
             DurationSeconds = options.Duration;
             CaptureRectangle = captureRectangle;
             CachePath = options.OutputPath;
@@ -228,6 +228,14 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+        }
+
+        public bool FFmpegEncodeVideo(string input, string output)
+        {
+            Helpers.CreateDirectoryFromFilePath(output);
+            bool result = ffmpegCli.EncodeVideo(input, output);
+            //DebugHelper.WriteLine("Video encoding result:\nInput file size: {0}\nOutput file size: {1}", new FileInfo(input).Length.ToSizeString(), new FileInfo(output).Length.ToSizeString());
+            return result;
         }
 
         public bool FFmpegEncodeAsGIF(string sourceFilePath, string targetFilePath, string tempFolder)

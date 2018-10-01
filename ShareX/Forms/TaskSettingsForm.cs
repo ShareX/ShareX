@@ -1050,9 +1050,9 @@ namespace ShareX
         {
             ScreencastOptions options = new ScreencastOptions
             {
+                IsRecording = true,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
-                ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
-                GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
+                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
