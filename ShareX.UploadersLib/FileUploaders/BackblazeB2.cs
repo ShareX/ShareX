@@ -269,8 +269,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2Authorization"/>.</returns>
         private B2Authorization B2ApiAuthorize(string keyId, string key, out string error)
         {
-            var base64Key = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{keyId}:{key}"));
-            var headers = new NameValueCollection() { ["Authorization"] = $"Basic {base64Key}" };
+            var headers = CreateAuthenticationHeader(keyId, key);
 
             using (var res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
             {
@@ -280,7 +279,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return null;
                 }
 
-                var body = new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                var body = ResponseToString(res);
 
                 error = null;
                 return JsonConvert.DeserializeObject<B2Authorization>(body);
@@ -314,7 +313,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    var body = new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                    var body = ResponseToString(res);
 
                     JObject json;
 
@@ -370,7 +369,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    var body = new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                    var body = ResponseToString(res);
 
                     error = null;
                     return JsonConvert.DeserializeObject<B2UploadUrl>(body);
@@ -441,7 +440,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
                 }
 
-                var body = new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                var body = ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{body}'");
 
                 return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(body));
@@ -503,7 +502,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                var body = new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                var body = ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: ParseB2Error() got: {body}");
                 var err = JsonConvert.DeserializeObject<B2Error>(body);
                 return err;
