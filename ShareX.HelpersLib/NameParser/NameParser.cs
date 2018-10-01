@@ -93,7 +93,8 @@ namespace ShareX.HelpersLib
 
             if (ProcessName != null)
             {
-                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), ProcessName);
+                string processName = ProcessName.Trim().Replace(' ', '_');
+                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
             }
 
             string width = "", height = "";

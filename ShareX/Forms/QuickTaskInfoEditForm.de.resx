@@ -129,4 +129,7 @@
   <data name="lblName.Text" xml:space="preserve">
     <value>Menü Text:</value>
   </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

@@ -595,10 +595,12 @@ namespace ShareX.UploadersLib
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
             txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
+            txtOwnCloudExpiryTime.Value = Config.OwnCloudExpiryTime;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
+            cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
 
             #endregion ownCloud / Nextcloud
 
@@ -2325,6 +2327,11 @@ namespace ShareX.UploadersLib
             Config.OwnCloudPath = txtOwnCloudPath.Text;
         }
 
+        private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudExpiryTime = Convert.ToInt32(txtOwnCloudExpiryTime.Value);
+        }
+
         private void cbOwnCloudCreateShare_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudCreateShare = cbOwnCloudCreateShare.Checked;
@@ -2343,6 +2350,11 @@ namespace ShareX.UploadersLib
         private void cbOwnCloudUsePreviewLinks_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudUsePreviewLinks = cbOwnCloudUsePreviewLinks.Checked;
+        }
+
+        private void cbOwnCloudAutoExpire_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
         }
 
         #endregion ownCloud / Nextcloud
@@ -3746,11 +3758,11 @@ namespace ShareX.UploadersLib
                     {
                         if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
                         {
-                            syntax = string.Format("$regex:{0},{1}$", selectedIndex + 1, match.Groups[1].Value);
+                            syntax = string.Format("$regex:{0}|{1}$", selectedIndex + 1, match.Groups[1].Value);
                         }
                         else
                         {
-                            syntax = string.Format("$regex:{0},1$", selectedIndex + 1);
+                            syntax = string.Format("$regex:{0}|1$", selectedIndex + 1);
                         }
                     }
                     else
