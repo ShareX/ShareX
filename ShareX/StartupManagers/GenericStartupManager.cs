@@ -35,34 +35,34 @@ namespace ShareX
     {
         public abstract string StartupTargetPath { get; }
 
-        public StartupTaskState State
+        public StartupState State
         {
             get
             {
                 if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, StartupTargetPath))
                 {
                     byte[] status = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
-                    "ShareX.lnk", null) as byte[];
+                        "ShareX.lnk", null) as byte[];
 
                     if (status != null && status.Length > 0 && status[0] == 3)
                     {
-                        return StartupTaskState.DisabledByUser;
+                        return StartupState.DisabledByUser;
                     }
                     else
                     {
-                        return StartupTaskState.Enabled;
+                        return StartupState.Enabled;
                     }
                 }
                 else
                 {
-                    return StartupTaskState.Disabled;
+                    return StartupState.Disabled;
                 }
             }
             set
             {
-                if (value == StartupTaskState.Enabled || value == StartupTaskState.Disabled)
+                if (value == StartupState.Enabled || value == StartupState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupTaskState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
+                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, StartupTargetPath, "-silent");
                 }
                 else
                 {
