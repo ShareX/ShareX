@@ -31,10 +31,6 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-#if WindowsStore
-using Windows.ApplicationModel;
-#endif
-
 namespace ShareX
 {
     public static class IntegrationHelpers
@@ -401,7 +397,7 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            StartupManagerSingletonProvider.CurrentStartupManager.State = StartupTaskState.Disabled;
+            StartupManagerSingletonProvider.CurrentStartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
