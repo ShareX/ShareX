@@ -285,11 +285,10 @@ namespace ShareX
             DebugHelper.WriteLine("Personal path: " + PersonalFolder);
             DebugHelper.WriteLine("Operating system: " + Helpers.GetWindowsProductName());
 
-            SilentRun = CLI.IsCommandExist("silent", "s")
+            SilentRun = CLI.IsCommandExist("silent", "s");
 #if WindowsStore
-                || AppInstance.GetActivatedEventArgs().Kind == ActivationKind.StartupTask;
+            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs().Kind == ActivationKind.StartupTask;
 #endif
-            ;
 
 #if STEAM
             SteamFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
