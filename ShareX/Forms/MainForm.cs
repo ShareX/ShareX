@@ -265,6 +265,16 @@ namespace ShareX
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
             }
 
+            if (Program.Settings.TaskListViewColumnWidths != null)
+            {
+                int len = Math.Min(lvUploads.Columns.Count - 1, Program.Settings.TaskListViewColumnWidths.Count);
+
+                for (int i = 0; i < len; i++)
+                {
+                    lvUploads.Columns[i].Width = Program.Settings.TaskListViewColumnWidths[i];
+                }
+            }
+
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
 
             UpdateCheckStates();
@@ -929,6 +939,16 @@ namespace ShareX
             Refresh();
         }
 
+        private void SaveTaskListViewColumnWidths()
+        {
+            Program.Settings.TaskListViewColumnWidths = new List<int>();
+
+            for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
+            {
+                Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+            }
+        }
+
         public void UpdateToggleHotkeyButton()
         {
             if (Program.Settings.DisableHotkeys)
@@ -1101,6 +1121,8 @@ namespace ShareX
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            SaveTaskListViewColumnWidths();
+
             if (e.CloseReason == CloseReason.UserClosing && Program.Settings.ShowTray && !forceClose)
             {
                 e.Cancel = true;
