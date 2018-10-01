@@ -40,7 +40,7 @@ namespace ShareX
         private AfterCaptureForm(TaskSettings taskSettings)
         {
             TaskSettings = taskSettings;
-            
+
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
@@ -113,7 +113,7 @@ namespace ShareX
 
             int newListViewHeight = lvAfterCaptureTasks.Items.Count * itemHeight;
             int listViewHeightDifference = newListViewHeight - lvAfterCaptureTasks.Height;
-            if(listViewHeightDifference > 0)
+            if (listViewHeightDifference > 0)
                 Height += listViewHeightDifference;
         }
 
