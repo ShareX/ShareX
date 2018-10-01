@@ -123,12 +123,20 @@
           <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Facade\Windows.WinMD</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="Windows.ApplicationModel.Activation.ActivatedEventsContract">
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.Activation.ActivatedEventsContract\1.0.0.0\Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.ApplicationModel.StartupTaskContract\1.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.FoundationContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Windows.Foundation.UniversalApiContract">
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.UniversalApiContract\6.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
