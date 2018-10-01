@@ -243,7 +243,7 @@ namespace ShareX.HelpersLib
 
         public static char GetRandomChar(string chars)
         {
-            return chars[MathHelpers.Random(chars.Length - 1)];
+            return chars[MathHelpers.CryptoRandom(chars.Length - 1)];
         }
 
         public static string GetRandomString(string chars, int length)
@@ -283,7 +283,7 @@ namespace ShareX.HelpersLib
             string[] lines = text.Trim().Lines();
             if (lines != null && lines.Length > 0)
             {
-                return lines[MathHelpers.Random(0, lines.Length - 1)];
+                return lines[MathHelpers.CryptoRandom(0, lines.Length - 1)];
             }
             return null;
         }
