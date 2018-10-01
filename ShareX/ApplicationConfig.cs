@@ -183,6 +183,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
 
+        [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
+        public bool AutoSelectLastCompletedTask { get; set; }
+
         [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
         public bool DisableHotkeys { get; set; }
 

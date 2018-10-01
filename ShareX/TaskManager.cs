@@ -441,6 +441,11 @@ namespace ShareX
                         if (lvi != null)
                         {
                             lvi.EnsureVisible();
+
+                            if (Program.Settings.AutoSelectLastCompletedTask)
+                            {
+                                ListViewControl.SelectSingle(lvi);
+                            }
                         }
                     }
                 }

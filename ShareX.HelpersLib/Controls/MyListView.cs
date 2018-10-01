@@ -67,10 +67,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                foreach (ListViewItem lvi in SelectedItems)
-                {
-                    lvi.Selected = false;
-                }
+                UnselectAll();
 
                 if (value > -1)
                 {
@@ -141,6 +138,24 @@ namespace ShareX.HelpersLib
             if (Items.Count > 0)
             {
                 SelectedIndex = Items.Count - 1;
+            }
+        }
+
+        public void SelectSingle(ListViewItem lvi)
+        {
+            UnselectAll();
+
+            if (lvi != null)
+            {
+                lvi.Selected = true;
+            }
+        }
+
+        public void UnselectAll()
+        {
+            foreach (ListViewItem lvi in SelectedItems)
+            {
+                lvi.Selected = false;
             }
         }
 
