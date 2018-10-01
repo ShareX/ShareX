@@ -260,8 +260,6 @@ namespace ShareX
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
                             screenRecorder.FFmpegEncodeVideo(input, path);
-                            DebugHelper.WriteLine("Two pass encoding result:\nInput file size: {0}\nOutput file size: {1}",
-                                new FileInfo(input).Length.ToSizeString(), new FileInfo(path).Length.ToSizeString());
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI && !taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
