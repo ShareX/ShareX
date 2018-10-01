@@ -119,7 +119,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] ApplyFilters(HistoryItem[] historyItems)
         {
-            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && string.IsNullOrEmpty(txtFilenameFilter.Text) && !cbDateFilter.Checked)
+            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && string.IsNullOrEmpty(txtFilenameFilter.Text) && string.IsNullOrEmpty(txtURLFilter.Text) && !cbDateFilter.Checked)
             {
                 return historyItems;
             }
@@ -146,31 +146,35 @@ namespace ShareX.HistoryLib
                 }
             }
 
-            if (!string.IsNullOrEmpty(txtFilenameFilter.Text))
+            string filenameFilter = txtFilenameFilter.Text;
+
+            if (!string.IsNullOrEmpty(filenameFilter))
             {
-                string filenameFilter = txtFilenameFilter.Text;
+                StringComparison filenameRule = StringComparison.InvariantCultureIgnoreCase;
 
-                if (!string.IsNullOrEmpty(filenameFilter))
+                switch (cbFilenameFilterMethod.SelectedIndex)
                 {
-                    StringComparison filenameRule = StringComparison.InvariantCultureIgnoreCase;
-
-                    switch (cbFilenameFilterMethod.SelectedIndex)
-                    {
-                        default:
-                        case 0: // Contains
-                            result = result.Where(x => x.Filename.Contains(filenameFilter, filenameRule));
-                            break;
-                        case 1: // Starts with
-                            result = result.Where(x => x.Filename.StartsWith(filenameFilter, filenameRule));
-                            break;
-                        case 2: // Ends with
-                            result = result.Where(x => x.Filename.EndsWith(filenameFilter, filenameRule));
-                            break;
-                        case 3: // Exact match
-                            result = result.Where(x => x.Filename.Equals(filenameFilter, filenameRule));
-                            break;
-                    }
+                    default:
+                    case 0: // Contains
+                        result = result.Where(x => x.Filename.Contains(filenameFilter, filenameRule));
+                        break;
+                    case 1: // Starts with
+                        result = result.Where(x => x.Filename.StartsWith(filenameFilter, filenameRule));
+                        break;
+                    case 2: // Ends with
+                        result = result.Where(x => x.Filename.EndsWith(filenameFilter, filenameRule));
+                        break;
+                    case 3: // Exact match
+                        result = result.Where(x => x.Filename.Equals(filenameFilter, filenameRule));
+                        break;
                 }
+            }
+
+            string urlFilter = txtURLFilter.Text;
+
+            if (!string.IsNullOrEmpty(urlFilter))
+            {
+                result = result.Where(x => x.URL != null && x.URL.Contains(urlFilter, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (cbDateFilter.Checked)
