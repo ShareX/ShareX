@@ -500,6 +500,9 @@
     <EmbeddedResource Include="Forms\ActionsForm.zh-TW.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.de.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.es-MX.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1266,6 +1269,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.es-MX.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1311,6 +1315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.zh-TW.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.de.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextUploadForm.es-MX.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
@@ -1465,7 +1472,9 @@
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
-    <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Properties\Resources.tr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />

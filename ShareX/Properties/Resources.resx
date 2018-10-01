@@ -982,4 +982,7 @@ Middle click to close</value>
   <data name="mx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>You must reopen ShareX for personal folder changes to take effect.</value>
+  </data>
 </root>

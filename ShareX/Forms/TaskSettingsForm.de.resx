@@ -408,4 +408,118 @@
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Bildschirmfarbauswähler-Format</value>
   </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Bildeinstellungen überschreiben</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Aufnahmeeinstellungen überschreiben</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>Abbrechen bestätigen lassen</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Hochlader</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Erweiterung</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Hochlader:</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Beispiel: png, jpg, jpeg</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Allgemeine Einstellungen überschreiben</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Ziele überschreiben</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Aufgabe nach dem Hochladen überschreiben</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Aufgabe nach der Aufnahme überschreiben</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>FPS-Anzahl in der oberen linken Ecke anzeigen</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Lupe Pixelgröße:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Lupe Pixelanzahl:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Verwenden des Multi-Region-Modus, welcher ebenfalls eine Größenänderung und das Verschieben von Bereichen ermöglicht</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Hochladeinstellungen überschreiben</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Aktionen überschreiben</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Erweiterte Einstellungen überschreiben</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Aktion bei mittlerer Maustaste:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Aktion bei Rechtsklick:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Aktion bei Maustaste 4:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Aktion bei Maustaste 5:</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Eigenen Text in der Nähe des Mauszeigers verwenden:</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Positions- und Größeninformationen anzeigen</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Lupe in der Nähe des Mauszeigers anzeigen</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Quadratische Lupe anstelle des Kreises verwenden</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Dateierweiterungsfilter:</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Hochlader Filter</value>
+  </data>
 </root>

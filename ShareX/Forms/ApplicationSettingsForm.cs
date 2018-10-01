@@ -71,7 +71,7 @@ namespace ShareX
                 {
                     if (Program.WritePersonalPathConfig(currentPersonalPath))
                     {
-                        MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.MustReopenForPersonalFolderChangesToTakeEffect, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
