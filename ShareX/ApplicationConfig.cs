@@ -56,6 +56,7 @@ namespace ShareX
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
+        public List<int> TaskListViewColumnWidths = new List<int>();
         public DateTime NewsLastReadDate;
 
         #endregion Main Form
