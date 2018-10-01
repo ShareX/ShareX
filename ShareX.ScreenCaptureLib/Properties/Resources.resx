@@ -165,6 +165,9 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>Use letters</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Value of first step:</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Image size...</value>
   </data>

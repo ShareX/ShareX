@@ -218,6 +218,171 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;mbCustomUploaderDestinationType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="txtB2CustomUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 309</value>
+  </data>
+  <data name="txtB2CustomUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2CustomUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Enter a custom URL here that will replace the host and path that BackBlaze returns.</value>
+  </data>
+  <data name="&gt;&gt;txtB2CustomUrl.Name" xml:space="preserve">
+    <value>txtB2CustomUrl</value>
+  </data>
+  <data name="&gt;&gt;txtB2CustomUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2CustomUrl.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2CustomUrl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbB2CustomUrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbB2CustomUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbB2CustomUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 286</value>
+  </data>
+  <data name="cbB2CustomUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 17</value>
+  </data>
+  <data name="cbB2CustomUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Use custom URL (supports pattern format):</value>
+  </data>
+  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>If enabled, the URL you receive will be the upload path
+appended to the given URL.
+
+This is useful in conjunction with a service like CloudFlare or
+another service acting as frontend to B2. See the article
+"Creating a Vanity URL with B2" in the B2 knowledge base.
+
+If disabled, then the URL you will receive will be determined
+by Backblaze B2. </value>
+  </data>
+  <data name="&gt;&gt;cbB2CustomUrl.Name" xml:space="preserve">
+    <value>cbB2CustomUrl</value>
+  </data>
+  <data name="&gt;&gt;cbB2CustomUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbB2CustomUrl.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;cbB2CustomUrl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtB2Bucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="txtB2Bucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2Bucket.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
+    <value>Where to store your files.
+
+This only takes effect when you did not set
+"Allow access to bucket(s)" to a bucket
+when you made the application key.</value>
+  </data>
+  <data name="&gt;&gt;txtB2Bucket.Name" xml:space="preserve">
+    <value>txtB2Bucket</value>
+  </data>
+  <data name="&gt;&gt;txtB2Bucket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2Bucket.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2Bucket.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtB2UploadPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 230</value>
+  </data>
+  <data name="txtB2UploadPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2UploadPath.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
+    <value>The path for your file. Uses name pattern format.</value>
+  </data>
+  <data name="&gt;&gt;txtB2UploadPath.Name" xml:space="preserve">
+    <value>txtB2UploadPath</value>
+  </data>
+  <data name="&gt;&gt;txtB2UploadPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2UploadPath.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2UploadPath.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtB2ApplicationKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtB2ApplicationKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2ApplicationKey.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
+    <value>The application key. Looks alphanumeric.</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKey.Name" xml:space="preserve">
+    <value>txtB2ApplicationKey</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKey.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKey.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
+    <value>The Application Key ID. Looks like a lowercase hexadecimal string.</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKeyId.Name" xml:space="preserve">
+    <value>txtB2ApplicationKeyId</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKeyId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKeyId.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2ApplicationKeyId.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -5247,7 +5412,7 @@ store.book[0].title</value>
     <value>4</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 202</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -7589,6 +7754,234 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpAzureStorage.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="lblB2ManageLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2ManageLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2ManageLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 174</value>
+  </data>
+  <data name="lblB2ManageLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 13</value>
+  </data>
+  <data name="lblB2ManageLink.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Click here to create an Application Key or manage your buckets.</value>
+  </data>
+  <data name="&gt;&gt;lblB2ManageLink.Name" xml:space="preserve">
+    <value>lblB2ManageLink</value>
+  </data>
+  <data name="&gt;&gt;lblB2ManageLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2ManageLink.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2ManageLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtB2UrlPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 355</value>
+  </data>
+  <data name="txtB2UrlPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtB2UrlPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtB2UrlPreview.Name" xml:space="preserve">
+    <value>txtB2UrlPreview</value>
+  </data>
+  <data name="&gt;&gt;txtB2UrlPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtB2UrlPreview.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;txtB2UrlPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblB2UrlPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2UrlPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2UrlPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 339</value>
+  </data>
+  <data name="lblB2UrlPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblB2UrlPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>URL preview:</value>
+  </data>
+  <data name="&gt;&gt;lblB2UrlPreview.Name" xml:space="preserve">
+    <value>lblB2UrlPreview</value>
+  </data>
+  <data name="&gt;&gt;lblB2UrlPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2UrlPreview.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2UrlPreview.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblB2Bucket.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2Bucket.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2Bucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblB2Bucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="lblB2Bucket.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Bucket name:</value>
+  </data>
+  <data name="&gt;&gt;lblB2Bucket.Name" xml:space="preserve">
+    <value>lblB2Bucket</value>
+  </data>
+  <data name="&gt;&gt;lblB2Bucket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2Bucket.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2Bucket.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblB2UploadPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2UploadPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2UploadPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 214</value>
+  </data>
+  <data name="lblB2UploadPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblB2UploadPath.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Upload path:</value>
+  </data>
+  <data name="&gt;&gt;lblB2UploadPath.Name" xml:space="preserve">
+    <value>lblB2UploadPath</value>
+  </data>
+  <data name="&gt;&gt;lblB2UploadPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2UploadPath.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2UploadPath.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblB2ApplicationKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2ApplicationKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2ApplicationKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblB2ApplicationKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="lblB2ApplicationKey.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Application Key (secret):</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKey.Name" xml:space="preserve">
+    <value>lblB2ApplicationKey</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKey.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKey.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>Application Key ID:</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKeyId.Name" xml:space="preserve">
+    <value>lblB2ApplicationKeyId</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKeyId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKeyId.Parent" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;lblB2ApplicationKeyId.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tpBackblazeB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpBackblazeB2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpBackblazeB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 519</value>
+  </data>
+  <data name="tpBackblazeB2.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="tpBackblazeB2.Text" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="&gt;&gt;tpBackblazeB2.Name" xml:space="preserve">
+    <value>tpBackblazeB2</value>
+  </data>
+  <data name="&gt;&gt;tpBackblazeB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpBackblazeB2.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpBackblazeB2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="cbGfycatIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7686,7 +8079,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpGfycat.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnMegaRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8004,7 +8397,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
@@ -8466,7 +8859,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbMediaFireUseLongLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8676,7 +9069,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMediaFire.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblPushbulletDevices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8838,7 +9231,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPushbullet.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnSendSpaceRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9015,7 +9408,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSendSpace.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblGe_ttStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9201,7 +9594,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpGe_tt.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="cbLocalhostrDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9360,7 +9753,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpHostr.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 277</value>
@@ -9567,7 +9960,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpJira.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9726,7 +10119,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="btnPomfTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9936,7 +10329,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -10897,7 +11290,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11098,7 +11491,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="btnSulGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -11203,7 +11596,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="btnLithiioFetchAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -11437,7 +11830,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11944,7 +12337,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12070,7 +12463,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="lbSharedFolderAccounts.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -12376,7 +12769,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -12796,7 +13189,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

@@ -486,4 +486,67 @@ Bist du sicher?</value>
 Rechte Maustaste um das Menü zu öffnen
 Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Möchten Sie die Aufnahme wirklich beenden?</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>mit ShareX bearbeiten</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Entwicklungs-Versionen können instabil sein und sind nur für Testzwecke geeignet. Möchten Sie diese trotzdem installieren?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Möchten Sie die ShareX-Einstellungen zurücksetzen?</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>URL-Kürzen</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Kürzen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Französisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Niederländisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Vietnamesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Koreanisch</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Trennzeichen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Traditionelles Chinesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Portugiesisch (Brasilien)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Türkisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Italienisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Ungarisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Vereinfachtes Chinesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Spanisch</value>
+  </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>Sie müssen ShareX erneut öffnen, damit Änderungen an persönlichen Ordnern wirksam werden.</value>
+  </data>
 </root>

@@ -208,4 +208,19 @@ Hergestellte Ordner:</value>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Das FTP-Programm unterstützt nur FTP oder FTPS.</value>
   </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Nicht angemeldet.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Angemeldet.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Anmeldung fehlgeschlagen.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Angemeldet.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Nicht angemeldet.</value>
+  </data>
 </root>

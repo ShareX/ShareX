@@ -132,4 +132,7 @@
   <data name="llAttribution.Text" xml:space="preserve">
     <value>Unterstützt von OCR.Space API</value>
   </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>In Google-Übersetzer öffnen &amp; Schließen</value>
+  </data>
 </root>

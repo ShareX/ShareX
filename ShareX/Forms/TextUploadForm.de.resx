@@ -118,60 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX FTP Gerät</value>
+    <value>ShareX - Text hochladen</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Dateiname</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Hochladen</value>
   </data>
-  <data name="chFilesize.Text" xml:space="preserve">
-    <value>Dateigröße</value>
-  </data>
-  <data name="chFiletype.Text" xml:space="preserve">
-    <value>Dateigröße</value>
-  </data>
-  <data name="chLastModified.Text" xml:space="preserve">
-    <value>Zuletzt geändert</value>
-  </data>
-  <data name="lblConnecting.Text" xml:space="preserve">
-    <value>Verbinde zu FTP Server...</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="tpAccount.Text" xml:space="preserve">
-    <value>Account</value>
-  </data>
-  <data name="tpConsole.Text" xml:space="preserve">
-    <value>Konsole</value>
-  </data>
-  <data name="tpMain.Text" xml:space="preserve">
-    <value>Dateien</value>
-  </data>
-  <data name="tsmiConnect.Text" xml:space="preserve">
-    <value>Verbinden</value>
-  </data>
-  <data name="tsmiDisconnect.Text" xml:space="preserve">
-    <value>Trennen</value>
-  </data>
-  <data name="tsmiDownload.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
-  <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL öffnen</value>
-  </data>
-  <data name="tsmiRename.Text" xml:space="preserve">
-    <value>Umbenennen</value>
-  </data>
-  <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Löschen</value>
-  </data>
-  <data name="tsmiRefresh.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
-  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
-    <value>Ordner erstellen</value>
-  </data>
-  <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>URL(s) in die Zwischenablage kopieren</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
   </data>
 </root>

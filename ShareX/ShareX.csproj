@@ -123,12 +123,20 @@
           <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Facade\Windows.WinMD</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="Windows.ApplicationModel.Activation.ActivatedEventsContract">
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.Activation.ActivatedEventsContract\1.0.0.0\Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.ApplicationModel.StartupTaskContract\1.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.FoundationContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Windows.Foundation.UniversalApiContract">
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.UniversalApiContract\6.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
@@ -491,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.zh-TW.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.de.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.es-MX.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
@@ -1258,6 +1269,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.es-MX.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1303,6 +1315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.zh-TW.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.de.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextUploadForm.es-MX.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
@@ -1457,7 +1472,9 @@
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
-    <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Properties\Resources.tr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />

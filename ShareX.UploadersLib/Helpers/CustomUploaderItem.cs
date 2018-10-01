@@ -229,7 +229,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public string ParseURL(string url, bool output)
+        public string ParseURL(string url, bool usingResponse)
         {
             if (string.IsNullOrEmpty(url))
             {
@@ -259,7 +259,7 @@ namespace ShareX.UploadersLib
                         if (syntaxLength > 0)
                         {
                             string syntax = url.Substring(syntaxStartIndex, syntaxLength);
-                            string syntaxResult = ParseSyntax(syntax, output);
+                            string syntaxResult = ParseSyntax(syntax, usingResponse);
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
@@ -284,57 +284,50 @@ namespace ShareX.UploadersLib
             return result.ToString();
         }
 
-        private string ParseSyntax(string syntax, bool output)
+        private string ParseSyntax(string syntax, bool usingResponse)
         {
-            CustomUploaderResponseParseType parseType;
-
-            if (syntax.Equals("response", StringComparison.InvariantCultureIgnoreCase)) // Example: $response$
+            if (usingResponse)
             {
-                return response;
-            }
-            else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
-            {
-                parseType = CustomUploaderResponseParseType.Regex;
-                syntax = syntax.Substring(6);
-            }
-            else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
-            {
-                parseType = CustomUploaderResponseParseType.Json;
-                syntax = syntax.Substring(5);
-            }
-            else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
-            {
-                parseType = CustomUploaderResponseParseType.Xml;
-                syntax = syntax.Substring(4);
-            }
-            else if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
-            {
-                parseType = CustomUploaderResponseParseType.Random;
-                syntax = syntax.Substring(7);
-            }
-            else // Example: $1,1$
-            {
-                parseType = CustomUploaderResponseParseType.Regex;
+                if (syntax.Equals("response", StringComparison.InvariantCultureIgnoreCase)) // Example: $response$
+                {
+                    return response;
+                }
+                else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1|1$
+                {
+                    return ParseSyntax(CustomUploaderResponseParseType.Regex, syntax.Substring(6));
+                }
+                else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
+                {
+                    return ParseSyntax(CustomUploaderResponseParseType.Json, syntax.Substring(5));
+                }
+                else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
+                {
+                    return ParseSyntax(CustomUploaderResponseParseType.Xml, syntax.Substring(4));
+                }
             }
 
+            if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
+            {
+                return ParseSyntax(CustomUploaderResponseParseType.Random, syntax.Substring(7));
+            }
+
+            return null;
+        }
+
+        private string ParseSyntax(CustomUploaderResponseParseType parseType, string syntax)
+        {
             if (!string.IsNullOrEmpty(syntax))
             {
-                if (output)
+                switch (parseType)
                 {
-                    switch (parseType)
-                    {
-                        case CustomUploaderResponseParseType.Regex:
-                            return ParseRegexSyntax(syntax);
-                        case CustomUploaderResponseParseType.Json:
-                            return ParseJsonSyntax(syntax);
-                        case CustomUploaderResponseParseType.Xml:
-                            return ParseXmlSyntax(syntax);
-                    }
-                }
-
-                if (parseType == CustomUploaderResponseParseType.Random)
-                {
-                    return ParseRandomSyntax(syntax);
+                    case CustomUploaderResponseParseType.Regex:
+                        return ParseRegexSyntax(syntax);
+                    case CustomUploaderResponseParseType.Json:
+                        return ParseJsonSyntax(syntax);
+                    case CustomUploaderResponseParseType.Xml:
+                        return ParseXmlSyntax(syntax);
+                    case CustomUploaderResponseParseType.Random:
+                        return ParseRandomSyntax(syntax);
                 }
             }
 
@@ -356,7 +349,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    if (syntax[i] == ',')
+                    if (syntax[i] == '|' || syntax[i] == ',')
                     {
                         isGroupRegex = true;
                     }
