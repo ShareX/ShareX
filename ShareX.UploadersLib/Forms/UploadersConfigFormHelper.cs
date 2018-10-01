@@ -1576,22 +1576,5 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Generic OAuth2
-
-        #region Miscellaneous
-
-        /// <summary>
-        /// Adds or replaces placeholder text in a text box without affecting the content (<c>.Text</c>) of the
-        /// text box.
-        /// </summary>
-        /// <param name="textBox">The TextBox to operate on.</param>
-        /// <param name="text">Text to display to the user.</param>
-        public static void SetPlaceholderText(TextBox textBox, string text)
-        {
-            // https://stackoverflow.com/a/22405509
-            const int EM_SETCUEBANNER = 0x1501;
-            NativeMethods.SendMessage(textBox.Handle, EM_SETCUEBANNER, 0, text);
-        }
-
-        #endregion Miscellaneous
     }
 }

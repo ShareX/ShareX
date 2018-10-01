@@ -124,7 +124,8 @@ namespace ShareX.UploadersLib
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
-            SetPlaceholderText(txtB2Bucket, "Optional, only used if you didn't set a bucket when you made the key");
+            txtB2Bucket.HandleCreated += (sender, e) =>
+                txtB2Bucket.SetWatermark("Optional, only used if you didn't set a bucket when you made the key", showCueWhenFocus: true);
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
