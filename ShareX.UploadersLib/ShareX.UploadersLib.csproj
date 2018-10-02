@@ -125,6 +125,7 @@
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
     <Compile Include="BaseUploaders\URLSharer.cs" />
+    <Compile Include="FileUploaders\Aboo.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />

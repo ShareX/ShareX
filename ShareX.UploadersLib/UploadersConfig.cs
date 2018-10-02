@@ -413,6 +413,12 @@ namespace ShareX.UploadersLib
 
         #endregion Google Cloud Storage
 
+        #region Aboo
+
+        public AccountType AbooAccountType = AccountType.Anonymous;
+
+        #endregion Aboo
+
         #endregion File uploaders
 
         #region URL shorteners
