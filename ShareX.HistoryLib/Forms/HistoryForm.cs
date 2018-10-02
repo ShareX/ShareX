@@ -69,7 +69,6 @@ namespace ShareX.HistoryLib
             him.GetHistoryItems += him_GetHistoryItems;
 
             pbThumbnail.Reset();
-            cbFilenameFilterMethod.SelectedIndex = 0; // Contains
             lvHistory.FillLastColumn();
 
             if (Settings.SplitterDistance > 0)
@@ -150,24 +149,7 @@ namespace ShareX.HistoryLib
 
             if (!string.IsNullOrEmpty(filenameFilter))
             {
-                StringComparison filenameRule = StringComparison.InvariantCultureIgnoreCase;
-
-                switch (cbFilenameFilterMethod.SelectedIndex)
-                {
-                    default:
-                    case 0: // Contains
-                        result = result.Where(x => x.Filename.Contains(filenameFilter, filenameRule));
-                        break;
-                    case 1: // Starts with
-                        result = result.Where(x => x.Filename.StartsWith(filenameFilter, filenameRule));
-                        break;
-                    case 2: // Ends with
-                        result = result.Where(x => x.Filename.EndsWith(filenameFilter, filenameRule));
-                        break;
-                    case 3: // Exact match
-                        result = result.Where(x => x.Filename.Equals(filenameFilter, filenameRule));
-                        break;
-                }
+                result = result.Where(x => x.Filename != null && x.Filename.Contains(filenameFilter, StringComparison.InvariantCultureIgnoreCase));
             }
 
             string urlFilter = txtURLFilter.Text;
@@ -190,6 +172,8 @@ namespace ShareX.HistoryLib
 
         private void AddHistoryItems(HistoryItem[] historyItems)
         {
+            Cursor = Cursors.WaitCursor;
+
             UpdateTitle(historyItems);
 
             lvHistory.Items.Clear();
@@ -227,6 +211,8 @@ namespace ShareX.HistoryLib
             lvHistory.Items.AddRange(listViewItems);
             lvHistory.FillLastColumn();
             lvHistory.Focus();
+
+            Cursor = Cursors.Default;
         }
 
         private void UpdateTitle(HistoryItem[] historyItems = null)
