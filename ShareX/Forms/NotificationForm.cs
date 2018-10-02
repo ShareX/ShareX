@@ -183,7 +183,10 @@ namespace ShareX
         {
             if ((duration > 0 || fadeDuration > 0) && size.Width > 0 && size.Height > 0)
             {
-                config.Image = ImageHelpers.LoadImage(config.FilePath);
+                if (config.Image == null)
+                {
+                    config.Image = ImageHelpers.LoadImage(config.FilePath);
+                }
 
                 if (config.Image != null || !string.IsNullOrEmpty(config.Text))
                 {

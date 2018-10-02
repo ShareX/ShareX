@@ -55,8 +55,8 @@ namespace ShareX
         public bool StopRequested { get; private set; }
         public bool RequestSettingUpdate { get; private set; }
         public Stream Data { get; private set; }
+        public Image Image { get; private set; }
 
-        private Image tempImage;
         private string tempText;
         private ThreadWorker threadWorker;
         private GenericUploader uploader;
@@ -112,7 +112,7 @@ namespace ShareX
             if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && task.Info.DataType == EDataType.Image)
             {
                 task.Info.Job = TaskJob.Job;
-                task.tempImage = ImageHelpers.LoadImage(task.Info.FilePath);
+                task.Image = ImageHelpers.LoadImage(task.Info.FilePath);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace ShareX
                 task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", imageInfo);
             }
 
-            task.tempImage = imageInfo.Image;
+            task.Image = imageInfo.Image;
             return task;
         }
 
@@ -304,7 +304,7 @@ namespace ShareX
             }
             finally
             {
-                Dispose();
+                Dispose(!(Info.DataType == EDataType.Image && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification));
 
                 if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                 {
@@ -556,16 +556,16 @@ namespace ShareX
 
         private bool DoAfterCaptureJobs()
         {
-            if (tempImage == null)
+            if (Image == null)
             {
                 return true;
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
-                tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings.ImageSettingsReference);
+                Image = TaskHelpers.AddImageEffects(Image, Info.TaskSettings.ImageSettingsReference);
 
-                if (tempImage == null)
+                if (Image == null)
                 {
                     DebugHelper.WriteLine("Error: Applying image effects resulted empty image.");
                     return false;
@@ -574,9 +574,9 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                tempImage = TaskHelpers.AnnotateImage(tempImage, null, Info.TaskSettings, true);
+                Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
 
-                if (tempImage == null)
+                if (Image == null)
                 {
                     return false;
                 }
@@ -584,95 +584,92 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
             {
-                ClipboardHelpers.CopyImage(tempImage);
+                ClipboardHelpers.CopyImage(Image);
                 DebugHelper.WriteLine("Image copied to clipboard.");
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
             {
-                TaskHelpers.PrintImage(tempImage);
+                TaskHelpers.PrintImage(Image);
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.DoOCR,
                 AfterCaptureTasks.UploadImageToHost))
             {
-                using (tempImage)
+                ImageData imageData = TaskHelpers.PrepareImage(Image, Info.TaskSettings);
+                Data = imageData.ImageStream;
+                Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                 {
-                    ImageData imageData = TaskHelpers.PrepareImage(tempImage, Info.TaskSettings);
-                    Data = imageData.ImageStream;
-                    Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
+                    string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
-
-                        if (!string.IsNullOrEmpty(filePath))
-                        {
-                            Info.FilePath = filePath;
-                            imageData.Write(Info.FilePath);
-                            DebugHelper.WriteLine("Image saved to file: " + Info.FilePath);
-                        }
+                        Info.FilePath = filePath;
+                        imageData.Write(Info.FilePath);
+                        DebugHelper.WriteLine("Image saved to file: " + Info.FilePath);
                     }
+                }
 
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
+                {
+                    using (SaveFileDialog sfd = new SaveFileDialog())
                     {
-                        using (SaveFileDialog sfd = new SaveFileDialog())
-                        {
-                            bool imageSaved;
+                        bool imageSaved;
 
-                            do
+                        do
+                        {
+                            if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
                             {
-                                if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
-                                {
-                                    lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
-                                }
+                                lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
+                            }
 
-                                sfd.InitialDirectory = lastSaveAsFolder;
-                                sfd.FileName = Info.FileName;
-                                sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
-                                sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
-                                sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
+                            sfd.InitialDirectory = lastSaveAsFolder;
+                            sfd.FileName = Info.FileName;
+                            sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
+                            sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
+                            sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
 
-                                if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
-                                {
-                                    Info.FilePath = sfd.FileName;
-                                    lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
-                                    imageSaved = imageData.Write(Info.FilePath);
+                            if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
+                            {
+                                Info.FilePath = sfd.FileName;
+                                lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
+                                imageSaved = imageData.Write(Info.FilePath);
 
-                                    if (imageSaved)
-                                    {
-                                        DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
-                                    }
-                                }
-                                else
+                                if (imageSaved)
                                 {
-                                    break;
+                                    DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
                                 }
-                            } while (!imageSaved);
-                        }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        } while (!imageSaved);
+                    }
+                }
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
+                {
+                    string thumbnailFilename, thumbnailFolder;
+
+                    if (!string.IsNullOrEmpty(Info.FilePath))
+                    {
+                        thumbnailFilename = Path.GetFileName(Info.FilePath);
+                        thumbnailFolder = Path.GetDirectoryName(Info.FilePath);
+                    }
+                    else
+                    {
+                        thumbnailFilename = Info.FileName;
+                        thumbnailFolder = Info.TaskSettings.CaptureFolder;
                     }
 
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
+                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
+
+                    if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
                     {
-                        string thumbnailFilename, thumbnailFolder;
-
-                        if (!string.IsNullOrEmpty(Info.FilePath))
-                        {
-                            thumbnailFilename = Path.GetFileName(Info.FilePath);
-                            thumbnailFolder = Path.GetDirectoryName(Info.FilePath);
-                        }
-                        else
-                        {
-                            thumbnailFilename = Info.FileName;
-                            thumbnailFolder = Info.TaskSettings.CaptureFolder;
-                        }
-
-                        Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(tempImage, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
-
-                        if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
-                        {
-                            DebugHelper.WriteLine("Thumbnail saved to file: " + Info.ThumbnailFilePath);
-                        }
+                        DebugHelper.WriteLine("Thumbnail saved to file: " + Info.ThumbnailFilePath);
                     }
                 }
             }
@@ -1115,7 +1112,7 @@ namespace ShareX
             }
         }
 
-        public void Dispose()
+        private void Dispose(bool shouldDisposeImage)
         {
             if (Data != null)
             {
@@ -1123,11 +1120,16 @@ namespace ShareX
                 Data = null;
             }
 
-            if (tempImage != null)
+            if (Image != null && shouldDisposeImage)
             {
-                tempImage.Dispose();
-                tempImage = null;
+                Image.Dispose();
+                Image = null;
             }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
         }
     }
 }
