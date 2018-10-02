@@ -173,10 +173,17 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void LoadSettings()
+        private void LoadSettings()
         {
-            #region Image uploaders
+            LoadImageUploaderSettings();
+            LoadTextUploaderSettings();
+            LoadFileUploaderSettings();
+            LoadURLShortenerSettings();
+            LoadOtherUploaderSettings();
+        }
 
+        private void LoadImageUploaderSettings()
+        {
             #region Imgur
 
             oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
@@ -276,11 +283,10 @@ namespace ShareX.UploadersLib
             txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion vgy.me
+        }
 
-            #endregion Image uploaders
-
-            #region Text uploaders
-
+        private void LoadTextUploaderSettings()
+        {
             #region Pastebin
 
             txtPastebinUsername.Text = Config.PastebinSettings.Username;
@@ -352,11 +358,10 @@ namespace ShareX.UploadersLib
             cbPastieIsPublic.Checked = Config.PastieIsPublic;
 
             #endregion Pastie
+        }
 
-            #endregion Text uploaders
-
-            #region File uploaders
-
+        private void LoadFileUploaderSettings()
+        {
             #region FTP
 
             if (Config.FTPAccountList == null)
@@ -755,11 +760,10 @@ namespace ShareX.UploadersLib
             txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
 
             #endregion Google Cloud Storage
+        }
 
-            #endregion File uploaders
-
-            #region URL shorteners
-
+        private void LoadURLShortenerSettings()
+        {
             #region bit.ly
 
             if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
@@ -813,11 +817,10 @@ namespace ShareX.UploadersLib
             cbKuttReuse.Checked = Config.KuttSettings.Reuse;
 
             #endregion Kutt
+        }
 
-            #endregion URL shorteners
-
-            #region Other uploaders
-
+        private void LoadOtherUploaderSettings()
+        {
             #region Twitter
 
             lbTwitterAccounts.Items.Clear();
@@ -844,8 +847,6 @@ namespace ShareX.UploadersLib
             CustomUploaderLoadTab();
 
             #endregion Custom uploaders
-
-            #endregion Other uploaders
         }
 
         #region Image uploaders
