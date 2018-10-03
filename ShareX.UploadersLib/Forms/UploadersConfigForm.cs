@@ -114,6 +114,7 @@ namespace ShareX.UploadersLib
             // FTP
             cbFTPURLPathProtocol.Items.AddRange(Helpers.GetEnumDescriptions<BrowserProtocol>());
             cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
+            cbFTPSMinimumEncryptionVersion.Items.AddRange(Helpers.GetEnumDescriptions<FTPSEncryptionVersion>());
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Custom uploader
@@ -1603,6 +1604,15 @@ namespace ShareX.UploadersLib
             if (account != null)
             {
                 account.FTPSEncryption = (FTPSEncryption)cbFTPSEncryption.SelectedIndex;
+            }
+        }
+
+        private void cbFTPSMinimumEncryptionVersion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FTPAccount account = FTPGetSelectedAccount();
+            if (account != null)
+            {
+                account.FTPSMinimumEncryptionVersion = (FTPSEncryptionVersion)cbFTPSMinimumEncryptionVersion.SelectedIndex;
             }
         }
 

@@ -120,8 +120,11 @@ namespace ShareX.UploadersLib
             }
         }
 
-        [Category("FTPS"), Description("Type of SSL to use. Explicit is TLS, Implicit is SSL."), DefaultValue(FTPSEncryption.Explicit)]
+        [Category("FTPS"), Description("How to encrypt the connection. Implicit will connect encrypted, Explicit will connect in plaintext and then enable encryption with the AUTH command."), DefaultValue(FTPSEncryption.Explicit)]
         public FTPSEncryption FTPSEncryption { get; set; }
+
+        [Category("FTPS"), Description("The minimum TLS/SSL to use. Defaults to TLS 1.2."), DefaultValue(FTPSEncryptionVersion.Tls12)]
+        public FTPSEncryptionVersion FTPSMinimumEncryptionVersion { get; set; }
 
         [Category("FTPS"), Description("Certificate file location. Optional setting.")]
         [Editor(typeof(CertFileNameEditor), typeof(UITypeEditor))]
@@ -147,6 +150,7 @@ namespace ShareX.UploadersLib
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
             FTPSEncryption = FTPSEncryption.Explicit;
+            FTPSMinimumEncryptionVersion = FTPSEncryptionVersion.Tls12;
             FTPSCertificateLocation = "";
         }
 
