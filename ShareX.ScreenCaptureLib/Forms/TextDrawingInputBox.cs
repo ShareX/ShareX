@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
 
-        private int _processKeyCount;
+        private int processKeyCount;
 
         public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
         {
@@ -246,11 +246,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
-            // if we get VK_PROCESSKEY, the next KeyUp event will be fired by the IME
+            // If we get VK_PROCESSKEY, the next KeyUp event will be fired by the IME
             // we should ignore these when checking if enter is pressed (GH-3621)
             if (e.KeyCode == Keys.ProcessKey)
             {
-                _processKeyCount += 1;
+                processKeyCount += 1;
             }
 
             if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
@@ -261,9 +261,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyUp(object sender, KeyEventArgs e)
         {
-            // if _processKeyCount != 0, then this KeyUp event was fired by the
+            // If processKeyCount != 0, then this KeyUp event was fired by the
             // IME suggestion box, not by the user intentionally pressing Enter
-            if (_processKeyCount == 0)
+            if (processKeyCount == 0)
             {
                 if (e.KeyData == Keys.Enter)
                 {
@@ -275,7 +275,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            _processKeyCount = Math.Max(0, _processKeyCount - 1);
+            processKeyCount = Math.Max(0, processKeyCount - 1);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -67,15 +67,15 @@ namespace ShareX.HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
-        private static Cursor[] _cursorList;
+        private static Cursor[] cursorList;
 
         public static Cursor[] CursorList
         {
             get
             {
-                if (_cursorList == null)
+                if (cursorList == null)
                 {
-                    _cursorList = new Cursor[] {
+                    cursorList = new Cursor[] {
                         Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
                         Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
                         Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
@@ -84,7 +84,7 @@ namespace ShareX.HelpersLib
                     };
                 }
 
-                return _cursorList;
+                return cursorList;
             }
         }
 

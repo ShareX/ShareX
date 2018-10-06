@@ -172,26 +172,26 @@ namespace ShareX.HelpersLib
     internal class WindowWrapper : IWin32Window
     {
         /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="handle">Handle to wrap</param>
-        public WindowWrapper(IntPtr handle)
-        {
-            _hwnd = handle;
-        }
-
-        /// <summary>
         /// Original ptr
         /// </summary>
         public IntPtr Handle
         {
             get
             {
-                return _hwnd;
+                return hwnd;
             }
         }
 
-        private IntPtr _hwnd;
+        private IntPtr hwnd;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="handle">Handle to wrap</param>
+        public WindowWrapper(IntPtr handle)
+        {
+            hwnd = handle;
+        }
     }
 
     /// <summary>
