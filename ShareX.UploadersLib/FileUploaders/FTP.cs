@@ -501,7 +501,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         /// <summary>
-        /// For the given <c>minimumVersion</c>, returns a <see cref="SslProtocols"/> that
+        /// For the given <c>minimumVersion</c>, returns a <see cref="SslProtocols"/>
         /// with all SSL protocols newer than that version.
         /// </summary>
         /// <param name="minimumVersion">A minimum SSL/TLS version.</param>
