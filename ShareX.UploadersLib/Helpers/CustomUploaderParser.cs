@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.XPath;
@@ -131,32 +132,36 @@ namespace ShareX.UploadersLib
                 }
                 else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1|1$
                 {
-                    return ParseRegexSyntax(syntax.Substring(6));
+                    return ParseSyntaxRegex(syntax.Substring(6));
                 }
                 else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
                 {
-                    return ParseJsonSyntax(syntax.Substring(5));
+                    return ParseSyntaxJson(syntax.Substring(5));
                 }
                 else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
                 {
-                    return ParseXmlSyntax(syntax.Substring(4));
+                    return ParseSyntaxXml(syntax.Substring(4));
                 }
             }
 
             if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
             {
-                return ParseRandomSyntax(syntax.Substring(7));
+                return ParseSyntaxRandom(syntax.Substring(7));
+            }
+            else if (syntax.StartsWith("select:", StringComparison.InvariantCultureIgnoreCase)) // Example: $select:domain1.com|domain2.com$
+            {
+                return ParseSyntaxSelect(syntax.Substring(7));
             }
 
+            // Invalid syntax
             return null;
         }
 
-        private string ParseRegexSyntax(string syntax)
+        private string ParseSyntaxRegex(string syntax)
         {
             if (!string.IsNullOrEmpty(syntax))
             {
                 string regexIndexString = "";
-                int regexIndex;
                 bool isGroupRegex = false;
                 int i;
 
@@ -177,16 +182,15 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
+                if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out int regexIndex))
                 {
                     Match match = RegexMatches[regexIndex - 1];
 
                     if (isGroupRegex && i + 1 < syntax.Length)
                     {
                         string group = syntax.Substring(i + 1);
-                        int groupNumber;
 
-                        if (int.TryParse(group, out groupNumber))
+                        if (int.TryParse(group, out int groupNumber))
                         {
                             return match.Groups[groupNumber].Value;
                         }
@@ -202,7 +206,7 @@ namespace ShareX.UploadersLib
         }
 
         // http://goessner.net/articles/JsonPath/
-        private string ParseJsonSyntax(string syntaxJsonPath)
+        private string ParseSyntaxJson(string syntaxJsonPath)
         {
             if (!string.IsNullOrEmpty(syntaxJsonPath))
             {
@@ -214,7 +218,7 @@ namespace ShareX.UploadersLib
 
         // http://www.w3schools.com/xsl/xpath_syntax.asp
         // https://msdn.microsoft.com/en-us/library/ms256086(v=vs.110).aspx
-        private string ParseXmlSyntax(string syntaxXPath)
+        private string ParseSyntaxXml(string syntaxXPath)
         {
             if (!string.IsNullOrEmpty(syntaxXPath))
             {
@@ -234,7 +238,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private string ParseRandomSyntax(string syntax)
+        private string ParseSyntaxRandom(string syntax)
         {
             if (!string.IsNullOrEmpty(syntax))
             {
@@ -243,6 +247,25 @@ namespace ShareX.UploadersLib
                 if (values.Length > 0)
                 {
                     return values[MathHelpers.Random(values.Length - 1)];
+                }
+            }
+
+            return null;
+        }
+
+        private string ParseSyntaxSelect(string syntax)
+        {
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                string[] values = syntax.Split(SyntaxParameterChar).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+                if (values.Length > 0)
+                {
+                    using (ParserSelectForm form = new ParserSelectForm(values))
+                    {
+                        form.ShowDialog();
+                        return form.SelectedText;
+                    }
                 }
             }
 
