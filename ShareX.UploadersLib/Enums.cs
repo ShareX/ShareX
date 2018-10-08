@@ -298,14 +298,6 @@ namespace ShareX.UploadersLib
         DELETE
     }
 
-    public enum CustomUploaderResponseParseType
-    {
-        Regex,
-        Json,
-        Xml,
-        Random
-    }
-
     [Flags]
     public enum CustomUploaderDestinationType
     {

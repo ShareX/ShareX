@@ -131,41 +131,21 @@ namespace ShareX.UploadersLib
                 }
                 else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1|1$
                 {
-                    return ParseSyntax(CustomUploaderResponseParseType.Regex, syntax.Substring(6));
+                    return ParseRegexSyntax(syntax.Substring(6));
                 }
                 else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
                 {
-                    return ParseSyntax(CustomUploaderResponseParseType.Json, syntax.Substring(5));
+                    return ParseJsonSyntax(syntax.Substring(5));
                 }
                 else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
                 {
-                    return ParseSyntax(CustomUploaderResponseParseType.Xml, syntax.Substring(4));
+                    return ParseXmlSyntax(syntax.Substring(4));
                 }
             }
 
             if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
             {
-                return ParseSyntax(CustomUploaderResponseParseType.Random, syntax.Substring(7));
-            }
-
-            return null;
-        }
-
-        private string ParseSyntax(CustomUploaderResponseParseType parseType, string syntax)
-        {
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                switch (parseType)
-                {
-                    case CustomUploaderResponseParseType.Regex:
-                        return ParseRegexSyntax(syntax);
-                    case CustomUploaderResponseParseType.Json:
-                        return ParseJsonSyntax(syntax);
-                    case CustomUploaderResponseParseType.Xml:
-                        return ParseXmlSyntax(syntax);
-                    case CustomUploaderResponseParseType.Random:
-                        return ParseRandomSyntax(syntax);
-                }
+                return ParseRandomSyntax(syntax.Substring(7));
             }
 
             return null;
@@ -173,46 +153,49 @@ namespace ShareX.UploadersLib
 
         private string ParseRegexSyntax(string syntax)
         {
-            string regexIndexString = "";
-            int regexIndex;
-            bool isGroupRegex = false;
-            int i;
-
-            for (i = 0; i < syntax.Length; i++)
+            if (!string.IsNullOrEmpty(syntax))
             {
-                if (char.IsDigit(syntax[i]))
+                string regexIndexString = "";
+                int regexIndex;
+                bool isGroupRegex = false;
+                int i;
+
+                for (i = 0; i < syntax.Length; i++)
                 {
-                    regexIndexString += syntax[i];
-                }
-                else
-                {
-                    if (syntax[i] == SyntaxParameterChar || syntax[i] == ',') // , for backward compatibility
+                    if (char.IsDigit(syntax[i]))
                     {
-                        isGroupRegex = true;
+                        regexIndexString += syntax[i];
+                    }
+                    else
+                    {
+                        if (syntax[i] == SyntaxParameterChar || syntax[i] == ',') // , for backward compatibility
+                        {
+                            isGroupRegex = true;
+                        }
+
+                        break;
+                    }
+                }
+
+                if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
+                {
+                    Match match = RegexMatches[regexIndex - 1];
+
+                    if (isGroupRegex && i + 1 < syntax.Length)
+                    {
+                        string group = syntax.Substring(i + 1);
+                        int groupNumber;
+
+                        if (int.TryParse(group, out groupNumber))
+                        {
+                            return match.Groups[groupNumber].Value;
+                        }
+
+                        return match.Groups[group].Value;
                     }
 
-                    break;
+                    return match.Value;
                 }
-            }
-
-            if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
-            {
-                Match match = RegexMatches[regexIndex - 1];
-
-                if (isGroupRegex && i + 1 < syntax.Length)
-                {
-                    string group = syntax.Substring(i + 1);
-                    int groupNumber;
-
-                    if (int.TryParse(group, out groupNumber))
-                    {
-                        return match.Groups[groupNumber].Value;
-                    }
-
-                    return match.Groups[group].Value;
-                }
-
-                return match.Value;
             }
 
             return null;
@@ -221,22 +204,30 @@ namespace ShareX.UploadersLib
         // http://goessner.net/articles/JsonPath/
         private string ParseJsonSyntax(string syntaxJsonPath)
         {
-            return (string)JToken.Parse(Response).SelectToken("$." + syntaxJsonPath);
+            if (!string.IsNullOrEmpty(syntaxJsonPath))
+            {
+                return (string)JToken.Parse(Response).SelectToken("$." + syntaxJsonPath);
+            }
+
+            return null;
         }
 
         // http://www.w3schools.com/xsl/xpath_syntax.asp
         // https://msdn.microsoft.com/en-us/library/ms256086(v=vs.110).aspx
         private string ParseXmlSyntax(string syntaxXPath)
         {
-            using (StringReader sr = new StringReader(Response))
+            if (!string.IsNullOrEmpty(syntaxXPath))
             {
-                XPathDocument doc = new XPathDocument(sr);
-                XPathNavigator nav = doc.CreateNavigator();
-                XPathNavigator node = nav.SelectSingleNode(syntaxXPath);
-
-                if (node != null)
+                using (StringReader sr = new StringReader(Response))
                 {
-                    return node.Value;
+                    XPathDocument doc = new XPathDocument(sr);
+                    XPathNavigator nav = doc.CreateNavigator();
+                    XPathNavigator node = nav.SelectSingleNode(syntaxXPath);
+
+                    if (node != null)
+                    {
+                        return node.Value;
+                    }
                 }
             }
 
@@ -245,14 +236,17 @@ namespace ShareX.UploadersLib
 
         private string ParseRandomSyntax(string syntax)
         {
-            string[] values = syntax.Split(SyntaxParameterChar);
-
-            if (values.Length > 0)
+            if (!string.IsNullOrEmpty(syntax))
             {
-                return values[MathHelpers.Random(values.Length - 1)];
+                string[] values = syntax.Split(SyntaxParameterChar);
+
+                if (values.Length > 0)
+                {
+                    return values[MathHelpers.Random(values.Length - 1)];
+                }
             }
 
-            return "";
+            return null;
         }
     }
 }
