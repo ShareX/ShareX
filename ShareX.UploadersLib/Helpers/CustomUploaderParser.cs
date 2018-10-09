@@ -31,6 +31,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using System.Xml.XPath;
 
 namespace ShareX.UploadersLib
@@ -152,6 +153,14 @@ namespace ShareX.UploadersLib
             {
                 return ParseSyntaxSelect(syntax.Substring(7));
             }
+            else if (syntax.Equals("input", StringComparison.InvariantCultureIgnoreCase)) // Example: $input$
+            {
+                return ParseSyntaxInput();
+            }
+            else if (syntax.StartsWith("input:", StringComparison.InvariantCultureIgnoreCase)) // Example: $input:default value$
+            {
+                return ParseSyntaxInput(syntax.Substring(6));
+            }
 
             // Invalid syntax
             return null;
@@ -270,6 +279,19 @@ namespace ShareX.UploadersLib
             }
 
             return null;
+        }
+
+        private string ParseSyntaxInput(string defaultValue = null)
+        {
+            using (InputBox inputBox = new InputBox("ShareX - Input", defaultValue))
+            {
+                if (inputBox.ShowDialog() == DialogResult.OK)
+                {
+                    return inputBox.InputText;
+                }
+            }
+
+            return defaultValue;
         }
     }
 }
