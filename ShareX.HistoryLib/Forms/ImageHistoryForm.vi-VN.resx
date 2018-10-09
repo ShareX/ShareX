@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Lịch sử hình ảnh</value>
+    <value>ShareX - Lịch sử hình ảnh</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm:</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Cài đặt...</value>
   </data>
 </root>

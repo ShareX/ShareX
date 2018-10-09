@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Giới thiệu về ShareX</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="btnShareXLicense.Text" xml:space="preserve">
+    <value>Giấy phép cho ShareX...</value>
+  </data>
+  <data name="btnLicenses.Text" xml:space="preserve">
+    <value>Giấy phép...</value>
+  </data>
 </root>

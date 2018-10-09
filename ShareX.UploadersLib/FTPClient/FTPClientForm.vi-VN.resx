@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Trình ShareX FTP</value>
+    <value>ShareX - Trình FTP</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>Tên tệp tin</value>
+    <value>Tên tệp</value>
   </data>
   <data name="chFilesize.Text" xml:space="preserve">
-    <value>Kích thước</value>
+    <value>Kích thước tệp</value>
   </data>
   <data name="chFiletype.Text" xml:space="preserve">
-    <value>Kiểu </value>
+    <value>Kiểu tệp</value>
   </data>
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Lần chỉnh sửa cuối</value>
@@ -146,5 +146,32 @@
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Các tệp tin</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>Kết nối</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Chép URL vào vùng nhớ tạm</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Tạo thư mục</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>Ngắt kết nối</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>Mở URL</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Đổi tên</value>
   </data>
 </root>

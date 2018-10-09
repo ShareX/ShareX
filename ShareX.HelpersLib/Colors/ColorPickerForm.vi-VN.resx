@@ -151,7 +151,7 @@
     <value>Vàng:</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
-    <value>Blue:</value>
+    <value>Blue (Xanh dương):</value>
   </data>
   <data name="rbBrightness.Text" xml:space="preserve">
     <value>Độ sáng:</value>
@@ -163,9 +163,51 @@
     <value>Hue:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
-    <value>Red:</value>
+    <value>Đỏ (Red):</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Tương phản:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Sao chép tất cả</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Sao chép mã CMYK</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Sao chép mã thập phân</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Sao chép mã hệ 16 (hex)</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Sao chép mã HSB</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Sao chép vị trí</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Sao chép mã RGB</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Vị trí con trỏ:</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Trong suốt</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Mã 16 (Hex):</value>
+  </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>Chọn màu từ màn hình</value>
+  </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>Các màu gần đây:</value>
   </data>
 </root>

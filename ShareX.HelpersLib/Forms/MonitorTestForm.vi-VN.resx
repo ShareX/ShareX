@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kiểm tra màn hình</value>
+    <value>ShareX - Kiểm tra màn hình</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Đóng</value>
@@ -133,7 +133,7 @@
     <value>Màu 2</value>
   </data>
   <data name="cbShapes.Items1" xml:space="preserve">
-    <value>Vạch ngang</value>
+    <value>Vạch dọc</value>
   </data>
   <data name="cbShapes.Items2" xml:space="preserve">
     <value>Vạch dọc</value>
@@ -160,12 +160,15 @@
     <value>R:</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
-    <value>G:</value>
+    <value>G (Xanh lá):</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B:</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
     <value>Kẻ ca rô</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Kiểm tra hiển thị đứt đoạn của màn hình (screen tearing)</value>
   </data>
 </root>

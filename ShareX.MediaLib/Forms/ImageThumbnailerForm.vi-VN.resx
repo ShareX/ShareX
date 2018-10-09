@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Thêm...</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Rộng:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>ShareX - Tạo ảnh nhỏ/Thumbnail</value>
+  </data>
+  <data name="lblOutputFilename.Text" xml:space="preserve">
+    <value>Tên tệp đầu ra:</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Thư mục đầu ra:</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Cao:</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Xóa bỏ</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>Tạo ảnh thu nhỏ/thumbnail</value>
   </data>
 </root>

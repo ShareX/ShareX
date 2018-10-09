@@ -133,9 +133,9 @@
     <value>Đường dẫn:</value>
   </data>
   <data name="lblExt.Text" xml:space="preserve">
-    <value>Phần mở rộng:</value>
+    <value>Phần đuôi mở rộng:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Trình encoder</value>
+    <value>ShareX - Trình nén/Encoder</value>
   </data>
 </root>

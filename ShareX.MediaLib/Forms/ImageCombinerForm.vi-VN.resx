@@ -133,7 +133,7 @@
     <value>Chuyển lên</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
+    <value>Xóa bỏ</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
     <value>Đường dẫn tệp ảnh</value>

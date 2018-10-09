@@ -137,7 +137,7 @@
 
 {1}
 
-Vui lòng chọn hotkey khác hoặc thoát ứng dụng đang gây lỗi và mở lại ShareX.</value>
+Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi và mở lại ShareX.</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Xác nhận xóa tệp tin</value>
@@ -149,7 +149,7 @@ Vui lòng chọn hotkey khác hoặc thoát ứng dụng đang gây lỗi và m�
     <value>Chia sẻ URL ({0})</value>
   </data>
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X: {0}, Y: {1}, Dài: {2}, Rộng: {3}</value>
+    <value>X: {0}, Y: {1}, Rộng: {2}, Cao: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Không hiện thông báo này nữa.</value>
@@ -164,16 +164,16 @@ Vui lòng chọn hotkey khác hoặc thoát ứng dụng đang gây lỗi và m�
     <value>Lịch sử thay đổi</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>hotkey</value>
+    <value>phím tắt</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Chọn một hotkey...</value>
+    <value>Chọn một phím tắt...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>Thiết lập tác vụ</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>Vui lòng chọn nơi tải lên.</value>
+    <value>Vui lòng chọn dịch vụ tải lên.</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Đang bắt đầu</value>
@@ -193,7 +193,7 @@ Bạn có muốn tự động tải nó xuống không?</value>
     <value>Nhấn để dừng ghi hình.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Bạn có thể thêm các luồng công việc từ thiết lập hotkey</value>
+    <value>Bạn có thể thêm các luồng công việc từ thiết lập phím tắt</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Trình FTP chỉ hỗ trợ giao thức FTP hoặc FTPS.</value>
@@ -215,10 +215,10 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Cảnh báo với lần tải lên đầu tiên</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Hỗ trợ từ Chrome được bật</value>
+    <value>Hỗ trợ Chrome được bật</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Phần mở rộng không được để trống.</value>
+    <value>Phần đuôi mở rộng không được để trống.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Sau khi chụp: {0}</value>
@@ -236,7 +236,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Không thể tạo thư mục mới:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Các hotkey đang được thiết lập:</value>
+    <value>Các phím tắt đang được thiết lập:</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Chuột trái để sao chép URL vào vùng nhớ tạm. Chuột phải để mở URL.</value>
@@ -251,7 +251,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Bạn có thật sự muốn xóa tệp này không?</value>
   </data>
   <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>Tải xuống thất bại:
+    <value>Tải về thất bại:
 {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
@@ -267,7 +267,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Dịch vụ chia sẻ URL: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Hỗ trợ từ Chrome đã tắt</value>
+    <value>Hỗ trợ Chrome đã tắt</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Bắt đầu</value>
@@ -276,7 +276,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Xem trước:</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Thử nghiệm tải lên đoạn văn bản</value>
+    <value>Kiểm tra tải lên đoạn văn bản</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Thiết lập tác vụ cho {0}</value>
@@ -321,7 +321,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Hiện menu</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL để lấy về và tải lên</value>
+    <value>URL để tải xuống và tải lên</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Đường dẫn tới tệp tin không thể trống</value>
@@ -330,13 +330,13 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Chọn thư mục để lưu</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
-    <value>Cho phép hotkey hoạt động</value>
+    <value>Kích hoạt phím tắt</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>Đăng ký hotkey thất bại</value>
+    <value>Đăng ký phím tắt thất bại</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Hotkey đã được kích hoạt.</value>
+    <value>Phím tắt đã được kích hoạt.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Tải lên các file</value>
@@ -352,16 +352,16 @@ Bạn có muốn khởi động lại ShareX không?</value>
 ở đây</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Hotkey đã bị vô hiệu hóa.</value>
+    <value>Phím tắt đã bị vô hiệu hóa.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>Các hotkey</value>
+    <value>Các phím tắt</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
     <value>Đường dẫn không được để trống.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Dịch vụ tải lên tệp tin: {0}</value>
+    <value>Dịch vụ tải lên tệp: {0}</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Trang project</value>
@@ -386,7 +386,7 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
     <value>Tên không thể để trống</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
-    <value>Không cho phép hotkey hoạt động</value>
+    <value>Vô hiệu hóa phím tắt</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tác vụ đã hoàn thành</value>
@@ -424,7 +424,7 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
     <value>FFmpeg đã được tải xuống thành công.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Đang encode...</value>
+    <value>Đang mã hóa...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>Lỗi FFmpeg</value>
@@ -434,5 +434,136 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Chạy ShareX cùng Windows</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Mở khi ShareX khởi động</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Thiết lập {0} không đúng hoặc bị thiếu. Vui lòng kiểm tra cửa sổ "Cài đặt dịch vụ tải lên" để thiết lập.</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Bạn có chắc chắn hủy việc ghi hình này không?</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Không thể ghi tệp ảnh vào đường đẫn {0}.</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Bản phát hành cho lập trình viên có thể không ổn định và chỉ được dùng cho mục đích kiểm thử. Bạn có muốn cài đặt nó không?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Tiếng Hà Lan</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Sửa menu này...</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Chỉnh sửa với ShareX</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Chỉnh sửa...</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Nhập văn bản để nén</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Tiếng Pháp</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Bạn có muốn đặt lại các cài đặt cho ShareX không?</value>
+  </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>Bạn cần mở lại ShareX để thay đổi thư mục cá nhân có hiệu lực.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Rút gọn</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>Rút gọn URL</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>Hiện các cột</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Tiếng Trung phồn thể</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Tiếng Thổ Nhĩ Kỳ</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Tải lên với ShareX</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Tiếng Tây Ban Nha</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Ẩn các cột</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Tiếng Hungary</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Tiếng Ý</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Tiếng Hàn</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Cố định vị trí</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Tiếng Bồ Đào Nha (Brazil)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Tiếng Nga</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Tiếng Trung giản thể</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Tự khởi động đã được kích hoạt bởi tổ chức của bạn</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Tự khởi động đã bị vô hiệu bởi tổ chức của bạn</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Tiếng Đức</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Đặt lại tất cả tác vụ nhanh về mặc định?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Tự khởi động đã bị vô hiệu trong Task Manager</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Có thể đã có mâu thuẫn với một ứng dụng:</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Nhấn chuột trái để kéo
+Nhấn chuột phải để mở menu
+Nhấn chuột giữa để đóng</value>
+  </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Đặt lại tất cả phím tắt về mặc định?</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Phân cách</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Giữ ở trên cùng</value>
   </data>
 </root>

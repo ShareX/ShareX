@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>ShareX - Trình sửa menu tác vụ nhanh</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Xóa bỏ</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Đặt lại về mặc định...</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Tip: Nếu bạn thêm tác vụ trống nó sẽ được chuyển thành dòng phân cách trên menu</value>
   </data>
 </root>

@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="btnCreateNewImage.Text" xml:space="preserve">
+    <value>Tạo ảnh mới...</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>ShareX - Trình chỉnh sửa ảnh</value>
+  </data>
+  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Chọn ảnh từ vùng nhớ tạm</value>
+  </data>
+  <data name="btnOpenImageFile.Text" xml:space="preserve">
+    <value>Mở tệp ảnh...</value>
   </data>
 </root>

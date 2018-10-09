@@ -126,4 +126,13 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Các assembly đã được tải</value>
   </data>
+  <data name="btnUploadLog.Text" xml:space="preserve">
+    <value>Tải lên log ghi chép</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Mở tệp sự kiện...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Đường dẫn khởi động:</value>
+  </data>
 </root>

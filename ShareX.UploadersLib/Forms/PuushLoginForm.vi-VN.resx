@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="llForgottenPassword.Text" xml:space="preserve">
+    <value>Quên mật khẩu?</value>
+  </data>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>Đăng nhập puush</value>
   </data>
 </root>
