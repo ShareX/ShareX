@@ -759,6 +759,10 @@ namespace ShareX.UploadersLib
             txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
             txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
 
+            cbGoogleCloudStorageStripExtensionImage.Checked = Config.GoogleCloudStorageRemoveExtensionImage;
+            cbGoogleCloudStorageStripExtensionVideo.Checked = Config.GoogleCloudStorageRemoveExtensionVideo;
+            cbGoogleCloudStorageStripExtensionText.Checked = Config.GoogleCloudStorageRemoveExtensionText;
+
             #endregion Google Cloud Storage
         }
 
@@ -3136,6 +3140,21 @@ namespace ShareX.UploadersLib
         {
             Config.GoogleCloudStorageObjectPrefix = txtGoogleCloudStorageObjectPrefix.Text;
             UpdateGoogleCloudStorageStatus();
+        }
+
+        private void cbGoogleCloudStorageStripExtensionImage_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionImage = cbGoogleCloudStorageStripExtensionImage.Checked;
+        }
+
+        private void cbGoogleCloudStorageStripExtensionVideo_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionVideo = cbGoogleCloudStorageStripExtensionVideo.Checked;
+        }
+
+        private void cbGoogleCloudStorageStripExtensionText_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionText = cbGoogleCloudStorageStripExtensionText.Checked;
         }
 
         #endregion Google Cloud Storage
