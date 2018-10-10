@@ -121,10 +121,10 @@
     <value>Thêm</value>
   </data>
   <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Sửa</value>
+    <value>Chỉnh sửa</value>
   </data>
   <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
+    <value>Xóa bỏ</value>
   </data>
   <data name="chEncoderArgs.Text" xml:space="preserve">
     <value>Đối số</value>
@@ -139,7 +139,7 @@
     <value>Nhân bản</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Thiết lập Encoder</value>
+    <value>ShareX - Thiết lập trình nén (Encoder)</value>
   </data>
   <data name="chEncoderOutputExtension.Text" xml:space="preserve">
     <value>Phần mở rộng của đầu ra</value>

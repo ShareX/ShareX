@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>Màu nền</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>Thay đổi màu...</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Rộng:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>ShareX - Ảnh mới</value>
+  </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>điểm ảnh</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>Trong suốt</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Cao:</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>điểm ảnh</value>
   </data>
 </root>

@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Duyệt thư mục...</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ủy quyền</value>
+    <value>ShareX - Đánh chỉ mục thư mục</value>
+  </data>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Xem trước</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Tải lên và đóng cửa sổ này</value>
+  </data>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Đánh chỉ mục thư mục đã chọn</value>
   </data>
 </root>

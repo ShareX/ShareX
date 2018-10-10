@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Lựa chọn in</value>
+    <value>ShareX - Lựa chọn in</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy bỏ</value>
@@ -136,7 +136,7 @@
     <value>Tự động xoay ảnh</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Tự động chỉnh kích thước ảnh</value>
+    <value>Tự động chỉnh tỉ lệ ảnh</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
     <value>Vị trí trung tâm ảnh</value>
