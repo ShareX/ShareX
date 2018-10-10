@@ -410,6 +410,9 @@ namespace ShareX.UploadersLib
         public string GoogleCloudStorageBucket = "";
         public string GoogleCloudStorageDomain = "";
         public string GoogleCloudStorageObjectPrefix = "ShareX/%y/%mo";
+        public bool GoogleCloudStorageRemoveExtensionImage = false;
+        public bool GoogleCloudStorageRemoveExtensionVideo = false;
+        public bool GoogleCloudStorageRemoveExtensionText = false;
 
         #endregion Google Cloud Storage
 
