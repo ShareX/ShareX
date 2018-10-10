@@ -337,6 +337,10 @@ namespace ShareX.UploadersLib
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.lblGoogleCloudStorageStripExtension = new System.Windows.Forms.Label();
+            this.cbGoogleCloudStorageStripExtensionText = new System.Windows.Forms.CheckBox();
+            this.cbGoogleCloudStorageStripExtensionVideo = new System.Windows.Forms.CheckBox();
+            this.cbGoogleCloudStorageStripExtensionImage = new System.Windows.Forms.CheckBox();
             this.lblGoogleCloudStoragePathPreview = new System.Windows.Forms.Label();
             this.lblGoogleCloudStoragePathPreviewLabel = new System.Windows.Forms.Label();
             this.txtGoogleCloudStorageObjectPrefix = new System.Windows.Forms.TextBox();
@@ -2907,6 +2911,10 @@ namespace ShareX.UploadersLib
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageStripExtension);
+            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionText);
+            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionVideo);
+            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionImage);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageObjectPrefix);
@@ -2919,6 +2927,32 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // lblGoogleCloudStorageStripExtension
+            // 
+            resources.ApplyResources(this.lblGoogleCloudStorageStripExtension, "lblGoogleCloudStorageStripExtension");
+            this.lblGoogleCloudStorageStripExtension.Name = "lblGoogleCloudStorageStripExtension";
+            // 
+            // cbGoogleCloudStorageStripExtensionText
+            // 
+            resources.ApplyResources(this.cbGoogleCloudStorageStripExtensionText, "cbGoogleCloudStorageStripExtensionText");
+            this.cbGoogleCloudStorageStripExtensionText.Name = "cbGoogleCloudStorageStripExtensionText";
+            this.cbGoogleCloudStorageStripExtensionText.UseVisualStyleBackColor = true;
+            this.cbGoogleCloudStorageStripExtensionText.CheckedChanged += new System.EventHandler(this.cbGoogleCloudStorageStripExtensionText_CheckedChanged);
+            // 
+            // cbGoogleCloudStorageStripExtensionVideo
+            // 
+            resources.ApplyResources(this.cbGoogleCloudStorageStripExtensionVideo, "cbGoogleCloudStorageStripExtensionVideo");
+            this.cbGoogleCloudStorageStripExtensionVideo.Name = "cbGoogleCloudStorageStripExtensionVideo";
+            this.cbGoogleCloudStorageStripExtensionVideo.UseVisualStyleBackColor = true;
+            this.cbGoogleCloudStorageStripExtensionVideo.CheckedChanged += new System.EventHandler(this.cbGoogleCloudStorageStripExtensionVideo_CheckedChanged);
+            // 
+            // cbGoogleCloudStorageStripExtensionImage
+            // 
+            resources.ApplyResources(this.cbGoogleCloudStorageStripExtensionImage, "cbGoogleCloudStorageStripExtensionImage");
+            this.cbGoogleCloudStorageStripExtensionImage.Name = "cbGoogleCloudStorageStripExtensionImage";
+            this.cbGoogleCloudStorageStripExtensionImage.UseVisualStyleBackColor = true;
+            this.cbGoogleCloudStorageStripExtensionImage.CheckedChanged += new System.EventHandler(this.cbGoogleCloudStorageStripExtensionImage_CheckedChanged);
             // 
             // lblGoogleCloudStoragePathPreview
             // 
@@ -6373,5 +6407,9 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblKuttPassword;
         private System.Windows.Forms.TextBox txtKuttPassword;
         internal System.Windows.Forms.TabPage tpKutt;
+        private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionVideo;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
     }
 }

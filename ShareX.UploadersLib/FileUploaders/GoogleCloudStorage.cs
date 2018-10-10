@@ -51,7 +51,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Bucket = config.GoogleCloudStorageBucket,
                 Domain = config.GoogleCloudStorageDomain,
-                Prefix = config.GoogleCloudStorageObjectPrefix
+                Prefix = config.GoogleCloudStorageObjectPrefix,
+                RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
+                RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
             };
         }
 
@@ -63,6 +66,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Bucket { get; set; }
         public string Domain { get; set; }
         public string Prefix { get; set; }
+        public bool RemoveExtensionImage { get; set; }
+        public bool RemoveExtensionText { get; set; }
+        public bool RemoveExtensionVideo { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -100,10 +106,20 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
+            string contentType = Helpers.GetMimeType(fileName);
+
+            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                fileName = Path.GetFileNameWithoutExtension(fileName);
+            }
+
             string uploadpath = GetUploadPath(fileName);
 
             GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
             {
+                contentType = contentType,
                 name = uploadpath,
                 acl = new GoogleCloudStorageAcl[]
                 {
@@ -170,6 +186,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private class GoogleCloudStorageMetadata
         {
+            public string contentType { get; set; }
             public string name { get; set; }
             public GoogleCloudStorageAcl[] acl { get; set; }
         }
