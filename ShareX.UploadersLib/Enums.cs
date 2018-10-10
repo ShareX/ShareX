@@ -322,6 +322,24 @@ namespace ShareX.UploadersLib
         Implicit
     }
 
+    /// <summary>
+    ///  FTPS TLS/SSL encryption versions.
+    /// </summary>
+    public enum FTPSEncryptionVersion
+    {
+        [Description("TLS 1.2")]
+        Tls12,
+
+        [Description("TLS 1.1")]
+        Tls11,
+
+        [Description("TLS 1.0")]
+        Tls10,
+
+        [Description("SSL 3.0")]
+        Ssl3
+    }
+
     public enum OAuthLoginStatus
     {
         LoginRequired,

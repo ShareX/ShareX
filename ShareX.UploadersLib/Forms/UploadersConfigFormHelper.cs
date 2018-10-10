@@ -547,6 +547,8 @@ namespace ShareX.UploadersLib
             lblFTPURLPreviewValue.Text = account.PreviewHttpPath;
 
             cbFTPSEncryption.SelectedIndex = (int)account.FTPSEncryption;
+            cbFTPSMinimumEncryptionVersion.SelectedIndex = (int)account.FTPSMinimumEncryptionVersion;
+
             txtFTPSCertificateLocation.Text = account.FTPSCertificateLocation;
 
             txtSFTPKeyLocation.Text = account.Keypath;
@@ -596,6 +598,7 @@ namespace ShareX.UploadersLib
             string msg = "";
             string remotePath = account.GetSubFolderPath();
             List<string> directories = new List<string>();
+            bool hasFailed = false;
 
             try
             {
@@ -652,10 +655,31 @@ namespace ShareX.UploadersLib
             }
             catch (Exception e)
             {
-                msg = e.Message;
+                hasFailed = true;
+                msg = "The connection test failed with the following message:";
+                msg += "\n\n" + e.Message;
+
+                if (e.InnerException != null && !string.IsNullOrEmpty(e.InnerException.Message))
+                {
+                    msg += "\n\n" + e.InnerException.Message;
+                }
+
+                if (account.Protocol == FTPProtocol.FTPS)
+                {
+                    msg += "\n\nFTPS troubleshooting:";
+                    msg += "\n\nUnexpected packet format? Check whether your server uses explicit or implicit mode. If it uses port 21, it's probably using explicit mode.";
+                    msg += "\n\nClient and server do not possess common algorithm? Check your SSL/TLS version setting. Your server is probably using outdated encryption.";
+                }
+
+                msg += "\n\nThe debug log may reveal more details.";
+
+                DebugHelper.WriteException(e, "FTP settings test failed");
             }
 
-            MessageBox.Show(msg, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Invoke(new Action(() =>
+            {
+                MessageBox.Show(this, msg, "ShareX FTP connection test", MessageBoxButtons.OK, hasFailed ? MessageBoxIcon.Error : MessageBoxIcon.Information);
+            }));
         }
 
         private void FTPOpenClient(FTPAccount account)

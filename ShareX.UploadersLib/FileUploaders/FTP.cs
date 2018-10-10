@@ -32,6 +32,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Security;
+using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
@@ -116,8 +117,12 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Host = Account.Host,
                 Port = Account.Port,
-                Credentials = new NetworkCredential(Account.Username, Account.Password)
+                Credentials = new NetworkCredential(Account.Username, Account.Password),
+                SslProtocols = GetEnabledSSLProtocols(account.FTPSMinimumEncryptionVersion),
             };
+
+            DebugHelper.WriteLine($"FTP: FTP client configured to connect to '{Account.Host}' " +
+                                  $"port {Account.Port}.");
 
             if (account.IsActive)
             {
@@ -127,6 +132,8 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 client.DataConnectionType = FtpDataConnectionType.AutoPassive;
             }
+
+            DebugHelper.WriteLine($"FTP: Client using {(account.IsActive ? "active" : "passive")} connection.");
 
             if (account.Protocol == FTPProtocol.FTPS)
             {
@@ -141,22 +148,16 @@ namespace ShareX.UploadersLib.FileUploaders
                         break;
                 }
 
+                DebugHelper.WriteLine($"FTP: Client using encryption, {Account.FTPSEncryption} mode.");
+                DebugHelper.WriteLine($"FTP: Allowed TLS/SSL versions: {client.SslProtocols}.");
+
                 client.DataConnectionEncryption = true;
 
                 if (!string.IsNullOrEmpty(account.FTPSCertificateLocation) && File.Exists(account.FTPSCertificateLocation))
                 {
+                    DebugHelper.WriteLine($"FTP: Using client certificate.");
                     X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FTPSCertificateLocation);
                     client.ClientCertificates.Add(cert);
-                }
-                else
-                {
-                    client.ValidateCertificate += (control, e) =>
-                    {
-                        if (e.PolicyErrors != SslPolicyErrors.None)
-                        {
-                            e.Accept = true;
-                        }
-                    };
                 }
             }
         }
@@ -497,6 +498,41 @@ namespace ShareX.UploadersLib.FileUploaders
                     DebugHelper.WriteException(e);
                 }
             }
+        }
+
+        /// <summary>
+        /// For the given <c>minimumVersion</c>, returns a <see cref="SslProtocols"/>
+        /// with all SSL protocols newer than that version.
+        /// </summary>
+        /// <param name="minimumVersion">A minimum SSL/TLS version.</param>
+        /// <returns>A set of supported SSL/TLS versions.</returns>
+        private static SslProtocols GetEnabledSSLProtocols(FTPSEncryptionVersion minimumVersion)
+        {
+            var protocols = SslProtocols.None;
+
+            switch (minimumVersion)
+            {
+                case FTPSEncryptionVersion.Ssl3:
+                    protocols |= SslProtocols.Ssl3;
+                    goto case FTPSEncryptionVersion.Tls10;
+
+                case FTPSEncryptionVersion.Tls10:
+                    protocols |= SslProtocols.Tls;
+                    goto case FTPSEncryptionVersion.Tls11;
+
+                case FTPSEncryptionVersion.Tls11:
+                    protocols |= SslProtocols.Tls11;
+                    goto case FTPSEncryptionVersion.Tls12;
+
+                case FTPSEncryptionVersion.Tls12:
+                    protocols |= SslProtocols.Tls12;
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(minimumVersion), minimumVersion, null);
+            }
+
+            return protocols;
         }
     }
 }
