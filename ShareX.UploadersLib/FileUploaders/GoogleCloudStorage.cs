@@ -106,20 +106,19 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string contentType = Helpers.GetMimeType(fileName);
+            string name = fileName;
 
             if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
                 (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
                 (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
             {
-                fileName = Path.GetFileNameWithoutExtension(fileName);
+                name = Path.GetFileNameWithoutExtension(fileName);
             }
 
-            string uploadpath = GetUploadPath(fileName);
+            string uploadpath = GetUploadPath(name);
 
             GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
             {
-                contentType = contentType,
                 name = uploadpath,
                 acl = new GoogleCloudStorageAcl[]
                 {
@@ -135,6 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
                 headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
             if (upload.name != uploadpath)
@@ -186,7 +186,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private class GoogleCloudStorageMetadata
         {
-            public string contentType { get; set; }
             public string name { get; set; }
             public GoogleCloudStorageAcl[] acl { get; set; }
         }
