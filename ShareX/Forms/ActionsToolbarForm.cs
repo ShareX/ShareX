@@ -404,7 +404,8 @@ namespace ShareX
             if (e.Button == MouseButtons.Left && !Program.Settings.ActionsToolbarLockPosition)
             {
                 NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+                var m = Message.Create(Handle, (int)WindowsMessages.SYSCOMMAND, new IntPtr(NativeConstants.MOUSE_MOVE), IntPtr.Zero);
+                DefWndProc(ref m);
             }
         }
 
