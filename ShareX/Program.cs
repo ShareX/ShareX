@@ -34,6 +34,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 #if WindowsStore
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
