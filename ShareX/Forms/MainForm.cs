@@ -298,6 +298,36 @@ namespace ShareX
             IsReady = true;
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
+            {
+                var reason = (EndSessionReasons)m.GetLParam(typeof(EndSessionReasons));
+                if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
+                {
+                    // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
+                    // Also allows it to restart if it gets terminated for other reasons (see description of ENDSESSION_CLOSEAPP).
+                    // Add the silent switch to avoid ShareX popping up in front of the user when the application restarts.
+                    NativeMethods.RegisterApplicationRestart("-silent", 0);
+                }
+                m.Result = new IntPtr(1); // "Applications should respect the user's intentions and return TRUE."
+            }
+            else if (m.Msg == (int)WindowsMessages.ENDSESSION)
+            {
+                if (m.WParam != IntPtr.Zero)
+                {
+                    // If wParam is not equal to false (0), the application can be terminated at any moment after processing this message
+                    // thus should save its data while processing the message.
+                    SettingManager.SaveAllSettings();
+                }
+                m.Result = IntPtr.Zero; // "If an application processes this message, it should return zero."
+            }
+            else
+            {
+                base.WndProc(ref m);
+            }
+        }
+
         private void AfterShownJobs()
         {
             if (!Program.Settings.ShowMostRecentTaskFirst && lvUploads.Items.Count > 0)

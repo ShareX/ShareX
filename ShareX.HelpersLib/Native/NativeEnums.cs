@@ -3131,4 +3131,42 @@ namespace ShareX.HelpersLib
         PROFILE_SERVER = 0x40000000,
         CREATE_IGNORE_SYSTEM_DEFAULT = 0x80000000,
     }
+
+    [Flags]
+    public enum RegisterApplicationRestartFlags : uint
+    {
+        /// <summary>
+        /// Do not restart the process if it terminates due to an unhandled exception.
+        /// </summary>
+        RESTART_NO_CRASH = 1,
+        /// <summary>
+        /// Do not restart the process if it terminates due to the application not responding.
+        /// </summary>
+        RESTART_NO_HANG = 2,
+        /// <summary>
+        /// Do not restart the process if it terminates due to the installation of an update.
+        /// </summary>
+        RESTART_NO_PATCH = 4,
+        /// <summary>
+        /// Do not restart the process if the computer is restarted as the result of an update.
+        /// </summary>
+        RESTART_NO_REBOOT = 8
+    }
+
+    [Flags]
+    public enum EndSessionReasons : uint
+    {
+        /// <summary>
+        /// The application is using a file that must be replaced, the system is being serviced, or system resources are exhausted.
+        /// </summary>
+        ENDSESSION_CLOSEAPP = 0x1,
+        /// <summary>
+        /// The application is forced to shut down.
+        /// </summary>
+        ENDSESSION_CRITICAL = 0x40000000,
+        /// <summary>
+        /// The user is logging off.
+        /// </summary>
+        ENDSESSION_LOGOFF = 0x80000000
+    }
 }
