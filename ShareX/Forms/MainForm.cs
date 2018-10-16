@@ -972,11 +972,14 @@ namespace ShareX
 
         private void SaveTaskListViewColumnWidths()
         {
-            Program.Settings.TaskListViewColumnWidths = new List<int>();
-
-            for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
+            if (IsReady)
             {
-                Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+                Program.Settings.TaskListViewColumnWidths = new List<int>();
+
+                for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
+                {
+                    Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+                }
             }
         }
 
@@ -1152,8 +1155,6 @@ namespace ShareX
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveTaskListViewColumnWidths();
-
             if (e.CloseReason == CloseReason.UserClosing && Program.Settings.ShowTray && !forceClose)
             {
                 e.Cancel = true;
@@ -1306,6 +1307,11 @@ namespace ShareX
             {
                 cmsTaskInfo.Close();
             }
+        }
+
+        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            SaveTaskListViewColumnWidths();
         }
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
