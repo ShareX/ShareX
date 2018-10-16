@@ -100,8 +100,6 @@ namespace ShareX
         internal static GitHubUpdateManager UpdateManager { get; private set; }
         internal static CLIManager CLI { get; private set; }
 
-        private static bool restarting;
-
         #region Paths
 
         private const string AppName = "ShareX";
@@ -232,6 +230,8 @@ namespace ShareX
 
         #endregion Paths
 
+        private static bool closeSequenceStarted, restarting;
+
         [STAThread]
         private static void Main(string[] args)
         {
@@ -315,11 +315,23 @@ namespace ShareX
 
             Application.Run(MainForm);
 
-            if (WatchFolderManager != null) WatchFolderManager.Dispose();
-            SettingManager.SaveAllSettings();
+            CloseSequence();
+        }
 
-            DebugHelper.Logger.AsyncWrite = false;
-            DebugHelper.WriteLine("ShareX closing.");
+        public static void CloseSequence()
+        {
+            if (!closeSequenceStarted)
+            {
+                closeSequenceStarted = true;
+
+                DebugHelper.Logger.AsyncWrite = false;
+                DebugHelper.WriteLine("ShareX closing.");
+
+                if (WatchFolderManager != null) WatchFolderManager.Dispose();
+                SettingManager.SaveAllSettings();
+
+                DebugHelper.WriteLine("ShareX closed.");
+            }
         }
 
         public static void Restart()
