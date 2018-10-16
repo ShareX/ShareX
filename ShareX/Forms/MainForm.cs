@@ -302,7 +302,7 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
-                var reason = (EndSessionReasons)m.LParam;
+                EndSessionReasons reason = (EndSessionReasons)m.LParam;
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
                 {
                     // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
@@ -318,8 +318,7 @@ namespace ShareX
                 {
                     // If wParam is not equal to false (0), the application can be terminated at any moment after processing this message
                     // thus should save its data while processing the message.
-                    SettingManager.SaveAllSettings();
-                    // CloseSequence();
+                    Program.CloseSequence();
                 }
                 m.Result = IntPtr.Zero; // "If an application processes this message, it should return zero."
             }
