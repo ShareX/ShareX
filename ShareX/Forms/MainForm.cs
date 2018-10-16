@@ -969,19 +969,6 @@ namespace ShareX
             Refresh();
         }
 
-        private void SaveTaskListViewColumnWidths()
-        {
-            if (IsReady)
-            {
-                Program.Settings.TaskListViewColumnWidths = new List<int>();
-
-                for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
-                {
-                    Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
-                }
-            }
-        }
-
         public void UpdateToggleHotkeyButton()
         {
             if (Program.Settings.DisableHotkeys)
@@ -1310,7 +1297,15 @@ namespace ShareX
 
         private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
-            SaveTaskListViewColumnWidths();
+            if (IsReady)
+            {
+                Program.Settings.TaskListViewColumnWidths = new List<int>();
+
+                for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
+                {
+                    Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+                }
+            }
         }
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
