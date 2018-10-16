@@ -302,7 +302,7 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
-                var reason = (EndSessionReasons)m.GetLParam(typeof(EndSessionReasons));
+                var reason = (EndSessionReasons)m.LParam;
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
                 {
                     // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
