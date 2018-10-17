@@ -1808,6 +1808,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The debug log can contain sensitive information. Are you sure you want to proceed?.
+        /// </summary>
+        public static string MainForm_UploadDebugLogWarning {
+            get {
+                return ResourceManager.GetString("MainForm_UploadDebugLogWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap megaphone {

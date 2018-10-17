@@ -122,7 +122,10 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(rtbDebug.Text))
             {
-                UploadRequested?.Invoke(rtbDebug.Text);
+                this.InvokeSafe(() =>
+                {
+                    UploadRequested?.Invoke(rtbDebug.Text);
+                });
             }
         }
 
