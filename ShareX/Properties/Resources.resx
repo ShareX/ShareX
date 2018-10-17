@@ -991,4 +991,7 @@ Middle click to close</value>
   <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
     <value>You must reopen ShareX for personal folder changes to take effect.</value>
   </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>The debug log can contain sensitive information. Are you sure you want to proceed?</value>
+  </data>
 </root>

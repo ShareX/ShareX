@@ -340,7 +340,7 @@
     <value>6</value>
   </data>
   <data name="btnUploadLog.Text" xml:space="preserve">
-    <value>Upload log</value>
+    <value>Upload log...</value>
   </data>
   <data name="&gt;&gt;btnUploadLog.Name" xml:space="preserve">
     <value>btnUploadLog</value>

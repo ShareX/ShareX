@@ -1668,7 +1668,14 @@ namespace ShareX
             DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
             if (!form.HasUploadRequested)
             {
-                form.UploadRequested += text => UploadManager.UploadText(text);
+                form.UploadRequested += (text) =>
+                {
+                    DialogResult result = MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (result == DialogResult.Yes)
+                    {
+                        UploadManager.UploadText(text);
+                    }
+                };
             }
             form.ForceActivate();
         }
