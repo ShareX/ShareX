@@ -29,18 +29,12 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
-using System.Net.Cache;
 using System.Text;
 
 namespace ShareX.UploadersLib
 {
     public class Uploader
     {
-        protected const string ContentTypeMultipartFormData = "multipart/form-data";
-        protected const string ContentTypeJSON = "application/json";
-        protected const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
-        protected const string ContentTypeOctetStream = "application/octet-stream";
-
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
 
@@ -124,7 +118,7 @@ namespace ShareX.UploadersLib
         {
             using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
-                string response = ResponseToString(webResponse, responseType);
+                string response = UploadHelpers.ResponseToString(webResponse, responseType);
 
                 if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
                 {
@@ -153,7 +147,7 @@ namespace ShareX.UploadersLib
         {
             string query = URLHelpers.CreateQuery(args);
 
-            return SendRequest(method, url, query, ContentTypeURLEncoded, args, headers, cookies, responseType);
+            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, args, headers, cookies, responseType);
         }
 
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
@@ -178,9 +172,9 @@ namespace ShareX.UploadersLib
         protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
-            string boundary = CreateBoundary();
-            string contentType = ContentTypeMultipartFormData + "; boundary=" + boundary;
-            byte[] data = MakeInputContent(boundary, args);
+            string boundary = UploadHelpers.CreateBoundary();
+            string contentType = UploadHelpers.ContentTypeMultipartFormData + "; boundary=" + boundary;
+            byte[] data = UploadHelpers.MakeInputContent(boundary, args);
 
             using (MemoryStream stream = new MemoryStream())
             {
@@ -188,7 +182,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse webResponse = GetResponse(HttpMethod.POST, url, stream, contentType, null, headers, cookies))
                 {
-                    string response = ResponseToString(webResponse, responseType);
+                    string response = UploadHelpers.ResponseToString(webResponse, responseType);
 
                     if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
                     {
@@ -202,7 +196,7 @@ namespace ShareX.UploadersLib
 
         protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
-            string contentType = ContentTypeMultipartFormData, string metadata = null)
+            string contentType = UploadHelpers.ContentTypeMultipartFormData, string metadata = null)
         {
             UploadResult result = new UploadResult();
 
@@ -211,28 +205,29 @@ namespace ShareX.UploadersLib
 
             try
             {
-                string boundary = CreateBoundary();
+                string boundary = UploadHelpers.CreateBoundary();
                 contentType += "; boundary=" + boundary;
 
-                byte[] bytesArguments = MakeInputContent(boundary, args, false);
+                byte[] bytesArguments = UploadHelpers.MakeInputContent(boundary, args, false);
                 byte[] bytesDataOpen;
                 byte[] bytesDataDatafile = { };
 
                 if (metadata != null)
                 {
-                    bytesDataOpen = MakeFileInputContentOpen(boundary, fileFormName, fileName, metadata);
-                    bytesDataDatafile = MakeFileInputContentOpen(boundary, fileFormName, fileName, null);
+                    bytesDataOpen = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, metadata);
+                    bytesDataDatafile = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, null);
                 }
                 else
                 {
-                    bytesDataOpen = MakeFileInputContentOpen(boundary, fileFormName, fileName);
+                    bytesDataOpen = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName);
                 }
 
-                byte[] bytesDataClose = MakeFileInputContentClose(boundary);
+                byte[] bytesDataClose = UploadHelpers.MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
 
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                currentRequest = request;
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -245,7 +240,7 @@ namespace ShareX.UploadersLib
 
                 using (WebResponse response = request.GetResponse())
                 {
-                    result.Response = ResponseToString(response, responseType);
+                    result.Response = UploadHelpers.ResponseToString(response, responseType);
                 }
 
                 result.IsSuccess = true;
@@ -295,7 +290,7 @@ namespace ShareX.UploadersLib
                 }
                 contentLength = Math.Min(contentLength, data.Length - contentPosition);
 
-                string contentType = Helpers.GetMimeType(fileName);
+                string contentType = UploadHelpers.GetMimeType(fileName);
 
                 if (headers == null)
                 {
@@ -306,7 +301,8 @@ namespace ShareX.UploadersLib
                 long dataLength = data.Length;
                 headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{dataLength}");
 
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                currentRequest = request;
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -318,7 +314,7 @@ namespace ShareX.UploadersLib
 
                 using (WebResponse response = request.GetResponse())
                 {
-                    result.Response = ResponseToString(response, responseType);
+                    result.Response = UploadHelpers.ResponseToString(response, responseType);
                 }
 
                 result.IsSuccess = true;
@@ -366,7 +362,8 @@ namespace ShareX.UploadersLib
                     contentLength = data.Length;
                 }
 
-                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+                currentRequest = request;
 
                 if (contentLength > 0)
                 {
@@ -404,80 +401,6 @@ namespace ShareX.UploadersLib
         }
 
         #region Helper methods
-
-        private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null, long contentLength = 0)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-            string accept = null;
-            string referer = null;
-            string userAgent = ShareXResources.UserAgent;
-
-            if (headers != null)
-            {
-                if (headers["Accept"] != null)
-                {
-                    accept = headers["Accept"];
-                    headers.Remove("Accept");
-                }
-
-                if (headers["Content-Length"] != null)
-                {
-                    if (long.TryParse(headers["Content-Length"], out contentLength))
-                    {
-                        request.ContentLength = contentLength;
-                    }
-
-                    headers.Remove("Content-Length");
-                }
-
-                if (headers["Referer"] != null)
-                {
-                    referer = headers["Referer"];
-                    headers.Remove("Referer");
-                }
-
-                if (headers["User-Agent"] != null)
-                {
-                    userAgent = headers["User-Agent"];
-                    headers.Remove("User-Agent");
-                }
-
-                request.Headers.Add(headers);
-            }
-
-            request.Accept = accept;
-            request.ContentType = contentType;
-            request.CookieContainer = new CookieContainer();
-            if (cookies != null) request.CookieContainer.Add(cookies);
-            request.Method = method.ToString();
-            IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-            if (proxy != null) request.Proxy = proxy;
-            request.Referer = referer;
-            request.UserAgent = userAgent;
-
-            if (contentLength > 0)
-            {
-                request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
-
-                if (method == HttpMethod.GET)
-                {
-                    request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-                }
-
-                request.ContentLength = contentLength;
-                request.Pipelined = false;
-                request.Timeout = -1;
-            }
-            else
-            {
-                request.KeepAlive = false;
-            }
-
-            currentRequest = request;
-
-            return request;
-        }
 
         protected bool TransferData(Stream dataStream, Stream requestStream, long dataPosition = 0, long dataLength = -1)
         {
@@ -518,121 +441,6 @@ namespace ShareX.UploadersLib
             return !StopUploadRequested;
         }
 
-        private string CreateBoundary()
-        {
-            return new string('-', 20) + DateTime.Now.Ticks.ToString("x");
-        }
-
-        private byte[] MakeInputContent(string boundary, string name, string value)
-        {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, name, value);
-            return Encoding.UTF8.GetBytes(format);
-        }
-
-        private byte[] MakeInputContent(string boundary, Dictionary<string, string> contents, bool isFinal = true)
-        {
-            using (MemoryStream stream = new MemoryStream())
-            {
-                if (string.IsNullOrEmpty(boundary)) boundary = CreateBoundary();
-                byte[] bytes;
-
-                if (contents != null)
-                {
-                    foreach (KeyValuePair<string, string> content in contents)
-                    {
-                        if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
-                        {
-                            bytes = MakeInputContent(boundary, content.Key, content.Value);
-                            stream.Write(bytes, 0, bytes.Length);
-                        }
-                    }
-
-                    if (isFinal)
-                    {
-                        bytes = MakeFinalBoundary(boundary);
-                        stream.Write(bytes, 0, bytes.Length);
-                    }
-                }
-
-                return stream.ToArray();
-            }
-        }
-
-        private byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
-        {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
-                boundary, fileFormName, fileName, Helpers.GetMimeType(fileName));
-
-            return Encoding.UTF8.GetBytes(format);
-        }
-
-        private byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName, string metadata)
-        {
-            string format = "";
-
-            if (metadata != null)
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}; charset=UTF-8\r\n\r\n{2}\r\n\r\n", boundary, ContentTypeJSON, metadata);
-            }
-            else
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n", boundary, Helpers.GetMimeType(fileName));
-            }
-
-            return Encoding.UTF8.GetBytes(format);
-        }
-
-        private byte[] MakeFileInputContentClose(string boundary)
-        {
-            return Encoding.UTF8.GetBytes(string.Format("\r\n--{0}--\r\n", boundary));
-        }
-
-        private byte[] MakeFinalBoundary(string boundary)
-        {
-            return Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
-        }
-
-        protected static string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
-        {
-            if (response == null)
-            {
-                return null;
-            }
-
-            switch (responseType)
-            {
-                case ResponseType.Text:
-                    using (Stream responseStream = response.GetResponseStream())
-                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                    {
-                        return reader.ReadToEnd();
-                    }
-                case ResponseType.RedirectionURL:
-                    return response.ResponseUri.OriginalString;
-                case ResponseType.Headers:
-                    StringBuilder sbHeaders = new StringBuilder();
-                    foreach (string key in response.Headers.AllKeys)
-                    {
-                        string value = response.Headers[key];
-                        sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
-                    }
-                    return sbHeaders.ToString().Trim();
-                case ResponseType.LocationHeader:
-                    return response.Headers["Location"];
-                default:
-                    return null;
-            }
-        }
-
-        protected NameValueCollection CreateAuthenticationHeader(string username, string password)
-        {
-            string authInfo = username + ":" + password;
-            authInfo = Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
-            NameValueCollection headers = new NameValueCollection();
-            headers["Authorization"] = "Basic " + authInfo;
-            return headers;
-        }
-
         private string AddWebError(Exception e, string url)
         {
             string response = null;
@@ -657,7 +465,7 @@ namespace ShareX.UploadersLib
                         WebResponse res = webException.Response;
                         using (res)
                         {
-                            response = ResponseToString(res);
+                            response = UploadHelpers.ResponseToString(res);
 
                             if (!string.IsNullOrEmpty(response))
                             {

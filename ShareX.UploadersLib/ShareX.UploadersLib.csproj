@@ -237,6 +237,8 @@
     <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
     <Compile Include="Helpers\CustomUploaderParser.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
+    <Compile Include="Helpers\MimeTypes.cs" />
+    <Compile Include="Helpers\UploadHelpers.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
     <Compile Include="OAuth\OAuth2ProofKey.cs" />

@@ -57,21 +57,17 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return
-                !string.IsNullOrWhiteSpace(config.B2ApplicationKeyId) &&
-                !string.IsNullOrWhiteSpace(config.B2ApplicationKey);
+            return !string.IsNullOrWhiteSpace(config.B2ApplicationKeyId) && !string.IsNullOrWhiteSpace(config.B2ApplicationKey);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new BackblazeB2(
-                applicationKeyId: config.B2ApplicationKeyId,
+            return new BackblazeB2(applicationKeyId: config.B2ApplicationKeyId,
                 applicationKey: config.B2ApplicationKey,
                 bucketName: config.B2BucketName,
                 uploadPath: config.B2UploadPath,
                 useCustomUrl: config.B2UseCustomUrl,
-                customUrl: config.B2CustomUrl
-                );
+                customUrl: config.B2CustomUrl);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBackblazeB2;
@@ -189,10 +185,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 // STEP 3: upload file and see if anything went wrong
                 DebugHelper.WriteLine($"B2 uploader: Uploading to URL {url.uploadUrl}");
-                var (status, uploadError, upload) = B2ApiUploadFile(url, destinationPath, stream);
+                B2UploadResult uploadResult = B2ApiUploadFile(url, destinationPath, stream);
                 HashSet<string> expiredTokenCodes = new HashSet<string>(new List<string> { "expired_auth_token", "bad_auth_token" });
 
-                if (status == -1)
+                if (uploadResult.RC == -1)
                 {
                     // magic number for "connection failed", should also happen when upload
                     // caps are exceeded
@@ -200,24 +196,24 @@ namespace ShareX.UploadersLib.FileUploaders
                     url = null;
                     continue;
                 }
-                else if (status == 401 && expiredTokenCodes.Contains(uploadError.code))
+                else if (uploadResult.RC == 401 && expiredTokenCodes.Contains(uploadResult.Error.code))
                 {
                     // Unauthorized, our token expired
                     DebugHelper.WriteLine("B2 uploader: Upload auth token expired, trying with new URL.");
                     url = null;
                     continue;
                 }
-                else if (status == 408)
+                else if (uploadResult.RC == 408)
                 {
                     DebugHelper.WriteLine("B2 uploader: Request Timeout, trying with same URL.");
                     continue;
                 }
-                else if (status == 429)
+                else if (uploadResult.RC == 429)
                 {
                     DebugHelper.WriteLine("B2 uploader: Too Many Requests, trying with same URL.");
                     continue;
                 }
-                else if (status != 200)
+                else if (uploadResult.RC != 200)
                 {
                     // something else happened that wasn't a success, so bail out
                     DebugHelper.WriteLine("B2 uploader: Unknown error, upload failure.");
@@ -232,18 +228,14 @@ namespace ShareX.UploadersLib.FileUploaders
                 //         or
                 //           $customUrl/$uploadPath
 
-                string remoteLocation = auth.downloadUrl +
-                                     "/file/" +
-                                     URLHelpers.URLEncode(BucketName) +
-                                     "/" +
-                                     upload.fileName;
+                string remoteLocation = URLHelpers.CombineURL(auth.downloadUrl, "file", URLHelpers.URLEncode(BucketName), uploadResult.Upload.fileName);
 
                 DebugHelper.WriteLine($"B2 uploader: Successful upload! File should be at: {remoteLocation}");
 
                 if (UseCustomUrl)
                 {
                     string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
-                    remoteLocation = parsedCustomUrl + upload.fileName;
+                    remoteLocation = parsedCustomUrl + uploadResult.Upload.fileName;
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
                 }
 
@@ -268,7 +260,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2Authorization"/>.</returns>
         private B2Authorization B2ApiAuthorize(string keyId, string key, out string error)
         {
-            NameValueCollection headers = CreateAuthenticationHeader(keyId, key);
+            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(keyId, key);
 
             using (HttpWebResponse res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
             {
@@ -278,7 +270,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return null;
                 }
 
-                string body = ResponseToString(res);
+                string body = UploadHelpers.ResponseToString(res);
 
                 error = null;
                 return JsonConvert.DeserializeObject<B2Authorization>(body);
@@ -316,7 +308,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    string body = ResponseToString(res);
+                    string body = UploadHelpers.ResponseToString(res);
 
                     JObject json;
 
@@ -331,10 +323,8 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    string bucketId = json
-                        .SelectToken("buckets")
-                        ?.FirstOrDefault(b => b["bucketName"].ToString() == bucketName)
-                        ?.SelectToken("bucketId")?.ToString() ?? "";
+                    string bucketId = json.SelectToken("buckets")?.FirstOrDefault(b => b["bucketName"].ToString() == bucketName)?.
+                        SelectToken("bucketId")?.ToString() ?? "";
 
                     if (!string.IsNullOrWhiteSpace(bucketId))
                     {
@@ -372,7 +362,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    string body = ResponseToString(res);
+                    string body = UploadHelpers.ResponseToString(res);
 
                     error = null;
                     return JsonConvert.DeserializeObject<B2UploadUrl>(body);
@@ -426,7 +416,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["X-Bz-Info-b2-content-disposition"] = URLHelpers.URLEncode(contentDisposition.ToString()),
             };
 
-            string contentType = Helpers.GetMimeType(destinationPath);
+            string contentType = UploadHelpers.GetMimeType(destinationPath);
 
             using (HttpWebResponse res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
                 contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true))
@@ -443,7 +433,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
                 }
 
-                string body = ResponseToString(res);
+                string body = UploadHelpers.ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{body}'");
 
                 return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(body));
@@ -465,7 +455,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (allowedBucketId != null && bucketId != allowedBucketId)
             {
                 DebugHelper.WriteLine($"B2 uploader: Error, user is only allowed to access '{allowedBucketId}', " +
-                                      $"but user is trying to access '{bucketId}'.");
+                    $"but user is trying to access '{bucketId}'.");
 
                 error = "No permission to upload to this bucket. Are you using the right application key?";
                 return false;
@@ -501,11 +491,11 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <exception cref="IOException">If the response body cannot be read.</exception>
         private static B2Error ParseB2Error(HttpWebResponse res)
         {
-            if (Helpers.IsSuccessfulResponse(res)) return null;
+            if (UploadHelpers.IsSuccessfulResponse(res)) return null;
 
             try
             {
-                string body = ResponseToString(res);
+                string body = UploadHelpers.ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: ParseB2Error() got: {body}");
                 B2Error err = JsonConvert.DeserializeObject<B2Error>(body);
                 return err;
@@ -550,13 +540,6 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2UploadResult
         {
-            public B2UploadResult(int rc, B2Error error, B2Upload upload)
-            {
-                RC = rc;
-                Error = error;
-                Upload = upload;
-            }
-
             /// <summary>
             /// The HTTP status code.
             /// </summary>
@@ -572,11 +555,11 @@ namespace ShareX.UploadersLib.FileUploaders
             /// </summary>
             public B2Upload Upload { get; }
 
-            public void Deconstruct(out int rc, out B2Error error, out B2Upload upload)
+            public B2UploadResult(int rc, B2Error error, B2Upload upload)
             {
-                rc = RC;
-                error = Error;
-                upload = Upload;
+                RC = rc;
+                Error = error;
+                Upload = upload;
             }
         }
 
@@ -591,18 +574,16 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2Allowed
         {
+            public List<string> capabilities { get; }
+            public string bucketId { get; }  // may be null!
+            public string namePrefix { get; } // may be null!
+
             public B2Allowed(List<string> capabilities, string bucketId, string namePrefix)
             {
                 this.capabilities = capabilities;
                 this.bucketId = bucketId;
                 this.namePrefix = namePrefix;
             }
-
-            public List<string> capabilities { get; }
-
-            public string bucketId { get; }  // may be null!
-
-            public string namePrefix { get; } // may be null!
         }
 
         /// <summary>
@@ -610,6 +591,13 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2Authorization
         {
+            public string accountId { get; }
+            public string apiUrl { get; }
+            public string authorizationToken { get; }
+            public string downloadUrl { get; }
+            public int minimumPartSize { get; }
+            public B2Allowed allowed { get; } // optional
+
             public B2Authorization(string accountId, string apiUrl, string authorizationToken, string downloadUrl, int minimumPartSize, B2Allowed allowed)
             {
                 this.accountId = accountId;
@@ -619,13 +607,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 this.minimumPartSize = minimumPartSize;
                 this.allowed = allowed;
             }
-
-            public string accountId { get; }
-            public string apiUrl { get; }
-            public string authorizationToken { get; }
-            public string downloadUrl { get; }
-            public int minimumPartSize { get; }
-            public B2Allowed allowed { get; } // optional
         }
 
         /// <summary>
@@ -633,16 +614,16 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2Error
         {
+            public int status { get; }
+            public string code { get; }
+            public string message { get; }
+
             public B2Error(int status, string code, string message)
             {
                 this.status = status;
                 this.code = code;
                 this.message = message;
             }
-
-            public int status { get; }
-            public string code { get; }
-            public string message { get; }
         }
 
         /// <summary>
@@ -650,16 +631,16 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2UploadUrl
         {
+            public string bucketId { get; }
+            public string uploadUrl { get; }
+            public string authorizationToken { get; }
+
             public B2UploadUrl(string bucketId, string uploadUrl, string authorizationToken)
             {
                 this.bucketId = bucketId;
                 this.uploadUrl = uploadUrl;
                 this.authorizationToken = authorizationToken;
             }
-
-            public string bucketId { get; }
-            public string uploadUrl { get; }
-            public string authorizationToken { get; }
         }
 
         /// <summary>
@@ -667,6 +648,15 @@ namespace ShareX.UploadersLib.FileUploaders
         /// </summary>
         private class B2Upload
         {
+            public string fileId { get; }
+            public string fileName { get; }
+            public string accountId { get; }
+            public string bucketId { get; }
+            public int contentLength { get; }
+            public string contentSha1 { get; }
+            public string contentType { get; }
+            public Dictionary<string, string> fileInfo { get; }
+
             public B2Upload(string fileId, string fileName, string accountId, string bucketId,
                 int contentLength, string contentSha1, string contentType, Dictionary<string, string> fileInfo)
             {
@@ -679,15 +669,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 this.contentType = contentType;
                 this.fileInfo = fileInfo;
             }
-
-            public string fileId { get; }
-            public string fileName { get; }
-            public string accountId { get; }
-            public string bucketId { get; }
-            public int contentLength { get; }
-            public string contentSha1 { get; }
-            public string contentType { get; }
-            public Dictionary<string, string> fileInfo { get; }
         }
 
         // ReSharper restore ClassNeverInstantiated.Local, MemberCanBePrivate.Local, UnusedAutoPropertyAccessor.Local

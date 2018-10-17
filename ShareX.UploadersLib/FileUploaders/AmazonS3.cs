@@ -119,7 +119,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string contentType = Helpers.GetMimeType(fileName);
+            string contentType = UploadHelpers.GetMimeType(fileName);
             string hashedPayload = "UNSIGNED-PAYLOAD";
 
             if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||

@@ -191,7 +191,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private T DeserializeResponse<T>(string s) where T : new()
         {
             var refObj = new { response = new T() };
-            var obj = JsonConvert.DeserializeObject(s, refObj.GetType());
+            object obj = JsonConvert.DeserializeObject(s, refObj.GetType());
             return (T)obj.GetType().GetProperty("response").GetValue(obj, null);
         }
 

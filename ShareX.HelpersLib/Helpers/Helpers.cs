@@ -332,33 +332,6 @@ namespace ShareX.HelpersLib
             return Regex.Match(input, string.Format("(?<={0}>).+?(?=</{0})", tag)).Value;
         }
 
-        public static string GetMimeType(string fileName)
-        {
-            if (!string.IsNullOrEmpty(fileName))
-            {
-                string ext = Path.GetExtension(fileName).ToLowerInvariant();
-
-                if (!string.IsNullOrEmpty(ext))
-                {
-                    string mimeType = MimeTypes.GetMimeType(ext);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-
-                    mimeType = RegistryHelpers.GetRegistryValue(ext, "Content Type", RegistryHive.ClassesRoot);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-                }
-            }
-
-            return MimeTypes.DefaultMimeType;
-        }
-
         public static T[] GetEnums<T>()
         {
             return (T[])Enum.GetValues(typeof(T));
@@ -1322,16 +1295,6 @@ namespace ShareX.HelpersLib
                 // If it fails, we'll just have to live with the old hand.
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Returns whether the HttpWebResponse was successful (has a 2xx status code).
-        /// </summary>
-        /// <param name="res">The HttpWebResponse to check.</param>
-        /// <returns>true if 2xx status code, otherwise false.</returns>
-        public static bool IsSuccessfulResponse(HttpWebResponse res)
-        {
-            return int.TryParse(res.StatusCode.ToString(), out int rc) && (rc >= 200 && rc <= 299);
         }
     }
 }
