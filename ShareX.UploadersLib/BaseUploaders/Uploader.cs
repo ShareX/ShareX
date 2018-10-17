@@ -654,7 +654,7 @@ namespace ShareX.UploadersLib
                 {
                     try
                     {
-                        var res = webException.Response;
+                        WebResponse res = webException.Response;
                         using (res)
                         {
                             response = ResponseToString(res);

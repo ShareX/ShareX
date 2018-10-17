@@ -98,8 +98,8 @@ namespace ShareX.HelpersLib
 
             lock (cryptoRandomLock)
             {
-                var diff = (long)max - min;
-                long ceiling = (1 + (long)uint.MaxValue);
+                long diff = (long)max - min;
+                long ceiling = 1 + (long)uint.MaxValue;
                 long remainder = ceiling % diff;
                 // this should only iterate once unless we generate really large numbers
                 uint r;

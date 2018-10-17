@@ -1329,7 +1329,9 @@ namespace ShareX.HelpersLib
         /// </summary>
         /// <param name="res">The HttpWebResponse to check.</param>
         /// <returns>true if 2xx status code, otherwise false.</returns>
-        public static bool IsSuccessfulResponse(HttpWebResponse res) =>
-            int.TryParse(res.StatusCode.ToString(), out var rc) && (rc >= 200 && rc <= 299);
+        public static bool IsSuccessfulResponse(HttpWebResponse res)
+        {
+            return int.TryParse(res.StatusCode.ToString(), out int rc) && (rc >= 200 && rc <= 299);
+        }
     }
 }

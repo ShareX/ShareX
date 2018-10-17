@@ -113,14 +113,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            var parsedUploadPath = NameParser.Parse(NameParserType.FolderPath, UploadPath);
-            var destinationPath = parsedUploadPath + fileName;
+            string parsedUploadPath = NameParser.Parse(NameParserType.FolderPath, UploadPath);
+            string destinationPath = parsedUploadPath + fileName;
 
             // docs: https://www.backblaze.com/b2/docs/
 
             // STEP 1: authorize, get auth token, api url, download url
             DebugHelper.WriteLine($"B2 uploader: Attempting to authorize as '{ApplicationKeyId}'.");
-            var auth = B2ApiAuthorize(ApplicationKeyId, ApplicationKey, out var authError);
+            B2Authorization auth = B2ApiAuthorize(ApplicationKeyId, ApplicationKey, out string authError);
             if (authError != null)
             {
                 DebugHelper.WriteLine("B2 uploader: Failed to authorize.");
@@ -132,12 +132,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // STEP 1.25: if we have an application key, there will be a bucketId present here, but if
             //            not, we have an account key and need to find our bucket id ourselves
-            var bucketId = auth.allowed?.bucketId;
+            string bucketId = auth.allowed?.bucketId;
             if (bucketId == null)
             {
                 DebugHelper.WriteLine("B2 uploader: Key doesn't have a bucket ID set, so I'm looking for a bucket ID.");
 
-                var newBucketId = B2ApiGetBucketId(auth, BucketName, out var getBucketError);
+                string newBucketId = B2ApiGetBucketId(auth, BucketName, out string getBucketError);
                 if (getBucketError != null)
                 {
                     DebugHelper.WriteLine($"B2 uploader: It's {newBucketId}.");
@@ -147,7 +147,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // STEP 1.5: verify whether we can write to the bucket user wants to write to, with the given prefix
             DebugHelper.WriteLine("B2 uploader: Checking clientside whether we have permission to upload.");
-            var authCheckOk = IsAuthorizedForUpload(auth, bucketId, destinationPath, out var authCheckError);
+            bool authCheckOk = IsAuthorizedForUpload(auth, bucketId, destinationPath, out string authCheckError);
             if (!authCheckOk)
             {
                 DebugHelper.WriteLine("B2 uploader: Key is not suitable for this upload.");
@@ -158,9 +158,9 @@ namespace ShareX.UploadersLib.FileUploaders
             // STEP 1.75: start upload attempt loop
             const int maxTries = 5;
             B2UploadUrl url = null;
-            for (var tries = 1; tries <= maxTries; tries++)
+            for (int tries = 1; tries <= maxTries; tries++)
             {
-                var newOrSameUrl = url == null ? "New URL." : "Same URL.";
+                string newOrSameUrl = url == null ? "New URL." : "Same URL.";
                 DebugHelper.WriteLine($"B2 uploader: Upload attempt {tries} of {maxTries}. {newOrSameUrl}");
 
                 // sloppy, but we need exponential backoff somehow and we are not in async code
@@ -168,7 +168,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 // this should be OK
                 if (tries > 1)
                 {
-                    var delay = (int)Math.Pow(2, tries - 1) * 1000;
+                    int delay = (int)Math.Pow(2, tries - 1) * 1000;
                     DebugHelper.WriteLine($"Waiting ${delay} ms for backoff.");
                     Thread.Sleep(delay);
                 }
@@ -177,7 +177,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (url == null)
                 {
                     DebugHelper.WriteLine("B2 uploader: Getting new upload URL.");
-                    url = B2ApiGetUploadUrl(auth, bucketId, out var getUrlError);
+                    url = B2ApiGetUploadUrl(auth, bucketId, out string getUrlError);
                     if (getUrlError != null)
                     {
                         // this is guaranteed to be unrecoverable, so bail out
@@ -190,7 +190,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 // STEP 3: upload file and see if anything went wrong
                 DebugHelper.WriteLine($"B2 uploader: Uploading to URL {url.uploadUrl}");
                 var (status, uploadError, upload) = B2ApiUploadFile(url, destinationPath, stream);
-                var expiredTokenCodes = new HashSet<string>(new List<string> { "expired_auth_token", "bad_auth_token" });
+                HashSet<string> expiredTokenCodes = new HashSet<string>(new List<string> { "expired_auth_token", "bad_auth_token" });
 
                 if (status == -1)
                 {
@@ -232,7 +232,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 //         or
                 //           $customUrl/$uploadPath
 
-                var remoteLocation = auth.downloadUrl +
+                string remoteLocation = auth.downloadUrl +
                                      "/file/" +
                                      URLHelpers.URLEncode(BucketName) +
                                      "/" +
@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (UseCustomUrl)
                 {
-                    var parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
+                    string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
                     remoteLocation = parsedCustomUrl + upload.fileName;
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
                 }
@@ -268,9 +268,9 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2Authorization"/>.</returns>
         private B2Authorization B2ApiAuthorize(string keyId, string key, out string error)
         {
-            var headers = CreateAuthenticationHeader(keyId, key);
+            NameValueCollection headers = CreateAuthenticationHeader(keyId, key);
 
-            using (var res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
+            using (HttpWebResponse res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
             {
                 if (res.StatusCode != HttpStatusCode.OK)
                 {
@@ -278,7 +278,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return null;
                 }
 
-                var body = ResponseToString(res);
+                string body = ResponseToString(res);
 
                 error = null;
                 return JsonConvert.DeserializeObject<B2Authorization>(body);
@@ -294,20 +294,20 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, the bucket ID.</returns>
         private string B2ApiGetBucketId(B2Authorization auth, string bucketName, out string error)
         {
-            var headers = new NameValueCollection()
+            NameValueCollection headers = new NameValueCollection()
             {
                 ["Authorization"] = auth.authorizationToken
             };
 
-            var reqBody = new Dictionary<string, string>
+            Dictionary<string, string> reqBody = new Dictionary<string, string>
             {
                 ["accountId"] = auth.accountId,
                 ["bucketName"] = bucketName
             };
 
-            using (var data = CreateJsonBody(reqBody))
+            using (Stream data = CreateJsonBody(reqBody))
             {
-                using (var res = GetResponse(HttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
+                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2ListBucketsPath,
                     contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
                 {
                     if (res.StatusCode != HttpStatusCode.OK)
@@ -316,7 +316,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    var body = ResponseToString(res);
+                    string body = ResponseToString(res);
 
                     JObject json;
 
@@ -331,7 +331,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    var bucketId = json
+                    string bucketId = json
                         .SelectToken("buckets")
                         ?.FirstOrDefault(b => b["bucketName"].ToString() == bucketName)
                         ?.SelectToken("bucketId")?.ToString() ?? "";
@@ -357,13 +357,13 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2UploadUrl"/></returns>
         private B2UploadUrl B2ApiGetUploadUrl(B2Authorization auth, string bucketId, out string error)
         {
-            var headers = new NameValueCollection() { ["Authorization"] = auth.authorizationToken };
+            NameValueCollection headers = new NameValueCollection() { ["Authorization"] = auth.authorizationToken };
 
-            var reqBody = new Dictionary<string, string> { ["bucketId"] = bucketId };
+            Dictionary<string, string> reqBody = new Dictionary<string, string> { ["bucketId"] = bucketId };
 
-            using (var data = CreateJsonBody(reqBody))
+            using (Stream data = CreateJsonBody(reqBody))
             {
-                using (var res = GetResponse(HttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
+                using (HttpWebResponse res = GetResponse(HttpMethod.POST, auth.apiUrl + B2GetUploadUrlPath,
                     contentType: ApplicationJson, headers: headers, data: data, allowNon2xxResponses: true))
                 {
                     if (res.StatusCode != HttpStatusCode.OK)
@@ -372,7 +372,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    var body = ResponseToString(res);
+                    string body = ResponseToString(res);
 
                     error = null;
                     return JsonConvert.DeserializeObject<B2UploadUrl>(body);
@@ -400,15 +400,15 @@ namespace ShareX.UploadersLib.FileUploaders
             // we want to send 'Content-Disposition: inline; filename="screenshot.png"'
             // this should display the uploaded data inline if possible, but if that fails, present a sensible filename
             // conveniently, this class will handle this for us
-            var contentDisposition = new ContentDisposition("inline") { FileName = URLHelpers.GetFileName(destinationPath) };
+            ContentDisposition contentDisposition = new ContentDisposition("inline") { FileName = URLHelpers.GetFileName(destinationPath) };
             DebugHelper.WriteLine($"B2 uploader: Content disposition is '{contentDisposition}'.");
 
             // compute SHA1 hash without loading the file fully into memory
             string sha1Hash;
-            using (var cryptoProvider = new SHA1CryptoServiceProvider())
+            using (SHA1CryptoServiceProvider cryptoProvider = new SHA1CryptoServiceProvider())
             {
                 file.Seek(0, SeekOrigin.Begin);
-                var bytes = cryptoProvider.ComputeHash(file);
+                byte[] bytes = cryptoProvider.ComputeHash(file);
                 sha1Hash = BitConverter.ToString(bytes).Replace("-", "").ToLower();
                 file.Seek(0, SeekOrigin.Begin);
             }
@@ -416,7 +416,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // it's showtime
             // https://www.backblaze.com/b2/docs/b2_upload_file.html
-            var headers = new NameValueCollection()
+            NameValueCollection headers = new NameValueCollection()
             {
                 ["Authorization"] = b2UploadUrl.authorizationToken,
                 ["X-Bz-File-Name"] = URLHelpers.URLEncode(destinationPath),
@@ -426,9 +426,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["X-Bz-Info-b2-content-disposition"] = URLHelpers.URLEncode(contentDisposition.ToString()),
             };
 
-            var contentType = Helpers.GetMimeType(destinationPath);
+            string contentType = Helpers.GetMimeType(destinationPath);
 
-            using (var res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
+            using (HttpWebResponse res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
                 contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true))
             {
                 // if connection failed, res will be null, and here we -do- want to check explicitly for this
@@ -443,7 +443,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
                 }
 
-                var body = ResponseToString(res);
+                string body = ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{body}'");
 
                 return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(body));
@@ -461,7 +461,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// to an error message describing why there is no permission.</returns>
         private static bool IsAuthorizedForUpload(B2Authorization auth, string bucketId, string destinationPath, out string error)
         {
-            var allowedBucketId = auth.allowed?.bucketId;
+            string allowedBucketId = auth.allowed?.bucketId;
             if (allowedBucketId != null && bucketId != allowedBucketId)
             {
                 DebugHelper.WriteLine($"B2 uploader: Error, user is only allowed to access '{allowedBucketId}', " +
@@ -471,7 +471,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return false;
             }
 
-            var allowedPrefix = auth.allowed?.namePrefix;
+            string allowedPrefix = auth.allowed?.namePrefix;
             if (allowedPrefix != null && !destinationPath.StartsWith(allowedPrefix))
             {
                 DebugHelper.WriteLine($"B2 uploader: Error, key is restricted to prefix '{allowedPrefix}'.");
@@ -479,7 +479,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return false;
             }
 
-            var caps = auth.allowed?.capabilities;
+            List<string> caps = auth.allowed?.capabilities;
             if (caps != null && !caps.Contains("writeFiles"))
             {
                 DebugHelper.WriteLine($"B2 uploader: No permission to write to '{bucketId}'.");
@@ -505,9 +505,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                var body = ResponseToString(res);
+                string body = ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: ParseB2Error() got: {body}");
-                var err = JsonConvert.DeserializeObject<B2Error>(body);
+                B2Error err = JsonConvert.DeserializeObject<B2Error>(body);
                 return err;
             }
             catch (JsonException)
@@ -523,13 +523,13 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>A string describing the error.</returns>
         private static string StringifyB2Error(HttpWebResponse res)
         {
-            var err = ParseB2Error(res);
+            B2Error err = ParseB2Error(res);
             if (err == null)
             {
                 return $"Status {res.StatusCode}, unknown error.";
             }
 
-            var colonSpace = string.IsNullOrWhiteSpace(err.message) ? "" : ": ";
+            string colonSpace = string.IsNullOrWhiteSpace(err.message) ? "" : ": ";
             return $"Got status {err.status} ({err.code}){colonSpace}{err.message}";
         }
 
@@ -541,7 +541,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns></returns>
         private static Stream CreateJsonBody(Dictionary<string, string> args)
         {
-            var body = JsonConvert.SerializeObject(args);
+            string body = JsonConvert.SerializeObject(args);
             return new MemoryStream(Encoding.UTF8.GetBytes(body));
         }
 

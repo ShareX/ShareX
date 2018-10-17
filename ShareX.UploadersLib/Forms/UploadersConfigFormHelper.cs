@@ -285,11 +285,11 @@ namespace ShareX.UploadersLib
 
         private void B2UpdateCustomDomainPreview()
         {
-            var uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
+            string uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
 
             if (cbB2CustomUrl.Checked)
             {
-                var customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
+                string customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
                 if (URLHelpers.IsValidURL(customUrl))
                 {
                     txtB2UrlPreview.Text = customUrl + uploadPath + "example.png";
@@ -301,10 +301,10 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                var bucket = string.IsNullOrEmpty(Config.B2BucketName) ?
+                string bucket = string.IsNullOrEmpty(Config.B2BucketName) ?
                     "[bucket]" :
                     URLHelpers.URLEncode(Config.B2BucketName);
-                var url = $"https://f001.backblazeb2.com/file/{bucket}/{uploadPath}example.png";
+                string url = $"https://f001.backblazeb2.com/file/{bucket}/{uploadPath}example.png";
                 txtB2UrlPreview.Text = url;
             }
         }

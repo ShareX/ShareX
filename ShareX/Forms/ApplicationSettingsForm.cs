@@ -259,7 +259,7 @@ namespace ShareX
 
             try
             {
-                var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
                 cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
                 if (state == StartupState.DisabledByUser)

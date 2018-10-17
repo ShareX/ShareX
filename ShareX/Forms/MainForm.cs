@@ -1665,7 +1665,7 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            var form = DebugForm.GetFormInstance(DebugHelper.Logger);
+            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
             if (!form.HasUploadRequested)
             {
                 form.UploadRequested += text => UploadManager.UploadText(text);

@@ -37,8 +37,8 @@ namespace ShareX
         {
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
-            var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
 
+            StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
             cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
             cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
 
