@@ -221,7 +221,18 @@ namespace ShareX.ScreenCaptureLib
                 args.AppendFormat("-t {0} ", isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture)); // duration limit
             }
 
-            args.AppendFormat("\"{0}\"", isCustom ? "$output$" : Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+            string output;
+
+            if (isCustom)
+            {
+                output = "$output$";
+            }
+            else
+            {
+                output = Path.ChangeExtension(OutputPath, IsLossless ? "mp4" : FFmpeg.Extension);
+            }
+
+            args.AppendFormat("\"{0}\"", output);
 
             return args.ToString();
         }

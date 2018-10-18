@@ -74,12 +74,17 @@ namespace ShareX
 
         private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
-            if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+            if (outputType == ScreenRecordOutput.GIF)
             {
-                outputType = ScreenRecordOutput.GIF;
+                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
             }
 
-            if (outputType == ScreenRecordOutput.FFmpeg)
+            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+            {
+                taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = true;
+            }
+
+            if (!taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
             {
                 DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
                     taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(),
@@ -88,7 +93,6 @@ namespace ShareX
             else
             {
                 DebugHelper.WriteLine("Starting screen recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
-                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
             }
 
             if (taskSettings.CaptureSettings.RunScreencastCLI)
@@ -149,7 +153,7 @@ namespace ShareX
             Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
             captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
 
-            if (outputType != ScreenRecordOutput.GIF)
+            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec != FFmpegVideoCodec.gif)
             {
                 captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
             }
@@ -176,7 +180,16 @@ namespace ShareX
             {
                 try
                 {
-                    string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
+                    string extension;
+                    if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
+                    {
+                        extension = "mp4";
+                    }
+                    else
+                    {
+                        extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
+                    }
+                    string filename = TaskHelpers.GetFilename(taskSettings, extension);
                     path = TaskHelpers.HandleExistsFile(taskSettings.CaptureFolder, filename, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
@@ -211,12 +224,23 @@ namespace ShareX
 
                         if (!abortRequested)
                         {
+                            int fps;
+
+                            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+                            {
+                                fps = taskSettings.CaptureSettings.GIFFPS;
+                            }
+                            else
+                            {
+                                fps = taskSettings.CaptureSettings.ScreenRecordFPS;
+                            }
+
                             ScreencastOptions options = new ScreencastOptions()
                             {
                                 IsRecording = true,
-                                IsLossless = outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
+                                IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
                                 FFmpeg = taskSettings.CaptureSettings.FFmpegOptions,
-                                FPS = outputType == ScreenRecordOutput.GIF ? taskSettings.CaptureSettings.GIFFPS : taskSettings.CaptureSettings.ScreenRecordFPS,
+                                FPS = fps,
                                 Duration = duration,
                                 OutputPath = path,
                                 CaptureArea = captureRectangle,
@@ -251,18 +275,20 @@ namespace ShareX
 
                         string input = path;
 
-                        if (outputType == ScreenRecordOutput.GIF)
-                        {
-                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.FFmpegEncodeAsGIF(input, path, Program.ToolsFolder);
-                        }
-                        else if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
+                        if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
-                            screenRecorder.FFmpegEncodeVideo(input, path);
-                        }
 
-                        if (taskSettings.CaptureSettings.RunScreencastCLI && !taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
+                            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+                            {
+                                screenRecorder.FFmpegEncodeAsGIF(input, path, Program.ToolsFolder);
+                            }
+                            else
+                            {
+                                screenRecorder.FFmpegEncodeVideo(input, path);
+                            }
+                        }
+                        else if (taskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected];
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, encoder.OutputExtension));
@@ -284,7 +310,7 @@ namespace ShareX
 
                     if (screenRecorder != null)
                     {
-                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI || taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding) &&
+                        if ((taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding || taskSettings.CaptureSettings.RunScreencastCLI) &&
                             !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                         {
                             File.Delete(screenRecorder.CachePath);

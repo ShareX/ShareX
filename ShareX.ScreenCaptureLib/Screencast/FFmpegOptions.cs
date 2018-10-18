@@ -96,12 +96,13 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx265:
                         case FFmpegVideoCodec.h264_nvenc:
                         case FFmpegVideoCodec.hevc_nvenc:
-                        case FFmpegVideoCodec.gif:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:
                             return "webm";
                         case FFmpegVideoCodec.libxvid:
                             return "avi";
+                        case FFmpegVideoCodec.gif:
+                            return "gif";
                     }
                 }
                 else if (!AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
