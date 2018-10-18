@@ -1106,7 +1106,8 @@ namespace ShareX.HelpersLib
                             int xLimit = Math.Min(x + pixelSize, unsafeBitmap.Width);
                             int yLimit = Math.Min(y + pixelSize, unsafeBitmap.Height);
                             int pixelCount = (xLimit - x) * (yLimit - y);
-                            int r = 0, g = 0, b = 0, a = 0;
+                            float r = 0, g = 0, b = 0, a = 0;
+                            float weightedCount = 0;
 
                             for (int y2 = y; y2 < yLimit; y2++)
                             {
@@ -1114,14 +1115,18 @@ namespace ShareX.HelpersLib
                                 {
                                     ColorBgra color = unsafeBitmap.GetPixel(x2, y2);
 
-                                    r += color.Red;
-                                    g += color.Green;
-                                    b += color.Blue;
-                                    a += color.Alpha;
+                                    float pixelWeight = color.Alpha / 255;
+
+                                    r += color.Red * pixelWeight;
+                                    g += color.Green * pixelWeight;
+                                    b += color.Blue * pixelWeight;
+                                    a += color.Alpha * pixelWeight;
+
+                                    weightedCount += pixelWeight;
                                 }
                             }
 
-                            ColorBgra averageColor = new ColorBgra((byte)(b / pixelCount), (byte)(g / pixelCount), (byte)(r / pixelCount), (byte)(a / pixelCount));
+                            ColorBgra averageColor = new ColorBgra((byte)(b / weightedCount), (byte)(g / weightedCount), (byte)(r / weightedCount), (byte)(a / pixelCount));
 
                             for (int y2 = y; y2 < yLimit; y2++)
                             {
