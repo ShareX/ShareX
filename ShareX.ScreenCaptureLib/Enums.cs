@@ -99,7 +99,9 @@ namespace ShareX.ScreenCaptureLib
         [Description("HEVC NVENC (mp4)")]
         hevc_nvenc,
         [Description("WebP")]
-        libwebp
+        libwebp,
+        [Description("APNG")]
+        apng
     }
 
     public enum FFmpegPreset

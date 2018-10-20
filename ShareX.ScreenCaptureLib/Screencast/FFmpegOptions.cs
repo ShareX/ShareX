@@ -105,6 +105,8 @@ namespace ShareX.ScreenCaptureLib
                             return "gif";
                         case FFmpegVideoCodec.libwebp:
                             return "webp";
+                        case FFmpegVideoCodec.apng:
+                            return "apng";
                     }
                 }
                 else if (!AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
@@ -131,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
             (!IsVideoSourceSelected || !IsTwoPassEncodingRequired);
 
-        public bool IsTwoPassEncodingRequired => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp;
+        public bool IsTwoPassEncodingRequired => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
 
         public FFmpegOptions()
         {

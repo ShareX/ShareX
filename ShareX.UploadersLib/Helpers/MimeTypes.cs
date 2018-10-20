@@ -84,6 +84,7 @@ namespace ShareX.UploadersLib
             { "ait", "application/vnd.dvb.ait" },
             { "ami", "application/vnd.amiga.ami" },
             { "apk", "application/vnd.android.package-archive" },
+            { "apng", "image/apng" },
             { "appcache", "text/cache-manifest" },
             { "application", "application/x-ms-application" },
             { "apr", "application/vnd.lotus-approach" },

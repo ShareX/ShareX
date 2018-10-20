@@ -150,19 +150,22 @@ namespace ShareX.ScreenCaptureLib
 
             if (FFmpeg.IsVideoSourceSelected)
             {
-                string videoCodec;
-
-                if (IsLossless)
+                if (IsLossless || FFmpeg.VideoCodec != FFmpegVideoCodec.apng)
                 {
-                    videoCodec = FFmpegVideoCodec.libx264.ToString();
-                }
-                else
-                {
-                    videoCodec = FFmpeg.VideoCodec.ToString();
-                }
+                    string videoCodec;
 
-                args.AppendFormat("-c:v {0} ", videoCodec);
-                args.AppendFormat("-r {0} ", fps); // output FPS
+                    if (IsLossless)
+                    {
+                        videoCodec = FFmpegVideoCodec.libx264.ToString();
+                    }
+                    else
+                    {
+                        videoCodec = FFmpeg.VideoCodec.ToString();
+                    }
+
+                    args.AppendFormat("-c:v {0} ", videoCodec);
+                    args.AppendFormat("-r {0} ", fps); // output FPS
+                }
 
                 if (IsLossless)
                 {
@@ -200,6 +203,10 @@ namespace ShareX.ScreenCaptureLib
                             args.AppendFormat("-lossless {0} ", "0");
                             args.AppendFormat("-preset {0} ", "default");
                             args.AppendFormat("-loop {0} ", "0");
+                            break;
+                        case FFmpegVideoCodec.apng:
+                            args.Append("-f apng ");
+                            args.AppendFormat("-plays {0} ", "0");
                             break;
                     }
                 }
