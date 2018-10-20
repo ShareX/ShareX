@@ -196,6 +196,11 @@ namespace ShareX.ScreenCaptureLib
                             args.AppendFormat("-b:v {0}k ", FFmpeg.NVENC_bitrate);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p");
                             break;
+                        case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
+                            args.AppendFormat("-lossless {0} ", "0");
+                            args.AppendFormat("-preset {0} ", "default");
+                            args.AppendFormat("-loop {0} ", "0");
+                            break;
                     }
                 }
             }

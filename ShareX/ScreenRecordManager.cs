@@ -79,7 +79,7 @@ namespace ShareX
                 taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
             }
 
-            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+            if (taskSettings.CaptureSettings.FFmpegOptions.IsTwoPassEncodingRequired)
             {
                 taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = true;
             }
