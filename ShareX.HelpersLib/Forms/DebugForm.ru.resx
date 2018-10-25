@@ -132,4 +132,7 @@
   <data name="lblRunningFrom.Text" xml:space="preserve">
     <value>Рабочая папка:</value>
   </data>
+  <data name="btnUploadLog.Text" xml:space="preserve">
+    <value>Загрузить лог...</value>
+  </data>
 </root>

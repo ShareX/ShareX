@@ -543,4 +543,16 @@
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>Заменять проблемные для URL символы подчеркиваниями при загрузке</value>
   </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Записывать без потерь, потом применять пользовательские настройки</value>
+  </data>
+  <data name="cbScreenRecordRunScreencastCLI.Text" xml:space="preserve">
+    <value>Потом выполнять команду:</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Запрашивать подтверждение на отмену</value>
+  </data>
+  <data name="btnScreenRecordEncoderConfig.Text" xml:space="preserve">
+    <value>Профили…</value>
+  </data>
 </root>
