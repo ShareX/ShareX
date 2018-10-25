@@ -106,6 +106,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mexican Spanish.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_es_MX {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_es_MX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to French.
         /// </summary>
         public static string AboutForm_AboutForm_Language_fr {
@@ -120,6 +129,15 @@ namespace ShareX.Properties {
         public static string AboutForm_AboutForm_Language_hu {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Language_hu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indonesian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_id_ID {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_id_ID", resourceCulture);
             }
         }
         
@@ -174,6 +192,15 @@ namespace ShareX.Properties {
         public static string AboutForm_AboutForm_Language_tr {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Language_tr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ukrainian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_uk {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_uk", resourceCulture);
             }
         }
         

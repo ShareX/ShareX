@@ -994,4 +994,13 @@ Middle click to close</value>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>The debug log can contain sensitive information. Are you sure you want to proceed?</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ukrainian</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonesian</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Mexican Spanish</value>
+  </data>
 </root>

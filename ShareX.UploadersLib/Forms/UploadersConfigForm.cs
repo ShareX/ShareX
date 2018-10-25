@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib
 
             // Backblaze B2
             txtB2Bucket.HandleCreated += (sender, e) =>
-                txtB2Bucket.SetWatermark("Optional, only used if you didn't set a bucket when you made the key", showCueWhenFocus: true);
+                txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, showCueWhenFocus: true);
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;

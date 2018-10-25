@@ -413,4 +413,7 @@ Created folders:</value>
   <data name="Kutt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Kutt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Optional, only used if you didn't set a bucket when you made the key</value>
+  </data>
 </root>

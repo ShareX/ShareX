@@ -230,6 +230,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drop shadow color....
+        /// </summary>
+        internal static string DropShadowColor {
+            get {
+                return ResourceManager.GetString("DropShadowColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap edit_alignment {
@@ -554,6 +563,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add image effects....
+        /// </summary>
+        internal static string ImageEffects {
+            get {
+                return ResourceManager.GetString("ImageEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap layer {
@@ -804,6 +822,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use light resize nodes.
+        /// </summary>
+        internal static string LightResizeNodes {
+            get {
+                return ResourceManager.GetString("LightResizeNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap monitor {
@@ -830,6 +857,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("monitor_window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open keybinds web page....
+        /// </summary>
+        internal static string OpenKeybindsPage {
+            get {
+                return ResourceManager.GetString("OpenKeybindsPage", resourceCulture);
             }
         }
         
@@ -1632,6 +1668,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("test_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This window will close before opening the keybinds web page. Do you want to continue?.
+        /// </summary>
+        internal static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
+            get {
+                return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture);
             }
         }
         
