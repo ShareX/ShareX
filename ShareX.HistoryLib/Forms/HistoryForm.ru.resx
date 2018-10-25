@@ -168,4 +168,7 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Имя файла:</value>
   </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

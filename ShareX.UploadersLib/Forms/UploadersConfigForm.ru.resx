@@ -1176,4 +1176,86 @@ store.book[0].title</value>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
   </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Автоматически устаревать публичные ссылки</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Время устаревания (дней):</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Если URL с указанной ссылкой существует, вернуть его</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Убирать расширение файла:</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>Текстов</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Картинок</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>ID ключа приложения:</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Ключ приложения (секрет):</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Имя ведра:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Нажмите здесь, чтобы создать ключ приложения или управлять вашими ведрами.</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
+    <value>ID ключа приложения. Похож на шестнадцатеричную строку в нижнем регистре.</value>
+  </data>
+  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
+    <value>Ключ приложения. Похож на буквенно-цифровой.</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Использовать пользовательский URL (поддерживает формат шаблонов):</value>
+  </data>
+  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Если включено, URL, который вы получите, будет путем загрузки,
+добавленным к данному URL.
+
+Зто полезно в связке с сервисом вроде CloudFlare или
+другим сервисом в роли фронтенда B2.
+Ознакомьтесь со статьей "Creating a Vanity URL with B2"
+в базе знаний B2.
+
+Если выключено, URL, который вы получите, будет зависеть
+от Backblaze B2. </value>
+  </data>
+  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
+    <value>Где хранить ваши файлы.
+
+Это вступит в силу только если вы не задали
+свойство "Разрешить доступ к ведрам (ов)"
+при создании ключа приложения.</value>
+  </data>
+  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Введите пользовательский URL, который заменит хост и путь, которые возвращает BackBlaze.</value>
+  </data>
+  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
+    <value>Путь к вашему файлу. Использует формат шаблонов.</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
 </root>
