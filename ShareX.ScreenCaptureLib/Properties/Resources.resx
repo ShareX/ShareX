@@ -637,4 +637,19 @@ X: {4} Y: {5}</value>
   <data name="smiley_yell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smiley-yell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Use light resize nodes</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Open keybinds web page...</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>This window will close before opening the keybinds web page. Do you want to continue?</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Drop shadow color...</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Add image effects...</value>
+  </data>
 </root>
