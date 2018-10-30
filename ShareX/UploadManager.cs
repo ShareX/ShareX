@@ -211,6 +211,74 @@ namespace ShareX
             }
         }
 
+        public static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (ccv.ClipboardContentType == EClipboardContentType.Image)
+            {
+                Image img = (Image)ccv.ClipboardContent;
+
+                if (img != null)
+                {
+                    if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
+                    {
+                        taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                    }
+
+                    RunImageTask(img, taskSettings);
+                }
+            }
+            else if (ccv.ClipboardContentType == EClipboardContentType.Text)
+            {
+                string text = (string)ccv.ClipboardContent;
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    string url = text.Trim();
+
+                    if (URLHelpers.IsValidURL(url))
+                    {
+                        if (taskSettings.UploadSettings.ClipboardUploadURLContents)
+                        {
+                            DownloadAndUploadFile(url, taskSettings);
+                            return;
+                        }
+
+                        if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
+                        {
+                            ShortenURL(url, taskSettings);
+                            return;
+                        }
+
+                        if (taskSettings.UploadSettings.ClipboardUploadShareURL)
+                        {
+                            ShareURL(url, taskSettings);
+                            return;
+                        }
+                    }
+
+                    if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+                    {
+                        IndexFolder(text, taskSettings);
+                    }
+                    else
+                    {
+                        UploadText(text, taskSettings, true);
+                    }
+                }
+            }
+            else if (ccv.ClipboardContentType == EClipboardContentType.Files)
+            {
+                string[] files = (string[])ccv.ClipboardContent;
+
+                if (files.Length > 0)
+                {
+                    UploadFile(files, taskSettings);
+                }
+            }
+        }
+
         public static void ClipboardUploadWithContentViewer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -219,7 +287,18 @@ namespace ShareX
             {
                 if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                 {
-                    ClipboardUpload(taskSettings);
+                    if (ccv.ClipboardContentType != EClipboardContentType.Default)
+                    {
+                        ClipboardUploadCached(ccv, taskSettings);
+                    }
+                    else
+                    {
+                        ClipboardUpload(taskSettings);
+                    }
+                }
+                else if (ccv.ClipboardContentType == EClipboardContentType.Image)
+                {
+                    ((Image)ccv.ClipboardContent).Dispose();
                 }
             }
         }
@@ -234,7 +313,18 @@ namespace ShareX
                 {
                     if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                     {
-                        ClipboardUpload(taskSettings);
+                        if (ccv.ClipboardContentType != EClipboardContentType.Default)
+                        {
+                            ClipboardUploadCached(ccv, taskSettings);
+                        }
+                        else
+                        {
+                            ClipboardUpload(taskSettings);
+                        }
+                    }
+                    else if (ccv.ClipboardContentType == EClipboardContentType.Image)
+                    {
+                        ((Image)ccv.ClipboardContent).Dispose();
                     }
 
                     Program.Settings.ShowClipboardContentViewer = !ccv.DontShowThisWindow;
