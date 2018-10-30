@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
+
 #if WindowsStore
 using Windows.ApplicationModel;
 #endif
