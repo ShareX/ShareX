@@ -101,7 +101,11 @@ namespace ShareX.ScreenCaptureLib
         [Description("WebP")]
         libwebp,
         [Description("APNG")]
-        apng
+        apng,
+        [Description("H.264 AMF (mp4)")]
+        h264_amf,
+        [Description("HEVC AMF (mp4)")]
+        hevc_amf
     }
 
     public enum FFmpegPreset
@@ -152,6 +156,28 @@ namespace ShareX.ScreenCaptureLib
         lossless,
         [Description("Lossless high performance")]
         losslesshp
+    }
+
+    public enum FFmpegAMFUsage
+    {
+        [Description("Generic Transcoding")]
+        transcoding = 0,
+        [Description("Ultra Low Latency")]
+        ultralowlatency = 1,
+        [Description("Low Latency")]
+        lowlatency = 2,
+        [Description("Webcam")]
+        webcam = 3
+    }
+
+    public enum FFmpegAMFQuality
+    {
+        [Description("Prefer Speed")]
+        speed = 0,
+        [Description("Balanced")]
+        balanced = 1,
+        [Description("Prefer Quality")]
+        quality = 2
     }
 
     public enum FFmpegTune
