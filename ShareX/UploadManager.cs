@@ -211,7 +211,7 @@ namespace ShareX
             }
         }
 
-        public static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
+        private static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
