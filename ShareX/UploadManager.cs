@@ -296,6 +296,10 @@ namespace ShareX
                         ClipboardUpload(taskSettings);
                     }
                 }
+                else if (ccv.ClipboardContentType == EClipboardContentType.Image)
+                {
+                    ((Image)ccv.ClipboardContent).Dispose();
+                }
             }
         }
 
@@ -317,6 +321,10 @@ namespace ShareX
                         {
                             ClipboardUpload(taskSettings);
                         }
+                    }
+                    else if (ccv.ClipboardContentType == EClipboardContentType.Image)
+                    {
+                        ((Image)ccv.ClipboardContent).Dispose();
                     }
 
                     Program.Settings.ShowClipboardContentViewer = !ccv.DontShowThisWindow;
