@@ -155,6 +155,7 @@ namespace ShareX
                 RunImageTask(img, taskSettings);
             }
         }
+
         private static void ProcessTextUpload(string text, TaskSettings taskSettings)
         {
             if (!string.IsNullOrEmpty(text))
