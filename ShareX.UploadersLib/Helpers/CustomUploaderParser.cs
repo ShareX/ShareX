@@ -44,6 +44,8 @@ namespace ShareX.UploadersLib
         public bool IsOutput { get; set; }
         public string Response { get; private set; }
         public List<Match> RegexMatches { get; private set; }
+        public string Filename { get; private set; }
+        public string Input { get; private set; }
 
         public CustomUploaderParser()
         {
@@ -66,6 +68,14 @@ namespace ShareX.UploadersLib
             }
 
             IsOutput = true;
+        }
+
+        public CustomUploaderParser(string filename, string input)
+        {
+            Filename = filename;
+            Input = input;
+
+            IsOutput = false;
         }
 
         public string Parse(string text)
@@ -125,45 +135,73 @@ namespace ShareX.UploadersLib
 
         private string ParseSyntax(string syntax)
         {
+            string value;
+
             if (IsOutput)
             {
-                if (syntax.Equals("response", StringComparison.InvariantCultureIgnoreCase)) // Example: $response$
+                if (CheckKeyword(syntax, "response")) // Example: $response$
                 {
                     return Response;
                 }
-                else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1|1$
+                else if (CheckKeyword(syntax, "regex", out value)) // Examples: $regex:1$ $regex:1|1$ $regex:1|thumbnail$
                 {
-                    return ParseSyntaxRegex(syntax.Substring(6));
+                    return ParseSyntaxRegex(value);
                 }
-                else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
+                else if (CheckKeyword(syntax, "json", out value)) // Example: $json:Files[0].URL$
                 {
-                    return ParseSyntaxJson(syntax.Substring(5));
+                    return ParseSyntaxJson(value);
                 }
-                else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
+                else if (CheckKeyword(syntax, "xml", out value)) // Example: $xml:/Files/File[1]/URL$
                 {
-                    return ParseSyntaxXml(syntax.Substring(4));
+                    return ParseSyntaxXml(value);
                 }
             }
 
-            if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
+            if (CheckKeyword(syntax, "filename")) // Example: $filename$
             {
-                return ParseSyntaxRandom(syntax.Substring(7));
+                return Filename;
             }
-            else if (syntax.StartsWith("select:", StringComparison.InvariantCultureIgnoreCase)) // Example: $select:domain1.com|domain2.com$
+            else if (CheckKeyword(syntax, "input")) // Example: $input$
             {
-                return ParseSyntaxSelect(syntax.Substring(7));
+                return Input;
             }
-            else if (syntax.Equals("prompt", StringComparison.InvariantCultureIgnoreCase)) // Example: prompt
+            else if (CheckKeyword(syntax, "random", out value)) // Example: $random:domain1.com|domain2.com$
             {
-                return ParseSyntaxPrompt();
+                return ParseSyntaxRandom(value);
             }
-            else if (syntax.StartsWith("prompt:", StringComparison.InvariantCultureIgnoreCase)) // Example: $prompt:default value$
+            else if (CheckKeyword(syntax, "select", out value)) // Example: $select:domain1.com|domain2.com$
             {
-                return ParseSyntaxPrompt(syntax.Substring(7));
+                return ParseSyntaxSelect(value);
+            }
+            else if (CheckKeyword(syntax, "prompt", out value)) // Examples: $prompt$ $prompt:default value$
+            {
+                return ParseSyntaxPrompt(value);
             }
 
             // Invalid syntax
             return null;
+        }
+
+        private bool CheckKeyword(string syntax, string keyword)
+        {
+            return CheckKeyword(syntax, keyword, out _);
+        }
+
+        private bool CheckKeyword(string syntax, string keyword, out string value)
+        {
+            value = null;
+
+            if (syntax.Equals(keyword, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return true;
+            }
+            else if (syntax.StartsWith(keyword + ":", StringComparison.InvariantCultureIgnoreCase))
+            {
+                value = keyword.Substring(keyword.Length);
+                return true;
+            }
+
+            return false;
         }
 
         private string ParseSyntaxRegex(string syntax)

@@ -45,11 +45,8 @@ namespace ShareX.UploadersLib
             EscapeHelper escapeHelper = new EscapeHelper();
             arg = escapeHelper.Parse(arg, nameParser.Parse);
 
-            arg = arg.BatchReplace(new Dictionary<string, string>()
-            {
-                { "$filename$", Filename },
-                { "$input$", Input }
-            });
+            CustomUploaderParser customUploaderParser = new CustomUploaderParser(Filename, Input);
+            arg = customUploaderParser.Parse(arg);
 
             return arg;
         }
