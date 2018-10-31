@@ -51,6 +51,8 @@ namespace ShareX.ScreenCaptureLib
         public int NVENC_bitrate { get; set; } = 3000; // kbit/s
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
+        public FFmpegAMFUsage AMF_usage { get; set; } = FFmpegAMFUsage.transcoding;
+        public FFmpegAMFQuality AMF_quality { get; set; } = FFmpegAMFQuality.speed;
 
         // Audio
         public int AAC_bitrate { get; set; } = 128; // kbit/s
@@ -96,6 +98,8 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx265:
                         case FFmpegVideoCodec.h264_nvenc:
                         case FFmpegVideoCodec.hevc_nvenc:
+                        case FFmpegVideoCodec.h264_amf:
+                        case FFmpegVideoCodec.hevc_amf:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:
                             return "webm";

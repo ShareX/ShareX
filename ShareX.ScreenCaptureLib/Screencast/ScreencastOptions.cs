@@ -89,7 +89,7 @@ namespace ShareX.ScreenCaptureLib
 
             StringBuilder args = new StringBuilder();
             args.Append("-y "); // -y for overwrite file
-            args.Append("-rtbufsize 100M "); // default real time buffer size was 3041280 (3M)
+            args.Append("-rtbufsize 150M "); // default real time buffer size was 3041280 (3M)
 
             string fps;
 
@@ -207,6 +207,12 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.apng:
                             args.Append("-f apng ");
                             args.AppendFormat("-plays {0} ", "0");
+                            break;
+                        case FFmpegVideoCodec.h264_amf:
+                        case FFmpegVideoCodec.hevc_amf:
+                            args.AppendFormat("-usage {0} ", FFmpeg.AMF_usage);
+                            args.AppendFormat("-quality {0} ", FFmpeg.AMF_quality);
+                            args.AppendFormat("-pix_fmt {0} ", "yuv420p");
                             break;
                     }
                 }

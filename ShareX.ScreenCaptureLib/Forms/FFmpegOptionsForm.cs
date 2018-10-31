@@ -56,6 +56,8 @@ namespace ShareX.ScreenCaptureLib
             cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
             cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
             cbGIFDither.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>());
+            cbAMFUsage.Items.AddRange(Helpers.GetEnums<FFmpegAMFUsage>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
+            cbAMFQuality.Items.AddRange(Helpers.GetEnums<FFmpegAMFQuality>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
         }
 
         private async Task SettingsLoad()
@@ -104,6 +106,10 @@ namespace ShareX.ScreenCaptureLib
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
             cbGIFDither.SelectedIndex = (int)Options.FFmpeg.GIFDither;
+
+            // AMF
+            cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_usage;
+            cbAMFQuality.SelectedIndex = (int)Options.FFmpeg.AMF_quality;
 
             // AAC
             tbAACBitrate.Value = Options.FFmpeg.AAC_bitrate / 32;
@@ -333,6 +339,10 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.gif:
                         tcFFmpegVideoCodecs.SelectedIndex = 4;
                         break;
+                    case FFmpegVideoCodec.h264_amf:
+                    case FFmpegVideoCodec.hevc_amf:
+                        tcFFmpegVideoCodecs.SelectedIndex = 5;
+                        break;
                 }
             }
 
@@ -408,6 +418,18 @@ namespace ShareX.ScreenCaptureLib
         private void cbGIFDither_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.GIFDither = (FFmpegPaletteUseDither)cbGIFDither.SelectedIndex;
+            UpdateUI();
+        }
+
+        private void cbAMFUsage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AMF_usage = (FFmpegAMFUsage)cbAMFUsage.SelectedIndex;
+            UpdateUI();
+        }
+
+        private void cbAMFQuality_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AMF_quality = (FFmpegAMFQuality)cbAMFQuality.SelectedIndex;
             UpdateUI();
         }
 
