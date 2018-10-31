@@ -180,7 +180,7 @@ namespace ShareX.UploadersLib
             {
                 return ParseSyntaxSelect(value);
             }
-            else if (CheckKeyword(syntax, "prompt", out value)) // Examples: $prompt$ $prompt:default value$ $prompt:default value|title$
+            else if (CheckKeyword(syntax, "prompt", out value)) // Examples: $prompt$ $prompt:title$ $prompt:title|default value$
             {
                 return ParseSyntaxPrompt(value);
             }
@@ -328,18 +328,20 @@ namespace ShareX.UploadersLib
 
         private string ParseSyntaxPrompt(string syntax)
         {
-            string defaultValue, title;
+            string title = "ShareX - Prompt", defaultValue = "";
 
-            if (!string.IsNullOrEmpty(syntax) && syntax.Contains(SyntaxParameterChar))
+            if (!string.IsNullOrEmpty(syntax))
             {
-                int index = syntax.IndexOf(SyntaxParameterChar);
-                defaultValue = syntax.Remove(index);
-                title = syntax.Substring(index + 1);
-            }
-            else
-            {
-                defaultValue = syntax;
-                title = "ShareX - Prompt";
+                if (syntax.Contains(SyntaxParameterChar))
+                {
+                    int index = syntax.IndexOf(SyntaxParameterChar);
+                    title = syntax.Remove(index);
+                    defaultValue = syntax.Substring(index + 1);
+                }
+                else
+                {
+                    title = syntax;
+                }
             }
 
             using (InputBox inputBox = new InputBox(title, defaultValue))
