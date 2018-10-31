@@ -86,54 +86,58 @@ namespace ShareX.UploadersLib
                 return "";
             }
 
-            StringBuilder result = new StringBuilder();
-
-            bool syntaxStart = false;
-            int syntaxStartIndex = 0;
-            bool escape = false;
+            StringBuilder sbResult = new StringBuilder();
+            StringBuilder sbSyntax = new StringBuilder();
+            bool escapeNext = false;
+            bool parsingSyntax = false;
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (!escape && text[i] == SyntaxChar)
+                if (!escapeNext && text[i] == SyntaxChar)
                 {
-                    if (!syntaxStart)
+                    if (!parsingSyntax)
                     {
-                        syntaxStart = true;
-                        syntaxStartIndex = i + 1;
+                        parsingSyntax = true;
+
+                        sbSyntax.Clear();
                     }
                     else
                     {
-                        syntaxStart = false;
-                        int syntaxLength = i - syntaxStartIndex;
+                        parsingSyntax = false;
 
-                        if (syntaxLength > 0)
+                        string syntax = sbSyntax.ToString();
+
+                        if (!string.IsNullOrEmpty(syntax))
                         {
-                            string syntax = text.Substring(syntaxStartIndex, syntaxLength);
                             string syntaxResult = ParseSyntax(syntax);
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
-                                result.Append(syntaxResult);
+                                sbResult.Append(syntaxResult);
                             }
                         }
                     }
                 }
-                else if (!escape && text[i] == SyntaxEscapeChar)
+                else if (!escapeNext && text[i] == SyntaxEscapeChar)
                 {
-                    escape = true;
+                    escapeNext = true;
                 }
                 else
                 {
-                    if (!syntaxStart)
-                    {
-                        result.Append(text[i]);
-                    }
+                    escapeNext = false;
 
-                    escape = false;
+                    if (!parsingSyntax)
+                    {
+                        sbResult.Append(text[i]);
+                    }
+                    else
+                    {
+                        sbSyntax.Append(text[i]);
+                    }
                 }
             }
 
-            return result.ToString();
+            return sbResult.ToString();
         }
 
         private string ParseSyntax(string syntax)
