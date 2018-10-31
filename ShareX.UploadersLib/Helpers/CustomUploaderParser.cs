@@ -40,15 +40,24 @@ namespace ShareX.UploadersLib
     {
         public const char SyntaxChar = '$';
         public const char SyntaxParameterChar = '|';
+        public const char SyntaxEscapeChar = '\\';
 
         public bool IsOutput { get; set; }
-        public string Response { get; private set; }
-        public List<Match> RegexMatches { get; private set; }
         public string Filename { get; private set; }
         public string Input { get; private set; }
+        public string Response { get; private set; }
+        public List<Match> RegexMatches { get; private set; }
 
         public CustomUploaderParser()
         {
+            IsOutput = false;
+        }
+
+        public CustomUploaderParser(string filename, string input)
+        {
+            Filename = filename;
+            Input = input;
+
             IsOutput = false;
         }
 
@@ -70,14 +79,6 @@ namespace ShareX.UploadersLib
             IsOutput = true;
         }
 
-        public CustomUploaderParser(string filename, string input)
-        {
-            Filename = filename;
-            Input = input;
-
-            IsOutput = false;
-        }
-
         public string Parse(string text)
         {
             if (string.IsNullOrEmpty(text))
@@ -93,7 +94,7 @@ namespace ShareX.UploadersLib
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i] == SyntaxChar && !escape)
+                if (!escape && text[i] == SyntaxChar)
                 {
                     if (!syntaxStart)
                     {
@@ -119,7 +120,7 @@ namespace ShareX.UploadersLib
 
                     escape = false;
                 }
-                else if (text[i] == '\\' && !escape)
+                else if (!escape && text[i] == SyntaxEscapeChar)
                 {
                     escape = true;
                 }
@@ -157,13 +158,13 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            if (CheckKeyword(syntax, "filename")) // Example: $filename$
-            {
-                return Filename;
-            }
-            else if (CheckKeyword(syntax, "input")) // Example: $input$
+            if (CheckKeyword(syntax, "input")) // Example: $input$
             {
                 return Input;
+            }
+            else if (CheckKeyword(syntax, "filename")) // Example: $filename$
+            {
+                return Filename;
             }
             else if (CheckKeyword(syntax, "random", out value)) // Example: $random:domain1.com|domain2.com$
             {
@@ -197,7 +198,7 @@ namespace ShareX.UploadersLib
             }
             else if (syntax.StartsWith(keyword + ":", StringComparison.InvariantCultureIgnoreCase))
             {
-                value = keyword.Substring(keyword.Length);
+                value = syntax.Substring(keyword.Length + 1);
                 return true;
             }
 
