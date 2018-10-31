@@ -117,16 +117,18 @@ namespace ShareX.UploadersLib
                             }
                         }
                     }
-
-                    escape = false;
                 }
                 else if (!escape && text[i] == SyntaxEscapeChar)
                 {
                     escape = true;
                 }
-                else if (!syntaxStart)
+                else
                 {
-                    result.Append(text[i]);
+                    if (!syntaxStart)
+                    {
+                        result.Append(text[i]);
+                    }
+
                     escape = false;
                 }
             }
