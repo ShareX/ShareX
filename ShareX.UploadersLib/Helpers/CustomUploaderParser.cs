@@ -153,13 +153,13 @@ namespace ShareX.UploadersLib
             {
                 return ParseSyntaxSelect(syntax.Substring(7));
             }
-            else if (syntax.Equals("input", StringComparison.InvariantCultureIgnoreCase)) // Example: $input$
+            else if (syntax.Equals("prompt", StringComparison.InvariantCultureIgnoreCase)) // Example: prompt
             {
-                return ParseSyntaxInput();
+                return ParseSyntaxPrompt();
             }
-            else if (syntax.StartsWith("input:", StringComparison.InvariantCultureIgnoreCase)) // Example: $input:default value$
+            else if (syntax.StartsWith("prompt:", StringComparison.InvariantCultureIgnoreCase)) // Example: $prompt:default value$
             {
-                return ParseSyntaxInput(syntax.Substring(6));
+                return ParseSyntaxPrompt(syntax.Substring(7));
             }
 
             // Invalid syntax
@@ -281,9 +281,9 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private string ParseSyntaxInput(string defaultValue = null)
+        private string ParseSyntaxPrompt(string defaultValue = null)
         {
-            using (InputBox inputBox = new InputBox("ShareX - Input", defaultValue))
+            using (InputBox inputBox = new InputBox("ShareX - Prompt", defaultValue))
             {
                 if (inputBox.ShowDialog() == DialogResult.OK)
                 {
