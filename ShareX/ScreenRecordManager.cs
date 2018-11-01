@@ -241,55 +241,31 @@ namespace ShareX
                     DebugHelper.WriteException(e);
                 }
 
-                try
+                if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding && !abortRequested && screenRecorder != null && File.Exists(path))
                 {
-                    if (!abortRequested && screenRecorder != null && File.Exists(path))
-                    {
-                        recordForm.ChangeState(ScreenRecordState.AfterStop);
+                    recordForm.ChangeState(ScreenRecordState.Encoding);
 
-                        string input = path;
-
-                        if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
-                        {
-                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
-
-                            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
-                            {
-                                screenRecorder.FFmpegEncodeAsGIF(input, path, Program.ToolsFolder);
-                            }
-                            else
-                            {
-                                screenRecorder.FFmpegEncodeVideo(input, path);
-                            }
-                        }
-                    }
+                    path = ProcessTwoPassEncoding(path, taskSettings);
                 }
-                finally
+
+                if (recordForm != null)
                 {
-                    if (recordForm != null)
+                    recordForm.InvokeSafe(() =>
                     {
-                        recordForm.InvokeSafe(() =>
-                        {
-                            recordForm.Close();
-                            recordForm.Dispose();
-                            recordForm = null;
-                        });
-                    }
+                        recordForm.Close();
+                        recordForm.Dispose();
+                        recordForm = null;
+                    });
+                }
 
-                    if (screenRecorder != null)
+                if (screenRecorder != null)
+                {
+                    screenRecorder.Dispose();
+                    screenRecorder = null;
+
+                    if (abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path))
                     {
-                        if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding && !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
-                        {
-                            File.Delete(screenRecorder.CachePath);
-                        }
-
-                        screenRecorder.Dispose();
-                        screenRecorder = null;
-
-                        if (abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path))
-                        {
-                            File.Delete(path);
-                        }
+                        File.Delete(path);
                     }
                 }
             }).ContinueInCurrentContext(() =>
@@ -316,6 +292,33 @@ namespace ShareX
                 abortRequested = false;
                 IsRecording = false;
             });
+        }
+
+        private static string ProcessTwoPassEncoding(string input, TaskSettings taskSettings, bool deleteInputFile = true)
+        {
+            string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
+            string output = Path.Combine(taskSettings.CaptureFolder, filename);
+
+            try
+            {
+                if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+                {
+                    screenRecorder.FFmpegEncodeAsGIF(input, output, Program.ToolsFolder);
+                }
+                else
+                {
+                    screenRecorder.FFmpegEncodeVideo(input, output);
+                }
+            }
+            finally
+            {
+                if (deleteInputFile && !input.Equals(output, StringComparison.InvariantCultureIgnoreCase) && File.Exists(input))
+                {
+                    File.Delete(input);
+                }
+            }
+
+            return output;
         }
     }
 }

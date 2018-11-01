@@ -292,7 +292,7 @@ namespace ShareX
                         IsRecording = true;
                         StartRecordingTimer();
                         break;
-                    case ScreenRecordState.AfterStop:
+                    case ScreenRecordState.Encoding:
                         Hide();
                         string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         niTray.Text = trayTextAfterStop.Truncate(63);
