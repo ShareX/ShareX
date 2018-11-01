@@ -79,21 +79,24 @@ namespace ShareX
                 taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
             }
 
-            if (taskSettings.CaptureSettings.FFmpegOptions.IsTwoPassEncodingRequired)
+            if (taskSettings.CaptureSettings.FFmpegOptions.IsAnimatedImage)
             {
                 taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = true;
             }
 
-            if (!taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
+            int fps;
+
+            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
             {
-                DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
-                    taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(),
-                    taskSettings.CaptureSettings.ScreenRecordFPS);
+                fps = taskSettings.CaptureSettings.GIFFPS;
             }
             else
             {
-                DebugHelper.WriteLine("Starting screen recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
+                fps = taskSettings.CaptureSettings.ScreenRecordFPS;
             }
+
+            DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
+                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(), fps);
 
             if (!TaskHelpers.CheckFFmpeg(taskSettings))
             {
@@ -135,7 +138,7 @@ namespace ShareX
             Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
             captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
 
-            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec != FFmpegVideoCodec.gif)
+            if (taskSettings.CaptureSettings.FFmpegOptions.IsEvenSizeRequired)
             {
                 captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
             }
@@ -206,17 +209,6 @@ namespace ShareX
 
                         if (!abortRequested)
                         {
-                            int fps;
-
-                            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
-                            {
-                                fps = taskSettings.CaptureSettings.GIFFPS;
-                            }
-                            else
-                            {
-                                fps = taskSettings.CaptureSettings.ScreenRecordFPS;
-                            }
-
                             ScreencastOptions options = new ScreencastOptions()
                             {
                                 IsRecording = true,

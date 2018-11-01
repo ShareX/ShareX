@@ -135,9 +135,11 @@ namespace ShareX.ScreenCaptureLib
         public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
 
         public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
-            (!IsVideoSourceSelected || !IsTwoPassEncodingRequired);
+            (!IsVideoSourceSelected || !IsAnimatedImage);
 
-        public bool IsTwoPassEncodingRequired => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
+        public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
+
+        public bool IsEvenSizeRequired => !IsAnimatedImage;
 
         public FFmpegOptions()
         {
