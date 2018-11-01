@@ -95,24 +95,6 @@ namespace ShareX
                 DebugHelper.WriteLine("Starting screen recording. FPS: {0}", taskSettings.CaptureSettings.GIFFPS);
             }
 
-            if (taskSettings.CaptureSettings.RunScreencastCLI)
-            {
-                if (!Program.Settings.VideoEncoders.IsValidIndex(taskSettings.CaptureSettings.VideoEncoderSelected))
-                {
-                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_,
-                        "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (!Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
-                {
-                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ +
-                        Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].Path,
-                        "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-            }
-
             if (!TaskHelpers.CheckFFmpeg(taskSettings))
             {
                 return;
@@ -288,12 +270,6 @@ namespace ShareX
                                 screenRecorder.FFmpegEncodeVideo(input, path);
                             }
                         }
-                        else if (taskSettings.CaptureSettings.RunScreencastCLI)
-                        {
-                            VideoEncoder encoder = Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected];
-                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, encoder.OutputExtension));
-                            screenRecorder.EncodeUsingCommandLine(encoder, input, path);
-                        }
                     }
                 }
                 finally
@@ -310,8 +286,7 @@ namespace ShareX
 
                     if (screenRecorder != null)
                     {
-                        if ((taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding || taskSettings.CaptureSettings.RunScreencastCLI) &&
-                            !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
+                        if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding && !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                         {
                             File.Delete(screenRecorder.CachePath);
                         }

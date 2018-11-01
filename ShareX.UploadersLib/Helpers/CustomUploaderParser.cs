@@ -81,6 +81,11 @@ namespace ShareX.UploadersLib
 
         public string Parse(string text)
         {
+            return Parse(text, IsOutput);
+        }
+
+        public string Parse(string text, bool isOutput)
+        {
             if (string.IsNullOrEmpty(text))
             {
                 return "";
@@ -109,7 +114,7 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(syntax))
                         {
-                            string syntaxResult = ParseSyntax(syntax);
+                            string syntaxResult = ParseSyntax(syntax, isOutput);
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
@@ -140,11 +145,11 @@ namespace ShareX.UploadersLib
             return sbResult.ToString();
         }
 
-        private string ParseSyntax(string syntax)
+        private string ParseSyntax(string syntax, bool isOutput)
         {
             string value;
 
-            if (IsOutput)
+            if (isOutput)
             {
                 if (CheckKeyword(syntax, "response")) // Example: $response$
                 {

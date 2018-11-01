@@ -245,14 +245,6 @@ namespace ShareX.ScreenCaptureLib
             return ffmpegCli.EncodeGIF(sourceFilePath, targetFilePath, tempFolder);
         }
 
-        public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)
-        {
-            if (!string.IsNullOrEmpty(sourceFilePath) && File.Exists(sourceFilePath))
-            {
-                encoder.Encode(sourceFilePath, targetFilePath);
-            }
-        }
-
         protected void OnRecordingStarted()
         {
             if (RecordingStarted != null)

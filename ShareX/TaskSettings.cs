@@ -350,8 +350,6 @@ namespace ShareX
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;
-        public bool RunScreencastCLI = false;
-        public int VideoEncoderSelected = 0;
 
         #endregion Capture / Screen recorder
 

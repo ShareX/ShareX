@@ -207,7 +207,6 @@
     </Compile>
     <Compile Include="DNS\DNSInfo.cs" />
     <Compile Include="DWMManager.cs" />
-    <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
     <Compile Include="EnumInfo.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />

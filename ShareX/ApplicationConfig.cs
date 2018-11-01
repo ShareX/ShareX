@@ -136,12 +136,6 @@ namespace ShareX
 
         #endregion Print
 
-        #region Profiles
-
-        public List<VideoEncoder> VideoEncoders = new List<VideoEncoder>();
-
-        #endregion Profiles
-
         #region Advanced
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]

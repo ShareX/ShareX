@@ -3397,7 +3397,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbScreenRecordConfirmAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 207</value>
+    <value>8, 184</value>
   </data>
   <data name="cbScreenRecordConfirmAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
@@ -3621,84 +3621,6 @@
   <data name="&gt;&gt;lblScreenRecordFPS.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cbScreenRecordRunScreencastCLI.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbScreenRecordRunScreencastCLI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbScreenRecordRunScreencastCLI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 184</value>
-  </data>
-  <data name="cbScreenRecordRunScreencastCLI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="cbScreenRecordRunScreencastCLI.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="cbScreenRecordRunScreencastCLI.Text" xml:space="preserve">
-    <value>Run CLI afterwards:</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordRunScreencastCLI.Name" xml:space="preserve">
-    <value>cbScreenRecordRunScreencastCLI</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordRunScreencastCLI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordRunScreencastCLI.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordRunScreencastCLI.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 181</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 23</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.Text" xml:space="preserve">
-    <value>Profiles...</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecordEncoderConfig.Name" xml:space="preserve">
-    <value>btnScreenRecordEncoderConfig</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecordEncoderConfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecordEncoderConfig.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecordEncoderConfig.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="cbScreenRecordEncoder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 182</value>
-  </data>
-  <data name="cbScreenRecordEncoder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="cbScreenRecordEncoder.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordEncoder.Name" xml:space="preserve">
-    <value>cbScreenRecordEncoder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordEncoder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordEncoder.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordEncoder.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="nudScreenRecorderDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 134</value>
   </data>
@@ -3721,7 +3643,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudScreenRecorderDuration.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="nudScreenRecorderStartDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 110</value>
@@ -3745,7 +3667,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudScreenRecorderStartDelay.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3775,7 +3697,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;cbScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="nudGIFFPS.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 60</value>
@@ -3799,7 +3721,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;nudGIFFPS.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="lblGIFFPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3829,7 +3751,7 @@
     <value>tpScreenRecorder</value>
   </data>
   <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="tpScreenRecorder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

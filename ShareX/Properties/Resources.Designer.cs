@@ -1147,33 +1147,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extension can&apos;t be empty..
-        /// </summary>
-        public static string EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path can&apos;t be empty..
-        /// </summary>
-        public static string EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose encoder path.
-        /// </summary>
-        public static string EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap eraser {
@@ -2123,15 +2096,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CLI video encoder file does not exist: .
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Click to start recording..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
@@ -2194,15 +2158,6 @@ namespace ShareX.Properties {
         public static string ScreenRecordForm_StartRecording_Missing {
             get {
                 return ResourceManager.GetString("ScreenRecordForm_StartRecording_Missing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is no valid CLI video encoder selected..
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_", resourceCulture);
             }
         }
         
@@ -2330,15 +2285,6 @@ namespace ShareX.Properties {
         public static string TaskManager_task_UploadCompleted_ShareX___Task_completed {
             get {
                 return ResourceManager.GetString("TaskManager_task_UploadCompleted_ShareX___Task_completed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Configure CLI video encoders ---&gt;.
-        /// </summary>
-        public static string TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____", resourceCulture);
             }
         }
         
