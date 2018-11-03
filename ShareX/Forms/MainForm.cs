@@ -1311,7 +1311,7 @@ namespace ShareX
             {
                 Program.Settings.TaskListViewColumnWidths = new List<int>();
 
-                for (int i = 0; i < lvUploads.Columns.Count - 1; i++)
+                for (int i = 0; i < lvUploads.Columns.Count; i++)
                 {
                     Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
                 }

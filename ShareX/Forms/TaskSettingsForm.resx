@@ -3370,13 +3370,13 @@
     <value>8, 160</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 17</value>
+    <value>350, 17</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
-    <value>Record using lossless encoding, then apply user encoding option</value>
+    <value>Record using lossless encoding and then apply user encoding option</value>
   </data>
   <data name="&gt;&gt;cbScreenRecordTwoPassEncoding.Name" xml:space="preserve">
     <value>cbScreenRecordTwoPassEncoding</value>

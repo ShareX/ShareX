@@ -131,7 +131,6 @@ namespace ShareX
             btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
-            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
@@ -406,7 +405,6 @@ namespace ShareX
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
-            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
         }
 
         private void btnCheckDevBuild_Click(object sender, EventArgs e)
