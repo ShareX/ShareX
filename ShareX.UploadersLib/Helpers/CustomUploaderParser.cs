@@ -189,6 +189,10 @@ namespace ShareX.UploadersLib
             {
                 return ParseSyntaxPrompt(value);
             }
+            else if (CheckKeyword(syntax, "base64", out value)) // Example: Basic $base64:username:password$
+            {
+                return ParseSyntaxBase64(value);
+            }
 
             // Invalid syntax
             return null;
@@ -358,6 +362,16 @@ namespace ShareX.UploadersLib
             }
 
             return defaultValue;
+        }
+
+        private string ParseSyntaxBase64(string syntax)
+        {
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                return TranslatorHelper.TextToBase64(syntax);
+            }
+
+            return null;
         }
     }
 }

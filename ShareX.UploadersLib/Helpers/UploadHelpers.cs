@@ -223,10 +223,9 @@ namespace ShareX.UploadersLib
 
         public static NameValueCollection CreateAuthenticationHeader(string username, string password)
         {
-            string authInfo = username + ":" + password;
-            authInfo = Convert.ToBase64String(Encoding.UTF8.GetBytes(authInfo));
+            string authorization = TranslatorHelper.TextToBase64(username + ":" + password);
             NameValueCollection headers = new NameValueCollection();
-            headers["Authorization"] = "Basic " + authInfo;
+            headers["Authorization"] = "Basic " + authorization;
             return headers;
         }
 
