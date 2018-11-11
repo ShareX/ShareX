@@ -60,7 +60,7 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                int size = Height - ExtraImagePadding * 2;
+                int size = Height - (ExtraImagePadding * 2);
                 Bitmap bmp = new Bitmap(size, size);
 
                 using (Graphics g = Graphics.FromImage(bmp))

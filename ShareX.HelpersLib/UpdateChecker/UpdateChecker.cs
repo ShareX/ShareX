@@ -32,6 +32,9 @@ namespace ShareX.HelpersLib
 {
     public abstract class UpdateChecker
     {
+        /// <summary>For testing purposes.</summary>
+        public static bool ForceUpdate { get; set; } = false;
+
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
         public Version LatestVersion { get; set; }
@@ -61,8 +64,6 @@ namespace ShareX.HelpersLib
 
         public string DownloadURL { get; set; }
 
-        private const bool forceUpdate = false; // For testing purposes
-
         public void RefreshStatus()
         {
             if (CurrentVersion == null)
@@ -71,7 +72,7 @@ namespace ShareX.HelpersLib
             }
 
             if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
-                (forceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion) < 0 || (IsBeta && Helpers.CompareVersion(CurrentVersion, LatestVersion) == 0)))
+                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion) < 0 || (IsBeta && Helpers.CompareVersion(CurrentVersion, LatestVersion) == 0)))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }

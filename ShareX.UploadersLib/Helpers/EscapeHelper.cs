@@ -25,10 +25,6 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
 {
@@ -36,6 +32,7 @@ namespace ShareX.UploadersLib
     {
         public string EscapeCharacter { get; set; } = @"\";
         public string EscapeableCharacter { get; set; } = "%";
+        public bool KeepEscapeCharacter { get; set; }
 
         private string escapeCharacterReserve = Helpers.GetRandomAlphanumeric(32);
         private string escapeableCharacterReserve = Helpers.GetRandomAlphanumeric(32);
@@ -45,8 +42,16 @@ namespace ShareX.UploadersLib
             input = input.Replace(EscapeCharacter + EscapeCharacter, escapeCharacterReserve);
             input = input.Replace(EscapeCharacter + EscapeableCharacter, escapeableCharacterReserve);
             input = action(input);
-            input = input.Replace(escapeableCharacterReserve, EscapeableCharacter);
-            input = input.Replace(escapeCharacterReserve, EscapeCharacter);
+            if (KeepEscapeCharacter)
+            {
+                input = input.Replace(escapeableCharacterReserve, EscapeCharacter + EscapeableCharacter);
+                input = input.Replace(escapeCharacterReserve, EscapeCharacter + EscapeCharacter);
+            }
+            else
+            {
+                input = input.Replace(escapeableCharacterReserve, EscapeableCharacter);
+                input = input.Replace(escapeCharacterReserve, EscapeCharacter);
+            }
             return input;
         }
     }

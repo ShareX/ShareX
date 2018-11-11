@@ -231,11 +231,6 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>En attente...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'images ?
-
-Cliquez sur « Oui » pour ouvrir l'image du presse-papier. Sinon, cliquez sur « Non » pour ouvrir la boîte de dialogue pour les images.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Mise en ligne d'images : {0}</value>
   </data>
@@ -339,20 +334,11 @@ Voulez-vous le télécharger automatiquement ?</value>
     <value>ShareX doit être redémarré pour que les changements de langue s'appliquent.
 Voulez-vous redémarrer ShareX ?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Démarrer le sélecteur de couleurs de l'écran</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Utiliser un nouveau nom :</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Arrêter le sélecteur de couleurs de l'écran</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Manquant</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Position du curseur (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traducteurs</value>
@@ -421,9 +407,6 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Démarrer</value>
   </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Prévisualisation :</value>
   </data>
@@ -438,9 +421,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Téléchargement</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Éditeur d'images - Comment charger une image ?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Continuer</value>

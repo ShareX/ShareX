@@ -101,6 +101,9 @@ namespace ShareX
                 case SupportedLanguage.Korean:
                     icon = Resources.kr;
                     break;
+                case SupportedLanguage.MexicanSpanish:
+                    icon = Resources.mx;
+                    break;
                 case SupportedLanguage.PortugueseBrazil:
                     icon = Resources.br;
                     break;
@@ -160,6 +163,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Korean:
                     cultureName = "ko-KR";
+                    break;
+                case SupportedLanguage.MexicanSpanish:
+                    cultureName = "es-MX";
                     break;
                 case SupportedLanguage.PortugueseBrazil:
                     cultureName = "pt-BR";

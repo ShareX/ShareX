@@ -80,15 +80,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (customUploader.RequestType != CustomUploaderRequestType.POST)
-            {
-                throw new Exception("'Request type' must be 'POST' when using custom file uploader.");
-            }
-
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
 
             UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                customUploader.GetArguments(input), customUploader.GetHeaders(input), responseType: customUploader.ResponseType);
+                customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
 
             if (result.IsSuccess)
             {

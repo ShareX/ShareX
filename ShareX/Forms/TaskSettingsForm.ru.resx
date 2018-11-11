@@ -462,9 +462,6 @@
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Размеры области для привязки, если зажата кнопка "Alt":</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Показывать горячие клавиши и подсказки в верхнем правом углу</value>
-  </data>
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Показывать информацию о позиции и размере</value>
   </data>
@@ -539,5 +536,23 @@
   </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Изменить...</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>Запрашивать подтверждение на отмену</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Заменять проблемные для URL символы подчеркиваниями при загрузке</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Записывать без потерь, потом применять пользовательские настройки</value>
+  </data>
+  <data name="cbScreenRecordRunScreencastCLI.Text" xml:space="preserve">
+    <value>Потом выполнять команду:</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Запрашивать подтверждение на отмену</value>
+  </data>
+  <data name="btnScreenRecordEncoderConfig.Text" xml:space="preserve">
+    <value>Профили…</value>
   </data>
 </root>

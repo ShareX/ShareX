@@ -289,11 +289,10 @@ namespace ShareX
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
-            cbScreenRecorderConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
+            cbScreenRecordConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
-            chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
-            UpdateVideoEncoders();
+            cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
 
             #endregion Screen recorder
 
@@ -1029,29 +1028,13 @@ namespace ShareX
 
         #region Screen recorder
 
-        private void UpdateVideoEncoders()
-        {
-            cboEncoder.Items.Clear();
-
-            if (Program.Settings.VideoEncoders.Count > 0)
-            {
-                Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
-                cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
-            }
-            else if (!cboEncoder.Items.Contains(Resources.TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____))
-            {
-                cboEncoder.Items.Add(Resources.TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____);
-                cboEncoder.SelectedIndex = 0;
-            }
-        }
-
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
             ScreencastOptions options = new ScreencastOptions
             {
+                IsRecording = true,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
-                ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
-                GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
+                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
@@ -1102,28 +1085,14 @@ namespace ShareX
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
         }
 
-        private void chkConfirmAbort_CheckedChanged(object sender, EventArgs e)
+        private void cbScreenRecordTwoPassEncoding_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort = cbScreenRecorderConfirmAbort.Checked;
+            TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = cbScreenRecordTwoPassEncoding.Checked;
         }
 
-        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
+        private void cbScreenRecordConfirmAbort_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.RunScreencastCLI = cboEncoder.Enabled = btnEncoderConfig.Enabled = chkRunScreencastCLI.Checked;
-        }
-
-        private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
-        }
-
-        private void btnEncoderConfig_Click(object sender, EventArgs e)
-        {
-            using (VideoEncodersForm form = new VideoEncodersForm() { Icon = Icon })
-            {
-                form.ShowDialog();
-                UpdateVideoEncoders();
-            }
+            TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort = cbScreenRecordConfirmAbort.Checked;
         }
 
         #endregion Screen recorder

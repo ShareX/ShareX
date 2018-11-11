@@ -123,6 +123,7 @@
             this.Controls.Add(this.btnBrowseFolder);
             this.Controls.Add(this.txtFolderPath);
             this.Name = "DirectoryIndexerForm";
+            this.Load += new System.EventHandler(this.DirectoryIndexerForm_Load);
             this.tcMain.ResumeLayout(false);
             this.tpPreview.ResumeLayout(false);
             this.tpPreview.PerformLayout();

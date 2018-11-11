@@ -24,13 +24,22 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public static class ShareXResources
     {
-        public const string UserAgent = "ShareX";
+        public static string UserAgent
+        {
+            get
+            {
+                Version version = Version.Parse(Application.ProductVersion);
+                return $"ShareX/{version.Major}.{version.Minor}.{version.Build}";
+            }
+        }
 
         public static Icon Icon => Resources.ShareX_Icon;
 

@@ -210,9 +210,9 @@ namespace ShareX.HelpersLib
         {
             return new ColorMatrix(new[]
             {
-                new float[] { (1.0f - value) * rw + value, (1.0f - value) * rw, (1.0f - value) * rw, 0, 0 },
-                new float[] { (1.0f - value) * gw, (1.0f - value) * gw + value, (1.0f - value) * gw, 0, 0 },
-                new float[] { (1.0f - value) * bw, (1.0f - value) * bw, (1.0f - value) * bw + value, 0, 0 },
+                new float[] { ((1.0f - value) * rw) + value, (1.0f - value) * rw, (1.0f - value) * rw, 0, 0 },
+                new float[] { (1.0f - value) * gw, ((1.0f - value) * gw) + value, (1.0f - value) * gw, 0, 0 },
+                new float[] { (1.0f - value) * bw, (1.0f - value) * bw, ((1.0f - value) * bw) + value, 0, 0 },
                 new float[] { 0, 0, 0, 1, 0 },
                 new float[] { 0, 0, 0, 0, 1 }
             });
@@ -229,9 +229,9 @@ namespace ShareX.HelpersLib
 
             return new ColorMatrix(new[]
             {
-                new float[] { inv_amount + value * r * rw, value * g * rw, value * b * rw, 0, 0 },
-                new float[] { value * r * gw, inv_amount + value * g * gw, value * b * gw, 0, 0 },
-                new float[] { value * r * bw, value * g * bw, inv_amount + value * b * bw, 0, 0 },
+                new float[] { inv_amount + (value * r * rw), value * g * rw, value * b * rw, 0, 0 },
+                new float[] { value * r * gw, inv_amount + (value * g * gw), value * b * gw, 0, 0 },
+                new float[] { value * r * bw, value * g * bw, inv_amount + (value * b * bw), 0, 0 },
                 new float[] { 0, 0, 0, 1, 0 },
                 new float[] { 0, 0, 0, 0, 1 }
             });

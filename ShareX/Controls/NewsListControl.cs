@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -55,17 +56,18 @@ namespace ShareX
 
         public void Start()
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 NewsManager = new NewsManager();
                 NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
                 NewsManager.UpdateNews();
                 NewsManager.UpdateUnread();
-            },
-            () =>
+            }).ContinueInCurrentContext(() =>
             {
                 if (NewsManager != null && NewsManager.NewsItems != null)
                 {
+                    tlpMain.SuspendLayout();
+
                     foreach (NewsItem item in NewsManager.NewsItems)
                     {
                         if (item != null)
@@ -73,6 +75,8 @@ namespace ShareX
                             AddNewsItem(item);
                         }
                     }
+
+                    tlpMain.ResumeLayout();
 
                     OnNewsLoaded();
                 }
@@ -102,19 +106,18 @@ namespace ShareX
             }
         }
 
-        private void TlpMain_Layout(object sender, LayoutEventArgs e)
+        private async void TlpMain_Layout(object sender, LayoutEventArgs e)
         {
-            TaskEx.RunDelayed(() =>
+            await Task.Delay(1);
+
+            if (tlpMain.HorizontalScroll.Visible)
             {
-                if (tlpMain.HorizontalScroll.Visible)
-                {
-                    tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-                }
-                else
-                {
-                    tlpMain.Padding = new Padding(0);
-                }
-            }, 1);
+                tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
+            }
+            else
+            {
+                tlpMain.Padding = new Padding(0);
+            }
         }
 
         private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -123,11 +126,11 @@ namespace ShareX
 
             if (e.Row.IsEvenNumber())
             {
-                color = Color.FromArgb(250, 250, 250);
+                color = SystemColors.Window;
             }
             else
             {
-                color = Color.FromArgb(247, 247, 247);
+                color = ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
             }
 
             using (Brush brush = new SolidBrush(color))
@@ -135,13 +138,15 @@ namespace ShareX
                 e.Graphics.FillRectangle(brush, e.CellBounds);
             }
 
-            if (NewsManager != null && NewsManager.NewsItems != null & NewsManager.NewsItems.IsValidIndex(e.Row) &&
-                NewsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
+            if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.IsValidIndex(e.Row) && NewsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
             {
                 e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));
             }
 
-            e.Graphics.DrawLine(Pens.LightGray, new Point(e.CellBounds.X, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1));
+            using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
+            {
+                e.Graphics.DrawLine(pen, new Point(e.CellBounds.X, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1));
+            }
         }
 
         public void AddNewsItem(NewsItem item)
@@ -196,7 +201,7 @@ namespace ShareX
             {
                 tooltip.SetToolTip(lblText, item.URL);
                 lblText.Cursor = Cursors.Hand;
-                lblText.MouseEnter += (sender, e) => lblText.ForeColor = Color.Blue;
+                lblText.MouseEnter += (sender, e) => lblText.ForeColor = SystemColors.HotTrack;
                 lblText.MouseLeave += (sender, e) => lblText.ForeColor = SystemColors.ControlText;
                 lblText.MouseClick += (sender, e) =>
                 {

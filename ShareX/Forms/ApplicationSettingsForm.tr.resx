@@ -271,7 +271,7 @@
     <value>Dil:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>"ShareX ile yükle" tuşunu sağ tık menüsünde göster</value>
+    <value>"ShareX ile yükle" tuşunu Windows sağ tık menüsünde göster</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Son görevleri kaydet</value>
@@ -281,15 +281,6 @@
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Kütüğü dışarı aktar</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Geçmişi dışarı aktar</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Ayarları dışarı aktar</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
@@ -317,5 +308,44 @@
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Açılışta ana pencerede son görevleri göster</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Geliştirici sürümünü kur...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Firefox eklentisi</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Ayarları sıfırla...</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Önsürüm güncellemeleri kontrol et</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Tepsi simgesi çift tıklandığında:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Tepsi simgesi bir kere tıklandığında:</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Tepsi simgesi orta tuş ile tıklandığında:</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome uzantısı</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Chrome uzantı desteğini aktif et</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Firefox eklenti desteğini aktif et</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>ShareX Chrome uzantısını indir...</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>ShareX Firefox eklentisini indir...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>"ShareX ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
   </data>
 </root>

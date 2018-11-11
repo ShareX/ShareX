@@ -157,7 +157,8 @@ namespace ShareX
             {
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
                 {
-                    return Helpers.ExpandFolderVariables(AdvancedSettings.CapturePath);
+                    string captureFolderPath = NameParser.Parse(NameParserType.FolderPath, AdvancedSettings.CapturePath);
+                    return Helpers.GetAbsolutePath(captureFolderPath);
                 }
 
                 return Program.ScreenshotsFolder;
@@ -348,8 +349,7 @@ namespace ShareX
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
-        public bool RunScreencastCLI = false;
-        public int VideoEncoderSelected = 0;
+        public bool ScreenRecordTwoPassEncoding = false;
 
         #endregion Capture / Screen recorder
 
@@ -366,8 +366,8 @@ namespace ShareX
 
         public bool UseCustomTimeZone = false;
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
-        public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s";
-        public string NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
+        public string NameFormatPattern = "%ra{10}";
+        public string NameFormatPatternActiveWindow = "%pn_%ra{10}";
         public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;

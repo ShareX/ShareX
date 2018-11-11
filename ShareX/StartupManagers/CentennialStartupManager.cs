@@ -26,7 +26,6 @@
 #if WindowsStore
 
 using System;
-using System.Threading.Tasks;
 using Windows.ApplicationModel;
 
 namespace ShareX
@@ -36,16 +35,16 @@ namespace ShareX
         private const int StartupTargetIndex = 0;
         private readonly StartupTask packageTask = StartupTask.GetForCurrentPackageAsync().GetAwaiter().GetResult()[StartupTargetIndex];
 
-        public StartupTaskState State
+        public StartupState State
         {
-            get => packageTask.State;
+            get => (StartupState)packageTask.State;
             set
             {
-                if (value == StartupTaskState.Enabled)
+                if (value == StartupState.Enabled)
                 {
                     packageTask.RequestEnableAsync().GetAwaiter().GetResult();
                 }
-                else if (value == StartupTaskState.Disabled)
+                else if (value == StartupState.Disabled)
                 {
                     packageTask.Disable();
                 }

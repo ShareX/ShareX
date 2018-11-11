@@ -134,9 +134,6 @@
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>新增</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>刪除</value>
   </data>
@@ -229,9 +226,6 @@
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>幫助...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>清除全部 --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>圖片上傳:</value>
@@ -510,39 +504,6 @@
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>JIRA問題的字首:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>刪除資料夾</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>新增資料夾</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>重新整理資料夾列表</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>上傳圖像</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>授權</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>使用者名:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>密碼:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>重新整理授權</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>登入狀態:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>認證</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL類型:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>電子郵件:</value>
   </data>
@@ -756,18 +717,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>上傳圖像</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>第1步:開啟網頁授權...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>第2步:完成授權</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>重新整理授權</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>你的照片流...</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>開啟我的圖片網頁...</value>
   </data>
@@ -822,14 +771,6 @@
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>創建新相簿</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>採用精簡冗餘儲存</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>儲存物件使用一個較低的冗餘儲存類。
-使用此選項,物件可以很方便的儲存,但只有99.99％的永續性，而不是99.999999999％。
-這意味著,他們可以從Amazon S3某些點丟失。</value>
-  </data>
   <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
     <value>例子：
 
@@ -853,9 +794,6 @@ store.book[0].title</value>
   </data>
   <data name="lblPuushPassword.Text" xml:space="preserve">
     <value>密碼：</value>
-  </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>創建一個帳戶...</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>忘記了密碼？</value>
@@ -884,9 +822,6 @@ store.book[0].title</value>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>取得API 金鑰...</value>
   </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>取得API 金鑰...</value>
-  </data>
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
     <value>寄送email且不會顯示此email地址:</value>
   </data>
@@ -895,12 +830,6 @@ store.book[0].title</value>
   </data>
   <data name="cbGistUseRawURL.Text" xml:space="preserve">
     <value>使用原始URL</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>使用 "https://" 連結</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>公開</value>
   </data>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>原始URL</value>
@@ -926,17 +855,8 @@ store.book[0].title</value>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>使用過時API v1</value>
   </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>直接連結</value>
-  </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>使用直接連結</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>啟用直接下載</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>是否為高階會員</value>
   </data>
   <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
     <value>日</value>
@@ -946,12 +866,6 @@ store.book[0].title</value>
   </data>
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
     <value>分</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>登入認證</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>使用者資訊</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>存取金鑰</value>
@@ -994,23 +908,5 @@ store.book[0].title</value>
   </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>API金鑰:</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API金鑰:</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>API金鑰:</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>電子郵件：</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>密碼:</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>帳號:</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>取得API金鑰請看 https://someimage.com/api</value>
   </data>
 </root>

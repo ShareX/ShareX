@@ -137,9 +137,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualité :</value>
   </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Capture rectangulaire annotée</value>
-  </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturer une région </value>
   </data>
@@ -149,92 +146,17 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Capture rectangle transparent</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Ctrl + C] Copier la position</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Ctrl + C] Copier la position et la taille</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Masquer les raccourcis clavier</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Echap] Annuler la capture</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Échec du téléchargement de FFmpeg.</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Touches fléchées] Déplacer la position du curseur</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] [ù] Capturer l'écran actif</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Maintenir Maj] Redimensionnement proportionnel</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Capture rectangulaire simple</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Capturer un écran</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[Molette de la souris] Changer de mode</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Sélectionner le mode capture</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] Sélectionner le mode dessin rectangulaire</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] Sélectionner le mode dessin avec stylo</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Maj] Changer la couleur des bordures</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl + Molette de la souris] Changer la taille des bordures</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Maj] Changer la couleur du stylo</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl + Molette de la souris] Changer la taille du stylo</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Capturer</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Arrêter</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Espace] Capture plein écran</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Ctrl + C] Copier les infos</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Clic droit] [Suppr] Annuler la sélection de la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Suppr] Supprimer la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Maintenir clic gauche sur la sélection] Déplacer la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Maintenir clic gauche] [Inser] Débuter la sélection de la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Double clic gauche] [Entrée] Capturer les régions</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Maintenir Alt] Aligner la sélection avec des tailles prédéfinies</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Relâcher clic gauche] [Inser] Terminer la sélection de la région</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Arrêter la capture</value>
@@ -244,12 +166,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>Afficher la loupe</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
-    <value>[Molette de la souris] Changer la taille de la loupe</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
-    <value>[Ctrl + Molette de la souris] Changer l'outil actuel</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
     <value>Largeur :</value>
@@ -262,9 +178,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>Capturer l'écran actif</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Afficher les raccourcis clavier</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Options</value>
@@ -284,26 +197,8 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Loupe de forme carrée</value>
   </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
-    <value>[Maintenir Ctrl + Touches fléchées] Déplacer la région</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
-    <value>[Maintenir Maj + Touches fléchées] Redimensionner ou déplacer une région plus rapidement</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Maintenir Maj + Touches fléchées] Déplacer le curseur plus rapidement</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
-    <value>[Tab][Clic de la molette] Sélectionner le dernier outil d'annotation</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
-    <value>[Tab][Clic de la molette] Sélectionner le dernier outil région</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
     <value>Capture plein écran</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
-    <value>[Maintenir Ctrl] Déplacer la sélection</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Couleur des bordures...</value>
@@ -334,9 +229,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Afficher la large croix sur l'écran</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion" xml:space="preserve">
-    <value>[Clic droit] Annuler la capture / supprimer la région</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Continuer la tâche (Espace ou clic droit)</value>
@@ -404,23 +296,8 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>Exécuter après les tâches de capture</value>
   </data>
-  <data name="RegionCaptureForm_WriteTips_CtrlZUndoShape" xml:space="preserve">
-    <value>[Ctrl + Z] Annuler la forme</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_CtrlVPasteImageOrText" xml:space="preserve">
-    <value>[Ctrl + V] Coller une image ou du texte</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Appliquer les modifications et continuer la tâche (Entrée)</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner" xml:space="preserve">
-    <value>[Maintenir Alt + Touches fléchées] Redimensionner la région du coin supérieur gauche</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner" xml:space="preserve">
-    <value>[Touches fléchées] Redimensionner la région du coin inférieur droit</value>
-  </data>
-  <data name="RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly" xml:space="preserve">
-    <value>Remarque: Cacher ces conseils augmentera considérablement les IPS.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Ombre portée</value>

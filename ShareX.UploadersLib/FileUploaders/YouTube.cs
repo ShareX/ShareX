@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Drawing;
 using System.IO;
@@ -111,12 +110,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
-
-            if (!Helpers.IsVideoFile(fileName))
-            {
-                Errors.Add("YouTube only supports video files.");
-                return null;
-            }
 
             string metadata = GetMetadata(fileName);
 

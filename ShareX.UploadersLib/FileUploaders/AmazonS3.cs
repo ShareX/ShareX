@@ -32,6 +32,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -87,10 +88,12 @@ namespace ShareX.UploadersLib.FileUploaders
             new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
             new AmazonS3Endpoint("US West (N. California)", "s3.us-west-1.amazonaws.com", "us-west-1"),
             new AmazonS3Endpoint("US West (Oregon)", "s3.us-west-2.amazonaws.com", "us-west-2"),
-            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io"),
+            new AmazonS3Endpoint("DreamObjects", "objects-us-east-1.dream.io"),
             new AmazonS3Endpoint("DigitalOcean (Amsterdam)", "ams3.digitaloceanspaces.com", "ams3"),
             new AmazonS3Endpoint("DigitalOcean (New York)", "nyc3.digitaloceanspaces.com", "nyc3"),
-            new AmazonS3Endpoint("DigitalOcean (Singapore)", "sgp1.digitaloceanspaces.com", "sgp1")
+            new AmazonS3Endpoint("DigitalOcean (San Francisco)", "sfo2.digitaloceanspaces.com", "sfo2"),
+            new AmazonS3Endpoint("DigitalOcean (Singapore)", "sgp1.digitaloceanspaces.com", "sgp1"),
+            new AmazonS3Endpoint("Wasabi", "s3.wasabisys.com")
         };
 
         private AmazonS3Settings Settings { get; set; }
@@ -117,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string contentType = Helpers.GetMimeType(fileName);
+            string contentType = UploadHelpers.GetMimeType(fileName);
             string hashedPayload = "UNSIGNED-PAYLOAD";
 
             if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
@@ -142,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string canonicalURI = uploadPath;
             if (isPathStyleRequest) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
             canonicalURI = URLHelpers.AddSlash(canonicalURI, SlashType.Prefix);
-            canonicalURI = URLHelpers.URLPathEncode(canonicalURI);
+            canonicalURI = URLHelpers.URLEncode(canonicalURI, true);
             string canonicalQueryString = "";
             string canonicalHeaders = CreateCanonicalHeaders(headers);
             string signedHeaders = GetSignedHeaders(headers);
@@ -177,19 +180,25 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(host, canonicalURI);
             url = URLHelpers.ForcePrefix(url, "https://");
 
-            NameValueCollection responseHeaders = SendRequestGetHeaders(HttpMethod.PUT, url, stream, contentType, null, headers);
-
-            if (responseHeaders == null || responseHeaders.Count == 0 || responseHeaders["ETag"] == null)
+            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, headers))
             {
-                Errors.Add("Upload to Amazon S3 failed.");
-                return null;
+                if (response != null)
+                {
+                    NameValueCollection responseHeaders = response.Headers;
+
+                    if (responseHeaders != null && responseHeaders["ETag"] != null)
+                    {
+                        return new UploadResult
+                        {
+                            IsSuccess = true,
+                            URL = GenerateURL(uploadPath)
+                        };
+                    }
+                }
             }
 
-            return new UploadResult
-            {
-                IsSuccess = true,
-                URL = GenerateURL(uploadPath)
-            };
+            Errors.Add("Upload to Amazon S3 failed.");
+            return null;
         }
 
         private string GetRegion()
@@ -243,13 +252,14 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
-                uploadPath = URLHelpers.URLPathEncode(uploadPath);
+                uploadPath = URLHelpers.URLEncode(uploadPath, true);
 
                 string url;
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
                 {
-                    string parsedDomain = new CustomUploaderItem().ParseURL(Settings.CustomDomain, false);
+                    CustomUploaderParser parser = new CustomUploaderParser();
+                    string parsedDomain = parser.Parse(Settings.CustomDomain);
                     url = URLHelpers.CombineURL(parsedDomain, uploadPath);
                 }
                 else

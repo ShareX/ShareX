@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.IndexerLib
@@ -44,19 +45,23 @@ namespace ShareX.IndexerLib
             Icon = ShareXResources.Icon;
             Settings = settings;
             pgSettings.SelectedObject = Settings;
-            BrowseFolder();
         }
 
-        private void btnBrowseFolder_Click(object sender, EventArgs e)
+        private async void DirectoryIndexerForm_Load(object sender, EventArgs e)
         {
-            BrowseFolder();
+            await BrowseFolder();
         }
 
-        private void BrowseFolder()
+        private async void btnBrowseFolder_Click(object sender, EventArgs e)
+        {
+            await BrowseFolder();
+        }
+
+        private async Task BrowseFolder()
         {
             if (Helpers.BrowseFolder(txtFolderPath))
             {
-                IndexFolder();
+                await IndexFolder();
             }
         }
 
@@ -65,12 +70,12 @@ namespace ShareX.IndexerLib
             btnIndexFolder.Enabled = txtFolderPath.TextLength > 0;
         }
 
-        private void btnIndexFolder_Click(object sender, EventArgs e)
+        private async void btnIndexFolder_Click(object sender, EventArgs e)
         {
-            IndexFolder();
+            await IndexFolder();
         }
 
-        private void IndexFolder()
+        private async Task IndexFolder()
         {
             string folderPath = txtFolderPath.Text;
 
@@ -79,37 +84,35 @@ namespace ShareX.IndexerLib
                 btnIndexFolder.Enabled = false;
                 btnUpload.Enabled = false;
 
-                TaskEx.Run(() =>
+                await Task.Run(() =>
                 {
                     Source = Indexer.Index(folderPath, Settings);
-                },
-                () =>
+                });
+
+                if (!IsDisposed)
                 {
-                    if (!IsDisposed)
+                    if (!string.IsNullOrEmpty(Source))
                     {
-                        if (!string.IsNullOrEmpty(Source))
+                        tcMain.SelectedTab = tpPreview;
+
+                        if (Settings.Output == IndexerOutput.Html)
                         {
-                            tcMain.SelectedTab = tpPreview;
-
-                            if (Settings.Output == IndexerOutput.Html)
-                            {
-                                txtPreview.Visible = false;
-                                wbPreview.Visible = true;
-                                wbPreview.DocumentText = Source;
-                            }
-                            else
-                            {
-                                wbPreview.Visible = false;
-                                txtPreview.Visible = true;
-                                txtPreview.Text = Source;
-                            }
-
-                            btnUpload.Enabled = true;
+                            txtPreview.Visible = false;
+                            wbPreview.Visible = true;
+                            wbPreview.DocumentText = Source;
+                        }
+                        else
+                        {
+                            wbPreview.Visible = false;
+                            txtPreview.Visible = true;
+                            txtPreview.Text = Source;
                         }
 
-                        btnIndexFolder.Enabled = true;
+                        btnUpload.Enabled = true;
                     }
-                });
+
+                    btnIndexFolder.Enabled = true;
+                }
             }
         }
 

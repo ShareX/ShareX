@@ -129,9 +129,6 @@
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Ongeldige apparaatnaam</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Status: Inloggen mislukt.</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>vernieuwen mappenlijst Box mislukt</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root map</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Ingelogd als {0}.</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP programma</value>
@@ -155,12 +149,6 @@
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Selecteer een sleutelbestand...</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Status: Ingelogd.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Status: Niet ingelogd.</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Nieuw account</value>
@@ -194,9 +182,6 @@
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Niet geconfigureerd</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Niet ingelogd.</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Doorzoeken mappen...</value>

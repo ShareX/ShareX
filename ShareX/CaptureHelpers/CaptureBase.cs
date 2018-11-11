@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -48,10 +49,10 @@ namespace ShareX
             {
                 int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
 
-                TaskEx.RunDelayed(() =>
+                Task.Delay(delay).ContinueInCurrentContext(() =>
                 {
                     CaptureInternal(taskSettings, autoHideForm);
-                }, delay);
+                });
             }
             else
             {
@@ -106,7 +107,7 @@ namespace ShareX
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture &&
-                    this.GetType() != typeof(CaptureRegion) && this.GetType() != typeof(CaptureLastRegion))
+                    GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion))
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }

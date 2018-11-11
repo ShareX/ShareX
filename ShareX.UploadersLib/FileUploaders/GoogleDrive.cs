@@ -117,10 +117,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     name = name,
                     parents = new[]
                     {
-                        new
-                        {
-                            id = parentID
-                        }
+                        parentID
                     }
                 };
             }
@@ -148,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, UploadHelpers.ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)

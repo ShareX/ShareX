@@ -213,9 +213,6 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Cattura Colore...</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>Annota Immagine...</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Effetti Immagine...</value>
   </data>
@@ -545,9 +542,6 @@
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Cattura Colore...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>Annota Immagine...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Effetti Immagine...</value>

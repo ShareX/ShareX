@@ -48,27 +48,28 @@ namespace ShareX.HelpersLib
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
 
+            PrepareRecentColors();
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
 
-            btnOK.Visible = btnCancel.Visible = pColorPicker.Visible = !IsScreenColorPickerMode;
-            mbCopy.Visible = btnClose.Visible = pSceenColorPicker.Visible = IsScreenColorPickerMode;
-
-            if (!IsScreenColorPickerMode)
-            {
-                PrepareRecentColors();
-            }
+            btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
+            mbCopy.Visible = btnClose.Visible = pCursorPosition.Visible = IsScreenColorPickerMode;
         }
 
         public void EnableScreenColorPickerButton(Func<PointInfo> openScreenColorPicker)
         {
             OpenScreenColorPicker = openScreenColorPicker;
-            btnPickColor.Visible = true;
+            btnScreenColorPicker.Visible = true;
         }
 
-        public static bool PickColor(Color currentColor, out Color newColor, Form owner = null)
+        public static bool PickColor(Color currentColor, out Color newColor, Form owner = null, Func<PointInfo> openScreenColorPicker = null)
         {
             using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
+                if (openScreenColorPicker != null)
+                {
+                    dialog.EnableScreenColorPickerButton(openScreenColorPicker);
+                }
+
                 if (dialog.ShowDialog(owner) == DialogResult.OK)
                 {
                     newColor = dialog.NewColor;
@@ -385,7 +386,7 @@ namespace ShareX.HelpersLib
             ClipboardHelpers.CopyText($"{txtX.Text}, {txtY.Text}");
         }
 
-        private void btnPickColor_Click(object sender, EventArgs e)
+        private void btnScreenColorPicker_Click(object sender, EventArgs e)
         {
             try
             {

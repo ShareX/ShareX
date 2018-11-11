@@ -178,7 +178,7 @@
     <value>Panodan yükle...</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>URL'den yükle...</value>
+    <value>Adresden indirip yükle...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
@@ -205,7 +205,7 @@
     <value>QR kod...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>Dizini indeksle...</value>
+    <value>Dizin indeksleyici...</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
@@ -238,10 +238,10 @@
     <value>Dosya yükleyiciler</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
+    <value>Adres kısaltıcılar</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL paylaşım servisleri</value>
+    <value>Adres paylaşım servisleri</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
@@ -280,10 +280,10 @@
     <value>Dosya yükleme testi</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>URL kısaltma testi</value>
+    <value>Adres kısaltma testi</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>URL paylaşım testi</value>
+    <value>Adres paylaşım testi</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Hataları göster</value>
@@ -295,13 +295,13 @@
     <value>Aç</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>Kısaltılmış URL</value>
+    <value>Kısaltılmış adres</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>Küçük resim URL</value>
+    <value>Küçük resim adresi</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Silme URL</value>
+    <value>Silme adresi</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Dosya</value>
@@ -316,13 +316,13 @@
     <value>Kopyala</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>Kısaltılmış URL</value>
+    <value>Kısaltılmış adres</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>Küçük resim URL</value>
+    <value>Küçük resim adresi</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>Silme URL</value>
+    <value>Silme adresi</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Dosya</value>
@@ -379,10 +379,10 @@
     <value>Yerel dosya sil</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>URL kısalt</value>
+    <value>Adresi kısalt</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>URL paylaş</value>
+    <value>Adresi paylaş</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>QR kod göster...</value>
@@ -451,7 +451,7 @@
     <value>Panodan yükle...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>URL'den yükle...</value>
+    <value>Adresden indirip yükle...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
@@ -478,7 +478,7 @@
     <value>QR kod...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Dizini indeksle...</value>
+    <value>Dizin indeksleyici...</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
@@ -511,10 +511,10 @@
     <value>Dosya yükleyiciler</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
+    <value>Adres kısaltıcılar</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
-    <value>URL paylaşım servisleri</value>
+    <value>Adres paylaşım servisleri</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
@@ -550,13 +550,13 @@
     <value>Çıkış</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>Adres</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>Adres</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>Adres</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>Renk seçici...</value>
@@ -616,10 +616,10 @@
     <value>Yazı yükleme testi</value>
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL paylaşım testi</value>
+    <value>Adres paylaşım testi</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>URL kısaltma testi</value>
+    <value>Adres kısaltma testi</value>
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Kolonları gizle</value>
@@ -629,5 +629,92 @@
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Yazı yakalama (OCR)...</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>ShareX Patreon web sayfasını aç</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Patreon tuşunu kalıcı olarak sakla</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>İmleç göster</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Yazı yükle...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Adresi kısalt...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Resim düzenleyici...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Küçük resim yapıcı...</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Bağış yap...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Hakkında...</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown bağlantı</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown resim</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown bağlantılı resim</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Listeden sil</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google resim arama...</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Resimden yazı yakala (OCR)...</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Resimleri birleştir...</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Yan</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>İmleç göster</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Yazı yükle...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Adresi kısalt...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Resim düzenleyici...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Küçük resim yapıcı...</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Aksiyonlar araç çubuğunu göster/sakla</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Discord tuşunu kalıcı olarak sakla</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>ShareX Discord sunucusu davet linkini aç</value>
   </data>
 </root>

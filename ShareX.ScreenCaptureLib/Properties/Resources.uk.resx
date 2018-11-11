@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,91 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Ctrl + С] Копіювати позицію та розмір</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Стрілки] Швидше переміщення курсора</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Показати</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Правий притиск] [Delete] Скасувати вибір області</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Якість:</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Почати захоплення</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Пробіл] Повноекранне захоплення</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Утримання Shift] Переміщення вибраної області замість зміни розміру</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>вгорі зліва</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Відпустити лівий притиск] [Insert] Завершити вибір області</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>праворуч внизу</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Утримувати лівий притиск на виділенні] Переміщення області</value>
-  </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Прямокутне захоплення з коментарем</value>
-  </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
 Ширина: {4} пікс. / Висота: {5} пікс.
 Відстань: {6:0.00} пікс. / Кут: {7:0.00}°</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Numpad 1] Прямокутник</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Трикутник</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Правий притиск на виділенні] [Delete] Вилучити область</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] широке перехрестя на екрані {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Стрілки] Змінити розмір вибраної області з {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Активувати кілька-обласний режим</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Перемкнути зміну розміру якоря на {0}</value>
-  </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Захоплення області</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Приховати підказки</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Ромб</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + або -] Змінити кут трикутника</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} лупа</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Утримувати лівий притиск] [Insert] Почати вибір області</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Утримувати Ctrl] Швидша зміна розміру / пересування</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Швидкотік: {0}к</value>
@@ -212,100 +137,19 @@
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Зупинити захоплення</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Утримувати Alt] Прив’язка виділення до шаблонних розмірів</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Правий притиск] [Esc] Скасувати захоплення</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Активувати режим швидкого захоплення</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Numpad 2] Прямокутник із заокругленими кутами</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Знайти ffmpeg.exe</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Подвійний лівий притиск] [Enter] Захоплення областей</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Numpad 3] Еліпс</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Ctrl + С] Копіювати інформацію</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] Інформація про положення та розмір {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Приховати</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Прозоре прямокутне захоплення</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Ctrl + С] Копіювати позицію</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
-    <value>[Numpad + або -] Змінити радіус заокруглення кутів прямокутника</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg вдало завантажено.</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Скасувати захоплення</value>
-  </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Монітор {0} (X:{1} Y:{2} Ширина:{3} Висота:{4})</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Збій завантаження FFmpeg.</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Стрілки] Переміщення курсора</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Коліщатко миші] Змінити кількість пікселів лупи</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Захоплення активного монітора</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Утримуйте Shift] Змінити пропорцію розмірів</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Коліща миші] Змінити розмір пікселя лупи</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Прямокутне захоплення з підсвічуванням</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Захоплення монітора</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[Коліщатко миші] Перемкнути режими</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Виберіть режим захоплення</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] Режим малювання прямокутника</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] Режим малювання пером</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Shift] Змінити колір межі</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl + Коліща миші] Змінити розмір межі</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Shift] Змінити колір пера</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl + Коліща миші] Змінити розмір пера</value>
   </data>
 </root>

@@ -31,10 +31,6 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-#if WindowsStore
-using Windows.ApplicationModel;
-#endif
-
 namespace ShareX
 {
     public static class IntegrationHelpers
@@ -53,7 +49,7 @@ namespace ShareX
         private static readonly string ShellExtEditName = "ShareXImageEditor";
         private static readonly string ShellExtEditImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtEditName}";
         private static readonly string ShellExtEditImageCmd = $@"{ShellExtEditImage}\command";
-        private static readonly string ShellExtEditDesc = "Edit with ShareX"; // TODO: Translate
+        private static readonly string ShellExtEditDesc = Resources.IntegrationHelpers_EditWithShareX;
         private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
@@ -401,7 +397,7 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            StartupManagerSingletonProvider.CurrentStartupManager.State = StartupTaskState.Disabled;
+            StartupManagerSingletonProvider.CurrentStartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);

@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib
             filename = URLHelpers.URLEncode(filename);
 
             string subFolderPath = GetSubFolderPath();
-            subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
+            subFolderPath = URLHelpers.URLEncode(subFolderPath, true);
 
             string httpHomePath = GetHttpHomePath();
 
@@ -157,7 +157,7 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                path = URLHelpers.URLPathEncode(httpHomePath);
+                path = URLHelpers.URLEncode(httpHomePath, true);
             }
 
             if (Port != 80)

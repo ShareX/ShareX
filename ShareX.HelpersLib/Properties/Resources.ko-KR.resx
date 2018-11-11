@@ -621,12 +621,6 @@
   <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
     <value>URL 단축기</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>진행 상황: {0}</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>다운로드가 취소되었습니다.</value>
-  </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>구글 이미지 검색</value>
   </data>
@@ -654,9 +648,6 @@
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>화살표 그리기</value>
-  </data>
-  <data name="ShapeType_DrawingCrop" xml:space="preserve">
-    <value>이미지 자르기</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>커서 그리기</value>
@@ -889,9 +880,6 @@
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>텍스트 업로드</value>
   </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>프록시를 사용하고 있는 것 같습니다. 메인 메뉴에서 "프로그램 설정"을 누른 뒤, "프록시" 항목을 선택하여 프록시 서버 설정을 입력 해 주세요.</value>
-  </data>
   <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
     <value>기타</value>
   </data>
@@ -1113,5 +1101,32 @@
   </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>자동 조정</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>이미지 자르기(C)</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>그리기: 스티커</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>랜덤 동물</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>랜덤 형용사</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>사운드 파일 탐색...</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>비공개</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>공개</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>미공개</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>QR코드 스캔</value>
   </data>
 </root>

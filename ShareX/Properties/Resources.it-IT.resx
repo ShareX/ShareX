@@ -233,12 +233,6 @@ Vuoi scaricarlo automaticamente?</value>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Attendere...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Gli appunti contengono un'immagine, vuoi aprirla nell'editor di immagini?
-
-Premi "Sì" per aprire l'immagine dagli appunti.
-Premi "No" per aprire la finestra di dialogo delle immagini.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servizio di Caricamento Immagini: {0}</value>
   </data>
@@ -350,14 +344,8 @@ Riavviare ShareX?</value>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Usa un Nuovo Nome:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Ferma Cattura Colore</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Mancante</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Posizione Cursore (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traduttori</value>
@@ -397,9 +385,6 @@ Riavviare ShareX?</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Scorciatoie Configurate:</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Chiudi</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Click Sinistro per Copiare URL negli Appunti. Click Destro per Aprire URL</value>
@@ -456,9 +441,6 @@ Riavviare ShareX?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Scaricamento</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Editor Immagini - Come caricare un'immagine?</value>
-  </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Continua</value>
   </data>
@@ -482,9 +464,6 @@ Riavviare ShareX?</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Scaricamento FFmpeg fallito.</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Avvia Cattura Colore</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Carica con ShareX</value>

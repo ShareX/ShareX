@@ -52,13 +52,13 @@
             this.txtPresetName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // pgSettings
             // 
             resources.ApplyResources(this.pgSettings, "pgSettings");
-            this.pgSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgSettings.ToolbarVisible = false;
@@ -228,12 +228,20 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // btnUploadImage
+            // 
+            resources.ApplyResources(this.btnUploadImage, "btnUploadImage");
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPresetName);
@@ -284,6 +292,7 @@
         private System.Windows.Forms.TextBox txtPresetName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnUploadImage;
     }
 }
 

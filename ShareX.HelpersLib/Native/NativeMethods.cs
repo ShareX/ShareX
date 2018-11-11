@@ -194,6 +194,9 @@ namespace ShareX.HelpersLib
         public static extern bool IsZoomed(IntPtr hWnd);
 
         [DllImport("user32.dll")]
+        public static extern IntPtr LoadCursor(IntPtr hInstance, int iconId);
+
+        [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool PrintWindow(IntPtr hwnd, IntPtr hDC, uint nFlags);
 
@@ -312,6 +315,9 @@ namespace ShareX.HelpersLib
         [DllImport("kernel32.dll", CallingConvention = CallingConvention.Winapi)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool IsWow64Process([In] IntPtr hProcess, [Out] out bool lpSystemInfo);
+
+        [DllImport("kernel32.dll", PreserveSig = false)]
+        public static extern void RegisterApplicationRestart(string pwzCommandline, RegisterApplicationRestartFlags dwFlags);
 
         #endregion kernel32.dll
 

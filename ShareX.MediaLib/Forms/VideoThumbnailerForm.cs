@@ -28,7 +28,7 @@ using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -50,7 +50,7 @@ namespace ShareX.MediaLib
             pgOptions.SelectedObject = Options;
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
         {
             string mediaPath = txtMediaPath.Text;
 
@@ -63,10 +63,10 @@ namespace ShareX.MediaLib
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
 
-                new Thread(() =>
-                {
-                    List<VideoThumbnailInfo> thumbnails = null;
+                List<VideoThumbnailInfo> thumbnails = null;
 
+                await Task.Run(() =>
+                {
                     try
                     {
                         VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
@@ -77,20 +77,15 @@ namespace ShareX.MediaLib
                     {
                         ex.ShowError();
                     }
-                    finally
-                    {
-                        this.InvokeSafe(() =>
-                        {
-                            if (thumbnails != null)
-                            {
-                                OnThumbnailsTaken(thumbnails);
-                            }
+                });
 
-                            btnStart.Visible = true;
-                            pbProgress.Visible = false;
-                        });
-                    }
-                }).Start();
+                if (thumbnails != null)
+                {
+                    OnThumbnailsTaken(thumbnails);
+                }
+
+                btnStart.Visible = true;
+                pbProgress.Visible = false;
             }
         }
 

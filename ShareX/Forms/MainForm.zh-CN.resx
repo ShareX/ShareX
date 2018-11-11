@@ -145,7 +145,7 @@
     <value>历史记录...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>热键设置...</value>
+    <value>快捷键设置...</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>历史图片...</value>
@@ -529,7 +529,7 @@
     <value>快捷动作</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet消息...</value>
+    <value>发推文...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>从剪贴板上传...</value>
@@ -568,7 +568,7 @@
     <value>网页捕捉...</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>颜色选择器...</value>
+    <value>拾色器...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>
@@ -586,7 +586,7 @@
     <value>网页捕捉...</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>颜色选择器...</value>
+    <value>拾色器...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>图像合并...</value>
@@ -642,9 +642,6 @@
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>编辑图片...</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>从列表中删除任务</value>
   </data>
@@ -656,9 +653,6 @@
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>图片拼接...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>编辑图片...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>显示工作栏</value>
@@ -674,5 +668,92 @@
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>关闭</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>永久隐藏Discord按钮</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>打开ShareX Discord服务器邀请链接</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown 的图像</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown 链接</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown 链接的图像</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>图像编辑器...</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>侧边</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>生成图像缩略图...</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>URL短链</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>显示指针</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>图像编辑...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>图像缩略图...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>URL短链...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>显示指针</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>上传文本...</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>上传文本...</value>
   </data>
 </root>

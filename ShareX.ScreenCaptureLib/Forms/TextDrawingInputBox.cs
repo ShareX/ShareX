@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -37,7 +38,9 @@ namespace ShareX.ScreenCaptureLib
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
 
-        public TextDrawingInputBox(string text, TextDrawingOptions options)
+        private int processKeyCount;
+
+        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -65,6 +68,32 @@ namespace ShareX.ScreenCaptureLib
 
             nudTextSize.SetValue(Options.Size);
             btnTextColor.Color = Options.Color;
+
+            btnGradient.Visible = supportGradient;
+
+            if (supportGradient)
+            {
+                tsmiEnableGradient.Checked = Options.Gradient;
+
+                tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
+
+                switch (Options.GradientMode)
+                {
+                    case LinearGradientMode.Horizontal:
+                        tsrbmiGradientHorizontal.Checked = true;
+                        break;
+                    case LinearGradientMode.Vertical:
+                        tsrbmiGradientVertical.Checked = true;
+                        break;
+                    case LinearGradientMode.ForwardDiagonal:
+                        tsrbmiGradientForwardDiagonal.Checked = true;
+                        break;
+                    case LinearGradientMode.BackwardDiagonal:
+                        tsrbmiGradientBackwardDiagonal.Checked = true;
+                        break;
+                }
+            }
+
             cbBold.Checked = Options.Bold;
             cbItalic.Checked = Options.Italic;
             cbUnderline.Checked = Options.Underline;
@@ -110,6 +139,44 @@ namespace ShareX.ScreenCaptureLib
             UpdateInputBox();
         }
 
+        private void btnGradient_Click(object sender, EventArgs e)
+        {
+            cmsGradient.Show(btnGradient, 1, btnGradient.Height + 1);
+        }
+
+        private void tsmiEnableGradient_Click(object sender, EventArgs e)
+        {
+            Options.Gradient = tsmiEnableGradient.Checked;
+        }
+
+        private void tsmiSecondColor_Click(object sender, EventArgs e)
+        {
+            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this);
+            Options.Color2 = newColor;
+            if (tsmiSecondColor.Image != null) tsmiSecondColor.Image.Dispose();
+            tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
+        }
+
+        private void tsrbmiGradientHorizontal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.Horizontal;
+        }
+
+        private void tsrbmiGradientVertical_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.Vertical;
+        }
+
+        private void tsrbmiGradientForwardDiagonal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.ForwardDiagonal;
+        }
+
+        private void tsrbmiGradientBackwardDiagonal_Click(object sender, EventArgs e)
+        {
+            Options.GradientMode = LinearGradientMode.BackwardDiagonal;
+        }
+
         private void cbBold_CheckedChanged(object sender, EventArgs e)
         {
             Options.Bold = cbBold.Checked;
@@ -130,7 +197,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnAlignmentHorizontal_Click(object sender, EventArgs e)
         {
-            cmsAlignmentHorizontal.Show(btnAlignmentHorizontal, 0, btnAlignmentHorizontal.Height + 1);
+            cmsAlignmentHorizontal.Show(btnAlignmentHorizontal, 1, btnAlignmentHorizontal.Height + 1);
         }
 
         private void tsmiAlignmentLeft_Click(object sender, EventArgs e)
@@ -156,7 +223,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnAlignmentVertical_Click(object sender, EventArgs e)
         {
-            cmsAlignmentVertical.Show(btnAlignmentVertical, 0, btnAlignmentVertical.Height + 1);
+            cmsAlignmentVertical.Show(btnAlignmentVertical, 1, btnAlignmentVertical.Height + 1);
         }
 
         private void tsmiAlignmentTop_Click(object sender, EventArgs e)
@@ -179,6 +246,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
+            // If we get VK_PROCESSKEY, the next KeyUp event will be fired by the IME
+            // we should ignore these when checking if enter is pressed (GH-3621)
+            if (e.KeyCode == Keys.ProcessKey)
+            {
+                processKeyCount += 1;
+            }
+
             if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
             {
                 e.SuppressKeyPress = true;
@@ -187,14 +261,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            // If processKeyCount != 0, then this KeyUp event was fired by the
+            // IME suggestion box, not by the user intentionally pressing Enter
+            if (processKeyCount == 0)
             {
-                Close(DialogResult.OK);
+                if (e.KeyData == Keys.Enter)
+                {
+                    Close(DialogResult.OK);
+                }
+                else if (e.KeyData == Keys.Escape)
+                {
+                    Close(DialogResult.Cancel);
+                }
             }
-            else if (e.KeyData == Keys.Escape)
-            {
-                Close(DialogResult.Cancel);
-            }
+
+            processKeyCount = Math.Max(0, processKeyCount - 1);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

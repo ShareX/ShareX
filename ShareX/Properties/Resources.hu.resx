@@ -199,20 +199,11 @@ Szeretnéd automatikus letölteni?</value>
     <value>A ShareX-nek újra kell indulnia a nyelvi beállítások érvényesüléséhez.
 Újra szeretnéd indítani?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Színszedő indítása</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Új név használata:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Színszedő leállítása</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Hiányzik</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Kurzor pozíció (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Fordítók</value>
@@ -268,9 +259,6 @@ Szeretnéd automatikus letölteni?</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Indítás</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Bezárás</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Előnézet:</value>

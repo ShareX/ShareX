@@ -152,6 +152,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
         public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentTool);
+        public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
         public bool IsMoving { get; set; }
@@ -166,9 +167,19 @@ namespace ShareX.ScreenCaptureLib
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
 
-        private bool isAnnotated;
+        private bool isModified;
 
-        public bool IsAnnotated => isAnnotated || DrawingShapes.Where(x => x.ShapeType != ShapeType.DrawingCursor).Count() > 0 || EffectShapes.Length > 0;
+        public bool IsModified
+        {
+            get
+            {
+                return isModified || DrawingShapes.Any(x => x.ShapeType != ShapeType.DrawingCursor) || EffectShapes.Length > 0;
+            }
+            internal set
+            {
+                isModified = value;
+            }
+        }
 
         public InputManager InputManager { get; private set; } = new InputManager();
         public List<SimpleWindowInfo> Windows { get; set; }
@@ -372,37 +383,32 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys.HasFlag(Keys.Control) && Form.Mode == RegionCaptureMode.Annotation)
+            if (e.Delta > 0)
             {
-                if (e.Delta > 0)
-                {
-                    CurrentTool = CurrentTool.Previous<ShapeType>();
-
-                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
-                    {
-                        CurrentTool = CurrentTool.Previous<ShapeType>();
-                    }
-                }
-                else if (e.Delta < 0)
-                {
-                    CurrentTool = CurrentTool.Next<ShapeType>();
-
-                    if (!Form.IsEditorMode && CurrentTool == ShapeType.ToolCrop)
-                    {
-                        CurrentTool = CurrentTool.Next<ShapeType>();
-                    }
-                }
-            }
-            else
-            {
-                if (e.Delta > 0)
+                if (Options.ShowMagnifier)
                 {
                     Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
                 }
-                else if (e.Delta < 0)
+                else
                 {
-                    Options.MagnifierPixelCount = Math.Max(Options.MagnifierPixelCount - 2, RegionCaptureOptions.MagnifierPixelCountMinimum);
+                    Options.ShowMagnifier = true;
                 }
+            }
+            else if (e.Delta < 0)
+            {
+                int magnifierPixelCount = Options.MagnifierPixelCount - 2;
+                if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
+                {
+                    magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
+                    Options.ShowMagnifier = false;
+                }
+                Options.MagnifierPixelCount = magnifierPixelCount;
+            }
+
+            if (Form.IsAnnotationMode)
+            {
+                tsmiShowMagnifier.Checked = Options.ShowMagnifier;
+                tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
             }
         }
 
@@ -1031,9 +1037,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 shape.OnConfigLoad();
                 shape.OnMoved();
-
-                Form.Invalidate();
             }
+
+            Form.Resume();
         }
 
         private void SwapShapeType()
@@ -1116,7 +1122,7 @@ namespace ShareX.ScreenCaptureLib
 
                         return new RectangleRegionShape()
                         {
-                            Rectangle = new Rectangle(new Point(location.X - Options.FixedSize.Width / 2, location.Y - Options.FixedSize.Height / 2), Options.FixedSize)
+                            Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2), location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize)
                         };
                     }
                     else
@@ -1469,7 +1475,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void OrderStepShapes()
         {
-            int i = 1;
+            int i = StartingStepNumber;
 
             foreach (StepDrawingShape shape in Shapes.OfType<StepDrawingShape>())
             {
@@ -1549,7 +1555,7 @@ namespace ShareX.ScreenCaptureLib
                 effect.OnMoved();
             }
 
-            isAnnotated = true;
+            IsModified = true;
         }
 
         public void CropArea(Rectangle rect)
@@ -1860,6 +1866,18 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Form.Resume();
+        }
+
+        private bool PickColor(Color currentColor, out Color newColor)
+        {
+            Func<PointInfo> openScreenColorPicker = null;
+
+            if (!Form.IsFullscreen)
+            {
+                openScreenColorPicker = () => RegionCaptureTasks.GetPointInfo(Options);
+            }
+
+            return ColorPickerForm.PickColor(currentColor, out newColor, Form, openScreenColorPicker);
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

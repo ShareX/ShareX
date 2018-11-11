@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (string.IsNullOrEmpty(SessionKey) || (DateTime.Now - LastSessionKey).TotalMinutes > 30)
                     {
                         SessionKey = sendSpace.AuthLogin(Token, username, password).SessionKey;
-                        if (string.IsNullOrEmpty(Token)) throw new Exception("SessionKey is null or empty.");
+                        if (string.IsNullOrEmpty(SessionKey)) throw new Exception("SessionKey is null or empty.");
                         LastSessionKey = DateTime.Now;
                     }
                     UploadInfo = sendSpace.UploadGetInfo(SessionKey);

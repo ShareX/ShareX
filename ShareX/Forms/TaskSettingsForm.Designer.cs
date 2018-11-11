@@ -161,7 +161,8 @@
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
-            this.cbScreenRecorderConfirmAbort = new System.Windows.Forms.CheckBox();
+            this.cbScreenRecordTwoPassEncoding = new System.Windows.Forms.CheckBox();
+            this.cbScreenRecordConfirmAbort = new System.Windows.Forms.CheckBox();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
@@ -169,9 +170,6 @@
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.nudScreenRecordFPS = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecordFPS = new System.Windows.Forms.Label();
-            this.chkRunScreencastCLI = new System.Windows.Forms.CheckBox();
-            this.btnEncoderConfig = new System.Windows.Forms.Button();
-            this.cboEncoder = new System.Windows.Forms.ComboBox();
             this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
             this.nudScreenRecorderStartDelay = new System.Windows.Forms.NumericUpDown();
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
@@ -182,6 +180,7 @@
             this.tpUploadMain = new System.Windows.Forms.TabPage();
             this.chkOverrideUploadSettings = new System.Windows.Forms.CheckBox();
             this.tpFileNaming = new System.Windows.Forms.TabPage();
+            this.cbFileUploadReplaceProblematicCharacters = new System.Windows.Forms.CheckBox();
             this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
             this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
@@ -241,7 +240,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbFileUploadReplaceProblematicCharacters = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -617,7 +615,7 @@
             // 
             resources.ApplyResources(this.nudImageAutoUseJPEGSize, "nudImageAutoUseJPEGSize");
             this.nudImageAutoUseJPEGSize.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
@@ -1408,7 +1406,8 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
-            this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderConfirmAbort);
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTwoPassEncoding);
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecordConfirmAbort);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1416,9 +1415,6 @@
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderFixedDuration);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecordFPS);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecordFPS);
-            this.tpScreenRecorder.Controls.Add(this.chkRunScreencastCLI);
-            this.tpScreenRecorder.Controls.Add(this.btnEncoderConfig);
-            this.tpScreenRecorder.Controls.Add(this.cboEncoder);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecorderDuration);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecorderStartDelay);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderFixedDuration);
@@ -1427,12 +1423,19 @@
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
             // 
-            // cbScreenRecorderConfirmAbort
+            // cbScreenRecordTwoPassEncoding
             // 
-            resources.ApplyResources(this.cbScreenRecorderConfirmAbort, "cbScreenRecorderConfirmAbort");
-            this.cbScreenRecorderConfirmAbort.Name = "cbScreenRecorderConfirmAbort";
-            this.cbScreenRecorderConfirmAbort.UseVisualStyleBackColor = true;
-            this.cbScreenRecorderConfirmAbort.CheckedChanged += new System.EventHandler(this.chkConfirmAbort_CheckedChanged);
+            resources.ApplyResources(this.cbScreenRecordTwoPassEncoding, "cbScreenRecordTwoPassEncoding");
+            this.cbScreenRecordTwoPassEncoding.Name = "cbScreenRecordTwoPassEncoding";
+            this.cbScreenRecordTwoPassEncoding.UseVisualStyleBackColor = true;
+            this.cbScreenRecordTwoPassEncoding.CheckedChanged += new System.EventHandler(this.cbScreenRecordTwoPassEncoding_CheckedChanged);
+            // 
+            // cbScreenRecordConfirmAbort
+            // 
+            resources.ApplyResources(this.cbScreenRecordConfirmAbort, "cbScreenRecordConfirmAbort");
+            this.cbScreenRecordConfirmAbort.Name = "cbScreenRecordConfirmAbort";
+            this.cbScreenRecordConfirmAbort.UseVisualStyleBackColor = true;
+            this.cbScreenRecordConfirmAbort.CheckedChanged += new System.EventHandler(this.cbScreenRecordConfirmAbort_CheckedChanged);
             // 
             // cbScreenRecorderShowCursor
             // 
@@ -1490,28 +1493,6 @@
             // 
             resources.ApplyResources(this.lblScreenRecordFPS, "lblScreenRecordFPS");
             this.lblScreenRecordFPS.Name = "lblScreenRecordFPS";
-            // 
-            // chkRunScreencastCLI
-            // 
-            resources.ApplyResources(this.chkRunScreencastCLI, "chkRunScreencastCLI");
-            this.chkRunScreencastCLI.Name = "chkRunScreencastCLI";
-            this.chkRunScreencastCLI.UseVisualStyleBackColor = true;
-            this.chkRunScreencastCLI.CheckedChanged += new System.EventHandler(this.chkRunScreencastCLI_CheckedChanged);
-            // 
-            // btnEncoderConfig
-            // 
-            resources.ApplyResources(this.btnEncoderConfig, "btnEncoderConfig");
-            this.btnEncoderConfig.Name = "btnEncoderConfig";
-            this.btnEncoderConfig.UseVisualStyleBackColor = true;
-            this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
-            // 
-            // cboEncoder
-            // 
-            this.cboEncoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEncoder.FormattingEnabled = true;
-            resources.ApplyResources(this.cboEncoder, "cboEncoder");
-            this.cboEncoder.Name = "cboEncoder";
-            this.cboEncoder.SelectedIndexChanged += new System.EventHandler(this.cboEncoder_SelectedIndexChanged);
             // 
             // nudScreenRecorderDuration
             // 
@@ -1646,6 +1627,13 @@
             this.tpFileNaming.Controls.Add(this.txtNameFormatPattern);
             resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
             this.tpFileNaming.Name = "tpFileNaming";
+            // 
+            // cbFileUploadReplaceProblematicCharacters
+            // 
+            resources.ApplyResources(this.cbFileUploadReplaceProblematicCharacters, "cbFileUploadReplaceProblematicCharacters");
+            this.cbFileUploadReplaceProblematicCharacters.Name = "cbFileUploadReplaceProblematicCharacters";
+            this.cbFileUploadReplaceProblematicCharacters.UseVisualStyleBackColor = true;
+            this.cbFileUploadReplaceProblematicCharacters.CheckedChanged += new System.EventHandler(this.cbFileUploadReplaceProblematicCharacters_CheckedChanged);
             // 
             // lblAutoIncrementNumber
             // 
@@ -2043,9 +2031,7 @@
             // 
             // pgTaskSettings
             // 
-            this.pgTaskSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgTaskSettings, "pgTaskSettings");
-            this.pgTaskSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgTaskSettings.Name = "pgTaskSettings";
             this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgTaskSettings.ToolbarVisible = false;
@@ -2068,13 +2054,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // cbFileUploadReplaceProblematicCharacters
-            // 
-            resources.ApplyResources(this.cbFileUploadReplaceProblematicCharacters, "cbFileUploadReplaceProblematicCharacters");
-            this.cbFileUploadReplaceProblematicCharacters.Name = "cbFileUploadReplaceProblematicCharacters";
-            this.cbFileUploadReplaceProblematicCharacters.UseVisualStyleBackColor = true;
-            this.cbFileUploadReplaceProblematicCharacters.CheckedChanged += new System.EventHandler(this.cbFileUploadReplaceProblematicCharacters_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2269,8 +2248,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiURLSharingServices;
         private System.Windows.Forms.ComboBox cbImageFileExist;
         private System.Windows.Forms.Label lblImageFileExist;
-        private System.Windows.Forms.ComboBox cboEncoder;
-        private System.Windows.Forms.Button btnEncoderConfig;
         private System.Windows.Forms.TabPage tpThumbnail;
         private System.Windows.Forms.Label lblThumbnailHeight;
         private System.Windows.Forms.Label lblThumbnailWidth;
@@ -2281,7 +2258,6 @@
         private System.Windows.Forms.Label lblThumbnailNamePreview;
         private System.Windows.Forms.CheckBox cbThumbnailIfSmaller;
         private System.Windows.Forms.CheckBox cbClipboardUploadAutoIndexFolder;
-        private System.Windows.Forms.CheckBox chkRunScreencastCLI;
         private System.Windows.Forms.CheckBox chkClipboardUploadURLContents;
         private System.Windows.Forms.NumericUpDown nudScreenRecordFPS;
         private System.Windows.Forms.Label lblScreenRecordFPS;
@@ -2375,7 +2351,8 @@
         private System.Windows.Forms.ComboBox cbImagePNGBitDepth;
         private System.Windows.Forms.Label lblImagePNGBitDepth;
         private System.Windows.Forms.Button btnWatchFolderEdit;
-        private System.Windows.Forms.CheckBox cbScreenRecorderConfirmAbort;
+        private System.Windows.Forms.CheckBox cbScreenRecordConfirmAbort;
         private System.Windows.Forms.CheckBox cbFileUploadReplaceProblematicCharacters;
+        private System.Windows.Forms.CheckBox cbScreenRecordTwoPassEncoding;
     }
 }

@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,15 +30,12 @@ namespace ShareX.HelpersLib
 {
     public class SplitContainerCustomSplitter : SplitContainer
     {
-        [DefaultValue(typeof(Color), "Black")]
-        public Color SplitterColor { get; set; } = Color.Black;
-
         protected override void OnPaint(PaintEventArgs pevent)
         {
             Graphics g = pevent.Graphics;
             Rectangle rect = SplitterRectangle;
 
-            using (Pen pen = new Pen(SplitterColor))
+            using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
             {
                 if (Orientation == Orientation.Horizontal)
                 {

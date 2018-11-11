@@ -205,20 +205,11 @@
     <value>語言更改需要重新啟動ShareX。
 你要重新啟動ShareX？</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>啟動螢幕取色器</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>使用新的名字:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>停止螢幕顏色選擇器</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>丟失</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>遊標位置 (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>語言翻譯</value>
@@ -284,9 +275,6 @@
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>開始</value>
   </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>關閉</value>
-  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>預覽:</value>
   </data>
@@ -298,9 +286,6 @@
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>下載中</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>圖像編輯器 - 怎麼上傳圖像？</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>完成</value>
@@ -325,11 +310,6 @@
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>等待...</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>剪貼簿中包含一個圖像，你想在圖像編輯器中開啟它嗎？
-
-按“Yes”從剪貼簿中開啟圖像。或者，按“No”開啟圖像檔案對話方塊。</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>圖片上傳: {0}</value>

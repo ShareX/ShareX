@@ -98,18 +98,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentFTP, Version=19.1.3.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentFTP.19.1.3\lib\net45\FluentFTP.dll</HintPath>
-    </Reference>
-    <Reference Include="MegaApiClient, Version=1.6.3.424, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
-      <HintPath>..\packages\MegaApiClient.1.6.3\lib\net46\MegaApiClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -141,6 +129,7 @@
     <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\AzureStorage.cs" />
+    <Compile Include="FileUploaders\BackblazeB2.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\GoogleCloudStorage.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
@@ -148,7 +137,6 @@
     <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
-    <Compile Include="FileUploaders\Dropfile.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
     <Compile Include="FileUploaders\Copy.cs" />
     <Compile Include="FileUploaders\Email.cs" />
@@ -175,6 +163,12 @@
     </Compile>
     <Compile Include="Forms\OCRSpaceForm.Designer.cs">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ParserSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ParserSelectForm.Designer.cs">
+      <DependentUpon>ParserSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PuushLoginForm.cs">
       <SubType>Form</SubType>
@@ -241,10 +235,13 @@
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
+    <Compile Include="Helpers\CustomUploaderParser.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
-    <Compile Include="Helpers\GoogleOAuth2.cs" />
-    <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
-    <Compile Include="Helpers\OAuth\OAuth2ProofKey.cs" />
+    <Compile Include="Helpers\MimeTypes.cs" />
+    <Compile Include="Helpers\UploadHelpers.cs" />
+    <Compile Include="OAuth\GoogleOAuth2.cs" />
+    <Compile Include="OAuth\IOAuthBase.cs" />
+    <Compile Include="OAuth\OAuth2ProofKey.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
@@ -301,13 +298,13 @@
     <Compile Include="Helpers\AccountInfo.cs" />
     <Compile Include="Helpers\Argument.cs" />
     <Compile Include="Helpers\KeyFileNameEditor.cs" />
-    <Compile Include="Helpers\OAuth\IOAuth.cs" />
-    <Compile Include="Helpers\OAuth\IOAuth2.cs" />
-    <Compile Include="Helpers\OAuth\IOAuth2Basic.cs" />
-    <Compile Include="Helpers\OAuth\OAuth2Info.cs" />
-    <Compile Include="Helpers\OAuth\OAuth2Token.cs" />
-    <Compile Include="Helpers\OAuth\OAuthManager.cs" />
-    <Compile Include="Helpers\OAuth\OAuthInfo.cs" />
+    <Compile Include="OAuth\IOAuth.cs" />
+    <Compile Include="OAuth\IOAuth2.cs" />
+    <Compile Include="OAuth\IOAuth2Basic.cs" />
+    <Compile Include="OAuth\OAuth2Info.cs" />
+    <Compile Include="OAuth\OAuth2Token.cs" />
+    <Compile Include="OAuth\OAuthManager.cs" />
+    <Compile Include="OAuth\OAuthInfo.cs" />
     <Compile Include="ImageUploaders\CustomImageUploader.cs" />
     <Compile Include="ImageUploaders\Imgur.cs" />
     <Compile Include="ImageUploaders\GooglePhotos.cs" />
@@ -346,17 +343,16 @@
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
     <Compile Include="TextUploaders\Pastebin.cs" />
-    <Compile Include="TextUploaders\Pastee.cs" />
     <Compile Include="TextUploaders\Slexy.cs" />
     <Compile Include="BaseUploaders\Uploader.cs" />
     <Compile Include="BaseUploaders\URLShortener.cs" />
     <Compile Include="BaseServices\URLShortenerService.cs" />
     <Compile Include="URLShorteners\FirebaseDynamicLinksURLShortener.cs" />
+    <Compile Include="URLShorteners\KuttURLShortener.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
-    <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
@@ -369,6 +365,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\AccountTypeControl.de.resx">
+      <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountTypeControl.es-MX.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.es.resx">
@@ -416,6 +415,9 @@
     <EmbeddedResource Include="Controls\OAuthControl.de.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.es-MX.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.es.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +461,9 @@
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForm.es-MX.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.es.resx">
@@ -506,6 +511,9 @@
     <EmbeddedResource Include="Forms\JiraUpload.de.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JiraUpload.es-MX.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.es.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
@@ -549,6 +557,9 @@
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.de.resx">
+      <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OAuthWebForm.es-MX.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.es.resx">
@@ -596,7 +607,13 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.de.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.es-MX.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.id-ID.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.ko-KR.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
@@ -608,10 +625,40 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.uk.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.vi-VN.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.zh-CN.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ParserSelectForm.resx">
+      <DependentUpon>ParserSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.es-MX.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ko-KR.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ru.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.tr.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.vi-VN.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.zh-CN.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.de.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponseForm.es-MX.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.es.resx">
@@ -659,6 +706,9 @@
     <EmbeddedResource Include="Forms\TwitterTweetForm.de.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TwitterTweetForm.es-MX.resx">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.es.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -702,6 +752,9 @@
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.de.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadersConfigForm.es-MX.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.es.resx">
@@ -749,6 +802,9 @@
     <EmbeddedResource Include="Forms\UserPassBox.de.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserPassBox.es-MX.resx">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.es.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -792,6 +848,9 @@
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.de.resx">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\FTPClientForm.es-MX.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.es.resx">
@@ -872,6 +931,7 @@
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
@@ -900,7 +960,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
-    <None Include="app.config" />
     <None Include="Favicons\Yourls.ico" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
@@ -927,7 +986,6 @@
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />
     <None Include="Favicons\Hastebin.png" />
-    <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\OneTimeSecret.ico" />
@@ -939,7 +997,6 @@
     <None Include="Favicons\Vgyme.ico" />
     <None Include="Favicons\Lithiio.ico" />
     <None Include="Favicons\puush.ico" />
-    <None Include="packages.config" />
     <None Include="Resources\puush-256.png" />
     <None Include="Resources\folder-network.png" />
     <None Include="Resources\globe-network.png" />
@@ -951,23 +1008,37 @@
     <None Include="Favicons\Plik.ico" />
     <None Include="Favicons\Gfycat.png" />
     <None Include="Favicons\GooglePhotos.ico" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Favicons\BackblazeB2.ico" />
     <None Include="Favicons\Firebase.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Favicons\YouTube.ico" />
+    <None Include="Favicons\GoogleCloud.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Favicons\GoogleCloudStorage.ico" />
+    <PackageReference Include="FluentFTP">
+      <Version>19.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="MegaApiClient">
+      <Version>1.6.3</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2016.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Kutt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cd $(ProjectDir)APIKeys\
+    <PreBuildEvent>
+      cd $(ProjectDir)APIKeys\
 
-if not exist APIKeysLocal.cs (
-    type nul &gt; APIKeysLocal.cs
-)</PreBuildEvent>
+      if not exist APIKeysLocal.cs (
+      type nul &gt; APIKeysLocal.cs
+      )
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

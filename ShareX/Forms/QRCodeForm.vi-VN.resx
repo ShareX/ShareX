@@ -121,9 +121,30 @@
     <value>ShareX - Mã QR</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Sao chép vào vùng nhớ tạm</value>
+    <value>Chép ảnh vào vùng nhớ tạm</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Lưu thành tệp ảnh</value>
+    <value>Lưu thành tệp ảnh...</value>
+  </data>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="tsmiDecode.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>Giải mã từ tệp ảnh...</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>Giải mã từ màn hình...</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>Nén</value>
+  </data>
+  <data name="tsmiUpload.Text" xml:space="preserve">
+    <value>Tải lên ảnh</value>
+  </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>Kết quả:</value>
   </data>
 </root>

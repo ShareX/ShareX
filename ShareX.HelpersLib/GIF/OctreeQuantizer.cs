@@ -148,14 +148,16 @@ namespace ShareX.HelpersLib
                 {
                     // If so, check if I have a previous node setup. This will only ocurr if the first color in the image
                     // happens to be black, with an alpha component of zero.
-                    if (null == _previousNode)
+                    if (_previousNode == null)
                     {
                         _previousColor = pixel.ARGB;
                         _root.AddColor(pixel, _maxColorBits, 0, this);
                     }
                     else
+                    {
                         // Just update the previous node
                         _previousNode.Increment(pixel);
+                    }
                 }
                 else
                 {
@@ -169,10 +171,13 @@ namespace ShareX.HelpersLib
             /// </summary>
             public void Reduce()
             {
-                int index;
+                int index = _maxColorBits - 1;
 
                 // Find the deepest level containing at least one reducible node
-                for (index = _maxColorBits - 1; (index > 0) && (null == _reducibleNodes[index]); index--) ;
+                while (index > 0 && _reducibleNodes[index] == null)
+                {
+                    index--;
+                }
 
                 // Reduce the node most recently added to the list at level 'index'
                 OctreeNode node = _reducibleNodes[index];
@@ -346,7 +351,7 @@ namespace ShareX.HelpersLib
 
                         OctreeNode child = _children[index];
 
-                        if (null == child)
+                        if (child == null)
                         {
                             // Create a new child node & store in the array
                             child = new OctreeNode(level + 1, colorBits, octree);
@@ -386,7 +391,7 @@ namespace ShareX.HelpersLib
                     // Loop through all children and add their information to this node
                     for (int index = 0; index < 8; index++)
                     {
-                        if (null != _children[index])
+                        if (_children[index] != null)
                         {
                             _red += _children[index]._red;
                             _green += _children[index]._green;
@@ -401,7 +406,7 @@ namespace ShareX.HelpersLib
                     _leaf = true;
 
                     // Return the number of nodes to decrement the leaf count by
-                    return (children - 1);
+                    return children - 1;
                 }
 
                 /// <summary>
@@ -424,8 +429,10 @@ namespace ShareX.HelpersLib
                         // Loop through children looking for leaves
                         for (int index = 0; index < 8; index++)
                         {
-                            if (null != _children[index])
+                            if (_children[index] != null)
+                            {
                                 _children[index].ConstructPalette(palette, ref paletteIndex);
+                            }
                         }
                     }
                 }
@@ -444,10 +451,14 @@ namespace ShareX.HelpersLib
                                     ((pixel.Green & mask[level]) >> (shift - 1)) |
                                     ((pixel.Blue & mask[level]) >> (shift));
 
-                        if (null != _children[index])
+                        if (_children[index] != null)
+                        {
                             paletteIndex = _children[index].GetPaletteIndex(pixel, level + 1);
+                        }
                         else
+                        {
                             throw new Exception("Didn't expect this!");
+                        }
                     }
 
                     return paletteIndex;

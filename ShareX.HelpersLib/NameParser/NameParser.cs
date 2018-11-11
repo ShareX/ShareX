@@ -83,7 +83,7 @@ namespace ShareX.HelpersLib
 
             if (WindowText != null)
             {
-                string windowText = WindowText.Replace(' ', '_');
+                string windowText = WindowText.Trim().Replace(' ', '_');
                 if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
                 {
                     windowText = windowText.Remove(MaxTitleLength);
@@ -93,7 +93,8 @@ namespace ShareX.HelpersLib
 
             if (ProcessName != null)
             {
-                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), ProcessName);
+                string processName = ProcessName.Trim().Replace(' ', '_');
+                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
             }
 
             string width = "", height = "";

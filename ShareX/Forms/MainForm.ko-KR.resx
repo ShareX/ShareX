@@ -750,4 +750,10 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>액션 도구상자 토글</value>
   </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>커서 표시</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>커서 표시</value>
+  </data>
 </root>

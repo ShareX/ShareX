@@ -31,20 +31,16 @@ namespace ShareX.HelpersLib
 {
     public class WindowState
     {
-        public Point Location { get; set; }
-        public Size Size { get; set; }
-        public bool IsMaximized { get; set; }
+        public Point Location { get; private set; }
+        public Size Size { get; private set; }
+        public bool IsMaximized { get; private set; }
 
         public void ApplyFormState(Form form)
         {
-            if (!Location.IsEmpty && CaptureHelpers.GetScreenBounds().IntersectsWith(new Rectangle(Location, Size)))
+            if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
             {
                 form.StartPosition = FormStartPosition.Manual;
                 form.Location = Location;
-            }
-
-            if (!Size.IsEmpty)
-            {
                 form.Size = Size;
             }
 

@@ -684,12 +684,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Image OCR...</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>Modifier l'image...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>Modifier l'image...</value>
-  </data>
   <data name="tsmiSearchImage.Text" xml:space="preserve">
     <value>Rechercher une image avec Google...</value>
   </data>

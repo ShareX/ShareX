@@ -205,11 +205,6 @@
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Ожидание...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Ваш буфер обмена содержит изображение, хотите открыть его в редакторе?
-
-Нажмите «Да», чтобы открыть изображение из буфера. Если нажать «Нет», откроется окно выбора файла.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки картинок: {0}</value>
   </data>
@@ -238,7 +233,7 @@
     <value>Ссылка пуста.</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Выберите путь к личной папке ShareX</value>
+    <value>Выберите путь к персональной папке ShareX</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Не удалось зарегистрировать {0}:
@@ -313,20 +308,11 @@
     <value>Для изменения языка ShareX должен быть перезапущен.
 Хотите перезапустить ShareX?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Включить режим пипетки</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Использовать новое имя:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Выключить режим пипетки</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Отсутствует</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Позиция курсора (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Переводчики</value>
@@ -395,9 +381,6 @@
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Старт</value>
   </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Предпросмотр:</value>
   </data>
@@ -412,9 +395,6 @@
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Скачивается</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Редактор изображений - Как загрузить изображение?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Продолжить</value>
@@ -565,5 +545,38 @@
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Сократить</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Редактировать в ShareX</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Вы действительно хотите отменить эту запись?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Хотите сбросить настройки ShareX?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Автозапуск отключен вашей организацией</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Автозапуск включен вашей организацией</value>
+  </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>Для применения персональной папки нужно перезапустить ShareX.</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Журнал отладки может содержать конфиденциальную информацию. Вы уверены, что хотите продолжить?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Украинский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Индонезийский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Испанский (Мексика)</value>
   </data>
 </root>

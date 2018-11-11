@@ -210,7 +210,7 @@
     <value>1</value>
   </data>
   <data name="lblTweetLength.Text" xml:space="preserve">
-    <value>140</value>
+    <value></value>
   <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblTweetLength.Name" xml:space="preserve">
     <value>lblTweetLength</value>

@@ -290,9 +290,7 @@ namespace ShareX.HelpersLib
         {
             int f = 0;
             int b = 0;
-            while (text.Length > f
-                   && 0 <= (f = text.IndexOf(front, f))
-                   && 0 <= (b = text.IndexOf(back, f + front.Length)))
+            while (text.Length > f && (f = text.IndexOf(front, f)) >= 0 && (b = text.IndexOf(back, f + front.Length)) >= 0)
             {
                 string result = text.Substring(f, (b + back.Length) - f);
                 yield return new Tuple<string, string>(result, result.Substring(front.Length, (result.Length - back.Length) - front.Length));
@@ -320,7 +318,7 @@ namespace ShareX.HelpersLib
                 for (int i = text.Length - 1; i >= 0; --i)
                 {
                     int temp = digits.IndexOf(text[i]) * (int)Math.Pow(radix, text.Length - (i + 1));
-                    if (0 > temp)
+                    if (temp < 0)
                     {
                         throw new IndexOutOfRangeException("Text contains characters not found in digits.");
                     }

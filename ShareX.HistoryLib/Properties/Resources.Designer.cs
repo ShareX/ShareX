@@ -117,6 +117,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit image....
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_EditImage {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_EditImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_File {
@@ -315,6 +324,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upload file.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_UploadFile {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_UploadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to URL.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_URL {
@@ -365,6 +383,16 @@ namespace ShareX.HistoryLib.Properties {
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier {
+            get {
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

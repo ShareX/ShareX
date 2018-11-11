@@ -134,9 +134,6 @@ z.B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.exa
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
@@ -238,9 +235,6 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Hilfe...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Leere Felder --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Bildhochlader:</value>
@@ -528,39 +522,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira Ausgabe Prefix:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Entferne Ordner</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Ordner hinzufügen</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Lade Ordnerliste neu</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Lade Bilder hoch nach</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorisieren</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Benutzername:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Aktualisiere Autorisierung</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Einloggstatus:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authentifizierung</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL typ:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>E-Mail:</value>
   </data>
@@ -783,18 +744,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Lade Bilder hoch nach</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>1. Schritt: Öffne Autorisierungsseite...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>2. Schritt: Schließe die Autorisierung ab</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Aktualisiere Autorisierung</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Dein Fotostream...</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Öffne meine Bilder Seite...</value>
   </data>
@@ -848,13 +797,5 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Erstelle neues Album</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Benutze geringeren Redundanzspeicher</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Benutze eine geringe Redundanz Speicherklasse für gespeicherte Elemente.
-Mit dieser Option sind Objekte billiger zu speichern, haben aber eine 99,99% Beständigkeit, anstatt von 99,999999999%
-d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
 </root>

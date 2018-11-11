@@ -23,17 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Xml.XPath;
 
 namespace ShareX.UploadersLib
 {
@@ -47,8 +42,8 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        [DefaultValue(CustomUploaderRequestType.POST)]
-        public CustomUploaderRequestType RequestType { get; set; }
+        [DefaultValue(CustomUploaderRequestMethod.POST)]
+        public CustomUploaderRequestMethod RequestType { get; set; }
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
@@ -83,9 +78,6 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string DeletionURL { get; set; }
 
-        private string response;
-        private List<Match> regexResult;
-
         public CustomUploaderItem()
         {
         }
@@ -117,15 +109,15 @@ namespace ShareX.UploadersLib
             switch (RequestType)
             {
                 default:
-                case CustomUploaderRequestType.POST:
+                case CustomUploaderRequestMethod.POST:
                     return HttpMethod.POST;
-                case CustomUploaderRequestType.GET:
+                case CustomUploaderRequestMethod.GET:
                     return HttpMethod.GET;
-                case CustomUploaderRequestType.PUT:
+                case CustomUploaderRequestMethod.PUT:
                     return HttpMethod.PUT;
-                case CustomUploaderRequestType.PATCH:
+                case CustomUploaderRequestMethod.PATCH:
                     return HttpMethod.PATCH;
-                case CustomUploaderRequestType.DELETE:
+                case CustomUploaderRequestMethod.DELETE:
                     return HttpMethod.DELETE;
             }
         }
@@ -137,8 +129,8 @@ namespace ShareX.UploadersLib
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            string url = ParseURL(RequestURL, false);
-
+            CustomUploaderParser parser = new CustomUploaderParser();
+            string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
         }
 
@@ -188,18 +180,17 @@ namespace ShareX.UploadersLib
         {
             if (result != null && !string.IsNullOrEmpty(result.Response))
             {
-                response = result.Response;
-                ParseRegexList();
+                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList);
 
                 string url;
 
                 if (!string.IsNullOrEmpty(URL))
                 {
-                    url = ParseURL(URL, true);
+                    url = parser.Parse(URL);
                 }
                 else
                 {
-                    url = response;
+                    url = parser.Response;
                 }
 
                 if (isShortenedURL)
@@ -211,218 +202,9 @@ namespace ShareX.UploadersLib
                     result.URL = url;
                 }
 
-                result.ThumbnailURL = ParseURL(ThumbnailURL, true);
-                result.DeletionURL = ParseURL(DeletionURL, true);
+                result.ThumbnailURL = parser.Parse(ThumbnailURL);
+                result.DeletionURL = parser.Parse(DeletionURL);
             }
-        }
-
-        private void ParseRegexList()
-        {
-            regexResult = new List<Match>();
-
-            if (RegexList != null)
-            {
-                foreach (string regex in RegexList)
-                {
-                    regexResult.Add(Regex.Match(response, regex));
-                }
-            }
-        }
-
-        public string ParseURL(string url, bool output)
-        {
-            if (string.IsNullOrEmpty(url))
-            {
-                return "";
-            }
-
-            StringBuilder result = new StringBuilder();
-
-            bool syntaxStart = false;
-            int syntaxStartIndex = 0;
-            bool escape = false;
-
-            for (int i = 0; i < url.Length; i++)
-            {
-                if (url[i] == '$' && !escape)
-                {
-                    if (!syntaxStart)
-                    {
-                        syntaxStart = true;
-                        syntaxStartIndex = i + 1;
-                    }
-                    else
-                    {
-                        syntaxStart = false;
-                        int syntaxLength = i - syntaxStartIndex;
-
-                        if (syntaxLength > 0)
-                        {
-                            string syntax = url.Substring(syntaxStartIndex, syntaxLength);
-                            string syntaxResult = ParseSyntax(syntax, output);
-
-                            if (!string.IsNullOrEmpty(syntaxResult))
-                            {
-                                result.Append(syntaxResult);
-                            }
-                        }
-                    }
-
-                    escape = false;
-                }
-                else if (url[i] == '\\' && !escape)
-                {
-                    escape = true;
-                }
-                else if (!syntaxStart)
-                {
-                    result.Append(url[i]);
-                    escape = false;
-                }
-            }
-
-            return result.ToString();
-        }
-
-        private string ParseSyntax(string syntax, bool output)
-        {
-            CustomUploaderResponseParseType parseType;
-
-            if (syntax.Equals("response", StringComparison.InvariantCultureIgnoreCase)) // Example: $response$
-            {
-                return response;
-            }
-            else if (syntax.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
-            {
-                parseType = CustomUploaderResponseParseType.Regex;
-                syntax = syntax.Substring(6);
-            }
-            else if (syntax.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
-            {
-                parseType = CustomUploaderResponseParseType.Json;
-                syntax = syntax.Substring(5);
-            }
-            else if (syntax.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
-            {
-                parseType = CustomUploaderResponseParseType.Xml;
-                syntax = syntax.Substring(4);
-            }
-            else if (syntax.StartsWith("random:", StringComparison.InvariantCultureIgnoreCase)) // Example: $random:domain1.com|domain2.com$
-            {
-                parseType = CustomUploaderResponseParseType.Random;
-                syntax = syntax.Substring(7);
-            }
-            else // Example: $1,1$
-            {
-                parseType = CustomUploaderResponseParseType.Regex;
-            }
-
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                if (output)
-                {
-                    switch (parseType)
-                    {
-                        case CustomUploaderResponseParseType.Regex:
-                            return ParseRegexSyntax(syntax);
-                        case CustomUploaderResponseParseType.Json:
-                            return ParseJsonSyntax(syntax);
-                        case CustomUploaderResponseParseType.Xml:
-                            return ParseXmlSyntax(syntax);
-                    }
-                }
-
-                if (parseType == CustomUploaderResponseParseType.Random)
-                {
-                    return ParseRandomSyntax(syntax);
-                }
-            }
-
-            return null;
-        }
-
-        private string ParseRegexSyntax(string syntax)
-        {
-            string regexIndexString = "";
-            int regexIndex;
-            bool isGroupRegex = false;
-            int i;
-
-            for (i = 0; i < syntax.Length; i++)
-            {
-                if (char.IsDigit(syntax[i]))
-                {
-                    regexIndexString += syntax[i];
-                }
-                else
-                {
-                    if (syntax[i] == ',')
-                    {
-                        isGroupRegex = true;
-                    }
-
-                    break;
-                }
-            }
-
-            if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
-            {
-                Match match = regexResult[regexIndex - 1];
-
-                if (isGroupRegex && i + 1 < syntax.Length)
-                {
-                    string group = syntax.Substring(i + 1);
-                    int groupNumber;
-
-                    if (int.TryParse(group, out groupNumber))
-                    {
-                        return match.Groups[groupNumber].Value;
-                    }
-
-                    return match.Groups[group].Value;
-                }
-
-                return match.Value;
-            }
-
-            return null;
-        }
-
-        // http://goessner.net/articles/JsonPath/
-        private string ParseJsonSyntax(string syntaxJsonPath)
-        {
-            return (string)JToken.Parse(response).SelectToken("$." + syntaxJsonPath);
-        }
-
-        // http://www.w3schools.com/xsl/xpath_syntax.asp
-        // https://msdn.microsoft.com/en-us/library/ms256086(v=vs.110).aspx
-        private string ParseXmlSyntax(string syntaxXPath)
-        {
-            using (StringReader sr = new StringReader(response))
-            {
-                XPathDocument doc = new XPathDocument(sr);
-                XPathNavigator nav = doc.CreateNavigator();
-                XPathNavigator node = nav.SelectSingleNode(syntaxXPath);
-
-                if (node != null)
-                {
-                    return node.Value;
-                }
-            }
-
-            return null;
-        }
-
-        private string ParseRandomSyntax(string syntax)
-        {
-            string[] values = syntax.Split('|');
-
-            if (values.Length > 0)
-            {
-                return values[MathHelpers.Random(values.Length - 1)];
-            }
-
-            return "";
         }
     }
 }

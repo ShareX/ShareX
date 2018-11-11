@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -78,7 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
             metaDataReq.Files = new UploadMetadataRequestFile0();
             metaDataReq.Files.File0 = new UploadMetadataRequestFile();
             metaDataReq.Files.File0.FileName = fileName;
-            metaDataReq.Files.File0.FileType = Helpers.GetMimeType(fileName);
+            metaDataReq.Files.File0.FileType = UploadHelpers.GetMimeType(fileName);
             metaDataReq.Files.File0.FileSize = Convert.ToInt32(stream.Length);
             metaDataReq.Removable = Settings.Removable;
             metaDataReq.OneShot = Settings.OneShot;

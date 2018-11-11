@@ -200,11 +200,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Bitte warten...</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>In deiner Zwischenablage befindet sich ein Bild, willst du es im Bildeditor öffnen?
-
-Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Dateiauswahl zu öffnen.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Bildhochlader: {0}</value>
   </data>
@@ -258,7 +253,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>FFmpeg-Video- und -Audioquellen können nicht beide "Nichts" sein.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Änderungen</value>
+    <value>Änderungsprotokoll</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>Tastenkürzel</value>
@@ -303,20 +298,11 @@ Möchtest du es automatisch herunterladen?</value>
 
 Soll ShareX neu gestartet werden?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>starte Bildschirmfarbauswähler</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Benutze neuen Namen:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>stoppe Bildschirmfarbauswähler</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Zeigerposition (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Übersetzer</value>
@@ -325,7 +311,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Warnung: Erstes Hochladen</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Chrome Unterstützung aktiviert.</value>
+    <value>Chrome-Unterstützung aktiviert.</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
     <value>Erweiterung kann nicht leer sein.</value>
@@ -379,13 +365,10 @@ Soll ShareX neu gestartet werden?</value>
     <value>URL-Teiler: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Chrome Unterstützung deaktiviert.</value>
+    <value>Chrome-Unterstützung deaktiviert.</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Schließen</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Vorschau:</value>
@@ -399,9 +382,6 @@ Soll ShareX neu gestartet werden?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Herunterladen</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Bildeditor - Wie soll das Bild geladen werden?</value>
-  </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Fortsetzen</value>
   </data>
@@ -409,7 +389,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Fertig</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} wird gleich hochgeladen {1} Du solltest ein anderes Ziel auswählen.</value>
+    <value>{0} wird in Kürze zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Webseite</value>
@@ -442,7 +422,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>FFmpeg-Fehler</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>Bist du sicher, dass du {0} Datei(en) hochladen möchtest?</value>
+    <value>Bist du sicher, dass du {0} Dateien hochladen möchtest?</value>
   </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Angepasst</value>
@@ -465,11 +445,11 @@ Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische 
     <value>Es wurde keine gültiger CLI-Videocodec ausgewählt</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Kann keinen gültiges FTP Konto finden.</value>
+    <value>Kann kein gültiges FTP Konto finden.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
-Sind Sie sich sicher?</value>
+Bist du sicher?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>ShareX beim Starten von Windows ausführen</value>
@@ -505,5 +485,68 @@ Sind Sie sich sicher?</value>
     <value>Linke Maustaste zum verschieben gedrückt halten
 Rechte Maustaste um das Menü zu öffnen
 Mittlere Maustaste um die Aktionsleiste zu schließen</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Möchten Sie die Aufnahme wirklich beenden?</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>mit ShareX bearbeiten</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Entwicklungs-Versionen können instabil sein und sind nur für Testzwecke geeignet. Möchten Sie diese trotzdem installieren?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Möchten Sie die ShareX-Einstellungen zurücksetzen?</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>URL-Kürzen</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Kürzen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Französisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Niederländisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Vietnamesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Koreanisch</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Trennzeichen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Traditionelles Chinesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Portugiesisch (Brasilien)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Türkisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Italienisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Ungarisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Vereinfachtes Chinesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Spanisch</value>
+  </data>
+  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
+    <value>Sie müssen ShareX erneut öffnen, damit Änderungen an persönlichen Ordnern wirksam werden.</value>
   </data>
 </root>

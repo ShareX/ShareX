@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib.Properties;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -136,21 +137,19 @@ namespace ShareX.HelpersLib
             txtAlternateDNS.Enabled = !cbAutomatic.Checked && cbDNSType.SelectedIndex == 0;
         }
 
-        private void SendPing(string ip)
+        private async Task SendPing(string ip)
         {
             if (!string.IsNullOrEmpty(ip))
             {
                 btnPingPrimary.Enabled = btnPingSecondary.Enabled = false;
 
-                TaskEx.Run(() =>
+                await Task.Run(() =>
                 {
                     PingResult pingResult = PingHelper.PingHost(ip);
                     MessageBox.Show(pingResult.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                },
-                () =>
-                {
-                    btnPingPrimary.Enabled = btnPingSecondary.Enabled = true;
                 });
+
+                btnPingPrimary.Enabled = btnPingSecondary.Enabled = true;
             }
         }
 
@@ -209,14 +208,14 @@ namespace ShareX.HelpersLib
             Close();
         }
 
-        private void btnPingPrimary_Click(object sender, EventArgs e)
+        private async void btnPingPrimary_Click(object sender, EventArgs e)
         {
-            SendPing(txtPreferredDNS.Text);
+            await SendPing(txtPreferredDNS.Text);
         }
 
-        private void btnPingSecondary_Click(object sender, EventArgs e)
+        private async void btnPingSecondary_Click(object sender, EventArgs e)
         {
-            SendPing(txtAlternateDNS.Text);
+            await SendPing(txtAlternateDNS.Text);
         }
     }
 }

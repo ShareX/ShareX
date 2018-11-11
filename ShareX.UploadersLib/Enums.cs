@@ -62,8 +62,6 @@ namespace ShareX.UploadersLib
         Paste2,
         [Description("Slexy")]
         Slexy,
-        [Description("Pastee.org")]
-        Pastee,
         [Description("Paste.ee")]
         Paste_ee,
         [Description("GitHub Gist")]
@@ -103,6 +101,8 @@ namespace ShareX.UploadersLib
         GoogleCloudStorage,
         [Description("Azure Storage")]
         AzureStorage,
+        [Description("Backblaze B2")]
+        BackblazeB2,
         [Description("Gfycat")]
         Gfycat,
         [Description("ownCloud / Nextcloud")]
@@ -127,8 +127,6 @@ namespace ShareX.UploadersLib
         Pomf,
         [Description("Uguu")]
         Uguu,
-        [Description("Dropfile")]
-        Dropfile,
         [Description("Seafile")]
         Seafile,
         [Description("Streamable")]
@@ -165,8 +163,6 @@ namespace ShareX.UploadersLib
         YOURLS,
         [Description("adf.ly")]
         AdFly,
-        [Description("coinurl.com")]
-        CoinURL,
         [Description("qr.net")]
         QRnet,
         [Description("vurl.com")]
@@ -177,6 +173,8 @@ namespace ShareX.UploadersLib
         Polr,
         [Description("Firebase Dynamic Links")]
         FirebaseDynamicLinks,
+        [Description("Kutt")]
+        Kutt,
         CustomURLShortener // Localized
     }
 
@@ -291,21 +289,13 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestType
+    public enum CustomUploaderRequestMethod
     {
         POST,
         GET,
         PUT,
         PATCH,
         DELETE
-    }
-
-    public enum CustomUploaderResponseParseType
-    {
-        Regex,
-        Json,
-        Xml,
-        Random
     }
 
     [Flags]

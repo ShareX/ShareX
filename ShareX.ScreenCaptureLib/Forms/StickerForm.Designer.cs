@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickerForm));
+            this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.ilvStickers = new Manina.Windows.Forms.ImageListView();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
@@ -39,11 +39,25 @@
             this.tsbEditStickers = new System.Windows.Forms.ToolStripButton();
             this.tslSize = new System.Windows.Forms.ToolStripLabel();
             this.tsnudSize = new ShareX.HelpersLib.ToolStripNumericUpDown();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
+            this.tscMain.ContentPanel.SuspendLayout();
+            this.tscMain.TopToolStripPanel.SuspendLayout();
+            this.tscMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tscMain
+            // 
+            // 
+            // tscMain.ContentPanel
+            // 
+            this.tscMain.ContentPanel.Controls.Add(this.ilvStickers);
+            resources.ApplyResources(this.tscMain.ContentPanel, "tscMain.ContentPanel");
+            resources.ApplyResources(this.tscMain, "tscMain");
+            this.tscMain.Name = "tscMain";
+            // 
+            // tscMain.TopToolStripPanel
+            // 
+            this.tscMain.TopToolStripPanel.Controls.Add(this.tsMain);
             // 
             // ilvStickers
             // 
@@ -56,20 +70,6 @@
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
             this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.ilvStickers);
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsMain);
             // 
             // tsMain
             // 
@@ -138,14 +138,14 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.tscMain);
             this.Name = "StickerForm";
             this.Shown += new System.EventHandler(this.StickerForm_Shown);
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
+            this.tscMain.ContentPanel.ResumeLayout(false);
+            this.tscMain.TopToolStripPanel.ResumeLayout(false);
+            this.tscMain.TopToolStripPanel.PerformLayout();
+            this.tscMain.ResumeLayout(false);
+            this.tscMain.PerformLayout();
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
             this.ResumeLayout(false);
@@ -155,7 +155,7 @@
         #endregion
 
         private Manina.Windows.Forms.ImageListView ilvStickers;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripContainer tscMain;
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;

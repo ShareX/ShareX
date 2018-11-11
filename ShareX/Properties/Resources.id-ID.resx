@@ -391,9 +391,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Gunakan nama baru:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Hentikan pemilih warna layar</value>
-  </data>
   <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
     <value>Anda yakin ingin menggagalkan perekaman ini?</value>
   </data>
@@ -402,9 +399,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Hilang</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Posisi penunjuk (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Penerjemah</value>
@@ -441,9 +435,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Pilih jalur folder screenshot</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Tutup</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Tombol cepat yang dikonfigurasi saat ini:</value>
@@ -550,9 +541,6 @@ Klik tengah untuk menutup</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Persingkat</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Mulai pemilih warna layar</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Persingkat URL</value>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Lựa chọn in</value>
+    <value>ShareX - Lựa chọn in</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Hủy</value>
+    <value>Hủy bỏ</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>Thay đổi font...</value>
+    <value>Thay đổi phông chữ...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>In...</value>
@@ -133,6 +133,6 @@
     <value>Xem trước...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>Font:</value>
+    <value>Phông chữ:</value>
   </data>
 </root>

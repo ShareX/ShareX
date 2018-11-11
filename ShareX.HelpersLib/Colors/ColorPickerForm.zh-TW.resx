@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 螢幕取色器</value>
+    <value>ShareX - 拾色器</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -133,7 +133,7 @@
     <value>青色:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>十進位制:</value>
+    <value>十進制:</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
     <value>鍵:</value>

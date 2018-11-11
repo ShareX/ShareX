@@ -28,6 +28,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -109,7 +110,7 @@ namespace ShareX.HelpersLib
 
                 if (AsyncWrite)
                 {
-                    TaskEx.Run(() => ProcessMessageQueue());
+                    Task.Run(() => ProcessMessageQueue());
                 }
                 else
                 {

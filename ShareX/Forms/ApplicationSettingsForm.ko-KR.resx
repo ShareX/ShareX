@@ -297,15 +297,6 @@
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>설정 초기화...</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>로그 내보내기</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>히스토리 내보내기</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>설정 내보내기</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>내보내기...</value>
   </data>
@@ -316,7 +307,7 @@
     <value>내보내기 / 불러오기</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
-    <value>URL이 비어있지 않을 때애만 저장하기</value>
+    <value>URL이 비어있지 않을 때만 저장하기</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>작업을 히스토리에 저장하기</value>
@@ -350,5 +341,11 @@
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>dev build 설치...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
   </data>
 </root>

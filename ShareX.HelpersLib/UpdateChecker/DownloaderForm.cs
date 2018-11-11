@@ -172,7 +172,9 @@ namespace ShareX.HelpersLib
                     psi.UseShellExecute = true;
                     Process.Start(psi);
                 }
-                catch { }
+                catch
+                {
+                }
             }
         }
 

@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
-using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -42,10 +41,12 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
+using System.Security.Permissions;
 using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -59,9 +60,6 @@ namespace ShareX.HelpersLib
         public const string Alphanumeric = Numbers + AlphabetCapital + Alphabet;
         public const string AlphanumericInverse = Numbers + Alphabet + AlphabetCapital;
         public const string Hexadecimal = Numbers + "ABCDEF";
-        public const string URLCharacters = Alphanumeric + "-._~"; // 45 46 95 126
-        public const string URLPathCharacters = URLCharacters + "/"; // 47
-        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
 
         public static readonly string[] ImageFileExtensions = new string[] { "jpg", "jpeg", "png", "gif", "bmp", "ico", "tif", "tiff" };
         public static readonly string[] TextFileExtensions = new string[] { "txt", "log", "nfo", "c", "cpp", "cc", "cxx", "h", "hpp", "hxx", "cs", "vb", "html", "htm", "xhtml", "xht", "xml", "css", "js", "php", "bat", "java", "lua", "py", "pl", "cfg", "ini", "dart", "go", "gohtml" };
@@ -69,13 +67,26 @@ namespace ShareX.HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
-        public static Cursor[] CursorList = new Cursor[] {
-            Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
-            Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
-            Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
-            Cursors.PanSW, Cursors.PanWest, Cursors.SizeAll, Cursors.SizeNESW, Cursors.SizeNS, Cursors.SizeNWSE,
-            Cursors.SizeWE, Cursors.UpArrow, Cursors.VSplit, Cursors.WaitCursor
-        };
+        private static Cursor[] cursorList;
+
+        public static Cursor[] CursorList
+        {
+            get
+            {
+                if (cursorList == null)
+                {
+                    cursorList = new Cursor[] {
+                        Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
+                        Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
+                        Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
+                        Cursors.PanSW, Cursors.PanWest, Cursors.SizeAll, Cursors.SizeNESW, Cursors.SizeNS, Cursors.SizeNWSE,
+                        Cursors.SizeWE, Cursors.UpArrow, Cursors.VSplit, Cursors.WaitCursor
+                    };
+                }
+
+                return cursorList;
+            }
+        }
 
         /// <summary>Get file name extension without dot.</summary>
         public static string GetFilenameExtension(string filePath)
@@ -232,7 +243,7 @@ namespace ShareX.HelpersLib
 
         public static char GetRandomChar(string chars)
         {
-            return chars[MathHelpers.Random(chars.Length - 1)];
+            return chars[MathHelpers.CryptoRandom(chars.Length - 1)];
         }
 
         public static string GetRandomString(string chars, int length)
@@ -259,7 +270,7 @@ namespace ShareX.HelpersLib
 
         public static string GetRandomKey(int length = 5, int count = 3, char separator = '-')
         {
-            return Enumerable.Range(1, (length + 1) * count - 1).Aggregate("", (x, index) => x += index % (length + 1) == 0 ? separator : GetRandomChar(Alphanumeric));
+            return Enumerable.Range(1, ((length + 1) * count) - 1).Aggregate("", (x, index) => x += index % (length + 1) == 0 ? separator : GetRandomChar(Alphanumeric));
         }
 
         public static string GetAllCharacters()
@@ -272,7 +283,7 @@ namespace ShareX.HelpersLib
             string[] lines = text.Trim().Lines();
             if (lines != null && lines.Length > 0)
             {
-                return lines[MathHelpers.Random(0, lines.Length - 1)];
+                return lines[MathHelpers.CryptoRandom(0, lines.Length - 1)];
             }
             return null;
         }
@@ -319,33 +330,6 @@ namespace ShareX.HelpersLib
         public static string GetXMLValue(string input, string tag)
         {
             return Regex.Match(input, string.Format("(?<={0}>).+?(?=</{0})", tag)).Value;
-        }
-
-        public static string GetMimeType(string fileName)
-        {
-            if (!string.IsNullOrEmpty(fileName))
-            {
-                string ext = Path.GetExtension(fileName).ToLowerInvariant();
-
-                if (!string.IsNullOrEmpty(ext))
-                {
-                    string mimeType = MimeTypes.GetMimeType(ext);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-
-                    mimeType = RegistryHelpers.GetRegistryValue(ext, "Content Type", RegistryHive.ClassesRoot);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-                }
-            }
-
-            return MimeTypes.DefaultMimeType;
         }
 
         public static T[] GetEnums<T>()
@@ -651,7 +635,7 @@ namespace ShareX.HelpersLib
         {
             if (stream != null)
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     using (stream)
                     using (SoundPlayer soundPlayer = new SoundPlayer(stream))
@@ -666,7 +650,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     using (SoundPlayer soundPlayer = new SoundPlayer(filepath))
                     {
@@ -803,11 +787,11 @@ namespace ShareX.HelpersLib
             return true;
         }
 
-        public static void WaitWhileAsync(Func<bool> check, int interval, int timeout, Action onSuccess, int waitStart = 0)
+        public static async Task WaitWhileAsync(Func<bool> check, int interval, int timeout, Action onSuccess, int waitStart = 0)
         {
             bool result = false;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 if (waitStart > 0)
                 {
@@ -815,11 +799,9 @@ namespace ShareX.HelpersLib
                 }
 
                 result = WaitWhile(check, interval, timeout);
-            },
-            () =>
-            {
-                if (result) onSuccess();
-            }, false);
+            });
+
+            if (result) onSuccess();
         }
 
         public static bool IsFileLocked(string path)
@@ -875,37 +857,66 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void BackupFileMonthly(string filepath, string destinationFolder)
+        public static bool IsValidFilePath(string path)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-            {
-                string filename = Path.GetFileNameWithoutExtension(filepath);
-                string extension = Path.GetExtension(filepath);
-                string newFilename = string.Format("{0}-{1:yyyy-MM}{2}", filename, DateTime.Now, extension);
-                string newFilepath = Path.Combine(destinationFolder, newFilename);
+            FileInfo fi = null;
 
-                if (!File.Exists(newFilepath))
-                {
-                    CreateDirectoryFromFilePath(newFilepath);
-                    File.Copy(filepath, newFilepath, false);
-                }
+            try
+            {
+                fi = new FileInfo(path);
+            }
+            catch (ArgumentException) { }
+            catch (PathTooLongException) { }
+            catch (NotSupportedException) { }
+
+            return fi != null;
+        }
+
+        public static void CopyFile(string filePath, string destinationFolder, bool overwrite = true)
+        {
+            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(destinationFolder))
+            {
+                string fileName = Path.GetFileName(filePath);
+                string destinationFilePath = Path.Combine(destinationFolder, fileName);
+                CreateDirectoryFromDirectoryPath(destinationFolder);
+                File.Copy(filePath, destinationFilePath, overwrite);
             }
         }
 
-        public static void BackupFileWeekly(string filepath, string destinationFolder)
+        public static string BackupFileWeekly(string filePath, string destinationFolder)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                string filename = Path.GetFileNameWithoutExtension(filepath);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
                 DateTime dateTime = DateTime.Now;
-                string extension = Path.GetExtension(filepath);
-                string newFilename = string.Format("{0}-{1:yyyy-MM}-W{2:00}{3}", filename, dateTime, dateTime.WeekOfYear(), extension);
-                string newFilepath = Path.Combine(destinationFolder, newFilename);
+                string extension = Path.GetExtension(filePath);
+                string newFileName = string.Format("{0}-{1:yyyy-MM}-W{2:00}{3}", fileName, dateTime, dateTime.WeekOfYear(), extension);
+                string newFilePath = Path.Combine(destinationFolder, newFileName);
 
-                if (!File.Exists(newFilepath))
+                if (!File.Exists(newFilePath))
                 {
-                    CreateDirectoryFromFilePath(newFilepath);
-                    File.Copy(filepath, newFilepath, false);
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
+                    File.Copy(filePath, newFilePath, false);
+                    return newFilePath;
+                }
+            }
+
+            return null;
+        }
+
+        public static void BackupFileMonthly(string filePath, string destinationFolder)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string extension = Path.GetExtension(filePath);
+                string newFileName = string.Format("{0}-{1:yyyy-MM}{2}", fileName, DateTime.Now, extension);
+                string newFilePath = Path.Combine(destinationFolder, newFileName);
+
+                if (!File.Exists(newFilePath))
+                {
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
+                    File.Copy(filePath, newFilePath, false);
                 }
             }
         }
@@ -917,8 +928,8 @@ namespace ShareX.HelpersLib
 
         public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
-            int midX = backgroundSize.Width / 2 - objectSize.Width / 2;
-            int midY = backgroundSize.Height / 2 - objectSize.Height / 2;
+            int midX = (backgroundSize.Width / 2) - (objectSize.Width / 2);
+            int midY = (backgroundSize.Height / 2) - (objectSize.Height / 2);
             int right = backgroundSize.Width - objectSize.Width;
             int bottom = backgroundSize.Height - objectSize.Height;
 
@@ -1262,10 +1273,28 @@ namespace ShareX.HelpersLib
             string result = "";
             while (--num >= 0)
             {
-                result = (char)('A' + num % 26) + result;
+                result = (char)('A' + (num % 26)) + result;
                 num /= 26;
             }
             return result;
+        }
+
+        [ReflectionPermission(SecurityAction.Assert, MemberAccess = true)]
+        public static bool TryFixHandCursor()
+        {
+            try
+            {
+                // https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/Cursors.cs,423
+                typeof(Cursors).GetField("hand", BindingFlags.NonPublic | BindingFlags.Static)
+                    .SetValue(null, new Cursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeConstants.IDC_HAND)));
+
+                return true;
+            }
+            catch
+            {
+                // If it fails, we'll just have to live with the old hand.
+                return false;
+            }
         }
     }
 }

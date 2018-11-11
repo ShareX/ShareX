@@ -29,11 +29,8 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
-#if WindowsStore
-using Windows.ApplicationModel;
-#endif
 
 namespace ShareX
 {
@@ -41,7 +38,7 @@ namespace ShareX
     {
         private const int MaxBufferSizePower = 14;
 
-        private bool ready;
+        private bool ready, isValidPersonalPath;
         private string lastPersonalPath;
 
         public ApplicationSettingsForm()
@@ -62,13 +59,17 @@ namespace ShareX
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string currentPersonalPath = txtPersonalFolderPath.Text;
-
-            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
+            if (isValidPersonalPath)
             {
-                Program.WritePersonalPathConfig(currentPersonalPath);
+                string currentPersonalPath = txtPersonalFolderPath.Text;
 
-                MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (Program.WritePersonalPathConfig(currentPersonalPath))
+                    {
+                        MessageBox.Show(Resources.MustReopenForPersonalFolderChangesToTakeEffect, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
         }
 
@@ -127,13 +128,13 @@ namespace ShareX
 
 #if STEAM || WindowsStore
             cbCheckPreReleaseUpdates.Visible = false;
+            btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
 #if WindowsStore
-            gbWindows.Height = 56;
             cbShellContextMenu.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
@@ -256,12 +257,20 @@ namespace ShareX
 
             try
             {
-                var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
-                cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
-                if (state == StartupTaskState.DisabledByUser)
+                if (state == StartupState.DisabledByUser)
                 {
                     cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
+                else if (state == StartupState.DisabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+                }
+                else if (state == StartupState.EnabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
                 }
                 else
                 {
@@ -297,28 +306,36 @@ namespace ShareX
         {
             string personalPath = txtPersonalFolderPath.Text;
 
-            if (string.IsNullOrEmpty(personalPath))
+            try
             {
-                if (Program.PortableApps)
+                if (string.IsNullOrEmpty(personalPath))
                 {
-                    personalPath = Program.PortableAppsPersonalFolder;
-                }
-                else if (Program.Portable)
-                {
-                    personalPath = Program.PortablePersonalFolder;
+                    if (Program.PortableApps)
+                    {
+                        personalPath = Program.PortableAppsPersonalFolder;
+                    }
+                    else if (Program.Portable)
+                    {
+                        personalPath = Program.PortablePersonalFolder;
+                    }
+                    else
+                    {
+                        personalPath = Program.DefaultPersonalFolder;
+                    }
                 }
                 else
                 {
-                    personalPath = Program.DefaultPersonalFolder;
+                    personalPath = Helpers.GetAbsolutePath(personalPath);
                 }
-            }
-            else
-            {
-                personalPath = Helpers.ExpandFolderVariables(personalPath);
-                personalPath = Helpers.GetAbsolutePath(personalPath);
-            }
 
-            lblPreviewPersonalFolderPath.Text = personalPath;
+                lblPreviewPersonalFolderPath.Text = personalPath;
+                isValidPersonalPath = true;
+            }
+            catch (Exception e)
+            {
+                isValidPersonalPath = false;
+                lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
+            }
         }
 
         #region General
@@ -390,13 +407,12 @@ namespace ShareX
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
         }
 
-        private void cbCheckPreReleaseUpdates_MouseUp(object sender, MouseEventArgs e)
+        private void btnCheckDevBuild_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Middle)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning, "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
                 TaskHelpers.DownloadAppVeyorBuild();
-                Cursor = Cursors.Default;
             }
         }
 
@@ -410,7 +426,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)
@@ -531,7 +547,7 @@ namespace ShareX
 
         #region Export / Import
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private async void btnExport_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -550,27 +566,25 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Export started: {exportPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.SaveAllSettings();
                         SettingManager.Export(exportPath);
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    DebugHelper.WriteLine($"Export completed: {exportPath}");
                 }
             }
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private async void btnImport_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -587,35 +601,33 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Import started: {importPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.Import(importPath);
                         SettingManager.LoadAllSettings();
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            UpdateControls();
-
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        LanguageHelper.ChangeLanguage(Program.Settings.Language);
-
-                        Program.MainForm.UpdateControls();
-
-                        DebugHelper.WriteLine($"Import completed: {importPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        UpdateControls();
+
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    LanguageHelper.ChangeLanguage(Program.Settings.Language);
+
+                    Program.MainForm.UpdateControls();
+
+                    DebugHelper.WriteLine($"Import completed: {importPath}");
                 }
             }
         }
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();
                 SettingManager.SaveAllSettings();

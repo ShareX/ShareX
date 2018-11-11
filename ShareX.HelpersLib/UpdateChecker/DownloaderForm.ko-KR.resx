@@ -129,9 +129,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 파일 다운로더</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>업데이트 노트 보기</value>
-  </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>상태:</value>
   </data>

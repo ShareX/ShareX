@@ -181,7 +181,7 @@
     <value>Arbeitsablauf</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>Bildschirmfarbenauswähler...</value>
+    <value>Bildschirmfarbauswähler...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Bildeffekt...</value>
@@ -430,7 +430,7 @@
     <value>Arbeitsablauf</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>Bildschirmfarbenauswähler...</value>
+    <value>Bildschirmfarbauswähler...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte...</value>
@@ -707,5 +707,50 @@
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Texterkennung (OCR)...</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Patreon Schaltfläche ausblenden</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Bildeditor...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Mauszeiger anzeigen</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown-Link</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Mauszeiger anzeigen</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Bildeditor...</value>
+  </data>
+  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
+    <value>Discord Schaltfläche ausblenden</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown-Bild</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown verlinktes Bild</value>
+  </data>
+  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
+    <value>ShareX Discord-Server Einladung öffnen</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Bilder zusammenführen...</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>Seitlich</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Bild Thumbnailer</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>ShareX Patreon-Seite öffnen</value>
   </data>
 </root>

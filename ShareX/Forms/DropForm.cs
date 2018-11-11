@@ -190,11 +190,11 @@ namespace ShareX
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Cursor = Cursors.SizeAll;
-            this.Text = "DropForm";
-            this.AllowDrop = true;
+            components = new System.ComponentModel.Container();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Cursor = Cursors.SizeAll;
+            Text = "DropForm";
+            AllowDrop = true;
 
             MouseDown += DropForm_MouseDown;
             MouseUp += DropForm_MouseUp;

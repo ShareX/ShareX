@@ -129,9 +129,6 @@
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Ungültiger Gerätename</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Status: Login fehlgeschlagen</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box Aktualisierung der Ordnerliste fehlgeschlagen</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Rootordner</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Eingeloggt als {0}.</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP Gerät</value>
@@ -155,12 +149,6 @@
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Durchsuche für eine Keydatei...</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Status: Eingeloggt</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Status: Nicht eingeloggt</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Neuer Account</value>
@@ -192,9 +180,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Nicht konfiguriert</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Nicht eingeloggt.</value>
-  </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} erfolgreich erstellt</value>
   </data>
@@ -222,5 +207,20 @@ Hergestellte Ordner:</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Das FTP-Programm unterstützt nur FTP oder FTPS.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Nicht angemeldet.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Angemeldet.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Anmeldung fehlgeschlagen.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Angemeldet.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Nicht angemeldet.</value>
   </data>
 </root>

@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -315,15 +316,26 @@ namespace ShareX
                     {
                         ListViewItem lvi = FindListViewItem(task);
 
-                        if (info.Result.IsError)
+                        if (task.Status == TaskStatus.Stopped)
                         {
-                            string errors = string.Join("\r\n\r\n", info.Result.Errors.ToArray());
-
-                            DebugHelper.WriteLine("Task failed. Filename: {0}, Errors:\r\n{1}", info.FileName, errors);
+                            DebugHelper.WriteLine($"Task stopped. Filename: {info.FileName}");
 
                             if (lvi != null)
                             {
-                                lvi.SubItems[1].Text = Resources.TaskManager_task_UploadCompleted_Error;
+                                lvi.Text = info.FileName;
+                                lvi.SubItems[1].Text = info.Status;
+                                lvi.ImageIndex = 2;
+                            }
+                        }
+                        else if (task.Status == TaskStatus.Failed)
+                        {
+                            string errors = string.Join("\r\n\r\n", info.Result.Errors.ToArray());
+
+                            DebugHelper.WriteLine($"Task failed. Filename: {info.FileName}, Errors:\r\n{errors}");
+
+                            if (lvi != null)
+                            {
+                                lvi.SubItems[1].Text = info.Status;
                                 lvi.SubItems[6].Text = "";
                                 lvi.ImageIndex = 1;
                             }
@@ -335,7 +347,8 @@ namespace ShareX
                                     TaskHelpers.PlayErrorSound(info.TaskSettings);
                                 }
 
-                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible && !string.IsNullOrEmpty(errors))
+                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible &&
+                                    !string.IsNullOrEmpty(errors))
                                 {
                                     Program.MainForm.niTray.Tag = null;
                                     Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, errors, ToolTipIcon.Error);
@@ -370,7 +383,8 @@ namespace ShareX
                                 if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
                                    (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
                                 {
-                                    HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
+                                    HistoryItem historyItem = info.GetHistoryItem();
+                                    AppendHistoryItemAsync(historyItem);
                                 }
 
                                 RecentManager.Add(task);
@@ -404,6 +418,7 @@ namespace ShareX
                                                 {
                                                     Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
                                                     FilePath = info.FilePath,
+                                                    Image = task.Image,
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };
@@ -427,6 +442,11 @@ namespace ShareX
                         if (lvi != null)
                         {
                             lvi.EnsureVisible();
+
+                            if (Program.Settings.AutoSelectLastCompletedTask)
+                            {
+                                ListViewControl.SelectSingle(lvi);
+                            }
                         }
                     }
                 }
@@ -541,6 +561,21 @@ namespace ShareX
                 }
             };
             timer.Start();
+        }
+
+        private static void AppendHistoryItemAsync(HistoryItem historyItem)
+        {
+            Task.Run(() =>
+            {
+                HistoryManager history = new HistoryManager(Program.HistoryFilePath)
+                {
+                    BackupFolder = SettingManager.BackupFolder,
+                    CreateBackup = false,
+                    CreateWeeklyBackup = true
+                };
+
+                history.AppendHistoryItem(historyItem);
+            });
         }
 
         public static void AddRecentTasksToMainWindow()

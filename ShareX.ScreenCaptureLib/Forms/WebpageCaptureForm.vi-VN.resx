@@ -132,13 +132,7 @@
   <data name="lblCaptureDelay.Text" xml:space="preserve">
     <value>Độ trễ:</value>
   </data>
-  <data name="lblURL.Text" xml:space="preserve">
-    <value>URL:</value>
-  </data>
   <data name="lblWebpageSize.Text" xml:space="preserve">
     <value>Kích thước trình duyệt</value>
-  </data>
-  <data name="lblWebpageX.Text" xml:space="preserve">
-    <value>x</value>
   </data>
 </root>

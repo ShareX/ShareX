@@ -59,8 +59,8 @@ namespace ShareX.HelpersLib
                 {
                     using (Pen pen = new Pen(Color.FromArgb(currentAlpha, shadowColor)))
                     {
-                        Rectangle shadowRect = new Rectangle(rect.X + -shadowDirection.Left * i, rect.Y + -shadowDirection.Top * i,
-                            rect.Width + (shadowDirection.Left + shadowDirection.Right) * i, rect.Height + (shadowDirection.Top + shadowDirection.Bottom) * i);
+                        Rectangle shadowRect = new Rectangle(rect.X + (-shadowDirection.Left * i), rect.Y + (-shadowDirection.Top * i),
+                            rect.Width + ((shadowDirection.Left + shadowDirection.Right) * i), rect.Height + ((shadowDirection.Top + shadowDirection.Bottom) * i));
 
                         g.DrawRectangleProper(pen, shadowRect);
                     }

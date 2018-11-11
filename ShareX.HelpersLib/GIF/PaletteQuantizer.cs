@@ -62,17 +62,19 @@ namespace ShareX.HelpersLib
 
             // Check if the color is in the lookup table
             if (_colorMap.ContainsKey(colorHash))
+            {
                 colorIndex = (byte)_colorMap[colorHash];
+            }
             else
             {
                 // Not found - loop through the palette and find the nearest match.
                 // Firstly check the alpha value - if 0, lookup the transparent color
-                if (0 == pixel.Alpha)
+                if (pixel.Alpha == 0)
                 {
                     // Transparent. Lookup the first color with an alpha value of 0
                     for (int index = 0; index < _colors.Length; index++)
                     {
-                        if (0 == _colors[index].A)
+                        if (_colors[index].A == 0)
                         {
                             colorIndex = (byte)index;
                             break;
@@ -106,8 +108,10 @@ namespace ShareX.HelpersLib
                             leastDistance = distance;
 
                             // And if it's an exact match, exit the loop
-                            if (0 == distance)
+                            if (distance == 0)
+                            {
                                 break;
+                            }
                         }
                     }
                 }
@@ -127,7 +131,9 @@ namespace ShareX.HelpersLib
         protected override ColorPalette GetPalette(ColorPalette palette)
         {
             for (int index = 0; index < _colors.Length; index++)
+            {
                 palette.Entries[index] = _colors[index];
+            }
 
             return palette;
         }

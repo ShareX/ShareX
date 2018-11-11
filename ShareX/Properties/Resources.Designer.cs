@@ -106,6 +106,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mexican Spanish.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_es_MX {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_es_MX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to French.
         /// </summary>
         public static string AboutForm_AboutForm_Language_fr {
@@ -120,6 +129,15 @@ namespace ShareX.Properties {
         public static string AboutForm_AboutForm_Language_hu {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Language_hu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indonesian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_id_ID {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_id_ID", resourceCulture);
             }
         }
         
@@ -174,6 +192,15 @@ namespace ShareX.Properties {
         public static string AboutForm_AboutForm_Language_tr {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Language_tr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ukrainian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_uk {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_uk", resourceCulture);
             }
         }
         
@@ -455,6 +482,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset ShareX settings?.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
         ///Would you like to restart ShareX?.
         /// </summary>
@@ -465,11 +510,29 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Startup has been disabled by your organization.
+        /// </summary>
+        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Startup has been disabled in Task Manager.
         /// </summary>
         public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text {
             get {
                 return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startup has been enabled by your organization.
+        /// </summary>
+        public static string ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text", resourceCulture);
             }
         }
         
@@ -1084,33 +1147,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extension can&apos;t be empty..
-        /// </summary>
-        public static string EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path can&apos;t be empty..
-        /// </summary>
-        public static string EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose encoder path.
-        /// </summary>
-        public static string EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path {
-            get {
-                return ResourceManager.GetString("EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap eraser {
@@ -1505,6 +1541,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit with ShareX.
+        /// </summary>
+        public static string IntegrationHelpers_EditWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload with ShareX.
         /// </summary>
         public static string IntegrationHelpers_UploadWithShareX {
@@ -1763,6 +1808,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The debug log can contain sensitive information. Are you sure you want to proceed?.
+        /// </summary>
+        public static string MainForm_UploadDebugLogWarning {
+            get {
+                return ResourceManager.GetString("MainForm_UploadDebugLogWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap megaphone {
@@ -1778,6 +1832,25 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap monitor {
             get {
                 object obj = ResourceManager.GetObject("monitor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must reopen ShareX for personal folder changes to take effect..
+        /// </summary>
+        public static string MustReopenForPersonalFolderChangesToTakeEffect {
+            get {
+                return ResourceManager.GetString("MustReopenForPersonalFolderChangesToTakeEffect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap mx {
+            get {
+                object obj = ResourceManager.GetObject("mx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2023,15 +2096,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CLI video encoder file does not exist: .
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Click to start recording..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
@@ -2094,15 +2158,6 @@ namespace ShareX.Properties {
         public static string ScreenRecordForm_StartRecording_Missing {
             get {
                 return ResourceManager.GetString("ScreenRecordForm_StartRecording_Missing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is no valid CLI video encoder selected..
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_", resourceCulture);
             }
         }
         
@@ -2230,15 +2285,6 @@ namespace ShareX.Properties {
         public static string TaskManager_task_UploadCompleted_ShareX___Task_completed {
             get {
                 return ResourceManager.GetString("TaskManager_task_UploadCompleted_ShareX___Task_completed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Configure CLI video encoders ---&gt;.
-        /// </summary>
-        public static string TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____", resourceCulture);
             }
         }
         

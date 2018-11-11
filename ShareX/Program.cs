@@ -32,7 +32,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+
+#if WindowsStore
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+#endif
 
 namespace ShareX
 {
@@ -64,7 +70,7 @@ namespace ShareX
                 string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
                 if (version.Build > 0) title += "." + version.Build;
                 if (version.Revision > 0) title += "." + version.Revision;
-                if (Beta) title += " Beta";
+                if (Dev) title += " Dev";
                 if (Portable) title += " Portable";
                 return title;
             }
@@ -72,7 +78,7 @@ namespace ShareX
 
         public static string TitleLong => $"{Title} ({Build})";
 
-        public static bool Beta { get; } = true;
+        public static bool Dev { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
         public static bool PortableApps { get; private set; }
@@ -94,8 +100,6 @@ namespace ShareX
         internal static GitHubUpdateManager UpdateManager { get; private set; }
         internal static CLIManager CLI { get; private set; }
 
-        private static bool restarting;
-
         #region Paths
 
         private const string AppName = "ShareX";
@@ -103,17 +107,17 @@ namespace ShareX
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
         public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
-        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
+        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath(@"..\..\Data");
 
         private static string PersonalPathConfigFilePath
         {
             get
             {
-                string oldPath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
+                string relativePath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
 
-                if (Portable || File.Exists(oldPath))
+                if (File.Exists(relativePath))
                 {
-                    return oldPath;
+                    return relativePath;
                 }
 
                 return CurrentPersonalPathConfigFilePath;
@@ -211,7 +215,8 @@ namespace ShareX
             get
             {
                 string subFolderName = NameParser.Parse(NameParserType.FolderPath, Settings.SaveImageSubFolderPattern);
-                return Path.Combine(ScreenshotsParentFolder, subFolderName);
+                string folderPath = Path.Combine(ScreenshotsParentFolder, subFolderName);
+                return Helpers.GetAbsolutePath(folderPath);
             }
         }
 
@@ -221,13 +226,19 @@ namespace ShareX
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
         public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
+        private static string PersonalPathDetectionMethod;
+
         #endregion Paths
+
+        private static bool closeSequenceStarted, restarting;
 
         [STAThread]
         private static void Main(string[] args)
         {
+#if !DEBUG // Allow Visual Studio to break on exceptions in Debug builds.
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+#endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
@@ -266,10 +277,19 @@ namespace ShareX
             DebugHelper.WriteLine(Title);
             DebugHelper.WriteLine("Build: " + Build);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
+
+            if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
+            {
+                DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
+            }
+
             DebugHelper.WriteLine("Personal path: " + PersonalFolder);
             DebugHelper.WriteLine("Operating system: " + Helpers.GetWindowsProductName());
 
             SilentRun = CLI.IsCommandExist("silent", "s");
+#if WindowsStore
+            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs().Kind == ActivationKind.StartupTask;
+#endif
 
 #if STEAM
             SteamFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
@@ -284,22 +304,34 @@ namespace ShareX
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
-            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Beta, Portable);
+            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
+            Helpers.TryFixHandCursor();
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
 
             Application.Run(MainForm);
 
-            if (WatchFolderManager != null) WatchFolderManager.Dispose();
-            SettingManager.SaveAllSettings();
-            SettingManager.BackupSettings();
+            CloseSequence();
+        }
 
-            DebugHelper.Logger.AsyncWrite = false;
-            DebugHelper.WriteLine("ShareX closing.");
+        public static void CloseSequence()
+        {
+            if (!closeSequenceStarted)
+            {
+                closeSequenceStarted = true;
+
+                DebugHelper.Logger.AsyncWrite = false;
+                DebugHelper.WriteLine("ShareX closing.");
+
+                if (WatchFolderManager != null) WatchFolderManager.Dispose();
+                SettingManager.SaveAllSettings();
+
+                DebugHelper.WriteLine("ShareX closed.");
+            }
         }
 
         public static void Restart()
@@ -359,17 +391,37 @@ namespace ShareX
 
             if (!Sandbox)
             {
-                Portable = CLI.IsCommandExist("portable", "p");
-
-                if (Portable)
+                if (CLI.IsCommandExist("portable", "p"))
                 {
+                    Portable = true;
                     CustomPersonalPath = PortablePersonalFolder;
+                    PersonalPathDetectionMethod = "Portable CLI flag";
+                }
+                else if (File.Exists(PortableCheckFilePath))
+                {
+                    Portable = true;
+                    CustomPersonalPath = PortablePersonalFolder;
+                    PersonalPathDetectionMethod = $"Portable file ({PortableCheckFilePath})";
+                }
+                else if (File.Exists(PortableAppsCheckFilePath))
+                {
+                    Portable = PortableApps = true;
+                    CustomPersonalPath = PortableAppsPersonalFolder;
+                    PersonalPathDetectionMethod = $"PortableApps file ({PortableAppsCheckFilePath})";
                 }
                 else
                 {
-                    PortableApps = File.Exists(PortableAppsCheckFilePath);
-                    Portable = PortableApps || File.Exists(PortableCheckFilePath);
-                    CheckPersonalPathConfig();
+#if !WindowsStore
+                    MigratePersonalPathConfig();
+#endif
+
+                    string customPersonalPath = ReadPersonalPathConfig();
+
+                    if (!string.IsNullOrEmpty(customPersonalPath))
+                    {
+                        CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
+                        PersonalPathDetectionMethod = $"PersonalPath.cfg file ({PersonalPathConfigFilePath})";
+                    }
                 }
 
                 if (!Directory.Exists(PersonalFolder))
@@ -380,34 +432,23 @@ namespace ShareX
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalFolder, e),
-                            "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StringBuilder sb = new StringBuilder();
+
+                        sb.AppendFormat("{0} \"{1}\"", Resources.Program_Run_Unable_to_create_folder_, PersonalFolder);
+                        sb.AppendLine();
+
+                        if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
+                        {
+                            sb.AppendLine("Personal path detection method: " + PersonalPathDetectionMethod);
+                        }
+
+                        sb.AppendLine();
+                        sb.Append(e);
+
+                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }
-            }
-        }
-
-        private static void CheckPersonalPathConfig()
-        {
-#if !WindowsStore
-            MigratePersonalPathConfig();
-#endif
-
-            string customPersonalPath = ReadPersonalPathConfig();
-
-            if (!string.IsNullOrEmpty(customPersonalPath))
-            {
-                customPersonalPath = Helpers.ExpandFolderVariables(customPersonalPath);
-                CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
-            }
-            else if (PortableApps)
-            {
-                CustomPersonalPath = PortableAppsPersonalFolder;
-            }
-            else if (Portable)
-            {
-                CustomPersonalPath = PortablePersonalFolder;
             }
         }
 
@@ -443,7 +484,7 @@ namespace ShareX
             return "";
         }
 
-        public static void WritePersonalPathConfig(string path)
+        public static bool WritePersonalPathConfig(string path)
         {
             if (path == null)
             {
@@ -466,6 +507,7 @@ namespace ShareX
                     {
                         Helpers.CreateDirectoryFromFilePath(PersonalPathConfigFilePath);
                         File.WriteAllText(PersonalPathConfigFilePath, path, Encoding.UTF8);
+                        return true;
                     }
                     catch (UnauthorizedAccessException)
                     {
@@ -474,6 +516,8 @@ namespace ShareX
                     }
                 }
             }
+
+            return false;
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
@@ -500,6 +544,7 @@ namespace ShareX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                Helpers.TryFixHandCursor();
                 Application.Run(new DNSChangerForm());
                 return true;
             }
@@ -536,7 +581,7 @@ namespace ShareX
         {
             List<string> flags = new List<string>();
 
-            if (Beta) flags.Add(nameof(Beta));
+            if (Dev) flags.Add(nameof(Dev));
             if (MultiInstance) flags.Add(nameof(MultiInstance));
             if (Portable) flags.Add(nameof(Portable));
             if (PortableApps) flags.Add(nameof(PortableApps));
@@ -556,7 +601,7 @@ namespace ShareX
 
         private static void CleanTempFiles()
         {
-            new Thread(() =>
+            Task.Run(() =>
             {
                 try
                 {
@@ -578,7 +623,7 @@ namespace ShareX
                 {
                     DebugHelper.WriteException(e);
                 }
-            }).Start();
+            });
         }
     }
 }

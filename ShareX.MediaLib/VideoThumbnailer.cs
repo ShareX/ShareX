@@ -182,7 +182,7 @@ namespace ShareX.MediaLib
             }
 
             Random random = new Random();
-            return (int)(random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start]) + mediaSeekTimes[start]);
+            return (int)((random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start])) + mediaSeekTimes[start]);
         }
 
         private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
@@ -222,18 +222,18 @@ namespace ShareX.MediaLib
 
                 int thumbWidth = images[0].Width;
 
-                int width = Options.Padding * 2 +
-                            thumbWidth * columnCount +
-                            (columnCount - 1) * Options.Spacing;
+                int width = (Options.Padding * 2) +
+                            (thumbWidth * columnCount) +
+                            ((columnCount - 1) * Options.Spacing);
 
                 int rowCount = (int)Math.Ceiling(images.Count / (float)columnCount);
 
                 int thumbHeight = images[0].Height;
 
-                int height = Options.Padding * 3 +
+                int height = (Options.Padding * 3) +
                              infoStringHeight +
-                             thumbHeight * rowCount +
-                             (rowCount - 1) * Options.Spacing;
+                             (thumbHeight * rowCount) +
+                             ((rowCount - 1) * Options.Spacing);
 
                 finalImage = new Bitmap(width, height);
 
@@ -250,7 +250,7 @@ namespace ShareX.MediaLib
                     }
 
                     int i = 0;
-                    int offsetY = Options.Padding * 2 + infoStringHeight;
+                    int offsetY = (Options.Padding * 2) + infoStringHeight;
 
                     for (int y = 0; y < rowCount; y++)
                     {

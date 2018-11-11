@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.OtherServices;
@@ -40,10 +41,7 @@ namespace ShareX
         public TaskSettings DefaultTaskSettings = new TaskSettings();
 
         public string FileUploadDefaultDirectory = "";
-        public bool ShowUploadWarning = true; // First time upload warning
-        public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public int NameParserAutoIncrementNumber = 0;
-        public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
         public ApplicationConfig()
@@ -58,6 +56,7 @@ namespace ShareX
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
+        public List<int> TaskListViewColumnWidths = new List<int>();
         public DateTime NewsLastReadDate;
 
         #endregion Main Form
@@ -125,14 +124,8 @@ namespace ShareX
         public bool RecentTasksShowInTrayMenu = true;
         public bool RecentTasksTrayMenuMostRecentFirst = false;
 
-        public WindowState HistoryWindowState = new WindowState();
-        public int HistoryMaxItemCount = 0;
-        public int HistorySplitterDistance = 550;
-
-        public WindowState ImageHistoryWindowState = new WindowState();
-        public int ImageHistoryViewMode = 3;
-        public Size ImageHistoryThumbnailSize = new Size(150, 150);
-        public int ImageHistoryMaxItemCount = 250;
+        public HistorySettings HistorySettings = new HistorySettings();
+        public ImageHistorySettings ImageHistorySettings = new ImageHistorySettings();
 
         #endregion History
 
@@ -142,12 +135,6 @@ namespace ShareX
         public PrintSettings PrintSettings = new PrintSettings();
 
         #endregion Print
-
-        #region Profiles
-
-        public List<VideoEncoder> VideoEncoders = new List<VideoEncoder>();
-
-        #endregion Profiles
 
         #region Advanced
 
@@ -188,8 +175,29 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
         public bool TrayTextMoreInfo { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
+        [Category("Application"), DefaultValue(false), Description("Save settings after task completed but only if there is no other active tasks.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
+        public bool AutoSelectLastCompletedTask { get; set; }
+
+        [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
+        public bool DisableHotkeys { get; set; }
+
+        private int hotkeyRepeatLimit;
+
+        [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
+        public int HotkeyRepeatLimit
+        {
+            get
+            {
+                return hotkeyRepeatLimit;
+            }
+            set
+            {
+                hotkeyRepeatLimit = Math.Max(value, 200);
+            }
+        }
 
         [Category("Clipboard"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
@@ -214,6 +222,12 @@ namespace ShareX
 
         [Category("Upload"), DefaultValue(false), Description("Writes verbose web request logs to \"{PersonalFolder}\\Logs\\ShareX-Request-Logs.txt\" file for debugging purposes.")]
         public bool VerboseRequestLogs { get; set; }
+
+        [Category("Upload"), DefaultValue(true), Description("Show first time upload warning.")]
+        public bool ShowUploadWarning { get; set; }
+
+        [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
+        public bool ShowMultiUploadWarning { get; set; }
 
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]

@@ -132,4 +132,7 @@
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>Начать распознавание</value>
   </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>Открыть в Google Translate и закрыть окно</value>
+  </data>
 </root>

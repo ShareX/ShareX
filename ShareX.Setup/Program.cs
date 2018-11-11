@@ -89,13 +89,12 @@ namespace ShareX.Setup
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
-        private static string DesktopBridgeHelperDir => Path.Combine(ParentDir, @"ShareX.DesktopBridgeHelper\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
-        public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
+        public static string FFmpeg32bit => Path.Combine(OutputDir, "ffmpeg.exe");
+        public static string FFmpeg64bit => Path.Combine(OutputDir, "ffmpeg-x64.exe");
         public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe";
 
         private static void Main(string[] args)
@@ -294,7 +293,7 @@ namespace ShareX.Setup
                 SetupHelpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
-            string[] languages = new string[] { "de", "es", "fr", "hu", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN", "zh-TW" };
+            string[] languages = new string[] { "de", "es", "es-MX", "fr", "hu", "id-ID", "it-IT", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
@@ -309,7 +308,6 @@ namespace ShareX.Setup
             }
             else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
-                SetupHelpers.CopyFile(Path.Combine(DesktopBridgeHelperDir, "ShareX_DesktopBridgeHelper.exe"), destination);
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)
@@ -333,7 +331,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg32bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20171130-83ecdc9-win32-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-4.0-win32-static.zip");
                     ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
@@ -345,7 +343,7 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg64bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20171130-83ecdc9-win64-static.zip");
+                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-4.0-win64-static.zip");
                     ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }

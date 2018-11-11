@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib
 
         public IGenericUploaderService GetUploaderService()
         {
-            return UploaderFactory.AllGenericUploaderServices.Where(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            return UploaderFactory.AllGenericUploaderServices.FirstOrDefault(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public void SetExtensions(string extensions)

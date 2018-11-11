@@ -55,12 +55,12 @@ namespace ShareX.HelpersLib
                 items.AddRange(extraItems);
             }
 
-            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
+            IEnumerable<CodeMenuItem> variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
                 Select(x => new CodeMenuItem(x.ToPrefixString(), x.Description, x.Category));
 
             items.AddRange(variables);
 
-            foreach (var item in items)
+            foreach (CodeMenuItem item in items)
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
                 tsmi.Click += (sender, e) =>
@@ -77,7 +77,7 @@ namespace ShareX.HelpersLib
                 {
                     ToolStripMenuItem tsmiParent;
                     int index = cms.Items.IndexOfKey(item.Category);
-                    if (0 > index)
+                    if (index < 0)
                     {
                         tsmiParent = new ToolStripMenuItem { Text = item.Category, Tag = item.Category, Name = item.Category };
                         tsmiParent.HideImageMargin();

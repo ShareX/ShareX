@@ -149,7 +149,7 @@ namespace ShareX
             if (IsRunning && !IsDisposed)
             {
                 timeleft = Math.Max(0, delay - (int)stopwatch.ElapsedMilliseconds);
-                percentage = (int)(100 - (double)timeleft / delay * 100);
+                percentage = (int)(100 - ((double)timeleft / delay * 100));
                 tspbBar.Value = percentage;
                 string secondsLeft = (timeleft / 1000f).ToString("0.0");
                 tsslStatus.Text = " " + string.Format(Resources.AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_, secondsLeft, percentage, count);

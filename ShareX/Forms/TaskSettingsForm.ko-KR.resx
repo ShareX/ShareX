@@ -543,9 +543,6 @@
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
     <value>화면을 가로지르는 조준선 보이기</value>
   </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>좌측 상단 구석에 단축키와 팁 보이기</value>
-  </data>
   <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
     <value>커서 근처 돋보기 보이기</value>
   </data>
@@ -557,5 +554,11 @@
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>"Alt" 키를 누르고 있으면 달라붙을 영역 크기:</value>
+  </data>
+  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
+    <value>중단 할 때 확인을 요청</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>업로드 할 때 URL에 문제가있는 문자를 밑줄로 바꾸기</value>
   </data>
 </root>

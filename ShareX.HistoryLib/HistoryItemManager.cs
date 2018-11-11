@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -48,8 +49,13 @@ namespace ShareX.HistoryLib
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
-        public HistoryItemManager()
+        private Action<string> uploadFile, editImage;
+
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage)
         {
+            this.uploadFile = uploadFile;
+            this.editImage = editImage;
+
             InitializeComponent();
         }
 
@@ -302,6 +308,16 @@ namespace ShareX.HistoryLib
         public void ShowMoreInfo()
         {
             new HistoryItemInfoForm(HistoryItem).Show();
+        }
+
+        public void UploadFile()
+        {
+            if (uploadFile != null && HistoryItem != null && IsFileExist) uploadFile(HistoryItem.Filepath);
+        }
+
+        public void EditImage()
+        {
+            if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.Filepath);
         }
     }
 }

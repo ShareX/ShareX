@@ -94,10 +94,10 @@ namespace ShareX.ScreenCaptureLib
         public string LastStickerPath { get; set; }
 
         // Blur effect
-        public int BlurRadius { get; set; } = 15;
+        public int BlurRadius { get; set; } = 35;
 
         // Pixelate effect
-        public int PixelateSize { get; set; } = 8;
+        public int PixelateSize { get; set; } = 15;
 
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;

@@ -271,7 +271,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvFTPList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 506</value>
+    <value>952, 481</value>
   </data>
   <data name="lvFTPList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -280,7 +280,7 @@
     <value>lvFTPList</value>
   </data>
   <data name="&gt;&gt;lvFTPList.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.ListViewEx, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.ListViewEx, ShareX.UploadersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvFTPList.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -289,7 +289,7 @@
     <value>0</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 506</value>
+    <value>952, 481</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>

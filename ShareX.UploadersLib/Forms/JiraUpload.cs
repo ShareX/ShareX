@@ -37,8 +37,8 @@ namespace ShareX.UploadersLib
     {
         public delegate string GetSummaryHandler(string issueId);
 
-        private readonly string _issuePrefix;
-        private readonly GetSummaryHandler _getSummary;
+        private readonly string issuePrefix;
+        private readonly GetSummaryHandler getSummary;
 
         public string IssueId
         {
@@ -60,15 +60,15 @@ namespace ShareX.UploadersLib
             {
                 throw new ArgumentNullException("getSummary");
             }
-            _issuePrefix = issuePrefix;
-            _getSummary = getSummary;
+            this.issuePrefix = issuePrefix;
+            this.getSummary = getSummary;
         }
 
         private void JiraUpload_Load(object sender, EventArgs e)
         {
             UpdateSummary(null);
 
-            txtIssueId.Text = _issuePrefix;
+            txtIssueId.Text = issuePrefix;
             txtIssueId.SelectionStart = txtIssueId.Text.Length;
         }
 
@@ -85,9 +85,7 @@ namespace ShareX.UploadersLib
 
         private void ValidateIssueId(string issueId)
         {
-            Task.Factory
-                .StartNew(() => _getSummary(issueId))
-                .ContinueWith(UpdateSummaryAsync);
+            Task.Run(() => getSummary(issueId)).ContinueWith(UpdateSummaryAsync);
         }
 
         private void UpdateSummaryAsync(Task<string> task)

@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleCloudStorage;
 
-        public override Icon ServiceIcon => Resources.GoogleCloudStorage;
+        public override Icon ServiceIcon => Resources.GoogleCloud;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -51,7 +51,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Bucket = config.GoogleCloudStorageBucket,
                 Domain = config.GoogleCloudStorageDomain,
-                Prefix = config.GoogleCloudStorageObjectPrefix
+                Prefix = config.GoogleCloudStorageObjectPrefix,
+                RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
+                RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
             };
         }
 
@@ -63,6 +66,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Bucket { get; set; }
         public string Domain { get; set; }
         public string Prefix { get; set; }
+        public bool RemoveExtensionImage { get; set; }
+        public bool RemoveExtensionText { get; set; }
+        public bool RemoveExtensionVideo { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -96,46 +102,27 @@ namespace ShareX.UploadersLib.FileUploaders
             return googleAuth.GetAccessToken(code);
         }
 
-        private string GetUploadPath(string fileName)
-        {
-            string path = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
-            return URLHelpers.CombineURL(path, fileName);
-        }
-
-        public class GoogleCloudStorageResponse
-        {
-            public string name { get; set; }
-        }
-
-        public class Metadata
-        {
-            public string name { get; set; }
-            public Acl[] acl { get; set; }
-        }
-
-        public class Acl
-        {
-            public string entity { get; set; }
-            public string role { get; set; }
-        }
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
-            string uploadpath = GetUploadPath(fileName);
+            string name = fileName;
 
-            if (string.IsNullOrEmpty(Domain))
+            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
             {
-                Domain = $"storage.googleapis.com/{Bucket}";
+                name = Path.GetFileNameWithoutExtension(fileName);
             }
 
-            Metadata metadata = new Metadata
+            string uploadpath = GetUploadPath(name);
+
+            GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
             {
                 name = uploadpath,
-                acl = new Acl[]
+                acl = new GoogleCloudStorageAcl[]
                 {
-                    new Acl
+                    new GoogleCloudStorageAcl
                     {
                         entity = "allUsers",
                         role = "READER"
@@ -147,6 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
                 headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
             if (upload.name != uploadpath)
@@ -155,9 +143,57 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            result.URL = URLHelpers.FixPrefix($"{Domain}/{URLHelpers.URLPathEncode(uploadpath)}", "https://");
+            result.URL = GenerateURL(uploadpath);
 
             return result;
+        }
+
+        private string GetUploadPath(string fileName)
+        {
+            string uploadPath = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
+            return URLHelpers.CombineURL(uploadPath, fileName);
+        }
+
+        public string GenerateURL(string uploadPath)
+        {
+            if (string.IsNullOrEmpty(Bucket))
+            {
+                return "";
+            }
+
+            if (string.IsNullOrEmpty(Domain))
+            {
+                Domain = URLHelpers.CombineURL("storage.googleapis.com", Bucket);
+            }
+
+            uploadPath = URLHelpers.URLEncode(uploadPath, true);
+
+            string url = URLHelpers.CombineURL(Domain, uploadPath);
+
+            return URLHelpers.FixPrefix(url, "https://");
+        }
+
+        public string GetPreviewURL()
+        {
+            string uploadPath = GetUploadPath("example.png");
+            return GenerateURL(uploadPath);
+        }
+
+        private class GoogleCloudStorageResponse
+        {
+            public string name { get; set; }
+        }
+
+        private class GoogleCloudStorageMetadata
+        {
+            public string name { get; set; }
+            public GoogleCloudStorageAcl[] acl { get; set; }
+        }
+
+        private class GoogleCloudStorageAcl
+        {
+            public string entity { get; set; }
+            public string role { get; set; }
         }
     }
 }

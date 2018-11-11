@@ -65,21 +65,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class MediaFire : FileUploader
     {
-        private static readonly string _apiUrl = "https://www.mediafire.com/api/";
-        private static readonly int _pollInterval = 1000;
-        private readonly string _appId, _apiKey, _user, _pasw;
-        private string _sessionToken, _signatureTime;
-        private int _signatureKey;
-
         public string UploadPath { get; set; }
         public bool UseLongLink { get; set; }
 
+        private static readonly string apiUrl = "https://www.mediafire.com/api/";
+        private static readonly int pollInterval = 1000;
+        private readonly string appId, apiKey, user, pasw;
+        private string sessionToken, signatureTime;
+        private int signatureKey;
+
         public MediaFire(string appId, string apiKey, string user, string pasw)
         {
-            _appId = appId;
-            _apiKey = apiKey;
-            _user = user;
-            _pasw = pasw;
+            this.appId = appId;
+            this.apiKey = apiKey;
+            this.user = user;
+            this.pasw = pasw;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -90,37 +90,37 @@ namespace ShareX.UploadersLib.FileUploaders
             string key = SimpleUpload(stream, fileName);
             AllowReportProgress = false;
             string url = null;
-            while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(_pollInterval);
+            while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(pollInterval);
             return new UploadResult() { IsSuccess = true, URL = url };
         }
 
         private void GetSessionToken()
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("email", _user);
-            args.Add("password", _pasw);
-            args.Add("application_id", _appId);
+            args.Add("email", user);
+            args.Add("password", pasw);
+            args.Add("application_id", appId);
             args.Add("token_version", "2");
             args.Add("response_format", "json");
             args.Add("signature", GetInitSignature());
-            string respStr = SendRequestMultiPart(_apiUrl + "user/get_session_token.php", args);
+            string respStr = SendRequestMultiPart(apiUrl + "user/get_session_token.php", args);
             GetSessionTokenResponse resp = DeserializeResponse<GetSessionTokenResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.session_token == null || resp.time == null || resp.secret_key == null)
                 throw new IOException("Invalid response");
-            _sessionToken = resp.session_token;
-            _signatureTime = resp.time;
-            _signatureKey = (int)resp.secret_key;
+            sessionToken = resp.session_token;
+            signatureTime = resp.time;
+            signatureKey = (int)resp.secret_key;
         }
 
         private string SimpleUpload(Stream stream, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("session_token", _sessionToken);
+            args.Add("session_token", sessionToken);
             args.Add("path", UploadPath);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/simple.php", args));
-            string url = URLHelpers.CreateQuery(_apiUrl + "upload/simple.php", args);
+            string url = URLHelpers.CreateQuery(apiUrl + "upload/simple.php", args);
             UploadResult res = SendRequestFile(url, stream, fileName, "Filedata");
             if (!res.IsSuccess) throw new IOException(res.ErrorsToString());
             SimpleUploadResponse resp = DeserializeResponse<SimpleUploadResponse>(res.Response);
@@ -132,12 +132,12 @@ namespace ShareX.UploadersLib.FileUploaders
         private string PollUpload(string uploadKey, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("session_token", _sessionToken);
+            args.Add("session_token", sessionToken);
             args.Add("key", uploadKey);
             args.Add("filename", fileName);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/poll_upload.php", args));
-            string respStr = SendRequestMultiPart(_apiUrl + "upload/poll_upload.php", args);
+            string respStr = SendRequestMultiPart(apiUrl + "upload/poll_upload.php", args);
             PollUploadResponse resp = DeserializeResponse<PollUploadResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException("Invalid response");
@@ -165,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetInitSignature()
         {
-            string signatureStr = _user + _pasw + _appId + _apiKey;
+            string signatureStr = user + pasw + appId + apiKey;
             byte[] signatureBytes = Encoding.ASCII.GetBytes(signatureStr);
             SHA1 sha1Gen = SHA1.Create();
             byte[] sha1Bytes = sha1Gen.ComputeHash(signatureBytes);
@@ -174,9 +174,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetSignature(string urlSuffix, Dictionary<string, string> args)
         {
-            string keyStr = (_signatureKey % 256).ToString(CultureInfo.InvariantCulture);
+            string keyStr = (signatureKey % 256).ToString(CultureInfo.InvariantCulture);
             string urlStr = CreateNonEscapedQuery("/api/" + urlSuffix, args);
-            string signatureStr = keyStr + _signatureTime + urlStr;
+            string signatureStr = keyStr + signatureTime + urlStr;
             byte[] signatureBytes = Encoding.ASCII.GetBytes(signatureStr);
             MD5 md5gen = MD5.Create();
             byte[] md5Bytes = md5gen.ComputeHash(signatureBytes);
@@ -185,13 +185,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void NextSignatureKey()
         {
-            _signatureKey = (int)(((long)_signatureKey * 16807) % 2147483647);
+            signatureKey = (int)(((long)signatureKey * 16807) % 2147483647);
         }
 
         private T DeserializeResponse<T>(string s) where T : new()
         {
             var refObj = new { response = new T() };
-            var obj = JsonConvert.DeserializeObject(s, refObj.GetType());
+            object obj = JsonConvert.DeserializeObject(s, refObj.GetType());
             return (T)obj.GetType().GetProperty("response").GetValue(obj, null);
         }
 
@@ -207,7 +207,7 @@ namespace ShareX.UploadersLib.FileUploaders
             for (int i = 0; i < b.Length; ++i)
             {
                 res[2 * i] = IntToChar(b[i] >> 4);
-                res[2 * i + 1] = IntToChar(b[i] & 0xf);
+                res[(2 * i) + 1] = IntToChar(b[i] & 0xf);
             }
             return new string(res);
         }

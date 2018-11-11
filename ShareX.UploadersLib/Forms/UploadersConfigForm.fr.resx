@@ -131,9 +131,6 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Mettre à jour</value>
-  </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
@@ -238,9 +235,6 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Aide...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Vider les champs ci-dessous</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne d'images :</value>
@@ -477,42 +471,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Préfixe du problème Jira :</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Supprimer un dossier</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Ajouter un dossier</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recharger la liste des dossiers</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Mettre en ligne les images vers</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autoriser</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur :</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Rafraîchir l'autorisation</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>État de la connexion :</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authentification</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Type d'URL :</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Adresse e-mail :</value>
   </data>
@@ -681,15 +639,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de destination</value>
   </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>URL direct</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Clé API :</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Pour obtenir la clé API, visitez https://someimage.com/api</value>
-  </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Clé utilisateur :</value>
   </data>
@@ -762,18 +711,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Étape 1 : Ouvrez la page d'autorisation...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Étape 2 : Complétez l'autorisation</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Rafraîchir l'autorisation</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Votre photostream...</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Ouvrir ma page d'images...</value>
   </data>
@@ -828,16 +765,8 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Créer un nouvel album</value>
   </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Utilisez une classe de stockage de redondance inférieure pour les objets stockés.
-Avec cette option, les objets coûtent moins chers en espace disque, mais ont 99,99% de durabilité, au lieu de 99,999999999%.
-Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Utiliser un domaine personnalisé :</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Utiliser le stockage de redondance réduite</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne de textes</value>
@@ -899,9 +828,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Utiliser l'URL brute</value>
   </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Créer un compte...</value>
-  </data>
   <data name="lblPuushEmail.Text" xml:space="preserve">
     <value>Adresse e-mail :</value>
   </data>
@@ -944,26 +870,8 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
     <value>Envoyer des e-mails sans afficher de boite de dialogue pour cette adresse e-mail :</value>
   </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>Adresse E-mail :</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>Clé API :</value>
-  </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Obtenir la clé API</value>
-  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Exemple : http://exemple.com/owncloud</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur :</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>Utiliser les liens "https://"</value>
   </data>
   <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
     <value>Clé d'accès :</value>
@@ -973,12 +881,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Est-ce une mise en ligne publique ?</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>Informations de l'utilisateur</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>Membre Premium</value>
   </data>
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>Nom du compte :</value>
@@ -1112,9 +1014,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>Autres paramètres</value>
   </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>Identifiants de connexion</value>
-  </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>jamais</value>
   </data>
@@ -1139,9 +1038,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Commentaire (Markdown)</value>
   </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>Téléchargement instantané activé</value>
-  </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Identifiants de connexion</value>
   </data>
@@ -1150,9 +1046,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   </data>
   <data name="lblAzureStorageContainer.Text" xml:space="preserve">
     <value>Conteneur :</value>
-  </data>
-  <data name="sulKeyLink.Text" xml:space="preserve">
-    <value>Cliquez ici pour obtenir votre clé API !</value>
   </data>
   <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>Dupliquer</value>

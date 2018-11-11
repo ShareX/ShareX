@@ -199,20 +199,11 @@
     <value>언어 설정을 변경하려면 ShareX를 재시작해야 합니다.
 ShareX를 재시작할까요?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>화면 색상 선택기 시작</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>새 이름 사용:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>화면 색상 선택기 중단</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>찾을 수 없음:</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>커서 위치 (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>번역자</value>
@@ -268,9 +259,6 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>시작</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>닫기</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>미리보기:</value>
@@ -438,11 +426,6 @@ ShareX를 재시작할까요?</value>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>베트남어</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>클립보드에 이미지가 저장되어 있습니다. 이 이미지 편집기로 열까요?
-
-클립보드의 이미지를 편집하려면 '예'를, 이미지 파일 대화상자를 열어 편집할 이미지 파일을 고르려면 '아니요'를 눌러주세요.</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>용량이 큰 파일을 업로드하려고 합니다.
 계속 진행할까요?</value>
@@ -497,9 +480,6 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
     <value>단축키 활성화</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>이미지 편집기 - 어디에서 이미지를 불러올까요?</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>편집...</value>
@@ -559,5 +539,8 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>작업 관리자에 의해 ShareX를 시작 프로그램으로 지정할 수 없습니다</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>중단 하시겠습니까?</value>
   </data>
 </root>

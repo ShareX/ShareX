@@ -230,6 +230,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drop shadow color....
+        /// </summary>
+        internal static string DropShadowColor {
+            get {
+                return ResourceManager.GetString("DropShadowColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap edit_alignment {
@@ -446,6 +455,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gradient {
+            get {
+                object obj = ResourceManager.GetObject("gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grid {
             get {
                 object obj = ResourceManager.GetObject("grid", resourceCulture);
@@ -540,6 +559,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("image_select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add image effects....
+        /// </summary>
+        internal static string ImageEffects {
+            get {
+                return ResourceManager.GetString("ImageEffects", resourceCulture);
             }
         }
         
@@ -768,7 +796,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_center {
             get {
-                object obj = ResourceManager.GetObject("layout-center", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_center", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -778,7 +806,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_split {
             get {
-                object obj = ResourceManager.GetObject("layout-split", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_split", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -788,8 +816,17 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap layout_split_vertical {
             get {
-                object obj = ResourceManager.GetObject("layout-split-vertical", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_split_vertical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use light resize nodes.
+        /// </summary>
+        internal static string LightResizeNodes {
+            get {
+                return ResourceManager.GetString("LightResizeNodes", resourceCulture);
             }
         }
         
@@ -820,6 +857,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("monitor_window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open keybinds web page....
+        /// </summary>
+        internal static string OpenKeybindsPage {
+            get {
+                return ResourceManager.GetString("OpenKeybindsPage", resourceCulture);
             }
         }
         
@@ -902,6 +948,25 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ShareX - Image editor.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are unsaved changes.
+        ///Would you like to close image editor?.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_Text {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tip: You can pan image by holding mouse middle button and dragging..
         /// </summary>
         internal static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {
@@ -947,7 +1012,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blur radius:.
+        ///   Looks up a localized string similar to Blur strength:.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Blur_radius_ {
             get {
@@ -1532,6 +1597,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value of first step:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartingStepValue {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartingStepValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
@@ -1570,9 +1644,19 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stamp {
+        internal static System.Drawing.Bitmap smiley_cool {
             get {
-                object obj = ResourceManager.GetObject("stamp", resourceCulture);
+                object obj = ResourceManager.GetObject("smiley_cool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smiley_yell {
+            get {
+                object obj = ResourceManager.GetObject("smiley_yell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1584,6 +1668,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("test_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This window will close before opening the keybinds web page. Do you want to continue?.
+        /// </summary>
+        internal static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
+            get {
+                return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture);
             }
         }
         

@@ -30,17 +30,24 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace ShareX.HelpersLib
 {
     public static class URLHelpers
     {
+        public const string URLCharacters = Helpers.Alphanumeric + "-._~"; // 45 46 95 126
+        public const string URLPathCharacters = URLCharacters + "/"; // 47
+        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
+
+        public static readonly char[] BidiControlCharacters = new char[] { '\u200E', '\u200F', '\u202A', '\u202B', '\u202C', '\u202D', '\u202E' };
+
         public static void OpenURL(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     try
                     {
@@ -63,41 +70,69 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static string Encode(string text, string unreservedCharacters)
+        public static string URLEncode(string text, bool isPath = false)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
             {
-                foreach (char c in text)
+                string unreservedCharacters;
+
+                if (isPath)
                 {
-                    if (unreservedCharacters.Contains(c))
+                    unreservedCharacters = URLPathCharacters;
+                }
+                else
+                {
+                    unreservedCharacters = URLCharacters;
+                }
+
+                foreach (char c in Encoding.UTF8.GetBytes(text))
+                {
+                    if (unreservedCharacters.IndexOf(c) != -1)
                     {
-                        result.Append(c);
+                        sb.Append(c);
                     }
                     else
                     {
-                        byte[] bytes = Encoding.UTF8.GetBytes(c.ToString());
-
-                        foreach (byte b in bytes)
-                        {
-                            result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", b);
-                        }
+                        sb.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
                 }
             }
 
-            return result.ToString();
+            return sb.ToString();
         }
 
-        public static string URLEncode(string text)
+        public static string RemoveBidiControlCharacters(string text)
         {
-            return Encode(text, Helpers.URLCharacters);
+            return new string(text.Where(c => !BidiControlCharacters.Contains(c)).ToArray());
         }
 
-        public static string URLPathEncode(string text)
+        public static string ReplaceReservedCharacters(string text, string replace)
         {
-            return Encode(text, Helpers.URLPathCharacters);
+            StringBuilder sb = new StringBuilder();
+
+            string last = null;
+
+            foreach (char c in text)
+            {
+                if (URLCharacters.Contains(c))
+                {
+                    last = c.ToString();
+                }
+                else if (last != replace)
+                {
+                    last = replace;
+                }
+                else
+                {
+                    continue;
+                }
+
+                sb.Append(last);
+            }
+
+            return sb.ToString();
         }
 
         public static string HtmlEncode(string text)

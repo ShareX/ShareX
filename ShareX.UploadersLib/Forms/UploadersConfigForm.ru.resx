@@ -120,9 +120,6 @@
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Использовать хранилище с меньшей избыточностью</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Используйте эту опцию в случае, если у вас есть ведро с пользовательским доменом.
 Если текстовое поле пустое, имя ведра будет использовано в качестве ссылки.
@@ -136,9 +133,6 @@
   </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
   </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -244,9 +238,6 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Помощь...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Очистить поля -&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>Сервис картинок:</value>
@@ -483,42 +474,6 @@ store.book[0].title</value>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Префикс запрос Jira:</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Удалить папку</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Добавить папку</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Публичный</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Обновить список папок</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Загружать картинки в</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Авторизация</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Обновить авторизацию</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Состояние входа:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Аутентификация</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Тип ссылки:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -687,15 +642,6 @@ store.book[0].title</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки сервисов</value>
   </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>Прямая ссылка</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Чтобы получить ключ API, посетите https://someimage.com/api</value>
-  </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Ключ пользователя:</value>
   </data>
@@ -768,18 +714,6 @@ store.book[0].title</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Загружать картинки в</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Шаг 1: Открыть страницу авторизации...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Шаг 2: Завершить авторизацию</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Обновить авторизацию</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Ваш фотопоток...</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Открыть мои картинки...</value>
   </data>
@@ -833,11 +767,6 @@ store.book[0].title</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Создать новый альбом</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Используйте класс хранилища с меньшей избыточностью хранимых объектов.
-В этом случае, хранить объекты дешевле, но их прочности 99.99%, вместо 99.999999999%.
-Это значит, что они могут исчезнуть из Amazon S3 в какой-то момент.</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Сервисы текстов</value>
@@ -917,9 +846,6 @@ store.book[0].title</value>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Использовать прямую ссылку</value>
   </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Создать аккаунт...</value>
-  </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>Забыли пароль:</value>
   </data>
@@ -940,33 +866,6 @@ store.book[0].title</value>
   </data>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
     <value>Использовать расширение файла для подсветки синтаксиса (кроме .txt)</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Получить ключ API:</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>Данные для входа</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>Моментальная загрузка включена</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>Премиум пользователь</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>Информация пользователя</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>Адрес Email:</value>
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Публичная загрузка?</value>
@@ -1027,9 +926,6 @@ store.book[0].title</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="cbImgurUseHTTPS.Text" xml:space="preserve">
-    <value>Использовать ссылки "https://"</value>
   </data>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Пример: https://api.github.com</value>
@@ -1151,9 +1047,6 @@ store.book[0].title</value>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Использовать запрос в виде пути</value>
   </data>
-  <data name="sulKeyLink.Text" xml:space="preserve">
-    <value>Кликните здесь, чтобы получить ваш ключ API!</value>
-  </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>никогда</value>
   </data>
@@ -1210,5 +1103,159 @@ store.book[0].title</value>
   </data>
   <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
     <value>Задавать файлам public-read ACL</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Короткая ссылка</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Ключ веб API:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase Dynamic Links</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Путь:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Пользовательский домен:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Имя ведра:</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Использовать ссылки на предпросмотр (только NextCloud)</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Тип доступа:</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>Использовать короткую ссылку</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>Пример: google.page.link</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>Домен:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>URL API:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID API:</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Автоматически устаревать публичные ссылки</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Время устаревания (дней):</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Если URL с указанной ссылкой существует, вернуть его</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Убирать расширение файла:</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>Текстов</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Картинок</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>ID ключа приложения:</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Ключ приложения (секрет):</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Имя ведра:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Нажмите здесь, чтобы создать ключ приложения или управлять вашими ведрами.</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
+    <value>ID ключа приложения. Похож на шестнадцатеричную строку в нижнем регистре.</value>
+  </data>
+  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
+    <value>Ключ приложения. Похож на буквенно-цифровой.</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Использовать пользовательский URL (поддерживает формат шаблонов):</value>
+  </data>
+  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Если включено, URL, который вы получите, будет путем загрузки,
+добавленным к данному URL.
+
+Зто полезно в связке с сервисом вроде CloudFlare или
+другим сервисом в роли фронтенда B2.
+Ознакомьтесь со статьей "Creating a Vanity URL with B2"
+в базе знаний B2.
+
+Если выключено, URL, который вы получите, будет зависеть
+от Backblaze B2. </value>
+  </data>
+  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
+    <value>Где хранить ваши файлы.
+
+Это вступит в силу только если вы не задали
+свойство "Разрешить доступ к ведрам (ов)"
+при создании ключа приложения.</value>
+  </data>
+  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Введите пользовательский URL, который заменит хост и путь, которые возвращает BackBlaze.</value>
+  </data>
+  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
+    <value>Путь к вашему файлу. Использует формат шаблонов.</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
   </data>
 </root>

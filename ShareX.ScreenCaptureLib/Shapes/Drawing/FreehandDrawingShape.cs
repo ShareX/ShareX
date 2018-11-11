@@ -139,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (Brush brush = new SolidBrush(borderColor))
                     {
-                        Rectangle rect = new Rectangle((int)(points[0].X - borderSize / 2f), (int)(points[0].Y - borderSize / 2f), borderSize, borderSize);
+                        Rectangle rect = new Rectangle((int)(points[0].X - (borderSize / 2f)), (int)(points[0].Y - (borderSize / 2f)), borderSize, borderSize);
                         g.FillEllipse(brush, rect);
                     }
                 }

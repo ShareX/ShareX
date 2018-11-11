@@ -93,6 +93,11 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.tbAMF = new System.Windows.Forms.TabPage();
+            this.cbAMFUsage = new System.Windows.Forms.ComboBox();
+            this.lblAMFUsage = new System.Windows.Forms.Label();
+            this.cbAMFQuality = new System.Windows.Forms.ComboBox();
+            this.lblAMFQuality = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -117,6 +122,7 @@
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
+            this.tbAMF.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -356,6 +362,7 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpXvid);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpNVENC);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpGIF);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tbAMF);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
@@ -649,11 +656,48 @@
             // 
             // eiFFmpeg
             // 
+            this.eiFFmpeg.DefaultFileName = null;
             resources.ApplyResources(this.eiFFmpeg, "eiFFmpeg");
             this.eiFFmpeg.Name = "eiFFmpeg";
             this.eiFFmpeg.ObjectType = null;
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
+            // 
+            // tbAMF
+            // 
+            this.tbAMF.Controls.Add(this.cbAMFQuality);
+            this.tbAMF.Controls.Add(this.lblAMFQuality);
+            this.tbAMF.Controls.Add(this.cbAMFUsage);
+            this.tbAMF.Controls.Add(this.lblAMFUsage);
+            resources.ApplyResources(this.tbAMF, "tbAMF");
+            this.tbAMF.Name = "tbAMF";
+            this.tbAMF.UseVisualStyleBackColor = true;
+            // 
+            // cbAMFUsage
+            // 
+            this.cbAMFUsage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAMFUsage.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAMFUsage, "cbAMFUsage");
+            this.cbAMFUsage.Name = "cbAMFUsage";
+            this.cbAMFUsage.SelectedIndexChanged += new System.EventHandler(this.cbAMFUsage_SelectedIndexChanged);
+            // 
+            // lblAMFUsage
+            // 
+            resources.ApplyResources(this.lblAMFUsage, "lblAMFUsage");
+            this.lblAMFUsage.Name = "lblAMFUsage";
+            // 
+            // cbAMFQuality
+            // 
+            this.cbAMFQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAMFQuality.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAMFQuality, "cbAMFQuality");
+            this.cbAMFQuality.Name = "cbAMFQuality";
+            this.cbAMFQuality.SelectedIndexChanged += new System.EventHandler(this.cbAMFQuality_SelectedIndexChanged);
+            // 
+            // lblAMFQuality
+            // 
+            resources.ApplyResources(this.lblAMFQuality, "lblAMFQuality");
+            this.lblAMFQuality.Name = "lblAMFQuality";
             // 
             // FFmpegOptionsForm
             // 
@@ -674,6 +718,7 @@
             this.MinimizeBox = false;
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Load += new System.EventHandler(this.FFmpegOptionsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
@@ -711,6 +756,8 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
+            this.tbAMF.ResumeLayout(false);
+            this.tbAMF.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,5 +828,10 @@
         private System.Windows.Forms.Label lblNVENCPreset;
         private System.Windows.Forms.NumericUpDown nudNVENCBitrate;
         private System.Windows.Forms.Label lblNVENCBitrate;
+        private System.Windows.Forms.TabPage tbAMF;
+        private System.Windows.Forms.ComboBox cbAMFUsage;
+        private System.Windows.Forms.Label lblAMFUsage;
+        private System.Windows.Forms.ComboBox cbAMFQuality;
+        private System.Windows.Forms.Label lblAMFQuality;
     }
 }

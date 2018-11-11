@@ -142,7 +142,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             UploadResult ur = new UploadResult();
 
             string url = string.Format("https://picasaweb.google.com/data/feed/api/user/default/albumid/" + AlbumID);
-            string contentType = Helpers.GetMimeType(fileName);
+            string contentType = UploadHelpers.GetMimeType(fileName);
 
             NameValueCollection headers = GetAuthHeaders();
             headers.Add("Slug", URLHelpers.URLEncode(fileName));

@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.btnCheckDevBuild = new System.Windows.Forms.Button();
             this.cbCheckPreReleaseUpdates = new System.Windows.Forms.CheckBox();
             this.cbTrayMiddleClickAction = new System.Windows.Forms.ComboBox();
             this.lblTrayMiddleClickAction = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@ namespace ShareX
             this.cbChromeExtensionSupport = new System.Windows.Forms.CheckBox();
             this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
+            this.cbEditWithShareX = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
@@ -141,7 +143,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbEditWithShareX = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -191,6 +192,7 @@ namespace ShareX
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGeneral.Controls.Add(this.btnCheckDevBuild);
             this.tpGeneral.Controls.Add(this.cbCheckPreReleaseUpdates);
             this.tpGeneral.Controls.Add(this.cbTrayMiddleClickAction);
             this.tpGeneral.Controls.Add(this.lblTrayMiddleClickAction);
@@ -210,13 +212,19 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             // 
+            // btnCheckDevBuild
+            // 
+            resources.ApplyResources(this.btnCheckDevBuild, "btnCheckDevBuild");
+            this.btnCheckDevBuild.Name = "btnCheckDevBuild";
+            this.btnCheckDevBuild.UseVisualStyleBackColor = true;
+            this.btnCheckDevBuild.Click += new System.EventHandler(this.btnCheckDevBuild_Click);
+            // 
             // cbCheckPreReleaseUpdates
             // 
             resources.ApplyResources(this.cbCheckPreReleaseUpdates, "cbCheckPreReleaseUpdates");
             this.cbCheckPreReleaseUpdates.Name = "cbCheckPreReleaseUpdates";
             this.cbCheckPreReleaseUpdates.UseVisualStyleBackColor = true;
             this.cbCheckPreReleaseUpdates.CheckedChanged += new System.EventHandler(this.cbCheckPreReleaseUpdates_CheckedChanged);
-            this.cbCheckPreReleaseUpdates.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cbCheckPreReleaseUpdates_MouseUp);
             // 
             // cbTrayMiddleClickAction
             // 
@@ -400,6 +408,13 @@ namespace ShareX
             resources.ApplyResources(this.gbWindows, "gbWindows");
             this.gbWindows.Name = "gbWindows";
             this.gbWindows.TabStop = false;
+            // 
+            // cbEditWithShareX
+            // 
+            resources.ApplyResources(this.cbEditWithShareX, "cbEditWithShareX");
+            this.cbEditWithShareX.Name = "cbEditWithShareX";
+            this.cbEditWithShareX.UseVisualStyleBackColor = true;
+            this.cbEditWithShareX.CheckedChanged += new System.EventHandler(this.cbEditWithShareX_CheckedChanged);
             // 
             // cbStartWithWindows
             // 
@@ -1005,9 +1020,7 @@ namespace ShareX
             // 
             // pgSettings
             // 
-            this.pgSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgSettings, "pgSettings");
-            this.pgSettings.LineColor = System.Drawing.SystemColors.ControlDark;
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.ToolbarVisible = false;
@@ -1021,13 +1034,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // cbEditWithShareX
-            // 
-            resources.ApplyResources(this.cbEditWithShareX, "cbEditWithShareX");
-            this.cbEditWithShareX.Name = "cbEditWithShareX";
-            this.cbEditWithShareX.UseVisualStyleBackColor = true;
-            this.cbEditWithShareX.CheckedChanged += new System.EventHandler(this.cbEditWithShareX_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1201,5 +1207,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.CheckBox cbEditWithShareX;
+        private System.Windows.Forms.Button btnCheckDevBuild;
     }
 }

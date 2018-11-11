@@ -117,7 +117,7 @@ namespace ShareX.HelpersLib
             // next character
             int c;
 
-            for (; ; )
+            while (true)
             {
                 // get next character
                 c = NextChar();
@@ -180,7 +180,9 @@ namespace ShareX.HelpersLib
 
                 // if next line doesn't fit on page anymore, exit loop
                 if (textheight > (pageheight - lineheight) || c == Eos)
+                {
                     break;
+                }
             }
 
             // print footer

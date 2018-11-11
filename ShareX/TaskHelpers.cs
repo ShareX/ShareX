@@ -42,6 +42,7 @@ using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
@@ -266,7 +267,7 @@ namespace ShareX
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
-                string thumbnailFilePath = CheckFilePath(folder, thumbnailFileName, taskSettings);
+                string thumbnailFilePath = HandleExistsFile(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
@@ -380,12 +381,17 @@ namespace ShareX
             }
         }
 
-        public static void SaveImageAsFile(Image img, TaskSettings taskSettings)
+        public static void SaveImageAsFile(Image img, TaskSettings taskSettings, bool overwriteFile = false)
         {
             using (ImageData imageData = PrepareImage(img, taskSettings))
             {
                 string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), img);
-                string filePath = CheckFilePath(taskSettings.CaptureFolder, fileName, taskSettings);
+                string filePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+
+                if (!overwriteFile)
+                {
+                    filePath = HandleExistsFile(filePath, taskSettings);
+                }
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
@@ -574,34 +580,39 @@ namespace ShareX
         {
             percentage = percentage.Between(0, 99);
 
-            using (Bitmap bmp = new Bitmap(16, 16))
+            Size size = SystemInformation.SmallIconSize;
+            using (Bitmap bmp = new Bitmap(size.Width, size.Height))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                int y = (int)(16 * (percentage / 100f));
+                int y = (int)(size.Height * (percentage / 100f));
 
                 if (y > 0)
                 {
                     using (Brush brush = new SolidBrush(Color.FromArgb(16, 116, 193)))
                     {
-                        g.FillRectangle(brush, 0, 15 - y, 16, y);
+                        g.FillRectangle(brush, 0, size.Height - 1 - y, size.Width, y);
                     }
                 }
 
-                using (Font font = new Font("Arial", 12, GraphicsUnit.Pixel))
+                using (Font font = new Font("Arial", 10))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.Black, 8, 8, sf);
-                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 7, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.Black, size.Width / 2, size.Height / 2, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2, (size.Height / 2) - 1, sf);
                 }
 
                 return Icon.FromHandle(bmp.GetHicon());
             }
         }
 
-        public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
+        public static string HandleExistsFile(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
+            return HandleExistsFile(filepath, taskSettings);
+        }
 
+        public static string HandleExistsFile(string filepath, TaskSettings taskSettings)
+        {
             if (File.Exists(filepath))
             {
                 switch (taskSettings.ImageSettings.FileExistAction)
@@ -704,48 +715,23 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
-            historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
-            Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             historyForm.Show();
         }
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
-                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
-            Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             imageHistoryForm.Show();
         }
 
-        private static void imageHistoryForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ImageHistoryForm imageHistoryForm = sender as ImageHistoryForm;
-            Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
-            Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
-            Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
-        }
-
-        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null, bool checkClipboard = true)
+        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Color color = Color.Red;
-
-            if (checkClipboard && Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
-
-                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
-                {
-                    color = clipboardColor;
-                }
-            }
-
-            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
-            colorPickerForm.EnableScreenColorPickerButton(() => RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions));
-            colorPickerForm.Show();
+            RegionCaptureTasks.ShowScreenColorPickerDialog(taskSettings.CaptureSettings.SurfaceOptions, true);
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -899,18 +885,34 @@ namespace ShareX
 
                         form.SaveImageRequested += (output, newFilePath) =>
                         {
-                            Program.MainForm.InvokeSafe(() =>
+                            using (output)
                             {
-                                using (output) { ImageHelpers.SaveImage(output, newFilePath); }
-                            });
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                ImageHelpers.SaveImage(output, newFilePath);
+                            }
+
+                            return newFilePath;
                         };
 
                         form.SaveImageAsRequested += (output, newFilePath) =>
                         {
-                            Program.MainForm.InvokeSafe(() =>
+                            using (output)
                             {
-                                using (output) { ImageHelpers.SaveImageFileDialog(output, newFilePath); }
-                            });
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);
+                            }
+
+                            return newFilePath;
                         };
 
                         form.CopyImageRequested += output =>
@@ -980,7 +982,7 @@ namespace ShareX
                     using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
                         taskSettings.ImageSettings.SelectedImageEffectPreset))
                     {
-                        imageEffectsForm.ToolMode();
+                        imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings));
                         imageEffectsForm.ShowDialog();
                         //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                     }
@@ -1021,7 +1023,9 @@ namespace ShareX
                 psi.Verb = "runas";
                 Process.Start(psi);
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         public static void OpenQRCode()
@@ -1068,12 +1072,12 @@ namespace ShareX
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath));
+                    OCRImage(fs, Path.GetFileName(filePath), filePath);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName)
+        public static void OCRImage(Stream stream, string fileName, string filePath = null)
         {
             if (stream != null)
             {
@@ -1082,6 +1086,12 @@ namespace ShareX
                     form.Language = Program.Settings.OCRLanguage;
                     form.ShowDialog();
                     Program.Settings.OCRLanguage = form.Language;
+
+                    if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                    {
+                        string textPath = Path.ChangeExtension(filePath, "txt");
+                        File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                    }
                 }
             }
         }
@@ -1118,7 +1128,7 @@ namespace ShareX
 
                 if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                 {
-                    TaskEx.Run(() =>
+                    Task.Run(() =>
                     {
                         using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                         {
@@ -1279,7 +1289,7 @@ namespace ShareX
 
         public static void TextToSpeechAsync(string text)
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 using (SpeechSynthesizer speaker = new SpeechSynthesizer())
                 {
@@ -1589,7 +1599,7 @@ namespace ShareX
         {
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
-                IsBeta = Program.Beta,
+                IsBeta = Program.Dev,
                 IsPortable = Program.Portable,
                 Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
             };

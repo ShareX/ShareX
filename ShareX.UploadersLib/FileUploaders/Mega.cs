@@ -63,9 +63,9 @@ namespace ShareX.UploadersLib.FileUploaders
         // It allows to have a consistent upload progression in ShareX
         private const int UploadChunksPackSize = -1;
 
-        private readonly MegaApiClient _megaClient;
-        private readonly MegaApiClient.AuthInfos _authInfos;
-        private readonly string _parentNodeId;
+        private readonly MegaApiClient megaClient;
+        private readonly MegaApiClient.AuthInfos authInfos;
+        private readonly string parentNodeId;
 
         public Mega() : this(null, null)
         {
@@ -79,9 +79,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             AllowReportProgress = false;
             Options options = new Options(chunksPackSize: UploadChunksPackSize);
-            _megaClient = new MegaApiClient(options, this);
-            _authInfos = authInfos;
-            _parentNodeId = parentNodeId;
+            megaClient = new MegaApiClient(options, this);
+            this.authInfos = authInfos;
+            this.parentNodeId = parentNodeId;
         }
 
         public bool TryLogin()
@@ -99,19 +99,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void Login()
         {
-            if (_authInfos == null)
+            if (authInfos == null)
             {
-                _megaClient.LoginAnonymous();
+                megaClient.LoginAnonymous();
             }
             else
             {
-                _megaClient.Login(_authInfos);
+                megaClient.Login(authInfos);
             }
         }
 
         internal IEnumerable<DisplayNode> GetDisplayNodes()
         {
-            IEnumerable<INode> nodes = _megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
+            IEnumerable<INode> nodes = megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
             List<DisplayNode> displayNodes = new List<DisplayNode>();
 
             foreach (INode node in nodes)
@@ -127,23 +127,23 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public INode GetParentNode()
         {
-            if (_authInfos == null || _parentNodeId == null)
+            if (authInfos == null || parentNodeId == null)
             {
-                return _megaClient.GetNodes().SingleOrDefault(n => n.Type == NodeType.Root);
+                return megaClient.GetNodes().SingleOrDefault(n => n.Type == NodeType.Root);
             }
 
-            return _megaClient.GetNodes().SingleOrDefault(n => n.Id == _parentNodeId);
+            return megaClient.GetNodes().SingleOrDefault(n => n.Id == parentNodeId);
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Login();
 
-            INode createdNode = _megaClient.Upload(stream, fileName, GetParentNode());
+            INode createdNode = megaClient.Upload(stream, fileName, GetParentNode());
 
             UploadResult res = new UploadResult();
             res.IsURLExpected = true;
-            res.URL = _megaClient.GetDownloadLink(createdNode).ToString();
+            res.URL = megaClient.GetDownloadLink(createdNode).ToString();
 
             return res;
         }
@@ -152,7 +152,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, ContentTypeJSON);
+            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, UploadHelpers.ContentTypeJSON);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)

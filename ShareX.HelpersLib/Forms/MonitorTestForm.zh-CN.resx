@@ -145,7 +145,7 @@
     <value>尺寸：</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>您可以点击外面隐藏/显示此面板.</value>
+    <value>您可以点击外侧隐藏/显示此面板</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>黑色,  白色：</value>
@@ -161,5 +161,14 @@
   </data>
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
     <value>屏幕撕裂测试</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R（红）：</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>G（绿）：</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>B（蓝）：</value>
   </data>
 </root>

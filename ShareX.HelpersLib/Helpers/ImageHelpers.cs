@@ -702,7 +702,7 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(Image img)
         {
-            return DrawCheckers(img, 10, Color.FromArgb(230, 230, 230), Color.White);
+            return DrawCheckers(img, 10, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
@@ -743,7 +743,7 @@ namespace ShareX.HelpersLib
 
         public static Image CreateCheckerPattern(int width, int height)
         {
-            return CreateCheckerPattern(width, height, Color.FromArgb(230, 230, 230), Color.White);
+            return CreateCheckerPattern(width, height, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
         private static Image CreateCheckerPattern(int width, int height, Color color1, Color color2)
@@ -864,8 +864,8 @@ namespace ShareX.HelpersLib
 
                 double cos = Math.Abs(Math.Cos(angleRadians));
                 double sin = Math.Abs(Math.Sin(angleRadians));
-                newWidth = (int)Math.Round(oldWidth * cos + oldHeight * sin);
-                newHeight = (int)Math.Round(oldWidth * sin + oldHeight * cos);
+                newWidth = (int)Math.Round((oldWidth * cos) + (oldHeight * sin));
+                newHeight = (int)Math.Round((oldWidth * sin) + (oldHeight * cos));
             }
 
             // If upsizing not wanted and clipping not OK need a scaling factor
@@ -976,11 +976,11 @@ namespace ShareX.HelpersLib
 
                     double[,] filter = new double[,]
                     {
-                        {-1, -1, -1, -1, -1},
-                        {-1,  2,  2,  2, -1},
-                        {-1,  2, 16,  2, -1},
-                        {-1,  2,  2,  2, -1},
-                        {-1, -1, -1, -1, -1}
+                        { -1, -1, -1, -1, -1 },
+                        { -1,  2,  2,  2, -1 },
+                        { -1,  2, 16,  2, -1 },
+                        { -1,  2,  2,  2, -1 },
+                        { -1, -1, -1, -1, -1 }
                     };
 
                     double bias = 1.0 - strength;
@@ -1017,18 +1017,18 @@ namespace ShareX.HelpersLib
                                         int imageX = (x - s + filterX + width) % width;
                                         int imageY = (y - s + filterY + height) % height;
 
-                                        rgb = imageY * pbits.Stride + 3 * imageX;
+                                        rgb = (imageY * pbits.Stride) + (3 * imageX);
 
                                         red += rgbValues[rgb + 2] * filter[filterX, filterY];
                                         green += rgbValues[rgb + 1] * filter[filterX, filterY];
                                         blue += rgbValues[rgb + 0] * filter[filterX, filterY];
                                     }
 
-                                    rgb = y * pbits.Stride + 3 * x;
+                                    rgb = (y * pbits.Stride) + (3 * x);
 
-                                    int r = Math.Min(Math.Max((int)(factor * red + (bias * rgbValues[rgb + 2])), 0), 255);
-                                    int g = Math.Min(Math.Max((int)(factor * green + (bias * rgbValues[rgb + 1])), 0), 255);
-                                    int b = Math.Min(Math.Max((int)(factor * blue + (bias * rgbValues[rgb + 0])), 0), 255);
+                                    int r = Math.Min(Math.Max((int)((factor * red) + (bias * rgbValues[rgb + 2])), 0), 255);
+                                    int g = Math.Min(Math.Max((int)((factor * green) + (bias * rgbValues[rgb + 1])), 0), 255);
+                                    int b = Math.Min(Math.Max((int)((factor * blue) + (bias * rgbValues[rgb + 0])), 0), 255);
 
                                     result[x, y] = Color.FromArgb(r, g, b);
                                 }
@@ -1040,7 +1040,7 @@ namespace ShareX.HelpersLib
                         {
                             for (int y = s; y < height - s; y++)
                             {
-                                rgb = y * pbits.Stride + 3 * x;
+                                rgb = (y * pbits.Stride) + (3 * x);
 
                                 rgbValues[rgb + 2] = result[x, y].R;
                                 rgbValues[rgb + 1] = result[x, y].G;
@@ -1106,7 +1106,8 @@ namespace ShareX.HelpersLib
                             int xLimit = Math.Min(x + pixelSize, unsafeBitmap.Width);
                             int yLimit = Math.Min(y + pixelSize, unsafeBitmap.Height);
                             int pixelCount = (xLimit - x) * (yLimit - y);
-                            int r = 0, g = 0, b = 0, a = 0;
+                            float r = 0, g = 0, b = 0, a = 0;
+                            float weightedCount = 0;
 
                             for (int y2 = y; y2 < yLimit; y2++)
                             {
@@ -1114,14 +1115,18 @@ namespace ShareX.HelpersLib
                                 {
                                     ColorBgra color = unsafeBitmap.GetPixel(x2, y2);
 
-                                    r += color.Red;
-                                    g += color.Green;
-                                    b += color.Blue;
-                                    a += color.Alpha;
+                                    float pixelWeight = color.Alpha / 255;
+
+                                    r += color.Red * pixelWeight;
+                                    g += color.Green * pixelWeight;
+                                    b += color.Blue * pixelWeight;
+                                    a += color.Alpha * pixelWeight;
+
+                                    weightedCount += pixelWeight;
                                 }
                             }
 
-                            ColorBgra averageColor = new ColorBgra((byte)(b / pixelCount), (byte)(g / pixelCount), (byte)(r / pixelCount), (byte)(a / pixelCount));
+                            ColorBgra averageColor = new ColorBgra((byte)(b / weightedCount), (byte)(g / weightedCount), (byte)(r / weightedCount), (byte)(a / pixelCount));
 
                             for (int y2 = y; y2 < yLimit; y2++)
                             {
@@ -1136,8 +1141,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        // https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/
         public static void BoxBlur(Bitmap bmp, int range)
+        {
+            BoxBlur(bmp, range, new Rectangle(0, 0, bmp.Width, bmp.Height));
+        }
+
+        // https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/
+        public static void BoxBlur(Bitmap bmp, int range, Rectangle rect)
         {
             if (range > 1)
             {
@@ -1148,22 +1158,24 @@ namespace ShareX.HelpersLib
 
                 using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
                 {
-                    BoxBlurHorizontal(unsafeBitmap, range);
-                    BoxBlurVertical(unsafeBitmap, range);
-                    BoxBlurHorizontal(unsafeBitmap, range);
-                    BoxBlurVertical(unsafeBitmap, range);
+                    BoxBlurHorizontal(unsafeBitmap, range, rect);
+                    BoxBlurVertical(unsafeBitmap, range, rect);
+                    BoxBlurHorizontal(unsafeBitmap, range, rect);
+                    BoxBlurVertical(unsafeBitmap, range, rect);
                 }
             }
         }
 
-        private static void BoxBlurHorizontal(UnsafeBitmap unsafeBitmap, int range)
+        private static void BoxBlurHorizontal(UnsafeBitmap unsafeBitmap, int range, Rectangle rect)
         {
-            int w = unsafeBitmap.Width;
-            int h = unsafeBitmap.Height;
+            int left = rect.X;
+            int top = rect.Y;
+            int right = rect.Right;
+            int bottom = rect.Bottom;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[w];
+            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Width];
 
-            for (int y = 0; y < h; y++)
+            for (int y = top; y < bottom; y++)
             {
                 int hits = 0;
                 int r = 0;
@@ -1171,10 +1183,10 @@ namespace ShareX.HelpersLib
                 int b = 0;
                 int a = 0;
 
-                for (int x = -halfRange; x < w; x++)
+                for (int x = left - halfRange; x < right; x++)
                 {
                     int oldPixel = x - halfRange - 1;
-                    if (oldPixel >= 0)
+                    if (oldPixel >= left)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(oldPixel, y);
 
@@ -1190,7 +1202,7 @@ namespace ShareX.HelpersLib
                     }
 
                     int newPixel = x + halfRange;
-                    if (newPixel < w)
+                    if (newPixel < right)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(newPixel, y);
 
@@ -1205,27 +1217,29 @@ namespace ShareX.HelpersLib
                         hits++;
                     }
 
-                    if (x >= 0)
+                    if (x >= left)
                     {
                         newColors[x] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
                     }
                 }
 
-                for (int x = 0; x < w; x++)
+                for (int x = left; x < right; x++)
                 {
                     unsafeBitmap.SetPixel(x, y, newColors[x]);
                 }
             }
         }
 
-        private static void BoxBlurVertical(UnsafeBitmap unsafeBitmap, int range)
+        private static void BoxBlurVertical(UnsafeBitmap unsafeBitmap, int range, Rectangle rect)
         {
-            int w = unsafeBitmap.Width;
-            int h = unsafeBitmap.Height;
+            int left = rect.X;
+            int top = rect.Y;
+            int right = rect.Right;
+            int bottom = rect.Bottom;
             int halfRange = range / 2;
-            ColorBgra[] newColors = new ColorBgra[h];
+            ColorBgra[] newColors = new ColorBgra[unsafeBitmap.Height];
 
-            for (int x = 0; x < w; x++)
+            for (int x = left; x < right; x++)
             {
                 int hits = 0;
                 int r = 0;
@@ -1233,10 +1247,10 @@ namespace ShareX.HelpersLib
                 int b = 0;
                 int a = 0;
 
-                for (int y = -halfRange; y < h; y++)
+                for (int y = top - halfRange; y < bottom; y++)
                 {
                     int oldPixel = y - halfRange - 1;
-                    if (oldPixel >= 0)
+                    if (oldPixel >= top)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(x, oldPixel);
 
@@ -1252,7 +1266,7 @@ namespace ShareX.HelpersLib
                     }
 
                     int newPixel = y + halfRange;
-                    if (newPixel < h)
+                    if (newPixel < bottom)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(x, newPixel);
 
@@ -1267,13 +1281,13 @@ namespace ShareX.HelpersLib
                         hits++;
                     }
 
-                    if (y >= 0)
+                    if (y >= top)
                     {
                         newColors[y] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
                     }
                 }
 
-                for (int y = 0; y < h; y++)
+                for (int y = top; y < bottom; y++)
                 {
                     unsafeBitmap.SetPixel(x, y, newColors[y]);
                 }
@@ -1439,7 +1453,7 @@ namespace ShareX.HelpersLib
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    points.Add(new Point(img.Width - 1 - tornRange * x, img.Height - 1 - MathHelpers.Random(0, tornDepth)));
+                    points.Add(new Point(img.Width - 1 - (tornRange * x), img.Height - 1 - MathHelpers.Random(0, tornDepth)));
                 }
             }
             else
@@ -1452,7 +1466,7 @@ namespace ShareX.HelpersLib
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - tornRange * y));
+                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - (tornRange * y)));
                 }
             }
             else
@@ -1704,16 +1718,23 @@ namespace ShareX.HelpersLib
             {
                 g.CompositingMode = CompositingMode.SourceCopy;
 
-                Rectangle holeRect = new Rectangle(rect.Width / 2 - holeSize / 2, rect.Height / 2 - holeSize / 2, holeSize, holeSize);
+                Rectangle holeRect = new Rectangle((rect.Width / 2) - (holeSize / 2), (rect.Height / 2) - (holeSize / 2), holeSize, holeSize);
 
                 g.FillRectangle(Brushes.Transparent, holeRect);
                 g.DrawRectangleProper(Pens.Black, holeRect);
             }
         }
 
-        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false)
+        public static Rectangle FindAutoCropRectangle(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
+
+            if (sides == AnchorStyles.None)
+            {
+                return source;
+            }
+
             Rectangle crop = source;
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
@@ -1721,86 +1742,94 @@ namespace ShareX.HelpersLib
                 bool leave = false;
 
                 ColorBgra checkColor = unsafeBitmap.GetPixel(0, 0);
+                uint mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
+                uint check = checkColor.Bgra & mask;
 
-                // Find X (Left to right)
-                for (int x = 0; x < bmp.Width && !leave; x++)
+                if (sides.HasFlag(AnchorStyles.Left))
                 {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find X (Left to right)
+                    for (int x = 0; x < bmp.Width && !leave; x++)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.X = x;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.X = x;
+                                crop.Width -= x;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
+
+                    // If all pixels same color
+                    if (!leave)
+                    {
+                        return crop;
+                    }
+
+                    leave = false;
                 }
 
-                // If all pixels same color
-                if (!leave)
+                if (sides.HasFlag(AnchorStyles.Top))
                 {
-                    return crop;
-                }
+                    // Find Y (Top to bottom)
+                    for (int y = 0; y < bmp.Height && !leave; y++)
+                    {
+                        for (int x = 0; x < bmp.Width; x++)
+                        {
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Y = y;
+                                crop.Height -= y;
+                                leave = true;
+                                break;
+                            }
+                        }
+                    }
 
-                leave = false;
+                    leave = false;
+                }
 
                 if (!sameColorCrop)
                 {
-                    checkColor = unsafeBitmap.GetPixel(0, 0);
+                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, bmp.Height - 1);
+                    mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
+                    check = checkColor.Bgra & mask;
                 }
 
-                // Find Y (Top to bottom)
-                for (int y = 0; y < bmp.Height && !leave; y++)
+                if (sides.HasFlag(AnchorStyles.Right))
                 {
-                    for (int x = 0; x < bmp.Width; x++)
+                    // Find Width (Right to left)
+                    for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int y = 0; y < bmp.Height; y++)
                         {
-                            crop.Y = y;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Width = x - crop.X + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
+
+                    leave = false;
                 }
 
-                leave = false;
-
-                if (!sameColorCrop)
+                if (sides.HasFlag(AnchorStyles.Bottom))
                 {
-                    checkColor = unsafeBitmap.GetPixel(bmp.Width - 1, 0);
-                }
-
-                // Find Width (Right to left)
-                for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
-                {
-                    for (int y = 0; y < bmp.Height; y++)
+                    // Find Height (Bottom to top)
+                    for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
+                        for (int x = 0; x < bmp.Width; x++)
                         {
-                            crop.Width = x - crop.X + 1;
-                            leave = true;
-                            break;
-                        }
-                    }
-                }
-
-                leave = false;
-
-                if (!sameColorCrop)
-                {
-                    checkColor = unsafeBitmap.GetPixel(0, bmp.Height - 1);
-                }
-
-                // Find Height (Bottom to top)
-                for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
-                {
-                    for (int x = 0; x < bmp.Width; x++)
-                    {
-                        if (unsafeBitmap.GetPixel(x, y) != checkColor)
-                        {
-                            crop.Height = y - crop.Y + 1;
-                            leave = true;
-                            break;
+                            if ((unsafeBitmap.GetPixel(x, y).Bgra & mask) != check)
+                            {
+                                crop.Height = y - crop.Y + 1;
+                                leave = true;
+                                break;
+                            }
                         }
                     }
                 }
@@ -1809,10 +1838,11 @@ namespace ShareX.HelpersLib
             return crop;
         }
 
-        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false)
+        public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false,
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop);
+            Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop, sides);
 
             if (source != rect)
             {
@@ -1873,6 +1903,22 @@ namespace ShareX.HelpersLib
                     return RotateFlipType.Rotate270FlipX;
                 case 8:
                     return RotateFlipType.Rotate270FlipNone;
+            }
+        }
+
+        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int threshold)
+        {
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int i = 0; i < unsafeBitmap.PixelCount; i++)
+                {
+                    ColorBgra color = unsafeBitmap.GetPixel(i);
+                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > threshold ? lightColor : darkColor;
+                    color.Red = newColor.R;
+                    color.Green = newColor.G;
+                    color.Blue = newColor.B;
+                    unsafeBitmap.SetPixel(i, color);
+                }
             }
         }
     }

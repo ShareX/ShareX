@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -228,7 +229,7 @@ namespace ShareX
                 {
                     StartPosition = FormStartPosition.Manual;
                     Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
-                    Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
+                    Location = new Point((activeScreen.Width / 2) - (Size.Width / 2), (activeScreen.Height / 2) - (Size.Height / 2));
                 }
             }
             else
@@ -264,6 +265,16 @@ namespace ShareX
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
             }
 
+            if (Program.Settings.TaskListViewColumnWidths != null)
+            {
+                int len = Math.Min(lvUploads.Columns.Count - 1, Program.Settings.TaskListViewColumnWidths.Count);
+
+                for (int i = 0; i < len; i++)
+                {
+                    lvUploads.Columns[i].Width = Program.Settings.TaskListViewColumnWidths[i];
+                }
+            }
+
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
 
             UpdateCheckStates();
@@ -285,6 +296,36 @@ namespace ShareX
 #endif
 
             IsReady = true;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
+            {
+                EndSessionReasons reason = (EndSessionReasons)m.LParam;
+                if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
+                {
+                    // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
+                    // Also allows it to restart if it gets terminated for other reasons (see description of ENDSESSION_CLOSEAPP).
+                    // Add the silent switch to avoid ShareX popping up in front of the user when the application restarts.
+                    NativeMethods.RegisterApplicationRestart("-silent", 0);
+                }
+                m.Result = new IntPtr(1); // "Applications should respect the user's intentions and return TRUE."
+            }
+            else if (m.Msg == (int)WindowsMessages.ENDSESSION)
+            {
+                if (m.WParam != IntPtr.Zero)
+                {
+                    // If wParam is not equal to false (0), the application can be terminated at any moment after processing this message
+                    // thus should save its data while processing the message.
+                    Program.CloseSequence();
+                }
+                m.Result = IntPtr.Zero; // "If an application processes this message, it should return zero."
+            }
+            else
+            {
+                base.WndProc(ref m);
+            }
         }
 
         private void AfterShownJobs()
@@ -309,11 +350,10 @@ namespace ShareX
 
         private void InitHotkeys()
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 SettingManager.WaitHotkeysConfig();
-            },
-            () =>
+            }).ContinueInCurrentContext(() =>
             {
                 if (Program.HotkeyManager == null)
                 {
@@ -655,7 +695,7 @@ namespace ShareX
                     tsmiSearchImage.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
-                    tsmiCombineImages.Visible = uim.SelectedItems.Where(x => x.IsImageFile).Count() > 1;
+                    tsmiCombineImages.Visible = uim.SelectedItems.Count(x => x.IsImageFile) > 1;
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
@@ -704,6 +744,7 @@ namespace ShareX
                 niTray.Text = "ShareX";
             }
 
+            HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
             HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;
@@ -715,10 +756,20 @@ namespace ShareX
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
 #if RELEASE
+            ConfigureAutoUpdate();
+#else
+            if (UpdateChecker.ForceUpdate)
+            {
+                ConfigureAutoUpdate();
+            }
+#endif
+        }
+
+        private void ConfigureAutoUpdate()
+        {
             Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps;
             Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
             Program.UpdateManager.ConfigureAutoUpdate();
-#endif
         }
 
         private void AfterTaskSettingsJobs()
@@ -973,61 +1024,59 @@ namespace ShareX
             ucNews.MarkRead();
         }
 
-        private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
+        private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
         {
             tsmiWindow.DropDownItems.Clear();
 
             WindowsList windowsList = new WindowsList();
             List<WindowInfo> windows = null;
 
-            TaskEx.Run(() =>
+            await Task.Run(() =>
             {
                 windows = windowsList.GetVisibleWindowsList();
-            },
-            () =>
-            {
-                if (windows != null)
-                {
-                    foreach (WindowInfo window in windows)
-                    {
-                        try
-                        {
-                            string title = window.Text.Truncate(50, "...");
-                            ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
-                            tsi.Tag = window;
-                            tsi.Click += handlerWindow;
+            });
 
-                            using (Icon icon = window.Icon)
+            if (windows != null)
+            {
+                foreach (WindowInfo window in windows)
+                {
+                    try
+                    {
+                        string title = window.Text.Truncate(50, "...");
+                        ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
+                        tsi.Tag = window;
+                        tsi.Click += handlerWindow;
+
+                        using (Icon icon = window.Icon)
+                        {
+                            if (icon != null && icon.Width > 0 && icon.Height > 0)
                             {
-                                if (icon != null && icon.Width > 0 && icon.Height > 0)
-                                {
-                                    tsi.Image = icon.ToBitmap();
-                                }
+                                tsi.Image = icon.ToBitmap();
                             }
                         }
-                        catch (Exception e)
-                        {
-                            DebugHelper.WriteException(e);
-                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
                     }
                 }
+            }
 
-                tsmiMonitor.DropDownItems.Clear();
+            tsmiMonitor.DropDownItems.Clear();
 
-                Screen[] screens = Screen.AllScreens;
+            Screen[] screens = Screen.AllScreens;
 
-                for (int i = 0; i < screens.Length; i++)
-                {
-                    Screen screen = screens[i];
-                    string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
-                    ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
-                    tsi.Tag = screen.Bounds;
-                    tsi.Click += handlerMonitor;
-                }
+            for (int i = 0; i < screens.Length; i++)
+            {
+                Screen screen = screens[i];
+                string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
+                ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
+                tsi.Tag = screen.Bounds;
+                tsi.Click += handlerMonitor;
+            }
 
-                tsmiWindow.Invalidate();
-                tsmiMonitor.Invalidate();
-            });
+            tsmiWindow.Invalidate();
+            tsmiMonitor.Invalidate();
         }
 
         public void ForceClose()
@@ -1147,8 +1196,11 @@ namespace ShareX
             }
         }
 
-        private void lvUploads_SelectedIndexChanged(object sender, EventArgs e)
+        private async void lvUploads_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lvUploads.SelectedIndexChanged -= lvUploads_SelectedIndexChanged;
+            await Task.Delay(1);
+            lvUploads.SelectedIndexChanged += lvUploads_SelectedIndexChanged;
             UpdateContextMenu();
         }
 
@@ -1253,6 +1305,19 @@ namespace ShareX
             }
         }
 
+        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (IsReady)
+            {
+                Program.Settings.TaskListViewColumnWidths = new List<int>();
+
+                for (int i = 0; i < lvUploads.Columns.Count; i++)
+                {
+                    Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+                }
+            }
+        }
+
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
         {
             TaskInfo[] taskInfos = GetCurrentTasks().Select(x => x.Info).Where(x => x != null).ToArray();
@@ -1331,9 +1396,9 @@ namespace ShareX
             new CaptureFullscreen().Capture(true);
         }
 
-        private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
+        private async void tsddbCapture_DropDownOpening(object sender, EventArgs e)
         {
-            PrepareCaptureMenuAsync(tsmiWindow, tsmiWindowItems_Click, tsmiMonitor, tsmiMonitorItems_Click);
+            await PrepareCaptureMenuAsync(tsmiWindow, tsmiWindowItems_Click, tsmiMonitor, tsmiMonitorItems_Click);
         }
 
         private void tsmiWindowItems_Click(object sender, EventArgs e)
@@ -1600,7 +1665,19 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            DebugForm.GetFormInstance(DebugHelper.Logger).ForceActivate();
+            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
+            if (!form.HasUploadRequested)
+            {
+                form.UploadRequested += (text) =>
+                {
+                    DialogResult result = MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (result == DialogResult.Yes)
+                    {
+                        UploadManager.UploadText(text);
+                    }
+                };
+            }
+            form.ForceActivate();
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)
@@ -1718,9 +1795,9 @@ namespace ShareX
             new CaptureFullscreen().Capture();
         }
 
-        private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
+        private async void tsmiCapture_DropDownOpening(object sender, EventArgs e)
         {
-            PrepareCaptureMenuAsync(tsmiTrayWindow, tsmiTrayWindowItems_Click, tsmiTrayMonitor, tsmiTrayMonitorItems_Click);
+            await PrepareCaptureMenuAsync(tsmiTrayWindow, tsmiTrayWindowItems_Click, tsmiTrayMonitor, tsmiTrayMonitorItems_Click);
         }
 
         private void tsmiTrayWindowItems_Click(object sender, EventArgs e)

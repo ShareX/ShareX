@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>여분 저장소 사용 줄이기</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>저장된 오브젝트에 대해 여분 저장소 사용을 줄입니다.
-이 설정을 사용하면 오브젝트를 저장하는 비용이 줄어들지만,
-가용성이 99.999999999%에서 99.99%로 줄어듦니다.
-이것은 Amazon S3에서 오브젝트를 잃어버릴 수 있는 가능성이 생긴다는 뜻입니다.</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>커스텀 도메인 사용:</value>
   </data>
@@ -142,9 +133,6 @@
   </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>추가</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>갱신</value>
   </data>
   <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>삭제</value>
@@ -172,9 +160,6 @@
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>도움말...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>필드 전부 초기화 --&gt;</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
     <value>이미지 업로더:</value>
@@ -228,7 +213,7 @@
     <value>도메인:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
+    <value>참고: 시그니쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
@@ -237,7 +222,7 @@
     <value>사용자 ID:</value>
   </data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>시그내쳐:</value>
+    <value>시그니쳐:</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
@@ -316,18 +301,6 @@
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>업로드할 곳</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>포토스트림 보기...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>내 이미지 페이지 열기...</value>
@@ -463,39 +436,6 @@
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira 이슈 접두사:</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>폴더 삭제</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>폴더 추가</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>폴더 목록 갱신하기</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>업로드할 곳</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>로그인 상태:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL 종류:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>이메일:</value>
@@ -854,9 +794,6 @@ store.book[0].title</value>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
   </data>
-  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
   </data>
@@ -868,12 +805,6 @@ store.book[0].title</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>오래되어 권장되지 않는 API v1 사용하기</value>
@@ -1382,5 +1313,59 @@ store.book[0].title</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>사용량:</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>웹 API 키:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase 다이나믹 링크</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>파일 확장자 제거:</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>비디오</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>파일에 공용 읽기 ACL설정</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>미리보기</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>URL 미리보기:</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>경로:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>개인 맞춤 도메인:</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>미리보기 링크 사용(NextCloud만)</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>단축 링크 사용</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>개인 정보 유형:</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>중복</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>추가</value>
   </data>
 </root>

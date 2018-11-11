@@ -70,7 +70,7 @@ namespace ShareX
             }
         }
 
-        private void fileWatcher_Created(object sender, FileSystemEventArgs e)
+        private async void fileWatcher_Created(object sender, FileSystemEventArgs e)
         {
             CleanElapsedTimers();
 
@@ -89,7 +89,7 @@ namespace ShareX
             int successCount = 0;
             long previousSize = -1;
 
-            Helpers.WaitWhileAsync(() =>
+            await Helpers.WaitWhileAsync(() =>
             {
                 if (!Helpers.IsFileLocked(path))
                 {

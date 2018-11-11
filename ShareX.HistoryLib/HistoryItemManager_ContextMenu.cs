@@ -71,6 +71,8 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiShow;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiShowMoreInfo;
+        private ToolStripMenuItem tsmiUploadFile;
+        private ToolStripMenuItem tsmiEditImage;
 
         private void InitializeComponent()
         {
@@ -112,6 +114,8 @@ namespace ShareX.HistoryLib
             tsmiShow = new ToolStripMenuItem();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiShowMoreInfo = new ToolStripMenuItem();
+            tsmiUploadFile = new ToolStripMenuItem();
+            tsmiEditImage = new ToolStripMenuItem();
             cmsHistory.SuspendLayout();
 
             //
@@ -121,7 +125,9 @@ namespace ShareX.HistoryLib
             {
                 tsmiOpen,
                 tsmiCopy,
-                tsmiShow
+                tsmiShow,
+                tsmiUploadFile,
+                tsmiEditImage
             });
             cmsHistory.Name = "cmsHistory";
             cmsHistory.ShowImageMargin = false;
@@ -212,6 +218,10 @@ namespace ShareX.HistoryLib
                 tsmiCopyForumImage,
                 tsmiCopyForumLinkedImage,
                 tssCopy4,
+                tsmiCopyMarkdownLink,
+                tsmiCopyMarkdownImage,
+                tsmiCopyMarkdownLinkedImage,
+                tssCopy5,
                 tsmiCopyFilePath,
                 tsmiCopyFileName,
                 tsmiCopyFileNameWithExtension,
@@ -410,6 +420,20 @@ namespace ShareX.HistoryLib
             tsmiShowMoreInfo.Size = new Size(127, 22);
             tsmiShowMoreInfo.Text = Resources.HistoryItemManager_InitializeComponent_More_info;
             tsmiShowMoreInfo.Click += tsmiShowMoreInfo_Click;
+            //
+            // tsmiUploadFile
+            //
+            tsmiUploadFile.Name = "tsmiUploadFile";
+            tsmiUploadFile.Size = new Size(127, 22);
+            tsmiUploadFile.Text = Resources.HistoryItemManager_InitializeComponent_UploadFile;
+            tsmiUploadFile.Click += tsmiUploadFile_Click;
+            //
+            // tsmiEditImage
+            //
+            tsmiEditImage.Name = "tsmiEditImage";
+            tsmiEditImage.Size = new Size(127, 22);
+            tsmiEditImage.Text = Resources.HistoryItemManager_InitializeComponent_EditImage;
+            tsmiEditImage.Click += tsmiEditImage_Click;
 
             cmsHistory.ResumeLayout(false);
         }
@@ -467,6 +491,12 @@ namespace ShareX.HistoryLib
 
             // Show
             tsmiShowImagePreview.Enabled = IsImageFile;
+
+            // Upload file
+            tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
+
+            // Edit image
+            tsmiEditImage.Enabled = editImage != null && IsImageFile;
 
             cmsHistory.ResumeLayout();
         }
@@ -609,6 +639,16 @@ namespace ShareX.HistoryLib
         private void tsmiShowMoreInfo_Click(object sender, EventArgs e)
         {
             ShowMoreInfo();
+        }
+
+        private void tsmiUploadFile_Click(object sender, EventArgs e)
+        {
+            UploadFile();
+        }
+
+        private void tsmiEditImage_Click(object sender, EventArgs e)
+        {
+            EditImage();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
             get
             {
                 return Settings != null && ((PrintType == PrintType.Image && Image != null) ||
-                                            (PrintType == PrintType.Text && !string.IsNullOrEmpty(Text) && Settings.TextFont != null));
+                    (PrintType == PrintType.Text && !string.IsNullOrEmpty(Text) && Settings.TextFont != null));
             }
         }
 

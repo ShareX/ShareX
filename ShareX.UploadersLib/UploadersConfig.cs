@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
@@ -293,10 +294,12 @@ namespace ShareX.UploadersLib
         public string OwnCloudUsername = "";
         public string OwnCloudPassword = "";
         public string OwnCloudPath = "/";
+        public int OwnCloudExpiryTime = 7;
         public bool OwnCloudCreateShare = true;
         public bool OwnCloudDirectLink = false;
         public bool OwnCloud81Compatibility = true;
         public bool OwnCloudUsePreviewLinks = false;
+        public bool OwnCloudAutoExpire = false;
 
         #endregion ownCloud / Nextcloud
 
@@ -372,8 +375,20 @@ namespace ShareX.UploadersLib
         public string AzureStorageContainer = "";
         public string AzureStorageEnvironment = "blob.core.windows.net";
         public string AzureStorageCustomDomain = "";
+        public string AzureStorageUploadPath = "";
 
         #endregion Azure Storage
+
+        #region Backblaze B2
+
+        public string B2ApplicationKeyId = "";
+        public string B2ApplicationKey = "";
+        public string B2BucketName = "";
+        public string B2UploadPath = "ShareX/%y/%mo/";
+        public bool B2UseCustomUrl = false;
+        public string B2CustomUrl = "https://example.com/";
+
+        #endregion Backblaze B2
 
         #region Plik
 
@@ -395,6 +410,9 @@ namespace ShareX.UploadersLib
         public string GoogleCloudStorageBucket = "";
         public string GoogleCloudStorageDomain = "";
         public string GoogleCloudStorageObjectPrefix = "ShareX/%y/%mo";
+        public bool GoogleCloudStorageRemoveExtensionImage = false;
+        public bool GoogleCloudStorageRemoveExtensionVideo = false;
+        public bool GoogleCloudStorageRemoveExtensionText = false;
 
         #endregion Google Cloud Storage
 
@@ -425,12 +443,6 @@ namespace ShareX.UploadersLib
 
         #endregion adf.ly
 
-        #region coinurl.com
-
-        public string CoinURLUUID = "";
-
-        #endregion coinurl.com
-
         #region polr
 
         public string PolrAPIHostname = "";
@@ -447,6 +459,12 @@ namespace ShareX.UploadersLib
         public bool FirebaseIsShort = false;
 
         #endregion Firebase Dynamic Links
+
+        #region Kutt
+
+        public KuttSettings KuttSettings = new KuttSettings();
+
+        #endregion Kutt
 
         #endregion URL shorteners
 

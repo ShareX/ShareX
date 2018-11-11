@@ -254,15 +254,15 @@ namespace ShareX.HelpersLib
                     break;
                 case DrawStyle.Red:
                     lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - ((double)SelectedColor.RGBA.Green / 255)));
                     break;
                 case DrawStyle.Green:
                     lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Red / 255));
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - ((double)SelectedColor.RGBA.Red / 255)));
                     break;
                 case DrawStyle.Blue:
                     lastPos.X = Round((clientWidth - 1) * (double)SelectedColor.RGBA.Red / 255);
-                    lastPos.Y = Round((clientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
+                    lastPos.Y = Round((clientHeight - 1) * (1.0 - ((double)SelectedColor.RGBA.Green / 255)));
                     break;
             }
 
@@ -275,32 +275,32 @@ namespace ShareX.HelpersLib
             {
                 case DrawStyle.Hue:
                     selectedColor.HSB.Saturation = (double)lastPos.X / (clientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Brightness = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Saturation:
                     selectedColor.HSB.Hue = (double)lastPos.X / (clientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Brightness = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Brightness:
                     selectedColor.HSB.Hue = (double)lastPos.X / (clientWidth - 1);
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Saturation = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Red:
                     selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (clientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
+                    selectedColor.RGBA.Green = Round(255 * (1.0 - ((double)lastPos.Y / (clientHeight - 1))));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Green:
                     selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (clientWidth - 1));
-                    selectedColor.RGBA.Red = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
+                    selectedColor.RGBA.Red = Round(255 * (1.0 - ((double)lastPos.Y / (clientHeight - 1))));
                     selectedColor.RGBAUpdate();
                     break;
                 case DrawStyle.Blue:
                     selectedColor.RGBA.Red = Round(255 * (double)lastPos.X / (clientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (clientHeight - 1)));
+                    selectedColor.RGBA.Green = Round(255 * (1.0 - ((double)lastPos.Y / (clientHeight - 1))));
                     selectedColor.RGBAUpdate();
                     break;
             }
@@ -337,15 +337,15 @@ namespace ShareX.HelpersLib
             switch (DrawStyle)
             {
                 case DrawStyle.Hue:
-                    selectedColor.HSB.Hue = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Hue = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Saturation:
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Saturation = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Brightness:
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (clientHeight - 1);
+                    selectedColor.HSB.Brightness = 1.0 - ((double)lastPos.Y / (clientHeight - 1));
                     selectedColor.HSBUpdate();
                     break;
                 case DrawStyle.Red:

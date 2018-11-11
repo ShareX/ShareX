@@ -129,9 +129,6 @@
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>无效的设备名称</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>状态：登录失败。</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box刷新文件夹列表失败</value>
   </data>
@@ -141,9 +138,6 @@
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>根文件夹</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>登录为 {0}。</value>
-  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP客户端</value>
   </data>
@@ -151,22 +145,16 @@
     <value>使用目录名来创建</value>
   </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>未找到问题</value>
+    <value>未发现问题</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>浏览密钥文件...</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>状态：已登录。</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>状态:尚未登录。</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>新账户</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Tweet错误</value>
+    <value>推文发送异常</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>要求认证。</value>
@@ -195,9 +183,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>未配置</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>尚未登录。</value>
-  </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>查询文件夹...</value>
   </data>
@@ -211,10 +196,10 @@
     <value>错误：结果是空的。</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>连接成功!</value>
+    <value>连接成功！</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>连接成功!
+    <value>连接成功！
 创建的文件夹：</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
@@ -229,10 +214,43 @@
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>删除所有自定义上传？</value>
   </data>
-  <data name="UploadersConfigForm_CustomUploader_Name" xml:space="preserve">
-    <value>名称</value>
-  </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>这里粘贴验证码</value>
+    <value>此处粘贴验证码</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>“目标类型”必须被配置</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>“文件格式名称”必须被配置</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>“请求URL”必须被配置</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>“请求URL”必须被配置</value>
+  </data>
+  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
+    <value>同名标头已存在。</value>
+  </data>
+  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
+    <value>同名参数已存在。</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>密钥文件不存在</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>已登陆</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>已登陆</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>登录失败。</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>未登陆</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>未登陆</value>
   </data>
 </root>

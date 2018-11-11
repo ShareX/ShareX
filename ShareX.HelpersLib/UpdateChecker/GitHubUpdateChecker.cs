@@ -55,7 +55,7 @@ namespace ShareX.HelpersLib
             {
                 GitHubRelease latestRelease = GetLatestRelease(IncludePreRelease);
 
-                if (UpdateReleaseInfo(latestRelease, IsPortable, IsPortable ? true : false))
+                if (UpdateReleaseInfo(latestRelease, IsPortable, IsPortable))
                 {
                     RefreshStatus();
                     return;

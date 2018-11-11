@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 NameValueCollection headers = new NameValueCollection();
                 headers.Add("X-Auth-Token", APIKey);
 
-                ur.Response = SendRequest(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, ContentTypeJSON, null, headers);
+                ur.Response = SendRequest(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, UploadHelpers.ContentTypeJSON, null, headers);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

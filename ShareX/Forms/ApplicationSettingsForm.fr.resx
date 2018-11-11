@@ -276,15 +276,6 @@
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Chemins</value>
   </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Exporter le journal</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Exporter l'historique</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Exporter les paramètres</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Exporter...</value>
   </data>

@@ -33,7 +33,86 @@ namespace ShareX.HelpersLib
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
     {
-        public int Left, Top, Right, Bottom;
+        public int Left;
+        public int Top;
+        public int Right;
+        public int Bottom;
+
+        public int X
+        {
+            get
+            {
+                return Left;
+            }
+            set
+            {
+                Right -= Left - value;
+                Left = value;
+            }
+        }
+
+        public int Y
+        {
+            get
+            {
+                return Top;
+            }
+            set
+            {
+                Bottom -= Top - value;
+                Top = value;
+            }
+        }
+
+        public int Width
+        {
+            get
+            {
+                return Right - Left;
+            }
+            set
+            {
+                Right = value + Left;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return Bottom - Top;
+            }
+            set
+            {
+                Bottom = value + Top;
+            }
+        }
+
+        public Point Location
+        {
+            get
+            {
+                return new Point(Left, Top);
+            }
+            set
+            {
+                X = value.X;
+                Y = value.Y;
+            }
+        }
+
+        public Size Size
+        {
+            get
+            {
+                return new Size(Width, Height);
+            }
+            set
+            {
+                Width = value.Width;
+                Height = value.Height;
+            }
+        }
 
         public RECT(int left, int top, int right, int bottom)
         {
@@ -45,42 +124,6 @@ namespace ShareX.HelpersLib
 
         public RECT(Rectangle r) : this(r.Left, r.Top, r.Right, r.Bottom)
         {
-        }
-
-        public int X
-        {
-            get { return Left; }
-            set { Right -= Left - value; Left = value; }
-        }
-
-        public int Y
-        {
-            get { return Top; }
-            set { Bottom -= Top - value; Top = value; }
-        }
-
-        public int Width
-        {
-            get { return Right - Left; }
-            set { Right = value + Left; }
-        }
-
-        public int Height
-        {
-            get { return Bottom - Top; }
-            set { Bottom = value + Top; }
-        }
-
-        public Point Location
-        {
-            get { return new Point(Left, Top); }
-            set { X = value.X; Y = value.Y; }
-        }
-
-        public Size Size
-        {
-            get { return new Size(Width, Height); }
-            set { Width = value.Width; Height = value.Height; }
         }
 
         public static implicit operator Rectangle(RECT r)
@@ -613,7 +656,7 @@ namespace ShareX.HelpersLib
             {
                 if (biCompression == BI_COMPRESSION.BI_BITFIELDS)
                 {
-                    return biSize + 3 * 4;
+                    return biSize + (3 * 4);
                 }
 
                 return biSize;
