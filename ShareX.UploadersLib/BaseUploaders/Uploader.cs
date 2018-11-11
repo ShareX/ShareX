@@ -170,7 +170,7 @@ namespace ShareX.UploadersLib
         }
 
         protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            ResponseType responseType = ResponseType.Text)
+            ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST)
         {
             string boundary = UploadHelpers.CreateBoundary();
             string contentType = UploadHelpers.ContentTypeMultipartFormData + "; boundary=" + boundary;
@@ -180,7 +180,7 @@ namespace ShareX.UploadersLib
             {
                 stream.Write(data, 0, data.Length);
 
-                using (HttpWebResponse webResponse = GetResponse(HttpMethod.POST, url, stream, contentType, null, headers, cookies))
+                using (HttpWebResponse webResponse = GetResponse(method, url, stream, contentType, null, headers, cookies))
                 {
                     string response = UploadHelpers.ResponseToString(webResponse, responseType);
 
