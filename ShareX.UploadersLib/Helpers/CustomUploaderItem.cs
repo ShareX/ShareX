@@ -42,8 +42,8 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        [DefaultValue(CustomUploaderRequestType.POST)]
-        public CustomUploaderRequestType RequestType { get; set; }
+        [DefaultValue(CustomUploaderRequestMethod.POST)]
+        public CustomUploaderRequestMethod RequestType { get; set; }
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
@@ -109,15 +109,15 @@ namespace ShareX.UploadersLib
             switch (RequestType)
             {
                 default:
-                case CustomUploaderRequestType.POST:
+                case CustomUploaderRequestMethod.POST:
                     return HttpMethod.POST;
-                case CustomUploaderRequestType.GET:
+                case CustomUploaderRequestMethod.GET:
                     return HttpMethod.GET;
-                case CustomUploaderRequestType.PUT:
+                case CustomUploaderRequestMethod.PUT:
                     return HttpMethod.PUT;
-                case CustomUploaderRequestType.PATCH:
+                case CustomUploaderRequestMethod.PATCH:
                     return HttpMethod.PATCH;
-                case CustomUploaderRequestType.DELETE:
+                case CustomUploaderRequestMethod.DELETE:
                     return HttpMethod.DELETE;
             }
         }

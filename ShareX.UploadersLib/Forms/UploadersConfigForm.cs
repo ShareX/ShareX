@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib
             txtCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
@@ -3482,7 +3482,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
+            if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
 
             CustomUploaderUpdateRequestState();
         }

@@ -958,7 +958,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
             txtCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             txtCustomUploaderFileForm.Text = uploader.FileFormName ?? "";
-            txtCustomUploaderFileForm.Enabled = uploader.RequestType == CustomUploaderRequestType.POST;
+            txtCustomUploaderFileForm.Enabled = uploader.RequestType == CustomUploaderRequestMethod.POST;
 
             txtCustomUploaderArgName.Text = "";
             txtCustomUploaderArgValue.Text = "";
@@ -1026,7 +1026,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateRequestState()
         {
-            txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestType.POST;
+            txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestMethod.POST;
         }
 
         private void CustomUploaderUpdateArgumentsState()

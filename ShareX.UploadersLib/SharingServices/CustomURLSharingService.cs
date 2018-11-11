@@ -74,7 +74,7 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override UploadResult ShareURL(string url)
         {
-            if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
+            if (customUploader.RequestType == CustomUploaderRequestMethod.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
                 throw new Exception("'File form name' cannot be used with custom URL sharing service.");
 
             if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib.SharingServices
 
             Dictionary<string, string> args = customUploader.GetArguments(input);
 
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            if (customUploader.RequestType == CustomUploaderRequestMethod.POST)
             {
                 result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(input),
                     responseType: customUploader.ResponseType);

@@ -84,7 +84,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             string requestURL = customUploader.GetRequestURL();
 
-            if ((customUploader.RequestType != CustomUploaderRequestType.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
+            if ((customUploader.RequestType != CustomUploaderRequestMethod.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
                 ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
                 (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$")))))
                 throw new Exception("Atleast one '$input$' required for argument or header value.");
@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             Dictionary<string, string> args = customUploader.GetArguments(input);
 
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            if (customUploader.RequestType == CustomUploaderRequestMethod.POST)
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {

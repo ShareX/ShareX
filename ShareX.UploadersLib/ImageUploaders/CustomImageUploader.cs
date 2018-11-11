@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (customUploader.RequestType != CustomUploaderRequestType.POST)
+            if (customUploader.RequestType != CustomUploaderRequestMethod.POST)
             {
                 throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
             }

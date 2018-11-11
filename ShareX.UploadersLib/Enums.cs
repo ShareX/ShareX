@@ -289,7 +289,7 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestType
+    public enum CustomUploaderRequestMethod
     {
         POST,
         GET,
