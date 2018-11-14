@@ -9,4 +9,4 @@
 
 [![Screenshot](https://getsharex.com/img/ShareX_Animation.gif)](https://getsharex.com)
 
-### Check [getsharex.com](https://getsharex.com) for more info.
+### For further information check [getsharex.com](https://getsharex.com)
