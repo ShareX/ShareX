@@ -1162,22 +1162,40 @@ namespace ShareX.HelpersLib
             return instances.ToArray();
         }
 
-        public static string GetWindowsProductName()
+        public static string GetOperatingSystemProductName(bool includeBit = false)
         {
+            string productName = null;
+
             try
             {
-                string productName = RegistryHelpers.GetRegistryValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
-
-                if (!string.IsNullOrEmpty(productName))
-                {
-                    return productName;
-                }
+                productName = RegistryHelpers.GetRegistryValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
             }
             catch
             {
             }
 
-            return Environment.OSVersion.VersionString;
+            if (string.IsNullOrEmpty(productName))
+            {
+                productName = Environment.OSVersion.VersionString;
+            }
+
+            if (includeBit)
+            {
+                string bit;
+
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    bit = "64";
+                }
+                else
+                {
+                    bit = "32";
+                }
+
+                productName = $"{productName} ({bit}-bit)";
+            }
+
+            return productName;
         }
 
         public static Cursor CreateCursor(byte[] data)
