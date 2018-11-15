@@ -148,7 +148,7 @@ namespace ShareX
                 }
                 else
                 {
-                    row.Cells[0].Style.ApplyStyle(dgvNews.AlternatingRowsDefaultCellStyle);
+                    row.Cells[0].Style = null;
                 }
             }
         }
