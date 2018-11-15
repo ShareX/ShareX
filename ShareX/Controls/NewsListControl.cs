@@ -165,10 +165,6 @@ namespace ShareX
                     row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = SystemColors.HotTrack;
                 }
             }
-            else
-            {
-                dgvNews.Cursor = Cursors.Default;
-            }
         }
 
         private void dgvNews_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
@@ -182,10 +178,8 @@ namespace ShareX
                     row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = SystemColors.ControlText;
                 }
             }
-            else
-            {
-                dgvNews.Cursor = Cursors.Default;
-            }
+
+            dgvNews.Cursor = Cursors.Default;
         }
 
         private void dgvNews_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
