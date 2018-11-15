@@ -626,5 +626,11 @@ namespace ShareX.HelpersLib
             TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
             return task.ContinueWith(t => action(), scheduler);
         }
+
+        public static void DoubleBuffered(this DataGridView dgv, bool value)
+        {
+            PropertyInfo pi = dgv.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, value, null);
+        }
     }
 }

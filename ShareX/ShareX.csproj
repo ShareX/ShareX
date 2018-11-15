@@ -388,6 +388,9 @@
     <EmbeddedResource Include="Controls\HotkeySelectionControl.zh-TW.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewsListControl.resx">
+      <DependentUpon>NewsListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.de.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
