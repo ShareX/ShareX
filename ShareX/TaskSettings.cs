@@ -30,6 +30,7 @@ using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -358,6 +359,12 @@ namespace ShareX
         public ScrollingCaptureOptions ScrollingCaptureOptions = new ScrollingCaptureOptions();
 
         #endregion Capture / Scrolling capture
+
+        #region Capture / OCR
+
+        public OCROptions OCROptions = new OCROptions();
+
+        #endregion
     }
 
     public class TaskSettingsUpload

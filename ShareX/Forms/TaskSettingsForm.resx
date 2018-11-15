@@ -3780,6 +3780,114 @@
   <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbCaptureOCRSilent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbCaptureOCRSilent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 60</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="cbCaptureOCRSilent.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Process OCR silently</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRSilent.Name" xml:space="preserve">
+    <value>cbCaptureOCRSilent</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRSilent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRSilent.Parent" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRSilent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Default language:</value>
+  </data>
+  <data name="&gt;&gt;lblOCRDefaultLanguage.Name" xml:space="preserve">
+    <value>lblOCRDefaultLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblOCRDefaultLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOCRDefaultLanguage.Parent" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;lblOCRDefaultLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbCaptureOCRDefaultLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 24</value>
+  </data>
+  <data name="cbCaptureOCRDefaultLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 21</value>
+  </data>
+  <data name="cbCaptureOCRDefaultLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRDefaultLanguage.Name" xml:space="preserve">
+    <value>cbCaptureOCRDefaultLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRDefaultLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRDefaultLanguage.Parent" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRDefaultLanguage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpOCR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpOCR.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpOCR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 447</value>
+  </data>
+  <data name="tpOCR.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="&gt;&gt;tpOCR.Name" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;tpOCR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOCR.Parent" xml:space="preserve">
+    <value>tcCapture</value>
+  </data>
+  <data name="&gt;&gt;tpOCR.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tcCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

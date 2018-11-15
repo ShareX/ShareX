@@ -985,4 +985,13 @@ Middle click to close</value>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Mexican Spanish</value>
   </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>The OCR output has been copied to your clipboard.</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Error occurred during OCR processing, or no text was returned.</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>OCR is processing.</value>
+  </data>
 </root>

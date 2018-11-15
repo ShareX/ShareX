@@ -175,6 +175,10 @@
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
+            this.tpOCR = new System.Windows.Forms.TabPage();
+            this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
+            this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
+            this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
@@ -279,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
+            this.tpOCR.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpUploadMain.SuspendLayout();
@@ -805,6 +810,7 @@
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
             this.tcCapture.Controls.Add(this.tpRegionCapture);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
+            this.tcCapture.Controls.Add(this.tpOCR);
             resources.ApplyResources(this.tcCapture, "tcCapture");
             this.tcCapture.Name = "tcCapture";
             this.tcCapture.SelectedIndex = 0;
@@ -1576,6 +1582,35 @@
             resources.ApplyResources(this.lblGIFFPS, "lblGIFFPS");
             this.lblGIFFPS.Name = "lblGIFFPS";
             // 
+            // tpOCR
+            // 
+            this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
+            this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
+            this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
+            resources.ApplyResources(this.tpOCR, "tpOCR");
+            this.tpOCR.Name = "tpOCR";
+            this.tpOCR.UseVisualStyleBackColor = true;
+            // 
+            // cbCaptureOCRSilent
+            // 
+            resources.ApplyResources(this.cbCaptureOCRSilent, "cbCaptureOCRSilent");
+            this.cbCaptureOCRSilent.Name = "cbCaptureOCRSilent";
+            this.cbCaptureOCRSilent.UseVisualStyleBackColor = true;
+            this.cbCaptureOCRSilent.CheckedChanged += new System.EventHandler(this.cbCaptureOCRSilent_CheckedChanged);
+            // 
+            // lblOCRDefaultLanguage
+            // 
+            resources.ApplyResources(this.lblOCRDefaultLanguage, "lblOCRDefaultLanguage");
+            this.lblOCRDefaultLanguage.Name = "lblOCRDefaultLanguage";
+            // 
+            // cbCaptureOCRDefaultLanguage
+            // 
+            this.cbCaptureOCRDefaultLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCaptureOCRDefaultLanguage.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCaptureOCRDefaultLanguage, "cbCaptureOCRDefaultLanguage");
+            this.cbCaptureOCRDefaultLanguage.Name = "cbCaptureOCRDefaultLanguage";
+            this.cbCaptureOCRDefaultLanguage.SelectedIndexChanged += new System.EventHandler(this.cbCaptureOCRDefaultLanguage_SelectedIndexChanged);
+            // 
             // tpUpload
             // 
             this.tpUpload.BackColor = System.Drawing.SystemColors.Window;
@@ -2117,6 +2152,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
+            this.tpOCR.ResumeLayout(false);
+            this.tpOCR.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpUploadMain.ResumeLayout(false);
@@ -2354,5 +2391,9 @@
         private System.Windows.Forms.CheckBox cbScreenRecordConfirmAbort;
         private System.Windows.Forms.CheckBox cbFileUploadReplaceProblematicCharacters;
         private System.Windows.Forms.CheckBox cbScreenRecordTwoPassEncoding;
+        private System.Windows.Forms.TabPage tpOCR;
+        private System.Windows.Forms.Label lblOCRDefaultLanguage;
+        private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
+        private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
     }
 }

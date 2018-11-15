@@ -28,6 +28,7 @@ using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -295,6 +296,17 @@ namespace ShareX
             cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
 
             #endregion Screen recorder
+
+            #region OCR
+
+            OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
+
+            cbCaptureOCRDefaultLanguage.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+
+            cbCaptureOCRSilent.Checked = ocrOptions.Silent;
+
+            #endregion
 
             #endregion Capture
 
@@ -1096,6 +1108,20 @@ namespace ShareX
         }
 
         #endregion Screen recorder
+
+        #region OCR
+
+        private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = (OCRSpaceLanguages)cbCaptureOCRDefaultLanguage.SelectedIndex;
+        }
+
+        private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
+        }
+
+        #endregion
 
         #endregion Capture
 
