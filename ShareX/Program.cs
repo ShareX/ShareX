@@ -283,6 +283,7 @@ namespace ShareX
                 DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
             }
             DebugHelper.WriteLine("Operating system: " + Helpers.GetOperatingSystemProductName(true));
+            DebugHelper.WriteLine("Running as elevated process: " + Helpers.IsAdministrator());
 
             SilentRun = CLI.IsCommandExist("silent", "s");
 #if WindowsStore
