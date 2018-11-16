@@ -287,7 +287,7 @@ namespace ShareX
 
             SilentRun = CLI.IsCommandExist("silent", "s");
 #if WindowsStore
-            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs().Kind == ActivationKind.StartupTask;
+            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs()?.Kind == ActivationKind.StartupTask;
 #endif
 
 #if STEAM
