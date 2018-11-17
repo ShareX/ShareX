@@ -6,7 +6,7 @@ labels:
 ---
 
 **ShareX version and OS**
-Mention your current ShareX version and the OS you are on (eg. Windows)
+Mention your current ShareX version and the OS you are on (eg. ShareX 12.3 from Microsoft Store on Windows 10 v1607 64 bit)
 
 **Describe the bug**
 Describe the bug you are facing here.
