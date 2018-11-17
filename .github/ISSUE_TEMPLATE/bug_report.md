@@ -11,8 +11,8 @@ Mention your current ShareX version and the OS you are on (eg. ShareX 12.3 from 
 **What happened**
 Describe the bug you are facing here.
 
-**Expected behavior**
-What did you expect to happen?
+**Steps to reproduce the error**
+Please tell us the steps you followed until you faced that problem so that we can recreate it on our end and find a solution.
 
 **Screenshots (Optional)**
 If you want, add screenshots to help us understand better your problem.
