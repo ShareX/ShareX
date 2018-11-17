@@ -833,27 +833,29 @@ namespace ShareX.HelpersLib
             return -1;
         }
 
-        public static void CreateDirectoryFromDirectoryPath(string path)
+        public static void CreateDirectoryFromDirectoryPath(string directoryPath)
         {
-            if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
+            if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
             {
                 try
                 {
-                    Directory.CreateDirectory(path);
+                    Directory.CreateDirectory(directoryPath);
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX - " + Resources.Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        public static void CreateDirectoryFromFilePath(string path)
+        public static void CreateDirectoryFromFilePath(string filePath)
         {
-            if (!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                CreateDirectoryFromDirectoryPath(Path.GetDirectoryName(path));
+                string directoryPath = Path.GetDirectoryName(filePath);
+                CreateDirectoryFromDirectoryPath(directoryPath);
             }
         }
 
@@ -1021,7 +1023,7 @@ namespace ShareX.HelpersLib
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

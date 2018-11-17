@@ -1567,6 +1567,8 @@ namespace ShareX.HelpersLib
 
         public static void SaveImage(Image img, string filePath)
         {
+            Helpers.CreateDirectoryFromFilePath(filePath);
+
             img.Save(filePath, GetImageFormat(filePath));
         }
 
