@@ -1073,7 +1073,18 @@ namespace ShareX.HelpersLib
 
         public static bool IsAdministrator()
         {
-            return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+            try
+            {
+                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+                {
+                    WindowsPrincipal principal = new WindowsPrincipal(identity);
+                    return principal.IsInRole(WindowsBuiltInRole.Administrator);
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static string RepeatGenerator(int count, Func<string> generator)
