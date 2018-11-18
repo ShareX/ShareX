@@ -309,14 +309,6 @@ namespace ShareX
             {
                 case EImageFormat.PNG:
                     SaveImageAsPNGStream(img, stream, pngBitDepth);
-
-                    if (Program.Settings.PNGStripColorSpaceInformation)
-                    {
-                        using (stream)
-                        {
-                            return PNGStripColorSpaceInformation(stream);
-                        }
-                    }
                     break;
                 case EImageFormat.JPEG:
                     SaveImageAsJPEGStream(img, stream, jpegQuality);
@@ -373,64 +365,6 @@ namespace ShareX
             }
 
             img.Save(stream, ImageFormat.Png);
-        }
-
-        private static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
-        {
-            MemoryStream output = new MemoryStream();
-            stream.Seek(0, SeekOrigin.Begin);
-
-            byte[] signature = new byte[8];
-            stream.Read(signature, 0, 8);
-            output.Write(signature, 0, 8);
-
-            while (true)
-            {
-                byte[] lenBytes = new byte[4];
-                if (stream.Read(lenBytes, 0, 4) != 4)
-                {
-                    break;
-                }
-
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
-
-                int len = BitConverter.ToInt32(lenBytes, 0);
-
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
-
-                byte[] type = new byte[4];
-                stream.Read(type, 0, 4);
-
-                byte[] data = new byte[len + 4];
-                stream.Read(data, 0, data.Length);
-
-                string strType = Encoding.ASCII.GetString(type);
-
-                if (!chunks.Contains(strType))
-                {
-                    output.Write(lenBytes, 0, lenBytes.Length);
-                    output.Write(type, 0, type.Length);
-                    output.Write(data, 0, data.Length);
-                }
-            }
-
-            return output;
-        }
-
-        private static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
-        {
-            // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
-            // 4.2.2.1. gAMA Image gamma
-            // 4.2.2.2. cHRM Primary chromaticities
-            // 4.2.2.3. sRGB Standard RGB color space
-            // 4.2.2.4. iCCP Embedded ICC profile
-            return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
         }
 
         private static void SaveImageAsJPEGStream(Image img, Stream stream, int jpegQuality)
