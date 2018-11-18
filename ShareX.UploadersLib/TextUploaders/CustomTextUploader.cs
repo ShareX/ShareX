@@ -81,9 +81,9 @@ namespace ShareX.UploadersLib.TextUploaders
         public override UploadResult UploadText(string text, string fileName)
         {
             if ((customUploader.RequestType != CustomUploaderRequestMethod.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
-                ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
-                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$")))))
-                throw new Exception("Atleast one '$input$' required for argument or header value.");
+                (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
+                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
+                throw new Exception("At least one \"$input$\" required for argument or header value.");
 
             UploadResult result = new UploadResult();
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, text);

@@ -889,7 +889,7 @@ namespace ShareX
                             {
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
-                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
                                     newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
                                 }
 
@@ -905,7 +905,7 @@ namespace ShareX
                             {
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
-                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
                                     newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
                                 }
 

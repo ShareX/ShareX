@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
                 (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
-                throw new Exception("Atleast one '$input$' required for argument or header value.");
+                throw new Exception("At least one \"$input$\" required for argument or header value.");
 
             UploadResult result = new UploadResult { URL = url };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
