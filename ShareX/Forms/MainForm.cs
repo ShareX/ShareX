@@ -302,9 +302,9 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
-                // Casting to long before because the int conversion operator enforces checked semantics
-                // thus crashes any 64 bits build. IntPtr -> long and long -> enum doesn't.
-                EndSessionReasons reason = (EndSessionReasons)(long)(m.LParam);
+                // Calling ToInt64 because the int conversion operator (called when irectly casting the IntPtr to the enum)
+                // enforces checked semantics thus crashes any 64 bits build. ToInt64() and long -> enum conversion doesn't.
+                EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
                 {
                     // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
