@@ -302,7 +302,7 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
-                // Calling ToInt64 because the int conversion operator (called when irectly casting the IntPtr to the enum)
+                // Calling ToInt64 because the int conversion operator (called when directly casting the IntPtr to the enum)
                 // enforces checked semantics thus crashes any 64 bits build. ToInt64() and long -> enum conversion doesn't.
                 EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
