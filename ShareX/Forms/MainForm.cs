@@ -302,7 +302,9 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
-                EndSessionReasons reason = (EndSessionReasons)(m.LParam.ToInt64() & 0xFFFFFFFF);
+                // Calling ToInt64 because the int conversion operator (called when directly casting the IntPtr to the enum)
+                // enforces checked semantics thus crashes any 64 bits build. ToInt64() and long -> enum conversion doesn't.
+                EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
                 {
                     // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
