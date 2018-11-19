@@ -117,7 +117,10 @@ namespace ShareX.UploadersLib
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Custom uploader
-            txtCustomUploaderLog.AddContextMenu();
+            rtbCustomUploaderURL.AddContextMenu();
+            rtbCustomUploaderThumbnailURL.AddContextMenu();
+            rtbCustomUploaderDeletionURL.AddContextMenu();
+            rtbCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
@@ -3830,58 +3833,61 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.URL;
         }
 
-        private void txtCustomUploaderURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.URL = txtCustomUploaderURL.Text;
+            if (uploader != null) uploader.URL = rtbCustomUploaderURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
         }
 
-        private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.ThumbnailURL;
         }
 
-        private void txtCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
+            if (uploader != null) uploader.ThumbnailURL = rtbCustomUploaderThumbnailURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
         }
 
-        private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.DeletionURL;
         }
 
-        private void txtCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.DeletionURL = txtCustomUploaderDeletionURL.Text;
+            if (uploader != null) uploader.DeletionURL = rtbCustomUploaderDeletionURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
         }
 
         private void AddTextToActiveURLField(string text)
         {
-            TextBox tb;
+            RichTextBox rtb;
 
             switch (customUploaderURLType)
             {
                 default:
                 case URLType.URL:
-                    tb = txtCustomUploaderURL;
+                    rtb = rtbCustomUploaderURL;
                     break;
                 case URLType.ThumbnailURL:
-                    tb = txtCustomUploaderThumbnailURL;
+                    rtb = rtbCustomUploaderThumbnailURL;
                     break;
                 case URLType.DeletionURL:
-                    tb = txtCustomUploaderDeletionURL;
+                    rtb = rtbCustomUploaderDeletionURL;
                     break;
             }
 
-            tb.AppendText(text);
+            rtb.AppendText(text);
         }
 
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)

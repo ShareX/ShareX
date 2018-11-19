@@ -236,6 +236,7 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
     <Compile Include="Helpers\CustomUploaderParser.cs" />
+    <Compile Include="Helpers\CustomUploaderSyntaxInfo.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\UploadHelpers.cs" />

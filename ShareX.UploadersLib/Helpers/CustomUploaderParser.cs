@@ -48,6 +48,9 @@ namespace ShareX.UploadersLib
         public string Response { get; private set; }
         public List<Match> RegexMatches { get; private set; }
 
+        public bool SkipSyntaxParse { get; set; }
+        public List<CustomUploaderSyntaxInfo> SyntaxInfoList { get; private set; }
+
         public CustomUploaderParser()
         {
             IsOutput = false;
@@ -95,6 +98,8 @@ namespace ShareX.UploadersLib
             StringBuilder sbSyntax = new StringBuilder();
             bool escapeNext = false;
             bool parsingSyntax = false;
+            SyntaxInfoList = new List<CustomUploaderSyntaxInfo>();
+            CustomUploaderSyntaxInfo syntaxInfo = null;
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -103,16 +108,16 @@ namespace ShareX.UploadersLib
                     if (!parsingSyntax)
                     {
                         parsingSyntax = true;
-
                         sbSyntax.Clear();
+                        syntaxInfo = new CustomUploaderSyntaxInfo() { StartPosition = i };
                     }
                     else
                     {
                         parsingSyntax = false;
-
                         string syntax = sbSyntax.ToString();
+                        EndSyntaxInfo(syntaxInfo, i, syntax);
 
-                        if (!string.IsNullOrEmpty(syntax))
+                        if (!SkipSyntaxParse && !string.IsNullOrEmpty(syntax))
                         {
                             string syntaxResult = ParseSyntax(syntax, isOutput);
 
@@ -142,7 +147,23 @@ namespace ShareX.UploadersLib
                 }
             }
 
+            if (parsingSyntax)
+            {
+                string syntax = sbSyntax.ToString();
+                EndSyntaxInfo(syntaxInfo, text.Length - 1, syntax);
+            }
+
             return sbResult.ToString();
+        }
+
+        private void EndSyntaxInfo(CustomUploaderSyntaxInfo syntaxInfo, int position, string syntax)
+        {
+            if (syntaxInfo != null)
+            {
+                syntaxInfo.EndPosition = position;
+                syntaxInfo.Text = syntax;
+                SyntaxInfoList.Add(syntaxInfo);
+            }
         }
 
         private string ParseSyntax(string syntax, bool isOutput)
