@@ -345,11 +345,11 @@ namespace ShareX
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordAutoStart = true;
-        public bool ScreenRecordAskConfirmationOnAbort = false;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;
+        public bool ScreenRecordAskConfirmationOnAbort = false;
 
         #endregion Capture / Screen recorder
 
