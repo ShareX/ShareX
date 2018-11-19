@@ -302,6 +302,8 @@ namespace ShareX
         {
             if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
             {
+                // Casting to long before because the int conversion operator enforces checked semantics
+                // thus crashes any 64 bits build. IntPtr -> long and long -> enum doesn't.
                 EndSessionReasons reason = (EndSessionReasons)(long)(m.LParam);
                 if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
                 {
