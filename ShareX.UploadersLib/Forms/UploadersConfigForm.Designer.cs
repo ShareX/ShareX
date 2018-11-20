@@ -120,18 +120,20 @@ namespace ShareX.UploadersLib
             this.lblCustomUploaderURL = new System.Windows.Forms.Label();
             this.tcCustomUploaderArguments = new System.Windows.Forms.TabControl();
             this.tpCustomUploaderArguments = new System.Windows.Forms.TabPage();
+            this.pCustomUploaderArgValue = new System.Windows.Forms.Panel();
+            this.rtbCustomUploaderArgValue = new System.Windows.Forms.RichTextBox();
             this.btnCustomUploaderArgUpdate = new System.Windows.Forms.Button();
             this.txtCustomUploaderArgName = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderArgValue = new System.Windows.Forms.TextBox();
             this.btnCustomUploaderArgAdd = new System.Windows.Forms.Button();
             this.btnCustomUploaderArgRemove = new System.Windows.Forms.Button();
             this.lvCustomUploaderArguments = new ShareX.HelpersLib.MyListView();
             this.chCustomUploaderArgumentsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCustomUploaderArgumentsValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpCustomUploaderHeaders = new System.Windows.Forms.TabPage();
+            this.pCustomUploaderHeaderValue = new System.Windows.Forms.Panel();
+            this.rtbCustomUploaderHeaderValue = new System.Windows.Forms.RichTextBox();
             this.btnCustomUploaderHeaderUpdate = new System.Windows.Forms.Button();
             this.txtCustomUploaderHeaderName = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderHeaderValue = new System.Windows.Forms.TextBox();
             this.btnCustomUploaderHeaderAdd = new System.Windows.Forms.Button();
             this.btnCustomUploaderHeaderRemove = new System.Windows.Forms.Button();
             this.lvCustomUploaderHeaders = new ShareX.HelpersLib.MyListView();
@@ -725,7 +727,9 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderRegexParse.SuspendLayout();
             this.tcCustomUploaderArguments.SuspendLayout();
             this.tpCustomUploaderArguments.SuspendLayout();
+            this.pCustomUploaderArgValue.SuspendLayout();
             this.tpCustomUploaderHeaders.SuspendLayout();
+            this.pCustomUploaderHeaderValue.SuspendLayout();
             this.gbCustomUploaders.SuspendLayout();
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
@@ -1330,15 +1334,30 @@ namespace ShareX.UploadersLib
             // 
             // tpCustomUploaderArguments
             // 
+            this.tpCustomUploaderArguments.Controls.Add(this.pCustomUploaderArgValue);
             this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgUpdate);
             this.tpCustomUploaderArguments.Controls.Add(this.txtCustomUploaderArgName);
-            this.tpCustomUploaderArguments.Controls.Add(this.txtCustomUploaderArgValue);
             this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgAdd);
             this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgRemove);
             this.tpCustomUploaderArguments.Controls.Add(this.lvCustomUploaderArguments);
             resources.ApplyResources(this.tpCustomUploaderArguments, "tpCustomUploaderArguments");
             this.tpCustomUploaderArguments.Name = "tpCustomUploaderArguments";
             this.tpCustomUploaderArguments.UseVisualStyleBackColor = true;
+            // 
+            // pCustomUploaderArgValue
+            // 
+            this.pCustomUploaderArgValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pCustomUploaderArgValue.Controls.Add(this.rtbCustomUploaderArgValue);
+            resources.ApplyResources(this.pCustomUploaderArgValue, "pCustomUploaderArgValue");
+            this.pCustomUploaderArgValue.Name = "pCustomUploaderArgValue";
+            // 
+            // rtbCustomUploaderArgValue
+            // 
+            this.rtbCustomUploaderArgValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbCustomUploaderArgValue.DetectUrls = false;
+            resources.ApplyResources(this.rtbCustomUploaderArgValue, "rtbCustomUploaderArgValue");
+            this.rtbCustomUploaderArgValue.Name = "rtbCustomUploaderArgValue";
+            this.rtbCustomUploaderArgValue.TextChanged += new System.EventHandler(this.rtbCustomUploaderArgValue_TextChanged);
             // 
             // btnCustomUploaderArgUpdate
             // 
@@ -1352,11 +1371,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.txtCustomUploaderArgName, "txtCustomUploaderArgName");
             this.txtCustomUploaderArgName.Name = "txtCustomUploaderArgName";
             this.txtCustomUploaderArgName.TextChanged += new System.EventHandler(this.txtCustomUploaderArgName_TextChanged);
-            // 
-            // txtCustomUploaderArgValue
-            // 
-            resources.ApplyResources(this.txtCustomUploaderArgValue, "txtCustomUploaderArgValue");
-            this.txtCustomUploaderArgValue.Name = "txtCustomUploaderArgValue";
             // 
             // btnCustomUploaderArgAdd
             // 
@@ -1401,15 +1415,30 @@ namespace ShareX.UploadersLib
             // 
             // tpCustomUploaderHeaders
             // 
+            this.tpCustomUploaderHeaders.Controls.Add(this.pCustomUploaderHeaderValue);
             this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderUpdate);
             this.tpCustomUploaderHeaders.Controls.Add(this.txtCustomUploaderHeaderName);
-            this.tpCustomUploaderHeaders.Controls.Add(this.txtCustomUploaderHeaderValue);
             this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderAdd);
             this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderRemove);
             this.tpCustomUploaderHeaders.Controls.Add(this.lvCustomUploaderHeaders);
             resources.ApplyResources(this.tpCustomUploaderHeaders, "tpCustomUploaderHeaders");
             this.tpCustomUploaderHeaders.Name = "tpCustomUploaderHeaders";
             this.tpCustomUploaderHeaders.UseVisualStyleBackColor = true;
+            // 
+            // pCustomUploaderHeaderValue
+            // 
+            this.pCustomUploaderHeaderValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pCustomUploaderHeaderValue.Controls.Add(this.rtbCustomUploaderHeaderValue);
+            resources.ApplyResources(this.pCustomUploaderHeaderValue, "pCustomUploaderHeaderValue");
+            this.pCustomUploaderHeaderValue.Name = "pCustomUploaderHeaderValue";
+            // 
+            // rtbCustomUploaderHeaderValue
+            // 
+            this.rtbCustomUploaderHeaderValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbCustomUploaderHeaderValue.DetectUrls = false;
+            resources.ApplyResources(this.rtbCustomUploaderHeaderValue, "rtbCustomUploaderHeaderValue");
+            this.rtbCustomUploaderHeaderValue.Name = "rtbCustomUploaderHeaderValue";
+            this.rtbCustomUploaderHeaderValue.TextChanged += new System.EventHandler(this.rtbCustomUploaderHeaderValue_TextChanged);
             // 
             // btnCustomUploaderHeaderUpdate
             // 
@@ -1423,11 +1452,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.txtCustomUploaderHeaderName, "txtCustomUploaderHeaderName");
             this.txtCustomUploaderHeaderName.Name = "txtCustomUploaderHeaderName";
             this.txtCustomUploaderHeaderName.TextChanged += new System.EventHandler(this.txtCustomUploaderHeaderName_TextChanged);
-            // 
-            // txtCustomUploaderHeaderValue
-            // 
-            resources.ApplyResources(this.txtCustomUploaderHeaderValue, "txtCustomUploaderHeaderValue");
-            this.txtCustomUploaderHeaderValue.Name = "txtCustomUploaderHeaderValue";
             // 
             // btnCustomUploaderHeaderAdd
             // 
@@ -5669,8 +5693,10 @@ namespace ShareX.UploadersLib
             this.tcCustomUploaderArguments.ResumeLayout(false);
             this.tpCustomUploaderArguments.ResumeLayout(false);
             this.tpCustomUploaderArguments.PerformLayout();
+            this.pCustomUploaderArgValue.ResumeLayout(false);
             this.tpCustomUploaderHeaders.ResumeLayout(false);
             this.tpCustomUploaderHeaders.PerformLayout();
+            this.pCustomUploaderHeaderValue.ResumeLayout(false);
             this.gbCustomUploaders.ResumeLayout(false);
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
@@ -5864,7 +5890,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtCustomUploaderFileForm;
         private System.Windows.Forms.Label lblCustomUploaderURL;
         private System.Windows.Forms.Button btnCustomUploaderArgUpdate;
-        private System.Windows.Forms.TextBox txtCustomUploaderArgValue;
         private System.Windows.Forms.Button btnCustomUploaderArgRemove;
         private ShareX.HelpersLib.MyListView lvCustomUploaderArguments;
         private System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsName;
@@ -6186,7 +6211,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TabPage tpCustomUploaderHeaders;
         private System.Windows.Forms.Button btnCustomUploaderHeaderUpdate;
         private System.Windows.Forms.TextBox txtCustomUploaderHeaderName;
-        private System.Windows.Forms.TextBox txtCustomUploaderHeaderValue;
         private System.Windows.Forms.Button btnCustomUploaderHeaderAdd;
         private System.Windows.Forms.Button btnCustomUploaderHeaderRemove;
         private HelpersLib.MyListView lvCustomUploaderHeaders;
@@ -6475,5 +6499,9 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Panel pCustomUploaderLog;
         private System.Windows.Forms.Panel pCustomUploaderRequestURL;
         private System.Windows.Forms.RichTextBox rtbCustomUploaderRequestURL;
+        private System.Windows.Forms.Panel pCustomUploaderArgValue;
+        private System.Windows.Forms.RichTextBox rtbCustomUploaderArgValue;
+        private System.Windows.Forms.Panel pCustomUploaderHeaderValue;
+        private System.Windows.Forms.RichTextBox rtbCustomUploaderHeaderValue;
     }
 }

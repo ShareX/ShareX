@@ -33,12 +33,12 @@ namespace ShareX.HelpersLib
 {
     public static class CodeMenu
     {
-        public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
         {
             return Create(tb, ignoreList, (CodeMenuItem[])null);
         }
 
-        public static ContextMenuStrip Create<TEntry>(TextBox tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
         {
             ContextMenuStrip cms = new ContextMenuStrip
             {

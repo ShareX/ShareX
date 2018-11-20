@@ -962,7 +962,7 @@ namespace ShareX.UploadersLib
             txtCustomUploaderFileForm.Enabled = uploader.RequestType == CustomUploaderRequestMethod.POST;
 
             txtCustomUploaderArgName.Text = "";
-            txtCustomUploaderArgValue.Text = "";
+            rtbCustomUploaderArgValue.Text = "";
             lvCustomUploaderArguments.Items.Clear();
             if (uploader.Arguments != null)
             {
@@ -973,7 +973,7 @@ namespace ShareX.UploadersLib
             }
 
             txtCustomUploaderHeaderName.Text = "";
-            txtCustomUploaderHeaderValue.Text = "";
+            rtbCustomUploaderHeaderValue.Text = "";
             lvCustomUploaderHeaders.Items.Clear();
             if (uploader.Headers != null)
             {

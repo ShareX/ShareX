@@ -307,7 +307,7 @@ namespace ShareX.HelpersLib
             return Helpers.DateTimeToUnix(dateTime);
         }
 
-        public static void AppendTextToSelection(this TextBox tb, string text)
+        public static void AppendTextToSelection(this TextBoxBase tb, string text)
         {
             if (!string.IsNullOrEmpty(text))
             {
