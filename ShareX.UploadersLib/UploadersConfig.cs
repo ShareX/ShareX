@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib
 
         #region Chevereto
 
-        public CheveretoUploader CheveretoUploader = new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397");
+        public CheveretoUploader CheveretoUploader = new CheveretoUploader("https://freeimage.host/api/1/upload", "6d207e02198a847aa98d0a2a901485a5");
         public bool CheveretoDirectURL = true;
 
         #endregion Chevereto
