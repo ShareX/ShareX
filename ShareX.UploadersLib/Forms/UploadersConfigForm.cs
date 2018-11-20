@@ -50,6 +50,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
+        private bool customUploaderPauseLoad;
         private URLType customUploaderURLType = URLType.URL;
 
         private UploadersConfigForm(UploadersConfig config)
@@ -3425,7 +3426,10 @@ namespace ShareX.UploadersLib
 
         private void lbCustomUploaderList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomUploaderLoadSelected();
+            if (!customUploaderPauseLoad)
+            {
+                CustomUploaderLoadSelected();
+            }
         }
 
         private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
@@ -3490,11 +3494,12 @@ namespace ShareX.UploadersLib
             CustomUploaderUpdateRequestState();
         }
 
-        private void txtCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestURL = txtCustomUploaderRequestURL.Text;
+            if (uploader != null) uploader.RequestURL = rtbCustomUploaderRequestURL.Text;
 
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             CustomUploaderRefreshNames();
         }
 

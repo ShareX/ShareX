@@ -957,7 +957,7 @@ namespace ShareX.UploadersLib
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
-            txtCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
+            rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             txtCustomUploaderFileForm.Text = uploader.FileFormName ?? "";
             txtCustomUploaderFileForm.Enabled = uploader.RequestType == CustomUploaderRequestMethod.POST;
 
@@ -1053,12 +1053,14 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderRefreshNames()
         {
+            customUploaderPauseLoad = true;
             lbCustomUploaderList.RefreshSelectedItem();
             cbCustomUploaderImageUploader.RefreshItems();
             cbCustomUploaderTextUploader.RefreshItems();
             cbCustomUploaderFileUploader.RefreshItems();
             cbCustomUploaderURLShortener.RefreshItems();
             cbCustomUploaderURLSharingService.RefreshItems();
+            customUploaderPauseLoad = false;
         }
 
         private void CustomUploaderClearUploaders()
@@ -1132,6 +1134,7 @@ namespace ShareX.UploadersLib
                     lbCustomUploaderList.SelectedIndex = Config.CustomImageUploaderSelected;
                 }
 
+                CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);

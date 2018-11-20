@@ -79,6 +79,8 @@ namespace ShareX.UploadersLib
             this.btnTwitterRemove = new System.Windows.Forms.Button();
             this.btnTwitterAdd = new System.Windows.Forms.Button();
             this.tpCustomUploaders = new System.Windows.Forms.TabPage();
+            this.pCustomUploaderRequestURL = new System.Windows.Forms.Panel();
+            this.rtbCustomUploaderRequestURL = new System.Windows.Forms.RichTextBox();
             this.pCustomUploaderLog = new System.Windows.Forms.Panel();
             this.rtbCustomUploaderLog = new System.Windows.Forms.RichTextBox();
             this.btnCustomUploaderURLSharingServiceTest = new System.Windows.Forms.Button();
@@ -140,7 +142,6 @@ namespace ShareX.UploadersLib
             this.lblCustomUploaderFileForm = new System.Windows.Forms.Label();
             this.txtCustomUploaderName = new System.Windows.Forms.TextBox();
             this.lblCustomUploaderThumbnailURL = new System.Windows.Forms.Label();
-            this.txtCustomUploaderRequestURL = new System.Windows.Forms.TextBox();
             this.cbCustomUploaderResponseType = new System.Windows.Forms.ComboBox();
             this.lblCustomUploaderRequestURL = new System.Windows.Forms.Label();
             this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
@@ -712,6 +713,7 @@ namespace ShareX.UploadersLib
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
+            this.pCustomUploaderRequestURL.SuspendLayout();
             this.pCustomUploaderLog.SuspendLayout();
             this.pCustomUploader.SuspendLayout();
             this.pCustomUploaderDeletionURL.SuspendLayout();
@@ -987,6 +989,7 @@ namespace ShareX.UploadersLib
             // tpCustomUploaders
             // 
             this.tpCustomUploaders.BackColor = System.Drawing.SystemColors.Window;
+            this.tpCustomUploaders.Controls.Add(this.pCustomUploaderRequestURL);
             this.tpCustomUploaders.Controls.Add(this.pCustomUploaderLog);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderURLSharingServiceTest);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderURLSharingService);
@@ -1011,6 +1014,21 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderImageUploader);
             resources.ApplyResources(this.tpCustomUploaders, "tpCustomUploaders");
             this.tpCustomUploaders.Name = "tpCustomUploaders";
+            // 
+            // pCustomUploaderRequestURL
+            // 
+            this.pCustomUploaderRequestURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pCustomUploaderRequestURL.Controls.Add(this.rtbCustomUploaderRequestURL);
+            resources.ApplyResources(this.pCustomUploaderRequestURL, "pCustomUploaderRequestURL");
+            this.pCustomUploaderRequestURL.Name = "pCustomUploaderRequestURL";
+            // 
+            // rtbCustomUploaderRequestURL
+            // 
+            this.rtbCustomUploaderRequestURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbCustomUploaderRequestURL.DetectUrls = false;
+            resources.ApplyResources(this.rtbCustomUploaderRequestURL, "rtbCustomUploaderRequestURL");
+            this.rtbCustomUploaderRequestURL.Name = "rtbCustomUploaderRequestURL";
+            this.rtbCustomUploaderRequestURL.TextChanged += new System.EventHandler(this.rtbCustomUploaderRequestURL_TextChanged);
             // 
             // pCustomUploaderLog
             // 
@@ -1062,7 +1080,6 @@ namespace ShareX.UploadersLib
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderFileForm);
             this.pCustomUploader.Controls.Add(this.txtCustomUploaderName);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderThumbnailURL);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderRequestURL);
             this.pCustomUploader.Controls.Add(this.cbCustomUploaderResponseType);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestURL);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderResponseType);
@@ -1479,12 +1496,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblCustomUploaderThumbnailURL, "lblCustomUploaderThumbnailURL");
             this.lblCustomUploaderThumbnailURL.Name = "lblCustomUploaderThumbnailURL";
-            // 
-            // txtCustomUploaderRequestURL
-            // 
-            resources.ApplyResources(this.txtCustomUploaderRequestURL, "txtCustomUploaderRequestURL");
-            this.txtCustomUploaderRequestURL.Name = "txtCustomUploaderRequestURL";
-            this.txtCustomUploaderRequestURL.TextChanged += new System.EventHandler(this.txtCustomUploaderRequestURL_TextChanged);
             // 
             // cbCustomUploaderResponseType
             // 
@@ -5641,6 +5652,7 @@ namespace ShareX.UploadersLib
             this.tpTwitter.PerformLayout();
             this.tpCustomUploaders.ResumeLayout(false);
             this.tpCustomUploaders.PerformLayout();
+            this.pCustomUploaderRequestURL.ResumeLayout(false);
             this.pCustomUploaderLog.ResumeLayout(false);
             this.pCustomUploader.ResumeLayout(false);
             this.pCustomUploader.PerformLayout();
@@ -5844,7 +5856,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbCustomUploaderResponseType;
         private System.Windows.Forms.Button btnCustomUploaderTextUploaderTest;
         private System.Windows.Forms.ComboBox cbCustomUploaderImageUploader;
-        private System.Windows.Forms.TextBox txtCustomUploaderRequestURL;
         private System.Windows.Forms.RichTextBox rtbCustomUploaderLog;
         private System.Windows.Forms.Label lblCustomUploaderThumbnailURL;
         private System.Windows.Forms.Label lblCustomUploaderFileForm;
@@ -6462,5 +6473,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Panel pCustomUploaderDeletionURL;
         private System.Windows.Forms.RichTextBox rtbCustomUploaderDeletionURL;
         private System.Windows.Forms.Panel pCustomUploaderLog;
+        private System.Windows.Forms.Panel pCustomUploaderRequestURL;
+        private System.Windows.Forms.RichTextBox rtbCustomUploaderRequestURL;
     }
 }

@@ -605,14 +605,22 @@ namespace ShareX.HelpersLib
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
 
+        public static void RefreshItem(this ListBox lb, int index)
+        {
+            typeof(ListBox).InvokeMember("RefreshItem", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { index });
+        }
+
         public static void RefreshSelectedItem(this ListBox lb)
         {
-            int index = lb.SelectedIndex;
-
-            if (index > -1)
+            if (lb.SelectedIndex > -1)
             {
-                lb.Items[index] = lb.Items[index];
+                lb.RefreshItem(lb.SelectedIndex);
             }
+        }
+
+        public static void RefreshItems(this ListBox lb)
+        {
+            typeof(ListBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { });
         }
 
         public static void ShowError(this Exception e, bool fullError = true)
