@@ -5510,6 +5510,7 @@ namespace ShareX.UploadersLib
             // 
             // tpCustomUploaderData
             // 
+            this.tpCustomUploaderData.Controls.Add(this.btnCustomUploaderDataBeautify);
             this.tpCustomUploaderData.Controls.Add(this.pCustomUploaderData);
             resources.ApplyResources(this.tpCustomUploaderData, "tpCustomUploaderData");
             this.tpCustomUploaderData.Name = "tpCustomUploaderData";
@@ -5518,7 +5519,6 @@ namespace ShareX.UploadersLib
             // pCustomUploaderData
             // 
             this.pCustomUploaderData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pCustomUploaderData.Controls.Add(this.btnCustomUploaderDataBeautify);
             this.pCustomUploaderData.Controls.Add(this.rtbCustomUploaderData);
             resources.ApplyResources(this.pCustomUploaderData, "pCustomUploaderData");
             this.pCustomUploaderData.Name = "pCustomUploaderData";

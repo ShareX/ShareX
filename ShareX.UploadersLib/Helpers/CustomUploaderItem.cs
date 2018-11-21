@@ -168,7 +168,7 @@ namespace ShareX.UploadersLib
 
         public string GetData(CustomUploaderArgumentInput input)
         {
-            return input.Parse(Data);
+            return input.Parse(Data, RequestFormat == CustomUploaderRequestFormat.JSON);
         }
 
         public string GetFileFormName()
