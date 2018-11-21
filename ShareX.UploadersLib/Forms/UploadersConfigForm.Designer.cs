@@ -715,6 +715,9 @@ namespace ShareX.UploadersLib
             this.oAuthJira = new ShareX.UploadersLib.OAuthControl();
             this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.tpCustomUploaderFile = new System.Windows.Forms.TabPage();
+            this.lblCustomUploaderRequestFormat = new System.Windows.Forms.Label();
+            this.cbCustomUploaderRequestFormat = new System.Windows.Forms.ComboBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -816,6 +819,7 @@ namespace ShareX.UploadersLib
             this.tcUploaders.SuspendLayout();
             this.tpCustomUploaderData.SuspendLayout();
             this.pCustomUploaderData.SuspendLayout();
+            this.tpCustomUploaderFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1067,6 +1071,8 @@ namespace ShareX.UploadersLib
             // 
             // pCustomUploader
             // 
+            this.pCustomUploader.Controls.Add(this.cbCustomUploaderRequestFormat);
+            this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestFormat);
             this.pCustomUploader.Controls.Add(this.pCustomUploaderDeletionURL);
             this.pCustomUploader.Controls.Add(this.pCustomUploaderThumbnailURL);
             this.pCustomUploader.Controls.Add(this.pCustomUploaderURL);
@@ -1076,9 +1082,7 @@ namespace ShareX.UploadersLib
             this.pCustomUploader.Controls.Add(this.tcCustomUploaderResponseParse);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderURL);
             this.pCustomUploader.Controls.Add(this.tcCustomUploaderArguments);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderFileForm);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestType);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderFileForm);
             this.pCustomUploader.Controls.Add(this.txtCustomUploaderName);
             this.pCustomUploader.Controls.Add(this.lblCustomUploaderThumbnailURL);
             this.pCustomUploader.Controls.Add(this.cbCustomUploaderResponseType);
@@ -1325,6 +1329,7 @@ namespace ShareX.UploadersLib
             // 
             this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderData);
             this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderArguments);
+            this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderFile);
             this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderHeaders);
             resources.ApplyResources(this.tcCustomUploaderArguments, "tcCustomUploaderArguments");
             this.tcCustomUploaderArguments.Name = "tcCustomUploaderArguments";
@@ -5693,6 +5698,27 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // tpCustomUploaderFile
+            // 
+            this.tpCustomUploaderFile.Controls.Add(this.lblCustomUploaderFileForm);
+            this.tpCustomUploaderFile.Controls.Add(this.txtCustomUploaderFileForm);
+            resources.ApplyResources(this.tpCustomUploaderFile, "tpCustomUploaderFile");
+            this.tpCustomUploaderFile.Name = "tpCustomUploaderFile";
+            this.tpCustomUploaderFile.UseVisualStyleBackColor = true;
+            // 
+            // lblCustomUploaderRequestFormat
+            // 
+            resources.ApplyResources(this.lblCustomUploaderRequestFormat, "lblCustomUploaderRequestFormat");
+            this.lblCustomUploaderRequestFormat.Name = "lblCustomUploaderRequestFormat";
+            // 
+            // cbCustomUploaderRequestFormat
+            // 
+            this.cbCustomUploaderRequestFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCustomUploaderRequestFormat.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCustomUploaderRequestFormat, "cbCustomUploaderRequestFormat");
+            this.cbCustomUploaderRequestFormat.Name = "cbCustomUploaderRequestFormat";
+            this.cbCustomUploaderRequestFormat.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderRequestFormat_SelectedIndexChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5879,6 +5905,8 @@ namespace ShareX.UploadersLib
             this.tcUploaders.ResumeLayout(false);
             this.tpCustomUploaderData.ResumeLayout(false);
             this.pCustomUploaderData.ResumeLayout(false);
+            this.tpCustomUploaderFile.ResumeLayout(false);
+            this.tpCustomUploaderFile.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6546,5 +6574,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Panel pCustomUploaderData;
         private System.Windows.Forms.Button btnCustomUploaderDataBeautify;
         private System.Windows.Forms.RichTextBox rtbCustomUploaderData;
+        private System.Windows.Forms.ComboBox cbCustomUploaderRequestFormat;
+        private System.Windows.Forms.Label lblCustomUploaderRequestFormat;
+        private System.Windows.Forms.TabPage tpCustomUploaderFile;
     }
 }

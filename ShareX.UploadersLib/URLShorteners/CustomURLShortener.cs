@@ -66,11 +66,11 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class CustomURLShortener : URLShortener
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomURLShortener(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult ShortenURL(string url)
@@ -78,22 +78,22 @@ namespace ShareX.UploadersLib.URLShorteners
             UploadResult result = new UploadResult { URL = url };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
 
-            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.URLShortener);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLShortener);
 
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), customUploader.GetArguments(input), customUploader.GetHeaders(input), null,
-                    customUploader.ResponseType, customUploader.GetHttpMethod());
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
+                    uploader.ResponseType, uploader.GetHttpMethod());
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
-                    customUploader.GetHeaders(input), null, customUploader.ResponseType);
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.JSON)
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.Data, UploadHelpers.ContentTypeJSON,
-                    customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType);
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
@@ -102,7 +102,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             try
             {
-                customUploader.ParseResponse(result, true);
+                uploader.ParseResponse(result, true);
             }
             catch (Exception e)
             {

@@ -71,29 +71,29 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class CustomFileUploader : FileUploader
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomFileUploader(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
 
-            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.FileUploader);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.FileUploader);
 
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                    customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
+                UploadResult result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
 
                 if (result.IsSuccess)
                 {
                     try
                     {
-                        customUploader.ParseResponse(result);
+                        uploader.ParseResponse(result);
                     }
                     catch (Exception e)
                     {

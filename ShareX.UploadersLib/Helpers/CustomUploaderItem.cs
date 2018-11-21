@@ -166,6 +166,11 @@ namespace ShareX.UploadersLib
             return RequestFormat;
         }
 
+        public string GetData(CustomUploaderArgumentInput input)
+        {
+            return input.Parse(Data);
+        }
+
         public string GetFileFormName()
         {
             if (string.IsNullOrEmpty(FileFormName))

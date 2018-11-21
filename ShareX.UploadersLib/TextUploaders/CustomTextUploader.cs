@@ -71,11 +71,11 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class CustomTextUploader : TextUploader
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomTextUploader(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult UploadText(string text, string fileName)
@@ -83,29 +83,29 @@ namespace ShareX.UploadersLib.TextUploaders
             UploadResult result = new UploadResult();
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, text);
 
-            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
 
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                if (string.IsNullOrEmpty(customUploader.FileFormName))
+                if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
-                    result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), customUploader.GetArguments(input),
-                        customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
+                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input),
+                        uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
                 }
                 else
                 {
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                            customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
+                        result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
                     }
                 }
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
-                    customUploader.GetHeaders(input), null, customUploader.ResponseType);
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             try
             {
-                customUploader.ParseResponse(result);
+                uploader.ParseResponse(result);
             }
             catch (Exception e)
             {

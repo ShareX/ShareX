@@ -65,11 +65,11 @@ namespace ShareX.UploadersLib.SharingServices
 
     public sealed class CustomURLSharer : URLSharer
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomURLSharer(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult ShareURL(string url)
@@ -77,17 +77,17 @@ namespace ShareX.UploadersLib.SharingServices
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
 
-            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
 
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), customUploader.GetArguments(input), customUploader.GetHeaders(input), null,
-                    customUploader.ResponseType, customUploader.GetHttpMethod());
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
+                    uploader.ResponseType, uploader.GetHttpMethod());
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
-                    customUploader.GetHeaders(input), null, customUploader.ResponseType);
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {

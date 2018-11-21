@@ -129,6 +129,7 @@ namespace ShareX.UploadersLib
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
+            cbCustomUploaderRequestFormat.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestFormat)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
@@ -3494,8 +3495,6 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
-
-            CustomUploaderUpdateRequestState();
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
@@ -3507,10 +3506,10 @@ namespace ShareX.UploadersLib
             CustomUploaderRefreshNames();
         }
 
-        private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
+        private void cbCustomUploaderRequestFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.FileFormName = txtCustomUploaderFileForm.Text;
+            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
         }
 
         private void rtbCustomUploaderData_TextChanged(object sender, EventArgs e)
@@ -3523,6 +3522,12 @@ namespace ShareX.UploadersLib
         private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
         {
             CustomUploaderBeautifyJsonData();
+        }
+
+        private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.FileFormName = txtCustomUploaderFileForm.Text;
         }
 
         private void txtCustomUploaderArgName_TextChanged(object sender, EventArgs e)

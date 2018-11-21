@@ -960,8 +960,9 @@ namespace ShareX.UploadersLib
 
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
-            txtCustomUploaderFileForm.Text = uploader.FileFormName ?? "";
-            txtCustomUploaderFileForm.Enabled = uploader.RequestType == CustomUploaderRequestMethod.POST;
+            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
+
+            rtbCustomUploaderData.Text = uploader.Data ?? "";
 
             txtCustomUploaderArgName.Text = "";
             rtbCustomUploaderArgValue.Text = "";
@@ -973,6 +974,8 @@ namespace ShareX.UploadersLib
                     lvCustomUploaderArguments.Items.Add(arg.Key).SubItems.Add(arg.Value);
                 }
             }
+
+            txtCustomUploaderFileForm.Text = uploader.FileFormName ?? "";
 
             txtCustomUploaderHeaderName.Text = "";
             rtbCustomUploaderHeaderValue.Text = "";
@@ -1014,7 +1017,6 @@ namespace ShareX.UploadersLib
 
             if (isSelected)
             {
-                CustomUploaderUpdateRequestState();
                 CustomUploaderUpdateArgumentsState();
                 CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateResponseState();
@@ -1025,11 +1027,6 @@ namespace ShareX.UploadersLib
                 cbCustomUploaderFileUploader.Enabled = btnCustomUploaderFileUploaderTest.Enabled = cbCustomUploaderURLShortener.Enabled =
                 btnCustomUploaderURLShortenerTest.Enabled = cbCustomUploaderURLSharingService.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled =
                 lbCustomUploaderList.Items.Count > 0;
-        }
-
-        private void CustomUploaderUpdateRequestState()
-        {
-            txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestMethod.POST;
         }
 
         private void CustomUploaderUpdateArgumentsState()
