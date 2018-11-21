@@ -298,6 +298,16 @@ namespace ShareX.UploadersLib
         DELETE
     }
 
+    public enum CustomUploaderRequestFormat
+    {
+        Automatic,
+        FormData,
+        URLQuery,
+        JSON,
+        //Binary,
+        //FormURLEncoded
+    }
+
     [Flags]
     public enum CustomUploaderDestinationType
     {

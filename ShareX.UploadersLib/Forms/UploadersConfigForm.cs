@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -119,6 +120,7 @@ namespace ShareX.UploadersLib
 
             // Custom uploader
             rtbCustomUploaderRequestURL.AddContextMenu();
+            rtbCustomUploaderData.AddContextMenu();
             rtbCustomUploaderArgValue.AddContextMenu();
             rtbCustomUploaderHeaderValue.AddContextMenu();
             rtbCustomUploaderURL.AddContextMenu();
@@ -128,6 +130,7 @@ namespace ShareX.UploadersLib
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
+            cbCustomUploaderRequestFormat.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestFormat)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
@@ -3493,8 +3496,6 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
-
-            CustomUploaderUpdateRequestState();
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
@@ -3504,6 +3505,32 @@ namespace ShareX.UploadersLib
 
             CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             CustomUploaderRefreshNames();
+        }
+
+        private void cbCustomUploaderRequestFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
+
+            CustomUploaderUpdateRequestFormatState();
+        }
+
+        private void rtbCustomUploaderData_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.Data = rtbCustomUploaderData.Text;
+
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
+        }
+
+        private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderFormatJsonData(Formatting.Indented);
+        }
+
+        private void btnCustomUploaderDataMinify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderFormatJsonData(Formatting.None);
         }
 
         private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)

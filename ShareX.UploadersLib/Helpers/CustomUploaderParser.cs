@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System;
@@ -47,6 +48,7 @@ namespace ShareX.UploadersLib
         public string Input { get; private set; }
         public string Response { get; private set; }
         public List<Match> RegexMatches { get; private set; }
+        public bool JsonEncode { get; set; }
 
         public bool SkipSyntaxParse { get; set; }
         public List<CustomUploaderSyntaxInfo> SyntaxInfoList { get; private set; }
@@ -123,6 +125,12 @@ namespace ShareX.UploadersLib
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
+                                if (JsonEncode)
+                                {
+                                    syntaxResult = JsonConvert.ToString(syntaxResult);
+                                    syntaxResult = syntaxResult.Substring(1, syntaxResult.Length - 2);
+                                }
+
                                 sbResult.Append(syntaxResult);
                             }
                         }

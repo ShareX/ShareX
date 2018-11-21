@@ -48,8 +48,14 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string RequestURL { get; set; }
 
+        [DefaultValue(CustomUploaderRequestFormat.Automatic)]
+        public CustomUploaderRequestFormat RequestFormat { get; set; }
+
         [DefaultValue("")]
         public string FileFormName { get; set; }
+
+        [DefaultValue("")]
+        public string Data { get; set; }
 
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
@@ -132,6 +138,37 @@ namespace ShareX.UploadersLib
             CustomUploaderParser parser = new CustomUploaderParser();
             string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
+        }
+
+        public CustomUploaderRequestFormat GetRequestFormat(CustomUploaderDestinationType destinationType)
+        {
+            if (RequestFormat == CustomUploaderRequestFormat.Automatic)
+            {
+                switch (destinationType)
+                {
+                    case CustomUploaderDestinationType.ImageUploader:
+                    case CustomUploaderDestinationType.FileUploader:
+                        return CustomUploaderRequestFormat.FormData;
+                    case CustomUploaderDestinationType.TextUploader:
+                    case CustomUploaderDestinationType.URLShortener:
+                    case CustomUploaderDestinationType.URLSharingService:
+                        if (RequestType == CustomUploaderRequestMethod.POST)
+                        {
+                            return CustomUploaderRequestFormat.FormData;
+                        }
+                        else
+                        {
+                            return CustomUploaderRequestFormat.URLQuery;
+                        }
+                }
+            }
+
+            return RequestFormat;
+        }
+
+        public string GetData(CustomUploaderArgumentInput input)
+        {
+            return input.Parse(Data, RequestFormat == CustomUploaderRequestFormat.JSON);
         }
 
         public string GetFileFormName()

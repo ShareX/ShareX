@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib
             Input = input;
         }
 
-        public string Parse(string arg)
+        public string Parse(string arg, bool jsonEncode = false)
         {
             NameParser nameParser = new NameParser(NameParserType.Text);
             EscapeHelper escapeHelper = new EscapeHelper();
@@ -46,6 +46,7 @@ namespace ShareX.UploadersLib
             arg = escapeHelper.Parse(arg, nameParser.Parse);
 
             CustomUploaderParser customUploaderParser = new CustomUploaderParser(Filename, Input);
+            customUploaderParser.JsonEncode = jsonEncode;
             arg = customUploaderParser.Parse(arg);
 
             return arg;
