@@ -960,9 +960,11 @@ namespace ShareX.UploadersLib
 
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
 
             rtbCustomUploaderData.Text = uploader.Data ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
 
             txtCustomUploaderArgName.Text = "";
             rtbCustomUploaderArgValue.Text = "";
@@ -1002,8 +1004,11 @@ namespace ShareX.UploadersLib
             }
 
             rtbCustomUploaderURL.Text = uploader.URL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
             rtbCustomUploaderThumbnailURL.Text = uploader.ThumbnailURL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
             rtbCustomUploaderDeletionURL.Text = uploader.DeletionURL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
 
             CustomUploaderUpdateStates();
         }
@@ -1165,12 +1170,6 @@ namespace ShareX.UploadersLib
                 {
                     lbCustomUploaderList.SelectedIndex = Config.CustomImageUploaderSelected;
                 }
-
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
             }
 
             CustomUploaderUpdateStates();
