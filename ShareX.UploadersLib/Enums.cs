@@ -304,8 +304,8 @@ namespace ShareX.UploadersLib
         FormData,
         URLQuery,
         JSON,
-        Binary,
-        FormURLEncoded
+        //Binary,
+        //FormURLEncoded
     }
 
     [Flags]

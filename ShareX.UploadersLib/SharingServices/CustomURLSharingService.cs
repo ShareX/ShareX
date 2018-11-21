@@ -89,6 +89,11 @@ namespace ShareX.UploadersLib.SharingServices
                 result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
+            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            {
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
             else
             {
                 throw new Exception("Unsupported request format.");
