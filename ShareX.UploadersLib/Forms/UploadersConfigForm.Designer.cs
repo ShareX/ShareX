@@ -718,6 +718,7 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderFile = new System.Windows.Forms.TabPage();
             this.lblCustomUploaderRequestFormat = new System.Windows.Forms.Label();
             this.cbCustomUploaderRequestFormat = new System.Windows.Forms.ComboBox();
+            this.btnCustomUploaderDataMinify = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -5510,6 +5511,7 @@ namespace ShareX.UploadersLib
             // 
             // tpCustomUploaderData
             // 
+            this.tpCustomUploaderData.Controls.Add(this.btnCustomUploaderDataMinify);
             this.tpCustomUploaderData.Controls.Add(this.btnCustomUploaderDataBeautify);
             this.tpCustomUploaderData.Controls.Add(this.pCustomUploaderData);
             resources.ApplyResources(this.tpCustomUploaderData, "tpCustomUploaderData");
@@ -5718,6 +5720,13 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.cbCustomUploaderRequestFormat, "cbCustomUploaderRequestFormat");
             this.cbCustomUploaderRequestFormat.Name = "cbCustomUploaderRequestFormat";
             this.cbCustomUploaderRequestFormat.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderRequestFormat_SelectedIndexChanged);
+            // 
+            // btnCustomUploaderDataMinify
+            // 
+            resources.ApplyResources(this.btnCustomUploaderDataMinify, "btnCustomUploaderDataMinify");
+            this.btnCustomUploaderDataMinify.Name = "btnCustomUploaderDataMinify";
+            this.btnCustomUploaderDataMinify.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderDataMinify.Click += new System.EventHandler(this.btnCustomUploaderDataMinify_Click);
             // 
             // UploadersConfigForm
             // 
@@ -6577,5 +6586,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbCustomUploaderRequestFormat;
         private System.Windows.Forms.Label lblCustomUploaderRequestFormat;
         private System.Windows.Forms.TabPage tpCustomUploaderFile;
+        private System.Windows.Forms.Button btnCustomUploaderDataMinify;
     }
 }

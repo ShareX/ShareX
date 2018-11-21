@@ -1412,7 +1412,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void CustomUploaderBeautifyJsonData()
+        private void CustomUploaderFormatJsonData(Formatting formatting)
         {
             string json = rtbCustomUploaderData.Text;
 
@@ -1420,7 +1420,7 @@ namespace ShareX.UploadersLib
             {
                 try
                 {
-                    rtbCustomUploaderData.Text = JToken.Parse(json).ToString(Formatting.Indented);
+                    rtbCustomUploaderData.Text = JToken.Parse(json).ToString(formatting);
                 }
                 catch (Exception e)
                 {

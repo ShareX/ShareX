@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -3521,7 +3522,12 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
         {
-            CustomUploaderBeautifyJsonData();
+            CustomUploaderFormatJsonData(Formatting.Indented);
+        }
+
+        private void btnCustomUploaderDataMinify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderFormatJsonData(Formatting.None);
         }
 
         private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
