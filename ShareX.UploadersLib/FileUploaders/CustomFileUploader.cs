@@ -82,22 +82,31 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
 
-            UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
+            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.FileUploader);
 
-            if (result.IsSuccess)
+            if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                try
-                {
-                    customUploader.ParseResponse(result);
-                }
-                catch (Exception e)
-                {
-                    Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-                }
-            }
+                UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
+                    customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
 
-            return result;
+                if (result.IsSuccess)
+                {
+                    try
+                    {
+                        customUploader.ParseResponse(result);
+                    }
+                    catch (Exception e)
+                    {
+                        Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
+                    }
+                }
+
+                return result;
+            }
+            else
+            {
+                throw new Exception("Unsupported request format.");
+            }
         }
     }
 }

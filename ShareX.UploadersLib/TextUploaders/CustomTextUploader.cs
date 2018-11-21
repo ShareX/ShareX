@@ -88,7 +88,9 @@ namespace ShareX.UploadersLib.TextUploaders
             UploadResult result = new UploadResult();
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, text);
 
-            if (customUploader.RequestType == CustomUploaderRequestMethod.POST)
+            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
+
+            if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
@@ -105,10 +107,14 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 }
             }
-            else
+            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
                 result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
                     customUploader.GetHeaders(input), null, customUploader.ResponseType);
+            }
+            else
+            {
+                throw new Exception("Unsupported request format.");
             }
 
             try

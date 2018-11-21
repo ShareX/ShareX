@@ -81,15 +81,21 @@ namespace ShareX.UploadersLib.SharingServices
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
 
-            if (customUploader.RequestType == CustomUploaderRequestMethod.POST)
+            CustomUploaderRequestFormat requestFormat = customUploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
+
+            if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
                 result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), customUploader.GetArguments(input), customUploader.GetHeaders(input), null,
                     customUploader.ResponseType, customUploader.GetHttpMethod());
             }
-            else
+            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
                 result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
                     customUploader.GetHeaders(input), null, customUploader.ResponseType);
+            }
+            else
+            {
+                throw new Exception("Unsupported request format.");
             }
 
             return result;
