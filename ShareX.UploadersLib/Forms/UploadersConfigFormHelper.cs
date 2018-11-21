@@ -1017,6 +1017,7 @@ namespace ShareX.UploadersLib
 
             if (isSelected)
             {
+                CustomUploaderUpdateRequestFormatState();
                 CustomUploaderUpdateArgumentsState();
                 CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateResponseState();
@@ -1027,6 +1028,38 @@ namespace ShareX.UploadersLib
                 cbCustomUploaderFileUploader.Enabled = btnCustomUploaderFileUploaderTest.Enabled = cbCustomUploaderURLShortener.Enabled =
                 btnCustomUploaderURLShortenerTest.Enabled = cbCustomUploaderURLSharingService.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled =
                 lbCustomUploaderList.Items.Count > 0;
+        }
+
+        private void CustomUploaderUpdateRequestFormatState()
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null)
+            {
+                if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
+                {
+                    if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
+                    {
+                        tcCustomUploaderArguments.TabPages.Insert(0, tpCustomUploaderData);
+                    }
+                }
+                else if (tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
+                {
+                    tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderData);
+                }
+
+                if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == CustomUploaderRequestMethod.POST) ||
+                    uploader.RequestFormat == CustomUploaderRequestFormat.FormData)
+                {
+                    if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
+                    {
+                        tcCustomUploaderArguments.TabPages.Insert(1, tpCustomUploaderFile);
+                    }
+                }
+                else if (tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
+                {
+                    tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderFile);
+                }
+            }
         }
 
         private void CustomUploaderUpdateArgumentsState()

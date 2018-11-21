@@ -3511,12 +3511,15 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
+
+            CustomUploaderUpdateRequestFormatState();
         }
 
         private void rtbCustomUploaderData_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Data = rtbCustomUploaderData.Text;
+
             CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
         }
 
