@@ -75,10 +75,6 @@ namespace ShareX.UploadersLib.URLShorteners
 
         public override UploadResult ShortenURL(string url)
         {
-            if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
-                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
-                throw new Exception("At least one \"$input$\" required for argument or header value.");
-
             UploadResult result = new UploadResult { URL = url };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
 
@@ -93,6 +89,11 @@ namespace ShareX.UploadersLib.URLShorteners
             {
                 result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.GetArguments(input),
                     customUploader.GetHeaders(input), null, customUploader.ResponseType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            {
+                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), customUploader.Data, UploadHelpers.ContentTypeJSON,
+                    customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType);
             }
             else
             {

@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -1135,6 +1137,7 @@ namespace ShareX.UploadersLib
                 }
 
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
+                CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
                 CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
@@ -1408,6 +1411,23 @@ namespace ShareX.UploadersLib
                     rtb.SelectionStart = start;
                     rtb.SelectionLength = length;
                     rtb.EndUpdate();
+                }
+            }
+        }
+
+        private void CustomUploaderBeautifyJsonData()
+        {
+            string json = rtbCustomUploaderData.Text;
+
+            if (!string.IsNullOrEmpty(json))
+            {
+                try
+                {
+                    rtbCustomUploaderData.Text = JToken.Parse(json).ToString(Formatting.Indented);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -119,6 +119,7 @@ namespace ShareX.UploadersLib
 
             // Custom uploader
             rtbCustomUploaderRequestURL.AddContextMenu();
+            rtbCustomUploaderData.AddContextMenu();
             rtbCustomUploaderArgValue.AddContextMenu();
             rtbCustomUploaderHeaderValue.AddContextMenu();
             rtbCustomUploaderURL.AddContextMenu();
@@ -3510,6 +3511,18 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.FileFormName = txtCustomUploaderFileForm.Text;
+        }
+
+        private void rtbCustomUploaderData_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.Data = rtbCustomUploaderData.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
+        }
+
+        private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderBeautifyJsonData();
         }
 
         private void txtCustomUploaderArgName_TextChanged(object sender, EventArgs e)

@@ -54,6 +54,9 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string FileFormName { get; set; }
 
+        [DefaultValue("")]
+        public string Data { get; set; }
+
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
 

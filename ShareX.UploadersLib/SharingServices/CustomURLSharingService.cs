@@ -74,10 +74,6 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override UploadResult ShareURL(string url)
         {
-            if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
-                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
-                throw new Exception("At least one \"$input$\" required for argument or header value.");
-
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
 
