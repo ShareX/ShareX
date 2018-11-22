@@ -95,6 +95,11 @@ namespace ShareX.UploadersLib.URLShorteners
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
+            else if (requestFormat == CustomUploaderRequestFormat.FormURLEncoded)
+            {
+                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
             else
             {
                 throw new Exception("Unsupported request format.");

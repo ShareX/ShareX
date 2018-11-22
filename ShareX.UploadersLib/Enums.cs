@@ -295,13 +295,13 @@ namespace ShareX.UploadersLib
         Automatic,
         [Description("Form data (multipart/form-data)")]
         MultipartFormData,
-        [Description("URL query string")]
+        [Description("URL query string (example.com?name1=value1)")]
         URLQueryString,
         [Description("JSON (application/json)")]
         JSON,
         [Description("Binary")]
         Binary,
-        [Description("application/x-www-form-urlencoded")]
+        [Description("Form URL encoded (application/x-www-form-urlencoded)")]
         FormURLEncoded
     }
 
