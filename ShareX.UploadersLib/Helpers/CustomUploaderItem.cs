@@ -42,8 +42,8 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        [DefaultValue(CustomUploaderRequestMethod.POST)]
-        public CustomUploaderRequestMethod RequestType { get; set; }
+        [DefaultValue(HttpMethod.POST)]
+        public HttpMethod RequestType { get; set; }
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
@@ -110,24 +110,6 @@ namespace ShareX.UploadersLib
             return ToString() + ".sxcu";
         }
 
-        public HttpMethod GetHttpMethod()
-        {
-            switch (RequestType)
-            {
-                default:
-                case CustomUploaderRequestMethod.POST:
-                    return HttpMethod.POST;
-                case CustomUploaderRequestMethod.GET:
-                    return HttpMethod.GET;
-                case CustomUploaderRequestMethod.PUT:
-                    return HttpMethod.PUT;
-                case CustomUploaderRequestMethod.PATCH:
-                    return HttpMethod.PATCH;
-                case CustomUploaderRequestMethod.DELETE:
-                    return HttpMethod.DELETE;
-            }
-        }
-
         public string GetRequestURL()
         {
             if (string.IsNullOrEmpty(RequestURL))
@@ -152,7 +134,7 @@ namespace ShareX.UploadersLib
                     case CustomUploaderDestinationType.TextUploader:
                     case CustomUploaderDestinationType.URLShortener:
                     case CustomUploaderDestinationType.URLSharingService:
-                        if (RequestType == CustomUploaderRequestMethod.POST)
+                        if (RequestType == HttpMethod.POST)
                         {
                             return CustomUploaderRequestFormat.FormData;
                         }

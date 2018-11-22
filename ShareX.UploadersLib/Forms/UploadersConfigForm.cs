@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib
             rtbCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
             cbCustomUploaderRequestFormat.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestFormat)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
@@ -3495,7 +3495,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
+            if (uploader != null) uploader.RequestType = (HttpMethod)cbCustomUploaderRequestType.SelectedIndex;
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)

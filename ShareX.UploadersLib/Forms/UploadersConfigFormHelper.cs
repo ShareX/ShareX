@@ -1052,7 +1052,7 @@ namespace ShareX.UploadersLib
                     tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderData);
                 }
 
-                if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == CustomUploaderRequestMethod.POST) ||
+                if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == HttpMethod.POST) ||
                     uploader.RequestFormat == CustomUploaderRequestFormat.FormData)
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))

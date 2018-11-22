@@ -289,22 +289,13 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestMethod
-    {
-        POST,
-        GET,
-        PUT,
-        PATCH,
-        DELETE
-    }
-
     public enum CustomUploaderRequestFormat
     {
         Automatic,
         FormData,
         URLQuery,
         JSON,
-        //Binary,
+        Binary,
         //FormURLEncoded
     }
 

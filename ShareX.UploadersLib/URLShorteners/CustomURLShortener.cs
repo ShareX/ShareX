@@ -83,16 +83,16 @@ namespace ShareX.UploadersLib.URLShorteners
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
                 result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
-                    uploader.ResponseType, uploader.GetHttpMethod());
+                    uploader.ResponseType, uploader.RequestType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
             {
-                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.JSON)
             {
-                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else

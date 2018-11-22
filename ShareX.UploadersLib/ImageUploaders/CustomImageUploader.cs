@@ -77,33 +77,36 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            UploadResult result = new UploadResult();
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.ImageUploader);
 
             if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                UploadResult result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
-
-                if (result.IsSuccess)
-                {
-                    try
-                    {
-                        uploader.ParseResponse(result);
-                    }
-                    catch (Exception e)
-                    {
-                        Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-                    }
-                }
-
-                return result;
+                result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.Binary)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), stream, UploadHelpers.GetMimeType(fileName),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
                 throw new Exception("Unsupported request format.");
             }
+
+            try
+            {
+                uploader.ParseResponse(result);
+            }
+            catch (Exception e)
+            {
+                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
+            }
+
+            return result;
         }
     }
 }
