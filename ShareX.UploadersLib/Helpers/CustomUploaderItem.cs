@@ -130,17 +130,17 @@ namespace ShareX.UploadersLib
                 {
                     case CustomUploaderDestinationType.ImageUploader:
                     case CustomUploaderDestinationType.FileUploader:
-                        return CustomUploaderRequestFormat.FormData;
+                        return CustomUploaderRequestFormat.MultipartFormData;
                     case CustomUploaderDestinationType.TextUploader:
                     case CustomUploaderDestinationType.URLShortener:
                     case CustomUploaderDestinationType.URLSharingService:
                         if (RequestType == HttpMethod.POST)
                         {
-                            return CustomUploaderRequestFormat.FormData;
+                            return CustomUploaderRequestFormat.MultipartFormData;
                         }
                         else
                         {
-                            return CustomUploaderRequestFormat.URLQuery;
+                            return CustomUploaderRequestFormat.URLQueryString;
                         }
                 }
             }

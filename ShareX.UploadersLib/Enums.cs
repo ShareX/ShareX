@@ -291,12 +291,18 @@ namespace ShareX.UploadersLib
 
     public enum CustomUploaderRequestFormat
     {
+        [Description("Automatic")]
         Automatic,
-        FormData,
-        URLQuery,
+        [Description("Form data (multipart/form-data)")]
+        MultipartFormData,
+        [Description("URL query string")]
+        URLQueryString,
+        [Description("JSON (application/json)")]
         JSON,
+        [Description("Binary")]
         Binary,
-        //FormURLEncoded
+        [Description("application/x-www-form-urlencoded")]
+        FormURLEncoded
     }
 
     [Flags]

@@ -85,7 +85,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
 
-            if (requestFormat == CustomUploaderRequestFormat.FormData)
+            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
@@ -102,7 +102,7 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 }
             }
-            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
+            else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);

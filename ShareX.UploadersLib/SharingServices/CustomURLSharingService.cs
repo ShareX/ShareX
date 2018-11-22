@@ -80,12 +80,12 @@ namespace ShareX.UploadersLib.SharingServices
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
 
-            if (requestFormat == CustomUploaderRequestFormat.FormData)
+            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
                     uploader.ResponseType, uploader.RequestType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
+            else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);

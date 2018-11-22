@@ -1053,7 +1053,7 @@ namespace ShareX.UploadersLib
                 }
 
                 if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == HttpMethod.POST) ||
-                    uploader.RequestFormat == CustomUploaderRequestFormat.FormData)
+                    uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
                     {

@@ -85,7 +85,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.FileUploader);
 
-            if (requestFormat == CustomUploaderRequestFormat.FormData)
+            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
