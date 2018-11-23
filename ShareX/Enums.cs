@@ -234,6 +234,8 @@ namespace ShareX
     [DefaultValue(OpenUrl)]
     public enum ToastClickAction
     {
+        [Description("Close notification")]
+        CloseNotification,
         [Description("Annotate image")]
         AnnotateImage,
         [Description("Copy image to clipboard")]
