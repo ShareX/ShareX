@@ -126,11 +126,7 @@ namespace ShareX.UploadersLib
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
-                                if (URLEncode)
-                                {
-                                    syntaxResult = URLHelpers.URLEncode(syntaxResult);
-                                }
-                                else if (JSONEncode)
+                                if (JSONEncode)
                                 {
                                     syntaxResult = URLHelpers.JSONEncode(syntaxResult);
                                 }
@@ -205,13 +201,13 @@ namespace ShareX.UploadersLib
             {
                 if (CheckKeyword(syntax, "input")) // Example: $input$
                 {
-                    return Input;
+                    return AutoEncode(Input);
                 }
             }
 
             if (CheckKeyword(syntax, "filename")) // Example: $filename$
             {
-                return Filename;
+                return AutoEncode(Filename);
             }
             else if (CheckKeyword(syntax, "random", out value)) // Example: $random:domain1.com|domain2.com$
             {
@@ -232,6 +228,16 @@ namespace ShareX.UploadersLib
 
             // Invalid syntax
             return null;
+        }
+
+        private string AutoEncode(string text)
+        {
+            if (URLEncode)
+            {
+                return URLHelpers.URLEncode(text);
+            }
+
+            return text;
         }
 
         private bool CheckKeyword(string syntax, string keyword)
