@@ -1040,7 +1040,7 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
             {
-                if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
+                if (uploader.ShouldSerializeData())
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
                     {
@@ -1052,8 +1052,7 @@ namespace ShareX.UploadersLib
                     tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderData);
                 }
 
-                if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == HttpMethod.POST) ||
-                    uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
+                if (uploader.ShouldSerializeFileFormName())
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
                     {

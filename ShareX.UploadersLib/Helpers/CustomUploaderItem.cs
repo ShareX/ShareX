@@ -54,8 +54,13 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string FileFormName { get; set; }
 
+        public bool ShouldSerializeFileFormName() => (RequestFormat == CustomUploaderRequestFormat.Automatic && RequestType == HttpMethod.POST) ||
+            RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
+
         [DefaultValue("")]
         public string Data { get; set; }
+
+        public bool ShouldSerializeData() => RequestFormat == CustomUploaderRequestFormat.JSON;
 
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
