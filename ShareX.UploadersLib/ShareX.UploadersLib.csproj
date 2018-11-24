@@ -234,9 +234,9 @@
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
-    <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
-    <Compile Include="Helpers\CustomUploaderParser.cs" />
-    <Compile Include="Helpers\CustomUploaderSyntaxInfo.cs" />
+    <Compile Include="CustomUploader\CustomUploaderArgumentInput.cs" />
+    <Compile Include="CustomUploader\CustomUploaderParser.cs" />
+    <Compile Include="CustomUploader\CustomUploaderSyntaxInfo.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\UploadHelpers.cs" />
@@ -322,7 +322,7 @@
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="Helpers\CustomUploaderItem.cs" />
+    <Compile Include="CustomUploader\CustomUploaderItem.cs" />
     <Compile Include="ImageUploaders\ImmioUploader.cs" />
     <Compile Include="ImageUploaders\Photobucket.cs" />
     <Compile Include="ImageUploaders\Twitter.cs" />
