@@ -201,12 +201,15 @@ namespace ShareX.UploadersLib
                     return ParseSyntaxXml(value);
                 }
             }
-
-            if (CheckKeyword(syntax, "input")) // Example: $input$
+            else
             {
-                return Input;
+                if (CheckKeyword(syntax, "input")) // Example: $input$
+                {
+                    return Input;
+                }
             }
-            else if (CheckKeyword(syntax, "filename")) // Example: $filename$
+
+            if (CheckKeyword(syntax, "filename")) // Example: $filename$
             {
                 return Filename;
             }
