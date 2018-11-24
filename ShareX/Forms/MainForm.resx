@@ -159,6 +159,102 @@
   <data name="&gt;&gt;lblMainFormTip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lvUploads.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvUploads.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 429</value>
+  </data>
+  <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvUploads.Name" xml:space="preserve">
+    <value>lvUploads</value>
+  </data>
+  <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Parent" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 429</value>
+  </data>
+  <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Name" xml:space="preserve">
+    <value>pbPreview</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 429</value>
+  </data>
+  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>335</value>
+  </data>
+  <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
   </data>
@@ -198,125 +294,8 @@
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>145</value>
   </data>
-  <data name="lvUploads.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvUploads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 429</value>
-  </data>
-  <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvUploads.Name" xml:space="preserve">
-    <value>lvUploads</value>
-  </data>
-  <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel1.Parent" xml:space="preserve">
-    <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 429</value>
-  </data>
-  <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.Name" xml:space="preserve">
-    <value>pbPreview</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
-    <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
-  </data>
-  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>335</value>
-  </data>
-  <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
-    <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="flpPatreon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="pbPatreonOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pbPatreonOpen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbPatreonOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 45</value>
-  </data>
-  <data name="pbPatreonOpen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbPatreonOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>567, 17</value>
-  </metadata>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Patreon campaign web page</value>
   </data>
   <data name="&gt;&gt;pbPatreonOpen.Name" xml:space="preserve">
     <value>pbPatreonOpen</value>
@@ -329,24 +308,6 @@
   </data>
   <data name="&gt;&gt;pbPatreonOpen.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="pbPatreonHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 0</value>
-  </data>
-  <data name="pbPatreonHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbPatreonHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 45</value>
-  </data>
-  <data name="pbPatreonHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbPatreonHide.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Hide Patreon button permanently</value>
   </data>
   <data name="&gt;&gt;pbPatreonHide.Name" xml:space="preserve">
     <value>pbPatreonHide</value>
@@ -387,6 +348,75 @@
   <data name="&gt;&gt;flpPatreon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>567, 17</value>
+  </metadata>
+  <data name="pbPatreonOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbPatreonOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pbPatreonOpen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pbPatreonOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 45</value>
+  </data>
+  <data name="pbPatreonOpen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbPatreonOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Open ShareX Patreon campaign web page</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonOpen.Name" xml:space="preserve">
+    <value>pbPatreonOpen</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonOpen.Parent" xml:space="preserve">
+    <value>flpPatreon</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonOpen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbPatreonHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbPatreonHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 0</value>
+  </data>
+  <data name="pbPatreonHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pbPatreonHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 45</value>
+  </data>
+  <data name="pbPatreonHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbPatreonHide.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Hide Patreon button permanently</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonHide.Name" xml:space="preserve">
+    <value>pbPatreonHide</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonHide.Parent" xml:space="preserve">
+    <value>flpPatreon</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -395,6 +425,42 @@
   </data>
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 429</value>
+  </data>
+  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
+    <value>tsMain</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capture</value>
   </data>
   <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
@@ -483,17 +549,17 @@
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Show cursor</value>
   </data>
-  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 20</value>
   </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -537,18 +603,6 @@
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>Shorten URL...</value>
   </data>
-  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
   <data name="tsddbWorkflows.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>
   </data>
@@ -560,6 +614,18 @@
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
+  </data>
+  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -651,18 +717,6 @@
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
   </data>
-  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
   <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 6</value>
   </data>
@@ -689,6 +743,18 @@
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
+  </data>
+  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -728,18 +794,6 @@
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Destination settings...</value>
-  </data>
-  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
   </data>
   <data name="tsbTaskSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -828,6 +882,18 @@
   <data name="tsbNews.Text" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbDebug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
@@ -864,18 +930,6 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
   </data>
-  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbDebug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
   <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -900,33 +954,18 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
-  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 429</value>
-  </data>
-  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
-    <value>tsMain</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
   </metadata>
+  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 450</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
+    <value>cmsTaskInfo</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -939,9 +978,14 @@
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
   </data>
+  <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -972,7 +1016,6 @@
   </data>
   <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Enter</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -982,7 +1025,6 @@
   </data>
   <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Enter</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -996,15 +1038,14 @@
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Thumbnail file</value>
   </data>
-  <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
-  <data name="tsmiOpen.Text" xml:space="preserve">
-    <value>Open</value>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copy</value>
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1035,7 +1076,6 @@
   </data>
   <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+C</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1045,7 +1085,6 @@
   </data>
   <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Alt+C</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1139,7 +1178,6 @@
   </data>
   <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Shift+C</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1171,15 +1209,8 @@
   <data name="tssCopy6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
   <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+U</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1189,7 +1220,6 @@
   </data>
   <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+D</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1199,7 +1229,6 @@
   </data>
   <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+E</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1209,7 +1238,6 @@
   </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDeleteSelectedItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1219,7 +1247,6 @@
   </data>
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Del</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1290,6 +1317,12 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Hide columns</value>
   </data>
+  <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Image preview</value>
+  </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
   </data>
@@ -1323,27 +1356,30 @@
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Image preview</value>
-  </data>
-  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 450</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
-    <value>cmsTaskInfo</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <metadata name="niTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
   <metadata name="cmsTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>190, 17</value>
   </metadata>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 484</value>
+  </data>
+  <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
+    <value>cmsTray</value>
+  </data>
+  <data name="&gt;&gt;cmsTray.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capture</value>
+  </data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1431,11 +1467,11 @@
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Show cursor</value>
   </data>
-  <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
   </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -1479,17 +1515,17 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Shorten URL...</value>
   </data>
-  <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
   <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
+  </data>
+  <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiTrayColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1581,12 +1617,6 @@
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
   </data>
-  <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="tsmiTrayTools.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
   <data name="tssTray1.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 6</value>
   </data>
@@ -1601,6 +1631,12 @@
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
+  </data>
+  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
   </data>
   <data name="tsmiTrayImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -1640,12 +1676,6 @@
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Destination settings...</value>
-  </data>
-  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
   </data>
   <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -1692,6 +1722,12 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
+  <data name="tsmiTrayDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
   <data name="tsmiTrayShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
@@ -1727,12 +1763,6 @@
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
-  </data>
-  <data name="tsmiTrayDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Debug</value>
   </data>
   <data name="tsmiTrayDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -1776,21 +1806,11 @@
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 506</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
-    <value>cmsTray</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-    <comment>@Invariant</comment>
-  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
+  </metadata>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>567, 17</value>
   </metadata>
   <data name="pbDiscordOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1858,35 +1878,11 @@
   <data name="&gt;&gt;pbDiscordHide.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ucNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ucNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ucNews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
-  </data>
-  <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Name" xml:space="preserve">
-    <value>ucNews</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
-    <value>ShareX.NewsListControl, ShareX, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
-    <value>pNews</value>
-  </data>
-  <data name="&gt;&gt;ucNews.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btnCloseNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="btnCloseNews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
     <value>560, 400</value>
@@ -1911,6 +1907,30 @@
   </data>
   <data name="&gt;&gt;btnCloseNews.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ucNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ucNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 429</value>
+  </data>
+  <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Name" xml:space="preserve">
+    <value>ucNews</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
+    <value>ShareX.Controls.NewsListControl, ShareX, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
+    <value>pNews</value>
+  </data>
+  <data name="&gt;&gt;ucNews.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="pNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1948,24 +1968,6 @@
   <data name="flpCommunity.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="flpDiscord.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flpDiscord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="flpDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 45</value>
-  </data>
-  <data name="flpDiscord.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="flpDiscord.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="flpDiscord.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;flpDiscord.Name" xml:space="preserve">
     <value>flpDiscord</value>
   </data>
@@ -2001,6 +2003,36 @@
   </data>
   <data name="&gt;&gt;flpCommunity.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="flpDiscord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpDiscord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="flpDiscord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 45</value>
+  </data>
+  <data name="flpDiscord.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="flpDiscord.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="flpDiscord.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Name" xml:space="preserve">
+    <value>flpDiscord</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.Parent" xml:space="preserve">
+    <value>flpCommunity</value>
+  </data>
+  <data name="&gt;&gt;flpDiscord.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2420,7 +2452,7 @@
     <value>tsbNews</value>
   </data>
   <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
@@ -2468,7 +2500,7 @@
     <value>tsbDonate</value>
   </data>
   <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
     <value>tsbAbout</value>
@@ -2944,6 +2976,18 @@
   <data name="&gt;&gt;tsmiTrayAutoCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTrayCapture1.Name" xml:space="preserve">
+    <value>tssTrayCapture1</value>
+  </data>
+  <data name="&gt;&gt;tssTrayCapture1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShowCursor.Name" xml:space="preserve">
+    <value>tsmiTrayShowCursor</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShowCursor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayUpload.Name" xml:space="preserve">
     <value>tsmiTrayUpload</value>
   </data>
@@ -3304,22 +3348,10 @@
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssTrayCapture1.Name" xml:space="preserve">
-    <value>tssTrayCapture1</value>
-  </data>
-  <data name="&gt;&gt;tssTrayCapture1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayShowCursor.Name" xml:space="preserve">
-    <value>tsmiTrayShowCursor</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayShowCursor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=12.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

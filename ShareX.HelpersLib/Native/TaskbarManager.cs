@@ -78,51 +78,51 @@ namespace ShareX.HelpersLib
         {
         }
 
-        private static readonly object _syncLock = new object();
+        private static readonly object syncLock = new object();
 
-        private static ITaskbarList4 _taskbarList;
+        private static ITaskbarList4 taskbarList;
 
         private static ITaskbarList4 TaskbarList
         {
             get
             {
-                if (_taskbarList == null)
+                if (taskbarList == null)
                 {
-                    lock (_syncLock)
+                    lock (syncLock)
                     {
-                        if (_taskbarList == null)
+                        if (taskbarList == null)
                         {
-                            _taskbarList = (ITaskbarList4)new CTaskbarList();
-                            _taskbarList.HrInit();
+                            taskbarList = (ITaskbarList4)new CTaskbarList();
+                            taskbarList.HrInit();
                         }
                     }
                 }
 
-                return _taskbarList;
+                return taskbarList;
             }
         }
 
-        private static IntPtr _mainWindowHandle;
+        private static IntPtr mainWindowHandle;
 
         private static IntPtr MainWindowHandle
         {
             get
             {
-                if (_mainWindowHandle == IntPtr.Zero)
+                if (mainWindowHandle == IntPtr.Zero)
                 {
                     Process currentProcess = Process.GetCurrentProcess();
 
                     if (currentProcess == null || currentProcess.MainWindowHandle == IntPtr.Zero)
                     {
-                        _mainWindowHandle = IntPtr.Zero;
+                        mainWindowHandle = IntPtr.Zero;
                     }
                     else
                     {
-                        _mainWindowHandle = currentProcess.MainWindowHandle;
+                        mainWindowHandle = currentProcess.MainWindowHandle;
                     }
                 }
 
-                return _mainWindowHandle;
+                return mainWindowHandle;
             }
         }
 

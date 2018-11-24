@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -50,6 +51,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
+        private bool customUploaderPauseLoad;
         private URLType customUploaderURLType = URLType.URL;
 
         private UploadersConfigForm(UploadersConfig config)
@@ -104,10 +106,10 @@ namespace ShareX.UploadersLib
             CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
             CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
 
-            CodeMenu.Create<CodeMenuEntryFilename>(txtCustomUploaderArgValue,
+            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderArgValue,
                 new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
                 new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
-            CodeMenu.Create<CodeMenuEntryFilename>(txtCustomUploaderHeaderValue,
+            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderHeaderValue,
                 new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
                 new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
 
@@ -117,15 +119,23 @@ namespace ShareX.UploadersLib
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Custom uploader
-            txtCustomUploaderLog.AddContextMenu();
+            rtbCustomUploaderRequestURL.AddContextMenu();
+            rtbCustomUploaderData.AddContextMenu();
+            rtbCustomUploaderArgValue.AddContextMenu();
+            rtbCustomUploaderHeaderValue.AddContextMenu();
+            rtbCustomUploaderURL.AddContextMenu();
+            rtbCustomUploaderThumbnailURL.AddContextMenu();
+            rtbCustomUploaderDeletionURL.AddContextMenu();
+            rtbCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
+            cbCustomUploaderRequestFormat.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestFormat)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
             txtB2Bucket.HandleCreated += (sender, e) =>
-                txtB2Bucket.SetWatermark("Optional, only used if you didn't set a bucket when you made the key", showCueWhenFocus: true);
+                txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, showCueWhenFocus: true);
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
@@ -173,10 +183,17 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void LoadSettings()
+        private void LoadSettings()
         {
-            #region Image uploaders
+            LoadImageUploaderSettings();
+            LoadTextUploaderSettings();
+            LoadFileUploaderSettings();
+            LoadURLShortenerSettings();
+            LoadOtherUploaderSettings();
+        }
 
+        private void LoadImageUploaderSettings()
+        {
             #region Imgur
 
             oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
@@ -276,11 +293,10 @@ namespace ShareX.UploadersLib
             txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion vgy.me
+        }
 
-            #endregion Image uploaders
-
-            #region Text uploaders
-
+        private void LoadTextUploaderSettings()
+        {
             #region Pastebin
 
             txtPastebinUsername.Text = Config.PastebinSettings.Username;
@@ -352,11 +368,10 @@ namespace ShareX.UploadersLib
             cbPastieIsPublic.Checked = Config.PastieIsPublic;
 
             #endregion Pastie
+        }
 
-            #endregion Text uploaders
-
-            #region File uploaders
-
+        private void LoadFileUploaderSettings()
+        {
             #region FTP
 
             if (Config.FTPAccountList == null)
@@ -754,12 +769,15 @@ namespace ShareX.UploadersLib
             txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
             txtGoogleCloudStorageObjectPrefix.Text = Config.GoogleCloudStorageObjectPrefix;
 
+            cbGoogleCloudStorageStripExtensionImage.Checked = Config.GoogleCloudStorageRemoveExtensionImage;
+            cbGoogleCloudStorageStripExtensionVideo.Checked = Config.GoogleCloudStorageRemoveExtensionVideo;
+            cbGoogleCloudStorageStripExtensionText.Checked = Config.GoogleCloudStorageRemoveExtensionText;
+
             #endregion Google Cloud Storage
+        }
 
-            #endregion File uploaders
-
-            #region URL shorteners
-
+        private void LoadURLShortenerSettings()
+        {
             #region bit.ly
 
             if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
@@ -805,10 +823,18 @@ namespace ShareX.UploadersLib
 
             #endregion Firebase Dynamic Links
 
-            #endregion URL shorteners
+            #region Kutt
 
-            #region Other uploaders
+            txtKuttHost.Text = Config.KuttSettings.Host;
+            txtKuttAPIKey.Text = Config.KuttSettings.APIKey;
+            txtKuttPassword.Text = Config.KuttSettings.Password;
+            cbKuttReuse.Checked = Config.KuttSettings.Reuse;
 
+            #endregion Kutt
+        }
+
+        private void LoadOtherUploaderSettings()
+        {
             #region Twitter
 
             lbTwitterAccounts.Items.Clear();
@@ -835,8 +861,6 @@ namespace ShareX.UploadersLib
             CustomUploaderLoadTab();
 
             #endregion Custom uploaders
-
-            #endregion Other uploaders
         }
 
         #region Image uploaders
@@ -3128,6 +3152,21 @@ namespace ShareX.UploadersLib
             UpdateGoogleCloudStorageStatus();
         }
 
+        private void cbGoogleCloudStorageStripExtensionImage_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionImage = cbGoogleCloudStorageStripExtensionImage.Checked;
+        }
+
+        private void cbGoogleCloudStorageStripExtensionVideo_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionVideo = cbGoogleCloudStorageStripExtensionVideo.Checked;
+        }
+
+        private void cbGoogleCloudStorageStripExtensionText_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageRemoveExtensionText = cbGoogleCloudStorageStripExtensionText.Checked;
+        }
+
         #endregion Google Cloud Storage
 
         #endregion File uploaders
@@ -3245,6 +3284,30 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Firebase Dynamic Links
+
+        #region Kutt
+
+        private void txtKuttHost_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Host = txtKuttHost.Text;
+        }
+
+        private void txtKuttAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.APIKey = txtKuttAPIKey.Text;
+        }
+
+        private void txtKuttPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Password = txtKuttPassword.Text;
+        }
+
+        private void cbKuttReuse_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Reuse = cbKuttReuse.Checked;
+        }
+
+        #endregion Kutt
 
         #endregion URL shorteners
 
@@ -3369,7 +3432,10 @@ namespace ShareX.UploadersLib
 
         private void lbCustomUploaderList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomUploaderLoadSelected();
+            if (!customUploaderPauseLoad)
+            {
+                CustomUploaderLoadSelected();
+            }
         }
 
         private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
@@ -3429,17 +3495,42 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
-
-            CustomUploaderUpdateRequestState();
+            if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
         }
 
-        private void txtCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestURL = txtCustomUploaderRequestURL.Text;
+            if (uploader != null) uploader.RequestURL = rtbCustomUploaderRequestURL.Text;
 
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             CustomUploaderRefreshNames();
+        }
+
+        private void cbCustomUploaderRequestFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
+
+            CustomUploaderUpdateRequestFormatState();
+        }
+
+        private void rtbCustomUploaderData_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.Data = rtbCustomUploaderData.Text;
+
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
+        }
+
+        private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderFormatJsonData(Formatting.Indented);
+        }
+
+        private void btnCustomUploaderDataMinify_Click(object sender, EventArgs e)
+        {
+            CustomUploaderFormatJsonData(Formatting.None);
         }
 
         private void txtCustomUploaderFileForm_TextChanged(object sender, EventArgs e)
@@ -3451,6 +3542,11 @@ namespace ShareX.UploadersLib
         private void txtCustomUploaderArgName_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderUpdateArgumentsState();
+        }
+
+        private void rtbCustomUploaderArgValue_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderArgValue);
         }
 
         private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)
@@ -3471,13 +3567,13 @@ namespace ShareX.UploadersLib
                     }
                     else
                     {
-                        string value = txtCustomUploaderArgValue.Text;
+                        string value = rtbCustomUploaderArgValue.Text;
                         lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
                         uploader.Arguments.Add(name, value);
 
                         lvCustomUploaderArguments.SelectedItems.Clear();
                         txtCustomUploaderArgName.Text = "";
-                        txtCustomUploaderArgValue.Text = "";
+                        rtbCustomUploaderArgValue.Text = "";
                         txtCustomUploaderArgName.Focus();
                     }
                 }
@@ -3503,7 +3599,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(name))
                 {
-                    string value = txtCustomUploaderArgValue.Text;
+                    string value = rtbCustomUploaderArgValue.Text;
 
                     CustomUploaderItem uploader = CustomUploaderGetSelected();
                     if (uploader != null)
@@ -3530,7 +3626,7 @@ namespace ShareX.UploadersLib
             }
 
             txtCustomUploaderArgName.Text = name;
-            txtCustomUploaderArgValue.Text = value;
+            rtbCustomUploaderArgValue.Text = value;
 
             CustomUploaderUpdateArgumentsState();
         }
@@ -3538,6 +3634,11 @@ namespace ShareX.UploadersLib
         private void txtCustomUploaderHeaderName_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderUpdateHeadersState();
+        }
+
+        private void rtbCustomUploaderHeaderValue_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderHeaderValue);
         }
 
         private void btnCustomUploaderHeaderAdd_Click(object sender, EventArgs e)
@@ -3558,13 +3659,13 @@ namespace ShareX.UploadersLib
                     }
                     else
                     {
-                        string value = txtCustomUploaderHeaderValue.Text;
+                        string value = rtbCustomUploaderHeaderValue.Text;
                         lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
                         uploader.Headers.Add(name, value);
 
                         lvCustomUploaderHeaders.SelectedItems.Clear();
                         txtCustomUploaderHeaderName.Text = "";
-                        txtCustomUploaderHeaderValue.Text = "";
+                        rtbCustomUploaderHeaderValue.Text = "";
                         txtCustomUploaderHeaderName.Focus();
                     }
                 }
@@ -3590,7 +3691,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(name))
                 {
-                    string value = txtCustomUploaderHeaderValue.Text;
+                    string value = rtbCustomUploaderHeaderValue.Text;
 
                     CustomUploaderItem uploader = CustomUploaderGetSelected();
                     if (uploader != null)
@@ -3617,7 +3718,7 @@ namespace ShareX.UploadersLib
             }
 
             txtCustomUploaderHeaderName.Text = name;
-            txtCustomUploaderHeaderValue.Text = value;
+            rtbCustomUploaderHeaderValue.Text = value;
 
             CustomUploaderUpdateHeadersState();
         }
@@ -3777,58 +3878,61 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.URL;
         }
 
-        private void txtCustomUploaderURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.URL = txtCustomUploaderURL.Text;
+            if (uploader != null) uploader.URL = rtbCustomUploaderURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
         }
 
-        private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.ThumbnailURL;
         }
 
-        private void txtCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
+            if (uploader != null) uploader.ThumbnailURL = rtbCustomUploaderThumbnailURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
         }
 
-        private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
+        private void rtbCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
             customUploaderURLType = URLType.DeletionURL;
         }
 
-        private void txtCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
+        private void rtbCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.DeletionURL = txtCustomUploaderDeletionURL.Text;
+            if (uploader != null) uploader.DeletionURL = rtbCustomUploaderDeletionURL.Text;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
         }
 
         private void AddTextToActiveURLField(string text)
         {
-            TextBox tb;
+            RichTextBox rtb;
 
             switch (customUploaderURLType)
             {
                 default:
                 case URLType.URL:
-                    tb = txtCustomUploaderURL;
+                    rtb = rtbCustomUploaderURL;
                     break;
                 case URLType.ThumbnailURL:
-                    tb = txtCustomUploaderThumbnailURL;
+                    rtb = rtbCustomUploaderThumbnailURL;
                     break;
                 case URLType.DeletionURL:
-                    tb = txtCustomUploaderDeletionURL;
+                    rtb = rtbCustomUploaderDeletionURL;
                     break;
             }
 
-            tb.AppendText(text);
+            rtb.AppendText(text);
         }
 
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)

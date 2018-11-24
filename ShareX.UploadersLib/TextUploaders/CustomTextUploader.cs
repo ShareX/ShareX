@@ -71,53 +71,55 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class CustomTextUploader : TextUploader
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomTextUploader(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult UploadText(string text, string fileName)
         {
             UploadResult result = new UploadResult();
-
-            string requestURL = customUploader.GetRequestURL();
-
-            if ((customUploader.RequestType != CustomUploaderRequestType.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
-                ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
-                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$")))))
-                throw new Exception("Atleast one '$input$' required for argument or header value.");
-
             CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, text);
 
-            Dictionary<string, string> args = customUploader.GetArguments(input);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
 
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            if (requestFormat == CustomUploaderRequestFormat.FormData)
             {
-                if (string.IsNullOrEmpty(customUploader.FileFormName))
+                if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
-                    result.Response = SendRequestMultiPart(requestURL, args, customUploader.GetHeaders(input), responseType: customUploader.ResponseType);
+                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input),
+                        uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
                 }
                 else
                 {
-                    byte[] byteArray = Encoding.UTF8.GetBytes(text);
-                    using (MemoryStream stream = new MemoryStream(byteArray))
+                    byte[] bytes = Encoding.UTF8.GetBytes(text);
+                    using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        result = SendRequestFile(requestURL, stream, fileName, customUploader.GetFileFormName(), args, customUploader.GetHeaders(input),
-                            responseType: customUploader.ResponseType);
+                        result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
                     }
                 }
             }
+            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
+            {
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            {
+                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, customUploader.GetHeaders(input),
-                    responseType: customUploader.ResponseType);
+                throw new Exception("Unsupported request format.");
             }
 
             try
             {
-                customUploader.ParseResponse(result);
+                uploader.ParseResponse(result);
             }
             catch (Exception e)
             {

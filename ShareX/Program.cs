@@ -34,6 +34,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 #if WindowsStore
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -43,37 +44,37 @@ namespace ShareX
 {
     internal static class Program
     {
-        public static ShareXBuild Build
+        public const string Name = "ShareX";
+
+        public const ShareXBuild Build =
+#if RELEASE
+            ShareXBuild.Release;
+#elif STEAM
+            ShareXBuild.Steam;
+#elif WindowsStore
+            ShareXBuild.MicrosoftStore;
+#elif DEBUG
+            ShareXBuild.Debug;
+#else
+            ShareXBuild.Unknown;
+#endif
+
+        public static string VersionText
         {
             get
             {
-#if RELEASE
-                return ShareXBuild.Release;
-#elif STEAM
-                return ShareXBuild.Steam;
-#elif WindowsStore
-                return ShareXBuild.MicrosoftStore;
-#elif DEBUG
-                return ShareXBuild.Debug;
-#else
-                return ShareXBuild.Unknown;
-#endif
+                StringBuilder sbVersionText = new StringBuilder();
+                Version version = Version.Parse(Application.ProductVersion);
+                sbVersionText.Append(version.Major + "." + version.Minor);
+                if (version.Build > 0) sbVersionText.Append("." + version.Build);
+                if (version.Revision > 0) sbVersionText.Append("." + version.Revision);
+                if (Dev) sbVersionText.Append(" Dev");
+                if (Portable) sbVersionText.Append(" Portable");
+                return sbVersionText.ToString();
             }
         }
 
-        public static string Title
-        {
-            get
-            {
-                Version version = Version.Parse(Application.ProductVersion);
-                string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
-                if (version.Build > 0) title += "." + version.Build;
-                if (version.Revision > 0) title += "." + version.Revision;
-                if (Dev) title += " Dev";
-                if (Portable) title += " Portable";
-                return title;
-            }
-        }
+        public static string Title => $"{Name} {VersionText}";
 
         public static string TitleLong => $"{Title} ({Build})";
 
@@ -99,15 +100,12 @@ namespace ShareX
         internal static GitHubUpdateManager UpdateManager { get; private set; }
         internal static CLIManager CLI { get; private set; }
 
-        private static bool restarting;
-
         #region Paths
 
-        private const string AppName = "ShareX";
         private const string PersonalPathConfigFileName = "PersonalPath.cfg";
 
-        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
-        public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
+        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Name);
+        public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(Name);
         public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath(@"..\..\Data");
 
         private static string PersonalPathConfigFilePath
@@ -128,7 +126,7 @@ namespace ShareX
         private static readonly string CurrentPersonalPathConfigFilePath = Path.Combine(DefaultPersonalFolder, PersonalPathConfigFileName);
 
         private static readonly string PreviousPersonalPathConfigFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            AppName, PersonalPathConfigFileName);
+            Name, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
         private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
@@ -231,6 +229,8 @@ namespace ShareX
 
         #endregion Paths
 
+        private static bool closeSequenceStarted, restarting;
+
         [STAThread]
         private static void Main(string[] args)
         {
@@ -273,21 +273,21 @@ namespace ShareX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DebugHelper.WriteLine(Title);
+            DebugHelper.WriteLine("ShareX starting.");
+            DebugHelper.WriteLine("Version: " + VersionText);
             DebugHelper.WriteLine("Build: " + Build);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
-
+            DebugHelper.WriteLine("Personal path: " + PersonalFolder);
             if (!string.IsNullOrEmpty(PersonalPathDetectionMethod))
             {
                 DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
             }
-
-            DebugHelper.WriteLine("Personal path: " + PersonalFolder);
-            DebugHelper.WriteLine("Operating system: " + Helpers.GetWindowsProductName());
+            DebugHelper.WriteLine("Operating system: " + Helpers.GetOperatingSystemProductName(true));
+            DebugHelper.WriteLine("Running as elevated process: " + Helpers.IsAdministrator());
 
             SilentRun = CLI.IsCommandExist("silent", "s");
 #if WindowsStore
-            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs().Kind == ActivationKind.StartupTask;
+            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs()?.Kind == ActivationKind.StartupTask;
 #endif
 
 #if STEAM
@@ -314,11 +314,23 @@ namespace ShareX
 
             Application.Run(MainForm);
 
-            if (WatchFolderManager != null) WatchFolderManager.Dispose();
-            SettingManager.SaveAllSettings();
+            CloseSequence();
+        }
 
-            DebugHelper.Logger.AsyncWrite = false;
-            DebugHelper.WriteLine("ShareX closing.");
+        public static void CloseSequence()
+        {
+            if (!closeSequenceStarted)
+            {
+                closeSequenceStarted = true;
+
+                DebugHelper.Logger.AsyncWrite = false;
+                DebugHelper.WriteLine("ShareX closing.");
+
+                if (WatchFolderManager != null) WatchFolderManager.Dispose();
+                SettingManager.SaveAllSettings();
+
+                DebugHelper.WriteLine("ShareX closed.");
+            }
         }
 
         public static void Restart()

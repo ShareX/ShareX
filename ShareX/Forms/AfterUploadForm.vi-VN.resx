@@ -124,10 +124,10 @@
     <value>Đóng</value>
   </data>
   <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Sao chép hình ảnh</value>
+    <value>Sao chép ảnh</value>
   </data>
   <data name="btnCopyLink.Text" xml:space="preserve">
-    <value>Sao chép đường dẫn</value>
+    <value>Sao chép liên kết</value>
   </data>
   <data name="btnOpenFile.Text" xml:space="preserve">
     <value>Mở tệp tin...</value>

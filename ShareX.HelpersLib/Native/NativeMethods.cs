@@ -316,6 +316,9 @@ namespace ShareX.HelpersLib
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool IsWow64Process([In] IntPtr hProcess, [Out] out bool lpSystemInfo);
 
+        [DllImport("kernel32.dll", PreserveSig = false)]
+        public static extern void RegisterApplicationRestart(string pwzCommandline, RegisterApplicationRestartFlags dwFlags);
+
         #endregion kernel32.dll
 
         #region gdi32.dll

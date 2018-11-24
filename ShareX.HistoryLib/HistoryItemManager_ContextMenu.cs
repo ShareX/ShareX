@@ -425,14 +425,14 @@ namespace ShareX.HistoryLib
             //
             tsmiUploadFile.Name = "tsmiUploadFile";
             tsmiUploadFile.Size = new Size(127, 22);
-            tsmiUploadFile.Text = "Upload file"; // TODO: Translate
+            tsmiUploadFile.Text = Resources.HistoryItemManager_InitializeComponent_UploadFile;
             tsmiUploadFile.Click += tsmiUploadFile_Click;
             //
             // tsmiEditImage
             //
             tsmiEditImage.Name = "tsmiEditImage";
             tsmiEditImage.Size = new Size(127, 22);
-            tsmiEditImage.Text = "Edit image..."; // TODO: Translate
+            tsmiEditImage.Text = Resources.HistoryItemManager_InitializeComponent_EditImage;
             tsmiEditImage.Click += tsmiEditImage_Click;
 
             cmsHistory.ResumeLayout(false);

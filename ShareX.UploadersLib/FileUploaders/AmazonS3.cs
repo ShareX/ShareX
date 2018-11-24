@@ -88,9 +88,10 @@ namespace ShareX.UploadersLib.FileUploaders
             new AmazonS3Endpoint("US East (Ohio)", "s3.us-east-2.amazonaws.com", "us-east-2"),
             new AmazonS3Endpoint("US West (N. California)", "s3.us-west-1.amazonaws.com", "us-west-1"),
             new AmazonS3Endpoint("US West (Oregon)", "s3.us-west-2.amazonaws.com", "us-west-2"),
-            new AmazonS3Endpoint("DreamObjects", "objects-us-west-1.dream.io"),
+            new AmazonS3Endpoint("DreamObjects", "objects-us-east-1.dream.io"),
             new AmazonS3Endpoint("DigitalOcean (Amsterdam)", "ams3.digitaloceanspaces.com", "ams3"),
             new AmazonS3Endpoint("DigitalOcean (New York)", "nyc3.digitaloceanspaces.com", "nyc3"),
+            new AmazonS3Endpoint("DigitalOcean (San Francisco)", "sfo2.digitaloceanspaces.com", "sfo2"),
             new AmazonS3Endpoint("DigitalOcean (Singapore)", "sgp1.digitaloceanspaces.com", "sgp1"),
             new AmazonS3Endpoint("Wasabi", "s3.wasabisys.com")
         };
@@ -119,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string contentType = Helpers.GetMimeType(fileName);
+            string contentType = UploadHelpers.GetMimeType(fileName);
             string hashedPayload = "UNSIGNED-PAYLOAD";
 
             if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
@@ -257,7 +258,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
                 {
-                    string parsedDomain = new CustomUploaderItem().ParseURL(Settings.CustomDomain, false);
+                    CustomUploaderParser parser = new CustomUploaderParser();
+                    string parsedDomain = parser.Parse(Settings.CustomDomain);
                     url = URLHelpers.CombineURL(parsedDomain, uploadPath);
                 }
                 else

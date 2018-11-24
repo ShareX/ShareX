@@ -130,7 +130,7 @@ namespace ShareX.UploadersLib
         private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
-            this.Close();
+            Close();
         }
     }
 }

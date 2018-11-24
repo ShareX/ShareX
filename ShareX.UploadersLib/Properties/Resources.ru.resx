@@ -253,4 +253,7 @@
   <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
     <value>Вход не удался.</value>
   </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Работает только если ведро не задано при создании ключа</value>
+  </data>
 </root>

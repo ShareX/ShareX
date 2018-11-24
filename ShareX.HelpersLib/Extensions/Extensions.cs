@@ -307,7 +307,7 @@ namespace ShareX.HelpersLib
             return Helpers.DateTimeToUnix(dateTime);
         }
 
-        public static void AppendTextToSelection(this TextBox tb, string text)
+        public static void AppendTextToSelection(this TextBoxBase tb, string text)
         {
             if (!string.IsNullOrEmpty(text))
             {
@@ -480,7 +480,7 @@ namespace ShareX.HelpersLib
         {
             if (tsmi != null)
             {
-                foreach (var item in tsmi.GetCurrentParent().Items)
+                foreach (ToolStripItem item in tsmi.GetCurrentParent().Items)
                 {
                     if (item != null && item is ToolStripMenuItem tsmiItem && tsmiItem.Tag.Equals(tsmi.Tag))
                     {
@@ -605,14 +605,22 @@ namespace ShareX.HelpersLib
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
 
+        public static void RefreshItem(this ListBox lb, int index)
+        {
+            typeof(ListBox).InvokeMember("RefreshItem", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { index });
+        }
+
         public static void RefreshSelectedItem(this ListBox lb)
         {
-            int index = lb.SelectedIndex;
-
-            if (index > -1)
+            if (lb.SelectedIndex > -1)
             {
-                lb.Items[index] = lb.Items[index];
+                lb.RefreshItem(lb.SelectedIndex);
             }
+        }
+
+        public static void RefreshItems(this ListBox lb)
+        {
+            typeof(ListBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { });
         }
 
         public static void ShowError(this Exception e, bool fullError = true)
@@ -625,6 +633,12 @@ namespace ShareX.HelpersLib
         {
             TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
             return task.ContinueWith(t => action(), scheduler);
+        }
+
+        public static void DoubleBuffered(this DataGridView dgv, bool value)
+        {
+            PropertyInfo pi = dgv.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, value, null);
         }
     }
 }

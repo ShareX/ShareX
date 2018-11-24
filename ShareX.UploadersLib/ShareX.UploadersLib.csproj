@@ -164,6 +164,12 @@
     <Compile Include="Forms\OCRSpaceForm.Designer.cs">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ParserSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ParserSelectForm.Designer.cs">
+      <DependentUpon>ParserSelectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PuushLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,7 +235,11 @@
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
+    <Compile Include="Helpers\CustomUploaderParser.cs" />
+    <Compile Include="Helpers\CustomUploaderSyntaxInfo.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
+    <Compile Include="Helpers\MimeTypes.cs" />
+    <Compile Include="Helpers\UploadHelpers.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
     <Compile Include="OAuth\OAuth2ProofKey.cs" />
@@ -339,6 +349,7 @@
     <Compile Include="BaseUploaders\URLShortener.cs" />
     <Compile Include="BaseServices\URLShortenerService.cs" />
     <Compile Include="URLShorteners\FirebaseDynamicLinksURLShortener.cs" />
+    <Compile Include="URLShorteners\KuttURLShortener.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
@@ -615,8 +626,14 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.uk.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.vi-VN.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.zh-CN.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ParserSelectForm.resx">
+      <DependentUpon>ParserSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.es-MX.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
@@ -631,6 +648,9 @@
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.tr.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.vi-VN.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.zh-CN.resx">
@@ -1007,6 +1027,9 @@
     <PackageReference Include="SSH.NET">
       <Version>2016.1.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Kutt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

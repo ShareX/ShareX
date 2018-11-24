@@ -36,6 +36,14 @@ namespace ShareX.HelpersLib
         URL
     }
 
+    public enum EClipboardContentType
+    {
+        Default,
+        Image,
+        Text,
+        Files
+    }
+
     public enum PNGBitDepth // Localized
     {
         Default,

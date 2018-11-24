@@ -27,6 +27,10 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
+#if WindowsStore
+using Windows.ApplicationModel;
+#endif
+
 namespace ShareX
 {
     public enum ShareXBuild
@@ -266,7 +270,7 @@ namespace ShareX
 
     public enum ScreenRecordState
     {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, AfterStop
+        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
     }
 
     public enum RegionCaptureType
@@ -275,11 +279,22 @@ namespace ShareX
     }
 
 #if !WindowsStore
-    public enum StartupTaskState
+    public enum StartupState
     {
-        Disabled = 0,
-        DisabledByUser = 1,
-        Enabled = 2
+        Disabled,
+        DisabledByUser,
+        Enabled,
+        DisabledByPolicy,
+        EnabledByPolicy
+    }
+#else
+    public enum StartupState
+    {
+        Disabled = StartupTaskState.Disabled,
+        DisabledByUser = StartupTaskState.DisabledByUser,
+        Enabled = StartupTaskState.Enabled,
+        DisabledByPolicy = StartupTaskState.DisabledByPolicy,
+        EnabledByPolicy = StartupTaskState.EnabledByPolicy
     }
 #endif
 }

@@ -382,6 +382,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kutt {
+            get {
+                object obj = ResourceManager.GetObject("Kutt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Lambda {
@@ -681,6 +691,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string TwitterTweetForm_SendTweet_Tweet_error {
             get {
                 return ResourceManager.GetString("TwitterTweetForm_SendTweet_Tweet_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional, only used if you didn&apos;t set a bucket when you made the key.
+        /// </summary>
+        internal static string txtB2BucketWatermark {
+            get {
+                return ResourceManager.GetString("txtB2BucketWatermark", resourceCulture);
             }
         }
         

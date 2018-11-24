@@ -133,6 +133,12 @@
     <value>Sau khi chụp</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Trước khi tải lên</value>
+    <value>Dịch vụ tải lên</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Sau khi tải lên</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Tên tệp:</value>
   </data>
 </root>

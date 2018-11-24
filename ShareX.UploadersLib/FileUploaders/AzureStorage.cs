@@ -95,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string uploadPath = GetUploadPath(fileName);
             string url = GenerateURL(uploadPath, true);
-            string contentType = Helpers.GetMimeType(fileName);
+            string contentType = UploadHelpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;

@@ -32,10 +32,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-#if WindowsStore
-using Windows.ApplicationModel;
-#endif
-
 namespace ShareX
 {
     public partial class ApplicationSettingsForm : Form
@@ -135,13 +131,12 @@ namespace ShareX
             btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
-            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
 #if WindowsStore
-            gbWindows.Height = 56;
             cbShellContextMenu.Visible = false;
+            cbEditWithShareX.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
             gbFirefox.Visible = false;
@@ -263,12 +258,20 @@ namespace ShareX
 
             try
             {
-                var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
-                cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
+                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
-                if (state == StartupTaskState.DisabledByUser)
+                if (state == StartupState.DisabledByUser)
                 {
                     cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
+                else if (state == StartupState.DisabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+                }
+                else if (state == StartupState.EnabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
                 }
                 else
                 {
@@ -403,7 +406,6 @@ namespace ShareX
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
-            btnCheckDevBuild.Visible = Program.Settings.CheckPreReleaseUpdates;
         }
 
         private void btnCheckDevBuild_Click(object sender, EventArgs e)
@@ -425,7 +427,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)

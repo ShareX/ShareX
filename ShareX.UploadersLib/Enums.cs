@@ -173,6 +173,8 @@ namespace ShareX.UploadersLib
         Polr,
         [Description("Firebase Dynamic Links")]
         FirebaseDynamicLinks,
+        [Description("Kutt")]
+        Kutt,
         CustomURLShortener // Localized
     }
 
@@ -287,7 +289,7 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestType
+    public enum CustomUploaderRequestMethod
     {
         POST,
         GET,
@@ -296,12 +298,14 @@ namespace ShareX.UploadersLib
         DELETE
     }
 
-    public enum CustomUploaderResponseParseType
+    public enum CustomUploaderRequestFormat
     {
-        Regex,
-        Json,
-        Xml,
-        Random
+        Automatic,
+        FormData,
+        URLQuery,
+        JSON,
+        //Binary,
+        //FormURLEncoded
     }
 
     [Flags]

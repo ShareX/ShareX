@@ -207,4 +207,7 @@
   <data name="lblRecentColors.Text" xml:space="preserve">
     <value>Последние цвета:</value>
   </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>Выбрать цвет на экране</value>
+  </data>
 </root>

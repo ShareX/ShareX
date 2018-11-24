@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
 {
@@ -39,17 +38,16 @@ namespace ShareX.UploadersLib
             Input = input;
         }
 
-        public string Parse(string arg)
+        public string Parse(string arg, bool jsonEncode = false)
         {
             NameParser nameParser = new NameParser(NameParserType.Text);
             EscapeHelper escapeHelper = new EscapeHelper();
+            escapeHelper.KeepEscapeCharacter = true;
             arg = escapeHelper.Parse(arg, nameParser.Parse);
 
-            arg = arg.BatchReplace(new Dictionary<string, string>()
-            {
-                { "$filename$", Filename },
-                { "$input$", Input }
-            });
+            CustomUploaderParser customUploaderParser = new CustomUploaderParser(Filename, Input);
+            customUploaderParser.JsonEncode = jsonEncode;
+            arg = customUploaderParser.Parse(arg);
 
             return arg;
         }

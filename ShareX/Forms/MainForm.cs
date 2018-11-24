@@ -265,6 +265,16 @@ namespace ShareX
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
             }
 
+            if (Program.Settings.TaskListViewColumnWidths != null)
+            {
+                int len = Math.Min(lvUploads.Columns.Count - 1, Program.Settings.TaskListViewColumnWidths.Count);
+
+                for (int i = 0; i < len; i++)
+                {
+                    lvUploads.Columns[i].Width = Program.Settings.TaskListViewColumnWidths[i];
+                }
+            }
+
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
 
             UpdateCheckStates();
@@ -286,6 +296,38 @@ namespace ShareX
 #endif
 
             IsReady = true;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
+            {
+                // Calling ToInt64 because the int conversion operator (called when directly casting the IntPtr to the enum)
+                // enforces checked semantics thus crashes any 64 bits build. ToInt64() and long -> enum conversion doesn't.
+                EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
+                if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
+                {
+                    // Register for restart. This allows our application to automatically restart when it is installing an update from the Store.
+                    // Also allows it to restart if it gets terminated for other reasons (see description of ENDSESSION_CLOSEAPP).
+                    // Add the silent switch to avoid ShareX popping up in front of the user when the application restarts.
+                    NativeMethods.RegisterApplicationRestart("-silent", 0);
+                }
+                m.Result = new IntPtr(1); // "Applications should respect the user's intentions and return TRUE."
+            }
+            else if (m.Msg == (int)WindowsMessages.ENDSESSION)
+            {
+                if (m.WParam != IntPtr.Zero)
+                {
+                    // If wParam is not equal to false (0), the application can be terminated at any moment after processing this message
+                    // thus should save its data while processing the message.
+                    Program.CloseSequence();
+                }
+                m.Result = IntPtr.Zero; // "If an application processes this message, it should return zero."
+            }
+            else
+            {
+                base.WndProc(ref m);
+            }
         }
 
         private void AfterShownJobs()
@@ -716,10 +758,20 @@ namespace ShareX
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
 #if RELEASE
+            ConfigureAutoUpdate();
+#else
+            if (UpdateChecker.ForceUpdate)
+            {
+                ConfigureAutoUpdate();
+            }
+#endif
+        }
+
+        private void ConfigureAutoUpdate()
+        {
             Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps;
             Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
             Program.UpdateManager.ConfigureAutoUpdate();
-#endif
         }
 
         private void AfterTaskSettingsJobs()
@@ -1255,6 +1307,19 @@ namespace ShareX
             }
         }
 
+        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (IsReady)
+            {
+                Program.Settings.TaskListViewColumnWidths = new List<int>();
+
+                for (int i = 0; i < lvUploads.Columns.Count; i++)
+                {
+                    Program.Settings.TaskListViewColumnWidths.Add(lvUploads.Columns[i].Width);
+                }
+            }
+        }
+
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
         {
             TaskInfo[] taskInfos = GetCurrentTasks().Select(x => x.Info).Where(x => x != null).ToArray();
@@ -1602,7 +1667,19 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            DebugForm.GetFormInstance(DebugHelper.Logger).ForceActivate();
+            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
+            if (!form.HasUploadRequested)
+            {
+                form.UploadRequested += (text) =>
+                {
+                    DialogResult result = MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (result == DialogResult.Yes)
+                    {
+                        UploadManager.UploadText(text);
+                    }
+                };
+            }
+            form.ForceActivate();
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)

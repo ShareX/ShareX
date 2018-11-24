@@ -117,6 +117,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit image....
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_EditImage {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_EditImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_File {
@@ -311,6 +320,15 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryItemManager_InitializeComponent_Thumbnail_URL {
             get {
                 return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Thumbnail_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload file.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_UploadFile {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_UploadFile", resourceCulture);
             }
         }
         

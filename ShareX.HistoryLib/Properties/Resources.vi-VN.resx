@@ -145,7 +145,7 @@
     <value>Tên tệp tin</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Tên tệp tin không có phần mở rộng</value>
+    <value>Tên tệp có phần đuôi mở rộng</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>Đường dẫn tệp</value>
@@ -157,7 +157,7 @@
     <value>Ảnh cho Forum (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>Đường dẫn cho Forum (BBCode)</value>
+    <value>Liên kết cho Forum (BBCode)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>Ảnh kèm đường dẫn cho Forum (BBCode)</value>
@@ -193,13 +193,13 @@
     <value>URL để xóa</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL ảnh thu nhỏ</value>
+    <value>URL ảnh thu nhỏ/thumbnail</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
     <value>Lỗi xảy ra khi đọc tệp XML: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>Đường dẫn dạng HTML</value>
+    <value>Liên kết dạng HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>Ảnh dạng HTML</value>
@@ -208,9 +208,18 @@
     <value>Ảnh kèm đường dẫn HTML</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Đường dẫn dạng HTML ({0})</value>
+    <value>Liên kết dạng HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Thông tin thêm</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Ảnh Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Liên kết Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Ảnh liên kết Markdown</value>
   </data>
 </root>

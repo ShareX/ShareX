@@ -284,7 +284,13 @@
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ru.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.tr.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.vi-VN.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
