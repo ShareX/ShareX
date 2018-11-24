@@ -76,28 +76,28 @@ namespace ShareX.UploadersLib.SharingServices
         public override UploadResult ShareURL(string url)
         {
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
+            CustomUploaderInput input = new CustomUploaderInput("", url);
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
 
             if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
                     uploader.ResponseType, uploader.RequestType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.JSON)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else

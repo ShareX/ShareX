@@ -78,18 +78,18 @@ namespace ShareX.UploadersLib.ImageUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             UploadResult result = new UploadResult();
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
+            CustomUploaderInput input = new CustomUploaderInput(fileName, "");
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.ImageUploader);
 
             if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.Binary)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), stream, UploadHelpers.GetMimeType(fileName),
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             try
             {
-                uploader.ParseResponse(result);
+                uploader.ParseResponse(result, input);
             }
             catch (Exception e)
             {

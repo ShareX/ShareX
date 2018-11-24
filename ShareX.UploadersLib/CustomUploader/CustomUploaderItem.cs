@@ -115,14 +115,14 @@ namespace ShareX.UploadersLib
             return ToString() + ".sxcu";
         }
 
-        public string GetRequestURL()
+        public string GetRequestURL(CustomUploaderInput input)
         {
             if (string.IsNullOrEmpty(RequestURL))
             {
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            CustomUploaderParser parser = new CustomUploaderParser();
+            CustomUploaderParser parser = new CustomUploaderParser(input);
             parser.URLEncode = true;
             string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
@@ -154,9 +154,13 @@ namespace ShareX.UploadersLib
             return RequestFormat;
         }
 
-        public string GetData(CustomUploaderArgumentInput input)
+        public string GetData(CustomUploaderInput input)
         {
-            return input.Parse(Data, RequestFormat == CustomUploaderRequestFormat.JSON);
+            CustomUploaderParser parser = new CustomUploaderParser(input);
+            parser.UseNameParser = true;
+            parser.JSONEncode = RequestFormat == CustomUploaderRequestFormat.JSON;
+
+            return parser.Parse(Data);
         }
 
         public string GetFileFormName()
@@ -169,30 +173,35 @@ namespace ShareX.UploadersLib
             return FileFormName;
         }
 
-        public Dictionary<string, string> GetArguments(CustomUploaderArgumentInput input)
+        public Dictionary<string, string> GetArguments(CustomUploaderInput input)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 
             if (Arguments != null)
             {
+                CustomUploaderParser parser = new CustomUploaderParser(input);
+                parser.UseNameParser = true;
+
                 foreach (KeyValuePair<string, string> arg in Arguments)
                 {
-                    arguments.Add(arg.Key, input.Parse(arg.Value));
+                    arguments.Add(arg.Key, parser.Parse(arg.Value));
                 }
             }
 
             return arguments;
         }
 
-        public NameValueCollection GetHeaders(CustomUploaderArgumentInput input)
+        public NameValueCollection GetHeaders(CustomUploaderInput input)
         {
             if (Headers != null && Headers.Count > 0)
             {
                 NameValueCollection collection = new NameValueCollection();
+                CustomUploaderParser parser = new CustomUploaderParser(input);
+                parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> header in Headers)
                 {
-                    collection.Add(header.Key, input.Parse(header.Value));
+                    collection.Add(header.Key, parser.Parse(header.Value));
                 }
 
                 return collection;
@@ -201,11 +210,15 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        public void ParseResponse(UploadResult result, bool isShortenedURL = false)
+        public void ParseResponse(UploadResult result, CustomUploaderInput input, bool isShortenedURL = false)
         {
             if (result != null && !string.IsNullOrEmpty(result.Response))
             {
-                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList);
+                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList)
+                {
+                    Filename = input.Filename,
+                    URLEncode = true
+                };
 
                 string url;
 

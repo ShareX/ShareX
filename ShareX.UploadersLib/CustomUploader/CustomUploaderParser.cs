@@ -44,12 +44,13 @@ namespace ShareX.UploadersLib
         public const char SyntaxEscapeChar = '\\';
 
         public bool IsOutput { get; set; }
-        public string Filename { get; private set; }
-        public string Input { get; private set; }
-        public string Response { get; private set; }
-        public List<Match> RegexMatches { get; private set; }
-        public bool URLEncode { get; set; }
+        public string Filename { get; set; }
+        public string Input { get; set; }
+        public string Response { get; set; }
+        public List<Match> RegexMatches { get; set; }
+        public bool URLEncode { get; set; } // Only URL encodes filename and input
         public bool JSONEncode { get; set; }
+        public bool UseNameParser { get; set; }
 
         public bool SkipSyntaxParse { get; set; }
         public List<CustomUploaderSyntaxInfo> SyntaxInfoList { get; private set; }
@@ -85,16 +86,28 @@ namespace ShareX.UploadersLib
             IsOutput = true;
         }
 
+        public CustomUploaderParser(CustomUploaderInput input) : this(input.Filename, input.Input)
+        {
+        }
+
         public string Parse(string text)
         {
             return Parse(text, IsOutput);
         }
 
-        public string Parse(string text, bool isOutput)
+        private string Parse(string text, bool isOutput)
         {
             if (string.IsNullOrEmpty(text))
             {
                 return "";
+            }
+
+            if (UseNameParser)
+            {
+                NameParser nameParser = new NameParser(NameParserType.Text);
+                EscapeHelper escapeHelper = new EscapeHelper();
+                escapeHelper.KeepEscapeCharacter = true;
+                text = escapeHelper.Parse(text, nameParser.Parse);
             }
 
             StringBuilder sbResult = new StringBuilder();

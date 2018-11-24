@@ -81,7 +81,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public override UploadResult UploadText(string text, string fileName)
         {
             UploadResult result = new UploadResult();
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, text);
+            CustomUploaderInput input = new CustomUploaderInput(fileName, text);
 
             CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.TextUploader);
 
@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
-                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input),
+                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input),
                         uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
                 }
                 else
@@ -97,19 +97,19 @@ namespace ShareX.UploadersLib.TextUploaders
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
+                        result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
                             uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
                     }
                 }
             }
             else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.JSON)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (requestFormat == CustomUploaderRequestFormat.Binary)
@@ -117,13 +117,13 @@ namespace ShareX.UploadersLib.TextUploaders
                 byte[] bytes = Encoding.UTF8.GetBytes(text);
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
-                    result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(), stream, UploadHelpers.GetMimeType(fileName),
+                    result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
                         uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
                 }
             }
             else if (requestFormat == CustomUploaderRequestFormat.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             try
             {
-                uploader.ParseResponse(result);
+                uploader.ParseResponse(result, input);
             }
             catch (Exception e)
             {
