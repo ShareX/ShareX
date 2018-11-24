@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -155,6 +156,12 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string JSONEncode(string text)
+        {
+            text = JsonConvert.ToString(text);
+            return text.Substring(1, text.Length - 2);
         }
 
         public static string URLDecode(string url, int count = 1)

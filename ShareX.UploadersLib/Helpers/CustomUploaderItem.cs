@@ -118,6 +118,7 @@ namespace ShareX.UploadersLib
             }
 
             CustomUploaderParser parser = new CustomUploaderParser();
+            parser.URLEncode = true;
             string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
         }

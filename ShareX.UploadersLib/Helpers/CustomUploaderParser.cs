@@ -48,7 +48,8 @@ namespace ShareX.UploadersLib
         public string Input { get; private set; }
         public string Response { get; private set; }
         public List<Match> RegexMatches { get; private set; }
-        public bool JsonEncode { get; set; }
+        public bool URLEncode { get; set; }
+        public bool JSONEncode { get; set; }
 
         public bool SkipSyntaxParse { get; set; }
         public List<CustomUploaderSyntaxInfo> SyntaxInfoList { get; private set; }
@@ -125,10 +126,13 @@ namespace ShareX.UploadersLib
 
                             if (!string.IsNullOrEmpty(syntaxResult))
                             {
-                                if (JsonEncode)
+                                if (URLEncode)
                                 {
-                                    syntaxResult = JsonConvert.ToString(syntaxResult);
-                                    syntaxResult = syntaxResult.Substring(1, syntaxResult.Length - 2);
+                                    syntaxResult = URLHelpers.URLEncode(syntaxResult);
+                                }
+                                else if (JSONEncode)
+                                {
+                                    syntaxResult = URLHelpers.JSONEncode(syntaxResult);
                                 }
 
                                 sbResult.Append(syntaxResult);

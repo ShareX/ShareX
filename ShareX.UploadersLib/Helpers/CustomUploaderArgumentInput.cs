@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib
             arg = escapeHelper.Parse(arg, nameParser.Parse);
 
             CustomUploaderParser customUploaderParser = new CustomUploaderParser(Filename, Input);
-            customUploaderParser.JsonEncode = jsonEncode;
+            customUploaderParser.JSONEncode = jsonEncode;
             arg = customUploaderParser.Parse(arg);
 
             return arg;
