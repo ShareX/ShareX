@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib.TextUploaders
             args.Add("code", code);
 
             WebHeaderCollection headers = new WebHeaderCollection();
-            headers.Add("Accept", ContentTypeJSON);
+            headers.Add("Accept", UploadHelpers.ContentTypeJSON);
 
             string response = SendRequestMultiPart("https://github.com/login/oauth/access_token", args, headers);
 
@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("access_token", AuthInfo.Token.access_token);
 
-                string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, args);
+                string response = SendRequest(HttpMethod.POST, url, json, UploadHelpers.ContentTypeJSON, args);
 
                 GistResponse gistResponse = JsonConvert.DeserializeObject<GistResponse>(response);
 

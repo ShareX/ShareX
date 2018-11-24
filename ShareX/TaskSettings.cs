@@ -345,12 +345,11 @@ namespace ShareX
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordAutoStart = true;
-        public bool ScreenRecordAskConfirmationOnAbort = false;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
-        public bool RunScreencastCLI = false;
-        public int VideoEncoderSelected = 0;
+        public bool ScreenRecordTwoPassEncoding = false;
+        public bool ScreenRecordAskConfirmationOnAbort = false;
 
         #endregion Capture / Screen recorder
 
@@ -508,6 +507,12 @@ namespace ShareX
 
         [Category("After upload / Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
         public ToastClickAction ToastWindowClickAction { get; set; }
+
+        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowRightClickAction { get; set; }
+
+        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         private Size toastWindowSize;
 

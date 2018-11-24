@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Thiết lập Hotkey</value>
+    <value>ShareX - Thiết lập phím tắt</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Thêm...</value>
@@ -127,12 +127,12 @@
     <value>Nhân bản</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Sửa...</value>
+    <value>Chỉnh sửa...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
+    <value>Xóa bỏ</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Khôi phục hotkey gốc</value>
+    <value>Khôi phục các phím tắt gốc...</value>
   </data>
 </root>

@@ -66,42 +66,48 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class CustomURLShortener : URLShortener
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomURLShortener(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult ShortenURL(string url)
         {
-            if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
-                throw new Exception("'File form name' cannot be used with custom URL shortener.");
-
-            if ((customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$"))) &&
-                (customUploader.Headers == null || !customUploader.Headers.Any(x => x.Value.Contains("$input$"))))
-                throw new Exception("Atleast one '$input$' required for argument or header value.");
-
             UploadResult result = new UploadResult { URL = url };
+            CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLShortener);
 
-            Dictionary<string, string> args = customUploader.GetArguments(input);
-
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(input),
-                    responseType: customUploader.ResponseType);
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
+                    uploader.ResponseType, uploader.RequestType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.FormURLEncoded)
+            {
+                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(input),
-                    responseType: customUploader.ResponseType);
+                throw new Exception("Unsupported request format.");
             }
 
             try
             {
-                customUploader.ParseResponse(result, true);
+                uploader.ParseResponse(result, input, true);
             }
             catch (Exception e)
             {

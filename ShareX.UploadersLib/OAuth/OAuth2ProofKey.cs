@@ -56,9 +56,9 @@ namespace ShareX.UploadersLib
         {
             Method = method;
 
-            var buffer = new byte[32];
+            byte[] buffer = new byte[32];
 
-            using (var rng = new RNGCryptoServiceProvider())
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
             {
                 rng.GetBytes(buffer);
             }
@@ -67,7 +67,7 @@ namespace ShareX.UploadersLib
 
             if (Method == OAuth2ChallengeMethod.SHA256)
             {
-                using (var sha = SHA256.Create())
+                using (SHA256 sha = SHA256.Create())
                 {
                     sha.ComputeHash(Encoding.UTF8.GetBytes(CodeVerifier));
                     CodeChallenge = CleanBase64(sha.Hash);
@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib
 
         private string CleanBase64(byte[] buffer)
         {
-            var sb = new StringBuilder(Convert.ToBase64String(buffer));
+            StringBuilder sb = new StringBuilder(Convert.ToBase64String(buffer));
             sb.Replace('+', '-');
             sb.Replace('/', '_');
             sb.Replace("=", "");

@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -576,7 +575,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadow);
 
-            tsmiShadowColor = new ToolStripMenuItem("Drop shadow color...");
+            tsmiShadowColor = new ToolStripMenuItem(Resources.DropShadowColor);
             tsmiShadowColor.Click += (sender, e) =>
             {
                 Form.Pause();
@@ -740,7 +739,7 @@ namespace ShareX.ScreenCaptureLib
 
                 tsddbImage.DropDownItems.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiAddImageEffects = new ToolStripMenuItem("Add image effects...");
+                ToolStripMenuItem tsmiAddImageEffects = new ToolStripMenuItem(Resources.ImageEffects);
                 tsmiAddImageEffects.Image = Resources.image_saturation;
                 tsmiAddImageEffects.Click += (sender, e) => AddImageEffects();
                 tsddbImage.DropDownItems.Add(tsmiAddImageEffects);
@@ -902,7 +901,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.Click += (sender, e) => Options.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsddbOptions.DropDownItems.Add(tsmiShowCrosshair);
 
-            ToolStripMenuItem tsmiUseLightResizeNodes = new ToolStripMenuItem("Use light resize nodes");
+            ToolStripMenuItem tsmiUseLightResizeNodes = new ToolStripMenuItem(Resources.LightResizeNodes);
             tsmiUseLightResizeNodes.Checked = Options.UseLightResizeNodes;
             tsmiUseLightResizeNodes.CheckOnClick = true;
             tsmiUseLightResizeNodes.Click += (sender, e) => Options.UseLightResizeNodes = tsmiUseLightResizeNodes.Checked;
@@ -954,12 +953,12 @@ namespace ShareX.ScreenCaptureLib
 
             tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiKeybinds = new ToolStripMenuItem("Open keybinds web page...");
+            ToolStripMenuItem tsmiKeybinds = new ToolStripMenuItem(Resources.OpenKeybindsPage);
             tsmiKeybinds.Click += (sender, e) =>
             {
                 if (Form.IsFullscreen)
                 {
-                    if (MessageBox.Show(Form, "This window will close before opening the keybinds web page. Do you want to continue?",
+                    if (MessageBox.Show(Form, Resources.ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue,
                         "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Form.CloseWindow();

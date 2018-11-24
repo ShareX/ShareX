@@ -51,7 +51,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Bucket = config.GoogleCloudStorageBucket,
                 Domain = config.GoogleCloudStorageDomain,
-                Prefix = config.GoogleCloudStorageObjectPrefix
+                Prefix = config.GoogleCloudStorageObjectPrefix,
+                RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
+                RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
             };
         }
 
@@ -63,6 +66,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Bucket { get; set; }
         public string Domain { get; set; }
         public string Prefix { get; set; }
+        public bool RemoveExtensionImage { get; set; }
+        public bool RemoveExtensionText { get; set; }
+        public bool RemoveExtensionVideo { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -100,7 +106,16 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string uploadpath = GetUploadPath(fileName);
+            string name = fileName;
+
+            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                name = Path.GetFileNameWithoutExtension(fileName);
+            }
+
+            string uploadpath = GetUploadPath(name);
 
             GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
             {
@@ -119,6 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
                 headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
             if (upload.name != uploadpath)

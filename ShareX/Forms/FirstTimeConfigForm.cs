@@ -27,10 +27,6 @@ using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
 
-#if WindowsStore
-using Windows.ApplicationModel;
-#endif
-
 namespace ShareX
 {
     public partial class FirstTimeConfigForm : BlackStyleForm
@@ -41,10 +37,10 @@ namespace ShareX
         {
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
-            var state = StartupManagerSingletonProvider.CurrentStartupManager.State;
 
-            cbRunStartup.Checked = state == StartupTaskState.Enabled;
-            cbRunStartup.Enabled = state != StartupTaskState.DisabledByUser;
+            StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+            cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+            cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
 
             cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
@@ -67,7 +63,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                StartupManagerSingletonProvider.CurrentStartupManager.State = cbRunStartup.Checked ? StartupTaskState.Enabled : StartupTaskState.Disabled;
+                StartupManagerSingletonProvider.CurrentStartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
             }
         }
 

@@ -68,35 +68,42 @@ namespace ShareX.UploadersLib.ImageUploaders
 
     public sealed class CustomImageUploader : ImageUploader
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomImageUploader(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (customUploader.RequestType != CustomUploaderRequestType.POST)
+            UploadResult result = new UploadResult();
+            CustomUploaderInput input = new CustomUploaderInput(fileName, "");
+
+            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.ImageUploader);
+
+            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
+            }
+            else if (requestFormat == CustomUploaderRequestFormat.Binary)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else
+            {
+                throw new Exception("Unsupported request format.");
             }
 
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
-
-            UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                customUploader.GetArguments(input), customUploader.GetHeaders(input), responseType: customUploader.ResponseType);
-
-            if (result.IsSuccess)
+            try
             {
-                try
-                {
-                    customUploader.ParseResponse(result);
-                }
-                catch (Exception e)
-                {
-                    Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-                }
+                uploader.ParseResponse(result, input);
+            }
+            catch (Exception e)
+            {
+                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
             }
 
             return result;

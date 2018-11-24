@@ -127,7 +127,6 @@
   </data>
   <data name="chIcon.Text" xml:space="preserve">
     <value />
-    <comment>@Invariant</comment>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chIcon.Width" type="System.Int32, mscorlib">
@@ -197,7 +196,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 368</value>
+    <value>408, 384</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -216,6 +215,54 @@
   </data>
   <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="lblURLFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblURLFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblURLFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblURLFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Name" xml:space="preserve">
+    <value>lblURLFilter</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtURLFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 44</value>
+  </data>
+  <data name="txtURLFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 20</value>
+  </data>
+  <data name="txtURLFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Name" xml:space="preserve">
+    <value>txtURLFilter</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -242,10 +289,10 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;lblFilenameFilter.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cbHostFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 176</value>
+    <value>168, 168</value>
   </data>
   <data name="cbHostFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 21</value>
@@ -263,13 +310,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnRemoveFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnRemoveFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 210</value>
+    <value>168, 200</value>
   </data>
   <data name="btnRemoveFilters.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 24</value>
@@ -290,13 +337,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnApplyFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnApplyFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 210</value>
+    <value>16, 200</value>
   </data>
   <data name="btnApplyFilters.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 24</value>
@@ -317,10 +364,10 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 150</value>
+    <value>168, 142</value>
   </data>
   <data name="cbTypeFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 21</value>
@@ -338,7 +385,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="cbHostFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -347,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbHostFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 179</value>
+    <value>16, 170</value>
   </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 17</value>
@@ -368,7 +415,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="cbTypeFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -377,7 +424,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTypeFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 152</value>
+    <value>16, 144</value>
   </data>
   <data name="cbTypeFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 17</value>
@@ -398,13 +445,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="dtpFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 94</value>
+    <value>96, 92</value>
   </data>
   <data name="dtpFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
+    <value>216, 20</value>
   </data>
   <data name="dtpFilterFrom.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -419,7 +466,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblFilterFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -428,7 +475,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 98</value>
+    <value>13, 96</value>
   </data>
   <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -449,7 +496,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="lblFilterTo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -458,7 +505,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 122</value>
+    <value>13, 120</value>
   </data>
   <data name="lblFilterTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 13</value>
@@ -479,7 +526,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="cbDateFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -509,13 +556,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="dtpFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 118</value>
+    <value>96, 116</value>
   </data>
   <data name="dtpFilterTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
+    <value>216, 20</value>
   </data>
   <data name="dtpFilterTo.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -530,13 +577,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 46</value>
+    <value>96, 20</value>
   </data>
   <data name="txtFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 20</value>
+    <value>216, 20</value>
   </data>
   <data name="txtFilenameFilter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -551,46 +598,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contains</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Starts with</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Ends with</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Exact match</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 20</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 21</value>
-  </data>
-  <data name="cbFilenameFilterMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Name" xml:space="preserve">
-    <value>cbFilenameFilterMethod</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 384</value>
+    <value>8, 400</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 250</value>
+    <value>408, 234</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

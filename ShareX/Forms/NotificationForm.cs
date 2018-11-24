@@ -183,7 +183,10 @@ namespace ShareX
         {
             if ((duration > 0 || fadeDuration > 0) && size.Width > 0 && size.Height > 0)
             {
-                config.Image = ImageHelpers.LoadImage(config.FilePath);
+                if (config.Image == null)
+                {
+                    config.Image = ImageHelpers.LoadImage(config.FilePath);
+                }
 
                 if (config.Image != null || !string.IsNullOrEmpty(config.Text))
                 {
@@ -199,39 +202,56 @@ namespace ShareX
 
             Close();
 
+            ToastClickAction action = ToastClickAction.CloseNotification;
+
             if (e.Button == MouseButtons.Left)
             {
-                switch (ToastConfig.Action)
-                {
-                    case ToastClickAction.AnnotateImage:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
-                            TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.CopyImageToClipboard:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.CopyUrl:
-                        if (!string.IsNullOrEmpty(ToastConfig.URL))
-                            ClipboardHelpers.CopyText(ToastConfig.URL);
-                        break;
-                    case ToastClickAction.OpenFile:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            URLHelpers.OpenURL(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.OpenFolder:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            Helpers.OpenFolderWithFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.OpenUrl:
-                        if (!string.IsNullOrEmpty(ToastConfig.URL))
-                            URLHelpers.OpenURL(ToastConfig.URL);
-                        break;
-                    case ToastClickAction.Upload:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            UploadManager.UploadFile(ToastConfig.FilePath);
-                        break;
-                }
+                action = ToastConfig.LeftClickAction;
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                action = ToastConfig.RightClickAction;
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                action = ToastConfig.MiddleClickAction;
+            }
+
+            ExecuteAction(action);
+        }
+
+        private void ExecuteAction(ToastClickAction action)
+        {
+            switch (action)
+            {
+                case ToastClickAction.AnnotateImage:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
+                        TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.CopyImageToClipboard:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.CopyUrl:
+                    if (!string.IsNullOrEmpty(ToastConfig.URL))
+                        ClipboardHelpers.CopyText(ToastConfig.URL);
+                    break;
+                case ToastClickAction.OpenFile:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        URLHelpers.OpenURL(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.OpenFolder:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        Helpers.OpenFolderWithFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.OpenUrl:
+                    if (!string.IsNullOrEmpty(ToastConfig.URL))
+                        URLHelpers.OpenURL(ToastConfig.URL);
+                    break;
+                case ToastClickAction.Upload:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        UploadManager.UploadFile(ToastConfig.FilePath);
+                    break;
             }
         }
 
@@ -284,34 +304,34 @@ namespace ShareX
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tDuration = new System.Windows.Forms.Timer(this.components);
-            this.tOpacity = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            tDuration = new System.Windows.Forms.Timer(components);
+            tOpacity = new System.Windows.Forms.Timer(components);
+            SuspendLayout();
             //
             // tDuration
             //
-            this.tDuration.Tick += new System.EventHandler(this.tDuration_Tick);
+            tDuration.Tick += new System.EventHandler(tDuration_Tick);
             //
             // tOpacity
             //
-            this.tOpacity.Tick += new System.EventHandler(this.tOpacity_Tick);
+            tOpacity.Tick += new System.EventHandler(tOpacity_Tick);
             //
             // NotificationForm
             //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 300);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NotificationForm";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "NotificationForm";
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
-            this.MouseEnter += new System.EventHandler(this.NotificationForm_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.NotificationForm_MouseLeave);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(400, 300);
+            Cursor = System.Windows.Forms.Cursors.Hand;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "NotificationForm";
+            ShowInTaskbar = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            Text = "NotificationForm";
+            MouseClick += new System.Windows.Forms.MouseEventHandler(NotificationForm_MouseClick);
+            MouseEnter += new System.EventHandler(NotificationForm_MouseEnter);
+            MouseLeave += new System.EventHandler(NotificationForm_MouseLeave);
+            ResumeLayout(false);
         }
 
         #endregion Windows Form Designer generated code
@@ -323,7 +343,9 @@ namespace ShareX
         public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }
-        public ToastClickAction Action { get; set; }
+        public ToastClickAction LeftClickAction { get; set; }
+        public ToastClickAction RightClickAction { get; set; }
+        public ToastClickAction MiddleClickAction { get; set; }
 
         public void Dispose()
         {

@@ -92,6 +92,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool EncodeVideo(string input, string output)
+        {
+            Options.IsRecording = false;
+            Options.IsLossless = false;
+            Options.InputPath = input;
+            Options.OutputPath = output;
+            return Run(Options.FFmpeg.FFmpegPath, Options.GetFFmpegCommands());
+        }
+
         public bool EncodeGIF(string input, string output, string tempFolder)
         {
             bool result;

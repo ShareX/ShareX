@@ -175,7 +175,7 @@
     <value>Dưới:</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Dọc:</value>
+    <value>Chiều dọc:</value>
   </data>
   <data name="lblTrimLeft.Text" xml:space="preserve">
     <value>Trái:</value>
@@ -215,5 +215,17 @@
   </data>
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
     <value>Hàng dọc cuối:</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Sau khi chụp</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Trước khi chụp</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Khi đang chụp</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Phương thức cuộn lên trên cùng trước khi chụp:</value>
   </data>
 </root>

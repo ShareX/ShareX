@@ -33,12 +33,12 @@ namespace ShareX.HelpersLib
 {
     public static class CodeMenu
     {
-        public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
         {
             return Create(tb, ignoreList, (CodeMenuItem[])null);
         }
 
-        public static ContextMenuStrip Create<TEntry>(TextBox tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
         {
             ContextMenuStrip cms = new ContextMenuStrip
             {
@@ -55,12 +55,12 @@ namespace ShareX.HelpersLib
                 items.AddRange(extraItems);
             }
 
-            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
+            IEnumerable<CodeMenuItem> variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
                 Select(x => new CodeMenuItem(x.ToPrefixString(), x.Description, x.Category));
 
             items.AddRange(variables);
 
-            foreach (var item in items)
+            foreach (CodeMenuItem item in items)
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
                 tsmi.Click += (sender, e) =>

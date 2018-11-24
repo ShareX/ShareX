@@ -512,7 +512,7 @@ namespace ShareX.ScreenCaptureLib
         {
             bool result = true;
 
-            if (ShapeManager != null && ShapeManager.IsModified)
+            if (IsModified)
             {
                 Pause();
                 result = MessageBox.Show(this, Resources.RegionCaptureForm_ShowExitConfirmation_Text, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
@@ -1338,18 +1338,25 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
+        private Image ReceiveImageForTask()
+        {
+            Image img = GetResultImage();
+
+            ShapeManager.IsModified = false;
+
+            if (Options.AutoCloseEditorOnTask)
+            {
+                CloseWindow();
+            }
+
+            return img;
+        }
+
         internal void OnSaveImageRequested()
         {
             if (SaveImageRequested != null)
             {
-                Image img = GetResultImage();
-
-                ShapeManager.IsModified = false;
-
-                if (Options.AutoCloseEditorOnTask)
-                {
-                    CloseWindow();
-                }
+                Image img = ReceiveImageForTask();
 
                 string imageFilePath = SaveImageRequested(img, ImageFilePath);
 
@@ -1365,14 +1372,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (SaveImageAsRequested != null)
             {
-                Image img = GetResultImage();
-
-                ShapeManager.IsModified = false;
-
-                if (Options.AutoCloseEditorOnTask)
-                {
-                    CloseWindow();
-                }
+                Image img = ReceiveImageForTask();
 
                 string imageFilePath = SaveImageAsRequested(img, ImageFilePath);
 
@@ -1388,12 +1388,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (CopyImageRequested != null)
             {
-                Image img = GetResultImage();
-
-                if (Options.AutoCloseEditorOnTask)
-                {
-                    CloseWindow();
-                }
+                Image img = ReceiveImageForTask();
 
                 CopyImageRequested(img);
             }
@@ -1403,12 +1398,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (UploadImageRequested != null)
             {
-                Image img = GetResultImage();
-
-                if (Options.AutoCloseEditorOnTask)
-                {
-                    CloseWindow();
-                }
+                Image img = ReceiveImageForTask();
 
                 UploadImageRequested(img);
             }
@@ -1418,12 +1408,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (PrintImageRequested != null)
             {
-                Image img = GetResultImage();
-
-                if (Options.AutoCloseEditorOnTask)
-                {
-                    CloseWindow();
-                }
+                Image img = ReceiveImageForTask();
 
                 PrintImageRequested(img);
             }

@@ -56,6 +56,7 @@ namespace ShareX
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
+        public List<int> TaskListViewColumnWidths = new List<int>();
         public DateTime NewsLastReadDate;
 
         #endregion Main Form
@@ -135,12 +136,6 @@ namespace ShareX
 
         #endregion Print
 
-        #region Profiles
-
-        public List<VideoEncoder> VideoEncoders = new List<VideoEncoder>();
-
-        #endregion Profiles
-
         #region Advanced
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
@@ -180,8 +175,11 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
         public bool TrayTextMoreInfo { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
+        [Category("Application"), DefaultValue(false), Description("Save settings after task completed but only if there is no other active tasks.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
+        public bool AutoSelectLastCompletedTask { get; set; }
 
         [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
         public bool DisableHotkeys { get; set; }
@@ -215,6 +213,9 @@ namespace ShareX
 
         [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]
         public bool RotateImageByExifOrientationData { get; set; }
+
+        [Category("Image"), DefaultValue(false), Description("Strip color space information chunks from PNG image.")]
+        public bool PNGStripColorSpaceInformation { get; set; }
 
         [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }

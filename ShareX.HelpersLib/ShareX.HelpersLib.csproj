@@ -131,6 +131,12 @@
     <Compile Include="Controls\ToolStripNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="PointInfo.cs" />
     <Compile Include="SevenZipManager.cs" />
@@ -201,7 +207,6 @@
     </Compile>
     <Compile Include="DNS\DNSInfo.cs" />
     <Compile Include="DWMManager.cs" />
-    <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
     <Compile Include="EnumInfo.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
@@ -223,7 +228,6 @@
     <Compile Include="Input\InputHelpers.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
-    <Compile Include="MimeTypes.cs" />
     <Compile Include="NameParser\CodeMenuEntryPixelInfo.cs" />
     <Compile Include="NameParser\CodeMenuItem.cs" />
     <Compile Include="Native\LayeredForm.cs">
@@ -276,12 +280,6 @@
     <Compile Include="UITypeEditors\CssFileNameEditor.cs" />
     <Compile Include="CursorData.cs" />
     <Compile Include="UITypeEditors\ExeFileNameEditor.cs" />
-    <Compile Include="Forms\DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DebugTimer.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Forms\HashCheckForm.cs">
@@ -769,6 +767,9 @@
     <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-TW.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.de.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -801,9 +802,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.ru.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>

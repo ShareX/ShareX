@@ -416,8 +416,11 @@ namespace ShareX
                                             case PopUpNotificationType.ToastNotification:
                                                 NotificationFormConfig toastConfig = new NotificationFormConfig()
                                                 {
-                                                    Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
+                                                    LeftClickAction = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
+                                                    RightClickAction = info.TaskSettings.AdvancedSettings.ToastWindowRightClickAction,
+                                                    MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
                                                     FilePath = info.FilePath,
+                                                    Image = task.Image,
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };
@@ -441,6 +444,11 @@ namespace ShareX
                         if (lvi != null)
                         {
                             lvi.EnsureVisible();
+
+                            if (Program.Settings.AutoSelectLastCompletedTask)
+                            {
+                                ListViewControl.SelectSingle(lvi);
+                            }
                         }
                     }
                 }

@@ -67,15 +67,15 @@ namespace ShareX.HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
-        private static Cursor[] _cursorList;
+        private static Cursor[] cursorList;
 
         public static Cursor[] CursorList
         {
             get
             {
-                if (_cursorList == null)
+                if (cursorList == null)
                 {
-                    _cursorList = new Cursor[] {
+                    cursorList = new Cursor[] {
                         Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
                         Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
                         Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
@@ -84,7 +84,7 @@ namespace ShareX.HelpersLib
                     };
                 }
 
-                return _cursorList;
+                return cursorList;
             }
         }
 
@@ -243,7 +243,7 @@ namespace ShareX.HelpersLib
 
         public static char GetRandomChar(string chars)
         {
-            return chars[MathHelpers.Random(chars.Length - 1)];
+            return chars[MathHelpers.CryptoRandom(chars.Length - 1)];
         }
 
         public static string GetRandomString(string chars, int length)
@@ -283,7 +283,7 @@ namespace ShareX.HelpersLib
             string[] lines = text.Trim().Lines();
             if (lines != null && lines.Length > 0)
             {
-                return lines[MathHelpers.Random(0, lines.Length - 1)];
+                return lines[MathHelpers.CryptoRandom(0, lines.Length - 1)];
             }
             return null;
         }
@@ -330,33 +330,6 @@ namespace ShareX.HelpersLib
         public static string GetXMLValue(string input, string tag)
         {
             return Regex.Match(input, string.Format("(?<={0}>).+?(?=</{0})", tag)).Value;
-        }
-
-        public static string GetMimeType(string fileName)
-        {
-            if (!string.IsNullOrEmpty(fileName))
-            {
-                string ext = Path.GetExtension(fileName).ToLowerInvariant();
-
-                if (!string.IsNullOrEmpty(ext))
-                {
-                    string mimeType = MimeTypes.GetMimeType(ext);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-
-                    mimeType = RegistryHelpers.GetRegistryValue(ext, "Content Type", RegistryHive.ClassesRoot);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-                }
-            }
-
-            return MimeTypes.DefaultMimeType;
         }
 
         public static T[] GetEnums<T>()
@@ -860,27 +833,29 @@ namespace ShareX.HelpersLib
             return -1;
         }
 
-        public static void CreateDirectoryFromDirectoryPath(string path)
+        public static void CreateDirectoryFromDirectoryPath(string directoryPath)
         {
-            if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
+            if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
             {
                 try
                 {
-                    Directory.CreateDirectory(path);
+                    Directory.CreateDirectory(directoryPath);
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX - " + Resources.Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        public static void CreateDirectoryFromFilePath(string path)
+        public static void CreateDirectoryFromFilePath(string filePath)
         {
-            if (!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                CreateDirectoryFromDirectoryPath(Path.GetDirectoryName(path));
+                string directoryPath = Path.GetDirectoryName(filePath);
+                CreateDirectoryFromDirectoryPath(directoryPath);
             }
         }
 
@@ -1048,7 +1023,7 @@ namespace ShareX.HelpersLib
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -1098,7 +1073,18 @@ namespace ShareX.HelpersLib
 
         public static bool IsAdministrator()
         {
-            return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+            try
+            {
+                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+                {
+                    WindowsPrincipal principal = new WindowsPrincipal(identity);
+                    return principal.IsInRole(WindowsBuiltInRole.Administrator);
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static string RepeatGenerator(int count, Func<string> generator)
@@ -1189,22 +1175,40 @@ namespace ShareX.HelpersLib
             return instances.ToArray();
         }
 
-        public static string GetWindowsProductName()
+        public static string GetOperatingSystemProductName(bool includeBit = false)
         {
+            string productName = null;
+
             try
             {
-                string productName = RegistryHelpers.GetRegistryValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
-
-                if (!string.IsNullOrEmpty(productName))
-                {
-                    return productName;
-                }
+                productName = RegistryHelpers.GetRegistryValue(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
             }
             catch
             {
             }
 
-            return Environment.OSVersion.VersionString;
+            if (string.IsNullOrEmpty(productName))
+            {
+                productName = Environment.OSVersion.VersionString;
+            }
+
+            if (includeBit)
+            {
+                string bit;
+
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    bit = "64";
+                }
+                else
+                {
+                    bit = "32";
+                }
+
+                productName = $"{productName} ({bit}-bit)";
+            }
+
+            return productName;
         }
 
         public static Cursor CreateCursor(byte[] data)
@@ -1323,13 +1327,5 @@ namespace ShareX.HelpersLib
                 return false;
             }
         }
-
-        /// <summary>
-        /// Returns whether the HttpWebResponse was successful (has a 2xx status code).
-        /// </summary>
-        /// <param name="res">The HttpWebResponse to check.</param>
-        /// <returns>true if 2xx status code, otherwise false.</returns>
-        public static bool IsSuccessfulResponse(HttpWebResponse res) =>
-            int.TryParse(res.StatusCode.ToString(), out var rc) && (rc >= 200 && rc <= 299);
     }
 }

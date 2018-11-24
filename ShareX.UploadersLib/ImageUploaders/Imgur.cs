@@ -186,11 +186,41 @@ namespace ShareX.UploadersLib.ImageUploaders
             return true;
         }
 
-        public List<ImgurAlbumData> GetAlbums()
+        public List<ImgurAlbumData> GetAlbums(int maxPage = 10, int perPage = 100)
+        {
+            List<ImgurAlbumData> albums = new List<ImgurAlbumData>();
+
+            for (int i = 0; i < maxPage; i++)
+            {
+                List<ImgurAlbumData> tempAlbums = GetAlbumsPage(i, perPage);
+
+                if (tempAlbums != null && tempAlbums.Count > 0)
+                {
+                    albums.AddRange(tempAlbums);
+
+                    if (tempAlbums.Count < perPage)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return albums;
+        }
+
+        private List<ImgurAlbumData> GetAlbumsPage(int page, int perPage)
         {
             if (CheckAuthorization())
             {
-                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", headers: GetAuthHeaders());
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("page", page.ToString()); // default: 0
+                args.Add("perPage", perPage.ToString()); // default: 50, max: 100
+
+                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", args, GetAuthHeaders());
 
                 ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
 

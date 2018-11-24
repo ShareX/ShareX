@@ -166,20 +166,7 @@ namespace ShareX.ScreenCaptureLib
         // Is holding Alt?
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
-
-        private bool isModified;
-
-        public bool IsModified
-        {
-            get
-            {
-                return isModified || DrawingShapes.Any(x => x.ShapeType != ShapeType.DrawingCursor) || EffectShapes.Length > 0;
-            }
-            internal set
-            {
-                isModified = value;
-            }
-        }
+        public bool IsModified { get; internal set; }
 
         public InputManager InputManager { get; private set; } = new InputManager();
         public List<SimpleWindowInfo> Windows { get; set; }
@@ -946,6 +933,11 @@ namespace ShareX.ScreenCaptureLib
         {
             Shapes.Add(shape);
             CurrentShape = shape;
+
+            if (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect)
+            {
+                IsModified = true;
+            }
         }
 
         private BaseShape CreateShape()
@@ -1257,6 +1249,12 @@ namespace ShareX.ScreenCaptureLib
                 shape.Dispose();
                 Shapes.Remove(shape);
                 DeselectShape(shape);
+
+                if (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect)
+                {
+                    IsModified = true;
+                }
+
                 UpdateMenu();
             }
         }
@@ -1273,13 +1271,17 @@ namespace ShareX.ScreenCaptureLib
 
         private void DeleteAllShapes()
         {
-            foreach (BaseShape shape in Shapes)
+            if (Shapes.Count > 0)
             {
-                shape.Dispose();
-            }
+                foreach (BaseShape shape in Shapes)
+                {
+                    shape.Dispose();
+                }
 
-            Shapes.Clear();
-            DeselectCurrentShape();
+                Shapes.Clear();
+                DeselectCurrentShape();
+                IsModified = true;
+            }
         }
 
         private void ResetModifiers()

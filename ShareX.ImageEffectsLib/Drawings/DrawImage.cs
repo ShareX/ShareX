@@ -37,20 +37,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ContentAlignment.BottomRight)]
         public ContentAlignment Placement { get; set; }
 
-        private Point offset;
-
         [DefaultValue(typeof(Point), "5, 5")]
-        public Point Offset
-        {
-            get
-            {
-                return offset;
-            }
-            set
-            {
-                offset = new Point(value.X.Min(0), value.Y.Min(0));
-            }
-        }
+        public Point Offset { get; set; }
 
         [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }

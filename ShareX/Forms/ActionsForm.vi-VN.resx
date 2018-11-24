@@ -136,10 +136,10 @@
     <value>Tên:</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>Đường dẫn tệp tin:</value>
+    <value>Đường dẫn tệp:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Tác vụ</value>
+    <value>ShareX - Hành động</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
     <value>Phần mở rộng của tệp tin đầu ra: (Để trống = Sử dụng tên tệp)</value>

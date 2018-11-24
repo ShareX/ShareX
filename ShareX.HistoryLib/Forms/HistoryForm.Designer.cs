@@ -39,6 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.lblURLFilter = new System.Windows.Forms.Label();
+            this.txtURLFilter = new System.Windows.Forms.TextBox();
             this.lblFilenameFilter = new System.Windows.Forms.Label();
             this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
             this.btnRemoveFilters = new System.Windows.Forms.Button();
@@ -52,7 +54,6 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
-            this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -134,6 +135,8 @@
             // gbFilters
             // 
             resources.ApplyResources(this.gbFilters, "gbFilters");
+            this.gbFilters.Controls.Add(this.lblURLFilter);
+            this.gbFilters.Controls.Add(this.txtURLFilter);
             this.gbFilters.Controls.Add(this.lblFilenameFilter);
             this.gbFilters.Controls.Add(this.cbHostFilterSelection);
             this.gbFilters.Controls.Add(this.btnRemoveFilters);
@@ -147,9 +150,18 @@
             this.gbFilters.Controls.Add(this.cbDateFilter);
             this.gbFilters.Controls.Add(this.dtpFilterTo);
             this.gbFilters.Controls.Add(this.txtFilenameFilter);
-            this.gbFilters.Controls.Add(this.cbFilenameFilterMethod);
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.TabStop = false;
+            // 
+            // lblURLFilter
+            // 
+            resources.ApplyResources(this.lblURLFilter, "lblURLFilter");
+            this.lblURLFilter.Name = "lblURLFilter";
+            // 
+            // txtURLFilter
+            // 
+            resources.ApplyResources(this.txtURLFilter, "txtURLFilter");
+            this.txtURLFilter.Name = "txtURLFilter";
             // 
             // lblFilenameFilter
             // 
@@ -226,18 +238,6 @@
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             // 
-            // cbFilenameFilterMethod
-            // 
-            this.cbFilenameFilterMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilenameFilterMethod.FormattingEnabled = true;
-            this.cbFilenameFilterMethod.Items.AddRange(new object[] {
-            resources.GetString("cbFilenameFilterMethod.Items"),
-            resources.GetString("cbFilenameFilterMethod.Items1"),
-            resources.GetString("cbFilenameFilterMethod.Items2"),
-            resources.GetString("cbFilenameFilterMethod.Items3")});
-            resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
-            this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
-            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -283,7 +283,8 @@
         private System.Windows.Forms.CheckBox cbDateFilter;
         private System.Windows.Forms.DateTimePicker dtpFilterTo;
         private System.Windows.Forms.TextBox txtFilenameFilter;
-        private System.Windows.Forms.ComboBox cbFilenameFilterMethod;
         private System.Windows.Forms.Label lblFilenameFilter;
+        private System.Windows.Forms.Label lblURLFilter;
+        private System.Windows.Forms.TextBox txtURLFilter;
     }
 }

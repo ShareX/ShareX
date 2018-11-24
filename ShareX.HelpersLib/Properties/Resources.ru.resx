@@ -1144,4 +1144,7 @@
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Доступ по ссылке</value>
   </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Искать звуковой файл...</value>
+  </data>
 </root>

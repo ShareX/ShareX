@@ -143,6 +143,65 @@ namespace ShareX
             }
         }
 
+        private static void ProcessImageUpload(Image img, TaskSettings taskSettings)
+        {
+            if (img != null)
+            {
+                if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
+                {
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                }
+
+                RunImageTask(img, taskSettings);
+            }
+        }
+
+        private static void ProcessTextUpload(string text, TaskSettings taskSettings)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                string url = text.Trim();
+
+                if (URLHelpers.IsValidURL(url))
+                {
+                    if (taskSettings.UploadSettings.ClipboardUploadURLContents)
+                    {
+                        DownloadAndUploadFile(url, taskSettings);
+                        return;
+                    }
+
+                    if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
+                    {
+                        ShortenURL(url, taskSettings);
+                        return;
+                    }
+
+                    if (taskSettings.UploadSettings.ClipboardUploadShareURL)
+                    {
+                        ShareURL(url, taskSettings);
+                        return;
+                    }
+                }
+
+                if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+                {
+                    IndexFolder(text, taskSettings);
+                }
+                else
+                {
+                    UploadText(text, taskSettings, true);
+                }
+            }
+        }
+
+        private static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
+        {
+            if (files.Length > 0)
+            {
+                UploadFile(files, taskSettings);
+            }
+        }
+
         public static void ClipboardUpload(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -151,63 +210,64 @@ namespace ShareX
             {
                 Image img = ClipboardHelpers.GetImage();
 
-                if (img != null)
-                {
-                    if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
-                    {
-                        taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                    }
-
-                    RunImageTask(img, taskSettings);
-                }
+                ProcessImageUpload(img, taskSettings);
             }
             else if (Clipboard.ContainsText())
             {
                 string text = Clipboard.GetText();
 
-                if (!string.IsNullOrEmpty(text))
-                {
-                    string url = text.Trim();
-
-                    if (URLHelpers.IsValidURL(url))
-                    {
-                        if (taskSettings.UploadSettings.ClipboardUploadURLContents)
-                        {
-                            DownloadAndUploadFile(url, taskSettings);
-                            return;
-                        }
-
-                        if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
-                        {
-                            ShortenURL(url, taskSettings);
-                            return;
-                        }
-
-                        if (taskSettings.UploadSettings.ClipboardUploadShareURL)
-                        {
-                            ShareURL(url, taskSettings);
-                            return;
-                        }
-                    }
-
-                    if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
-                    {
-                        IndexFolder(text, taskSettings);
-                    }
-                    else
-                    {
-                        UploadText(text, taskSettings, true);
-                    }
-                }
+                ProcessTextUpload(text, taskSettings);
             }
             else if (Clipboard.ContainsFileDropList())
             {
                 string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
 
-                if (files.Length > 0)
+                ProcessFilesUpload(files, taskSettings);
+            }
+        }
+
+        private static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (ccv.ClipboardContentType == EClipboardContentType.Image)
+            {
+                Image img = (Image)ccv.ClipboardContent;
+
+                ProcessImageUpload(img, taskSettings);
+            }
+            else if (ccv.ClipboardContentType == EClipboardContentType.Text)
+            {
+                string text = (string)ccv.ClipboardContent;
+
+                ProcessTextUpload(text, taskSettings);
+            }
+            else if (ccv.ClipboardContentType == EClipboardContentType.Files)
+            {
+                string[] files = (string[])ccv.ClipboardContent;
+
+                ProcessFilesUpload(files, taskSettings);
+            }
+        }
+
+        private static void ProcessClipboardContentViewerDialog(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
+            {
+                if (ccv.ClipboardContentType != EClipboardContentType.Default)
                 {
-                    UploadFile(files, taskSettings);
+                    ClipboardUploadCached(ccv, taskSettings);
                 }
+                else
+                {
+                    ClipboardUpload(taskSettings);
+                }
+            }
+            else if (ccv.ClipboardContentType == EClipboardContentType.Image)
+            {
+                ((Image)ccv.ClipboardContent).Dispose();
             }
         }
 
@@ -217,10 +277,7 @@ namespace ShareX
 
             using (ClipboardContentViewer ccv = new ClipboardContentViewer())
             {
-                if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
-                {
-                    ClipboardUpload(taskSettings);
-                }
+                ProcessClipboardContentViewerDialog(ccv, taskSettings);
             }
         }
 
@@ -232,10 +289,7 @@ namespace ShareX
             {
                 using (ClipboardContentViewer ccv = new ClipboardContentViewer(true))
                 {
-                    if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
-                    {
-                        ClipboardUpload(taskSettings);
-                    }
+                    ProcessClipboardContentViewerDialog(ccv, taskSettings);
 
                     Program.Settings.ShowClipboardContentViewer = !ccv.DontShowThisWindow;
                 }
