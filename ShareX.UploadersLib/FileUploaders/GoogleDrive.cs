@@ -201,7 +201,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metadata = GetMetadata(fileName, FolderID);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink,webContentLink", stream, fileName,
-                headers: GoogleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadata);
+                "file", headers: GoogleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
