@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -34,24 +35,28 @@ namespace ShareX.UploadersLib
 {
     public partial class OCRSpaceForm : Form
     {
-        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public OCRSpaceLanguages Language { get; set; }
         public string Result { get; private set; }
 
         private Stream data;
         private string filename;
+        private OCROptions ocrOptions;
 
-        public OCRSpaceForm()
+        public OCRSpaceForm(OCROptions ocrOptions)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            Language = ocrOptions.DefaultLanguage;
             txtResult.SupportSelectAll();
         }
 
-        public OCRSpaceForm(Stream data, string filename) : this()
+        public OCRSpaceForm(Stream data, string filename, OCROptions ocrOptions) : this(ocrOptions)
         {
             this.data = data;
             this.filename = filename;
+            this.ocrOptions = ocrOptions;
         }
 
         private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
@@ -76,7 +81,7 @@ namespace ShareX.UploadersLib
             btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
         }
 
-        private async Task StartOCR(Stream stream, string filename)
+        public async Task StartOCR(Stream stream, string filename)
         {
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
             {
@@ -132,5 +137,12 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
             Close();
         }
+    }
+
+    public class OCROptions
+    {
+        public OCRSpaceLanguages DefaultLanguage = OCRSpaceLanguages.eng;
+        public bool Silent = false;
+        public bool ProcessOnLoad = true;
     }
 }

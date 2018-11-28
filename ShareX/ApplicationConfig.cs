@@ -284,12 +284,6 @@ namespace ShareX
 
         #endregion Webpage Capture Form
 
-        #region OCR Form
-
-        public OCRSpaceLanguages OCRLanguage = OCRSpaceLanguages.eng;
-
-        #endregion OCR Form
-
         #region Actions toolbar
 
         public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,

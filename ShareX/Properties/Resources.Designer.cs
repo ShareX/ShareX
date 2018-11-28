@@ -1906,6 +1906,33 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The OCR output has been copied to your clipboard..
+        /// </summary>
+        public static string OCRForm_AutoComplete {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occurred during OCR processing, or no text was returned..
+        /// </summary>
+        public static string OCRForm_AutoCompleteFail {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoCompleteFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OCR is processing..
+        /// </summary>
+        public static string OCRForm_AutoProcessing {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoProcessing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Patreon_Button_01 {

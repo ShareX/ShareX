@@ -31,6 +31,7 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
@@ -1106,52 +1107,70 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
+        public static void SearchImage(string url)
+        {
+            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
+        }
+
         public static void OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
-                OCRImage(img);
+                OCRImage(img, taskSettings);
             }
         }
 
-        public static void OCRImage(Image img)
+        public static void OCRImage(Image img, TaskSettings taskSettings = null)
         {
             if (img != null)
             {
                 using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
-                    OCRImage(stream, "ShareX.png");
+                    OCRImage(stream, "ShareX.png", taskSettings);
                 }
             }
         }
 
-        public static void SearchImage(string url)
-        {
-            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
-        }
-
-        public static void OCRImage(string filePath)
+        public static void OCRImage(string filePath, TaskSettings taskSettings = null)
         {
             if (File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath), filePath);
+                    OCRImage(fs, Path.GetFileName(filePath), taskSettings, filePath);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName, string filePath = null)
+        public static void OCRImage(Stream stream, string fileName, TaskSettings taskSettings = null, string filePath = null)
         {
             if (stream != null)
             {
-                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName))
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
+                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
                 {
-                    form.Language = Program.Settings.OCRLanguage;
-                    form.ShowDialog();
-                    Program.Settings.OCRLanguage = form.Language;
+                    if (ocrOptions.Silent)
+                    {
+                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoProcessing, ToolTipIcon.Info);
+                        Task.Run(() => form.StartOCR(stream, fileName)).Wait();
+
+                        if (!string.IsNullOrEmpty(form.Result)) {
+                            ClipboardHelpers.CopyText(form.Result);
+                            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoComplete, ToolTipIcon.Info);
+                        }
+                        else
+                        {
+                            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        form.ShowDialog();
+                    }
 
                     if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
                     {
