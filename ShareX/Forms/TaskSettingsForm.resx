@@ -3780,6 +3780,36 @@
   <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbCaptureOCRProcessOnLoad.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 83</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 17</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Process OCR on dialog open</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRProcessOnLoad.Name" xml:space="preserve">
+    <value>cbCaptureOCRProcessOnLoad</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRProcessOnLoad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRProcessOnLoad.Parent" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRProcessOnLoad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbCaptureOCRSilent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

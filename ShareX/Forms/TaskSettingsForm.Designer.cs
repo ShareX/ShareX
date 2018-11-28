@@ -244,6 +244,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbCaptureOCRProcessOnLoad = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1584,6 +1585,7 @@
             // 
             // tpOCR
             // 
+            this.tpOCR.Controls.Add(this.cbCaptureOCRProcessOnLoad);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -2090,6 +2092,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbCaptureOCRProcessOnLoad
+            // 
+            resources.ApplyResources(this.cbCaptureOCRProcessOnLoad, "cbCaptureOCRProcessOnLoad");
+            this.cbCaptureOCRProcessOnLoad.Name = "cbCaptureOCRProcessOnLoad";
+            this.cbCaptureOCRProcessOnLoad.UseVisualStyleBackColor = true;
+            this.cbCaptureOCRProcessOnLoad.CheckedChanged += new System.EventHandler(this.cbCaptureOCRProcessOnLoad_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2395,5 +2404,6 @@
         private System.Windows.Forms.Label lblOCRDefaultLanguage;
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
+        private System.Windows.Forms.CheckBox cbCaptureOCRProcessOnLoad;
     }
 }

@@ -143,5 +143,6 @@ namespace ShareX.UploadersLib
     {
         public OCRSpaceLanguages DefaultLanguage = OCRSpaceLanguages.eng;
         public bool Silent = false;
+        public bool ProcessOnLoad = true;
     }
 }

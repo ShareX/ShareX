@@ -305,6 +305,7 @@ namespace ShareX
             cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
+            cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
 
             #endregion
 
@@ -1119,6 +1120,11 @@ namespace ShareX
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
+        }
+
+        private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
         }
 
         #endregion
