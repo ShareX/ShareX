@@ -134,7 +134,7 @@ namespace ShareX
                     OpenWebpageCapture(safeTaskSettings);
                     break;
                 case HotkeyType.TextCapture:
-                    OCRImage(safeTaskSettings);
+                    OCRImage(safeTaskSettings).RunSynchronously();
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
@@ -1112,72 +1112,108 @@ namespace ShareX
             new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
-        public static void OCRImage(TaskSettings taskSettings = null)
+        public static async Task OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
-                OCRImage(img, taskSettings);
+                await OCRImage(img, taskSettings);
             }
         }
 
-        public static void OCRImage(Image img, TaskSettings taskSettings = null)
+        public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
         {
             if (img != null)
             {
                 using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
-                    OCRImage(stream, "ShareX.png", taskSettings);
+                    await OCRImage(stream, "ShareX.png", null, taskSettings);
                 }
             }
         }
 
-        public static void OCRImage(string filePath, TaskSettings taskSettings = null)
+        public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
             if (File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath), taskSettings, filePath);
+                    await OCRImage(fs, Path.GetFileName(filePath), filePath, taskSettings);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName, TaskSettings taskSettings = null, string filePath = null)
+        public static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
         {
             if (stream != null)
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
-                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
-                {
-                    if (ocrOptions.Silent)
-                    {
-                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoProcessing, ToolTipIcon.Info);
-                        Task.Run(() => form.StartOCR(stream, fileName)).Wait();
 
-                        if (!string.IsNullOrEmpty(form.Result)) {
-                            ClipboardHelpers.CopyText(form.Result);
-                            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoComplete, ToolTipIcon.Info);
-                        }
-                        else
-                        {
-                            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning);
-                        }
-                    }
-                    else
+                if (ocrOptions.Silent)
+                {
+                    await AsyncOCRImage(stream, fileName, filePath, ocrOptions);
+                }
+                else
+                {
+                    using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
                     {
                         form.ShowDialog();
-                    }
 
-                    if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
-                    {
-                        string textPath = Path.ChangeExtension(filePath, "txt");
-                        File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                        if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                        {
+                            string textPath = Path.ChangeExtension(filePath, "txt");
+                            File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                        }
                     }
                 }
+            }
+        }
+
+        public static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
+        {
+            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoProcessing, ToolTipIcon.None);
+
+            string result = null;
+
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
+            {
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        OCRSpace ocr = new OCRSpace(ocrOptions.DefaultLanguage, false);
+                        OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
+
+                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                        {
+                            result = response.ParsedResults[0].ParsedText;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                });
+            }
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                ClipboardHelpers.CopyText(result);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    string textPath = Path.ChangeExtension(filePath, "txt");
+                    File.WriteAllText(textPath, result, Encoding.UTF8);
+                }
+
+                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoComplete, ToolTipIcon.None);
+            }
+            else
+            {
+                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning);
             }
         }
 

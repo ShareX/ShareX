@@ -1009,7 +1009,7 @@ namespace ShareX
         {
             if (Data != null && Info.DataType == EDataType.Image)
             {
-                TaskHelpers.OCRImage(Data, Info.FileName, Info.TaskSettings, Info.FilePath);
+                TaskHelpers.OCRImage(Data, Info.FileName, Info.FilePath, Info.TaskSettings).RunSynchronously();
             }
         }
 

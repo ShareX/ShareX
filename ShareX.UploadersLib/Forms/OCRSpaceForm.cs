@@ -46,6 +46,8 @@ namespace ShareX.UploadersLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+
+            this.ocrOptions = ocrOptions;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
             cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
             Language = ocrOptions.DefaultLanguage;
@@ -56,14 +58,13 @@ namespace ShareX.UploadersLib
         {
             this.data = data;
             this.filename = filename;
-            this.ocrOptions = ocrOptions;
         }
 
         private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
         {
             UpdateControls();
 
-            if (string.IsNullOrEmpty(Result))
+            if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
                 await StartOCR(data, filename);
             }
@@ -141,8 +142,8 @@ namespace ShareX.UploadersLib
 
     public class OCROptions
     {
-        public OCRSpaceLanguages DefaultLanguage = OCRSpaceLanguages.eng;
-        public bool Silent = false;
-        public bool ProcessOnLoad = true;
+        public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
+        public bool Silent { get; set; } = false;
+        public bool ProcessOnLoad { get; set; } = true;
     }
 }

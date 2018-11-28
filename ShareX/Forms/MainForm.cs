@@ -1470,7 +1470,7 @@ namespace ShareX
 
             try
             {
-                TaskHelpers.OCRImage();
+                TaskHelpers.OCRImage().RunSynchronously();
             }
             catch (Exception ex)
             {
@@ -1844,7 +1844,7 @@ namespace ShareX
 
         private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OCRImage();
+            TaskHelpers.OCRImage().RunSynchronously();
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)

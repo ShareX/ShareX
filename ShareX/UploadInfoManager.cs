@@ -364,7 +364,7 @@ namespace ShareX
 
         public void OCRImage()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath, Program.DefaultTaskSettings);
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath).RunSynchronously();
         }
 
         public void CombineImages()

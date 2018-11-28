@@ -124,6 +124,7 @@ namespace ShareX.UploadersLib
 
             CustomUploaderParser parser = new CustomUploaderParser(input);
             parser.URLEncode = true;
+
             string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
         }
@@ -196,6 +197,7 @@ namespace ShareX.UploadersLib
             if (Headers != null && Headers.Count > 0)
             {
                 NameValueCollection collection = new NameValueCollection();
+
                 CustomUploaderParser parser = new CustomUploaderParser(input);
                 parser.UseNameParser = true;
 
@@ -214,11 +216,9 @@ namespace ShareX.UploadersLib
         {
             if (result != null && !string.IsNullOrEmpty(result.Response))
             {
-                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList)
-                {
-                    Filename = input.Filename,
-                    URLEncode = true
-                };
+                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList);
+                parser.Filename = input.Filename;
+                parser.URLEncode = true;
 
                 string url;
 
