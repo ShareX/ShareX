@@ -89,23 +89,7 @@ namespace ShareX.UploadersLib
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
                 pbProgress.Visible = true;
 
-                await Task.Run(() =>
-                {
-                    try
-                    {
-                        OCRSpace ocr = new OCRSpace(Language, false);
-                        OCRSpaceResponse response = ocr.DoOCR(stream, filename);
-
-                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
-                        {
-                            Result = response.ParsedResults[0].ParsedText;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                });
+                Result = await OCRSpace.DoOCRAsync(Language, stream, filename);
 
                 if (!IsDisposed)
                 {

@@ -24,9 +24,12 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib.OtherServices
 {
@@ -116,6 +119,31 @@ namespace ShareX.UploadersLib.OtherServices
             }
 
             return null;
+        }
+
+        public static async Task<string> DoOCRAsync(OCRSpaceLanguages language, Stream stream, string filename)
+        {
+            string result = null;
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    OCRSpace ocr = new OCRSpace(language, false);
+                    OCRSpaceResponse response = ocr.DoOCR(stream, filename);
+
+                    if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                    {
+                        result = response.ParsedResults[0].ParsedText;
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            });
+
+            return result;
         }
     }
 

@@ -1180,23 +1180,7 @@ namespace ShareX
 
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                await Task.Run(() =>
-                {
-                    try
-                    {
-                        OCRSpace ocr = new OCRSpace(ocrOptions.DefaultLanguage, false);
-                        OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
-
-                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
-                        {
-                            result = response.ParsedResults[0].ParsedText;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                });
+                result = await OCRSpace.DoOCRAsync(ocrOptions.DefaultLanguage, stream, fileName);
             }
 
             if (!string.IsNullOrEmpty(result))
