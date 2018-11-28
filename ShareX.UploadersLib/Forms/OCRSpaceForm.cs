@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib
         public string Result { get; private set; }
 
         private Stream data;
-        private string filename;
+        private string fileName;
         private OCROptions ocrOptions;
 
         public OCRSpaceForm(OCROptions ocrOptions)
@@ -57,7 +57,7 @@ namespace ShareX.UploadersLib
         public OCRSpaceForm(Stream data, string filename, OCROptions ocrOptions) : this(ocrOptions)
         {
             this.data = data;
-            this.filename = filename;
+            this.fileName = filename;
         }
 
         private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib
 
             if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
-                await StartOCR(data, filename);
+                await StartOCR(data, fileName);
             }
         }
 
@@ -79,17 +79,17 @@ namespace ShareX.UploadersLib
                 txtResult.Text = Result;
             }
 
-            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
+            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(fileName);
         }
 
-        public async Task StartOCR(Stream stream, string filename)
+        public async Task StartOCR(Stream stream, string fileName)
         {
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
                 pbProgress.Visible = true;
 
-                Result = await OCRSpace.DoOCRAsync(Language, stream, filename);
+                Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
 
                 if (!IsDisposed)
                 {
@@ -109,7 +109,7 @@ namespace ShareX.UploadersLib
 
         private async void btnStartOCR_Click(object sender, EventArgs e)
         {
-            await StartOCR(data, filename);
+            await StartOCR(data, fileName);
         }
 
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

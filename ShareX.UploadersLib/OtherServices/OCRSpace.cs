@@ -94,11 +94,13 @@ namespace ShareX.UploadersLib.OtherServices
         private const string APIURLAsia = "https://apipro3.ocr.space/parse/image";
         private const string APIURLFree = "https://api.ocr.space/parse/image";
 
+        public string APIKey { get; set; }
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
 
-        public OCRSpace(OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        public OCRSpace(string apiKey, OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
         {
+            APIKey = apiKey;
             Language = language;
             Overlay = overlay;
         }
@@ -106,7 +108,7 @@ namespace ShareX.UploadersLib.OtherServices
         public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
+            arguments.Add("apikey", APIKey);
             arguments.Add("language", Language.ToString());
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
@@ -125,29 +127,31 @@ namespace ShareX.UploadersLib.OtherServices
             return null;
         }
 
-        public static async Task<string> DoOCRAsync(OCRSpaceLanguages language, Stream stream, string filename)
+        public static string DoOCR(OCRSpaceLanguages language, Stream stream, string fileName)
         {
             string result = null;
 
-            await Task.Run(() =>
+            try
             {
-                try
-                {
-                    OCRSpace ocr = new OCRSpace(language, false);
-                    OCRSpaceResponse response = ocr.DoOCR(stream, filename);
+                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language);
+                OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
 
-                    if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
-                    {
-                        result = response.ParsedResults[0].ParsedText;
-                    }
-                }
-                catch (Exception e)
+                if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
                 {
-                    DebugHelper.WriteException(e);
+                    result = response.ParsedResults[0].ParsedText;
                 }
-            });
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
 
             return result;
+        }
+
+        public static Task<string> DoOCRAsync(OCRSpaceLanguages language, Stream stream, string fileName)
+        {
+            return Task.Run(() => DoOCR(language, stream, fileName));
         }
     }
 
