@@ -56,7 +56,6 @@
             // 
             resources.ApplyResources(this.txtResult, "txtResult");
             this.txtResult.Name = "txtResult";
-            this.txtResult.ReadOnly = true;
             // 
             // lblResult
             // 

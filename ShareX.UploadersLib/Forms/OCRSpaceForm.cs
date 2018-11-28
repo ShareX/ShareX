@@ -123,11 +123,4 @@ namespace ShareX.UploadersLib
             Close();
         }
     }
-
-    public class OCROptions
-    {
-        public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
-        public bool Silent { get; set; } = false;
-        public bool ProcessOnLoad { get; set; } = true;
-    }
 }
