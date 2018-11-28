@@ -107,11 +107,15 @@ namespace ShareX.UploadersLib.OtherServices
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
-            //arguments.Add("url", "");
             arguments.Add("language", Language.ToString());
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
-            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, args: arguments);
+            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
+
+            if (!ur.IsSuccess)
+            {
+                ur = SendRequestFile(APIURLEurope, stream, fileName, "file", arguments);
+            }
 
             if (ur.IsSuccess)
             {

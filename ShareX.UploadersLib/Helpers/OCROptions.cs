@@ -25,7 +25,7 @@
 
 using ShareX.UploadersLib.OtherServices;
 
-namespace ShareX.UploadersLib.Helpers
+namespace ShareX.UploadersLib
 {
     public class OCROptions
     {
