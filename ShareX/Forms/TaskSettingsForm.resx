@@ -3780,6 +3780,33 @@
   <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbCaptureOCRAutoCopy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 106</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 17</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Automatically copy results to clipboard</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRAutoCopy.Name" xml:space="preserve">
+    <value>cbCaptureOCRAutoCopy</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRAutoCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRAutoCopy.Parent" xml:space="preserve">
+    <value>tpOCR</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureOCRAutoCopy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbCaptureOCRProcessOnLoad.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3808,7 +3835,7 @@
     <value>tpOCR</value>
   </data>
   <data name="&gt;&gt;cbCaptureOCRProcessOnLoad.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbCaptureOCRSilent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3838,7 +3865,7 @@
     <value>tpOCR</value>
   </data>
   <data name="&gt;&gt;cbCaptureOCRSilent.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblOCRDefaultLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3868,7 +3895,7 @@
     <value>tpOCR</value>
   </data>
   <data name="&gt;&gt;lblOCRDefaultLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbCaptureOCRDefaultLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 24</value>
@@ -3889,7 +3916,7 @@
     <value>tpOCR</value>
   </data>
   <data name="&gt;&gt;cbCaptureOCRDefaultLanguage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="tpOCR.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
