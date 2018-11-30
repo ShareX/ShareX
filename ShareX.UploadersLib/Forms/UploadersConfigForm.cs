@@ -130,7 +130,7 @@ namespace ShareX.UploadersLib
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
-            cbCustomUploaderRequestFormat.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<CustomUploaderRequestFormat>());
+            cbCustomUploaderRequestFormat.Items.AddRange(Helpers.GetEnumDescriptions<CustomUploaderRequestFormat>(1));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
@@ -3510,7 +3510,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
+            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)(cbCustomUploaderRequestFormat.SelectedIndex + 1);
 
             CustomUploaderUpdateRequestFormatState();
         }

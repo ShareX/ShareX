@@ -78,31 +78,29 @@ namespace ShareX.UploadersLib.SharingServices
             UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
             CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLSharingService);
-
-            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
                     uploader.ResponseType, uploader.RequestType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.URLQueryString)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.FormURLEncoded)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)
             {
                 result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format.");
+                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
             }
 
             return result;

@@ -337,9 +337,9 @@ namespace ShareX.HelpersLib
             return (T[])Enum.GetValues(typeof(T));
         }
 
-        public static string[] GetEnumDescriptions<T>()
+        public static string[] GetEnumDescriptions<T>(int skip = 0)
         {
-            return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();
+            return Enum.GetValues(typeof(T)).OfType<Enum>().Skip(skip).Select(x => x.GetDescription()).ToArray();
         }
 
         /*public static string[] GetLocalizedEnumDescriptions<T>()

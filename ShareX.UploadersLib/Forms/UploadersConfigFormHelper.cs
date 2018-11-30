@@ -961,7 +961,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
-            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
+            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat - 1;
 
             rtbCustomUploaderData.Text = uploader.Data ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderData);

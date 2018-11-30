@@ -80,21 +80,19 @@ namespace ShareX.UploadersLib.ImageUploaders
             UploadResult result = new UploadResult();
             CustomUploaderInput input = new CustomUploaderInput(fileName, "");
 
-            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.ImageUploader);
-
-            if (requestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.Binary)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.Binary)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format.");
+                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
             }
 
             try

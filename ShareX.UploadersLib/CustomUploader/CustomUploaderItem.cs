@@ -48,13 +48,25 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string RequestURL { get; set; }
 
-        [DefaultValue(CustomUploaderRequestFormat.Automatic)]
-        public CustomUploaderRequestFormat RequestFormat { get; set; }
+        private CustomUploaderRequestFormat requestFormat;
+
+        [DefaultValue(CustomUploaderRequestFormat.None)]
+        public CustomUploaderRequestFormat RequestFormat
+        {
+            get
+            {
+                return CheckRequestFormat(requestFormat);
+            }
+            set
+            {
+                requestFormat = value;
+            }
+        }
 
         [DefaultValue("")]
         public string FileFormName { get; set; }
 
-        public bool ShouldSerializeFileFormName() => (RequestFormat == CustomUploaderRequestFormat.Automatic && RequestType == HttpMethod.POST) ||
+        public bool ShouldSerializeFileFormName() => (RequestFormat == CustomUploaderRequestFormat.None && RequestType == HttpMethod.POST) ||
             RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
 
         [DefaultValue("")]
@@ -129,30 +141,22 @@ namespace ShareX.UploadersLib
             return URLHelpers.FixPrefix(url);
         }
 
-        public CustomUploaderRequestFormat GetRequestFormat(CustomUploaderDestinationType destinationType)
+        private CustomUploaderRequestFormat CheckRequestFormat(CustomUploaderRequestFormat format)
         {
-            if (RequestFormat == CustomUploaderRequestFormat.Automatic)
+            // For backward compatibility
+            if (format == CustomUploaderRequestFormat.None)
             {
-                switch (destinationType)
+                if (RequestType == HttpMethod.POST)
                 {
-                    case CustomUploaderDestinationType.ImageUploader:
-                    case CustomUploaderDestinationType.FileUploader:
-                        return CustomUploaderRequestFormat.MultipartFormData;
-                    case CustomUploaderDestinationType.TextUploader:
-                    case CustomUploaderDestinationType.URLShortener:
-                    case CustomUploaderDestinationType.URLSharingService:
-                        if (RequestType == HttpMethod.POST)
-                        {
-                            return CustomUploaderRequestFormat.MultipartFormData;
-                        }
-                        else
-                        {
-                            return CustomUploaderRequestFormat.URLQueryString;
-                        }
+                    return CustomUploaderRequestFormat.MultipartFormData;
+                }
+                else
+                {
+                    return CustomUploaderRequestFormat.URLQueryString;
                 }
             }
 
-            return RequestFormat;
+            return format;
         }
 
         public string GetData(CustomUploaderInput input)
