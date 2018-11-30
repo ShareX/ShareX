@@ -1470,7 +1470,7 @@ namespace ShareX
 
             try
             {
-                TaskHelpers.OCRImage().RunSynchronously();
+                _ = TaskHelpers.OCRImage();
             }
             catch (Exception ex)
             {
@@ -1842,9 +1842,16 @@ namespace ShareX
             new CaptureLastRegion().Capture();
         }
 
-        private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
+        private async void tsmiTrayTextCapture_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OCRImage().RunSynchronously();
+            try
+            {
+                await TaskHelpers.OCRImage();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
@@ -2094,9 +2101,9 @@ namespace ShareX
             uim.ShowQRCode();
         }
 
-        private void tsmiOCRImage_Click(object sender, EventArgs e)
+        private async void tsmiOCRImage_Click(object sender, EventArgs e)
         {
-            uim.OCRImage();
+            await uim.OCRImage();
         }
 
         private void tsmiCombineImages_Click(object sender, EventArgs e)

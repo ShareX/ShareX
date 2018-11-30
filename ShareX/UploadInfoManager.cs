@@ -30,6 +30,7 @@ using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -362,9 +363,9 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
-        public void OCRImage()
+        public async Task OCRImage()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath).RunSynchronously();
+            if (IsItemSelected && SelectedItem.IsImageFile) await TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
         }
 
         public void CombineImages()

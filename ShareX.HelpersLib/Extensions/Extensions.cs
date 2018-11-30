@@ -359,18 +359,21 @@ namespace ShareX.HelpersLib
 
         public static void ForceActivate(this Form form)
         {
-            if (!form.Visible)
+            if (!form.IsDisposed)
             {
-                form.Show();
-            }
+                if (!form.Visible)
+                {
+                    form.Show();
+                }
 
-            if (form.WindowState == FormWindowState.Minimized)
-            {
-                form.WindowState = FormWindowState.Normal;
-            }
+                if (form.WindowState == FormWindowState.Minimized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
 
-            form.BringToFront();
-            form.Activate();
+                form.BringToFront();
+                form.Activate();
+            }
         }
 
         public static int WeekOfYear(this DateTime dateTime)

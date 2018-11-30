@@ -1007,9 +1007,9 @@ namespace ShareX
 
         private void DoOCR()
         {
-            if (Data != null && Info.DataType == EDataType.Image)
+            if (Image != null && Info.DataType == EDataType.Image)
             {
-                TaskHelpers.OCRImage(Data, Info.FileName, Info.FilePath, Info.TaskSettings).RunSynchronously();
+                _ = TaskHelpers.OCRImage(Image, Info.TaskSettings);
             }
         }
 

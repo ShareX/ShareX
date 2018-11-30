@@ -134,7 +134,7 @@ namespace ShareX
                     OpenWebpageCapture(safeTaskSettings);
                     break;
                 case HotkeyType.TextCapture:
-                    OCRImage(safeTaskSettings).RunSynchronously();
+                    _ = OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
@@ -1144,7 +1144,7 @@ namespace ShareX
             }
         }
 
-        public static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
+        private static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
         {
             if (stream != null)
             {
