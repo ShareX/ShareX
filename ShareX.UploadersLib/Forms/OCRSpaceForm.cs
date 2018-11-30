@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -54,10 +53,10 @@ namespace ShareX.UploadersLib
             txtResult.SupportSelectAll();
         }
 
-        public OCRSpaceForm(Stream data, string filename, OCROptions ocrOptions) : this(ocrOptions)
+        public OCRSpaceForm(Stream data, string fileName, OCROptions ocrOptions) : this(ocrOptions)
         {
             this.data = data;
-            this.fileName = filename;
+            this.fileName = fileName;
         }
 
         private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
@@ -67,11 +66,6 @@ namespace ShareX.UploadersLib
             if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
                 await StartOCR(data, fileName);
-
-                if (!string.IsNullOrEmpty(Result) && ocrOptions.AutoCopy)
-                {
-                    ClipboardHelpers.CopyText(Result);
-                }
             }
         }
 
@@ -95,6 +89,11 @@ namespace ShareX.UploadersLib
                 pbProgress.Visible = true;
 
                 Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
+
+                if (!string.IsNullOrEmpty(Result) && ocrOptions.AutoCopy)
+                {
+                    ClipboardHelpers.CopyText(Result);
+                }
 
                 if (!IsDisposed)
                 {
