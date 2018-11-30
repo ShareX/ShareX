@@ -67,6 +67,11 @@ namespace ShareX.UploadersLib
             if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
                 await StartOCR(data, fileName);
+
+                if (!string.IsNullOrEmpty(Result) && ocrOptions.AutoCopy)
+                {
+                    ClipboardHelpers.CopyText(Result);
+                }
             }
         }
 

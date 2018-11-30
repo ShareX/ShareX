@@ -32,5 +32,6 @@ namespace ShareX.UploadersLib
         public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
         public bool Silent { get; set; } = false;
         public bool ProcessOnLoad { get; set; } = true;
+        public bool AutoCopy { get; set; } = true;
     }
 }

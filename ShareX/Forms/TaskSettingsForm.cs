@@ -306,6 +306,10 @@ namespace ShareX
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
             cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
+            cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
+
+            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
+            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
 
             #endregion
 
@@ -1120,11 +1124,19 @@ namespace ShareX
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
+
+            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
+            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
         }
 
         private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
+        }
+
+        private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
         }
 
         #endregion
