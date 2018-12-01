@@ -126,6 +126,7 @@
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
+            this.txtResult.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtResult_KeyDown);
             // 
             // txtTarget
             // 
