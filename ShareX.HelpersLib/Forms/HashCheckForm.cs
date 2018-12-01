@@ -89,6 +89,7 @@ namespace ShareX.HelpersLib
                 if (hashCheck.Start(txtFilePath.Text, hashType))
                 {
                     btnStartHashCheck.Text = Resources.Stop;
+                    pbProgress.Value = 0;
                     txtResult.Text = "";
                 }
             }
@@ -122,6 +123,14 @@ namespace ShareX.HelpersLib
             }
 
             UpdateResult();
+        }
+
+        private void txtResult_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                txtResult.SelectAll();
+            }
         }
 
         private void tpFileHashCheck_DragEnter(object sender, DragEventArgs e)
