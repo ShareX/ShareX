@@ -327,31 +327,31 @@
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbShowMissingFiles.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbShowMissingFiles.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbFilterMissingFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 152</value>
   </data>
-  <data name="cbShowMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+  <data name="cbFilterMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
   </data>
-  <data name="cbShowMissingFiles.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbFilterMissingFiles.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="cbShowMissingFiles.Text" xml:space="preserve">
-    <value>Show missing files</value>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Filter missing files</value>
   </data>
-  <data name="&gt;&gt;cbShowMissingFiles.Name" xml:space="preserve">
-    <value>cbShowMissingFiles</value>
+  <data name="&gt;&gt;cbFilterMissingFiles.Name" xml:space="preserve">
+    <value>cbFilterMissingFiles</value>
   </data>
-  <data name="&gt;&gt;cbShowMissingFiles.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbFilterMissingFiles.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbShowMissingFiles.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbFilterMissingFiles.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbShowMissingFiles.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
