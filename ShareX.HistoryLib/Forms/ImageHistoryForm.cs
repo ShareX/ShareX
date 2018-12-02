@@ -27,6 +27,7 @@ using Manina.Windows.Forms;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using View = Manina.Windows.Forms.View;
@@ -110,7 +111,8 @@ namespace ShareX.HistoryLib
                 HistoryItem hi = historyItems[i];
 
                 if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) &&
-                    (string.IsNullOrEmpty(SearchText) || hi.Filename.Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)))
+                    (string.IsNullOrEmpty(SearchText) || hi.Filename.Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)) &&
+                    (Settings.ShowMissingFiles || File.Exists(hi.Filepath)))
                 {
                     filteredHistoryItems.Add(hi);
 
