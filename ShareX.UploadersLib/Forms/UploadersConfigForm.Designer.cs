@@ -719,6 +719,7 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbAmazonS3SignedPayload = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2877,6 +2878,7 @@ namespace ShareX.UploadersLib
             // 
             // gbAmazonS3Advanced
             // 
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3SignedPayload);
             this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StripExtension);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StripExtensionText);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StorageClass);
@@ -5729,6 +5731,13 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbAmazonS3SignedPayload
+            // 
+            resources.ApplyResources(this.cbAmazonS3SignedPayload, "cbAmazonS3SignedPayload");
+            this.cbAmazonS3SignedPayload.Name = "cbAmazonS3SignedPayload";
+            this.cbAmazonS3SignedPayload.UseVisualStyleBackColor = true;
+            this.cbAmazonS3SignedPayload.CheckedChanged += new System.EventHandler(this.cbAmazonS3SignedPayload_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6588,5 +6597,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblCustomUploaderRequestFormat;
         private System.Windows.Forms.TabPage tpCustomUploaderFile;
         private System.Windows.Forms.Button btnCustomUploaderDataMinify;
+        private System.Windows.Forms.CheckBox cbAmazonS3SignedPayload;
     }
 }

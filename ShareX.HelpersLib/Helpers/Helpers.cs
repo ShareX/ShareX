@@ -1242,6 +1242,16 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static byte[] ComputeSHA256(Stream stream, int bufferSize = 1024 * 32)
+        {
+            BufferedStream bufferedStream = new BufferedStream(stream, bufferSize);
+
+            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            {
+                return hashAlgorithm.ComputeHash(bufferedStream);
+            }
+        }
+
         public static byte[] ComputeSHA256(string data)
         {
             return ComputeSHA256(Encoding.UTF8.GetBytes(data));

@@ -121,7 +121,16 @@ namespace ShareX.UploadersLib.FileUploaders
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             string contentType = UploadHelpers.GetMimeType(fileName);
-            string hashedPayload = "UNSIGNED-PAYLOAD";
+            string hashedPayload;
+
+            if (Settings.SignedPayload)
+            {
+                hashedPayload = Helpers.BytesToHex(Helpers.ComputeSHA256(stream));
+            }
+            else
+            {
+                hashedPayload = "UNSIGNED-PAYLOAD";
+            }
 
             if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
                 (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
@@ -129,6 +138,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 fileName = Path.GetFileNameWithoutExtension(fileName);
             }
+
             string uploadPath = GetUploadPath(fileName);
 
             NameValueCollection headers = new NameValueCollection
@@ -140,7 +150,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["x-amz-content-sha256"] = hashedPayload,
                 ["x-amz-storage-class"] = Settings.StorageClass.ToString()
             };
-            if (Settings.SetPublicACL) headers["x-amz-acl"] = "public-read";
+
+            if (Settings.SetPublicACL)
+            {
+                headers["x-amz-acl"] = "public-read";
+            }
 
             string canonicalURI = uploadPath;
             if (isPathStyleRequest) canonicalURI = URLHelpers.CombineURL(Settings.Bucket, canonicalURI);
