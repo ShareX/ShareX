@@ -311,7 +311,7 @@ namespace ShareX
             cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
             cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
 
-            #endregion
+            #endregion OCR
 
             #endregion Capture
 
@@ -1139,7 +1139,7 @@ namespace ShareX
             TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
         }
 
-        #endregion
+        #endregion OCR
 
         #endregion Capture
 
@@ -1204,6 +1204,11 @@ namespace ShareX
         {
             TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
             UpdateNameFormatPreviews();
+        }
+
+        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         private void btnResetAutoIncrementNumber_Click(object sender, EventArgs e)
@@ -1424,6 +1429,11 @@ namespace ShareX
             }
         }
 
+        private void lvActions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnActionsEdit.Enabled = btnActionsDuplicate.Enabled = btnActionsRemove.Enabled = lvActions.SelectedItems.Count > 0;
+        }
+
         private void lvActions_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             ExternalProgram fileAction = e.Item.Tag as ExternalProgram;
@@ -1532,11 +1542,6 @@ namespace ShareX
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
-        }
-
-        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         #endregion Tools

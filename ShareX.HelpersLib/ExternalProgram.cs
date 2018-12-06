@@ -32,16 +32,16 @@ namespace ShareX.HelpersLib
     public class ExternalProgram
     {
         public bool IsActive { get; set; }
-        public bool HiddenWindow { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
         public string Args { get; set; }
-        public string Extensions { get; set; }
         public string OutputExtension { get; set; }
+        public string Extensions { get; set; }
+        public bool HiddenWindow { get; set; }
+        public bool DeleteInputFile { get; set; }
 
         public ExternalProgram()
         {
-            IsActive = false;
             Args = "%input";
         }
 
@@ -59,87 +59,111 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public string Run(string filePath)
+        public string Run(string inputPath)
         {
-            if (!string.IsNullOrEmpty(filePath) && CheckExtensions(filePath) && !string.IsNullOrEmpty(Path) && File.Exists(Path))
+            if (!string.IsNullOrEmpty(Path) && File.Exists(Path) && !string.IsNullOrWhiteSpace(inputPath))
             {
-                filePath = filePath.Trim('"');
+                inputPath = inputPath.Trim('"');
 
-                try
+                if (CheckExtension(inputPath, Extensions))
                 {
-                    string outputPath = "";
-
-                    using (Process process = new Process())
+                    try
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo(Path);
+                        string outputPath = inputPath;
 
-                        if (string.IsNullOrEmpty(Args))
+                        using (Process process = new Process())
                         {
-                            psi.Arguments = '"' + filePath + '"';
-                        }
-                        else
-                        {
-                            if (!string.IsNullOrEmpty(OutputExtension))
+                            ProcessStartInfo psi = new ProcessStartInfo(Path);
+                            psi.UseShellExecute = false;
+
+                            if (string.IsNullOrEmpty(Args))
                             {
-                                outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
-
-                                if (!OutputExtension.Contains("."))
-                                {
-                                    OutputExtension = "." + OutputExtension;
-                                }
-
-                                outputPath += OutputExtension;
+                                psi.Arguments = '"' + inputPath + '"';
                             }
                             else
                             {
-                                outputPath = filePath;
+                                if (!string.IsNullOrWhiteSpace(OutputExtension))
+                                {
+                                    outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(inputPath), System.IO.Path.GetFileNameWithoutExtension(inputPath));
+
+                                    if (!OutputExtension.StartsWith("."))
+                                    {
+                                        outputPath += ".";
+                                    }
+
+                                    outputPath += OutputExtension;
+                                }
+
+                                psi.Arguments = CodeMenuEntryActions.Parse(Args, inputPath, outputPath);
                             }
 
-                            psi.Arguments = CodeMenuEntryActions.Parse(Args, filePath, outputPath);
+                            if (HiddenWindow)
+                            {
+                                psi.CreateNoWindow = true;
+                            }
+
+                            process.StartInfo = psi;
+
+                            DebugHelper.WriteLine($"Running \"{psi.FileName}\" with arguments: {psi.Arguments}");
+
+                            process.Start();
+                            process.WaitForExit();
                         }
 
-                        if (HiddenWindow)
+                        if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
                         {
-                            psi.WindowStyle = ProcessWindowStyle.Hidden;
-                            psi.CreateNoWindow = true;
+                            if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase) && File.Exists(inputPath))
+                            {
+                                DebugHelper.WriteLine("Deleting input file: " + inputPath);
+
+                                File.Delete(inputPath);
+                            }
+
+                            return outputPath;
                         }
 
-                        process.StartInfo = psi;
-
-                        DebugHelper.WriteLine(string.Format("Running {0} with arguments: {1}", Path, psi.Arguments));
-
-                        process.Start();
-                        process.WaitForExit();
+                        return inputPath;
                     }
-
-                    if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
+                    catch (Exception e)
                     {
-                        return outputPath;
+                        DebugHelper.WriteException(e);
                     }
-
-                    return filePath;
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
                 }
             }
 
-            return filePath;
+            return inputPath;
         }
 
-        private bool CheckExtensions(string path)
+        private bool CheckExtension(string path, string extensions)
         {
-            if (string.IsNullOrEmpty(Extensions) || string.IsNullOrEmpty(path)) return true;
-            int idx = 0;
-            for (int i = 0; i <= Extensions.Length; ++i)
+            if (!string.IsNullOrWhiteSpace(path))
             {
-                if (i == Extensions.Length || !char.IsLetterOrDigit(Extensions[i]))
+                if (string.IsNullOrWhiteSpace(extensions))
                 {
-                    if (idx < i && path.EndsWith(Extensions.Substring(idx, i - idx))) return true;
-                    idx = i + 1;
+                    return true;
+                }
+
+                int index = 0;
+
+                for (int i = 0; i <= extensions.Length; ++i)
+                {
+                    if (i == extensions.Length || !char.IsLetterOrDigit(extensions[i]))
+                    {
+                        if (i > index)
+                        {
+                            string extension = "." + extensions.Substring(index, i - index);
+
+                            if (path.EndsWith(extension, StringComparison.OrdinalIgnoreCase))
+                            {
+                                return true;
+                            }
+                        }
+
+                        index = i + 1;
+                    }
                 }
             }
+
             return false;
         }
     }
