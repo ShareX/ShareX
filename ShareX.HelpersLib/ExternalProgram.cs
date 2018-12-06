@@ -71,41 +71,41 @@ namespace ShareX.HelpersLib
                     {
                         string outputPath = inputPath;
 
-                        using (Process process = new Process())
+                        string arguments;
+
+                        if (string.IsNullOrEmpty(Args))
                         {
-                            ProcessStartInfo psi = new ProcessStartInfo(Path);
-                            psi.UseShellExecute = false;
+                            arguments = '"' + inputPath + '"';
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrWhiteSpace(OutputExtension))
+                            {
+                                outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(inputPath), System.IO.Path.GetFileNameWithoutExtension(inputPath));
 
-                            if (string.IsNullOrEmpty(Args))
-                            {
-                                psi.Arguments = '"' + inputPath + '"';
-                            }
-                            else
-                            {
-                                if (!string.IsNullOrWhiteSpace(OutputExtension))
+                                if (!OutputExtension.StartsWith("."))
                                 {
-                                    outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(inputPath), System.IO.Path.GetFileNameWithoutExtension(inputPath));
-
-                                    if (!OutputExtension.StartsWith("."))
-                                    {
-                                        outputPath += ".";
-                                    }
-
-                                    outputPath += OutputExtension;
+                                    outputPath += ".";
                                 }
 
-                                psi.Arguments = CodeMenuEntryActions.Parse(Args, inputPath, outputPath);
+                                outputPath += OutputExtension;
                             }
 
-                            if (HiddenWindow)
+                            arguments = CodeMenuEntryActions.Parse(Args, inputPath, outputPath);
+                        }
+
+                        using (Process process = new Process())
+                        {
+                            ProcessStartInfo psi = new ProcessStartInfo()
                             {
-                                psi.CreateNoWindow = true;
-                            }
+                                FileName = Path,
+                                Arguments = arguments,
+                                UseShellExecute = false,
+                                CreateNoWindow = HiddenWindow
+                            };
 
                             process.StartInfo = psi;
-
-                            DebugHelper.WriteLine($"Running \"{psi.FileName}\" with arguments: {psi.Arguments}");
-
+                            DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {psi.Arguments}");
                             process.Start();
                             process.WaitForExit();
                         }
@@ -115,7 +115,6 @@ namespace ShareX.HelpersLib
                             if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase) && File.Exists(inputPath))
                             {
                                 DebugHelper.WriteLine("Deleting input file: " + inputPath);
-
                                 File.Delete(inputPath);
                             }
 

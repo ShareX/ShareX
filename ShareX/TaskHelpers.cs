@@ -1085,10 +1085,19 @@ namespace ShareX
         {
             try
             {
-                ProcessStartInfo psi = new ProcessStartInfo(Application.ExecutablePath);
-                psi.Arguments = arguments;
-                psi.Verb = "runas";
-                Process.Start(psi);
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = Application.ExecutablePath,
+                        Arguments = arguments,
+                        UseShellExecute = false,
+                        Verb = "runas"
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                }
             }
             catch
             {

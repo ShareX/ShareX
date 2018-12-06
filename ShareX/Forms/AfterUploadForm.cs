@@ -176,18 +176,12 @@ namespace ShareX
 
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
-            {
-                URLHelpers.OpenURL(Info.FilePath);
-            }
+            Helpers.OpenFile(Info.FilePath);
         }
 
         private void btnFolderOpen_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
-            {
-                Helpers.OpenFolderWithFile(Info.FilePath);
-            }
+            Helpers.OpenFolderWithFile(Info.FilePath);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -137,7 +137,7 @@ namespace ShareX.HistoryLib
 
         public void OpenFile()
         {
-            if (HistoryItem != null && IsFileExist) URLHelpers.OpenURL(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) Helpers.OpenFile(HistoryItem.Filepath);
         }
 
         public void OpenFolder()
@@ -159,7 +159,7 @@ namespace ShareX.HistoryLib
                 }
                 else if (IsFileExist)
                 {
-                    URLHelpers.OpenURL(HistoryItem.Filepath);
+                    Helpers.OpenFile(HistoryItem.Filepath);
                 }
             }
         }

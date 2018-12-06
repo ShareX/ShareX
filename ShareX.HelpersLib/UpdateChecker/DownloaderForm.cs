@@ -150,27 +150,32 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(DownloadLocation)
+                    using (Process process = new Process())
                     {
-                        Arguments = "/UPDATE"
-                    };
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = DownloadLocation,
+                            Arguments = "/UPDATE",
+                            UseShellExecute = false
+                        };
 
-                    if (InstallType == InstallType.Silent)
-                    {
-                        psi.Arguments += " /SILENT";
-                    }
-                    else if (InstallType == InstallType.VerySilent)
-                    {
-                        psi.Arguments += " /VERYSILENT";
-                    }
+                        if (InstallType == InstallType.Silent)
+                        {
+                            psi.Arguments += " /SILENT";
+                        }
+                        else if (InstallType == InstallType.VerySilent)
+                        {
+                            psi.Arguments += " /VERYSILENT";
+                        }
 
-                    if (Helpers.IsDefaultInstallDir())
-                    {
-                        psi.Verb = "runas";
-                    }
+                        if (Helpers.IsDefaultInstallDir())
+                        {
+                            psi.Verb = "runas";
+                        }
 
-                    psi.UseShellExecute = true;
-                    Process.Start(psi);
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
                 }
                 catch
                 {

@@ -94,15 +94,20 @@ namespace ShareX.Setup
         {
             Console.WriteLine($"Process starting: {filePath} {arguments}");
 
-            ProcessStartInfo startInfo = new ProcessStartInfo()
+            using (Process process = new Process())
             {
-                FileName = filePath,
-                Arguments = arguments,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = filePath,
+                    Arguments = arguments,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-            Process.Start(startInfo).WaitForExit();
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+            }
         }
 
         public static bool CheckArguments(string[] args, string check)

@@ -71,25 +71,27 @@ namespace ShareX.HelpersLib
 
         private int Run(string arguments, string workingDirectory = "")
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo()
+            using (Process process = new Process())
             {
-                FileName = SevenZipPath,
-                Arguments = arguments,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = SevenZipPath,
+                    Arguments = arguments,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-            if (!string.IsNullOrEmpty(workingDirectory))
-            {
-                startInfo.WorkingDirectory = workingDirectory;
+                if (!string.IsNullOrEmpty(workingDirectory))
+                {
+                    psi.WorkingDirectory = workingDirectory;
+                }
+
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+
+                return process.ExitCode;
             }
-
-            Process process = new Process();
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-
-            return process.ExitCode;
         }
     }
 }

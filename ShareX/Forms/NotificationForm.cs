@@ -238,7 +238,7 @@ namespace ShareX
                     break;
                 case ToastClickAction.OpenFile:
                     if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                        URLHelpers.OpenURL(ToastConfig.FilePath);
+                        Helpers.OpenFile(ToastConfig.FilePath);
                     break;
                 case ToastClickAction.OpenFolder:
                     if (!string.IsNullOrEmpty(ToastConfig.FilePath))

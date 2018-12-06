@@ -424,7 +424,19 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    Process.Start(filePath);
+                    using (Process process = new Process())
+                    {
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = filePath
+                        };
+
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
+
+                    DebugHelper.WriteLine("File opened: " + filePath);
+
                     return true;
                 }
                 catch (Exception e)
@@ -451,7 +463,19 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    Process.Start(folderPath);
+                    using (Process process = new Process())
+                    {
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = folderPath
+                        };
+
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
+
+                    DebugHelper.WriteLine("Folder opened: " + folderPath);
+
                     return true;
                 }
                 catch (Exception e)
@@ -474,6 +498,9 @@ namespace ShareX.HelpersLib
                 try
                 {
                     NativeMethods.OpenFolderAndSelectFile(filePath);
+
+                    DebugHelper.WriteLine("Folder opened with file: " + filePath);
+
                     return true;
                 }
                 catch (Exception e)
