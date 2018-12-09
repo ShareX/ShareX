@@ -157,15 +157,15 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(txtQRCode.Text))
             {
-                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    saveFileDialog.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
-                    saveFileDialog.FileName = txtQRCode.Text;
-                    saveFileDialog.DefaultExt = "png";
+                    sfd.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
+                    sfd.FileName = txtQRCode.Text;
+                    sfd.DefaultExt = "png";
 
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        string filePath = saveFileDialog.FileName;
+                        string filePath = sfd.FileName;
 
                         if (filePath.EndsWith("svg", StringComparison.InvariantCultureIgnoreCase))
                         {

@@ -40,5 +40,6 @@ namespace ShareX.HelpersLib
         public static bool RotateImageByExifOrientationData { get; set; } = true;
         public static string BrowserPath { get; set; } = "";
         public static List<Color> RecentColors { get; set; } = new List<Color>();
+        public static string LastSaveDirectory { get; set; } = "";
     }
 }
