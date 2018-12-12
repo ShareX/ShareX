@@ -220,6 +220,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.RegionEllipse:
                         img = Resources.layer_shape_ellipse_region;
                         break;
+                    case ShapeType.DrawingEraser:
+                        img = Resources.layer_shape_eraser;
+                        break;
                     case ShapeType.RegionFreehand:
                         img = Resources.layer_shape_polygon;
                         break;
@@ -1330,20 +1333,25 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tsddbShapeOptions.Visible = false;
                     break;
-                case ShapeType.RegionRectangle:
-                case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingEllipse:
-                case ShapeType.DrawingFreehand:
-                case ShapeType.DrawingLine:
-                case ShapeType.DrawingArrow:
-                case ShapeType.DrawingTextOutline:
-                case ShapeType.DrawingTextBackground:
-                case ShapeType.DrawingSpeechBalloon:
-                case ShapeType.DrawingStep:
-                case ShapeType.DrawingImage:
-                case ShapeType.DrawingImageScreen:
-                case ShapeType.DrawingCursor:
-                case ShapeType.EffectBlur:
+                case ShapeType.RegionRectangle: break;
+                case ShapeType.DrawingRectangle: break;
+                case ShapeType.DrawingEllipse: break;
+                case ShapeType.DrawingFreehand: break;
+                case ShapeType.DrawingEraser:
+                    tsbBorderColor.Visible = false;
+                    tsmiShadow.Visible = false;
+                    tsmiShadowColor.Visible = false;
+                    break;
+                case ShapeType.DrawingLine: break;
+                case ShapeType.DrawingArrow: break;
+                case ShapeType.DrawingTextOutline: break;
+                case ShapeType.DrawingTextBackground: break;
+                case ShapeType.DrawingSpeechBalloon: break;
+                case ShapeType.DrawingStep: break;
+                case ShapeType.DrawingImage: break;
+                case ShapeType.DrawingImageScreen: break;
+                case ShapeType.DrawingCursor: break;
+                case ShapeType.EffectBlur: break;
                 case ShapeType.EffectPixelate:
                     tsddbShapeOptions.Visible = true;
                     break;
@@ -1360,14 +1368,19 @@ namespace ShareX.ScreenCaptureLib
                     tsmiShadow.Visible = false;
                     tsmiShadowColor.Visible = false;
                     break;
-                case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingEllipse:
-                case ShapeType.DrawingFreehand:
-                case ShapeType.DrawingLine:
-                case ShapeType.DrawingArrow:
-                case ShapeType.DrawingTextOutline:
-                case ShapeType.DrawingTextBackground:
-                case ShapeType.DrawingSpeechBalloon:
+                case ShapeType.DrawingRectangle: break;
+                case ShapeType.DrawingEllipse: break;
+                case ShapeType.DrawingFreehand: break;
+                case ShapeType.DrawingEraser:
+                    tsbBorderColor.Visible = false;
+                    tsmiShadow.Visible = false;
+                    tsmiShadowColor.Visible = false;
+                    break;
+                case ShapeType.DrawingLine: break;
+                case ShapeType.DrawingArrow: break;
+                case ShapeType.DrawingTextOutline: break;
+                case ShapeType.DrawingTextBackground: break;
+                case ShapeType.DrawingSpeechBalloon: break;
                 case ShapeType.DrawingStep:
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
@@ -1381,10 +1394,10 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tsbFillColor.Visible = false;
                     break;
-                case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingEllipse:
-                case ShapeType.DrawingTextBackground:
-                case ShapeType.DrawingSpeechBalloon:
+                case ShapeType.DrawingRectangle: break;
+                case ShapeType.DrawingEllipse: break;
+                case ShapeType.DrawingTextBackground: break;
+                case ShapeType.DrawingSpeechBalloon: break;
                 case ShapeType.DrawingStep:
                     tsbFillColor.Visible = true;
                     break;
@@ -1395,8 +1408,8 @@ namespace ShareX.ScreenCaptureLib
                 default:
                     tslnudCornerRadius.Visible = false;
                     break;
-                case ShapeType.RegionRectangle:
-                case ShapeType.DrawingRectangle:
+                case ShapeType.RegionRectangle: break;
+                case ShapeType.DrawingRectangle: break;
                 case ShapeType.DrawingTextBackground:
                     tslnudCornerRadius.Visible = true;
                     break;
