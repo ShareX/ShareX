@@ -36,19 +36,11 @@ namespace ShareX.ImageEffectsLib
         private double sigma;
         private int size;
 
-        private ConvolutionMatrix cachedKernelHoriz;
-        private ConvolutionMatrix cachedKernelVert;
-
         [DefaultValue(0.7955555)]
         public double Sigma
         {
             get => sigma;
-            set
-            {
-                sigma = Math.Max(value, 0.1);
-
-                UpdateKernels();
-            }
+            set => sigma = Math.Max(value, 0.1);
         }
 
         [DefaultValue(3)]
@@ -63,8 +55,6 @@ namespace ShareX.ImageEffectsLib
                 {
                     size++;
                 }
-
-                UpdateKernels();
             }
         }
 
@@ -73,24 +63,20 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        private void UpdateKernels()
-        {
-            cachedKernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
-
-            // Copy the kernel into the vertical
-            cachedKernelVert = new ConvolutionMatrix(size, 1);
-            for (int i = 0; i < size; i++)
-            {
-                cachedKernelVert[i, 0] = cachedKernelHoriz[0, i];
-            }
-        }
-
         public override Image Apply(Image img)
         {
-            using (img)
-            using (Image horizPass = cachedKernelHoriz.Apply(img))
+            ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+
+            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1);
+            for (int i = 0; i < size; i++)
             {
-                return cachedKernelVert.Apply(horizPass);
+                kernelVert[i, 0] = kernelHoriz[0, i];
+            }
+
+            using (img)
+            using (Image horizPass = kernelHoriz.Apply(img))
+            {
+                return kernelVert.Apply(horizPass);
             }
         }
     }
