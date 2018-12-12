@@ -2952,6 +2952,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tool: Eraser.
+        /// </summary>
+        internal static string ShapeType_DrawingEraser {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingEraser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Freehand (F).
         /// </summary>
         internal static string ShapeType_DrawingFreehand {

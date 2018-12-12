@@ -158,6 +158,7 @@
     <Compile Include="Animations\OpacityAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\EraserDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\ImageFileDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\StickerDrawingShape.cs" />
     <Compile Include="Shapes\StickerPackInfo.cs" />
@@ -243,6 +244,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\layer-shape-eraser.png" />
     <None Include="Resources\smiley-yell.png" />
     <None Include="Resources\smiley-cool.png" />
     <None Include="Resources\gradient.png" />

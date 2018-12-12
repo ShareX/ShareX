@@ -1012,6 +1012,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
+                case ShapeType.DrawingEraser:
+                    shape = new EraserDrawingShape();
+                    break;
             }
 
             shape.Manager = this;
@@ -1810,6 +1813,16 @@ namespace ShareX.ScreenCaptureLib
         {
             CurrentTool = ShapeType.ToolCrop;
             CropTool tool = (CropTool)CreateShape(ShapeType.ToolCrop);
+            tool.Rectangle = Form.CanvasRectangle;
+            tool.OnCreated();
+            AddShape(tool);
+            SelectCurrentShape();
+        }
+
+        private void AddEraserShape()
+        {
+            CurrentTool = ShapeType.DrawingEraser;
+            EraserDrawingShape tool = (EraserDrawingShape)CreateShape(ShapeType.DrawingEraser);
             tool.Rectangle = Form.CanvasRectangle;
             tool.OnCreated();
             AddShape(tool);
