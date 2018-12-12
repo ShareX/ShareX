@@ -170,6 +170,5 @@ namespace ShareX.ScreenCaptureLib
         {
             Move(x, y);
         }
-
     }
 }
