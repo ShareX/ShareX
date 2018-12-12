@@ -212,6 +212,7 @@ namespace ShareX
             // History
             cbHistorySaveTasks.Checked = Program.Settings.HistorySaveTasks;
             cbHistoryCheckURL.Checked = Program.Settings.HistoryCheckURL;
+            cbHistoryDoubleClickEdit.Checked = Program.Settings.HistoryOpenEditOnDoubleClick;
 
             cbRecentTasksSave.Checked = Program.Settings.RecentTasksSave;
             nudRecentTasksMaxCount.SetValue(Program.Settings.RecentTasksMaxCount);
@@ -788,6 +789,11 @@ namespace ShareX
         private void cbHistoryCheckURL_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.HistoryCheckURL = cbHistoryCheckURL.Checked;
+        }
+
+        private void cbHistoryDoubleClickEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.HistoryOpenEditOnDoubleClick = cbHistoryDoubleClickEdit.Checked;
         }
 
         private void cbRecentTasksSave_CheckedChanged(object sender, EventArgs e)

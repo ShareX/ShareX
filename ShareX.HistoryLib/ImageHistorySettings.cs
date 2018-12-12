@@ -37,5 +37,6 @@ namespace ShareX.HistoryLib
         public bool FilterMissingFiles { get; set; } = false;
         public bool RememberSearchText { get; set; } = false;
         public string SearchText { get; set; } = "";
+        public bool OpenEditOnDoubleClick { get; set; } = false;
     }
 }

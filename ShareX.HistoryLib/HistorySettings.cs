@@ -32,5 +32,6 @@ namespace ShareX.HistoryLib
         public WindowState WindowState { get; set; } = new WindowState();
         public int MaxItemCount { get; set; } = 0;
         public int SplitterDistance { get; set; } = 550;
+        public bool OpenEditOnDoubleClick { get; set; } = false;
     }
 }

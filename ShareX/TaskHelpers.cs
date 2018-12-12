@@ -782,6 +782,7 @@ namespace ShareX
 
         public static void OpenHistory()
         {
+            Program.Settings.HistorySettings.OpenEditOnDoubleClick = Program.Settings.HistoryOpenEditOnDoubleClick;
             HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
                 filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             historyForm.Show();
@@ -789,6 +790,7 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
+            Program.Settings.ImageHistorySettings.OpenEditOnDoubleClick = Program.Settings.HistoryOpenEditOnDoubleClick;
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
                 filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             imageHistoryForm.Show();

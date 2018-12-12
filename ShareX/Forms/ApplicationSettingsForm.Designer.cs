@@ -116,6 +116,7 @@ namespace ShareX
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
             this.tpHistory = new System.Windows.Forms.TabPage();
             this.gbHistory = new System.Windows.Forms.GroupBox();
+            this.cbHistoryDoubleClickEdit = new System.Windows.Forms.CheckBox();
             this.cbHistoryCheckURL = new System.Windows.Forms.CheckBox();
             this.cbHistorySaveTasks = new System.Windows.Forms.CheckBox();
             this.gbRecentLinks = new System.Windows.Forms.GroupBox();
@@ -821,11 +822,19 @@ namespace ShareX
             // 
             // gbHistory
             // 
+            this.gbHistory.Controls.Add(this.cbHistoryDoubleClickEdit);
             this.gbHistory.Controls.Add(this.cbHistoryCheckURL);
             this.gbHistory.Controls.Add(this.cbHistorySaveTasks);
             resources.ApplyResources(this.gbHistory, "gbHistory");
             this.gbHistory.Name = "gbHistory";
             this.gbHistory.TabStop = false;
+            // 
+            // cbHistoryDoubleClickEdit
+            // 
+            resources.ApplyResources(this.cbHistoryDoubleClickEdit, "cbHistoryDoubleClickEdit");
+            this.cbHistoryDoubleClickEdit.Name = "cbHistoryDoubleClickEdit";
+            this.cbHistoryDoubleClickEdit.UseVisualStyleBackColor = true;
+            this.cbHistoryDoubleClickEdit.CheckedChanged += new System.EventHandler(this.cbHistoryDoubleClickEdit_CheckedChanged);
             // 
             // cbHistoryCheckURL
             // 
@@ -1208,5 +1217,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
+        private System.Windows.Forms.CheckBox cbHistoryDoubleClickEdit;
     }
 }
