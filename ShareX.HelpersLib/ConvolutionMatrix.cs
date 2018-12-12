@@ -57,9 +57,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public ref double this[int y, int x]
-        {
-            get => ref matrix[y, x];
-        }
+        public ref double this[int y, int x] => ref matrix[y, x];
     }
 }
