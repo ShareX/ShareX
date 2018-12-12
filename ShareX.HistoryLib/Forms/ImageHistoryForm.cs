@@ -167,7 +167,14 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            him.ShowImagePreview();
+            if (Settings.OpenEditOnDoubleClick)
+            {
+                him.EditImage();
+            }
+            else
+            {
+                him.ShowImagePreview();
+            }
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)

@@ -357,7 +357,14 @@ namespace ShareX.HistoryLib
         {
             if (him != null && e.Button == MouseButtons.Left)
             {
-                him.TryOpen();
+                if (Settings.OpenEditOnDoubleClick)
+                {
+                    him.EditImage();
+                }
+                else
+                {
+                    him.TryOpen();
+                }    
             }
         }
 
