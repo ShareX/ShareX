@@ -149,5 +149,10 @@ namespace ShareX.HelpersLib
         {
             return num % 2 == 0;
         }
+
+        public static void Clamp<T>(ref this T val, T min, T max) where T : struct, IComparable<T>
+        {
+            MathHelpers.Clamp(ref val, min, max);
+        }
     }
 }
