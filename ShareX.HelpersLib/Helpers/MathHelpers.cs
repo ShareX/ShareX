@@ -185,5 +185,23 @@ namespace ShareX.HelpersLib
             float y = Lerp(pos1.Y, pos2.Y, amount);
             return new Vector2(x, y);
         }
+
+        public static void Clamp<T>(ref T val, T min, T max) where T : IComparable<T>
+        {
+            if (val.CompareTo(min) < 0)
+            {
+                val = min;
+            }
+            else if (val.CompareTo(max) > 0)
+            {
+                val = max;
+            }
+        }
+
+        public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
+        {
+            Clamp(ref val, min, max);
+            return val;
+        }
     }
 }

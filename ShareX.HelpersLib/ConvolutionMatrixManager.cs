@@ -126,16 +126,6 @@ namespace ShareX.HelpersLib
             return cm;
         }
 
-        public static ConvolutionMatrix GaussianBlur(int weight = 4)
-        {
-            ConvolutionMatrix cm = new ConvolutionMatrix();
-            cm.SetAll(1);
-            cm.Matrix[1, 1] = weight;
-            cm.Matrix[1, 0] = cm.Matrix[0, 1] = cm.Matrix[2, 1] = cm.Matrix[1, 2] = 2;
-            cm.Factor = weight + 12;
-            return cm;
-        }
-
         public static ConvolutionMatrix MeanRemoval(int weight = 9)
         {
             ConvolutionMatrix cm = new ConvolutionMatrix();
