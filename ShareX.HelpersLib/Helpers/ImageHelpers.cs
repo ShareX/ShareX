@@ -1933,5 +1933,18 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        public static Size GetImageFileDimensions(string filePath)
+        {
+            using (Image img = LoadImage(filePath))
+            {
+                if (img != null)
+                {
+                    return img.Size;
+                }
+            }
+
+            return Size.Empty;
+        }
     }
 }

@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -183,6 +184,18 @@ namespace ShareX
         public void CopyImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) ClipboardHelpers.CopyImageFromFile(SelectedItem.Info.FilePath);
+        }
+
+        public void CopyImageDimensions()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile)
+            {
+                Size size = ImageHelpers.GetImageFileDimensions(SelectedItem.Info.FilePath);
+                if (!size.IsEmpty)
+                {
+                    ClipboardHelpers.CopyText($"{size.Width} x {size.Height}");
+                }
+            }
         }
 
         public void CopyText()

@@ -260,9 +260,10 @@
             this.pbDiscordHide = new System.Windows.Forms.PictureBox();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
+            this.ucNews = new ShareX.NewsListControl();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucNews = new ShareX.NewsListControl();
+            this.tsmiCopyImageDimensions = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1066,6 +1067,7 @@
             this.tssCopy1,
             this.tsmiCopyFile,
             this.tsmiCopyImage,
+            this.tsmiCopyImageDimensions,
             this.tsmiCopyText,
             this.tsmiCopyThumbnailFile,
             this.tsmiCopyThumbnailImage,
@@ -2053,6 +2055,12 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
+            // ucNews
+            // 
+            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
+            this.ucNews.Name = "ucNews";
+            // 
             // flpCommunity
             // 
             resources.ApplyResources(this.flpCommunity, "flpCommunity");
@@ -2068,10 +2076,11 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
-            // ucNews
+            // tsmiCopyImageDimensions
             // 
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
+            this.tsmiCopyImageDimensions.Name = "tsmiCopyImageDimensions";
+            resources.ApplyResources(this.tsmiCopyImageDimensions, "tsmiCopyImageDimensions");
+            this.tsmiCopyImageDimensions.Click += new System.EventHandler(this.tsmiCopyImageDimensions_Click);
             // 
             // MainForm
             // 
@@ -2353,5 +2362,6 @@
         private System.Windows.Forms.ToolStripSeparator tssTrayCapture1;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowCursor;
         private NewsListControl ucNews;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyImageDimensions;
     }
 }

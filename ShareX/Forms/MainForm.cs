@@ -651,6 +651,7 @@ namespace ShareX
 
                     tsmiCopyFile.Enabled = uim.SelectedItem.IsFileExist;
                     tsmiCopyImage.Enabled = uim.SelectedItem.IsImageFile;
+                    tsmiCopyImageDimensions.Enabled = uim.SelectedItem.IsImageFile;
                     tsmiCopyText.Enabled = uim.SelectedItem.IsTextFile;
                     tsmiCopyThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
                     tsmiCopyThumbnailImage.Enabled = uim.SelectedItem.IsThumbnailFileExist;
@@ -1972,6 +1973,11 @@ namespace ShareX
         private void tsmiCopyImage_Click(object sender, EventArgs e)
         {
             uim.CopyImage();
+        }
+
+        private void tsmiCopyImageDimensions_Click(object sender, EventArgs e)
+        {
+            uim.CopyImageDimensions();
         }
 
         private void tsmiCopyText_Click(object sender, EventArgs e)
