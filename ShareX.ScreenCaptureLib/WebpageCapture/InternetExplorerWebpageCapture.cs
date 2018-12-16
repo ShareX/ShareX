@@ -29,17 +29,13 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.WebpageCapture
 {
-    public class WebpageCapture : IDisposable
+    public class InternetExplorerWebpageCapture : WebpageCaptureBase
     {
-        public event Action<Bitmap> CaptureCompleted;
-
-        public int CaptureDelay { get; set; }
-
         private WebBrowser webBrowser;
 
-        public WebpageCapture()
+        public InternetExplorerWebpageCapture()
         {
             webBrowser = new WebBrowser();
             webBrowser.AllowNavigation = true;
@@ -48,12 +44,7 @@ namespace ShareX.ScreenCaptureLib
             webBrowser.DocumentCompleted += webBrowser_DocumentCompleted;
         }
 
-        public void CapturePage(string url)
-        {
-            CapturePage(url, Screen.PrimaryScreen.Bounds.Size);
-        }
-
-        public void CapturePage(string url, Size browserSize)
+        public override void CapturePage(string url, Size browserSize)
         {
             if (!string.IsNullOrEmpty(url))
             {
@@ -62,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void Stop()
+        public override void Stop()
         {
             webBrowser.Stop();
         }
@@ -131,19 +122,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected void OnCaptureCompleted(Bitmap bmp)
-        {
-            if (CaptureCompleted != null)
-            {
-                CaptureCompleted(bmp);
-            }
-            else if (bmp != null)
-            {
-                bmp.Dispose();
-            }
-        }
-
-        public void Dispose()
+        public override void Dispose()
         {
             if (webBrowser != null)
             {

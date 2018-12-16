@@ -118,9 +118,9 @@
           <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+        <Reference Include="windows">
           <SpecificVersion>False</SpecificVersion>
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Facade\Windows.WinMD</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.17763.0\Facade\windows.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.ApplicationModel.Activation.ActivatedEventsContract">
