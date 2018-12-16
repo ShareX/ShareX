@@ -25,7 +25,7 @@
 
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.WebpageCapture
 {
     public class WebpageCaptureOptions
     {

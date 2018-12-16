@@ -100,7 +100,7 @@
             // 
             resources.ApplyResources(this.nudWebpageWidth, "nudWebpageWidth");
             this.nudWebpageWidth.Maximum = new decimal(new int[] {
-            10000,
+            15000,
             0,
             0,
             0});
@@ -121,7 +121,7 @@
             // 
             resources.ApplyResources(this.nudWebpageHeight, "nudWebpageHeight");
             this.nudWebpageHeight.Maximum = new decimal(new int[] {
-            10000,
+            15000,
             0,
             0,
             0});

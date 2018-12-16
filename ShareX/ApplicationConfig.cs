@@ -25,7 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.WebpageCapture;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;

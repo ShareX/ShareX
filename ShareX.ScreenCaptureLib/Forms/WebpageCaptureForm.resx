@@ -158,7 +158,7 @@
   </data>
   <data name="lblURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblURL.Name" xml:space="preserve">
     <value>lblURL</value>
   </data>
@@ -338,7 +338,7 @@
   </data>
   <data name="lblWebpageX.Text" xml:space="preserve">
     <value>x</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblWebpageX.Name" xml:space="preserve">
     <value>lblWebpageX</value>
   </data>
