@@ -115,28 +115,24 @@
       <ItemGroup>
         <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
-          <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+          <HintPath>..\Lib\WindowsRuntime\System.Runtime.WindowsRuntime.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="windows">
           <SpecificVersion>False</SpecificVersion>
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.17763.0\Facade\windows.winmd</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Windows.ApplicationModel.Activation.ActivatedEventsContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.ApplicationModel.Activation.ActivatedEventsContract\1.0.0.0\Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd</HintPath>
+          <HintPath>..\Lib\WindowsRuntime\windows.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+          <HintPath>..\Lib\WindowsRuntime\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.FoundationContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <HintPath>..\Lib\WindowsRuntime\Windows.Foundation.FoundationContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.UniversalApiContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.UniversalApiContract\7.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+          <HintPath>..\Lib\WindowsRuntime\Windows.Foundation.UniversalApiContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
