@@ -322,12 +322,11 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
+        public decimal ScreenshotDelay = 0;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
         public bool CaptureClientArea = false;
-        public bool IsDelayScreenshot = false;
-        public decimal DelayScreenshot = 2.0m;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
 
@@ -364,7 +363,7 @@ namespace ShareX
 
         public OCROptions OCROptions = new OCROptions();
 
-        #endregion
+        #endregion Capture / OCR
     }
 
     public class TaskSettingsUpload

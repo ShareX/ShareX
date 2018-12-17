@@ -779,7 +779,7 @@ namespace ShareX
         private void AfterTaskSettingsJobs()
         {
             tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
-            SetScreenshotDelay(Program.DefaultTaskSettings.CaptureSettings.DelayScreenshot);
+            SetScreenshotDelay(Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay);
         }
 
         public void UpdateCheckStates()
@@ -1031,7 +1031,7 @@ namespace ShareX
 
         private void SetScreenshotDelay(decimal delay)
         {
-            Program.DefaultTaskSettings.CaptureSettings.DelayScreenshot = delay;
+            Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
 
             switch (delay)
             {
@@ -1065,7 +1065,7 @@ namespace ShareX
                     break;
             }
 
-            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", (int)delay);
+            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", delay);
             tsmiScreenshotDelay.Checked = tsmiTrayScreenshotDelay.Checked = delay > 0;
         }
 
