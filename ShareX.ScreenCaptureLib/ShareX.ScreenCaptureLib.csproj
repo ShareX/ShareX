@@ -75,25 +75,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="windows">
-      <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.17763.0\Facade\windows.winmd</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Windows.Foundation.FoundationContract">
-      <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Windows.Foundation.UniversalApiContract">
-      <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.UniversalApiContract\7.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -102,7 +85,6 @@
     <Compile Include="Animations\BaseAnimation.cs" />
     <Compile Include="Animations\PointAnimation.cs" />
     <Compile Include="Animations\RectangleAnimation.cs" />
-    <Compile Include="WebpageCapture\EdgeWebpageCapture.cs" />
     <Compile Include="Forms\CanvasSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,9 +223,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />
     <Compile Include="Animations\TextAnimation.cs" />
-    <Compile Include="WebpageCapture\InternetExplorerWebpageCapture.cs" />
-    <Compile Include="WebpageCapture\WebpageCaptureBase.cs" />
-    <Compile Include="WebpageCapture\WebpageCaptureOptions.cs" />
+    <Compile Include="WebpageCapture.cs" />
+    <Compile Include="WebpageCaptureOptions.cs" />
     <Compile Include="RegionHelpers\WindowsList.cs" />
     <Compile Include="RegionHelpers\WindowsRectangleList.cs" />
   </ItemGroup>

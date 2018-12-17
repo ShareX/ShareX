@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
-using ShareX.ScreenCaptureLib.WebpageCapture;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -40,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public WebpageCaptureOptions Options { get; set; }
         public bool IsBusy { get; private set; }
 
-        private WebpageCaptureBase webpageCapture;
+        private WebpageCapture webpageCapture;
         private bool stopRequested;
 
         public WebpageCaptureForm(WebpageCaptureOptions options)
@@ -49,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
             Icon = ShareXResources.Icon;
             Options = options;
             LoadSettings();
-            webpageCapture = WebpageCaptureBase.Create();
+            webpageCapture = new WebpageCapture();
             webpageCapture.CaptureCompleted += webpageCapture_CaptureCompleted;
         }
 
@@ -134,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             webpageCapture.CaptureDelay = (int)nudCaptureDelay.Value * 1000;
-            webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageHeight.Value));
+            webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
         }
 
         private void StopCapture()
