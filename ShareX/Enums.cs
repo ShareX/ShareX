@@ -185,7 +185,6 @@ namespace ShareX
         CustomRegion,
         LastRegion,
         ScrollingCapture,
-        CaptureWebpage,
         TextCapture,
         AutoCapture,
         StartAutoCapture,

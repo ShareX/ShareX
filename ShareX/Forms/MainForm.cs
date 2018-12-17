@@ -1459,11 +1459,6 @@ namespace ShareX
             TaskHelpers.OpenScrollingCapture();
         }
 
-        private void tsmiWebpageCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenWebpageCapture();
-        }
-
         private void tsmiTextCapture_Click(object sender, EventArgs e)
         {
             Hide();

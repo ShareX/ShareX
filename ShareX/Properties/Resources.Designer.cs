@@ -1069,16 +1069,6 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap document_globe {
-            get {
-                object obj = ResourceManager.GetObject("document_globe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap drive {
             get {
                 object obj = ResourceManager.GetObject("drive", resourceCulture);

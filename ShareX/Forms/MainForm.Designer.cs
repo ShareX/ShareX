@@ -56,7 +56,6 @@
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCapture1 = new System.Windows.Forms.ToolStripSeparator();
@@ -134,6 +133,7 @@
             this.tssCopy1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCopyFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyImageDimensions = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyText = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyThumbnailFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyThumbnailImage = new System.Windows.Forms.ToolStripMenuItem();
@@ -191,7 +191,6 @@
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTrayCapture1 = new System.Windows.Forms.ToolStripSeparator();
@@ -263,7 +262,6 @@
             this.ucNews = new ShareX.NewsListControl();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
-            this.tsmiCopyImageDimensions = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -443,7 +441,6 @@
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
             this.tsmiScrollingCapture,
-            this.tsmiWebpageCapture,
             this.tsmiTextCapture,
             this.tsmiAutoCapture,
             this.tssCapture1,
@@ -520,13 +517,6 @@
             this.tsmiScrollingCapture.Name = "tsmiScrollingCapture";
             resources.ApplyResources(this.tsmiScrollingCapture, "tsmiScrollingCapture");
             this.tsmiScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
-            // 
-            // tsmiWebpageCapture
-            // 
-            this.tsmiWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
-            this.tsmiWebpageCapture.Name = "tsmiWebpageCapture";
-            resources.ApplyResources(this.tsmiWebpageCapture, "tsmiWebpageCapture");
-            this.tsmiWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
             // 
             // tsmiTextCapture
             // 
@@ -1134,6 +1124,12 @@
             resources.ApplyResources(this.tsmiCopyImage, "tsmiCopyImage");
             this.tsmiCopyImage.Click += new System.EventHandler(this.tsmiCopyImage_Click);
             // 
+            // tsmiCopyImageDimensions
+            // 
+            this.tsmiCopyImageDimensions.Name = "tsmiCopyImageDimensions";
+            resources.ApplyResources(this.tsmiCopyImageDimensions, "tsmiCopyImageDimensions");
+            this.tsmiCopyImageDimensions.Click += new System.EventHandler(this.tsmiCopyImageDimensions_Click);
+            // 
             // tsmiCopyText
             // 
             this.tsmiCopyText.Name = "tsmiCopyText";
@@ -1473,7 +1469,6 @@
             this.tsmiTrayScreenRecordingFFmpeg,
             this.tsmiTrayScreenRecordingGIF,
             this.tsmiTrayScrollingCapture,
-            this.tsmiTrayWebpageCapture,
             this.tsmiTrayTextCapture,
             this.tsmiTrayAutoCapture,
             this.tssTrayCapture1,
@@ -1550,13 +1545,6 @@
             this.tsmiTrayScrollingCapture.Name = "tsmiTrayScrollingCapture";
             resources.ApplyResources(this.tsmiTrayScrollingCapture, "tsmiTrayScrollingCapture");
             this.tsmiTrayScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
-            // 
-            // tsmiTrayWebpageCapture
-            // 
-            this.tsmiTrayWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
-            this.tsmiTrayWebpageCapture.Name = "tsmiTrayWebpageCapture";
-            resources.ApplyResources(this.tsmiTrayWebpageCapture, "tsmiTrayWebpageCapture");
-            this.tsmiTrayWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
             // 
             // tsmiTrayTextCapture
             // 
@@ -2076,12 +2064,6 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
-            // tsmiCopyImageDimensions
-            // 
-            this.tsmiCopyImageDimensions.Name = "tsmiCopyImageDimensions";
-            resources.ApplyResources(this.tsmiCopyImageDimensions, "tsmiCopyImageDimensions");
-            this.tsmiCopyImageDimensions.Click += new System.EventHandler(this.tsmiCopyImageDimensions_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2307,8 +2289,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsTray;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleTransparent;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleTransparent;
-        private System.Windows.Forms.ToolStripMenuItem tsmiWebpageCapture;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayToggleHotkeys;
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoThumbnailer;

@@ -277,12 +277,6 @@ namespace ShareX
 
         #endregion ScreenRecord Form
 
-        #region Webpage Capture Form
-
-        public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();
-
-        #endregion Webpage Capture Form
-
         #region Actions toolbar
 
         public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,

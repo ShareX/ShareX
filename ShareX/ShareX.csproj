@@ -1490,7 +1490,6 @@
     <None Include="Resources\kr.png" />
     <None Include="Resources\es.png" />
     <None Include="Resources\nl.png" />
-    <None Include="Resources\document-globe.png" />
     <None Include="Resources\keyboard--minus.png" />
     <None Include="Resources\keyboard--plus.png" />
     <None Include="Resources\images-stack.png" />

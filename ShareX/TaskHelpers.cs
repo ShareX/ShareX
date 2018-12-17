@@ -130,9 +130,6 @@ namespace ShareX
                 case HotkeyType.ScrollingCapture:
                     OpenScrollingCapture(safeTaskSettings, true);
                     break;
-                case HotkeyType.CaptureWebpage:
-                    OpenWebpageCapture(safeTaskSettings);
-                    break;
                 case HotkeyType.TextCapture:
                     _ = OCRImage(safeTaskSettings);
                     break;
@@ -737,22 +734,6 @@ namespace ShareX
 
             AutoCaptureForm.Instance.TaskSettings = taskSettings;
             AutoCaptureForm.Instance.ForceActivate();
-        }
-
-        public static void OpenWebpageCapture(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm(Program.Settings.WebpageCaptureOptions);
-            webpageCaptureForm.ImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
-            webpageCaptureForm.ImageCopyRequested += img =>
-            {
-                using (img)
-                {
-                    ClipboardHelpers.CopyImage(img);
-                }
-            };
-            webpageCaptureForm.Show();
         }
 
         public static void StartAutoCapture(TaskSettings taskSettings = null)
@@ -1536,7 +1517,6 @@ namespace ShareX
                 case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                case HotkeyType.CaptureWebpage: return Resources.document_globe;
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
                 case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
