@@ -174,7 +174,8 @@ namespace ShareX
             {
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
                 tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
-                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay
+                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay,
+                tsmiTrayScreenshotDelay
             })
             {
                 dropDownItem.DisableMenuCloseOnClick();
@@ -1036,29 +1037,36 @@ namespace ShareX
             {
                 default:
                     tsmiScreenshotDelay.UpdateCheckedAll(false);
+                    tsmiTrayScreenshotDelay.UpdateCheckedAll(false);
                     break;
                 case 0:
                     tsmiScreenshotDelay0.RadioCheck();
+                    tsmiTrayScreenshotDelay0.RadioCheck();
                     break;
                 case 1:
                     tsmiScreenshotDelay1.RadioCheck();
+                    tsmiTrayScreenshotDelay1.RadioCheck();
                     break;
                 case 2:
                     tsmiScreenshotDelay2.RadioCheck();
+                    tsmiTrayScreenshotDelay2.RadioCheck();
                     break;
                 case 3:
                     tsmiScreenshotDelay3.RadioCheck();
+                    tsmiTrayScreenshotDelay3.RadioCheck();
                     break;
                 case 4:
                     tsmiScreenshotDelay4.RadioCheck();
+                    tsmiTrayScreenshotDelay4.RadioCheck();
                     break;
                 case 5:
                     tsmiScreenshotDelay5.RadioCheck();
+                    tsmiTrayScreenshotDelay5.RadioCheck();
                     break;
             }
 
-            tsmiScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", (int)delay);
-            tsmiScreenshotDelay.Checked = delay > 0;
+            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", (int)delay);
+            tsmiScreenshotDelay.Checked = tsmiTrayScreenshotDelay.Checked = delay > 0;
         }
 
         private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)

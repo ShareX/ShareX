@@ -891,7 +891,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap clock_select {
             get {
-                object obj = ResourceManager.GetObject("clock-select", resourceCulture);
+                object obj = ResourceManager.GetObject("clock_select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
