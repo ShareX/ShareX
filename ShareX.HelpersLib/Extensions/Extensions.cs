@@ -342,6 +342,14 @@ namespace ShareX.HelpersLib
             tsb.Checked = true;
         }
 
+        public static void UpdateCheckedAll(this ToolStripMenuItem tsmi, bool check)
+        {
+            foreach (ToolStripMenuItem tsmiChild in tsmi.DropDownItems.OfType<ToolStripMenuItem>())
+            {
+                tsmiChild.Checked = check;
+            }
+        }
+
         public static void InvokeSafe(this Control control, Action action)
         {
             if (control != null && !control.IsDisposed)
@@ -516,6 +524,11 @@ namespace ShareX.HelpersLib
         public static void HideImageMargin(this ToolStripDropDownItem tsddi)
         {
             ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
+        }
+
+        public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
+        {
+            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
         }
 
         public static void SetValue(this NumericUpDown nud, decimal number)

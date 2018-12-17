@@ -174,10 +174,10 @@ namespace ShareX
             {
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
                 tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
-                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices
+                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay
             })
             {
-                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+                dropDownItem.DisableMenuCloseOnClick();
             }
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
@@ -778,6 +778,7 @@ namespace ShareX
         private void AfterTaskSettingsJobs()
         {
             tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
+            SetScreenshotDelay(Program.DefaultTaskSettings.CaptureSettings.DelayScreenshot);
         }
 
         public void UpdateCheckStates()
@@ -1025,6 +1026,39 @@ namespace ShareX
         {
             pNews.Visible = false;
             ucNews.MarkRead();
+        }
+
+        private void SetScreenshotDelay(decimal delay)
+        {
+            Program.DefaultTaskSettings.CaptureSettings.DelayScreenshot = delay;
+
+            switch (delay)
+            {
+                default:
+                    tsmiScreenshotDelay.UpdateCheckedAll(false);
+                    break;
+                case 0:
+                    tsmiScreenshotDelay0.RadioCheck();
+                    break;
+                case 1:
+                    tsmiScreenshotDelay1.RadioCheck();
+                    break;
+                case 2:
+                    tsmiScreenshotDelay2.RadioCheck();
+                    break;
+                case 3:
+                    tsmiScreenshotDelay3.RadioCheck();
+                    break;
+                case 4:
+                    tsmiScreenshotDelay4.RadioCheck();
+                    break;
+                case 5:
+                    tsmiScreenshotDelay5.RadioCheck();
+                    break;
+            }
+
+            tsmiScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", (int)delay);
+            tsmiScreenshotDelay.Checked = delay > 0;
         }
 
         private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -1487,6 +1521,36 @@ namespace ShareX
         {
             Program.DefaultTaskSettings.CaptureSettings.ShowCursor = ((ToolStripMenuItem)sender).Checked;
             AfterTaskSettingsJobs();
+        }
+
+        private void tsmiScreenshotDelay0_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(0);
+        }
+
+        private void tsmiScreenshotDelay1_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(1);
+        }
+
+        private void tsmiScreenshotDelay2_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(2);
+        }
+
+        private void tsmiScreenshotDelay3_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(3);
+        }
+
+        private void tsmiScreenshotDelay4_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(4);
+        }
+
+        private void tsmiScreenshotDelay5_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(5);
         }
 
         private void tsbFileUpload_Click(object sender, EventArgs e)

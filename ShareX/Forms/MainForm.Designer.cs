@@ -60,6 +60,7 @@
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCapture1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiShowCursor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -262,6 +263,12 @@
             this.ucNews = new ShareX.NewsListControl();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
+            this.tsmiScreenshotDelay5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiScreenshotDelay0 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -444,7 +451,8 @@
             this.tsmiTextCapture,
             this.tsmiAutoCapture,
             this.tssCapture1,
-            this.tsmiShowCursor});
+            this.tsmiShowCursor,
+            this.tsmiScreenshotDelay});
             this.tsddbCapture.Image = global::ShareX.Properties.Resources.camera;
             resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
             this.tsddbCapture.Name = "tsddbCapture";
@@ -544,6 +552,19 @@
             this.tsmiShowCursor.Name = "tsmiShowCursor";
             resources.ApplyResources(this.tsmiShowCursor, "tsmiShowCursor");
             this.tsmiShowCursor.Click += new System.EventHandler(this.tsmiShowCursor_Click);
+            // 
+            // tsmiScreenshotDelay
+            // 
+            this.tsmiScreenshotDelay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiScreenshotDelay0,
+            this.tsmiScreenshotDelay1,
+            this.tsmiScreenshotDelay2,
+            this.tsmiScreenshotDelay3,
+            this.tsmiScreenshotDelay4,
+            this.tsmiScreenshotDelay5});
+            this.tsmiScreenshotDelay.Image = global::ShareX.Properties.Resources.clock_select;
+            this.tsmiScreenshotDelay.Name = "tsmiScreenshotDelay";
+            resources.ApplyResources(this.tsmiScreenshotDelay, "tsmiScreenshotDelay");
             // 
             // tsddbUpload
             // 
@@ -2064,6 +2085,42 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
+            // tsmiScreenshotDelay5
+            // 
+            this.tsmiScreenshotDelay5.Name = "tsmiScreenshotDelay5";
+            resources.ApplyResources(this.tsmiScreenshotDelay5, "tsmiScreenshotDelay5");
+            this.tsmiScreenshotDelay5.Click += new System.EventHandler(this.tsmiScreenshotDelay5_Click);
+            // 
+            // tsmiScreenshotDelay4
+            // 
+            this.tsmiScreenshotDelay4.Name = "tsmiScreenshotDelay4";
+            resources.ApplyResources(this.tsmiScreenshotDelay4, "tsmiScreenshotDelay4");
+            this.tsmiScreenshotDelay4.Click += new System.EventHandler(this.tsmiScreenshotDelay4_Click);
+            // 
+            // tsmiScreenshotDelay3
+            // 
+            this.tsmiScreenshotDelay3.Name = "tsmiScreenshotDelay3";
+            resources.ApplyResources(this.tsmiScreenshotDelay3, "tsmiScreenshotDelay3");
+            this.tsmiScreenshotDelay3.Click += new System.EventHandler(this.tsmiScreenshotDelay3_Click);
+            // 
+            // tsmiScreenshotDelay2
+            // 
+            this.tsmiScreenshotDelay2.Name = "tsmiScreenshotDelay2";
+            resources.ApplyResources(this.tsmiScreenshotDelay2, "tsmiScreenshotDelay2");
+            this.tsmiScreenshotDelay2.Click += new System.EventHandler(this.tsmiScreenshotDelay2_Click);
+            // 
+            // tsmiScreenshotDelay1
+            // 
+            this.tsmiScreenshotDelay1.Name = "tsmiScreenshotDelay1";
+            resources.ApplyResources(this.tsmiScreenshotDelay1, "tsmiScreenshotDelay1");
+            this.tsmiScreenshotDelay1.Click += new System.EventHandler(this.tsmiScreenshotDelay1_Click);
+            // 
+            // tsmiScreenshotDelay0
+            // 
+            this.tsmiScreenshotDelay0.Name = "tsmiScreenshotDelay0";
+            resources.ApplyResources(this.tsmiScreenshotDelay0, "tsmiScreenshotDelay0");
+            this.tsmiScreenshotDelay0.Click += new System.EventHandler(this.tsmiScreenshotDelay0_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2343,5 +2400,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowCursor;
         private NewsListControl ucNews;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyImageDimensions;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay0;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay5;
     }
 }
