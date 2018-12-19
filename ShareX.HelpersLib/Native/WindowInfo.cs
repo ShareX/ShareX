@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; }
 
+        public bool IsHandleCreated => Handle != IntPtr.Zero;
+
         public string Text => NativeMethods.GetWindowText(Handle);
 
         public string ClassName => NativeMethods.GetClassName(Handle);
@@ -75,7 +77,18 @@ namespace ShareX.HelpersLib
 
         public void Activate()
         {
-            NativeMethods.ActivateWindow(Handle);
+            if (IsHandleCreated)
+            {
+                NativeMethods.SetForegroundWindow(Handle);
+            }
+        }
+
+        public void Restore()
+        {
+            if (IsHandleCreated)
+            {
+                NativeMethods.RestoreWindow(Handle);
+            }
         }
 
         public override string ToString()

@@ -29,6 +29,7 @@ using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -115,7 +116,23 @@ namespace ShareX
             switch (startMethod)
             {
                 case ScreenRecordStartMethod.Region:
+                    IntPtr foregroundWindow = NativeMethods.GetForegroundWindow();
+
                     RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+
+                    IntPtr foregroundWindow2 = NativeMethods.GetForegroundWindow();
+
+                    if (foregroundWindow != foregroundWindow2)
+                    {
+                        WindowInfo windowInfo = new WindowInfo(foregroundWindow);
+
+                        if (windowInfo.IsMinimized)
+                        {
+                            windowInfo.Restore();
+                        }
+
+                        windowInfo.Activate();
+                    }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
                     if (taskSettings.CaptureSettings.CaptureClientArea)

@@ -42,16 +42,18 @@ namespace ShareX
 
         protected override ImageInfo Execute(TaskSettings taskSettings)
         {
-            if (NativeMethods.IsIconic(WindowHandle))
+            WindowInfo windowInfo = new WindowInfo(WindowHandle);
+
+            if (windowInfo.IsMinimized)
             {
-                NativeMethods.RestoreWindow(WindowHandle);
+                windowInfo.Restore();
             }
 
-            NativeMethods.SetForegroundWindow(WindowHandle);
+            windowInfo.Activate();
+
             Thread.Sleep(250);
 
             ImageInfo imageInfo = new ImageInfo();
-            WindowInfo windowInfo = new WindowInfo(WindowHandle);
             imageInfo.UpdateInfo(windowInfo);
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
