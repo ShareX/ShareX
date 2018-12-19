@@ -87,7 +87,7 @@ namespace ShareX.HelpersLib
         {
             if (IsHandleCreated)
             {
-                NativeMethods.RestoreWindow(Handle);
+                NativeMethods.ShowWindow(Handle, (int)WindowShowStyle.Restore);
             }
         }
 
