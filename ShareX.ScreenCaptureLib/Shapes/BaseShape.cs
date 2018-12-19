@@ -228,7 +228,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     StartPosition = StartPosition.Add(InputManager.MouseVelocity);
                 }
-                else if (Manager.IsProportionalResizing)
+
+                if (Manager.IsProportionalResizing)
                 {
                     float degree, startDegree;
 

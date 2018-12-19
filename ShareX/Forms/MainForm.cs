@@ -1528,7 +1528,7 @@ namespace ShareX
         private void tsmiShowCursor_Click(object sender, EventArgs e)
         {
             Program.DefaultTaskSettings.CaptureSettings.ShowCursor = ((ToolStripMenuItem)sender).Checked;
-            AfterTaskSettingsJobs();
+            tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
         }
 
         private void tsmiScreenshotDelay0_Click(object sender, EventArgs e)
