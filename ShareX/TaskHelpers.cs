@@ -1701,7 +1701,7 @@ namespace ShareX
             UpdateMessageBox.Start(updateChecker);
         }
 
-        public static Image QRCodeEncode(string text, int width, int height)
+        public static Image CreateQRCode(string text, int width, int height)
         {
             if (CheckQRCodeContent(text))
             {
@@ -1730,12 +1730,12 @@ namespace ShareX
             return null;
         }
 
-        public static Image QRCodeEncode(string text, int size)
+        public static Image CreateQRCode(string text, int size)
         {
-            return QRCodeEncode(text, size, size);
+            return CreateQRCode(text, size, size);
         }
 
-        public static string[] QRCodeDecode(Bitmap bmp)
+        public static string[] BarcodeScan(Bitmap bmp, bool scanQRCodeOnly = false)
         {
             try
             {
@@ -1745,16 +1745,20 @@ namespace ShareX
                     TryInverted = true,
                     Options = new DecodingOptions
                     {
-                        PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE },
                         TryHarder = true
                     }
                 };
+
+                if (scanQRCodeOnly)
+                {
+                    barcodeReader.Options.PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE };
+                }
 
                 Result[] results = barcodeReader.DecodeMultiple(bmp);
 
                 if (results != null)
                 {
-                    return results.Where(x => x != null).Select(x => x.Text).ToArray();
+                    return results.Where(x => x != null && !string.IsNullOrEmpty(x.Text)).Select(x => x.Text).ToArray();
                 }
             }
             catch (Exception e)

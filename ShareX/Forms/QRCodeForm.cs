@@ -103,7 +103,7 @@ namespace ShareX
                 ClearQRCode();
 
                 int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
-                pbQRCode.Image = TaskHelpers.QRCodeEncode(text, size);
+                pbQRCode.Image = TaskHelpers.CreateQRCode(text, size);
             }
         }
 
@@ -111,11 +111,11 @@ namespace ShareX
         {
             string output = "";
 
-            string[] results = TaskHelpers.QRCodeDecode(bmp);
+            string[] results = TaskHelpers.BarcodeScan(bmp);
 
             if (results != null)
             {
-                output = string.Join(Environment.NewLine + Environment.NewLine, results.Where(x => !string.IsNullOrEmpty(x)));
+                output = string.Join(Environment.NewLine + Environment.NewLine, results);
             }
 
             txtDecodeResult.Text = output;
