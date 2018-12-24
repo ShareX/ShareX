@@ -219,6 +219,9 @@
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="rtbCredits.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -242,6 +245,9 @@
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="rtbShareXInfo.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
@@ -523,7 +529,7 @@
     <value>uclUpdate</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -547,7 +553,7 @@
     <value>cLogo</value>
   </data>
   <data name="&gt;&gt;cLogo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cLogo.Parent" xml:space="preserve">
     <value>$this</value>
@@ -572,7 +578,7 @@
   </data>
   <data name="lblBuild.Text" xml:space="preserve">
     <value>Build</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblBuild.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
