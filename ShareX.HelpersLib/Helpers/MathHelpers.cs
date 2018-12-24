@@ -66,6 +66,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static int RandomPick(params int[] nums)
+        {
+            return nums[Random(nums.Length - 1)];
+        }
+
         /// <summary>
         /// Returns a random number between 0 and <c>max</c> (inclusive) generated with a cryptographic PRNG.
         /// </summary>

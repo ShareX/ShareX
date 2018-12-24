@@ -258,6 +258,7 @@ Copyright (c) 2007-2018 ShareX Team";
 
                 if (clickCount >= 10)
                 {
+                    easterEggBounce.ApplyGravity = e.Button == MouseButtons.Left;
                     easterEggBounce.Start();
                 }
             }
