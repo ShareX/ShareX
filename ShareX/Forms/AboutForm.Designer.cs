@@ -18,7 +18,7 @@
                 components.Dispose();
             }
 
-            if (bounceTimer != null) bounceTimer.Dispose();
+            if (easterEggBounce != null) easterEggBounce.Dispose();
 
             base.Dispose(disposing);
         }

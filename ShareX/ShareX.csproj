@@ -164,6 +164,7 @@
     <Compile Include="Controls\NewsListControl.Designer.cs">
       <DependentUpon>NewsListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EasterEggBounce.cs" />
     <Compile Include="Forms\TextUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>

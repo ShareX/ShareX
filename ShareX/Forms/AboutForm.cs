@@ -34,6 +34,8 @@ namespace ShareX
 {
     public partial class AboutForm : Form
     {
+        private EasterEggBounce easterEggBounce;
+
         public AboutForm()
         {
             InitializeComponent();
@@ -116,6 +118,8 @@ MegaApiClient: https://github.com/gpailler/MegaApiClient
 Blob Emoji: http://blobs.gg
 
 Copyright (c) 2007-2018 ShareX Team";
+
+            easterEggBounce = new EasterEggBounce(this);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
@@ -246,7 +250,7 @@ Copyright (c) 2007-2018 ShareX Team";
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!isEasterEggStarted)
+            if (!easterEggBounce.IsWorking)
             {
                 isPaused = !isPaused;
 
@@ -254,78 +258,15 @@ Copyright (c) 2007-2018 ShareX Team";
 
                 if (clickCount >= 10)
                 {
-                    isEasterEggStarted = true;
-                    RunEasterEgg();
+                    easterEggBounce.Start();
                 }
             }
             else
             {
-                if (bounceTimer != null)
-                {
-                    bounceTimer.Stop();
-                }
-
-                isEasterEggStarted = false;
+                easterEggBounce.Stop();
             }
         }
 
         #endregion Animation
-
-        #region Easter egg
-
-        private bool isEasterEggStarted;
-        private Rectangle screenRect;
-        private Timer bounceTimer;
-        private const int windowGravityPower = 3;
-        private const int windowBouncePower = -50;
-        private const int windowSpeed = 20;
-        private Point windowVelocity = new Point(windowSpeed, windowGravityPower);
-
-        private void RunEasterEgg()
-        {
-            screenRect = CaptureHelpers.GetScreenWorkingArea();
-
-            bounceTimer = new Timer();
-            bounceTimer.Interval = 20;
-            bounceTimer.Tick += bounceTimer_Tick;
-            bounceTimer.Start();
-        }
-
-        private void bounceTimer_Tick(object sender, EventArgs e)
-        {
-            if (!IsDisposed)
-            {
-                int x = Left + windowVelocity.X;
-                int windowRight = screenRect.X + screenRect.Width - 1 - Width;
-
-                if (x <= screenRect.X)
-                {
-                    x = screenRect.X;
-                    windowVelocity.X = windowSpeed;
-                }
-                else if (x >= windowRight)
-                {
-                    x = windowRight;
-                    windowVelocity.X = -windowSpeed;
-                }
-
-                int y = Top + windowVelocity.Y;
-                int windowBottom = screenRect.Y + screenRect.Height - 1 - Height;
-
-                if (y >= windowBottom)
-                {
-                    y = windowBottom;
-                    windowVelocity.Y = windowBouncePower.RandomAdd(-10, 10);
-                }
-                else
-                {
-                    windowVelocity.Y += windowGravityPower;
-                }
-
-                Location = new Point(x, y);
-            }
-        }
-
-        #endregion Easter egg
     }
 }
