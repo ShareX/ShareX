@@ -34,12 +34,12 @@ namespace ShareX
     {
         public Form Form { get; private set; }
         public bool IsWorking { get; private set; }
+        public Rectangle BounceRectangle { get; set; }
         public int Speed { get; set; } = 20;
         public bool ApplyGravity { get; set; } = true;
         public int GravityPower { get; set; } = 3;
         public int BouncePower { get; set; } = 50;
 
-        private Rectangle screenRectangle;
         private Timer timer;
         private Point velocity;
 
@@ -50,6 +50,8 @@ namespace ShareX
             timer = new Timer();
             timer.Interval = 20;
             timer.Tick += bounceTimer_Tick;
+
+            BounceRectangle = CaptureHelpers.GetScreenWorkingArea();
         }
 
         public void Start()
@@ -58,7 +60,6 @@ namespace ShareX
             {
                 IsWorking = true;
 
-                screenRectangle = CaptureHelpers.GetScreenWorkingArea();
                 velocity = new Point(MathHelpers.RandomPick(-Speed, Speed), ApplyGravity ? GravityPower : MathHelpers.RandomPick(-Speed, Speed));
                 timer.Start();
             }
@@ -82,11 +83,11 @@ namespace ShareX
             if (Form != null && !Form.IsDisposed)
             {
                 int x = Form.Left + velocity.X;
-                int windowRight = screenRectangle.X + screenRectangle.Width - Form.Width - 1;
+                int windowRight = BounceRectangle.X + BounceRectangle.Width - Form.Width - 1;
 
-                if (x <= screenRectangle.X)
+                if (x <= BounceRectangle.X)
                 {
-                    x = screenRectangle.X;
+                    x = BounceRectangle.X;
                     velocity.X = Speed;
                 }
                 else if (x >= windowRight)
@@ -96,7 +97,7 @@ namespace ShareX
                 }
 
                 int y = Form.Top + velocity.Y;
-                int windowBottom = screenRectangle.Y + screenRectangle.Height - Form.Height - 1;
+                int windowBottom = BounceRectangle.Y + BounceRectangle.Height - Form.Height - 1;
 
                 if (ApplyGravity)
                 {
@@ -112,9 +113,9 @@ namespace ShareX
                 }
                 else
                 {
-                    if (y <= screenRectangle.Y)
+                    if (y <= BounceRectangle.Y)
                     {
-                        y = screenRectangle.Y;
+                        y = BounceRectangle.Y;
                         velocity.Y = Speed;
                     }
                     else if (y >= windowBottom)

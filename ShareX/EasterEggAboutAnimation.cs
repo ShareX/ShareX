@@ -33,22 +33,18 @@ namespace ShareX
 {
     public class EasterEggAboutAnimation : IDisposable
     {
-        private const int w = 200;
-        private const int h = w;
-        private const int mX = w / 2;
-        private const int mY = h / 2;
-        private const int minStep = 3;
-        private const int maxStep = 35;
-        private const int speed = 1;
-
         public Canvas Canvas { get; private set; }
         public bool IsPaused { get; set; }
+        public Size Size { get; set; } = new Size(200, 200);
         public int Step { get; set; } = 10;
-        public int Direction { get; set; } = speed;
-        public Color Color { get; set; } = new HSB(0d, 1d, 0.9d);
+        public int MinStep { get; set; } = 3;
+        public int MaxStep { get; set; } = 35;
+        public int Speed { get; set; } = 1;
+        public Color Color { get; set; } = new HSB(0.0, 1.0, 0.9);
         public int ClickCount { get; private set; }
 
         private EasterEggBounce easterEggBounce;
+        private int direction;
 
         public EasterEggAboutAnimation(Canvas canvas, Form form)
         {
@@ -61,6 +57,7 @@ namespace ShareX
 
         public void Start()
         {
+            direction = Speed;
             Canvas.Start(50);
         }
 
@@ -88,20 +85,23 @@ namespace ShareX
         {
             g.SetHighQuality();
 
+            int halfWidth = Size.Width / 2;
+            int halfHeight = Size.Height / 2;
+
             using (Matrix m = new Matrix())
             {
-                m.RotateAt(45, new PointF(mX, mY));
+                m.RotateAt(45, new PointF(halfWidth, halfHeight));
                 g.Transform = m;
             }
 
             using (Pen pen = new Pen(Color, 2))
             {
-                for (int i = 0; i <= mX; i += Step)
+                for (int i = 0; i <= halfWidth; i += Step)
                 {
-                    g.DrawLine(pen, i, mY, mX, mY - i); // Left top
-                    g.DrawLine(pen, mX, i, mX + i, mY); // Right top
-                    g.DrawLine(pen, w - i, mY, mX, mY + i); // Right bottom
-                    g.DrawLine(pen, mX, h - i, mX - i, mY); // Left bottom
+                    g.DrawLine(pen, i, halfHeight, halfWidth, halfHeight - i); // Left top
+                    g.DrawLine(pen, halfWidth, i, halfWidth + i, halfHeight); // Right top
+                    g.DrawLine(pen, Size.Width - i, halfHeight, halfWidth, halfHeight + i); // Right bottom
+                    g.DrawLine(pen, halfWidth, Size.Height - i, halfWidth - i, halfHeight); // Left bottom
 
                     /*
                     g.DrawLine(pen, i, mY, mX, mY - i); // Left top
@@ -123,16 +123,16 @@ namespace ShareX
 
             if (!IsPaused)
             {
-                if (Step + speed > maxStep)
+                if (Step + Speed > MaxStep)
                 {
-                    Direction = -speed;
+                    direction = -Speed;
                 }
-                else if (Step - speed < minStep)
+                else if (Step - Speed < MinStep)
                 {
-                    Direction = speed;
+                    direction = Speed;
                 }
 
-                Step += Direction;
+                Step += direction;
 
                 HSB hsb = Color;
 
