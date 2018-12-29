@@ -91,7 +91,7 @@ namespace ShareX.UploadersLib
             if (!File.Exists(filePath)) throw new FileNotFoundException("File does not exist");
 
             // Split it down so we can get the extension
-            string[] splitPath = filePath.Split(new Char[] { '.' });
+            string[] splitPath = filePath.Split(new char[] { '.' });
             string extension = (string)splitPath.GetValue(splitPath.GetUpperBound(0));
 
             //Check that we haven't already got the extension, if we have, then

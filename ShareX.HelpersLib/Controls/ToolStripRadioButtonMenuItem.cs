@@ -149,7 +149,7 @@ namespace ShareX.HelpersLib
             }
 
             // Calculate the position at which to display the RadioButton.
-            Int32 offset = (ContentRectangle.Height - RadioButtonRenderer.GetGlyphSize(e.Graphics, buttonState).Height) / 2;
+            int offset = (ContentRectangle.Height - RadioButtonRenderer.GetGlyphSize(e.Graphics, buttonState).Height) / 2;
             Point imageLocation = new Point(ContentRectangle.Location.X + 4, ContentRectangle.Location.Y + offset);
 
             // If the item is selected and the RadioButton paints with partial
